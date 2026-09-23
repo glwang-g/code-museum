@@ -1,0 +1,13 @@
+{
+  "meta": {
+    "source": "https://pldb.io/pldb.json",
+    "license": "Public domain (PLDB)",
+    "retrieved": "2026-09-23T12:35:38.637Z",
+    "sha256": "57f45d25bba78ab6bc4af5d969356d2efbfcc7c1ee722dbb5c708d60aa78ba77",
+    "count": 5155,
+    "languages": 4608,
+    "edgeCount": 340,
+    "unresolved": 0
+  },
+  "unresolved": []
+}

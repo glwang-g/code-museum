@@ -1,0 +1,32 @@
+{
+  "schema": "code-museum.lineage/v1",
+  "rule": "A visual edge is rendered only after its relationship type and source have been recorded.",
+  "relationshipTypes": {
+    "direct_derivation": "A language was explicitly derived from another language.",
+    "syntax_influence": "Surface syntax or grammar was adopted or deliberately adapted.",
+    "object_model_influence": "Classes, objects, delegation, or messaging influenced the design.",
+    "type_system_influence": "Type-system or memory-safety ideas influenced the design.",
+    "runtime_ecosystem": "A language interoperates with or targets another language's runtime/ecosystem."
+  },
+  "sources": [
+    {
+      "id": "hopl",
+      "title": "HOPL — Online Historical Encyclopaedia of Programming Languages",
+      "url": "https://hopl.info/",
+      "use": "Language identifiers, dates, and candidate influence links; every displayed relationship is then individually reviewed."
+    },
+    {
+      "id": "jls",
+      "title": "The Java Language Specification",
+      "url": "https://docs.oracle.com/javase/specs/",
+      "use": "Primary reference for Java's language semantics."
+    }
+  ],
+  "reviewQueue": [
+    { "from": "C", "to": "C++", "type": "direct_derivation", "status": "source review required" },
+    { "from": "C++", "to": "Java", "type": "syntax_influence", "status": "source review required" },
+    { "from": "Smalltalk", "to": "Java", "type": "object_model_influence", "status": "source review required" },
+    { "from": "Java", "to": "Kotlin", "type": "runtime_ecosystem", "status": "source review required" },
+    { "from": "Self", "to": "JavaScript", "type": "object_model_influence", "status": "source review required" }
+  ]
+}
