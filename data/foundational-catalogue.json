@@ -1,0 +1,12 @@
+{
+  "eras": [
+    {"id":"prehistory","name":"规则成为程序之前","items":["Jacquard loom","Charles Babbage","Ada Lovelace","George Boole","Alonzo Church","Alan Turing"]},
+    {"id":"machine","name":"机器与汇编","items":["machine code","assembly","Autocode"]},
+    {"id":"early-high-level","name":"高阶语言的黎明","items":["Fortran","Lisp","COBOL","ALGOL","BASIC","APL","Pascal"]},
+    {"id":"systems","name":"系统与通用语言","items":["C","C++","Ada","Objective-C","Java","C#","Go","Rust","Zig"]},
+    {"id":"functional","name":"函数式流域","items":["Lisp","Scheme","Common Lisp","ML","Standard ML","OCaml","Haskell","Erlang","Elixir","Clojure","F#"]},
+    {"id":"scientific","name":"科学与数学计算","items":["Fortran","APL","MATLAB","S","R","Mathematica","Julia"]},
+    {"id":"data","name":"商业、数据与数据库","items":["COBOL","SQL","PL/SQL","dBase","xBase","FoxPro","SAS"]},
+    {"id":"personal-web","name":"个人计算与 Web","items":["BASIC","Logo","Smalltalk","Perl","Python","Ruby","JavaScript","TypeScript","PHP"]}
+  ]
+}
