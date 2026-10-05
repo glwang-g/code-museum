@@ -65,7 +65,7 @@ jobs:
           target="$DEPLOY_USER@$DEPLOY_HOST"
           release_path="/var/www/code-museum/releases/$GITHUB_SHA"
           ssh -o BatchMode=yes -o StrictHostKeyChecking=yes -i ~/.ssh/code_museum_key -p "$port" "$target" "mkdir -p '$release_path'"
-          rsync -az -e "ssh -o BatchMode=yes -o StrictHostKeyChecking=yes -i $HOME/.ssh/code_museum_key -p $port" release/ "$target:$release_path/"
+          rsync -az --checksum --link-dest=/var/www/code-museum/current -e "ssh -o BatchMode=yes -o StrictHostKeyChecking=yes -i $HOME/.ssh/code_museum_key -p $port" release/ "$target:$release_path/"
           ssh -o BatchMode=yes -o StrictHostKeyChecking=yes -i ~/.ssh/code_museum_key -p "$port" "$target" "bash '$release_path/deploy/activate.sh' '$GITHUB_SHA'"
       - name: Check HTTPS release
         run: curl --fail --retry 3 --silent --show-error https://codemuseum.freexlib.com/ --output /dev/null

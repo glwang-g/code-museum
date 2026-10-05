@@ -53,3 +53,5 @@ sudo -u code-museum python3 /var/www/code-museum/current/server/analytics.py --b
 ## 已核线上边界
 
 24个静态文件与本机构建SHA-256一致，HTTP重定向HTTPS，Wasm以application/wasm及gzip传输。实际Chrome通过地图模糊搜索、节点选中、JavaScript输出42、Python输出55和390px布局检查；自动浏览器与DeploymentBot上报不计数。复查发现一次首次Python加载30秒超时，随后将加载预算增至90秒，执行预算保持3秒，最终发布后继续核验。当前只增加独立code-museum虚拟主机，备份对比确认其他Nginx站点配置保持一致。统计服务开机自启，数据库首份备份已创建，定时异地备份尚未配置。
+
+发布传输使用 rsync --checksum 与 --link-dest 指向当前release，校验内容后复用或在服务器内复制相同文件；新release仍是独立目录，不原地覆盖current。避免每次从GitHub经国际链路重传未变化的Pyodide文件，读取与校验开销发生在CI和服务器。
