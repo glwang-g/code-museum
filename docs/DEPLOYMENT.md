@@ -1,6 +1,6 @@
 # Code Museum 首版部署
 
-目标仓库：`glwang-g/code-museum`，主分支 `master`。目标域名：<https://codemuseum.freexlib.com>。2026-10-05 查询 xshow 的线上入口 `labs.freexlib.com` 为 `82.156.83.121`；Code Museum 域名当时尚未解析。服务器 SSH 用户/端口和证书约定仍需确认；DNS 相同不等于已取得服务器访问权。本文是可执行准备方案，不表示网站已上线。
+目标仓库：`glwang-g/code-museum`，主分支 `master`。目标域名：<https://codemuseum.freexlib.com>。2026-10-05 查询 xshow 的线上入口 `labs.freexlib.com` 为 `82.156.83.121`；Code Museum 域名当时尚未解析。服务器 SSH 用户/端口和证书约定仍需确认；DNS 相同不等于已取得服务器访问权。首版源码已推送至 `505048f`，GitHub Actions 构建成功，远程部署跳过。本文是可执行准备方案，不表示网站已上线。
 
 ## 发布结构
 
