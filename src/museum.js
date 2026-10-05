@@ -511,6 +511,12 @@ mapSearchInput.addEventListener('keydown',event=>{
   if(event.key==='Enter'){if(mapSearchMatches.length){event.preventDefault();chooseMapSearch(mapSearchMatches[Math.max(0,mapSearchIndex)].id);}return;}
   event.preventDefault();if(mapSearchMatches.length)highlightMapSearch((mapSearchIndex+(event.key==='ArrowDown'?1:mapSearchIndex<0?0:-1)+mapSearchMatches.length)%mapSearchMatches.length);
 });
+// Keep focus on the combobox until click is delivered. On macOS/Safari a
+// mouse click on a button may blur the input with relatedTarget=null.
+// Closing the popup on that blur would remove the target before click.
+$('#map-search-popup').addEventListener('mousedown',event=>{
+  if(event.button===0&&event.target.closest('button'))event.preventDefault();
+});
 $('#map-search-results').addEventListener('click',event=>{const option=event.target.closest('[data-map-result]');if(option)chooseMapSearch(option.dataset.mapResult)});
 $('#map-search-clear').onclick=()=>{mapSearchInput.value='';updateMapSearch();mapSearchInput.focus({preventScroll:true})};
 $('#map-search-catalogue').onclick=()=>{const query=mapSearchInput.value;closeMapSearch();$('#search').value=query;$('#scope').value='all';update();$('#catalogue-view').click();$('#search').focus({preventScroll:true})};

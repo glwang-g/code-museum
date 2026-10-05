@@ -594,7 +594,12 @@ async function record(name,detail){results.push({name,detail});console.log('PASS
       await screenshot(`map-search-many-${mode}-${size.width}.png`);
       await query('C++');assert.equal(await evaluate(`document.querySelector('[data-map-result]')?.dataset.mapResult`),'cpp');
       await query('C#');assert.equal(await evaluate(`document.querySelector('[data-map-result]')?.dataset.mapResult`),'csharp');
-      await query('tcsh');await evaluate(`document.querySelector('[data-map-result="tcsh"]').click()`);
+      await query('tcsh');
+      const searchPoint=await evaluate(`(()=>{const r=document.querySelector('[data-map-result="tcsh"] strong').getBoundingClientRect();return {x:r.left+r.width/2,y:r.top+r.height/2};})()`);
+      await page('Input.dispatchMouseEvent',{type:'mousePressed',...searchPoint,button:'left',clickCount:1});
+      assert.equal(await evaluate(`document.activeElement===document.querySelector('#map-search')`),true,'Mouse press must keep input focus until click, including platforms that do not focus buttons');
+      assert.equal(await evaluate(`document.querySelector('#map-search-popup').hidden`),false,'Result must remain visible through mouse press');
+      await page('Input.dispatchMouseEvent',{type:'mouseReleased',...searchPoint,button:'left',clickCount:1});
       await new Promise(resolve=>setTimeout(resolve,1000));
       assert.equal(await evaluate(`document.querySelector('.dock.selected')?.dataset.id`),'tcsh');
       await query('python');
