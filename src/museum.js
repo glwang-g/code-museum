@@ -491,7 +491,9 @@ function updateMapSearch(){
   mapSearchMatches=matches.slice(0,8).map(match=>match.record);
   $('#map-search-results').innerHTML=mapSearchMatches.map((record,i)=>`<button type="button" role="option" aria-selected="false" id="map-search-option-${i}" data-map-result="${esc(record.id)}"><strong>${esc(record.name)}</strong><small>${record.year} · ${esc(record.id)}${viewMode==='lineage'&&!graphIds.has(record.id)?' · 仅时间长河':''}</small></button>`).join('');
   $('#map-search-status').textContent=matches.length?`地图中 ${matches.length} 条匹配${matches.length>8?'，显示前 8 条':''}`:`地图中没有匹配；可在全部 ${meta.count.toLocaleString()} 条馆藏中继续检索。`;
-  const room=$('#river').getBoundingClientRect().bottom-$('#map-search-box').getBoundingClientRect().bottom-100;
+  const riverBounds=$('#river').getBoundingClientRect(),searchBounds=$('#map-search-box').getBoundingClientRect();
+  mapSearchPopup.style.maxWidth=`${Math.max(110,riverBounds.right-searchBounds.left-8)}px`;
+  const room=riverBounds.bottom-searchBounds.bottom-100;
   $('#map-search-results').style.maxHeight=`${Math.max(36,Math.min(300,innerHeight*.35,room))}px`;
   mapSearchPopup.hidden=false;mapSearchInput.setAttribute('aria-expanded','true');highlightMapSearch(-1);
 }

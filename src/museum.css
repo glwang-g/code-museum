@@ -241,3 +241,19 @@ body:not(.lineage-focus) .atlas .relations path.field-edge{opacity:.12}
 #map-search-catalogue{margin:0 8px 4px;padding:5px 0;border:0;background:transparent;color:#e5be75;font-size:12px}
 #map-search-popup[hidden],#map-search-clear[hidden]{display:none}
 @media(max-width:600px){.map-search-hint{display:none}.map-search-field{width:100%}}
+
+/* Search shares the map toolbar; compact screens may wrap controls. */
+.atlas-head{gap:8px;flex-wrap:wrap}
+.atlas-head #atlas-title{flex:0 1 auto;min-width:0}
+.atlas-head .map-search{flex:1 1 180px;min-width:120px;max-width:360px;padding:0;border:0;background:transparent}
+.atlas-head .map-search-field{width:100%}
+.atlas-head .map-search-hint{display:none}
+.atlas-head #map-search-popup{left:0;top:calc(100% + 6px);width:min(440px,calc(100vw - 56px));min-width:100%;max-width:none}
+.atlas-head .atlas-controls{flex:none;margin-left:auto}
+@media(max-width:700px){
+  .atlas-head{flex-wrap:wrap;align-items:center}
+  .atlas-head .map-search{max-width:none;flex-basis:150px;min-width:110px}
+  .atlas-head #map-search-popup{width:100%}
+}
+
+#map-search-results button{overflow-wrap:anywhere}
