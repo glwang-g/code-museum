@@ -1,6 +1,8 @@
 # Code Museum 首版部署
 
-目标仓库：`glwang-g/code-museum`，主分支 `master`。目标域名：<https://codemuseum.freexlib.com>。2026-10-05 查询 xshow 的线上入口 `labs.freexlib.com` 为 `82.156.83.121`；Code Museum 域名当时尚未解析。服务器 SSH 用户/端口和证书约定仍需确认；DNS 相同不等于已取得服务器访问权。首版源码已推送至 `505048f`，GitHub Actions 构建成功，远程部署跳过。本文是可执行准备方案，不表示网站已上线。
+目标仓库：`glwang-g/code-museum`，主分支 `master`。正式站点：<https://codemuseum.freexlib.com>，与 xshow 的 `labs.freexlib.com` 同在 `82.156.83.121`（Ubuntu 24.04 / Nginx 1.24）。2026-10-05 已完成独立站点、Let's Encrypt HTTPS 和统计服务部署；证书有效至2027-01-03，Certbot续期 timer 已启用，新域名续期成功后专用 hook 校验并 reload Nginx。
+
+首次发布 release 为 `0a0b19e2656c962dccb5ce18c272b05e300463f8`。管理员使用本机 SSH alias `xshow`；经用户明确批准，专用 `code-museum-deploy` 账户只可写 `/var/www/code-museum`，sudo仅允许 restart `code-museum-analytics`，已实际验证无 xshow 目录写权限。GitHub Actions 使用单独密钥及已记录的主机公钥，Secrets不进入源码。自动部署启用后仍需看对应 Actions 的deploy结果，不能仅凭build成功判断已发布。
 
 ## 发布结构
 
@@ -37,7 +39,9 @@ GitHub 无法读回 xshow Secret 值；需要本机已有授权密钥或用户�
 
 `src/analytics.js` 仅在生产 HTTPS 域名运行。页面首次可见时发送一次 POST `/api/visits`；刷新计新 PV，SPA 页签/语言点击不计新 PV。UV 按 localStorage 中随机 UUID 去重；数据库只保存其 SHA-256，不保存原标识、IP、搜索词或代码。清除浏览器数据/换设备会产生新 UV；禁用脚本/持久存储、上报失败及被识别的自动客户端不计数。它是已成功上报的浏览器访问，不是精确人数，也无法保证排除所有机器人。限流可能丢弃高频刷新。首次启动数据库保存 `startedAt`；此前无埋点的访问无法恢复。
 
-接口检查同源 Origin、UUID、请求大小、内容类型；同一个 eventId 重复请求只计一次。SQLite WAL 事务持久化，同一标识重复加载增加 PV 不增加 UV。进程仅监听回环地址，Nginx 转发并限制频率；公开接口不提供统计查询。是否公开展示累计数字仍待用户决定，当前管理员通过 SSH 查询：
+Python 首次运行文件下载及初始化允许最多90秒；程序实际运行仍最多3秒。较慢网络可能达到加载预算，失败时显示真实错误并允许重试。
+
+接口检查同源 Origin、UUID、请求大小、内容类型；同一个 eventId 重复请求只计一次。SQLite WAL 事务持久化，同一标识重复加载增加 PV 不增加 UV。进程仅监听回环地址，Nginx 转发并限制频率；公开接口不提供统计查询。统计起始时间为2026-10-05 11:43:53（Asia/Shanghai）。是否公开展示累计数字仍待用户决定，当前管理员通过 SSH 查询：
 
 ```sh
 sudo -u code-museum python3 /var/www/code-museum/current/server/analytics.py --report
@@ -45,3 +49,7 @@ sudo -u code-museum python3 /var/www/code-museum/current/server/analytics.py --b
 ```
 
 备份使用 SQLite backup API，不能只复制活动数据库而忽略 WAL。应定期把备份存入已有服务器备份体系；数据库和备份均不放进公开静态目录。尚未配置自动定时备份。更换发布版本不清零；删除状态目录才会丢失统计。
+
+## 已核线上边界
+
+24个静态文件与本机构建SHA-256一致，HTTP重定向HTTPS，Wasm以application/wasm及gzip传输。实际Chrome通过地图模糊搜索、节点选中、JavaScript输出42、Python输出55和390px布局检查；自动浏览器与DeploymentBot上报不计数。复查发现一次首次Python加载30秒超时，随后将加载预算增至90秒，执行预算保持3秒，最终发布后继续核验。当前只增加独立code-museum虚拟主机，备份对比确认其他Nginx站点配置保持一致。统计服务开机自启，数据库首份备份已创建，定时异地备份尚未配置。

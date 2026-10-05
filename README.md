@@ -10,7 +10,7 @@
 
 地图选中 JavaScript 或 Python 时，名称右侧显示 `▶` 运行图标，点击或键盘 Enter 可直接打开对应实验台，焦点随即进入代码编辑器；其他未接入网页运行时的语言不显示此标识。图标只表示已具备执行入口，加载失败或超时仍显示真实错误。
 
-实验台提供可编辑且高亮的代码。JavaScript 在浏览器 Worker 中真实执行，运行超过 2 秒会停止；Python 由本地 Pyodide WebAssembly 运行时在模块 Worker 中执行，运行超过 3 秒会停止。编辑后均自动更新实际输出或错误。Python 仅在选中时加载约 13.53 MB 的固定运行文件。C、C++、Java、Ruby、Go、Rust、Bash、Korn shell、tcsh 提供可编辑示例，但尚无浏览器运行环境；Shell 默认样例与本机实际执行记录一致，并注明核验版本。其他语言可写草稿，不显示模拟结果。Worker 不是安全沙箱；请只执行自己信任的代码。
+实验台提供可编辑且高亮的代码。JavaScript 在浏览器 Worker 中真实执行，运行超过 2 秒会停止；Python 由本地 Pyodide WebAssembly 运行时在模块 Worker 中执行，运行超过 3 秒会停止。编辑后均自动更新实际输出或错误。Python 仅在选中时加载约 13.53 MB 的固定运行文件，首次下载及初始化最多等待90秒；代码执行仍最多3秒。C、C++、Java、Ruby、Go、Rust、Bash、Korn shell、tcsh 提供可编辑示例，但尚无浏览器运行环境；Shell 默认样例与本机实际执行记录一致，并注明核验版本。其他语言可写草稿，不显示模拟结果。Worker 不是安全沙箱；请只执行自己信任的代码。
 
 JavaScript 与 Python 的捕获输出最多保留 20,000 个字符，JavaScript 另保留最多 200 次日志调用。输出过多时优先保留运行异常，避免错误被日志截断。捕获上限只约束日志存储，程序自身的内存分配仍会消耗设备资源。
 
@@ -116,4 +116,4 @@ PLDB 的公开领域说明见 https://github.com/breck7/pldb/blob/main/readme.sc
 
 ## 服务端发布与访问量
 
-GitHub Actions 已准备 master 分支测试、离线构建和独立 release 发布；启用部署需要服务器及仓库 Secrets 配置。生产域名累计 UV/PV 通过同域接口写入独立 SQLite，管理员可经 SSH 查询与备份。当前上线状态、前置条件和统计边界见 [部署说明](docs/DEPLOYMENT.md)。
+正式站点为 [codemuseum.freexlib.com](https://codemuseum.freexlib.com)，已配置 HTTPS。GitHub Actions 提供 master 分支测试、离线构建和独立 release 发布。生产域名累计 UV/PV 通过同域接口写入独立 SQLite，管理员可经 SSH 查询与备份。上线状态、发布方式和统计边界见 [部署说明](docs/DEPLOYMENT.md)。

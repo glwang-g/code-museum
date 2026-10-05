@@ -93,8 +93,8 @@
     document.querySelector('#lab-runtime-note').textContent='正在准备本地 WebAssembly 运行时；只显示真实输出或错误。';
     pythonTimeout=setTimeout(()=>{
       if(generation!==pythonGeneration||pythonReady)return;
-      stopPython();result.textContent='Python 运行时加载超过 30 秒，已停止。';result.dataset.state='error';document.querySelector('#lab-runtime-note').textContent='点击「运行代码」可重新加载。';
-    },30000);
+      stopPython();result.textContent='Python 运行时加载超过 90 秒，已停止。';result.dataset.state='error';document.querySelector('#lab-runtime-note').textContent='点击「运行代码」可重新加载。';
+    },90000);
     active.onmessage=event=>{
       if(generation!==pythonGeneration)return;
       const data=event.data;

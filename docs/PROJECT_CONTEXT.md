@@ -186,3 +186,5 @@
 发布准备核验：29项既有测试、离线构建通过；Python/JS/Bash语法检查通过。临时本机HTTP实际验证2个浏览器标识/3次加载、重复event去重、错误Origin/UUID拒绝、公开GET不可查询、识别到的自动客户端排除，数据库重开与SQLite备份保留2 UV/3 PV。这些为临时测试数据，不计线上访问；没有据此声称已在生产统计。
 
 2026-10-05 首版已推送 GitHub master：`505048fc24257382a01a289a3663787c2f0e75ce`。本机暂存输入导出可离线重建，并与本地 dist 逐文件哈希一致；Actions run `37259801436` 的 build 成功，deploy 因尚未启用而跳过。工作区当次推送后干净。网站尚未上服务器，仍等待 SSH 身份与目标子域 DNS/证书配置；不要将 GitHub 构建通过称为正式上线。
+
+2026-10-05 服务器已接通：SSH alias xshow，Ubuntu24.04/Nginx1.24；codemuseum.freexlib.com 已解析并启用独立Lets Encrypt证书，有效至2027-01-03，timer与新域名续期reload hook已配置。首个release 0a0b19e已激活，统计服务开机自启且监听127.0.0.1:4180，计数起始为北京时间11:43:53。24个线上静态文件与本地SHA一致；实际Chrome首次核验地图搜索、JS42、Python55、窄屏无溢出通过，复核发现一次Python加载30秒超时，加载预算调整为90秒而执行仍3秒。其他Nginx配置与备份相比未改变。用户明确批准专用CI账户/密钥/限权sudo，账户已建并核对无xshow目录写权，Secrets配置中；后续以Actions实际deploy结果记录自动发布状态。
