@@ -55,3 +55,7 @@ sudo -u code-museum python3 /var/www/code-museum/current/server/analytics.py --b
 24个静态文件与本机构建SHA-256一致，HTTP重定向HTTPS，Wasm以application/wasm及gzip传输。实际Chrome通过地图模糊搜索、节点选中、JavaScript输出42、Python输出55和390px布局检查；自动浏览器与DeploymentBot上报不计数。复查发现一次首次Python加载30秒超时，随后将加载预算增至90秒，执行预算保持3秒，最终发布后继续核验。当前只增加独立code-museum虚拟主机，备份对比确认其他Nginx站点配置保持一致。统计服务开机自启，数据库首份备份已创建，定时异地备份尚未配置。
 
 发布传输使用 rsync --checksum 与 --link-dest 指向当前release，校验内容后复用或在服务器内复制相同文件；新release仍是独立目录，不原地覆盖current。避免每次从GitHub经国际链路重传未变化的Pyodide文件，读取与校验开销发生在CI和服务器。
+
+## 最终首版核验记录
+
+2026-10-05，Actions run [37266961880](https://github.com/glwang-g/code-museum/actions/runs/37266961880) 的build与deploy成功，release392411b已激活。完整线上复核已通过合并工具栏、真实鼠标选中、JavaScript42、Python55、三个Shell高亮示例及窄屏布局；24份静态文件哈希与本地一致。记录：[生产核验](../data/audit/production-runtime-checks.json)。暂存CI私钥已从本机临时目录移除，私钥仅保存在已授权GitHub Secret中。
