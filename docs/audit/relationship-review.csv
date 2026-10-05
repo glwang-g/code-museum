@@ -1,0 +1,418 @@
+﻿from,from_name,to,to_name,type,origin,source,source_sha256,evidence,evidence_status,from_year,to_year,map_visible,chronology_flag,self_link,nonlanguage_endpoint
+abc,ABC,python,Python,influencedBy,curated-override,https://docs.python.org/3/faq/general.html,cf058d750585d9fda7277449356f1425fb4b5a15addd116fdf37d3c1b9002e80,Python 官方 FAQ 引 Guido van Rossum 自述：ABC 团队经验是 Python 许多特性的来源，包括用缩进分组语句和高层数据类型；也明确指出 Python 与 ABC 的实现及细节不同。,claim-with-citation,1980,1991,True,,False,False
+activity-pub,ActivityPub,farcaster,Farcaster,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/farcaster.scroll,,,record-field-only,2018,2021,False,,False,False
+ada,Ada,chapel,Chapel,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/chapel.scroll,,,record-field-only,1980,2004,False,,False,False
+ada,Ada,hla,High Level Assembly,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/hla.scroll,,,record-field-only,1980,2011,False,,False,False
+ada,Ada,ruby,Ruby,influencedBy,curated-override,https://www.ruby-lang.org/en/about/,,Ruby 官方 About 页面称其创造者将 Perl、Smalltalk、Eiffel、Ada 和 Lisp 中喜欢的部分融合成 Ruby。此处的 Ada 指 Ada 编程语言。,claim-with-citation,1980,1995,True,,False,False
+ada,Ada,spark-pl,Spark,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/spark-pl.scroll,,,record-field-only,1980,1988,False,,False,False
+ada,Ada,vhdl,VHDL,influencedBy,curated-override,https://ghdl.github.io/ghdl/about.html,,GHDL 官方 About 页明确说明 VHDL 的大部分语法和语义来自 Ada，并随即区分 VHDL 面向硬件、事件驱动的高度并发模型。依据为实现项目的说明，非原始设计者论文；此处表示设计借鉴，不表示 VHDL 是 Ada 超集、两者源码兼容或 Ada 程序自动成为硬件。VHDL 仿真执行与综合成网表也应分开理解。,claim-with-citation,1980,1983,True,,False,False
+agda,Agda,axio,Axio,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/axio.scroll,,,record-field-only,2007,2024,False,,False,False
+algol,Algol,basic,BASIC,influencedBy,curated-override,https://time.com/69316/basic/,642e10845838898768d8ad0649cc58b2a6d5510100abb2ec6abceb120f407456,Harry McCracken 的 TIME 2014年4月29日报道引用 BASIC 设计者 Thomas Kurtz：曾尝试做 Fortran 与 ALGOL 的简单子集，发现不可行；随后 Kemeny/Kurtz 转向用常用词和易理解语法设计初学者语言。ALGOL 在此作为 BASIC 早期设计参照与回应来源，而非已成功实现的子集、严格后继或源码兼容。报道未指定具体版本，保留家族条目，不替换成 FORTRAN II 或 ALGOL 60；依据为记者报道中的设计者回顾。,claim-with-citation,1958,1964,True,,False,False
+algol,Algol,forth,Forth,influencedBy,curated-override,https://raw.githubusercontent.com/colorforth/colorforth.github.io/master/HOPL.html,,Moore 描述 Forth 前身 CURVE 的定义词冒号取自 Algol 标签格式，并将 LABEL: 反转为 : LABEL 以适应从左到右解释；他明确称 CURVE 为 Forth 前身。关系限于此语法输入，未指定 Algol 版号，不能替换成 ALGOL 60 或推定严格后继。,claim-with-citation,1958,1970,True,,False,False
+algol-58,ALGOL 58,balgol,BALGOL,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/balgol.scroll,,,record-field-only,1958,1959,False,,False,False
+algol-60,ALGOL 60,algol-w,ALGOL W,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/algol-w.scroll,,,record-field-only,1960,1966,False,,False,False
+algol-60,ALGOL 60,espol,Executive Systems Problem Oriented Language,supersetOf,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/espol.scroll,,,record-field-only,1960,1967,False,,False,False
+algol-60,ALGOL 60,modula,Modula,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/modula.scroll,,,record-field-only,1960,1975,False,,False,False
+algol-60,ALGOL 60,oberon,Oberon,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/oberon.scroll,,,record-field-only,1960,1986,True,,False,False
+algol-60,ALGOL 60,pascal,Pascal,influencedBy,curated-override,https://people.inf.ethz.ch/wirth/Articles/GoodIdeas.pdf,,"Niklaus Wirth《Good Ideas, Through the Looking Glass》（Computer，2006年1月）印刷第63页 / PDF第8页讨论 ALGOL 的传名参数及开销，说明其在 Algol W、Pascal、Ada 等后来语言中被引用参数取代。此边表示具体参数设计的借鉴与改进，不表示 Pascal 是 ALGOL 60 超集、所有语法直接承继或源码兼容。",claim-with-citation,1960,1970,True,,False,False
+algol-60,ALGOL 60,simula,Simula,influencedBy,curated-override,https://www.mn.uio.no/ifi/english/about/ole-johan-dahl/bibliography/the-birth-of-object-orientation-the-simula-languages.pdf,,Ole-Johan Dahl《The Birth of Object Orientation: the Simula Languages》（2001）第2–3页明确说 Simula I 选用 ALGOL 60，以块结构等为基础并加入模拟机制；Simula 67 随后概括与改进 Simula I。此边表示这一设计来源，作者对旧编译器的兼容说明不泛化为所有 Simula 版本或严格超集。,claim-with-citation,1960,1965,True,,False,False
+algol-68,ALGOL 68,mary,Mary,supersetOf,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/mary.scroll,,,record-field-only,1968,1970,False,,False,False
+alohanet,ALOHAnet,ethernet,Ethernet,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/ethernet.scroll,,,record-field-only,1971,1973,False,,False,False
+alpaca,Alpaca,gleam,Gleam,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/gleam.scroll,,,record-field-only,2016,2016,False,,False,False
+antlr,ANTLR,lllpg,lllpg,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/lllpg.scroll,,,record-field-only,1992,2012,False,,False,False
+antlr,ANTLR,parsers,Parsers,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/parsers.scroll,,,record-field-only,1992,2017,False,,False,False
+antlr,ANTLR,particles,Particles,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/particles.scroll,,,record-field-only,1992,2017,False,,False,False
+antlr,ANTLR,scroll,Scroll,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/scroll.scroll,,,record-field-only,1992,2019,False,,False,False
+apl,APL,axio,Axio,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/axio.scroll,,,record-field-only,1964,2024,False,,False,False
+apl,APL,bqn,BQN,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/bqn.scroll,,,record-field-only,1964,2020,False,,False,False
+apl,APL,forth,Forth,influencedBy,curated-override,https://raw.githubusercontent.com/colorforth/colorforth.github.io/master/HOPL.html,,Moore《Forth: The Early Years》回顾称欣赏并仿效 APL 运算符；这是作者明确的局部设计参照，不表示整体语法、数组体系或源码兼容。该回顾未准确给出采纳时间，不将章节标题1958当作这条关系的年份。,claim-with-citation,1964,1970,True,,False,False
+apl,APL,futhark,Futhark,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/futhark.scroll,,,record-field-only,1964,2013,False,,False,False
+apl,APL,goal,Goal,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/goal.scroll,,,record-field-only,1964,2022,False,,False,False
+apl,APL,klong,Klong,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/klong.scroll,,,record-field-only,1964,2015,False,,False,False
+apl,APL,particles,Particles,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/particles.scroll,,,record-field-only,1964,2017,False,,False,False
+apl,APL,u,U,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/u.scroll,,,record-field-only,1964,2013,False,,False,False
+atari-basic,Atari BASIC,turbo-basic-xl,Turbo-Basic XL,supersetOf,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/turbo-basic-xl.scroll,,,record-field-only,1983,1985,False,,False,False
+atx,atx,markdown,Markdown,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/markdown.scroll,,,record-field-only,2002,2004,False,,False,False
+automath,Automath,axio,Axio,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/axio.scroll,,,record-field-only,1967,2024,False,,False,False
+automath,Automath,lego,LEGO,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/lego.scroll,,,record-field-only,1967,1992,False,,False,False
+automath,Automath,mltt,Martin-Lof Type Theory,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/mltt.scroll,,,record-field-only,1967,1972,False,,False,False
+automath,Automath,nuprl,Nuprl,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/nuprl.scroll,,,record-field-only,1967,1984,False,,False,False
+awk,awk,bawk,bawk,supersetOf,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/bawk.scroll,,,record-field-only,1977,1994,False,,False,False
+awk,awk,lua,Lua,influencedBy,curated-override,https://www.lua.org/doc/hopl.pdf,d3a2c0cf69503e85e40667b3114e3005e50df6f61eeec67b3069dcdc8d4185fe,"Lua 三位作者《The Evolution of Lua》（HOPL III, 2007）PDF p.5 明确称从 SNOBOL 和 Awk 借用关联数组，并在 Lua 中称为表；同时说明 Lua 表是对象，不绑定特定变量。 只记录该具体设计影响，不表示 Lua 是对应语言的超集或源码兼容。",claim-with-citation,1977,1993,True,,False,False
+b,B,c,C,influencedBy,curated-override,https://doi.org/10.1145/155360.155580,,Ritchie《The Development of the C Language》及 Bell Labs《The Programming Language B》记载 C 从 B 演进，早期 Unix 的 B 工具逐步转为 C。此处表示历史承继，不推定 C 是 B 的严格超集。,claim-with-citation,1969,1972,True,,False,False
+bash,Bash,civet,Civet,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/civet.scroll,,,record-field-only,1989,2022,False,,False,False
+basic,BASIC,visual-basic,Visual Basic,influencedBy,curated-override,https://techcommunity.microsoft.com/blog/smallbasic/a-brief-history-of-basic/336312,,微软 Small Basic 社区刊载的 Ed Price《A Brief History of BASIC》明确把 Visual Basic 列为从早期 BASIC 演进而来的例子。本文改编自 Philip Conrod 与 Lou Tylee 的 Small Basic 教材，因此是微软平台刊载的历史概述，并非 Visual Basic 设计者的一手回忆；此边不表示 Visual Basic 与最初 Dartmouth BASIC 源码兼容。,claim-with-citation,1964,1991,True,,False,False
+bcpl,BCPL,b,B,influencedBy,curated-override,https://www.bell-labs.com/usr/dmr/www/chist.html,,Ritchie《The Development of the C Language》记载：Ken Thompson 基于 BCPL 设计 B，并为早期 Unix 环境做了简化。此处表示历史承继，不推定源码完全兼容。,claim-with-citation,1966,1969,True,,False,False
+binary-notation,Binary notation,begriffsschrift,Begriffsschrift,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/begriffsschrift.scroll,,,record-field-only,1689,1879,False,,False,False
+bison,Bison,lemon,Lemon,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/lemon.scroll,,,record-field-only,1985,1989,False,,False,False
+bitsy,Bitsy,decker,Decker,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/decker.scroll,,,record-field-only,2016,2022,False,,False,True
+bnf,BNF,parsers,Parsers,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/parsers.scroll,,,record-field-only,1956,2017,False,,False,False
+bnf,BNF,square,SQUARE,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/square.scroll,,,record-field-only,1956,1975,False,,False,False
+brainfuck,Brainfuck,semicolon,semicolon,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/semicolon.scroll,,,record-field-only,1993,2012,False,,False,False
+c,C,c-shell,C shell,influencedBy,curated-override,https://www.tuhs.org/cgi-bin/utree.pl?file=2BSD/doc/csh,66da20f0978f3ed5c554b612b1ce832fb8349ac27ce66dfd1a3c5c3824215853,William Joy《An introduction to the C shell》，TUHS 2BSD原始文档。§3.5 Expressions明确说明采用C的算术运算及相同优先级；§3.7 Other control structures以C参照while和switch，并展示具体语法、说明breaksw与break区别，以及C式标签。2BSD csh.u的Expressions节进一步列出运算符和字符串比较差异。只表示这些语法设计输入，不代表C shell是C后继、严格超集或可执行C源码；解释器以C编写不能替代这条设计证据。,claim-with-citation,1972,1978,True,,False,False
+c,C,c3,C3,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/c3.scroll,,,record-field-only,1972,2019,False,,False,False
+c,C,cpp,C++,supersetOf,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/cpp.scroll,,,record-field-only,1972,1985,True,,False,False
+c,C,go,Go,influencedBy,curated-override,https://go.dev/doc/faq,6ff7e86bad4c6fb71f61a3f46028bca7cc128857e728b153803c6ab282e6f129,Go 官方 FAQ 的 What are Go’s ancestors? 明确称 Go 的基础语法主要来自 C 家族；这是语法影响，不表示 Go 是 C 的超集。,claim-with-citation,1972,2009,True,,False,False
+c,C,java,Java,influencedBy,curated-override,https://docs.oracle.com/javase/specs/jls/se25/html/jls-1.html,,JLS §1.1：词法结构以及块和语句基于 C 与 C++。,claim-with-citation,1972,1995,True,,False,False
+c,C,jule,Jule,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/jule.scroll,,,record-field-only,1972,2021,False,,False,False
+c,C,korn-shell,Korn shell,influencedBy,curated-override,https://www.usenix.org/legacy/publications/library/proceedings/vhll/full_papers/korn.ksh.a,1542b6a6bef06ec0840983c3ee2314cd97daea15a8bf00214d05bebd7f2c52ea,David G. Korn《ksh — An Extensible High Level Language》，USENIX 1994。§2 History：早期 let 命令采用 C 表达式语法的小子集；§5.1：ksh93 增加 ANSI C 算术运算符和近似 C for 语句的算术循环。只表示这些语法的设计输入，不表示 ksh 是 C 派生语言、C 超集或源码兼容；用 C 编写解释器是另一个事实，不能代替此论证。,claim-with-citation,1972,1983,True,,False,False
+c,C,mojo,Mojo,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/mojo.scroll,,,record-field-only,1972,2022,False,,False,False
+c,C,objective-c,Objective-C,supersetOf,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/objective-c.scroll,,,record-field-only,1972,1984,True,,False,False
+c,C,php,PHP,influencedBy,curated-override,https://www.php.net/manual/en/history.php.php,854cc7c2b9581a1b1b4a888819f78c5cf8b73f951b4448f23b4709cc0a6ccd8d,PHP 官方历史记载，早期语言刻意设计成在结构上类似 C，方便熟悉 C 的开发者使用。,claim-with-citation,1972,1995,True,,False,False
+c,C,sdlang,SDLang,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/sdlang.scroll,,,record-field-only,1972,2011,False,,False,False
+c,C,speedie,Speedie,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/speedie.scroll,,,record-field-only,1972,2022,False,,False,False
+c,C,tick-c,Tick C,supersetOf,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/tick-c.scroll,,,record-field-only,1972,1997,False,,False,False
+c,C,wa,Wa-lang,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/wa.scroll,,,record-field-only,1972,2022,False,,False,False
+c-shell,C shell,bash,Bash,influencedBy,curated-override,https://mirrors.kernel.org/gnu/bash/bash-5.3.tar.gz,0d5cd86965f869a26cf64f4b71be7b96f90a3ba8b3d74e27e8e9d9d5550f31ba,官方5.3手册 Introduction 明确借鉴 C shell；差异附录具体列出 csh-like history expansion 与目录栈及 pushd/popd/dirs。只表示这些功能的借鉴，不表示 Bash 继承全部 C shell 语法或源码兼容；C shell 尚未因此自动获主图资格。 资料来自 GNU 固定发行包的 doc/bashref.texi，下载镜像与成员字节哈希保存在审查证据中；本轮未编译该包。,claim-with-citation,1978,1989,True,,False,False
+c-shell,C shell,korn-shell,Korn shell,influencedBy,curated-override,https://www.usenix.org/legacy/publications/library/proceedings/vhll/full_papers/korn.ksh.a,1542b6a6bef06ec0840983c3ee2314cd97daea15a8bf00214d05bebd7f2c52ea,David G. Korn《ksh — An Extensible High Level Language》，USENIX 1994。§2 History：作者明确在首版 ksh 加入 C shell 的 history、aliases、job control。范围为这些交互特性的借鉴，不表示 ksh 使用 C shell 全部语法或源码兼容。C shell 的地图资格另由2BSD原始语法手册及实现审查支持。,claim-with-citation,1978,1983,True,,False,False
+c-shell,C shell,tcsh,tcsh,supersetOf,curated-override,https://raw.githubusercontent.com/tcsh-org/tcsh/TCSH6_21_00/tcsh.man,6bc1b05e6da45ca0beba8fd466791ea13b5b54a23c1033da4f2d9f8779630a31,tcsh 6.21.00 官方标签手册 DESCRIPTION 明确称 enhanced but completely compatible version of the Berkeley UNIX C shell；增强功能包括命令行编辑、可编程补全及拼写纠正，并用 (+) 区分多数csh实现（特别是4.4BSD csh）没有的特性。扩展关系按此手册声明记录，不代表独立验证所有历史csh版本完全兼容，也不表示已接入网页执行。,claim-with-citation,1978,1983,True,,False,False
+c2,C2,c3,C3,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/c3.scroll,,,record-field-only,2012,2019,False,,False,False
+clojure,Clojure,shrubbery,Shrubbery Notation,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/shrubbery.scroll,,,record-field-only,2007,2023,False,,False,False
+clu,CLU,lua,Lua,influencedBy,curated-override,https://www.lua.org/doc/hopl.pdf,d3a2c0cf69503e85e40667b3114e3005e50df6f61eeec67b3069dcdc8d4185fe,"Lua 三位作者《The Evolution of Lua》（HOPL III, 2007）PDF p.5 明确称从 CLU 借用多重赋值与函数调用的多返回值。 只记录该具体设计影响，不表示 Lua 是对应语言的超集或源码兼容。",claim-with-citation,1975,1993,False,,False,False
+cobol,COBOL,particles,Particles,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/particles.scroll,,,record-field-only,1959,2017,False,,False,False
+coffeekup,CoffeeKup,jedi,Jedi,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/jedi.scroll,,,record-field-only,2010,2012,False,,False,False
+coffeescript,CoffeeScript,civet,Civet,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/civet.scroll,,,record-field-only,2009,2022,False,,False,False
+coffeescript,CoffeeScript,kode,kode,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/kode.scroll,,,record-field-only,2009,2021,False,,False,False
+common-lisp,Common Lisp,flare,Flare,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/flare.scroll,,,record-field-only,1984,2001,False,,False,False
+commonmark,commonmark,djot,Djot,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/djot.scroll,,,record-field-only,2014,2022,False,,False,False
+cpp,C++,chapel,Chapel,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/chapel.scroll,,,record-field-only,1985,2004,False,,False,False
+cpp,C++,d,D,influencedBy,curated-override,https://dlang.org/overview.html,f6f5ed59d461df23221c1acd5f3c8e7571d901bcdaabb31e732ca180cceaafdd,D 官方 Overview 明确称 D 从其他语言，尤其 C++，汲取灵感；并说明采用 C/C++ 的一般外观、代数表达式及多种语句形式。,claim-with-citation,1985,2001,True,,False,False
+cpp,C++,flare,Flare,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/flare.scroll,,,record-field-only,1985,2001,False,,False,False
+cpp,C++,hla,High Level Assembly,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/hla.scroll,,,record-field-only,1985,2011,False,,False,False
+cpp,C++,java,Java,influencedBy,curated-override,https://docs.oracle.com/javase/specs/jls/se25/html/jls-1.html,,JLS §1.1：词法结构以及块和语句基于 C 与 C++。,claim-with-citation,1985,1995,True,,False,False
+cpp,C++,jule,Jule,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/jule.scroll,,,record-field-only,1985,2021,False,,False,False
+cpp,C++,lua,Lua,influencedBy,curated-override,https://www.lua.org/doc/hopl.pdf,d3a2c0cf69503e85e40667b3114e3005e50df6f61eeec67b3069dcdc8d4185fe,"Lua 三位作者《The Evolution of Lua》（HOPL III, 2007）PDF p.5 明确称从 C++ 借用在需要位置声明局部变量的设计。 只记录该具体设计影响，不表示 Lua 是对应语言的超集或源码兼容。",claim-with-citation,1985,1993,True,,False,False
+cpp,C++,particles,Particles,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/particles.scroll,,,record-field-only,1985,2017,False,,False,False
+cpp,C++,real-time-concurrent-c,Real-Time Concurrent C,supersetOf,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/real-time-concurrent-c.scroll,,,record-field-only,1985,1991,False,,False,False
+cpp,C++,rust,Rust,influencedBy,curated-override,https://doc.rust-lang.org/reference/influences.html,,Rust Reference 的 Influences 页列举 C++ 对引用、RAII、智能指针和移动语义等设计的影响。,claim-with-citation,1985,2010,True,,False,False
+cpp,C++,sdlang,SDLang,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/sdlang.scroll,,,record-field-only,1985,2011,False,,False,False
+cpp,C++,speedie,Speedie,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/speedie.scroll,,,record-field-only,1985,2022,False,,False,False
+cpp,C++,wa,Wa-lang,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/wa.scroll,,,record-field-only,1985,2022,False,,False,False
+crystal,Crystal,civet,Civet,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/civet.scroll,,,record-field-only,2014,2022,False,,False,False
+csharp,C#,chapel,Chapel,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/chapel.scroll,,,record-field-only,2000,2004,False,,False,False
+csharp,C#,kotlin,Kotlin,influencedBy,curated-override,https://kotlinlang.org/docs/faq.html,c52ad62286ecc5d1647999ad445804aea9eecdd847e23b53ed1548700e6a4593,Kotlin 官方 FAQ《Is Kotlin hard?》明确称 Kotlin 从 Java、C#、JavaScript、Scala、Groovy 等现有语言获得启发；此边表示设计影响，不能推定整体语法派生、超集或源码兼容。,claim-with-citation,2000,2011,True,,False,False
+csharp,C#,nemerle,Nemerle,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/nemerle.scroll,,,record-field-only,2000,2003,False,,False,False
+csharp,C#,particles,Particles,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/particles.scroll,,,record-field-only,2000,2017,False,,False,False
+csharp,C#,rust,Rust,influencedBy,curated-override,https://doc.rust-lang.org/reference/influences.html,,Rust Reference 的 Influences 页列举 C# 的属性作为设计输入。,claim-with-citation,2000,2010,True,,False,False
+csharp,C#,sdlang,SDLang,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/sdlang.scroll,,,record-field-only,2000,2011,False,,False,False
+css,CSS,particles,Particles,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/particles.scroll,,,record-field-only,1996,2017,False,,False,False
+css,CSS,speedie,Speedie,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/speedie.scroll,,,record-field-only,1996,2022,False,,False,False
+csv,CSV,scroll,Scroll,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/scroll.scroll,,,record-field-only,1972,2019,False,,False,False
+curl,Curl,hurl,hurl,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/hurl.scroll,,,record-field-only,1998,2020,False,,False,True
+curl,Curl,hurl,hurl,supersetOf,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/hurl.scroll,,,record-field-only,1998,2020,False,,False,True
+d,D,sdlang,SDLang,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/sdlang.scroll,,,record-field-only,2001,2011,False,,False,False
+dplyr,dplyr,scroll,Scroll,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/scroll.scroll,,,record-field-only,2012,2019,False,,False,False
+ebnf,EBNF,parsers,Parsers,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/parsers.scroll,,,record-field-only,1977,2017,False,,False,False
+ed-editor,ed,ex-editor,ex,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/ex-editor.scroll,,,record-field-only,1973,1978,False,,False,True
+eiffel,Eiffel,flare,Flare,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/flare.scroll,,,record-field-only,1986,2001,False,,False,False
+eiffel,Eiffel,ruby,Ruby,influencedBy,curated-override,https://www.ruby-lang.org/en/about/,,Ruby 官方 About 页面称其创造者将 Perl、Smalltalk、Eiffel、Ada 和 Lisp 中喜欢的部分融合成 Ruby。,claim-with-citation,1986,1995,False,,False,False
+elm,Elm,civet,Civet,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/civet.scroll,,,record-field-only,2012,2022,False,,False,False
+elm,Elm,scrapscript,Scrapscript,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/scrapscript.scroll,,,record-field-only,2012,2023,False,,False,False
+erlang,Erlang,axio,Axio,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/axio.scroll,,,record-field-only,1986,2024,False,,False,False
+erlang,Erlang,rust,Rust,influencedBy,curated-override,https://doc.rust-lang.org/reference/influences.html,,Rust Reference 的 Influences 页列举 Erlang 的消息传递和轻量级并发。,claim-with-citation,1986,2010,True,,False,False
+ex-editor,ex,vi,vi,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/vi.scroll,,,record-field-only,1978,1976,False,parent-year-later,False,True
+false,False,apter-f,F,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/apter-f.scroll,,,record-field-only,1993,2006,False,,False,False
+flow,Flow,civet,Civet,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/civet.scroll,,,record-field-only,2014,2022,False,,False,False
+flow-matic,FLOW-MATIC,cobol,COBOL,influencedBy,curated-override,https://bitsavers.org/pdf/codasyl/COBOL_Report_Apr60.pdf,3f45f870ee8de1ff177282b7ffd900fc6b154e11a9ca72e25b3c7fea63483ed6,CODASYL《COBOL — Initial Specifications》，1960年4月报告，Part I §3 Attribution，打印I-2/I-3（PDF13–14）：明确说ideas and information取自多种来源，特别列出FLOW-MATIC，并说明借用了1958年FLOW-MATIC Programming System资料；I-7（PDF18）记录作者授权。按委员会原始报告录为早期COBOL设计资料输入，不宣称所有版本超集、源码兼容或每个关键字唯一来自FLOW-MATIC。1959报告形成和1960批准是不同事件。,claim-with-citation,1955,1959,True,,False,False
+forth,Forth,particles,Particles,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/particles.scroll,,,record-field-only,1970,2017,False,,False,False
+forth,Forth,postscript,PostScript,influencedBy,curated-override,https://www.adobe.com/jp/print/postscript/pdfs/PLRM.pdf,,Adobe《PostScript Language Reference》第三版第23页说明语法最接近 Forth，操作数在运算符之前且没有保留词；第850页索引明确列为 PostScript influence。关系是局部语法设计影响，不表示 PostScript 是 Forth 的严格后继、超集或实现。,claim-with-citation,1970,1982,True,,False,False
+fortran,Fortran,balgol,BALGOL,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/balgol.scroll,,,record-field-only,1957,1959,False,,False,False
+fortran,Fortran,basic,BASIC,influencedBy,curated-override,https://time.com/69316/basic/,642e10845838898768d8ad0649cc58b2a6d5510100abb2ec6abceb120f407456,Harry McCracken 的 TIME 2014年4月29日报道引用 BASIC 设计者 Thomas Kurtz：曾尝试做 Fortran 与 ALGOL 的简单子集，发现不可行；随后 Kemeny/Kurtz 转向用常用词和易理解语法设计初学者语言。FORTRAN 在此作为 BASIC 早期设计参照与回应来源，而非已成功实现的子集、严格后继或源码兼容。报道未指定具体版本，保留家族条目，不替换成 FORTRAN II 或 ALGOL 60；依据为记者报道中的设计者回顾。,claim-with-citation,1957,1964,True,,False,False
+fortran,Fortran,chapel,Chapel,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/chapel.scroll,,,record-field-only,1957,2004,False,,False,False
+fortran,Fortran,explor,EXPLOR,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/explor.scroll,,,record-field-only,1957,1972,False,,False,False
+fortran,Fortran,forth,Forth,influencedBy,curated-override,https://raw.githubusercontent.com/colorforth/colorforth.github.io/master/HOPL.html,,Moore 描述 Mohasco 阶段 Forth 循环词 DO 与早期 CONTINUE（后来 LOOP），称它们意在向 Fortran 致意。这里记录词名的设计参照，不以早期解释器用 Fortran 实现推定语义继承或源码兼容。,claim-with-citation,1957,1970,True,,False,False
+fortran,Fortran,particles,Particles,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/particles.scroll,,,record-field-only,1957,2017,False,,False,False
+fortran-77,FORTRAN 77,fortran-90,Fortran 90,supersetOf,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/fortran-90.scroll,,,record-field-only,1977,1990,False,,False,False
+gemini,Gemini,susn,SUSN,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/susn.scroll,,,record-field-only,2019,2023,False,,False,False
+go,Go,jule,Jule,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/jule.scroll,,,record-field-only,2009,2021,False,,False,False
+go,Go,moonbit,MoonBit,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/moonbit.scroll,,,record-field-only,2009,2022,False,,False,False
+go,Go,wa,Wa-lang,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/wa.scroll,,,record-field-only,2009,2022,False,,False,False
+gopher,Gopher,gemini,Gemini,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/gemini.scroll,,,record-field-only,1991,2019,False,,False,False
+groovy,Groovy,kotlin,Kotlin,influencedBy,curated-override,https://kotlinlang.org/docs/faq.html,c52ad62286ecc5d1647999ad445804aea9eecdd847e23b53ed1548700e6a4593,Kotlin 官方 FAQ《Is Kotlin hard?》明确称 Kotlin 从 Java、C#、JavaScript、Scala、Groovy 等现有语言获得启发；此边表示设计影响，不能推定整体语法派生、超集或源码兼容。,claim-with-citation,2003,2011,True,,False,False
+guile,Guile,poke,GNU Poke,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/poke.scroll,,,record-field-only,1993,2017,False,,False,False
+hackage-pm,hackage-pm,scrapscript,Scrapscript,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/scrapscript.scroll,,,record-field-only,2007,2023,False,,False,True
+haml,HAML,particles,Particles,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/particles.scroll,,,record-field-only,2006,2017,False,,False,False
+haml,HAML,scroll,Scroll,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/scroll.scroll,,,record-field-only,2006,2019,False,,False,False
+haskell,Haskell,civet,Civet,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/civet.scroll,,,record-field-only,1990,2022,False,,False,False
+haskell,Haskell,curry,Curry,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/curry.scroll,,,record-field-only,1990,1990,True,,False,False
+haskell,Haskell,flare,Flare,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/flare.scroll,,,record-field-only,1990,2001,False,,False,False
+haskell,Haskell,mlscript,MLscript,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/mlscript.scroll,,,record-field-only,1990,2020,False,,False,False
+haskell,Haskell,morloc,Morloc,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/morloc.scroll,,,record-field-only,1990,2016,False,,False,False
+haskell,Haskell,particles,Particles,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/particles.scroll,,,record-field-only,1990,2017,False,,False,False
+haskell,Haskell,rust,Rust,influencedBy,curated-override,https://doc.rust-lang.org/reference/influences.html,,Rust Reference 的 Influences 页列举 Haskell 的 typeclasses 和 type families 等设计输入。,claim-with-citation,1990,2010,True,,False,False
+haskell,Haskell,scrapscript,Scrapscript,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/scrapscript.scroll,,,record-field-only,1990,2023,False,,False,False
+homebrew-pm,Homebrew,tea-pm,tea,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/tea-pm.scroll,,,record-field-only,2009,2021,False,,False,True
+html,HTML,particles,Particles,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/particles.scroll,,,record-field-only,1991,2017,False,,False,False
+html,HTML,scroll,Scroll,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/scroll.scroll,,,record-field-only,1991,2019,False,,False,False
+html,HTML,speedie,Speedie,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/speedie.scroll,,,record-field-only,1991,2022,False,,False,False
+hypercard,HyperCard,decker,Decker,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/decker.scroll,,,record-field-only,1987,2022,False,,False,False
+hypercard,HyperCard,lil,Lil,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/lil.scroll,,,record-field-only,1987,2022,False,,False,False
+hypercard,HyperCard,speedie,Speedie,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/speedie.scroll,,,record-field-only,1987,2022,False,,False,False
+hypertalk,HyperTalk,applescript,Applescript,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/applescript.scroll,,,record-field-only,1987,1993,False,,False,False
+hypertalk,HyperTalk,supertalk,SuperTalk,supersetOf,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/supertalk.scroll,,,record-field-only,1987,1989,False,,False,False
+i-expressions,I-expressions,shrubbery,Shrubbery Notation,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/shrubbery.scroll,,,record-field-only,2003,2023,False,,False,False
+interpress,Interpress,interscript,Interscript,supersetOf,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/interscript.scroll,,,record-field-only,1986,1984,False,parent-year-later,False,False
+ipfs,IPFS,filecoin,Filecoin,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/filecoin.scroll,,,record-field-only,2015,2020,False,,False,True
+it,IT,runcible,RUNCIBLE,supersetOf,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/runcible.scroll,,,record-field-only,1955,1958,False,,False,False
+j,J,goal,Goal,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/goal.scroll,,,record-field-only,1990,2022,False,,False,False
+j,J,u,U,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/u.scroll,,,record-field-only,1990,2013,False,,False,False
+java,Java,chapel,Chapel,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/chapel.scroll,,,record-field-only,1995,2004,False,,False,False
+java,Java,csharp,C#,influencedBy,curated-override,https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/introduction,,Microsoft C# 规范导言将 Java 程序员列为会熟悉 C# 的目标读者，并说明 C# 扎根于 C 语言家族。结合 Java 与 C# 的语法和面向对象设计关联，此边记录设计影响；不表示 C# 是 Java 的派生语言，也不表示两者运行时兼容。,claim-with-citation,1995,2000,True,,False,False
+java,Java,deesel,Deesel,supersetOf,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/deesel.scroll,,,record-field-only,1995,2005,False,,False,False
+java,Java,flare,Flare,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/flare.scroll,,,record-field-only,1995,2001,False,,False,False
+java,Java,groovy,Groovy,influencedBy,curated-override,https://groovy-lang.org/differences.html,,Groovy 官方《Differences with Java》记载设计时考虑 Java 开发者的预期，并逐项说明两种语言的差异；官网称 Groovy 旨在提供 Java 风格的感受和语法。此处表示语法与设计影响，不表示严格的 Java 超集。,claim-with-citation,1995,2003,True,,False,False
+java,Java,javascript,JavaScript,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/javascript.scroll,,,record-field-only,1995,1995,True,,False,False
+java,Java,kotlin,Kotlin,influencedBy,curated-override,https://kotlinlang.org/docs/faq.html,c52ad62286ecc5d1647999ad445804aea9eecdd847e23b53ed1548700e6a4593,Kotlin 官方 FAQ《Is Kotlin hard?》明确称 Kotlin 从 Java、C#、JavaScript、Scala、Groovy 等现有语言获得启发；此边表示设计影响，不能推定整体语法派生、超集或源码兼容。,claim-with-citation,1995,2011,True,,False,False
+java,Java,pizza,Pizza,supersetOf,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/pizza.scroll,,,record-field-only,1995,2001,False,,False,False
+java,Java,scala,Scala,influencedBy,curated-override,https://docs.scala-lang.org/tutorials/scala-for-java-programmers.html,,Scala 官方《A Scala Tutorial for Java Programmers》说明 Scala 简化 Java 的样板写法，并在相同的类型与运行时基础上构建；此处表示设计与语法承接，不表示 Scala 是 Java 的超集。,claim-with-citation,1995,2004,True,,False,False
+java,Java,sdlang,SDLang,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/sdlang.scroll,,,record-field-only,1995,2011,False,,False,False
+javascript,JavaScript,amber,Amber,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/amber.scroll,,,record-field-only,1995,2022,False,,False,False
+javascript,JavaScript,json,JSON,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/json.scroll,,,record-field-only,1995,2001,False,,False,False
+javascript,JavaScript,kotlin,Kotlin,influencedBy,curated-override,https://kotlinlang.org/docs/faq.html,c52ad62286ecc5d1647999ad445804aea9eecdd847e23b53ed1548700e6a4593,Kotlin 官方 FAQ《Is Kotlin hard?》明确称 Kotlin 从 Java、C#、JavaScript、Scala、Groovy 等现有语言获得启发；此边表示设计影响，不能推定整体语法派生、超集或源码兼容。,claim-with-citation,1995,2011,True,,False,False
+javascript,JavaScript,objective-j,Objective-J,supersetOf,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/objective-j.scroll,,,record-field-only,1995,2008,False,,False,False
+javascript,JavaScript,scroll,Scroll,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/scroll.scroll,,,record-field-only,1995,2019,False,,False,False
+javascript,JavaScript,speedie,Speedie,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/speedie.scroll,,,record-field-only,1995,2022,False,,False,False
+javascript,JavaScript,typescript,TypeScript,supersetOf,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/typescript.scroll,,,record-field-only,1995,2012,True,,False,False
+jeebox,jeebox,speedie,Speedie,supersetOf,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/speedie.scroll,,,record-field-only,2012,2022,False,,False,False
+jekyll,Jekyll,scroll,Scroll,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/scroll.scroll,,,record-field-only,2008,2019,False,,False,False
+joy,Joy,apter-f,F,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/apter-f.scroll,,,record-field-only,2001,2006,False,,False,False
+joy,Joy,ck,cK,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/ck.scroll,,,record-field-only,2001,2003,False,,False,False
+joy,Joy,xy,XY,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/xy.scroll,,,record-field-only,2001,2004,False,,False,False
+jq,jq,mdq,mdq,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/mdq.scroll,,,record-field-only,2012,2024,False,,False,False
+json,JSON,hocon,Hocon,supersetOf,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/hocon.scroll,,,record-field-only,2001,2011,False,,False,False
+json,JSON,ion,Ion,supersetOf,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/ion.scroll,,,record-field-only,2001,2016,False,,False,False
+json,JSON,json-with-comments,JSON with Comments,supersetOf,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/json-with-comments.scroll,,,record-field-only,2001,2001,False,,False,False
+json,JSON,json5,JSON5,supersetOf,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/json5.scroll,,,record-field-only,2001,2012,False,,False,False
+json,JSON,jsoniq,JSONiq,supersetOf,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/jsoniq.scroll,,,record-field-only,2001,2011,False,,False,False
+json,JSON,jsonnet,Jsonnet,supersetOf,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/jsonnet.scroll,,,record-field-only,2001,2014,False,,False,False
+json,JSON,kaml,KAML,supersetOf,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/kaml.scroll,,,record-field-only,2001,2018,False,,False,False
+json,JSON,particles,Particles,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/particles.scroll,,,record-field-only,2001,2017,False,,False,False
+json,JSON,scrapscript,Scrapscript,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/scrapscript.scroll,,,record-field-only,2001,2023,False,,False,False
+json,JSON,sdlang,SDLang,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/sdlang.scroll,,,record-field-only,2001,2011,False,,False,False
+json,JSON,speedie,Speedie,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/speedie.scroll,,,record-field-only,2001,2022,False,,False,False
+json,JSON,superjson,Superjson,supersetOf,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/superjson.scroll,,,record-field-only,2001,2014,False,,False,False
+json,JSON,susn,SUSN,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/susn.scroll,,,record-field-only,2001,2023,False,,False,False
+k,K,apter-f,F,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/apter-f.scroll,,,record-field-only,1993,2006,False,,False,False
+k,K,ck,cK,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/ck.scroll,,,record-field-only,1993,2003,False,,False,False
+k,K,earnest-ok,oK,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/earnest-ok.scroll,,,record-field-only,1993,2015,False,,False,False
+k,K,goal,Goal,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/goal.scroll,,,record-field-only,1993,2022,False,,False,False
+k,K,klong,Klong,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/klong.scroll,,,record-field-only,1993,2015,False,,False,False
+k,K,lil,Lil,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/lil.scroll,,,record-field-only,1993,2022,False,,False,False
+k,K,slack,SLACK,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/slack.scroll,,,record-field-only,1993,2006,False,,False,False
+k,K,u,U,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/u.scroll,,,record-field-only,1993,2013,False,,False,False
+k,K,xy,XY,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/xy.scroll,,,record-field-only,1993,2004,False,,False,False
+korn-shell,Korn shell,bash,Bash,influencedBy,curated-override,https://mirrors.kernel.org/gnu/bash/bash-5.3.tar.gz,0d5cd86965f869a26cf64f4b71be7b96f90a3ba8b3d74e27e8e9d9d5550f31ba,官方5.3手册 Introduction/What is Bash? 明确借鉴 Korn shell，typeset 内建命令条目进一步说明为 Korn shell 兼容而提供、是 declare 的同义命令。这里只表示命令层设计输入，不表示整个语言超集或所有程序兼容。 资料来自 GNU 固定发行包的 doc/bashref.texi，下载镜像与成员字节哈希保存在审查证据中；本轮未编译该包。,claim-with-citation,1983,1989,True,,False,False
+lambda-calculus,Lambda Calculus,automath,Automath,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/automath.scroll,,,record-field-only,1936,1967,False,,False,False
+lambda-calculus,Lambda Calculus,cosmicos,CosmicOS,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/cosmicos.scroll,,,record-field-only,1936,2000,False,,False,False
+lambda-calculus,Lambda Calculus,de-bruijn-notation,De Bruijn Notation,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/de-bruijn-notation.scroll,,,record-field-only,1936,1972,False,,False,False
+lambda-calculus,Lambda Calculus,lego,LEGO,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/lego.scroll,,,record-field-only,1936,1992,False,,False,False
+lambda-calculus,Lambda Calculus,lisp,Lisp,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/lisp.scroll,,,record-field-only,1936,1958,False,,False,False
+lambda-calculus,Lambda Calculus,mltt,Martin-Lof Type Theory,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/mltt.scroll,,,record-field-only,1936,1972,False,,False,False
+latex,LaTeX,typst,Typst,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/typst.scroll,,,record-field-only,1985,2022,False,,False,False
+lisp,Lisp,autolisp,AutoLISP,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/autolisp.scroll,,,record-field-only,1958,1986,False,,False,False
+lisp,Lisp,axio,Axio,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/axio.scroll,,,record-field-only,1958,2024,False,,False,False
+lisp,Lisp,cosmicos,CosmicOS,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/cosmicos.scroll,,,record-field-only,1958,2000,False,,False,False
+lisp,Lisp,julia,Julia,influencedBy,curated-override,https://julialang.org/blog/2012/02/why-we-created-julia/,c78002dce7f99e3409307b68b3a6c1dcb2316f08522af0a7924677c3b5a6c9d0,Julia 四位设计者在 Why We Created Julia 中明确提出希望拥有像 Lisp 那样的同像性与真正的宏；这是设计目标参照。,claim-with-citation,1958,2012,True,,False,False
+lisp,Lisp,kamby,Kamby,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/kamby.scroll,,,record-field-only,1958,2022,False,,False,False
+lisp,Lisp,nemerle,Nemerle,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/nemerle.scroll,,,record-field-only,1958,2003,False,,False,False
+lisp,Lisp,particles,Particles,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/particles.scroll,,,record-field-only,1958,2017,False,,False,False
+lisp,Lisp,postscript,PostScript,influencedBy,curated-override,https://www.adobe.com/jp/print/postscript/pdfs/PLRM.pdf,,Adobe《PostScript Language Reference》第三版第23页明确将程序作为数据，以及监控和控制语言执行状态等观念归于 Lisp 等语言。关系限于所述思想输入，不表示 Lisp 语法、源码或运行时兼容。,claim-with-citation,1958,1982,True,,False,False
+lisp,Lisp,ruby,Ruby,influencedBy,curated-override,https://www.ruby-lang.org/en/about/,,Ruby 官方 About 页面称其创造者将 Perl、Smalltalk、Eiffel、Ada 和 Lisp 中喜欢的部分融合成 Ruby。,claim-with-citation,1958,1995,True,,False,False
+lisp,Lisp,scheme,Scheme,influencedBy,curated-override,https://www.scheme.org/,8ce153049e77ec378787f3be3c0375e98b95ef6b3197cb3e291215ccf28997a2,Scheme 官方社区首页明确称 Scheme 是 Lisp 家族中的经典编程语言；此边表示家族承接，不表示 Scheme 与所有 Lisp 方言源码兼容。,claim-with-citation,1958,1975,True,,False,False
+lisp,Lisp,scroll,Scroll,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/scroll.scroll,,,record-field-only,1958,2019,False,,False,False
+lisp,Lisp,smalltalk,Smalltalk,influencedBy,curated-override,https://worrydream.com/EarlyHistoryOfSmalltalk/,,Alan Kay 描述理解 Lisp 对其思想的影响，并回忆 Lisp 自描述解释器对 Smalltalk 解释器的启发。,claim-with-citation,1958,1972,True,,False,False
+livescript,LiveScript,civet,Civet,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/civet.scroll,,,record-field-only,2011,2022,False,,False,False
+llvmir,LLVM IR,mlir,MLIR,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/mlir.scroll,,,record-field-only,2003,2019,True,,False,False
+llvmir,LLVM IR,mojo,Mojo,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/mojo.scroll,,,record-field-only,2003,2022,False,,False,False
+lua,Lua,buzz,buzz,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/buzz.scroll,,,record-field-only,1993,2021,False,,False,False
+lua,Lua,lil,Lil,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/lil.scroll,,,record-field-only,1993,2022,False,,False,False
+lua,Lua,speedie,Speedie,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/speedie.scroll,,,record-field-only,1993,2022,False,,False,False
+markdown,Markdown,krml,KRML,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/krml.scroll,,,record-field-only,2004,2021,False,,False,False
+markdown,Markdown,markwhen,Markwhen,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/markwhen.scroll,,,record-field-only,2004,2022,False,,False,False
+markdown,Markdown,marp,Marp,supersetOf,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/marp.scroll,,,record-field-only,2004,2018,False,,False,False
+markdown,Markdown,mathpix-markdown,Mathpix Markdown,supersetOf,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/mathpix-markdown.scroll,,,record-field-only,2004,2019,False,,False,False
+markdown,Markdown,scroll,Scroll,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/scroll.scroll,,,record-field-only,2004,2019,False,,False,False
+markdown,Markdown,slashdown,Slashdown,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/slashdown.scroll,,,record-field-only,2004,2021,False,,False,False
+markdown,Markdown,susn,SUSN,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/susn.scroll,,,record-field-only,2004,2023,False,,False,False
+markdown,Markdown,typst,Typst,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/typst.scroll,,,record-field-only,2004,2022,False,,False,False
+mathematica,Mathematica,particles,Particles,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/particles.scroll,,,record-field-only,1988,2017,False,,False,False
+mathematica,Mathematica,scroll,Scroll,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/scroll.scroll,,,record-field-only,1988,2019,False,,False,False
+matlab,MATLAB,julia,Julia,influencedBy,curated-override,https://julialang.org/blog/2012/02/why-we-created-julia/,c78002dce7f99e3409307b68b3a6c1dcb2316f08522af0a7924677c3b5a6c9d0,Julia 设计者明确提出希望拥有像 MATLAB 那样熟悉的数学记法，并兼顾线性代数；这是语言设计参照，不表示 Julia 与 MATLAB 兼容。,claim-with-citation,1984,2012,True,,False,False
+matlab,MATLAB,octave,GNU Octave,compatibleWith,curated-override,https://octave.org/about.html,3a1d8d7dfa3a8ef048d31bea4c29df425340f240640dcd2f4ec400bec91d9ff9,GNU Octave 官方 About 明确称其使用的语言与 MATLAB 大体兼容（mostly compatible）；兼容有范围，不表示 Octave 是 MATLAB 的严格超集。,claim-with-citation,1984,1988,True,,False,False
+matlab,MATLAB,simit,Simit,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/simit.scroll,,,record-field-only,1984,2014,False,,False,False
+mdx,MDX,slashdown,Slashdown,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/slashdown.scroll,,,record-field-only,2017,2021,False,,False,False
+mesa,Mesa,cedar,Cedar,supersetOf,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/cedar.scroll,,,record-field-only,1970,1983,False,,False,False
+mesa,Mesa,modula-2,Modula-2,influencedBy,curated-override,https://people.inf.ethz.ch/wirth/Articles/Modula-Oberon-June.pdf,7b445f8f28e52b711daf2db2b6132203985cad45f586756cdb718ec8cacf8183,Niklaus Wirth《Modula-2 and Oberon》（HOPL-3投稿稿，2006年6月修订）第2页作者明确说 Mesa served as Modula-2’s guideline；第5–6页说明模块定义/实现拆分、类型安全分离编译与版本检查。只表示具体设计借鉴。,claim-with-citation,1970,1978,False,,False,False
+ml,ML,mlite,mLite,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/mlite.scroll,,,record-field-only,1973,2014,False,,False,False
+ml,ML,mlscript,MLscript,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/mlscript.scroll,,,record-field-only,1973,2020,False,,False,False
+ml,ML,nemerle,Nemerle,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/nemerle.scroll,,,record-field-only,1973,2003,False,,False,False
+mlir,MLIR,mojo,Mojo,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/mojo.scroll,,,record-field-only,2019,2022,False,,False,False
+modula,Modula,lua,Lua,influencedBy,curated-override,https://www.lua.org/doc/hopl.pdf,d3a2c0cf69503e85e40667b3114e3005e50df6f61eeec67b3069dcdc8d4185fe,"Lua 三位作者《The Evolution of Lua》（HOPL III, 2007）PDF p.5 明确称 while、if、repeat until 等控制结构语法主要借自 Modula；作者未在此指定 Modula-2，故不替换为该方言。 只记录该具体设计影响，不表示 Lua 是对应语言的超集或源码兼容。",claim-with-citation,1975,1993,False,,False,False
+modula,Modula,modula-2,Modula-2,influencedBy,curated-override,https://people.inf.ethz.ch/wirth/Articles/Modula-Oberon-June.pdf,7b445f8f28e52b711daf2db2b6132203985cad45f586756cdb718ec8cacf8183,Niklaus Wirth《Modula-2 and Oberon》（HOPL-3投稿稿，2006年6月修订）第2页作者区分1975年的 Modula 与 Modula-2，并说明前者 monitor 的概念在后者演变为模块。两个语言 ID 保持独立，不把 Modula 自动改名为 Modula-2。,claim-with-citation,1975,1978,False,,False,False
+modula-2,Modula-2,hla,High Level Assembly,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/hla.scroll,,,record-field-only,1978,2011,False,,False,False
+modula-2,Modula-2,modula-2p,Modula-2+,supersetOf,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/modula-2p.scroll,,,record-field-only,1978,1984,False,,False,False
+modula-2,Modula-2,oberon,Oberon,influencedBy,curated-override,https://people.inf.ethz.ch/wirth/Articles/Modula-Oberon-June.pdf,7b445f8f28e52b711daf2db2b6132203985cad45f586756cdb718ec8cacf8183,Niklaus Wirth《Modula-2 and Oberon》（HOPL-3投稿稿，2006年6月修订）第13–16页作者明确说 Oberon 旨在增强 Modula-2 能力并降低复杂度，删去部分设施，加入类型扩展与类型测试；此为设计承接与改造，不是超集。编译器由 Modula-2 编写是另一个实现事实，不作为设计关系的唯一依据。,claim-with-citation,1978,1986,True,,False,False
+mumps,MUMPS,cache-objectscript,Caché ObjectScript,supersetOf,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/cache-objectscript.scroll,,,record-field-only,1966,1997,False,,False,False
+mumps,MUMPS,proto-gnosis,proto-GNOSIS,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/proto-gnosis.scroll,,,record-field-only,1966,1987,False,,False,False
+nial,Nial,u,U,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/u.scroll,,,record-field-only,1981,2013,False,,False,False
+oberon,Oberon,go,Go,influencedBy,curated-override,https://go.dev/doc/faq,6ff7e86bad4c6fb71f61a3f46028bca7cc128857e728b153803c6ab282e6f129,Go 官方 FAQ 明确点名 Pascal/Modula/Oberon 家族对声明和包设计有显著输入；Oberon 是其中被点名的语言。,claim-with-citation,1986,2009,True,,False,False
+oberon,Oberon,oberon-2,Oberon-2,supersetOf,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/oberon-2.scroll,,,record-field-only,1986,1991,False,,False,False
+oberon-2,Oberon-2,component-pascal,COMPONENT PASCAL,supersetOf,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/component-pascal.scroll,,,record-field-only,1991,1997,False,,False,False
+obj,OBJ,maude,Maude,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/maude.scroll,,,record-field-only,1976,1990,False,,False,False
+objective-c,Objective-C,cooc,cooC,supersetOf,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/cooc.scroll,,,record-field-only,1984,2000,False,,False,False
+objective-c,Objective-C,swift,Swift,influencedBy,curated-override,https://www.swift.org/about/,,Swift 官方 About 页面明确说，Swift 的命名参数从 Objective-C 继承而来（named parameters brought forward from Objective-C）。这证明具体语言设计影响；两者的互操作和共同平台背景本身不作为继承证据。,claim-with-citation,1984,2014,True,,False,False
+ocaml,OCaml,f-sharp,F#,influencedBy,curated-override,https://fsharp.org/history/hopl-final/hopl-fsharp.pdf,db336bd4f1f57c5881477ee5e12995ac164255b81ede10d4bee9a055daf1202a,F# 设计者 Don Syme《The Early History of F#》回顾：OCaml 原本启发了 F#，并列举 F# 继承的 OCaml 特性、运算符优先级等具体设计；此处表示设计影响，不表示 F# 是 OCaml 的原样 .NET 实现。,claim-with-citation,1996,2005,True,,False,False
+ocaml,OCaml,mlscript,MLscript,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/mlscript.scroll,,,record-field-only,1996,2020,False,,False,False
+ocaml,OCaml,rust,Rust,influencedBy,curated-override,https://doc.rust-lang.org/reference/influences.html,,Rust Reference 的 Influences 页列举 OCaml 对代数数据类型、模式匹配和类型推断的影响。,claim-with-citation,1996,2010,True,,False,False
+opml,OPML,bike,Bike,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/bike.scroll,,,record-field-only,2000,2022,False,,False,False
+org,Org Mode,bike,Bike,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/bike.scroll,,,record-field-only,2003,2022,False,,False,False
+pascal,Pascal,adlib,ADLIB,supersetOf,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/adlib.scroll,,,record-field-only,1970,1980,False,,False,False
+pascal,Pascal,extended-pascal,Extended Pascal,supersetOf,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/extended-pascal.scroll,,,record-field-only,1970,1987,False,,False,False
+pascal,Pascal,go,Go,influencedBy,curated-override,https://go.dev/doc/faq,6ff7e86bad4c6fb71f61a3f46028bca7cc128857e728b153803c6ab282e6f129,Go 官方 FAQ 明确点名 Pascal/Modula/Oberon 家族对声明和包设计有显著输入；Pascal 是其中被点名的语言。,claim-with-citation,1970,2009,True,,False,False
+pascal,Pascal,hla,High Level Assembly,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/hla.scroll,,,record-field-only,1970,2011,False,,False,False
+pascal,Pascal,mesa,Mesa,influencedBy,curated-override,https://people.inf.ethz.ch/wirth/Articles/Modula-Oberon-June.pdf,7b445f8f28e52b711daf2db2b6132203985cad45f586756cdb718ec8cacf8183,Niklaus Wirth《Modula-2 and Oberon》（HOPL-3投稿稿，2006年6月修订）第2页 Wirth 回顾 Mesa stemmed from Pascal，采用其严格静态类型、风格与概念。Wirth 是 Modula-2/Oberon 的设计者，此处对 Mesa 的回顾不是 Mesa 自身作者声明，不表示源码兼容。,claim-with-citation,1970,1970,False,,False,False
+pascal,Pascal,modula-2,Modula-2,successorOf,curated-override,https://people.inf.ethz.ch/wirth/Articles/Modula-Oberon-June.pdf,7b445f8f28e52b711daf2db2b6132203985cad45f586756cdb718ec8cacf8183,Niklaus Wirth《Modula-2 and Oberon》（HOPL-3投稿稿，2006年6月修订）第2–3页作者明确以“genuine successor of Pascal”和“new version of Pascal”说明 Modula-2 的设计目标，新增模块并修正 Pascal 的语法与参数设计；后继关系不表示严格超集或源码兼容。,claim-with-citation,1970,1978,True,,False,False
+pascal,Pascal,plz,PLZ,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/plz.scroll,,,record-field-only,1970,1978,False,,False,False
+pascal,Pascal,virt,Virt,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/virt.scroll,,,record-field-only,1970,1998,False,,False,False
+perl,Perl,civet,Civet,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/civet.scroll,,,record-field-only,1987,2022,False,,False,False
+perl,Perl,flare,Flare,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/flare.scroll,,,record-field-only,1987,2001,False,,False,False
+perl,Perl,julia,Julia,influencedBy,curated-override,https://julialang.org/blog/2012/02/why-we-created-julia/,c78002dce7f99e3409307b68b3a6c1dcb2316f08522af0a7924677c3b5a6c9d0,Julia 设计者明确提出希望字符串处理像 Perl 一样自然；这是设计目标参照，不表示 Julia 的整体语法来自 Perl。,claim-with-citation,1987,2012,True,,False,False
+perl,Perl,php,PHP,influencedBy,curated-override,https://www.php.net/manual/en/history.php.php,854cc7c2b9581a1b1b4a888819f78c5cf8b73f951b4448f23b4709cc0a6ccd8d,PHP 官方历史记载，早期 FI/PHP 有 Perl 风格变量，语法本身与 Perl 相似；不表示 PHP 是 Perl 方言。,claim-with-citation,1987,1995,True,,False,False
+perl,Perl,ruby,Ruby,influencedBy,curated-override,https://www.ruby-lang.org/en/about/,,Ruby 官方 About 页面称其创造者将 Perl、Smalltalk、Eiffel、Ada 和 Lisp 中喜欢的部分融合成 Ruby。,claim-with-citation,1987,1995,True,,False,False
+perl,Perl,slash,Slash,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/slash.scroll,,,record-field-only,1987,2012,False,,False,False
+php,PHP,slash,Slash,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/slash.scroll,,,record-field-only,1995,2012,False,,False,False
+pl-i,PL/I,pl-i-formac,PL/I-FORMAC,supersetOf,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/pl-i-formac.scroll,,,record-field-only,1964,1968,False,,False,False
+prolog,Prolog,clpr,CLPR,supersetOf,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/clpr.scroll,,,record-field-only,1972,1986,False,,False,False
+prolog,Prolog,erlang,Erlang,influencedBy,curated-override,https://www.erlang.org/download/armstrong_thesis_2003.pdf,,Armstrong《Making reliable distributed systems in the presence of software errors》§1.1，第3–5页记载：1986年 Erlang 起于向 Prolog 加入并发进程的实验，1987年仍嵌入 Prolog；1989年 JAM 借鉴 WAM 的模式匹配编译，但移除回溯并加入进程、消息与故障检测。1990年已有独立语法，1991年替代 Prolog 实现。这里是历史设计演进，不表示当前 Erlang 是 Prolog 的超集或源码兼容，也不把早期实现用 Prolog 编写作为唯一依据。,claim-with-citation,1972,1986,True,,False,False
+prolog,Prolog,gaea,GAEA,supersetOf,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/gaea.scroll,,,record-field-only,1972,1998,False,,False,False
+prolog,Prolog,progol,Progol,supersetOf,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/progol.scroll,,,record-field-only,1972,1993,False,,False,False
+prolog,Prolog,proto-gnosis,proto-GNOSIS,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/proto-gnosis.scroll,,,record-field-only,1972,1987,False,,False,False
+python,Python,chapel,Chapel,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/chapel.scroll,,,record-field-only,1991,2004,False,,False,False
+python,Python,civet,Civet,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/civet.scroll,,,record-field-only,1991,2022,False,,False,False
+python,Python,cobrust,Cobrust,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/cobrust.scroll,,,record-field-only,1991,2026,False,,False,False
+python,Python,cython,Cython,supersetOf,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/cython.scroll,,,record-field-only,1991,2007,False,,False,False
+python,Python,flare,Flare,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/flare.scroll,,,record-field-only,1991,2001,False,,False,False
+python,Python,julia,Julia,influencedBy,curated-override,https://julialang.org/blog/2012/02/why-we-created-julia/,c78002dce7f99e3409307b68b3a6c1dcb2316f08522af0a7924677c3b5a6c9d0,Julia 设计者明确提出希望通用编程像 Python 一样易用；这是设计目标参照，不表示语法派生。,claim-with-citation,1991,2012,True,,False,False
+python,Python,mojo,Mojo,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/mojo.scroll,,,record-field-only,1991,2022,False,,False,False
+python,Python,mojo,Mojo,supersetOf,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/mojo.scroll,,,record-field-only,1991,2022,False,,False,False
+python,Python,morloc,Morloc,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/morloc.scroll,,,record-field-only,1991,2016,False,,False,False
+python,Python,particles,Particles,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/particles.scroll,,,record-field-only,1991,2017,False,,False,False
+python,Python,please-build,Please Build,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/please-build.scroll,,,record-field-only,1991,2016,False,,False,False
+python,Python,scroll,Scroll,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/scroll.scroll,,,record-field-only,1991,2019,False,,False,False
+python,Python,shrubbery,Shrubbery Notation,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/shrubbery.scroll,,,record-field-only,1991,2023,False,,False,False
+python,Python,speedie,Speedie,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/speedie.scroll,,,record-field-only,1991,2022,False,,False,False
+q,Q,lil,Lil,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/lil.scroll,,,record-field-only,2003,2022,False,,False,False
+q,Q,xs-lang,xs,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/xs-lang.scroll,,,record-field-only,2003,2019,False,,False,False
+qed-editor,QED,ed-editor,ed,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/ed-editor.scroll,,,record-field-only,1967,1973,False,,False,True
+query-by-example,Query by Example,sba,SBA,supersetOf,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/sba.scroll,,,record-field-only,1969,1977,False,,False,False
+r,R,julia,Julia,influencedBy,curated-override,https://julialang.org/blog/2012/02/why-we-created-julia/,c78002dce7f99e3409307b68b3a6c1dcb2316f08522af0a7924677c3b5a6c9d0,Julia 设计者明确提出希望统计编程像 R 一样便利；这是设计目标参照，不表示 Julia 是 R 的实现。,claim-with-citation,1993,2012,True,,False,False
+r,R,particles,Particles,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/particles.scroll,,,record-field-only,1993,2017,False,,False,False
+racket,Racket,particles,Particles,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/particles.scroll,,,record-field-only,1994,2017,False,,False,False
+racket,Racket,zuo,Zuo,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/zuo.scroll,,,record-field-only,1994,2022,False,,False,False
+ratfor,RATFOR,efl,EFL,supersetOf,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/efl.scroll,,,record-field-only,1976,1979,False,,False,False
+rdf,RDF,krml,KRML,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/krml.scroll,,,record-field-only,1997,2021,False,,False,False
+rdf,RDF,sdlang,SDLang,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/sdlang.scroll,,,record-field-only,1997,2011,False,,False,False
+rdf,RDF,susn,SUSN,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/susn.scroll,,,record-field-only,1997,2023,False,,False,False
+reactjs,ReactJS,scroll,Scroll,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/scroll.scroll,,,record-field-only,2013,2019,False,,False,True
+rebol,REBOL,boron,Boron,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/boron.scroll,,,record-field-only,1997,2009,False,,False,False
+rebol,REBOL,particles,Particles,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/particles.scroll,,,record-field-only,1997,2017,False,,False,False
+recfiles,Recfiles,susn,SUSN,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/susn.scroll,,,record-field-only,2009,2023,False,,False,False
+red,Red,particles,Particles,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/particles.scroll,,,record-field-only,2011,2017,False,,False,False
+relational-data-file,Relational Data File,relational-model,Relational Model,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/relational-model.scroll,,,record-field-only,1965,1969,False,,False,False
+relational-model,Relational Model,alpha-programming-language,Alpha,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/alpha-programming-language.scroll,,,record-field-only,1969,1971,False,,False,False
+relational-model,Relational Model,isbl,ISBL,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/isbl.scroll,,,record-field-only,1969,1980,False,,False,False
+relational-model,Relational Model,quel,QUEL,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/quel.scroll,,,record-field-only,1969,1976,False,,False,False
+relational-model,Relational Model,sequel-2,SEQUEL 2,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/sequel-2.scroll,,,record-field-only,1969,1976,False,,False,False
+relational-model,Relational Model,sql,SQL,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/sql.scroll,,,record-field-only,1969,1974,False,,False,False
+relational-model,Relational Model,square,SQUARE,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/square.scroll,,,record-field-only,1969,1975,False,,False,False
+roc,Roc,scrapscript,Scrapscript,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/scrapscript.scroll,,,record-field-only,2020,2023,False,,False,False
+rss,RSS,yess,YESS,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/yess.scroll,,,record-field-only,1999,2022,False,,False,False
+ruby,Ruby,civet,Civet,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/civet.scroll,,,record-field-only,1995,2022,False,,False,False
+ruby,Ruby,julia,Julia,influencedBy,curated-override,https://julialang.org/blog/2012/02/why-we-created-julia/,c78002dce7f99e3409307b68b3a6c1dcb2316f08522af0a7924677c3b5a6c9d0,Julia 设计者明确提出希望语言具有 Ruby 的动态性；这是设计目标参照，不表示 Julia 是 Ruby 方言。,claim-with-citation,1995,2012,True,,False,False
+ruby,Ruby,rust,Rust,influencedBy,curated-override,https://doc.rust-lang.org/reference/influences.html,,Rust Reference 的 Influences 页列举 Ruby 的闭包与块语法设计。,claim-with-citation,1995,2010,True,,False,False
+ruby,Ruby,slash,Slash,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/slash.scroll,,,record-field-only,1995,2012,False,,False,False
+rust,Rust,alumina,Alumina,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/alumina.scroll,,,record-field-only,2010,2021,False,,False,False
+rust,Rust,cairo,Cairo,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/cairo.scroll,,,record-field-only,2010,2022,False,,False,False
+rust,Rust,cobrust,Cobrust,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/cobrust.scroll,,,record-field-only,2010,2026,False,,False,False
+rust,Rust,jule,Jule,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/jule.scroll,,,record-field-only,2010,2021,False,,False,False
+rust,Rust,mlscript,MLscript,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/mlscript.scroll,,,record-field-only,2010,2020,False,,False,False
+rust,Rust,moonbit,MoonBit,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/moonbit.scroll,,,record-field-only,2010,2022,False,,False,False
+s,S,r,R,implementationOf,curated-override,https://cran.r-project.org/doc/manuals/r-release/R-intro.html,bd38e34e0335d2c6b9e3a0d9cff8fb2ffeb28d80f9f69b03d8ad25bd2650d7fb,R 官方《An Introduction to R》§1.2 明确说 R 可视为 Bell Labs S 语言的一种实现；两者存在差异，不表示 R 是 S 的严格超集。S 暂未达到本地图节点证据阈值。,claim-with-citation,1976,1993,False,,False,False
+s-expressions,S-expressions,l-expressions,Line-expressions,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/l-expressions.scroll,,,record-field-only,1960,2019,False,,False,False
+s-expressions,S-expressions,shrubbery,Shrubbery Notation,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/shrubbery.scroll,,,record-field-only,1960,2023,False,,False,False
+s-expressions,S-expressions,susn,SUSN,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/susn.scroll,,,record-field-only,1960,2023,False,,False,False
+s-expressions,S-expressions,sxml,SXML,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/sxml.scroll,,,record-field-only,1960,2001,False,,False,False
+sasl,SASL,slack,SLACK,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/slack.scroll,,,record-field-only,1972,2006,False,,False,False
+scala,Scala,kotlin,Kotlin,influencedBy,curated-override,https://kotlinlang.org/docs/faq.html,c52ad62286ecc5d1647999ad445804aea9eecdd847e23b53ed1548700e6a4593,Kotlin 官方 FAQ《Is Kotlin hard?》明确称 Kotlin 从 Java、C#、JavaScript、Scala、Groovy 等现有语言获得启发；此边表示设计影响，不能推定整体语法派生、超集或源码兼容。,claim-with-citation,2004,2011,True,,False,False
+scala,Scala,mlscript,MLscript,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/mlscript.scroll,,,record-field-only,2004,2020,False,,False,False
+scheme,Scheme,bio,Bio,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/bio.scroll,,,record-field-only,1975,2021,False,,False,False
+scheme,Scheme,flare,Flare,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/flare.scroll,,,record-field-only,1975,2001,False,,False,False
+scheme,Scheme,javascript,JavaScript,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/javascript.scroll,,,record-field-only,1975,1995,True,,False,False
+scheme,Scheme,lua,Lua,influencedBy,curated-override,https://www.lua.org/doc/hopl.pdf,d3a2c0cf69503e85e40667b3114e3005e50df6f61eeec67b3069dcdc8d4185fe,"Lua 三位作者《The Evolution of Lua》（HOPL III, 2007）PDF p.2 明确称 Scheme 在 Lua 演进中的影响逐渐增加，尤其体现在匿名函数和完整词法作用域。 只记录该具体设计影响，不表示 Lua 是对应语言的超集或源码兼容。",claim-with-citation,1975,1993,True,,False,False
+scheme,Scheme,particles,Particles,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/particles.scroll,,,record-field-only,1975,2017,False,,False,False
+scheme,Scheme,rust,Rust,influencedBy,curated-override,https://doc.rust-lang.org/reference/influences.html,,Rust Reference 的 Influences 页列举 Scheme 的卫生宏设计。,claim-with-citation,1975,2010,True,,False,False
+scheme,Scheme,slope,Slope,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/slope.scroll,,,record-field-only,1975,2021,False,,False,False
+scratch,Scratch,microblocks,MicroBlocks,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/microblocks.scroll,,,record-field-only,2002,2021,False,,False,False
+sdlang,SDLang,kdl,KDL,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/kdl.scroll,,,record-field-only,2011,2020,False,,False,False
+self,Self,javascript,JavaScript,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/javascript.scroll,,,record-field-only,1987,1995,False,,False,False
+sgml,SGML,topic-maps,Topic Maps,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/topic-maps.scroll,,,record-field-only,1986,2006,False,,False,False
+sh,Bourne shell (sh),bash,Bash,influencedBy,curated-override,https://mirrors.kernel.org/gnu/bash/bash-5.3.tar.gz,0d5cd86965f869a26cf64f4b71be7b96f90a3ba8b3d74e27e8e9d9d5550f31ba,官方5.3手册 Introduction/What is Bash? 明确 Bourne Shell 是设计输入并定位到 Unix 第七版，称 Bash largely compatible with sh。差异附录采用 SVR4.2 传统 Bourne 作比较且指出 POSIX 行为可以不同，故不声称严格超集或所有源码兼容。sh 已核为 V7 Bourne 身份；另一 bourne-shell 原始记录保留待去重，不画两者继承。 资料来自 GNU 固定发行包的 doc/bashref.texi，下载镜像与成员字节哈希保存在审查证据中；本轮未编译该包。,claim-with-citation,1979,1989,True,,False,False
+sh,Bourne shell (sh),korn-shell,Korn shell,influencedBy,curated-override,https://www.usenix.org/legacy/publications/library/proceedings/vhll/full_papers/korn.ksh.a,1542b6a6bef06ec0840983c3ee2314cd97daea15a8bf00214d05bebd7f2c52ea,David G. Korn《ksh — An Extensible High Level Language》，USENIX 1994。§2 History：作者先修改 Bourne shell 建立表单脚本语言，增补内建命令、数组、函数和协同进程，首版 ksh 由其删去表单专用代码而来。表示具体扩展过程的设计输入；论文兼容叙述针对 System V、ksh88/ksh93，不声明所有 Bourne 版本是现代 ksh 的严格子集。sh 为已核 V7 Bourne 展示身份，另一个 bourne-shell 原始 ID 保留待核。,claim-with-citation,1979,1983,True,,False,False
+sh,Bourne shell (sh),powershell,PowerShell,influencedBy,curated-override,https://www.jsnover.com/Docs/MonadManifesto.pdf,b16605109e6c8394c7c68d346fd3d1062b61a07cf31982b42087edbbe2d30574,Snover《Monad Manifesto》1.2版 PDF第15页明确说明 Monad 基于并扩展 Bourne Shell 的语法和控制结构，将文本管道改为 .NET 对象；第1页脚注限定它是长期设计愿景，不是 PowerShell V1.0 精确实现说明。因此表示历史设计输入，不表示现代版本是 Bourne 超集或源码兼容。端点 sh 已以 V7 原始手册、署名源码及版本史校订为 Bourne shell；Bash 不是替代端点，1979仅表示 Unix V7 发布。,claim-with-citation,1979,2006,True,,False,False
+simula,Simula,smalltalk,Smalltalk,influencedBy,curated-override,https://worrydream.com/EarlyHistoryOfSmalltalk/,,Alan Kay 在 Sketchpad and Simula 一节回忆：此后多数想法扎根于 Simula。,claim-with-citation,1965,1972,True,,False,False
+smalltalk,Smalltalk,ruby,Ruby,influencedBy,curated-override,https://www.ruby-lang.org/en/about/,,Ruby 官方 About 页面称其创造者将 Perl、Smalltalk、Eiffel、Ada 和 Lisp 中喜欢的部分融合成 Ruby。,claim-with-citation,1972,1995,True,,False,False
+smtp,SMTP,nntp,NNTP,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/nntp.scroll,,,record-field-only,1982,1984,False,,False,False
+snobol,SNOBOL,lua,Lua,influencedBy,curated-override,https://www.lua.org/doc/hopl.pdf,d3a2c0cf69503e85e40667b3114e3005e50df6f61eeec67b3069dcdc8d4185fe,"Lua 三位作者《The Evolution of Lua》（HOPL III, 2007）PDF p.5 明确称从 SNOBOL 和 Awk 借用关联数组，并在 Lua 中称为表；同时说明 Lua 表是对象，不绑定特定变量。 只记录该具体设计影响，不表示 Lua 是对应语言的超集或源码兼容。",claim-with-citation,1962,1993,True,,False,False
+snobol3,SNOBOL3,snobol4,SNOBOL4,supersetOf,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/snobol4.scroll,,,record-field-only,1966,1967,False,,False,False
+snobol4,SNOBOL4,s-snobol,S-Snobol,supersetOf,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/s-snobol.scroll,,,record-field-only,1967,1978,False,,False,False
+spec-sharp,Spec Sharp,sing-sharp,Sing Sharp,supersetOf,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/sing-sharp.scroll,,,record-field-only,2004,2005,False,,False,False
+sql,SQL,lil,Lil,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/lil.scroll,,,record-field-only,1974,2022,False,,False,False
+sql,SQL,particles,Particles,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/particles.scroll,,,record-field-only,1974,2017,False,,False,False
+sql,SQL,pl-sql,PL/SQL,influencedBy,curated-override,https://docs.oracle.com/en/database/oracle/oracle-database/23/lnpls/overview.html,f1f8c1d014b81a05faa1fb9e1180962316e048a812374eac7ef0a6e04fd9e947,Oracle 官方 PL/SQL Overview 明确称其为 SQL 的过程式扩展；不声称 PL/SQL 可原样包含全部 SQL 方言。,claim-with-citation,1974,1991,True,,False,False
+sql,SQL,sequel-2,SEQUEL 2,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/sequel-2.scroll,,,record-field-only,1974,1976,False,,False,False
+sql,SQL,square,SQUARE,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/square.scroll,,,record-field-only,1974,1975,False,,False,False
+sql,SQL,tql,TQL,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/tql.scroll,,,record-field-only,1974,2023,False,,False,False
+ssb,Secure Scuttlebutt,farcaster,Farcaster,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/farcaster.scroll,,,record-field-only,2014,2021,False,,False,False
+standard-ml,Standard ML,mlscript,MLscript,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/mlscript.scroll,,,record-field-only,1990,2020,False,,False,False
+swift,Swift,mojo,Mojo,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/mojo.scroll,,,record-field-only,2014,2022,False,,False,False
+swift-il,Swift SIL,mlir,MLIR,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/mlir.scroll,,,record-field-only,2012,2019,False,,False,False
+tcp,TCP,homa,Homa,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/homa.scroll,,,record-field-only,1974,2018,False,,False,False
+tex,Tex,scroll,Scroll,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/scroll.scroll,,,record-field-only,1978,2019,False,,False,False
+tex,Tex,typst,Typst,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/typst.scroll,,,record-field-only,1978,2022,False,,False,False
+tla,TLA+,quint,Quint,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/quint.scroll,,,record-field-only,1999,2021,False,,False,False
+treesheets,TreeSheets,explorer,Explorer,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/explorer.scroll,,,record-field-only,2019,2020,False,,False,False
+treesheets,TreeSheets,particles,Particles,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/particles.scroll,,,record-field-only,2019,2017,False,parent-year-later,False,False
+tsv,TSV,scroll,Scroll,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/scroll.scroll,,,record-field-only,1993,2019,False,,False,False
+turtle,Turtle,notation3,Notation3,supersetOf,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/notation3.scroll,,,record-field-only,2011,1998,False,parent-year-later,False,False
+twine,Twine,decker,Decker,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/decker.scroll,,,record-field-only,2013,2022,False,,False,True
+typescript,TypeScript,assemblyscript,AssemblyScript,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/assemblyscript.scroll,,,record-field-only,2012,2017,False,,False,False
+typescript,TypeScript,civet,Civet,supersetOf,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/civet.scroll,,,record-field-only,2012,2022,False,,False,False
+typescript,TypeScript,particles,Particles,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/particles.scroll,,,record-field-only,2012,2017,False,,False,False
+typescript,TypeScript,static-typescript,Static Typescript,supersetOf,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/static-typescript.scroll,,,record-field-only,2012,2019,False,,False,False
+unified-parallel-c,UPC,chapel,Chapel,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/chapel.scroll,,,record-field-only,2003,2004,False,,False,False
+url,URL,uri,URI,supersetOf,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/uri.scroll,,,record-field-only,1994,2005,False,,False,False
+vba,VBA,vbscript,VBScript,influencedBy,curated-override,https://learn.microsoft.com/en-us/windows/win32/com/translating-to-vbscript,,微软 Win32 文档明确称 VBScript 是 Visual Basic for Applications 语言的子集，并说明它不提供文件输入输出或直接访问底层操作系统的能力。这里记录从 VBA 到 VBScript 的子集化设计；不表示两者运行环境或全部代码兼容。,claim-with-citation,1993,1996,True,,False,False
+vi,vi,vim,Vim,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/vim.scroll,,,record-field-only,1976,1991,False,,False,True
+visual-basic,Visual Basic,speedie,Speedie,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/speedie.scroll,,,record-field-only,1991,2022,False,,False,False
+visual-basic,Visual Basic,vba,VBA,influencedBy,curated-override,https://learn.microsoft.com/en-us/office/vba/language/concepts/getting-started/64-bit-visual-basic-for-applications-overview,,微软 Office VBA 文档明确称 VBA 是随 Microsoft Office 提供的 Visual Basic 版本（the version of Visual Basic that ships with Microsoft Office）。这是语言家族和宿主版本关系，不表示任意 Visual Basic 程序都能直接在 Office VBA 中运行。,claim-with-citation,1991,1993,True,,False,False
+visual-basic,Visual Basic,visual-basic.net,Visual Basic .NET,successorOf,curated-override,https://learn.microsoft.com/en-us/lifecycle/announcements/visual-basic-6-support-announcement,1c4eda50a63e5ea0036160bbbe6c2d21ebdbb6051c8acbc033f81602387c2a37,Microsoft Visual Basic 6.0 支持说明直接链接《Upgrading Visual Basic 6.0 Applications to Visual Basic .NET》指南，确认从 VB6 到 VB.NET 的迁移路径；语言与运行时有重大变化，不表示源码直接兼容。,claim-with-citation,1991,2001,True,,False,False
+wasm,WebAssembly,wa,Wa-lang,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/wa.scroll,,,record-field-only,2015,2022,False,,False,False
+wasm,WebAssembly,wah,wah,supersetOf,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/wah.scroll,,,record-field-only,2015,2017,False,,False,False
+wordpress,WordPress,scroll,Scroll,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/scroll.scroll,,,record-field-only,2003,2019,False,,False,True
+xla,XLA,mlir,MLIR,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/mlir.scroll,,,record-field-only,2017,2019,False,,False,False
+xml,XML,flare,Flare,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/flare.scroll,,,record-field-only,1996,2001,False,,False,False
+xml,XML,particles,Particles,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/particles.scroll,,,record-field-only,1996,2017,False,,False,False
+xml,XML,sdlang,SDLang,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/sdlang.scroll,,,record-field-only,1996,2011,False,,False,False
+xml,XML,speedie,Speedie,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/speedie.scroll,,,record-field-only,1996,2022,False,,False,False
+xml,XML,susn,SUSN,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/susn.scroll,,,record-field-only,1996,2023,False,,False,False
+xml,XML,sxml,SXML,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/sxml.scroll,,,record-field-only,1996,2001,False,,False,False
+yacc,Yacc,lemon,Lemon,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/lemon.scroll,,,record-field-only,1975,1989,False,,False,False
+yacc,Yacc,menhir,Menhir,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/menhir.scroll,,,record-field-only,1975,2017,False,,False,False
+yacc,Yacc,parsers,Parsers,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/parsers.scroll,,,record-field-only,1975,2017,False,,False,False
+yaml,YAML,kaml,KAML,supersetOf,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/kaml.scroll,,,record-field-only,2001,2018,False,,False,False
+yaml,YAML,krml,KRML,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/krml.scroll,,,record-field-only,2001,2021,False,,False,False
+yaml,YAML,scroll,Scroll,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/scroll.scroll,,,record-field-only,2001,2019,False,,False,False
+yaml,YAML,sdlang,SDLang,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/sdlang.scroll,,,record-field-only,2001,2011,False,,False,False
+yaml,YAML,yamp,YAMP,supersetOf,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/yamp.scroll,,,record-field-only,2001,2019,False,,False,False
+zig,Zig,mojo,Mojo,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/mojo.scroll,,,record-field-only,2015,2022,False,,False,False
+zpl,ZPL,chapel,Chapel,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/chapel.scroll,,,record-field-only,1993,2004,False,,False,False

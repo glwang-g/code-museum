@@ -1,0 +1,149 @@
+﻿id,name,year,review_status
+afnix,Afnix,2003,unreviewed
+aheui,Aheui,2012,unreviewed
+ante,Ante,2015,unreviewed
+aplus,A+,1988,unreviewed
+aspectcpp,AspectC++,2001,unreviewed
+aspectj,AspectJ,2001,unreviewed
+assembly-language,Assembly language,1960,unreviewed
+ats,ATS,2013,unreviewed
+batch,Batchfile,1985,unreviewed
+battlestar,Battlestar,2014,unreviewed
+bc,basic calculator,1975,unreviewed
+beanshell,BeanShell,1999,unreviewed
+beatnik,Beatnik,2001,unreviewed
+befunge,Befunge,1993,unreviewed
+blc,Binary Lambda Calculus,2004,unreviewed
+boo,Boo,2003,unreviewed
+boogie,Boogie,2008,unreviewed
+bython,Bython,2016,unreviewed
+carbon,Carbon,2020,unreviewed
+cat,cat,2016,unreviewed
+ceylon,Ceylon,2011,unreviewed
+chef,chef,2002,unreviewed
+cil,CIL,2000,unreviewed
+clean,Clean,1987,unreviewed
+clojurescript,ClojureScript,2011,unreviewed
+coconut,Coconut,2014,unreviewed
+common-workflow-language,CWL,2014,unreviewed
+dafny,Dafny,2009,unreviewed
+dart,Dart,2011,verified-language
+dc,Dc,1978,unreviewed
+dhall,Dhall,2017,unreviewed
+dogescript,Dogescript,2013,unreviewed
+dylan,Dylan,1992,unreviewed
+e,E,1997,unreviewed
+ec,eC,2004,unreviewed
+elixir,Elixir,2011,verified-language
+elvish,Elvish,2013,unreviewed
+emojicode,Emojicode,2016,unreviewed
+entropy,Entropy,2021,unreviewed
+euphoria,Euphoria,1993,unreviewed
+ezhil,Ezhil,2007,unreviewed
+factor,Factor,2003,unreviewed
+fennel,Fennel,2016,unreviewed
+fish,fish,2005,unreviewed
+fishlang,><>,2009,unreviewed
+flex,FLEX,1987,unreviewed
+gambas,Gambas,1999,unreviewed
+gap,GAP,1986,unreviewed
+genius-extension-language,GEL Genius,1997,unreviewed
+gnuplot,Gnuplot,1986,unreviewed
+golfscript,GolfScript,2007,unreviewed
+grass,GRASS,1977,unreviewed
+hack,Hack,2014,unreviewed
+haxe,Haxe,2005,unreviewed
+hexagony,hexagony,2015,unreviewed
+hmmm,HMMM,2006,unreviewed
+hy,Hy,2013,unreviewed
+icon,Icon,1977,unreviewed
+idris,Idris,2014,unreviewed
+ink,ink,2015,unreviewed
+intercal,INTERCAL,1972,unreviewed
+io,Io,2002,unreviewed
+ioke,Ioke,2008,unreviewed
+jakt,Jakt,2022,unreviewed
+janet,Janet,2018,unreviewed
+jolie,Jolie,2006,unreviewed
+jsf,JSFuck,2012,unreviewed
+kalyn,Kalyn,2020,unreviewed
+kitten,kitten,2012,unreviewed
+lazy-k,Lazy K,2002,unreviewed
+less,Less,2009,unreviewed
+limbo,Limbo,1995,unreviewed
+lisaac,Lisaac,2003,unreviewed
+lolcode,LOLCODE,2007,unreviewed
+lsl,Linden Scripting Language,2003,unreviewed
+m4,M4,1977,unreviewed
+malbolge,Malbolge,1998,unreviewed
+mercury,Mercury,1995,unreviewed
+minizinc,MiniZinc,2012,unreviewed
+miranda,Miranda,1985,unreviewed
+moonscript,MoonScript,2011,unreviewed
+neko,Neko,2005,unreviewed
+nelua,Nelua,2019,unreviewed
+newlisp,NewLisp,1991,unreviewed
+nextflow,Nextflow,2013,unreviewed
+nickle,Nickle,2001,unreviewed
+nim,Nim,2008,verified-language
+nu,Nu,2007,unreviewed
+objective-cpp,Objective C++,1993,unreviewed
+odin,Odin,2016,unreviewed
+omgrofl,Omgrofl,2006,unreviewed
+ook,Ook,2005,unreviewed
+openscad,OpenSCAD,2010,unreviewed
+oz,Oz,1991,unreviewed
+pari-gp,PARI/GP,1985,unreviewed
+parrot-assembly,Parrot Assembly,2003,unreviewed
+parrot-internal-representation,PIR,2006,unreviewed
+parser,Parser 3,1997,unreviewed
+pawn,PAWN,2006,unreviewed
+picolisp,PicoLisp,1988,unreviewed
+pikachu,pikachu,2017,unreviewed
+pike,Pike,1994,unreviewed
+pony,Pony,2012,unreviewed
+promela,Promela,1997,unreviewed
+pseint,PSeInt,2003,unreviewed
+pug,Pug,2010,unreviewed
+q-sharp,Q#,2017,unreviewed
+qalb,Qalb,2012,unreviewed
+raku,Raku,2015,unreviewed
+rapira,Rapira,1987,unreviewed
+rc,Rc,1989,unreviewed
+reason,Reason,2016,unreviewed
+rescript,Rescript,2020,unreviewed
+rexx,Rexx,1979,unreviewed
+sagemath,Sage,2005,unreviewed
+sass,Sass,2006,unreviewed
+scilab,Scilab,1990,unreviewed
+scss,SCSS,2006,unreviewed
+sed,sed,1974,verified-language
+setl,SETL,1969,unreviewed
+slang,SLANG,1960,unreviewed
+slick,Slick,2020,unreviewed
+smt,SMT,2003,unreviewed
+solidity,Solidity,2014,unreviewed
+squirrel,Squirrel,2003,unreviewed
+supercollider,SuperCollider,1996,unreviewed
+tabloid,Tabloid,2020,unreviewed
+tcl,Tcl,1988,verified-language
+teco,TECO,1963,unreviewed
+terra,Terra,2012,unreviewed
+text-executive-programming-language,Text Executive Programming Language,1979,unreviewed
+thue-programming-language,Thue,2004,unreviewed
+unison,unison,2015,unreviewed
+unlambda,UNLAMBDA,1999,unreviewed
+v,V,2019,unreviewed
+vala,Vala,2006,unreviewed
+velato,Velato,2009,unreviewed
+verilog,Verilog,1984,verified-language
+vim-script,Vim script,1991,unreviewed
+whitespace,Whitespace,2003,unreviewed
+wolfram,Wolfram Language,1988,unreviewed
+x86-assembly,x86 Assembly,1972,verified-language
+xslt,XSLT,1998,verified-language
+yoptascript,YoptaScript,2016,unreviewed
+yorick,Yorick,1996,unreviewed
+z-shell,Z shell,1990,unreviewed
+zoem,Zoem,2005,unreviewed
+zot,Zot,2015,unreviewed

@@ -1,0 +1,28 @@
+{
+  "snapshot_sha256": "57f45d25bba78ab6bc4af5d969356d2efbfcc7c1ee722dbb5c708d60aa78ba77",
+  "reviewed_at": "2026-10-04",
+  "records": 5155,
+  "source_languages": 4608,
+  "status_counts": {
+    "unreviewed": 5072,
+    "verified-related-technology": 6,
+    "verified-language": 60,
+    "historical-primary-source": 11,
+    "verified-formal-language": 5,
+    "bibliographic-only": 1
+  },
+  "verified_language_count": 60,
+  "map_eligible_count": 233,
+  "curated_map_exclusions": 9,
+  "sparse_source_language_count": 1784,
+  "source_language_tool_or_standard_candidates": 260,
+  "runtime_counts": {
+    "sample-passed": 17,
+    "check-error": 1
+  },
+  "language_evidence_tiers": {
+    "官网/规范/代码/说明线索": 2579,
+    "仅目录、百科或引文等线索": 1784,
+    "语法/示例与执行工具线索": 245
+  }
+}

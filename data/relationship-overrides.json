@@ -1,0 +1,697 @@
+[
+  {
+    "from": "cpp",
+    "to": "rust",
+    "type": "influencedBy",
+    "label": "资源管理与移动语义",
+    "source": "https://doc.rust-lang.org/reference/influences.html",
+    "evidence": "Rust Reference 的 Influences 页列举 C++ 对引用、RAII、智能指针和移动语义等设计的影响。"
+  },
+  {
+    "from": "ocaml",
+    "to": "rust",
+    "type": "influencedBy",
+    "label": "代数数据类型与模式匹配",
+    "source": "https://doc.rust-lang.org/reference/influences.html",
+    "evidence": "Rust Reference 的 Influences 页列举 OCaml 对代数数据类型、模式匹配和类型推断的影响。"
+  },
+  {
+    "from": "haskell",
+    "to": "rust",
+    "type": "influencedBy",
+    "label": "类型类设计参照",
+    "source": "https://doc.rust-lang.org/reference/influences.html",
+    "evidence": "Rust Reference 的 Influences 页列举 Haskell 的 typeclasses 和 type families 等设计输入。"
+  },
+  {
+    "from": "erlang",
+    "to": "rust",
+    "type": "influencedBy",
+    "label": "消息传递与轻量并发",
+    "source": "https://doc.rust-lang.org/reference/influences.html",
+    "evidence": "Rust Reference 的 Influences 页列举 Erlang 的消息传递和轻量级并发。"
+  },
+  {
+    "from": "scheme",
+    "to": "rust",
+    "type": "influencedBy",
+    "label": "卫生宏",
+    "source": "https://doc.rust-lang.org/reference/influences.html",
+    "evidence": "Rust Reference 的 Influences 页列举 Scheme 的卫生宏设计。"
+  },
+  {
+    "from": "csharp",
+    "to": "rust",
+    "type": "influencedBy",
+    "label": "属性设计参照",
+    "source": "https://doc.rust-lang.org/reference/influences.html",
+    "evidence": "Rust Reference 的 Influences 页列举 C# 的属性作为设计输入。"
+  },
+  {
+    "from": "ruby",
+    "to": "rust",
+    "type": "influencedBy",
+    "label": "闭包与块语法",
+    "source": "https://doc.rust-lang.org/reference/influences.html",
+    "evidence": "Rust Reference 的 Influences 页列举 Ruby 的闭包与块语法设计。"
+  },
+  {
+    "from": "bcpl",
+    "to": "b",
+    "type": "influencedBy",
+    "label": "承继与简化",
+    "source": "https://www.bell-labs.com/usr/dmr/www/chist.html",
+    "evidence": "Ritchie《The Development of the C Language》记载：Ken Thompson 基于 BCPL 设计 B，并为早期 Unix 环境做了简化。此处表示历史承继，不推定源码完全兼容。"
+  },
+  {
+    "from": "b",
+    "to": "c",
+    "type": "influencedBy",
+    "label": "承继与演进",
+    "source": "https://doi.org/10.1145/155360.155580",
+    "evidence": "Ritchie《The Development of the C Language》及 Bell Labs《The Programming Language B》记载 C 从 B 演进，早期 Unix 的 B 工具逐步转为 C。此处表示历史承继，不推定 C 是 B 的严格超集。"
+  },
+  {
+    "from": "c",
+    "to": "java",
+    "type": "influencedBy",
+    "label": "词法、语句结构影响",
+    "source": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-1.html",
+    "evidence": "JLS §1.1：词法结构以及块和语句基于 C 与 C++。"
+  },
+  {
+    "from": "java",
+    "to": "csharp",
+    "type": "influencedBy",
+    "label": "语法与设计关联",
+    "source": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/introduction",
+    "evidence": "Microsoft C# 规范导言将 Java 程序员列为会熟悉 C# 的目标读者，并说明 C# 扎根于 C 语言家族。结合 Java 与 C# 的语法和面向对象设计关联，此边记录设计影响；不表示 C# 是 Java 的派生语言，也不表示两者运行时兼容。"
+  },
+  {
+    "from": "java",
+    "to": "scala",
+    "type": "influencedBy",
+    "label": "语法与设计参照",
+    "source": "https://docs.scala-lang.org/tutorials/scala-for-java-programmers.html",
+    "evidence": "Scala 官方《A Scala Tutorial for Java Programmers》说明 Scala 简化 Java 的样板写法，并在相同的类型与运行时基础上构建；此处表示设计与语法承接，不表示 Scala 是 Java 的超集。"
+  },
+  {
+    "from": "java",
+    "to": "groovy",
+    "type": "influencedBy",
+    "label": "Java 风格语法与设计参照",
+    "source": "https://groovy-lang.org/differences.html",
+    "evidence": "Groovy 官方《Differences with Java》记载设计时考虑 Java 开发者的预期，并逐项说明两种语言的差异；官网称 Groovy 旨在提供 Java 风格的感受和语法。此处表示语法与设计影响，不表示严格的 Java 超集。"
+  },
+  {
+    "from": "cpp",
+    "to": "java",
+    "type": "influencedBy",
+    "label": "词法、语句结构影响",
+    "source": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-1.html",
+    "evidence": "JLS §1.1：词法结构以及块和语句基于 C 与 C++。"
+  },
+  {
+    "from": "simula",
+    "to": "smalltalk",
+    "type": "influencedBy",
+    "label": "对象思想影响",
+    "source": "https://worrydream.com/EarlyHistoryOfSmalltalk/",
+    "evidence": "Alan Kay 在 Sketchpad and Simula 一节回忆：此后多数想法扎根于 Simula。"
+  },
+  {
+    "from": "lisp",
+    "to": "smalltalk",
+    "type": "influencedBy",
+    "label": "语言与解释器思想影响",
+    "source": "https://worrydream.com/EarlyHistoryOfSmalltalk/",
+    "evidence": "Alan Kay 描述理解 Lisp 对其思想的影响，并回忆 Lisp 自描述解释器对 Smalltalk 解释器的启发。"
+  },
+  {
+    "from": "objective-c",
+    "to": "swift",
+    "type": "influencedBy",
+    "label": "部分语言设计承接",
+    "source": "https://www.swift.org/about/",
+    "evidence": "Swift 官方 About 页面明确说，Swift 的命名参数从 Objective-C 继承而来（named parameters brought forward from Objective-C）。这证明具体语言设计影响；两者的互操作和共同平台背景本身不作为继承证据。"
+  },
+  {
+    "from": "perl",
+    "to": "ruby",
+    "type": "influencedBy",
+    "label": "设计影响",
+    "source": "https://www.ruby-lang.org/en/about/",
+    "evidence": "Ruby 官方 About 页面称其创造者将 Perl、Smalltalk、Eiffel、Ada 和 Lisp 中喜欢的部分融合成 Ruby。"
+  },
+  {
+    "from": "smalltalk",
+    "to": "ruby",
+    "type": "influencedBy",
+    "label": "设计影响",
+    "source": "https://www.ruby-lang.org/en/about/",
+    "evidence": "Ruby 官方 About 页面称其创造者将 Perl、Smalltalk、Eiffel、Ada 和 Lisp 中喜欢的部分融合成 Ruby。"
+  },
+  {
+    "from": "eiffel",
+    "to": "ruby",
+    "type": "influencedBy",
+    "label": "设计影响",
+    "source": "https://www.ruby-lang.org/en/about/",
+    "evidence": "Ruby 官方 About 页面称其创造者将 Perl、Smalltalk、Eiffel、Ada 和 Lisp 中喜欢的部分融合成 Ruby。"
+  },
+  {
+    "from": "ada",
+    "to": "ruby",
+    "type": "influencedBy",
+    "label": "设计影响",
+    "source": "https://www.ruby-lang.org/en/about/",
+    "evidence": "Ruby 官方 About 页面称其创造者将 Perl、Smalltalk、Eiffel、Ada 和 Lisp 中喜欢的部分融合成 Ruby。此处的 Ada 指 Ada 编程语言。"
+  },
+  {
+    "from": "lisp",
+    "to": "ruby",
+    "type": "influencedBy",
+    "label": "设计影响",
+    "source": "https://www.ruby-lang.org/en/about/",
+    "evidence": "Ruby 官方 About 页面称其创造者将 Perl、Smalltalk、Eiffel、Ada 和 Lisp 中喜欢的部分融合成 Ruby。"
+  },
+  {
+    "from": "c",
+    "to": "go",
+    "type": "influencedBy",
+    "label": "基础语法影响",
+    "source": "https://go.dev/doc/faq",
+    "sourceSha256": "6ff7e86bad4c6fb71f61a3f46028bca7cc128857e728b153803c6ab282e6f129",
+    "evidence": "Go 官方 FAQ 的 What are Go’s ancestors? 明确称 Go 的基础语法主要来自 C 家族；这是语法影响，不表示 Go 是 C 的超集。"
+  },
+  {
+    "from": "pascal",
+    "to": "go",
+    "type": "influencedBy",
+    "label": "声明与包设计参照",
+    "source": "https://go.dev/doc/faq",
+    "sourceSha256": "6ff7e86bad4c6fb71f61a3f46028bca7cc128857e728b153803c6ab282e6f129",
+    "evidence": "Go 官方 FAQ 明确点名 Pascal/Modula/Oberon 家族对声明和包设计有显著输入；Pascal 是其中被点名的语言。"
+  },
+  {
+    "from": "oberon",
+    "to": "go",
+    "type": "influencedBy",
+    "label": "声明与包设计参照",
+    "source": "https://go.dev/doc/faq",
+    "sourceSha256": "6ff7e86bad4c6fb71f61a3f46028bca7cc128857e728b153803c6ab282e6f129",
+    "evidence": "Go 官方 FAQ 明确点名 Pascal/Modula/Oberon 家族对声明和包设计有显著输入；Oberon 是其中被点名的语言。"
+  },
+  {
+    "from": "cpp",
+    "to": "d",
+    "type": "influencedBy",
+    "label": "语言设计参照",
+    "source": "https://dlang.org/overview.html",
+    "sourceSha256": "f6f5ed59d461df23221c1acd5f3c8e7571d901bcdaabb31e732ca180cceaafdd",
+    "evidence": "D 官方 Overview 明确称 D 从其他语言，尤其 C++，汲取灵感；并说明采用 C/C++ 的一般外观、代数表达式及多种语句形式。"
+  },
+  {
+    "from": "c",
+    "to": "php",
+    "type": "influencedBy",
+    "label": "语言结构影响",
+    "source": "https://www.php.net/manual/en/history.php.php",
+    "sourceSha256": "854cc7c2b9581a1b1b4a888819f78c5cf8b73f951b4448f23b4709cc0a6ccd8d",
+    "evidence": "PHP 官方历史记载，早期语言刻意设计成在结构上类似 C，方便熟悉 C 的开发者使用。"
+  },
+  {
+    "from": "perl",
+    "to": "php",
+    "type": "influencedBy",
+    "label": "早期语法影响",
+    "source": "https://www.php.net/manual/en/history.php.php",
+    "sourceSha256": "854cc7c2b9581a1b1b4a888819f78c5cf8b73f951b4448f23b4709cc0a6ccd8d",
+    "evidence": "PHP 官方历史记载，早期 FI/PHP 有 Perl 风格变量，语法本身与 Perl 相似；不表示 PHP 是 Perl 方言。"
+  },
+  {
+    "from": "sql",
+    "to": "pl-sql",
+    "type": "influencedBy",
+    "label": "过程式扩展关系",
+    "source": "https://docs.oracle.com/en/database/oracle/oracle-database/23/lnpls/overview.html",
+    "sourceSha256": "f1f8c1d014b81a05faa1fb9e1180962316e048a812374eac7ef0a6e04fd9e947",
+    "evidence": "Oracle 官方 PL/SQL Overview 明确称其为 SQL 的过程式扩展；不声称 PL/SQL 可原样包含全部 SQL 方言。"
+  },
+  {
+    "from": "abc",
+    "to": "python",
+    "type": "influencedBy",
+    "label": "缩进与语言设计影响",
+    "source": "https://docs.python.org/3/faq/general.html",
+    "sourceSha256": "cf058d750585d9fda7277449356f1425fb4b5a15addd116fdf37d3c1b9002e80",
+    "evidence": "Python 官方 FAQ 引 Guido van Rossum 自述：ABC 团队经验是 Python 许多特性的来源，包括用缩进分组语句和高层数据类型；也明确指出 Python 与 ABC 的实现及细节不同。"
+  },
+  {
+    "from": "lisp",
+    "to": "scheme",
+    "type": "influencedBy",
+    "label": "Lisp 家族分支",
+    "source": "https://www.scheme.org/",
+    "sourceSha256": "8ce153049e77ec378787f3be3c0375e98b95ef6b3197cb3e291215ccf28997a2",
+    "evidence": "Scheme 官方社区首页明确称 Scheme 是 Lisp 家族中的经典编程语言；此边表示家族承接，不表示 Scheme 与所有 Lisp 方言源码兼容。"
+  },
+  {
+    "from": "lisp",
+    "to": "julia",
+    "type": "influencedBy",
+    "label": "宏设计参照",
+    "source": "https://julialang.org/blog/2012/02/why-we-created-julia/",
+    "sourceSha256": "c78002dce7f99e3409307b68b3a6c1dcb2316f08522af0a7924677c3b5a6c9d0",
+    "evidence": "Julia 四位设计者在 Why We Created Julia 中明确提出希望拥有像 Lisp 那样的同像性与真正的宏；这是设计目标参照。"
+  },
+  {
+    "from": "matlab",
+    "to": "julia",
+    "type": "influencedBy",
+    "label": "数学记法参照",
+    "source": "https://julialang.org/blog/2012/02/why-we-created-julia/",
+    "sourceSha256": "c78002dce7f99e3409307b68b3a6c1dcb2316f08522af0a7924677c3b5a6c9d0",
+    "evidence": "Julia 设计者明确提出希望拥有像 MATLAB 那样熟悉的数学记法，并兼顾线性代数；这是语言设计参照，不表示 Julia 与 MATLAB 兼容。"
+  },
+  {
+    "from": "python",
+    "to": "julia",
+    "type": "influencedBy",
+    "label": "通用编程易用性参照",
+    "source": "https://julialang.org/blog/2012/02/why-we-created-julia/",
+    "sourceSha256": "c78002dce7f99e3409307b68b3a6c1dcb2316f08522af0a7924677c3b5a6c9d0",
+    "evidence": "Julia 设计者明确提出希望通用编程像 Python 一样易用；这是设计目标参照，不表示语法派生。"
+  },
+  {
+    "from": "ruby",
+    "to": "julia",
+    "type": "influencedBy",
+    "label": "动态性设计参照",
+    "source": "https://julialang.org/blog/2012/02/why-we-created-julia/",
+    "sourceSha256": "c78002dce7f99e3409307b68b3a6c1dcb2316f08522af0a7924677c3b5a6c9d0",
+    "evidence": "Julia 设计者明确提出希望语言具有 Ruby 的动态性；这是设计目标参照，不表示 Julia 是 Ruby 方言。"
+  },
+  {
+    "from": "r",
+    "to": "julia",
+    "type": "influencedBy",
+    "label": "统计编程设计参照",
+    "source": "https://julialang.org/blog/2012/02/why-we-created-julia/",
+    "sourceSha256": "c78002dce7f99e3409307b68b3a6c1dcb2316f08522af0a7924677c3b5a6c9d0",
+    "evidence": "Julia 设计者明确提出希望统计编程像 R 一样便利；这是设计目标参照，不表示 Julia 是 R 的实现。"
+  },
+  {
+    "from": "perl",
+    "to": "julia",
+    "type": "influencedBy",
+    "label": "字符串处理设计参照",
+    "source": "https://julialang.org/blog/2012/02/why-we-created-julia/",
+    "sourceSha256": "c78002dce7f99e3409307b68b3a6c1dcb2316f08522af0a7924677c3b5a6c9d0",
+    "evidence": "Julia 设计者明确提出希望字符串处理像 Perl 一样自然；这是设计目标参照，不表示 Julia 的整体语法来自 Perl。"
+  },
+  {
+    "from": "visual-basic",
+    "to": "visual-basic.net",
+    "type": "successorOf",
+    "label": "版本后继与迁移",
+    "source": "https://learn.microsoft.com/en-us/lifecycle/announcements/visual-basic-6-support-announcement",
+    "sourceSha256": "1c4eda50a63e5ea0036160bbbe6c2d21ebdbb6051c8acbc033f81602387c2a37",
+    "evidence": "Microsoft Visual Basic 6.0 支持说明直接链接《Upgrading Visual Basic 6.0 Applications to Visual Basic .NET》指南，确认从 VB6 到 VB.NET 的迁移路径；语言与运行时有重大变化，不表示源码直接兼容。"
+  },
+  {
+    "from": "s",
+    "to": "r",
+    "type": "implementationOf",
+    "label": "S 语言的另一种实现",
+    "source": "https://cran.r-project.org/doc/manuals/r-release/R-intro.html",
+    "sourceSha256": "bd38e34e0335d2c6b9e3a0d9cff8fb2ffeb28d80f9f69b03d8ad25bd2650d7fb",
+    "evidence": "R 官方《An Introduction to R》§1.2 明确说 R 可视为 Bell Labs S 语言的一种实现；两者存在差异，不表示 R 是 S 的严格超集。S 暂未达到本地图节点证据阈值。"
+  },
+  {
+    "from": "matlab",
+    "to": "octave",
+    "type": "compatibleWith",
+    "label": "以 MATLAB 语法兼容为目标",
+    "source": "https://octave.org/about.html",
+    "sourceSha256": "3a1d8d7dfa3a8ef048d31bea4c29df425340f240640dcd2f4ec400bec91d9ff9",
+    "evidence": "GNU Octave 官方 About 明确称其使用的语言与 MATLAB 大体兼容（mostly compatible）；兼容有范围，不表示 Octave 是 MATLAB 的严格超集。"
+  },
+  {
+    "from": "ocaml",
+    "to": "f-sharp",
+    "type": "influencedBy",
+    "label": "函数式核心与语言设计影响",
+    "source": "https://fsharp.org/history/hopl-final/hopl-fsharp.pdf",
+    "sourceSha256": "db336bd4f1f57c5881477ee5e12995ac164255b81ede10d4bee9a055daf1202a",
+    "evidence": "F# 设计者 Don Syme《The Early History of F#》回顾：OCaml 原本启发了 F#，并列举 F# 继承的 OCaml 特性、运算符优先级等具体设计；此处表示设计影响，不表示 F# 是 OCaml 的原样 .NET 实现。"
+  },
+  {
+    "from": "basic",
+    "to": "visual-basic",
+    "type": "influencedBy",
+    "label": "BASIC 家族演进",
+    "source": "https://techcommunity.microsoft.com/blog/smallbasic/a-brief-history-of-basic/336312",
+    "evidence": "微软 Small Basic 社区刊载的 Ed Price《A Brief History of BASIC》明确把 Visual Basic 列为从早期 BASIC 演进而来的例子。本文改编自 Philip Conrod 与 Lou Tylee 的 Small Basic 教材，因此是微软平台刊载的历史概述，并非 Visual Basic 设计者的一手回忆；此边不表示 Visual Basic 与最初 Dartmouth BASIC 源码兼容。"
+  },
+  {
+    "from": "visual-basic",
+    "to": "vba",
+    "type": "influencedBy",
+    "label": "Office 中的 Visual Basic 版本",
+    "source": "https://learn.microsoft.com/en-us/office/vba/language/concepts/getting-started/64-bit-visual-basic-for-applications-overview",
+    "evidence": "微软 Office VBA 文档明确称 VBA 是随 Microsoft Office 提供的 Visual Basic 版本（the version of Visual Basic that ships with Microsoft Office）。这是语言家族和宿主版本关系，不表示任意 Visual Basic 程序都能直接在 Office VBA 中运行。"
+  },
+  {
+    "from": "vba",
+    "to": "vbscript",
+    "type": "influencedBy",
+    "label": "VBA 的脚本子集",
+    "source": "https://learn.microsoft.com/en-us/windows/win32/com/translating-to-vbscript",
+    "evidence": "微软 Win32 文档明确称 VBScript 是 Visual Basic for Applications 语言的子集，并说明它不提供文件输入输出或直接访问底层操作系统的能力。这里记录从 VBA 到 VBScript 的子集化设计；不表示两者运行环境或全部代码兼容。"
+  },
+  {
+    "from": "java",
+    "to": "kotlin",
+    "type": "influencedBy",
+    "label": "官方列举的设计启发",
+    "source": "https://kotlinlang.org/docs/faq.html",
+    "sourceSha256": "c52ad62286ecc5d1647999ad445804aea9eecdd847e23b53ed1548700e6a4593",
+    "evidence": "Kotlin 官方 FAQ《Is Kotlin hard?》明确称 Kotlin 从 Java、C#、JavaScript、Scala、Groovy 等现有语言获得启发；此边表示设计影响，不能推定整体语法派生、超集或源码兼容。"
+  },
+  {
+    "from": "csharp",
+    "to": "kotlin",
+    "type": "influencedBy",
+    "label": "官方列举的设计启发",
+    "source": "https://kotlinlang.org/docs/faq.html",
+    "sourceSha256": "c52ad62286ecc5d1647999ad445804aea9eecdd847e23b53ed1548700e6a4593",
+    "evidence": "Kotlin 官方 FAQ《Is Kotlin hard?》明确称 Kotlin 从 Java、C#、JavaScript、Scala、Groovy 等现有语言获得启发；此边表示设计影响，不能推定整体语法派生、超集或源码兼容。"
+  },
+  {
+    "from": "javascript",
+    "to": "kotlin",
+    "type": "influencedBy",
+    "label": "官方列举的设计启发",
+    "source": "https://kotlinlang.org/docs/faq.html",
+    "sourceSha256": "c52ad62286ecc5d1647999ad445804aea9eecdd847e23b53ed1548700e6a4593",
+    "evidence": "Kotlin 官方 FAQ《Is Kotlin hard?》明确称 Kotlin 从 Java、C#、JavaScript、Scala、Groovy 等现有语言获得启发；此边表示设计影响，不能推定整体语法派生、超集或源码兼容。"
+  },
+  {
+    "from": "scala",
+    "to": "kotlin",
+    "type": "influencedBy",
+    "label": "官方列举的设计启发",
+    "source": "https://kotlinlang.org/docs/faq.html",
+    "sourceSha256": "c52ad62286ecc5d1647999ad445804aea9eecdd847e23b53ed1548700e6a4593",
+    "evidence": "Kotlin 官方 FAQ《Is Kotlin hard?》明确称 Kotlin 从 Java、C#、JavaScript、Scala、Groovy 等现有语言获得启发；此边表示设计影响，不能推定整体语法派生、超集或源码兼容。"
+  },
+  {
+    "from": "groovy",
+    "to": "kotlin",
+    "type": "influencedBy",
+    "label": "官方列举的设计启发",
+    "source": "https://kotlinlang.org/docs/faq.html",
+    "sourceSha256": "c52ad62286ecc5d1647999ad445804aea9eecdd847e23b53ed1548700e6a4593",
+    "evidence": "Kotlin 官方 FAQ《Is Kotlin hard?》明确称 Kotlin 从 Java、C#、JavaScript、Scala、Groovy 等现有语言获得启发；此边表示设计影响，不能推定整体语法派生、超集或源码兼容。"
+  },
+  {
+    "from": "scheme",
+    "to": "lua",
+    "type": "influencedBy",
+    "label": "匿名函数与词法作用域",
+    "source": "https://www.lua.org/doc/hopl.pdf",
+    "sourceSha256": "d3a2c0cf69503e85e40667b3114e3005e50df6f61eeec67b3069dcdc8d4185fe",
+    "evidence": "Lua 三位作者《The Evolution of Lua》（HOPL III, 2007）PDF p.2 明确称 Scheme 在 Lua 演进中的影响逐渐增加，尤其体现在匿名函数和完整词法作用域。 只记录该具体设计影响，不表示 Lua 是对应语言的超集或源码兼容。"
+  },
+  {
+    "from": "modula",
+    "to": "lua",
+    "type": "influencedBy",
+    "label": "控制结构语法",
+    "source": "https://www.lua.org/doc/hopl.pdf",
+    "sourceSha256": "d3a2c0cf69503e85e40667b3114e3005e50df6f61eeec67b3069dcdc8d4185fe",
+    "evidence": "Lua 三位作者《The Evolution of Lua》（HOPL III, 2007）PDF p.5 明确称 while、if、repeat until 等控制结构语法主要借自 Modula；作者未在此指定 Modula-2，故不替换为该方言。 只记录该具体设计影响，不表示 Lua 是对应语言的超集或源码兼容。"
+  },
+  {
+    "from": "clu",
+    "to": "lua",
+    "type": "influencedBy",
+    "label": "多重赋值与多返回值",
+    "source": "https://www.lua.org/doc/hopl.pdf",
+    "sourceSha256": "d3a2c0cf69503e85e40667b3114e3005e50df6f61eeec67b3069dcdc8d4185fe",
+    "evidence": "Lua 三位作者《The Evolution of Lua》（HOPL III, 2007）PDF p.5 明确称从 CLU 借用多重赋值与函数调用的多返回值。 只记录该具体设计影响，不表示 Lua 是对应语言的超集或源码兼容。"
+  },
+  {
+    "from": "cpp",
+    "to": "lua",
+    "type": "influencedBy",
+    "label": "局部变量声明位置",
+    "source": "https://www.lua.org/doc/hopl.pdf",
+    "sourceSha256": "d3a2c0cf69503e85e40667b3114e3005e50df6f61eeec67b3069dcdc8d4185fe",
+    "evidence": "Lua 三位作者《The Evolution of Lua》（HOPL III, 2007）PDF p.5 明确称从 C++ 借用在需要位置声明局部变量的设计。 只记录该具体设计影响，不表示 Lua 是对应语言的超集或源码兼容。"
+  },
+  {
+    "from": "snobol",
+    "to": "lua",
+    "type": "influencedBy",
+    "label": "关联数组与表设计",
+    "source": "https://www.lua.org/doc/hopl.pdf",
+    "sourceSha256": "d3a2c0cf69503e85e40667b3114e3005e50df6f61eeec67b3069dcdc8d4185fe",
+    "evidence": "Lua 三位作者《The Evolution of Lua》（HOPL III, 2007）PDF p.5 明确称从 SNOBOL 和 Awk 借用关联数组，并在 Lua 中称为表；同时说明 Lua 表是对象，不绑定特定变量。 只记录该具体设计影响，不表示 Lua 是对应语言的超集或源码兼容。"
+  },
+  {
+    "from": "awk",
+    "to": "lua",
+    "type": "influencedBy",
+    "label": "关联数组与表设计",
+    "source": "https://www.lua.org/doc/hopl.pdf",
+    "sourceSha256": "d3a2c0cf69503e85e40667b3114e3005e50df6f61eeec67b3069dcdc8d4185fe",
+    "evidence": "Lua 三位作者《The Evolution of Lua》（HOPL III, 2007）PDF p.5 明确称从 SNOBOL 和 Awk 借用关联数组，并在 Lua 中称为表；同时说明 Lua 表是对象，不绑定特定变量。 只记录该具体设计影响，不表示 Lua 是对应语言的超集或源码兼容。"
+  },
+  {
+    "from": "algol-60",
+    "to": "simula",
+    "type": "influencedBy",
+    "label": "块结构与模拟机制基础",
+    "source": "https://www.mn.uio.no/ifi/english/about/ole-johan-dahl/bibliography/the-birth-of-object-orientation-the-simula-languages.pdf",
+    "evidence": "Ole-Johan Dahl《The Birth of Object Orientation: the Simula Languages》（2001）第2–3页明确说 Simula I 选用 ALGOL 60，以块结构等为基础并加入模拟机制；Simula 67 随后概括与改进 Simula I。此边表示这一设计来源，作者对旧编译器的兼容说明不泛化为所有 Simula 版本或严格超集。"
+  },
+  {
+    "from": "algol-60",
+    "to": "pascal",
+    "type": "influencedBy",
+    "label": "参数机制的设计回应",
+    "source": "https://people.inf.ethz.ch/wirth/Articles/GoodIdeas.pdf",
+    "evidence": "Niklaus Wirth《Good Ideas, Through the Looking Glass》（Computer，2006年1月）印刷第63页 / PDF第8页讨论 ALGOL 的传名参数及开销，说明其在 Algol W、Pascal、Ada 等后来语言中被引用参数取代。此边表示具体参数设计的借鉴与改进，不表示 Pascal 是 ALGOL 60 超集、所有语法直接承继或源码兼容。"
+  },
+  {
+    "from": "pascal",
+    "to": "modula-2",
+    "type": "successorOf",
+    "label": "模块化系统编程后继",
+    "source": "https://people.inf.ethz.ch/wirth/Articles/Modula-Oberon-June.pdf",
+    "sourceSha256": "7b445f8f28e52b711daf2db2b6132203985cad45f586756cdb718ec8cacf8183",
+    "evidence": "Niklaus Wirth《Modula-2 and Oberon》（HOPL-3投稿稿，2006年6月修订）第2–3页作者明确以“genuine successor of Pascal”和“new version of Pascal”说明 Modula-2 的设计目标，新增模块并修正 Pascal 的语法与参数设计；后继关系不表示严格超集或源码兼容。"
+  },
+  {
+    "from": "mesa",
+    "to": "modula-2",
+    "type": "influencedBy",
+    "label": "模块与分离编译设计",
+    "source": "https://people.inf.ethz.ch/wirth/Articles/Modula-Oberon-June.pdf",
+    "sourceSha256": "7b445f8f28e52b711daf2db2b6132203985cad45f586756cdb718ec8cacf8183",
+    "evidence": "Niklaus Wirth《Modula-2 and Oberon》（HOPL-3投稿稿，2006年6月修订）第2页作者明确说 Mesa served as Modula-2’s guideline；第5–6页说明模块定义/实现拆分、类型安全分离编译与版本检查。只表示具体设计借鉴。"
+  },
+  {
+    "from": "modula",
+    "to": "modula-2",
+    "type": "influencedBy",
+    "label": "monitor 到模块的设计承接",
+    "source": "https://people.inf.ethz.ch/wirth/Articles/Modula-Oberon-June.pdf",
+    "sourceSha256": "7b445f8f28e52b711daf2db2b6132203985cad45f586756cdb718ec8cacf8183",
+    "evidence": "Niklaus Wirth《Modula-2 and Oberon》（HOPL-3投稿稿，2006年6月修订）第2页作者区分1975年的 Modula 与 Modula-2，并说明前者 monitor 的概念在后者演变为模块。两个语言 ID 保持独立，不把 Modula 自动改名为 Modula-2。"
+  },
+  {
+    "from": "modula-2",
+    "to": "oberon",
+    "type": "influencedBy",
+    "label": "简化模块机制与扩展类型",
+    "source": "https://people.inf.ethz.ch/wirth/Articles/Modula-Oberon-June.pdf",
+    "sourceSha256": "7b445f8f28e52b711daf2db2b6132203985cad45f586756cdb718ec8cacf8183",
+    "evidence": "Niklaus Wirth《Modula-2 and Oberon》（HOPL-3投稿稿，2006年6月修订）第13–16页作者明确说 Oberon 旨在增强 Modula-2 能力并降低复杂度，删去部分设施，加入类型扩展与类型测试；此为设计承接与改造，不是超集。编译器由 Modula-2 编写是另一个实现事实，不作为设计关系的唯一依据。"
+  },
+  {
+    "from": "pascal",
+    "to": "mesa",
+    "type": "influencedBy",
+    "label": "静态类型与风格基础",
+    "source": "https://people.inf.ethz.ch/wirth/Articles/Modula-Oberon-June.pdf",
+    "sourceSha256": "7b445f8f28e52b711daf2db2b6132203985cad45f586756cdb718ec8cacf8183",
+    "evidence": "Niklaus Wirth《Modula-2 and Oberon》（HOPL-3投稿稿，2006年6月修订）第2页 Wirth 回顾 Mesa stemmed from Pascal，采用其严格静态类型、风格与概念。Wirth 是 Modula-2/Oberon 的设计者，此处对 Mesa 的回顾不是 Mesa 自身作者声明，不表示源码兼容。"
+  },
+  {
+    "from": "fortran",
+    "to": "basic",
+    "type": "influencedBy",
+    "label": "初学者语言设计的参照与回应",
+    "source": "https://time.com/69316/basic/",
+    "sourceSha256": "642e10845838898768d8ad0649cc58b2a6d5510100abb2ec6abceb120f407456",
+    "evidence": "Harry McCracken 的 TIME 2014年4月29日报道引用 BASIC 设计者 Thomas Kurtz：曾尝试做 Fortran 与 ALGOL 的简单子集，发现不可行；随后 Kemeny/Kurtz 转向用常用词和易理解语法设计初学者语言。FORTRAN 在此作为 BASIC 早期设计参照与回应来源，而非已成功实现的子集、严格后继或源码兼容。报道未指定具体版本，保留家族条目，不替换成 FORTRAN II 或 ALGOL 60；依据为记者报道中的设计者回顾。"
+  },
+  {
+    "from": "algol",
+    "to": "basic",
+    "type": "influencedBy",
+    "label": "初学者语言设计的参照与回应",
+    "source": "https://time.com/69316/basic/",
+    "sourceSha256": "642e10845838898768d8ad0649cc58b2a6d5510100abb2ec6abceb120f407456",
+    "evidence": "Harry McCracken 的 TIME 2014年4月29日报道引用 BASIC 设计者 Thomas Kurtz：曾尝试做 Fortran 与 ALGOL 的简单子集，发现不可行；随后 Kemeny/Kurtz 转向用常用词和易理解语法设计初学者语言。ALGOL 在此作为 BASIC 早期设计参照与回应来源，而非已成功实现的子集、严格后继或源码兼容。报道未指定具体版本，保留家族条目，不替换成 FORTRAN II 或 ALGOL 60；依据为记者报道中的设计者回顾。"
+  },
+  {
+    "from": "apl",
+    "to": "forth",
+    "type": "influencedBy",
+    "label": "运算符设计参照",
+    "source": "https://raw.githubusercontent.com/colorforth/colorforth.github.io/master/HOPL.html",
+    "evidence": "Moore《Forth: The Early Years》回顾称欣赏并仿效 APL 运算符；这是作者明确的局部设计参照，不表示整体语法、数组体系或源码兼容。该回顾未准确给出采纳时间，不将章节标题1958当作这条关系的年份。"
+  },
+  {
+    "from": "algol",
+    "to": "forth",
+    "type": "influencedBy",
+    "label": "定义词的冒号格式",
+    "source": "https://raw.githubusercontent.com/colorforth/colorforth.github.io/master/HOPL.html",
+    "evidence": "Moore 描述 Forth 前身 CURVE 的定义词冒号取自 Algol 标签格式，并将 LABEL: 反转为 : LABEL 以适应从左到右解释；他明确称 CURVE 为 Forth 前身。关系限于此语法输入，未指定 Algol 版号，不能替换成 ALGOL 60 或推定严格后继。"
+  },
+  {
+    "from": "fortran",
+    "to": "forth",
+    "type": "influencedBy",
+    "label": "循环词名的设计致意",
+    "source": "https://raw.githubusercontent.com/colorforth/colorforth.github.io/master/HOPL.html",
+    "evidence": "Moore 描述 Mohasco 阶段 Forth 循环词 DO 与早期 CONTINUE（后来 LOOP），称它们意在向 Fortran 致意。这里记录词名的设计参照，不以早期解释器用 Fortran 实现推定语义继承或源码兼容。"
+  },
+  {
+    "from": "forth",
+    "to": "postscript",
+    "type": "influencedBy",
+    "label": "后缀语法与运算符约定",
+    "source": "https://www.adobe.com/jp/print/postscript/pdfs/PLRM.pdf",
+    "evidence": "Adobe《PostScript Language Reference》第三版第23页说明语法最接近 Forth，操作数在运算符之前且没有保留词；第850页索引明确列为 PostScript influence。关系是局部语法设计影响，不表示 PostScript 是 Forth 的严格后继、超集或实现。"
+  },
+  {
+    "from": "lisp",
+    "to": "postscript",
+    "type": "influencedBy",
+    "label": "程序作为数据与执行状态控制",
+    "source": "https://www.adobe.com/jp/print/postscript/pdfs/PLRM.pdf",
+    "evidence": "Adobe《PostScript Language Reference》第三版第23页明确将程序作为数据，以及监控和控制语言执行状态等观念归于 Lisp 等语言。关系限于所述思想输入，不表示 Lisp 语法、源码或运行时兼容。"
+  },
+  {
+    "from": "prolog",
+    "to": "erlang",
+    "type": "influencedBy",
+    "label": "早期并发扩展与演进",
+    "source": "https://www.erlang.org/download/armstrong_thesis_2003.pdf",
+    "evidence": "Armstrong《Making reliable distributed systems in the presence of software errors》§1.1，第3–5页记载：1986年 Erlang 起于向 Prolog 加入并发进程的实验，1987年仍嵌入 Prolog；1989年 JAM 借鉴 WAM 的模式匹配编译，但移除回溯并加入进程、消息与故障检测。1990年已有独立语法，1991年替代 Prolog 实现。这里是历史设计演进，不表示当前 Erlang 是 Prolog 的超集或源码兼容，也不把早期实现用 Prolog 编写作为唯一依据。"
+  },
+  {
+    "from": "ada",
+    "to": "vhdl",
+    "type": "influencedBy",
+    "label": "语法与语义的设计基础",
+    "source": "https://ghdl.github.io/ghdl/about.html",
+    "evidence": "GHDL 官方 About 页明确说明 VHDL 的大部分语法和语义来自 Ada，并随即区分 VHDL 面向硬件、事件驱动的高度并发模型。依据为实现项目的说明，非原始设计者论文；此处表示设计借鉴，不表示 VHDL 是 Ada 超集、两者源码兼容或 Ada 程序自动成为硬件。VHDL 仿真执行与综合成网表也应分开理解。"
+  },
+  {
+    "from": "sh",
+    "to": "powershell",
+    "type": "influencedBy",
+    "label": "语法与控制结构的设计输入",
+    "source": "https://www.jsnover.com/Docs/MonadManifesto.pdf",
+    "sourceSha256": "b16605109e6c8394c7c68d346fd3d1062b61a07cf31982b42087edbbe2d30574",
+    "evidence": "Snover《Monad Manifesto》1.2版 PDF第15页明确说明 Monad 基于并扩展 Bourne Shell 的语法和控制结构，将文本管道改为 .NET 对象；第1页脚注限定它是长期设计愿景，不是 PowerShell V1.0 精确实现说明。因此表示历史设计输入，不表示现代版本是 Bourne 超集或源码兼容。端点 sh 已以 V7 原始手册、署名源码及版本史校订为 Bourne shell；Bash 不是替代端点，1979仅表示 Unix V7 发布。"
+  },
+  {
+    "from": "sh",
+    "to": "bash",
+    "type": "influencedBy",
+    "label": "Bourne 语法与内建命令的承接",
+    "source": "https://mirrors.kernel.org/gnu/bash/bash-5.3.tar.gz",
+    "sourceSha256": "0d5cd86965f869a26cf64f4b71be7b96f90a3ba8b3d74e27e8e9d9d5550f31ba",
+    "evidence": "官方5.3手册 Introduction/What is Bash? 明确 Bourne Shell 是设计输入并定位到 Unix 第七版，称 Bash largely compatible with sh。差异附录采用 SVR4.2 传统 Bourne 作比较且指出 POSIX 行为可以不同，故不声称严格超集或所有源码兼容。sh 已核为 V7 Bourne 身份；另一 bourne-shell 原始记录保留待去重，不画两者继承。 资料来自 GNU 固定发行包的 doc/bashref.texi，下载镜像与成员字节哈希保存在审查证据中；本轮未编译该包。"
+  },
+  {
+    "from": "korn-shell",
+    "to": "bash",
+    "type": "influencedBy",
+    "label": "Korn shell 的命令设计输入",
+    "source": "https://mirrors.kernel.org/gnu/bash/bash-5.3.tar.gz",
+    "sourceSha256": "0d5cd86965f869a26cf64f4b71be7b96f90a3ba8b3d74e27e8e9d9d5550f31ba",
+    "evidence": "官方5.3手册 Introduction/What is Bash? 明确借鉴 Korn shell，typeset 内建命令条目进一步说明为 Korn shell 兼容而提供、是 declare 的同义命令。这里只表示命令层设计输入，不表示整个语言超集或所有程序兼容。 资料来自 GNU 固定发行包的 doc/bashref.texi，下载镜像与成员字节哈希保存在审查证据中；本轮未编译该包。"
+  },
+  {
+    "from": "c-shell",
+    "to": "bash",
+    "type": "influencedBy",
+    "label": "历史展开与目录栈的设计输入",
+    "source": "https://mirrors.kernel.org/gnu/bash/bash-5.3.tar.gz",
+    "sourceSha256": "0d5cd86965f869a26cf64f4b71be7b96f90a3ba8b3d74e27e8e9d9d5550f31ba",
+    "evidence": "官方5.3手册 Introduction 明确借鉴 C shell；差异附录具体列出 csh-like history expansion 与目录栈及 pushd/popd/dirs。只表示这些功能的借鉴，不表示 Bash 继承全部 C shell 语法或源码兼容；C shell 尚未因此自动获主图资格。 资料来自 GNU 固定发行包的 doc/bashref.texi，下载镜像与成员字节哈希保存在审查证据中；本轮未编译该包。"
+  },
+  {
+    "from": "sh",
+    "to": "korn-shell",
+    "type": "influencedBy",
+    "label": "Bourne 语言扩展与演进",
+    "source": "https://www.usenix.org/legacy/publications/library/proceedings/vhll/full_papers/korn.ksh.a",
+    "sourceSha256": "1542b6a6bef06ec0840983c3ee2314cd97daea15a8bf00214d05bebd7f2c52ea",
+    "evidence": "David G. Korn《ksh — An Extensible High Level Language》，USENIX 1994。§2 History：作者先修改 Bourne shell 建立表单脚本语言，增补内建命令、数组、函数和协同进程，首版 ksh 由其删去表单专用代码而来。表示具体扩展过程的设计输入；论文兼容叙述针对 System V、ksh88/ksh93，不声明所有 Bourne 版本是现代 ksh 的严格子集。sh 为已核 V7 Bourne 展示身份，另一个 bourne-shell 原始 ID 保留待核。"
+  },
+  {
+    "from": "c-shell",
+    "to": "korn-shell",
+    "type": "influencedBy",
+    "label": "历史记录、别名与作业控制",
+    "source": "https://www.usenix.org/legacy/publications/library/proceedings/vhll/full_papers/korn.ksh.a",
+    "sourceSha256": "1542b6a6bef06ec0840983c3ee2314cd97daea15a8bf00214d05bebd7f2c52ea",
+    "evidence": "David G. Korn《ksh — An Extensible High Level Language》，USENIX 1994。§2 History：作者明确在首版 ksh 加入 C shell 的 history、aliases、job control。范围为这些交互特性的借鉴，不表示 ksh 使用 C shell 全部语法或源码兼容。C shell 的地图资格另由2BSD原始语法手册及实现审查支持。"
+  },
+  {
+    "from": "c",
+    "to": "korn-shell",
+    "type": "influencedBy",
+    "label": "算术表达式与循环语法的借鉴",
+    "source": "https://www.usenix.org/legacy/publications/library/proceedings/vhll/full_papers/korn.ksh.a",
+    "sourceSha256": "1542b6a6bef06ec0840983c3ee2314cd97daea15a8bf00214d05bebd7f2c52ea",
+    "evidence": "David G. Korn《ksh — An Extensible High Level Language》，USENIX 1994。§2 History：早期 let 命令采用 C 表达式语法的小子集；§5.1：ksh93 增加 ANSI C 算术运算符和近似 C for 语句的算术循环。只表示这些语法的设计输入，不表示 ksh 是 C 派生语言、C 超集或源码兼容；用 C 编写解释器是另一个事实，不能代替此论证。"
+  },
+  {
+    "from": "c-shell",
+    "to": "tcsh",
+    "type": "supersetOf",
+    "label": "Berkeley C shell 的兼容增强版",
+    "source": "https://raw.githubusercontent.com/tcsh-org/tcsh/TCSH6_21_00/tcsh.man",
+    "sourceSha256": "6bc1b05e6da45ca0beba8fd466791ea13b5b54a23c1033da4f2d9f8779630a31",
+    "evidence": "tcsh 6.21.00 官方标签手册 DESCRIPTION 明确称 enhanced but completely compatible version of the Berkeley UNIX C shell；增强功能包括命令行编辑、可编程补全及拼写纠正，并用 (+) 区分多数csh实现（特别是4.4BSD csh）没有的特性。扩展关系按此手册声明记录，不代表独立验证所有历史csh版本完全兼容，也不表示已接入网页执行。"
+  },
+  {
+    "from": "c",
+    "to": "c-shell",
+    "type": "influencedBy",
+    "label": "算术运算与控制语法的参照",
+    "source": "https://www.tuhs.org/cgi-bin/utree.pl?file=2BSD/doc/csh",
+    "sourceSha256": "66da20f0978f3ed5c554b612b1ce832fb8349ac27ce66dfd1a3c5c3824215853",
+    "evidence": "William Joy《An introduction to the C shell》，TUHS 2BSD原始文档。§3.5 Expressions明确说明采用C的算术运算及相同优先级；§3.7 Other control structures以C参照while和switch，并展示具体语法、说明breaksw与break区别，以及C式标签。2BSD csh.u的Expressions节进一步列出运算符和字符串比较差异。只表示这些语法设计输入，不代表C shell是C后继、严格超集或可执行C源码；解释器以C编写不能替代这条设计证据。"
+  },
+  {
+    "from": "flow-matic",
+    "to": "cobol",
+    "type": "influencedBy",
+    "label": "早期规格的思想与资料输入",
+    "source": "https://bitsavers.org/pdf/codasyl/COBOL_Report_Apr60.pdf",
+    "sourceSha256": "3f45f870ee8de1ff177282b7ffd900fc6b154e11a9ca72e25b3c7fea63483ed6",
+    "evidence": "CODASYL《COBOL — Initial Specifications》，1960年4月报告，Part I §3 Attribution，打印I-2/I-3（PDF13–14）：明确说ideas and information取自多种来源，特别列出FLOW-MATIC，并说明借用了1958年FLOW-MATIC Programming System资料；I-7（PDF18）记录作者授权。按委员会原始报告录为早期COBOL设计资料输入，不宣称所有版本超集、源码兼容或每个关键字唯一来自FLOW-MATIC。1959报告形成和1960批准是不同事件。"
+  }
+]

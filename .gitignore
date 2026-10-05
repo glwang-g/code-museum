@@ -1,1 +1,12 @@
-dist/
+/dist/
+/node_modules/
+/.build-*/
+.DS_Store
+
+*.sqlite3
+*.sqlite3-wal
+*.sqlite3-shm
+/deploy/*.env
+
+__pycache__/
+*.pyc

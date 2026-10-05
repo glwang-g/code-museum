@@ -1,0 +1,10 @@
+{
+  "source": "https://github.com/github-linguist/linguist/blob/76f88c6d3c22f8560d22d29854f24d9607f9edde/lib/linguist/languages.yml",
+  "commit": "76f88c6d3c22f8560d22d29854f24d9607f9edde",
+  "retrieved": "2026-09-25T08:47:52Z",
+  "sha256": "183243e30496ba53f5f8743b0e39c9f0e0bccc5a32639f7b541cc2285db0e043",
+  "license": "MIT",
+  "licenseFile": "data/raw/linguist-LICENSE",
+  "licenseSha256": "7717070c5a8c85440ff2312930bb30dd19002ab5bc235c9800042767f6f5242f",
+  "scope": "GitHub Linguist's file-type registry, not a census of historical programming languages. This current snapshot is a cross-check lead; PLDB also imports older Linguist fields, so the sources are not fully independent."
+}

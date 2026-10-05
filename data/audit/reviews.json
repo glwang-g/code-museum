@@ -1,0 +1,2873 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-04",
+  "method": "Manually reviewed public documentation and bibliography, with separate local execution evidence. Not an exhaustive manual verification of the whole PLDB snapshot.",
+  "reviews": [
+    {
+      "id": "python",
+      "status": "verified-language",
+      "kind": "programming",
+      "syntax": "documented",
+      "implementation": "documented",
+      "implementationName": "CPython",
+      "notes": "",
+      "nextStep": "固定实现版本并补充语法、错误处理和标准库用例；需要馆内运行时则另行接入。",
+      "sources": [
+        {
+          "role": "语法",
+          "url": "https://docs.python.org/3/reference/",
+          "checkedAt": "2026-09-24T07:32:50.821562+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "The Python Language Reference — Python 3.14.7 documentation",
+          "finalUrl": "https://docs.python.org/3/reference/",
+          "decodedBodySha256": "1c3a85901cff2b3b48dea8e8ed072c958cfe280bf6f3f21d97caf340c1ec7df3",
+          "excerpt": "This reference manual describes the syntax and core semantics of the language. It is terse, but attempts to be exact and complete. Elsewhere, the built-in object types and functions are described in Python built-ins reference . Standard library modules are described in The Python standard library . "
+        },
+        {
+          "role": "实现",
+          "url": "https://docs.python.org/3/using/cmdline.html",
+          "checkedAt": "2026-09-24T07:32:50.821869+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "1. Command line and environment — Python 3.14.7 documentation",
+          "finalUrl": "https://docs.python.org/3/using/cmdline.html",
+          "decodedBodySha256": "77f07703897edcda42b6171cdc3396e61cdc5f4364ce827f8cbfd4129e12c11a",
+          "excerpt": "The CPython interpreter scans the command line and the environment for various settings. CPython implementation detail: Other implementations’ command line schemes may differ. See Alternate Implementations for further resources. 1.1. Command line ¶ When invoking Python, you may specify any of these "
+        }
+      ]
+    },
+    {
+      "id": "c",
+      "status": "verified-language",
+      "kind": "programming",
+      "syntax": "documented",
+      "implementation": "documented",
+      "implementationName": "GCC / Clang",
+      "notes": "现代 C；具体标准版本依编译器选项。",
+      "nextStep": "固定实现版本并补充语法、错误处理和标准库用例；需要馆内运行时则另行接入。",
+      "sources": [
+        {
+          "role": "语法",
+          "url": "https://www.gnu.org/software/c-intro-and-ref/manual/html_node/index.html",
+          "checkedAt": "2026-09-24T07:32:50.821955+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "Top (GNU C Language Manual)",
+          "finalUrl": "https://www.gnu.org/software/c-intro-and-ref/manual/html_node/index.html",
+          "decodedBodySha256": "287482f3f6a54c4944a297a1d911172e4cc0f7ae32ff8b633fc580d82235d9ee",
+          "excerpt": "This manual explains the C language for use with the GNU Compiler Collection (GCC) on the GNU/Linux operating system and other systems. We refer to this dialect as GNU C. If you already know C, you can use this as a reference manual. If you understand basic concepts of programming but know nothing a"
+        },
+        {
+          "role": "实现",
+          "url": "https://clang.llvm.org/docs/UsersManual.html",
+          "checkedAt": "2026-09-24T07:32:50.822030+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "Clang Compiler User’s Manual - Clang",
+          "finalUrl": "https://clang.llvm.org/docs/UsersManual.html",
+          "decodedBodySha256": "6167d81d397567410d3100f068a30d587567c0acbfb70d2d65bbfc17686581cc",
+          "excerpt": "Clang is one component in a complete toolchain for C family languages. A separate document describes the other pieces necessary to assemble a complete toolchain . Clang is designed to support the C family of programming languages, which includes C , Objective-C , C++ , and Objective-C++ as well as m"
+        }
+      ]
+    },
+    {
+      "id": "cpp",
+      "status": "verified-language",
+      "kind": "programming",
+      "syntax": "documented",
+      "implementation": "documented",
+      "implementationName": "GCC / Clang",
+      "notes": "C++ 工作草案和编译器文档；具体标准版本需选择。",
+      "nextStep": "固定实现版本并补充语法、错误处理和标准库用例；需要馆内运行时则另行接入。",
+      "sources": [
+        {
+          "role": "语法",
+          "url": "https://eel.is/c++draft/lex",
+          "checkedAt": "2026-09-24T07:32:50.822095+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "[lex]",
+          "finalUrl": "https://eel.is/c++draft/lex",
+          "decodedBodySha256": "ad562266dc05bf70b48d03134846cab70c7108cbf1bd65c30ba6ee555a55e749",
+          "excerpt": "The precedence among the syntax rules of translation is specified by the following phases . ⁷ 1. An implementation shall support input files that are a sequence of UTF-8 code units (UTF-8 files) . It may also support an implementation-defined set of other kinds of input files, and, if so, the kind o"
+        },
+        {
+          "role": "实现",
+          "url": "https://clang.llvm.org/docs/UsersManual.html",
+          "checkedAt": "2026-09-24T07:32:50.822030+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "Clang Compiler User’s Manual - Clang",
+          "finalUrl": "https://clang.llvm.org/docs/UsersManual.html",
+          "decodedBodySha256": "6167d81d397567410d3100f068a30d587567c0acbfb70d2d65bbfc17686581cc",
+          "excerpt": "Clang is one component in a complete toolchain for C family languages. A separate document describes the other pieces necessary to assemble a complete toolchain . Clang is designed to support the C family of programming languages, which includes C , Objective-C , C++ , and Objective-C++ as well as m"
+        }
+      ]
+    },
+    {
+      "id": "javascript",
+      "status": "verified-language",
+      "kind": "programming",
+      "syntax": "documented",
+      "implementation": "documented",
+      "implementationName": "Node.js",
+      "notes": "ECMAScript 与 Node.js；浏览器 API 不等同于语言本身。 ECMAScript 在线规范为滚动草案；Node.js 实测只涉及基础循环。",
+      "nextStep": "固定实现版本并补充语法、错误处理和标准库用例；需要馆内运行时则另行接入。",
+      "sources": [
+        {
+          "role": "语法",
+          "url": "https://tc39.es/ecma262/multipage/ecmascript-language-lexical-grammar.html",
+          "checkedAt": "2026-09-24T07:32:50.822144+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "ECMAScript® 2027 Language Specification",
+          "finalUrl": "https://tc39.es/ecma262/multipage/ecmascript-language-lexical-grammar.html",
+          "decodedBodySha256": "85be30882e4462b28b7503b5f9a82f69510de64d8c9b70848dc82f5cf4e88532",
+          "excerpt": " Functions + 12 ECMAScript Language: Lexical Grammar 12.1 Unicode Format-Control Characters 12.2 White Space 12.3 Line Terminators 12.4 Comments 12.5 Hashbang Comments 12.6 Tokens + 12.7 Names and Keywords + 12.7.1 Identifier Names 12.7.1.1 SS: Early Errors 12.7.1.2 SS: IdentifierCodePoints 12.7.1.3"
+        },
+        {
+          "role": "实现",
+          "url": "https://nodejs.org/api/synopsis.html",
+          "checkedAt": "2026-09-24T07:32:50.822236+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "Usage and example | Node.js v26.10.0 Documentation",
+          "finalUrl": "https://nodejs.org/api/synopsis.html",
+          "decodedBodySha256": "5ac6928a02398c5a90ed967c969657e541defd051d6bdc9aa487dfaae3cdef2a",
+          "excerpt": "API C++ embedder API Child processes Cluster Command-line options Console Crypto Debugger Deprecated APIs Diagnostics Channel DNS Domain Environment Variables Errors Events File system FFI Globals HTTP HTTP/2 HTTPS Inspector Internationalization Iterable Streams API Modules: CommonJS modules Modules"
+        }
+      ]
+    },
+    {
+      "id": "typescript",
+      "status": "verified-language",
+      "kind": "programming",
+      "syntax": "documented",
+      "implementation": "documented",
+      "implementationName": "tsc",
+      "notes": "转译为 JavaScript，再由 JS 运行时执行。",
+      "nextStep": "固定实现版本并补充语法、错误处理和标准库用例；需要馆内运行时则另行接入。",
+      "sources": [
+        {
+          "role": "语法",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html",
+          "checkedAt": "2026-09-24T07:32:50.822541+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "TypeScript: Documentation - Everyday Types",
+          "finalUrl": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html",
+          "decodedBodySha256": "10aff10be54766f4e5c5b0436b834c497d03c2fe77b5a1586ddab22c764c27b8",
+          "excerpt": "To specify the type of an array like [1, 2, 3] , you can use the syntax number[] ; this syntax works for any type (e.g. string[] is an array of strings, and so on). You may also see this written as Array<number> , which means the same thing. We’ll learn more about the syntax T<U> when we cover gener"
+        },
+        {
+          "role": "实现",
+          "url": "https://www.typescriptlang.org/docs/handbook/typescript-tooling-in-5-minutes.html",
+          "checkedAt": "2026-09-24T07:32:51.266113+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "TypeScript: Documentation - TypeScript Tooling in 5 minutes",
+          "finalUrl": "https://www.typescriptlang.org/docs/handbook/typescript-tooling-in-5-minutes.html",
+          "decodedBodySha256": "ed044955ed7b5b4c25fcc814825ba92a7a8d51511267240a61ab5c4d78978036",
+          "excerpt": "does not include the TypeScript compiler, tsc . If you didn’t install TypeScript with Visual Studio, you can still download it . For npm users: shell > npm install -g typescript Building your first TypeScript file In your editor, type the following JavaScript code in greeter.ts : ts function greeter"
+        }
+      ]
+    },
+    {
+      "id": "java",
+      "status": "verified-language",
+      "kind": "programming",
+      "syntax": "documented",
+      "implementation": "documented",
+      "implementationName": "JDK / javac",
+      "notes": " 规范文档为 Java SE 25；本机小程序使用 JDK 21，未测试新版特性。",
+      "nextStep": "固定实现版本并补充语法、错误处理和标准库用例；需要馆内运行时则另行接入。",
+      "sources": [
+        {
+          "role": "语法",
+          "url": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-2.html",
+          "checkedAt": "2026-09-24T07:32:51.980430+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "Chapter 2. Grammars",
+          "finalUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-2.html",
+          "decodedBodySha256": "88f011be5e9d40039a379f0f3fd2f0bc43f6cb3df5c2ea6a1c3af09782cc2f63",
+          "excerpt": "This chapter describes the context-free grammars used in this specification to define the lexical and syntactic structure of a program. 2.1. Context-Free Grammars A context-free grammar consists of a number of productions . Each production has an abstract symbol called a nonterminal as its left-hand"
+        },
+        {
+          "role": "实现",
+          "url": "https://docs.oracle.com/en/java/javase/25/docs/specs/man/javac.html",
+          "checkedAt": "2026-09-24T07:32:52.002245+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "The javac Command",
+          "finalUrl": "https://docs.oracle.com/en/java/javase/25/docs/specs/man/javac.html",
+          "decodedBodySha256": "95641f9082f4111dc170d1d98dc496860d65248eea528e0d1184563caf9629d0",
+          "excerpt": "junction with either -source or --release . -encoding encoding Specifies character encoding used by source files, such as EUC-JP and UTF-8. If the -encoding option is not specified, then the platform default converter is used. -endorseddirs directories Overrides the location of the endorsed standard"
+        }
+      ]
+    },
+    {
+      "id": "csharp",
+      "status": "verified-language",
+      "kind": "programming",
+      "syntax": "documented",
+      "implementation": "documented",
+      "implementationName": ".NET SDK / Roslyn",
+      "notes": "",
+      "nextStep": "固定实现版本并补充语法、错误处理和标准库用例；需要馆内运行时则另行接入。",
+      "sources": [
+        {
+          "role": "语法",
+          "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/",
+          "checkedAt": "2026-09-24T07:32:52.047363+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "C# language reference - C# reference | Microsoft Learn",
+          "finalUrl": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/",
+          "decodedBodySha256": "d765e075dcfb62404001d2a9ab9100c94114c92e14ed4d917747666ee2222589",
+          "excerpt": "ference provides an informal reference to C# syntax and idioms for beginners and experienced C# and .NET developers. C# language reference Overview C# language strategy Reference C# keywords C# operators and expressions Configure language version C# language specification - C# 8 draft in progress Wh"
+        },
+        {
+          "role": "实现",
+          "url": "https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-run",
+          "checkedAt": "2026-09-24T07:32:52.694677+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "dotnet run command - .NET CLI | Microsoft Learn",
+          "finalUrl": "https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-run",
+          "decodedBodySha256": "04ae1e543ef330559733ab0bb48f3b5177f204cf9af034adab7b9e9b269cb44c",
+          "excerpt": "ocess. Explicit application arguments on the command line take precedence. For a Project profile, arguments supplied by the project also take precedence. environmentVariables Specifies environment variables for the launched process. Profile values override inherited and SDK-generated environment var"
+        }
+      ]
+    },
+    {
+      "id": "go",
+      "status": "verified-language",
+      "kind": "programming",
+      "syntax": "documented",
+      "implementation": "documented",
+      "implementationName": "Go toolchain",
+      "notes": " 本机为 Go 1.24.0；在线规范版本更新不代表该版本支持全部新增特性。",
+      "nextStep": "固定实现版本并补充语法、错误处理和标准库用例；需要馆内运行时则另行接入。",
+      "sources": [
+        {
+          "role": "语法",
+          "url": "https://go.dev/ref/spec",
+          "checkedAt": "2026-09-24T07:32:53.354889+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "The Go Programming Language Specification - The Go Programming Language",
+          "finalUrl": "https://go.dev/ref/spec",
+          "decodedBodySha256": "7a0e32461098566bd7f9ec16dfbef3e0e92ee2768c2106357d8b205395a36507",
+          "excerpt": "\" } // A struct corresponding to a TimeStamp protocol buffer. // The tag strings define the protocol buffer field numbers; // they follow the convention outlined by the reflect package. struct { microsec uint64 `protobuf:\"1\"` serverIP6 uint64 `protobuf:\"2\"` } A struct type T may not contain a field "
+        },
+        {
+          "role": "实现",
+          "url": "https://go.dev/doc/install",
+          "checkedAt": "2026-09-24T07:32:53.609454+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "Download and install - The Go Programming Language",
+          "finalUrl": "https://go.dev/doc/install",
+          "decodedBodySha256": "6a7ac4c8f33edcd599c2cae744e6b45bd366d4510c27ede93f450999ac5ec941",
+          "excerpt": "Download and install - The Go Programming Language Skip to Main Content Why Go arrow_drop_down Press Enter to activate/deactivate dropdown Case Studies Common problems companies solve with Go Use Cases Stories about how and why companies use Go Security How Go can help keep you secure by default Lea"
+        }
+      ]
+    },
+    {
+      "id": "rust",
+      "status": "verified-language",
+      "kind": "programming",
+      "syntax": "documented",
+      "implementation": "documented",
+      "implementationName": "rustc / Cargo",
+      "notes": "",
+      "nextStep": "固定实现版本并补充语法、错误处理和标准库用例；需要馆内运行时则另行接入。",
+      "sources": [
+        {
+          "role": "语法",
+          "url": "https://doc.rust-lang.org/reference/",
+          "checkedAt": "2026-09-24T07:32:54.200034+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "Introduction - The Rust Reference",
+          "finalUrl": "https://doc.rust-lang.org/reference/",
+          "decodedBodySha256": "c60e07b633178a504ff223e782b752d373030b801ee1b972fa1919db66fb7230",
+          "excerpt": "eing worked on, see the Unstable Book . Rust compilers, including rustc , will perform optimizations. The reference does not specify what optimizations are allowed or disallowed. Instead, think of the compiled program as a black box. You can only probe by running it, feeding it input and observing i"
+        },
+        {
+          "role": "实现",
+          "url": "https://doc.rust-lang.org/book/ch01-01-installation.html",
+          "checkedAt": "2026-09-24T07:32:54.819514+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "Installation - The Rust Programming Language",
+          "finalUrl": "https://doc.rust-lang.org/book/ch01-01-installation.html",
+          "decodedBodySha256": "abbab8f00254044a8a2d19855f49edf9cd7e34edeaa10abac2a7b13de9c83411",
+          "excerpt": "k as expected with the content of this book. Command Line Notation In this chapter and throughout the book, we’ll show some commands used in the terminal. Lines that you should enter in a terminal all start with $ . You don’t need to type the $ character; it’s the command line prompt shown to indica"
+        }
+      ]
+    },
+    {
+      "id": "kotlin",
+      "status": "verified-language",
+      "kind": "programming",
+      "syntax": "documented",
+      "implementation": "documented",
+      "implementationName": "Kotlin compiler",
+      "notes": "JVM、JS 与 Native 后端需分别选择。 官方 FAQ 明确列出 Java、C#、JavaScript、Scala、Groovy 的设计启发；这是设计影响，不表示源码继承或超集。",
+      "nextStep": "固定实现版本并补充语法、错误处理和标准库用例；需要馆内运行时则另行接入。",
+      "sources": [
+        {
+          "role": "语法",
+          "url": "https://kotlinlang.org/docs/basic-syntax.html",
+          "checkedAt": "2026-09-24T07:32:54.946980+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "Basic syntax overview | Kotlin Documentation",
+          "finalUrl": "https://kotlinlang.org/docs/basic-syntax.html",
+          "decodedBodySha256": "467b8712dc36c47e3d6446f14e3d8ae8a0c0a5f3c45fd8f25f226aefc0a5af2c",
+          "excerpt": "for information on the documentation comment syntax. String templates fun main() { //sampleStart var a = 1 // simple name in template: val s1 = \"a is $a\" a = 2 // arbitrary expression in template: val s2 = \"${s1.replace(\"is\", \"was\")}, but now is $a\" //sampleEnd println(s2) } See String templates for"
+        },
+        {
+          "role": "实现",
+          "url": "https://kotlinlang.org/docs/command-line.html",
+          "checkedAt": "2026-09-24T07:32:54.962372+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "Kotlin command-line compiler | Kotlin Documentation",
+          "finalUrl": "https://kotlinlang.org/docs/command-line.html",
+          "decodedBodySha256": "deb4b1959422dd9bc1a4aa5ecce6290521de752d42b83aa783213bb5f42fd790",
+          "excerpt": " started with Kotlin in an IDE . Install the compiler Manual install To install the Kotlin compiler manually: Download the latest version ( kotlin-compiler-2.4.20.zip ) from GitHub Releases . Unzip the standalone compiler into a directory and optionally add the kotlinc/bin directory to the system pa"
+        },
+        {
+          "role": "设计关系",
+          "url": "https://kotlinlang.org/docs/faq.html",
+          "finalUrl": "https://kotlinlang.org/docs/faq.html",
+          "checkedAt": "2026-10-03T15:20:24.009764+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "FAQ | Kotlin Documentation",
+          "decodedBodySha256": "c52ad62286ecc5d1647999ad445804aea9eecdd847e23b53ed1548700e6a4593",
+          "excerpt": "Kotlin is inspired by existing languages such as Java, C#, JavaScript, Scala, and Groovy."
+        }
+      ]
+    },
+    {
+      "id": "d",
+      "status": "verified-language",
+      "kind": "programming",
+      "syntax": "documented",
+      "implementation": "documented",
+      "implementationName": "DMD",
+      "notes": "",
+      "nextStep": "固定实现版本并补充语法、错误处理和标准库用例；需要馆内运行时则另行接入。",
+      "sources": [
+        {
+          "role": "语法",
+          "url": "https://dlang.org/spec/lex.html",
+          "checkedAt": "2026-09-24T07:32:55.006390+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "Lexical - D Programming Language",
+          "finalUrl": "https://dlang.org/spec/lex.html",
+          "decodedBodySha256": "3134083bfc7cab82aa8899fc256be8ed4336378fe1a3b1f9397ac321124b68e8",
+          "excerpt": "d strings can be defined using either of two syntaxes. In the first form, they are enclosed between r\" and \" . All characters between the r\" and \" are part of the string. There are no escape sequences inside wysiwyg strings. r\"I am Oz\" r\"c:\\games\\Sudoku.exe\" r\"ab\\n\" // string is 4 characters, // 'a'"
+        },
+        {
+          "role": "实现",
+          "url": "https://dlang.org/dmd.html",
+          "checkedAt": "2026-09-24T07:32:55.021614+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "DMD Compiler for Windows - D Programming Language",
+          "finalUrl": "https://dlang.org/dmd-windows.html",
+          "decodedBodySha256": "2e804b7a0a840b57ab7591c9586e04d87642277f68b93692f17081445bcd33fd",
+          "excerpt": " the C preprocessor used by the associated C compiler is used to preprocess ImportC files. -D Generate documentation from source. Note: mind the security considerations . -Dd directory Write documentation file to directory . -op can be used if the original package hierarchy should be retained -Df fi"
+        }
+      ]
+    },
+    {
+      "id": "nim",
+      "status": "verified-language",
+      "kind": "programming",
+      "syntax": "documented",
+      "implementation": "documented",
+      "implementationName": "Nim compiler",
+      "notes": "",
+      "nextStep": "固定实现版本并补充语法、错误处理和标准库用例；需要馆内运行时则另行接入。",
+      "sources": [
+        {
+          "role": "语法",
+          "url": "https://nim-lang.org/docs/manual.html",
+          "checkedAt": "2026-09-24T07:32:55.036451+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "Nim Manual",
+          "finalUrl": "https://nim-lang.org/docs/manual.html",
+          "decodedBodySha256": "18d7b29ccb4e68393f3ead6e11ea7cc3232e7d7d75dd39108948ec32e2ea5155",
+          "excerpt": " as it is typical for most others imperative programming languages: var s = \"\" proc p ( arg : int ) : int = s . add $ arg result = arg discard p ( p ( 1 ) + p ( 2 ) ) doAssert s == \"123\" Assignments are not special, the left-hand-side expression is evaluated before the right-hand side: var v = 0 pro"
+        },
+        {
+          "role": "实现",
+          "url": "https://nim-lang.org/docs/nimc.html",
+          "checkedAt": "2026-09-24T07:32:55.175291+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "Nim Compiler User Guide",
+          "finalUrl": "https://nim-lang.org/docs/nimc.html",
+          "decodedBodySha256": "7f5f5142f4b9b6748bfb07b789bad67567346ba445f70fa397c19a2f983a910a",
+          "excerpt": "ul with: | jq ) check checks the project for syntax and semantics (can be combined with --defusages) Runtime checks (see -x): --objChecks:on|off turn obj conversion checks on|off --fieldChecks:on|off turn case variant field checks on|off --rangeChecks:on|off turn range checks on|off --boundChecks:on"
+        }
+      ]
+    },
+    {
+      "id": "ruby",
+      "status": "verified-language",
+      "kind": "programming",
+      "syntax": "documented",
+      "implementation": "documented",
+      "implementationName": "CRuby",
+      "notes": "",
+      "nextStep": "固定实现版本并补充语法、错误处理和标准库用例；需要馆内运行时则另行接入。",
+      "sources": [
+        {
+          "role": "语法",
+          "url": "https://docs.ruby-lang.org/en/master/syntax_rdoc.html",
+          "checkedAt": "2026-09-24T07:32:57.234157+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "syntax - Documentation for Ruby 4.1",
+          "finalUrl": "https://docs.ruby-lang.org/en/master/syntax_rdoc.html",
+          "decodedBodySha256": "42ff2aa2140ed7e142b54cf185ae8ad78e6f8044994bb93435a28feb509087a3",
+          "excerpt": "The Ruby syntax is large and is split up into the following sections: Code Layout Breaking code in lines Literals Numbers, Strings, Arrays, Hashes, etc. Assignment Assignment and variables Control Expressions if , unless , while , until , for , break , next , redo Pattern matching Structural pattern"
+        },
+        {
+          "role": "实现",
+          "url": "https://www.ruby-lang.org/en/documentation/installation/",
+          "checkedAt": "2026-09-24T07:32:57.558386+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "Installing Ruby | Ruby",
+          "finalUrl": "https://www.ruby-lang.org/en/documentation/installation/",
+          "decodedBodySha256": "4b81c5596e074dcdd5ea0c167535c99cfc1f8cee4bdf1d9bebb829634f49177d",
+          "excerpt": "installation methods available on that system. Here are available installation methods: Package Management Systems Debian, Ubuntu CentOS, Fedora, RHEL Snap Gentoo Arch Linux macOS FreeBSD OpenBSD OpenIndiana Windows Package Manager Chocolatey package manager for Windows Other Distributions Installer"
+        }
+      ]
+    },
+    {
+      "id": "perl",
+      "status": "verified-language",
+      "kind": "programming",
+      "syntax": "documented",
+      "implementation": "documented",
+      "implementationName": "Perl 5",
+      "notes": "Perl 5；Raku 应另列。",
+      "nextStep": "固定实现版本并补充语法、错误处理和标准库用例；需要馆内运行时则另行接入。",
+      "sources": [
+        {
+          "role": "语法",
+          "url": "https://perldoc.perl.org/perlsyn",
+          "checkedAt": "2026-09-24T07:32:58.146848+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "perlsyn - Perl syntax: declarations, statements, comments - Perldoc Browser",
+          "finalUrl": "https://perldoc.perl.org/perlsyn",
+          "decodedBodySha256": "2c19930b544e479ef13c9940e00c7a5e96926c9018e0e53a67b8c6165c7714c9",
+          "excerpt": "A Perl program consists of a sequence of declarations and statements which run from the top to the bottom. Loops, subroutines, and other control structures allow you to jump around within the code. Perl is a free-form language: you can format and indent it however you like. Whitespace serves mostly "
+        },
+        {
+          "role": "实现",
+          "url": "https://perldoc.perl.org/5.40.0/perlrun",
+          "checkedAt": "2026-09-24T07:36:42.514217+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "perlrun - how to execute the Perl interpreter - Perldoc Browser",
+          "finalUrl": "https://perldoc.perl.org/5.40.0/perlrun",
+          "decodedBodySha256": "bc2bd5a96499e41161904b1354895c784919710a15cdf091079ae38fe900c9cd",
+          "excerpt": "how to execute the Perl interpreter - Perldoc Browser Perldoc Browser 5.40.0 Latest 5.44.0 5.42.3 5.42.2 5.42.1 5.42.0 5.40.5 5.40.4 5.40.3 5.40.2 5.40.1 5.40.0 5.38.5 5.38.4 5.38.3 5.38.2 5.38.1 5.38.0 5.36.3 5.36.2 5.36.1 5.36.0 5.34.3 5.34.2 5.34.1 5.34.0 5.32.1 5.32.0 5.30.3 5.30.2 5.30.1 5.30.0"
+        }
+      ]
+    },
+    {
+      "id": "php",
+      "status": "verified-language",
+      "kind": "programming",
+      "syntax": "documented",
+      "implementation": "documented",
+      "implementationName": "PHP interpreter",
+      "notes": "",
+      "nextStep": "固定实现版本并补充语法、错误处理和标准库用例；需要馆内运行时则另行接入。",
+      "sources": [
+        {
+          "role": "语法",
+          "url": "https://www.php.net/manual/en/language.basic-syntax.php",
+          "checkedAt": "2026-09-24T07:32:59.467883+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "PHP: Basic syntax - Manual",
+          "finalUrl": "https://www.php.net/manual/en/language.basic-syntax.php",
+          "decodedBodySha256": "6ba865585a2cb02df3d5cf244b0fca7715ceaaf18ec9f30baf731ed6468a70d9",
+          "excerpt": "tes Context options and parameters Supported Protocols and Wrappers Security Introduction General considerations Installed as CGI binary Installed as an Apache module Session Security Filesystem Security Database Security Error Reporting User Submitted Data Hiding PHP Keeping Current Features HTTP a"
+        },
+        {
+          "role": "实现",
+          "url": "https://www.php.net/manual/en/features.commandline.php",
+          "checkedAt": "2026-09-24T07:32:59.494492+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "PHP: Command line usage - Manual",
+          "finalUrl": "https://www.php.net/manual/en/features.commandline.php",
+          "decodedBodySha256": "76c5e9e1e96ac04bd1cecdac9b98d08a21b7e5a6cd2e70452480fc6ccf0069f2",
+          "excerpt": " dot edu ¶ 14 years ago You can easily parse command line arguments into the $_GET variable by using the parse_str() function. <?php parse_str ( implode ( '&' , array_slice ( $argv , 1 )), $_GET ); ?> It behaves exactly like you'd expect with cgi-php. $ php -f somefile.php a=1 b[]=2 b[]=3 This will "
+        }
+      ]
+    },
+    {
+      "id": "lua",
+      "status": "verified-language",
+      "kind": "programming",
+      "syntax": "documented",
+      "implementation": "documented",
+      "implementationName": "Lua 5.4",
+      "notes": " 官方语法与解释器文档已读；本机 lua 因 Bad CPU type in executable 未能运行。 作者《The Evolution of Lua》已核具体设计来源；Modula 与 Modula-2 不自动等同。",
+      "nextStep": "固定实现版本并补充语法、错误处理和标准库用例；需要馆内运行时则另行接入。",
+      "sources": [
+        {
+          "role": "语法",
+          "url": "https://www.lua.org/manual/5.4/manual.html",
+          "checkedAt": "2026-09-24T07:32:59.853319+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "Lua 5.4 Reference Manual",
+          "finalUrl": "https://www.lua.org/manual/5.4/manual.html",
+          "decodedBodySha256": "139df56e1fad429aa336fff43392e929bea3aa32372ca3026c45156d5ffdae86",
+          "excerpt": "3.3 – Statements Lua supports an almost conventional set of statements, similar to those in other conventional languages. This set includes blocks, assignments, control structures, function calls, and variable declarations. 3.3.1 – Blocks A block is a list of statements, which are executed sequentia"
+        },
+        {
+          "role": "实现",
+          "url": "https://www.lua.org/manual/5.4/manual.html#7",
+          "checkedAt": "2026-09-24T07:33:00.161575+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "Lua 5.4 Reference Manual",
+          "finalUrl": "https://www.lua.org/manual/5.4/manual.html#7",
+          "decodedBodySha256": "139df56e1fad429aa336fff43392e929bea3aa32372ca3026c45156d5ffdae86",
+          "excerpt": "standalone interpreter includes all standard libraries. Its usage is: lua [options] [script [args]] The options are: -e stat : execute string stat ; -i : enter interactive mode after running script ; -l mod : \"require\" mod and assign the result to global mod ; -l g=mod : \"require\" mod and assign the"
+        },
+        {
+          "role": "设计关系",
+          "url": "https://www.lua.org/doc/hopl.pdf",
+          "finalUrl": "https://www.lua.org/doc/hopl.pdf",
+          "checkedAt": "2026-10-03T15:20:27.117462+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "The Evolution of Lua — Roberto Ierusalimschy, Luiz Henrique de Figueiredo, Waldemar Celes (HOPL III, 2007)",
+          "decodedBodySha256": "d3a2c0cf69503e85e40667b3114e3005e50df6f61eeec67b3069dcdc8d4185fe",
+          "hashScope": "PDF response bytes after HTTP content decoding; no text encoding conversion",
+          "excerpt": "PDF p.2: The influence of Scheme on Lua has gradually increased during Lua’s evolution: initially, Scheme was just a language in the background, but later it became increasingly important as a source of inspiration, especially with the introduction of anonymous functions and full lexical scoping. PDF p.5: We quickly settled on a small set of control structures, with syntax mostly borrowed from Modula (while, if, and repeat until). From CLU we took multiple assignment and multiple returns from function calls. We regarded multiple returns as a simpler alternative to reference parameters used in Pascal and Modula and to in-out parameters used in Ada; we also wanted to avoid explicit pointers (used in C). From C++ we took the neat idea of allowing a local variable to be declared only where we need it. From SNOBOL and Awk we took associative arrays, which we called tables;",
+          "pagesReviewed": [
+            2,
+            5
+          ],
+          "extractionMethod": "macOS PDFKit text extraction and visual inspection of both relevant pages"
+        }
+      ]
+    },
+    {
+      "id": "julia",
+      "status": "verified-language",
+      "kind": "programming",
+      "syntax": "documented",
+      "implementation": "documented",
+      "implementationName": "Julia",
+      "notes": "",
+      "nextStep": "固定实现版本并补充语法、错误处理和标准库用例；需要馆内运行时则另行接入。",
+      "sources": [
+        {
+          "role": "语法",
+          "url": "https://docs.julialang.org/en/v1/manual/variables/",
+          "checkedAt": "2026-09-24T07:33:00.247776+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "Variables · The Julia Language",
+          "finalUrl": "https://docs.julialang.org/en/v1/manual/variables/",
+          "decodedBodySha256": "d1184fb4c4421837e90de8a00b98ce44e656110a0f416da937db37bf135b3c1a",
+          "excerpt": "Variables · The Julia Language Search docs (Ctrl + /) Julia Documentation Manual Getting Started Installation Variables Allowed Variable Names Assignment expressions and assignment versus mutation Stylistic Conventions Integers and Floating-Point Numbers Mathematical Operations and Elementary Functi"
+        },
+        {
+          "role": "实现",
+          "url": "https://docs.julialang.org/en/v1/manual/getting-started/",
+          "checkedAt": "2026-09-24T07:33:00.791411+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "Getting Started · The Julia Language",
+          "finalUrl": "https://docs.julialang.org/en/v1/manual/getting-started/",
+          "decodedBodySha256": "54369b53aa7bd21c6058f703915f043ec2dfeaa8e65ec0a3cf6596756515b3bd",
+          "excerpt": "To run code in a file non-interactively, you can give it as the first argument to the julia command: $ julia script.jl You can pass additional arguments to Julia, and to your program script.jl . A detailed list of all the available options can be found under Command-line Interface . Resources A cura"
+        }
+      ]
+    },
+    {
+      "id": "r",
+      "status": "verified-language",
+      "kind": "programming",
+      "syntax": "documented",
+      "implementation": "documented",
+      "implementationName": "R",
+      "notes": "",
+      "nextStep": "固定实现版本并补充语法、错误处理和标准库用例；需要馆内运行时则另行接入。",
+      "sources": [
+        {
+          "role": "语法",
+          "url": "https://cran.r-project.org/doc/manuals/r-release/R-lang.html",
+          "checkedAt": "2026-09-24T07:33:01.024629+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "The R Language Definition",
+          "finalUrl": "https://cran.r-project.org/doc/manuals/r-release/R-lang.html",
+          "decodedBodySha256": "9ec1914d29065400b8530d4f34a2c45ed7498136afc5ef872e98d85760f5b66f",
+          "excerpt": "The R Language Definition Next: Introduction , Up: (dir) [ Contents ] [ Index ] The R Language Definition ¶ This is an introduction to the R language, explaining evaluation, parsing, object oriented programming, computing on the language, and so forth. This manual is for R, version 4.6.1 (2026-06-24"
+        },
+        {
+          "role": "实现",
+          "url": "https://cran.r-project.org/doc/manuals/r-release/R-intro.html",
+          "checkedAt": "2026-09-24T07:33:01.277829+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "An Introduction to R",
+          "finalUrl": "https://cran.r-project.org/doc/manuals/r-release/R-intro.html",
+          "decodedBodySha256": "bd38e34e0335d2c6b9e3a0d9cff8fb2ffeb28d80f9f69b03d8ad25bd2650d7fb",
+          "excerpt": "R CMD BATCH foo.R . If you want to run this in the background or as a batch job use OS-specific facilities to do so: for example in most shells on Unix-alike OSes R CMD BATCH foo.R & runs a background job. You can pass parameters to scripts via additional arguments on the command line: for example ("
+        }
+      ]
+    },
+    {
+      "id": "octave",
+      "status": "verified-language",
+      "kind": "programming",
+      "syntax": "documented",
+      "implementation": "documented",
+      "implementationName": "GNU Octave",
+      "notes": "GNU Octave；与 MATLAB 存在兼容范围和差异。",
+      "nextStep": "固定实现版本并补充语法、错误处理和标准库用例；需要馆内运行时则另行接入。",
+      "sources": [
+        {
+          "role": "语法",
+          "url": "https://docs.octave.org/latest/Statements.html",
+          "checkedAt": "2026-09-24T07:33:01.280189+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "Statements (GNU Octave (version 11.1.0))",
+          "finalUrl": "https://docs.octave.org/latest/Statements.html",
+          "decodedBodySha256": "2141adcbde72a597289f7530ea62d426b453e8d1daad9cd9ae0dc26fe6a80cbb",
+          "excerpt": "Statements (GNU Octave (version 11.1.0)) Next: Functions and Scripts , Previous: Evaluation [ Contents ][ Index ] 10 Statements ¶ Statements may be a simple constant expression or a complicated list of nested loops and conditional statements. Control statements such as if , while , and so on control"
+        },
+        {
+          "role": "实现",
+          "url": "https://docs.octave.org/latest/Running-Octave.html",
+          "checkedAt": "2026-09-24T07:33:01.619765+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "Running Octave (GNU Octave (version 11.1.0))",
+          "finalUrl": "https://docs.octave.org/latest/Running-Octave.html",
+          "decodedBodySha256": "9255b397aced7316ee0bbbfb5d1679f2603e127b6fbba7e2d16f456a75577f0a",
+          "excerpt": "with the graphical user interface (GUI) or a command line interface (CLI). You can also typically find Octave in the \"Start Menu\" or equivalent of your computer. You can also type octave in a command shell; as long as you have Octave in your path, it will start. If you start Octave with the GUI, the"
+        }
+      ]
+    },
+    {
+      "id": "fortran",
+      "status": "verified-language",
+      "kind": "programming",
+      "syntax": "documented",
+      "implementation": "documented",
+      "implementationName": "GNU Fortran",
+      "notes": "现代 Fortran 方言；不代表 1957 年初版已复现。",
+      "nextStep": "固定实现版本并补充语法、错误处理和标准库用例；需要馆内运行时则另行接入。",
+      "sources": [
+        {
+          "role": "语法",
+          "url": "https://gcc.gnu.org/onlinedocs/gfortran/Fortran-Dialect-Options.html",
+          "checkedAt": "2026-09-24T07:33:01.766445+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "Fortran Dialect Options (The GNU Fortran Compiler)",
+          "finalUrl": "https://gcc.gnu.org/onlinedocs/gfortran/Fortran-Dialect-Options.html",
+          "decodedBodySha256": "42ed7b871a023a2c3826d84c37d24c29daaf044f9f073acf3a0185752cbbb75b",
+          "excerpt": "res that mimic the default behavior of older compilers (such as DEC). These features are nonstandard and should be avoided at all costs. For details on GNU Fortran’s implementation of these extensions see the full documentation. Other flags enabled by this switch are: -fdollar-ok -fcray-pointer -fde"
+        },
+        {
+          "role": "实现",
+          "url": "https://gcc.gnu.org/onlinedocs/gfortran/",
+          "checkedAt": "2026-09-24T07:33:02.829360+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "Top (The GNU Fortran Compiler)",
+          "finalUrl": "https://gcc.gnu.org/onlinedocs/gfortran/",
+          "decodedBodySha256": "ccf6c85accf7cf4d27b72c06bcc41ebae7dcc5d4f187208850de2126046f0718",
+          "excerpt": "expressions 5.2.3 Alternate complex function syntax 5.2.4 Volatile COMMON blocks 5.2.5 OPEN( ... NAME=) 5.2.6 Q edit descriptor 6 Mixed-Language Programming 6.1 Interoperability with C 6.1.1 Intrinsic Types 6.1.2 Derived Types and struct 6.1.3 Interoperable Global Variables 6.1.4 Interoperable Subro"
+        }
+      ]
+    },
+    {
+      "id": "cobol",
+      "status": "verified-language",
+      "kind": "programming",
+      "syntax": "documented",
+      "implementation": "documented",
+      "implementationName": "GnuCOBOL",
+      "notes": "GnuCOBOL 支持的方言，不等同于所有历史版本。 1960年初始规格报告明确列出FLOW-MATIC、IBM Commercial Translator和AIMACO的资料/思想输入；本次先核实FLOW-MATIC端点及历史语法实现，另外两个端点继续独立核对。1959年报告形成与1960年批准分开记录；历史资料输入不代表现代GnuCOBOL方言是FLOW-MATIC超集或源码兼容。",
+      "nextStep": "固定实现版本并补充语法、错误处理和标准库用例；需要馆内运行时则另行接入。",
+      "sources": [
+        {
+          "role": "语法与实现",
+          "url": "https://gnucobol.sourceforge.io/doc/gnucobol.html",
+          "checkedAt": "2026-09-24T07:33:02.931911+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "GnuCOBOL Manual",
+          "finalUrl": "https://gnucobol.sourceforge.io/doc/gnucobol.html",
+          "decodedBodySha256": "5ee0ed8d499b542958e550b9ef67986a79fde60997724a7ee545097bb0a81661",
+          "excerpt": "of code size and execution speed. See your C compiler documentation, for example man gcc for details. -O2 Optimize even more. -Os Optimize for size. Optimizer will favour code size over execution speed. -fnotrunc Do not truncate binary fields according to PICTURE. 2.1.8 Miscellaneous -ext <extension"
+        },
+        {
+          "url": "https://bitsavers.org/pdf/codasyl/COBOL_Report_Apr60.pdf",
+          "finalUrl": "https://bitsavers.org/pdf/codasyl/COBOL_Report_Apr60.pdf",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-04T13:25:10.504054+00:00",
+          "decodedBodySha256": "3f45f870ee8de1ff177282b7ffd900fc6b154e11a9ca72e25b3c7fea63483ed6",
+          "role": "历史原文",
+          "title": "CODASYL — COBOL Initial Specifications, April 1960 report",
+          "reviewed": true,
+          "excerpt": "Title/Foreword (PDF3–4) distinguish the December 17, 1959 committee report from January 7–8, 1960 acceptance. Part I §3 Attribution, printed I-2/I-3 (PDF13–14), explicitly identifies FLOW-MATIC, IBM Commercial Translator and AIMACO as sources of ideas and information; says material was taken from the 1958 FLOW-MATIC Programming System and 1959 IBM Commercial Translator publications. Printed I-7 (PDF18) records authorization. This supports design/documentation input to early COBOL, not strict superset, source compatibility or a specific exclusive origin for each syntax feature. COMTRAN/AIMACO endpoints still require independent identity evidence; these pages do not substantiate FACT influence.",
+          "hashScope": "SHA-256 of complete original scanned PDF response bytes; stated pages rendered and visually read. No OCR text used as authority."
+        }
+      ]
+    },
+    {
+      "id": "pascal",
+      "status": "verified-language",
+      "kind": "programming",
+      "syntax": "documented",
+      "implementation": "documented",
+      "implementationName": "Free Pascal",
+      "notes": "Free Pascal 的语言模式；历史 Pascal 版本需另核。 2026-10-04 核对 Wirth 作者回顾：Pascal 的引用参数是对 ALGOL 传名参数及其开销的设计回应；这不表示源码兼容或严格超集。",
+      "nextStep": "固定实现版本并补充语法、错误处理和标准库用例；需要馆内运行时则另行接入。",
+      "sources": [
+        {
+          "role": "语法",
+          "url": "https://www.freepascal.org/docs-html/ref/ref.html",
+          "checkedAt": "2026-09-24T07:33:03.365433+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "Free Pascal\nReference guide",
+          "finalUrl": "https://www.freepascal.org/docs-html/ref/ref.html",
+          "decodedBodySha256": "72b7716fb74f7b6956db9b723795d6b875478b7b3ec0b53566789aab524ff08a",
+          "excerpt": " restrictions 8.5 Delphi compatibility 8.5.1 Syntax elements 8.5.2 Record type restrictions 8.5.3 Type overloads 8.5.4 Name space considerations 8.6 Type compatibility 8.7 Using the default intrinsic 8.8 A word about scope 8.9 Operator overloading and generics 9 Extended records 9.1 Definition 9.2 E"
+        },
+        {
+          "role": "实现",
+          "url": "https://www.freepascal.org/docs-html/user/user.html",
+          "checkedAt": "2026-09-24T07:33:04.662206+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "Free Pascal\nUser’s Guide",
+          "finalUrl": "https://www.freepascal.org/docs-html/user/user.html",
+          "decodedBodySha256": "0e59c5a6446172820a5fcfd7319c8f3818855be585fd30dc165fecb43ee3aef2",
+          "excerpt": "n steps 2.4 Before compiling 2.5 Testing the compiler 3 Compiler usage 3.1 File searching 3.1.1 Command line files 3.1.2 Unit files 3.1.3 Include files 3.1.4 Object files 3.1.5 Configuration file 3.1.6 About long filenames 3.2 Compiling a program 3.3 Compiling a unit 3.4 Units, libraries and smartli"
+        },
+        {
+          "url": "https://people.inf.ethz.ch/wirth/Articles/GoodIdeas.pdf",
+          "finalUrl": "https://people.inf.ethz.ch/wirth/Articles/GoodIdeas.pdf",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-04T01:15:52.885746+00:00",
+          "decodedBodySha256": "ac9c0857a1d39ee73fd8728be076ca36a5f19b3346d7b458ee6f6311648374c0",
+          "hashScope": "SHA-256 of complete PDF response bytes.",
+          "role": "设计关系",
+          "reviewed": true,
+          "title": "Niklaus Wirth — Good Ideas, Through the Looking Glass (Computer, January 2006)",
+          "excerpt": "PDF p. 8 / printed p. 63, “Algol’s name parameter”: “We could simply drop the name parameter from the language. However, this measure would be too drastic and therefore unacceptable. It would, for example, preclude assignments to parameters to pass results back to the caller. This suggestion, however, led to the replacement of the name parameter by the reference parameter in later languages such as Algol W, Pascal, and Ada.” This passage describes a specific parameter-design response, not source compatibility or a strict successor declaration."
+        }
+      ]
+    },
+    {
+      "id": "haskell",
+      "status": "verified-language",
+      "kind": "programming",
+      "syntax": "documented",
+      "implementation": "documented",
+      "implementationName": "GHC",
+      "notes": "Haskell 2010 与 GHC 扩展有区别。",
+      "nextStep": "固定实现版本并补充语法、错误处理和标准库用例；需要馆内运行时则另行接入。",
+      "sources": [
+        {
+          "role": "语法",
+          "url": "https://www.haskell.org/onlinereport/haskell2010/haskellch2.html",
+          "checkedAt": "2026-09-24T07:33:04.669678+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "2 Lexical Structure",
+          "finalUrl": "https://www.haskell.org/onlinereport/haskell2010/haskellch2.html",
+          "decodedBodySha256": "e49e716155985f4cbbcdd1adc71e29cbd8129c00fa280a35de45e989611a0258",
+          "excerpt": "nificance. Nested comments are also used for compiler pragmas, as explained in Chapter 12 . If some code is commented out using a nested comment, then any occurrence of {- or -} within a string or within an end-of-line comment in that code will interfere with the nested comments. 2.4 Identifiers and"
+        },
+        {
+          "role": "实现",
+          "url": "https://downloads.haskell.org/ghc/latest/docs/users_guide/ghci.html",
+          "checkedAt": "2026-09-24T07:33:05.296465+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "3. Using GHCi — Glasgow Haskell Compiler 9.14.1 User's Guide",
+          "finalUrl": "https://downloads.haskell.org/ghc/latest/docs/users_guide/ghci.html",
+          "decodedBodySha256": "4b672a9c70dddd164accbdd0fd6334a03e43500446a429252e1a155a26c3c98a",
+          "excerpt": "hem in future expressions or statements. The syntax of a statement accepted at the GHCi prompt is exactly the same as the syntax of a statement in a Haskell do expression. However, there’s no monad overloading here: statements typed at the prompt must be in the IO monad. ghci> x <- return 42 ghci> p"
+        }
+      ]
+    },
+    {
+      "id": "common-lisp",
+      "status": "verified-language",
+      "kind": "programming",
+      "syntax": "documented",
+      "implementation": "documented",
+      "implementationName": "SBCL",
+      "notes": "ANSI Common Lisp；不代替所有早期 Lisp 方言。",
+      "nextStep": "固定实现版本并补充语法、错误处理和标准库用例；需要馆内运行时则另行接入。",
+      "sources": [
+        {
+          "role": "语法",
+          "url": "https://www.lispworks.com/documentation/HyperSpec/Body/02_a.htm",
+          "checkedAt": "2026-09-24T07:33:05.796283+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "CLHS: Section 2.1",
+          "finalUrl": "https://www.lispworks.com/documentation/HyperSpec/Body/02_a.htm",
+          "decodedBodySha256": "905d5285c3e28ca358b729c5bd98e7d6fbcc5aa86b9172a9021809c33286757b",
+          "excerpt": "constructs that object , and returns it. The syntax described by this chapter is called the standard syntax . Operations are provided by Common Lisp so that various aspects of the syntax information represented by a readtable can be modified under program control; see Section 23 (Reader) . Except as"
+        },
+        {
+          "role": "实现",
+          "url": "https://www.sbcl.org/manual/",
+          "checkedAt": "2026-09-24T07:33:05.931567+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "SBCL 2.6.8 User Manual",
+          "finalUrl": "https://www.sbcl.org/manual/",
+          "decodedBodySha256": "ed78dd4e14b51363453f4a22facd3d7627dd6256b7f855bd45049fcddbdeadfe",
+          "excerpt": "agnostic Severity ¶ There are four levels of compiler diagnostic severity: error warning style warning note The first three levels correspond to condition classes which are defined in the ANSI standard for Common Lisp and which have special significance to the compile and compile-file functions. The"
+        }
+      ]
+    },
+    {
+      "id": "racket",
+      "status": "verified-language",
+      "kind": "programming",
+      "syntax": "documented",
+      "implementation": "documented",
+      "implementationName": "Racket",
+      "notes": "",
+      "nextStep": "固定实现版本并补充语法、错误处理和标准库用例；需要馆内运行时则另行接入。",
+      "sources": [
+        {
+          "role": "语法",
+          "url": "https://docs.racket-lang.org/guide/syntax-overview.html",
+          "checkedAt": "2026-09-24T07:33:05.931987+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "2.2 Simple Definitions and Expressions",
+          "finalUrl": "https://docs.racket-lang.org/guide/syntax-overview.html",
+          "decodedBodySha256": "1cd117d7fc850c522617573ef5e7d1ad05c558fb28805d24e97a6ea6da6e472a",
+          "excerpt": "Racket’s syntax for identifiers is especially liberal. Excluding the special characters Identifiers and Binding (later in this guide) explains more about identifiers. ( ) [ ] { } \" , ' ` ; # | \\ and except for the sequences of characters that make number constants, almost any sequence of non-whitesp"
+        },
+        {
+          "role": "实现",
+          "url": "https://docs.racket-lang.org/guide/intro.html",
+          "checkedAt": "2026-09-24T07:33:06.447379+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "1 Welcome to Racket",
+          "finalUrl": "https://docs.racket-lang.org/guide/intro.html",
+          "decodedBodySha256": "f222600391909892b5ab69d640b269fa55d4cf94e3c993f875a6399a4b1691f4",
+          "excerpt": "Racket’s main tools are racket , the core compiler, interpreter, and run-time system; DrRacket , the programming environment; and raco , a command-line tool for executing Ra cket co mmands that install packages, build libraries, and more. Most likely, you’ll want to explore the Racket language using"
+        }
+      ]
+    },
+    {
+      "id": "clojure",
+      "status": "verified-language",
+      "kind": "programming",
+      "syntax": "documented",
+      "implementation": "documented",
+      "implementationName": "Clojure JVM",
+      "notes": "",
+      "nextStep": "固定实现版本并补充语法、错误处理和标准库用例；需要馆内运行时则另行接入。",
+      "sources": [
+        {
+          "role": "语法",
+          "url": "https://clojure.org/reference/reader",
+          "checkedAt": "2026-09-24T07:33:06.453386+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "Clojure - The Reader",
+          "finalUrl": "https://clojure.org/reference/reader",
+          "decodedBodySha256": "644bcebf731e488a89fa4b0cb2c50910a2e6434bff149b5a2d3157ffbcf67f3b",
+          "excerpt": "peating ':'s. The symbol '&' is reserved for syntax and cannot be a local binding. Literals Strings - Enclosed in \"double quotes\". May span multiple lines. Standard Java escape characters are supported. Numbers - generally represented as per Java Integers can be indefinitely long and will be read as"
+        },
+        {
+          "role": "实现",
+          "url": "https://clojure.org/guides/install_clojure",
+          "checkedAt": "2026-09-24T07:33:06.982168+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "Clojure - Install Clojure",
+          "finalUrl": "https://clojure.org/guides/install_clojure",
+          "decodedBodySha256": "f5a18d7bb7d6c8ea5af4ea2d36ce592cdd8fd7d50d00580566f4d5c4ce71ee25",
+          "excerpt": "on the Releases page. This page concerns the command-line tool (the Clojure CLI). This tool (used by the commands clojure and clj ) can download Clojure itself and other Clojure or JVM-based libraries. Any version of the Clojure CLI can download or use any version of the Clojure language itself (the"
+        }
+      ]
+    },
+    {
+      "id": "erlang",
+      "status": "verified-language",
+      "kind": "programming",
+      "syntax": "documented",
+      "implementation": "documented",
+      "implementationName": "Erlang/OTP",
+      "notes": "Armstrong 2003年论文第3–5页追溯 Prolog 并发扩展实验、1987年嵌入式原型、JAM/WAM 技术输入，以及1990年独立语法与1991年替代旧实现。关系限于历史演进，不表示当前 Erlang 是 Prolog 超集、保留回溯或源码兼容；本轮未重现历史实现，尚无网页运行时。",
+      "nextStep": "固定实现版本并补充语法、错误处理和标准库用例；需要馆内运行时则另行接入。",
+      "sources": [
+        {
+          "role": "语法",
+          "url": "https://www.erlang.org/doc/system/expressions.html",
+          "checkedAt": "2026-09-24T07:33:08.643904+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "Expressions — Erlang System Documentation v29.1.1",
+          "finalUrl": "https://www.erlang.org/doc/system/expressions.html",
+          "decodedBodySha256": "8ed1074c66db077d1bfbc544c0a33526e8ff11e9081c74c7748d48a7ef604dbf",
+          "excerpt": "Variables start with an uppercase letter or underscore ( _ ). Variables can contain alphanumeric characters, underscore, and @ . Examples: X Name1 PhoneNumber Phone_number _ _Height name@node Variables are bound to values using pattern matching . Erlang uses single assignment , that is, a variable c"
+        },
+        {
+          "role": "实现",
+          "url": "https://www.erlang.org/doc/system/seq_prog.html",
+          "checkedAt": "2026-09-24T14:47:13.005014+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "Sequential Programming — Erlang System Documentation v29.1.1",
+          "finalUrl": "https://www.erlang.org/doc/system/seq_prog.html",
+          "decodedBodySha256": "6f847a2035ce2770a12bd40161a7b540ab4f1c7c4acaeec28e26a41c2150c7ed",
+          "excerpt": "Type 2 + 5. in the shell and then press Enter (carriage return). Notice that you tell the shell you are done entering code by finishing with a full stop . and a carriage return. 1> 2 + 5 . 7 2> As shown, the Erlang shell numbers the lines that can be entered (as 1> , 2> , ...) and correctly says tha"
+        },
+        {
+          "url": "https://www.erlang.org/download/armstrong_thesis_2003.pdf",
+          "finalUrl": "https://erlang.org/download/armstrong_thesis_2003.pdf",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-04T06:18:48.528852+00:00",
+          "decodedBodySha256": "da585b914eb07350e2d6f727db5eb0fb1551f49fc1270f7d4dc079f2c8c1ab7a",
+          "hashScope": "SHA-256 of complete PDF response bytes; PDF pp. 15–17 visually read.",
+          "title": "Joe Armstrong — Making reliable distributed systems in the presence of software errors (doctoral thesis, 2003)",
+          "role": "作者历史回顾",
+          "reviewed": true,
+          "excerpt": "Printed pp. 3–5 / PDF pp. 15–17, §1.1 Background: in 1986 “The language started as an experiment to add concurrent processes to Prolog”; in 1987 Erlang was embedded in Prolog using its infix operators and did not yet have its own syntax. In 1989 JAM was loosely based on the Warren abstract machine, adding parallel processes, message passing and failure detection while omitting backtracking; pattern-matching compilation was essentially the same as WAM. In 1990 Erlang acquired its own syntax and was a language in its own right rather than a Prolog dialect; in 1991 JAM replaced the Prolog implementation. Cross-compilation to Strand and a C implementation are mentioned as implementation experiments, not sufficient evidence of design inheritance. These dates refer to different development events, not a replacement of the catalogue year. No historical implementation reproduced or webpage runtime added this round."
+        }
+      ]
+    },
+    {
+      "id": "elixir",
+      "status": "verified-language",
+      "kind": "programming",
+      "syntax": "documented",
+      "implementation": "documented",
+      "implementationName": "Elixir / Erlang VM",
+      "notes": "",
+      "nextStep": "固定实现版本并补充语法、错误处理和标准库用例；需要馆内运行时则另行接入。",
+      "sources": [
+        {
+          "role": "语法",
+          "url": "https://hexdocs.pm/elixir/syntax-reference.html",
+          "checkedAt": "2026-09-24T07:33:09.158244+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "Syntax reference — Elixir v1.20.4",
+          "finalUrl": "https://elixir.hexdocs.pm/syntax-reference.html",
+          "decodedBodySha256": "bd517cdba215a432521c7cea6e2ef4a0510f73db6f1f253bba3b06b7f0a2c24d",
+          "excerpt": "nt the same atom. The only catch is that the compiler will warn when quotes are used in atoms that do not need to be quoted. All operators in Elixir are also valid atoms. Valid examples are :foo , :FOO , :foo_42 , :foo@bar , and :++ . Invalid examples are :@foo ( @ is not allowed at start), :123 (nu"
+        },
+        {
+          "role": "实现",
+          "url": "https://elixir-lang.org/install/",
+          "checkedAt": "2026-09-24T07:35:25.383161+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "Install Elixir | The Elixir programming language",
+          "finalUrl": "https://elixir-lang.org/install/",
+          "decodedBodySha256": "4fa47dce9042720a55302d6131ce7039ab98bd68be11d17aeddf867b09f32628",
+          "excerpt": "installed, you should be able to open up the command line (or command prompt) and check the Erlang version by typing erl -s erlang halt . You will see some information similar to: Erlang/OTP 27.0 [64-bit] [smp:2:2] [...] Notice that depending on how you installed Erlang, Erlang binaries might not be"
+        }
+      ]
+    },
+    {
+      "id": "dart",
+      "status": "verified-language",
+      "kind": "programming",
+      "syntax": "documented",
+      "implementation": "documented",
+      "implementationName": "Dart SDK",
+      "notes": " 2026-10-04 旧 FAQ 地址跳转至官方 Overview，说明 Dart 可编译为 JavaScript/WebAssembly；编译目标不作为语言继承证据，本轮未新增设计关系。",
+      "nextStep": "固定实现版本并补充语法、错误处理和标准库用例；需要馆内运行时则另行接入。",
+      "sources": [
+        {
+          "role": "语法",
+          "url": "https://dart.dev/language",
+          "checkedAt": "2026-09-24T07:33:09.393458+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "Introduction to Dart",
+          "finalUrl": "https://dart.dev/language",
+          "decodedBodySha256": "8f61ad1dd960027a8adc1180d59de451c2cef5aa1c0bc464a722060437cc04ee",
+          "excerpt": "expand_more Overview Troubleshooting DartPad Command-line tools expand_more Dart SDK expand_more Overview dart dart analyze dart build dart compile dart create dart doc dart fix dart format dart info dart install dart pub dart run dart test dartaotruntime Experiment flags Other command-line tools ex"
+        },
+        {
+          "role": "实现",
+          "url": "https://dart.dev/tools/dart-run",
+          "checkedAt": "2026-09-24T07:33:09.594568+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "dart run",
+          "finalUrl": "https://dart.dev/tools/dart-run",
+          "decodedBodySha256": "4100f834b7496e8028cee523a8b888d40c88689936505c0ed62ed3781ccca08b",
+          "excerpt": "presentation Google APIs Multi-platform apps Command-line & server apps expand_more Overview Fetch data from the internet Libraries & packages Google Cloud Web apps expand_more Overview Get started Deployment Libraries & packages Wasm compilation Environment declarations Interoperability expand_more"
+        },
+        {
+          "url": "https://dart.dev/resources/faq",
+          "finalUrl": "https://dart.dev/overview",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-04T00:42:39.048227+00:00",
+          "title": "Dart overview",
+          "decodedBodySha256": "03276dcc442ced519827e1d1ee331ded919edbaa5055efb33f376530985a79d0",
+          "role": "关系研究：编译目标",
+          "reviewed": true,
+          "excerpt": "Web platform : For apps targeting the web, Dart can compile for development or production purposes. Its web compilers translate Dart into JavaScript or WebAssembly. The Flutter framework is a popular, multi-platform UI toolkit that's powered by the Dart platform, and that provides tooling and UI libraries to build UI experiences that run on iOS, Android, macOS, Windows, Linux, and the web. Dart Native (machine code JIT and AOT) # During developme"
+        }
+      ]
+    },
+    {
+      "id": "groovy",
+      "status": "verified-language",
+      "kind": "programming",
+      "syntax": "documented",
+      "implementation": "documented",
+      "implementationName": "Groovy / JVM",
+      "notes": "",
+      "nextStep": "固定实现版本并补充语法、错误处理和标准库用例；需要馆内运行时则另行接入。",
+      "sources": [
+        {
+          "role": "语法",
+          "url": "https://groovy-lang.org/syntax.html",
+          "checkedAt": "2026-09-24T07:33:10.971944+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "The Apache Groovy programming language - Syntax",
+          "finalUrl": "https://groovy-lang.org/syntax.html",
+          "decodedBodySha256": "9a9ab80a6e1d971a9a629ff8c9548a9aa419d6832bf8bc488086bdc6e510bbc4",
+          "excerpt": "re also called interpolated strings in other programming languages. 4.1. Single-quoted string Single-quoted strings are a series of characters surrounded by single quotes: 'a single-quoted string' Single-quoted strings are plain java.lang.String and don’t support interpolation. 4.2. String concatena"
+        },
+        {
+          "role": "实现",
+          "url": "https://groovy-lang.org/install.html",
+          "checkedAt": "2026-09-24T07:33:11.003127+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "The Apache Groovy programming language - Install Groovy",
+          "finalUrl": "https://groovy-lang.org/install.html",
+          "decodedBodySha256": "922b7269419d172e27c716924a8520eccfa3f9168d815d5658c42dd2eb7f574b",
+          "excerpt": "verflow questions Slack Community The Groovy programming language is supported by the Apache Software Foundation and the Groovy community. Apache, Apache Groovy, Groovy, and the ASF logo are either registered trademarks or trademarks of The Apache Software Foundation. © 2003-2026 The Apache Software"
+        }
+      ]
+    },
+    {
+      "id": "f-sharp",
+      "status": "verified-language",
+      "kind": "programming",
+      "syntax": "documented",
+      "implementation": "documented",
+      "implementationName": "F# / .NET",
+      "notes": "",
+      "nextStep": "固定实现版本并补充语法、错误处理和标准库用例；需要馆内运行时则另行接入。",
+      "sources": [
+        {
+          "role": "语法",
+          "url": "https://learn.microsoft.com/en-us/dotnet/fsharp/language-reference/",
+          "checkedAt": "2026-09-24T07:33:11.265040+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "Language Guide - F# | Microsoft Learn",
+          "finalUrl": "https://learn.microsoft.com/en-us/dotnet/fsharp/language-reference/",
+          "decodedBodySha256": "2f139d5e072f2e13043a48d965de648a5ee694b3a93fb39a8b3ec3c3dbaa3470",
+          "excerpt": ". Title Description Literals Learn about the syntax for literal values in F# and how to specify type information for F# literals. Strings Learn about strings in F#. The string type represents immutable text, as a sequence of Unicode characters. string is an alias for System.String in .NET. Interpola"
+        },
+        {
+          "role": "实现",
+          "url": "https://learn.microsoft.com/en-us/dotnet/fsharp/tools/fsharp-interactive/",
+          "checkedAt": "2026-09-24T07:33:11.525920+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "F# Interactive (dotnet) Reference - .NET | Microsoft Learn",
+          "finalUrl": "https://learn.microsoft.com/en-us/dotnet/fsharp/tools/fsharp-interactive/",
+          "decodedBodySha256": "fbe312073c253038da8f1cee0214428cbeef71ec879d3faf80d548b810fc7cbc",
+          "excerpt": " session after executing dotnet fsi from the command line: Microsoft (R) F# Interactive version 11.0.0.0 for F# 5.0 Copyright (c) Microsoft Corporation. All Rights Reserved. For help type #help;; > let square x = x * x;; val square : x:int -> int > square 12;; val it : int = 144 > printfn \"Hello, FS"
+        }
+      ]
+    },
+    {
+      "id": "prolog",
+      "status": "verified-language",
+      "kind": "programming",
+      "syntax": "documented",
+      "implementation": "documented",
+      "implementationName": "SWI-Prolog",
+      "notes": "具体实现为 SWI-Prolog；其他 Prolog 方言可能不兼容。",
+      "nextStep": "固定实现版本并补充语法、错误处理和标准库用例；需要馆内运行时则另行接入。",
+      "sources": [
+        {
+          "role": "语法",
+          "url": "https://www.swi-prolog.org/man/syntax.html",
+          "checkedAt": "2026-09-24T07:36:42.519761+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "SWI-Prolog manual",
+          "finalUrl": "https://www.swi-prolog.org/man/syntax.html",
+          "decodedBodySha256": "0bc05658fe2e412d289f75eb37f88a8edc70ceb3cdbb4a98deb5bb8f25d4018b",
+          "excerpt": "o use the idiosyncratic closing \\ ISO Prolog syntax. \\UXXXXXXXX Same as \\uXXXX , but using 8 digits to cover the whole Unicode set. \\40 Octal character specification. The rules and remarks for hexadecimal specifications apply to octal specifications as well. \\ \\ Escapes the backslash itself. Thus, '"
+        },
+        {
+          "role": "实现",
+          "url": "https://www.swi-prolog.org/pldoc/man?section=quickstart",
+          "checkedAt": "2026-09-24T07:35:25.384927+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "SWI-Prolog -- Getting started quickly",
+          "finalUrl": "https://www.swi-prolog.org/pldoc/man?section=quickstart",
+          "decodedBodySha256": "14f52525bf2e3c3ae1db4adc082406911ba42103d22b6d59aa8f39a28e43b6d6",
+          "excerpt": "lisation file Initialisation files and goals Command line options UI Themes GNU Emacs Interface Online Help Command line history Reuse of top-level bindings Overview of the Debugger Loading and running projects Environment Control (Prolog flags) An overview of hook predicates Automatic loading of li"
+        }
+      ]
+    },
+    {
+      "id": "forth",
+      "status": "verified-language",
+      "kind": "programming",
+      "syntax": "documented",
+      "implementation": "documented",
+      "implementationName": "Gforth",
+      "notes": "以 Gforth 的交互语法及实现作为证据。 作者1991年回顾（1999年HTML前言，作者仓库镜像）支持 APL 运算符参照、Algol 标签格式与 Fortran 循环词名输入；不是已发表 HOPL II 论文。关系限于所述机制，不把作者用过的语言都算作上游，也不据回忆章节给 APL 采纳时间。",
+      "nextStep": "固定实现版本并补充语法、错误处理和标准库用例；需要馆内运行时则另行接入。",
+      "sources": [
+        {
+          "role": "语法与实现",
+          "url": "https://gforth.org/manual/Your-first-definition.html",
+          "checkedAt": "2026-09-24T07:35:25.384356+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "Your first definition (Gforth Manual)",
+          "finalUrl": "https://gforth.org/manual/Your-first-definition.html",
+          "decodedBodySha256": "2008f7ce25e855328da4f093ad2f62c09d9421f6ff26d8b16cb7da2ed9b6894a",
+          "excerpt": ": add-two 2 + . ; : greet .\" Hello and welcome\" ; : demo 5 add-two ; Now try them out: greet RET Hello and welcome ok greet greet RET Hello and welcomeHello and welcome ok 4 add-two RET 6 ok demo RET 7 ok 9 greet demo add-two RET Hello and welcome7 11 ok The first new thing that we’ve introduced her"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/colorforth/colorforth.github.io/master/HOPL.html",
+          "finalUrl": "https://raw.githubusercontent.com/colorforth/colorforth.github.io/master/HOPL.html",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-04T06:10:27.085555+00:00",
+          "decodedBodySha256": "aa12ef4cc57fd3cfd57780b8dd0963db9599587cfbe8768624d532b643d1e1bc",
+          "title": "Charles H. Moore — Forth: The Early Years (1991 manuscript, 1999 HTML foreword; author repository mirror)",
+          "role": "作者历史回顾",
+          "reviewed": true,
+          "excerpt": "Foreword 1999: this 1991 HOPL II submission was rejected; much of its content appeared in the accepted Rather et al. paper. Not itself an accepted conference paper. MIT/SAO section: “Although I admire and emulate its [APL] operators, I'm not persuaded they constitute an optimal set.” Stanford/SLAC: CURVE was “an impressive precursor to Forth”; “The word : was taken from the Algol label format, flipped for left-right parsing”, with LABEL: / : LABEL examples. Mohasco: LOOP was earlier spelled CONTINUE; “DO and CONTINUE were meant to acknowledge Fortran.” Lisp teaching, COBOL rewrites and machine instructions are also mentioned, but author experience or implementation language alone is not recorded as a broad design edge. Recollection does not identify an ALGOL edition or date APL operator adoption precisely."
+        }
+      ]
+    },
+    {
+      "id": "basic",
+      "status": "verified-language",
+      "kind": "programming",
+      "syntax": "documented",
+      "implementation": "documented",
+      "implementationName": "FreeBASIC",
+      "notes": "BASIC 家族的现代 FreeBASIC 方言；不声称重现初版 Dartmouth BASIC。 另视觉核读1964年10月1日 Dartmouth BASIC 手册的语法示例与 DTSS 宿主说明；未运行该历史实现。TIME 2014年采访引 Kurtz 对 FORTRAN/ALGOL 简化尝试的回顾，关系限于初学者语言设计的参照与回应，不能称为已成功的子集或指定 ALGOL 60/FORTRAN II。",
+      "nextStep": "固定实现版本并补充语法、错误处理和标准库用例；需要馆内运行时则另行接入。",
+      "sources": [
+        {
+          "role": "语法",
+          "url": "https://www.freebasic.net/wiki/wikka.php?wakka=DocToc",
+          "checkedAt": "2026-09-24T07:33:12.792763+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "FreeBASIC Manual - FreeBASIC Wiki Manual | FBWiki",
+          "finalUrl": "https://www.freebasic.net/wiki/DocToc",
+          "decodedBodySha256": "e9ea03e77729db7311d4f36e9afd0cf107b29f50013d736cb136343cb469f682",
+          "excerpt": "External Libraries Index Using the FreeBASIC compiler Installing FreeBASIC | Requirements Running FreeBASIC Using the Command Line | Command Line Options Debugging with FreeBASIC Compiler Error Messages Tools used by fbc Installing gcc for -gen gcc FreeBASIC dialects and QBASIC FreeBASIC and Qbasic "
+        },
+        {
+          "role": "实现",
+          "url": "https://www.freebasic.net/",
+          "checkedAt": "2026-09-24T07:33:13.020597+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "FreeBASIC Language | Home",
+          "finalUrl": "https://www.freebasic.net/",
+          "decodedBodySha256": "84bee87ba536733656175b975ec3df1af069093570b83f5095aced8711ee10b4",
+          "excerpt": "rint num end sub FreeBASIC is a self-hosting compiler which makes use of the GNU binutils programming tools as backends and can produce console, graphical/GUI executables, dynamic and static libraries. FreeBASIC fully supports the use of C libraries and has partial C++ library support. This lets pro"
+        },
+        {
+          "url": "https://time.com/69316/basic/",
+          "finalUrl": "https://time.com/69316/basic/",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-04T06:00:48.700818+00:00",
+          "decodedBodySha256": "642e10845838898768d8ad0649cc58b2a6d5510100abb2ec6abceb120f407456",
+          "role": "设计者采访",
+          "reviewed": true,
+          "title": "Harry McCracken — Fifty Years of BASIC, the Programming Language That Made Computers Personal (TIME, 2014-04-29)",
+          "excerpt": "Thomas E. Kurtz is quoted: “I tried, briefly, to develop simple subsets of Fortran and ALGOL, but found quickly that such could not be done.” He calls Fortran loop syntax an “almost impossible-to-memorize convention”. The article continues: “So Kemeny and Kurtz decided to create something so straightforward that it almost didn’t involve memorization at all.” Kurtz: “We wanted the syntax of the language to consist of common words, and to have those words have a more-or-less obvious meaning.” Interview reported by a journalist; edition of Fortran/ALGOL is not specified, and failed subset attempts do not establish BASIC as a subset."
+        },
+        {
+          "url": "https://bitsavers.org/pdf/dartmouth/dtss/196410_BASIC.pdf",
+          "finalUrl": "https://bitsavers.org/pdf/dartmouth/dtss/196410_BASIC.pdf",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-04T05:59:54.310627+00:00",
+          "decodedBodySha256": "39343181df978de83ca5ddeecc7de3fef71d85c3b9a81bceca6c17b86a76a9ab",
+          "role": "历史语法与宿主",
+          "reviewed": true,
+          "title": "Dartmouth College — A Manual for BASIC (1 October 1964), Bitsavers scan",
+          "hashScope": "SHA-256 of complete PDF response bytes; selected scanned pages visually read, not a decoded text hash.",
+          "excerpt": "PDF p. 3 title: “A Manual for BASIC, the elementary algebraic language designed for use with the Dartmouth Time Sharing System.” Dated 1 October 1964. Printed p. 3 / PDF p. 9 describes a complete linear-equation program with READ, LET, IF ... THEN, PRINT, GO TO, DATA and END. Printed p. 12 / PDF p. 18 explains loops with numbered LET/PRINT/IF statements. Printed p. 14 / PDF p. 20 describes the Dartmouth Time Sharing System and teletype input. This scan documents that historical version; no historical implementation executed this round."
+        }
+      ]
+    },
+    {
+      "id": "sql",
+      "status": "verified-language",
+      "kind": "domain-language",
+      "syntax": "documented",
+      "implementation": "documented",
+      "implementationName": "SQLite / PostgreSQL",
+      "notes": "查询语言；核实的是 SQLite SQL 方言，非所有 SQL 标准特性。",
+      "nextStep": "固定实现版本并补充语法、错误处理和标准库用例；需要馆内运行时则另行接入。",
+      "sources": [
+        {
+          "role": "语法",
+          "url": "https://www.sqlite.org/lang.html",
+          "checkedAt": "2026-09-24T07:33:13.312997+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "Query Language Understood by SQLite",
+          "finalUrl": "https://www.sqlite.org/lang.html",
+          "decodedBodySha256": "553c24101f0d975f1af72161806475ed71b1401363794f0a67dfdd500a1c2737",
+          "excerpt": "The SQL language syntax is described by syntax diagrams . The following syntax documentation topics are available: aggregate functions ALTER TABLE ANALYZE ATTACH DATABASE BEGIN TRANSACTION comment COMMIT TRANSACTION core functions CREATE INDEX CREATE TABLE CREATE TRIGGER CREATE VIEW CREATE VIRTUAL T"
+        },
+        {
+          "role": "实现",
+          "url": "https://www.sqlite.org/cli.html",
+          "checkedAt": "2026-09-24T07:33:13.509236+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "Command Line Shell For SQLite",
+          "finalUrl": "https://www.sqlite.org/cli.html",
+          "decodedBodySha256": "37baa5247899e148c401d0d3ef2bffcb0da78868c4cdc38ce72f8365f5798c3c",
+          "excerpt": "sqlite3 in a shell script 21. Marking The End Of An SQL Statement 22. More Details On How To Start The CLI 22.1. Extra command-line arguments 22.2. Command-line Options 22.3. The --safe command-line option 22.3.1. Bypassing --safe restrictions for specific commands 22.4. The --unsafe-testing command"
+        }
+      ]
+    },
+    {
+      "id": "pl-sql",
+      "status": "verified-language",
+      "kind": "domain-language",
+      "syntax": "documented",
+      "implementation": "documented",
+      "implementationName": "Oracle Database PL/SQL",
+      "notes": "依据 Oracle 11g 官方手册；需要 Oracle 数据库环境，不代表现代版本已实测。",
+      "nextStep": "固定实现版本并补充语法、错误处理和标准库用例；需要馆内运行时则另行接入。",
+      "sources": [
+        {
+          "role": "语法与实现",
+          "url": "https://docs.oracle.com/cd/B28359_01/appdev.111/b28370/overview.htm",
+          "checkedAt": "2026-09-24T14:51:46.315029+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "Overview of PL/SQL",
+          "finalUrl": "https://docs.oracle.com/cd/B28359_01/appdev.111/b28370/overview.htm",
+          "decodedBodySha256": "6120f95aa9036ae237861460887ae2063f3ee9b0e5bcdd715cbb01d2fffcc5be",
+          "excerpt": "A PL/SQL block is defined by the keywords DECLARE , BEGIN , EXCEPTION , and END . These keywords partition the block into a declarative part, an executable part, and an exception-handling part. Only the executable part is required. Declarations are local to the block and cease to exist when the bloc"
+        }
+      ]
+    },
+    {
+      "id": "bash",
+      "status": "verified-language",
+      "kind": "programming",
+      "syntax": "documented",
+      "implementation": "documented",
+      "implementationName": "GNU Bash",
+      "notes": "Bash 5.3 固定发行包手册明确列出 Bourne、Korn、C shell 的设计输入；后两者包括 typeset 以及历史展开、目录栈等。手册仅称 largely compatible，且 POSIX 行为可能不同于传统 sh，因此不标为严格超集或所有旧程序兼容。Bourne 端点使用已核 V7 身份的 sh；馆藏另有 bourne-shell 待去重，未画两者继承。已有本机 Bash 样例不表示5.3发行包被执行，网页未接入 Bash。",
+      "nextStep": "固定实现版本并补充语法、错误处理和标准库用例；需要馆内运行时则另行接入。",
+      "sources": [
+        {
+          "role": "语法与实现",
+          "url": "https://www.gnu.org/software/bash/manual/bash.html",
+          "checkedAt": "2026-09-24T07:33:14.840948+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "Bash Reference Manual",
+          "finalUrl": "https://www.gnu.org/software/bash/manual/bash.html",
+          "decodedBodySha256": "78d0eefbe60cfe7345ffdafede7294f055b04e53bd520360ff699b24f81e2b4b",
+          "excerpt": "l Expansions ¶ Expansion is performed on the command line after it has been split into token s. Bash performs these expansions: brace expansion tilde expansion parameter and variable expansion command substitution arithmetic expansion word splitting filename expansion quote removal The order of expa"
+        },
+        {
+          "url": "https://mirrors.kernel.org/gnu/bash/bash-5.3.tar.gz",
+          "finalUrl": "https://mirrors.kernel.org/gnu/bash/bash-5.3.tar.gz",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-04T12:21:42.281439+00:00",
+          "decodedBodySha256": "0d5cd86965f869a26cf64f4b71be7b96f90a3ba8b3d74e27e8e9d9d5550f31ba",
+          "member": "bash-5.3/doc/bashref.texi",
+          "memberSha256": "f3d37d57a1061e24d266051de9bd47ffa43dc86584afea11576c535ad2be32d5",
+          "role": "设计关系：固定版本手册",
+          "reviewed": true,
+          "title": "GNU Bash Reference Manual — Bash 5.3 release archive, doc/bashref.texi",
+          "excerpt": "Introduction explicitly says Bash borrowed concepts from Bourne Shell, Korn Shell and C-shell. §What is Bash? identifies Stephen Bourne and Seventh Edition Unix, then says Bash is largely compatible with sh and incorporates ksh/csh features. typeset builtin is supplied for Korn shell compatibility. Appendix Major Differences From The Bourne Shell describes csh-like history expansion and pushd/popd/dirs directory stack, and explicitly notes POSIX behavior can differ from traditional sh; its comparison baseline is SVR4.2, not V7. Thus these are design inputs, not a strict superset or universal source-compatibility claim.",
+          "hashScope": "SHA-256 of complete GNU Bash 5.3 tar.gz bytes from GNU distribution mirror; member and memberSha256 identify read manual source. No archive code built or installed."
+        }
+      ]
+    },
+    {
+      "id": "awk",
+      "status": "verified-language",
+      "kind": "domain-language",
+      "syntax": "documented",
+      "implementation": "documented",
+      "implementationName": "awk / GNU awk",
+      "notes": "文本处理语言；GNU awk 与 POSIX awk 有区别。 手册为 GNU awk；实测为 macOS 系统 awk，仅验证共有基础语法。",
+      "nextStep": "固定实现版本并补充语法、错误处理和标准库用例；需要馆内运行时则另行接入。",
+      "sources": [
+        {
+          "role": "语法",
+          "url": "https://www.gnu.org/software/gawk/manual/html_node/Patterns-and-Actions.html",
+          "checkedAt": "2026-09-24T07:33:14.841070+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "Patterns and Actions (The GNU Awk User’s Guide)",
+          "finalUrl": "https://www.gnu.org/software/gawk/manual/html_node/Patterns-and-Actions.html",
+          "decodedBodySha256": "7dedcb272d392e87c19a7bf2e245a200e2154b625efc3f8825a49c578936f197",
+          "excerpt": "Patterns and Actions (The GNU Awk User’s Guide) Next: Arrays in awk , Previous: Expressions , Up: General Introduction [ Contents ][ Index ] 7 Patterns, Actions, and Variables ¶ As you have already seen, each awk statement consists of a pattern with an associated action. This chapter describes how y"
+        },
+        {
+          "role": "实现",
+          "url": "https://www.gnu.org/software/gawk/manual/html_node/Running-gawk.html",
+          "checkedAt": "2026-09-24T07:33:15.454589+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "Running gawk (The GNU Awk User’s Guide)",
+          "finalUrl": "https://www.gnu.org/software/gawk/manual/html_node/Running-gawk.html",
+          "decodedBodySha256": "a3151c45c7468a969cf0885925f07affa70a7923923ccb48deeca12b8c6f3ac4",
+          "excerpt": "Running gawk (The GNU Awk User’s Guide) Next: Data files for the Examples , Up: Getting Started with awk [ Contents ][ Index ] 1.1 How to Run awk Programs ¶ There are several ways to run an awk program. If the program is short, it is easiest to include it in the command that runs awk , like this: aw"
+        }
+      ]
+    },
+    {
+      "id": "sed",
+      "status": "verified-language",
+      "kind": "domain-language",
+      "syntax": "documented",
+      "implementation": "documented",
+      "implementationName": "sed / GNU sed",
+      "notes": "文本变换脚本语言及流编辑器。 手册为 GNU sed；实测为 macOS 系统 sed，仅验证共有替换命令。",
+      "nextStep": "固定实现版本并补充语法、错误处理和标准库用例；需要馆内运行时则另行接入。",
+      "sources": [
+        {
+          "role": "语法与实现",
+          "url": "https://www.gnu.org/software/sed/manual/sed.html",
+          "checkedAt": "2026-09-24T07:33:15.688060+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "sed, a stream editor",
+          "finalUrl": "https://www.gnu.org/software/sed/manual/sed.html",
+          "decodedBodySha256": "511edd60a6f5034d4f28ca1dbe0772bbfd4c9865aaf6c0f85e2f05d4294b6bac",
+          "excerpt": " sed and has a lot of different options. The syntax of the s command is ‘ s/ regexp / replacement / flags ’. Its basic concept is simple: the s command attempts to match the pattern space against the supplied regular expression regexp ; if the match is successful, then that portion of the pattern sp"
+        }
+      ]
+    },
+    {
+      "id": "powershell",
+      "status": "verified-language",
+      "kind": "programming",
+      "syntax": "documented",
+      "implementation": "documented",
+      "implementationName": "PowerShell",
+      "notes": "作者 Monad 宣言明确借鉴 Bourne Shell 的语法和控制结构；在校订 sh 身份后录入设计影响，范围为2002年长期设计愿景，不是 PowerShell V1.0 完整实现或源码兼容证明。C# 语法对照及迁移目标未单独录入继承；Add-Type 的 C# 编译与调用保留为独立生态扩展接口。本轮未执行该接口，也未接入网页运行。",
+      "nextStep": "固定实现版本并补充语法、错误处理和标准库用例；需要馆内运行时则另行接入。",
+      "sources": [
+        {
+          "role": "语法",
+          "url": "https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_language_keywords",
+          "checkedAt": "2026-09-24T07:33:15.716969+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "about_Language_Keywords - PowerShell | Microsoft Learn",
+          "finalUrl": "https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_language_keywords?view=powershell-7.6",
+          "decodedBodySha256": "25b32998baf3d19de3023b7ad3bb355b61bf23a5e3047cf85606b6177e0719a3",
+          "excerpt": " any objects are received from the pipeline. Syntax: function <name> { dynamicparam {<statement list>} begin {<statement list>} process {<statement list>} end {<statement list>} } break Causes a script to exit a loop. Syntax: while (<condition>) { <statements> ... break ... <statements> } catch Spec"
+        },
+        {
+          "role": "实现",
+          "url": "https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell",
+          "checkedAt": "2026-09-24T07:33:16.137741+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "Install PowerShell on Windows, Linux, and macOS - PowerShell | Microsoft Learn",
+          "finalUrl": "https://learn.microsoft.com/en-us/powershell/scripting/install/install-powershell?view=powershell-7.6",
+          "decodedBodySha256": "524e95868dfba2575de13d9a4fdda65f60bf7624bc1db5b1d72ab7b4b4c204a5",
+          "excerpt": "Install PowerShell on Windows, Linux, and macOS - PowerShell | Microsoft Learn Skip to main content This browser is no longer supported. Upgrade to Microsoft Edge to take advantage of the latest features, security updates, and technical support. Download Microsoft Edge More info about Internet Explo"
+        },
+        {
+          "url": "https://learn.microsoft.com/en-us/powershell/scripting/lang-spec/chapter-01",
+          "finalUrl": "https://learn.microsoft.com/en-us/powershell/scripting/lang-spec/chapter-01?view=powershell-7.6",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-04T00:42:36.697235+00:00",
+          "title": "Windows PowerShell Language Specification 3.0 - PowerShell | Microsoft Learn",
+          "decodedBodySha256": "11535753d8be36523ae26702f0d961506112e81b76c33c9c45df03fabb586161",
+          "role": "关系研究：语法对照",
+          "reviewed": true,
+          "excerpt": "This language has syntax features and keywords similar to those used in the C# programming language ( §C. ). There are four kinds of commands in PowerShell: scripts, functions and methods, cmdlets, and native commands. A file of commands is called a script . By convention, a script has a filename extension of .ps1. The top-most level of a PowerShell program is a script, which, in turn, can invoke other commands. PowerShell supports modular progra"
+        },
+        {
+          "url": "https://www.jsnover.com/Docs/MonadManifesto.pdf",
+          "finalUrl": "https://www.jsnover.com/Docs/MonadManifesto.pdf",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-04T11:55:26.411058+00:00",
+          "decodedBodySha256": "b16605109e6c8394c7c68d346fd3d1062b61a07cf31982b42087edbbe2d30574",
+          "title": "Jeffrey P. Snover — Monad Manifesto, version 1.2 (2002 design vision, publication-updated copy)",
+          "role": "作者设计宣言",
+          "reviewed": true,
+          "excerpt": "PDF p. 1 footnote states this is not a PowerShell whitepaper or an accurate description of V1.0; it is an updated publication version of the long-term Monad vision that started PowerShell development. PDF p. 12 §6.3 uses POSIX Shell functions and syntax as a starting point, modified and expanded for new functionality and a glide path to C#. PDF p. 15 explicitly says Monad is based upon and extends Bourne Shell syntax and control structures, replacing text pipelines with .NET objects. These are historical design goals, not proof all features shipped. The catalogue sh entry combines 1971 with creator Stephen Bourne and must be resolved before attaching the specific Bourne Shell claim; Bash is not a substitute endpoint. Leibniz monads, C# migration goals and early cmdlet implementation languages do not by themselves establish a functional-language lineage.",
+          "hashScope": "SHA-256 of complete PDF response bytes; selected pages visually read."
+        },
+        {
+          "url": "https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/add-type",
+          "finalUrl": "https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/add-type?view=powershell-7.6",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-04T11:57:42.922264+00:00",
+          "decodedBodySha256": "6d86d7485852b36dd2106e57a589b74e2b185f62e90207936bed1b22931e2cad",
+          "title": "Add-Type (Microsoft.PowerShell.Utility) — Microsoft Learn / PowerShell 7.6",
+          "role": "扩展接口",
+          "reviewed": true,
+          "excerpt": "Description: Add-Type defines .NET Core types in a PowerShell session. Given source code it compiles the code and generates an in-memory assembly; C# is the default language. Example 1 adds a C# BasicTest class using Add-Type -TypeDefinition, then calls a static method and an instance method from PowerShell. Types exist in the current session; existing names cannot be unloaded or changed, and PowerShell 7 avoids compiling an already existing type. This documents an extension/integration interface, not syntax inheritance, source compatibility, or a browser compiler. No local or webpage execution of this interface this round."
+        }
+      ]
+    },
+    {
+      "id": "x86-assembly",
+      "status": "verified-language",
+      "kind": "domain-language",
+      "syntax": "documented",
+      "implementation": "documented",
+      "implementationName": "NASM",
+      "notes": "仅核实 NASM 的 x86 汇编语法；不是所有汇编语言。",
+      "nextStep": "固定实现版本并补充语法、错误处理和标准库用例；需要馆内运行时则另行接入。",
+      "sources": [
+        {
+          "role": "语法",
+          "url": "https://www.nasm.us/doc/nasm03.html",
+          "checkedAt": "2026-09-24T07:33:16.431772+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "NASM - The Netwide Assembler",
+          "finalUrl": "https://www.nasm.us/doc/nasm03.html",
+          "decodedBodySha256": "1c783bd6a67df359e1911d39b288bfc79a46bccb7df7c1459aa2f2dd821da6b0",
+          "excerpt": ": db ? ; uninitialized A superset of the DUP syntax. The NASM version of this has the following syntax specification; capital letters indicate literal keywords: dx := DB | DW | DD | DQ | DT | DO | DY | DZ type := BYTE | WORD | DWORD | QWORD | TWORD | OWORD | YWORD | ZWORD atom := expression | string"
+        },
+        {
+          "role": "实现",
+          "url": "https://www.nasm.us/doc/nasm02.html",
+          "checkedAt": "2026-09-24T07:33:17.597713+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "NASM - The Netwide Assembler",
+          "finalUrl": "https://www.nasm.us/doc/nasm02.html",
+          "decodedBodySha256": "dfbb0aac88956ddeb996e64a5c2fa88d982c37cc0114c5b4b46c6733a6232009",
+          "excerpt": " , - and * adds, removes, or restores to the command-line default the flags that follow. For example, to turn on the d and m flags but disable the s flag: %pragma list options +dm -s The + and ++ shorthands available in on the command line are not available when using %pragma list options ; each lis"
+        }
+      ]
+    },
+    {
+      "id": "wasm",
+      "status": "verified-language",
+      "kind": "domain-language",
+      "syntax": "documented",
+      "implementation": "documented",
+      "implementationName": "WebAssembly / Wasmtime",
+      "notes": "包含文本格式与二进制指令；执行需宿主运行时。",
+      "nextStep": "固定实现版本并补充语法、错误处理和标准库用例；需要馆内运行时则另行接入。",
+      "sources": [
+        {
+          "role": "语法",
+          "url": "https://webassembly.github.io/spec/core/text/index.html",
+          "checkedAt": "2026-09-24T07:33:17.597807+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "Text Format — WebAssembly 3.0 (2026-09-21)",
+          "finalUrl": "https://webassembly.github.io/spec/core/text/index.html",
+          "decodedBodySha256": "dc954a4e66c4a6297b04d982c59e6d69cb8760c71179a756f86233be8c5cdfc2",
+          "excerpt": "s PDF Quick search Text Format ¶ Conventions Grammar Abbreviations Contexts Lists Lexical Format Characters Tokens White Space Comments Annotations Values Integers Floating-Point Strings Names Identifiers Types Number Types Vector Types Heap Types Reference Types Value Types Composite Types Recursiv"
+        },
+        {
+          "role": "实现",
+          "url": "https://docs.wasmtime.dev/cli.html",
+          "checkedAt": "2026-09-24T07:33:17.597937+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "Using the Wasmtime CLI - Wasmtime",
+          "finalUrl": "https://docs.wasmtime.dev/cli.html",
+          "decodedBodySha256": "4638a27262a044fb05bbd7ca5cd3c10299e784df2d85d02b0f88d9234dee0bc2",
+          "excerpt": "niently execute WebAssembly modules from the command line. This section will provide a guide to the wasmtime CLI and major functionality that it contains. In short, however, you can execute a WebAssembly file (actually doing work as part of the start function) like so: wasmtime foo.wasm Or similarly"
+        }
+      ]
+    },
+    {
+      "id": "html",
+      "status": "verified-formal-language",
+      "kind": "formal-notation",
+      "syntax": "documented",
+      "implementation": "not-reviewed",
+      "implementationName": "浏览器解析器",
+      "notes": "标记语言，与编程密切相关；不当作通用程序语言。",
+      "nextStep": "参照来源继续核实适用范围、历史年代及实现；不得仅据元数据升级结论。",
+      "sources": [
+        {
+          "role": "规范",
+          "url": "https://html.spec.whatwg.org/multipage/syntax.html",
+          "checkedAt": "2026-09-24T07:33:17.744398+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "HTML Standard",
+          "finalUrl": "https://html.spec.whatwg.org/multipage/syntax.html",
+          "decodedBodySha256": "5ddcc2864f309356b8a99a4095dfc060263e476ab3df706b7adc8f441a6489f9",
+          "excerpt": "13 The HTML syntax 13.1 Writing HTML documents 13.1.1 The DOCTYPE 13.1.2 Elements 13.1.2.1 Start tags 13.1.2.2 End tags 13.1.2.3 Attributes 13.1.2.4 Optional tags 13.1.2.5 Restrictions on content models 13.1.2.6 Restrictions on the contents of raw text and escapable raw text elements 13.1.3 Text 13."
+        }
+      ]
+    },
+    {
+      "id": "css",
+      "status": "verified-formal-language",
+      "kind": "formal-notation",
+      "syntax": "documented",
+      "implementation": "not-reviewed",
+      "implementationName": "浏览器样式引擎",
+      "notes": "样式语言，有形式语法和处理模型。",
+      "nextStep": "参照来源继续核实适用范围、历史年代及实现；不得仅据元数据升级结论。",
+      "sources": [
+        {
+          "role": "规范",
+          "url": "https://www.w3.org/TR/css-syntax-3/",
+          "checkedAt": "2026-09-24T07:33:17.829713+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "CSS Syntax Module Level 3",
+          "finalUrl": "https://www.w3.org/TR/css-syntax-3/",
+          "decodedBodySha256": "413b27acb4e16721d28b487456359ecbcecba472c4310bd2f6a4939ad393738b",
+          "excerpt": "CSS Syntax Module Level 3 CSS Syntax Module Level 3 W3C Candidate Recommendation Draft , 24 December 2021 More details about this document This version: https://www.w3.org/TR/2021/CRD-css-syntax-3-20211224/ Latest published version: https://www.w3.org/TR/css-syntax-3/ Editor's Draft: https://drafts."
+        }
+      ]
+    },
+    {
+      "id": "json",
+      "status": "verified-formal-language",
+      "kind": "formal-notation",
+      "syntax": "documented",
+      "implementation": "not-reviewed",
+      "implementationName": "JSON 解析器",
+      "notes": "数据交换语法；不是独立编程语言。",
+      "nextStep": "参照来源继续核实适用范围、历史年代及实现；不得仅据元数据升级结论。",
+      "sources": [
+        {
+          "role": "规范",
+          "url": "https://www.rfc-editor.org/rfc/rfc8259.html",
+          "checkedAt": "2026-09-24T07:33:17.990591+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "标准或书目记录",
+          "finalUrl": "https://www.rfc-editor.org/rfc/rfc8259.html",
+          "decodedBodySha256": "5302d6ccb6cf221817bdd1f8cd7221661d4519372e0ac0b4cf641e11e8037de7",
+          "excerpt": "JSON defines a small set of formatting rules for the portable representation of structured data. This document removes inconsistencies with other specifications of JSON, repairs specification errors, and offers experience-based interoperability guidance. Status of This Memo This is an Internet Stand"
+        }
+      ]
+    },
+    {
+      "id": "xml",
+      "status": "verified-formal-language",
+      "kind": "formal-notation",
+      "syntax": "documented",
+      "implementation": "not-reviewed",
+      "implementationName": "XML 解析器",
+      "notes": "标记/数据表示语言。",
+      "nextStep": "参照来源继续核实适用范围、历史年代及实现；不得仅据元数据升级结论。",
+      "sources": [
+        {
+          "role": "规范",
+          "url": "https://www.w3.org/TR/xml/",
+          "checkedAt": "2026-09-24T07:33:18.164612+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "Extensible Markup Language (XML) 1.0 (Fifth Edition)",
+          "finalUrl": "https://www.w3.org/TR/xml/",
+          "decodedBodySha256": "f58a4b9e1e5b8bac13fb55c4e5c7c8c5e2c176aa45ee68e2f1ab2498511927ec",
+          "excerpt": "blocks, FFFE, and FFFF. */ The mechanism for encoding character code points into bit patterns may vary from entity to entity. All XML processors MUST accept the UTF-8 and UTF-16 encodings of Unicode [Unicode] ; the mechanisms for signaling which of the two is in use, or for bringing other encodings "
+        }
+      ]
+    },
+    {
+      "id": "yaml",
+      "status": "verified-formal-language",
+      "kind": "formal-notation",
+      "syntax": "documented",
+      "implementation": "not-reviewed",
+      "implementationName": "YAML 解析器",
+      "notes": "数据序列化语言。",
+      "nextStep": "参照来源继续核实适用范围、历史年代及实现；不得仅据元数据升级结论。",
+      "sources": [
+        {
+          "role": "规范",
+          "url": "https://yaml.org/spec/1.2.2/",
+          "checkedAt": "2026-09-24T07:33:18.724980+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "YAML Ain’t Markup Language (YAML™) revision 1.2.2",
+          "finalUrl": "https://yaml.org/spec/1.2.2/",
+          "decodedBodySha256": "2fe1bf40792df22ef8b8a5972a34c48e639969222e0bbae605aa9bb2ca85e9ab",
+          "excerpt": "data serialization language. Future YAML plans are focused on making the language and ecosystem more powerful and reliable while simultaneously simplifying the development process for implementers. While this revision of the specification is limiting itself to informational changes only, there is co"
+        }
+      ]
+    },
+    {
+      "id": "11ty",
+      "status": "verified-related-technology",
+      "kind": "related-tool",
+      "syntax": "not-applicable",
+      "implementation": "not-applicable-as-language",
+      "implementationName": "Eleventy",
+      "notes": "静态站点生成器，使用多种模板语言；工具不是独立语言。",
+      "nextStep": "参照来源继续核实适用范围、历史年代及实现；不得仅据元数据升级结论。",
+      "sources": [
+        {
+          "role": "技术分类",
+          "url": "https://www.11ty.dev/",
+          "checkedAt": "2026-09-24T07:33:19.260505+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "Eleventy is a simpler static site generator",
+          "finalUrl": "https://www.11ty.dev/",
+          "decodedBodySha256": "fe74aa2eb36efa1d1a087951ab49ac603bd2c1e3aa7ffc912348d393178c9c10",
+          "excerpt": "simpler static site generator Skip to navigation Skip to main content Build Awesome Font Awesome Web Awesome Podcast Awesome Blog Awesome 11ty Get Started Blog Community v3.1.6 Versions v4 Pre-release v3 Stable v2 v1 v0 History Firehose Search Search GitHub YouTube Mastodon Bluesky Discord Build Awe"
+        }
+      ]
+    },
+    {
+      "id": "gcc",
+      "status": "verified-related-technology",
+      "kind": "related-tool",
+      "syntax": "not-applicable",
+      "implementation": "not-applicable-as-language",
+      "implementationName": "GCC",
+      "notes": "编译器集合，支持多种语言；GCC 本身不是语言。",
+      "nextStep": "参照来源继续核实适用范围、历史年代及实现；不得仅据元数据升级结论。",
+      "sources": [
+        {
+          "role": "技术分类",
+          "url": "https://gcc.gnu.org/",
+          "checkedAt": "2026-09-24T07:33:19.735701+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "GCC, the GNU Compiler Collection\n- GNU Project",
+          "finalUrl": "https://gcc.gnu.org/",
+          "decodedBodySha256": "07c02cada181006e8d90a43f3e0fd434282367cc7fda730107f92a3a08a9ed63",
+          "excerpt": "The GNU Compiler Collection includes front ends for C , C++ , Objective-C, Objective-C++, Fortran , Ada, Go, D, Modula-2, COBOL, Rust, and Algol 68 as well as libraries for these languages (libstdc++,...). GCC was originally written as the compiler for the GNU operating system . The GNU system was d"
+        }
+      ]
+    },
+    {
+      "id": "utf-8",
+      "status": "verified-related-technology",
+      "kind": "encoding-protocol",
+      "syntax": "not-applicable",
+      "implementation": "not-applicable-as-language",
+      "implementationName": "UTF-8",
+      "notes": "字符编码，不是编程语言。",
+      "nextStep": "参照来源继续核实适用范围、历史年代及实现；不得仅据元数据升级结论。",
+      "sources": [
+        {
+          "role": "技术分类",
+          "url": "https://www.rfc-editor.org/rfc/rfc3629.html",
+          "checkedAt": "2026-09-24T07:33:19.871721+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "标准或书目记录",
+          "finalUrl": "https://www.rfc-editor.org/rfc/rfc3629.html",
+          "decodedBodySha256": "7907f1c879c4505d09497bb5b97609c72d7f995b60c41fa08e9e6174bcb8d6cd",
+          "excerpt": "-8, the object of this memo, has a one-octet encoding unit. It uses all bits of an octet, but has the quality of preserving the full US-ASCII [ US-ASCII ] range: US-ASCII characters are encoded in one octet having the normal US-ASCII value, and any octet with such a value can only stand for a US-ASC"
+        }
+      ]
+    },
+    {
+      "id": "tcp",
+      "status": "verified-related-technology",
+      "kind": "encoding-protocol",
+      "syntax": "not-applicable",
+      "implementation": "not-applicable-as-language",
+      "implementationName": "TCP",
+      "notes": "传输协议，不是编程语言。",
+      "nextStep": "参照来源继续核实适用范围、历史年代及实现；不得仅据元数据升级结论。",
+      "sources": [
+        {
+          "role": "技术分类",
+          "url": "https://www.rfc-editor.org/rfc/rfc9293.html",
+          "checkedAt": "2026-09-24T07:33:19.874004+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "RFC 9293: Transmission Control Protocol (TCP)",
+          "finalUrl": "https://www.rfc-editor.org/rfc/rfc9293.html",
+          "decodedBodySha256": "0be501b21b790ae4fa1db0cfe3d3ee935a94f69dc8e0ef7e32a04250eaa30f13",
+          "excerpt": "hough reset events are also generated by the protocol itself when various error conditions occur, as described below. The side of a connection issuing a reset should enter the TIME-WAIT state, as this generally helps to reduce the load on busy servers for reasons described in [ 70 ] . ¶ As a general"
+        }
+      ]
+    },
+    {
+      "id": "http",
+      "status": "verified-related-technology",
+      "kind": "encoding-protocol",
+      "syntax": "not-applicable",
+      "implementation": "not-applicable-as-language",
+      "implementationName": "HTTP",
+      "notes": "应用层协议，不是编程语言。",
+      "nextStep": "参照来源继续核实适用范围、历史年代及实现；不得仅据元数据升级结论。",
+      "sources": [
+        {
+          "role": "技术分类",
+          "url": "https://www.rfc-editor.org/rfc/rfc9110.html",
+          "checkedAt": "2026-09-24T07:33:20.084228+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "RFC 9110: HTTP Semantics",
+          "finalUrl": "https://www.rfc-editor.org/rfc/rfc9110.html",
+          "decodedBodySha256": "d431760660ea44e130f6e919dab216df2d0b3a490567a98089267523368fe1e5",
+          "excerpt": "entified resources might also be provided by protocols outside the scope of this document. ¶ 4.3.3. https Origins The \"https\" scheme ( Section 4.2.2 ) associates authority based on the ability of a server to use the private key corresponding to a certificate that the client considers to be trustwort"
+        }
+      ]
+    },
+    {
+      "id": "b",
+      "status": "historical-primary-source",
+      "kind": "historical-language",
+      "syntax": "manual-referenced-not-exhaustively-reviewed",
+      "implementation": "historically-documented",
+      "implementationName": "历史 B 编译器",
+      "notes": "Bell Labs CSTR #8（1973）原文介绍 B 的教程、参考手册、MH-TSS 与 Unix 编译实现；当前未运行历史 B 程序。",
+      "nextStep": "参照来源继续核实适用范围、历史年代及实现；不得仅据元数据升级结论。",
+      "sources": [
+        {
+          "role": "历史原文",
+          "url": "https://www.bell-labs.com/usr/dmr/www/bintro.html",
+          "checkedAt": "2026-09-24T07:33:21.005438+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "The Programming Language B",
+          "finalUrl": "https://www.nokia.com/bell-labs/about/dennis-m-ritchie/bintro.html",
+          "decodedBodySha256": "ca44cf177df63eff30097ee0268fa64e2002f73f4771457768f6bd931888ac58",
+          "excerpt": "B is a computer language designed by D. M. Ritchie and K. L. Thompson, for primarily non-numeric applications such as system programming. These typically involve complex logical decision-making, and processing of integers, characters, and bit strings. On the H6070 TSS system, B programs are usually "
+        }
+      ]
+    },
+    {
+      "id": "metapi",
+      "status": "bibliographic-only",
+      "kind": "unresolved",
+      "syntax": "not-established",
+      "implementation": "not-established",
+      "implementationName": "",
+      "notes": "Crossref 与 Semantic Scholar 书目一致：Gerald D. Chandler，METAPI - a language for extensions，1971，DOI 10.1145/800006.807972。仅书目支持；未取得全文语法或可运行实现。快照记录 1967，论文出版年 1971，年代口径待核。",
+      "nextStep": "参照来源继续核实适用范围、历史年代及实现；不得仅据元数据升级结论。",
+      "sources": [
+        {
+          "role": "书目",
+          "url": "https://hopl.info/showlanguage.prx?exp=5090",
+          "checkedAt": "2026-09-24T07:36:42.524231+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "HOPL",
+          "finalUrl": "https://hopl.info/showlanguage.prx?exp=5090",
+          "decodedBodySha256": "2df8f36cd49b5642e28b0c9c2f8e007a26936cff18499a4533269f0d63f4b132",
+          "excerpt": "us Grammar and Syntax-oriented ↑ Grammar and Syntax-oriented ↑ Language-related ↑ Content-reflexive ↑ Grammar and Syntax-oriented/1967 ↑ Language-related/1967 ↑ Content-reflexive/1967 ↑ Grammar and Syntax-oriented/United States ↑ Language-related/United States ↑ Content-reflexive/United States ↑ MET"
+        },
+        {
+          "role": "书目",
+          "url": "https://api.semanticscholar.org/graph/v1/paper/a617a6ef72375bfcc912fdbdb645fc66db3c6abc?fields=title,authors,year,abstract,url",
+          "checkedAt": "2026-09-24T07:33:22.016484+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "标准或书目记录",
+          "finalUrl": "https://api.semanticscholar.org/graph/v1/paper/a617a6ef72375bfcc912fdbdb645fc66db3c6abc?fields=title,authors,year,abstract,url",
+          "decodedBodySha256": "01007a44b9b9c7ad92110aa2aa302aec1aaae0e28fa6b186916527217074543c",
+          "excerpt": "{\"paperId\": \"a617a6ef72375bfcc912fdbdb645fc66db3c6abc\", \"url\": \"https://www.semanticscholar.org/paper/a617a6ef72375bfcc912fdbdb645fc66db3c6abc\", \"title\": \"METAPI - a language for extensions\", \"year\": 1971, \"openAccessPdf\": {\"url\": \"\", \"status\": \"CLOSED\", \"license\": null, \"disclaimer\": \"Notice: The f"
+        },
+        {
+          "role": "出版书目交叉核实",
+          "url": "https://api.crossref.org/works/10.1145/800006.807972",
+          "checkedAt": "2026-09-24T07:33:22.016484+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "METAPI - a language for extensions",
+          "decodedBodySha256": "7f46f82bdd26500ac751c4ce327bef0a6de4d030a45fd98f39062198c26ee74c",
+          "excerpt": "Gerald D. Chandler; METAPI - a language for extensions; 1971; Proceedings of the international symposium on Extensible languages; DOI 10.1145/800006.807972."
+        }
+      ]
+    },
+    {
+      "id": "swift",
+      "status": "verified-language",
+      "kind": "programming",
+      "syntax": "documented",
+      "implementation": "documented",
+      "implementationName": "Swift compiler",
+      "notes": "",
+      "nextStep": "固定实现版本并补充语法、错误处理和标准库用例；需要馆内运行时则另行接入。",
+      "sources": [
+        {
+          "role": "语法",
+          "url": "https://raw.githubusercontent.com/swiftlang/swift-book/main/TSPL.docc/ReferenceManual/LexicalStructure.md",
+          "checkedAt": "2026-09-24T07:35:25.391084+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "Swift 词法结构文档",
+          "finalUrl": "https://raw.githubusercontent.com/swiftlang/swift-book/main/TSPL.docc/ReferenceManual/LexicalStructure.md",
+          "decodedBodySha256": "1c81943f9b2a776aff04e470c437f22acf07a16986db76ec3473477107325d6f",
+          "excerpt": "tifiers within the scope of the closure. The compiler synthesizes identifiers that begin with a dollar sign (`$`) for properties that have a property wrapper projection. Your code can interact with these identifiers, but you can't declare identifiers with that prefix. For more information, see the s"
+        },
+        {
+          "role": "实现",
+          "url": "https://www.swift.org/install/",
+          "checkedAt": "2026-09-24T07:35:25.394280+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "Install Swift | Swift.org",
+          "finalUrl": "https://www.swift.org/install/",
+          "decodedBodySha256": "bbdd136a049cfb3b53cb5e04ff15695ac10180f10b590e7f066e5225ddbe5124",
+          "excerpt": "Install Swift | Swift.org Docs Community Packages Blog Install (6.4.0) Docs Community Packages Blog Install (6.4.0) Install Swift Linux macOS Windows Docs Community Packages Blog Install Tools Xcode Visual Studio Code Emacs Neovim Cursor Other Editors Community Overview Swift Evolution Diversity Men"
+        }
+      ]
+    },
+    {
+      "id": "zig",
+      "status": "verified-language",
+      "kind": "programming",
+      "syntax": "documented",
+      "implementation": "documented",
+      "implementationName": "Zig compiler",
+      "notes": "Zig 文档为开发分支，具体版本要固定。 2026-10-04 补核官方 Overview：@cImport 导入 C 类型、函数等，export 导出 C ABI；录入 C/Zig 互操作，不据此推断 Zig 继承 C。",
+      "nextStep": "固定实现版本并补充语法、错误处理和标准库用例；需要馆内运行时则另行接入。",
+      "sources": [
+        {
+          "role": "语法",
+          "url": "https://ziglang.org/documentation/master/",
+          "checkedAt": "2026-09-24T07:35:34.306811+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "Documentation - The Zig Programming Language",
+          "finalUrl": "https://ziglang.org/documentation/master/",
+          "decodedBodySha256": "65d7a9e3d9db658e4dea8eaea3554109ff533260a917042ac117c536a539cdc5",
+          "excerpt": "sts passed. Sentinel-Terminated Arrays § The syntax [N:x]T describes an array which has a sentinel element of value x at the index corresponding to the length N . test_null_terminated_array.zig const std = @import ( \"std\" ); const expectEqual = std.testing.expectEqual; test \"0-terminated sentinel ar"
+        },
+        {
+          "role": "实现",
+          "url": "https://ziglang.org/learn/getting-started/",
+          "checkedAt": "2026-09-24T07:35:38.345092+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "Getting Started\n      ⚡\n      Zig Programming Language",
+          "finalUrl": "https://ziglang.org/learn/getting-started/",
+          "decodedBodySha256": "b753643602b95a25f62ba08f08c57a907342f676c03d8ff6adaece85eaafcbe9",
+          "excerpt": "rom source See README.md . Recommended tools Syntax Highlighters and LSP All major text editors have syntax highlight support for Zig. Some bundle it, some others require installing a plugin. If you’re interested in a deeper integration between Zig and your editor, checkout zigtools/zls . If you’re "
+        },
+        {
+          "url": "https://ziglang.org/learn/overview/",
+          "finalUrl": "https://ziglang.org/learn/overview/",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-04T00:42:42.079299+00:00",
+          "title": "Overview ⚡ Zig Programming Language",
+          "decodedBodySha256": "fe022370ce3b694fbbe97bf5a28207cd2e88ed3260a89068db69d360b5de01b2",
+          "role": "实现与生态关系",
+          "reviewed": true,
+          "excerpt": "Integration with C libraries without FFI/bindings @cImport directly imports types, variables, functions, and simple macros for use in Zig. It even translates inline functions from C into Zig. Here is an example of emitting a sine wave using libsoundio : 22-sine-wave.zig const c = @cImport ( @cInclude ( \"soundio/soundio.h\" )); const std = @import ( \"std\" ); f … Export functions, variables, and types for C code to depend on One of the primary use cases for Zig is exporting a library with the C ABI for other programming languages to call into. The export keyword in front of functions, variables, and types causes them to be part of the library API: 23-math-test.zig export fn add (a: i32 , b: i32 ) i32 { return a + b; } To make a static library: $ zig build-lib mathtest.zig To make a shared library: $ zig build-lib mathtest.zig -dynamic Here is an example with the Zig Build System : test.c #incl"
+        }
+      ]
+    },
+    {
+      "id": "ocaml",
+      "status": "verified-language",
+      "kind": "programming",
+      "syntax": "documented",
+      "implementation": "documented",
+      "implementationName": "OCaml",
+      "notes": "",
+      "nextStep": "固定实现版本并补充语法、错误处理和标准库用例；需要馆内运行时则另行接入。",
+      "sources": [
+        {
+          "role": "语法",
+          "url": "https://ocaml.org/manual/5.3/lex.html",
+          "checkedAt": "2026-09-24T07:35:39.540610+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "OCaml - The OCaml language",
+          "finalUrl": "https://ocaml.org/manual/5.3/lex.html",
+          "decodedBodySha256": "eef60b48351ca173e9fa2a6af1ce315a08754b27bfee5fc44c3d81c640642544",
+          "excerpt": "ls are denoted with the 0x or 0X prefix. The syntax is similar to that of floating-point decimal literals, with the following differences. The integer part and the fractional part use hexadecimal digits. The exponent part starts with the character p or P . It is written in decimal and interpreted as"
+        },
+        {
+          "role": "实现",
+          "url": "https://ocaml.org/manual/5.3/comp.html",
+          "checkedAt": "2026-09-24T07:35:39.989619+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "OCaml - Batch compilation (ocamlc)",
+          "finalUrl": "https://ocaml.org/manual/5.3/comp.html",
+          "decodedBodySha256": "ed42647a805ee7caa41ea6ef926ca126326c69ceefae2a641fe5e3cd9fe22411",
+          "excerpt": "” mode (see the -custom option) and as the C compiler for compiling .c source files. When linking object files produced by a C++ compiler (such as g++ or clang++ ), it is recommended to use -cc c++ . -cclib -l libname Pass the -l libname option to the C linker when linking in “custom runtime” mode ("
+        }
+      ]
+    },
+    {
+      "id": "scheme",
+      "status": "verified-language",
+      "kind": "programming",
+      "syntax": "documented",
+      "implementation": "documented",
+      "implementationName": "GNU Guile",
+      "notes": "Scheme 家族，具体实现为 Guile；不等同于每个 Scheme 方言。",
+      "nextStep": "固定实现版本并补充语法、错误处理和标准库用例；需要馆内运行时则另行接入。",
+      "sources": [
+        {
+          "role": "语法",
+          "url": "https://www.gnu.org/software/guile/manual/html_node/Scheme-Syntax.html",
+          "checkedAt": "2026-09-24T07:35:40.429854+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "Scheme Syntax (Guile Reference Manual)",
+          "finalUrl": "https://doc.guix.gnu.org/guile/latest/en/html_node/Scheme-Syntax.html",
+          "decodedBodySha256": "9c8f943f9b44f27515491a184e1916d7df5e318a030ffb28d9de8b9dcd298873",
+          "excerpt": "me Code [ Contents ] [ Index ] 6.16.1 Scheme Syntax: Standard and Guile Extensions ¶ Expression Syntax Comments Block Comments Case Sensitivity Keyword Syntax Reader Extensions"
+        },
+        {
+          "role": "实现",
+          "url": "https://www.gnu.org/software/guile/manual/html_node/Invoking-Guile.html",
+          "checkedAt": "2026-09-24T07:35:40.697777+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "Invoking Guile (Guile Reference Manual)",
+          "finalUrl": "https://doc.guix.gnu.org/guile/latest/en/html_node/Invoking-Guile.html",
+          "decodedBodySha256": "6be578ab1673b60db17736ea638aea52669afd8850618cfc9eff5d85a175aaea",
+          "excerpt": "nformation to provide and how to provide it. Command-line Options Environment Variables"
+        }
+      ]
+    },
+    {
+      "id": "scala",
+      "status": "verified-language",
+      "kind": "programming",
+      "syntax": "documented",
+      "implementation": "documented",
+      "implementationName": "Scala compiler / JVM",
+      "notes": "Scala 3。",
+      "nextStep": "固定实现版本并补充语法、错误处理和标准库用例；需要馆内运行时则另行接入。",
+      "sources": [
+        {
+          "role": "语法",
+          "url": "https://docs.scala-lang.org/scala3/reference/syntax.html",
+          "checkedAt": "2026-09-24T07:35:41.180379+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "Scala 3 Syntax Summary",
+          "finalUrl": "https://docs.scala-lang.org/scala3/reference/syntax.html",
+          "decodedBodySha256": "ce6b919b125504e110d17f4f56ff31e702197cf206adf7e207c1af4ece52e5ae",
+          "excerpt": "ted Type Missing E203: Deprecated Assignment Syntax E204: Deprecated Infix Named Argument Syntax E205: Given Search Priority Warning E206: Enum May Not Be Value Class E207: Illegal Unroll Placement E208: Extension Has Default Receiver E209: Format Interpolation Error E210: Value Class Cannot Extend "
+        },
+        {
+          "role": "实现",
+          "url": "https://docs.scala-lang.org/getting-started/install-scala.html",
+          "checkedAt": "2026-09-24T07:35:42.001892+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "Getting Started | \n      \n      Scala Documentation",
+          "finalUrl": "https://docs.scala-lang.org/getting-started/install-scala.html",
+          "decodedBodySha256": "836eef7211309857e61574afdaaf5e34cc1e69ad5f6ed7d3d4b2ef34fad7d865",
+          "excerpt": "er Installing Scala means installing various command-line tools such as the Scala compiler and build tools. We recommend using the Scala installer tool “Coursier” that automatically installs all the requirements, but you can still manually install each tool. Using the Scala Installer (recommended wa"
+        }
+      ]
+    },
+    {
+      "id": "ada",
+      "status": "verified-language",
+      "kind": "programming",
+      "syntax": "documented",
+      "implementation": "documented",
+      "implementationName": "GNAT",
+      "notes": "Ada 语言，非 Ada Lovelace 人物。",
+      "nextStep": "固定实现版本并补充语法、错误处理和标准库用例；需要馆内运行时则另行接入。",
+      "sources": [
+        {
+          "role": "语法",
+          "url": "https://docs.adacore.com/live/wave/arm05/html/arm05/arm22-2-1.html",
+          "checkedAt": "2026-09-24T07:35:42.535759+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "Character Set",
+          "finalUrl": "https://docs.adacore.com/live/wave/arm05/html/arm05/arm22-2-1.html",
+          "decodedBodySha256": "9afa8e128452b4165cd07acecfaeb4ae20ef81bcff899312c68a1f95984d7bce",
+          "excerpt": "tation shall accept Ada source code in UTF-8 encoding, with or without a BOM (see A.4.11 ), where every character is represented by its code point. The character pair CARRIAGE RETURN/LINE FEED (code points 16#0D# 16#0A#) signifies a single end of line (see 2.2 ); every other occurrence of a format_e"
+        },
+        {
+          "role": "实现",
+          "url": "https://docs.adacore.com/gnat_ugn-docs/html/gnat_ugn/gnat_ugn.html",
+          "checkedAt": "2026-09-24T07:35:42.777137+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "GNAT User’s Guide for Native Platforms — GNAT User's Guide for Native Platforms 27.0w documentation",
+          "finalUrl": "https://docs.adacore.com/gnat_ugn-docs/html/gnat_ugn/gnat_ugn.html",
+          "decodedBodySha256": "03fc69abd185ea20f2b51e2ce5bc3207023e2a7f68f661bb76870cc49c41b078",
+          "excerpt": "2.2. Other 8-Bit Codes 3.2.3. Wide_Character Encodings 3.2.4. Wide_Wide_Character Encodings 3.3. File Naming Topics and Utilities 3.3.1. File Naming Rules 3.3.2. Using Other File Names 3.3.3. Alternative File Naming Schemes 3.3.4. Handling Arbitrary File Naming Conventions with gnatname 3.3.5. File "
+        }
+      ]
+    },
+    {
+      "id": "matlab",
+      "status": "verified-language",
+      "kind": "programming",
+      "syntax": "documented",
+      "implementation": "documented",
+      "implementationName": "MathWorks MATLAB",
+      "notes": "MathWorks 官方 R2026b 语言基础文档覆盖变量、数组、运算符与语句；产品页确认 MATLAB 含编程语言及可安装运行环境。先前 403 访问受阻已在本次复核中解除；尚未本机运行专有 MATLAB。Octave 不代替 MATLAB 验证。",
+      "nextStep": "在有许可的 MATLAB 环境固定版本并运行独立样例；馆内运行时另行接入。",
+      "sources": [
+        {
+          "role": "语法",
+          "url": "https://www.mathworks.com/help/matlab/language-fundamentals.html",
+          "checkedAt": "2026-09-25T16:39:55+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "Language Fundamentals - MATLAB & Simulink",
+          "finalUrl": "https://www.mathworks.com/help/matlab/language-fundamentals.html",
+          "decodedBodySha256": "37567f29d263ed8d1218102a760c20df11a0f08905565ea5f9f475081850d711",
+          "excerpt": "Language fundamentals include basic operations, such as creating variables, array indexing, arithmetic, and data types."
+        },
+        {
+          "role": "实现",
+          "url": "https://www.mathworks.com/products/matlab.html",
+          "checkedAt": "2026-09-25T16:39:55+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "MATLAB - MathWorks",
+          "finalUrl": "https://www.mathworks.com/products/matlab.html",
+          "decodedBodySha256": "a501ea3913253d1eab1f1f17a75386b04e86047850e1f988579fc40037229542",
+          "excerpt": "MATLAB includes a programming language, interactive apps, highly specialized libraries for engineering applications, and tools for automatically generating embedded code."
+        },
+        {
+          "role": "语法（访问受阻）",
+          "url": "https://www.mathworks.com/help/matlab/learn_matlab/matrices-and-arrays.html",
+          "checkedAt": "2026-09-24T14:51:46.322350+00:00",
+          "httpStatus": null,
+          "reviewed": false,
+          "error": "HTTP Error 403: Forbidden"
+        },
+        {
+          "role": "实现（访问受阻）",
+          "url": "https://www.mathworks.com/help/matlab/ref/matlab.html",
+          "checkedAt": "2026-09-24T14:51:46.322549+00:00",
+          "httpStatus": null,
+          "reviewed": false,
+          "error": "HTTP Error 403: Forbidden"
+        }
+      ]
+    },
+    {
+      "id": "tcl",
+      "status": "verified-language",
+      "kind": "programming",
+      "syntax": "documented",
+      "implementation": "documented",
+      "implementationName": "Tcl / tclsh",
+      "notes": "",
+      "nextStep": "固定实现版本并补充语法、错误处理和标准库用例；需要馆内运行时则另行接入。",
+      "sources": [
+        {
+          "role": "语法",
+          "url": "https://www.tcl-lang.org/man/tcl8.6/TclCmd/Tcl.htm",
+          "checkedAt": "2026-09-24T07:35:43.807749+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "Tcl manual page - Tcl Built-In Commands",
+          "finalUrl": "https://www.tcl-lang.org/man/tcl8.6/TclCmd/Tcl.htm",
+          "decodedBodySha256": "3b6e092ab1f50defe081748a724f70a67c7d4df80ea0a635dec5778c274eb9ed",
+          "excerpt": "nd is evaluated in two steps. First, the Tcl interpreter breaks the command into words and performs substitutions as described below. These substitutions are performed in the same way for all commands. Secondly, the first word is used to locate a command procedure to carry out the command, then all "
+        },
+        {
+          "role": "实现",
+          "url": "https://www.tcl-lang.org/man/tcl8.6/UserCmd/tclsh.htm",
+          "checkedAt": "2026-09-24T07:35:44.438889+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "tclsh manual page - Applications",
+          "finalUrl": "https://www.tcl-lang.org/man/tcl8.6/UserCmd/tclsh.htm",
+          "decodedBodySha256": "9d200206ffefcc95e8195423fd1021add21efe735297dd562ce23e6215c9e8eb",
+          "excerpt": " name of a script file, and, optionally, the encoding of the text data stored in that script file. Any additional arguments are made available to the script as variables (see below). Instead of reading commands from standard input tclsh will read Tcl commands from the named file; tclsh will exit whe"
+        }
+      ]
+    },
+    {
+      "id": "smalltalk",
+      "status": "verified-language",
+      "kind": "programming",
+      "syntax": "documented",
+      "implementation": "documented",
+      "implementationName": "GNU Smalltalk",
+      "notes": "Smalltalk 家族，证据针对 GNU Smalltalk。",
+      "nextStep": "固定实现版本并补充语法、错误处理和标准库用例；需要馆内运行时则另行接入。",
+      "sources": [
+        {
+          "role": "语法与实现",
+          "url": "https://www.gnu.org/software/smalltalk/manual/gst.html",
+          "checkedAt": "2026-09-24T07:36:42.528158+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "GNU Smalltalk User’s Guide",
+          "finalUrl": "https://www.gnu.org/software/smalltalk/manual/gst.html",
+          "decodedBodySha256": "58f2dad4bd606f7baaab9875c9993110290770d2a4df00decb9e2868b6e0bb15",
+          "excerpt": "A Simple Overview of Smalltalk Syntax Smalltalk’s power comes from its treatment of objects. In this document, we’ve mostly avoided the issue of syntax by using strictly parenthesized expressions as needed. When this leads to code which is hard to read due to the density of parentheses, a knowledge "
+        }
+      ]
+    },
+    {
+      "id": "verilog",
+      "status": "verified-language",
+      "kind": "domain-language",
+      "syntax": "documented",
+      "implementation": "documented",
+      "implementationName": "Icarus Verilog",
+      "notes": "硬件描述语言；软件仿真与实际硬件综合分开。",
+      "nextStep": "固定实现版本并补充语法、错误处理和标准库用例；需要馆内运行时则另行接入。",
+      "sources": [
+        {
+          "role": "语法与实现",
+          "url": "https://steveicarus.github.io/iverilog/usage/simulation.html",
+          "checkedAt": "2026-09-24T07:35:45.369892+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "Simulation Using Icarus Verilog - Icarus Verilog documentation",
+          "finalUrl": "https://steveicarus.github.io/iverilog/usage/simulation.html",
+          "decodedBodySha256": "50336a21672203482829496aa320158ed2cee058e7effcb178e6f2d356e1f7b3",
+          "excerpt": "Modules in Icarus Verilog Verilog-A math library Cadence PLI1 Modules Miscellaneous IEEE1364 Notes Swift Model Support (Preliminary) Xilinx Hint Glossary On this page Compilation and Elaboration Making and Using Libraries The Macro Preprocessor Automatic Module Libraries Advanced Command Files Input"
+        }
+      ]
+    },
+    {
+      "id": "vhdl",
+      "status": "verified-language",
+      "kind": "domain-language",
+      "syntax": "documented",
+      "implementation": "documented",
+      "implementationName": "GHDL",
+      "notes": "硬件描述语言；核实仿真工具，不声称已生成硬件。 GHDL 项目说明明确 VHDL 的大部分语法和语义来自 Ada，同时区分事件驱动的硬件并发模型。这是实现项目说明，非原始设计者论文；1983年研发与1987年标准是不同事件。未运行 GHDL、合成电路或接入网页运行时。",
+      "nextStep": "固定实现版本并补充语法、错误处理和标准库用例；需要馆内运行时则另行接入。",
+      "sources": [
+        {
+          "role": "语法与实现",
+          "url": "https://ghdl.github.io/ghdl/quick_start/simulation/index.html",
+          "checkedAt": "2026-09-24T14:47:13.029358+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "Simulation — 7.0.0-dev",
+          "finalUrl": "https://ghdl.github.io/ghdl/quick_start/simulation/index.html",
+          "decodedBodySha256": "2af4cd564db4f2ca5a8ea266f9658fd1b0f8fc34e47cc92f58a91e7f4d89aa51",
+          "excerpt": "entity). Run [-r] : execute the design to test the behaviour, generate output/waveforms, etc. The following tips might be useful: Don’t forget to select the version of the VHDL standard you want to use (see VHDL standards ). The default is --std=93c . Use --std=08 for VHDL-2008 (albeit not fully imp"
+        },
+        {
+          "url": "https://ghdl.github.io/ghdl/about.html",
+          "finalUrl": "https://ghdl.github.io/ghdl/about.html",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-04T06:26:08.726569+00:00",
+          "decodedBodySha256": "8ecd41e1c73877c6bd991720877be6a952ec54c57a64ab1a01e8e7ac04b80088",
+          "title": "GHDL documentation — About / What is VHDL?",
+          "role": "实现项目的设计说明",
+          "reviewed": true,
+          "excerpt": "The GHDL project states: “Indeed, VHDL derives most of its syntax and semantics from Ada.” It then distinguishes VHDL as an HDL, a highly concurrent language with an event-driven execution model. VHDL source can be executed/simulated; synthesis transforms source to a netlist and is a different operation. The page describes GHDL as an analyzer, compiler, simulator and experimental synthesizer, and dates VHDL development to 1983 and its first listed standard to 1987. This is an implementation project’s explanatory account, not a original designer paper or a whole-standard conformance claim. No GHDL execution, hardware generation or webpage runtime verified this round."
+        }
+      ]
+    },
+    {
+      "id": "bcpl",
+      "status": "historical-primary-source",
+      "kind": "historical-language",
+      "syntax": "manual-referenced-not-exhaustively-reviewed",
+      "implementation": "distribution-documented-not-executed",
+      "implementationName": "BCPL",
+      "notes": "Martin Richards 的 BCPL 项目资料；现代复现环境另核。",
+      "nextStep": "参照来源继续核实适用范围、历史年代及实现；不得仅据元数据升级结论。",
+      "sources": [
+        {
+          "role": "历史原文",
+          "url": "https://www.cl.cam.ac.uk/~mr10/BCPL.html",
+          "checkedAt": "2026-09-24T07:35:47.376355+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "BCPL",
+          "finalUrl": "https://www.cl.cam.ac.uk/~mr10/BCPL.html",
+          "decodedBodySha256": "d1de93941053a33e8027b72d98455fc0f1aef0e59710018be09f490872d9750c",
+          "excerpt": "BCPL BCPL BCPL is a simple typeless language that I designed in 1966 strongly influenced by my experience as a research student working on a compiler for CPL a language jointly designed a committee from both Cambridge and London Universities. I implemented BCPL for the first time when working at MIT"
+        }
+      ]
+    },
+    {
+      "id": "visual-basic.net",
+      "status": "verified-language",
+      "kind": "programming",
+      "syntax": "documented",
+      "implementation": "documented",
+      "implementationName": "Visual Basic .NET / .NET SDK",
+      "notes": "Visual Basic .NET，与早期 Visual Basic 分开。",
+      "nextStep": "固定实现版本并补充语法、错误处理和标准库用例；需要馆内运行时则另行接入。",
+      "sources": [
+        {
+          "role": "语法",
+          "url": "https://learn.microsoft.com/en-us/dotnet/visual-basic/language-reference/",
+          "checkedAt": "2026-09-24T07:36:42.529752+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "Language Reference - Visual Basic | Microsoft Learn",
+          "finalUrl": "https://learn.microsoft.com/en-us/dotnet/visual-basic/language-reference/",
+          "decodedBodySha256": "32cc578bae8e4c743b6ab3eb700df65975a8f74487b48aec70e3bb0af31a28f4",
+          "excerpt": "le in Visual Basic. Directives Documents the compiler directives available in Visual Basic. Functions Documents the run-time functions available in Visual Basic. Modifiers Lists the Visual Basic run-time modifiers and provides links to more information. Modules Documents the modules available in Vis"
+        },
+        {
+          "role": "实现",
+          "url": "https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-run",
+          "checkedAt": "2026-09-24T07:32:52.694677+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "dotnet run command - .NET CLI | Microsoft Learn",
+          "finalUrl": "https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-run",
+          "decodedBodySha256": "04ae1e543ef330559733ab0bb48f3b5177f204cf9af034adab7b9e9b269cb44c",
+          "excerpt": "ocess. Explicit application arguments on the command line take precedence. For a Project profile, arguments supplied by the project also take precedence. environmentVariables Specifies environment variables for the launched process. Profile values override inherited and SDK-generated environment var"
+        }
+      ]
+    },
+    {
+      "id": "reactjs",
+      "status": "verified-related-technology",
+      "kind": "related-tool",
+      "syntax": "not-applicable",
+      "implementation": "not-applicable-as-language",
+      "implementationName": "React",
+      "notes": "用于用户界面的 JavaScript 库；不是独立编程语言。",
+      "nextStep": "参照来源继续核实适用范围、历史年代及实现；不得仅据元数据升级结论。",
+      "sources": [
+        {
+          "role": "技术分类",
+          "url": "https://react.dev/",
+          "checkedAt": "2026-09-24T07:36:44.284412+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "React",
+          "finalUrl": "https://react.dev/",
+          "decodedBodySha256": "2d9fd341534c10b9668d29fd3cc796a3e09ef43993c3ded10637eb15a156a786",
+          "excerpt": "The library for web and native user interfaces Learn React API Reference Create user interfaces from components React lets you build user interfaces out of individual pieces called components. Create your own React components like Thumbnail , LikeButton , and Video . Then combine them into entire sc"
+        }
+      ]
+    },
+    {
+      "id": "standard-ml",
+      "status": "verified-language",
+      "kind": "programming",
+      "syntax": "documented",
+      "implementation": "documented",
+      "implementationName": "Standard ML of New Jersey",
+      "notes": "具体实现为 SML/NJ。",
+      "nextStep": "固定实现版本并补充语法、错误处理和标准库用例；需要馆内运行时则另行接入。",
+      "sources": [
+        {
+          "role": "语法与实现",
+          "url": "https://www.smlnj.org/doc/interact.html",
+          "checkedAt": "2026-09-24T14:51:46.323452+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "Standard ML of New Jersey Interactive System",
+          "finalUrl": "https://www.smlnj.org/doc/interact.html",
+          "decodedBodySha256": "86dca2999051e3187834aaf4804ff253398a3eda0d173790e29d066aa3bd7dd1",
+          "excerpt": "Input to the top level interpreter ( i.e. , declarations and expressions) must be terminated by a semicolon followed by a carriage return before the system will evaluate it. The system then prints out a response indicating the effect of the evaluation. Expressions are treated as implicit declaration"
+        }
+      ]
+    },
+    {
+      "id": "lisp",
+      "status": "historical-primary-source",
+      "kind": "historical-language",
+      "syntax": "historically-documented",
+      "implementation": "historically-documented",
+      "implementationName": "LISP / IBM 704 历史实现",
+      "notes": "McCarthy 1960 年原文描述 S 表达式、函数、解释器及 IBM 704 上已开发的 LISP 系统。此证据针对早期 LISP，不把现代 Lisp 方言视为同一实现。",
+      "nextStep": "继续核实原始版本年代及后续方言；馆内运行时另行接入。",
+      "sources": [
+        {
+          "role": "历史原文",
+          "url": "https://www-formal.stanford.edu/jmc/recursive.pdf",
+          "checkedAt": "2026-09-25T16:39:55+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "Recursive Functions of Symbolic Expressions and Their Computation by Machine, Part I",
+          "finalUrl": "https://www-formal.stanford.edu/jmc/recursive.pdf",
+          "decodedBodySha256": "3d981849e59505eff3f14397a177b409f5d978d43d114bdd67c956e74320fc92",
+          "excerpt": "A programming system called LISP (for LISt Processor) has been developed for the IBM 704 computer by the Artificial Intelligence group at M.I.T."
+        }
+      ]
+    },
+    {
+      "id": "simula",
+      "status": "historical-primary-source",
+      "kind": "historical-language",
+      "syntax": "historically-documented",
+      "implementation": "historically-documented",
+      "implementationName": "Simula I / Simula 67 历史实现",
+      "notes": "设计者 Ole-Johan Dahl 回顾 Simula I 与 Simula 67 均已定义并实现，并给出 Simula I 语法示例；不是本机重现声明。 2026-10-04 复读论文第2–3页：Simula I 明确以 ALGOL 60 的块结构为基础，并新增模拟机制；编译器兼容叙述仅对应该历史实现，不能泛化为所有 Simula 版本。",
+      "nextStep": "继续核对 Simula I 与 Simula 67 的年代及方言区分；馆内运行时另行接入。",
+      "sources": [
+        {
+          "role": "历史原文",
+          "url": "https://www.mn.uio.no/ifi/english/about/ole-johan-dahl/bibliography/the-birth-of-object-orientation-the-simula-languages.pdf",
+          "checkedAt": "2026-09-25T16:39:55+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "The Birth of Object Orientation: the Simula Languages",
+          "finalUrl": "https://www.mn.uio.no/ifi/english/about/ole-johan-dahl/bibliography/the-birth-of-object-orientation-the-simula-languages.pdf",
+          "decodedBodySha256": "9129a185f6a1a991a44dff110a69d098acd3eb3cdf699610d544cfc60155e8df",
+          "excerpt": "Two language versions were defined and implemented. The first one, later called Simula I, was developed under a contract by UNIVAC. PDF pp. 2–3: \"Algol 60 was chosen for the following main reasons: the block structure, good programming security, European patriotism.\" \"Then a useful simulation language could be defined by adding a few special purpose mechanisms to Algol 60.\" \"Consequently any Algol program not containing that keyword would execute normally on our compiler.\" The compatibility passage concerns the authors’ Simula I compiler, not all Simula versions.",
+          "hashScope": "SHA-256 of complete PDF response bytes; relationship passages reread and visually inspected on 2026-10-04."
+        }
+      ]
+    },
+    {
+      "id": "vba",
+      "status": "verified-language",
+      "kind": "programming",
+      "syntax": "documented",
+      "implementation": "documented",
+      "implementationName": "Microsoft Office VBA / Visual Basic Editor",
+      "notes": "已核微软 VBA 语言参考、For...Next 规则与 Office 内编辑/运行步骤。VBA 依赖宿主应用，不等同于 Visual Basic .NET；未在本机执行或接入网页运行时。",
+      "nextStep": "在明确版本的 Office 宿主中核验原创示例；地图年代沿用快照，未由本次语法审查独立核实。",
+      "sources": [
+        {
+          "role": "语法",
+          "url": "https://learn.microsoft.com/en-us/office/vba/language/reference/user-interface-help/visual-basic-language-reference",
+          "checkedAt": "2026-10-03T15:08:50.886792+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "Visual Basic language reference | Microsoft Learn",
+          "decodedBodySha256": "d76446d2827871a2c0bf47c73b4faa8cdc93a8a78e2fbd509d68725a1eb945f6",
+          "excerpt": "Provides documentation about Visual Basic the language: all its methods, properties, statements, functions, operators, and objects. Note Interested in developing solutions that extend the Office experience across multiple platforms ? Check out the new Office Add-ins model . Office Add-ins have a small footprint compared to VSTO Add-ins and solutions, and you can build them by using almost any web programming technology, such as HTML5, JavaScript, CSS3, and XML. Character sets Constants Data types Directives Events Functions Keywords Microsoft Forms Objects Operators Statements Visual Basic Add-in Model See also Methods and Properties (now und"
+        },
+        {
+          "role": "语法",
+          "url": "https://learn.microsoft.com/en-us/office/vba/language/reference/user-interface-help/fornext-statement",
+          "checkedAt": "2026-10-03T15:09:40.388790+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "For...Next statement (VBA) | Microsoft Learn",
+          "decodedBodySha256": "6858191986ed3224cf0f70f9d15c22bbe3d76a9ec317b300803f7f4e32942223",
+          "excerpt": "Repeats a group of statements while the loop counter approaches its final value. Syntax For counter = start To end [ Step step ] [ statements ] [ Exit For ] [ statements ] Next [ counter ] The For…Next statement syntax has these parts: Part Description counter Required. Numeric variable used as a loop counter. The variable can't be a Boolean or an array element. start Required. Initial value of counter . end Required. Final value of counter . step Optional. Amount counter is changed each time through the loop. If not specified, step defaults to one. statements Optional. One or more statements between For and Next that are executed the specifi"
+        },
+        {
+          "role": "实现",
+          "url": "https://learn.microsoft.com/en-us/office/vba/library-reference/concepts/getting-started-with-vba-in-office",
+          "checkedAt": "2026-10-03T15:09:07.465043+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "Getting started with VBA in Office | Microsoft Learn",
+          "decodedBodySha256": "99020c4d3c065bea497c9c86647224370baca311c7730c37f69326a288d5b2ad",
+          "excerpt": "return to the Excel document, choose Macros on the Developer tab, choose Macro1 , and then choose Run . Cell A1 now contains the text Wow! and has a double-line border around it. Figure 3. Results of your first macro You just combined macro recording, reading the object model documentation, and simple programming to make a VBA program that does something. Congratulations! Did not work? Read on for debugging suggestions in VBA. Programming tips and tricks Start with examples The VBA community is very large; a search on the Web can almost always yield an example of VBA code that does something similar to what you want to do. If you cannot find a good example, try to break the task down into sm"
+        }
+      ]
+    },
+    {
+      "id": "vbscript",
+      "status": "verified-language",
+      "kind": "programming",
+      "syntax": "documented",
+      "implementation": "documented",
+      "implementationName": "Microsoft VBScript engine / Windows Script Host (cscript.exe)",
+      "notes": "已核微软存档语言参考、For...Next 语法和 Windows cscript 宿主文档。微软列为弃用功能，Windows Server 2025 中以预装按需功能提供，后续计划移除；现代浏览器不支持。存在历史实现不等于推荐新项目使用，未在本机执行或接入网页运行时。",
+      "nextStep": "在提供 VBScript 引擎的固定 Windows 环境中核验原创示例；不将弃用计划推断成所有现有环境已经移除。",
+      "sources": [
+        {
+          "role": "语法",
+          "url": "https://learn.microsoft.com/en-us/previous-versions//d1wf56tt(v=vs.85)",
+          "checkedAt": "2026-10-03T15:10:10.555271+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "VBScript Language Reference | Microsoft Learn",
+          "decodedBodySha256": "c4d9691ca96c0a014d9aefba953c5350281cecaed0913f86d19b2408def71bed",
+          "excerpt": "The following sections include information about the elements that comprise the VBScript language. In This Section Feature Information Includes links to topics that list the versions that introduced VBScript features and includes links to topics that explain the feature differences between VBScript and VBA. Constants Lists the constants in VBScript and links to topics that explain how to use each constant. Errors Includes links to run-time and syntax error messages. Events Includes links to topics that explain events in VBScript. Functions Lists VBScript functions and links to topics that explain how to use each function. Keywords Includes li"
+        },
+        {
+          "role": "语法",
+          "url": "https://learn.microsoft.com/en-us/previous-versions/sa3hh43e(v=vs.85)",
+          "checkedAt": "2026-10-03T15:11:08.324774+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "For...Next Statement | Microsoft Learn",
+          "decodedBodySha256": "d8c9d5738ec6c1708442af567b315a7dff6413d7804407842dde09730244fbf4",
+          "excerpt": "Repeats a group of statements a specified number of times. For counter = start To end [Step step] [statements] [Exit For] [statements] Next Arguments counter Numeric variable used as a loop counter. The variable cannot be an array element or an element of a user-defined type. start Initial value of counter. end Final value of counter. step Amount counter is changed each time through the loop. If not specified, step defaults to one. statements One or more statements between For and Next that are executed the specified number of times. Remarks Use a For...Next structure when you want to repeat a set of statements a set number of times. When a F"
+        },
+        {
+          "role": "实现",
+          "url": "https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/cscript",
+          "checkedAt": "2026-10-03T15:09:06.275215+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "cscript | Microsoft Learn",
+          "decodedBodySha256": "689da1cbfdaf7d31f7585cd6065de60c39c988f65aa5c73700f0353e10942a52",
+          "excerpt": "Remarks Each parameter is optional; however, you can't specify script arguments without specifying a script. If you don't specify a script or any script arguments, cscript.exe displays the cscript.exe syntax and the valid host options. The /t parameter prevents excessive running of scripts by setting a timer. When the run time exceeds the specified value, cscript interrupts the script engine and ends the process. Windows script files usually have one of the following file name extensions: .wsf, .vbs, .js. Windows Script Host can use .wsf script files. Each .wsf file can use multiple scripting engines and perform multiple jobs. if you double-click a script file with an extension that has no association, the Open With dialog box appears. Select wscript or cscript, and then select Always use this program to open this file type . This registers wscript.exe or cscript as the default script host for files of this file type. Related links Command-Line Syntax Key Feedback Was this page helpful? Yes No No Need help with this topic? Want to try using Ask Learn to clarify or guide you through t"
+        },
+        {
+          "role": "支持状态",
+          "url": "https://learn.microsoft.com/en-us/windows-server/get-started/removed-deprecated-features-windows-server",
+          "checkedAt": "2026-10-03T15:10:26.565588+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "Features Removed or No Longer Developed in Windows Server | Microsoft Learn",
+          "decodedBodySha256": "fc84cb827822c5d1a27e6cabbf267c7db350bc78e64f95eb3c9932d039e0be37",
+          "excerpt": "VBScript VBScript is available as an FOD and preinstalled in Windows Server 2025, before its removal from the operating system in a later release. As a replacement for VBScript, use PowerShell for automating tasks, custom actions, or scripts. To learn more about migrating to PowerShell, see The VBScript-to-Windows PowerShell Conversion Guide . If you're using VBScript within your webpage, functionality is currently limited to browsers predating Internet Explorer 11. We recommend migrating your webpages to JavaScript, which provides cross-browser compatibility and modern browser support. Windows Server Update Services (WSUS) WSUS is no longer actively developed. All the existing capabilities and content continue to be available for your deployments. Rivest Cipher 4 (RC4) usage in Kerberos R"
+        }
+      ]
+    },
+    {
+      "id": "algol-60",
+      "status": "verified-language",
+      "kind": "programming",
+      "syntax": "documented",
+      "implementation": "documented",
+      "implementationName": "GNU MARST 2.8（ALGOL 60 到 C 的翻译器）",
+      "notes": "核实 ALGOL 60 的语言报告及 GNU MARST 实现说明。1963 Revised Report 与 1976 Modified Report 的 HTML 为 N. Landsteiner 的转录镜像；MARST README 明确采用 1976 修改报告的 Level 0 硬件表示，不能把各版语法视为完全相同。2026-10-04 在临时目录由已核发行包构建 MARST 2.8，原创求和、递归、按名调用样例经翻译至 C 并由本机 Clang 编译执行，实际输出55、720、6；无效语法被拒绝。生成的按名调用 C 程序有未排序修改警告，结果仅证明这些样例在本机本次配置中的输出，不证明完整标准符合性或跨平台语义。详细执行记录见仓库 data/audit/algol60-runtime-checks.json，尚无页面运行时。与馆藏 Algol 家族条目、ALGOL 68 分开；地图上的既有设计关系仍须逐条历史复核。",
+      "nextStep": "继续逐条核实 ALGOL 60 的设计输入；补充标准符合性与其他平台核验，生成 C 的按名调用警告需另核。",
+      "sources": [
+        {
+          "url": "https://www.masswerk.at/algol60/report.htm",
+          "finalUrl": "https://www.masswerk.at/algol60/report.htm",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-04T00:48:30.059774+00:00",
+          "decodedBodySha256": "29414154be30c49652e71e8c41bc98ca07052f1f00568bbeaf372ece4cd9563e",
+          "title": "Revised Report on the Algorithmic Language Algol 60",
+          "role": "历史语言报告",
+          "reviewed": true,
+          "excerpt": "The report gives a complete defining description of the international algorithmic language Algol 60. This is a language suitable for expressing a large class of numerical processes in a form sufficiently concise for direct automatic translation into the language of programmed automatic computers. The introduction contains an account of the preparatory work leading up to the final conference, where the language was defined. In addition the notions reference language, publication language, and hardware representations are explained. In the first chapter a survey of the basic constituents and features of the language is given, and the formal not"
+        },
+        {
+          "url": "https://www.masswerk.at/algol60/modified_report.htm",
+          "finalUrl": "https://www.masswerk.at/algol60/modified_report.htm",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-04T00:51:22.226235+00:00",
+          "decodedBodySha256": "7ca406c7fcd017b188fa23df875f8dfce6a08e76def7cb95fc39702ea8ffa1cd",
+          "title": "Modified Report on the Algorithmic Language Algol 60",
+          "role": "语法",
+          "reviewed": true,
+          "excerpt": "4.2. Assignment statements 4.2.1. Syntax <destination> ::= <variable> | <procedure identifier> <left part> ::= <destination> := <left part list> ::= <left part> | <left part list> <left part> <assignment statement> ::= <left part list> <arithmetic expression> | <left part list> <Boolean expression> 4.2.2. Examples s := p[0] := n := n + 1 + s n := n + 1 A := B/C - v - q S S[v, k + 2] := 3 - arctan(s zeta) V := Q > Y Z 4.2.3. Semantics Assignment statements serve for assigning the value of an expression to one or several destinations. Assignment to a procedure identifier may only occur within the body of a procedure defining the value of the function designator denoted by that identifier (see Section 5.4.4 ). If assignment is made to a subscripted variable, the values of all the subscripts must lie within the appropriate subscript bounds. Otherwise the action of the program becomes undefined. The process will in the general case be unders"
+        },
+        {
+          "url": "https://ftp.gnu.org/gnu/marst/marst-2.8.tar.gz",
+          "finalUrl": "https://ftp.gnu.org/gnu/marst/marst-2.8.tar.gz",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-04T00:50:00.037485+00:00",
+          "title": "GNU MARST 2.8 — README and INSTALL",
+          "decodedBodySha256": "d77f4703b0b44b50be57908f9d556ee6c3bedd97d638c42949d6aec84f8070ba",
+          "hashScope": "SHA-256 of complete compressed tar.gz response bytes; excerpts decoded from named README/INSTALL archive members.",
+          "role": "实现",
+          "reviewed": true,
+          "excerpt": "GNU MARST includes three components:\n\n*  the translator, MARST, which allows translating Algol 60 programs to\n   the C programming language;\n\n*  the library, ALGLIB, which contains pre-compiled standard Algol 60\n   procedures and additional library routines. This library is used at\n   the linking stage.\n\n*  the converter, MACVT, which allows converting Algol 60 programs from\n   some other (old) representations to the MARST representation.\n\nThe input language of the translator is the hardware representation of\nfull (i.e. Level 0) Algol 60 as described in the IFIP document:\n\nModified Report on the Algorithmic Language Algol 60, The Computer\nJournal, v.19, No.4, Nov. 1976, pp.364-79. (This document is an\nofficial standard IFIP document. It is *not* a part of GNU MARST.)\n\nNote that there are some differences between the Revised Report and\nthe Modified Report since the latter is a result of application of the\nfollowing IFIP document to the Revised Report:\n\nR.M.De Morgan, I.D.Hill, and B.A.Wichmann. A Supplement to the ALGOL 60\nRevised Report. The Computer Journal, Vol. 19, No. 3, 1976, pp. 276-88.\n(This document is an official standard IFIP document. It is *not* part\nof GNU MARST.)\n\nThe translator and all library routines are written in a basic dialect\nof the C programming language known as ANSI C89 and described in the\nfollowing document:\n\nAmerican National Standard for Information Systems - Programming\nLanguage C, ANSI X3.159-1989. (This document is an official standard\nANSI/ISO document. It is *not* part of GNU MARST.)\n\nThe output code produced by the translator is in the sam"
+        }
+      ]
+    },
+    {
+      "id": "modula-2",
+      "status": "historical-primary-source",
+      "kind": "historical-language",
+      "syntax": "historically-documented",
+      "implementation": "historically-documented",
+      "implementationName": "Modula-2 / Lilith 历史编译器",
+      "notes": "作者给出模块语法与代码示例、Mesa/Pascal/Modula 的具体设计输入，并叙述 Lilith 等历史编译器；本轮未重现执行。快照1978年与作者所述1979年定义报告是不同事件，保留来源年代并明确口径待补，不自动改年。",
+      "nextStep": "继续读取具体版本语言报告与可取得的编译器，固定版本并实测；网页运行时另行评估。",
+      "sources": [
+        {
+          "url": "https://people.inf.ethz.ch/wirth/Articles/Modula-Oberon-June.pdf",
+          "finalUrl": "https://people.inf.ethz.ch/wirth/Articles/Modula-Oberon-June.pdf",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-04T05:50:39.726737+00:00",
+          "decodedBodySha256": "7b445f8f28e52b711daf2db2b6132203985cad45f586756cdb718ec8cacf8183",
+          "hashScope": "SHA-256 of complete PDF response bytes.",
+          "title": "Niklaus Wirth — Modula-2 and Oberon (HOPL-3 submitted paper, revised June 2006)",
+          "role": "历史原文",
+          "reviewed": true,
+          "excerpt": "PDF pp. 2–3: “Mesa served as Modula-2’s guideline.” “The guiding idea was to construct a genuine successor of Pascal.” “The monitor, representing critical regions with mutual exclusion, mutated into modules in Modula-2.” “In planning Modula-2, I saw it as a new version of Pascal, updated to the requirements of the time.” pp. 3–5 describe import/export syntax and module examples. p. 10: “During 1984, the author designed and implemented yet another compiler for Modula-2.”"
+        }
+      ]
+    },
+    {
+      "id": "oberon",
+      "status": "historical-primary-source",
+      "kind": "historical-language",
+      "syntax": "historically-documented",
+      "implementation": "historically-documented",
+      "implementationName": "Oberon / Ceres 历史编译器",
+      "notes": "作者叙述从 Modula-2 简化设计、语法与类型机制、1986年语言定义及 Ceres 编译器；不是本机重现声明。语言 Oberon 与同名操作系统分开理解，语言定义与系统1989年发布不可混用。ALGOL 60 的家族祖先叙述不自动升级现有直接关系。",
+      "nextStep": "继续读取具体版本语言报告与可取得的编译器，固定版本并实测；网页运行时另行评估。",
+      "sources": [
+        {
+          "url": "https://people.inf.ethz.ch/wirth/Articles/Modula-Oberon-June.pdf",
+          "finalUrl": "https://people.inf.ethz.ch/wirth/Articles/Modula-Oberon-June.pdf",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-04T05:50:39.726737+00:00",
+          "decodedBodySha256": "7b445f8f28e52b711daf2db2b6132203985cad45f586756cdb718ec8cacf8183",
+          "hashScope": "SHA-256 of complete PDF response bytes.",
+          "title": "Niklaus Wirth — Modula-2 and Oberon (HOPL-3 submitted paper, revised June 2006)",
+          "role": "历史原文",
+          "reviewed": true,
+          "excerpt": "PDF p. 13: “The programming language Oberon was the result of a concentrated effort to increase the power of Modula-2 and simultaneously to reduce its complexity.” pp. 13–16 describe removed facilities, type extension and type tests. p. 16: “The first ideas leading to Oberon were drafted in 1985, and the language was fully defined in early 1986 in close cooperation with J. Gutknecht.” “The first compiler was programmed by this author, deriving it from the single-pass Modula-2 compiler.” PDF p. 15 gives syntax examples: “T0 = record x, y, w, h: integer end”; “T1 = record (T0) t: Text end”; “The only new operation required is the type test. Given a variable v of type T0, the Boolean expression v is T is used to determine the effective, current type assigned to v.”"
+        }
+      ]
+    },
+    {
+      "id": "postscript",
+      "status": "historical-primary-source",
+      "kind": "historical-language",
+      "syntax": "historically-documented",
+      "implementation": "historically-documented",
+      "implementationName": "Adobe PostScript 历史解释器",
+      "notes": "Adobe 原始参考手册明确它有可执行对象、后缀语法、栈和解释器，不只是静态排版记法；设计分别参考 Forth 后缀语法与 Lisp 的程序作为数据及执行状态控制。馆藏1982年为设计时代线索，手册所称1985年引入是另一事件；本轮未执行解释器，尚无网页运行时。",
+      "nextStep": "核实具体版本及可取得的解释器并实测，区分语言、解释器实现和文档格式；网页运行另行评估。",
+      "sources": [
+        {
+          "url": "https://www.adobe.com/jp/print/postscript/pdfs/PLRM.pdf",
+          "finalUrl": "https://www.adobe.com/jp/print/postscript/pdfs/PLRM.pdf",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-04T06:10:01.636029+00:00",
+          "decodedBodySha256": "6b29e79e4ab64aaa61a3fb27a0f36838c01f2530362873ac316bdb493a1bab6b",
+          "title": "Adobe Systems Incorporated — PostScript Language Reference, third edition (1999)",
+          "role": "历史原文",
+          "reviewed": true,
+          "excerpt": "Printed p. 23 / PDF p. 37: “The syntax most closely resembles that of the programming language FORTH”, with postfix notation and no reserved words. Programs as data and execution-state control are “derived from programming languages such as LISP.” Printed p. 850 / PDF p. 864 index explicitly lists “FORTH — as PostScript influence 23.” Printed p. 24 / PDF p. 38, §3.1, describes actual interpreter operations on number/name/operator/procedure objects, operand stack and dictionary lookup. Printed p. 5 / PDF p. 19 states introduction in 1985 and distinguishes LanguageLevels 1, 2, 3. Catalogue 1982 is a design-era date, not this introduction event. Syntax and historical Adobe interpreter are documented; no implementation executed or webpage runtime added this round.",
+          "hashScope": "SHA-256 of complete PDF response bytes; selected pages visually read."
+        }
+      ]
+    },
+    {
+      "id": "sh",
+      "status": "historical-primary-source",
+      "kind": "historical-language",
+      "syntax": "historically-documented",
+      "implementation": "historically-documented",
+      "implementationName": "Unix V7 Bourne shell",
+      "notes": "Unix V7 原始手册有完整命令编程语法，源码署名 S. R. Bourne。1978年作者论文的首页印刷页码为1971，明确发表于1978年7–8月，不能把页码当发表年；但也不能由此断言馆藏日期错误的成因。sh 展示校订为 Bourne shell (sh)，1979 表示 Unix V7 发布，而非设计开始；原1971保留可查。馆藏另有 bourne-shell（原值1977、同作者）且 HOPL 两个编号皆为 Bourne/Unix shell 语境，身份及年代范围仍待核，保留且不画彼此继承。不能把现代 /bin/sh、Bash 或 POSIX shell 等同于这个历史实现。本轮未编译历史源码，未接入网页运行。",
+      "nextStep": "继续核读作者论文和版本史；执行历史实现需单独固定工具链，不能用现代系统 sh 冒充。",
+      "sources": [
+        {
+          "url": "https://www.tuhs.org/cgi-bin/utree.pl?file=V7/usr/man/man1/sh.1",
+          "finalUrl": "https://www.tuhs.org/cgi-bin/utree.pl?file=V7/usr/man/man1/sh.1",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-04T12:00:43.622534+00:00",
+          "decodedBodySha256": "e4827b35a57390207d87fdf4bbcc820131733280ff810cdc2ba1b1641c4961e2",
+          "title": "Unix V7 sh(1) — original manual source archived by TUHS",
+          "role": "历史原文",
+          "reviewed": true,
+          "excerpt": "The V7 sh(1) manual calls sh a command programming language. It specifies simple commands, pipelines, lists, for/name/in/do/done, case/in/esac, if/then/elif/else/fi, while/do/done and until; these document executable grammar rather than a bibliography-only name. The manual source does not itself embed a 1979 release date.",
+          "hashScope": "SHA-256 of complete HTML response bytes, including TUHS wrapper where present; cited source text read."
+        },
+        {
+          "url": "https://www.tuhs.org/cgi-bin/utree.pl?file=V7/usr/src/cmd/sh/main.c",
+          "finalUrl": "https://www.tuhs.org/cgi-bin/utree.pl?file=V7/usr/src/cmd/sh/main.c",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-04T12:09:52.080559+00:00",
+          "decodedBodySha256": "6f84ba6c53160f282684ba48474602bb2d0322cee059fca3d6f7238a58cda83f",
+          "title": "Unix V7 shell main.c — original implementation archived by TUHS",
+          "role": "历史实现",
+          "reviewed": true,
+          "excerpt": "Header explicitly identifies UNIX shell, S. R. Bourne, Bell Telephone Laboratories. main sets options, positional parameters and input; exfile reads commands and calls execute(cmd(NL,MTFLG),0). This is historical implementation evidence, not a successful build, modern /bin/sh identity or online execution.",
+          "hashScope": "SHA-256 of complete HTML response bytes, including TUHS wrapper where present; cited source text read."
+        },
+        {
+          "url": "https://www.in-ulm.de/~mascheck/bourne/",
+          "finalUrl": "https://www.in-ulm.de/~mascheck/bourne/",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-04T12:06:11.657769+00:00",
+          "decodedBodySha256": "081957fb07d529df4d222a357a649380e21548c432d2cc4d00e45ead3321ddae",
+          "title": "Sven Mascheck — The traditional Bourne shell family",
+          "role": "年代与身份",
+          "reviewed": true,
+          "excerpt": "This curated secondary history explicitly restricts scope to traditional Bourne variants, excluding Korn/ash/bash/POSIX-compatible shells. It states the Bourne shell was introduced with Unix 7th edition in 1979; its predecessor section separately dates the Version 1 Thompson shell manual 11/3/71. The unreleased development period is not completely resolved. Use 1979 as the Unix V7 release event, not design start.",
+          "hashScope": "SHA-256 of complete HTML response bytes, including TUHS wrapper where present; cited source text read."
+        },
+        {
+          "url": "https://www.tuhs.org/Archive/Documentation/Papers/BSTJ/bstj57-6-1971.pdf",
+          "finalUrl": "https://www.tuhs.org/Archive/Documentation/Papers/BSTJ/bstj57-6-1971.pdf",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-04T12:42:20.918497+00:00",
+          "decodedBodySha256": "8f4dc793431e2188c507c0dc4e6c3379d1b17250c4eadf0553b3ad86c75d967f",
+          "role": "历史原文",
+          "reviewed": true,
+          "title": "S. R. Bourne — The UNIX Shell, Bell System Technical Journal 57(6), July–August 1978, pp. 1971–1990",
+          "excerpt": "Printed p. 1971 / PDF p. 1 explicitly gives July–August 1978 and manuscript received January 30, 1978; 1971 is the printed page number, not the paper publication year. The abstract identifies a command programming language with while, if, for, case, variables and parameter passing. Printed pp. 1971–1972 / PDF pp. 1–2 explicitly say design is partly based on the original UNIX shell and PWB/UNIX shell; Cambridge/CTSS are described as similarities, not equivalent claims of direct descent. Printed p. 1989 / PDF p. 19 lists operators and reserved words; p. 1990 / PDF p. 20 identifies the cited Thompson and Mashey works. This supports the Bourne identity and a 1978 publication event; it does not prove why HOPL dated a record 1971 or establish a precise design-start date.",
+          "hashScope": "SHA-256 of complete archived PDF bytes; PDF pages 1, 2, 19, 20 rendered and visually read."
+        },
+        {
+          "url": "https://hopl.info/showlanguage.prx?exp=568",
+          "finalUrl": "https://hopl.info/showlanguage.prx?exp=568",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-04T12:32:16.550938+00:00",
+          "decodedBodySha256": "28507b4cac5c02fe3787926aa7f5506b790de76c3ad303975b16ac457244d65e",
+          "role": "目录身份复核",
+          "reviewed": true,
+          "title": "HOPL 568 / sh:001",
+          "excerpt": "Directory lists sh/Shellish by Steve Bourne with Designed 1971 and Published 1971, but cites Bourne 1978 BSTJ 57(6), pp. 1971–1990 and An Introduction to the UNIX Shell (1978). Internal date ambiguity remains; do not assume a particular cause from page-number coincidence."
+        },
+        {
+          "url": "https://hopl.info/showlanguage.prx?exp=3931",
+          "finalUrl": "https://hopl.info/showlanguage.prx?exp=3931",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-04T12:32:16.110407+00:00",
+          "decodedBodySha256": "fa64289bb36dc332773f1d1033f4abe287c5ad7e971f710719f4bcac6366fe49",
+          "role": "目录身份复核",
+          "reviewed": true,
+          "title": "HOPL 3931 / bou002",
+          "excerpt": "Directory lists Bourne shell by Steven Bourne, Designed 1978, and a resource identifying Seventh Edition Unix. This differs from the pinned PLDB bourne-shell/1977 record. The two catalogue identities overlap; unargued csh→Bourne Evolution of relation is not imported."
+        }
+      ],
+      "catalogueCorrection": {
+        "changes": [
+          {
+            "field": "name",
+            "from": "sh",
+            "to": "Bourne shell (sh)"
+          },
+          {
+            "field": "year",
+            "from": 1971,
+            "to": 1979,
+            "event": "Unix V7 发布"
+          }
+        ],
+        "reason": "原始馆藏 sh 的1971年与 Bourne 身份混用，不能作为 V7 发布年份。V7 原始源码确认作者，1978年原论文确认语言语法及发表事件，独立版本史给出1979年 Unix V7 发布；展示以明确发布事件定位，保留原始值和记录 ID，不推定设计开始或错误成因。",
+        "sources": [
+          "https://www.tuhs.org/cgi-bin/utree.pl?file=V7/usr/man/man1/sh.1",
+          "https://www.tuhs.org/cgi-bin/utree.pl?file=V7/usr/src/cmd/sh/main.c",
+          "https://www.in-ulm.de/~mascheck/bourne/",
+          "https://www.tuhs.org/Archive/Documentation/Papers/BSTJ/bstj57-6-1971.pdf"
+        ]
+      }
+    },
+    {
+      "id": "xslt",
+      "status": "verified-language",
+      "kind": "domain-language",
+      "syntax": "documented",
+      "implementation": "documented",
+      "implementationName": "libxslt / xsltproc (XSLT 1.0)",
+      "notes": "W3C XSLT 1.0 原始标准定义模板、变量、参数、条件与结果树的执行语义，是可执行转换语言，不只是 XML 记法。libxslt 有真实处理器；本机 xsltproc 使用 libxslt 1.1.35。标准明确嵌入 XPath 表达式，不以规范引用或同属 XML 推定设计继承。1998馆藏年代与1999年正式 Recommendation 为不同事件，暂保留原值。未接入网页运行，后续版本需分别核实。 本轮已用本机 xsltproc --nonet 执行两份原创 XSLT 1.0：求和实际输出55，排序与条件实际输出8,9,10,，非法 XPath 表达式退出失败；证据与复现脚本保存在项目，属于样例核验而非完整符合性。",
+      "nextStep": "继续核验模板匹配、命名模板、参数及异常；另核2.0/3.0实现与 XPath 宿主关系，网页运行另行接入。",
+      "sources": [
+        {
+          "url": "https://www.w3.org/TR/1999/REC-xslt-19991116",
+          "finalUrl": "https://www.w3.org/TR/1999/REC-xslt-19991116",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-04T12:19:06.492697+00:00",
+          "decodedBodySha256": "0f0175f97761e6856b6f53267ef8be6d7875b823f0b807b4fc8fe3adb7907157",
+          "role": "语法",
+          "reviewed": true,
+          "title": "W3C XSL Transformations (XSLT) Version 1.0 — Recommendation, 16 November 1999",
+          "excerpt": "Abstract defines syntax and semantics of a language transforming XML documents. §Introduction describes template rules, result-tree construction and XPath expressions for selecting nodes, conditions and generating text. §11 variables/parameters and §10 sorting specify execution behavior. Appendix A lists DSSSL only as a reference; this does not itself prove a design-influence edge. 1999 is this Recommendation event, not necessarily the catalogue 1998 first-appearance event."
+        },
+        {
+          "url": "https://raw.githubusercontent.com/GNOME/libxslt/v1.1.35/doc/intro.html",
+          "finalUrl": "https://raw.githubusercontent.com/GNOME/libxslt/v1.1.35/doc/intro.html",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-04T12:22:32.730009+00:00",
+          "decodedBodySha256": "ef03d9fddb486545a6905b4c9b31760f6b388564381d49f088bf278de59d23a4",
+          "role": "实现",
+          "reviewed": true,
+          "title": "GNOME libxslt 1.1.35 — bundled Introduction",
+          "excerpt": "Original tagged documentation identifies libxslt as the GNOME XSLT C library, based on libxml for XML parsing, tree manipulation and XPath support. It describes a processor, with navigation to the xsltproc tool and its manual. This documents an implementation; it does not prove XSLT 2.0/3.0 support or browser execution."
+        }
+      ]
+    },
+    {
+      "id": "korn-shell",
+      "status": "historical-primary-source",
+      "kind": "historical-language",
+      "syntax": "historically-documented",
+      "implementation": "historically-documented",
+      "implementationName": "AT&T historical ksh88/ksh93; separately tested installed ksh93u+",
+      "notes": "作者1994年论文明确叙述在 Bourne shell 上增补并形成 ksh，借鉴 C shell 的历史记录、别名和作业控制，算术及 for 语法借鉴 C；有函数、数组和完整程序，以及实际发行描述。兼容叙述限定历史版本，不能扩成全版本超集；C实现与 ALGOL-like 源码风格不是新增继承依据。本机另以 Version AJM 93u+ 2012-08-01 执行原创算术循环、数组/函数，实际输出55与12，非法语法被拒绝。这不等于执行1988/1993原始二进制或完整符合性，未接入网页运行。",
+      "nextStep": "固定现代版本官方语法资料，补重定向、函数作用域和关联数组用例；历史实现与网页运行分别核实。",
+      "sources": [
+        {
+          "url": "https://www.usenix.org/legacy/publications/library/proceedings/vhll/full_papers/korn.ksh.a",
+          "finalUrl": "https://www.usenix.org/legacy/publications/library/proceedings/vhll/full_papers/korn.ksh.a",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-04T12:41:46.860397+00:00",
+          "decodedBodySha256": "1542b6a6bef06ec0840983c3ee2314cd97daea15a8bf00214d05bebd7f2c52ea",
+          "role": "历史原文",
+          "reviewed": true,
+          "title": "David G. Korn — ksh: An Extensible High Level Language, USENIX VHLL 1994 (full ASCII paper)",
+          "excerpt": "§2 History describes starting with a Bourne-shell form interpreter, adding let with a small subset of C expression syntax, arrays and shell functions, and using it as the first ksh after removing form-specific code. It explicitly borrows C-shell history, aliases and job control. §5.1 says ksh93 added ANSI-C arithmetic operators and a C-like arithmetic for statement; §§5.2/5.4 document arrays and function examples, and appendices contain complete programs. Abstract/§2 document shipped ksh versions and Toolchest source distribution. Compatibility claims concern historical versions (ksh88/ksh93, System V); the paper explicitly says then-current Bash/pdksh are not compatible with ksh. Full functionality comparisons with awk/perl/tcl and implementation in C do not by themselves establish further design ancestry. No historical ksh88 or original 1993 binary executed this round.",
+          "hashScope": "SHA-256 of complete USENIX ASCII response bytes; relevant full-paper sections read."
+        }
+      ],
+      "catalogueCorrection": {
+        "changes": [
+          {
+            "field": "creators",
+            "from": null,
+            "fromMissing": true,
+            "to": "David G. Korn"
+          }
+        ],
+        "reason": "固定馆藏未提供创造者字段；USENIX 原始论文署名 David G. Korn，且以第一人称叙述首版 ksh 的开发。仅补作者展示，原始缺失字段保留可查。",
+        "sources": [
+          "https://www.usenix.org/legacy/publications/library/proceedings/vhll/full_papers/korn.ksh.a"
+        ]
+      }
+    },
+    {
+      "id": "c-shell",
+      "status": "historical-primary-source",
+      "kind": "historical-language",
+      "syntax": "historically-documented",
+      "implementation": "historically-documented",
+      "implementationName": "2BSD C shell (historical source)",
+      "notes": "TUHS 保存的2BSD原始手册定义词法、表达式、管道及控制语法，作者文档署名 William Joy，源码署名 Bill Joy 并标注 October 1978。1979手册日期与1978源码时间分开保留；原始实现未编译执行。本机 /bin/csh 实为 tcsh 6.21，不能将其当作1978年 C shell 的执行证明。未接入网页运行。 作者原始介绍明确以C算术运算及优先级、while/switch和标签形式说明语法参照，同时指出字符串比较及breaksw等差异；据此只录入局部设计影响，不标为C的后继或超集。",
+      "nextStep": "核对后续 BSD 版本的兼容范围和历史实现；Interlisp历史机制类比仍需独立论证。",
+      "sources": [
+        {
+          "url": "https://www.tuhs.org/cgi-bin/utree.pl?file=2BSD/man/csh.u",
+          "finalUrl": "https://www.tuhs.org/cgi-bin/utree.pl?file=2BSD/man/csh.u",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-04T12:53:40.185572+00:00",
+          "decodedBodySha256": "c0233ba44ae3ef40120e2bb9171dc2e77af18dc02cd7a83ec367cd92f6848c25",
+          "role": "语法",
+          "reviewed": true,
+          "title": "2BSD csh.u — C shell manual, 24 February 1979",
+          "excerpt": "Defines lexical structure, pipelines, history substitution, expressions, foreach/end, if/then/else and switch/case/endsw. The manual identifies a command language interpreter with C-like syntax. This manual date is a version event, not a replacement for the catalogue 1978 date.",
+          "hashScope": "SHA-256 of complete TUHS HTML response bytes; archived source text read in the embedded listing."
+        },
+        {
+          "url": "https://www.tuhs.org/cgi-bin/utree.pl?file=2BSD/doc/csh",
+          "finalUrl": "https://www.tuhs.org/cgi-bin/utree.pl?file=2BSD/doc/csh",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-04T12:53:40.355196+00:00",
+          "decodedBodySha256": "66da20f0978f3ed5c554b612b1ce832fb8349ac27ce66dfd1a3c5c3824215853",
+          "role": "历史原文",
+          "reviewed": true,
+          "title": "William Joy — An introduction to the C shell (2BSD)",
+          "excerpt": "Original document is signed William Joy, UC Berkeley. Defines interactive commands and scripts with concrete while(expression)/end and switch/case/breaksw/endsw examples. The abstract compares its history mechanism to INTERLISP redo; analogy alone does not establish a reviewed influence relation. §3.5 Expressions explicitly says C arithmetic operations are available with the same precedence; ==/!= compare strings. §3.7 Other control structures describes while and switch as similar to C, gives concrete grammar, and distinguishes breaksw from break. Goto labels are described as looking like C. These document specific syntax references, not source compatibility or C implementation ancestry.",
+          "hashScope": "SHA-256 of complete TUHS HTML response bytes; archived source text read in the embedded listing."
+        },
+        {
+          "url": "https://www.tuhs.org/cgi-bin/utree.pl?file=2BSD/src/csh/sh.c",
+          "finalUrl": "https://www.tuhs.org/cgi-bin/utree.pl?file=2BSD/src/csh/sh.c",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-04T12:56:46.936723+00:00",
+          "decodedBodySha256": "05b386e5b1b60bd05f0870ad79dd24bd46e657647bd817d62bb1d10a494718b4",
+          "role": "实现",
+          "reviewed": true,
+          "title": "2BSD/src/csh/sh.c — Bill Joy C Shell implementation",
+          "excerpt": "Original implementation header identifies C Shell, Bill Joy, UC Berkeley, October 1978, with a separate 1979 copyright. main initializes shell variables, processes script/command options and invokes process(setintr). This is historical implementation evidence; the original binary has not been compiled or executed.",
+          "hashScope": "SHA-256 of complete TUHS HTML response bytes; archived source text read in the embedded listing."
+        }
+      ],
+      "catalogueCorrection": {
+        "changes": [
+          {
+            "field": "creators",
+            "fromMissing": true,
+            "to": "William Joy",
+            "from": null
+          }
+        ],
+        "reason": "固定馆藏缺失创造者字段；2BSD原始介绍署名 William Joy，原始实现署名 Bill Joy。仅补录展示作者，原始缺失字段保留。",
+        "sources": [
+          "https://www.tuhs.org/cgi-bin/utree.pl?file=2BSD/doc/csh",
+          "https://www.tuhs.org/cgi-bin/utree.pl?file=2BSD/src/csh/sh.c"
+        ]
+      }
+    },
+    {
+      "id": "tcsh",
+      "status": "verified-language",
+      "kind": "programming",
+      "syntax": "documented",
+      "implementation": "documented",
+      "implementationName": "tcsh 6.21.00; official source releases",
+      "notes": "固定6.21.00官方手册明确命令语言、脚本处理和控制语法，项目官网提供实现源码入口；手册称为 Berkeley C shell 的兼容增强版，并以4.4BSD csh说明扩展标记。本机 /bin/tcsh 与 /bin/csh 指向同一实现，版本6.21.00；另以 tcsh -f 执行两份原创程序，算术循环输出55，列表/条件输出Lisp；错误引号语法被拒绝。执行证据只覆盖本机版本与样例，不证明原始C shell或完整历史兼容性。未接入网页运行。",
+      "nextStep": "补重定向、历史替换和兼容差异的实际执行证据；网页运行需另行接入。",
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/tcsh-org/tcsh/TCSH6_21_00/tcsh.man",
+          "finalUrl": "https://raw.githubusercontent.com/tcsh-org/tcsh/TCSH6_21_00/tcsh.man",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-04T13:03:11.612120+00:00",
+          "decodedBodySha256": "6bc1b05e6da45ca0beba8fd466791ea13b5b54a23c1033da4f2d9f8779630a31",
+          "role": "语法",
+          "reviewed": true,
+          "title": "tcsh 6.21.00 official tagged manual — 8 May 2019",
+          "excerpt": "DESCRIPTION calls tcsh an enhanced but completely compatible version of the Berkeley UNIX C shell. It documents command processing, history, control flow and foreach/name/(wordlist)/end; enhancements over most csh implementations, specifically 4.4BSD csh, carry (+). This is the manual compatibility claim, not an exhaustive independent test of every historical C shell version.",
+          "hashScope": "SHA-256 of complete official TCSH6_21_00 tagged tcsh.man response bytes."
+        },
+        {
+          "url": "https://www.tcsh.org/",
+          "finalUrl": "https://www.tcsh.org/",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-04T13:01:41.817198+00:00",
+          "decodedBodySha256": "33b65096123a0ca7f386f271445079d67ad287a16655fa29f7128abe91338f79",
+          "role": "实现",
+          "reviewed": true,
+          "title": "TCSH official project — source releases and developer resources",
+          "excerpt": "Official site identifies C shell with file name completion and command line editing, links source releases at astron.com/pub/tcsh and the tcsh-org source repository. It documents a maintained implementation, not a browser runtime."
+        }
+      ]
+    },
+    {
+      "id": "flow-matic",
+      "status": "historical-primary-source",
+      "kind": "historical-language",
+      "syntax": "historically-documented",
+      "implementation": "historically-documented",
+      "implementationName": "UNIVAC FLOW-MATIC historical compiling system (1958 manual)",
+      "notes": "1958原始手册给出编号语句、词名及标点规则、18条操作的完整库存程序，以及Translation/Selection/Allocation/Processing到机器码磁带的编译过程和启动说明。手册版本年份不替换馆藏1955；未复现原始编译器、二进制或UNIVAC运行环境，未接入网页执行。COBOL初始规格明确承认FLOW-MATIC资料与思想输入，关系只标设计影响。",
+      "nextStep": "寻找可合法复现的原始编译器或模拟环境；继续核对商务语言设计的具体功能输入和不同版本。",
+      "sources": [
+        {
+          "url": "https://bitsavers.org/pdf/univac/flow-matic/U1518_FLOW-MATIC_Programming_System_1958.pdf",
+          "finalUrl": "https://bitsavers.org/pdf/univac/flow-matic/U1518_FLOW-MATIC_Programming_System_1958.pdf",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-04T13:25:33.113240+00:00",
+          "decodedBodySha256": "5e1a1c5990d882cba98b01aaf8e4b1d809acba2633e6e18d8915395c8b72c5df",
+          "role": "历史原文",
+          "title": "Sperry Rand — FLOW-MATIC Programming System, U1518 (1958)",
+          "reviewed": true,
+          "excerpt": "Printed pp28–34 (PDF37–43) define numbering, sequencing, punctuation, names and concrete statements; p34 contains the complete 18-operation inventory program. Statements include INPUT, COMPARE, TRANSFER, MOVE, READ-ITEM, JUMP, SET and STOP. Printed pp83–85 (PDF92–94) document translation, selection, allocation and processing into a machine-code program tape. Appendix D p112 (PDF121) gives compiler/library/code tape allocation and startup instructions. Preface documents English-like programming for UNIVAC. These are historical syntax and implementation evidence, not a newly executed historical binary or modern browser runtime. The 1958 manual version does not replace the catalogue 1955 appearance date.",
+          "hashScope": "SHA-256 of complete original scanned PDF response bytes; stated pages rendered and visually read. No OCR text used as authority."
+        }
+      ]
+    }
+  ]
+}

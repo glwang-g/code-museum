@@ -1,0 +1,87 @@
+{
+  "id": "tcsh",
+  "status": "sample-passed",
+  "checkedAt": "2026-10-04T13:14:17.020969+00:00",
+  "platform": "macOS-27.2-arm64-arm-64bit-Mach-O",
+  "executable": "/bin/tcsh",
+  "version": "tcsh 6.21.00 (Astron) 2019-05-08 (unknown-apple-darwin) options wide,nls,dl,bye,al,kan,sm,rh,color,filec",
+  "versionCommand": [
+    "tcsh",
+    "--version"
+  ],
+  "versionExitCode": 0,
+  "cshExecutable": "/bin/csh",
+  "cshIsSameFile": true,
+  "scope": "Two original tcsh samples and syntax rejection with the installed version; -f skips startup files. Not original 2BSD C shell, exhaustive historical compatibility, full compliance or browser execution.",
+  "samples": [
+    {
+      "name": "arithmetic-loop",
+      "sample": "@ total = 0\nforeach number (1 2 3 4 5 6 7 8 9 10)\n  @ total = $total + $number\nend\necho \"$total\"\n",
+      "sampleSha256": "957d9a5ff1fbd190504586f3155c64fa4512126997c644de6d921d7fd00ee5a4",
+      "expectedStdout": "55\n",
+      "status": "sample-passed",
+      "syntaxCheck": {
+        "commandTemplate": [
+          "tcsh",
+          "-f",
+          "-n",
+          "arithmetic-loop.tcsh"
+        ],
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "command": {
+        "commandTemplate": [
+          "tcsh",
+          "-f",
+          "arithmetic-loop.tcsh"
+        ],
+        "exitCode": 0,
+        "stdout": "55\n",
+        "stderr": ""
+      }
+    },
+    {
+      "name": "list-condition",
+      "sample": "set languages = (C Lisp tcsh)\nif ($#languages == 3) then\n  echo \"$languages[2]\"\nendif\n",
+      "sampleSha256": "d1296a64e6f22c373edbec36ea827a3b5c97c8f6d857426838600a42452e091d",
+      "expectedStdout": "Lisp\n",
+      "status": "sample-passed",
+      "syntaxCheck": {
+        "commandTemplate": [
+          "tcsh",
+          "-f",
+          "-n",
+          "list-condition.tcsh"
+        ],
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "command": {
+        "commandTemplate": [
+          "tcsh",
+          "-f",
+          "list-condition.tcsh"
+        ],
+        "exitCode": 0,
+        "stdout": "Lisp\n",
+        "stderr": ""
+      }
+    }
+  ],
+  "invalidSyntax": {
+    "sample": "echo \"unterminated\n",
+    "sampleSha256": "acbcca0dd08d70250737447507dc2a161dd61a22243ca04fcb46b507326dc5cb",
+    "commandTemplate": [
+      "tcsh",
+      "-f",
+      "-n",
+      "invalid-syntax.tcsh"
+    ],
+    "exitCode": 1,
+    "stdout": "",
+    "stderr": "Unmatched '\"'.\n"
+  }
+}

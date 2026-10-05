@@ -1,0 +1,564 @@
+﻿linguist_name,linguist_type,match_status,pldb_ids,review_note
+1C Enterprise,programming,id-slug-candidate,1c-enterprise,A name mismatch alone does not prove PLDB is missing this language.
+4D,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+ABAP,programming,exact-name,abap,A name mismatch alone does not prove PLDB is missing this language.
+ABAP CDS,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+ActionScript,programming,exact-name,actionscript,A name mismatch alone does not prove PLDB is missing this language.
+Ada,programming,exact-name,ada,A name mismatch alone does not prove PLDB is missing this language.
+Agda,programming,exact-name,agda,A name mismatch alone does not prove PLDB is missing this language.
+AGS Script,programming,id-slug-candidate,ags-script,A name mismatch alone does not prove PLDB is missing this language.
+AIDL,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+Aiken,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+AL,programming,exact-name,al,A name mismatch alone does not prove PLDB is missing this language.
+Aleo,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+ALGOL,programming,exact-name,algol,A name mismatch alone does not prove PLDB is missing this language.
+Alloy,programming,exact-name,alloy,A name mismatch alone does not prove PLDB is missing this language.
+Alpine Abuild,programming,exact-name,alpine-abuild,A name mismatch alone does not prove PLDB is missing this language.
+AMPL,programming,exact-name,ampl,A name mismatch alone does not prove PLDB is missing this language.
+AngelScript,programming,exact-name,angelscript,A name mismatch alone does not prove PLDB is missing this language.
+Answer Set Programming,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+ANTLR,programming,exact-name,antlr,A name mismatch alone does not prove PLDB is missing this language.
+Apex,programming,exact-name,apex,A name mismatch alone does not prove PLDB is missing this language.
+APL,programming,exact-name,apl,A name mismatch alone does not prove PLDB is missing this language.
+Apollo Guidance Computer,programming,id-slug-candidate,apollo-guidance-computer,A name mismatch alone does not prove PLDB is missing this language.
+AppleScript,programming,exact-name,applescript,A name mismatch alone does not prove PLDB is missing this language.
+Arc,programming,exact-name,arc,A name mismatch alone does not prove PLDB is missing this language.
+ArkTS,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+ASL,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+ASP.NET,programming,exact-name,asp.net,A name mismatch alone does not prove PLDB is missing this language.
+AspectJ,programming,exact-name,aspectj,A name mismatch alone does not prove PLDB is missing this language.
+Assembly,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+Asymptote,programming,exact-name,asymptote,A name mismatch alone does not prove PLDB is missing this language.
+ATS,programming,exact-name,ats,A name mismatch alone does not prove PLDB is missing this language.
+Augeas,programming,exact-name,augeas,A name mismatch alone does not prove PLDB is missing this language.
+AutoHotkey,programming,exact-name,autohotkey,A name mismatch alone does not prove PLDB is missing this language.
+AutoIt,programming,exact-name,autoit,A name mismatch alone does not prove PLDB is missing this language.
+Awk,programming,exact-name,awk,A name mismatch alone does not prove PLDB is missing this language.
+B,programming,exact-name,b,A name mismatch alone does not prove PLDB is missing this language.
+B (Formal Method),programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+B4X,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+Ballerina,programming,exact-name,ballerina,A name mismatch alone does not prove PLDB is missing this language.
+BAML,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+BASIC,programming,exact-name,basic,A name mismatch alone does not prove PLDB is missing this language.
+Batchfile,programming,exact-name,batch,A name mismatch alone does not prove PLDB is missing this language.
+Beef,programming,exact-name,beef-lang,A name mismatch alone does not prove PLDB is missing this language.
+Befunge,programming,exact-name,befunge,A name mismatch alone does not prove PLDB is missing this language.
+Bend,programming,exact-name,bend,A name mismatch alone does not prove PLDB is missing this language.
+Berry,programming,exact-name,berry,A name mismatch alone does not prove PLDB is missing this language.
+BibTeX Style,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+Bicep,programming,exact-name,bicep,A name mismatch alone does not prove PLDB is missing this language.
+Bison,programming,exact-name,bison,A name mismatch alone does not prove PLDB is missing this language.
+BitBake,programming,exact-name,bitbake,A name mismatch alone does not prove PLDB is missing this language.
+BlitzBasic,programming,exact-name,blitzbasic,A name mismatch alone does not prove PLDB is missing this language.
+BlitzMax,programming,exact-name,blitzmax,A name mismatch alone does not prove PLDB is missing this language.
+Bluespec,programming,exact-name,bluespec,A name mismatch alone does not prove PLDB is missing this language.
+Bluespec BH,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+Boo,programming,exact-name,boo,A name mismatch alone does not prove PLDB is missing this language.
+Boogie,programming,exact-name,boogie,A name mismatch alone does not prove PLDB is missing this language.
+BQN,programming,exact-name,bqn,A name mismatch alone does not prove PLDB is missing this language.
+Brainfuck,programming,exact-name,brainfuck,A name mismatch alone does not prove PLDB is missing this language.
+BrighterScript,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+Brightscript,programming,exact-name,brightscript-lang | roku-brightscript,A name mismatch alone does not prove PLDB is missing this language.
+C,programming,exact-name,c,A name mismatch alone does not prove PLDB is missing this language.
+C#,programming,exact-name,csharp,A name mismatch alone does not prove PLDB is missing this language.
+C++,programming,exact-name,cpp,A name mismatch alone does not prove PLDB is missing this language.
+C2hs Haskell,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+C3,programming,exact-name,c3,A name mismatch alone does not prove PLDB is missing this language.
+Cadence,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+Cairo,programming,exact-name,cairo,A name mismatch alone does not prove PLDB is missing this language.
+Cairo Zero,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+CameLIGO,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+Cangjie,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+CAP CDS,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+Cap'n Proto,programming,exact-name,capn-proto,A name mismatch alone does not prove PLDB is missing this language.
+Carbon,programming,exact-name,carbon,A name mismatch alone does not prove PLDB is missing this language.
+CartoCSS,programming,exact-name,cartocss,A name mismatch alone does not prove PLDB is missing this language.
+Ceylon,programming,exact-name,ceylon,A name mismatch alone does not prove PLDB is missing this language.
+Chapel,programming,exact-name,chapel,A name mismatch alone does not prove PLDB is missing this language.
+Charity,programming,exact-name,charity,A name mismatch alone does not prove PLDB is missing this language.
+ChucK,programming,id-slug-candidate,chuck,A name mismatch alone does not prove PLDB is missing this language.
+Circom,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+Cirru,programming,exact-name,cirru,A name mismatch alone does not prove PLDB is missing this language.
+Clarion,programming,exact-name,clarion,A name mismatch alone does not prove PLDB is missing this language.
+Clarity,programming,exact-name,clarity,A name mismatch alone does not prove PLDB is missing this language.
+Classic ASP,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+Clean,programming,exact-name,clean,A name mismatch alone does not prove PLDB is missing this language.
+Click,programming,exact-name,click,A name mismatch alone does not prove PLDB is missing this language.
+CLIPS,programming,exact-name,clips,A name mismatch alone does not prove PLDB is missing this language.
+Clojure,programming,exact-name,clojure,A name mismatch alone does not prove PLDB is missing this language.
+Clue,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+CMake,programming,exact-name,cmake,A name mismatch alone does not prove PLDB is missing this language.
+COBOL,programming,exact-name,cobol,A name mismatch alone does not prove PLDB is missing this language.
+CodeQL,programming,exact-name,codeql,A name mismatch alone does not prove PLDB is missing this language.
+CoffeeScript,programming,exact-name,coffeescript,A name mismatch alone does not prove PLDB is missing this language.
+ColdFusion,programming,exact-name,coldfusion,A name mismatch alone does not prove PLDB is missing this language.
+ColdFusion CFC,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+Common Lisp,programming,exact-name,common-lisp,A name mismatch alone does not prove PLDB is missing this language.
+Common Workflow Language,programming,id-slug-candidate,common-workflow-language,A name mismatch alone does not prove PLDB is missing this language.
+Component Pascal,programming,exact-name,component-pascal,A name mismatch alone does not prove PLDB is missing this language.
+Cool,programming,id-slug-candidate,cool,A name mismatch alone does not prove PLDB is missing this language.
+CQL,programming,exact-name,cql,A name mismatch alone does not prove PLDB is missing this language.
+Crystal,programming,exact-name,crystal,A name mismatch alone does not prove PLDB is missing this language.
+Csound,programming,exact-name,csound,A name mismatch alone does not prove PLDB is missing this language.
+Csound Document,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+Csound Score,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+Cuda,programming,exact-name,cuda,A name mismatch alone does not prove PLDB is missing this language.
+CUE,programming,exact-name,cuelang,A name mismatch alone does not prove PLDB is missing this language.
+Curry,programming,exact-name,curry,A name mismatch alone does not prove PLDB is missing this language.
+CWeb,programming,exact-name,cweb,A name mismatch alone does not prove PLDB is missing this language.
+Cycript,programming,exact-name,cycript,A name mismatch alone does not prove PLDB is missing this language.
+Cypher,programming,id-slug-candidate,cypher,A name mismatch alone does not prove PLDB is missing this language.
+Cython,programming,exact-name,cython,A name mismatch alone does not prove PLDB is missing this language.
+D,programming,exact-name,d,A name mismatch alone does not prove PLDB is missing this language.
+Dafny,programming,exact-name,dafny,A name mismatch alone does not prove PLDB is missing this language.
+Dart,programming,exact-name,dart,A name mismatch alone does not prove PLDB is missing this language.
+Daslang,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+DataWeave,programming,exact-name,dataweave,A name mismatch alone does not prove PLDB is missing this language.
+DenizenScript,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+Dhall,programming,exact-name,dhall,A name mismatch alone does not prove PLDB is missing this language.
+DIGITAL Command Language,programming,exact-name,digital-command-language,A name mismatch alone does not prove PLDB is missing this language.
+DM,programming,exact-name,dm,A name mismatch alone does not prove PLDB is missing this language.
+Dockerfile,programming,exact-name,dockerfile,A name mismatch alone does not prove PLDB is missing this language.
+Dogescript,programming,exact-name,dogescript,A name mismatch alone does not prove PLDB is missing this language.
+DTrace,programming,exact-name,dtrace,A name mismatch alone does not prove PLDB is missing this language.
+Dune,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+Dylan,programming,exact-name,dylan,A name mismatch alone does not prove PLDB is missing this language.
+E,programming,exact-name,e,A name mismatch alone does not prove PLDB is missing this language.
+Earthly,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+eC,programming,exact-name,ec,A name mismatch alone does not prove PLDB is missing this language.
+ECL,programming,exact-name,ecl,A name mismatch alone does not prove PLDB is missing this language.
+ECLiPSe,programming,exact-name,eclipse-editor,A name mismatch alone does not prove PLDB is missing this language.
+EdgeQL,programming,exact-name,edgeql,A name mismatch alone does not prove PLDB is missing this language.
+Eiffel,programming,exact-name,eiffel,A name mismatch alone does not prove PLDB is missing this language.
+Elixir,programming,exact-name,elixir,A name mismatch alone does not prove PLDB is missing this language.
+Elm,programming,exact-name,elm,A name mismatch alone does not prove PLDB is missing this language.
+Elvish,programming,exact-name,elvish,A name mismatch alone does not prove PLDB is missing this language.
+Elvish Transcript,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+Emacs Lisp,programming,exact-name,emacs-lisp,A name mismatch alone does not prove PLDB is missing this language.
+EmberScript,programming,exact-name,emberscript,A name mismatch alone does not prove PLDB is missing this language.
+EQ,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+Erlang,programming,exact-name,erlang,A name mismatch alone does not prove PLDB is missing this language.
+Euphoria,programming,exact-name,euphoria,A name mismatch alone does not prove PLDB is missing this language.
+F#,programming,exact-name,f-sharp,A name mismatch alone does not prove PLDB is missing this language.
+F*,programming,exact-name,fstar,A name mismatch alone does not prove PLDB is missing this language.
+Factor,programming,exact-name,factor,A name mismatch alone does not prove PLDB is missing this language.
+Fancy,programming,exact-name,fancy,A name mismatch alone does not prove PLDB is missing this language.
+Fantom,programming,exact-name,fantom,A name mismatch alone does not prove PLDB is missing this language.
+Faust,programming,exact-name,faust,A name mismatch alone does not prove PLDB is missing this language.
+Fennel,programming,exact-name,fennel,A name mismatch alone does not prove PLDB is missing this language.
+Filebench WML,programming,exact-name,filebench-wml,A name mismatch alone does not prove PLDB is missing this language.
+Filterscript,programming,exact-name,filterscript,A name mismatch alone does not prove PLDB is missing this language.
+FIRRTL,programming,exact-name,firrtl,A name mismatch alone does not prove PLDB is missing this language.
+fish,programming,exact-name,fish,A name mismatch alone does not prove PLDB is missing this language.
+Flix,programming,exact-name,flix,A name mismatch alone does not prove PLDB is missing this language.
+Fluent,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+FLUX,programming,exact-name,flux,A name mismatch alone does not prove PLDB is missing this language.
+Forth,programming,exact-name,forth,A name mismatch alone does not prove PLDB is missing this language.
+Fortran,programming,exact-name,fortran,A name mismatch alone does not prove PLDB is missing this language.
+Fortran Free Form,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+FPP,programming,id-slug-candidate,fpp,A name mismatch alone does not prove PLDB is missing this language.
+FreeBASIC,programming,exact-name,freebasic,A name mismatch alone does not prove PLDB is missing this language.
+FreeMarker,programming,exact-name,freemarker,A name mismatch alone does not prove PLDB is missing this language.
+Frege,programming,exact-name,frege,A name mismatch alone does not prove PLDB is missing this language.
+Futhark,programming,exact-name,futhark,A name mismatch alone does not prove PLDB is missing this language.
+G-code,programming,exact-name,g-code,A name mismatch alone does not prove PLDB is missing this language.
+Game Maker Language,programming,exact-name,game-maker-language,A name mismatch alone does not prove PLDB is missing this language.
+GAML,programming,exact-name,gaml,A name mismatch alone does not prove PLDB is missing this language.
+GAMS,programming,exact-name,gams | general-algebraic-modeling-system,A name mismatch alone does not prove PLDB is missing this language.
+GAP,programming,exact-name,gap,A name mismatch alone does not prove PLDB is missing this language.
+GCC Machine Description,programming,exact-name,gcc-machine-description,A name mismatch alone does not prove PLDB is missing this language.
+GDB,programming,exact-name,gdb,A name mismatch alone does not prove PLDB is missing this language.
+GDScript,programming,exact-name,gdscript,A name mismatch alone does not prove PLDB is missing this language.
+GDShader,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+Genero 4gl,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+Genie,programming,exact-name,genie,A name mismatch alone does not prove PLDB is missing this language.
+Genshi,programming,exact-name,genshi,A name mismatch alone does not prove PLDB is missing this language.
+Gentoo Ebuild,programming,exact-name,gentoo-ebuild,A name mismatch alone does not prove PLDB is missing this language.
+Gentoo Eclass,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+Gherkin,programming,exact-name,gherkin,A name mismatch alone does not prove PLDB is missing this language.
+Gleam,programming,exact-name,gleam,A name mismatch alone does not prove PLDB is missing this language.
+Glimmer JS,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+Glimmer TS,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+GLSL,programming,exact-name,glsl,A name mismatch alone does not prove PLDB is missing this language.
+Glyph,programming,exact-name,glyph,A name mismatch alone does not prove PLDB is missing this language.
+Gno,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+Gnuplot,programming,exact-name,gnuplot,A name mismatch alone does not prove PLDB is missing this language.
+Go,programming,exact-name,go,A name mismatch alone does not prove PLDB is missing this language.
+Golo,programming,exact-name,golo,A name mismatch alone does not prove PLDB is missing this language.
+Gosu,programming,exact-name,gosu,A name mismatch alone does not prove PLDB is missing this language.
+Grace,programming,exact-name,grace,A name mismatch alone does not prove PLDB is missing this language.
+Grammatical Framework,programming,exact-name,grammatical-framework,A name mismatch alone does not prove PLDB is missing this language.
+Groovy,programming,exact-name,groovy,A name mismatch alone does not prove PLDB is missing this language.
+Groovy Server Pages,programming,exact-name,groovy-server-pages,A name mismatch alone does not prove PLDB is missing this language.
+GSC,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+Hack,programming,exact-name,hack,A name mismatch alone does not prove PLDB is missing this language.
+Harbour,programming,exact-name,harbour,A name mismatch alone does not prove PLDB is missing this language.
+Hare,programming,exact-name,hare,A name mismatch alone does not prove PLDB is missing this language.
+Haskell,programming,exact-name,haskell,A name mismatch alone does not prove PLDB is missing this language.
+Haxe,programming,exact-name,haxe,A name mismatch alone does not prove PLDB is missing this language.
+HCL,programming,exact-name,hcl,A name mismatch alone does not prove PLDB is missing this language.
+HIP,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+HiveQL,programming,exact-name,hiveql,A name mismatch alone does not prove PLDB is missing this language.
+HLSL,programming,exact-name,hlsl,A name mismatch alone does not prove PLDB is missing this language.
+HolyC,programming,exact-name,holyc,A name mismatch alone does not prove PLDB is missing this language.
+hoon,programming,exact-name,hoon,A name mismatch alone does not prove PLDB is missing this language.
+Hurl,programming,exact-name,hurl,A name mismatch alone does not prove PLDB is missing this language.
+Hy,programming,exact-name,hy,A name mismatch alone does not prove PLDB is missing this language.
+HyPhy,programming,exact-name,hyphy,A name mismatch alone does not prove PLDB is missing this language.
+IDL,programming,exact-name,idl,A name mismatch alone does not prove PLDB is missing this language.
+Idris,programming,exact-name,idris,A name mismatch alone does not prove PLDB is missing this language.
+IGOR Pro,programming,exact-name,igor-pro,A name mismatch alone does not prove PLDB is missing this language.
+IL Assembly,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+ImageJ Macro,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+Imba,programming,exact-name,imba,A name mismatch alone does not prove PLDB is missing this language.
+ImHex Pattern Language,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+Inform 7,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+Ink,programming,exact-name,ink,A name mismatch alone does not prove PLDB is missing this language.
+Inno Setup,programming,exact-name,inno-setup,A name mismatch alone does not prove PLDB is missing this language.
+Io,programming,exact-name,io,A name mismatch alone does not prove PLDB is missing this language.
+Ioke,programming,exact-name,ioke,A name mismatch alone does not prove PLDB is missing this language.
+Isabelle,programming,exact-name,isabelle,A name mismatch alone does not prove PLDB is missing this language.
+Isabelle ROOT,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+ISPC,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+J,programming,exact-name,j,A name mismatch alone does not prove PLDB is missing this language.
+Jac,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+Jai,programming,exact-name,jai,A name mismatch alone does not prove PLDB is missing this language.
+Janet,programming,exact-name,janet,A name mismatch alone does not prove PLDB is missing this language.
+Jasmin,programming,exact-name,jasmin,A name mismatch alone does not prove PLDB is missing this language.
+JASS,programming,id-slug-candidate,jass,A name mismatch alone does not prove PLDB is missing this language.
+Java,programming,exact-name,java,A name mismatch alone does not prove PLDB is missing this language.
+Java Server Pages,programming,id-slug-candidate,java-server-pages,A name mismatch alone does not prove PLDB is missing this language.
+Java Template Engine,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+JavaScript,programming,exact-name,javascript,A name mismatch alone does not prove PLDB is missing this language.
+JavaScript+ERB,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+JCL,programming,exact-name,jcl,A name mismatch alone does not prove PLDB is missing this language.
+JetBrains MPS,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+JFlex,programming,exact-name,jflex,A name mismatch alone does not prove PLDB is missing this language.
+Jison,programming,exact-name,jison,A name mismatch alone does not prove PLDB is missing this language.
+Jison Lex,programming,exact-name,jison-lex,A name mismatch alone does not prove PLDB is missing this language.
+Jolie,programming,exact-name,jolie,A name mismatch alone does not prove PLDB is missing this language.
+jq,programming,exact-name,jq,A name mismatch alone does not prove PLDB is missing this language.
+JSONiq,programming,exact-name,jsoniq,A name mismatch alone does not prove PLDB is missing this language.
+Jsonnet,programming,exact-name,jsonnet,A name mismatch alone does not prove PLDB is missing this language.
+Julia,programming,exact-name,julia,A name mismatch alone does not prove PLDB is missing this language.
+Julia REPL,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+Just,programming,exact-name,just,A name mismatch alone does not prove PLDB is missing this language.
+Kaitai Struct,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+KakouneScript,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+KCL,programming,exact-name,kcl,A name mismatch alone does not prove PLDB is missing this language.
+KerboScript,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+KFramework,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+Koka,programming,exact-name,koka,A name mismatch alone does not prove PLDB is missing this language.
+KoLmafia ASH,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+Kotlin,programming,exact-name,kotlin,A name mismatch alone does not prove PLDB is missing this language.
+KRL,programming,exact-name,krl,A name mismatch alone does not prove PLDB is missing this language.
+LabVIEW,programming,id-slug-candidate,labview,A name mismatch alone does not prove PLDB is missing this language.
+Lambdapi,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+Langium,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+Lasso,programming,exact-name,lasso,A name mismatch alone does not prove PLDB is missing this language.
+Lean,programming,exact-name,lean,A name mismatch alone does not prove PLDB is missing this language.
+Lean 4,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+Leo,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+Lex,programming,exact-name,lex,A name mismatch alone does not prove PLDB is missing this language.
+LFE,programming,exact-name,lfe,A name mismatch alone does not prove PLDB is missing this language.
+LigoLANG,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+LilyPond,programming,exact-name,lilypond,A name mismatch alone does not prove PLDB is missing this language.
+Limbo,programming,exact-name,limbo,A name mismatch alone does not prove PLDB is missing this language.
+Linear Programming,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+Linker Script,programming,exact-name,linker-script,A name mismatch alone does not prove PLDB is missing this language.
+Liquidsoap,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+Literate Agda,programming,exact-name,literate-agda,A name mismatch alone does not prove PLDB is missing this language.
+Literate CoffeeScript,programming,exact-name,literate-coffeescript,A name mismatch alone does not prove PLDB is missing this language.
+Literate Haskell,programming,exact-name,literate-haskell,A name mismatch alone does not prove PLDB is missing this language.
+LiveCode Script,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+LiveScript,programming,exact-name,livescript,A name mismatch alone does not prove PLDB is missing this language.
+LLVM,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+LLVM TableGen,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+Lobster,programming,exact-name,lobster,A name mismatch alone does not prove PLDB is missing this language.
+Logos,programming,exact-name,logos,A name mismatch alone does not prove PLDB is missing this language.
+Logtalk,programming,exact-name,logtalk,A name mismatch alone does not prove PLDB is missing this language.
+LOLCODE,programming,exact-name,lolcode,A name mismatch alone does not prove PLDB is missing this language.
+LookML,programming,exact-name,lookml,A name mismatch alone does not prove PLDB is missing this language.
+LoomScript,programming,exact-name,loomscript,A name mismatch alone does not prove PLDB is missing this language.
+LSL,programming,id-slug-candidate,lsl,A name mismatch alone does not prove PLDB is missing this language.
+Lua,programming,exact-name,lua,A name mismatch alone does not prove PLDB is missing this language.
+Luau,programming,exact-name,luau,A name mismatch alone does not prove PLDB is missing this language.
+M,programming,exact-name,m-programming-language,A name mismatch alone does not prove PLDB is missing this language.
+M4,programming,exact-name,m4,A name mismatch alone does not prove PLDB is missing this language.
+M4Sugar,programming,exact-name,m4sugar,A name mismatch alone does not prove PLDB is missing this language.
+Macaulay2,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+Makefile,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+Mako,programming,exact-name,mako,A name mismatch alone does not prove PLDB is missing this language.
+Mathematical Programming System,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+MATLAB,programming,exact-name,matlab,A name mismatch alone does not prove PLDB is missing this language.
+Max,programming,exact-name,max,A name mismatch alone does not prove PLDB is missing this language.
+MAXScript,programming,exact-name,maxscript,A name mismatch alone does not prove PLDB is missing this language.
+mcfunction,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+Mercury,programming,exact-name,mercury,A name mismatch alone does not prove PLDB is missing this language.
+Meson,programming,exact-name,meson,A name mismatch alone does not prove PLDB is missing this language.
+Metal,programming,exact-name,metal | metal-programming-language,A name mismatch alone does not prove PLDB is missing this language.
+MeTTa,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+MiniD,programming,exact-name,minid,A name mismatch alone does not prove PLDB is missing this language.
+MiniScript,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+MiniZinc,programming,exact-name,minizinc,A name mismatch alone does not prove PLDB is missing this language.
+Mint,programming,exact-name,mint,A name mismatch alone does not prove PLDB is missing this language.
+Mirah,programming,exact-name,mirah,A name mismatch alone does not prove PLDB is missing this language.
+mIRC Script,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+MLIR,programming,exact-name,mlir,A name mismatch alone does not prove PLDB is missing this language.
+Modelica,programming,exact-name,modelica,A name mismatch alone does not prove PLDB is missing this language.
+Modula-2,programming,exact-name,modula-2,A name mismatch alone does not prove PLDB is missing this language.
+Modula-3,programming,exact-name,modula-3,A name mismatch alone does not prove PLDB is missing this language.
+Module Management System,programming,exact-name,module-management-system,A name mismatch alone does not prove PLDB is missing this language.
+Mojo,programming,exact-name,mojo,A name mismatch alone does not prove PLDB is missing this language.
+Monkey,programming,exact-name,monkey,A name mismatch alone does not prove PLDB is missing this language.
+Monkey C,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+Moocode,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+MoonBit,programming,exact-name,moonbit,A name mismatch alone does not prove PLDB is missing this language.
+MoonScript,programming,exact-name,moonscript,A name mismatch alone does not prove PLDB is missing this language.
+Motoko,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+Motorola 68K Assembly,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+Move,programming,exact-name,move,A name mismatch alone does not prove PLDB is missing this language.
+MQL4,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+MQL5,programming,exact-name,mql,A name mismatch alone does not prove PLDB is missing this language.
+MUF,programming,id-slug-candidate,muf,A name mismatch alone does not prove PLDB is missing this language.
+mupad,programming,exact-name,mupad,A name mismatch alone does not prove PLDB is missing this language.
+Myghty,programming,exact-name,myghty,A name mismatch alone does not prove PLDB is missing this language.
+Nasal,programming,exact-name,nasal,A name mismatch alone does not prove PLDB is missing this language.
+NASL,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+NCL,programming,id-slug-candidate,ncl,A name mismatch alone does not prove PLDB is missing this language.
+Nearley,programming,exact-name,nearley,A name mismatch alone does not prove PLDB is missing this language.
+Nemerle,programming,exact-name,nemerle,A name mismatch alone does not prove PLDB is missing this language.
+nesC,programming,exact-name,nesc,A name mismatch alone does not prove PLDB is missing this language.
+NetLinx,programming,exact-name,netlinx,A name mismatch alone does not prove PLDB is missing this language.
+NetLinx+ERB,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+NetLogo,programming,exact-name,netlogo,A name mismatch alone does not prove PLDB is missing this language.
+NewLisp,programming,exact-name,newlisp,A name mismatch alone does not prove PLDB is missing this language.
+Nextflow,programming,exact-name,nextflow,A name mismatch alone does not prove PLDB is missing this language.
+Nickel,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+Nim,programming,exact-name,nim,A name mismatch alone does not prove PLDB is missing this language.
+Nit,programming,exact-name,nit,A name mismatch alone does not prove PLDB is missing this language.
+Nix,programming,exact-name,nix,A name mismatch alone does not prove PLDB is missing this language.
+NMODL,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+Noir,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+NSIS,programming,exact-name,nsis,A name mismatch alone does not prove PLDB is missing this language.
+Nu,programming,exact-name,nu,A name mismatch alone does not prove PLDB is missing this language.
+NumPy,programming,exact-name,numpy,A name mismatch alone does not prove PLDB is missing this language.
+Nushell,programming,exact-name,nushell,A name mismatch alone does not prove PLDB is missing this language.
+NWScript,programming,exact-name,nwscript,A name mismatch alone does not prove PLDB is missing this language.
+Oberon,programming,exact-name,oberon,A name mismatch alone does not prove PLDB is missing this language.
+Objective-C,programming,exact-name,objective-c,A name mismatch alone does not prove PLDB is missing this language.
+Objective-C++,programming,id-slug-candidate,objective-c,A name mismatch alone does not prove PLDB is missing this language.
+Objective-J,programming,exact-name,objective-j,A name mismatch alone does not prove PLDB is missing this language.
+ObjectScript,programming,exact-name,objectscript,A name mismatch alone does not prove PLDB is missing this language.
+OCaml,programming,exact-name,ocaml,A name mismatch alone does not prove PLDB is missing this language.
+Odin,programming,exact-name,odin,A name mismatch alone does not prove PLDB is missing this language.
+Omgrofl,programming,exact-name,omgrofl,A name mismatch alone does not prove PLDB is missing this language.
+OMNeT++ MSG,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+OMNeT++ NED,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+ooc,programming,exact-name,ooc,A name mismatch alone does not prove PLDB is missing this language.
+Opa,programming,exact-name,opa,A name mismatch alone does not prove PLDB is missing this language.
+Opal,programming,exact-name,opal,A name mismatch alone does not prove PLDB is missing this language.
+Open Policy Agent,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+OpenCL,programming,exact-name,opencl,A name mismatch alone does not prove PLDB is missing this language.
+OpenEdge ABL,programming,exact-name,openedge-advanced-business-language,A name mismatch alone does not prove PLDB is missing this language.
+OpenQASM,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+OpenRC runscript,programming,exact-name,openrc-runscript,A name mismatch alone does not prove PLDB is missing this language.
+OpenSCAD,programming,exact-name,openscad,A name mismatch alone does not prove PLDB is missing this language.
+OverpassQL,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+OverPy,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+Ox,programming,exact-name,ox,A name mismatch alone does not prove PLDB is missing this language.
+Oxygene,programming,exact-name,oxygene,A name mismatch alone does not prove PLDB is missing this language.
+Oz,programming,exact-name,oz,A name mismatch alone does not prove PLDB is missing this language.
+P4,programming,exact-name,p4,A name mismatch alone does not prove PLDB is missing this language.
+Pact,programming,exact-name,pact,A name mismatch alone does not prove PLDB is missing this language.
+Pan,programming,exact-name,pan,A name mismatch alone does not prove PLDB is missing this language.
+Papyrus,programming,exact-name,papyrus,A name mismatch alone does not prove PLDB is missing this language.
+Parrot,programming,exact-name,parrot-vm,A name mismatch alone does not prove PLDB is missing this language.
+Parrot Assembly,programming,exact-name,parrot-assembly,A name mismatch alone does not prove PLDB is missing this language.
+Parrot Internal Representation,programming,id-slug-candidate,parrot-internal-representation,A name mismatch alone does not prove PLDB is missing this language.
+Pascal,programming,exact-name,pascal,A name mismatch alone does not prove PLDB is missing this language.
+Pawn,programming,exact-name,pawn | pawn-scripting-language,A name mismatch alone does not prove PLDB is missing this language.
+PDDL,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+PEG.js,programming,exact-name,pegjs,A name mismatch alone does not prove PLDB is missing this language.
+Pep8,programming,exact-name,pep8,A name mismatch alone does not prove PLDB is missing this language.
+Perl,programming,exact-name,perl,A name mismatch alone does not prove PLDB is missing this language.
+PHP,programming,exact-name,php,A name mismatch alone does not prove PLDB is missing this language.
+PicoLisp,programming,exact-name,picolisp,A name mismatch alone does not prove PLDB is missing this language.
+PigLatin,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+Pike,programming,exact-name,pike,A name mismatch alone does not prove PLDB is missing this language.
+Pkl,programming,exact-name,pkl,A name mismatch alone does not prove PLDB is missing this language.
+PLpgSQL,programming,id-slug-candidate,plpgsql,A name mismatch alone does not prove PLDB is missing this language.
+PLSQL,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+PogoScript,programming,exact-name,pogoscript,A name mismatch alone does not prove PLDB is missing this language.
+Polar,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+Pony,programming,exact-name,pony,A name mismatch alone does not prove PLDB is missing this language.
+Portugol,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+POV-Ray SDL,programming,exact-name,pov-ray-sdl,A name mismatch alone does not prove PLDB is missing this language.
+Power Query,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+PowerBuilder,programming,exact-name,powerbuilder,A name mismatch alone does not prove PLDB is missing this language.
+PowerShell,programming,exact-name,powershell,A name mismatch alone does not prove PLDB is missing this language.
+Praat,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+Pro*C,programming,exact-name,pro-star-c,A name mismatch alone does not prove PLDB is missing this language.
+Processing,programming,exact-name,processing,A name mismatch alone does not prove PLDB is missing this language.
+Procfile,programming,exact-name,procfile,A name mismatch alone does not prove PLDB is missing this language.
+Prolog,programming,exact-name,prolog,A name mismatch alone does not prove PLDB is missing this language.
+Promela,programming,exact-name,promela,A name mismatch alone does not prove PLDB is missing this language.
+Propeller Spin,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+Puppet,programming,exact-name,puppet,A name mismatch alone does not prove PLDB is missing this language.
+PureBasic,programming,exact-name,purebasic,A name mismatch alone does not prove PLDB is missing this language.
+PureScript,programming,exact-name,purescript,A name mismatch alone does not prove PLDB is missing this language.
+Pyret,programming,exact-name,pyret | pyret-lang,A name mismatch alone does not prove PLDB is missing this language.
+Python,programming,exact-name,python,A name mismatch alone does not prove PLDB is missing this language.
+Python console,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+q,programming,exact-name,q | q-equational-programming-language,A name mismatch alone does not prove PLDB is missing this language.
+Q#,programming,exact-name,q-sharp,A name mismatch alone does not prove PLDB is missing this language.
+QMake,programming,exact-name,qmake,A name mismatch alone does not prove PLDB is missing this language.
+QML,programming,exact-name,qml,A name mismatch alone does not prove PLDB is missing this language.
+Qt Script,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+Quake,programming,exact-name,quake,A name mismatch alone does not prove PLDB is missing this language.
+QuakeC,programming,exact-name,quakec,A name mismatch alone does not prove PLDB is missing this language.
+QuickBASIC,programming,exact-name,quickbasic,A name mismatch alone does not prove PLDB is missing this language.
+Quint,programming,exact-name,quint,A name mismatch alone does not prove PLDB is missing this language.
+R,programming,exact-name,r,A name mismatch alone does not prove PLDB is missing this language.
+Racket,programming,exact-name,racket,A name mismatch alone does not prove PLDB is missing this language.
+Ragel,programming,exact-name,ragel,A name mismatch alone does not prove PLDB is missing this language.
+Raku,programming,exact-name,raku,A name mismatch alone does not prove PLDB is missing this language.
+Rascal,programming,exact-name,rascal,A name mismatch alone does not prove PLDB is missing this language.
+RAScript,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+REALbasic,programming,id-slug-candidate,realbasic,A name mismatch alone does not prove PLDB is missing this language.
+Reason,programming,exact-name,reason,A name mismatch alone does not prove PLDB is missing this language.
+ReasonLIGO,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+Rebol,programming,exact-name,rebol,A name mismatch alone does not prove PLDB is missing this language.
+Red,programming,exact-name,red | red-lang,A name mismatch alone does not prove PLDB is missing this language.
+Redcode,programming,exact-name,redcode,A name mismatch alone does not prove PLDB is missing this language.
+Redscript,programming,exact-name,redscript,A name mismatch alone does not prove PLDB is missing this language.
+Ren'Py,programming,exact-name,renpy,A name mismatch alone does not prove PLDB is missing this language.
+RenderScript,programming,exact-name,renderscript,A name mismatch alone does not prove PLDB is missing this language.
+ReScript,programming,exact-name,rescript,A name mismatch alone does not prove PLDB is missing this language.
+REXX,programming,exact-name,rexx,A name mismatch alone does not prove PLDB is missing this language.
+Rez,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+Rhai,programming,exact-name,rhai,A name mismatch alone does not prove PLDB is missing this language.
+Ring,programming,exact-name,ring,A name mismatch alone does not prove PLDB is missing this language.
+RobotFramework,programming,exact-name,robotframework,A name mismatch alone does not prove PLDB is missing this language.
+Roc,programming,exact-name,roc,A name mismatch alone does not prove PLDB is missing this language.
+Rocq Prover,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+Rouge,programming,exact-name,rouge,A name mismatch alone does not prove PLDB is missing this language.
+RouterOS Script,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+RPC,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+RPGLE,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+Ruby,programming,exact-name,ruby,A name mismatch alone does not prove PLDB is missing this language.
+Rust,programming,exact-name,rust,A name mismatch alone does not prove PLDB is missing this language.
+Sage,programming,exact-name,sage | sagemath,A name mismatch alone does not prove PLDB is missing this language.
+Sail,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+Salt,programming,source-alias,saltstack,A name mismatch alone does not prove PLDB is missing this language.
+SAS,programming,exact-name,sas,A name mismatch alone does not prove PLDB is missing this language.
+Scala,programming,exact-name,scala,A name mismatch alone does not prove PLDB is missing this language.
+Scenic,programming,exact-name,scenic,A name mismatch alone does not prove PLDB is missing this language.
+Scheme,programming,exact-name,scheme,A name mismatch alone does not prove PLDB is missing this language.
+Scilab,programming,exact-name,scilab,A name mismatch alone does not prove PLDB is missing this language.
+sed,programming,exact-name,sed,A name mismatch alone does not prove PLDB is missing this language.
+Self,programming,exact-name,self,A name mismatch alone does not prove PLDB is missing this language.
+ShaderLab,programming,exact-name,shaderlab,A name mismatch alone does not prove PLDB is missing this language.
+Shell,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+ShellSession,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+Shen,programming,exact-name,shen,A name mismatch alone does not prove PLDB is missing this language.
+Sieve,programming,id-slug-candidate,sieve,A name mismatch alone does not prove PLDB is missing this language.
+Singularity,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+SIP,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+Slang,programming,exact-name,slang,A name mismatch alone does not prove PLDB is missing this language.
+Slash,programming,exact-name,slash | slashlang,A name mismatch alone does not prove PLDB is missing this language.
+Slice,programming,exact-name,slice,A name mismatch alone does not prove PLDB is missing this language.
+Smali,programming,exact-name,smali,A name mismatch alone does not prove PLDB is missing this language.
+Smalltalk,programming,exact-name,smalltalk,A name mismatch alone does not prove PLDB is missing this language.
+Smarty,programming,exact-name,smarty,A name mismatch alone does not prove PLDB is missing this language.
+Smithy,programming,exact-name,smithy,A name mismatch alone does not prove PLDB is missing this language.
+SmPL,programming,id-slug-candidate,smpl,A name mismatch alone does not prove PLDB is missing this language.
+SMT,programming,exact-name,smt,A name mismatch alone does not prove PLDB is missing this language.
+Snakemake,programming,exact-name,snakemake,A name mismatch alone does not prove PLDB is missing this language.
+Solidity,programming,exact-name,solidity,A name mismatch alone does not prove PLDB is missing this language.
+SourcePawn,programming,exact-name,sourcepawn,A name mismatch alone does not prove PLDB is missing this language.
+SQF,programming,exact-name,status-quo-function,A name mismatch alone does not prove PLDB is missing this language.
+SQLPL,programming,exact-name,sqlpl,A name mismatch alone does not prove PLDB is missing this language.
+Squirrel,programming,exact-name,squirrel,A name mismatch alone does not prove PLDB is missing this language.
+Stan,programming,exact-name,stan,A name mismatch alone does not prove PLDB is missing this language.
+Standard ML,programming,exact-name,standard-ml,A name mismatch alone does not prove PLDB is missing this language.
+Starlark,programming,exact-name,starlark,A name mismatch alone does not prove PLDB is missing this language.
+Stata,programming,exact-name,stata,A name mismatch alone does not prove PLDB is missing this language.
+SuperCollider,programming,exact-name,supercollider,A name mismatch alone does not prove PLDB is missing this language.
+SurrealQL,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+Sway,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+Swift,programming,exact-name,swift,A name mismatch alone does not prove PLDB is missing this language.
+SWIG,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+SystemVerilog,programming,exact-name,systemverilog,A name mismatch alone does not prove PLDB is missing this language.
+Tact,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+Talon,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+Tape,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+Tcl,programming,exact-name,tcl,A name mismatch alone does not prove PLDB is missing this language.
+Tcsh,programming,exact-name,tcsh,A name mismatch alone does not prove PLDB is missing this language.
+Teal,programming,exact-name,teal,A name mismatch alone does not prove PLDB is missing this language.
+Terra,programming,exact-name,terra,A name mismatch alone does not prove PLDB is missing this language.
+Thrift,programming,exact-name,thrift,A name mismatch alone does not prove PLDB is missing this language.
+TI Program,programming,exact-name,ti-basic-assembly,A name mismatch alone does not prove PLDB is missing this language.
+TL-Verilog,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+TLA,programming,id-slug-candidate,tla,A name mismatch alone does not prove PLDB is missing this language.
+Toit,programming,exact-name,toit,A name mismatch alone does not prove PLDB is missing this language.
+Tolk,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+Tree-sitter Query,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+TSQL,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+TSX,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+Turing,programming,exact-name,turing,A name mismatch alone does not prove PLDB is missing this language.
+TXL,programming,exact-name,txl,A name mismatch alone does not prove PLDB is missing this language.
+TypeScript,programming,exact-name,typescript,A name mismatch alone does not prove PLDB is missing this language.
+TypeSpec,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+Typst,programming,exact-name,typst,A name mismatch alone does not prove PLDB is missing this language.
+ucode,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+Unified Parallel C,programming,id-slug-candidate,unified-parallel-c,A name mismatch alone does not prove PLDB is missing this language.
+Unix Assembly,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+Uno,programming,exact-name,uno,A name mismatch alone does not prove PLDB is missing this language.
+UnrealScript,programming,exact-name,unrealscript,A name mismatch alone does not prove PLDB is missing this language.
+Untyped Plutus Core,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+UrWeb,programming,exact-name,urweb,A name mismatch alone does not prove PLDB is missing this language.
+V,programming,exact-name,v | v-golf | v-visual-language,A name mismatch alone does not prove PLDB is missing this language.
+Vala,programming,exact-name,vala,A name mismatch alone does not prove PLDB is missing this language.
+VBA,programming,exact-name,vba,A name mismatch alone does not prove PLDB is missing this language.
+VBScript,programming,exact-name,vbscript,A name mismatch alone does not prove PLDB is missing this language.
+VCL,programming,id-slug-candidate,vcl,A name mismatch alone does not prove PLDB is missing this language.
+Verilog,programming,exact-name,verilog,A name mismatch alone does not prove PLDB is missing this language.
+Verse,programming,exact-name,verse,A name mismatch alone does not prove PLDB is missing this language.
+VHDL,programming,exact-name,vhdl,A name mismatch alone does not prove PLDB is missing this language.
+Vim script,programming,exact-name,vim-script,A name mismatch alone does not prove PLDB is missing this language.
+Visual Basic .NET,programming,exact-name,visual-basic.net,A name mismatch alone does not prove PLDB is missing this language.
+Visual Basic 6.0,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+Volt,programming,exact-name,volt,A name mismatch alone does not prove PLDB is missing this language.
+Vyper,programming,exact-name,vyper,A name mismatch alone does not prove PLDB is missing this language.
+WDL,programming,exact-name,wdl,A name mismatch alone does not prove PLDB is missing this language.
+WebAssembly,programming,exact-name,wasm,A name mismatch alone does not prove PLDB is missing this language.
+WebIDL,programming,exact-name,web-idl,A name mismatch alone does not prove PLDB is missing this language.
+WGSL,programming,id-slug-candidate,wgsl,A name mismatch alone does not prove PLDB is missing this language.
+Whiley,programming,exact-name,whiley,A name mismatch alone does not prove PLDB is missing this language.
+wisp,programming,exact-name,wisp,A name mismatch alone does not prove PLDB is missing this language.
+Witcher Script,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+Wolfram Language,programming,exact-name,wolfram,A name mismatch alone does not prove PLDB is missing this language.
+Wollok,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+Wren,programming,exact-name,wren,A name mismatch alone does not prove PLDB is missing this language.
+X10,programming,exact-name,x10,A name mismatch alone does not prove PLDB is missing this language.
+xBase,programming,exact-name,xbase,A name mismatch alone does not prove PLDB is missing this language.
+XC,programming,exact-name,xc,A name mismatch alone does not prove PLDB is missing this language.
+Xmake,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+Xojo,programming,exact-name,xojo,A name mismatch alone does not prove PLDB is missing this language.
+Xonsh,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+XProc,programming,exact-name,xproc,A name mismatch alone does not prove PLDB is missing this language.
+XQuery,programming,exact-name,xquery,A name mismatch alone does not prove PLDB is missing this language.
+XS,programming,exact-name,xs | xs-lang,A name mismatch alone does not prove PLDB is missing this language.
+XSLT,programming,exact-name,xslt,A name mismatch alone does not prove PLDB is missing this language.
+Xtend,programming,exact-name,xtend,A name mismatch alone does not prove PLDB is missing this language.
+Yacc,programming,exact-name,yacc,A name mismatch alone does not prove PLDB is missing this language.
+YARA,programming,exact-name,yara,A name mismatch alone does not prove PLDB is missing this language.
+Yul,programming,exact-name,yul,A name mismatch alone does not prove PLDB is missing this language.
+ZAP,programming,name-unmatched,,A name mismatch alone does not prove PLDB is missing this language.
+Zeek,programming,exact-name,zeek,A name mismatch alone does not prove PLDB is missing this language.
+ZenScript,programming,exact-name,zenscript,A name mismatch alone does not prove PLDB is missing this language.
+Zephir,programming,exact-name,zephir,A name mismatch alone does not prove PLDB is missing this language.
+Zig,programming,exact-name,zig,A name mismatch alone does not prove PLDB is missing this language.
+ZIL,programming,id-slug-candidate,zil,A name mismatch alone does not prove PLDB is missing this language.
+Zimpl,programming,exact-name,zimpl,A name mismatch alone does not prove PLDB is missing this language.

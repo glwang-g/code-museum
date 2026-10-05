@@ -1,0 +1,51 @@
+﻿id,name,year,language_review,map_upstream,map_downstream,map_link_count,cited_map_links,field_only_map_links,links_to_nonmap_items,phrase_leads_on_map,phrase_lead_ids,relation_review_state
+ada,Ada,1980,verified-language,,ruby | vhdl,2,2,0,3,0,,cited-only
+algol-60,ALGOL 60,1960,verified-language,,oberon | pascal | simula,3,2,1,3,0,,cited-and-field
+apl,APL,1964,unreviewed,,forth,1,1,0,7,0,,cited-only
+assembly-language,Assembly language,1960,unreviewed,,,0,0,0,0,0,,no-map-link
+b,B,1969,historical-primary-source,bcpl,c,2,2,0,0,0,,cited-only
+basic,BASIC,1964,verified-language,algol | fortran,visual-basic,3,3,0,0,1,gambas,cited-only
+bcpl,BCPL,1966,historical-primary-source,,b,1,1,0,0,0,,cited-only
+c,C,1972,verified-language,b,c-shell | cpp | go | java | korn-shell | objective-c | php,8,6,2,7,0,,cited-and-field
+cobol,COBOL,1959,verified-language,flow-matic,,1,1,0,1,0,,cited-only
+cpp,C++,1985,verified-language,c,d | java | lua | rust,5,4,1,9,0,,cited-and-field
+csharp,C#,2000,verified-language,java,kotlin | rust,3,3,0,4,0,,cited-only
+d,D,2001,verified-language,cpp,,1,1,0,1,0,,cited-only
+dart,Dart,2011,verified-language,,,0,0,0,0,0,,no-map-link
+forth,Forth,1970,verified-language,algol | apl | fortran,postscript,4,4,0,1,0,,cited-only
+fortran,Fortran,1957,verified-language,,basic | forth,2,2,0,4,0,,cited-only
+go,Go,2009,verified-language,c | oberon | pascal,,3,3,0,3,0,,cited-only
+groovy,Groovy,2003,verified-language,java,kotlin,2,2,0,0,0,,cited-only
+haskell,Haskell,1990,verified-language,,curry | rust,2,1,1,6,1,miranda,cited-and-field
+java,Java,1995,verified-language,c | cpp,csharp | groovy | javascript | kotlin | scala,7,6,1,5,1,matlab,cited-and-field
+javascript,JavaScript,1995,verified-language,java | scheme,kotlin | typescript,4,1,3,6,1,jsf,cited-and-field
+julia,Julia,2012,verified-language,lisp | matlab | perl | python | r | ruby,,6,6,0,0,0,,cited-only
+kotlin,Kotlin,2011,verified-language,csharp | groovy | java | javascript | scala,,5,5,0,0,0,,cited-only
+lisp,Lisp,1958,historical-primary-source,,julia | postscript | ruby | scheme | smalltalk,5,5,0,8,3,clojure | common-lisp | hy,cited-only
+lua,Lua,1993,verified-language,awk | cpp | scheme | snobol,,4,4,0,5,0,,cited-only
+matlab,MATLAB,1984,verified-language,,julia | octave,2,2,0,1,1,java,cited-only
+objective-c,Objective-C,1984,unreviewed,c,swift,2,1,1,1,0,,cited-and-field
+ocaml,OCaml,1996,verified-language,,f-sharp | rust,2,2,0,1,0,,cited-only
+perl,Perl,1987,verified-language,,julia | php | ruby,3,3,0,3,1,raku,cited-only
+php,PHP,1995,verified-language,c | perl,,2,2,0,1,0,,cited-only
+pl-sql,PL/SQL,1991,verified-language,sql,,1,1,0,0,0,,cited-only
+powershell,PowerShell,2006,verified-language,sh,,1,1,0,0,0,,cited-only
+prolog,Prolog,1972,verified-language,,erlang,1,1,0,4,0,,cited-only
+python,Python,1991,verified-language,abc,julia,2,2,0,13,1,f-sharp,cited-only
+r,R,1993,verified-language,,julia,1,1,0,2,0,,cited-only
+ruby,Ruby,1995,verified-language,ada | lisp | perl | smalltalk,julia | rust,6,6,0,3,0,,cited-only
+rust,Rust,2010,verified-language,cpp | csharp | erlang | haskell | ocaml | ruby | scheme,,7,7,0,6,0,,cited-only
+scala,Scala,2004,verified-language,java,kotlin,2,2,0,1,0,,cited-only
+scheme,Scheme,1975,verified-language,lisp,javascript | lua | rust,4,3,1,4,0,,cited-and-field
+simula,Simula,1965,historical-primary-source,algol-60,smalltalk,2,2,0,0,0,,cited-only
+smalltalk,Smalltalk,1972,verified-language,lisp | simula,ruby,3,3,0,0,0,,cited-only
+snobol,SNOBOL,1962,unreviewed,,lua,1,1,0,0,0,,cited-only
+sql,SQL,1974,verified-language,,pl-sql,1,1,0,6,0,,cited-only
+swift,Swift,2014,verified-language,objective-c,,1,1,0,1,0,,cited-only
+typescript,TypeScript,2012,verified-language,javascript,,1,0,1,4,0,,field-only
+vbscript,VBScript,1996,verified-language,vba,,1,1,0,0,1,visual-basic,cited-only
+vhdl,VHDL,1983,verified-language,ada,,1,1,0,0,0,,cited-only
+visual-basic,Visual Basic,1991,unreviewed,basic,vba | visual-basic.net,3,3,0,1,1,vbscript,cited-only
+visual-basic.net,Visual Basic .NET,2001,verified-language,visual-basic,,1,1,0,0,0,,cited-only
+xslt,XSLT,1998,verified-language,,,0,0,0,0,0,,no-map-link
+zig,Zig,2015,verified-language,,,0,0,0,1,0,,no-map-link

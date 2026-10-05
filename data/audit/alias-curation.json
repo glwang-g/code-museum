@@ -1,0 +1,8 @@
+[
+  {
+    "id": "vba",
+    "exclude": ["vb6", "visual basic 6"],
+    "reason": "The PLDB GitHub Linguist alias field treats VBA as VB6. The same snapshot describes VBA as a separate implementation of Visual Basic 6, so these names must not resolve to VBA.",
+    "source": "https://github.com/breck7/pldb/blob/main/concepts/vba.scroll"
+  }
+]

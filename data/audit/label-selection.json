@@ -1,0 +1,345 @@
+{
+  "source": {
+    "name": "TIOBE Index",
+    "period": "2026-09",
+    "url": "https://www.tiobe.com/tiobe-index/",
+    "retrievedAt": "2026-09-26",
+    "htmlSha256": "f87281ddaa36c9ab97bfa01c4316babbcdbaabd7d983a560916221203649baa1",
+    "scope": "Publicly numbered ranks 1–50. Rank is current attention, not historical importance or language eligibility."
+  },
+  "top50": [
+    {
+      "rank": 1,
+      "name": "Python",
+      "mapId": "python"
+    },
+    {
+      "rank": 2,
+      "name": "C",
+      "mapId": "c"
+    },
+    {
+      "rank": 3,
+      "name": "C++",
+      "mapId": "cpp"
+    },
+    {
+      "rank": 4,
+      "name": "Java",
+      "mapId": "java"
+    },
+    {
+      "rank": 5,
+      "name": "C#",
+      "mapId": "csharp"
+    },
+    {
+      "rank": 6,
+      "name": "JavaScript",
+      "mapId": "javascript"
+    },
+    {
+      "rank": 7,
+      "name": "Visual Basic",
+      "mapId": "visual-basic.net"
+    },
+    {
+      "rank": 8,
+      "name": "SQL",
+      "mapId": "sql"
+    },
+    {
+      "rank": 9,
+      "name": "R",
+      "mapId": "r"
+    },
+    {
+      "rank": 10,
+      "name": "Rust",
+      "mapId": "rust"
+    },
+    {
+      "rank": 11,
+      "name": "Fortran",
+      "mapId": "fortran"
+    },
+    {
+      "rank": 12,
+      "name": "Go",
+      "mapId": "go"
+    },
+    {
+      "rank": 13,
+      "name": "Delphi/Object Pascal",
+      "mapId": null
+    },
+    {
+      "rank": 14,
+      "name": "PHP",
+      "mapId": "php"
+    },
+    {
+      "rank": 15,
+      "name": "Scratch",
+      "mapId": null
+    },
+    {
+      "rank": 16,
+      "name": "Assembly language",
+      "mapId": "assembly-language"
+    },
+    {
+      "rank": 17,
+      "name": "Ada",
+      "mapId": "ada"
+    },
+    {
+      "rank": 18,
+      "name": "Swift",
+      "mapId": "swift"
+    },
+    {
+      "rank": 19,
+      "name": "Objective-C",
+      "mapId": "objective-c"
+    },
+    {
+      "rank": 20,
+      "name": "COBOL",
+      "mapId": "cobol"
+    },
+    {
+      "rank": 21,
+      "name": "Julia",
+      "mapId": "julia"
+    },
+    {
+      "rank": 22,
+      "name": "Ruby",
+      "mapId": "ruby"
+    },
+    {
+      "rank": 23,
+      "name": "Perl",
+      "mapId": "perl"
+    },
+    {
+      "rank": 24,
+      "name": "SAS",
+      "mapId": null
+    },
+    {
+      "rank": 25,
+      "name": "Classic Visual Basic",
+      "mapId": "visual-basic"
+    },
+    {
+      "rank": 26,
+      "name": "Kotlin",
+      "mapId": "kotlin"
+    },
+    {
+      "rank": 27,
+      "name": "MATLAB",
+      "mapId": "matlab"
+    },
+    {
+      "rank": 28,
+      "name": "Caml",
+      "mapId": null
+    },
+    {
+      "rank": 29,
+      "name": "Prolog",
+      "mapId": "prolog"
+    },
+    {
+      "rank": 30,
+      "name": "GML",
+      "mapId": null
+    },
+    {
+      "rank": 31,
+      "name": "Lua",
+      "mapId": "lua"
+    },
+    {
+      "rank": 32,
+      "name": "PowerShell",
+      "mapId": "powershell"
+    },
+    {
+      "rank": 33,
+      "name": "D",
+      "mapId": "d"
+    },
+    {
+      "rank": 34,
+      "name": "PL/SQL",
+      "mapId": "pl-sql"
+    },
+    {
+      "rank": 35,
+      "name": "ABAP",
+      "mapId": null
+    },
+    {
+      "rank": 36,
+      "name": "Transact-SQL",
+      "mapId": null
+    },
+    {
+      "rank": 37,
+      "name": "VBScript",
+      "mapId": "vbscript",
+      "mappingReviewedAt": "2026-10-03",
+      "mappingNote": "Exact VBScript catalogue identity; now eligible after official syntax and host review. Rank and September source snapshot unchanged."
+    },
+    {
+      "rank": 38,
+      "name": "OCaml",
+      "mapId": "ocaml"
+    },
+    {
+      "rank": 39,
+      "name": "TypeScript",
+      "mapId": "typescript"
+    },
+    {
+      "rank": 40,
+      "name": "Zig",
+      "mapId": "zig"
+    },
+    {
+      "rank": 41,
+      "name": "Dart",
+      "mapId": "dart"
+    },
+    {
+      "rank": 42,
+      "name": "X++",
+      "mapId": null
+    },
+    {
+      "rank": 43,
+      "name": "Lisp",
+      "mapId": "lisp"
+    },
+    {
+      "rank": 44,
+      "name": "Scala",
+      "mapId": "scala"
+    },
+    {
+      "rank": 45,
+      "name": "LabVIEW",
+      "mapId": null
+    },
+    {
+      "rank": 46,
+      "name": "Ladder Logic",
+      "mapId": null
+    },
+    {
+      "rank": 47,
+      "name": "VHDL",
+      "mapId": "vhdl"
+    },
+    {
+      "rank": 48,
+      "name": "XSLT",
+      "mapId": "xslt"
+    },
+    {
+      "rank": 49,
+      "name": "Haskell",
+      "mapId": "haskell"
+    },
+    {
+      "rank": 50,
+      "name": "(Visual) FoxPro",
+      "mapId": null
+    }
+  ],
+  "historicalContext": {
+    "url": "https://www.tiobe.com/tiobe-index/",
+    "method": "TIOBE Very Long Term History uses 12-month average ranks; pre-2001 figures are retrospectively based on Usenet hits. The table covers selected languages only.",
+    "examples": [
+      {
+        "name": "Lisp",
+        "year": 1986,
+        "rank": 3
+      },
+      {
+        "name": "Ada",
+        "year": 1986,
+        "rank": 2
+      },
+      {
+        "name": "(Visual) Basic",
+        "year": 1986,
+        "rank": 5,
+        "note": "Grouped dialects; not a rank for classic BASIC alone."
+      }
+    ]
+  },
+  "historicalAnchors": [
+    {
+      "id": "algol-60",
+      "reason": "以已核正式语法及 GNU MARST 实现的 ALGOL 60 版本作为历史锚点；不把 Algol 家族总称与具体版本混用。",
+      "source": "https://www.masswerk.at/algol60/report.htm"
+    },
+    {
+      "id": "apl",
+      "reason": "早期数组语言分支",
+      "source": "https://hopl.info/showlanguage.prx?exp=18"
+    },
+    {
+      "id": "basic",
+      "reason": "TIOBE 历史表 1986 年的 (Visual) Basic 合并口径列第 5；此标签用 BASIC 家族叙事，不误称单一方言排名",
+      "source": "https://www.tiobe.com/tiobe-index/"
+    },
+    {
+      "id": "b",
+      "reason": "Bell Labs 原始手册确认的 BCPL 到 C 演进中间节点",
+      "source": "https://www.bell-labs.com/usr/dmr/www/bintro.html"
+    },
+    {
+      "id": "bcpl",
+      "reason": "设计者原文确认的 1966 年历史语言",
+      "source": "https://www.cl.cam.ac.uk/~mr10/BCPL.html"
+    },
+    {
+      "id": "simula",
+      "reason": "设计者 Dahl 原文确认 Simula I/67 的定义与实现",
+      "source": "https://www.mn.uio.no/ifi/english/about/ole-johan-dahl/bibliography/the-birth-of-object-orientation-the-simula-languages.pdf"
+    },
+    {
+      "id": "smalltalk",
+      "reason": "对象语言史的重要节点，设计者 Kay 的一手回顾",
+      "source": "https://worrydream.com/EarlyHistoryOfSmalltalk/"
+    },
+    {
+      "id": "scheme",
+      "reason": "Lisp 分支的代表节点，已有人工核查的语法和实现资料",
+      "source": "https://www.gnu.org/software/guile/manual/html_node/Scheme-Syntax.html"
+    },
+    {
+      "id": "forth",
+      "reason": "堆栈语言分支的代表节点，已有人工核查的语法和实现资料",
+      "source": "https://gforth.org/manual/Your-first-definition.html"
+    },
+    {
+      "id": "snobol",
+      "reason": "早期字符串处理语言分支",
+      "source": "https://hopl.info/showlanguage.prx?exp=171"
+    }
+  ],
+  "relationshipContext": [
+    {
+      "id": "groovy",
+      "reason": "保留已核 Java → Groovy 谱系中的常显名称，避免恢复为难辨认的点。",
+      "source": "https://groovy-lang.org/differences.html"
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "id": "xslt",
+  "status": "sample-passed",
+  "checkedAt": "2026-10-04T12:24:20.012332+00:00",
+  "platform": "macOS-27.2-arm64-arm-64bit-Mach-O",
+  "executable": "/usr/bin/xsltproc",
+  "version": "Using libxml 20913, libxslt 10135 and libexslt 820\nxsltproc was compiled against libxml 20913, libxslt 10135 and libexslt 820\nlibxslt 10135 was compiled against libxml 20913\nlibexslt 820 was compiled against libxml 20913",
+  "scope": "Two original XSLT 1.0 samples and one invalid XPath expression, local xsltproc only; no complete compliance or webpage runtime claim.",
+  "input": "<museum><n>10</n><n>9</n><n>8</n><n>7</n><n>6</n><n>5</n><n>4</n><n>3</n><n>2</n><n>1</n></museum>\n",
+  "inputSha256": "0f5964d751bb1acc75e29e2b1cf98ece8a0306dd5615ed218abc870b05a5eddf",
+  "samples": [
+    {
+      "name": "sum",
+      "sample": "<xsl:stylesheet version=\"1.0\" xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\"><xsl:output method=\"text\"/><xsl:template match=\"/\"><xsl:value-of select=\"sum(museum/n)\"/></xsl:template></xsl:stylesheet>\n",
+      "sampleSha256": "07cdd3e4300bd43f88c498c78da50ab9e4f96780fc32de4f3be5478617809f2b",
+      "expectedStdout": "55",
+      "status": "sample-passed",
+      "command": {
+        "commandTemplate": [
+          "xsltproc",
+          "--nonet",
+          "sum.xsl",
+          "input.xml"
+        ],
+        "exitCode": 0,
+        "stdout": "55",
+        "stderr": ""
+      }
+    },
+    {
+      "name": "sort-condition",
+      "sample": "<xsl:stylesheet version=\"1.0\" xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\"><xsl:output method=\"text\"/><xsl:template match=\"/\"><xsl:for-each select=\"museum/n\"><xsl:sort data-type=\"number\"/><xsl:if test=\". &gt; 7\"><xsl:value-of select=\".\"/><xsl:text>,</xsl:text></xsl:if></xsl:for-each></xsl:template></xsl:stylesheet>\n",
+      "sampleSha256": "53726881840c2788012632551a269492e5340827c149b564a6887a166d59368b",
+      "expectedStdout": "8,9,10,",
+      "status": "sample-passed",
+      "command": {
+        "commandTemplate": [
+          "xsltproc",
+          "--nonet",
+          "sort-condition.xsl",
+          "input.xml"
+        ],
+        "exitCode": 0,
+        "stdout": "8,9,10,",
+        "stderr": ""
+      }
+    }
+  ],
+  "invalidSyntax": {
+    "sample": "<xsl:stylesheet version=\"1.0\" xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\"><xsl:output method=\"text\"/><xsl:template match=\"/\"><xsl:value-of select=\"1 +\"/></xsl:template></xsl:stylesheet>\n",
+    "sampleSha256": "35f01bcd02ba8fb2d20cadd9d14dce40aebba0268c40e3f8ab8bd1068fcc8a68",
+    "commandTemplate": [
+      "xsltproc",
+      "--nonet",
+      "invalid-expression.xsl",
+      "input.xml"
+    ],
+    "exitCode": 5,
+    "stdout": "",
+    "stderr": "XPath error : Invalid expression\ncompilation error: file invalid-expression.xsl line 1 element value-of\nxsl:value-of : could not compile select expression '1 +'\n"
+  }
+}

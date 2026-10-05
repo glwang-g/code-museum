@@ -1,0 +1,163 @@
+{
+  "id": "algol-60",
+  "checkedAt": "2026-10-04T01:09:43.490837+00:00",
+  "platform": "macOS-27.2-arm64-arm-64bit-Mach-O",
+  "version": "Was sich ueberhaupt sagen laesst, laesst\n                                 sich klar sagen; und wovon man nicht reden\n                                 kann, darueber muss man schweigen.\n                                                         Ludwig Wittgenstein\n\nMARST--Algol-to-C Translator, Version 2.8\nCopyright (C) 2000, 2001, 2002, 2007, 2013, 2025 Free Software Foundation, Inc.\nThis program is free software; you may redistribute it under the terms of\nthe GNU General Public License. This program has absolutely no warranty.",
+  "compilerVersion": "Apple clang version 21.0.0 (clang-2100.3.34.2)\nTarget: arm64-apple-darwin27.2.0\nThread model: posix\nInstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin",
+  "status": "sample-passed",
+  "scope": "three-original-native-samples-and-invalid-syntax-only",
+  "limitations": "Native MARST translation and C89 compilation on this machine only. Captured compiler warnings remain part of the evidence. Not full conformance, portability or a museum browser runtime.",
+  "runtimeFiles": {
+    "/private/tmp/codemuseum-marst-2.8-source/marst-2.8/marst": "9d41486cff37fbfe61fcc0b2082527f977442af438fafb9b98fdde71633bceb4",
+    "/private/tmp/codemuseum-marst-2.8-source/marst-2.8/.libs/libalgol.a": "c8c766e1e04043b66a5b269a253368cc4fe31fc331bdff530b63ef2a6d5dc1d3",
+    "/private/tmp/codemuseum-marst-2.8-source/marst-2.8/algol.h": "c1874f97f4ffb9b748ffee8b45aa694bc562740d47a88eb494b7e95bf7b39fad"
+  },
+  "samples": [
+    {
+      "name": "sum",
+      "sample": "begin\n integer i, total;\n total := 0;\n for i := 1 step 1 until 10 do total := total + i;\n outinteger(1, total); outstring(1, \"\\n\")\nend\n",
+      "sampleSha256": "93a2e319dea621ba2c0465a827c6adfc910c2ae081b972d0d3e64fb5990a7dae",
+      "expectedStdout": "55",
+      "commands": [
+        {
+          "command": [
+            "/private/tmp/codemuseum-marst-2.8-source/marst-2.8/marst",
+            "/var/folders/fg/sj9cml3s24x4dm466v4bt5400000gn/T/museum-algol60-tal2qtrs/sum.alg",
+            "-o",
+            "/var/folders/fg/sj9cml3s24x4dm466v4bt5400000gn/T/museum-algol60-tal2qtrs/sum.c"
+          ],
+          "exitCode": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": [
+            "/usr/bin/clang",
+            "-std=c89",
+            "-I/private/tmp/codemuseum-marst-2.8-source/marst-2.8",
+            "/var/folders/fg/sj9cml3s24x4dm466v4bt5400000gn/T/museum-algol60-tal2qtrs/sum.c",
+            "/private/tmp/codemuseum-marst-2.8-source/marst-2.8/.libs/libalgol.a",
+            "-lm",
+            "-o",
+            "/var/folders/fg/sj9cml3s24x4dm466v4bt5400000gn/T/museum-algol60-tal2qtrs/sum"
+          ],
+          "exitCode": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": [
+            "/var/folders/fg/sj9cml3s24x4dm466v4bt5400000gn/T/museum-algol60-tal2qtrs/sum"
+          ],
+          "exitCode": 0,
+          "stdout": "55 \n",
+          "stderr": ""
+        }
+      ],
+      "status": "sample-passed"
+    },
+    {
+      "name": "recursion",
+      "sample": "begin\n integer procedure factorial(n);\n value n; integer n;\n begin factorial := if n = 0 then 1 else n * factorial(n - 1) end;\n outinteger(1, factorial(6)); outstring(1, \"\\n\")\nend\n",
+      "sampleSha256": "886b44482bc48b75e51a94ce5b3793651fc4c407edd49e909427aa3bb456e99e",
+      "expectedStdout": "720",
+      "commands": [
+        {
+          "command": [
+            "/private/tmp/codemuseum-marst-2.8-source/marst-2.8/marst",
+            "/var/folders/fg/sj9cml3s24x4dm466v4bt5400000gn/T/museum-algol60-tal2qtrs/recursion.alg",
+            "-o",
+            "/var/folders/fg/sj9cml3s24x4dm466v4bt5400000gn/T/museum-algol60-tal2qtrs/recursion.c"
+          ],
+          "exitCode": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": [
+            "/usr/bin/clang",
+            "-std=c89",
+            "-I/private/tmp/codemuseum-marst-2.8-source/marst-2.8",
+            "/var/folders/fg/sj9cml3s24x4dm466v4bt5400000gn/T/museum-algol60-tal2qtrs/recursion.c",
+            "/private/tmp/codemuseum-marst-2.8-source/marst-2.8/.libs/libalgol.a",
+            "-lm",
+            "-o",
+            "/var/folders/fg/sj9cml3s24x4dm466v4bt5400000gn/T/museum-algol60-tal2qtrs/recursion"
+          ],
+          "exitCode": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": [
+            "/var/folders/fg/sj9cml3s24x4dm466v4bt5400000gn/T/museum-algol60-tal2qtrs/recursion"
+          ],
+          "exitCode": 0,
+          "stdout": "720 \n",
+          "stderr": ""
+        }
+      ],
+      "status": "sample-passed"
+    },
+    {
+      "name": "by-name",
+      "sample": "begin\n integer i; integer array a[1:3];\n integer procedure sum(k, x); integer k, x;\n begin integer total; total := 0;\n for k := 1 step 1 until 3 do total := total + x;\n sum := total end;\n a[1] := 1; a[2] := 2; a[3] := 3;\n outinteger(1, sum(i, a[i])); outstring(1, \"\\n\")\nend\n",
+      "sampleSha256": "61aa9ceb5ace008c093d03d7eae73e0b5abccc88bca5d36d43e2fba3aebffeae",
+      "expectedStdout": "6",
+      "commands": [
+        {
+          "command": [
+            "/private/tmp/codemuseum-marst-2.8-source/marst-2.8/marst",
+            "/var/folders/fg/sj9cml3s24x4dm466v4bt5400000gn/T/museum-algol60-tal2qtrs/by-name.alg",
+            "-o",
+            "/var/folders/fg/sj9cml3s24x4dm466v4bt5400000gn/T/museum-algol60-tal2qtrs/by-name.c"
+          ],
+          "exitCode": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": [
+            "/usr/bin/clang",
+            "-std=c89",
+            "-I/private/tmp/codemuseum-marst-2.8-source/marst-2.8",
+            "/var/folders/fg/sj9cml3s24x4dm466v4bt5400000gn/T/museum-algol60-tal2qtrs/by-name.c",
+            "/private/tmp/codemuseum-marst-2.8-source/marst-2.8/.libs/libalgol.a",
+            "-lm",
+            "-o",
+            "/var/folders/fg/sj9cml3s24x4dm466v4bt5400000gn/T/museum-algol60-tal2qtrs/by-name"
+          ],
+          "exitCode": 0,
+          "stdout": "",
+          "stderr": "/var/folders/fg/sj9cml3s24x4dm466v4bt5400000gn/T/museum-algol60-tal2qtrs/by-name.c:156:27: warning: multiple unsequenced modifications to 'global_dsa' [-Wunsequenced]\n  156 |       set_int((global_dsa = dsa_1->k_4.arg2, (*(struct desc (*)(void))\n      |                           ^\n  157 |          dsa_1->k_4.arg1)()), dsa_1->teta_i_6 + get_int((global_dsa = \n      |                                                                     ~\n1 warning generated.\n"
+        },
+        {
+          "command": [
+            "/var/folders/fg/sj9cml3s24x4dm466v4bt5400000gn/T/museum-algol60-tal2qtrs/by-name"
+          ],
+          "exitCode": 0,
+          "stdout": "6 \n",
+          "stderr": ""
+        }
+      ],
+      "status": "sample-passed"
+    }
+  ],
+  "invalidSyntax": {
+    "sample": "begin integer ; end\n",
+    "command": [
+      "/private/tmp/codemuseum-marst-2.8-source/marst-2.8/marst",
+      "/var/folders/fg/sj9cml3s24x4dm466v4bt5400000gn/T/museum-algol60-tal2qtrs/invalid.alg",
+      "-o",
+      "/var/folders/fg/sj9cml3s24x4dm466v4bt5400000gn/T/museum-algol60-tal2qtrs/invalid.c"
+    ],
+    "exitCode": 1,
+    "stdout": "",
+    "stderr": "/var/folders/fg/sj9cml3s24x4dm466v4bt5400000gn/T/museum-algol60-tal2qtrs/invalid.alg:1: error: missing simple variable identifier\n/var/folders/fg/sj9cml3s24x4dm466v4bt5400000gn/T/museum-algol60-tal2qtrs/invalid.alg:1: warning: unlabelled dummy statement\n/var/folders/fg/sj9cml3s24x4dm466v4bt5400000gn/T/museum-algol60-tal2qtrs/invalid.alg:1: error: one error detected on the first pass; translation terminated\n"
+  },
+  "sourceAcquisition": {
+    "url": "https://ftp.gnu.org/gnu/marst/marst-2.8.tar.gz",
+    "sha256": "d77f4703b0b44b50be57908f9d556ee6c3bedd97d638c42949d6aec84f8070ba",
+    "scope": "Digest supplied from separately verified download; runtime files are hashed by this checker."
+  }
+}

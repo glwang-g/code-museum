@@ -1,0 +1,125 @@
+﻿kind,name_or_alias,record_ids,finding
+alias-equals-other-name,apache,apacheconf | apache,The source alias may merge distinct languages; review before indexing.
+alias-equals-other-name,arexx,rexx | arexx,The source alias may merge distinct languages; review before indexing.
+alias-equals-other-name,autoconf,m4sugar | autoconf,The source alias may merge distinct languages; review before indexing.
+alias-equals-other-name,bazel,starlark | bazel,The source alias may merge distinct languages; review before indexing.
+alias-equals-other-name,blitz3d,blitzbasic | blitz3d,The source alias may merge distinct languages; review before indexing.
+alias-equals-other-name,blitzplus,blitzbasic | blitzplus,The source alias may merge distinct languages; review before indexing.
+alias-equals-other-name,bro,zeek | bro,The source alias may merge distinct languages; review before indexing.
+alias-equals-other-name,cfml,coldfusion | cfml,The source alias may merge distinct languages; review before indexing.
+alias-equals-other-name,clipper,xbase | clipper,The source alias may merge distinct languages; review before indexing.
+alias-equals-other-name,cperl,perl | cperl,The source alias may merge distinct languages; review before indexing.
+alias-equals-other-name,delphi,pascal | delphi,The source alias may merge distinct languages; review before indexing.
+alias-equals-other-name,django,jinja | django,The source alias may merge distinct languages; review before indexing.
+alias-equals-other-name,emacs,emacs-lisp | emacs-editor,The source alias may merge distinct languages; review before indexing.
+alias-equals-other-name,flex,lex | flex,The source alias may merge distinct languages; review before indexing.
+alias-equals-other-name,foxpro,xbase | foxpro,The source alias may merge distinct languages; review before indexing.
+alias-equals-other-name,geojson,json | geojson,The source alias may merge distinct languages; review before indexing.
+alias-equals-other-name,groff,roff | groff,The source alias may merge distinct languages; review before indexing.
+alias-equals-other-name,inc,php | inc,The source alias may merge distinct languages; review before indexing.
+alias-equals-other-name,irc,irc-log | irc,The source alias may merge distinct languages; review before indexing.
+alias-equals-other-name,jruby,ruby | jruby,The source alias may merge distinct languages; review before indexing.
+alias-equals-other-name,latex,tex | latex,The source alias may merge distinct languages; review before indexing.
+alias-equals-other-name,lisp,common-lisp | lisp,The source alias may merge distinct languages; review before indexing.
+alias-equals-other-name,nixos,nix | nixos,The source alias may merge distinct languages; review before indexing.
+alias-equals-other-name,nroff,roff | nroff,The source alias may merge distinct languages; review before indexing.
+alias-equals-other-name,pandoc,markdown | pandoc-app,The source alias may merge distinct languages; review before indexing.
+alias-equals-other-name,pyrex,cython | pyrex,The source alias may merge distinct languages; review before indexing.
+alias-equals-other-name,rhtml,erb | rhtml,The source alias may merge distinct languages; review before indexing.
+alias-equals-other-name,rss,xml | rss,The source alias may merge distinct languages; review before indexing.
+alias-equals-other-name,sh,bash | sh,The source alias may merge distinct languages; review before indexing.
+alias-equals-other-name,soy,closure-templates | soy,The source alias may merge distinct languages; review before indexing.
+alias-equals-other-name,squeak,smalltalk | squeak,The source alias may merge distinct languages; review before indexing.
+alias-equals-other-name,troff,roff | troff,The source alias may merge distinct languages; review before indexing.
+alias-equals-other-name,ts,typescript | ts,The source alias may merge distinct languages; review before indexing.
+alias-equals-other-name,velocity,vtl-lang | apache-velocity,The source alias may merge distinct languages; review before indexing.
+alias-equals-other-name,vim,vim-script | vim,The source alias may merge distinct languages; review before indexing.
+alias-equals-other-name,visual basic,visual-basic.net | visual-basic,The source alias may merge distinct languages; review before indexing.
+alias-equals-other-name,winbatch,batch | winbatch,The source alias may merge distinct languages; review before indexing.
+alias-equals-other-name,wolfram language,mathematica | wolfram,The source alias may merge distinct languages; review before indexing.
+alias-equals-other-name,wsdl,xml | wsdl,The source alias may merge distinct languages; review before indexing.
+alias-equals-other-name,xhtml,html | xhtml,The source alias may merge distinct languages; review before indexing.
+alias-equals-other-name,xsd,xml | xsd,The source alias may merge distinct languages; review before indexing.
+corrected-name-overlap,Bourne shell,sh | bourne-shell,Reviewed display name overlaps another pinned record; resolve identity and date events before merging or treating as distinct languages.
+curated-false-alias,vb6,vba,"The PLDB GitHub Linguist alias field treats VBA as VB6. The same snapshot describes VBA as a separate implementation of Visual Basic 6, so these names must not resolve to VBA."
+curated-false-alias,visual basic 6,vba,"The PLDB GitHub Linguist alias field treats VBA as VB6. The same snapshot describes VBA as a separate implementation of Visual Basic 6, so these names must not resolve to VBA."
+same-display-name,alma,alma | alma-007,"Check whether these are homonyms, versions, or duplicates."
+same-display-name,alphard,alphard | alphard-programming-language,"Check whether these are homonyms, versions, or duplicates."
+same-display-name,amber,amber | amber-lang,"Check whether these are homonyms, versions, or duplicates."
+same-display-name,ante,ante | ante-esolang,"Check whether these are homonyms, versions, or duplicates."
+same-display-name,ark,ark | ark-lang,"Check whether these are homonyms, versions, or duplicates."
+same-display-name,atom,atom | atom-editor,"Check whether these are homonyms, versions, or duplicates."
+same-display-name,aui,aui | aui-lang,"Check whether these are homonyms, versions, or duplicates."
+same-display-name,axiom,axiom | axiom-computer-algebra-system,"Check whether these are homonyms, versions, or duplicates."
+same-display-name,blade,blade | blade-lang,"Check whether these are homonyms, versions, or duplicates."
+same-display-name,blue,blue | blue-programming-language,"Check whether these are homonyms, versions, or duplicates."
+same-display-name,bml,behavior-markup-language | bml,"Check whether these are homonyms, versions, or duplicates."
+same-display-name,bounce,bounce | bounce-lang,"Check whether these are homonyms, versions, or duplicates."
+same-display-name,brightscript,brightscript-lang | roku-brightscript,"Check whether these are homonyms, versions, or duplicates."
+same-display-name,broccoli,broccoli | broccoli-1 | broccoli-2,"Check whether these are homonyms, versions, or duplicates."
+same-display-name,cil,cil | cilk,"Check whether these are homonyms, versions, or duplicates."
+same-display-name,coral,coral | coral-lang,"Check whether these are homonyms, versions, or duplicates."
+same-display-name,d4,d4 | d4-programming-language,"Check whether these are homonyms, versions, or duplicates."
+same-display-name,dml,dependent-ml | dml,"Check whether these are homonyms, versions, or duplicates."
+same-display-name,dynamo,dynamo | dynamo-visual-language,"Check whether these are homonyms, versions, or duplicates."
+same-display-name,enso,enso | enso-lang,"Check whether these are homonyms, versions, or duplicates."
+same-display-name,f,apter-f | f,"Check whether these are homonyms, versions, or duplicates."
+same-display-name,fable,fable | fable-lang,"Check whether these are homonyms, versions, or duplicates."
+same-display-name,fp,fp | fp3,"Check whether these are homonyms, versions, or duplicates."
+same-display-name,frank,frank | frank-lang,"Check whether these are homonyms, versions, or duplicates."
+same-display-name,gams,gams | general-algebraic-modeling-system,"Check whether these are homonyms, versions, or duplicates."
+same-display-name,gold,gold | gold-linker,"Check whether these are homonyms, versions, or duplicates."
+same-display-name,heron,heron | heron-lang,"Check whether these are homonyms, versions, or duplicates."
+same-display-name,hyperscript,hyperscript | hyperscript-lang,"Check whether these are homonyms, versions, or duplicates."
+same-display-name,imp,imp | imp-lang,"Check whether these are homonyms, versions, or duplicates."
+same-display-name,janus,janus-lang | janus-programming-language,"Check whether these are homonyms, versions, or duplicates."
+same-display-name,lemon,lemon | lemon-lang,"Check whether these are homonyms, versions, or duplicates."
+same-display-name,linden scripting language,linden-scripting-language | lsl,"Check whether these are homonyms, versions, or duplicates."
+same-display-name,links,links | links-programming-language,"Check whether these are homonyms, versions, or duplicates."
+same-display-name,loglan,loglan | loglan-pl,"Check whether these are homonyms, versions, or duplicates."
+same-display-name,lorel,lorel | lorel-1,"Check whether these are homonyms, versions, or duplicates."
+same-display-name,lucid,lucid | lucid-lang,"Check whether these are homonyms, versions, or duplicates."
+same-display-name,luna,luna | luna-1,"Check whether these are homonyms, versions, or duplicates."
+same-display-name,mdl,mdl | methodology-description-language | microarchitecture-description-language,"Check whether these are homonyms, versions, or duplicates."
+same-display-name,metal,metal | metal-programming-language,"Check whether these are homonyms, versions, or duplicates."
+same-display-name,mobl,mobl | mobl-lang,"Check whether these are homonyms, versions, or duplicates."
+same-display-name,mp3,mp3 | mp3-format,"Check whether these are homonyms, versions, or duplicates."
+same-display-name,nova,nova | nova-editor,"Check whether these are homonyms, versions, or duplicates."
+same-display-name,npl,npl | npl-lang,"Check whether these are homonyms, versions, or duplicates."
+same-display-name,obsidian,obsidian | obsidian-lang,"Check whether these are homonyms, versions, or duplicates."
+same-display-name,ok,earnest-ok | ok,"Check whether these are homonyms, versions, or duplicates."
+same-display-name,omega,omega | pbt-omega,"Check whether these are homonyms, versions, or duplicates."
+same-display-name,opl,opl | opl-langage-informatique,"Check whether these are homonyms, versions, or duplicates."
+same-display-name,pawn,pawn | pawn-scripting-language,"Check whether these are homonyms, versions, or duplicates."
+same-display-name,pl/i,pl-i | pl-i-subset-g,"Check whether these are homonyms, versions, or duplicates."
+same-display-name,plot,plot | plot-lang,"Check whether these are homonyms, versions, or duplicates."
+same-display-name,prism,prism | prismjs,"Check whether these are homonyms, versions, or duplicates."
+same-display-name,pyret,pyret | pyret-lang,"Check whether these are homonyms, versions, or duplicates."
+same-display-name,q,q | q-equational-programming-language,"Check whether these are homonyms, versions, or duplicates."
+same-display-name,red,red | red-lang,"Check whether these are homonyms, versions, or duplicates."
+same-display-name,rpl,relational-production-language | rpl,"Check whether these are homonyms, versions, or duplicates."
+same-display-name,sage,sage | sagemath,"Check whether these are homonyms, versions, or duplicates."
+same-display-name,scoop,scoop | scoop-pm,"Check whether these are homonyms, versions, or duplicates."
+same-display-name,scroll,scroll | scroll-lang,"Check whether these are homonyms, versions, or duplicates."
+same-display-name,sheep,sheep | sheep-lang,"Check whether these are homonyms, versions, or duplicates."
+same-display-name,slash,slash | slashlang,"Check whether these are homonyms, versions, or duplicates."
+same-display-name,snowman,snowman | snowman-decompiler,"Check whether these are homonyms, versions, or duplicates."
+same-display-name,solid,solid | solid-network,"Check whether these are homonyms, versions, or duplicates."
+same-display-name,soql,social-networks-query-language | soql,"Check whether these are homonyms, versions, or duplicates."
+same-display-name,sr,sr | sr-programming-language,"Check whether these are homonyms, versions, or duplicates."
+same-display-name,tao,tao | tao-lang | tree-annotation-operator,"Check whether these are homonyms, versions, or duplicates."
+same-display-name,tea,tea | tea-pl | tea-pm,"Check whether these are homonyms, versions, or duplicates."
+same-display-name,topaz,topaz | topaz-lang,"Check whether these are homonyms, versions, or duplicates."
+same-display-name,unicode,unicode | unicode-lang,"Check whether these are homonyms, versions, or duplicates."
+same-display-name,unity,unity | unity-engine,"Check whether these are homonyms, versions, or duplicates."
+same-display-name,unql,unql | unql-lang,"Check whether these are homonyms, versions, or duplicates."
+same-display-name,v,v | v-golf | v-visual-language,"Check whether these are homonyms, versions, or duplicates."
+same-display-name,vale,vale | vale-assembly,"Check whether these are homonyms, versions, or duplicates."
+same-display-name,wml,wireless-markup-language | wml,"Check whether these are homonyms, versions, or duplicates."
+same-display-name,x bitmap,x-bitmap | x-bitmap-format,"Check whether these are homonyms, versions, or duplicates."
+same-display-name,x pixmap,x-pixmap | xpm-format,"Check whether these are homonyms, versions, or duplicates."
+same-display-name,xgboost,xgboost | xgboost-model,"Check whether these are homonyms, versions, or duplicates."
+same-display-name,xl,xl | xl-lang,"Check whether these are homonyms, versions, or duplicates."
+same-display-name,xql,xql | xql-lang,"Check whether these are homonyms, versions, or duplicates."
+same-display-name,xs,xs | xs-lang,"Check whether these are homonyms, versions, or duplicates."
+same-display-name,z,z | z-expressions,"Check whether these are homonyms, versions, or duplicates."

@@ -1,0 +1,23 @@
+[Unit]
+Description=Code Museum anonymous visit recorder
+After=network.target
+
+[Service]
+Type=simple
+User=code-museum
+Group=code-museum
+WorkingDirectory=/var/www/code-museum/current
+ExecStart=/usr/bin/python3 /var/www/code-museum/current/server/analytics.py
+Restart=on-failure
+RestartSec=3
+StateDirectory=code-museum
+StateDirectoryMode=0700
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/code-museum
+
+[Install]
+WantedBy=multi-user.target

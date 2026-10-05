@@ -1,0 +1,71 @@
+name: Build and deploy Code Museum
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: code-museum-production
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm test
+      - run: npm run build
+      - name: Check Python backend syntax
+        run: python3 -c "import ast, pathlib; ast.parse(pathlib.Path('server/analytics.py').read_text())"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: code-museum-release
+          path: |
+            dist/
+            server/
+            deploy/activate.sh
+          retention-days: 14
+  deploy:
+    if: vars.DEPLOY_ENABLED == 'true'
+    needs: build
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: code-museum-release
+          path: release
+      - name: Upload an independent immutable release
+        env:
+          DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
+          DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
+          DEPLOY_PORT: ${{ secrets.DEPLOY_PORT }}
+          DEPLOY_SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
+          DEPLOY_KNOWN_HOSTS: ${{ secrets.DEPLOY_KNOWN_HOSTS }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          : "${DEPLOY_HOST:?Missing DEPLOY_HOST}"
+          : "${DEPLOY_USER:?Missing DEPLOY_USER}"
+          : "${DEPLOY_SSH_KEY:?Missing DEPLOY_SSH_KEY}"
+          : "${DEPLOY_KNOWN_HOSTS:?Missing pinned DEPLOY_KNOWN_HOSTS}"
+          port="${DEPLOY_PORT:-22}"
+          [[ "$port" =~ ^[0-9]+$ ]]
+          [[ "$DEPLOY_HOST" =~ ^[a-zA-Z0-9.-]+$ ]]
+          [[ "$DEPLOY_USER" =~ ^[a-zA-Z0-9_-]+$ ]]
+          mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+          printf '%s\n' "$DEPLOY_SSH_KEY" > ~/.ssh/code_museum_key
+          printf '%s\n' "$DEPLOY_KNOWN_HOSTS" > ~/.ssh/known_hosts
+          chmod 600 ~/.ssh/code_museum_key ~/.ssh/known_hosts
+          trap 'rm -f ~/.ssh/code_museum_key' EXIT
+          target="$DEPLOY_USER@$DEPLOY_HOST"
+          release_path="/var/www/code-museum/releases/$GITHUB_SHA"
+          ssh -o BatchMode=yes -o StrictHostKeyChecking=yes -i ~/.ssh/code_museum_key -p "$port" "$target" "mkdir -p '$release_path'"
+          rsync -az -e "ssh -o BatchMode=yes -o StrictHostKeyChecking=yes -i $HOME/.ssh/code_museum_key -p $port" release/ "$target:$release_path/"
+          ssh -o BatchMode=yes -o StrictHostKeyChecking=yes -i ~/.ssh/code_museum_key -p "$port" "$target" "bash '$release_path/deploy/activate.sh' '$GITHUB_SHA'"
+      - name: Check HTTPS release
+        run: curl --fail --retry 3 --silent --show-error https://codemuseum.freexlib.com/ --output /dev/null

@@ -1,0 +1,81 @@
+{
+  "id": "korn-shell",
+  "status": "sample-passed",
+  "checkedAt": "2026-10-04T12:43:53.014947+00:00",
+  "platform": "macOS-27.2-arm64-arm-64bit-Mach-O",
+  "executable": "/bin/ksh",
+  "version": "Version AJM 93u+ 2012-08-01",
+  "versionCommand": [
+    "ksh",
+    "-c",
+    "print -r -- \"${.sh.version}\""
+  ],
+  "versionExitCode": 0,
+  "scope": "Two original ksh93 samples and syntax rejection using the reported installed version; not historical ksh88, full compliance or browser execution.",
+  "samples": [
+    {
+      "name": "arithmetic-loop",
+      "sample": "typeset -i total=0\nfor ((i=1; i<=10; i++)); do total=$((total+i)); done\nprint -r -- \"$total\"\n",
+      "sampleSha256": "2783512f9c0f9feedd73fd4a7a55a24a33570ddc22f93b95c814d216e6c522f7",
+      "expectedStdout": "55\n",
+      "status": "sample-passed",
+      "syntaxCheck": {
+        "commandTemplate": [
+          "ksh",
+          "-n",
+          "arithmetic-loop.ksh"
+        ],
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "command": {
+        "commandTemplate": [
+          "ksh",
+          "arithmetic-loop.ksh"
+        ],
+        "exitCode": 0,
+        "stdout": "55\n",
+        "stderr": ""
+      }
+    },
+    {
+      "name": "array-function",
+      "sample": "function double { print -r -- \"$(( $1 * 2 ))\"; }\ntypeset -a values\nvalues[0]=6\ndouble \"${values[0]}\"\n",
+      "sampleSha256": "48ecd9cda70329e1e3e07c6f68dcf5983be093962e5d57746bb4acd5b0b9fafd",
+      "expectedStdout": "12\n",
+      "status": "sample-passed",
+      "syntaxCheck": {
+        "commandTemplate": [
+          "ksh",
+          "-n",
+          "array-function.ksh"
+        ],
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "command": {
+        "commandTemplate": [
+          "ksh",
+          "array-function.ksh"
+        ],
+        "exitCode": 0,
+        "stdout": "12\n",
+        "stderr": ""
+      }
+    }
+  ],
+  "invalidSyntax": {
+    "sample": "if then\n  print -r -- broken\nfi\n",
+    "sampleSha256": "d4103c5176fc8c4e418b9e276a8392b9362f3e088ffea5034badcc60a93d7423",
+    "commandTemplate": [
+      "ksh",
+      "-n",
+      "invalid-syntax.ksh"
+    ],
+    "exitCode": 3,
+    "stdout": "",
+    "stderr": "invalid-syntax.ksh: syntax error at line 1: `then' unexpected\n"
+  }
+}

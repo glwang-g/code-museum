@@ -1,0 +1,21 @@
+{
+  "exclude": [
+    {"id": "arm", "reason": "此条是 ARM 指令集/架构；具体 ARM 汇编方言应另列。"},
+    {"id": "dtrace", "reason": "此条是动态追踪框架；其 D 脚本语言应单独建档。"},
+    {"id": "jasmin", "reason": "此条是 JVM 汇编器工具；其输入的汇编语法应单独建档。"},
+    {"id": "make", "reason": "此条记述构建工具 Make；Makefile 规则语言应单独建档。"},
+    {"id": "mariadb", "reason": "数据库产品；SQL 方言由语言条目承载。"},
+    {"id": "mysql", "reason": "数据库产品；SQL 方言由语言条目承载。"},
+    {"id": "postgresql", "reason": "数据库产品；SQL 方言由语言条目承载。"},
+    {"id": "qmake", "reason": "此条是 Qt 构建工具；项目文件语法应单独建档。"},
+    {"id": "sqlite", "reason": "数据库引擎；SQLite SQL 方言由 SQL 语言条目承载。"}
+  ],
+  "allowNotation": [
+    {"id": "dhall", "reason": "具有可执行的函数式表达式、形式语法和实现。"},
+    {"id": "less", "reason": "具有变量、函数与混入规则，可编译为 CSS。"},
+    {"id": "postscript", "reason": "栈式程序语言，可由 PostScript 解释器执行。"},
+    {"id": "sass", "reason": "具有控制结构与函数，可编译为 CSS。"},
+    {"id": "scss", "reason": "Sass 的 SCSS 语法，可编译为 CSS。"},
+    {"id": "xslt", "reason": "具有模板和控制结构，可由 XSLT 处理器执行。"}
+  ]
+}

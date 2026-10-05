@@ -1,0 +1,44 @@
+{
+  "snapshot_sha256": "57f45d25bba78ab6bc4af5d969356d2efbfcc7c1ee722dbb5c708d60aa78ba77",
+  "records": 5155,
+  "source_marked_languages": 4608,
+  "independent_catalogue_comparison": "limited-name-crosscheck-with-linguist; HOPL full roster not licensed for copying",
+  "linguist_commit": "76f88c6d3c22f8560d22d29854f24d9607f9edde",
+  "linguist_entries": 836,
+  "linguist_programming_entries": 563,
+  "linguist_match_status_counts": {
+    "id-slug-candidate": 25,
+    "name-unmatched": 135,
+    "exact-name": 402,
+    "source-alias": 1
+  },
+  "source_field_counts": {
+    "hopl": 1808,
+    "hoplId": 1808,
+    "spec": 54,
+    "website": 1887,
+    "githubRepo": 1231,
+    "wikipedia": 1974,
+    "semanticScholar": 315
+  },
+  "manual_reviews": 83,
+  "reviewed_source_links": 162,
+  "reviewed_source_links_with_url_hash_excerpt": 162,
+  "verified_language_review_gaps": 0,
+  "identity_issue_rows": 124,
+  "relationship_count": 417,
+  "relationship_evidence_status_counts": {
+    "claim-with-citation": 81,
+    "record-field-only": 336
+  },
+  "relationship_chronology_flags": 4,
+  "relationship_self_links": 0,
+  "relationship_nonlanguage_endpoints": 13,
+  "map_nodes": 233,
+  "map_isolates": 148,
+  "map_nodes_without_visible_links": 167,
+  "map_nodes_with_field_only_links": 4,
+  "map_label_nodes": 50,
+  "map_labels_without_visible_links": 4,
+  "phrase_based_relationship_candidates": 184
+}

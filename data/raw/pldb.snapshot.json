@@ -1,0 +1,10 @@
+{
+  "source": "https://pldb.io/pldb.json",
+  "license": "Public domain (PLDB)",
+  "licenseReference": "https://github.com/breck7/pldb/blob/main/readme.scroll",
+  "retrieved": "2026-09-23T12:44:58.205Z",
+  "retrievedNote": "Preserved from the original import record; this is the recorded import time, not a new fetch.",
+  "sha256": "57f45d25bba78ab6bc4af5d969356d2efbfcc7c1ee722dbb5c708d60aa78ba77",
+  "count": 5155,
+  "languageCount": 4608
+}

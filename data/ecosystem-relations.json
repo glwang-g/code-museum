@@ -1,0 +1,58 @@
+[
+  {
+    "from": "c",
+    "to": "python",
+    "type": "extensionInterface",
+    "label": "CPython 的 C 扩展接口",
+    "source": "https://docs.python.org/3/extending/extending.html",
+    "evidence": "Python 官方扩展文档说明 CPython 提供用 C 编写扩展模块的接口。这是一个实现的扩展机制，不表示 Python 的语法继承 C。"
+  },
+  {
+    "from": "cpp",
+    "to": "python",
+    "type": "extensionInterface",
+    "label": "CPython 扩展可用 C++ 编写",
+    "source": "https://docs.python.org/3/extending/extending.html",
+    "evidence": "Python 官方扩展文档说明扩展模块也可以用 C++ 编写。这是 CPython 生态接口，不表示 Python 是 C++ 的后继。"
+  },
+  {
+    "from": "java",
+    "to": "python",
+    "type": "hostRuntime",
+    "label": "Jython 在 JVM 上实现 Python",
+    "source": "https://www.jython.org/",
+    "evidence": "Jython 官方说明它是在 Java 平台上运行、可使用 Java 类的 Python 实现。官网当前说明支持 Python 2；这不是所有 Python 实现的共同运行方式。"
+  },
+  {
+    "from": "c",
+    "to": "rust",
+    "type": "interop",
+    "label": "C ABI 外部函数接口",
+    "source": "https://doc.rust-lang.org/nomicon/ffi.html",
+    "evidence": "Rust Nomicon 的 FFI 章节说明 Rust 能通过外部函数接口调用 C 代码并向 C 暴露函数。接口关系不等于 Rust 语法由 C 派生。"
+  },
+  {
+    "from": "rust",
+    "to": "python",
+    "type": "interop",
+    "label": "PyO3 双向互操作",
+    "source": "https://pyo3.rs/",
+    "evidence": "PyO3 官方文档说明可从 Rust 调用 Python，也可用 Rust 编写原生 Python 模块；这是特定工具提供的双向互操作。"
+  },
+  {
+    "from": "c",
+    "to": "zig",
+    "type": "interop",
+    "label": "C 头文件导入与 C ABI 导出",
+    "source": "https://ziglang.org/learn/overview/",
+    "evidence": "Zig 官方 Overview 的 Integration with C libraries without FFI/bindings 说明 @cImport 直接导入 C 类型、变量、函数与简单宏；Export functions, variables, and types for C code to depend on 说明 export 可导出 C ABI 接口供 C 等语言调用。这是双向互操作，既不表示 Zig 是 C 的超集，也不证明其设计继承。"
+  },
+  {
+    "from": "csharp",
+    "to": "powershell",
+    "type": "extensionInterface",
+    "label": "Add-Type 的 C# 类型扩展",
+    "source": "https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/add-type",
+    "evidence": "微软 Add-Type 文档说明该命令可把 C# 源码编译为包含 .NET 类型的内存程序集，并在 PowerShell 会话中创建对象、调用静态或实例方法。C# 是默认语言，类型及命名受会话限制。这是明确的扩展接口，不代表 PowerShell 语法继承 C#、源码兼容或已接入馆内浏览器编译；本轮未执行该接口。"
+  }
+]

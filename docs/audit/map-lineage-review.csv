@@ -1,0 +1,234 @@
+﻿id,name,year,language_review,map_upstream,map_downstream,map_link_count,cited_map_links,field_only_map_links,links_to_nonmap_items,phrase_leads_on_map,phrase_lead_ids,relation_review_state
+abc,ABC,1980,unreviewed,,python,1,1,0,0,0,,cited-only
+ada,Ada,1980,verified-language,,ruby | vhdl,2,2,0,3,0,,cited-only
+afnix,Afnix,2003,unreviewed,,,0,0,0,0,0,,no-map-link
+aheui,Aheui,2012,unreviewed,,,0,0,0,0,0,,no-map-link
+algol,Algol,1958,unreviewed,,basic | forth,2,2,0,0,0,,cited-only
+algol-60,ALGOL 60,1960,verified-language,,oberon | pascal | simula,3,2,1,3,0,,cited-and-field
+ante,Ante,2015,unreviewed,,,0,0,0,0,0,,no-map-link
+apl,APL,1964,unreviewed,,forth,1,1,0,7,0,,cited-only
+aplus,A+,1988,unreviewed,,,0,0,0,0,0,,no-map-link
+applescript,Applescript,1993,unreviewed,,,0,0,0,1,0,,no-map-link
+aspectcpp,AspectC++,2001,unreviewed,,,0,0,0,0,0,,no-map-link
+aspectj,AspectJ,2001,unreviewed,,,0,0,0,0,0,,no-map-link
+assembly-language,Assembly language,1960,unreviewed,,,0,0,0,0,0,,no-map-link
+ats,ATS,2013,unreviewed,,,0,0,0,0,0,,no-map-link
+awk,awk,1977,verified-language,,lua,1,1,0,1,0,,cited-only
+b,B,1969,historical-primary-source,bcpl,c,2,2,0,0,0,,cited-only
+bash,Bash,1989,verified-language,c-shell | korn-shell | sh,,3,3,0,1,0,,cited-only
+basic,BASIC,1964,verified-language,algol | fortran,visual-basic,3,3,0,0,1,gambas,cited-only
+batch,Batchfile,1985,unreviewed,,,0,0,0,0,0,,no-map-link
+battlestar,Battlestar,2014,unreviewed,,,0,0,0,0,0,,no-map-link
+bc,basic calculator,1975,unreviewed,,,0,0,0,0,0,,no-map-link
+bcpl,BCPL,1966,historical-primary-source,,b,1,1,0,0,0,,cited-only
+beanshell,BeanShell,1999,unreviewed,,,0,0,0,0,0,,no-map-link
+beatnik,Beatnik,2001,unreviewed,,,0,0,0,0,0,,no-map-link
+befunge,Befunge,1993,unreviewed,,,0,0,0,0,0,,no-map-link
+blc,Binary Lambda Calculus,2004,unreviewed,,,0,0,0,0,0,,no-map-link
+boo,Boo,2003,unreviewed,,,0,0,0,0,0,,no-map-link
+boogie,Boogie,2008,unreviewed,,,0,0,0,0,0,,no-map-link
+brainfuck,Brainfuck,1993,unreviewed,,,0,0,0,1,0,,no-map-link
+bython,Bython,2016,unreviewed,,,0,0,0,0,0,,no-map-link
+c,C,1972,verified-language,b,c-shell | cpp | go | java | korn-shell | objective-c | php,8,6,2,7,0,,cited-and-field
+c-shell,C shell,1978,historical-primary-source,c,bash | korn-shell | tcsh,4,4,0,0,1,tcsh,cited-only
+carbon,Carbon,2020,unreviewed,,,0,0,0,0,0,,no-map-link
+cat,cat,2016,unreviewed,,,0,0,0,0,0,,no-map-link
+ceylon,Ceylon,2011,unreviewed,,,0,0,0,0,0,,no-map-link
+chef,chef,2002,unreviewed,,,0,0,0,0,0,,no-map-link
+cil,CIL,2000,unreviewed,,,0,0,0,0,0,,no-map-link
+clean,Clean,1987,unreviewed,,,0,0,0,0,0,,no-map-link
+clojure,Clojure,2007,verified-language,,,0,0,0,1,1,lisp,no-map-link
+clojurescript,ClojureScript,2011,unreviewed,,,0,0,0,0,0,,no-map-link
+cobol,COBOL,1959,verified-language,flow-matic,,1,1,0,1,0,,cited-only
+coconut,Coconut,2014,unreviewed,,,0,0,0,0,0,,no-map-link
+coffeescript,CoffeeScript,2009,unreviewed,,,0,0,0,2,0,,no-map-link
+common-lisp,Common Lisp,1984,verified-language,,,0,0,0,1,2,dylan | lisp,no-map-link
+common-workflow-language,CWL,2014,unreviewed,,,0,0,0,0,0,,no-map-link
+cpp,C++,1985,verified-language,c,d | java | lua | rust,5,4,1,9,0,,cited-and-field
+crystal,Crystal,2014,unreviewed,,,0,0,0,1,0,,no-map-link
+csharp,C#,2000,verified-language,java,kotlin | rust,3,3,0,4,0,,cited-only
+curry,Curry,1990,unreviewed,haskell,,1,0,1,0,0,,field-only
+d,D,2001,verified-language,cpp,,1,1,0,1,0,,cited-only
+dafny,Dafny,2009,unreviewed,,,0,0,0,0,0,,no-map-link
+dart,Dart,2011,verified-language,,,0,0,0,0,0,,no-map-link
+dc,Dc,1978,unreviewed,,,0,0,0,0,0,,no-map-link
+dhall,Dhall,2017,unreviewed,,,0,0,0,0,0,,no-map-link
+dogescript,Dogescript,2013,unreviewed,,,0,0,0,0,0,,no-map-link
+dylan,Dylan,1992,unreviewed,,,0,0,0,0,1,common-lisp,no-map-link
+e,E,1997,unreviewed,,,0,0,0,0,0,,no-map-link
+ec,eC,2004,unreviewed,,,0,0,0,0,0,,no-map-link
+elixir,Elixir,2011,verified-language,,,0,0,0,0,0,,no-map-link
+elm,Elm,2012,unreviewed,,,0,0,0,2,0,,no-map-link
+elvish,Elvish,2013,unreviewed,,,0,0,0,0,0,,no-map-link
+emojicode,Emojicode,2016,unreviewed,,,0,0,0,0,0,,no-map-link
+entropy,Entropy,2021,unreviewed,,,0,0,0,0,0,,no-map-link
+erlang,Erlang,1986,verified-language,prolog,rust,2,2,0,1,0,,cited-only
+euphoria,Euphoria,1993,unreviewed,,,0,0,0,0,0,,no-map-link
+ezhil,Ezhil,2007,unreviewed,,,0,0,0,0,0,,no-map-link
+f-sharp,F#,2005,verified-language,ocaml,,1,1,0,0,1,python,cited-only
+factor,Factor,2003,unreviewed,,,0,0,0,0,0,,no-map-link
+false,False,1993,unreviewed,,,0,0,0,1,0,,no-map-link
+fennel,Fennel,2016,unreviewed,,,0,0,0,0,0,,no-map-link
+fish,fish,2005,unreviewed,,,0,0,0,0,0,,no-map-link
+fishlang,><>,2009,unreviewed,,,0,0,0,0,0,,no-map-link
+flex,FLEX,1987,unreviewed,,,0,0,0,0,0,,no-map-link
+flow-matic,FLOW-MATIC,1955,historical-primary-source,,cobol,1,1,0,0,0,,cited-only
+forth,Forth,1970,verified-language,algol | apl | fortran,postscript,4,4,0,1,0,,cited-only
+fortran,Fortran,1957,verified-language,,basic | forth,2,2,0,4,0,,cited-only
+gambas,Gambas,1999,unreviewed,,,0,0,0,0,1,basic,no-map-link
+gap,GAP,1986,unreviewed,,,0,0,0,0,0,,no-map-link
+genius-extension-language,GEL Genius,1997,unreviewed,,,0,0,0,0,0,,no-map-link
+gnuplot,Gnuplot,1986,unreviewed,,,0,0,0,0,0,,no-map-link
+go,Go,2009,verified-language,c | oberon | pascal,,3,3,0,3,0,,cited-only
+golfscript,GolfScript,2007,unreviewed,,,0,0,0,0,0,,no-map-link
+grass,GRASS,1977,unreviewed,,,0,0,0,0,0,,no-map-link
+groovy,Groovy,2003,verified-language,java,kotlin,2,2,0,0,0,,cited-only
+hack,Hack,2014,unreviewed,,,0,0,0,0,0,,no-map-link
+haskell,Haskell,1990,verified-language,,curry | rust,2,1,1,6,1,miranda,cited-and-field
+haxe,Haxe,2005,unreviewed,,,0,0,0,0,0,,no-map-link
+hexagony,hexagony,2015,unreviewed,,,0,0,0,0,0,,no-map-link
+hmmm,HMMM,2006,unreviewed,,,0,0,0,0,0,,no-map-link
+hy,Hy,2013,unreviewed,,,0,0,0,0,1,lisp,no-map-link
+icon,Icon,1977,unreviewed,,,0,0,0,0,0,,no-map-link
+idris,Idris,2014,unreviewed,,,0,0,0,0,0,,no-map-link
+ink,ink,2015,unreviewed,,,0,0,0,0,0,,no-map-link
+intercal,INTERCAL,1972,unreviewed,,,0,0,0,0,0,,no-map-link
+io,Io,2002,unreviewed,,,0,0,0,0,0,,no-map-link
+ioke,Ioke,2008,unreviewed,,,0,0,0,0,0,,no-map-link
+j,J,1990,unreviewed,,,0,0,0,2,0,,no-map-link
+jakt,Jakt,2022,unreviewed,,,0,0,0,0,0,,no-map-link
+janet,Janet,2018,unreviewed,,,0,0,0,0,0,,no-map-link
+java,Java,1995,verified-language,c | cpp,csharp | groovy | javascript | kotlin | scala,7,6,1,5,1,matlab,cited-and-field
+javascript,JavaScript,1995,verified-language,java | scheme,kotlin | typescript,4,1,3,6,1,jsf,cited-and-field
+jolie,Jolie,2006,unreviewed,,,0,0,0,0,0,,no-map-link
+jq,jq,2012,unreviewed,,,0,0,0,1,0,,no-map-link
+jsf,JSFuck,2012,unreviewed,,,0,0,0,0,1,javascript,no-map-link
+julia,Julia,2012,verified-language,lisp | matlab | perl | python | r | ruby,,6,6,0,0,0,,cited-only
+kalyn,Kalyn,2020,unreviewed,,,0,0,0,0,0,,no-map-link
+kitten,kitten,2012,unreviewed,,,0,0,0,0,0,,no-map-link
+korn-shell,Korn shell,1983,historical-primary-source,c | c-shell | sh,bash,4,4,0,0,0,,cited-only
+kotlin,Kotlin,2011,verified-language,csharp | groovy | java | javascript | scala,,5,5,0,0,0,,cited-only
+lazy-k,Lazy K,2002,unreviewed,,,0,0,0,0,0,,no-map-link
+less,Less,2009,unreviewed,,,0,0,0,0,1,sass,no-map-link
+limbo,Limbo,1995,unreviewed,,,0,0,0,0,0,,no-map-link
+lisaac,Lisaac,2003,unreviewed,,,0,0,0,0,0,,no-map-link
+lisp,Lisp,1958,historical-primary-source,,julia | postscript | ruby | scheme | smalltalk,5,5,0,8,3,clojure | common-lisp | hy,cited-only
+livescript,LiveScript,2011,unreviewed,,,0,0,0,1,0,,no-map-link
+llvmir,LLVM IR,2003,unreviewed,,mlir,1,0,1,1,0,,field-only
+lolcode,LOLCODE,2007,unreviewed,,,0,0,0,0,0,,no-map-link
+lsl,Linden Scripting Language,2003,unreviewed,,,0,0,0,0,0,,no-map-link
+lua,Lua,1993,verified-language,awk | cpp | scheme | snobol,,4,4,0,5,0,,cited-only
+m4,M4,1977,unreviewed,,,0,0,0,0,0,,no-map-link
+malbolge,Malbolge,1998,unreviewed,,,0,0,0,0,0,,no-map-link
+matlab,MATLAB,1984,verified-language,,julia | octave,2,2,0,1,1,java,cited-only
+mercury,Mercury,1995,unreviewed,,,0,0,0,0,0,,no-map-link
+minizinc,MiniZinc,2012,unreviewed,,,0,0,0,0,0,,no-map-link
+miranda,Miranda,1985,unreviewed,,,0,0,0,0,1,haskell,no-map-link
+mlir,MLIR,2019,unreviewed,llvmir,,1,0,1,3,0,,field-only
+modula-2,Modula-2,1978,historical-primary-source,pascal,oberon,2,2,0,4,0,,cited-only
+moonscript,MoonScript,2011,unreviewed,,,0,0,0,0,0,,no-map-link
+mumps,MUMPS,1966,unreviewed,,,0,0,0,2,0,,no-map-link
+neko,Neko,2005,unreviewed,,,0,0,0,0,0,,no-map-link
+nelua,Nelua,2019,unreviewed,,,0,0,0,0,0,,no-map-link
+newlisp,NewLisp,1991,unreviewed,,,0,0,0,0,0,,no-map-link
+nextflow,Nextflow,2013,unreviewed,,,0,0,0,0,0,,no-map-link
+nickle,Nickle,2001,unreviewed,,,0,0,0,0,0,,no-map-link
+nim,Nim,2008,verified-language,,,0,0,0,0,0,,no-map-link
+nu,Nu,2007,unreviewed,,,0,0,0,0,0,,no-map-link
+oberon,Oberon,1986,historical-primary-source,algol-60 | modula-2,go,3,2,1,1,0,,cited-and-field
+objective-c,Objective-C,1984,unreviewed,c,swift,2,1,1,1,0,,cited-and-field
+objective-cpp,Objective C++,1993,unreviewed,,,0,0,0,0,0,,no-map-link
+ocaml,OCaml,1996,verified-language,,f-sharp | rust,2,2,0,1,0,,cited-only
+octave,GNU Octave,1988,verified-language,matlab,,1,1,0,0,0,,cited-only
+odin,Odin,2016,unreviewed,,,0,0,0,0,0,,no-map-link
+omgrofl,Omgrofl,2006,unreviewed,,,0,0,0,0,0,,no-map-link
+ook,Ook,2005,unreviewed,,,0,0,0,0,0,,no-map-link
+openscad,OpenSCAD,2010,unreviewed,,,0,0,0,0,0,,no-map-link
+oz,Oz,1991,unreviewed,,,0,0,0,0,0,,no-map-link
+pari-gp,PARI/GP,1985,unreviewed,,,0,0,0,0,0,,no-map-link
+parrot-assembly,Parrot Assembly,2003,unreviewed,,,0,0,0,0,0,,no-map-link
+parrot-internal-representation,PIR,2006,unreviewed,,,0,0,0,0,0,,no-map-link
+parser,Parser 3,1997,unreviewed,,,0,0,0,0,0,,no-map-link
+pascal,Pascal,1970,verified-language,algol-60,go | modula-2,3,3,0,6,0,,cited-only
+pawn,PAWN,2006,unreviewed,,,0,0,0,0,0,,no-map-link
+perl,Perl,1987,verified-language,,julia | php | ruby,3,3,0,3,1,raku,cited-only
+php,PHP,1995,verified-language,c | perl,,2,2,0,1,0,,cited-only
+picolisp,PicoLisp,1988,unreviewed,,,0,0,0,0,0,,no-map-link
+pikachu,pikachu,2017,unreviewed,,,0,0,0,0,0,,no-map-link
+pike,Pike,1994,unreviewed,,,0,0,0,0,0,,no-map-link
+pl-sql,PL/SQL,1991,verified-language,sql,,1,1,0,0,0,,cited-only
+pony,Pony,2012,unreviewed,,,0,0,0,0,0,,no-map-link
+postscript,PostScript,1982,historical-primary-source,forth | lisp,,2,2,0,0,0,,cited-only
+powershell,PowerShell,2006,verified-language,sh,,1,1,0,0,0,,cited-only
+prolog,Prolog,1972,verified-language,,erlang,1,1,0,4,0,,cited-only
+promela,Promela,1997,unreviewed,,,0,0,0,0,0,,no-map-link
+pseint,PSeInt,2003,unreviewed,,,0,0,0,0,0,,no-map-link
+pug,Pug,2010,unreviewed,,,0,0,0,0,0,,no-map-link
+python,Python,1991,verified-language,abc,julia,2,2,0,13,1,f-sharp,cited-only
+q-sharp,Q#,2017,unreviewed,,,0,0,0,0,0,,no-map-link
+qalb,Qalb,2012,unreviewed,,,0,0,0,0,0,,no-map-link
+r,R,1993,verified-language,,julia,1,1,0,2,0,,cited-only
+racket,Racket,1994,verified-language,,,0,0,0,2,0,,no-map-link
+raku,Raku,2015,unreviewed,,,0,0,0,0,1,perl,no-map-link
+rapira,Rapira,1987,unreviewed,,,0,0,0,0,1,setl,no-map-link
+ratfor,RATFOR,1976,unreviewed,,,0,0,0,1,0,,no-map-link
+rc,Rc,1989,unreviewed,,,0,0,0,0,0,,no-map-link
+reason,Reason,2016,unreviewed,,,0,0,0,0,0,,no-map-link
+rebol,REBOL,1997,unreviewed,,,0,0,0,2,0,,no-map-link
+red,Red,2011,unreviewed,,,0,0,0,1,0,,no-map-link
+rescript,Rescript,2020,unreviewed,,,0,0,0,0,0,,no-map-link
+rexx,Rexx,1979,unreviewed,,,0,0,0,0,0,,no-map-link
+ruby,Ruby,1995,verified-language,ada | lisp | perl | smalltalk,julia | rust,6,6,0,3,0,,cited-only
+rust,Rust,2010,verified-language,cpp | csharp | erlang | haskell | ocaml | ruby | scheme,,7,7,0,6,0,,cited-only
+sagemath,Sage,2005,unreviewed,,,0,0,0,0,0,,no-map-link
+sass,Sass,2006,unreviewed,,,0,0,0,0,1,less,no-map-link
+scala,Scala,2004,verified-language,java,kotlin,2,2,0,1,0,,cited-only
+scheme,Scheme,1975,verified-language,lisp,javascript | lua | rust,4,3,1,4,0,,cited-and-field
+scilab,Scilab,1990,unreviewed,,,0,0,0,0,0,,no-map-link
+scss,SCSS,2006,unreviewed,,,0,0,0,0,0,,no-map-link
+sed,sed,1974,verified-language,,,0,0,0,0,0,,no-map-link
+setl,SETL,1969,unreviewed,,,0,0,0,0,1,rapira,no-map-link
+sh,Bourne shell (sh),1979,historical-primary-source,,bash | korn-shell | powershell,3,3,0,0,0,,cited-only
+simula,Simula,1965,historical-primary-source,algol-60,smalltalk,2,2,0,0,0,,cited-only
+slang,SLANG,1960,unreviewed,,,0,0,0,0,0,,no-map-link
+slick,Slick,2020,unreviewed,,,0,0,0,0,0,,no-map-link
+smalltalk,Smalltalk,1972,verified-language,lisp | simula,ruby,3,3,0,0,0,,cited-only
+smt,SMT,2003,unreviewed,,,0,0,0,0,0,,no-map-link
+snobol,SNOBOL,1962,unreviewed,,lua,1,1,0,0,0,,cited-only
+solidity,Solidity,2014,unreviewed,,,0,0,0,0,0,,no-map-link
+sql,SQL,1974,verified-language,,pl-sql,1,1,0,6,0,,cited-only
+squirrel,Squirrel,2003,unreviewed,,,0,0,0,0,0,,no-map-link
+standard-ml,Standard ML,1990,verified-language,,,0,0,0,1,0,,no-map-link
+supercollider,SuperCollider,1996,unreviewed,,,0,0,0,0,0,,no-map-link
+swift,Swift,2014,verified-language,objective-c,,1,1,0,1,0,,cited-only
+tabloid,Tabloid,2020,unreviewed,,,0,0,0,0,0,,no-map-link
+tcl,Tcl,1988,verified-language,,,0,0,0,0,0,,no-map-link
+tcsh,tcsh,1983,verified-language,c-shell,,1,1,0,0,1,c-shell,cited-only
+teco,TECO,1963,unreviewed,,,0,0,0,0,0,,no-map-link
+terra,Terra,2012,unreviewed,,,0,0,0,0,0,,no-map-link
+text-executive-programming-language,Text Executive Programming Language,1979,unreviewed,,,0,0,0,0,0,,no-map-link
+thue-programming-language,Thue,2004,unreviewed,,,0,0,0,0,0,,no-map-link
+typescript,TypeScript,2012,verified-language,javascript,,1,0,1,4,0,,field-only
+unison,unison,2015,unreviewed,,,0,0,0,0,0,,no-map-link
+unlambda,UNLAMBDA,1999,unreviewed,,,0,0,0,0,0,,no-map-link
+v,V,2019,unreviewed,,,0,0,0,0,0,,no-map-link
+vala,Vala,2006,unreviewed,,,0,0,0,0,0,,no-map-link
+vba,VBA,1993,verified-language,visual-basic,vbscript,2,2,0,0,0,,cited-only
+vbscript,VBScript,1996,verified-language,vba,,1,1,0,0,1,visual-basic,cited-only
+velato,Velato,2009,unreviewed,,,0,0,0,0,0,,no-map-link
+verilog,Verilog,1984,verified-language,,,0,0,0,0,0,,no-map-link
+vhdl,VHDL,1983,verified-language,ada,,1,1,0,0,0,,cited-only
+vim-script,Vim script,1991,unreviewed,,,0,0,0,0,0,,no-map-link
+visual-basic,Visual Basic,1991,unreviewed,basic,vba | visual-basic.net,3,3,0,1,1,vbscript,cited-only
+visual-basic.net,Visual Basic .NET,2001,verified-language,visual-basic,,1,1,0,0,0,,cited-only
+wasm,WebAssembly,2015,verified-language,,,0,0,0,2,0,,no-map-link
+whitespace,Whitespace,2003,unreviewed,,,0,0,0,0,0,,no-map-link
+wolfram,Wolfram Language,1988,unreviewed,,,0,0,0,0,0,,no-map-link
+x86-assembly,x86 Assembly,1972,verified-language,,,0,0,0,0,0,,no-map-link
+xslt,XSLT,1998,verified-language,,,0,0,0,0,0,,no-map-link
+yoptascript,YoptaScript,2016,unreviewed,,,0,0,0,0,0,,no-map-link
+yorick,Yorick,1996,unreviewed,,,0,0,0,0,0,,no-map-link
+z-shell,Z shell,1990,unreviewed,,,0,0,0,0,0,,no-map-link
+zig,Zig,2015,verified-language,,,0,0,0,1,0,,no-map-link
+zoem,Zoem,2005,unreviewed,,,0,0,0,0,0,,no-map-link
+zot,Zot,2015,unreviewed,,,0,0,0,0,0,,no-map-link
