@@ -195,3 +195,5 @@
 工具栏合并版发布过程中发现GitHub→服务器国际链路传输缓慢，Wasm约9.6MB被每个release重复上传。工作流追加rsync --checksum --link-dest复用当前release的相同输入，保留新目录与原子切换。一次本机测试跨越约925秒后Worker超时导致28/29，自动审批阻止首次推送；对同一提交重跑完整29/29通过后获准推送，GitHub构建也通过。未将失败当作已验证发布。
 
 最终线上核验：Actions run37266961880的build+deploy成功，392411b已激活；24个静态文件与当前本地构建SHA完全一致。实际Chrome通过合并工具栏、真实鼠标选择、JS输出42、Pyodide输出55、三种Shell默认代码与基础高亮/禁用运行按钮、390px无横向溢出；截图已查看。记录见data/audit/production-runtime-checks.json，不声称原生Safari或全量地图遍历均由该次线上检查证明。此前临时线上检查脚本因未先聚焦输入框产生断言失败，修正真实操作顺序后完整通过。
+
+2026-10-05 修复 Safari 上「选中一门语言后，点它的关联圆点名字（例如 Python → ABC）选不中、只有贴着名字左侧的小圆点能点，标签本身一点就失去焦点」：关联圆点的名字是 `::before` 伪元素，第 31 行 `.lineage-focus .atlas .dock.dot.related:not(.selected)::before{...pointer-events:none}` 特异性 (0,6,0) 压过了第 36 行本就写好的 `.lineage-focus .atlas .dock.dot.related::before{pointer-events:auto}` (0,5,0)，于是整块可见名字都不参与命中——点击穿透到地图空白，触发「点空白恢复全景」，选中态被清空。修复：把第 36 行选择器补成 `:not(.selected)` 使特异性相等并靠后生效，名字区域恢复可点。核验：Chrome 实测可见标签框内 3 条扫描线由全不命中变为整块命中 `abc`，点名字中心命中 `abc`（密集圆点会照常打开「附近的语言」，选 ABC 后 `selected:"abc"`、保持聚焦）；不在当前地图上的标签、点真正空白恢复全景等既有行为未变。29 项测试与离线构建通过；浏览器集成检查新增「关联圆点名字必须可命中自身节点」用例。

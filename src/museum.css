@@ -33,7 +33,7 @@ body:not(.lineage-focus) .atlas .dock.dot:not(.selected):is(:hover,:focus-visibl
 .lineage-focus .atlas .relations path.related-edge{opacity:.96;stroke-width:3;filter:none}
 @media(max-width:650px){.museum-tabs{margin:0 8px}.museum-tabs button{flex:1;min-width:0;padding:9px 4px;font-size:12px}.archive.museum-panel{margin:0 8px;padding:20px 12px}.atlas-head{align-items:flex-start}}
 
-.lineage-focus .atlas .dock.selected::after,.lineage-focus .atlas .dock.dot.related::before{pointer-events:auto}
+.lineage-focus .atlas .dock.selected::after,.lineage-focus .atlas .dock.dot.related:not(.selected)::before{pointer-events:auto}
 .lineage-focus .atlas .relations path.related-edge{pointer-events:stroke}
 
 .lineage-focus .atlas .relations path.relation-hit{stroke:transparent;stroke-width:14;stroke-dasharray:none;filter:none;pointer-events:stroke}

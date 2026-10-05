@@ -623,6 +623,19 @@ async function record(name,detail){results.push({name,detail});console.log('PASS
     await evaluate(`document.querySelector('#map-search-catalogue').click()`);
     assert.equal(await evaluate(`!document.querySelector('#catalogue').hidden && document.querySelector('#search').value==='zzzz-no-language'`),true);
   }
+  // Related dot names are painted with ::before; the whole visible name must accept
+  // pointer events, otherwise a click falls through to the map background and the
+  // blank-click handler restores the overview instead of selecting the node.
+  await page('Emulation.setDeviceMetricsOverride',{width:1440,height:1000,deviceScaleFactor:1,mobile:false});
+  await evaluate(`document.querySelector('#design-layer').click();document.querySelector('#timeline-view').click();`);
+  await evaluate(`document.querySelector('.dock[data-id="python"]').click();var museumDotPick=document.querySelector('.nearby-list:not([hidden]) [data-nearby="python"]');if(museumDotPick)museumDotPick.click();`);
+  await new Promise(resolve=>setTimeout(resolve,1200));
+  const relatedDotLabel=await evaluate(`(()=>{const node=document.querySelector('#docks .dock.dot.related[data-id="abc"]');if(!node)return null;const r=node.getBoundingClientRect(),scale=new DOMMatrix(getComputedStyle(document.querySelector('#world')).transform).a,style=getComputedStyle(node,'::before'),base=getComputedStyle(node),n=v=>parseFloat(v)||0;const width=n(style.width)+n(style.paddingLeft)+n(style.paddingRight)+n(style.borderLeftWidth)+n(style.borderRightWidth),height=n(style.height)+n(style.paddingTop)+n(style.paddingBottom)+n(style.borderTopWidth)+n(style.borderBottomWidth);const left=r.left+(n(base.borderLeftWidth)+n(style.left))*scale+n(base.getPropertyValue('--label-shift-x')),top=r.top+(n(base.borderTopWidth)+n(style.top))*scale+n(base.getPropertyValue('--label-shift-y'));const hit=document.elementFromPoint(left+width/2,top+height/2);return {pointerEvents:style.pointerEvents,width,height,hit:hit&&hit.closest('.dock')?hit.closest('.dock').dataset.id:null};})()`);
+  assert.ok(relatedDotLabel,'Selecting Python must expose the ABC dot name');
+  assert.ok(relatedDotLabel.width>20,'Related dot name must be measured');
+  assert.equal(relatedDotLabel.pointerEvents,'auto','Related dot name must accept pointer events');
+  assert.equal(relatedDotLabel.hit,'abc','Clicking the visible related dot name must hit its own node');
+  mapSearchChecks.push({relatedDotLabel:relatedDotLabel,checks:'dot name label is hit-testable'});
   await record('Map fuzzy search selects nodes in both views, preserves punctuation and supports full collection fallback',mapSearchChecks);
   if(['1','all'].includes(process.env.MAP_SWEEP)){
     await page('Emulation.setEmulatedMedia',{features:[{name:'prefers-reduced-motion',value:'reduce'}]});
