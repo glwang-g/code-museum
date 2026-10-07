@@ -180,7 +180,7 @@
     document.querySelector('#lab-title').textContent=`${record.name} · 实验台`;
     document.querySelector('#lab-file').textContent=example?.file||`${record.name} · 草稿`;
     document.querySelector('#lab-status').textContent=id==='javascript'?'JavaScript 在浏览器 Worker 中执行；改动后自动更新结果。':id==='python'?'Python 在本地 Pyodide Worker 中执行；首次加载需要一些时间。':id==='lua'?'Lua 5.4 在本地 WebAssembly Worker 中执行；改动后自动更新结果。':id==='scheme'?'Scheme 由 BiwaScheme 0.8.3 浏览器解释器执行；改动后自动更新结果。':example?.note||(example?'这是可编辑的语法示例；本页尚未接入该语言的运行环境。':'尚无经审核的示例；可记下草稿，本页尚未接入该语言的运行环境。');
-    document.querySelector('#lab-runtime-note').textContent=id==='javascript'?'只显示本次代码实际产生的控制台输出或错误；超过 2 秒会停止。':id==='python'?'正在准备本地 WebAssembly 运行时；只显示真实输出或错误。':id==='lua'?'只显示真实输出或错误；超过 2 秒会停止。支持 print 和基础标准库，不提供文件、系统或第三方模块。':id==='scheme'?'JavaScript 实现，非 Wasm。支持多数 R7RS small 功能，不完整支持 syntax-rules、异常和库系统；字符串不可变，整数精度受 JavaScript 数值限制。超过 2 秒会停止。':'运行环境未接入，不显示模拟结果。';
+    document.querySelector('#lab-runtime-note').textContent=id==='javascript'?'只显示本次代码实际产生的控制台输出或错误；超过 2 秒会停止。':id==='python'?'正在准备本地 WebAssembly 运行时；只显示真实输出或错误。':id==='lua'?'只显示真实输出或错误；超过 2 秒会停止。支持 print 和基础标准库，不提供文件、系统或第三方模块。':id==='scheme'?'BiwaScheme 0.8.3（非 Wasm）；非完整 R7RS 兼容，不提供文件、网络或第三方库。超过 2 秒停止。':'运行环境未接入，不显示模拟结果。';
     editor.value=drafts.get(id)??example?.code??'';
     editor.placeholder=example?'':'暂无经审核的代码示例，可在此记录草稿。';
     resetButton.disabled=!example;

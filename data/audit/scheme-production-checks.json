@@ -1,0 +1,27 @@
+{
+  "checkedAt": "2026-10-07T16:33:54.557Z",
+  "url": "https://codemuseum.freexlib.com/",
+  "browser": "Chrome/154.0.8037.98",
+  "source": "810804da8cee75cc3877ef2e29eb0644dc62dcc7",
+  "widths": [
+    1440,
+    390
+  ],
+  "scheme": "sum55; lists14; syntax error; infinite loop terminated; recovery42",
+  "implementation": "BiwaScheme 0.8.3; JavaScript, not Wasm; not full R7RS conformance",
+  "mouseSearch": true,
+  "mapRunBadge": true,
+  "otherLispNotAdvertised": true,
+  "automatedVisitsExcluded": true,
+  "files": {
+    "index.html": "e801932af67097e2d3b3739d624e6fdc18158af3c2009e4d073cb8b8cb4efc5d",
+    "lab.js": "39d4ef287a9f90d8684c19e3c9c01f6709cf21238d2dc8bc6516c884eb338010",
+    "lab-examples.js": "1d45585edea31db0250dac85093e31a94d2ffcdc108f80a9e088332e8f2667ad",
+    "museum.js": "f44c1e9762f0fb3e9db0a3a5b40fd437a86e0cda9086da6b356314e7cbd8f145",
+    "scheme-worker.js": "edd85647e32de729a794e1fb3c49135fefc7d24ec7a0437247570e6cf3bac360",
+    "assets/scheme/manifest.json": "2736ddf2f4a037f868630473dfc9fd21d42b276fad5e6fdc252890cc4b48b390",
+    "assets/scheme/biwascheme-core.mjs": "e65a09b4407d943860d274efc0e3a3537b356110819908d775ccd80dcb0015d1",
+    "assets/scheme/biwascheme-source.mjs": "e34e2f7dcdb2e128d7457a2481c009bdb17d5d732af7de54fdc6cdf6b9b6f16b",
+    "assets/scheme/LICENSE": "e3dda836c385fbfd1353a112eb853d04dbd812aceb1e56064ec785a2108edca6"
+  }
+}
