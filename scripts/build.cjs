@@ -22,6 +22,17 @@ function build(projectRoot = root) {
     const actual = crypto.createHash('sha256').update(fs.readFileSync(path.join(pyodideRoot, name))).digest('hex');
     if (actual !== expected) throw new Error('Pyodide runtime checksum mismatch: ' + name);
   }
+  const luaRoot = path.join(projectRoot, 'public/assets/lua');
+  const luaManifest = JSON.parse(fs.readFileSync(path.join(luaRoot, 'manifest.json'), 'utf8'));
+  if (luaManifest.package !== 'wasmoon' || luaManifest.version !== '1.16.0' || luaManifest.luaVersion !== '5.4.5' || luaManifest.license !== 'MIT' ||
+      Object.keys(luaManifest.files).sort().join(',') !== 'LICENSE,glue.wasm,wasmoon.js') {
+    throw new Error('Unexpected Lua runtime manifest.');
+  }
+  for (const [name, expected] of Object.entries(luaManifest.files)) {
+    if (!/^[a-f0-9]{64}$/.test(expected) || crypto.createHash('sha256').update(fs.readFileSync(path.join(luaRoot, name))).digest('hex') !== expected) {
+      throw new Error('Lua runtime checksum mismatch: ' + name);
+    }
+  }
   const output = path.join(projectRoot, 'dist');
   if (fs.existsSync(output) && fs.lstatSync(output).isSymbolicLink()) {
     throw new Error('Refusing to replace a symlinked dist directory.');

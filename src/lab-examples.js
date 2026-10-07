@@ -1,7 +1,8 @@
-// Original short examples. Browser execution is available for JavaScript and Python.
+// Original short examples. Browser execution is available for JavaScript, Python and Lua.
 window.MUSEUM_LAB_EXAMPLES = [
   {id:'javascript',file:'museum.js',code:'const languages = ["C", "Lisp", "JavaScript"];\nfor (const name of languages) {\n  console.log(`Hello, ${name}!`);\n}\n'},
   {id:'python',file:'museum.py',code:'languages = ["C", "Lisp", "Python"]\nfor name in languages:\n    print(f"Hello, {name}!")\n'},
+  {id:'lua',file:'museum.lua',code:'local languages = {"C", "Lisp", "Lua"}\nfor _, name in ipairs(languages) do\n  print("Hello, " .. name .. "!")\nend\n'},
   {id:'c',file:'museum.c',code:'#include <stdio.h>\n\nint main(void) {\n    puts("Hello, Code Museum!");\n    return 0;\n}\n'},
   {id:'cpp',file:'museum.cpp',code:'#include <iostream>\n\nint main() {\n    std::cout << "Hello, Code Museum!\\n";\n}\n'},
   {id:'java',file:'Museum.java',code:'class Museum {\n    public static void main(String[] args) {\n        System.out.println("Hello, Code Museum!");\n    }\n}\n'},

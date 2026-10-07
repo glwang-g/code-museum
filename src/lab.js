@@ -5,25 +5,25 @@
   const highlight=document.querySelector('#lab-highlight'),result=document.querySelector('#lab-result');
   const runButton=document.querySelector('#lab-run'),resetButton=document.querySelector('#lab-reset');
   const escape=text=>text.replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
-  const keywords=new Set('async await break case catch class const continue default do else export extends false finally for from function if import in instanceof let new null of return static super switch this throw true try typeof undefined var void while yield def print range pass lambda None True False import as is not and or with int char return public private package namespace using fn mut impl use mod struct enum match pub crate let typeset done then fi foreach end endif echo set'.split(' '));
+  const keywords=new Set('async await break case catch class const continue default do else export extends false finally for from function if import in instanceof let new null of return static super switch this throw true try typeof undefined var void while yield def print range pass lambda None True False import as is not and or with int char return public private package namespace using fn mut impl use mod struct enum match pub crate let typeset done then fi foreach end endif echo set local nil repeat until elseif ipairs pairs true false'.split(' '));
   let current=null,timer=null,worker=null,workerTimeout=null,runId=0;
   let pythonWorker=null,pythonReady=false,pythonBusy=false,pythonPending=null,pythonTimeout=null,pythonGeneration=0;
   let idleTimer=null,needsRun=false;
   const drafts=new Map();
   function paint(){
-    const source=editor.value,pattern=/(\/\/[^\n]*|\/\*[\s\S]*?\*\/|#[^\n]*|"(?:\\.|[^"\\])*"|'(?:\\.|[^'\\])*'|`(?:\\.|[^`\\])*`|\b\d+(?:\.\d+)?\b|\b[A-Za-z_]\w*\b)/g;
+    const source=editor.value,pattern=current==='lua'?/(--\[\[[\s\S]*?\]\]|--[^\n]*|"(?:\\.|[^"\\])*"|'(?:\\.|[^'\\])*'|\b\d+(?:\.\d+)?\b|\b[A-Za-z_]\w*\b)/g:/(\/\/[^\n]*|\/\*[\s\S]*?\*\/|#[^\n]*|"(?:\\.|[^"\\])*"|'(?:\\.|[^'\\])*'|`(?:\\.|[^`\\])*`|\b\d+(?:\.\d+)?\b|\b[A-Za-z_]\w*\b)/g;
     let out='',at=0,match;
     while((match=pattern.exec(source))){
       out+=escape(source.slice(at,match.index));
       const token=match[0];
-      const kind=/^(\/\/|\/\*|#)/.test(token)?'comment':/^["'`]/.test(token)?'string':/^\d/.test(token)?'number':keywords.has(token)?'keyword':'';
+      const kind=/^(\/\/|\/\*|#|--)/.test(token)?'comment':/^["'`]/.test(token)?'string':/^\d/.test(token)?'number':keywords.has(token)?'keyword':'';
       out+=kind?`<span class="tok-${kind}">${escape(token)}</span>`:escape(token);
       at=pattern.lastIndex;
     }
     highlight.innerHTML=out+escape(source.slice(at))+'\n';
     highlight.scrollTop=editor.scrollTop;highlight.scrollLeft=editor.scrollLeft;
   }
-  function stopJavaScript(){
+  function stopFreshWorker(){
     clearTimeout(timer);timer=null;
     clearTimeout(workerTimeout);workerTimeout=null;
     if(worker){worker.terminate();worker=null}
@@ -34,13 +34,13 @@
     if(pythonWorker)pythonWorker.terminate();
     pythonWorker=null;pythonReady=false;pythonBusy=false;pythonPending=null;pythonGeneration++;
   }
-  function stop(){stopJavaScript();stopPython()}
+  function stop(){stopFreshWorker();stopPython()}
   function leave(){
     const hadPending=timer!==null;
     clearTimeout(timer);timer=null;
     if(hadPending)needsRun=true;
-    if(current==='javascript'){
-      if(worker||hadPending){stopJavaScript();needsRun=true;result.textContent='已离开实验台，运行暂停。';result.dataset.state=''}
+    if(current==='javascript'||current==='lua'){
+      if(worker||hadPending){stopFreshWorker();needsRun=true;result.textContent='已离开实验台，运行暂停。';result.dataset.state=''}
     }else if(current==='python'){
       if((pythonWorker&&!pythonReady)||pythonBusy){
         stopPython();needsRun=true;result.textContent='已离开实验台，运行暂停。';result.dataset.state='';
@@ -58,20 +58,30 @@
     clearTimeout(idleTimer);idleTimer=null;
     if(needsRun){needsRun=false;run()}
   }
-  function runJavaScript(){
-    stopJavaScript();
+  function runFreshWorker(lua=false){
+    stopFreshWorker();
     const id=runId;
     result.textContent='正在运行…';
-    try{worker=new Worker('lab-worker.js')}
+    try{worker=new Worker(lua?'lua-worker.js':'lab-worker.js')}
     catch(error){result.textContent=`无法启动浏览器运行环境：${error.message}`;return}
     const active=worker;
     workerTimeout=setTimeout(()=>{
       if(id!==runId)return;
       active.terminate();worker=null;workerTimeout=null;
-      result.textContent='运行超过 2 秒，已停止。';result.dataset.state='error';
-    },2000);
+      result.textContent=lua?'Lua 运行时加载超过 30 秒，已停止。':'运行超过 2 秒，已停止。';result.dataset.state='error';
+    },lua?30000:2000);
     active.onmessage=event=>{
       if(id!==runId)return;
+      if(lua&&event.data.kind==='ready'){
+        clearTimeout(workerTimeout);
+        result.textContent='正在运行 Lua…';
+        workerTimeout=setTimeout(()=>{
+          if(id!==runId)return;
+          active.terminate();worker=null;workerTimeout=null;
+          result.textContent='Lua 运行超过 2 秒，已停止。';result.dataset.state='error';
+        },2000);
+        return;
+      }
       clearTimeout(workerTimeout);workerTimeout=null;active.terminate();worker=null;
       result.textContent=event.data.output;
       result.dataset.state=event.data.ok?'ok':'error';
@@ -145,9 +155,9 @@
   }
   function run(){
     clearTimeout(timer);timer=null;
-    if(document.hidden||document.querySelector('#lab').hidden){needsRun=current==='javascript'||current==='python';return}
+    if(document.hidden||document.querySelector('#lab').hidden){needsRun=current==='javascript'||current==='python'||current==='lua';return}
     needsRun=false;
-    if(current==='javascript')runJavaScript();else if(current==='python')runPython();
+    if(current==='javascript')runFreshWorker();else if(current==='lua')runFreshWorker(true);else if(current==='python')runPython();
   }
   function options(id){
     const entries=[...examples.values()];
@@ -162,11 +172,11 @@
     clearTimeout(idleTimer);idleTimer=null;
     stop();
     current=id;options(id);
-    const record=byId.get(id),example=examples.get(id),runnable=id==='javascript'||id==='python';
+    const record=byId.get(id),example=examples.get(id),runnable=id==='javascript'||id==='python'||id==='lua';
     document.querySelector('#lab-title').textContent=`${record.name} · 实验台`;
     document.querySelector('#lab-file').textContent=example?.file||`${record.name} · 草稿`;
-    document.querySelector('#lab-status').textContent=id==='javascript'?'JavaScript 在浏览器 Worker 中执行；改动后自动更新结果。':id==='python'?'Python 在本地 Pyodide Worker 中执行；首次加载需要一些时间。':example?.note||(example?'这是可编辑的语法示例；本页尚未接入该语言的运行环境。':'尚无经审核的示例；可记下草稿，本页尚未接入该语言的运行环境。');
-    document.querySelector('#lab-runtime-note').textContent=id==='javascript'?'只显示本次代码实际产生的控制台输出或错误；超过 2 秒会停止。':id==='python'?'正在准备本地 WebAssembly 运行时；只显示真实输出或错误。':'运行环境未接入，不显示模拟结果。';
+    document.querySelector('#lab-status').textContent=id==='javascript'?'JavaScript 在浏览器 Worker 中执行；改动后自动更新结果。':id==='python'?'Python 在本地 Pyodide Worker 中执行；首次加载需要一些时间。':id==='lua'?'Lua 5.4 在本地 WebAssembly Worker 中执行；改动后自动更新结果。':example?.note||(example?'这是可编辑的语法示例；本页尚未接入该语言的运行环境。':'尚无经审核的示例；可记下草稿，本页尚未接入该语言的运行环境。');
+    document.querySelector('#lab-runtime-note').textContent=id==='javascript'?'只显示本次代码实际产生的控制台输出或错误；超过 2 秒会停止。':id==='python'?'正在准备本地 WebAssembly 运行时；只显示真实输出或错误。':id==='lua'?'只显示真实输出或错误；超过 2 秒会停止。支持 print 和基础标准库，不提供文件、系统或第三方模块。':'运行环境未接入，不显示模拟结果。';
     editor.value=drafts.get(id)??example?.code??'';
     editor.placeholder=example?'':'暂无经审核的代码示例，可在此记录草稿。';
     resetButton.disabled=!example;
@@ -179,8 +189,8 @@
   }
   editor.addEventListener('input',()=>{
     drafts.set(current,editor.value);paint();
-    if(current==='javascript'||current==='python'){
-      if(current==='javascript')stopJavaScript();
+    if(current==='javascript'||current==='python'||current==='lua'){
+      if(current==='javascript'||current==='lua')stopFreshWorker();
       else{runId++;if(!pythonReady)pythonPending=editor.value}
       result.textContent='代码已修改，等待运行…';result.dataset.state='';
       clearTimeout(timer);timer=setTimeout(run,current==='python'?650:450);
@@ -193,12 +203,12 @@
     editor.setRangeText('  ',start,end,'end');editor.dispatchEvent(new Event('input'));
   });
   runButton.onclick=run;
-  resetButton.onclick=()=>{const example=examples.get(current);if(!example)return;drafts.delete(current);editor.value=example.code;paint();if(current==='javascript'||current==='python')run();editor.focus()};
+  resetButton.onclick=()=>{const example=examples.get(current);if(!example)return;drafts.delete(current);editor.value=example.code;paint();if(current==='javascript'||current==='python'||current==='lua')run();editor.focus()};
   pick.onchange=()=>show(pick.value);
   document.addEventListener('visibilitychange',()=>{
     if(document.hidden)leave();
     else if(!document.querySelector('#lab').hidden)onTabChange(true);
   });
-  window.MUSEUM_LAB={canRun:id=>id==='javascript'||id==='python',open(id){show(id);document.querySelector('#lab-view').click();editor.focus({preventScroll:true})},show,stop,onTabChange};
+  window.MUSEUM_LAB={canRun:id=>id==='javascript'||id==='python'||id==='lua',open(id){show(id);document.querySelector('#lab-view').click();editor.focus({preventScroll:true})},show,stop,onTabChange};
   show('javascript');
 })();

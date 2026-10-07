@@ -88,7 +88,7 @@ async function checkLabels(ids){
 async function record(name,detail){results.push({name,detail});console.log('PASS '+name);}
 (async()=>{
  try{
-  for(const file of ['index.html','map-framing.js','museum.js','museum.css','lab.js','lab-examples.js','lab-worker.js','python-worker.js'])assert.deepEqual(fs.readFileSync(path.join(root,'dist',file)),fs.readFileSync(path.join(root,'src',file)),'Stale build: run npm run build before browser checks');
+  for(const file of ['index.html','map-framing.js','museum.js','museum.css','lab.js','lab-examples.js','lab-worker.js','python-worker.js','lua-worker.js'])assert.deepEqual(fs.readFileSync(path.join(root,'dist',file)),fs.readFileSync(path.join(root,'src',file)),'Stale build: run npm run build before browser checks');
   await new Promise((resolve,reject)=>{server.once('error',reject);server.listen(0,'127.0.0.1',resolve);});
   browser=spawn(chrome,['--headless=new','--disable-gpu','--disable-background-networking','--no-first-run','--no-default-browser-check','--remote-debugging-pipe','--host-resolver-rules=MAP * ~NOTFOUND, EXCLUDE 127.0.0.1','--user-data-dir='+profileDirectory],{stdio:['ignore','ignore','pipe','pipe','pipe']});
   browser.on('error',error=>{for(const request of pending.values()){clearTimeout(request.timer);request.reject(error);}pending.clear();});
@@ -105,6 +105,34 @@ async function record(name,detail){results.push({name,detail});console.log('PASS
   assert.equal(await evaluate('document.hidden'),false);
   await edit('await Promise.resolve(); console.log("browser JavaScript");');await output('browser JavaScript');
   await record('JavaScript asynchronous execution',version.product);
+  await evaluate(`window.MUSEUM_LAB.open('lua')`);
+  await output('Hello, C!\nHello, Lisp!\nHello, Lua!');
+  await edit('local total=0; for i=1,10 do total=total+i end; print(total)');await output('55');
+  await edit('local = 1');await wait(`document.querySelector('#lab-result').dataset.state==='error'`);
+  await edit('print(string.rep("x",50000)); error("after full logs")');
+  await wait(`document.querySelector('#lab-result').dataset.state==='error'`);
+  assert.equal(await evaluate(`document.querySelector('#lab-result').textContent.length`),20000);
+  assert.match(await evaluate(`document.querySelector('#lab-result').textContent`),/after full logs/);
+  await edit('while true do end');await wait(`document.querySelector('#lab-result').textContent.includes('超过 2 秒')`);
+  await edit('print(42)');await output('42');
+  await edit('saved=7; print(saved)');await output('7');
+  await edit('print(saved)');await output('nil');
+  await edit('-- Lua example\nlocal value = 55\nprint(value)');await output('55');
+  assert.ok(await evaluate(`document.querySelectorAll('#lab-highlight .tok-comment').length>0`));
+  for(const width of [1440,390]){
+    await page('Emulation.setDeviceMetricsOverride',{width,height:width===390?844:1000,deviceScaleFactor:1,mobile:width===390});
+    await screenshot('lua-lab-'+width+'.png');
+    assert.equal(await evaluate(`document.documentElement.scrollWidth<=innerWidth`),true);
+  }
+  await page('Emulation.setDeviceMetricsOverride',{width:1440,height:1000,deviceScaleFactor:1,mobile:false});
+  await edit('while true do end');
+  await wait(`document.querySelector('#lab-result').textContent==='正在运行 Lua…'`);
+  await evaluate(`document.querySelector('#timeline-view').click()`);
+  assert.equal(await evaluate(`window.__museumWorkers.filter(w=>w.observedURL==='lua-worker.js').every(w=>w.observedTerminated)`),true);
+  await evaluate(`window.MUSEUM_LAB.open('lua')`);
+  await edit('print(55)');await output('55');
+  await record('Lua bundled Wasm output, syntax errors, isolation, timeout recovery and tab cancellation','55; Lua 5.4; wide/narrow');
+
   await evaluate(`(()=>{const select=document.querySelector('#lab-language');select.value='python';select.dispatchEvent(new Event('change',{bubbles:true}));})()`);
   await wait(`document.querySelector('#lab-result').dataset.state==='ok'`,35000);
   await edit('print(sum(range(1, 11)))');await output('55');
@@ -530,7 +558,7 @@ async function record(name,detail){results.push({name,detail});console.log('PASS
   for(const size of [{width:1440,height:1000},{width:390,height:844}]){
     await page('Emulation.setDeviceMetricsOverride',{...size,deviceScaleFactor:1,mobile:size.width<500});
     for(const mode of ['timeline','lineage']){
-      for(const id of ['javascript','python']){
+      for(const id of ['javascript','python','lua']){
         await evaluate(`document.querySelector('#${mode}-view').click();document.querySelector('.dock[data-id="${id}"]').click()`);
         await new Promise(resolve=>setTimeout(resolve,1000));
         await checkLabels([id]);
@@ -667,7 +695,7 @@ async function record(name,detail){results.push({name,detail});console.log('PASS
     }
     await record((sweepAll?'All dated map nodes':'Persistent map labels')+' focus and restore across wide/narrow river and lineage',{cases,omitted,scope:(sweepAll?'Fixed current dated mapEligible records':'Fixed current mapLabelIds')+'; design and ecosystem layers; two sizes; reduced motion; no simulated history links. Omitted nodes are not present in lineage.'});
   }
-  const servedInputs=Object.fromEntries(['index.html','map-framing.js','museum.css','museum.js','data/catalogue.js','lab.js','lab-examples.js','lab-worker.js','python-worker.js','assets/pyodide/manifest.json'].map(file=>[file,crypto.createHash('sha256').update(fs.readFileSync(path.join(root,'dist',file))).digest('hex')]));
+  const servedInputs=Object.fromEntries(['index.html','map-framing.js','museum.css','museum.js','data/catalogue.js','lab.js','lab-examples.js','lab-worker.js','python-worker.js','lua-worker.js','assets/pyodide/manifest.json'].map(file=>[file,crypto.createHash('sha256').update(fs.readFileSync(path.join(root,'dist',file))).digest('hex')]));
   const report={servedInputs,checkedAt:new Date().toISOString(),browser:version.product,scope:'Actual headless Chrome over local HTTP; isolated temporary browser profile; external DNS blocked. Worker constructor/termination observed without replacing execution. Does not verify real tab visibility, idle release, production hosting or all languages.',inputs:Object.fromEntries(['src/index.html','src/map-framing.js','src/museum.js','src/museum.css','data/audit/reviews.json','data/audit/map-eligible-ids.json','data/audit/label-selection.json','data/relationship-overrides.json','data/ecosystem-relations.json','src/lab.js','src/lab-examples.js','data/audit/tcsh-runtime-checks.json','data/audit/ksh93-runtime-checks.json','data/audit/runtime-checks.json','src/lab-worker.js','src/python-worker.js','scripts/serve.cjs','scripts/check-browser-runtime.cjs','public/assets/pyodide/manifest.json'].map(file=>[file,crypto.createHash('sha256').update(fs.readFileSync(path.join(root,file))).digest('hex')])),checks:results};
   if(outputDirectory){fs.writeFileSync(path.join(outputDirectory,'checks.json'),JSON.stringify(report,null,2)+'\n');console.log('Report '+path.join(outputDirectory,'checks.json'));}else console.log(JSON.stringify(report,null,2));
  }catch(error){console.error(error.stack+'\n'+diagnostics);process.exitCode=1;}
