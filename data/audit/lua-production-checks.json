@@ -1,0 +1,25 @@
+{
+  "checkedAt": "2026-10-07T15:55:44.059Z",
+  "url": "https://codemuseum.freexlib.com/",
+  "browser": "Chrome/154.0.8037.98",
+  "source": "64ae9f8",
+  "widths": [
+    1440,
+    390
+  ],
+  "lua": "55; Lua 5.4; syntax error; infinite loop terminated; recovery 42",
+  "mouseSearch": true,
+  "mapRunBadge": true,
+  "automatedVisitsExcluded": true,
+  "files": {
+    "index.html": "effe2140b23be799e29b30a325bfa4b4b89fdfadf6a38866ecd11dfa7c3204d2",
+    "lab.js": "af2386bb17788255c079acde06f2ae956b208e430b5f5bb9021178eb0601f1b7",
+    "lab-examples.js": "9aca2c09c010b49025bb0367b75d22b10d303455af39ceee041f1ec10084a5e7",
+    "museum.js": "3c437f789b23a7c0c350e5a16d9ec975181987ee682a8d4266db4dccbd136188",
+    "lua-worker.js": "372d411d5cb6e1602c631658affc928685008d8c7e0f111aa80a86f579ed322c",
+    "assets/lua/manifest.json": "d803bb6f5b36551703c7d00e63cb5be50f2795fc050d2edacbd7f6f872e914f2",
+    "assets/lua/glue.wasm": "95f3f19ddb740125883bc41d5ec670cd0828e7b58c8bdad385323cbff497b55c",
+    "assets/lua/wasmoon.js": "dc2dcf019449008bb224370052473dc760db28b3ba14fc604e1ca3e8646af35d",
+    "assets/lua/LICENSE": "7ab5da971817e0d8dcf6051936198f4fe65f585b77c261cc4fc6439efa04fe51"
+  }
+}
