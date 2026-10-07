@@ -226,3 +226,7 @@
 文案输入data/credits.json；构建合并本地manifest和快照，版本与日期不手动重复维护，公开data/credits.json供检查。Linguist的MIT版权文件按已有SHA验证后复制到发布目录licenses/，Python/Lua/Scheme原有许可文件继续保留。构建仍不联网、无需npm安装。
 
 核验：34项npm测试与离线构建通过；30组实际Chrome检查通过，含7张展签、所有本地证据/许可链接200、1440/390px四种运行环境的真实鼠标跳转和目标聚焦、未接入语言隐藏入口，以及原有JS/Python/Lua/Scheme执行、地图与搜索回归。出处总览、Scheme展签和实验台宽窄屏截图已查看；报告输入和被服务文件SHA与当前源码一致。记录见data/audit/credits-browser-checks.json，未重新进行全量地图遍历。
+
+发布核验：实现提交9216c2e已上线。GitHub SSH两次及HTTPS一次推送均返回服务端Internal Server Error，先经现有xshow SSH通道以code-museum-deploy账户上传独立release，逐文件SHA验证后用既有activate脚本原子激活；随后同一提交GitHub重试推送成功，未修改仓库配置、用户权限或其他站点。正式HTTPS实际Chrome在1440/390px验证7张展签、四种运行环境真实鼠标跳转/聚焦、5份本地许可可读、Ruby不冒充已接入、JS/Scheme均输出42；7份页面/清单/许可文件与本地构建SHA一致，线上截图已查看。记录见data/audit/credits-production-checks.json。
+
+GitHub恢复后的Actions 37655741064已完成build和deploy，同一9216c2e版本自动发布成功；首轮SSH兜底发布与后续自动构建使用相同源码输入。

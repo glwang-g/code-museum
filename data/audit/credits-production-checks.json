@@ -1,0 +1,31 @@
+{
+  "checkedAt": "2026-10-07T17:01:38.726Z",
+  "url": "https://codemuseum.freexlib.com/",
+  "source": "9216c2e15de18c06e3dce4c424dedc8e1eda1ce7",
+  "browser": "Chrome/154.0.8037.98",
+  "widths": [
+    1440,
+    390
+  ],
+  "runtimeNavigation": [
+    "javascript",
+    "python",
+    "lua",
+    "scheme"
+  ],
+  "cards": 7,
+  "localLicenseLinks": 5,
+  "rubyNotAdvertised": true,
+  "javascript": "42",
+  "scheme": "42",
+  "automatedVisitsExcluded": true,
+  "files": {
+    "index.html": "76992a99b20ca44058850c1a95ac7739d264eb61835b583783e1f3f5a2b69750",
+    "museum.css": "e09758b64f395ea8db4102be9cdaaf2d557fef301a831898392901c3116d9dc8",
+    "lab.js": "d40ae322ef525b60ddc7dddfaadba358ac96e1f092acbb966ad9c19726099dfd",
+    "credits.js": "dd9e8ffe2a3b54f4f8524e54bd19df2cde719f46879f3308d87e0bd37ce95530",
+    "data/credits.js": "158aa7dc3009a8ef7b88fd0cfb0d1ead2b64d1bd29f06ffa54fd746019e3b239",
+    "data/credits.json": "327b36341e28bd99be7e5d560eb4b8ecc53d0a346d3cbe76541b37e9faf7c47e",
+    "licenses/linguist-LICENSE": "7717070c5a8c85440ff2312930bb30dd19002ab5bc235c9800042767f6f5242f"
+  }
+}
