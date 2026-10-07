@@ -162,6 +162,24 @@ main{flex:1;min-height:0;display:flex;flex-direction:column;overflow:hidden}
 .lab.museum-panel[hidden]{display:none}
 .lab-header{display:flex;justify-content:space-between;align-items:center;gap:16px;flex:none}
 .lab-header h2{font-size:23px}
+.lab-credit{display:block;margin-top:3px;padding:0;border:0;background:none;color:var(--gold);font-size:11px;text-align:left;max-width:100%;overflow-wrap:anywhere}
+.lab-credit[hidden]{display:none}
+.credits-nav{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 20px}
+.credits-nav button{border:1px solid #526b71;border-radius:3px;padding:5px 10px;background:#112a30;color:var(--ink);font-size:12px}
+.credit-group{margin:24px 0}
+.provenance .credit-group h3,.historical-sources h3{font-size:18px;color:var(--ink);margin:0 0 8px}
+.credit-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:12px}
+.credit-card{border:1px solid #405c63;padding:16px;background:#0b1d24;border-radius:4px;min-width:0;scroll-margin-top:16px}
+.credit-heading h4{font-size:16px;font-weight:500;color:var(--ink);margin:0}
+.credit-heading span{display:block;color:var(--gold);font-size:12px;margin-top:2px}
+.provenance .credit-card p{font-size:13px;margin:10px 0}
+.credit-card dl{font-size:12px;margin:12px 0}
+.credit-card dt{color:var(--ink);margin:9px 0 2px}
+.credit-card dd{margin:0;overflow-wrap:anywhere}
+.credit-links{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12px}
+.credit-revision code{font-size:10px;overflow-wrap:anywhere}
+.historical-sources{border-top:1px solid var(--line);padding-top:24px;margin-top:28px}
+@media(max-width:650px){.credit-grid{grid-template-columns:1fr}.credit-card{padding:12px}.credits-nav{gap:6px}.credits-nav button{padding:4px 7px}}
 .lab-header p{font-size:12px;color:var(--muted)}
 .lab-header label{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:12px;white-space:nowrap}
 .lab-header select{max-width:180px;padding:6px;color:var(--ink);background:#112a30;border:1px solid #526b71}

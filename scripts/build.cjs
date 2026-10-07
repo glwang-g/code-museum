@@ -2,12 +2,14 @@ const fs = require('node:fs');
 const path = require('node:path');
 const crypto = require('node:crypto');
 const { generateCatalogue } = require('./import-pldb.cjs');
+const { generateCredits } = require('./credits.cjs');
 
 const root = path.resolve(__dirname, '..');
 
 function build(projectRoot = root) {
   // Generate and validate before touching the previous working site.
   const catalogue = generateCatalogue(projectRoot);
+  const {credits,linguistLicense} = generateCredits(projectRoot);
   const auditBytes = fs.readFileSync(path.join(projectRoot, 'data/audit/reviews.json'));
   if (crypto.createHash('sha256').update(auditBytes).digest('hex') !== catalogue.meta.reviewEvidence.sha256) {
     throw new Error('Audit reviews changed during build. Retry with stable inputs.');
@@ -64,6 +66,10 @@ function build(projectRoot = root) {
     fs.cpSync(path.join(projectRoot, 'src'), next, { recursive: true });
     fs.mkdirSync(path.join(next, 'data'), { recursive: true });
     fs.writeFileSync(path.join(next, 'data/catalogue.js'), 'window.MUSEUM_DATA=' + JSON.stringify(catalogue) + ';');
+    fs.writeFileSync(path.join(next, 'data/credits.js'), 'window.MUSEUM_CREDITS=' + JSON.stringify(credits) + ';');
+    fs.writeFileSync(path.join(next, 'data/credits.json'), JSON.stringify(credits,null,2)+'\n');
+    fs.mkdirSync(path.join(next,'licenses'),{recursive:true});
+    fs.writeFileSync(path.join(next,'licenses/linguist-LICENSE'),linguistLicense);
     fs.writeFileSync(path.join(next, 'data/audit-reviews.json'), auditBytes);
     fs.writeFileSync(path.join(next, 'data/provenance.json'), JSON.stringify({ meta: catalogue.meta, unresolved: [] }, null, 2));
     if (fs.existsSync(output)) fs.renameSync(output, previous);

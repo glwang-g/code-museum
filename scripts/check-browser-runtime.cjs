@@ -88,7 +88,7 @@ async function checkLabels(ids){
 async function record(name,detail){results.push({name,detail});console.log('PASS '+name);}
 (async()=>{
  try{
-  for(const file of ['index.html','map-framing.js','museum.js','museum.css','lab.js','lab-examples.js','lab-worker.js','python-worker.js','lua-worker.js','scheme-worker.js'])assert.deepEqual(fs.readFileSync(path.join(root,'dist',file)),fs.readFileSync(path.join(root,'src',file)),'Stale build: run npm run build before browser checks');
+  for(const file of ['index.html','map-framing.js','museum.js','museum.css','lab.js','lab-examples.js','lab-worker.js','python-worker.js','lua-worker.js','scheme-worker.js','credits.js'])assert.deepEqual(fs.readFileSync(path.join(root,'dist',file)),fs.readFileSync(path.join(root,'src',file)),'Stale build: run npm run build before browser checks');
   await new Promise((resolve,reject)=>{server.once('error',reject);server.listen(0,'127.0.0.1',resolve);});
   browser=spawn(chrome,['--headless=new','--disable-gpu','--disable-background-networking','--no-first-run','--no-default-browser-check','--remote-debugging-pipe','--host-resolver-rules=MAP * ~NOTFOUND, EXCLUDE 127.0.0.1','--user-data-dir='+profileDirectory],{stdio:['ignore','ignore','pipe','pipe','pipe']});
   browser.on('error',error=>{for(const request of pending.values()){clearTimeout(request.timer);request.reject(error);}pending.clear();});
@@ -103,6 +103,37 @@ async function record(name,detail){results.push({name,detail});console.log('PASS
   await page('Page.navigate',{url:`http://127.0.0.1:${server.address().port}/#lab`});
   await wait('!!window.MUSEUM_LAB && !!document.querySelector("#lab-language")');
   assert.equal(await evaluate('document.hidden'),false);
+  const creditChecks=[];
+  for(const width of [1440,390]){
+    await page('Emulation.setDeviceMetricsOverride',{width,height:width===390?844:1000,deviceScaleFactor:1,mobile:width===390});
+    await evaluate(`document.querySelector('#sources-view').click();document.querySelector('#about').scrollTop=0`);
+    assert.equal(await evaluate(`document.querySelectorAll('.credit-card').length`),7);
+    assert.equal(await evaluate(`document.documentElement.scrollWidth<=innerWidth`),true);
+    const links=await evaluate(`Array.from(document.querySelectorAll('#open-source-credits a'),a=>({href:a.getAttribute('href'),external:a.target==='_blank',rel:a.rel}))`);
+    assert.ok(links.every(link=>!link.external||link.rel.includes('noreferrer')));
+    for(const link of links.filter(link=>!link.href.startsWith('https://'))){
+      assert.equal(await evaluate(`fetch(${JSON.stringify(link.href)}).then(r=>r.status)`),200,'Local credit evidence must resolve');
+    }
+    await screenshot('credits-overview-'+width+'.png');
+    for(const [language,id] of [['javascript','browser-javascript'],['python','pyodide'],['lua','wasmoon'],['scheme','biwascheme']]){
+      await evaluate(`window.MUSEUM_LAB.open(${JSON.stringify(language)})`);
+      const point=await evaluate(`(()=>{const b=document.querySelector('#lab-runtime-credit'),r=b.getBoundingClientRect();return {x:r.left+r.width/2,y:r.top+r.height/2,hidden:b.hidden,text:b.textContent};})()`);
+      assert.equal(point.hidden,false);assert.ok(point.text.includes('项目与许可'));
+      await page('Input.dispatchMouseEvent',{type:'mousePressed',x:point.x,y:point.y,button:'left',clickCount:1});
+      await page('Input.dispatchMouseEvent',{type:'mouseReleased',x:point.x,y:point.y,button:'left',clickCount:1});
+      assert.equal(await evaluate(`!document.querySelector('#about').hidden&&document.activeElement.id===${JSON.stringify('credit-'+id)}`),true);
+      const fits=await evaluate(`(()=>{const r=document.getElementById(${JSON.stringify('credit-'+id)}).getBoundingClientRect(),v=document.querySelector('#about').getBoundingClientRect();return r.left>=v.left&&r.right<=v.right&&r.top>=v.top&&r.top<v.bottom;})()`);
+      assert.equal(fits,true,'Selected credit heading must be visible');
+      creditChecks.push({width,language,id});
+      if(language==='scheme')await screenshot('credits-scheme-'+width+'.png');
+    }
+    await evaluate(`window.MUSEUM_LAB.open('rust')`);
+    assert.equal(await evaluate(`document.querySelector('#lab-runtime-credit').hidden`),true);
+  }
+  await page('Emulation.setDeviceMetricsOverride',{width:1440,height:1000,deviceScaleFactor:1,mobile:false});
+  await evaluate(`window.MUSEUM_LAB.open('javascript')`);
+  await record('Open source credits, bundled license links and real mouse lab attribution navigation',creditChecks);
+
   await edit('await Promise.resolve(); console.log("browser JavaScript");');await output('browser JavaScript');
   await record('JavaScript asynchronous execution',version.product);
   await evaluate(`window.MUSEUM_LAB.open('scheme')`);await output('55\n');
@@ -722,8 +753,8 @@ async function record(name,detail){results.push({name,detail});console.log('PASS
     }
     await record((sweepAll?'All dated map nodes':'Persistent map labels')+' focus and restore across wide/narrow river and lineage',{cases,omitted,scope:(sweepAll?'Fixed current dated mapEligible records':'Fixed current mapLabelIds')+'; design and ecosystem layers; two sizes; reduced motion; no simulated history links. Omitted nodes are not present in lineage.'});
   }
-  const servedInputs=Object.fromEntries(['index.html','map-framing.js','museum.css','museum.js','data/catalogue.js','lab.js','lab-examples.js','lab-worker.js','python-worker.js','lua-worker.js','scheme-worker.js','assets/pyodide/manifest.json'].map(file=>[file,crypto.createHash('sha256').update(fs.readFileSync(path.join(root,'dist',file))).digest('hex')]));
-  const report={servedInputs,checkedAt:new Date().toISOString(),browser:version.product,scope:'Actual headless Chrome over local HTTP; isolated temporary browser profile; external DNS blocked. Worker constructor/termination observed without replacing execution. Does not verify real tab visibility, idle release, production hosting or all languages.',inputs:Object.fromEntries(['src/index.html','src/map-framing.js','src/museum.js','src/museum.css','data/audit/reviews.json','data/audit/map-eligible-ids.json','data/audit/label-selection.json','data/relationship-overrides.json','data/ecosystem-relations.json','src/lab.js','src/lab-examples.js','data/audit/tcsh-runtime-checks.json','data/audit/ksh93-runtime-checks.json','data/audit/runtime-checks.json','src/lab-worker.js','src/python-worker.js','src/lua-worker.js','src/scheme-worker.js','public/assets/scheme/manifest.json','public/assets/scheme/biwascheme-core.mjs','scripts/serve.cjs','scripts/check-browser-runtime.cjs','public/assets/pyodide/manifest.json'].map(file=>[file,crypto.createHash('sha256').update(fs.readFileSync(path.join(root,file))).digest('hex')])),checks:results};
+  const servedInputs=Object.fromEntries(['index.html','map-framing.js','museum.css','museum.js','data/catalogue.js','lab.js','lab-examples.js','lab-worker.js','python-worker.js','lua-worker.js','scheme-worker.js','assets/pyodide/manifest.json','credits.js','data/credits.js','data/credits.json','licenses/linguist-LICENSE'].map(file=>[file,crypto.createHash('sha256').update(fs.readFileSync(path.join(root,'dist',file))).digest('hex')]));
+  const report={servedInputs,checkedAt:new Date().toISOString(),browser:version.product,scope:'Actual headless Chrome over local HTTP; isolated temporary browser profile; external DNS blocked. Worker constructor/termination observed without replacing execution. Does not verify real tab visibility, idle release, production hosting or all languages.',inputs:Object.fromEntries(['src/index.html','src/map-framing.js','src/museum.js','src/museum.css','data/audit/reviews.json','data/audit/map-eligible-ids.json','data/audit/label-selection.json','data/relationship-overrides.json','data/ecosystem-relations.json','src/lab.js','src/lab-examples.js','data/audit/tcsh-runtime-checks.json','data/audit/ksh93-runtime-checks.json','data/audit/runtime-checks.json','src/lab-worker.js','src/python-worker.js','src/lua-worker.js','src/scheme-worker.js','public/assets/scheme/manifest.json','public/assets/scheme/biwascheme-core.mjs','scripts/serve.cjs','scripts/check-browser-runtime.cjs','scripts/credits.cjs','data/credits.json','src/credits.js','public/assets/pyodide/manifest.json'].map(file=>[file,crypto.createHash('sha256').update(fs.readFileSync(path.join(root,file))).digest('hex')])),checks:results};
   if(outputDirectory){fs.writeFileSync(path.join(outputDirectory,'checks.json'),JSON.stringify(report,null,2)+'\n');console.log('Report '+path.join(outputDirectory,'checks.json'));}else console.log(JSON.stringify(report,null,2));
  }catch(error){console.error(error.stack+'\n'+diagnostics);process.exitCode=1;}
  finally{

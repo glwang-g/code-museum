@@ -176,6 +176,8 @@
     clearTimeout(idleTimer);idleTimer=null;
     stop();
     current=id;options(id);
+    const creditButton=document.querySelector('#lab-runtime-credit'),creditLabel=window.MUSEUM_CREDITS_UI?.labelFor(id);
+    if(creditButton){creditButton.hidden=!creditLabel;creditButton.textContent=creditLabel||'';creditButton.onclick=()=>window.MUSEUM_CREDITS_UI?.openFor(current)}
     const record=byId.get(id),example=examples.get(id),runnable=runnableIds.has(id);
     document.querySelector('#lab-title').textContent=`${record.name} · 实验台`;
     document.querySelector('#lab-file').textContent=example?.file||`${record.name} · 草稿`;

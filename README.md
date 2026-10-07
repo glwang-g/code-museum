@@ -117,3 +117,9 @@ PLDB 的公开领域说明见 https://github.com/breck7/pldb/blob/main/readme.sc
 ## 服务端发布与访问量
 
 正式站点为 [codemuseum.freexlib.com](https://codemuseum.freexlib.com)，已配置 HTTPS。GitHub Actions 提供 master 分支测试、离线构建和独立 release 发布。生产域名累计 UV/PV 通过同域接口写入独立 SQLite，管理员可经 SSH 查询与备份。上线状态、发布方式和统计边界见 [部署说明](docs/DEPLOYMENT.md)。
+
+## 开源项目与致谢
+
+「出处与说明」公开实际运行时、数据来源和参考资料，实验台的「项目与许可」入口跳到对应展签。Pyodide、Wasmoon/Lua和BiwaScheme版本从固定运行时清单读取；JavaScript说明为浏览器原生能力，不误标第三方执行库。PLDB、GitHub Linguist使用固定快照日期/提交，TIOBE标明参考榜单月份；历史论断仍在具体档案和关系旁保留引用。运行时许可继续随assets发布，Linguist版权许可从已纳入版本管理的输入校验后发布到licenses/；致谢不替代许可文件。
+
+维护文案在 `data/credits.json`，构建通过 `scripts/credits.cjs` 合并版本/快照证据，输出 `/data/credits.json` 和网页用的数据脚本。新增或升级运行时时，同步用途、适配与限制说明；不要把尚未接入的运行时列为实际使用。页面由 `src/credits.js` 渲染。
