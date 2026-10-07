@@ -1,0 +1,14 @@
+{
+  "package": "biwascheme",
+  "version": "0.8.3",
+  "license": "MIT",
+  "source": "https://registry.npmjs.org/biwascheme/-/biwascheme-0.8.3.tgz",
+  "integrity": "sha512-cQq4c5gzW3ymVRON+WR+MJk09RvGXS8WVnD5w5i8AXJy7chQ7tp0Yd6R79xtP7iRsHgpbAz235Xd/xvvhKmEIw==",
+  "sourceCommit": "c52385d0ca3aa4dc58ec3b4a78c9651701a29530",
+  "adaptation": "Keep interpreter core before browser DOM adapter; export core as ES module.",
+  "files": {
+    "LICENSE": "e3dda836c385fbfd1353a112eb853d04dbd812aceb1e56064ec785a2108edca6",
+    "biwascheme-core.mjs": "e65a09b4407d943860d274efc0e3a3537b356110819908d775ccd80dcb0015d1",
+    "biwascheme-source.mjs": "e34e2f7dcdb2e128d7457a2481c009bdb17d5d732af7de54fdc6cdf6b9b6f16b"
+  }
+}

@@ -33,6 +33,23 @@ function build(projectRoot = root) {
       throw new Error('Lua runtime checksum mismatch: ' + name);
     }
   }
+  const schemeRoot = path.join(projectRoot, 'public/assets/scheme');
+  const schemeManifest = JSON.parse(fs.readFileSync(path.join(schemeRoot, 'manifest.json'), 'utf8'));
+  if (schemeManifest.package !== 'biwascheme' || schemeManifest.version !== '0.8.3' || schemeManifest.license !== 'MIT' ||
+      Object.keys(schemeManifest.files).sort().join(',') !== 'LICENSE,biwascheme-core.mjs,biwascheme-source.mjs') {
+    throw new Error('Unexpected Scheme runtime manifest.');
+  }
+  for (const [name, expected] of Object.entries(schemeManifest.files)) {
+    if (!/^[a-f0-9]{64}$/.test(expected) || crypto.createHash('sha256').update(fs.readFileSync(path.join(schemeRoot, name))).digest('hex') !== expected) {
+      throw new Error('Scheme runtime checksum mismatch: ' + name);
+    }
+  }
+  const schemeSource = fs.readFileSync(path.join(schemeRoot, 'biwascheme-source.mjs'), 'utf8');
+  const boundary = 'const current_input = new Port.CustomInput(function (callback) {';
+  if (schemeSource.split(boundary).length !== 2 ||
+      fs.readFileSync(path.join(schemeRoot, 'biwascheme-core.mjs'), 'utf8') !== schemeSource.split(boundary)[0] + 'export default BiwaScheme$1;\n') {
+    throw new Error('Scheme Worker adaptation must match the fixed upstream interpreter core.');
+  }
   const output = path.join(projectRoot, 'dist');
   if (fs.existsSync(output) && fs.lstatSync(output).isSymbolicLink()) {
     throw new Error('Refusing to replace a symlinked dist directory.');
