@@ -4,7 +4,9 @@ const fs=require('node:fs'),path=require('node:path'),http=require('node:http'),
 const {spawn}=require('node:child_process');
 const os=require('node:os'),crypto=require('node:crypto');
 const root=path.resolve(__dirname,'..');
-const chrome=process.env.CHROME_BIN||'/Applications/GoogleChrome.app/Contents/MacOS/Google Chrome';
+const chromeCandidates=[process.env.CHROME_BIN,'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome','/Applications/GoogleChrome.app/Contents/MacOS/Google Chrome','/Applications/Chromium.app/Contents/MacOS/Chromium'].filter(Boolean);
+const chrome=chromeCandidates.find(candidate=>fs.existsSync(candidate));
+if(!chrome)throw new Error(`Chrome/Chromium not found. Set CHROME_BIN to one of: ${chromeCandidates.join(', ')}`);
 const outputDirectory=process.env.BROWSER_CHECK_OUTPUT?path.resolve(process.env.BROWSER_CHECK_OUTPUT):null;
 const profileDirectory=fs.mkdtempSync(path.join(os.tmpdir(),'code-museum-chrome-'));
 if(outputDirectory)fs.mkdirSync(outputDirectory,{recursive:true});

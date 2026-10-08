@@ -73,15 +73,25 @@ const maxLayer=Math.max(0,...depth.values()),layers=Array.from({length:maxLayer+
 for(const id of graphIds)layers[depth.get(id)].push(byId.get(id));
 const lineagePositions=new Map();
 layers.forEach((layer,x)=>layer.sort((a,b)=>(a.year||9999)-(b.year||9999)||a.name.localeCompare(b.name)).forEach((r,i)=>lineagePositions.set(r.id,{x:70+x*2400/Math.max(1,maxLayer),y:35+(i+1)*540/(layer.length+1)})));
-function relationMarkup(edge,curve,focused=false){
+function curvePoints(a,b){return [[a.x,a.y],[(a.x+b.x)/2,a.y],[(a.x+b.x)/2,b.y],[b.x,b.y]]}
+function cubicPoint(points,t){const u=1-t;return [u*u*u*points[0][0]+3*u*u*t*points[1][0]+3*u*t*t*points[2][0]+t*t*t*points[3][0],u*u*u*points[0][1]+3*u*u*t*points[1][1]+3*u*t*t*points[2][1]+t*t*t*points[3][1]]}
+function cubicDerivative(points,t){const u=1-t;return [3*u*u*(points[1][0]-points[0][0])+6*u*t*(points[2][0]-points[1][0])+3*t*t*(points[3][0]-points[2][0]),3*u*u*(points[1][1]-points[0][1])+6*u*t*(points[2][1]-points[1][1])+3*t*t*(points[3][1]-points[2][1])]}
+function relationHitCurve(a,b){
+  const points=curvePoints(a,b),distance=Math.hypot(b.x-a.x,b.y-a.y),trim=Math.min(.4,Math.max(.18,72/distance));
+  if(trim===0)return `M${a.x} ${a.y} C${points[1][0]} ${points[1][1]} ${points[2][0]} ${points[2][1]} ${b.x} ${b.y}`;
+  const start=cubicPoint(points,trim),end=cubicPoint(points,1-trim),startT=cubicDerivative(points,trim),endT=cubicDerivative(points,1-trim);
+  const span=1-2*trim;
+  return `M${start[0]} ${start[1]} C${start[0]+startT[0]*span/3} ${start[1]+startT[1]*span/3} ${end[0]-endT[0]*span/3} ${end[1]-endT[1]*span/3} ${end[0]} ${end[1]}`;
+}
+function relationMarkup(edge,curve,focused=false,hitCurve=curve){
   const label=byId.get(edge.from).name+' → '+byId.get(edge.to).name+' · '+relationLabel(edge)+'，查看关系依据';
   const audit=relationAudit.get(relationKey(edge));
-  return `<g class="relation-control ${inspectedRelation===relationKey(edge)?'inspected':''}" data-edge-key="${esc(relationKey(edge))}" role="button" tabindex="0" aria-label="${esc(label)}"><title>${esc(label)}</title><path class="relation-hit" d="${curve}"/><path class="${focused?'related-edge ':''}${relationLayer==='ecosystem'?'ecology-edge ':''}${relationClass(edge)} ${relationEvidenceClass(edge)} ${audit?.state==='needs-direct-evidence'?'needs-evidence':''}" data-evidence-state="${relationEvidenceState(edge)}" data-relation-type="${edge.type}" data-from="${esc(edge.from)}" data-to="${esc(edge.to)}" ${relationLayer==='design'?'marker-end="url(#arrow)"':''} d="${curve}"/></g>`;
+  return `<g class="relation-control ${inspectedRelation===relationKey(edge)?'inspected':''}" data-edge-key="${esc(relationKey(edge))}" role="button" tabindex="0" aria-label="${esc(label)}"><title>${esc(label)}</title><path class="relation-hit" d="${hitCurve}"/><path class="${focused?'related-edge ':''}${relationLayer==='ecosystem'?'ecology-edge ':''}${relationClass(edge)} ${relationEvidenceClass(edge)} ${audit?.state==='needs-direct-evidence'?'needs-evidence':''}" data-evidence-state="${relationEvidenceState(edge)}" data-relation-type="${edge.type}" data-from="${esc(edge.from)}" data-to="${esc(edge.to)}" ${relationLayer==='design'?'marker-end="url(#arrow)"':''} d="${curve}"/></g>`;
 }
 function overviewRelationMarkup(){
   return arrowDefinitions()+activeMapEdges().filter(e=>positions.has(e.from)&&positions.has(e.to)).map(edge=>{
-    const from=positions.get(edge.from),to=positions.get(edge.to),middle=(from.x+to.x)/2;
-    return relationMarkup(edge,`M${from.x} ${from.y} C${middle} ${from.y} ${middle} ${to.y} ${to.x} ${to.y}`);
+    const from=positions.get(edge.from),to=positions.get(edge.to),points=curvePoints(from,to),curve=`M${from.x} ${from.y} C${points[1][0]} ${points[1][1]} ${points[2][0]} ${points[2][1]} ${to.x} ${to.y}`;
+    return relationMarkup(edge,curve,false,relationHitCurve(from,to));
   }).join('');
 }
 function arrowDefinitions(){return '<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><polygon points="0,0 10,5 0,10" fill="#ffd99b"/></marker></defs>'}
@@ -303,7 +313,7 @@ function renderLineageFocus(id){
   const paths=currentEdges.filter(e=>related.has(e.from)&&related.has(e.to)&&visible.has(e.from)&&visible.has(e.to)).map(e=>{
     const a=positions.get(e.from),b=positions.get(e.to);
     const curve='M'+a.x+' '+a.y+' C'+((a.x+b.x)/2)+' '+a.y+' '+((a.x+b.x)/2)+' '+b.y+' '+b.x+' '+b.y;
-    return relationMarkup(e,curve,true);
+    return relationMarkup(e,curve,true,relationHitCurve(a,b));
   }).join('');
   $('#relations').innerHTML=arrowDefinitions()+paths;
   $('#atlas-note').textContent=paths?(relationLayer==='design'?'高亮已记录的设计前序与后续；较淡连线的关系依据待核。点击空白恢复全景。':'高亮实现与生态关联；青色线不表示语言继承。点击空白恢复全景。'):'当前层没有地图内关联；可切换关系层或查看档案。点击空白恢复全景。';
@@ -389,7 +399,7 @@ openPanel(`<div class="eyebrow">馆藏 / ${esc(r.id)}</div><h2>${esc(r.name)}</h
 $('#detail-open-lab')?.addEventListener('click',()=>window.MUSEUM_LAB.open(r.id));
 bindRelationProofs();
 $('#detail-content').querySelectorAll('[data-related]').forEach(b=>{b.addEventListener('pointerenter',()=>previewRelation(b));b.addEventListener('pointerleave',clearRelationPreview);b.addEventListener('focus',()=>previewRelation(b));b.addEventListener('blur',clearRelationPreview);b.onclick=()=>{const id=b.dataset.related;if(!mapLanguageIds.has(id)&&document.body.classList.contains('lineage-focus'))restoreMapOverview();select(id);if(mapLanguageIds.has(id)){activeId=id;renderLineageFocus(activeId)}else activeId=null}});
-$('#relations').innerHTML=arrowDefinitions()+[...incoming,...outgoing].filter(e=>positions.has(e.from)&&positions.has(e.to)).map(e=>{const a=positions.get(e.from),b=positions.get(e.to);return relationMarkup(e,`M${a.x} ${a.y} C${(a.x+b.x)/2} ${a.y},${(a.x+b.x)/2} ${b.y},${b.x} ${b.y}`)}).join('');}
+$('#relations').innerHTML=arrowDefinitions()+[...incoming,...outgoing].filter(e=>positions.has(e.from)&&positions.has(e.to)).map(e=>{const a=positions.get(e.from),b=positions.get(e.to),points=curvePoints(a,b),curve=`M${a.x} ${a.y} C${points[1][0]} ${points[1][1]} ${points[2][0]} ${points[2][1]} ${b.x} ${b.y}`;return relationMarkup(e,curve,false,relationHitCurve(a,b))}).join('');}
 
 function bindRelationProofs(){
   $('#detail-content').querySelectorAll('[data-proof-key]').forEach(b=>b.onclick=()=>openRelationship(b.dataset.proofKey));
@@ -405,7 +415,7 @@ function openRelationship(key){
   openPanel(`<div class="eyebrow">关系依据 / ${edge.layer==='design'?'设计脉络':'实现与生态'}</div><h2 class="relationship-title">${esc(byId.get(edge.from).name)} → ${esc(byId.get(edge.to).name)}</h2><p>${esc(relationLabel(edge))} · ${esc(stateLabel)}</p><h3>为什么关联</h3><p>${esc(edge.evidence||'固定 PLDB 快照记录了此关系字段，尚未保存独立史料论证；不能视为已核实关系。')}</p>${edge.reviewNote?`<p class="relationship-warning">${esc(edge.reviewNote)}</p>`:''}${edge.issues.length?`<h3>待核事项</h3><ul>${edge.issues.map(issue=>`<li>${esc(issue)}</li>`).join('')}</ul>`:''}<p>${edge.layer==='ecosystem'?'这条线描述具体实现、接口或互操作，不表示语言继承。':'设计输入不自动表示严格后继、超集或源码兼容。'}</p><p><a href="${esc(edge.source)}" target="_blank" rel="noreferrer">关系引用 ↗</a></p><h3>可回溯证据</h3>${sources||'<p>尚无匹配此引用的已阅读原文摘录，仍需补证。</p>'}<p>摘录和哈希用于回溯这次阅读记录，不证明历史关系已经全部核实。</p><p><a href="data/relationship-status.json">完整关系核对清单 ↗</a></p><h3>继续探索</h3><button type="button" data-relation-endpoint="${esc(edge.from)}">${esc(byId.get(edge.from).name)} 档案</button> <button type="button" data-relation-endpoint="${esc(edge.to)}">${esc(byId.get(edge.to).name)} 档案</button>`);
   $('#detail-content').querySelectorAll('[data-relation-endpoint]').forEach(button=>button.onclick=()=>{const id=button.dataset.relationEndpoint;select(id);activeId=mapLanguageIds.has(id)?id:null;if(activeId)renderLineageFocus(id)});
 }
-function nearestRelations(event){
+function nearestRelations(event,hitTolerance=8,anchorId=null){
   const candidates=[];
   for(const control of $('#relations').querySelectorAll('[data-edge-key]')){
     const path=control.querySelector('.relation-hit'),rect=path.getBoundingClientRect();
@@ -417,11 +427,22 @@ function nearestRelations(event){
     let low=Math.max(0,best-length/32),high=Math.min(length,best+length/32);
     for(let i=0;i<16;i++){const a=low+(high-low)/3,b=high-(high-low)/3;if(distance(a)<distance(b))high=b;else low=a}
     min=distance((low+high)/2);
-    if(min<=8)candidates.push({key:control.dataset.edgeKey,distance:min});
+    if(min<=hitTolerance)candidates.push({key:control.dataset.edgeKey,distance:min});
   }
   candidates.sort((a,b)=>a.distance-b.distance);
+  if(anchorId){
+    const anchored=candidates.filter(candidate=>{const edge=relationAudit.get(candidate.key);return edge?.from===anchorId||edge?.to===anchorId;});
+    if(anchored.length)return anchored.filter(c=>c.distance<=anchored[0].distance+.6);
+  }
   return candidates.filter(c=>c.distance<=candidates[0].distance+.6);
 }
+document.addEventListener('click',event=>{
+  if(!document.body.classList.contains('lineage-focus')||!event.target.closest('#viewport')||event.target.closest('.relation-control'))return;
+  const dock=event.target.closest('.dock');
+  const relation=nearestRelations(event,24,dock?.dataset.id||null)[0];
+  if(!relation)return;
+  event.preventDefault();event.stopImmediatePropagation();openRelationship(relation.key);
+},true);
 $('#relations').addEventListener('click',event=>{
   const control=event.target.closest('[data-edge-key]');if(!control)return;
   event.stopPropagation();
@@ -438,6 +459,10 @@ const nearby=document.createElement('div');nearby.className='nearby-list';nearby
 function hideNearby(){nearby.hidden=true;nearby.innerHTML=''}
 $('#docks').addEventListener('click',e=>{
   const b=e.target.closest('[data-id]');if(!b)return;
+  if(document.body.classList.contains('lineage-focus')){
+    const relation=nearestRelations(e)[0];
+    if(relation){openRelationship(relation.key);return;}
+  }
   if(b.classList.contains('dot')){
     const center=b.getBoundingClientRect(),x=(center.left+center.right)/2,y=(center.top+center.bottom)/2;
     const close=[...document.querySelectorAll('#docks [data-id]')].filter(node=>{const rect=node.getBoundingClientRect();return Math.hypot((rect.left+rect.right)/2-x,(rect.top+rect.bottom)/2-y)<28});

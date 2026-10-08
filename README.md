@@ -49,6 +49,8 @@ BROWSER_CHECK_OUTPUT=/tmp/code-museum-browser-check npm run runtime:browser
 
 `BROWSER_CHECK_OUTPUT` 可选；指定后保存 JSON 记录及宽屏、窄屏截图，未指定时仅输出记录。检查涵盖真实 JavaScript/Python 执行、Wasm 压缩响应、重复打开保留草稿与 Worker、输出上限与异常、无限循环终止及恢复、两种视口的页面溢出，以及 VBA/VBScript 地图节点、关系和审查详情、Kotlin/Lua 的已核设计连线、来源入口及宽窄屏完整标签边界、已放置名称互不覆盖，以及放大和适屏后的引导线端点。脚本会拒绝过期的实验台构建。这是需要本机浏览器与 HTTP 端口的单独检查，不影响默认离线 `npm test` 和构建。记录见 [浏览器核验](data/audit/browser-runtime-checks.json)；真实页签可见性、3 分钟闲置释放及正式托管配置尚未由该脚本验证。
 
+发布诊断可离线检查当前源码提交、`dist/` 文件清单、PLDB 快照和人工审查哈希：`npm run diagnose:release`。也可用 `npm run diagnose:release -- --url https://codemuseum.freexlib.com` 只读比较线上 `/data/provenance.json` 的来源哈希、记录数和关系计数；网络失败或线上版本不一致会以非零状态退出，不会修改本地或线上文件。
+
 ## 可选的 ALGOL 60 本机核验
 
 已在临时目录构建 GNU MARST 2.8 并实际执行三份原创样例，输出 `55`、`720`、`6`，错误语法被拒绝；传名调用生成的 C 存在求值顺序警告。这不代表已接入网页运行或完整符合性通过。

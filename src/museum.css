@@ -37,6 +37,7 @@ body:not(.lineage-focus) .atlas .dock.dot:not(.selected):is(:hover,:focus-visibl
 .lineage-focus .atlas .relations path.related-edge{pointer-events:stroke}
 
 .lineage-focus .atlas .relations path.relation-hit{stroke:transparent;stroke-width:14;stroke-dasharray:none;filter:none;pointer-events:stroke}
+.lineage-focus .atlas svg.relations{z-index:11}
 
 /* Keep marker targets above the broad label buttons without enlarging the visible dots. */
 .atlas .dock.dot,.lineage-mode .dock.dot,.atlas .dock.dot.selected{width:20px;height:20px;min-height:0;padding:0;background:transparent;border:0;box-shadow:none;z-index:9}
