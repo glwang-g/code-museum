@@ -264,3 +264,10 @@ GitHub恢复后的Actions 37655741064已完成build和deploy，同一9216c2e版�
 执行服务实际安装完成：用户明确批准权限与配置后，独立code-museum-executor服务active/enabled，HTTPS无令牌执行401；CI账户无Docker组权限。锁文件/正则配置两次安装问题已修复，Nginx失败检查证明原配置回滚生效。正式站点发布与浏览器实际执行仍待下列发布记录确认。
 
 正式发布完成：2daa0e1推送成功，Actions37737054299的build/deploy成功并激活；实际Chrome正式HTTPS10项检查覆盖两种远端语言、两种视口、stdin/错误/取消恢复、默认无下载/编辑不上传、本地Pyodide及JS/Lua/Scheme真实输出，13份线上关键静态文件SHA匹配，截图已查看。无令牌执行401；访问统计health204、两个服务active。证据data/audit/executor-production-checks.json，令牌未保存其中。首次脚本15秒Pyodide观察窗口不足及Chrome退出/临时目录竞态已修正；重跑全部通过，不把脚本失败当作网页运行时故障。
+
+
+## 2026-10-08 执行位置下拉框修复
+
+用户反馈Python不能切换浏览器本地执行。change处理器先cancel触发render，把下拉值重置成旧模式，再读取value，导致选择被覆盖。改为先保存用户选择，再取消任务、停止本地运行并应用模式。保持Python远端/本地双模式、明确下载同意和Ruby本地不可用的边界。
+
+本地39项npm测试与离线构建通过；定向状态检查覆盖Python切本地、下载同意、切回远端、保留本地启用状态以及Ruby本地选项禁用。32组已有隔离Chrome回归全部通过，含Python真实执行、宽窄屏布局及地图/搜索/运行入口回归，Python宽窄屏截图已查看；本轮报告保存在/tmp/code-museum-mode-fix/checks.json（临时核验产物，不作为构建输入）。正式站点execution-modes.js与修复前版本一致，确认线上仍有此问题。本次尚未提交、推送或部署。

@@ -94,7 +94,8 @@
     if(id===current){cancel();callbacks.stop?.();render();callbacks.run?.();}
   }
   $('lab-execution-mode').onchange=()=>{
-    cancel();callbacks.stop?.();modes.set(current,$('lab-execution-mode').value);render();
+    const nextMode=$('lab-execution-mode').value;
+    cancel();callbacks.stop?.();modes.set(current,nextMode);render();
     $('lab-result').textContent=allowed(current)?'点击运行代码，在浏览器本地执行。':mode(current)==='remote'?'点击运行后才提交代码。':'点击下载并启用本地环境。';$('lab-result').dataset.state='';
   };
   $('lab-enable-local').onclick=()=>useLocal();
