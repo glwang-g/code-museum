@@ -70,3 +70,7 @@ sudo -u code-museum python3 /var/www/code-museum/current/server/analytics.py --b
 代理只追加在code-museum独立虚拟主机，由 `/etc/nginx/snippets/code-museum-executor.conf` 提供。关闭执行API的访问日志、请求和响应缓冲。Nginx/systemd配置检查通过后reload。安装先遇到Linux保护已有/tmp锁的O_CREAT限制（没有配置变更），修复后遇到Nginx正则花括号须加引号，配置检查失败已自动恢复原站点；修正后安装成功。成功安装备份在 `/var/backups/code-museum-executor/20261008T061852Z`，此前失败检查也保留独立备份。
 
 这是正式域名上受私有令牌限制的runc执行服务，只执行受信任代码；不等于匿名公共沙箱、独立执行主机或gVisor防护。管理员取令牌并粘贴到实验台的步骤见 [执行说明](EXECUTOR.md)。最终页面commit与真实HTTPS浏览器核验待发布后追加。
+
+正式发布核验：实现提交 `2daa0e148811f5560e8cb940bbfca1adfc9aeb44` 已推送并激活，[Actions 37737054299](https://github.com/glwang-g/code-museum/actions/runs/37737054299) build/deploy均成功。正式HTTPS实际Chrome10项执行检查通过：Python/Ruby在1440/390两种宽度实际求和与stdin输出55/hello，Python语法错误，取消后恢复42，编辑不自动提交，默认无Pyodide下载，明确启用本地Pyodide后43，JavaScript/Lua/Scheme均实际输出42。13份线上页面/数据/Worker/运行时清单SHA与本地构建一致；宽窄屏截图已查看。记录见 [Docker与浏览器线上核验](../data/audit/executor-production-checks.json)。
+
+首次线上检查误用15秒等待本地Pyodide，页面当时仍在加载而非执行失败；脚本改为对齐网站90秒加载预算（95秒观察窗口），并修复关闭Chrome后临时目录删除的等待/重试，再完成全量10项。网站运行时本身未因这个脚本问题改动。原访问统计health204、统计与执行两个服务active；执行配置root-only600、root代码与固定镜像哈希一致。没有重新执行公开站点全地图遍历或原生Safari测试。

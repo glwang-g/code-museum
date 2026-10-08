@@ -15,7 +15,7 @@ const page=(method,params)=>send(method,params,session);
 async function evaluate(expression){const r=await page('Runtime.evaluate',{expression,returnByValue:true,awaitPromise:true});if(r.exceptionDetails)throw new Error(JSON.stringify(r.exceptionDetails));return r.result.value;}
 async function wait(expression,timeout=15000){const end=Date.now()+timeout;while(Date.now()<end){if(await evaluate(expression))return;await new Promise(resolve=>setTimeout(resolve,100));}throw new Error('Page condition timed out: '+expression+'; output='+await evaluate('document.querySelector("#lab-result")?.textContent'));}
 async function edit(code){await evaluate(`(()=>{const e=document.querySelector('#lab-code');e.value=${JSON.stringify(code)};e.dispatchEvent(new Event('input',{bubbles:true}));})()`);}
-async function output(expected){await wait(`document.querySelector('#lab-result').dataset.state==='ok' && document.querySelector('#lab-result').textContent===${JSON.stringify(expected)}`);}
+async function output(expected,timeout=15000){await wait(`document.querySelector('#lab-result').dataset.state==='ok' && document.querySelector('#lab-result').textContent===${JSON.stringify(expected)}`,timeout);}
 async function screenshot(name){if(!outputDirectory)return;await evaluate('new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)))');const r=await page('Page.captureScreenshot',{format:'png'});fs.writeFileSync(path.join(outputDirectory,name),Buffer.from(r.data,'base64'));}
 
 (async()=>{
@@ -60,16 +60,20 @@ async function screenshot(name){if(!outputDirectory)return;await evaluate('new P
   const before=await evaluate('window.__posts');await edit('print(43)');await new Promise(ok=>setTimeout(ok,800));assert.equal(await evaluate('window.__posts'),before);
   await evaluate(`document.querySelector('#lab-execution-mode').value='local';document.querySelector('#lab-execution-mode').dispatchEvent(new Event('change'))`);
   assert.equal(await evaluate(`performance.getEntriesByType('resource').some(r=>r.name.includes('/assets/pyodide/'))`),false);
-  await evaluate(`document.querySelector('#lab-enable-local').click()`);await output('43');
+  await evaluate(`document.querySelector('#lab-enable-local').click()`);await output('43',95000);
   assert.equal(await evaluate('window.__posts'),before);
   await screenshot('explicit-local-python-390.png');
   results.push({name:'Local Pyodide requires explicit enable, executes without POST',output:'43'});
-  const servedInputs={};for(const f of ['index.html','museum.css','museum.js','lab.js','execution-config.js','execution-modes.js','data/relationship-status.json']){const bytes=Buffer.from(await evaluate(`fetch(${JSON.stringify(f)}).then(r=>{if(!r.ok)throw new Error('Failed served input');return r.arrayBuffer()}).then(b=>Array.from(new Uint8Array(b)))`));assert.deepEqual(bytes,fs.readFileSync(path.join(root,'dist',f)),'Served build must match local: '+f);servedInputs[f]=crypto.createHash('sha256').update(bytes).digest('hex')}
+  for(const [language,code] of [['javascript','console.log(42)'],['lua','print(42)'],['scheme','(+ 40 2)']]){
+   await evaluate(`window.MUSEUM_LAB.useLocal(${JSON.stringify(language)});window.MUSEUM_LAB.open(${JSON.stringify(language)})`);await edit(code);await output('42');
+   results.push({name:'Actual browser '+language+' execution',output:'42'});
+  }
+  const servedInputs={};for(const f of ['index.html','museum.css','museum.js','lab.js','execution-config.js','execution-modes.js','data/relationship-status.json','lab-worker.js','lua-worker.js','scheme-worker.js','assets/lua/manifest.json','assets/scheme/manifest.json','assets/pyodide/manifest.json']){const bytes=Buffer.from(await evaluate(`fetch(${JSON.stringify(f)}).then(r=>{if(!r.ok)throw new Error('Failed served input');return r.arrayBuffer()}).then(b=>Array.from(new Uint8Array(b)))`));assert.deepEqual(bytes,fs.readFileSync(path.join(root,'dist',f)),'Served build must match local: '+f);servedInputs[f]=crypto.createHash('sha256').update(bytes).digest('hex')}
   const report={servedInputs,checkedAt:new Date().toISOString(),browser:version.product,scope:production?'Actual Chrome over production HTTPS with private token to persistent Docker runc service. Tokens, sessions and job IDs omitted; no anonymous execution or escape proof.':'Actual browser over private SSH tunnel to ephemeral Docker runc API on xshow. Tokens, sessions and job IDs omitted; not a public deployment or escape proof.',checks:results,inputs:Object.fromEntries(['server/executor.py','server/runtime-images.json','scripts/serve.cjs','scripts/executor-preview.cjs','scripts/check-executor-browser.cjs','src/index.html','src/lab.js','src/museum.css','src/execution-config.js','src/execution-modes.js'].map(f=>[f,crypto.createHash('sha256').update(fs.readFileSync(path.join(root,f))).digest('hex')]))};
   fs.writeFileSync(path.join(outputDirectory,'checks.json'),JSON.stringify(report,null,2)+'\n');console.log('PASS '+results.length+' actual Docker/browser checks; report '+path.join(outputDirectory,'checks.json'));
  }catch(e){await screenshot('failure.png').catch(()=>{});console.error(e.stack+'\n'+diagnostics);process.exitCode=1}
  finally{
-  if(browser){try{await send('Browser.close')}catch{}if(browser.exitCode===null&&browser.signalCode===null)browser.kill('SIGKILL')}
-  if(preview)await preview.stop();fs.rmSync(profileDirectory,{recursive:true,force:true});
+  if(browser){const exited=new Promise(ok=>browser.once('exit',ok));try{await send('Browser.close')}catch{}if(browser.exitCode===null&&browser.signalCode===null){browser.kill('SIGKILL');await exited}}
+  if(preview)await preview.stop();fs.rmSync(profileDirectory,{recursive:true,force:true,maxRetries:5,retryDelay:100});
  }
 })().catch(e=>{console.error(e.message);process.exitCode=1});

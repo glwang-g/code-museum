@@ -10,7 +10,7 @@
 
 地图选中 JavaScript、Python、Lua 或 Scheme 时，名称右侧显示 `▶` 运行图标，点击或键盘 Enter 可直接打开对应实验台，焦点随即进入代码编辑器；其他未接入网页运行时的语言不显示此标识。图标只表示已具备执行入口；Python默认远端需要连接私有API，或明确启用本地环境。加载失败或超时仍显示真实错误。
 
-实验台提供可编辑且高亮的代码。JavaScript 在浏览器 Worker 中真实执行，超过2秒会停止。Python、Ruby 默认选择远端执行，点击运行才上传，编辑不自动提交；需要连接私有 Docker 服务并输入令牌，远端API保持私有令牌访问，正式部署状态见部署说明。Python 可切换浏览器本地并明确点击「下载并启用」，加载约13.53 MB未压缩的固定 Pyodide文件，加载90秒、执行3秒预算。Lua 5.4.5 使用 Wasmoon 1.16.0 Wasm（约413 KiB），Scheme 使用 BiwaScheme 0.8.3 JavaScript解释器（约244 KiB，非Wasm），两者也需要明确启用，加载30秒、执行2秒预算。本地启用后编辑自动执行；离开实验台或后台停止活动任务。Ruby仅有私有Docker远端执行，尚无本地Wasm实现。无服务或加载失败显示真实错误，不伪造结果或自动回退。首版私有试看、资源限制、镜像来源与核验见 [Docker执行说明](docs/EXECUTOR.md)。
+实验台提供可编辑且高亮的代码。JavaScript 在浏览器 Worker 中真实执行，超过2秒会停止。Python、Ruby 默认选择远端执行，点击运行才上传，编辑不自动提交；需要连接私有 Docker 服务并输入令牌，远端API已部署到正式域名，保持私有令牌访问，核验记录见部署说明。Python 可切换浏览器本地并明确点击「下载并启用」，加载约13.53 MB未压缩的固定 Pyodide文件，加载90秒、执行3秒预算。Lua 5.4.5 使用 Wasmoon 1.16.0 Wasm（约413 KiB），Scheme 使用 BiwaScheme 0.8.3 JavaScript解释器（约244 KiB，非Wasm），两者也需要明确启用，加载30秒、执行2秒预算。本地启用后编辑自动执行；离开实验台或后台停止活动任务。Ruby仅有私有Docker远端执行，尚无本地Wasm实现。无服务或加载失败显示真实错误，不伪造结果或自动回退。首版私有试看、资源限制、镜像来源与核验见 [Docker执行说明](docs/EXECUTOR.md)。
 
 Lua每次运行新VM，支持print和基础标准库，不提供文件、系统、第三方模块；Scheme每次新环境，支持多数R7RS small功能，syntax-rules、异常、库系统不完整，字符串不可变、整数精度受JS数值限制，不提供JS互操作、文件/网络或第三方模块。本地文件、许可和SHA清单纳入源码，构建离线核验；Scheme核心验证从固定原模块精确派生。C、C++、Java、Go、Rust、Bash、Korn shell、tcsh提供可编辑示例，尚未接入执行环境；Shell样例保留本机实际核验版本。其他语言可记草稿。Worker不是安全沙箱，请只执行信任的代码。
 
@@ -138,4 +138,4 @@ PLDB 的公开领域说明见 https://github.com/breck7/pldb/blob/main/readme.sc
 
 ## 私有 Docker 执行原型
 
-已实现 Python/Ruby受限执行API和同源本机代理；默认不下载本地解释器，明确启用后再加载。`EXECUTOR_TOKEN`设置后执行 `npm run executor:preview` 可通过现有xshow SSH打开 http://127.0.0.1:4174/#lab ，30分钟临时试用，Ctrl+C结束。步骤见 [执行说明](docs/EXECUTOR.md)。普通runc共享宿主内核，仅用于受信任私有运行；按用户指令准备同域HTTPS与常驻服务部署，仍需私有令牌，CI不获Docker权限。真实Docker限制和前端端到端证据分别保存在 `data/audit/executor-checks.json` 和 `data/audit/executor-browser-checks.json`。
+已实现 Python/Ruby受限执行API和同源本机代理；默认不下载本地解释器，明确启用后再加载。`EXECUTOR_TOKEN`设置后执行 `npm run executor:preview` 可通过现有xshow SSH打开 http://127.0.0.1:4174/#lab ，30分钟临时试用，Ctrl+C结束。步骤见 [执行说明](docs/EXECUTOR.md)。普通runc共享宿主内核，仅用于受信任私有运行；已按用户指令部署同域HTTPS与常驻服务，仍需私有令牌，CI不获Docker权限。真实Docker限制和前端端到端证据分别保存在 `data/audit/executor-checks.json` 和 `data/audit/executor-browser-checks.json`。

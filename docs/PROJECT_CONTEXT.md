@@ -262,3 +262,5 @@ GitHub恢复后的Actions 37655741064已完成build和deploy，同一9216c2e版�
 用户明确要求推送并部署。静态站点沿用master Actions、独立release和限权CI账户；Python/Ruby执行服务采用管理员单独安装、root拥有代码与令牌配置、独立nologin账户和systemd，Docker组权限只赋给服务进程。API仅loopback监听，同源HTTPS代理，保持Bearer令牌与会话归属校验，不开放匿名执行、不把令牌存入网站或GitHub。deploy/install-executor.py核验已有固定镜像并备份配置，Nginx/systemd检查与健康检查失败回滚。CI只检查源码语法，不获得执行器重启或Docker权限。最终GitHub、上线和HTTPS核验结果待实际完成后追加。
 
 执行服务实际安装完成：用户明确批准权限与配置后，独立code-museum-executor服务active/enabled，HTTPS无令牌执行401；CI账户无Docker组权限。锁文件/正则配置两次安装问题已修复，Nginx失败检查证明原配置回滚生效。正式站点发布与浏览器实际执行仍待下列发布记录确认。
+
+正式发布完成：2daa0e1推送成功，Actions37737054299的build/deploy成功并激活；实际Chrome正式HTTPS10项检查覆盖两种远端语言、两种视口、stdin/错误/取消恢复、默认无下载/编辑不上传、本地Pyodide及JS/Lua/Scheme真实输出，13份线上关键静态文件SHA匹配，截图已查看。无令牌执行401；访问统计health204、两个服务active。证据data/audit/executor-production-checks.json，令牌未保存其中。首次脚本15秒Pyodide观察窗口不足及Chrome退出/临时目录竞态已修正；重跑全部通过，不把脚本失败当作网页运行时故障。

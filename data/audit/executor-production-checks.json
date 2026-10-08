@@ -1,0 +1,78 @@
+{
+  "servedInputs": {
+    "index.html": "6eb860c7ab8f180f8d9fd2b985909e7f29cd32dc0d8ae672500acdafcdbaf772",
+    "museum.css": "7540cd9c0c6ae8f3c654e8d17111a306764d6d8350d14febefda0a5cb00d43a8",
+    "museum.js": "1fb895afd32cc9890e92627d92de7a7f5188e84b13ab1093626b8cd74ba8dd98",
+    "lab.js": "b4d32387fcdfed1881bcf8f237115464bec6710ce3befd7612607924920450cf",
+    "execution-config.js": "4ed993efee2456e3cc0b0aa3767081211bb5b5509204eed6bea3c4ab5fa883e0",
+    "execution-modes.js": "632e1b70bea571f6c77d219100a9eb94412f45a5f0293b28d175a42dc353553f",
+    "data/relationship-status.json": "136c8f6ca6df4c8627e2ef4bbe9d6965adf249b6ac359050d18a84657194ca95",
+    "lab-worker.js": "d2f568c2087c77f9cd211a9e4c01478f1e8da07a088b29831f9d116762987371",
+    "lua-worker.js": "372d411d5cb6e1602c631658affc928685008d8c7e0f111aa80a86f579ed322c",
+    "scheme-worker.js": "edd85647e32de729a794e1fb3c49135fefc7d24ec7a0437247570e6cf3bac360",
+    "assets/lua/manifest.json": "d803bb6f5b36551703c7d00e63cb5be50f2795fc050d2edacbd7f6f872e914f2",
+    "assets/scheme/manifest.json": "2736ddf2f4a037f868630473dfc9fd21d42b276fad5e6fdc252890cc4b48b390",
+    "assets/pyodide/manifest.json": "3dbcea8d0957a60a80c84966832a201d06aeb190d77b6491d7d50577b65ec3a4"
+  },
+  "checkedAt": "2026-10-08T06:23:57.340Z",
+  "browser": "Chrome/154.0.8037.98",
+  "scope": "Actual Chrome over production HTTPS with private token to persistent Docker runc service. Tokens, sessions and job IDs omitted; no anonymous execution or escape proof.",
+  "checks": [
+    {
+      "name": "Actual python Docker execution and stdin",
+      "width": 1440,
+      "output": "55\nhello\n"
+    },
+    {
+      "name": "Actual ruby Docker execution and stdin",
+      "width": 1440,
+      "output": "55\nhello\n"
+    },
+    {
+      "name": "Actual python Docker execution and stdin",
+      "width": 390,
+      "output": "55\nhello\n"
+    },
+    {
+      "name": "Actual ruby Docker execution and stdin",
+      "width": 390,
+      "output": "55\nhello\n"
+    },
+    {
+      "name": "Actual remote syntax error",
+      "passed": true
+    },
+    {
+      "name": "Cancellation followed by actual remote recovery",
+      "passed": true
+    },
+    {
+      "name": "Local Pyodide requires explicit enable, executes without POST",
+      "output": "43"
+    },
+    {
+      "name": "Actual browser javascript execution",
+      "output": "42"
+    },
+    {
+      "name": "Actual browser lua execution",
+      "output": "42"
+    },
+    {
+      "name": "Actual browser scheme execution",
+      "output": "42"
+    }
+  ],
+  "inputs": {
+    "server/executor.py": "febadc6e5ce2d132383c3613487685633a7f947603b90411e1de11bc615dba9a",
+    "server/runtime-images.json": "edcad4f3becf25a2d99f066ecdc901e60a462919589ff6bdf41e343dc0adda2e",
+    "scripts/serve.cjs": "6b89ec4d96297a4e5a6ea1d0c97d2a99ff56b4b04ca09e619bcc5afc17ad9038",
+    "scripts/executor-preview.cjs": "27e038b1437913373175078c42a82fa50eacb1c321e898f8394eacb65c75705d",
+    "scripts/check-executor-browser.cjs": "047eefac2bc835c558159c92176e35f5ec4a0d1533383eb7e619a1d3ef2e1ffc",
+    "src/index.html": "6eb860c7ab8f180f8d9fd2b985909e7f29cd32dc0d8ae672500acdafcdbaf772",
+    "src/lab.js": "b4d32387fcdfed1881bcf8f237115464bec6710ce3befd7612607924920450cf",
+    "src/museum.css": "7540cd9c0c6ae8f3c654e8d17111a306764d6d8350d14febefda0a5cb00d43a8",
+    "src/execution-config.js": "4ed993efee2456e3cc0b0aa3767081211bb5b5509204eed6bea3c4ab5fa883e0",
+    "src/execution-modes.js": "632e1b70bea571f6c77d219100a9eb94412f45a5f0293b28d175a42dc353553f"
+  }
+}
