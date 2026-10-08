@@ -1,0 +1,26 @@
+# Administrator-installed private service. Code is root-owned, independent of CI releases.
+[Unit]
+Description=Code Museum private Docker executor
+After=docker.service
+Requires=docker.service
+
+[Service]
+Type=simple
+User=code-museum-executor
+Group=code-museum-executor
+SupplementaryGroups=docker
+WorkingDirectory=/opt/code-museum-executor
+EnvironmentFile=/etc/code-museum-executor/private.env
+ExecStart=/usr/bin/python3 /opt/code-museum-executor/executor.py --port 4181 --origin https://codemuseum.freexlib.com
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=30
+UMask=0077
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+# Shared lock with SSH prototypes. Do not use PrivateTmp: it would split the singleton lock.
+ReadWritePaths=/tmp
+
+[Install]
+WantedBy=multi-user.target

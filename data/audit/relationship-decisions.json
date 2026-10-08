@@ -1,0 +1,7 @@
+[
+  {
+    "key": "java|csharp|influencedBy",
+    "state": "needs-direct-evidence",
+    "note": "原有引用的规范导言不能仅凭读者熟悉度证明 Java 的设计影响。2026-10-08 复读当前导言，明确的是 C/C++ 程序员迁移目标；Java→C# 保留为待补直接设计依据，不视为已确认后继。"
+  }
+]

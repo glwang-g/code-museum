@@ -1,0 +1,1121 @@
+{
+  "servedInputs": {
+    "index.html": "331abf7c037cd2cd1e7db18c93a2d64801f2c439151cabed0d3dbc070eae8e4e",
+    "map-framing.js": "6f3952f57a76a319ae36a1bfa7b3210fafd551b0c4a63aff25a420c20874cfed",
+    "museum.css": "0037a97167cb87fa468be7e1efcb0d3b7ef2ae7c6268f745da3af9e10eb462b0",
+    "museum.js": "1fb895afd32cc9890e92627d92de7a7f5188e84b13ab1093626b8cd74ba8dd98",
+    "data/catalogue.js": "18b940214ed7d1bb3488043d10e584ba8bb3488b4a0b641dedb3164765df022b",
+    "lab.js": "d40ae322ef525b60ddc7dddfaadba358ac96e1f092acbb966ad9c19726099dfd",
+    "lab-examples.js": "1d45585edea31db0250dac85093e31a94d2ffcdc108f80a9e088332e8f2667ad",
+    "lab-worker.js": "d2f568c2087c77f9cd211a9e4c01478f1e8da07a088b29831f9d116762987371",
+    "python-worker.js": "bdb469021d0753e8bc9b0348e3ea2dc39bf2711376fdf6fd15eccf04255775a2",
+    "lua-worker.js": "372d411d5cb6e1602c631658affc928685008d8c7e0f111aa80a86f579ed322c",
+    "scheme-worker.js": "edd85647e32de729a794e1fb3c49135fefc7d24ec7a0437247570e6cf3bac360",
+    "assets/pyodide/manifest.json": "3dbcea8d0957a60a80c84966832a201d06aeb190d77b6491d7d50577b65ec3a4",
+    "credits.js": "dd9e8ffe2a3b54f4f8524e54bd19df2cde719f46879f3308d87e0bd37ce95530",
+    "relationship-coverage.js": "b38dc6766ac85653d6231cf24ec9b7a4220888590a2f51bcbbe7aeef0dbf439b",
+    "data/relationship-status.js": "81cc94d95b17cb01add45df36d0a27d06170bcd49d3a83ab269d3adb6f8b5bdc",
+    "data/relationship-status.json": "136c8f6ca6df4c8627e2ef4bbe9d6965adf249b6ac359050d18a84657194ca95",
+    "data/credits.js": "158aa7dc3009a8ef7b88fd0cfb0d1ead2b64d1bd29f06ffa54fd746019e3b239",
+    "data/credits.json": "327b36341e28bd99be7e5d560eb4b8ecc53d0a346d3cbe76541b37e9faf7c47e",
+    "licenses/linguist-LICENSE": "7717070c5a8c85440ff2312930bb30dd19002ab5bc235c9800042767f6f5242f"
+  },
+  "checkedAt": "2026-10-08T02:13:59.737Z",
+  "browser": "Chrome/154.0.8037.98",
+  "scope": "Actual headless Chrome over local HTTP; isolated temporary browser profile; external DNS blocked. Worker constructor/termination observed without replacing execution. Does not verify real tab visibility, idle release, production hosting or all languages.",
+  "inputs": {
+    "src/index.html": "331abf7c037cd2cd1e7db18c93a2d64801f2c439151cabed0d3dbc070eae8e4e",
+    "src/map-framing.js": "6f3952f57a76a319ae36a1bfa7b3210fafd551b0c4a63aff25a420c20874cfed",
+    "src/museum.js": "1fb895afd32cc9890e92627d92de7a7f5188e84b13ab1093626b8cd74ba8dd98",
+    "src/museum.css": "0037a97167cb87fa468be7e1efcb0d3b7ef2ae7c6268f745da3af9e10eb462b0",
+    "data/audit/reviews.json": "2d909be456c0ae949ae0e77b6d76da6547c20544fc895f4dbe5425ed789bd6e4",
+    "data/audit/map-eligible-ids.json": "6c6c9933ab1e699b919108c434f14bcdfdfd435025c0c4069c8b609e0cedff51",
+    "data/audit/label-selection.json": "dc5eee62fa662b0d60940375d8a3ec56ac2bbf84ee2b9922a290d46d11cc866f",
+    "data/relationship-overrides.json": "7691e8ee0179d1eaade1e3ed43cb728edcb3d0edcee5fe257775b4d345dc82d1",
+    "data/ecosystem-relations.json": "0d96e92a3853eddc6b32e4a45d5c90223d2096fa35438823f7dcfe72ce161e76",
+    "src/lab.js": "d40ae322ef525b60ddc7dddfaadba358ac96e1f092acbb966ad9c19726099dfd",
+    "src/lab-examples.js": "1d45585edea31db0250dac85093e31a94d2ffcdc108f80a9e088332e8f2667ad",
+    "data/audit/tcsh-runtime-checks.json": "705c264a54bab58c9f1352070cc67af682cb7db5a738f480c123fc233d692b02",
+    "data/audit/ksh93-runtime-checks.json": "21259e897473143db28792cee92aaddbb4ce14544262d797b0e26b424477e23e",
+    "data/audit/runtime-checks.json": "be324987d2bbcef6388a912bc5a7ad67fc3e401c9de68fb15167725211e4eee9",
+    "src/lab-worker.js": "d2f568c2087c77f9cd211a9e4c01478f1e8da07a088b29831f9d116762987371",
+    "src/python-worker.js": "bdb469021d0753e8bc9b0348e3ea2dc39bf2711376fdf6fd15eccf04255775a2",
+    "src/lua-worker.js": "372d411d5cb6e1602c631658affc928685008d8c7e0f111aa80a86f579ed322c",
+    "src/scheme-worker.js": "edd85647e32de729a794e1fb3c49135fefc7d24ec7a0437247570e6cf3bac360",
+    "public/assets/scheme/manifest.json": "2736ddf2f4a037f868630473dfc9fd21d42b276fad5e6fdc252890cc4b48b390",
+    "public/assets/scheme/biwascheme-core.mjs": "e65a09b4407d943860d274efc0e3a3537b356110819908d775ccd80dcb0015d1",
+    "scripts/serve.cjs": "7c96b6def7badd2916e6f686265171e7d7d27133a65d245a3d41bc8acc95f655",
+    "scripts/check-browser-runtime.cjs": "83e398d466ebe2cea0e1cf697deee279af890e29141fa00f232c114592dd0e7f",
+    "scripts/credits.cjs": "b91e528ce02b125fd65dfbc81011ff264387820c3a9cb300d124b6f7a35965f0",
+    "scripts/relationship-audit.cjs": "94c5d548328b21e909ac5826a7a34c2600bab841c990043dab6aa03905ea15b8",
+    "data/audit/relationship-decisions.json": "15c22e52c04c2813e78932805e639c116f40637fd173c82a493b8f34e885c145",
+    "src/relationship-coverage.js": "b38dc6766ac85653d6231cf24ec9b7a4220888590a2f51bcbbe7aeef0dbf439b",
+    "data/credits.json": "26b4638b6298c6dcee09536c3a2006eb758ba03d942e64df705d4ff31ffd69b3",
+    "src/credits.js": "dd9e8ffe2a3b54f4f8524e54bd19df2cde719f46879f3308d87e0bd37ce95530",
+    "public/assets/pyodide/manifest.json": "3dbcea8d0957a60a80c84966832a201d06aeb190d77b6491d7d50577b65ec3a4"
+  },
+  "checks": [
+    {
+      "name": "Open source credits, bundled license links and real mouse lab attribution navigation",
+      "detail": [
+        {
+          "width": 1440,
+          "language": "javascript",
+          "id": "browser-javascript"
+        },
+        {
+          "width": 1440,
+          "language": "python",
+          "id": "pyodide"
+        },
+        {
+          "width": 1440,
+          "language": "lua",
+          "id": "wasmoon"
+        },
+        {
+          "width": 1440,
+          "language": "scheme",
+          "id": "biwascheme"
+        },
+        {
+          "width": 390,
+          "language": "javascript",
+          "id": "browser-javascript"
+        },
+        {
+          "width": 390,
+          "language": "python",
+          "id": "pyodide"
+        },
+        {
+          "width": 390,
+          "language": "lua",
+          "id": "wasmoon"
+        },
+        {
+          "width": 390,
+          "language": "scheme",
+          "id": "biwascheme"
+        }
+      ]
+    },
+    {
+      "name": "Relationship evidence real mouse/keyboard navigation, both map layers/views and 50 label coverage",
+      "detail": [
+        {
+          "width": 1440,
+          "mode": "timeline",
+          "key": "csharp|scala|influencedBy",
+          "state": "excerpt-recorded"
+        },
+        {
+          "width": 1440,
+          "mode": "timeline",
+          "key": "java|javascript|influencedBy",
+          "state": "field-only"
+        },
+        {
+          "width": 1440,
+          "mode": "timeline",
+          "key": "java|csharp|influencedBy",
+          "state": "needs-direct-evidence"
+        },
+        {
+          "width": 1440,
+          "mode": "timeline",
+          "key": "c|python|extensionInterface",
+          "state": "citation-only"
+        },
+        {
+          "width": 1440,
+          "mode": "lineage",
+          "key": "csharp|scala|influencedBy",
+          "state": "excerpt-recorded"
+        },
+        {
+          "width": 1440,
+          "mode": "lineage",
+          "key": "java|javascript|influencedBy",
+          "state": "field-only"
+        },
+        {
+          "width": 1440,
+          "mode": "lineage",
+          "key": "java|csharp|influencedBy",
+          "state": "needs-direct-evidence"
+        },
+        {
+          "width": 1440,
+          "mode": "lineage",
+          "key": "c|python|extensionInterface",
+          "state": "citation-only"
+        },
+        {
+          "width": 390,
+          "mode": "timeline",
+          "key": "csharp|scala|influencedBy",
+          "state": "excerpt-recorded"
+        },
+        {
+          "width": 390,
+          "mode": "timeline",
+          "key": "java|javascript|influencedBy",
+          "state": "field-only"
+        },
+        {
+          "width": 390,
+          "mode": "timeline",
+          "key": "java|csharp|influencedBy",
+          "state": "needs-direct-evidence"
+        },
+        {
+          "width": 390,
+          "mode": "timeline",
+          "key": "c|python|extensionInterface",
+          "state": "citation-only"
+        },
+        {
+          "width": 390,
+          "mode": "lineage",
+          "key": "csharp|scala|influencedBy",
+          "state": "excerpt-recorded"
+        },
+        {
+          "width": 390,
+          "mode": "lineage",
+          "key": "java|javascript|influencedBy",
+          "state": "field-only"
+        },
+        {
+          "width": 390,
+          "mode": "lineage",
+          "key": "java|csharp|influencedBy",
+          "state": "needs-direct-evidence"
+        },
+        {
+          "width": 390,
+          "mode": "lineage",
+          "key": "c|python|extensionInterface",
+          "state": "citation-only"
+        }
+      ]
+    },
+    {
+      "name": "JavaScript asynchronous execution",
+      "detail": "Chrome/154.0.8037.98"
+    },
+    {
+      "name": "Scheme interpreter expressions, continuations, errors, output limits, isolated runs and cancellation",
+      "detail": "BiwaScheme 0.8.3; wide/narrow; non-Wasm"
+    },
+    {
+      "name": "Lua bundled Wasm output, syntax errors, isolation, timeout recovery and tab cancellation",
+      "detail": "55; Lua 5.4; wide/narrow"
+    },
+    {
+      "name": "Python HTTP-loaded Pyodide execution",
+      "detail": "55"
+    },
+    {
+      "name": "Chrome loads Brotli-compressed Wasm with correct MIME",
+      "detail": {
+        "file": "/assets/pyodide/pyodide.asm.wasm",
+        "status": 200,
+        "mimeType": "application/wasm",
+        "encoding": "br"
+      }
+    },
+    {
+      "name": "Python archive reopening reuses worker, draft and result",
+      "detail": 3
+    },
+    {
+      "name": "Python bounded output preserves actual exception",
+      "detail": 20000
+    },
+    {
+      "name": "Python infinite loop termination and recovery",
+      "detail": "9"
+    },
+    {
+      "name": "Reviewed VBA and VBScript map nodes, family links and detail evidence",
+      "detail": "Visual Basic → VBA → VBScript"
+    },
+    {
+      "name": "kotlin reviewed design links appear in river and lineage views",
+      "detail": [
+        "java",
+        "csharp",
+        "javascript",
+        "scala",
+        "groovy"
+      ]
+    },
+    {
+      "name": "lua reviewed design links appear in river and lineage views",
+      "detail": [
+        "scheme",
+        "cpp",
+        "snobol",
+        "awk"
+      ]
+    },
+    {
+      "name": "Wide lab fits viewport",
+      "detail": {
+        "width": 1440,
+        "height": 1000,
+        "scrollWidth": 1440,
+        "scrollHeight": 1000
+      }
+    },
+    {
+      "name": "Narrow lab fits viewport",
+      "detail": {
+        "width": 390,
+        "height": 844,
+        "scrollWidth": 390,
+        "scrollHeight": 844
+      }
+    },
+    {
+      "name": "Editable shell samples match native evidence and never fabricate browser results",
+      "detail": [
+        {
+          "id": "bash",
+          "width": 1440,
+          "nativeSampleMatched": true,
+          "onlineRuntime": false
+        },
+        {
+          "id": "korn-shell",
+          "width": 1440,
+          "nativeSampleMatched": true,
+          "onlineRuntime": false
+        },
+        {
+          "id": "tcsh",
+          "width": 1440,
+          "nativeSampleMatched": true,
+          "onlineRuntime": false
+        },
+        {
+          "id": "bash",
+          "width": 390,
+          "nativeSampleMatched": true,
+          "onlineRuntime": false
+        },
+        {
+          "id": "korn-shell",
+          "width": 390,
+          "nativeSampleMatched": true,
+          "onlineRuntime": false
+        },
+        {
+          "id": "tcsh",
+          "width": 390,
+          "nativeSampleMatched": true,
+          "onlineRuntime": false
+        }
+      ]
+    },
+    {
+      "name": "lua focus labels avoid overlaps and guides remain aligned after zoom and fit",
+      "detail": {
+        "viewport": {
+          "left": 9,
+          "right": 381,
+          "top": 219.09375,
+          "bottom": 817
+        },
+        "labels": [
+          {
+            "id": "lua",
+            "placement": "placed",
+            "left": 319.5856014589844,
+            "right": 362.9918014589844,
+            "top": 488.0270059765625,
+            "bottom": 519.6208059765626,
+            "width": 43.4062
+          },
+          {
+            "id": "scheme",
+            "placement": "placed",
+            "left": 89.4529800415039,
+            "right": 183.53109741210938,
+            "top": 471.6585998535156,
+            "bottom": 499.6585998535156
+          },
+          {
+            "id": "cpp",
+            "placement": "placed",
+            "left": 221.38626098632812,
+            "right": 293.6050109863281,
+            "top": 479.6737976074219,
+            "bottom": 507.6737976074219
+          },
+          {
+            "id": "snobol",
+            "placement": "placed",
+            "left": 26.852367401123047,
+            "right": 125.13361740112305,
+            "top": 438.6585998535156,
+            "bottom": 466.6585998535156
+          },
+          {
+            "id": "awk",
+            "placement": "placed",
+            "left": 77.75761066650391,
+            "right": 115.8982106665039,
+            "top": 504.6585741914063,
+            "bottom": 530.8460741914063,
+            "width": 38.1406
+          },
+          {
+            "id": "b",
+            "placement": "placed",
+            "left": 120.8982162475586,
+            "right": 177.28883361816406,
+            "top": 504.6585693359375,
+            "bottom": 532.6585693359375
+          },
+          {
+            "id": "bcpl",
+            "placement": "placed",
+            "left": 36.28205871582031,
+            "right": 115.70393371582031,
+            "top": 535.8460693359375,
+            "bottom": 563.8460693359375
+          },
+          {
+            "id": "c",
+            "placement": "placed",
+            "left": 168.4469757080078,
+            "right": 225.54071044921875,
+            "top": 438.6585998535156,
+            "bottom": 466.6585998535156
+          },
+          {
+            "id": "lisp",
+            "placement": "placed",
+            "left": 40.04768371582031,
+            "right": 111.93830871582031,
+            "top": 405.6585693359375,
+            "bottom": 433.6585693359375
+          }
+        ],
+        "guides": [
+          {
+            "id": "scheme",
+            "x": 136.49440002441406,
+            "y": 499.6585693359375
+          },
+          {
+            "id": "snobol",
+            "x": 75.99299621582031,
+            "y": 466.6585998535156
+          },
+          {
+            "id": "b",
+            "x": 136.49440002441406,
+            "y": 504.6585693359375
+          },
+          {
+            "id": "bcpl",
+            "x": 75.99299621582031,
+            "y": 535.8460693359375
+          },
+          {
+            "id": "c",
+            "x": 196.99581909179688,
+            "y": 466.6585998535156
+          },
+          {
+            "id": "lisp",
+            "x": 75.99299621582031,
+            "y": 433.6585693359375
+          }
+        ],
+        "evidenceCounts": {
+          "cited": 7,
+          "fieldOnly": 1
+        }
+      }
+    },
+    {
+      "name": "kotlin focus labels avoid overlaps and guides remain aligned after zoom and fit",
+      "detail": {
+        "viewport": {
+          "left": 9,
+          "right": 381,
+          "top": 219.09375,
+          "bottom": 817
+        },
+        "labels": [
+          {
+            "id": "kotlin",
+            "placement": "placed",
+            "left": 306.83702568359377,
+            "right": 363.14952568359377,
+            "top": 505.8147780761719,
+            "bottom": 537.4085780761719,
+            "width": 56.3125
+          },
+          {
+            "id": "java",
+            "placement": "placed",
+            "left": 27.03076171875,
+            "right": 101.26513671875,
+            "top": 482.45880126953125,
+            "bottom": 510.45880126953125
+          },
+          {
+            "id": "csharp",
+            "placement": "placed",
+            "left": 112.01446533203125,
+            "right": 176.67071533203125,
+            "top": 507.7199401855469,
+            "bottom": 535.719970703125
+          },
+          {
+            "id": "javascript",
+            "placement": "placed",
+            "left": 106.26513671875,
+            "right": 214.09326171875,
+            "top": 474.7199401855469,
+            "bottom": 502.7199401855469
+          },
+          {
+            "id": "scala",
+            "placement": "placed",
+            "left": 184.96694946289062,
+            "right": 264.10760498046875,
+            "top": 441.7199401855469,
+            "bottom": 469.7199401855469
+          },
+          {
+            "id": "groovy",
+            "placement": "placed",
+            "left": 99.92852783203125,
+            "right": 188.75665283203125,
+            "top": 540.719970703125,
+            "bottom": 568.719970703125
+          },
+          {
+            "id": "cpp",
+            "placement": "placed",
+            "left": 17,
+            "right": 89.21875,
+            "top": 449.45880126953125,
+            "bottom": 477.4588317871094
+          }
+        ],
+        "guides": [
+          {
+            "id": "groovy",
+            "x": 144.34365844726562,
+            "y": 546.9810791015625
+          },
+          {
+            "id": "javascript",
+            "x": 144.34365844726562,
+            "y": 496.45880126953125
+          },
+          {
+            "id": "scala",
+            "x": 224.53778076171875,
+            "y": 469.7199401855469
+          },
+          {
+            "id": "cpp",
+            "x": 16.999996185302734,
+            "y": 477.45880126953125
+          }
+        ],
+        "evidenceCounts": {
+          "cited": 14,
+          "fieldOnly": 3
+        }
+      }
+    },
+    {
+      "name": "Concrete ALGOL 60 label, preserved version endpoints and pending relation evidence",
+      "detail": [
+        {
+          "mode": "timeline",
+          "width": 1440
+        },
+        {
+          "mode": "lineage",
+          "width": 1440
+        },
+        {
+          "mode": "timeline",
+          "width": 390
+        },
+        {
+          "mode": "lineage",
+          "width": 390
+        }
+      ]
+    },
+    {
+      "name": "BASIC designer interview links Fortran and ALGOL without inventing subset or edition",
+      "detail": [
+        {
+          "mode": "timeline",
+          "width": 1440
+        },
+        {
+          "mode": "lineage",
+          "width": 1440
+        },
+        {
+          "mode": "timeline",
+          "width": 390
+        },
+        {
+          "mode": "lineage",
+          "width": 390
+        }
+      ]
+    },
+    {
+      "name": "Forth and PostScript retain specific author-documented design inputs",
+      "detail": [
+        {
+          "mode": "timeline",
+          "width": 1440
+        },
+        {
+          "mode": "lineage",
+          "width": 1440
+        },
+        {
+          "mode": "timeline",
+          "width": 390
+        },
+        {
+          "mode": "lineage",
+          "width": 390
+        }
+      ]
+    },
+    {
+      "name": "FLOW-MATIC historical syntax and COBOL original design input retain scope and provenance",
+      "detail": [
+        {
+          "mode": "timeline",
+          "width": 1440
+        },
+        {
+          "mode": "lineage",
+          "width": 1440
+        },
+        {
+          "mode": "timeline",
+          "width": 390
+        },
+        {
+          "mode": "lineage",
+          "width": 390
+        }
+      ]
+    },
+    {
+      "name": "Prolog Erlang historical design link supports upstream and downstream navigation",
+      "detail": [
+        {
+          "mode": "timeline",
+          "width": 1440
+        },
+        {
+          "mode": "lineage",
+          "width": 1440
+        },
+        {
+          "mode": "timeline",
+          "width": 390
+        },
+        {
+          "mode": "lineage",
+          "width": 390
+        }
+      ]
+    },
+    {
+      "name": "Ada VHDL design influence preserves hardware semantics and source level",
+      "detail": [
+        {
+          "mode": "timeline",
+          "width": 1440
+        },
+        {
+          "mode": "lineage",
+          "width": 1440
+        },
+        {
+          "mode": "timeline",
+          "width": 390
+        },
+        {
+          "mode": "lineage",
+          "width": 390
+        }
+      ]
+    },
+    {
+      "name": "Pascal Modula-2 Oberon design chain and nonmap predecessors retain cited scope",
+      "detail": [
+        {
+          "mode": "timeline",
+          "width": 1440
+        },
+        {
+          "mode": "lineage",
+          "width": 1440
+        },
+        {
+          "mode": "timeline",
+          "width": 390
+        },
+        {
+          "mode": "lineage",
+          "width": 390
+        }
+      ]
+    },
+    {
+      "name": "Korn designer-backed upstream links and Bourne publication event remain scoped",
+      "detail": [
+        {
+          "mode": "timeline",
+          "width": 1440
+        },
+        {
+          "mode": "lineage",
+          "width": 1440
+        },
+        {
+          "mode": "timeline",
+          "width": 390
+        },
+        {
+          "mode": "lineage",
+          "width": 390
+        }
+      ]
+    },
+    {
+      "name": "Historical C shell evidence and tcsh version-scoped extension remain distinct",
+      "detail": [
+        {
+          "mode": "timeline",
+          "width": 1440
+        },
+        {
+          "mode": "lineage",
+          "width": 1440
+        },
+        {
+          "mode": "timeline",
+          "width": 390
+        },
+        {
+          "mode": "lineage",
+          "width": 390
+        }
+      ]
+    },
+    {
+      "name": "Bash documented design inputs and XSLT implementation retain source and runtime scope",
+      "detail": [
+        {
+          "mode": "timeline",
+          "width": 1440
+        },
+        {
+          "mode": "lineage",
+          "width": 1440
+        },
+        {
+          "mode": "timeline",
+          "width": 390
+        },
+        {
+          "mode": "lineage",
+          "width": 390
+        }
+      ]
+    },
+    {
+      "name": "Python/Rust/Zig/PowerShell ecosystem layer and keyboard relation preview restore",
+      "detail": [
+        {
+          "id": "python",
+          "mode": "timeline",
+          "width": 1440,
+          "direct": [
+            "python",
+            "c",
+            "cpp",
+            "java",
+            "rust"
+          ]
+        },
+        {
+          "id": "rust",
+          "mode": "timeline",
+          "width": 1440,
+          "direct": [
+            "rust",
+            "c",
+            "python"
+          ]
+        },
+        {
+          "id": "zig",
+          "mode": "timeline",
+          "width": 1440,
+          "direct": [
+            "zig",
+            "c"
+          ]
+        },
+        {
+          "id": "powershell",
+          "mode": "timeline",
+          "width": 1440,
+          "direct": [
+            "powershell",
+            "csharp"
+          ]
+        },
+        {
+          "id": "python",
+          "mode": "lineage",
+          "width": 1440,
+          "direct": [
+            "python",
+            "c",
+            "cpp",
+            "java",
+            "rust"
+          ]
+        },
+        {
+          "id": "rust",
+          "mode": "lineage",
+          "width": 1440,
+          "direct": [
+            "rust",
+            "c",
+            "python"
+          ]
+        },
+        {
+          "id": "zig",
+          "mode": "lineage",
+          "width": 1440,
+          "direct": [
+            "zig",
+            "c"
+          ]
+        },
+        {
+          "id": "powershell",
+          "mode": "lineage",
+          "width": 1440,
+          "direct": [
+            "powershell",
+            "csharp"
+          ]
+        },
+        {
+          "id": "python",
+          "mode": "timeline",
+          "width": 390,
+          "direct": [
+            "python",
+            "c",
+            "cpp",
+            "java",
+            "rust"
+          ]
+        },
+        {
+          "id": "rust",
+          "mode": "timeline",
+          "width": 390,
+          "direct": [
+            "rust",
+            "c",
+            "python"
+          ]
+        },
+        {
+          "id": "zig",
+          "mode": "timeline",
+          "width": 390,
+          "direct": [
+            "zig",
+            "c"
+          ]
+        },
+        {
+          "id": "powershell",
+          "mode": "timeline",
+          "width": 390,
+          "direct": [
+            "powershell",
+            "csharp"
+          ]
+        },
+        {
+          "id": "python",
+          "mode": "lineage",
+          "width": 390,
+          "direct": [
+            "python",
+            "c",
+            "cpp",
+            "java",
+            "rust"
+          ]
+        },
+        {
+          "id": "rust",
+          "mode": "lineage",
+          "width": 390,
+          "direct": [
+            "rust",
+            "c",
+            "python"
+          ]
+        },
+        {
+          "id": "zig",
+          "mode": "lineage",
+          "width": 390,
+          "direct": [
+            "zig",
+            "c"
+          ]
+        },
+        {
+          "id": "powershell",
+          "mode": "lineage",
+          "width": 390,
+          "direct": [
+            "powershell",
+            "csharp"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Selected runnable labels expose clickable and keyboard-accessible lab icons",
+      "detail": [
+        {
+          "id": "javascript",
+          "mode": "timeline",
+          "width": 24.0001220703125,
+          "label": "JavaScript 可在线运行 · 打开实验台",
+          "height": 24,
+          "inside": true,
+          "hit": true
+        },
+        {
+          "id": "python",
+          "mode": "timeline",
+          "width": 24,
+          "label": "Python 可在线运行 · 打开实验台",
+          "height": 24,
+          "inside": true,
+          "hit": true
+        },
+        {
+          "id": "lua",
+          "mode": "timeline",
+          "width": 24,
+          "label": "Lua 可在线运行 · 打开实验台",
+          "height": 24,
+          "inside": true,
+          "hit": true
+        },
+        {
+          "id": "scheme",
+          "mode": "timeline",
+          "width": 24,
+          "label": "Scheme 可在线运行 · 打开实验台",
+          "height": 24,
+          "inside": true,
+          "hit": true
+        },
+        {
+          "id": "javascript",
+          "mode": "lineage",
+          "width": 24,
+          "label": "JavaScript 可在线运行 · 打开实验台",
+          "height": 24,
+          "inside": true,
+          "hit": true
+        },
+        {
+          "id": "python",
+          "mode": "lineage",
+          "width": 23.999969482421875,
+          "label": "Python 可在线运行 · 打开实验台",
+          "height": 24,
+          "inside": true,
+          "hit": true
+        },
+        {
+          "id": "lua",
+          "mode": "lineage",
+          "width": 23.99993896484375,
+          "label": "Lua 可在线运行 · 打开实验台",
+          "height": 24,
+          "inside": true,
+          "hit": true
+        },
+        {
+          "id": "scheme",
+          "mode": "lineage",
+          "width": 24,
+          "label": "Scheme 可在线运行 · 打开实验台",
+          "height": 24,
+          "inside": true,
+          "hit": true
+        },
+        {
+          "id": "javascript",
+          "mode": "timeline",
+          "width": 23.999969482421875,
+          "label": "JavaScript 可在线运行 · 打开实验台",
+          "height": 24,
+          "inside": true,
+          "hit": true
+        },
+        {
+          "id": "python",
+          "mode": "timeline",
+          "width": 23.99993896484375,
+          "label": "Python 可在线运行 · 打开实验台",
+          "height": 24,
+          "inside": true,
+          "hit": true
+        },
+        {
+          "id": "lua",
+          "mode": "timeline",
+          "width": 24,
+          "label": "Lua 可在线运行 · 打开实验台",
+          "height": 24,
+          "inside": true,
+          "hit": true
+        },
+        {
+          "id": "scheme",
+          "mode": "timeline",
+          "width": 24,
+          "label": "Scheme 可在线运行 · 打开实验台",
+          "height": 23.999969482421875,
+          "inside": true,
+          "hit": true
+        },
+        {
+          "id": "javascript",
+          "mode": "lineage",
+          "width": 24,
+          "label": "JavaScript 可在线运行 · 打开实验台",
+          "height": 24,
+          "inside": true,
+          "hit": true
+        },
+        {
+          "id": "python",
+          "mode": "lineage",
+          "width": 24.000015258789062,
+          "label": "Python 可在线运行 · 打开实验台",
+          "height": 24,
+          "inside": true,
+          "hit": true
+        },
+        {
+          "id": "lua",
+          "mode": "lineage",
+          "width": 24,
+          "label": "Lua 可在线运行 · 打开实验台",
+          "height": 24,
+          "inside": true,
+          "hit": true
+        },
+        {
+          "id": "scheme",
+          "mode": "lineage",
+          "width": 24.000015258789062,
+          "label": "Scheme 可在线运行 · 打开实验台",
+          "height": 24.000030517578125,
+          "inside": true,
+          "hit": true
+        }
+      ]
+    },
+    {
+      "name": "Map fuzzy search selects nodes in both views, preserves punctuation and supports full collection fallback",
+      "detail": [
+        {
+          "mode": "timeline",
+          "width": 1440,
+          "typo": "pyton → Python",
+          "dot": "tcsh",
+          "keyboard": true,
+          "escape": true,
+          "outside": true,
+          "clear": true
+        },
+        {
+          "mode": "lineage",
+          "width": 1440,
+          "typo": "pyton → Python",
+          "dot": "tcsh",
+          "keyboard": true,
+          "escape": true,
+          "outside": true,
+          "clear": true
+        },
+        {
+          "mode": "timeline",
+          "width": 390,
+          "typo": "pyton → Python",
+          "dot": "tcsh",
+          "keyboard": true,
+          "escape": true,
+          "outside": true,
+          "clear": true
+        },
+        {
+          "mode": "lineage",
+          "width": 390,
+          "typo": "pyton → Python",
+          "dot": "tcsh",
+          "keyboard": true,
+          "escape": true,
+          "outside": true,
+          "clear": true
+        },
+        {
+          "relatedDotLabel": {
+            "pointerEvents": "auto",
+            "width": 40.5625,
+            "height": 26.1875,
+            "hit": "abc"
+          },
+          "checks": "dot name label is hit-testable"
+        }
+      ]
+    }
+  ]
+}

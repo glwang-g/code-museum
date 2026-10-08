@@ -5,7 +5,8 @@
     "type": "influencedBy",
     "label": "资源管理与移动语义",
     "source": "https://doc.rust-lang.org/reference/influences.html",
-    "evidence": "Rust Reference 的 Influences 页列举 C++ 对引用、RAII、智能指针和移动语义等设计的影响。"
+    "evidence": "Rust Reference 的 Influences 页列举 C++ 对引用、RAII、智能指针和移动语义等设计的影响。",
+    "sourceSha256": "a1585e914cc55a3422f7e376456bb5bd31fdfe71a68e1f8d1736a58adea7c892"
   },
   {
     "from": "ocaml",
@@ -13,7 +14,8 @@
     "type": "influencedBy",
     "label": "代数数据类型与模式匹配",
     "source": "https://doc.rust-lang.org/reference/influences.html",
-    "evidence": "Rust Reference 的 Influences 页列举 OCaml 对代数数据类型、模式匹配和类型推断的影响。"
+    "evidence": "Rust Reference 的 Influences 页列举 OCaml 对代数数据类型、模式匹配和类型推断的影响。",
+    "sourceSha256": "a1585e914cc55a3422f7e376456bb5bd31fdfe71a68e1f8d1736a58adea7c892"
   },
   {
     "from": "haskell",
@@ -21,7 +23,8 @@
     "type": "influencedBy",
     "label": "类型类设计参照",
     "source": "https://doc.rust-lang.org/reference/influences.html",
-    "evidence": "Rust Reference 的 Influences 页列举 Haskell 的 typeclasses 和 type families 等设计输入。"
+    "evidence": "Rust Reference 的 Influences 页列举 Haskell 的 typeclasses 和 type families 等设计输入。",
+    "sourceSha256": "a1585e914cc55a3422f7e376456bb5bd31fdfe71a68e1f8d1736a58adea7c892"
   },
   {
     "from": "erlang",
@@ -29,7 +32,8 @@
     "type": "influencedBy",
     "label": "消息传递与轻量并发",
     "source": "https://doc.rust-lang.org/reference/influences.html",
-    "evidence": "Rust Reference 的 Influences 页列举 Erlang 的消息传递和轻量级并发。"
+    "evidence": "Rust Reference 的 Influences 页列举 Erlang 的消息传递和轻量级并发。",
+    "sourceSha256": "a1585e914cc55a3422f7e376456bb5bd31fdfe71a68e1f8d1736a58adea7c892"
   },
   {
     "from": "scheme",
@@ -37,7 +41,8 @@
     "type": "influencedBy",
     "label": "卫生宏",
     "source": "https://doc.rust-lang.org/reference/influences.html",
-    "evidence": "Rust Reference 的 Influences 页列举 Scheme 的卫生宏设计。"
+    "evidence": "Rust Reference 的 Influences 页列举 Scheme 的卫生宏设计。",
+    "sourceSha256": "a1585e914cc55a3422f7e376456bb5bd31fdfe71a68e1f8d1736a58adea7c892"
   },
   {
     "from": "csharp",
@@ -45,7 +50,8 @@
     "type": "influencedBy",
     "label": "属性设计参照",
     "source": "https://doc.rust-lang.org/reference/influences.html",
-    "evidence": "Rust Reference 的 Influences 页列举 C# 的属性作为设计输入。"
+    "evidence": "Rust Reference 的 Influences 页列举 C# 的属性作为设计输入。",
+    "sourceSha256": "a1585e914cc55a3422f7e376456bb5bd31fdfe71a68e1f8d1736a58adea7c892"
   },
   {
     "from": "ruby",
@@ -53,7 +59,8 @@
     "type": "influencedBy",
     "label": "闭包与块语法",
     "source": "https://doc.rust-lang.org/reference/influences.html",
-    "evidence": "Rust Reference 的 Influences 页列举 Ruby 的闭包与块语法设计。"
+    "evidence": "Rust Reference 的 Influences 页列举 Ruby 的闭包与块语法设计。",
+    "sourceSha256": "a1585e914cc55a3422f7e376456bb5bd31fdfe71a68e1f8d1736a58adea7c892"
   },
   {
     "from": "bcpl",
@@ -83,17 +90,19 @@
     "from": "java",
     "to": "csharp",
     "type": "influencedBy",
-    "label": "语法与设计关联",
+    "label": "语法与设计关联（待补证）",
     "source": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/introduction",
-    "evidence": "Microsoft C# 规范导言将 Java 程序员列为会熟悉 C# 的目标读者，并说明 C# 扎根于 C 语言家族。结合 Java 与 C# 的语法和面向对象设计关联，此边记录设计影响；不表示 C# 是 Java 的派生语言，也不表示两者运行时兼容。"
+    "evidence": "早期录入以微软 C# 规范导言的读者定位推断 Java 的设计影响。2026-10-08 复读当前导言，只能确认 C/C++ 程序员迁移目标，无法由读者熟悉度单独证明 Java 设计输入；这条记录保留为待补直接依据，不表示已确认血缘或运行时兼容。",
+    "sourceSha256": "8416859ee73291ea294577e3b3c2d61b4e4f233611fd8f57f07d3150f24dec9a"
   },
   {
     "from": "java",
     "to": "scala",
     "type": "influencedBy",
-    "label": "语法与设计参照",
-    "source": "https://docs.scala-lang.org/tutorials/scala-for-java-programmers.html",
-    "evidence": "Scala 官方《A Scala Tutorial for Java Programmers》说明 Scala 简化 Java 的样板写法，并在相同的类型与运行时基础上构建；此处表示设计与语法承接，不表示 Scala 是 Java 的超集。"
+    "label": "语法与类型系统设计输入",
+    "source": "https://www.scala-lang.org/docu/files/ScalaOverview.pdf",
+    "evidence": "Scala 设计者《An Overview of the Scala Programming Language》第二版（2006）PDF第1页明确说 Scala 采纳 Java 与 C# 的大量语法和类型系统，同时明确不是 Java 的超集。此边表示设计输入，不以 JVM 共存推定继承。",
+    "sourceSha256": "293f06b72978ce2f934a6d6aa66e0a40ff9dadabbb605d98a67c6525b1d899bd"
   },
   {
     "from": "java",
@@ -693,5 +702,23 @@
     "source": "https://bitsavers.org/pdf/codasyl/COBOL_Report_Apr60.pdf",
     "sourceSha256": "3f45f870ee8de1ff177282b7ffd900fc6b154e11a9ca72e25b3c7fea63483ed6",
     "evidence": "CODASYL《COBOL — Initial Specifications》，1960年4月报告，Part I §3 Attribution，打印I-2/I-3（PDF13–14）：明确说ideas and information取自多种来源，特别列出FLOW-MATIC，并说明借用了1958年FLOW-MATIC Programming System资料；I-7（PDF18）记录作者授权。按委员会原始报告录为早期COBOL设计资料输入，不宣称所有版本超集、源码兼容或每个关键字唯一来自FLOW-MATIC。1959报告形成和1960批准是不同事件。"
+  },
+  {
+    "from": "csharp",
+    "to": "scala",
+    "type": "influencedBy",
+    "label": "语法与类型系统设计输入",
+    "source": "https://www.scala-lang.org/docu/files/ScalaOverview.pdf",
+    "sourceSha256": "293f06b72978ce2f934a6d6aa66e0a40ff9dadabbb605d98a67c6525b1d899bd",
+    "evidence": "Scala 设计者2006年概述 PDF第1页明确说采纳 Java 与 C# 的大量语法和类型系统；不是仅由平台共存推断，也不表示 C# 的严格后继或超集。"
+  },
+  {
+    "from": "swift",
+    "to": "rust",
+    "type": "influencedBy",
+    "label": "可选绑定设计输入",
+    "source": "https://doc.rust-lang.org/reference/influences.html",
+    "sourceSha256": "a1585e914cc55a3422f7e376456bb5bd31fdfe71a68e1f8d1736a58adea7c892",
+    "evidence": "Rust Reference 的 Influences 明确列出 Swift: optional bindings。清单描述语言演进，包含后来移除的元素；不是 Rust 首版受到尚未发布的 Swift 影响，馆藏初始年份不能代表各特性的引入年份。"
   }
 ]

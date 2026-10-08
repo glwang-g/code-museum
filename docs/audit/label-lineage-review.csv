@@ -9,7 +9,7 @@ bcpl,BCPL,1966,historical-primary-source,,b,1,1,0,0,0,,cited-only
 c,C,1972,verified-language,b,c-shell | cpp | go | java | korn-shell | objective-c | php,8,6,2,7,0,,cited-and-field
 cobol,COBOL,1959,verified-language,flow-matic,,1,1,0,1,0,,cited-only
 cpp,C++,1985,verified-language,c,d | java | lua | rust,5,4,1,9,0,,cited-and-field
-csharp,C#,2000,verified-language,java,kotlin | rust,3,3,0,4,0,,cited-only
+csharp,C#,2000,verified-language,java,kotlin | rust | scala,4,4,0,4,0,,cited-only
 d,D,2001,verified-language,cpp,,1,1,0,1,0,,cited-only
 dart,Dart,2011,verified-language,,,0,0,0,0,0,,no-map-link
 forth,Forth,1970,verified-language,algol | apl | fortran,postscript,4,4,0,1,0,,cited-only
@@ -34,14 +34,14 @@ prolog,Prolog,1972,verified-language,,erlang,1,1,0,4,0,,cited-only
 python,Python,1991,verified-language,abc,julia,2,2,0,13,1,f-sharp,cited-only
 r,R,1993,verified-language,,julia,1,1,0,2,0,,cited-only
 ruby,Ruby,1995,verified-language,ada | lisp | perl | smalltalk,julia | rust,6,6,0,3,0,,cited-only
-rust,Rust,2010,verified-language,cpp | csharp | erlang | haskell | ocaml | ruby | scheme,,7,7,0,6,0,,cited-only
-scala,Scala,2004,verified-language,java,kotlin,2,2,0,1,0,,cited-only
+rust,Rust,2010,verified-language,cpp | csharp | erlang | haskell | ocaml | ruby | scheme | swift,,8,8,0,6,0,,cited-only
+scala,Scala,2004,verified-language,csharp | java,kotlin,3,3,0,1,0,,cited-only
 scheme,Scheme,1975,verified-language,lisp,javascript | lua | rust,4,3,1,4,0,,cited-and-field
 simula,Simula,1965,historical-primary-source,algol-60,smalltalk,2,2,0,0,0,,cited-only
 smalltalk,Smalltalk,1972,verified-language,lisp | simula,ruby,3,3,0,0,0,,cited-only
 snobol,SNOBOL,1962,unreviewed,,lua,1,1,0,0,0,,cited-only
 sql,SQL,1974,verified-language,,pl-sql,1,1,0,6,0,,cited-only
-swift,Swift,2014,verified-language,objective-c,,1,1,0,1,0,,cited-only
+swift,Swift,2014,verified-language,objective-c,rust,2,2,0,1,0,,cited-only
 typescript,TypeScript,2012,verified-language,javascript,,1,0,1,4,0,,field-only
 vbscript,VBScript,1996,verified-language,vba,,1,1,0,0,1,visual-basic,cited-only
 vhdl,VHDL,1983,verified-language,ada,,1,1,0,0,0,,cited-only

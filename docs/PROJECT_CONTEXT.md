@@ -1,6 +1,6 @@
 # Code Museum · 产品上下文与交接
 
-整理于 2026-09-24，更新于 2026-10-05，依据项目讨论及当前源码。本文是上下文摘要，不是完整聊天记录，也不是所有讨论项均已实施的承诺。构建方法见 [README](../README.md)。
+整理于 2026-09-24，更新于 2026-10-08，依据项目讨论及当前源码。本文是上下文摘要，不是完整聊天记录，也不是所有讨论项均已实施的承诺。构建方法见 [README](../README.md)。
 
 ## 1. 我们在做什么
 
@@ -38,7 +38,7 @@
 
 - 不能把语言影响关系简化成单亲血缘树。区分语法借鉴、思想影响、超集扩展、实现关系等概念；规范化历史关系支持 `influencedBy`、`successorOf`、`supersetOf`、`implementationOf` 和 `compatibleWith`；独立生态关系支持 `extensionInterface`、`hostRuntime` 和 `interop`。每条关系仍需独立核实。
 - Java 与 C/C++ 有明确的词法、语句等影响，不能直接等同于 C++ 的派生版本或超集。Smalltalk 的上游不能留成“凭空出现”；当前已有 Simula、Lisp 的带出处补充。
-- Java → C# 作为语法与设计影响关联录入，依据 Microsoft C# 规范导言中的 Java 读者定位；这条关系不表示 C# 是 Java 派生语言或两者运行时兼容。
+- Java → C# 的旧记录以读者定位推断设计关联；2026-10-08 复读规范后明确降为「直接设计依据待补」，不视为已确认继承。读者熟悉度本身不构成设计影响证据。
 - Java → Scala 与 Java → Groovy 依据 Scala、Groovy 官方教程和语言说明录入为语法与设计影响；JVM 互操作本身不能推导出超集或严格的前后继承。
 - Rust 官方 Reference 的影响清单明确列出 C++、OCaml、Haskell、Erlang、Scheme、C#、Ruby 的具体设计输入，已逐条补为设计关系。Python 与 C/C++ 的 CPython 扩展接口、Java 的 Jython 平台实现、Rust 的 PyO3 工具互操作，以及 Rust 与 C 的 FFI，归入单独的生态层；这些不表示 Python 或 Rust 继承了对应语言。
 - Objective-C → Swift 依据 Swift 官方关于命名参数设计承接的说明录入；Ruby 官方列举的 Perl、Smalltalk、Eiffel、Ada、Lisp 影响也已逐条录入。它们均表示设计影响，不表示严格的语言继承或源码兼容。
@@ -230,3 +230,35 @@
 发布核验：实现提交9216c2e已上线。GitHub SSH两次及HTTPS一次推送均返回服务端Internal Server Error，先经现有xshow SSH通道以code-museum-deploy账户上传独立release，逐文件SHA验证后用既有activate脚本原子激活；随后同一提交GitHub重试推送成功，未修改仓库配置、用户权限或其他站点。正式HTTPS实际Chrome在1440/390px验证7张展签、四种运行环境真实鼠标跳转/聚焦、5份本地许可可读、Ruby不冒充已接入、JS/Scheme均输出42；7份页面/清单/许可文件与本地构建SHA一致，线上截图已查看。记录见data/audit/credits-production-checks.json。
 
 GitHub恢复后的Actions 37655741064已完成build和deploy，同一9216c2e版本自动发布成功；首轮SSH兜底发布与后续自动构建使用相同源码输入。
+
+
+## 2026-10-08 语言关系证据与盘点
+
+按用户“开搞”实施常显语言关系数据体检、连线证据展示和自动检查。出处页新增关系核对入口，全部50个常显标签逐项列出档案设计上游/下游、生态关联、地图内连线及论证/摘录缺口，可筛选和跳到档案。地图两种视图、两个关系层的连线支持鼠标和键盘查看依据；档案有独立证据按钮，展示原文摘录、读取时间、哈希口径、来源及待核事项。交叠线按点击到实际曲线距离选择，近似同位置时提供选择列表；点地图空白仍恢复全景。
+
+新增离线 scripts/relationship-audit.cjs；构建自动重算并公开data/relationship-status.json/js。原始人工关系重复不会被规范化去重掩盖，无效/自连端点、无效类型和来源URL阻止构建；缺论证、未存原文、哈希版本差异、年代异常与设计环路保持可追溯。全部常显标签均已盘点当前记录，不表示50个语言历史关系全部找齐。当前426条关系（419条规范化设计/历史关系、7条独立生态关系）：336条字段待核、39条有引用但缺匹配摘录、50条论证与引用摘录已存、1条直接设计依据待补；5项年代警告，无设计环路。设计层常显地图缺口仍4个。
+
+新增C#→Scala、Swift→Rust；Java→Scala替换为设计者2006年论文直接论证，七条既有Rust影响补存官方原文摘录。Swift晚于Rust首次出现不意味着这条演进关系错误，须核对后续特性事件；不把馆藏初始年当作所有特性的引入年。Java→C#旧论证不足，保留待补证并在图中弱化。Dart官方规范源码未发现明确设计来源声明；汇编类别、XSLT参考文献、Zig C ABI接口不用于补造设计继承。83条语言审查记录、166条已读来源，不宣称全馆已核。
+
+本轮先完成本地实现与核验，未提交、推送或部署；发布需按本轮明确指令进行。测试与浏览器核验结果另附完成记录。
+
+
+完成核验：38项npm测试、离线构建通过；31组实际Chrome回归通过，包括1440/390两种尺寸、时间长河/谱系、设计/生态层的16种真实鼠标连线选择和真实Enter键打开依据，字段待核/引用缺摘录/原文已存/直接依据待补四个证据状态，50个标签与4个地图缺口筛选，以及原有实验台真实执行、地图标签和搜索回归。宽窄屏连线/证据与核对列表截图已查看；浏览器记录见data/audit/relationship-browser-checks.json。没有重新做全量地图遍历，未核验原生Safari或正式站点；本轮仍为本地实现。
+
+
+## 2026-10-08 Docker 私有执行首版
+
+用户决定先用Docker实现受限服务原型。新增标准库Python API，Python/Ruby原生固定digest官方镜像，loopback监听、Bearer令牌及会话归属校验；单并发、有界队列/配额、独立非root禁网只读容器、内存/CPU/进程/输出限制、取消及独立宿主watchdog清理。源码与stdin完成后移出任务记录；不记录源码日志。运行时不自动pull镜像。
+
+实验台Python/Ruby默认remote，仅点击运行上传；无API时显示未连接。Python可切本地Pyodide，Python/Lua/Scheme均需明确启用后才加载，本地启用后保留编辑自动执行；JS原生照旧。Ruby本地选项禁用，未实现ruby.wasm。切语言/页签或编辑取消远端旧任务，generation阻止旧结果覆盖。远端标注原生版本/官方Docker镜像来源，本地保持原开源运行时归属。修复切语言时旧执行模式render覆盖新语言许可按钮。
+
+本机无运行中的Docker daemon，实际Linux Docker核验在xshow独立临时目录和loopback API进行，不操作生产Nginx/统计/站点。提供 `npm run executor:preview`，通过SSH stdin传源码和私有令牌到独立临时目录，以loopback隧道提供4174预览，30分钟到期、Ctrl+C或SSH stdin断开清理。说明、来源、版本、资源预算、复现步骤见EXECUTOR.md。systemd/Nginx仅评审模板，没有安装；没有新建账户、授予Docker权限、提交、推送或公开上线。普通runc与宿主共享内核，实测限制不证明抵御容器逃逸；公开匿名执行需另行隔离主机/更强沙箱与认证。
+
+完成核验：39项npm测试、离线构建通过；20项实际Docker检查覆盖真实Python/Ruby输出及stdin、语法拒绝、禁网/只读根/非root/NNP、tmpfs容量、内存/进程/输出上限（含非法UTF-8）、超时、归属隔离、取消、配额和API SIGKILL后watchdog清理。7项实际Chrome→本机代理→SSH→xshow Docker检查覆盖两种语言1440/390真实输出、错误、取消恢复、编辑不上传、默认不下载、明确启用Pyodide后的真实本地输出；宽窄屏截图已查看。32组最终完整浏览器回归通过，保留地图关系、标签、搜索与JS/Python/Lua/Scheme检查。报告源码哈希匹配；最后只读确认执行容器零残留。证据见data/audit/executor-checks.json、executor-browser-checks.json、execution-modes-browser-checks.json。未核验原生Safari或公开匿名执行防护；未公开部署。
+
+
+## 2026-10-08 发布与私有执行服务部署准备
+
+用户明确要求推送并部署。静态站点沿用master Actions、独立release和限权CI账户；Python/Ruby执行服务采用管理员单独安装、root拥有代码与令牌配置、独立nologin账户和systemd，Docker组权限只赋给服务进程。API仅loopback监听，同源HTTPS代理，保持Bearer令牌与会话归属校验，不开放匿名执行、不把令牌存入网站或GitHub。deploy/install-executor.py核验已有固定镜像并备份配置，Nginx/systemd检查与健康检查失败回滚。CI只检查源码语法，不获得执行器重启或Docker权限。最终GitHub、上线和HTTPS核验结果待实际完成后追加。
+
+执行服务实际安装完成：用户明确批准权限与配置后，独立code-museum-executor服务active/enabled，HTTPS无令牌执行401；CI账户无Docker组权限。锁文件/正则配置两次安装问题已修复，Nginx失败检查证明原配置回滚生效。正式站点发布与浏览器实际执行仍待下列发布记录确认。

@@ -41,7 +41,9 @@ async function checkEvidence(){
      if(!edge){issues.push('Unknown rendered edge '+path.dataset.from+' → '+path.dataset.to);continue;}
      const cited=typeof edge.evidence==='string'&&!!edge.evidence.trim(),state=cited?'claim-with-citation':'record-field-only';
      if(path.dataset.evidenceState!==state||!path.classList.contains(cited?'cited-edge':'field-edge'))issues.push('Wrong evidence tier '+edge.from+' → '+edge.to);
-     if(!document.body.classList.contains('relation-preview')&&Math.abs(parseFloat(getComputedStyle(path).opacity)-(cited?.96:.55))>.01)issues.push('Wrong evidence emphasis '+edge.from+' → '+edge.to);
+     const emphasized=path.parentElement.matches(':hover,:focus-visible,.inspected');
+     const expectedOpacity=emphasized?1:path.classList.contains('needs-evidence')?.4:cited?.96:.55;
+     if(!document.body.classList.contains('relation-preview')&&Math.abs(parseFloat(getComputedStyle(path).opacity)-expectedOpacity)>.01)issues.push('Wrong evidence emphasis '+edge.from+' → '+edge.to);
      counts[cited?'cited':'fieldOnly']++;
    }
    for(const button of document.querySelectorAll('#detail-content .relation-link')){
@@ -88,7 +90,7 @@ async function checkLabels(ids){
 async function record(name,detail){results.push({name,detail});console.log('PASS '+name);}
 (async()=>{
  try{
-  for(const file of ['index.html','map-framing.js','museum.js','museum.css','lab.js','lab-examples.js','lab-worker.js','python-worker.js','lua-worker.js','scheme-worker.js','credits.js'])assert.deepEqual(fs.readFileSync(path.join(root,'dist',file)),fs.readFileSync(path.join(root,'src',file)),'Stale build: run npm run build before browser checks');
+  for(const file of ['index.html','map-framing.js','museum.js','museum.css','lab.js','lab-examples.js','lab-worker.js','python-worker.js','lua-worker.js','scheme-worker.js','credits.js','relationship-coverage.js','execution-config.js','execution-modes.js'])assert.deepEqual(fs.readFileSync(path.join(root,'dist',file)),fs.readFileSync(path.join(root,'src',file)),'Stale build: run npm run build before browser checks');
   await new Promise((resolve,reject)=>{server.once('error',reject);server.listen(0,'127.0.0.1',resolve);});
   browser=spawn(chrome,['--headless=new','--disable-gpu','--disable-background-networking','--no-first-run','--no-default-browser-check','--remote-debugging-pipe','--host-resolver-rules=MAP * ~NOTFOUND, EXCLUDE 127.0.0.1','--user-data-dir='+profileDirectory],{stdio:['ignore','ignore','pipe','pipe','pipe']});
   browser.on('error',error=>{for(const request of pending.values()){clearTimeout(request.timer);request.reject(error);}pending.clear();});
@@ -103,6 +105,17 @@ async function record(name,detail){results.push({name,detail});console.log('PASS
   await page('Page.navigate',{url:`http://127.0.0.1:${server.address().port}/#lab`});
   await wait('!!window.MUSEUM_LAB && !!document.querySelector("#lab-language")');
   assert.equal(await evaluate('document.hidden'),false);
+  await evaluate(`window.MUSEUM_LAB.open('python')`);
+  await edit('print(42)');await new Promise(resolve=>setTimeout(resolve,800));
+  assert.equal(await evaluate(`window.__museumWorkers.some(w=>w.observedURL==='python-worker.js')`),false);
+  assert.equal(await evaluate(`document.querySelector('#lab-execution-mode').value`),'remote');
+  assert.equal(runtimeResponses.length,0,'Default remote mode must not download Pyodide');
+  for(const width of [1440,390]){
+    await page('Emulation.setDeviceMetricsOverride',{width,height:width===390?844:1000,deviceScaleFactor:1,mobile:width===390});
+    await screenshot('execution-default-'+width+'.png');
+  }
+  await record('Remote default requires an explicit run and local interpreters require download consent',{pythonWorkers:0,runtimeDownloads:0});
+  await evaluate(`document.querySelector('#lab-reset').click();for(const id of ['python','lua','scheme'])window.MUSEUM_LAB.useLocal(id);window.MUSEUM_LAB.open('javascript')`);
   const creditChecks=[];
   for(const width of [1440,390]){
     await page('Emulation.setDeviceMetricsOverride',{width,height:width===390?844:1000,deviceScaleFactor:1,mobile:width===390});
@@ -133,7 +146,53 @@ async function record(name,detail){results.push({name,detail});console.log('PASS
   await page('Emulation.setDeviceMetricsOverride',{width:1440,height:1000,deviceScaleFactor:1,mobile:false});
   await evaluate(`window.MUSEUM_LAB.open('javascript')`);
   await record('Open source credits, bundled license links and real mouse lab attribution navigation',creditChecks);
+  const relationProofChecks=[];
+  for(const size of [{width:1440,height:1000,mobile:false},{width:390,height:844,mobile:true}]){
+    await page('Emulation.setDeviceMetricsOverride',{...size,deviceScaleFactor:1});
+    await evaluate(`document.querySelector('#sources-view').click();document.querySelector('[data-credit-target="relationship-coverage"]').click();document.querySelector('#relationship-label-review').open=true;document.querySelector('#relationship-review-filter').value='all';document.querySelector('#relationship-review-filter').dispatchEvent(new Event('change'));`);
+    assert.equal(await evaluate(`document.querySelectorAll('[data-review-language]').length`),50);
+    await evaluate(`document.querySelector('#relationship-review-filter').value='gaps';document.querySelector('#relationship-review-filter').dispatchEvent(new Event('change'));`);
+    assert.deepEqual(await evaluate(`Array.from(document.querySelectorAll('[data-review-language]'),b=>b.dataset.reviewLanguage)`),['assembly-language','dart','xslt','zig']);
+    await screenshot('relationship-coverage-'+size.width+'.png');
+    await evaluate(`document.querySelector('[data-review-language="zig"]').click()`);
+    assert.equal(await evaluate(`document.querySelector('#detail-content h2').textContent`),'Zig');
+    assert.equal(await evaluate(`document.querySelector('#detail').classList.contains('open')`),true);
+    for(const mode of ['timeline','lineage']){
+      for(const entry of [{key:'csharp|scala|influencedBy',anchor:'scala',layer:'design',state:'excerpt-recorded'}, {key:'java|javascript|influencedBy',anchor:'javascript',layer:'design',state:'field-only'},{key:'java|csharp|influencedBy',anchor:'csharp',layer:'design',state:'needs-direct-evidence'},{key:'c|python|extensionInterface',anchor:'python',layer:'ecosystem',state:'citation-only'}]){
+        await evaluate(`setView(${JSON.stringify(mode)});setRelationLayer(${JSON.stringify(entry.layer)});select(${JSON.stringify(entry.anchor)});activeId=${JSON.stringify(entry.anchor)};renderLineageFocus(activeId);`);
+        await new Promise(resolve=>setTimeout(resolve,600));
+        const point=await evaluate(`(()=>{const g=document.querySelector('[data-edge-key="${entry.key}"]'),p=g.querySelector('.relation-hit'),v=document.querySelector('#viewport').getBoundingClientRect();for(let i=2;i<99;i++){const t=p.getPointAtLength(p.getTotalLength()*i/100).matrixTransform(p.getScreenCTM());if(t.x<v.left+3||t.x>v.right-3||t.y<v.top+3||t.y>v.bottom-3)continue;const hit=document.elementFromPoint(t.x,t.y);if(hit?.closest('[data-edge-key]')&&nearestRelations({clientX:t.x,clientY:t.y})[0]?.key==='${entry.key}')return {x:t.x,y:t.y};}return null})()`);
+        if(!point){await screenshot('relationship-hit-failure.png');console.log(await evaluate(`(()=>{const g=document.querySelector('[data-edge-key="${entry.key}"]'),p=g.querySelector('.relation-hit'),v=document.querySelector('#viewport').getBoundingClientRect();return {viewport:{x:v.x,y:v.y,width:v.width,height:v.height},samples:Array.from({length:9},(_,i)=>{const t=p.getPointAtLength(p.getTotalLength()*(i+1)/10).matrixTransform(p.getScreenCTM());return {x:t.x,y:t.y,hit:document.elementFromPoint(t.x,t.y)?.outerHTML.slice(0,240)}})}})()`));}
+        assert.ok(point,'Relation must have a real pointer target: '+JSON.stringify({mode,size,entry}));
+        await page('Input.dispatchMouseEvent',{type:'mousePressed',...point,button:'left',clickCount:1});
+        await page('Input.dispatchMouseEvent',{type:'mouseReleased',...point,button:'left',clickCount:1});
+        if(await evaluate(`document.querySelector('#detail-content .eyebrow').textContent==='交叠连线'`))await evaluate(`document.querySelector('[data-proof-key="${entry.key}"]').click()`);
+        assert.equal(await evaluate(`document.querySelector('#detail-content .eyebrow').textContent.startsWith('关系依据')`),true,JSON.stringify({mode,size,entry,point,actual:await evaluate(`document.querySelector('#detail-content .eyebrow').textContent`)}));
+        assert.equal(await evaluate(`inspectedRelation`),entry.key);
+        const detail=await evaluate(`document.querySelector('#detail-content').textContent`);
+        assert.ok(detail.includes(entry.state==='field-only'?'来源字段，关系待核':entry.state==='needs-direct-evidence'?'直接设计依据待补':entry.state==='citation-only'?'原文摘录待补':'原文摘录已存'));
+        if(entry.state==='excerpt-recorded'){
+          await evaluate(`document.querySelector('.relation-source').open=true`);
+          assert.ok((await evaluate(`document.querySelector('.relation-source').textContent`)).includes('not a superset'));
+          await screenshot('relationship-proof-'+mode+'-'+size.width+'.png');
+        }
+        await evaluate(`(()=>{document.querySelector('[data-relation-endpoint="${entry.anchor}"]').click();document.querySelector('[data-edge-key="${entry.key}"]').focus();})()`);
+        await page('Input.dispatchKeyEvent',{type:'keyDown',key:'Enter',code:'Enter',windowsVirtualKeyCode:13});
+        await page('Input.dispatchKeyEvent',{type:'keyUp',key:'Enter',code:'Enter',windowsVirtualKeyCode:13});
+        assert.equal(await evaluate(`document.querySelector('#detail-content .eyebrow').textContent.startsWith('关系依据')`),true,'Keyboard proof navigation');
+        await evaluate(`restoreMapOverview()`);
+        assert.equal(await evaluate(`document.querySelector('#detail').classList.contains('open')`),false);
+        relationProofChecks.push({width:size.width,mode,key:entry.key,state:entry.state});
+      }
+    }
+    assert.equal(await evaluate(`document.documentElement.scrollWidth<=innerWidth`),true);
+  }
+  assert.equal(await evaluate(`fetch('data/relationship-status.json').then(r=>r.status)`),200);
+  await record('Relationship evidence real mouse/keyboard navigation, both map layers/views and 50 label coverage',relationProofChecks);
+  await page('Emulation.setDeviceMetricsOverride',{width:1440,height:1000,deviceScaleFactor:1,mobile:false});
 
+
+  await evaluate(`setRelationLayer('design');window.MUSEUM_LAB.open('javascript')`);
   await edit('await Promise.resolve(); console.log("browser JavaScript");');await output('browser JavaScript');
   await record('JavaScript asynchronous execution',version.product);
   await evaluate(`window.MUSEUM_LAB.open('scheme')`);await output('55\n');
@@ -753,10 +812,10 @@ async function record(name,detail){results.push({name,detail});console.log('PASS
     }
     await record((sweepAll?'All dated map nodes':'Persistent map labels')+' focus and restore across wide/narrow river and lineage',{cases,omitted,scope:(sweepAll?'Fixed current dated mapEligible records':'Fixed current mapLabelIds')+'; design and ecosystem layers; two sizes; reduced motion; no simulated history links. Omitted nodes are not present in lineage.'});
   }
-  const servedInputs=Object.fromEntries(['index.html','map-framing.js','museum.css','museum.js','data/catalogue.js','lab.js','lab-examples.js','lab-worker.js','python-worker.js','lua-worker.js','scheme-worker.js','assets/pyodide/manifest.json','credits.js','data/credits.js','data/credits.json','licenses/linguist-LICENSE'].map(file=>[file,crypto.createHash('sha256').update(fs.readFileSync(path.join(root,'dist',file))).digest('hex')]));
-  const report={servedInputs,checkedAt:new Date().toISOString(),browser:version.product,scope:'Actual headless Chrome over local HTTP; isolated temporary browser profile; external DNS blocked. Worker constructor/termination observed without replacing execution. Does not verify real tab visibility, idle release, production hosting or all languages.',inputs:Object.fromEntries(['src/index.html','src/map-framing.js','src/museum.js','src/museum.css','data/audit/reviews.json','data/audit/map-eligible-ids.json','data/audit/label-selection.json','data/relationship-overrides.json','data/ecosystem-relations.json','src/lab.js','src/lab-examples.js','data/audit/tcsh-runtime-checks.json','data/audit/ksh93-runtime-checks.json','data/audit/runtime-checks.json','src/lab-worker.js','src/python-worker.js','src/lua-worker.js','src/scheme-worker.js','public/assets/scheme/manifest.json','public/assets/scheme/biwascheme-core.mjs','scripts/serve.cjs','scripts/check-browser-runtime.cjs','scripts/credits.cjs','data/credits.json','src/credits.js','public/assets/pyodide/manifest.json'].map(file=>[file,crypto.createHash('sha256').update(fs.readFileSync(path.join(root,file))).digest('hex')])),checks:results};
+  const servedInputs=Object.fromEntries(['index.html','map-framing.js','museum.css','museum.js','data/catalogue.js','lab.js','lab-examples.js','lab-worker.js','python-worker.js','lua-worker.js','scheme-worker.js','assets/pyodide/manifest.json','credits.js','relationship-coverage.js','execution-config.js','execution-modes.js','data/relationship-status.js','data/relationship-status.json','data/credits.js','data/credits.json','licenses/linguist-LICENSE'].map(file=>[file,crypto.createHash('sha256').update(fs.readFileSync(path.join(root,'dist',file))).digest('hex')]));
+  const report={servedInputs,checkedAt:new Date().toISOString(),browser:version.product,scope:'Actual headless Chrome over local HTTP; isolated temporary browser profile; external DNS blocked. Worker constructor/termination observed without replacing execution. Does not verify real tab visibility, idle release, production hosting or all languages.',inputs:Object.fromEntries(['src/index.html','src/map-framing.js','src/museum.js','src/museum.css','data/audit/reviews.json','data/audit/map-eligible-ids.json','data/audit/label-selection.json','data/relationship-overrides.json','data/ecosystem-relations.json','src/lab.js','src/lab-examples.js','data/audit/tcsh-runtime-checks.json','data/audit/ksh93-runtime-checks.json','data/audit/runtime-checks.json','src/lab-worker.js','src/python-worker.js','src/lua-worker.js','src/scheme-worker.js','public/assets/scheme/manifest.json','public/assets/scheme/biwascheme-core.mjs','scripts/serve.cjs','scripts/check-browser-runtime.cjs','scripts/credits.cjs','scripts/relationship-audit.cjs','data/audit/relationship-decisions.json','src/relationship-coverage.js','src/execution-config.js','src/execution-modes.js','data/credits.json','src/credits.js','public/assets/pyodide/manifest.json'].map(file=>[file,crypto.createHash('sha256').update(fs.readFileSync(path.join(root,file))).digest('hex')])),checks:results};
   if(outputDirectory){fs.writeFileSync(path.join(outputDirectory,'checks.json'),JSON.stringify(report,null,2)+'\n');console.log('Report '+path.join(outputDirectory,'checks.json'));}else console.log(JSON.stringify(report,null,2));
- }catch(error){console.error(error.stack+'\n'+diagnostics);process.exitCode=1;}
+ }catch(error){await screenshot('failure.png').catch(()=>{});console.error(error.stack+'\n'+diagnostics);process.exitCode=1;}
  finally{
   if(browser){try{await send('Browser.close');}catch{}if(browser.exitCode===null&&browser.signalCode===null){const closed=new Promise(resolve=>browser.once('exit',resolve));browser.kill('SIGKILL');await closed;}}
   server.closeAllConnections();await new Promise(resolve=>server.close(resolve));

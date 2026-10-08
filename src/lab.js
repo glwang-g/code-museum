@@ -5,6 +5,7 @@
   const highlight=document.querySelector('#lab-highlight'),result=document.querySelector('#lab-result');
   const runButton=document.querySelector('#lab-run'),resetButton=document.querySelector('#lab-reset');
   const escape=text=>text.replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
+  const execution=window.MUSEUM_EXECUTION;
   const runnableIds=new Set(['javascript','python','lua','scheme']);
   const freshRuntimes={javascript:{file:'lab-worker.js'},lua:{file:'lua-worker.js',name:'Lua'},scheme:{file:'scheme-worker.js',name:'Scheme',module:true}};
   const schemeKeywords=new Set('define lambda let let* letrec if cond else begin set! quote quasiquote unquote and or do delay case define-syntax syntax-rules display newline map apply car cdr cons list'.split(' '));
@@ -39,6 +40,7 @@
   }
   function stop(){stopFreshWorker();stopPython()}
   function leave(){
+    if(execution?.handles(current)&&!execution.allowed(current)){execution.cancel();needsRun=false;return}
     const hadPending=timer!==null;
     clearTimeout(timer);timer=null;
     if(hadPending)needsRun=true;
@@ -59,6 +61,7 @@
   function onTabChange(active){
     if(!active||document.hidden){leave();return}
     clearTimeout(idleTimer);idleTimer=null;
+    if(execution?.handles(current)&&!execution.allowed(current))return;
     if(needsRun){needsRun=false;run()}
   }
   function runFreshWorker(){
@@ -161,6 +164,7 @@
     clearTimeout(timer);timer=null;
     if(document.hidden||document.querySelector('#lab').hidden){needsRun=runnableIds.has(current);return}
     needsRun=false;
+    if(execution?.handles(current)&&!execution.allowed(current)){execution.run(current,editor.value);return}
     if(freshRuntimes[current])runFreshWorker();else if(current==='python')runPython();
   }
   function options(id){
@@ -191,10 +195,12 @@
     result.dataset.state='';
     paint();
     needsRun=runnable;
-    if(runnable&&!document.querySelector('#lab').hidden){needsRun=false;run()}
+    execution?.show(id);
+    if(runnable&&!document.querySelector('#lab').hidden&&(!execution?.handles(id)||execution.allowed(id))){needsRun=false;run()}
   }
   editor.addEventListener('input',()=>{
     drafts.set(current,editor.value);paint();
+    if(execution?.handles(current)&&!execution.allowed(current)){execution.edited();return}
     if(runnableIds.has(current)){
       if(!!freshRuntimes[current])stopFreshWorker();
       else{runId++;if(!pythonReady)pythonPending=editor.value}
@@ -209,12 +215,13 @@
     editor.setRangeText('  ',start,end,'end');editor.dispatchEvent(new Event('input'));
   });
   runButton.onclick=run;
-  resetButton.onclick=()=>{const example=examples.get(current);if(!example)return;drafts.delete(current);editor.value=example.code;paint();if(runnableIds.has(current))run();editor.focus()};
+  resetButton.onclick=()=>{const example=examples.get(current);if(!example)return;drafts.delete(current);editor.value=example.code;paint();if(runnableIds.has(current)&&(!execution?.handles(current)||execution.allowed(current)))run();else execution?.edited();editor.focus()};
   pick.onchange=()=>show(pick.value);
   document.addEventListener('visibilitychange',()=>{
     if(document.hidden)leave();
     else if(!document.querySelector('#lab').hidden)onTabChange(true);
   });
-  window.MUSEUM_LAB={canRun:id=>runnableIds.has(id),open(id){show(id);document.querySelector('#lab-view').click();editor.focus({preventScroll:true})},show,stop,onTabChange};
+  window.MUSEUM_LAB={canRun:id=>runnableIds.has(id)||!!execution?.canRun(id),useLocal:id=>execution?.useLocal(id),open(id){show(id);document.querySelector('#lab-view').click();editor.focus({preventScroll:true})},show,stop,onTabChange};
+  execution?.configure({run,stop});
   show('javascript');
 })();

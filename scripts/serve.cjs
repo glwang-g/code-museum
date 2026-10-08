@@ -22,9 +22,20 @@ function chooseEncoding(header, canCompress) {
   }
   return identityAllowed ? null : false;
 }
-function createRequestHandler(directory) {
+function createRequestHandler(directory, options={}) {
   const root = fs.realpathSync(path.resolve(directory));
+  const upstream=options.executor?new URL(options.executor):null;
+  if(upstream&&(upstream.protocol!=='http:'||!['127.0.0.1','localhost'].includes(upstream.hostname)||upstream.username||upstream.password||upstream.pathname!=='/'||upstream.search||upstream.hash))throw new Error('Executor proxy must target local HTTP');
   return (req, res) => {
+  if(upstream&&/^\/api\/(?:runtimes|executions(?:\/[a-f0-9]{32})?)$/.test(req.url)){
+    if(!['GET','POST','DELETE'].includes(req.method)){res.writeHead(405).end();return;}
+    const length=Number(req.headers['content-length']||0);
+    if(req.headers['transfer-encoding']||!Number.isInteger(length)||length>98304||length<0){res.writeHead(413).end();return;}
+    const headers={};for(const key of ['authorization','origin','content-type','content-length','x-execution-session'])if(req.headers[key])headers[key]=req.headers[key];
+    const proxy=http.request(new URL(req.url,upstream),{method:req.method,headers,timeout:10000},response=>{res.writeHead(response.statusCode,{'Content-Type':'application/json','Cache-Control':'no-store'});response.pipe(res)});
+    proxy.on('timeout',()=>proxy.destroy());proxy.on('error',()=>{if(!res.headersSent)res.writeHead(503,{'Content-Type':'application/json','Cache-Control':'no-store'}).end('{"error":"Execution service unavailable"}');else res.destroy()});
+    req.on('aborted',()=>proxy.destroy());req.pipe(proxy);return;
+  }
   if (!['GET', 'HEAD'].includes(req.method)) { res.writeHead(405).end(); return; }
   try {
     const pathname = decodeURIComponent(new URL(req.url, 'http://localhost').pathname);
@@ -61,7 +72,7 @@ if (require.main === module) {
     console.error('Run npm run build before preview.');
     process.exit(1);
   }
-  const server = http.createServer(createRequestHandler(root));
+  const server = http.createServer(createRequestHandler(root,{executor:process.env.EXECUTOR_UPSTREAM}));
   server.on('error', error => { console.error(error.message); process.exitCode = 1; });
   server.listen(Number(process.env.PORT || 4173), '127.0.0.1', () => console.log(`Code Museum: http://127.0.0.1:${server.address().port}`));
 }

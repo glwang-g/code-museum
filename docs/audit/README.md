@@ -1,6 +1,6 @@
 # 馆藏语言证据审查
 
-核查日期：2026-10-04。
+核查日期：2026-10-08。
 
 全量初筛覆盖 **5,155** 条馆藏，其中来源标为语言的 **4,608** 条。逐项外部文档核查覆盖 **83** 条；其余条目的证据线索已逐条列出，仍未完成人工核实。
 
@@ -57,13 +57,13 @@
 |Bash|GNU Bash|示例通过|[语法与实现](https://www.gnu.org/software/bash/manual/bash.html) · [设计关系：固定版本手册](https://mirrors.kernel.org/gnu/bash/bash-5.3.tar.gz)|Bash 5.3 固定发行包手册明确列出 Bourne、Korn、C shell 的设计输入；后两者包括 typeset 以及历史展开、目录栈等。手册仅称 largely compatible，且 POSIX 行为可能不同于传统 sh，因此不标为严格超集或所有旧程序兼容。Bourne 端点使用已核 V7 身份的 sh；馆藏另有 bourne-shell 待去重，未画两者继承。已有本机 Bash 样例不表示5.3发行包被执行，网页未接入 Bash。|
 |BASIC|FreeBASIC|未测试|[语法](https://www.freebasic.net/wiki/wikka.php?wakka=DocToc) · [实现](https://www.freebasic.net/) · [设计者采访](https://time.com/69316/basic/) · [历史语法与宿主](https://bitsavers.org/pdf/dartmouth/dtss/196410_BASIC.pdf)|BASIC 家族的现代 FreeBASIC 方言；不声称重现初版 Dartmouth BASIC。 另视觉核读1964年10月1日 Dartmouth BASIC 手册的语法示例与 DTSS 宿主说明；未运行该历史实现。TIME 2014年采访引 Kurtz 对 FORTRAN/ALGOL 简化尝试的回顾，关系限于初学者语言设计的参照与回应，不能称为已成功的子集或指定 ALGOL 60/FORTRAN II。|
 |C|GCC / Clang|示例通过|[语法](https://www.gnu.org/software/c-intro-and-ref/manual/html_node/index.html) · [实现](https://clang.llvm.org/docs/UsersManual.html)|现代 C；具体标准版本依编译器选项。|
-|C#|.NET SDK / Roslyn|未测试|[语法](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/) · [实现](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-run)||
+|C#|.NET SDK / Roslyn|未测试|[语法](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/) · [实现](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-run) · [关系复核：依据不足](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/introduction)||
 |C++|GCC / Clang|示例通过|[语法](https://eel.is/c++draft/lex) · [实现](https://clang.llvm.org/docs/UsersManual.html)|C++ 工作草案和编译器文档；具体标准版本需选择。|
 |Clojure|Clojure JVM|未测试|[语法](https://clojure.org/reference/reader) · [实现](https://clojure.org/guides/install_clojure)||
 |COBOL|GnuCOBOL|未测试|[语法与实现](https://gnucobol.sourceforge.io/doc/gnucobol.html) · [历史原文](https://bitsavers.org/pdf/codasyl/COBOL_Report_Apr60.pdf)|GnuCOBOL 支持的方言，不等同于所有历史版本。 1960年初始规格报告明确列出FLOW-MATIC、IBM Commercial Translator和AIMACO的资料/思想输入；本次先核实FLOW-MATIC端点及历史语法实现，另外两个端点继续独立核对。1959年报告形成与1960年批准分开记录；历史资料输入不代表现代GnuCOBOL方言是FLOW-MATIC超集或源码兼容。|
 |Common Lisp|SBCL|未测试|[语法](https://www.lispworks.com/documentation/HyperSpec/Body/02_a.htm) · [实现](https://www.sbcl.org/manual/)|ANSI Common Lisp；不代替所有早期 Lisp 方言。|
 |D|DMD|未测试|[语法](https://dlang.org/spec/lex.html) · [实现](https://dlang.org/dmd.html)||
-|Dart|Dart SDK|未测试|[语法](https://dart.dev/language) · [实现](https://dart.dev/tools/dart-run) · [关系研究：编译目标](https://dart.dev/resources/faq)| 2026-10-04 旧 FAQ 地址跳转至官方 Overview，说明 Dart 可编译为 JavaScript/WebAssembly；编译目标不作为语言继承证据，本轮未新增设计关系。|
+|Dart|Dart SDK|未测试|[语法](https://dart.dev/language) · [实现](https://dart.dev/tools/dart-run) · [关系研究：编译目标](https://dart.dev/resources/faq) · [关系研究：未发现直接论证](https://raw.githubusercontent.com/dart-lang/language/main/specification/dartLangSpec.tex)| 2026-10-04 旧 FAQ 地址跳转至官方 Overview，说明 Dart 可编译为 JavaScript/WebAssembly；编译目标不作为语言继承证据，本轮未新增设计关系。|
 |Elixir|Elixir / Erlang VM|未测试|[语法](https://hexdocs.pm/elixir/syntax-reference.html) · [实现](https://elixir-lang.org/install/)||
 |Erlang|Erlang/OTP|未测试|[语法](https://www.erlang.org/doc/system/expressions.html) · [实现](https://www.erlang.org/doc/system/seq_prog.html) · [作者历史回顾](https://www.erlang.org/download/armstrong_thesis_2003.pdf)|Armstrong 2003年论文第3–5页追溯 Prolog 并发扩展实验、1987年嵌入式原型、JAM/WAM 技术输入，以及1990年独立语法与1991年替代旧实现。关系限于历史演进，不表示当前 Erlang 是 Prolog 超集、保留回溯或源码兼容；本轮未重现历史实现，尚无网页运行时。|
 |F#|F# / .NET|未测试|[语法](https://learn.microsoft.com/en-us/dotnet/fsharp/language-reference/) · [实现](https://learn.microsoft.com/en-us/dotnet/fsharp/tools/fsharp-interactive/)||
@@ -91,8 +91,8 @@
 |R|R|未测试|[语法](https://cran.r-project.org/doc/manuals/r-release/R-lang.html) · [实现](https://cran.r-project.org/doc/manuals/r-release/R-intro.html)||
 |Racket|Racket|未测试|[语法](https://docs.racket-lang.org/guide/syntax-overview.html) · [实现](https://docs.racket-lang.org/guide/intro.html)||
 |Ruby|CRuby|示例通过|[语法](https://docs.ruby-lang.org/en/master/syntax_rdoc.html) · [实现](https://www.ruby-lang.org/en/documentation/installation/)||
-|Rust|rustc / Cargo|示例通过|[语法](https://doc.rust-lang.org/reference/) · [实现](https://doc.rust-lang.org/book/ch01-01-installation.html)||
-|Scala|Scala compiler / JVM|未测试|[语法](https://docs.scala-lang.org/scala3/reference/syntax.html) · [实现](https://docs.scala-lang.org/getting-started/install-scala.html)|Scala 3。|
+|Rust|rustc / Cargo|示例通过|[语法](https://doc.rust-lang.org/reference/) · [实现](https://doc.rust-lang.org/book/ch01-01-installation.html) · [设计关系](https://doc.rust-lang.org/reference/influences.html)||
+|Scala|Scala compiler / JVM|未测试|[语法](https://docs.scala-lang.org/scala3/reference/syntax.html) · [实现](https://docs.scala-lang.org/getting-started/install-scala.html) · [设计者论文](https://www.scala-lang.org/docu/files/ScalaOverview.pdf)|Scala 3。|
 |Scheme|GNU Guile|未测试|[语法](https://www.gnu.org/software/guile/manual/html_node/Scheme-Syntax.html) · [实现](https://www.gnu.org/software/guile/manual/html_node/Invoking-Guile.html)|Scheme 家族，具体实现为 Guile；不等同于每个 Scheme 方言。|
 |sed|sed / GNU sed|示例通过|[语法与实现](https://www.gnu.org/software/sed/manual/sed.html)|文本变换脚本语言及流编辑器。 手册为 GNU sed；实测为 macOS 系统 sed，仅验证共有替换命令。|
 |Smalltalk|GNU Smalltalk|未测试|[语法与实现](https://www.gnu.org/software/smalltalk/manual/gst.html)|Smalltalk 家族，证据针对 GNU Smalltalk。|

@@ -237,6 +237,38 @@ main{flex:1;min-height:0;display:flex;flex-direction:column;overflow:hidden}
 .lineage-focus.relation-preview .atlas .relations path.preview-edge.field-edge{opacity:.85}
 
 body:not(.lineage-focus) .atlas .relations path.field-edge{opacity:.12}
+.atlas .relations .relation-control{cursor:pointer}
+.atlas .relations .relation-control path.relation-hit{stroke:transparent;stroke-width:14;stroke-dasharray:none;filter:none;pointer-events:stroke;vector-effect:non-scaling-stroke}
+.atlas .relations .relation-control path:not(.relation-hit){pointer-events:stroke}
+.atlas .relations .relation-control:focus-visible{outline:none}
+.atlas .relations .relation-control:is(:hover,:focus-visible,.inspected) path:not(.relation-hit){stroke:#8de7d4;opacity:1;filter:drop-shadow(0 0 3px #8de7d4)}
+.atlas .relations .relation-control path.needs-evidence{opacity:.4}
+.detail .relationship-title{font-size:26px}
+.detail .relation-proof{font-size:12px;padding:4px 8px;margin-bottom:8px;color:var(--gold)}
+.relationship-warning{border-left:2px solid var(--gold);padding-left:12px}
+.relation-source{margin:12px 0;padding:10px;border:1px solid var(--line);font-size:13px}
+.relation-source summary{cursor:pointer;color:var(--gold);overflow-wrap:anywhere}
+.relation-source blockquote{margin:12px 0;border-left:2px solid var(--line);padding-left:10px;white-space:pre-wrap;overflow-wrap:anywhere}
+.source-hash{display:block;font-size:11px;overflow-wrap:anywhere}
+.relationship-coverage{margin-top:28px;border-top:1px solid var(--line);padding-top:24px}
+.relationship-coverage h3{font-size:18px;color:var(--ink);margin:0 0 8px}
+.relationship-coverage details{margin:12px 0}
+.relationship-coverage summary{cursor:pointer;color:var(--gold)}
+.relationship-filter{display:flex;align-items:center;gap:12px;margin:12px 0}
+.relationship-filter select,.relationship-review-row button{background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:4px;padding:6px 10px;max-width:100%}
+#relationship-label-rows{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.relationship-review-row{border:1px solid var(--line);padding:12px;overflow-wrap:anywhere}
+.relationship-review-row p{margin:8px 0;font-size:13px}
+@media(max-width:650px){#relationship-label-rows{grid-template-columns:1fr}}
+.lab-execution-controls{flex:none;min-width:0;display:flex;align-items:center;flex-wrap:wrap;gap:8px 14px;padding:10px 0;font-size:12px;border-bottom:1px solid var(--line)}
+.lab-execution-controls[hidden]{display:none}
+.lab-execution-controls label{display:flex;align-items:center;gap:7px}
+.lab-execution-controls select,.lab-execution-controls input,.lab-execution-controls button{background:var(--panel);color:var(--ink);border:1px solid #526b71;border-radius:3px;padding:5px 8px;max-width:100%;font-size:12px}
+#lab-execution-info{color:var(--muted);flex:1;min-width:180px}
+#lab-remote-access{display:flex;flex-wrap:wrap;gap:8px 14px;width:100%}
+#lab-remote-access[hidden]{display:none}
+#lab-remote-access input{width:180px;min-width:0}
+@media(max-width:650px){.lab-execution-controls{gap:6px;padding:6px 0}#lab-execution-info{flex-basis:100%;font-size:11px}#lab-remote-access input{width:140px}}
 
 /* A separate button keeps the selected language button free of nested controls. */
 .atlas .dock.selected[data-runnable]::after{padding-right:38px}
@@ -275,3 +307,5 @@ body:not(.lineage-focus) .atlas .relations path.field-edge{opacity:.12}
 }
 
 #map-search-results button{overflow-wrap:anywhere}
+
+@media(max-width:650px){.lab-output{min-height:160px}}

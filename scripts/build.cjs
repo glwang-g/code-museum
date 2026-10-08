@@ -3,12 +3,14 @@ const path = require('node:path');
 const crypto = require('node:crypto');
 const { generateCatalogue } = require('./import-pldb.cjs');
 const { generateCredits } = require('./credits.cjs');
+const { generateRelationshipAudit } = require('./relationship-audit.cjs');
 
 const root = path.resolve(__dirname, '..');
 
 function build(projectRoot = root) {
   // Generate and validate before touching the previous working site.
   const catalogue = generateCatalogue(projectRoot);
+  const relationshipAudit = generateRelationshipAudit(projectRoot,catalogue);
   const {credits,linguistLicense} = generateCredits(projectRoot);
   const auditBytes = fs.readFileSync(path.join(projectRoot, 'data/audit/reviews.json'));
   if (crypto.createHash('sha256').update(auditBytes).digest('hex') !== catalogue.meta.reviewEvidence.sha256) {
@@ -66,6 +68,8 @@ function build(projectRoot = root) {
     fs.cpSync(path.join(projectRoot, 'src'), next, { recursive: true });
     fs.mkdirSync(path.join(next, 'data'), { recursive: true });
     fs.writeFileSync(path.join(next, 'data/catalogue.js'), 'window.MUSEUM_DATA=' + JSON.stringify(catalogue) + ';');
+    fs.writeFileSync(path.join(next, 'data/relationship-status.js'), 'window.MUSEUM_RELATIONSHIP_AUDIT=' + JSON.stringify(relationshipAudit) + ';');
+    fs.writeFileSync(path.join(next, 'data/relationship-status.json'), JSON.stringify(relationshipAudit,null,2)+'\n');
     fs.writeFileSync(path.join(next, 'data/credits.js'), 'window.MUSEUM_CREDITS=' + JSON.stringify(credits) + ';');
     fs.writeFileSync(path.join(next, 'data/credits.json'), JSON.stringify(credits,null,2)+'\n');
     fs.mkdirSync(path.join(next,'licenses'),{recursive:true});

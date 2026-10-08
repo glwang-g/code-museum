@@ -59,3 +59,14 @@ sudo -u code-museum python3 /var/www/code-museum/current/server/analytics.py --b
 ## 最终首版核验记录
 
 2026-10-05，Actions run [37266961880](https://github.com/glwang-g/code-museum/actions/runs/37266961880) 的build与deploy成功，release392411b已激活。完整线上复核已通过合并工具栏、真实鼠标选中、JavaScript42、Python55、三个Shell高亮示例及窄屏布局；24份静态文件哈希与本地一致。记录：[生产核验](../data/audit/production-runtime-checks.json)。暂存CI私钥已从本机临时目录移除，私钥仅保存在已授权GitHub Secret中。
+
+
+## 2026-10-08 私有 Docker 执行服务
+
+用户明确批准安装独立无登录服务身份、服务进程Docker权限、root代码/私有令牌配置、systemd开机自启及同域HTTPS代理。`code-museum-executor`已安装并通过active/enabled检查，监听127.0.0.1:4181；Python3.13.16、Ruby3.4.11固定镜像已准备。执行请求必须私有Bearer令牌及32hex session，无令牌HTTPS POST实测401。不存在匿名执行或公开令牌。
+
+代码在 `/opt/code-museum-executor`，root拥有，独立于CI可写的release；单位文件在 `/etc/systemd/system/code-museum-executor.service`，secret在 `/etc/code-museum-executor/private.env`（root:root 0600）。Docker SupplementaryGroups只给服务进程，专用账户无登录、没有永久加入docker组；`code-museum-deploy`仍只有原部署权限，docker组仍仅现有ubuntu成员。后端升级必须管理员重新执行 `sudo python3 deploy/install-executor.py`，静态Actions不自动升级或重启这个服务。
+
+代理只追加在code-museum独立虚拟主机，由 `/etc/nginx/snippets/code-museum-executor.conf` 提供。关闭执行API的访问日志、请求和响应缓冲。Nginx/systemd配置检查通过后reload。安装先遇到Linux保护已有/tmp锁的O_CREAT限制（没有配置变更），修复后遇到Nginx正则花括号须加引号，配置检查失败已自动恢复原站点；修正后安装成功。成功安装备份在 `/var/backups/code-museum-executor/20261008T061852Z`，此前失败检查也保留独立备份。
+
+这是正式域名上受私有令牌限制的runc执行服务，只执行受信任代码；不等于匿名公共沙箱、独立执行主机或gVisor防护。管理员取令牌并粘贴到实验台的步骤见 [执行说明](EXECUTOR.md)。最终页面commit与真实HTTPS浏览器核验待发布后追加。

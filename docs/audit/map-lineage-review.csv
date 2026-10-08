@@ -46,7 +46,7 @@ common-lisp,Common Lisp,1984,verified-language,,,0,0,0,1,2,dylan | lisp,no-map-l
 common-workflow-language,CWL,2014,unreviewed,,,0,0,0,0,0,,no-map-link
 cpp,C++,1985,verified-language,c,d | java | lua | rust,5,4,1,9,0,,cited-and-field
 crystal,Crystal,2014,unreviewed,,,0,0,0,1,0,,no-map-link
-csharp,C#,2000,verified-language,java,kotlin | rust,3,3,0,4,0,,cited-only
+csharp,C#,2000,verified-language,java,kotlin | rust | scala,4,4,0,4,0,,cited-only
 curry,Curry,1990,unreviewed,haskell,,1,0,1,0,0,,field-only
 d,D,2001,verified-language,cpp,,1,1,0,1,0,,cited-only
 dafny,Dafny,2009,unreviewed,,,0,0,0,0,0,,no-map-link
@@ -179,10 +179,10 @@ red,Red,2011,unreviewed,,,0,0,0,1,0,,no-map-link
 rescript,Rescript,2020,unreviewed,,,0,0,0,0,0,,no-map-link
 rexx,Rexx,1979,unreviewed,,,0,0,0,0,0,,no-map-link
 ruby,Ruby,1995,verified-language,ada | lisp | perl | smalltalk,julia | rust,6,6,0,3,0,,cited-only
-rust,Rust,2010,verified-language,cpp | csharp | erlang | haskell | ocaml | ruby | scheme,,7,7,0,6,0,,cited-only
+rust,Rust,2010,verified-language,cpp | csharp | erlang | haskell | ocaml | ruby | scheme | swift,,8,8,0,6,0,,cited-only
 sagemath,Sage,2005,unreviewed,,,0,0,0,0,0,,no-map-link
 sass,Sass,2006,unreviewed,,,0,0,0,0,1,less,no-map-link
-scala,Scala,2004,verified-language,java,kotlin,2,2,0,1,0,,cited-only
+scala,Scala,2004,verified-language,csharp | java,kotlin,3,3,0,1,0,,cited-only
 scheme,Scheme,1975,verified-language,lisp,javascript | lua | rust,4,3,1,4,0,,cited-and-field
 scilab,Scilab,1990,unreviewed,,,0,0,0,0,0,,no-map-link
 scss,SCSS,2006,unreviewed,,,0,0,0,0,0,,no-map-link
@@ -200,7 +200,7 @@ sql,SQL,1974,verified-language,,pl-sql,1,1,0,6,0,,cited-only
 squirrel,Squirrel,2003,unreviewed,,,0,0,0,0,0,,no-map-link
 standard-ml,Standard ML,1990,verified-language,,,0,0,0,1,0,,no-map-link
 supercollider,SuperCollider,1996,unreviewed,,,0,0,0,0,0,,no-map-link
-swift,Swift,2014,verified-language,objective-c,,1,1,0,1,0,,cited-only
+swift,Swift,2014,verified-language,objective-c,rust,2,2,0,1,0,,cited-only
 tabloid,Tabloid,2020,unreviewed,,,0,0,0,0,0,,no-map-link
 tcl,Tcl,1988,verified-language,,,0,0,0,0,0,,no-map-link
 tcsh,tcsh,1983,verified-language,c-shell,,1,1,0,0,1,c-shell,cited-only

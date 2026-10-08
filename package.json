@@ -3,14 +3,20 @@
   "version": "0.1.0",
   "private": true,
   "description": "FreeXLib programming language museum — reproducible static site",
-  "engines": { "node": ">=22" },
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
     "build": "node scripts/build.cjs",
     "dev": "node scripts/build.cjs && node scripts/serve.cjs",
     "preview": "node scripts/serve.cjs",
     "audit": "python3 scripts/audit-catalogue.py && python3 scripts/audit-integrity.py",
+    "relations:audit": "node scripts/relationship-audit.cjs",
     "runtime:budget": "node scripts/runtime-budget.cjs",
     "runtime:browser": "node scripts/check-browser-runtime.cjs",
-    "test": "node --test tests/*.test.cjs"
+    "test": "node --test tests/*.test.cjs",
+    "executor:preview": "node scripts/executor-preview.cjs",
+    "executor:check": "python3 scripts/check-executor.py",
+    "executor:browser": "node scripts/check-executor-browser.cjs"
   }
 }

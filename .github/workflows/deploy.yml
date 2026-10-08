@@ -19,7 +19,7 @@ jobs:
       - run: npm test
       - run: npm run build
       - name: Check Python backend syntax
-        run: python3 -c "import ast, pathlib; ast.parse(pathlib.Path('server/analytics.py').read_text())"
+        run: python3 -c "import ast, pathlib; [ast.parse(p.read_text()) for p in [*pathlib.Path('server').glob('*.py'), *pathlib.Path('deploy').glob('*.py')]]"
       - uses: actions/upload-artifact@v4
         with:
           name: code-museum-release

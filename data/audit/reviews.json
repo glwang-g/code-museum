@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-10-04",
+  "checkedAt": "2026-10-08",
   "method": "Manually reviewed public documentation and bibliography, with separate local execution evidence. Not an exhaustive manual verification of the whole PLDB snapshot.",
   "reviews": [
     {
@@ -238,6 +238,17 @@
           "finalUrl": "https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-run",
           "decodedBodySha256": "04ae1e543ef330559733ab0bb48f3b5177f204cf9af034adab7b9e9b269cb44c",
           "excerpt": "ocess. Explicit application arguments on the command line take precedence. For a Project profile, arguments supplied by the project also take precedence. environmentVariables Specifies environment variables for the launched process. Profile values override inherited and SDK-generated environment var"
+        },
+        {
+          "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/introduction",
+          "finalUrl": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/introduction",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-08T01:53:18.550374+00:00",
+          "role": "关系复核：依据不足",
+          "title": "C# language specification — Introduction",
+          "reviewed": true,
+          "decodedBodySha256": "8416859ee73291ea294577e3b3c2d61b4e4f233611fd8f57f07d3150f24dec9a",
+          "excerpt": "Design goals: Source code portability is very important, as is programmer portability, especially for those programmers already familiar with C and C++. The current Introduction does not establish a Java design-input claim. Familiarity of intended readers alone would not prove design influence; the existing Java→C# claim needs direct evidence."
         }
       ]
     },
@@ -306,6 +317,17 @@
           "finalUrl": "https://doc.rust-lang.org/book/ch01-01-installation.html",
           "decodedBodySha256": "abbab8f00254044a8a2d19855f49edf9cd7e34edeaa10abac2a7b13de9c83411",
           "excerpt": "k as expected with the content of this book. Command Line Notation In this chapter and throughout the book, we’ll show some commands used in the terminal. Lines that you should enter in a terminal all start with $ . You don’t need to type the $ character; it’s the command line prompt shown to indica"
+        },
+        {
+          "url": "https://doc.rust-lang.org/reference/influences.html",
+          "finalUrl": "https://doc.rust-lang.org/reference/influences.html",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-08T01:53:19.404988+00:00",
+          "role": "设计关系",
+          "title": "Influences — The Rust Reference",
+          "reviewed": true,
+          "decodedBodySha256": "a1585e914cc55a3422f7e376456bb5bd31fdfe71a68e1f8d1736a58adea7c892",
+          "excerpt": "Rust is not a particularly original language, with design elements coming from a wide range of sources. Some of these are listed below (including elements that have since been removed): SML, OCaml: algebraic data types, pattern matching, type inference, semicolon statement separation; C++: references, RAII, smart pointers, move semantics, monomorphization, memory model; Haskell (GHC): typeclasses, type families; Erlang: message passing, thread failure, linked thread failure, lightweight concurrency; Swift: optional bindings; Scheme: hygienic macros; C#: attributes; Ruby: closure syntax, block syntax. The list covers evolution, including removed features; it is not a claim about the first Rust version."
         }
       ]
     },
@@ -1050,6 +1072,18 @@
           "role": "关系研究：编译目标",
           "reviewed": true,
           "excerpt": "Web platform : For apps targeting the web, Dart can compile for development or production purposes. Its web compilers translate Dart into JavaScript or WebAssembly. The Flutter framework is a popular, multi-platform UI toolkit that's powered by the Dart platform, and that provides tooling and UI libraries to build UI experiences that run on iOS, Android, macOS, Windows, Linux, and the web. Dart Native (machine code JIT and AOT) # During developme"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/dart-lang/language/main/specification/dartLangSpec.tex",
+          "finalUrl": "https://raw.githubusercontent.com/dart-lang/language/main/specification/dartLangSpec.tex",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-08T01:53:53.464961+00:00",
+          "role": "关系研究：未发现直接论证",
+          "title": "Dart Programming Language Specification (official LaTeX source)",
+          "reviewed": true,
+          "decodedBodySha256": "01726188b9069ccd1458ffe480f6eab6aa26beb6500355d7a35ed0310dc0531e",
+          "excerpt": "Introduction defines Dart as a class-based, single-inheritance, pure object-oriented programming language; identifiers and JavaScript compilation details do not independently establish language ancestry. No explicit design-influence claim was found in this source, so no new design edge is inferred. This is the evolving official source, not a fixed Dart release standard.",
+          "hashScope": "UTF-8 LaTeX 源码完整响应字节 SHA-256"
         }
       ]
     },
@@ -2008,6 +2042,18 @@
           "finalUrl": "https://docs.scala-lang.org/getting-started/install-scala.html",
           "decodedBodySha256": "836eef7211309857e61574afdaaf5e34cc1e69ad5f6ed7d3d4b2ef34fad7d865",
           "excerpt": "er Installing Scala means installing various command-line tools such as the Scala compiler and build tools. We recommend using the Scala installer tool “Coursier” that automatically installs all the requirements, but you can still manually install each tool. Using the Scala Installer (recommended wa"
+        },
+        {
+          "url": "https://www.scala-lang.org/docu/files/ScalaOverview.pdf",
+          "finalUrl": "https://www.scala-lang.org/docu/files/ScalaOverview.pdf",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-08T01:53:13.740204+00:00",
+          "role": "设计者论文",
+          "title": "An Overview of the Scala Programming Language, Second Edition (LAMP-REPORT-2006-001)",
+          "reviewed": true,
+          "decodedBodySha256": "293f06b72978ce2f934a6d6aa66e0a40ff9dadabbb605d98a67c6525b1d899bd",
+          "excerpt": "PDF page 1, Introduction: Scala has been designed to work well with Java and C#. It adopts a large part of the syntax and type systems of these languages. ... This is why Scala is not a superset of Java. Some features are missing, others are re-interpreted to provide better uniformity of concepts. Relevant page rendered and visually reviewed; this is syntax/type-system input, not just JVM hosting.",
+          "hashScope": "完整 PDF 响应字节 SHA-256；摘录及视觉核读为 PDF 第1页"
         }
       ]
     },

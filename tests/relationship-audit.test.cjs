@@ -1,0 +1,49 @@
+const test=require('node:test'),assert=require('node:assert/strict');
+const {auditRelationships,generateRelationshipAudit}=require('../scripts/relationship-audit.cjs');
+const {generateCatalogue}=require('../scripts/import-pldb.cjs');
+const path=require('node:path'),fs=require('node:fs');
+const root=path.resolve(__dirname,'..');
+const base=()=>({records:[{id:'a',name:'A',year:2000,mapEligible:true},{id:'b',name:'B',year:1990,mapEligible:true}],edges:[{from:'a',to:'b',type:'influencedBy',source:'https://example.org/source'}],ecosystemEdges:[],meta:{mapLabelIds:['a','b']}});
+const reviews={reviews:[]};
+test('relationship checks reject duplicate raw overrides, invalid endpoints and missing sources',()=>{
+ const c=base(),e=c.edges[0];
+ assert.throws(()=>auditRelationships(c,reviews,[e,e]),/duplicate relationship/);
+ assert.throws(()=>auditRelationships({...c,edges:[{...e,to:'unknown'}]},reviews),/invalid relationship endpoint/);
+ assert.throws(()=>auditRelationships({...c,edges:[{...e,to:'a'}]},reviews),/invalid relationship endpoint/);
+ assert.throws(()=>auditRelationships({...c,edges:[{...e,source:''}]},reviews),/invalid relationship type\/source/);
+ assert.throws(()=>auditRelationships({...c,edges:[{...e,source:'https:\/\/user:password@example.org'}]},reviews),/invalid relationship type\/source/);
+ assert.throws(()=>auditRelationships(c,reviews,[],[],[{key:'missing',state:'supported',note:'x'}]),/Invalid relationship review decision/);
+});
+test('citation, recorded excerpt and a supported historical claim remain distinct',()=>{
+ const c=base(),e=c.edges[0];
+ assert.equal(auditRelationships(c,reviews).relations[0].state,'field-only');
+ e.evidence='A design input';
+ assert.equal(auditRelationships(c,reviews).relations[0].state,'citation-only');
+ const source={url:e.source,reviewed:true,excerpt:'original text',title:'Title',decodedBodySha256:'a'.repeat(64),checkedAt:'2026-10-08T00:00:00Z'};
+ const r={reviews:[{id:'b',sources:[source]}]};
+ assert.equal(auditRelationships(c,r).relations[0].state,'excerpt-recorded');
+ assert.equal(auditRelationships(c,r,[],[],[{key:'a|b|influencedBy',state:'needs-direct-evidence',note:'Familiarity alone is not design input'}]).relations[0].state,'needs-direct-evidence');
+ assert.match(auditRelationships(c,r).scope,/不等于/);
+});
+test('chronology and cycles are review leads and ecosystem links do not become lineage',()=>{
+ const c=base();let report=auditRelationships(c,reviews);
+ assert.equal(report.warnings[0].kind,'chronology');
+ c.edges.push({...c.edges[0],from:'b',to:'a'});
+ assert.ok(auditRelationships(c,reviews).warnings.some(w=>w.kind==='cycle'));
+ c.edges=[];c.ecosystemEdges=[{from:'a',to:'b',type:'interop',source:'https://example.org',evidence:'C ABI'}];
+ report=auditRelationships(c,reviews);
+ assert.equal(report.summary.mapDesignGaps,2);assert.equal(report.warnings.length,0);
+ assert.equal(report.labels[0].ecology.length,1);assert.equal(report.labels[0].upstream.length,0);
+});
+test('pinned report covers every current label and preserves review decisions and research sources',()=>{
+ const report=generateRelationshipAudit(root,generateCatalogue(root));
+ assert.equal(report.summary.labels,50);assert.equal(report.summary.mapDesignGaps,4);
+ assert.deepEqual(report,JSON.parse(fs.readFileSync(path.join(root,'data/audit/relationship-status.json'))));
+ const find=(from,to)=>report.relations.find(e=>e.from===from&&e.to===to);
+ assert.equal(find('java','csharp').state,'needs-direct-evidence');
+ assert.equal(find('csharp','scala').state,'excerpt-recorded');
+ assert.match(find('csharp','scala').sources[0].excerpt,/not a superset/);
+ assert.equal(find('swift','rust').state,'excerpt-recorded');
+ assert.ok(find('swift','rust').issues.some(i=>i.includes('年代')));
+ assert.ok(report.labels.every(r=>r.state!=='verified-complete'));
+});

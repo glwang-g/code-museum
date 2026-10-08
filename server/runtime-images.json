@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "resolvedAt": "2026-10-08T03:50:32.368141+00:00",
+  "runtimes": [
+    {"id":"python","image":"python@sha256:a1165e272e578941b84abc79e4ab38a0305cd12803a5c4247979ac7655f4d641","imageId":"sha256:a1165e272e578941b84abc79e4ab38a0305cd12803a5c4247979ac7655f4d641","architecture":"amd64","os":"linux","version":"Python 3.13.16","memoryMiB":256,"executable":"/usr/local/bin/python","source":"https://hub.docker.com/_/python"},
+    {"id":"ruby","image":"ruby@sha256:22165c5f904d76a8a02fbdd419d0269481369523fd66978232d16c88099730e2","imageId":"sha256:22165c5f904d76a8a02fbdd419d0269481369523fd66978232d16c88099730e2","architecture":"amd64","os":"linux","version":"ruby 3.4.11 (2026-09-23 revision 592f1ffdb3) +PRISM [x86_64-linux]","memoryMiB":512,"executable":"/usr/local/bin/ruby","source":"https://hub.docker.com/_/ruby"}
+  ]
+}

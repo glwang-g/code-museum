@@ -1,0 +1,51 @@
+{
+  "checkedAt": "2026-10-08T04:13:57.934Z",
+  "browser": "Chrome/154.0.8037.98",
+  "scope": "Actual browser over private SSH tunnel to ephemeral Docker runc API on xshow. Not a public deployment or escape proof. Tokens, sessions and job IDs omitted.",
+  "checks": [
+    {
+      "name": "Actual python Docker execution and stdin",
+      "width": 1440,
+      "output": "55\nhello\n"
+    },
+    {
+      "name": "Actual ruby Docker execution and stdin",
+      "width": 1440,
+      "output": "55\nhello\n"
+    },
+    {
+      "name": "Actual python Docker execution and stdin",
+      "width": 390,
+      "output": "55\nhello\n"
+    },
+    {
+      "name": "Actual ruby Docker execution and stdin",
+      "width": 390,
+      "output": "55\nhello\n"
+    },
+    {
+      "name": "Actual remote syntax error",
+      "passed": true
+    },
+    {
+      "name": "Cancellation followed by actual remote recovery",
+      "passed": true
+    },
+    {
+      "name": "Local Pyodide requires explicit enable, executes without POST",
+      "output": "43"
+    }
+  ],
+  "inputs": {
+    "server/executor.py": "febadc6e5ce2d132383c3613487685633a7f947603b90411e1de11bc615dba9a",
+    "server/runtime-images.json": "edcad4f3becf25a2d99f066ecdc901e60a462919589ff6bdf41e343dc0adda2e",
+    "scripts/serve.cjs": "6b89ec4d96297a4e5a6ea1d0c97d2a99ff56b4b04ca09e619bcc5afc17ad9038",
+    "scripts/executor-preview.cjs": "27e038b1437913373175078c42a82fa50eacb1c321e898f8394eacb65c75705d",
+    "scripts/check-executor-browser.cjs": "1bdc123d91feb5872f690e24b28fa95ca8b40dd355a0615ae1c5b110ffa08c08",
+    "src/index.html": "6eb860c7ab8f180f8d9fd2b985909e7f29cd32dc0d8ae672500acdafcdbaf772",
+    "src/lab.js": "b4d32387fcdfed1881bcf8f237115464bec6710ce3befd7612607924920450cf",
+    "src/museum.css": "7540cd9c0c6ae8f3c654e8d17111a306764d6d8350d14febefda0a5cb00d43a8",
+    "src/execution-config.js": "4ed993efee2456e3cc0b0aa3767081211bb5b5509204eed6bea3c4ab5fa883e0",
+    "src/execution-modes.js": "632e1b70bea571f6c77d219100a9eb94412f45a5f0293b28d175a42dc353553f"
+  }
+}

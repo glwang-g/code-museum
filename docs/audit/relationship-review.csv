@@ -84,7 +84,7 @@ cpp,C++,jule,Jule,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/ma
 cpp,C++,lua,Lua,influencedBy,curated-override,https://www.lua.org/doc/hopl.pdf,d3a2c0cf69503e85e40667b3114e3005e50df6f61eeec67b3069dcdc8d4185fe,"Lua 三位作者《The Evolution of Lua》（HOPL III, 2007）PDF p.5 明确称从 C++ 借用在需要位置声明局部变量的设计。 只记录该具体设计影响，不表示 Lua 是对应语言的超集或源码兼容。",claim-with-citation,1985,1993,True,,False,False
 cpp,C++,particles,Particles,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/particles.scroll,,,record-field-only,1985,2017,False,,False,False
 cpp,C++,real-time-concurrent-c,Real-Time Concurrent C,supersetOf,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/real-time-concurrent-c.scroll,,,record-field-only,1985,1991,False,,False,False
-cpp,C++,rust,Rust,influencedBy,curated-override,https://doc.rust-lang.org/reference/influences.html,,Rust Reference 的 Influences 页列举 C++ 对引用、RAII、智能指针和移动语义等设计的影响。,claim-with-citation,1985,2010,True,,False,False
+cpp,C++,rust,Rust,influencedBy,curated-override,https://doc.rust-lang.org/reference/influences.html,a1585e914cc55a3422f7e376456bb5bd31fdfe71a68e1f8d1736a58adea7c892,Rust Reference 的 Influences 页列举 C++ 对引用、RAII、智能指针和移动语义等设计的影响。,claim-with-citation,1985,2010,True,,False,False
 cpp,C++,sdlang,SDLang,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/sdlang.scroll,,,record-field-only,1985,2011,False,,False,False
 cpp,C++,speedie,Speedie,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/speedie.scroll,,,record-field-only,1985,2022,False,,False,False
 cpp,C++,wa,Wa-lang,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/wa.scroll,,,record-field-only,1985,2022,False,,False,False
@@ -93,7 +93,8 @@ csharp,C#,chapel,Chapel,influencedBy,pldb-field,https://github.com/breck7/pldb/b
 csharp,C#,kotlin,Kotlin,influencedBy,curated-override,https://kotlinlang.org/docs/faq.html,c52ad62286ecc5d1647999ad445804aea9eecdd847e23b53ed1548700e6a4593,Kotlin 官方 FAQ《Is Kotlin hard?》明确称 Kotlin 从 Java、C#、JavaScript、Scala、Groovy 等现有语言获得启发；此边表示设计影响，不能推定整体语法派生、超集或源码兼容。,claim-with-citation,2000,2011,True,,False,False
 csharp,C#,nemerle,Nemerle,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/nemerle.scroll,,,record-field-only,2000,2003,False,,False,False
 csharp,C#,particles,Particles,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/particles.scroll,,,record-field-only,2000,2017,False,,False,False
-csharp,C#,rust,Rust,influencedBy,curated-override,https://doc.rust-lang.org/reference/influences.html,,Rust Reference 的 Influences 页列举 C# 的属性作为设计输入。,claim-with-citation,2000,2010,True,,False,False
+csharp,C#,rust,Rust,influencedBy,curated-override,https://doc.rust-lang.org/reference/influences.html,a1585e914cc55a3422f7e376456bb5bd31fdfe71a68e1f8d1736a58adea7c892,Rust Reference 的 Influences 页列举 C# 的属性作为设计输入。,claim-with-citation,2000,2010,True,,False,False
+csharp,C#,scala,Scala,influencedBy,curated-override,https://www.scala-lang.org/docu/files/ScalaOverview.pdf,293f06b72978ce2f934a6d6aa66e0a40ff9dadabbb605d98a67c6525b1d899bd,Scala 设计者2006年概述 PDF第1页明确说采纳 Java 与 C# 的大量语法和类型系统；不是仅由平台共存推断，也不表示 C# 的严格后继或超集。,claim-with-citation,2000,2004,True,,False,False
 csharp,C#,sdlang,SDLang,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/sdlang.scroll,,,record-field-only,2000,2011,False,,False,False
 css,CSS,particles,Particles,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/particles.scroll,,,record-field-only,1996,2017,False,,False,False
 css,CSS,speedie,Speedie,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/speedie.scroll,,,record-field-only,1996,2022,False,,False,False
@@ -109,7 +110,7 @@ eiffel,Eiffel,ruby,Ruby,influencedBy,curated-override,https://www.ruby-lang.org/
 elm,Elm,civet,Civet,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/civet.scroll,,,record-field-only,2012,2022,False,,False,False
 elm,Elm,scrapscript,Scrapscript,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/scrapscript.scroll,,,record-field-only,2012,2023,False,,False,False
 erlang,Erlang,axio,Axio,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/axio.scroll,,,record-field-only,1986,2024,False,,False,False
-erlang,Erlang,rust,Rust,influencedBy,curated-override,https://doc.rust-lang.org/reference/influences.html,,Rust Reference 的 Influences 页列举 Erlang 的消息传递和轻量级并发。,claim-with-citation,1986,2010,True,,False,False
+erlang,Erlang,rust,Rust,influencedBy,curated-override,https://doc.rust-lang.org/reference/influences.html,a1585e914cc55a3422f7e376456bb5bd31fdfe71a68e1f8d1736a58adea7c892,Rust Reference 的 Influences 页列举 Erlang 的消息传递和轻量级并发。,claim-with-citation,1986,2010,True,,False,False
 ex-editor,ex,vi,vi,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/vi.scroll,,,record-field-only,1978,1976,False,parent-year-later,False,True
 false,False,apter-f,F,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/apter-f.scroll,,,record-field-only,1993,2006,False,,False,False
 flow,Flow,civet,Civet,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/civet.scroll,,,record-field-only,2014,2022,False,,False,False
@@ -139,7 +140,7 @@ haskell,Haskell,flare,Flare,influencedBy,pldb-field,https://github.com/breck7/pl
 haskell,Haskell,mlscript,MLscript,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/mlscript.scroll,,,record-field-only,1990,2020,False,,False,False
 haskell,Haskell,morloc,Morloc,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/morloc.scroll,,,record-field-only,1990,2016,False,,False,False
 haskell,Haskell,particles,Particles,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/particles.scroll,,,record-field-only,1990,2017,False,,False,False
-haskell,Haskell,rust,Rust,influencedBy,curated-override,https://doc.rust-lang.org/reference/influences.html,,Rust Reference 的 Influences 页列举 Haskell 的 typeclasses 和 type families 等设计输入。,claim-with-citation,1990,2010,True,,False,False
+haskell,Haskell,rust,Rust,influencedBy,curated-override,https://doc.rust-lang.org/reference/influences.html,a1585e914cc55a3422f7e376456bb5bd31fdfe71a68e1f8d1736a58adea7c892,Rust Reference 的 Influences 页列举 Haskell 的 typeclasses 和 type families 等设计输入。,claim-with-citation,1990,2010,True,,False,False
 haskell,Haskell,scrapscript,Scrapscript,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/scrapscript.scroll,,,record-field-only,1990,2023,False,,False,False
 homebrew-pm,Homebrew,tea-pm,tea,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/tea-pm.scroll,,,record-field-only,2009,2021,False,,False,True
 html,HTML,particles,Particles,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/particles.scroll,,,record-field-only,1991,2017,False,,False,False
@@ -157,14 +158,14 @@ it,IT,runcible,RUNCIBLE,supersetOf,pldb-field,https://github.com/breck7/pldb/blo
 j,J,goal,Goal,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/goal.scroll,,,record-field-only,1990,2022,False,,False,False
 j,J,u,U,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/u.scroll,,,record-field-only,1990,2013,False,,False,False
 java,Java,chapel,Chapel,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/chapel.scroll,,,record-field-only,1995,2004,False,,False,False
-java,Java,csharp,C#,influencedBy,curated-override,https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/introduction,,Microsoft C# 规范导言将 Java 程序员列为会熟悉 C# 的目标读者，并说明 C# 扎根于 C 语言家族。结合 Java 与 C# 的语法和面向对象设计关联，此边记录设计影响；不表示 C# 是 Java 的派生语言，也不表示两者运行时兼容。,claim-with-citation,1995,2000,True,,False,False
+java,Java,csharp,C#,influencedBy,curated-override,https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/introduction,8416859ee73291ea294577e3b3c2d61b4e4f233611fd8f57f07d3150f24dec9a,早期录入以微软 C# 规范导言的读者定位推断 Java 的设计影响。2026-10-08 复读当前导言，只能确认 C/C++ 程序员迁移目标，无法由读者熟悉度单独证明 Java 设计输入；这条记录保留为待补直接依据，不表示已确认血缘或运行时兼容。,claim-with-citation,1995,2000,True,,False,False
 java,Java,deesel,Deesel,supersetOf,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/deesel.scroll,,,record-field-only,1995,2005,False,,False,False
 java,Java,flare,Flare,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/flare.scroll,,,record-field-only,1995,2001,False,,False,False
 java,Java,groovy,Groovy,influencedBy,curated-override,https://groovy-lang.org/differences.html,,Groovy 官方《Differences with Java》记载设计时考虑 Java 开发者的预期，并逐项说明两种语言的差异；官网称 Groovy 旨在提供 Java 风格的感受和语法。此处表示语法与设计影响，不表示严格的 Java 超集。,claim-with-citation,1995,2003,True,,False,False
 java,Java,javascript,JavaScript,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/javascript.scroll,,,record-field-only,1995,1995,True,,False,False
 java,Java,kotlin,Kotlin,influencedBy,curated-override,https://kotlinlang.org/docs/faq.html,c52ad62286ecc5d1647999ad445804aea9eecdd847e23b53ed1548700e6a4593,Kotlin 官方 FAQ《Is Kotlin hard?》明确称 Kotlin 从 Java、C#、JavaScript、Scala、Groovy 等现有语言获得启发；此边表示设计影响，不能推定整体语法派生、超集或源码兼容。,claim-with-citation,1995,2011,True,,False,False
 java,Java,pizza,Pizza,supersetOf,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/pizza.scroll,,,record-field-only,1995,2001,False,,False,False
-java,Java,scala,Scala,influencedBy,curated-override,https://docs.scala-lang.org/tutorials/scala-for-java-programmers.html,,Scala 官方《A Scala Tutorial for Java Programmers》说明 Scala 简化 Java 的样板写法，并在相同的类型与运行时基础上构建；此处表示设计与语法承接，不表示 Scala 是 Java 的超集。,claim-with-citation,1995,2004,True,,False,False
+java,Java,scala,Scala,influencedBy,curated-override,https://www.scala-lang.org/docu/files/ScalaOverview.pdf,293f06b72978ce2f934a6d6aa66e0a40ff9dadabbb605d98a67c6525b1d899bd,Scala 设计者《An Overview of the Scala Programming Language》第二版（2006）PDF第1页明确说 Scala 采纳 Java 与 C# 的大量语法和类型系统，同时明确不是 Java 的超集。此边表示设计输入，不以 JVM 共存推定继承。,claim-with-citation,1995,2004,True,,False,False
 java,Java,sdlang,SDLang,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/sdlang.scroll,,,record-field-only,1995,2011,False,,False,False
 javascript,JavaScript,amber,Amber,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/amber.scroll,,,record-field-only,1995,2022,False,,False,False
 javascript,JavaScript,json,JSON,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/json.scroll,,,record-field-only,1995,2001,False,,False,False
@@ -263,7 +264,7 @@ objective-c,Objective-C,cooc,cooC,supersetOf,pldb-field,https://github.com/breck
 objective-c,Objective-C,swift,Swift,influencedBy,curated-override,https://www.swift.org/about/,,Swift 官方 About 页面明确说，Swift 的命名参数从 Objective-C 继承而来（named parameters brought forward from Objective-C）。这证明具体语言设计影响；两者的互操作和共同平台背景本身不作为继承证据。,claim-with-citation,1984,2014,True,,False,False
 ocaml,OCaml,f-sharp,F#,influencedBy,curated-override,https://fsharp.org/history/hopl-final/hopl-fsharp.pdf,db336bd4f1f57c5881477ee5e12995ac164255b81ede10d4bee9a055daf1202a,F# 设计者 Don Syme《The Early History of F#》回顾：OCaml 原本启发了 F#，并列举 F# 继承的 OCaml 特性、运算符优先级等具体设计；此处表示设计影响，不表示 F# 是 OCaml 的原样 .NET 实现。,claim-with-citation,1996,2005,True,,False,False
 ocaml,OCaml,mlscript,MLscript,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/mlscript.scroll,,,record-field-only,1996,2020,False,,False,False
-ocaml,OCaml,rust,Rust,influencedBy,curated-override,https://doc.rust-lang.org/reference/influences.html,,Rust Reference 的 Influences 页列举 OCaml 对代数数据类型、模式匹配和类型推断的影响。,claim-with-citation,1996,2010,True,,False,False
+ocaml,OCaml,rust,Rust,influencedBy,curated-override,https://doc.rust-lang.org/reference/influences.html,a1585e914cc55a3422f7e376456bb5bd31fdfe71a68e1f8d1736a58adea7c892,Rust Reference 的 Influences 页列举 OCaml 对代数数据类型、模式匹配和类型推断的影响。,claim-with-citation,1996,2010,True,,False,False
 opml,OPML,bike,Bike,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/bike.scroll,,,record-field-only,2000,2022,False,,False,False
 org,Org Mode,bike,Bike,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/bike.scroll,,,record-field-only,2003,2022,False,,False,False
 pascal,Pascal,adlib,ADLIB,supersetOf,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/adlib.scroll,,,record-field-only,1970,1980,False,,False,False
@@ -329,7 +330,7 @@ roc,Roc,scrapscript,Scrapscript,influencedBy,pldb-field,https://github.com/breck
 rss,RSS,yess,YESS,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/yess.scroll,,,record-field-only,1999,2022,False,,False,False
 ruby,Ruby,civet,Civet,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/civet.scroll,,,record-field-only,1995,2022,False,,False,False
 ruby,Ruby,julia,Julia,influencedBy,curated-override,https://julialang.org/blog/2012/02/why-we-created-julia/,c78002dce7f99e3409307b68b3a6c1dcb2316f08522af0a7924677c3b5a6c9d0,Julia 设计者明确提出希望语言具有 Ruby 的动态性；这是设计目标参照，不表示 Julia 是 Ruby 方言。,claim-with-citation,1995,2012,True,,False,False
-ruby,Ruby,rust,Rust,influencedBy,curated-override,https://doc.rust-lang.org/reference/influences.html,,Rust Reference 的 Influences 页列举 Ruby 的闭包与块语法设计。,claim-with-citation,1995,2010,True,,False,False
+ruby,Ruby,rust,Rust,influencedBy,curated-override,https://doc.rust-lang.org/reference/influences.html,a1585e914cc55a3422f7e376456bb5bd31fdfe71a68e1f8d1736a58adea7c892,Rust Reference 的 Influences 页列举 Ruby 的闭包与块语法设计。,claim-with-citation,1995,2010,True,,False,False
 ruby,Ruby,slash,Slash,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/slash.scroll,,,record-field-only,1995,2012,False,,False,False
 rust,Rust,alumina,Alumina,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/alumina.scroll,,,record-field-only,2010,2021,False,,False,False
 rust,Rust,cairo,Cairo,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/cairo.scroll,,,record-field-only,2010,2022,False,,False,False
@@ -350,7 +351,7 @@ scheme,Scheme,flare,Flare,influencedBy,pldb-field,https://github.com/breck7/pldb
 scheme,Scheme,javascript,JavaScript,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/javascript.scroll,,,record-field-only,1975,1995,True,,False,False
 scheme,Scheme,lua,Lua,influencedBy,curated-override,https://www.lua.org/doc/hopl.pdf,d3a2c0cf69503e85e40667b3114e3005e50df6f61eeec67b3069dcdc8d4185fe,"Lua 三位作者《The Evolution of Lua》（HOPL III, 2007）PDF p.2 明确称 Scheme 在 Lua 演进中的影响逐渐增加，尤其体现在匿名函数和完整词法作用域。 只记录该具体设计影响，不表示 Lua 是对应语言的超集或源码兼容。",claim-with-citation,1975,1993,True,,False,False
 scheme,Scheme,particles,Particles,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/particles.scroll,,,record-field-only,1975,2017,False,,False,False
-scheme,Scheme,rust,Rust,influencedBy,curated-override,https://doc.rust-lang.org/reference/influences.html,,Rust Reference 的 Influences 页列举 Scheme 的卫生宏设计。,claim-with-citation,1975,2010,True,,False,False
+scheme,Scheme,rust,Rust,influencedBy,curated-override,https://doc.rust-lang.org/reference/influences.html,a1585e914cc55a3422f7e376456bb5bd31fdfe71a68e1f8d1736a58adea7c892,Rust Reference 的 Influences 页列举 Scheme 的卫生宏设计。,claim-with-citation,1975,2010,True,,False,False
 scheme,Scheme,slope,Slope,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/slope.scroll,,,record-field-only,1975,2021,False,,False,False
 scratch,Scratch,microblocks,MicroBlocks,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/microblocks.scroll,,,record-field-only,2002,2021,False,,False,False
 sdlang,SDLang,kdl,KDL,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/kdl.scroll,,,record-field-only,2011,2020,False,,False,False
@@ -375,6 +376,7 @@ sql,SQL,tql,TQL,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main
 ssb,Secure Scuttlebutt,farcaster,Farcaster,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/farcaster.scroll,,,record-field-only,2014,2021,False,,False,False
 standard-ml,Standard ML,mlscript,MLscript,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/mlscript.scroll,,,record-field-only,1990,2020,False,,False,False
 swift,Swift,mojo,Mojo,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/mojo.scroll,,,record-field-only,2014,2022,False,,False,False
+swift,Swift,rust,Rust,influencedBy,curated-override,https://doc.rust-lang.org/reference/influences.html,a1585e914cc55a3422f7e376456bb5bd31fdfe71a68e1f8d1736a58adea7c892,Rust Reference 的 Influences 明确列出 Swift: optional bindings。清单描述语言演进，包含后来移除的元素；不是 Rust 首版受到尚未发布的 Swift 影响，馆藏初始年份不能代表各特性的引入年份。,claim-with-citation,2014,2010,True,parent-year-later,False,False
 swift-il,Swift SIL,mlir,MLIR,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/mlir.scroll,,,record-field-only,2012,2019,False,,False,False
 tcp,TCP,homa,Homa,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/homa.scroll,,,record-field-only,1974,2018,False,,False,False
 tex,Tex,scroll,Scroll,influencedBy,pldb-field,https://github.com/breck7/pldb/blob/main/concepts/scroll.scroll,,,record-field-only,1978,2019,False,,False,False
