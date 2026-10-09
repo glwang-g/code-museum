@@ -328,11 +328,14 @@ body:not(.lineage-focus) .atlas .relations path.field-edge{opacity:.12}
 .visit-counts summary::-webkit-details-marker{display:none}
 .visit-counts summary:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:3px}
 .visit-counts b{color:var(--ink);font-weight:500}
+.project-link{color:var(--ink);font-size:12px;line-height:1;padding:5px 0;text-decoration:none;white-space:nowrap}
+.project-link:hover,.project-link:focus-visible{color:var(--gold);text-decoration:underline;text-underline-offset:3px}
+.project-link:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:3px}
 .visit-explanation{position:absolute;right:0;top:calc(100% + 8px);width:300px;max-width:calc(100vw - 24px);background:var(--panel);color:var(--muted);border:1px solid var(--line);border-radius:6px;padding:14px;box-shadow:0 6px 24px #0003;z-index:50;white-space:normal;line-height:1.6}
 .visit-explanation strong{color:var(--ink)}
 .visit-explanation p{margin:8px 0 0}
-@media(max-width:650px){header{gap:8px}.header-tools{gap:10px}.visit-counts{font-size:10px}.visit-counts summary{gap:7px}.visit-explanation{position:fixed;top:50px;right:12px}}
-@media(max-width:359px){header{height:68px;min-height:68px;flex-wrap:wrap;align-content:center;row-gap:0}.header-tools{margin-left:auto}.visit-explanation{top:72px}}
+@media(max-width:650px){header{position:relative;height:60px;min-height:60px;display:block;padding-top:7px}.brand{font-size:16px;white-space:nowrap}.header-tools{position:absolute;left:12px;right:12px;bottom:3px;width:auto;justify-content:flex-end;gap:10px}.visit-counts{font-size:10px}.visit-counts summary{gap:7px}.project-link{font-size:11px}.visit-explanation{position:fixed;top:64px;right:12px}}
+@media(max-width:359px){header{height:60px;min-height:60px;flex-wrap:wrap;align-content:center;row-gap:0}.header-tools{margin-left:auto}.visit-explanation{top:64px}}
 
 /* Learning workspace and paired language exhibits. */
 .lab-study-toolbar{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:12px;flex:none}
