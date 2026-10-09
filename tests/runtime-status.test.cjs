@@ -62,3 +62,18 @@ test('remote runtime stages follow API queue/run/results and a failed request ca
   fail=true;await window.MUSEUM_EXECUTION.run('python','print(42)');assert.equal(states.at(-1)[2].stage,'failed');assert.match(states.at(-1)[2].detail,/Connection interrupted/);
   fail=false;await window.MUSEUM_EXECUTION.retry('python','print(42)');assert.equal(states.at(-1)[2].stage,'completed');
 });
+
+test('remote compiler diagnostics and timings stay separate and clear on edits and language changes',async()=>{
+  const elements=new Map();let broken=false;
+  const get=id=>{if(!elements.has(id))elements.set(id,{value:'',hidden:false,textContent:'',dataset:{},options:new Map(),addEventListener(){},querySelector(s){if(!this.options.has(s))this.options.set(s,{});return this.options.get(s)}});return elements.get(id)};
+  const window={MUSEUM_EXECUTION_CONFIG:{enabled:true,endpoint:'/api'}};
+  const fetch=async url=>({ok:true,json:async()=>url==='/api/runtimes'?{available:true,runtimes:[{id:'rust',version:'rustc test'}]}:{state:broken?'compile_error':'completed',compilerStdout:'',compilerStderr:broken?'compiler syntax diagnostic':'warning: learning warning',stdout:broken?'':'42',stderr:broken?'':'runtime stderr',queueMs:5,compileMs:20,...(broken?{}:{runMs:8}),elapsedMs:50}});
+  vm.runInNewContext(source('execution-modes.js'),{window,document:{getElementById:get},fetch,crypto:require('node:crypto'),AbortSignal,setTimeout,Date});
+  await new Promise(resolve=>setImmediate(resolve));window.MUSEUM_EXECUTION.show('rust');get('lab-remote-token').value='x'.repeat(32);
+  await window.MUSEUM_EXECUTION.run('rust','fn main(){}');
+  assert.equal(get('lab-result').textContent,'42\nruntime stderr');assert.equal(get('lab-compiler-result').textContent,'\nwarning: learning warning');assert.equal(get('lab-compiler').open,true);
+  assert.match(get('lab-timings').textContent,/排队 5 ms.*编译 20 ms.*运行 8 ms/);
+  window.MUSEUM_EXECUTION.edited();assert.equal(get('lab-compiler').hidden,true);assert.equal(get('lab-timings').hidden,true);
+  broken=true;await window.MUSEUM_EXECUTION.run('rust','invalid');assert.equal(get('lab-result').textContent.trim(),'编译失败，未执行程序。');assert.match(get('lab-compiler-result').textContent,/compiler syntax/);assert.doesNotMatch(get('lab-timings').textContent,/ · 运行/);
+  window.MUSEUM_EXECUTION.show('javascript');assert.equal(get('lab-compiler-result').textContent,'');assert.equal(get('lab-timings').hidden,true);
+});

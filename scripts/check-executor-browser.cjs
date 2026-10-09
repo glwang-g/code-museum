@@ -59,7 +59,12 @@ async function screenshot(name){if(!outputDirectory)return;await evaluate('new P
   await evaluate(`window.MUSEUM_LAB.open('rust')`);await edit('not valid source !!!');await clickRun();
   await wait(`document.querySelector('#lab-result').textContent.includes('编译失败，未执行程序。')`);
   assert.equal(await evaluate(`document.querySelector('#lab-error-kind').textContent`),'编译错误');
+  assert.equal(await evaluate(`!document.querySelector('#lab-compiler').hidden && document.querySelector('#lab-compiler-result').textContent.length>0`),true);
+  assert.equal(await evaluate(`document.querySelector('#lab-result').textContent.trim()`),'编译失败，未执行程序。');
+  assert.match(await evaluate(`document.querySelector('#lab-timings').textContent`),/排队 \d+ ms.*编译 \d+ ms/);
+  assert.doesNotMatch(await evaluate(`document.querySelector('#lab-timings').textContent`),/ · 运行/);
   results.push({name:'Compiler diagnostics identified separately, no execution',passed:true});
+  await evaluate(`document.querySelector('.lab-output').scrollIntoView({block:'center'})`);
   await screenshot('compile-error-rust-390.png');
   await evaluate(`window.MUSEUM_LAB.open('go')`);await edit('package main\nimport "fmt"\nfunc main(){fmt.Println(42)}');await clickRun();
   await wait(`document.querySelector('#lab-runtime-state').dataset.stage==='compiling'`,15000);
@@ -86,6 +91,18 @@ async function screenshot(name){if(!outputDirectory)return;await evaluate('new P
    await evaluate(`window.MUSEUM_LAB.useLocal(${JSON.stringify(language)});window.MUSEUM_LAB.open(${JSON.stringify(language)})`);await edit(code);await output('42');
    results.push({name:'Actual browser '+language+' execution',output:'42'});
   }
+  for(const language of ['rust','go']){
+   for(const [topic,expected] of [['variables','Museum 2026\n'],['loops','55\n'],['functions','49\n'],['collections','6, 2, 4\n']]){
+    await evaluate(`window.MUSEUM_LAB.open(${JSON.stringify(language)});window.MUSEUM_LAB.chooseTopic(${JSON.stringify(topic)})`);
+    assert.equal(await evaluate(`document.querySelector('#lab-compiler').hidden && document.querySelector('#lab-timings').hidden`),true);
+    await clickRun();await output(expected,65000);
+    assert.match(await evaluate(`document.querySelector('#lab-timings').textContent`),/排队 \d+ ms.*编译 \d+ ms.*运行 \d+ ms/);
+    assert.equal(await evaluate(`document.querySelector('#lab-compiler-result').textContent`),'编译成功，无诊断输出。');
+    results.push({name:language+' learning '+topic,output:expected});
+   }
+  }
+  await evaluate(`document.querySelector('.lab-output').scrollIntoView({block:'center'})`);
+  await screenshot('go-learning-collections-390.png');
   const servedInputs={};for(const f of ['index.html','museum.css','museum.js','lab.js','execution-config.js','execution-modes.js','data/relationship-status.json','lab-worker.js','lua-worker.js','scheme-worker.js','assets/lua/manifest.json','assets/scheme/manifest.json','assets/pyodide/manifest.json']){const bytes=Buffer.from(await evaluate(`fetch(${JSON.stringify(f)}).then(r=>{if(!r.ok)throw new Error('Failed served input');return r.arrayBuffer()}).then(b=>Array.from(new Uint8Array(b)))`));assert.deepEqual(bytes,fs.readFileSync(path.join(root,'dist',f)),'Served build must match local: '+f);servedInputs[f]=crypto.createHash('sha256').update(bytes).digest('hex')}
   const report={servedInputs,checkedAt:new Date().toISOString(),browser:version.product,scope:production?'Actual Chrome over production HTTPS with private token to persistent Docker runc service. Tokens, sessions and job IDs omitted; no anonymous execution or escape proof.':'Actual browser over private SSH tunnel to ephemeral Docker runc API on xshow. Tokens, sessions and job IDs omitted; not a public deployment or escape proof.',checks:results,inputs:Object.fromEntries(['server/executor.py','server/runtime-images.json','scripts/serve.cjs','scripts/executor-preview.cjs','scripts/check-executor-browser.cjs','src/index.html','src/lab.js','src/museum.css','src/execution-config.js','src/execution-modes.js'].map(f=>[f,crypto.createHash('sha256').update(fs.readFileSync(path.join(root,f))).digest('hex')]))};
   fs.writeFileSync(path.join(outputDirectory,'checks.json'),JSON.stringify(report,null,2)+'\n');console.log('PASS '+results.length+' actual Docker/browser checks; report '+path.join(outputDirectory,'checks.json'));

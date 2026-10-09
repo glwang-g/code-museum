@@ -131,3 +131,17 @@ test('unresolvable curated relationships fail instead of silently disappearing',
     assert.throws(() => generateCatalogue(dir), /Unresolved relationship/);
   } finally { fs.rmSync(dir, { recursive: true, force: true }); }
 });
+
+test('reviewed relationship type correction preserves snapshot and rejects stale or unsupported replacement',()=>{
+ const dir=copySources();
+ try{
+  const file=path.join(dir,'data/relationship-overrides.json'),original=JSON.parse(fs.readFileSync(file));
+  const entry=original.find(e=>e.from==='c'&&e.to==='cpp');assert.equal(entry.replacesType,'supersetOf');
+  const result=generateCatalogue(dir);assert.ok(result.edges.some(e=>e.from==='c'&&e.to==='cpp'&&e.type==='influencedBy'));
+  assert.ok(!result.edges.some(e=>e.from==='c'&&e.to==='cpp'&&e.type==='supersetOf'));
+  for(const change of [{replacesType:'successorOf'},{replacesType:'influencedBy'},{sourceSha256:'0'.repeat(64)},{evidence:''}]){
+   const rows=structuredClone(original);Object.assign(rows.find(e=>e.from==='c'&&e.to==='cpp'),change);fs.writeFileSync(file,JSON.stringify(rows));
+   assert.throws(()=>generateCatalogue(dir),/replacement|matching reviewed source/);
+  }
+ }finally{fs.rmSync(dir,{recursive:true,force:true})}
+});

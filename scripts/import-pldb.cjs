@@ -100,7 +100,17 @@ function generateCatalogue(root = path.resolve(__dirname, '..')) {
   for (const r of records) for (const type of ['influencedBy', 'supersetOf']) {
     for (const from of r[type]) add({ from, to: r.id, type, source: r.source });
   }
-  for (const edge of overrides) add(edge);
+  for (const edge of overrides) {
+    if (edge.replacesType !== undefined) {
+      const oldKey=[edge.from,edge.to,edge.replacesType].join('\0');
+      const previous=edgeMap.get(oldKey);
+      if (!['influencedBy','supersetOf'].includes(edge.replacesType) || edge.replacesType===edge.type || !previous || previous.evidence || !edge.evidence || !edge.sourceSha256) throw new Error('Invalid reviewed relationship replacement: '+edge.from+' -> '+edge.to);
+      const review=audit.reviews.find(r=>r.id===edge.to);
+      if (!review?.sources.some(s=>s.reviewed && s.url===edge.source && s.decodedBodySha256===edge.sourceSha256)) throw new Error('Relationship replacement requires matching reviewed source.');
+      edgeMap.delete(oldKey);
+    }
+    add(edge);
+  }
   const edges = [...edgeMap.values()].sort((a, b) => compare(a.from, b.from) || compare(a.to, b.to) || compare(a.type, b.type));
   const ecosystemKeys = new Set();
   for (const edge of ecosystemRelations) {

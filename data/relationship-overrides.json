@@ -91,10 +91,10 @@
     "from": "java",
     "to": "csharp",
     "type": "influencedBy",
-    "label": "语法与设计关联（待补证）",
-    "source": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/introduction",
-    "evidence": "早期录入以微软 C# 规范导言的读者定位推断 Java 的设计影响。2026-10-08 复读当前导言，只能确认 C/C++ 程序员迁移目标，无法由读者熟悉度单独证明 Java 设计输入；这条记录保留为待补直接依据，不表示已确认血缘或运行时兼容。",
-    "sourceSha256": "8416859ee73291ea294577e3b3c2d61b4e4f233611fd8f57f07d3150f24dec9a"
+    "label": "异常机制设计参照与取舍",
+    "source": "https://www.artima.com/articles/the-trouble-with-checked-exceptions",
+    "evidence": "C# 首席设计者 Hejlsberg 回答为何未引入检查异常，直接评议 Java 实现的版本演化和规模问题。这支持具体机制的设计参照与取舍（包括未采用），不代表 C# 是 Java 的后继、超集或异常机制照搬。",
+    "sourceSha256": "84d17ba6d2f88eb784a211b9b522e4a77048121132ecb829db5d069541883d10"
   },
   {
     "from": "java",
@@ -142,8 +142,9 @@
     "to": "swift",
     "type": "influencedBy",
     "label": "部分语言设计承接",
-    "source": "https://www.swift.org/about/",
-    "evidence": "Swift 官方 About 页面明确说，Swift 的命名参数从 Objective-C 继承而来（named parameters brought forward from Objective-C）。这证明具体语言设计影响；两者的互操作和共同平台背景本身不作为继承证据。"
+    "source": "https://raw.githubusercontent.com/swiftlang/swift-org-website/ccf11a958db44ae501a84329455e89fa46fc5d61/about/index.md",
+    "evidence": "Swift 官方网站仓库固定提交 ccf11a958db44ae501a84329455e89fa46fc5d61 的 About 原文明确说明命名参数借鉴自 Objective-C。当前网页删改不影响固定原文可回溯性；这是具体设计影响，不代表整体后继或超集。",
+    "sourceSha256": "482b22698499f2b54c1c226e4969d22aa80b7bd30be2bb3023be089461a05d4f"
   },
   {
     "from": "perl",
@@ -728,5 +729,33 @@
     "type": "influencedBy",
     "source": "https://docs.python.org/3/faq/general.html",
     "evidence": "Python 官方 FAQ 引 Guido van Rossum 自述，明确把异常的语法与语义，以及其他一些特性，归于 Modula-3 的输入；不表示 Python 是 Modula-3 超集。"
+  },
+  {
+    "from": "c",
+    "to": "cpp",
+    "type": "influencedBy",
+    "label": "直接发展与近兼容设计",
+    "source": "https://www.stroustrup.com/bs_faq.html",
+    "sourceSha256": "2f0e35a9519217a12dfac5cd033a61c08e78d423671c8ddbcc4257c299c0d87e",
+    "evidence": "C++ 设计者称它直接源于 C、保留几乎全部 C，且说明兼容例外；此处 C 指 Classic C/C89，C++ 与 C99 是旁系发展。扩展关系不代表任意 C 程序均可作为 C++ 编译。",
+    "replacesType": "supersetOf"
+  },
+  {
+    "from": "c",
+    "to": "objective-c",
+    "type": "supersetOf",
+    "label": "C 的面向对象扩展",
+    "source": "https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/Introduction/Introduction.html",
+    "sourceSha256": "8cc6386df52599fe2a8923d10f61c7e186248269622fc2479939d92405839b78",
+    "evidence": "Apple 明确称 Objective-C 是 C 的超集，继承语法、基础类型和控制流，新增类和方法语法。"
+  },
+  {
+    "from": "javascript",
+    "to": "typescript",
+    "type": "supersetOf",
+    "label": "增加类型系统的扩展",
+    "source": "https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html",
+    "sourceSha256": "9a7cccc22284a8a40f7868ff5ac8b177a68c570c9f172acc139186daffd324c4",
+    "evidence": "TypeScript 官方手册说明保留 JavaScript 特性并增加类型系统；语言层扩展不保证任意项目配置、宿主 API 和类型检查均无错误。"
   }
 ]

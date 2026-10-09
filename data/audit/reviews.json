@@ -162,6 +162,18 @@
           "finalUrl": "https://clang.llvm.org/docs/UsersManual.html",
           "decodedBodySha256": "6167d81d397567410d3100f068a30d587567c0acbfb70d2d65bbfc17686581cc",
           "excerpt": "Clang is one component in a complete toolchain for C family languages. A separate document describes the other pieces necessary to assemble a complete toolchain . Clang is designed to support the C family of programming languages, which includes C , Objective-C , C++ , and Objective-C++ as well as m"
+        },
+        {
+          "url": "https://www.stroustrup.com/bs_faq.html",
+          "finalUrl": "https://www.stroustrup.com/bs_faq.html",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-09T06:52:59.137908+00:00",
+          "decodedBodySha256": "2f0e35a9519217a12dfac5cd033a61c08e78d423671c8ddbcc4257c299c0d87e",
+          "role": "关系依据",
+          "reviewed": true,
+          "title": "Bjarne Stroustrup FAQ",
+          "excerpt": "C++ is a direct descendant of C that retains almost all of C as a subset. [separate passage] C++ is not a descendant of C99; C++ and C99 are siblings.",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected"
         }
       ]
     },
@@ -230,6 +242,18 @@
           "finalUrl": "https://www.typescriptlang.org/docs/handbook/typescript-tooling-in-5-minutes.html",
           "decodedBodySha256": "ed044955ed7b5b4c25fcc814825ba92a7a8d51511267240a61ab5c4d78978036",
           "excerpt": "does not include the TypeScript compiler, tsc . If you didn’t install TypeScript with Visual Studio, you can still download it . For npm users: shell > npm install -g typescript Building your first TypeScript file In your editor, type the following JavaScript code in greeter.ts : ts function greeter"
+        },
+        {
+          "url": "https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html",
+          "finalUrl": "https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-09T06:52:59.137908+00:00",
+          "decodedBodySha256": "9a7cccc22284a8a40f7868ff5ac8b177a68c570c9f172acc139186daffd324c4",
+          "role": "关系依据",
+          "reviewed": true,
+          "title": "TypeScript official handbook",
+          "excerpt": "TypeScript offers all of JavaScript’s features, and an additional layer on top of these: TypeScript’s type system. [separate passage] This means that your existing working JavaScript code is also TypeScript code.",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected"
         }
       ]
     },
@@ -321,6 +345,18 @@
           "reviewed": true,
           "decodedBodySha256": "8416859ee73291ea294577e3b3c2d61b4e4f233611fd8f57f07d3150f24dec9a",
           "excerpt": "Design goals: Source code portability is very important, as is programmer portability, especially for those programmers already familiar with C and C++. The current Introduction does not establish a Java design-input claim. Familiarity of intended readers alone would not prove design influence; the existing Java→C# claim needs direct evidence."
+        },
+        {
+          "url": "https://www.artima.com/articles/the-trouble-with-checked-exceptions",
+          "finalUrl": "https://www.artima.com/articles/the-trouble-with-checked-exceptions",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-09T06:52:59.137908+00:00",
+          "decodedBodySha256": "84d17ba6d2f88eb784a211b9b522e4a77048121132ecb829db5d069541883d10",
+          "role": "关系依据",
+          "reviewed": true,
+          "title": "The Trouble with Checked Exceptions — Anders Hejlsberg interview (2003)",
+          "excerpt": "Bruce Eckel: C# doesn't have checked exceptions. How did you decide whether or not to put checked exceptions into C#? [separate passage] Anders Hejlsberg: By implementing checked exceptions the way it's done in Java, for example, I think you just take one set of problems and trade them for another set of problems. [separate passage] C# is basically silent on the checked exceptions issue. Once a better solution is known—and trust me we continue to think about it—we can go back and actually put something in place.",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected"
         }
       ]
     },
@@ -2087,6 +2123,18 @@
           "finalUrl": "https://www.swift.org/install/",
           "decodedBodySha256": "bbdd136a049cfb3b53cb5e04ff15695ac10180f10b590e7f066e5225ddbe5124",
           "excerpt": "Install Swift | Swift.org Docs Community Packages Blog Install (6.4.0) Docs Community Packages Blog Install (6.4.0) Install Swift Linux macOS Windows Docs Community Packages Blog Install Tools Xcode Visual Studio Code Emacs Neovim Cursor Other Editors Community Overview Swift Evolution Diversity Men"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/swiftlang/swift-org-website/ccf11a958db44ae501a84329455e89fa46fc5d61/about/index.md",
+          "finalUrl": "https://raw.githubusercontent.com/swiftlang/swift-org-website/ccf11a958db44ae501a84329455e89fa46fc5d61/about/index.md",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-09T06:47:50.280282+00:00",
+          "decodedBodySha256": "482b22698499f2b54c1c226e4969d22aa80b7bd30be2bb3023be089461a05d4f",
+          "role": "关系依据",
+          "reviewed": true,
+          "title": "Swift official About source, pinned commit ccf11a958db44ae501a84329455e89fa46fc5d61",
+          "excerpt": "Swift also borrows from other languages, for instance named parameters brought forward from Objective-C are expressed in a clean syntax that makes APIs in Swift easy to read and maintain.",
+          "hashScope": "complete HTTP response body bytes; fixed official repository commit; excerpt is manually selected"
         }
       ]
     },
@@ -3183,6 +3231,25 @@
           "title": "Ed Price: A Brief History of BASIC",
           "excerpt": "Every BASIC written since then has been based on that early version. Examples include: GW-Basic, QBasic, QuickBasic, Visual Basic.",
           "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body"
+        }
+      ]
+    },
+    {
+      "id": "objective-c",
+      "status": "unreviewed",
+      "notes": "本轮仅核读关系依据，尚未完成独立语法与实现审查。",
+      "sources": [
+        {
+          "url": "https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/Introduction/Introduction.html",
+          "finalUrl": "https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/Introduction/Introduction.html",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-09T06:52:59.137908+00:00",
+          "decodedBodySha256": "8cc6386df52599fe2a8923d10f61c7e186248269622fc2479939d92405839b78",
+          "role": "关系依据",
+          "reviewed": true,
+          "title": "Apple: Programming with Objective-C",
+          "excerpt": "It’s a superset of the C programming language and provides object-oriented capabilities and a dynamic runtime. Objective-C inherits the syntax, primitive types, and flow control statements of C and adds syntax for defining classes and methods.",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected"
         }
       ]
     }

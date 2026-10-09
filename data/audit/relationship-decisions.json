@@ -1,7 +1,7 @@
 [
   {
     "key": "java|csharp|influencedBy",
-    "state": "needs-direct-evidence",
-    "note": "原有引用的规范导言不能仅凭读者熟悉度证明 Java 的设计影响。2026-10-08 复读当前导言，明确的是 C/C++ 程序员迁移目标；Java→C# 保留为待补直接设计依据，不视为已确认后继。"
+    "state": "supported",
+    "note": "2026-10-09 补读 Hejlsberg 本人访谈，仅确认 Java 检查异常参与 C# 异常机制的设计评估与取舍；旧规范导言不足以证明设计影响的判断仍有效。不表示后继、超集或实现兼容。"
   }
 ]

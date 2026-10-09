@@ -2,7 +2,7 @@
 
 核查日期：2026-10-09。
 
-全量初筛覆盖 **5,155** 条馆藏，其中来源标为语言的 **4,608** 条。逐项外部文档核查覆盖 **84** 条；其余条目的证据线索已逐条列出，仍未完成人工核实。
+全量初筛覆盖 **5,155** 条馆藏，其中来源标为语言的 **4,608** 条。逐项外部文档核查覆盖 **85** 条；其余条目的证据线索已逐条列出，仍未完成人工核实。
 
 已核到语法资料和实现依据的语言/方言 **60** 条；本机独立示例通过 **17** 条。主图按明确的语法/执行线索收录 **233** 个节点。二者是不同维度。
 
@@ -57,8 +57,8 @@
 |Bash|GNU Bash|示例通过|[语法与实现](https://www.gnu.org/software/bash/manual/bash.html) · [设计关系：固定版本手册](https://mirrors.kernel.org/gnu/bash/bash-5.3.tar.gz)|Bash 5.3 固定发行包手册明确列出 Bourne、Korn、C shell 的设计输入；后两者包括 typeset 以及历史展开、目录栈等。手册仅称 largely compatible，且 POSIX 行为可能不同于传统 sh，因此不标为严格超集或所有旧程序兼容。Bourne 端点使用已核 V7 身份的 sh；馆藏另有 bourne-shell 待去重，未画两者继承。已有本机 Bash 样例不表示5.3发行包被执行，网页未接入 Bash。|
 |BASIC|FreeBASIC|未测试|[语法](https://www.freebasic.net/wiki/wikka.php?wakka=DocToc) · [实现](https://www.freebasic.net/) · [设计者采访](https://time.com/69316/basic/) · [历史语法与宿主](https://bitsavers.org/pdf/dartmouth/dtss/196410_BASIC.pdf)|BASIC 家族的现代 FreeBASIC 方言；不声称重现初版 Dartmouth BASIC。 另视觉核读1964年10月1日 Dartmouth BASIC 手册的语法示例与 DTSS 宿主说明；未运行该历史实现。TIME 2014年采访引 Kurtz 对 FORTRAN/ALGOL 简化尝试的回顾，关系限于初学者语言设计的参照与回应，不能称为已成功的子集或指定 ALGOL 60/FORTRAN II。|
 |C|GCC / Clang|示例通过|[语法](https://www.gnu.org/software/c-intro-and-ref/manual/html_node/index.html) · [实现](https://clang.llvm.org/docs/UsersManual.html) · [关系依据](https://www.bell-labs.com/usr/dmr/www/chist.html)|现代 C；具体标准版本依编译器选项。|
-|C#|.NET SDK / Roslyn|未测试|[语法](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/) · [实现](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-run) · [关系复核：依据不足](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/introduction)||
-|C++|GCC / Clang|示例通过|[语法](https://eel.is/c++draft/lex) · [实现](https://clang.llvm.org/docs/UsersManual.html)|C++ 工作草案和编译器文档；具体标准版本需选择。|
+|C#|.NET SDK / Roslyn|未测试|[语法](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/) · [实现](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-run) · [关系复核：依据不足](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/introduction) · [关系依据](https://www.artima.com/articles/the-trouble-with-checked-exceptions)||
+|C++|GCC / Clang|示例通过|[语法](https://eel.is/c++draft/lex) · [实现](https://clang.llvm.org/docs/UsersManual.html) · [关系依据](https://www.stroustrup.com/bs_faq.html)|C++ 工作草案和编译器文档；具体标准版本需选择。|
 |Clojure|Clojure JVM|未测试|[语法](https://clojure.org/reference/reader) · [实现](https://clojure.org/guides/install_clojure)||
 |COBOL|GnuCOBOL|未测试|[语法与实现](https://gnucobol.sourceforge.io/doc/gnucobol.html) · [历史原文](https://bitsavers.org/pdf/codasyl/COBOL_Report_Apr60.pdf)|GnuCOBOL 支持的方言，不等同于所有历史版本。 1960年初始规格报告明确列出FLOW-MATIC、IBM Commercial Translator和AIMACO的资料/思想输入；本次先核实FLOW-MATIC端点及历史语法实现，另外两个端点继续独立核对。1959年报告形成与1960年批准分开记录；历史资料输入不代表现代GnuCOBOL方言是FLOW-MATIC超集或源码兼容。|
 |Common Lisp|SBCL|未测试|[语法](https://www.lispworks.com/documentation/HyperSpec/Body/02_a.htm) · [实现](https://www.sbcl.org/manual/)|ANSI Common Lisp；不代替所有早期 Lisp 方言。|
@@ -98,10 +98,10 @@
 |Smalltalk|GNU Smalltalk|未测试|[语法与实现](https://www.gnu.org/software/smalltalk/manual/gst.html) · [关系依据](https://worrydream.com/EarlyHistoryOfSmalltalk/)|Smalltalk 家族，证据针对 GNU Smalltalk。|
 |SQL|SQLite / PostgreSQL|示例通过|[语法](https://www.sqlite.org/lang.html) · [实现](https://www.sqlite.org/cli.html)|查询语言；核实的是 SQLite SQL 方言，非所有 SQL 标准特性。|
 |Standard ML|Standard ML of New Jersey|未测试|[语法与实现](https://www.smlnj.org/doc/interact.html)|具体实现为 SML/NJ。|
-|Swift|Swift compiler|未测试|[语法](https://raw.githubusercontent.com/swiftlang/swift-book/main/TSPL.docc/ReferenceManual/LexicalStructure.md) · [实现](https://www.swift.org/install/)||
+|Swift|Swift compiler|未测试|[语法](https://raw.githubusercontent.com/swiftlang/swift-book/main/TSPL.docc/ReferenceManual/LexicalStructure.md) · [实现](https://www.swift.org/install/) · [关系依据](https://raw.githubusercontent.com/swiftlang/swift-org-website/ccf11a958db44ae501a84329455e89fa46fc5d61/about/index.md)||
 |Tcl|Tcl / tclsh|未测试|[语法](https://www.tcl-lang.org/man/tcl8.6/TclCmd/Tcl.htm) · [实现](https://www.tcl-lang.org/man/tcl8.6/UserCmd/tclsh.htm)||
 |tcsh|tcsh 6.21.00; official source releases|示例通过|[语法](https://raw.githubusercontent.com/tcsh-org/tcsh/TCSH6_21_00/tcsh.man) · [实现](https://www.tcsh.org/)|固定6.21.00官方手册明确命令语言、脚本处理和控制语法，项目官网提供实现源码入口；手册称为 Berkeley C shell 的兼容增强版，并以4.4BSD csh说明扩展标记。本机 /bin/tcsh 与 /bin/csh 指向同一实现，版本6.21.00；另以 tcsh -f 执行两份原创程序，算术循环输出55，列表/条件输出Lisp；错误引号语法被拒绝。执行证据只覆盖本机版本与样例，不证明原始C shell或完整历史兼容性。未接入网页运行。|
-|TypeScript|tsc|未测试|[语法](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html) · [实现](https://www.typescriptlang.org/docs/handbook/typescript-tooling-in-5-minutes.html)|转译为 JavaScript，再由 JS 运行时执行。|
+|TypeScript|tsc|未测试|[语法](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html) · [实现](https://www.typescriptlang.org/docs/handbook/typescript-tooling-in-5-minutes.html) · [关系依据](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html)|转译为 JavaScript，再由 JS 运行时执行。|
 |VBA|Microsoft Office VBA / Visual Basic Editor|未测试|[语法](https://learn.microsoft.com/en-us/office/vba/language/reference/user-interface-help/visual-basic-language-reference) · [语法](https://learn.microsoft.com/en-us/office/vba/language/reference/user-interface-help/fornext-statement) · [实现](https://learn.microsoft.com/en-us/office/vba/library-reference/concepts/getting-started-with-vba-in-office) · [关系依据](https://learn.microsoft.com/en-us/office/vba/language/concepts/getting-started/64-bit-visual-basic-for-applications-overview)|已核微软 VBA 语言参考、For...Next 规则与 Office 内编辑/运行步骤。VBA 依赖宿主应用，不等同于 Visual Basic .NET；未在本机执行或接入网页运行时。|
 |VBScript|Microsoft VBScript engine / Windows Script Host (cscript.exe)|未测试|[语法](https://learn.microsoft.com/en-us/previous-versions//d1wf56tt(v=vs.85)) · [语法](https://learn.microsoft.com/en-us/previous-versions/sa3hh43e(v=vs.85)) · [实现](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/cscript) · [支持状态](https://learn.microsoft.com/en-us/windows-server/get-started/removed-deprecated-features-windows-server) · [关系依据](https://learn.microsoft.com/en-us/windows/win32/com/translating-to-vbscript)|已核微软存档语言参考、For...Next 语法和 Windows cscript 宿主文档。微软列为弃用功能，Windows Server 2025 中以预装按需功能提供，后续计划移除；现代浏览器不支持。存在历史实现不等于推荐新项目使用，未在本机执行或接入网页运行时。|
 |Verilog|Icarus Verilog|未测试|[语法与实现](https://steveicarus.github.io/iverilog/usage/simulation.html)|硬件描述语言；软件仿真与实际硬件综合分开。|

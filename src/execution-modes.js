@@ -52,7 +52,12 @@
     }
     if(typeof Event!=='undefined')document.dispatchEvent?.(new Event('museum-execution-change'));
   }
+  function clearDetails(){
+    if($('lab-compiler')){$('lab-compiler').hidden=true;$('lab-compiler').open=false;$('lab-compiler-result').textContent='';}
+    if($('lab-timings')){$('lab-timings').hidden=true;$('lab-timings').textContent='';}
+  }
   function cancel(message=false,redraw=true){
+    clearDetails();
     generation++;
     const job=active;active=null;
     if(job)status?.update(current,'remote',{stage:'cancelled',detail:job.id?'已请求服务器停止任务。':'已停止等待提交结果。'});
@@ -83,6 +88,18 @@
       if(gen!==generation)return;
       const reasons={compile_error:'编译失败，未执行程序。',compile_timed_out:'编译超过时间预算，未执行程序。',timed_out:'运行超过3秒，已停止。',output_limit:'编译与运行输出超过32 KiB，已停止。',memory_limit:'达到内存上限，已停止。',cancelled:'任务已取消。',infrastructure_error:'远端执行环境不可用。'};
       $('lab-result').textContent=(job.stdout||'')+(job.stderr?'\n'+job.stderr:'')+(reasons[job.state]?'\n'+reasons[job.state]:'')||'（程序没有输出）';
+      const diagnostic=(job.compilerStdout||'')+(job.compilerStderr?'\n'+job.compilerStderr:'');
+      if($('lab-compiler')){
+        $('lab-compiler').hidden=job.compileMs===undefined&&!diagnostic;
+        $('lab-compiler').open=!!diagnostic;
+        $('lab-compiler-result').textContent=diagnostic||'编译成功，无诊断输出。';
+      }
+      if($('lab-timings')){
+        const timing=[['排队',job.queueMs],['编译',job.compileMs],['运行',job.runMs],['环境与执行',job.elapsedMs]];
+        $('lab-timings').textContent=timing.filter(([,v])=>Number.isFinite(v)).map(([label,v])=>label+' '+v+' ms').join(' · ');
+        $('lab-timings').hidden=!$('lab-timings').textContent;
+        $('lab-timings').title='排队不计入环境与执行；环境与执行还包含容器准备、代码传入等开销。';
+      }
       $('lab-result').dataset.state=job.state==='completed'?'ok':'error';
       active=null;render();
       status?.update(id,'remote',{stage:job.state==='completed'?'completed':job.state==='cancelled'?'cancelled':'failed',detail:job.state==='completed'?'执行完成 · '+(job.elapsedMs??'?')+' ms':reasons[job.state]||'代码执行失败，请查看运行结果。',version:shortVersion(job.runtimeVersion||id),retryLabel:'重试运行'});

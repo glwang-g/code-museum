@@ -61,6 +61,7 @@ class ExecutorTests(unittest.TestCase):
             self.assertIsNone(manager.get(second['id'],'owner-b'))
             cancelled=manager.get(second['id'],'owner-a',True)
             self.assertEqual(cancelled['state'],'cancelled')
+            self.assertGreaterEqual(cancelled['queueMs'],0)
             self.assertNotIn('code',manager.jobs[second['id']])
             manager.get(first['id'],'owner-a',True)
             deadline=time.monotonic()+1
@@ -68,6 +69,7 @@ class ExecutorTests(unittest.TestCase):
             self.assertEqual(manager.get(first['id'],'owner-a')['state'],'cancelled')
             self.assertNotIn('code',manager.get(first['id'],'owner-a'))
             self.assertNotIn('owner',manager.get(first['id'],'owner-a'))
+            self.assertGreaterEqual(manager.get(first['id'],'owner-a')['queueMs'],0)
             self.assertEqual(runner.maximum,1)
         finally: runner.gate.set();manager.stop()
 

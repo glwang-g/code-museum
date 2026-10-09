@@ -215,6 +215,11 @@ def main():
                         'evidence': '', 'evidence_status': 'record-field-only'}
                 edges[parent, record['id'], relation_type] = edge
     for item in overrides:
+        if item.get('replacesType'):
+            old_key = (item['from'], item['to'], item['replacesType'])
+            if old_key not in edges or item['replacesType'] == item['type']:
+                raise ValueError('Invalid reviewed relationship replacement')
+            del edges[old_key]
         edge = {'from': item['from'], 'to': item['to'], 'type': item['type'], 'origin': 'curated-override',
                 'source': item.get('source', ''), 'source_sha256': item.get('sourceSha256', ''), 'evidence': item.get('evidence', ''),
                 'evidence_status': 'claim-with-citation' if item.get('source') and item.get('evidence') else 'citation-or-excerpt-missing'}

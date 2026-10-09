@@ -40,7 +40,13 @@ test('pinned report covers every current label and preserves review decisions an
  assert.equal(report.summary.labels,50);assert.equal(report.summary.mapDesignGaps,4);
  assert.deepEqual(report,JSON.parse(fs.readFileSync(path.join(root,'data/audit/relationship-status.json'))));
  const find=(from,to)=>report.relations.find(e=>e.from===from&&e.to===to);
- assert.equal(find('java','csharp').state,'needs-direct-evidence');
+ assert.equal(find('java','csharp').state,'excerpt-recorded');
+ assert.match(find('java','csharp').sources[0].excerpt,/checked exceptions/);
+ assert.match(find('java','csharp').reviewNote,/不表示后继/);
+ assert.equal(find('objective-c','swift').state,'excerpt-recorded');
+ assert.match(find('objective-c','swift').source,/ccf11a958db44ae501a84329455e89fa46fc5d61/);
+ assert.equal(find('c','cpp').type,'influencedBy');
+ assert.ok(!report.relations.some(e=>e.from==='c'&&e.to==='cpp'&&e.type==='supersetOf'));
  assert.equal(find('csharp','scala').state,'excerpt-recorded');
  assert.match(find('csharp','scala').sources[0].excerpt,/not a superset/);
  assert.equal(find('swift','rust').state,'excerpt-recorded');

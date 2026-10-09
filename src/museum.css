@@ -383,3 +383,8 @@ body:not(.lineage-focus) .atlas .relations path.field-edge{opacity:.12}
 .lab-file-feedback{font-size:12px;color:var(--gold);margin:0;flex:none}
 .lab-file-feedback[hidden]{display:none}
 
+
+.lab-timings{flex:none;padding:6px 12px;color:var(--muted);font-size:11px;border-bottom:1px solid var(--line)}
+.lab-compiler{flex:none;max-height:40%;overflow:auto;border-bottom:1px solid var(--line)}
+.lab-compiler summary{cursor:pointer;padding:6px 12px;color:var(--gold);font-size:12px}
+.lab-compiler pre{padding:6px 12px;font-size:12px}

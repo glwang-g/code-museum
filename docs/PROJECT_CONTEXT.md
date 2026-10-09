@@ -327,3 +327,14 @@ UV/PV展示68707e8已推送，Actions37877136008的build/deploy成功；现有Ng
 最终本地核验完成：48项npm测试、离线构建通过；41项实际隔离Docker检查通过，补验Rust编译超时不执行、编译中API SIGKILL后watchdog清理，源码哈希一致、容器零残留。34组完整Chrome回归通过，四种关系证据状态、地图搜索/标签/上下游、主题/六页签/13张出处卡和JS/Python/Lua/Scheme真实输出保留。截图已查看。记录executor-compiled-checks.json和continuation-regression-checks.json；22组远端浏览器记录另列。发布结果待后续实际记录。
 
 第3/4/5项正式发布与核验完成：b1665b2及Actions37890426132的build/deploy成功；现有私有执行服务已带备份升级，七运行时可用、匿名执行401、执行/统计服务active、容器零残留。正式HTTPS实际Chrome22组执行/编译/错误/停止恢复及宽窄屏明暗检查通过，13+9份线上文件SHA一致、截图已查看；原累计数据库沿用。正式SSH stdio MCP9项检查及四数据SHA核对通过；接入见MCP.md，无公开HTTP MCP接口。发布证据见executor-compiled-production-checks.json、mcp-production-checks.json、continuation-production-files.json与DEPLOYMENT记录。关系证据仍有336条字段待核、Swift1条缺匹配摘录及Java→C#直接依据待补，不能宣称关系全量穷尽。
+
+
+## 2026-10-09 新一轮计划第1/2项：运行体验与标签关系证据
+
+本轮第1项是执行结果分层和Rust/Go学习示例，第2项是常显标签关系证据续核；后续运营监控、HTTPS MCP、学习导览未在本轮实施。编译器stdout/stderr分别返回compilerStdout/compilerStderr，程序stdout/stderr保持原字段；四个字段共享32KiB总预算，包括UTF-8替换扩张。Manager以单调时钟记录实际排队queueMs，编译/运行分别计时，解释器另记录附着执行阶段runMs；不存在阶段不提供虚构数字。“环境与执行”沿用elapsedMs且不含排队，包含容器准备和传入源码等开销，时间口径见README。
+
+前端独立编译诊断区，有内容自动展开；错误未执行明确显示，耗时条分阶段，编辑/切换清除旧结果附属信息。Rust2021/Go各四份原创完整主题程序，使用固定私有远端和标准库；语言对比跟随扩展为十一门/44份。没有新增本地Rust/Go运行环境。
+
+关系本批5份新读来源，85条审查/193份已读来源；五条升级，94条摘录已存/333条字段待核。Swift引用固定官方仓库历史源码，Java→C#限定为检查异常设计参照与取舍；C++原严格超集字段用有来源的replacesType显式更正为设计影响，原快照不改。四个常显设计层缺口、五个年代提示仍保留。细节与未解决项见RELATIONSHIP_RESEARCH_BATCH_12.md。
+
+本条编写时30组实际Chrome→临时私有SSH Docker检查已通过，包括Rust/Go八份程序真实预期输出；最终单测、扩展Docker安全回归和窄屏诊断截图复核正在完成。尚未提交、推送或部署本批改动。后续以最终核验条目覆盖此状态。

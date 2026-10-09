@@ -65,7 +65,7 @@ EXECUTOR_UPSTREAM=http://127.0.0.1:4181 npm run preview
 | 文件系统 | 只读根；解释器/work16MiB、/tmp8MiB均noexec；编译环境各128MiB，/work允许执行容器内产物、/tmp仍noexec；均nosuid/nodev |
 | 网络 / 用户 / 权限 | 禁网、uid65534、cap-drop ALL、no-new-privileges、Docker默认seccomp |
 | 源码 / stdin / HTTP body | 64 KiB / 16 KiB / 96 KiB，按UTF-8字节 |
-| stdout + stderr | 合计32 KiB，包括非法UTF-8替换后的结果 |
+| compilerStdout + compilerStderr + stdout + stderr | 合计32 KiB，包括非法UTF-8替换后的结果 |
 | 配额 / 结果查询 | 每session每分钟10次、全局30次；最多100记录，完成结果可查询5分钟 |
 
 任务状态包括 queued、compiling、running、completed、failed、compile_error、compile_timed_out、timed_out、cancelled、output_limit、memory_limit、infrastructure_error。源码与输入仅在任务内存和临时容器中使用，完成后从任务记录删除；标准输出/错误可能含用户输入，仍应视为敏感数据。结果超过5分钟不可查询，在新任务提交时移除过期内存记录，服务退出时全部释放；并非定时落盘或精确到秒的内存擦除。无代码日志和 Docker 输出日志。当前配额按私有会话计算，不是公开用户身份认证。
@@ -111,3 +111,12 @@ EXECUTOR_BROWSER_ORIGIN=https://codemuseum.freexlib.com npm run executor:browser
 源码通过docker exec的标准输入写入容器tmpfs，未写宿主源码文件、无宿主挂载。固定白名单编译命令与运行命令分别计时，返回compileMs/runMs/phase；编译失败或超时不启动用户程序。编译诊断和程序输出合计32KiB。超时/输出过量/取消先终止docker客户端管道，再强制移除容器；宿主watchdog处理API死亡。新程序的二进制/类文件只在容器内执行，最后随容器销毁。Go每次冷编译，首版没有跨用户共享可写缓存。
 
 真实Docker检查记录见data/audit/executor-compiled-checks.json；覆盖五语言真实编译/输出/stdin、编译诊断、运行超时和输出上限，保留Python/Ruby限制回归。普通Docker共享内核，资源限制实测不证明容器逃逸防护。
+
+## 分阶段结果字段（2026-10-09）
+
+- `compilerStdout` / `compilerStderr`：仅编译器诊断；`stdout` / `stderr`：程序执行阶段输出。编译失败后程序字段为空，不把诊断伪装成程序输出。
+- `queueMs`：接收任务至调度开始的单调时钟实测毫秒；排队取消也记录已等待时间。
+- `compileMs` / `runMs`：存在对应阶段才返回；解释器只有运行阶段。包含Docker客户端/解释器启动等阶段开销，不是CPU时间。
+- `elapsedMs`：调度开始后容器准备、传入源码、编译及执行等耗时，不含排队，不含最后销毁容器的时间；不能由compileMs/runMs简单相加替代。
+
+四项输出仍共享32KiB总上限，UTF-8替换扩张仍计入总预算，原任务认证/配额/容器限制保持。自定义API客户端应读取新增编译字段；网页独立展示诊断与程序输出。新一轮检查使用独立报告，不覆写前批证据。

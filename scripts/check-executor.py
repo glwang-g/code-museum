@@ -39,8 +39,9 @@ def main():
             assert time.monotonic()-started<60,(name,job)
             time.sleep(.08);status,job=request('GET','executions/'+job['id'],session=session)
         assert job['state']==state,(name,job)
+        assert job.get('queueMs',-1)>=0,(name,job)
         if expected is not None:assert job.get('stdout')==expected,(name,job)
-        assert len(job.get('stdout','').encode())+len(job.get('stderr','').encode())<=32768,(name,job)
+        assert sum(len(job.get(f,'').encode()) for f in ('stdout','stderr','compilerStdout','compilerStderr'))<=32768,(name,job)
         checks.append({'name':name,'language':language,'code':code,'stdin':stdin,'result':{k:v for k,v in job.items() if k!='id'}})
         print('PASS '+name,flush=True)
         return job
@@ -71,9 +72,11 @@ def main():
             job=run(language+' actual compilation, execution and stdin',language,code,'55\nhello\n',stdin='hello\n')
             assert job.get('compileMs',0)>0 and job.get('runMs',0)>0
             error=run(language+' compiler diagnostic',language,'not valid source !!!',None,'compile_error')
-            assert error.get('stderr') and 'runMs' not in error
+            assert error.get('compilerStderr') and not error.get('stderr') and not error.get('stdout') and 'runMs' not in error
             run(language+' runtime timeout',language,loop,None,'timed_out')
             run(language+' combined output budget',language,output,None,'output_limit')
+        warning=run('Compiler warning does not enter program output','c','#warning museum compiler warning\n#include <stdio.h>\nint main(void){puts("42");}', '42\n')
+        assert 'museum compiler warning' in warning.get('compilerStderr','') and not warning.get('stderr')
         compiler_loop='#![allow(long_running_const_eval)]\nconst X:u32={loop{}};fn main(){println!("{}",X);}'
         timeout=run('Rust compile timeout does not run the program','rust',compiler_loop,None,'compile_timed_out')
         assert 'runMs' not in timeout and timeout.get('phase')=='compiling'

@@ -6,10 +6,8 @@
     "relations": 427,
     "mapDesignGaps": 4,
     "states": {
-      "excerpt-recorded": 89,
-      "field-only": 336,
-      "needs-direct-evidence": 1,
-      "citation-only": 1
+      "excerpt-recorded": 94,
+      "field-only": 333
     },
     "warnings": 5
   },
@@ -163,7 +161,7 @@
       "downstream": [
         "c|c-shell|influencedBy",
         "c|c3|influencedBy",
-        "c|cpp|supersetOf",
+        "c|cpp|influencedBy",
         "c|go|influencedBy",
         "c|java|influencedBy",
         "c|jule|influencedBy",
@@ -182,10 +180,10 @@
         "c|zig|interop"
       ],
       "mapLinks": 8,
-      "fieldOnly": 9,
+      "fieldOnly": 7,
       "citationOnly": 0,
       "needsDirectEvidence": 0,
-      "excerptRecorded": 6,
+      "excerptRecorded": 8,
       "state": "needs-review"
     },
     {
@@ -213,7 +211,7 @@
       "year": 1985,
       "languageStatus": "verified-language",
       "upstream": [
-        "c|cpp|supersetOf"
+        "c|cpp|influencedBy"
       ],
       "downstream": [
         "cpp|chapel|influencedBy",
@@ -234,10 +232,10 @@
         "cpp|python|extensionInterface"
       ],
       "mapLinks": 5,
-      "fieldOnly": 10,
+      "fieldOnly": 9,
       "citationOnly": 0,
       "needsDirectEvidence": 0,
-      "excerptRecorded": 4,
+      "excerptRecorded": 5,
       "state": "needs-review"
     },
     {
@@ -263,8 +261,8 @@
       "mapLinks": 4,
       "fieldOnly": 4,
       "citationOnly": 0,
-      "needsDirectEvidence": 1,
-      "excerptRecorded": 3,
+      "needsDirectEvidence": 0,
+      "excerptRecorded": 4,
       "state": "needs-review"
     },
     {
@@ -438,8 +436,8 @@
       "mapLinks": 7,
       "fieldOnly": 6,
       "citationOnly": 0,
-      "needsDirectEvidence": 1,
-      "excerptRecorded": 5,
+      "needsDirectEvidence": 0,
+      "excerptRecorded": 6,
       "state": "needs-review"
     },
     {
@@ -463,10 +461,10 @@
       ],
       "ecology": [],
       "mapLinks": 4,
-      "fieldOnly": 9,
+      "fieldOnly": 8,
       "citationOnly": 0,
       "needsDirectEvidence": 0,
-      "excerptRecorded": 1,
+      "excerptRecorded": 2,
       "state": "needs-review"
     },
     {
@@ -602,10 +600,10 @@
       ],
       "ecology": [],
       "mapLinks": 2,
-      "fieldOnly": 2,
-      "citationOnly": 1,
+      "fieldOnly": 1,
+      "citationOnly": 0,
       "needsDirectEvidence": 0,
-      "excerptRecorded": 0,
+      "excerptRecorded": 2,
       "state": "needs-review"
     },
     {
@@ -985,9 +983,9 @@
       "ecology": [],
       "mapLinks": 2,
       "fieldOnly": 1,
-      "citationOnly": 1,
+      "citationOnly": 0,
       "needsDirectEvidence": 0,
-      "excerptRecorded": 1,
+      "excerptRecorded": 2,
       "state": "needs-review"
     },
     {
@@ -1006,10 +1004,10 @@
       ],
       "ecology": [],
       "mapLinks": 1,
-      "fieldOnly": 5,
+      "fieldOnly": 4,
       "citationOnly": 0,
       "needsDirectEvidence": 0,
-      "excerptRecorded": 0,
+      "excerptRecorded": 1,
       "state": "needs-review"
     },
     {
@@ -2053,17 +2051,30 @@
     {
       "from": "c",
       "to": "cpp",
-      "type": "supersetOf",
-      "source": "https://github.com/breck7/pldb/blob/main/concepts/cpp.scroll",
-      "key": "c|cpp|supersetOf",
+      "type": "influencedBy",
+      "label": "直接发展与近兼容设计",
+      "source": "https://www.stroustrup.com/bs_faq.html",
+      "sourceSha256": "2f0e35a9519217a12dfac5cd033a61c08e78d423671c8ddbcc4257c299c0d87e",
+      "evidence": "C++ 设计者称它直接源于 C、保留几乎全部 C，且说明兼容例外；此处 C 指 Classic C/C89，C++ 与 C99 是旁系发展。扩展关系不代表任意 C 程序均可作为 C++ 编译。",
+      "replacesType": "supersetOf",
+      "key": "c|cpp|influencedBy",
       "layer": "design",
-      "state": "field-only",
-      "issues": [
-        "缺少关系论证"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": true,
-      "sources": []
+      "sources": [
+        {
+          "url": "https://www.stroustrup.com/bs_faq.html",
+          "finalUrl": "https://www.stroustrup.com/bs_faq.html",
+          "title": "Bjarne Stroustrup FAQ",
+          "excerpt": "C++ is a direct descendant of C that retains almost all of C as a subset. [separate passage] C++ is not a descendant of C99; C++ and C99 are siblings.",
+          "checkedAt": "2026-10-09T06:52:59.137908+00:00",
+          "sha256": "2f0e35a9519217a12dfac5cd033a61c08e78d423671c8ddbcc4257c299c0d87e",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected",
+          "reviewId": "cpp"
+        }
+      ]
     },
     {
       "from": "c",
@@ -2179,16 +2190,28 @@
       "from": "c",
       "to": "objective-c",
       "type": "supersetOf",
-      "source": "https://github.com/breck7/pldb/blob/main/concepts/objective-c.scroll",
+      "label": "C 的面向对象扩展",
+      "source": "https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/Introduction/Introduction.html",
+      "sourceSha256": "8cc6386df52599fe2a8923d10f61c7e186248269622fc2479939d92405839b78",
+      "evidence": "Apple 明确称 Objective-C 是 C 的超集，继承语法、基础类型和控制流，新增类和方法语法。",
       "key": "c|objective-c|supersetOf",
       "layer": "design",
-      "state": "field-only",
-      "issues": [
-        "缺少关系论证"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": true,
-      "sources": []
+      "sources": [
+        {
+          "url": "https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/Introduction/Introduction.html",
+          "finalUrl": "https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/Introduction/Introduction.html",
+          "title": "Apple: Programming with Objective-C",
+          "excerpt": "It’s a superset of the C programming language and provides object-oriented capabilities and a dynamic runtime. Objective-C inherits the syntax, primitive types, and flow control statements of C and adds syntax for defining classes and methods.",
+          "checkedAt": "2026-10-09T06:52:59.137908+00:00",
+          "sha256": "8cc6386df52599fe2a8923d10f61c7e186248269622fc2479939d92405839b78",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected",
+          "reviewId": "objective-c"
+        }
+      ]
     },
     {
       "from": "c",
@@ -3936,27 +3959,25 @@
       "from": "java",
       "to": "csharp",
       "type": "influencedBy",
-      "label": "语法与设计关联（待补证）",
-      "source": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/introduction",
-      "evidence": "早期录入以微软 C# 规范导言的读者定位推断 Java 的设计影响。2026-10-08 复读当前导言，只能确认 C/C++ 程序员迁移目标，无法由读者熟悉度单独证明 Java 设计输入；这条记录保留为待补直接依据，不表示已确认血缘或运行时兼容。",
-      "sourceSha256": "8416859ee73291ea294577e3b3c2d61b4e4f233611fd8f57f07d3150f24dec9a",
+      "label": "异常机制设计参照与取舍",
+      "source": "https://www.artima.com/articles/the-trouble-with-checked-exceptions",
+      "evidence": "C# 首席设计者 Hejlsberg 回答为何未引入检查异常，直接评议 Java 实现的版本演化和规模问题。这支持具体机制的设计参照与取舍（包括未采用），不代表 C# 是 Java 的后继、超集或异常机制照搬。",
+      "sourceSha256": "84d17ba6d2f88eb784a211b9b522e4a77048121132ecb829db5d069541883d10",
       "key": "java|csharp|influencedBy",
       "layer": "design",
-      "state": "needs-direct-evidence",
-      "issues": [
-        "原有引用的规范导言不能仅凭读者熟悉度证明 Java 的设计影响。2026-10-08 复读当前导言，明确的是 C/C++ 程序员迁移目标；Java→C# 保留为待补直接设计依据，不视为已确认后继。"
-      ],
-      "reviewNote": "原有引用的规范导言不能仅凭读者熟悉度证明 Java 的设计影响。2026-10-08 复读当前导言，明确的是 C/C++ 程序员迁移目标；Java→C# 保留为待补直接设计依据，不视为已确认后继。",
+      "state": "excerpt-recorded",
+      "issues": [],
+      "reviewNote": "2026-10-09 补读 Hejlsberg 本人访谈，仅确认 Java 检查异常参与 C# 异常机制的设计评估与取舍；旧规范导言不足以证明设计影响的判断仍有效。不表示后继、超集或实现兼容。",
       "mapVisible": true,
       "sources": [
         {
-          "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/introduction",
-          "finalUrl": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/introduction",
-          "title": "C# language specification — Introduction",
-          "excerpt": "Design goals: Source code portability is very important, as is programmer portability, especially for those programmers already familiar with C and C++. The current Introduction does not establish a Java design-input claim. Familiarity of intended readers alone would not prove design influence; the existing Java→C# claim needs direct evidence.",
-          "checkedAt": "2026-10-08T01:53:18.550374+00:00",
-          "sha256": "8416859ee73291ea294577e3b3c2d61b4e4f233611fd8f57f07d3150f24dec9a",
-          "hashScope": "decoded response body",
+          "url": "https://www.artima.com/articles/the-trouble-with-checked-exceptions",
+          "finalUrl": "https://www.artima.com/articles/the-trouble-with-checked-exceptions",
+          "title": "The Trouble with Checked Exceptions — Anders Hejlsberg interview (2003)",
+          "excerpt": "Bruce Eckel: C# doesn't have checked exceptions. How did you decide whether or not to put checked exceptions into C#? [separate passage] Anders Hejlsberg: By implementing checked exceptions the way it's done in Java, for example, I think you just take one set of problems and trade them for another set of problems. [separate passage] C# is basically silent on the checked exceptions issue. Once a better solution is known—and trust me we continue to think about it—we can go back and actually put something in place.",
+          "checkedAt": "2026-10-09T06:52:59.137908+00:00",
+          "sha256": "84d17ba6d2f88eb784a211b9b522e4a77048121132ecb829db5d069541883d10",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected",
           "reviewId": "csharp"
         }
       ]
@@ -4222,16 +4243,28 @@
       "from": "javascript",
       "to": "typescript",
       "type": "supersetOf",
-      "source": "https://github.com/breck7/pldb/blob/main/concepts/typescript.scroll",
+      "label": "增加类型系统的扩展",
+      "source": "https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html",
+      "sourceSha256": "9a7cccc22284a8a40f7868ff5ac8b177a68c570c9f172acc139186daffd324c4",
+      "evidence": "TypeScript 官方手册说明保留 JavaScript 特性并增加类型系统；语言层扩展不保证任意项目配置、宿主 API 和类型检查均无错误。",
       "key": "javascript|typescript|supersetOf",
       "layer": "design",
-      "state": "field-only",
-      "issues": [
-        "缺少关系论证"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": true,
-      "sources": []
+      "sources": [
+        {
+          "url": "https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html",
+          "finalUrl": "https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html",
+          "title": "TypeScript official handbook",
+          "excerpt": "TypeScript offers all of JavaScript’s features, and an additional layer on top of these: TypeScript’s type system. [separate passage] This means that your existing working JavaScript code is also TypeScript code.",
+          "checkedAt": "2026-10-09T06:52:59.137908+00:00",
+          "sha256": "9a7cccc22284a8a40f7868ff5ac8b177a68c570c9f172acc139186daffd324c4",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected",
+          "reviewId": "typescript"
+        }
+      ]
     },
     {
       "from": "jeebox",
@@ -5721,17 +5754,27 @@
       "to": "swift",
       "type": "influencedBy",
       "label": "部分语言设计承接",
-      "source": "https://www.swift.org/about/",
-      "evidence": "Swift 官方 About 页面明确说，Swift 的命名参数从 Objective-C 继承而来（named parameters brought forward from Objective-C）。这证明具体语言设计影响；两者的互操作和共同平台背景本身不作为继承证据。",
+      "source": "https://raw.githubusercontent.com/swiftlang/swift-org-website/ccf11a958db44ae501a84329455e89fa46fc5d61/about/index.md",
+      "evidence": "Swift 官方网站仓库固定提交 ccf11a958db44ae501a84329455e89fa46fc5d61 的 About 原文明确说明命名参数借鉴自 Objective-C。当前网页删改不影响固定原文可回溯性；这是具体设计影响，不代表整体后继或超集。",
+      "sourceSha256": "482b22698499f2b54c1c226e4969d22aa80b7bd30be2bb3023be089461a05d4f",
       "key": "objective-c|swift|influencedBy",
       "layer": "design",
-      "state": "citation-only",
-      "issues": [
-        "缺少已阅读原文摘录"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": true,
-      "sources": []
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/swiftlang/swift-org-website/ccf11a958db44ae501a84329455e89fa46fc5d61/about/index.md",
+          "finalUrl": "https://raw.githubusercontent.com/swiftlang/swift-org-website/ccf11a958db44ae501a84329455e89fa46fc5d61/about/index.md",
+          "title": "Swift official About source, pinned commit ccf11a958db44ae501a84329455e89fa46fc5d61",
+          "excerpt": "Swift also borrows from other languages, for instance named parameters brought forward from Objective-C are expressed in a clean syntax that makes APIs in Swift easy to read and maintain.",
+          "checkedAt": "2026-10-09T06:47:50.280282+00:00",
+          "sha256": "482b22698499f2b54c1c226e4969d22aa80b7bd30be2bb3023be089461a05d4f",
+          "hashScope": "complete HTTP response body bytes; fixed official repository commit; excerpt is manually selected",
+          "reviewId": "swift"
+        }
+      ]
     },
     {
       "from": "ocaml",
@@ -8628,10 +8671,10 @@
   ],
   "inputHashes": {
     "data/raw/pldb.json": "57f45d25bba78ab6bc4af5d969356d2efbfcc7c1ee722dbb5c708d60aa78ba77",
-    "data/audit/reviews.json": "31a5a8d5b45ec4f0290f1b96a26bcfee35b77829f2b14ca4ccf7b8de5ca9416c",
-    "data/relationship-overrides.json": "f9a3c979252efa70f4f4ad59d22ff6aa8ffa4d2d7bbe2d1c58f85e9c2d72e342",
+    "data/audit/reviews.json": "2646571696d36b586e10a4b2d74193624f8632fe18864a17caffe4d5dda164b1",
+    "data/relationship-overrides.json": "1d28e08e3185eda32be16cdb46939e86a1ccf4216fd35d07a504ed38156d8e84",
     "data/ecosystem-relations.json": "0d96e92a3853eddc6b32e4a45d5c90223d2096fa35438823f7dcfe72ce161e76",
-    "data/audit/relationship-decisions.json": "15c22e52c04c2813e78932805e639c116f40637fd173c82a493b8f34e885c145",
+    "data/audit/relationship-decisions.json": "4339ab007ed91414653b56ddf2dcbe0a9450de5df1705c9ad76c1fbc7db53960",
     "data/audit/label-selection.json": "dc5eee62fa662b0d60940375d8a3ec56ac2bbf84ee2b9922a290d46d11cc866f"
   }
 }

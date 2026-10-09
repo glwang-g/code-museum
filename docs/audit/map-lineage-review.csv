@@ -29,7 +29,7 @@ boo,Boo,2003,unreviewed,,,0,0,0,0,0,,no-map-link
 boogie,Boogie,2008,unreviewed,,,0,0,0,0,0,,no-map-link
 brainfuck,Brainfuck,1993,unreviewed,,,0,0,0,1,0,,no-map-link
 bython,Bython,2016,unreviewed,,,0,0,0,0,0,,no-map-link
-c,C,1972,verified-language,b,c-shell | cpp | go | java | korn-shell | objective-c | php,8,6,2,7,0,,cited-and-field
+c,C,1972,verified-language,b,c-shell | cpp | go | java | korn-shell | objective-c | php,8,8,0,7,0,,cited-only
 c-shell,C shell,1978,historical-primary-source,c,bash | korn-shell | tcsh,4,4,0,0,1,tcsh,cited-only
 carbon,Carbon,2020,unreviewed,,,0,0,0,0,0,,no-map-link
 cat,cat,2016,unreviewed,,,0,0,0,0,0,,no-map-link
@@ -44,7 +44,7 @@ coconut,Coconut,2014,unreviewed,,,0,0,0,0,0,,no-map-link
 coffeescript,CoffeeScript,2009,unreviewed,,,0,0,0,2,0,,no-map-link
 common-lisp,Common Lisp,1984,verified-language,,,0,0,0,1,2,dylan | lisp,no-map-link
 common-workflow-language,CWL,2014,unreviewed,,,0,0,0,0,0,,no-map-link
-cpp,C++,1985,verified-language,c,d | java | lua | rust,5,4,1,9,0,,cited-and-field
+cpp,C++,1985,verified-language,c,d | java | lua | rust,5,5,0,9,0,,cited-only
 crystal,Crystal,2014,unreviewed,,,0,0,0,1,0,,no-map-link
 csharp,C#,2000,verified-language,java,kotlin | rust | scala,4,4,0,4,0,,cited-only
 curry,Curry,1990,unreviewed,haskell,,1,0,1,0,0,,field-only
@@ -99,7 +99,7 @@ j,J,1990,unreviewed,,,0,0,0,2,0,,no-map-link
 jakt,Jakt,2022,unreviewed,,,0,0,0,0,0,,no-map-link
 janet,Janet,2018,unreviewed,,,0,0,0,0,0,,no-map-link
 java,Java,1995,verified-language,c | cpp,csharp | groovy | javascript | kotlin | scala,7,6,1,5,1,matlab,cited-and-field
-javascript,JavaScript,1995,verified-language,java | scheme,kotlin | typescript,4,1,3,6,1,jsf,cited-and-field
+javascript,JavaScript,1995,verified-language,java | scheme,kotlin | typescript,4,2,2,6,1,jsf,cited-and-field
 jolie,Jolie,2006,unreviewed,,,0,0,0,0,0,,no-map-link
 jq,jq,2012,unreviewed,,,0,0,0,1,0,,no-map-link
 jsf,JSFuck,2012,unreviewed,,,0,0,0,0,1,javascript,no-map-link
@@ -136,7 +136,7 @@ nickle,Nickle,2001,unreviewed,,,0,0,0,0,0,,no-map-link
 nim,Nim,2008,verified-language,,,0,0,0,0,0,,no-map-link
 nu,Nu,2007,unreviewed,,,0,0,0,0,0,,no-map-link
 oberon,Oberon,1986,historical-primary-source,algol-60 | modula-2,go,3,2,1,1,0,,cited-and-field
-objective-c,Objective-C,1984,unreviewed,c,swift,2,1,1,1,0,,cited-and-field
+objective-c,Objective-C,1984,unreviewed,c,swift,2,2,0,1,0,,cited-only
 objective-cpp,Objective C++,1993,unreviewed,,,0,0,0,0,0,,no-map-link
 ocaml,OCaml,1996,verified-language,,f-sharp | rust,2,2,0,1,0,,cited-only
 octave,GNU Octave,1988,verified-language,matlab,,1,1,0,0,0,,cited-only
@@ -208,7 +208,7 @@ teco,TECO,1963,unreviewed,,,0,0,0,0,0,,no-map-link
 terra,Terra,2012,unreviewed,,,0,0,0,0,0,,no-map-link
 text-executive-programming-language,Text Executive Programming Language,1979,unreviewed,,,0,0,0,0,0,,no-map-link
 thue-programming-language,Thue,2004,unreviewed,,,0,0,0,0,0,,no-map-link
-typescript,TypeScript,2012,verified-language,javascript,,1,0,1,4,0,,field-only
+typescript,TypeScript,2012,verified-language,javascript,,1,1,0,4,0,,cited-only
 unison,unison,2015,unreviewed,,,0,0,0,0,0,,no-map-link
 unlambda,UNLAMBDA,1999,unreviewed,,,0,0,0,0,0,,no-map-link
 v,V,2019,unreviewed,,,0,0,0,0,0,,no-map-link

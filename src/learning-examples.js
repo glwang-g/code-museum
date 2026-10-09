@@ -238,6 +238,54 @@ window.MUSEUM_LESSONS={
           "note": "这是原创完整示例，展示一种常见写法。"
         }
       }
+    },
+    "rust": {
+      "version": "Rust 2021",
+      "goal": "强调内存安全的系统编程",
+      "source": "https://doc.rust-lang.org/book/",
+      "runtime": "私有远端编译执行 · 需令牌",
+      "examples": {
+        "variables": {
+          "code": "fn main() {\n    let name = \"Museum\";\n    let year: i32 = 2026;\n    println!(\"{} {}\", name, year);\n}\n",
+          "note": "let 默认不可变，i32 明确整数类型。"
+        },
+        "loops": {
+          "code": "fn main() {\n    let mut total = 0;\n    for i in 1..=10 { total += i; }\n    println!(\"{}\", total);\n}\n",
+          "note": "mut 允许修改累加器，1..=10 包含右端点。"
+        },
+        "functions": {
+          "code": "fn square(n: i32) -> i32 { n * n }\nfn main() { println!(\"{}\", square(7)); }\n",
+          "note": "末尾表达式不加分号，作为返回值。"
+        },
+        "collections": {
+          "code": "fn main() {\n    let values = vec![3, 1, 2];\n    let doubled: Vec<String> = values.iter().map(|n| (n * 2).to_string()).collect();\n    println!(\"{}\", doubled.join(\", \"));\n}\n",
+          "note": "Vec 是动态数组，迭代器把逐项结果收集成新集合。"
+        }
+      }
+    },
+    "go": {
+      "version": "Go",
+      "goal": "强调简洁与并发的通用编程",
+      "source": "https://go.dev/ref/spec",
+      "runtime": "私有远端编译执行 · 需令牌",
+      "examples": {
+        "variables": {
+          "code": "package main\nimport \"fmt\"\nfunc main() {\n    name := \"Museum\"\n    year := 2026\n    fmt.Println(name, year)\n}\n",
+          "note": ":= 声明变量并推断类型。"
+        },
+        "loops": {
+          "code": "package main\nimport \"fmt\"\nfunc main() {\n    total := 0\n    for i := 1; i <= 10; i++ { total += i }\n    fmt.Println(total)\n}\n",
+          "note": "for 是 Go 的循环结构，此例包含端点 10。"
+        },
+        "functions": {
+          "code": "package main\nimport \"fmt\"\nfunc square(n int) int { return n * n }\nfunc main() { fmt.Println(square(7)) }\n",
+          "note": "参数和返回类型写在名字后面。"
+        },
+        "collections": {
+          "code": "package main\nimport (\"fmt\"; \"strconv\"; \"strings\")\nfunc main() {\n    values := []int{3, 1, 2}\n    doubled := make([]string, 0, len(values))\n    for _, n := range values { doubled = append(doubled, strconv.Itoa(n * 2)) }\n    fmt.Println(strings.Join(doubled, \", \"))\n}\n",
+          "note": "slice 表示序列，range 遍历；这里只使用标准库。"
+        }
+      }
     }
   }
 };

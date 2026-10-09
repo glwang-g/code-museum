@@ -125,7 +125,7 @@ class DockerRunner:
         name = self.prefix + job['id']; row = self.runtimes[job['language']]
         _, _, _, compile_seconds, filename, compiler, program = COMPILED[job['language']]
         started = time.monotonic(); watchdog = None
-        buffers = {'stdout': bytearray(), 'stderr': bytearray()}
+        buffers = {field: bytearray() for field in ('compilerStdout', 'compilerStderr', 'stdout', 'stderr')}
         timings = {}; phase = 'compiling'; exit_code = None
         def capture(args, seconds, payload=b''):
             process = subprocess.Popen(args, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
@@ -136,9 +136,9 @@ class DockerRunner:
             reason = None; deadline = time.monotonic() + seconds
             try:
                 with selectors.DefaultSelector() as selector:
-                    for field in buffers:
+                    for field in ('stdout', 'stderr'):
                         stream = getattr(process, field); os.set_blocking(stream.fileno(), False)
-                        selector.register(stream, selectors.EVENT_READ, field)
+                        selector.register(stream, selectors.EVENT_READ, ('compilerStdout' if field == 'stdout' else 'compilerStderr') if phase == 'compiling' else field)
                     while selector.get_map():
                         if job['cancel'].is_set(): reason = 'cancelled'; break
                         if time.monotonic() >= deadline: reason = 'compile_timed_out' if phase == 'compiling' else 'timed_out'; break
@@ -200,7 +200,7 @@ class DockerRunner:
         process = watchdog = None
         started = time.monotonic()
         output = {'stdout': bytearray(), 'stderr': bytearray()}
-        reason = None
+        reason = None; run_ms = None
         try:
             # Start the lease before create, covering API death during Docker setup as well.
             watchdog = subprocess.Popen([sys.executable, str(Path(__file__).resolve()), '--namespace', self.namespace, '--watchdog', name], stdin=subprocess.PIPE, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
@@ -211,6 +211,7 @@ class DockerRunner:
             if job['cancel'].is_set():
                 reason = 'cancelled'
             else:
+                run_tick = time.monotonic()
                 process = subprocess.Popen(['docker', 'start', '--attach', '--interactive', name], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
                 payload = json.dumps({'code': job['code'], 'stdin': job['stdin']}).encode()
                 def send_input():
@@ -243,6 +244,7 @@ class DockerRunner:
                         if reason: break
                 if not reason:
                     process.wait(timeout=1)
+                run_ms = round((time.monotonic() - run_tick) * 1000)
             state = json.loads(subprocess.check_output(['docker', 'inspect', '--format', '{{json .State}}', name], timeout=5))
             reason = reason or ('memory_limit' if state.get('OOMKilled') else 'completed' if state.get('ExitCode') == 0 else 'failed')
             decoded = {};remaining = MAX_OUTPUT
@@ -252,7 +254,7 @@ class DockerRunner:
                 decoded[field] = encoded[:remaining].decode('utf-8', errors='ignore')
                 remaining -= len(decoded[field].encode('utf-8'))
             return {'state': reason, 'exitCode': state.get('ExitCode') if reason in ('completed', 'failed', 'memory_limit') else None,
-                    **decoded,
+                    **decoded, **({'runMs': run_ms} if run_ms is not None else {}),
                     'elapsedMs': round((time.monotonic() - started) * 1000), 'runtimeVersion': self.runtimes[job['language']]['version']}
         except (OSError, ValueError, subprocess.SubprocessError, RuntimeError):
             return {'state': 'cancelled' if job['cancel'].is_set() else 'infrastructure_error', 'stdout': '', 'stderr': 'Execution infrastructure unavailable; no fallback was used.', 'exitCode': None}
@@ -298,7 +300,7 @@ class Manager:
             return self.public(job)
 
     def public(self, job):
-        return {k: job[k] for k in ('id', 'language', 'state', 'phase', 'stdout', 'stderr', 'exitCode', 'elapsedMs', 'compileMs', 'runMs', 'runtimeVersion') if k in job}
+        return {k: job[k] for k in ('id', 'language', 'state', 'phase', 'stdout', 'stderr', 'exitCode', 'elapsedMs', 'queueMs', 'compileMs', 'runMs', 'compilerStdout', 'compilerStderr', 'runtimeVersion') if k in job}
 
     def get(self, ident, owner, cancel=False):
         with self.lock:
@@ -307,6 +309,7 @@ class Manager:
             if cancel and job['state'] not in FINAL:
                 job['cancel'].set()
                 if job['state'] == 'queued':
+                    job['queueMs'] = round((time.monotonic() - job['updated']) * 1000)
                     self.pending.remove(job);job['state'] = 'cancelled';job.pop('code', None);job.pop('stdin', None)
                 job['updated'] = time.monotonic()
             return self.public(job)
@@ -317,6 +320,7 @@ class Manager:
                 self.lock.wait_for(lambda: self.pending or self.stopping)
                 if self.stopping: return
                 job = self.pending.popleft()
+                job['queueMs'] = round((time.monotonic() - job['updated']) * 1000)
                 if not self.runner.healthy:
                     job.update(state='infrastructure_error', stderr='Runner disabled', updated=time.monotonic())
                     job.pop('code', None);job.pop('stdin', None);continue
