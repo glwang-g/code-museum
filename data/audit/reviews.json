@@ -1885,6 +1885,18 @@
           "finalUrl": "https://www.rfc-editor.org/rfc/rfc8259.html",
           "decodedBodySha256": "5302d6ccb6cf221817bdd1f8cd7221661d4519372e0ac0b4cf641e11e8037de7",
           "excerpt": "JSON defines a small set of formatting rules for the portable representation of structured data. This document removes inconsistencies with other specifications of JSON, repairs specification errors, and offers experience-based interoperability guidance. Status of This Memo This is an Internet Stand"
+        },
+        {
+          "role": "关系依据",
+          "url": "https://www.json.org/json-en.html",
+          "checkedAt": "2026-10-09T16:00:00+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "Introducing JSON",
+          "finalUrl": "https://www.json.org/json-en.html",
+          "decodedBodySha256": "7cd9c0dbe49b4ea39c06f67c9899aab876e78f03871c2939fb0071b5db897253",
+          "excerpt": "JSON (JavaScript Object Notation) is a lightweight data-interchange format. It is based on a subset of the JavaScript Programming Language Standard.",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected"
         }
       ]
     },
@@ -3296,10 +3308,10 @@
         }
       ]
     },
-    {
-      "id": "c3",
-      "status": "unreviewed",
-      "notes": "本批仅核读 C2→C3 关系依据，尚未完成独立语法与实现审查。",
+      {
+        "id": "c3",
+        "status": "unreviewed",
+        "notes": "本批仅核读 C→C3 与 C2→C3 关系依据，尚未完成独立语法与实现审查。",
       "sources": [
         {
           "url": "https://raw.githubusercontent.com/c3lang/c3c/master/README.md",
@@ -3310,7 +3322,45 @@
           "role": "关系依据",
           "title": "C3 Language — c3c README",
           "reviewed": true,
-          "excerpt": "C3 owes its inspiration to the C2 language: to iterate on top of C without inventing an entirely new language.",
+          "excerpt": "It's an evolution, not a revolution: familiar C syntax and semantics, modernized for everyday development. C3 owes its inspiration to the C2 language: to iterate on top of C without inventing an entirely new language.",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected"
+        }
+      ]
+    },
+    {
+      "id": "bqn",
+      "status": "unreviewed",
+      "notes": "本批仅核读 APL→BQN 关系依据，尚未完成独立语法与实现审查。",
+      "sources": [
+        {
+          "url": "https://mlochbaum.github.io/BQN/",
+          "finalUrl": "https://mlochbaum.github.io/BQN/",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-09T16:00:00+00:00",
+          "decodedBodySha256": "9a9c6123a187d840693a4777a8311e37f84da68ff43796cabf895bf519f80c09",
+          "role": "关系依据",
+          "reviewed": true,
+          "title": "BQN: finally, an APL for your flying saucer",
+          "excerpt": "BQN aims to remove irregular and burdensome aspects of the APL tradition, and put the great ideas on a firmer footing. It maintains many of the ideas that made APL\\360 revolutionary in 1966.",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected"
+        }
+      ]
+    },
+    {
+      "id": "assemblyscript",
+      "status": "unreviewed",
+      "notes": "本批核读 TypeScript→AssemblyScript 关系字段。官方页面只说明 TypeScript-like 与相似性，未找到足以把相似性升级为设计影响的直接表述；关系继续待核。",
+      "sources": [
+        {
+          "url": "https://www.assemblyscript.org/",
+          "finalUrl": "https://www.assemblyscript.org/",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-09T16:00:00+00:00",
+          "decodedBodySha256": "efbe9fb76ff40cb1e3a19183d51169d326c1df50d97a766ba6ba541292e0bf95",
+          "role": "关系依据",
+          "reviewed": true,
+          "title": "AssemblyScript",
+          "excerpt": "A TypeScript-like language for WebAssembly. Its similarity with TypeScript makes it easy to compile to WebAssembly without learning a new language.",
           "hashScope": "complete HTTP response body bytes; excerpt is manually selected"
         }
       ]

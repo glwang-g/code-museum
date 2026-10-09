@@ -802,5 +802,32 @@
     "source": "https://raw.githubusercontent.com/c3lang/c3c/master/README.md",
     "sourceSha256": "4424ba16217513218bc1c4ffdcd4c144a1e9cfbfb48a21c1cc3cee9b14603f88",
     "evidence": "C3 官方编译器仓库 README 明确写道 C3 的灵感来自 C2，目标是在不另造一门完全不同语言的情况下迭代 C2。此处表示 C2 对 C3 的设计输入，不把 C ABI 兼容或 C 风格语法另算成 C → C3 继承。"
+  },
+  {
+    "from": "apl",
+    "to": "bqn",
+    "type": "influencedBy",
+    "label": "APL 传统与数组编程思想",
+    "source": "https://mlochbaum.github.io/BQN/",
+    "sourceSha256": "9a9c6123a187d840693a4777a8311e37f84da68ff43796cabf895bf519f80c09",
+    "evidence": "BQN 官方首页明确说其目标是去除 APL 传统中不规则和负担较重的部分，同时保留并重新夯实 APL 与 APL\\360 的核心思想。此处表示 APL 对 BQN 的设计输入，不表示 BQN 是 APL 的源码兼容超集。"
+  },
+  {
+    "from": "javascript",
+    "to": "json",
+    "type": "influencedBy",
+    "label": "JavaScript 子集与数据表示语法",
+    "source": "https://www.json.org/json-en.html",
+    "sourceSha256": "7cd9c0dbe49b4ea39c06f67c9899aab876e78f03871c2939fb0071b5db897253",
+    "evidence": "JSON 官方介绍明确称 JSON 基于 JavaScript Programming Language Standard 的一个子集。这里限定为 JSON 语法/设计对 JavaScript 的直接取材，不表示 JSON 是可执行 JavaScript，也不表示两者运行时兼容。"
+  },
+  {
+    "from": "c",
+    "to": "c3",
+    "type": "influencedBy",
+    "label": "C 语法语义与演进目标",
+    "source": "https://raw.githubusercontent.com/c3lang/c3c/master/README.md",
+    "sourceSha256": "4424ba16217513218bc1c4ffdcd4c144a1e9cfbfb48a21c1cc3cee9b14603f88",
+    "evidence": "C3 官方 README 称 C3 是 evolution, not a revolution，保留熟悉的 C syntax and semantics 并现代化；其目标清单还写明 Evolve C。此处表示 C 对 C3 的设计输入，不宣称 C3 是 C 的严格超集、源码兼容实现或仅因 C ABI 兼容而建立关系。"
   }
 ]

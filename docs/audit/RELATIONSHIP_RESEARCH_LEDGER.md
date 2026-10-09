@@ -19,6 +19,9 @@
 | JavaScript → Dart | Batch 14 | 浏览器/JavaScript 兼容和语法取舍的局部影响 |
 | Python → Cython | Batch 16 | Cython 官方明确称其为 Python 超集 |
 | C2 → C3 | Batch 16 | C3 官方 README 明确称 C2 为设计灵感 |
+| APL → BQN | Batch 17 | BQN 官方说明保留并重做 APL 传统中的核心思想 |
+| JavaScript → JSON | Batch 17 | JSON 官方明确称其基于 JavaScript 标准的一个子集 |
+| C → C3 | Batch 17 | C3 官方 README 明确说保留并现代化 C 的语法与语义 |
 
 ## 当前范围内不补线
 
@@ -29,6 +32,11 @@
 | Zig 设计边 | Batch 15 | C ABI/工具链说明不等于 C 语言设计继承 |
 | Python → Mojo | Batch 16 | 当前官方材料只支持兼容/互操作说明 |
 | C++ → Chapel | Batch 16 | 未取得 C++ 作为具体设计来源的官方原文 |
+| TypeScript → AssemblyScript | Batch 17 | 官方只说明 TypeScript-like 与相似性，未取得设计来源声明 |
+| ALGOL 60 → ALGOL W | Batch 17 | 本批未取得稳定、可直接引用的 ALGOL W/ALGOL-X 一手设计说明 |
+| ALGOL 60 → Modula | Batch 17 | Wirth 家族连续性不足以证明直接设计边，本批未取得具体输入声明 |
+| ALGOL 60 → Oberon | Batch 17 | 未把中间 Modula 历史折算成直接边，本批未取得直接输入声明 |
+| SQL → SEQUEL 2 | Batch 17 | IBM 论文身份可定位，但本批未取得稳定可读且直接支持该端点的原文 |
 
 ## 来源受阻
 

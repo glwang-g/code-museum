@@ -6,8 +6,8 @@
     "relations": 428,
     "mapDesignGaps": 3,
     "states": {
-      "excerpt-recorded": 99,
-      "field-only": 329
+      "excerpt-recorded": 102,
+      "field-only": 326
     },
     "warnings": 5
   },
@@ -73,10 +73,10 @@
       ],
       "ecology": [],
       "mapLinks": 1,
-      "fieldOnly": 7,
+      "fieldOnly": 6,
       "citationOnly": 0,
       "needsDirectEvidence": 0,
-      "excerptRecorded": 1,
+      "excerptRecorded": 2,
       "state": "needs-review"
     },
     {
@@ -180,10 +180,10 @@
         "c|zig|interop"
       ],
       "mapLinks": 8,
-      "fieldOnly": 7,
+      "fieldOnly": 6,
       "citationOnly": 0,
       "needsDirectEvidence": 0,
-      "excerptRecorded": 8,
+      "excerptRecorded": 9,
       "state": "needs-review"
     },
     {
@@ -464,10 +464,10 @@
       ],
       "ecology": [],
       "mapLinks": 5,
-      "fieldOnly": 6,
+      "fieldOnly": 5,
       "citationOnly": 0,
       "needsDirectEvidence": 0,
-      "excerptRecorded": 5,
+      "excerptRecorded": 6,
       "state": "needs-review"
     },
     {
@@ -1581,16 +1581,28 @@
       "from": "apl",
       "to": "bqn",
       "type": "influencedBy",
-      "source": "https://github.com/breck7/pldb/blob/main/concepts/bqn.scroll",
+      "label": "APL 传统与数组编程思想",
+      "source": "https://mlochbaum.github.io/BQN/",
+      "sourceSha256": "9a9c6123a187d840693a4777a8311e37f84da68ff43796cabf895bf519f80c09",
+      "evidence": "BQN 官方首页明确说其目标是去除 APL 传统中不规则和负担较重的部分，同时保留并重新夯实 APL 与 APL\\360 的核心思想。此处表示 APL 对 BQN 的设计输入，不表示 BQN 是 APL 的源码兼容超集。",
       "key": "apl|bqn|influencedBy",
       "layer": "design",
-      "state": "field-only",
-      "issues": [
-        "缺少关系论证"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": false,
-      "sources": []
+      "sources": [
+        {
+          "url": "https://mlochbaum.github.io/BQN/",
+          "finalUrl": "https://mlochbaum.github.io/BQN/",
+          "title": "BQN: finally, an APL for your flying saucer",
+          "excerpt": "BQN aims to remove irregular and burdensome aspects of the APL tradition, and put the great ideas on a firmer footing. It maintains many of the ideas that made APL\\360 revolutionary in 1966.",
+          "checkedAt": "2026-10-09T16:00:00+00:00",
+          "sha256": "9a9c6123a187d840693a4777a8311e37f84da68ff43796cabf895bf519f80c09",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected",
+          "reviewId": "bqn"
+        }
+      ]
     },
     {
       "from": "apl",
@@ -2040,16 +2052,28 @@
       "from": "c",
       "to": "c3",
       "type": "influencedBy",
-      "source": "https://github.com/breck7/pldb/blob/main/concepts/c3.scroll",
+      "label": "C 语法语义与演进目标",
+      "source": "https://raw.githubusercontent.com/c3lang/c3c/master/README.md",
+      "sourceSha256": "4424ba16217513218bc1c4ffdcd4c144a1e9cfbfb48a21c1cc3cee9b14603f88",
+      "evidence": "C3 官方 README 称 C3 是 evolution, not a revolution，保留熟悉的 C syntax and semantics 并现代化；其目标清单还写明 Evolve C。此处表示 C 对 C3 的设计输入，不宣称 C3 是 C 的严格超集、源码兼容实现或仅因 C ABI 兼容而建立关系。",
       "key": "c|c3|influencedBy",
       "layer": "design",
-      "state": "field-only",
-      "issues": [
-        "缺少关系论证"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": false,
-      "sources": []
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/c3lang/c3c/master/README.md",
+          "finalUrl": "https://raw.githubusercontent.com/c3lang/c3c/master/README.md",
+          "title": "C3 Language — c3c README",
+          "excerpt": "It's an evolution, not a revolution: familiar C syntax and semantics, modernized for everyday development. C3 owes its inspiration to the C2 language: to iterate on top of C without inventing an entirely new language.",
+          "checkedAt": "2026-10-09T15:35:00+00:00",
+          "sha256": "4424ba16217513218bc1c4ffdcd4c144a1e9cfbfb48a21c1cc3cee9b14603f88",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected",
+          "reviewId": "c3"
+        }
+      ]
     },
     {
       "from": "c",
@@ -2405,7 +2429,7 @@
           "url": "https://raw.githubusercontent.com/c3lang/c3c/master/README.md",
           "finalUrl": "https://raw.githubusercontent.com/c3lang/c3c/master/README.md",
           "title": "C3 Language — c3c README",
-          "excerpt": "C3 owes its inspiration to the C2 language: to iterate on top of C without inventing an entirely new language.",
+          "excerpt": "It's an evolution, not a revolution: familiar C syntax and semantics, modernized for everyday development. C3 owes its inspiration to the C2 language: to iterate on top of C without inventing an entirely new language.",
           "checkedAt": "2026-10-09T15:35:00+00:00",
           "sha256": "4424ba16217513218bc1c4ffdcd4c144a1e9cfbfb48a21c1cc3cee9b14603f88",
           "hashScope": "complete HTTP response body bytes; excerpt is manually selected",
@@ -4210,16 +4234,28 @@
       "from": "javascript",
       "to": "json",
       "type": "influencedBy",
-      "source": "https://github.com/breck7/pldb/blob/main/concepts/json.scroll",
+      "label": "JavaScript 子集与数据表示语法",
+      "source": "https://www.json.org/json-en.html",
+      "sourceSha256": "7cd9c0dbe49b4ea39c06f67c9899aab876e78f03871c2939fb0071b5db897253",
+      "evidence": "JSON 官方介绍明确称 JSON 基于 JavaScript Programming Language Standard 的一个子集。这里限定为 JSON 语法/设计对 JavaScript 的直接取材，不表示 JSON 是可执行 JavaScript，也不表示两者运行时兼容。",
       "key": "javascript|json|influencedBy",
       "layer": "design",
-      "state": "field-only",
-      "issues": [
-        "缺少关系论证"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": false,
-      "sources": []
+      "sources": [
+        {
+          "url": "https://www.json.org/json-en.html",
+          "finalUrl": "https://www.json.org/json-en.html",
+          "title": "Introducing JSON",
+          "excerpt": "JSON (JavaScript Object Notation) is a lightweight data-interchange format. It is based on a subset of the JavaScript Programming Language Standard.",
+          "checkedAt": "2026-10-09T16:00:00+00:00",
+          "sha256": "7cd9c0dbe49b4ea39c06f67c9899aab876e78f03871c2939fb0071b5db897253",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected",
+          "reviewId": "json"
+        }
+      ]
     },
     {
       "from": "javascript",
@@ -8749,8 +8785,8 @@
   ],
   "inputHashes": {
     "data/raw/pldb.json": "57f45d25bba78ab6bc4af5d969356d2efbfcc7c1ee722dbb5c708d60aa78ba77",
-    "data/audit/reviews.json": "41f050b2c3fed5b56c1c4e51e266c73d722648ce85d768910d29dd1f0bfbd498",
-    "data/relationship-overrides.json": "b3000c82e7d95f44a8ee3339da02e0e7e39782b5db078fddc0466ea14a7d90c6",
+    "data/audit/reviews.json": "b5b67633decafff2baf545b529d902add2af8d07c483e88d48d7374dad38c8d7",
+    "data/relationship-overrides.json": "b5a84f5f4b23aeba1e789283feba07ded2285d1a6135aea2a392e54be0d239cb",
     "data/ecosystem-relations.json": "0d96e92a3853eddc6b32e4a45d5c90223d2096fa35438823f7dcfe72ce161e76",
     "data/audit/relationship-decisions.json": "4339ab007ed91414653b56ddf2dcbe0a9450de5df1705c9ad76c1fbc7db53960",
     "data/audit/label-selection.json": "dc5eee62fa662b0d60940375d8a3ec56ac2bbf84ee2b9922a290d46d11cc866f"

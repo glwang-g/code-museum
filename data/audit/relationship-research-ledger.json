@@ -74,6 +74,59 @@
       "batch": "2026-10-09_BATCH-16",
       "note": "The current Objective-J/Cappuccino official entry point was not stably retrievable; the existing field is not upgraded from a third-party summary.",
       "reopenWhen": "A stable official Objective-J source or fixed repository revision is available."
+    },
+    {
+      "id": "apl|bqn|influencedBy",
+      "status": "verified",
+      "batch": "2026-10-10_BATCH-17",
+      "note": "BQN official homepage explicitly says it removes burdensome parts of the APL tradition while maintaining ideas that made APL/ APL\\360 revolutionary; scope is design input, not source compatibility."
+    },
+    {
+      "id": "javascript|json|influencedBy",
+      "status": "verified",
+      "batch": "2026-10-10_BATCH-17",
+      "note": "JSON official homepage explicitly says JSON is based on a subset of the JavaScript Programming Language Standard; scope is data-notation syntax/design, not executable JavaScript or runtime compatibility."
+    },
+    {
+      "id": "c|c3|influencedBy",
+      "status": "verified",
+      "batch": "2026-10-10_BATCH-17",
+      "note": "C3 official README describes C3 as an evolution retaining familiar C syntax and semantics and lists evolving C as a goal; scope is design input, not strict superset or source compatibility."
+    },
+    {
+      "id": "typescript|assemblyscript|influencedBy",
+      "status": "closed-no-qualifying-source",
+      "batch": "2026-10-10_BATCH-17",
+      "note": "AssemblyScript official homepage says TypeScript-like and highlights similarity, but this batch found no explicit design-source statement sufficient to upgrade the field relation.",
+      "reopenWhen": "An official AssemblyScript design history or fixed source explicitly names TypeScript as a design input for concrete features."
+    },
+    {
+      "id": "algol-60|algol-w|influencedBy",
+      "status": "closed-no-qualifying-source",
+      "batch": "2026-10-10_BATCH-17",
+      "note": "The batch confirmed a historical endpoint candidate but did not obtain a stable first-party ALGOL W/ALGOL-X source with a directly quotable design statement.",
+      "reopenWhen": "A stable primary ALGOL W or ALGOL-X report, author account, or fixed archival copy explicitly connects the language to ALGOL 60."
+    },
+    {
+      "id": "algol-60|modula|influencedBy",
+      "status": "closed-no-qualifying-source",
+      "batch": "2026-10-10_BATCH-17",
+      "note": "Wirth-family continuity and later Modula documentation were not treated as proof of a direct ALGOL 60 design edge; no qualifying direct statement was secured in this batch.",
+      "reopenWhen": "A Modula primary report or author account explicitly identifies a concrete ALGOL 60 design input."
+    },
+    {
+      "id": "algol-60|oberon|influencedBy",
+      "status": "closed-no-qualifying-source",
+      "batch": "2026-10-10_BATCH-17",
+      "note": "The official Oberon report is useful for Oberon’s own specification, but this batch did not obtain a direct ALGOL 60 design-source statement; intervening Modula history is not collapsed into a direct edge.",
+      "reopenWhen": "An Oberon or Wirth primary source explicitly identifies ALGOL 60 as a concrete design input rather than only a family background."
+    },
+    {
+      "id": "sql|sequel-2|influencedBy",
+      "status": "closed-no-qualifying-source",
+      "batch": "2026-10-10_BATCH-17",
+      "note": "The IBM SEQUEL 2 paper identity is present, but the batch could not obtain a stable readable primary copy that directly supports the SQL endpoint claim; the PLDB field remains unupgraded.",
+      "reopenWhen": "A stable IBM paper copy or fixed archival source explicitly connects SQL to the specific SEQUEL 2 version."
     }
   ]
 }
