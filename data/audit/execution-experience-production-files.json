@@ -1,0 +1,51 @@
+{
+  "checkedAt": "2026-10-09T11:06:15.675868+00:00",
+  "scope": "Read-only HTTPS byte comparison to the local offline build; no execution or visit reporting.",
+  "checks": [
+    {
+      "file": "learning-examples.js",
+      "httpStatus": 200,
+      "sha256": "e4be43c7051db13a6421de833e6056c200ea75d9fe983606a9c7cdcb016dbdca"
+    },
+    {
+      "file": "compare.js",
+      "httpStatus": 200,
+      "sha256": "9757fd70345fe05a07041560c4b186f1a742ef5548554550c356957e6d3d5c02"
+    },
+    {
+      "file": "lab-tools.js",
+      "httpStatus": 200,
+      "sha256": "0f4634f511d5886d21fff28b9fdff725c5dbf182209a687ed7c27058f97a32b5"
+    },
+    {
+      "file": "themes.css",
+      "httpStatus": 200,
+      "sha256": "df167e01d77e34c60e523f70264938726f4eff103bc469f2ecceaeca3f725eaf"
+    },
+    {
+      "file": "data/catalogue.json",
+      "httpStatus": 200,
+      "sha256": "672ea4da9593cf367ce45472a5a203e058cc1d550b3aa2e79b0885def914683e"
+    },
+    {
+      "file": "data/audit-reviews.json",
+      "httpStatus": 200,
+      "sha256": "2646571696d36b586e10a4b2d74193624f8632fe18864a17caffe4d5dda164b1"
+    },
+    {
+      "file": "data/mcp-manifest.json",
+      "httpStatus": 200,
+      "sha256": "19d80a4bf7b31841d90d097a83b0f9756c374b2c19b20b7982af74407f90f402"
+    },
+    {
+      "file": "data/execution-capabilities.json",
+      "httpStatus": 200,
+      "sha256": "ea780923a031cd0e2c4eb83b6b7c9bce8ba45aae02106dd767867cd8e63ab612"
+    },
+    {
+      "file": "data/relationship-status.json",
+      "httpStatus": 200,
+      "sha256": "f826ca70c8832483bb8f962dfd1022a9959d76828add52dd1721ea46bf1cbe16"
+    }
+  ]
+}

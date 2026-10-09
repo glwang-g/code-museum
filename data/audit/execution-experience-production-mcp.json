@@ -1,0 +1,26 @@
+{
+  "checkedAt": "2026-10-09T11:06:31.399489+00:00",
+  "scope": "Actual read-only SSH stdio MCP relationship queries against the production current release.",
+  "checks": [
+    {
+      "key": "c|cpp|influencedBy",
+      "state": "excerpt-recorded",
+      "passed": true
+    },
+    {
+      "key": "java|csharp|influencedBy",
+      "state": "excerpt-recorded",
+      "passed": true
+    },
+    {
+      "key": "objective-c|swift|influencedBy",
+      "state": "excerpt-recorded",
+      "passed": true
+    },
+    {
+      "key": "javascript|typescript|supersetOf",
+      "state": "excerpt-recorded",
+      "passed": true
+    }
+  ]
+}

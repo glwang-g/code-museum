@@ -112,3 +112,5 @@ sudo -u code-museum python3 /var/www/code-museum/current/server/analytics.py --b
 主改动dcc6292已由用户/外部操作推送，Actions37898617382的build/deploy成功。私有执行器本轮带备份升级，备份`/var/backups/code-museum-executor/20261009T110023Z`；executor.py SHA `52dca77233bc3b583fd570befa00279fcb458931f8eb73a534b1828dd1fe06b6`，固定镜像清单SHA保持`4782d1897554fbd51bec739d5f1bcdac71289c09a28d7432019f9ef97f7c1ccc`。原令牌、服务身份/权限、CI权限和统计数据库沿用；Nginx/systemd检查通过，两服务active，生产执行器容器零残留。统计仍从2026-10-05开始，读取时10访客/23访问，读取不增计数。
 
 42项实际隔离Docker检查和30项实际Chrome→临时SSH Docker检查通过；后者包含Rust/Go八主题真实输出。窄屏展开诊断区最小高度补丁经实际截图复核，可同时读诊断和“未执行”提示。记录见execution-experience-docker-checks.json及execution-experience-browser-checks.json。最终收尾提交/Actions与正式HTTPS核验待实际完成后追加。
+
+最终续版上线核验：收尾补丁8f11914推送成功，Actions37921475238的build/deploy成功。正式HTTPS实际Chrome30项检查通过：七远端语言两尺寸、独立编译诊断/分阶段耗时、编译中停止恢复、Rust/Go八主题预期输出、私有远端与明确启用后的本地Pyodide，以及JS/Lua/Scheme真实输出。13份浏览器读取文件与额外9份模块/数据文件逐字节匹配本地构建；宽窄屏及编译错误截图已查看。正式SSH只读MCP四条更新关系查询通过，C→C++已显示influencedBy，Java→C#、Objective-C→Swift、JS→TS摘录状态一致。记录见execution-experience-production-checks.json、execution-experience-production-files.json、execution-experience-production-mcp.json。报告不存令牌/会话/任务ID；后续仅核验文档提交不改变已核验网页和后端源码。
