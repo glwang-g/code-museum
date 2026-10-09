@@ -427,6 +427,15 @@
     "evidence": "Kotlin 官方 FAQ《Is Kotlin hard?》明确称 Kotlin 从 Java、C#、JavaScript、Scala、Groovy 等现有语言获得启发；此边表示设计影响，不能推定整体语法派生、超集或源码兼容。"
   },
   {
+    "from": "javascript",
+    "to": "dart",
+    "type": "influencedBy",
+    "label": "浏览器兼容与语法取舍",
+    "source": "https://raw.githubusercontent.com/dart-lang/language/675b500505b9ffeb80fbb507f1911e393e400cd9/specification/dartLangSpec.tex",
+    "evidence": "Dart 官方语言规范固定提交的 rationale 说明：字符串表示选择考虑浏览器与 JavaScript 兼容，异常子句语法设计为向上兼容既有 JavaScript 程序。此处只表示局部兼容性与语法取舍，不表示 Dart 是 JavaScript 的后继、超集或转译产物。",
+    "sourceSha256": "01726188b9069ccd1458ffe480f6eab6aa26beb6500355d7a35ed0310dc0531e"
+  },
+  {
     "from": "scala",
     "to": "kotlin",
     "type": "influencedBy",
@@ -775,5 +784,23 @@
     "source": "https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html",
     "sourceSha256": "9a7cccc22284a8a40f7868ff5ac8b177a68c570c9f172acc139186daffd324c4",
     "evidence": "TypeScript 官方手册说明保留 JavaScript 特性并增加类型系统；语言层扩展不保证任意项目配置、宿主 API 和类型检查均无错误。"
+  },
+  {
+    "from": "python",
+    "to": "cython",
+    "type": "supersetOf",
+    "label": "Python 语法的静态扩展",
+    "source": "https://cython.org/",
+    "sourceSha256": "6e268e8d41870a17f3cced3093de02dcbd324cec1dd9949eb76f8510518d0aac",
+    "evidence": "Cython 官方 About 页面明确称 Cython language 是 Python language 的超集，并说明它增加调用 C/C++ 函数和声明 C/C++ 类型的能力。此处只表示语言层扩展，不表示所有 Python 程序、宿主 API 或第三方包都能无修改通过。"
+  },
+  {
+    "from": "c2",
+    "to": "c3",
+    "type": "influencedBy",
+    "label": "设计灵感与迭代",
+    "source": "https://raw.githubusercontent.com/c3lang/c3c/master/README.md",
+    "sourceSha256": "4424ba16217513218bc1c4ffdcd4c144a1e9cfbfb48a21c1cc3cee9b14603f88",
+    "evidence": "C3 官方编译器仓库 README 明确写道 C3 的灵感来自 C2，目标是在不另造一门完全不同语言的情况下迭代 C2。此处表示 C2 对 C3 的设计输入，不把 C ABI 兼容或 C 风格语法另算成 C → C3 继承。"
   }
 ]

@@ -26,7 +26,7 @@ function report() {
     counts: { relationships: relations.length, reviews: reviews.reviews.length, reviewedSources: reviews.reviews.reduce((n, r) => n + (r.sources || []).filter(s => s.reviewed).length, 0) },
     relationGaps,
     unresolvedResearch: [
-      { id: 'assembly-dart-xslt-zig', reason: 'four visible design-layer map gaps remain; no qualifying source found in the current review batch' }
+      { id: 'assembly-xslt-zig', reason: 'three visible design-layer map gaps remain; Batch 15 reviewed Zig C/toolchain claims and a concrete NASM x86 source, but neither qualifies as a design-layer relation for the generic map nodes' }
     ],
     catalogueNextSteps: nextSteps
   };

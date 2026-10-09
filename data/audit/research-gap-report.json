@@ -1,24 +1,24 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-09T14:52:26.011Z",
+  "generatedAt": "2026-10-09T15:26:30.985Z",
   "scope": "Offline inventory of existing evidence gaps; it does not add or infer historical relationships.",
   "counts": {
-    "relationships": 427,
-    "reviews": 85,
-    "reviewedSources": 194
+    "relationships": 428,
+    "reviews": 87,
+    "reviewedSources": 197
   },
   "relationGaps": {
-    "fieldOnly": 331,
-    "excerptRecorded": 96,
+    "fieldOnly": 329,
+    "excerptRecorded": 99,
     "citationWithoutExcerpt": 0,
     "directEvidenceMissing": 0,
     "dateWarnings": 5,
-    "designLayerMapGaps": 4
+    "designLayerMapGaps": 3
   },
   "unresolvedResearch": [
     {
-      "id": "assembly-dart-xslt-zig",
-      "reason": "four visible design-layer map gaps remain; no qualifying source found in the current review batch"
+      "id": "assembly-xslt-zig",
+      "reason": "three visible design-layer map gaps remain; Batch 15 reviewed Zig C/toolchain claims and a concrete NASM x86 source, but neither qualifies as a design-layer relation for the generic map nodes"
     }
   ],
   "catalogueNextSteps": [

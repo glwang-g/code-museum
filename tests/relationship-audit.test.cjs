@@ -37,7 +37,7 @@ test('chronology and cycles are review leads and ecosystem links do not become l
 });
 test('pinned report covers every current label and preserves review decisions and research sources',()=>{
  const report=generateRelationshipAudit(root,generateCatalogue(root));
- assert.equal(report.summary.labels,50);assert.equal(report.summary.mapDesignGaps,4);
+ assert.equal(report.summary.labels,50);assert.equal(report.summary.mapDesignGaps,3);
  assert.deepEqual(report,JSON.parse(fs.readFileSync(path.join(root,'data/audit/relationship-status.json'))));
  const find=(from,to)=>report.relations.find(e=>e.from===from&&e.to===to);
  assert.equal(find('java','csharp').state,'excerpt-recorded');
@@ -49,6 +49,8 @@ test('pinned report covers every current label and preserves review decisions an
  assert.ok(!report.relations.some(e=>e.from==='c'&&e.to==='cpp'&&e.type==='supersetOf'));
  assert.equal(find('csharp','scala').state,'excerpt-recorded');
  assert.match(find('csharp','scala').sources[0].excerpt,/not a superset/);
+ assert.equal(find('javascript','dart').state,'excerpt-recorded');
+ assert.match(find('javascript','dart').evidence,/向上兼容/);
  assert.equal(find('swift','rust').state,'excerpt-recorded');
  assert.ok(find('swift','rust').issues.some(i=>i.includes('年代')));
  assert.ok(report.labels.every(r=>r.state!=='verified-complete'));

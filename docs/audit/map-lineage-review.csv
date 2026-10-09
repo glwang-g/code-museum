@@ -50,7 +50,7 @@ csharp,C#,2000,verified-language,java,kotlin | rust | scala,4,4,0,4,0,,cited-onl
 curry,Curry,1990,unreviewed,haskell,,1,0,1,0,0,,field-only
 d,D,2001,verified-language,cpp,,1,1,0,1,0,,cited-only
 dafny,Dafny,2009,unreviewed,,,0,0,0,0,0,,no-map-link
-dart,Dart,2011,verified-language,,,0,0,0,0,0,,no-map-link
+dart,Dart,2011,verified-language,javascript,,1,1,0,0,0,,cited-only
 dc,Dc,1978,unreviewed,,,0,0,0,0,0,,no-map-link
 dhall,Dhall,2017,unreviewed,,,0,0,0,0,0,,no-map-link
 dogescript,Dogescript,2013,unreviewed,,,0,0,0,0,0,,no-map-link
@@ -99,7 +99,7 @@ j,J,1990,unreviewed,,,0,0,0,2,0,,no-map-link
 jakt,Jakt,2022,unreviewed,,,0,0,0,0,0,,no-map-link
 janet,Janet,2018,unreviewed,,,0,0,0,0,0,,no-map-link
 java,Java,1995,verified-language,c | cpp,csharp | groovy | javascript | kotlin | scala,7,7,0,5,1,matlab,cited-only
-javascript,JavaScript,1995,verified-language,java | scheme,kotlin | typescript,4,4,0,6,1,jsf,cited-only
+javascript,JavaScript,1995,verified-language,java | scheme,dart | kotlin | typescript,5,5,0,6,1,jsf,cited-only
 jolie,Jolie,2006,unreviewed,,,0,0,0,0,0,,no-map-link
 jq,jq,2012,unreviewed,,,0,0,0,1,0,,no-map-link
 jsf,JSFuck,2012,unreviewed,,,0,0,0,0,1,javascript,no-map-link

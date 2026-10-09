@@ -3,11 +3,11 @@
   "scope": "全量关系结构检查与常显标签逐项盘点；摘录已存不等于史料论证或关系覆盖全部核实。缺线不表示没有上游。",
   "summary": {
     "labels": 50,
-    "relations": 427,
-    "mapDesignGaps": 4,
+    "relations": 428,
+    "mapDesignGaps": 3,
     "states": {
-      "excerpt-recorded": 96,
-      "field-only": 331
+      "excerpt-recorded": 99,
+      "field-only": 329
     },
     "warnings": 5
   },
@@ -289,15 +289,17 @@
       "name": "Dart",
       "year": 2011,
       "languageStatus": "verified-language",
-      "upstream": [],
+      "upstream": [
+        "javascript|dart|influencedBy"
+      ],
       "downstream": [],
       "ecology": [],
-      "mapLinks": 0,
+      "mapLinks": 1,
       "fieldOnly": 0,
       "citationOnly": 0,
       "needsDirectEvidence": 0,
-      "excerptRecorded": 0,
-      "state": "no-design-link"
+      "excerptRecorded": 1,
+      "state": "excerpts-recorded"
     },
     {
       "id": "forth",
@@ -452,6 +454,7 @@
       ],
       "downstream": [
         "javascript|amber|influencedBy",
+        "javascript|dart|influencedBy",
         "javascript|json|influencedBy",
         "javascript|kotlin|influencedBy",
         "javascript|objective-j|supersetOf",
@@ -460,11 +463,11 @@
         "javascript|typescript|supersetOf"
       ],
       "ecology": [],
-      "mapLinks": 4,
+      "mapLinks": 5,
       "fieldOnly": 6,
       "citationOnly": 0,
       "needsDirectEvidence": 0,
-      "excerptRecorded": 4,
+      "excerptRecorded": 5,
       "state": "needs-review"
     },
     {
@@ -756,10 +759,10 @@
         "rust|python|interop"
       ],
       "mapLinks": 2,
-      "fieldOnly": 13,
+      "fieldOnly": 12,
       "citationOnly": 0,
       "needsDirectEvidence": 0,
-      "excerptRecorded": 3,
+      "excerptRecorded": 4,
       "state": "needs-review"
     },
     {
@@ -2387,16 +2390,28 @@
       "from": "c2",
       "to": "c3",
       "type": "influencedBy",
-      "source": "https://github.com/breck7/pldb/blob/main/concepts/c3.scroll",
+      "label": "设计灵感与迭代",
+      "source": "https://raw.githubusercontent.com/c3lang/c3c/master/README.md",
+      "sourceSha256": "4424ba16217513218bc1c4ffdcd4c144a1e9cfbfb48a21c1cc3cee9b14603f88",
+      "evidence": "C3 官方编译器仓库 README 明确写道 C3 的灵感来自 C2，目标是在不另造一门完全不同语言的情况下迭代 C2。此处表示 C2 对 C3 的设计输入，不把 C ABI 兼容或 C 风格语法另算成 C → C3 继承。",
       "key": "c2|c3|influencedBy",
       "layer": "design",
-      "state": "field-only",
-      "issues": [
-        "缺少关系论证"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": false,
-      "sources": []
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/c3lang/c3c/master/README.md",
+          "finalUrl": "https://raw.githubusercontent.com/c3lang/c3c/master/README.md",
+          "title": "C3 Language — c3c README",
+          "excerpt": "C3 owes its inspiration to the C2 language: to iterate on top of C without inventing an entirely new language.",
+          "checkedAt": "2026-10-09T15:35:00+00:00",
+          "sha256": "4424ba16217513218bc1c4ffdcd4c144a1e9cfbfb48a21c1cc3cee9b14603f88",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected",
+          "reviewId": "c3"
+        }
+      ]
     },
     {
       "from": "clojure",
@@ -4163,6 +4178,33 @@
       "reviewNote": "",
       "mapVisible": false,
       "sources": []
+    },
+    {
+      "from": "javascript",
+      "to": "dart",
+      "type": "influencedBy",
+      "label": "浏览器兼容与语法取舍",
+      "source": "https://raw.githubusercontent.com/dart-lang/language/675b500505b9ffeb80fbb507f1911e393e400cd9/specification/dartLangSpec.tex",
+      "evidence": "Dart 官方语言规范固定提交的 rationale 说明：字符串表示选择考虑浏览器与 JavaScript 兼容，异常子句语法设计为向上兼容既有 JavaScript 程序。此处只表示局部兼容性与语法取舍，不表示 Dart 是 JavaScript 的后继、超集或转译产物。",
+      "sourceSha256": "01726188b9069ccd1458ffe480f6eab6aa26beb6500355d7a35ed0310dc0531e",
+      "key": "javascript|dart|influencedBy",
+      "layer": "design",
+      "state": "excerpt-recorded",
+      "issues": [],
+      "reviewNote": "",
+      "mapVisible": true,
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/dart-lang/language/675b500505b9ffeb80fbb507f1911e393e400cd9/specification/dartLangSpec.tex",
+          "finalUrl": "https://raw.githubusercontent.com/dart-lang/language/675b500505b9ffeb80fbb507f1911e393e400cd9/specification/dartLangSpec.tex",
+          "title": "Dart Programming Language Specification, pinned official commit",
+          "excerpt": "This decision was made for compatibility with web browsers and Javascript. ... The syntax is designed to be upward compatible with existing Javascript programs.",
+          "checkedAt": "2026-10-09T15:06:00+00:00",
+          "sha256": "01726188b9069ccd1458ffe480f6eab6aa26beb6500355d7a35ed0310dc0531e",
+          "hashScope": "UTF-8 LaTeX 源码完整响应字节 SHA-256; fixed repository commit",
+          "reviewId": "dart"
+        }
+      ]
     },
     {
       "from": "javascript",
@@ -6335,16 +6377,28 @@
       "from": "python",
       "to": "cython",
       "type": "supersetOf",
-      "source": "https://github.com/breck7/pldb/blob/main/concepts/cython.scroll",
+      "label": "Python 语法的静态扩展",
+      "source": "https://cython.org/",
+      "sourceSha256": "6e268e8d41870a17f3cced3093de02dcbd324cec1dd9949eb76f8510518d0aac",
+      "evidence": "Cython 官方 About 页面明确称 Cython language 是 Python language 的超集，并说明它增加调用 C/C++ 函数和声明 C/C++ 类型的能力。此处只表示语言层扩展，不表示所有 Python 程序、宿主 API 或第三方包都能无修改通过。",
       "key": "python|cython|supersetOf",
       "layer": "design",
-      "state": "field-only",
-      "issues": [
-        "缺少关系论证"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": false,
-      "sources": []
+      "sources": [
+        {
+          "url": "https://cython.org/",
+          "finalUrl": "https://cython.org/",
+          "title": "Cython: C-Extensions for Python",
+          "excerpt": "The Cython language is a superset of the Python language that additionally supports calling C/C++ functions and declaring C/C++ types on variables and class attributes.",
+          "checkedAt": "2026-10-09T15:35:00+00:00",
+          "sha256": "6e268e8d41870a17f3cced3093de02dcbd324cec1dd9949eb76f8510518d0aac",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected",
+          "reviewId": "cython"
+        }
+      ]
     },
     {
       "from": "python",
@@ -8695,8 +8749,8 @@
   ],
   "inputHashes": {
     "data/raw/pldb.json": "57f45d25bba78ab6bc4af5d969356d2efbfcc7c1ee722dbb5c708d60aa78ba77",
-    "data/audit/reviews.json": "e0c00955c607a1a4d11f2fd7928bd0d5b8f7322589886c80f5fb0e38cb483627",
-    "data/relationship-overrides.json": "b61ba83e24695815e635c15c2429d2b8a996854dc38d7c7117f4bf8e2bafaa5e",
+    "data/audit/reviews.json": "41f050b2c3fed5b56c1c4e51e266c73d722648ce85d768910d29dd1f0bfbd498",
+    "data/relationship-overrides.json": "b3000c82e7d95f44a8ee3339da02e0e7e39782b5db078fddc0466ea14a7d90c6",
     "data/ecosystem-relations.json": "0d96e92a3853eddc6b32e4a45d5c90223d2096fa35438823f7dcfe72ce161e76",
     "data/audit/relationship-decisions.json": "4339ab007ed91414653b56ddf2dcbe0a9450de5df1705c9ad76c1fbc7db53960",
     "data/audit/label-selection.json": "dc5eee62fa662b0d60940375d8a3ec56ac2bbf84ee2b9922a290d46d11cc866f"

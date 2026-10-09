@@ -2,7 +2,7 @@
 
 核查日期：2026-10-09。
 
-全量初筛覆盖 **5,155** 条馆藏，其中来源标为语言的 **4,608** 条。逐项外部文档核查覆盖 **85** 条；其余条目的证据线索已逐条列出，仍未完成人工核实。
+全量初筛覆盖 **5,155** 条馆藏，其中来源标为语言的 **4,608** 条。逐项外部文档核查覆盖 **87** 条；其余条目的证据线索已逐条列出，仍未完成人工核实。
 
 已核到语法资料和实现依据的语言/方言 **60** 条；本机独立示例通过 **17** 条。主图按明确的语法/执行线索收录 **233** 个节点。二者是不同维度。
 
@@ -63,7 +63,7 @@
 |COBOL|GnuCOBOL|未测试|[语法与实现](https://gnucobol.sourceforge.io/doc/gnucobol.html) · [历史原文](https://bitsavers.org/pdf/codasyl/COBOL_Report_Apr60.pdf)|GnuCOBOL 支持的方言，不等同于所有历史版本。 1960年初始规格报告明确列出FLOW-MATIC、IBM Commercial Translator和AIMACO的资料/思想输入；本次先核实FLOW-MATIC端点及历史语法实现，另外两个端点继续独立核对。1959年报告形成与1960年批准分开记录；历史资料输入不代表现代GnuCOBOL方言是FLOW-MATIC超集或源码兼容。|
 |Common Lisp|SBCL|未测试|[语法](https://www.lispworks.com/documentation/HyperSpec/Body/02_a.htm) · [实现](https://www.sbcl.org/manual/)|ANSI Common Lisp；不代替所有早期 Lisp 方言。|
 |D|DMD|未测试|[语法](https://dlang.org/spec/lex.html) · [实现](https://dlang.org/dmd.html) · [关系依据](https://dlang.org/overview.html)||
-|Dart|Dart SDK|未测试|[语法](https://dart.dev/language) · [实现](https://dart.dev/tools/dart-run) · [关系研究：编译目标](https://dart.dev/resources/faq) · [关系研究：未发现直接论证](https://raw.githubusercontent.com/dart-lang/language/main/specification/dartLangSpec.tex)| 2026-10-04 旧 FAQ 地址跳转至官方 Overview，说明 Dart 可编译为 JavaScript/WebAssembly；编译目标不作为语言继承证据，本轮未新增设计关系。|
+|Dart|Dart SDK|未测试|[语法](https://dart.dev/language) · [实现](https://dart.dev/tools/dart-run) · [关系研究：编译目标](https://dart.dev/resources/faq) · [关系研究：未发现直接论证](https://raw.githubusercontent.com/dart-lang/language/main/specification/dartLangSpec.tex) · [关系依据](https://raw.githubusercontent.com/dart-lang/language/675b500505b9ffeb80fbb507f1911e393e400cd9/specification/dartLangSpec.tex)|Dart 可编译为 JavaScript/WebAssembly；固定官方语言规范还明确记录了浏览器/JavaScript 兼容性和向上兼容既有 JavaScript 程序的设计取舍。此处只表示局部设计影响，不把编译目标当作语言继承。|
 |Elixir|Elixir / Erlang VM|未测试|[语法](https://hexdocs.pm/elixir/syntax-reference.html) · [实现](https://elixir-lang.org/install/)||
 |Erlang|Erlang/OTP|未测试|[语法](https://www.erlang.org/doc/system/expressions.html) · [实现](https://www.erlang.org/doc/system/seq_prog.html) · [作者历史回顾](https://www.erlang.org/download/armstrong_thesis_2003.pdf)|Armstrong 2003年论文第3–5页追溯 Prolog 并发扩展实验、1987年嵌入式原型、JAM/WAM 技术输入，以及1990年独立语法与1991年替代旧实现。关系限于历史演进，不表示当前 Erlang 是 Prolog 超集、保留回溯或源码兼容；本轮未重现历史实现，尚无网页运行时。|
 |F#|F# / .NET|未测试|[语法](https://learn.microsoft.com/en-us/dotnet/fsharp/language-reference/) · [实现](https://learn.microsoft.com/en-us/dotnet/fsharp/tools/fsharp-interactive/) · [关系依据](https://fsharp.org/history/hopl-final/hopl-fsharp.pdf)||

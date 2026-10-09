@@ -364,4 +364,14 @@ HTTPS MCP采用既有执行器进程的POST-only无会话Streamable HTTP JSON，
 
 补充 `npm run executor:production-check`，只读比较正式 HTTPS 的 `/api/runtimes`、执行限制和三份公开构建证据与本地 `dist/`，不上传源码、不执行任务、不需要令牌；本次检查通过，正式执行器报告可用，7 个运行时、预算、限制及三份公开文件 SHA 与本地一致，记录见 `data/audit/production-consistency-checks.json`。由于当前 Intel Ventura 机器无法使用现版 OrbStack/Docker Desktop，新增 `docs/LOCAL_ENVIRONMENT.md`，明确离线、本机浏览器、SSH 临时 Docker 和正式生产四层边界，不把本机 Colima 未启动误称为真实执行环境。
 
-新增 `npm run research:gaps`，将关系审计与馆藏复核状态整理为只读报告 `data/audit/research-gap-report.json`。本批核读 Brendan Eich 作者回顾，补充 Java→JavaScript 的语法外观/平台定位参照和 Scheme→JavaScript 的一等函数设计影响，均保留范围限制，不表示后继或超集。当前仍是429条关系、96条有摘录、331条来源字段待核、4个常显设计层缺口、5个年代警告；Assembly/Dart/XSLT/Zig 仍是实际待办。细节见 `docs/audit/RELATIONSHIP_RESEARCH_2026-10-09_BATCH-13.md`。本轮 `npm test` 54/54、离线构建通过；未重新执行浏览器或生产代码运行核验。
+新增 `npm run research:gaps`，将关系审计与馆藏复核状态整理为只读报告 `data/audit/research-gap-report.json`。本批核读 Dart 固定官方规范，补充 JavaScript→Dart 的浏览器兼容与语法取舍影响；XSLT 规范虽列出 CSS2/DSSSL 参考文献，但没有足够的设计影响原文，仍不补线。当前仍是430条关系、97条有摘录、330条来源字段待核、3个常显设计层缺口、5个年代警告；Assembly/XSLT/Zig 仍是实际待办。细节见 `docs/audit/RELATIONSHIP_RESEARCH_2026-10-09_BATCH-14.md`。本轮 `npm test` 54/54、离线构建通过；未重新执行浏览器或生产代码运行核验。
+
+## 2026-10-09 关系证据续核批次15：Zig 与 Assembly
+
+继续核查 Zig 与 Assembly 的三个常显设计层缺口。Zig 官方 Overview 中的 `@cImport`、C ABI `export` 和“更好的 C 编译器”均属于互操作、工具链或产品定位说明；NASM 3.02 介绍只确认具体 x86/x86-64 方言的语法接近 Intel 手册。没有找到足以支持设计继承的明确历史原文，因此没有新增关系，也没有把 C/Zig `interop` 升格为设计边。
+
+泛称 Assembly 仍须按具体指令集/方言和具体设计事件研究；缺线不表示没有上游。批次记录见 `docs/audit/RELATIONSHIP_RESEARCH_2026-10-09_BATCH-15.md`。关系审计缺口报告同步说明本批结论。
+
+## 2026-10-09 关系证据续核批次16：Python/Cython 与 C2/C3
+
+本批从高展示价值候选中核查五条关系。Cython 官方 About 页面明确称 Cython 是 Python 的超集，补入 `Python → Cython`；C3 官方编译器仓库 README 明确称 C3 的灵感来自 C2，补入 `C2 → C3`。Python→Mojo 仅取得兼容/互操作说明，C++→Chapel 未取得具体设计来源原文，JavaScript→Objective-J 的官方入口本批无法稳定回溯，三条继续待核。当前关系证据为99条有摘录、329条仅来源字段，完整记录见 `docs/audit/RELATIONSHIP_RESEARCH_2026-10-09_BATCH-16.md`。

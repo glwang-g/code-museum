@@ -11,14 +11,14 @@ cobol,COBOL,1959,verified-language,flow-matic,,1,1,0,1,0,,cited-only
 cpp,C++,1985,verified-language,c,d | java | lua | rust,5,5,0,9,0,,cited-only
 csharp,C#,2000,verified-language,java,kotlin | rust | scala,4,4,0,4,0,,cited-only
 d,D,2001,verified-language,cpp,,1,1,0,1,0,,cited-only
-dart,Dart,2011,verified-language,,,0,0,0,0,0,,no-map-link
+dart,Dart,2011,verified-language,javascript,,1,1,0,0,0,,cited-only
 forth,Forth,1970,verified-language,algol | apl | fortran,postscript,4,4,0,1,0,,cited-only
 fortran,Fortran,1957,verified-language,,basic | forth,2,2,0,4,0,,cited-only
 go,Go,2009,verified-language,c | oberon | pascal,,3,3,0,3,0,,cited-only
 groovy,Groovy,2003,verified-language,java,kotlin,2,2,0,0,0,,cited-only
 haskell,Haskell,1990,verified-language,,curry | rust,2,1,1,6,1,miranda,cited-and-field
 java,Java,1995,verified-language,c | cpp,csharp | groovy | javascript | kotlin | scala,7,7,0,5,1,matlab,cited-only
-javascript,JavaScript,1995,verified-language,java | scheme,kotlin | typescript,4,4,0,6,1,jsf,cited-only
+javascript,JavaScript,1995,verified-language,java | scheme,dart | kotlin | typescript,5,5,0,6,1,jsf,cited-only
 julia,Julia,2012,verified-language,lisp | matlab | perl | python | r | ruby,,6,6,0,0,0,,cited-only
 kotlin,Kotlin,2011,verified-language,csharp | groovy | java | javascript | scala,,5,5,0,0,0,,cited-only
 lisp,Lisp,1958,historical-primary-source,,julia | postscript | ruby | scheme | smalltalk,5,5,0,8,3,clojure | common-lisp | hy,cited-only
