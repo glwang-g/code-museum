@@ -5,15 +5,16 @@ const {createRequestHandler}=require('./serve.cjs');
 const root=path.resolve(__dirname,'..');
 async function freePort(){const s=net.createServer();await new Promise((ok,no)=>{s.once('error',no);s.listen(0,'127.0.0.1',ok)});const port=s.address().port;await new Promise(ok=>s.close(ok));return port}
 const bootstrap=String.raw`
-import sys,json,os,tempfile,subprocess,selectors,time,urllib.request,shutil
+import sys,json,os,tempfile,subprocess,selectors,time,urllib.request,shutil,secrets
 from pathlib import Path
 payload=json.loads(sys.stdin.buffer.readline())
 directory=Path(tempfile.mkdtemp(prefix='code-museum-private-preview-'))
 process=None
 try:
  for name,source in payload['files'].items(): (directory/name).write_text(source)
- env=dict(os.environ,EXECUTOR_TOKEN=payload['token'])
- process=subprocess.Popen(['python3',str(directory/'executor.py'),'--port',str(payload['port']),'--origin',payload['origin']],env=env,stdout=subprocess.DEVNULL)
+ namespace='preview-'+secrets.token_hex(6)
+ env=dict(os.environ,EXECUTOR_TOKEN=payload['token'],EXECUTOR_LOCK=str(directory/'executor.lock'))
+ process=subprocess.Popen(['python3',str(directory/'executor.py'),'--namespace',namespace,'--port',str(payload['port']),'--origin',payload['origin']],env=env,stdout=subprocess.DEVNULL)
  for i in range(100):
   if process.poll() is not None: raise RuntimeError('Executor startup failed')
   try:
@@ -28,7 +29,7 @@ try:
 finally:
  if process and process.poll() is None:
   process.terminate()
-  try: process.wait(timeout=25)
+  try: process.wait(timeout=60)
   except subprocess.TimeoutExpired: process.kill();process.wait()
  shutil.rmtree(directory)
 `;
@@ -42,7 +43,7 @@ async function startPreview({host='xshow',port=4174,token=process.env.EXECUTOR_T
  let errors='',ready=false,closed=false;
  ssh.stdin.on('error',()=>{}); // Startup/exit promise reports SSH errors; avoid unhandled EPIPE.
  ssh.stderr.on('data',c=>{errors=(errors+c).slice(-3000)});
- const stop=async()=>{if(closed)return;closed=true;server.closeAllConnections();await new Promise(ok=>server.close(ok));if(ssh.exitCode===null&&ssh.signalCode===null){const exit=new Promise(ok=>ssh.once('exit',ok));ssh.stdin.end();const timer=setTimeout(()=>ssh.kill('SIGTERM'),30000);await exit;clearTimeout(timer)}};
+ const stop=async()=>{if(closed)return;closed=true;server.closeAllConnections();await new Promise(ok=>server.close(ok));if(ssh.exitCode===null&&ssh.signalCode===null){const exit=new Promise(ok=>ssh.once('exit',ok));ssh.stdin.end();const timer=setTimeout(()=>ssh.kill('SIGTERM'),65000);await exit;clearTimeout(timer)}};
  try{
   await new Promise((ok,no)=>{
    const timer=setTimeout(()=>no(new Error('SSH executor startup timeout: '+errors)),20000);

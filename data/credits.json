@@ -5,10 +5,232 @@
       "title": "实际使用 · 语言运行环境",
       "intro": "感谢这些项目让语言展品能够在浏览器中真实执行。下面注明我们使用的实现，以及本项目的适配范围。",
       "entries": [
-        {"id":"browser-javascript","name":"浏览器原生 JavaScript","languages":["javascript"],"kind":"浏览器能力","project":"https://developer.mozilla.org/zh-CN/docs/Web/JavaScript","usage":"JavaScript 由当前浏览器自带引擎执行，具体实现与版本取决于浏览器。","adaptation":"本项目提供 Worker 调度、日志与错误捕获、输出上限及 2 秒超时；代码编辑器和基础语法高亮由本项目实现。","limits":"执行环境是浏览器 Worker，不是 Node.js；不提供 DOM 或 Node.js 模块。"},
-        {"id":"pyodide","name":"Pyodide","languages":["python"],"manifest":"public/assets/pyodide/manifest.json","project":"https://pyodide.org/","repository":"https://github.com/pyodide/pyodide","usage":"提供 Python 的 WebAssembly 解释器与标准库，运行文件保存在本站，按需加载。","adaptation":"本项目提供独立 Worker、草稿调度、输出与错误捕获、执行超时和闲置释放；每次程序使用独立变量环境。","limits":"尚未接入第三方 Python 包；文件及网络能力受浏览器环境约束。","licenseNote":"Pyodide 为 MPL-2.0；Python 的版权和历史许可声明另行保留。","notices":[{"label":"Pyodide 许可","href":"assets/pyodide/LICENSE"},{"label":"Python 版权与许可","href":"assets/pyodide/LICENSE.PYTHON"}],"evidence":"assets/pyodide/manifest.json"},
-        {"id":"wasmoon","name":"Wasmoon / Lua","languages":["lua"],"manifest":"public/assets/lua/manifest.json","project":"https://github.com/ceifa/wasmoon","repository":"https://github.com/ceifa/wasmoon","usage":"Wasmoon 提供 Lua 的 WebAssembly 解释器和 JavaScript 接口。","adaptation":"本项目捕获 print 输出，禁用文件、系统、模块与 JS 对象接口；每次使用新 Worker，并设置 2 秒执行预算。","limits":"这是短程序实验环境，不提供第三方 Lua 模块或完整操作系统环境。","licenseNote":"Wasmoon 与 Lua 均采用 MIT 许可；两份版权声明保存在同一文件。","notices":[{"label":"Wasmoon 与 Lua 版权许可","href":"assets/lua/LICENSE"}],"evidence":"assets/lua/manifest.json"},
-        {"id":"biwascheme","name":"BiwaScheme","languages":["scheme"],"manifest":"public/assets/scheme/manifest.json","project":"https://www.biwascheme.org/","repository":"https://github.com/biwascheme/biwascheme","usage":"提供 JavaScript 实现的 Scheme 解释器，非 WebAssembly、非 GNU Guile。","adaptation":"保留原发布模块，移除 DOM 集成与自动执行网页脚本的部分以适配 Worker；捕获标准输出和最后表达式值，关闭 JS 互操作与定时器扩展。","limits":"上游支持多数 R7RS small 功能；syntax-rules、异常处理和库系统不完整，字符串不可变，数值遵循 JavaScript 的限制。","licenseNote":"MIT 许可；原始版权声明与完整许可随发布保留。","notices":[{"label":"BiwaScheme 版权许可","href":"assets/scheme/LICENSE"}],"evidence":"assets/scheme/manifest.json"}
+        {
+          "id": "browser-javascript",
+          "name": "浏览器原生 JavaScript",
+          "languages": [
+            "javascript"
+          ],
+          "kind": "浏览器能力",
+          "project": "https://developer.mozilla.org/zh-CN/docs/Web/JavaScript",
+          "usage": "JavaScript 由当前浏览器自带引擎执行，具体实现与版本取决于浏览器。",
+          "adaptation": "本项目提供 Worker 调度、日志与错误捕获、输出上限及 2 秒超时；代码编辑器和基础语法高亮由本项目实现。",
+          "limits": "执行环境是浏览器 Worker，不是 Node.js；不提供 DOM 或 Node.js 模块。"
+        },
+        {
+          "id": "pyodide",
+          "name": "Pyodide",
+          "languages": [
+            "python"
+          ],
+          "manifest": "public/assets/pyodide/manifest.json",
+          "project": "https://pyodide.org/",
+          "repository": "https://github.com/pyodide/pyodide",
+          "usage": "提供 Python 的 WebAssembly 解释器与标准库，运行文件保存在本站，按需加载。",
+          "adaptation": "本项目提供独立 Worker、草稿调度、输出与错误捕获、执行超时和闲置释放；每次程序使用独立变量环境。",
+          "limits": "尚未接入第三方 Python 包；文件及网络能力受浏览器环境约束。",
+          "licenseNote": "Pyodide 为 MPL-2.0；Python 的版权和历史许可声明另行保留。",
+          "notices": [
+            {
+              "label": "Pyodide 许可",
+              "href": "assets/pyodide/LICENSE"
+            },
+            {
+              "label": "Python 版权与许可",
+              "href": "assets/pyodide/LICENSE.PYTHON"
+            }
+          ],
+          "evidence": "assets/pyodide/manifest.json"
+        },
+        {
+          "id": "wasmoon",
+          "name": "Wasmoon / Lua",
+          "languages": [
+            "lua"
+          ],
+          "manifest": "public/assets/lua/manifest.json",
+          "project": "https://github.com/ceifa/wasmoon",
+          "repository": "https://github.com/ceifa/wasmoon",
+          "usage": "Wasmoon 提供 Lua 的 WebAssembly 解释器和 JavaScript 接口。",
+          "adaptation": "本项目捕获 print 输出，禁用文件、系统、模块与 JS 对象接口；每次使用新 Worker，并设置 2 秒执行预算。",
+          "limits": "这是短程序实验环境，不提供第三方 Lua 模块或完整操作系统环境。",
+          "licenseNote": "Wasmoon 与 Lua 均采用 MIT 许可；两份版权声明保存在同一文件。",
+          "notices": [
+            {
+              "label": "Wasmoon 与 Lua 版权许可",
+              "href": "assets/lua/LICENSE"
+            }
+          ],
+          "evidence": "assets/lua/manifest.json"
+        },
+        {
+          "id": "biwascheme",
+          "name": "BiwaScheme",
+          "languages": [
+            "scheme"
+          ],
+          "manifest": "public/assets/scheme/manifest.json",
+          "project": "https://www.biwascheme.org/",
+          "repository": "https://github.com/biwascheme/biwascheme",
+          "usage": "提供 JavaScript 实现的 Scheme 解释器，非 WebAssembly、非 GNU Guile。",
+          "adaptation": "保留原发布模块，移除 DOM 集成与自动执行网页脚本的部分以适配 Worker；捕获标准输出和最后表达式值，关闭 JS 互操作与定时器扩展。",
+          "limits": "上游支持多数 R7RS small 功能；syntax-rules、异常处理和库系统不完整，字符串不可变，数值遵循 JavaScript 的限制。",
+          "licenseNote": "MIT 许可；原始版权声明与完整许可随发布保留。",
+          "notices": [
+            {
+              "label": "BiwaScheme 版权许可",
+              "href": "assets/scheme/LICENSE"
+            }
+          ],
+          "evidence": "assets/scheme/manifest.json"
+        }
+      ]
+    },
+    {
+      "id": "remote-runtime-credits",
+      "title": "实际使用 · 私有远端运行环境",
+      "intro": "以下运行时位于执行服务器，不随网页下载；版本来自固定官方镜像，连接状态仍以执行 API 为准。",
+      "entries": [
+        {
+          "id": "remote-python",
+          "name": "CPython / Docker",
+          "languages": [
+            "python"
+          ],
+          "runtimeIds": [
+            "python"
+          ],
+          "kind": "私有远端",
+          "project": "https://www.python.org/",
+          "usage": "官方 Docker 镜像中的真实原生运行时；镜像 digest 固定，需私有令牌。",
+          "adaptation": "本项目编排独立非 root、禁网、只读根容器；编译语言分开限制编译与运行，任务结束销毁源码和产物。",
+          "limits": "短程序、单文件和预装标准库；不在线下载第三方依赖。普通容器共享宿主内核，仅供私有可信试用。",
+          "licenseNote": "Python Software Foundation License",
+          "notices": [
+            {
+              "label": "上游许可与版权",
+              "href": "https://docs.python.org/3/license.html"
+            }
+          ],
+          "evidence": "data/execution-capabilities.json"
+        },
+        {
+          "id": "remote-ruby",
+          "name": "Ruby / Docker",
+          "languages": [
+            "ruby"
+          ],
+          "runtimeIds": [
+            "ruby"
+          ],
+          "kind": "私有远端",
+          "project": "https://www.ruby-lang.org/",
+          "usage": "官方 Docker 镜像中的真实原生运行时；镜像 digest 固定，需私有令牌。",
+          "adaptation": "本项目编排独立非 root、禁网、只读根容器；编译语言分开限制编译与运行，任务结束销毁源码和产物。",
+          "limits": "短程序、单文件和预装标准库；不在线下载第三方依赖。普通容器共享宿主内核，仅供私有可信试用。",
+          "licenseNote": "Ruby License 或 BSD-2-Clause",
+          "notices": [
+            {
+              "label": "上游许可与版权",
+              "href": "https://github.com/ruby/ruby/blob/master/COPYING"
+            }
+          ],
+          "evidence": "data/execution-capabilities.json"
+        },
+        {
+          "id": "remote-gcc",
+          "name": "GCC / G++",
+          "languages": [
+            "c",
+            "cpp"
+          ],
+          "runtimeIds": [
+            "c",
+            "cpp"
+          ],
+          "kind": "私有远端",
+          "project": "https://gcc.gnu.org/",
+          "usage": "官方 Docker 镜像中的真实原生运行时；镜像 digest 固定，需私有令牌。",
+          "adaptation": "本项目编排独立非 root、禁网、只读根容器；编译语言分开限制编译与运行，任务结束销毁源码和产物。",
+          "limits": "短程序、单文件和预装标准库；不在线下载第三方依赖。普通容器共享宿主内核，仅供私有可信试用。",
+          "licenseNote": "GPL-3.0-or-later；运行库另有 GCC Runtime Library Exception",
+          "notices": [
+            {
+              "label": "上游许可与版权",
+              "href": "https://gcc.gnu.org/onlinedocs/libstdc++/manual/license.html"
+            }
+          ],
+          "evidence": "data/execution-capabilities.json"
+        },
+        {
+          "id": "remote-rust",
+          "name": "Rust",
+          "languages": [
+            "rust"
+          ],
+          "runtimeIds": [
+            "rust"
+          ],
+          "kind": "私有远端",
+          "project": "https://www.rust-lang.org/",
+          "usage": "官方 Docker 镜像中的真实原生运行时；镜像 digest 固定，需私有令牌。",
+          "adaptation": "本项目编排独立非 root、禁网、只读根容器；编译语言分开限制编译与运行，任务结束销毁源码和产物。",
+          "limits": "短程序、单文件和预装标准库；不在线下载第三方依赖。普通容器共享宿主内核，仅供私有可信试用。",
+          "licenseNote": "MIT 或 Apache-2.0；镜像系统组件各有许可",
+          "notices": [
+            {
+              "label": "上游许可与版权",
+              "href": "https://github.com/rust-lang/rust/blob/master/COPYRIGHT"
+            }
+          ],
+          "evidence": "data/execution-capabilities.json"
+        },
+        {
+          "id": "remote-go",
+          "name": "Go",
+          "languages": [
+            "go"
+          ],
+          "runtimeIds": [
+            "go"
+          ],
+          "kind": "私有远端",
+          "project": "https://go.dev/",
+          "usage": "官方 Docker 镜像中的真实原生运行时；镜像 digest 固定，需私有令牌。",
+          "adaptation": "本项目编排独立非 root、禁网、只读根容器；编译语言分开限制编译与运行，任务结束销毁源码和产物。",
+          "limits": "短程序、单文件和预装标准库；不在线下载第三方依赖。普通容器共享宿主内核，仅供私有可信试用。",
+          "licenseNote": "BSD-3-Clause；镜像系统组件各有许可",
+          "notices": [
+            {
+              "label": "上游许可与版权",
+              "href": "https://go.dev/LICENSE"
+            }
+          ],
+          "evidence": "data/execution-capabilities.json"
+        },
+        {
+          "id": "remote-java",
+          "name": "Eclipse Temurin / OpenJDK",
+          "languages": [
+            "java"
+          ],
+          "runtimeIds": [
+            "java"
+          ],
+          "kind": "私有远端",
+          "project": "https://adoptium.net/",
+          "usage": "官方 Docker 镜像中的真实原生运行时；镜像 digest 固定，需私有令牌。",
+          "adaptation": "本项目编排独立非 root、禁网、只读根容器；编译语言分开限制编译与运行，任务结束销毁源码和产物。",
+          "limits": "短程序、单文件和预装标准库；不在线下载第三方依赖。普通容器共享宿主内核，仅供私有可信试用。",
+          "licenseNote": "GPL-2.0 with Classpath Exception 等；各组件许可见上游",
+          "notices": [
+            {
+              "label": "上游许可与版权",
+              "href": "https://github.com/openjdk/jdk17u/blob/master/LICENSE"
+            }
+          ],
+          "evidence": "data/execution-capabilities.json"
+        }
       ]
     },
     {
@@ -16,8 +238,42 @@
       "title": "实际使用 · 馆藏数据与核对线索",
       "intro": "来源提供记录与研究线索，不能单独保证每条语言身份和历史关系已经核实。",
       "entries": [
-        {"id":"pldb","name":"PLDB","snapshot":"data/raw/pldb.snapshot.json","project":"https://pldb.io/","repository":"https://github.com/breck7/pldb","usage":"馆藏导入本次固定快照的 5,155 条记录，其中 4,608 条被来源标记为语言。","adaptation":"本项目规范化字段、保留原始身份，并结合语法、实现及历史资料审查筛选地图节点；人工校订和关系补充独立保留出处。","limits":"快照全量不等于所有历史语言；来源分类不等于已经核实，原字段关系仍有待复核。","licenseNote":"PLDB 的公开领域声明见项目说明；上游附带材料的单独许可仍应分别保留。","notices":[{"label":"公开领域与数据说明","href":"https://github.com/breck7/pldb/blob/main/readme.scroll"}],"evidence":"data/provenance.json"},
-        {"id":"linguist","name":"GitHub Linguist","snapshot":"data/raw/linguist.snapshot.json","project":"https://github.com/github-linguist/linguist","repository":"https://github.com/github-linguist/linguist","usage":"以固定 languages.yml 快照辅助核对语言分类、名称和语法实现线索。","adaptation":"用于离线馆藏审计和证据筛选；语言实验台的高亮由本项目实现。","limits":"它是文件类型识别目录，不是历史语言全集；PLDB 也引用过 Linguist，因此二者并非完全独立的证据。","licenseNote":"MIT 许可；本站保留此快照对应的版权许可。","notices":[{"label":"GitHub Linguist 版权许可","href":"licenses/linguist-LICENSE"}],"evidence":"data/credits.json"}
+        {
+          "id": "pldb",
+          "name": "PLDB",
+          "snapshot": "data/raw/pldb.snapshot.json",
+          "project": "https://pldb.io/",
+          "repository": "https://github.com/breck7/pldb",
+          "usage": "馆藏导入本次固定快照的 5,155 条记录，其中 4,608 条被来源标记为语言。",
+          "adaptation": "本项目规范化字段、保留原始身份，并结合语法、实现及历史资料审查筛选地图节点；人工校订和关系补充独立保留出处。",
+          "limits": "快照全量不等于所有历史语言；来源分类不等于已经核实，原字段关系仍有待复核。",
+          "licenseNote": "PLDB 的公开领域声明见项目说明；上游附带材料的单独许可仍应分别保留。",
+          "notices": [
+            {
+              "label": "公开领域与数据说明",
+              "href": "https://github.com/breck7/pldb/blob/main/readme.scroll"
+            }
+          ],
+          "evidence": "data/provenance.json"
+        },
+        {
+          "id": "linguist",
+          "name": "GitHub Linguist",
+          "snapshot": "data/raw/linguist.snapshot.json",
+          "project": "https://github.com/github-linguist/linguist",
+          "repository": "https://github.com/github-linguist/linguist",
+          "usage": "以固定 languages.yml 快照辅助核对语言分类、名称和语法实现线索。",
+          "adaptation": "用于离线馆藏审计和证据筛选；语言实验台的高亮由本项目实现。",
+          "limits": "它是文件类型识别目录，不是历史语言全集；PLDB 也引用过 Linguist，因此二者并非完全独立的证据。",
+          "licenseNote": "MIT 许可；本站保留此快照对应的版权许可。",
+          "notices": [
+            {
+              "label": "GitHub Linguist 版权许可",
+              "href": "licenses/linguist-LICENSE"
+            }
+          ],
+          "evidence": "data/credits.json"
+        }
       ]
     },
     {
@@ -25,7 +281,17 @@
       "title": "参考资料 · 标签选择与历史研究",
       "intro": "这些资料用于选择展签或核对具体论断，并非网站的执行引擎。",
       "entries": [
-        {"id":"tiobe","name":"TIOBE Index","ranking":"data/audit/label-selection.json","project":"https://www.tiobe.com/tiobe-index/","usage":"参考当期公开前 50 名和长期历史表选择常显标签，同时补充有出处的历史节点。","adaptation":"记录榜单日期与馆藏名称映射；排名只影响文字显示，不决定馆藏收录或可执行资格。","limits":"榜单衡量关注度；长期表仅覆盖部分语言，2001 年前的数据按 Usenet 讨论量回推，不是完整历史热度。","licenseNote":"榜单参考资料，版权归原发布方；不作为开源运行时或公开领域数据标注。","evidence":"data/credits.json"}
+        {
+          "id": "tiobe",
+          "name": "TIOBE Index",
+          "ranking": "data/audit/label-selection.json",
+          "project": "https://www.tiobe.com/tiobe-index/",
+          "usage": "参考当期公开前 50 名和长期历史表选择常显标签，同时补充有出处的历史节点。",
+          "adaptation": "记录榜单日期与馆藏名称映射；排名只影响文字显示，不决定馆藏收录或可执行资格。",
+          "limits": "榜单衡量关注度；长期表仅覆盖部分语言，2001 年前的数据按 Usenet 讨论量回推，不是完整历史热度。",
+          "licenseNote": "榜单参考资料，版权归原发布方；不作为开源运行时或公开领域数据标注。",
+          "evidence": "data/credits.json"
+        }
       ]
     }
   ]

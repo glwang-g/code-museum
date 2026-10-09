@@ -39,17 +39,35 @@ async function screenshot(name){if(!outputDirectory)return;await evaluate('new P
   assert.equal(await evaluate(`window.__posts`),0);
   assert.equal(await evaluate(`performance.getEntriesByType('resource').some(r=>r.name.includes('/assets/pyodide/'))`),false);
   await evaluate(`document.querySelector('#lab-remote-token').value=${JSON.stringify(token)}`);
-  async function clickRun(){await evaluate(`document.querySelector('#lab-run').click()`)}
+  let lastRun=0;
+  async function clickRun(){const delay=Math.max(0,6500-(Date.now()-lastRun));if(delay)await new Promise(ok=>setTimeout(ok,delay));lastRun=Date.now();await evaluate(`document.querySelector('#lab-run').click()`)}
   for(const size of [{width:1440,height:1000,mobile:false},{width:390,height:844,mobile:true}]){
    await page('Emulation.setDeviceMetricsOverride',{...size,deviceScaleFactor:1});
-   for(const [language,code] of [['python','print(sum(range(1,11))); print(input())'],['ruby','puts (1..10).sum; puts STDIN.gets']]){
+   await evaluate(`document.documentElement.dataset.theme=${JSON.stringify(size.width===1440?'dark':'light')}`);
+   for(const [language,code] of [['python','print(sum(range(1,11))); print(input())'],['ruby','puts (1..10).sum; puts STDIN.gets'],['c','#include <stdio.h>\nint main(void){char s[32];scanf("%31s",s);printf("55\\n%s\\n",s);}'],['cpp','#include <iostream>\n#include <string>\nint main(){std::string s;std::cin>>s;std::cout<<"55\\n"<<s<<"\\n";}'],['rust','use std::io;fn main(){let mut s=String::new();io::stdin().read_line(&mut s).unwrap();println!("55\\n{}",s.trim());}'],['go','package main\nimport("fmt";"bufio";"os")\nfunc main(){s:=bufio.NewScanner(os.Stdin);s.Scan();fmt.Println(55);fmt.Println(s.Text())}'],['java','import java.util.Scanner;class Museum{public static void main(String[]a){System.out.println(55);System.out.println(new Scanner(System.in).nextLine());}}']]){
     await evaluate(`window.MUSEUM_LAB.open(${JSON.stringify(language)});document.querySelector('#lab-stdin').value='hello\\n'`);
-    await edit(code);await clickRun();await output('55\nhello\n');
+    await edit(code);await clickRun();await output('55\nhello\n',65000);
+    if(['c','cpp','rust','go','java'].includes(language)){
+      assert.match(await evaluate(`document.querySelector('#lab-runtime-note').textContent`),/编译 \d+ ms.*运行 \d+ ms/);
+      assert.equal(await evaluate(`document.querySelector('#lab-execution-mode option[value="local"]').disabled`),true);
+    }
     assert.equal(await evaluate('document.documentElement.scrollWidth<=innerWidth'),true);
     await screenshot('remote-'+language+'-'+size.width+'.png');
     results.push({name:'Actual '+language+' Docker execution and stdin',width:size.width,output:'55\nhello\n'});
    }
   }
+  await evaluate(`window.MUSEUM_LAB.open('rust')`);await edit('not valid source !!!');await clickRun();
+  await wait(`document.querySelector('#lab-result').textContent.includes('编译失败，未执行程序。')`);
+  assert.equal(await evaluate(`document.querySelector('#lab-error-kind').textContent`),'编译错误');
+  results.push({name:'Compiler diagnostics identified separately, no execution',passed:true});
+  await screenshot('compile-error-rust-390.png');
+  await evaluate(`window.MUSEUM_LAB.open('go')`);await edit('package main\nimport "fmt"\nfunc main(){fmt.Println(42)}');await clickRun();
+  await wait(`document.querySelector('#lab-runtime-state').dataset.stage==='compiling'`,15000);
+  assert.equal(await evaluate(`document.querySelector('#lab-stop').hidden`),false);
+  await screenshot('compiling-go-390.png');
+  await evaluate(`document.querySelector('#lab-stop').click()`);
+  await edit('package main\nimport "fmt"\nfunc main(){fmt.Println(42)}');await clickRun();await output('42\n',65000);
+  results.push({name:'Stop during actual compilation and recover',passed:true});
   await evaluate(`window.MUSEUM_LAB.open('python')`);await edit('def broken(:');await clickRun();
   await wait(`document.querySelector('#lab-result').dataset.state==='error'&&document.querySelector('#lab-result').textContent.includes('SyntaxError')`);
   results.push({name:'Actual remote syntax error',passed:true});

@@ -14,7 +14,8 @@ test('Credits identify actual runtimes and derive versions from pinned manifests
   assert.equal(find('linguist').commit,'76f88c6d3c22f8560d22d29854f24d9607f9edde');
   assert.equal(find('tiobe').versionLabel,'榜单 · 2026-09');assert.equal(find('tiobe').languages,undefined);
   assert.match(linguistLicense.toString(),/Copyright \(c\) 2017 GitHub/);
-  assert.deepEqual(entries.flatMap(entry=>entry.languages||[]),['javascript','python','lua','scheme']);
+  assert.deepEqual(entries.filter(entry=>!entry.runtimeIds).flatMap(entry=>entry.languages||[]),['javascript','python','lua','scheme']);
+  assert.equal(find('remote-rust').versionLabel,JSON.parse(fs.readFileSync(path.join(root,'server/runtime-images.json'))).runtimes.find(r=>r.id==='rust').version);
 });
 test('Runtime credit notices and provenance artifacts are local source inputs',()=>{
   const {credits}=generateCredits(root);

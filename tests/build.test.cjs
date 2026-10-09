@@ -11,7 +11,7 @@ const root = path.resolve(__dirname, '..');
 const { generateCatalogue } = require('../scripts/import-pldb.cjs');
 function copySources() {
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'code-museum-rebuild-'));
-  for (const item of ['src', 'public', 'data', 'scripts', 'package.json']) {
+  for (const item of ['src', 'public', 'data', 'scripts', 'server', 'package.json']) {
     fs.cpSync(path.join(root, item), path.join(dir, item), { recursive: true });
   }
   return dir;

@@ -31,7 +31,7 @@ php,PHP,1995,verified-language,c | perl,,2,2,0,1,0,,cited-only
 pl-sql,PL/SQL,1991,verified-language,sql,,1,1,0,0,0,,cited-only
 powershell,PowerShell,2006,verified-language,sh,,1,1,0,0,0,,cited-only
 prolog,Prolog,1972,verified-language,,erlang,1,1,0,4,0,,cited-only
-python,Python,1991,verified-language,abc,julia,2,2,0,13,1,f-sharp,cited-only
+python,Python,1991,verified-language,abc,julia,2,2,0,14,1,f-sharp,cited-only
 r,R,1993,verified-language,,julia,1,1,0,2,0,,cited-only
 ruby,Ruby,1995,verified-language,ada | lisp | perl | smalltalk,julia | rust,6,6,0,3,0,,cited-only
 rust,Rust,2010,verified-language,cpp | csharp | erlang | haskell | ocaml | ruby | scheme | swift,,8,8,0,6,0,,cited-only

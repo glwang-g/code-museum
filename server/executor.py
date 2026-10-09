@@ -20,7 +20,14 @@ from pathlib import Path
 LABEL = 'code-museum.executor=private-v1'
 PREFIX = 'cm-exec-'
 MAX_BODY, MAX_CODE, MAX_STDIN, MAX_OUTPUT = 98304, 65536, 16384, 32768
-FINAL = {'completed', 'failed', 'timed_out', 'cancelled', 'output_limit', 'memory_limit', 'infrastructure_error'}
+FINAL = {'completed', 'failed', 'compile_error', 'compile_timed_out', 'timed_out', 'cancelled', 'output_limit', 'memory_limit', 'infrastructure_error'}
+COMPILED = {
+    'c': ('gcc', '/usr/local/bin/gcc', 512, 10, 'main.c', ['gcc', '-std=c11', '-O0', '-Wall', '-Wextra', '/work/main.c', '-o', '/work/program'], ['/work/program']),
+    'cpp': ('gcc', '/usr/local/bin/g++', 512, 10, 'main.cpp', ['g++', '-std=c++17', '-O0', '-Wall', '-Wextra', '/work/main.cpp', '-o', '/work/program'], ['/work/program']),
+    'rust': ('rust', '/usr/local/cargo/bin/rustc', 768, 15, 'main.rs', ['rustc', '--edition=2021', '/work/main.rs', '-o', '/work/program'], ['/work/program']),
+    'go': ('golang', '/usr/local/go/bin/go', 768, 30, 'main.go', ['go', 'build', '-o', '/work/program', '/work/main.go'], ['/work/program']),
+    'java': ('eclipse-temurin', '/opt/java/openjdk/bin/javac', 768, 15, 'Museum.java', ['javac', '-J-Xmx256m', '-J-XX:ActiveProcessorCount=1', '--release', '17', '/work/Museum.java'], ['java', '-Xmx256m', '-XX:ActiveProcessorCount=1', '-cp', '/work', 'Museum'])
+}
 PYTHON_BOOT = "import sys,json,io,runpy; p=json.load(sys.stdin); open('/work/main.py','w').write(p['code']); sys.stdin=io.StringIO(p['stdin']); sys.argv=['/work/main.py']; runpy.run_path('/work/main.py',run_name='__main__')"
 RUBY_BOOT = "require 'json'; require 'stringio'; p=JSON.parse(STDIN.read); File.write('/work/main.rb',p['code']); $stdin=StringIO.new(p['stdin']); Object.send(:remove_const,:STDIN); STDIN=$stdin; ARGV.clear; load '/work/main.rb'"
 
@@ -28,14 +35,16 @@ RUBY_BOOT = "require 'json'; require 'stringio'; p=JSON.parse(STDIN.read); File.
 def load_runtimes(file):
     manifest = json.loads(Path(file).read_text())
     rows = manifest.get('runtimes', [])
-    if manifest.get('schemaVersion') != 1 or {r['id'] for r in rows} != {'python', 'ruby'} or len(rows) != 2:
-        raise ValueError('Expected pinned Python and Ruby runtime manifest')
+    if manifest.get('schemaVersion') != 1 or not {'python', 'ruby'} <= {r['id'] for r in rows} or len({r['id'] for r in rows}) != len(rows):
+        raise ValueError('Expected unique pinned runtime manifest')
     for r in rows:
-        if not re.fullmatch(r'(?:docker.io/library/)?(?:python|ruby)@sha256:[a-f0-9]{64}', r['image']):
+        if r['id'] not in {'python', 'ruby', *COMPILED}: raise ValueError('Unsupported runtime')
+        repository, executable, memory = COMPILED[r['id']][:3] if r['id'] in COMPILED else (r['id'], '/usr/local/bin/' + r['id'], {'python':256, 'ruby':512}[r['id']])
+        if not re.fullmatch(re.escape(repository) + r'@sha256:[a-f0-9]{64}', r['image']):
             raise ValueError('Runtime must use an official image digest')
         if not re.fullmatch(r'sha256:[a-f0-9]{64}', r['imageId']) or r['os'] != 'linux':
             raise ValueError('Invalid image identity')
-        if r['executable'] != '/usr/local/bin/' + r['id'] or r['memoryMiB'] != {'python': 256, 'ruby': 512}[r['id']]:
+        if r['executable'] != executable or r['memoryMiB'] != memory or r['architecture'] != 'amd64':
             raise ValueError('Unexpected runtime command or memory limit')
     return {r['id']: r for r in rows}
 
@@ -53,10 +62,14 @@ def validate_submission(data, runtimes):
 
 
 class DockerRunner:
-    def __init__(self, runtimes, runtime='runc'):
+    def __init__(self, runtimes, runtime='runc', namespace='private-v1'):
         if runtime not in ('runc', 'runsc'):
             raise ValueError('Unsupported Docker runtime')
         self.runtimes, self.runtime = runtimes, runtime
+        if not re.fullmatch(r'[a-z][a-z0-9-]{0,31}', namespace): raise ValueError('Invalid executor namespace')
+        self.namespace = namespace
+        self.label = 'code-museum.executor=' + namespace
+        self.prefix = PREFIX if namespace == 'private-v1' else 'cm-' + namespace + '-'
         self.healthy = True
 
     def verify(self):
@@ -75,9 +88,9 @@ class DockerRunner:
         self.cleanup_stale()
 
     def cleanup_stale(self):
-        names = subprocess.check_output(['docker', 'ps', '-a', '--filter', 'label=' + LABEL, '--format', '{{.Names}}'], timeout=8).decode().splitlines()
+        names = subprocess.check_output(['docker', 'ps', '-a', '--filter', 'label=' + self.label, '--format', '{{.Names}}'], timeout=8).decode().splitlines()
         for name in names:
-            if re.fullmatch(PREFIX + r'[a-f0-9]{32}', name):
+            if re.fullmatch(self.prefix + r'[a-f0-9]{32}', name):
                 self.remove(name)
 
     def remove(self, name):
@@ -91,26 +104,106 @@ class DockerRunner:
 
     def command(self, name, language):
         row = self.runtimes[language]
-        return ['docker', 'create', '--pull=never', '--name', name, '--label', LABEL,
+        compiled = language in COMPILED
+        command = ['docker', 'create', '--pull=never', '--name', name, '--label', self.label,
                 '--runtime', self.runtime, '--network=none', '--read-only', '--init', '--ipc=none',
                 '--user=65534:65534', '--cap-drop=ALL', '--security-opt=no-new-privileges:true',
                 '--memory=' + str(row['memoryMiB']) + 'm', '--memory-swap=' + str(row['memoryMiB']) + 'm',
-                '--cpus=1', '--pids-limit=32', '--ulimit=nofile=64:64', '--ulimit=fsize=16777216:16777216',
+                '--cpus=1', '--pids-limit=' + ('128' if compiled else '32'), '--ulimit=nofile=64:64', '--ulimit=fsize=16777216:16777216',
                 '--log-driver=none', '--stop-timeout=1', '--workdir=/work',
-                '--tmpfs=/work:rw,noexec,nosuid,nodev,size=16m,mode=1777',
-                '--tmpfs=/tmp:rw,noexec,nosuid,nodev,size=8m,mode=1777', '-i',
-                '--entrypoint', row['executable'], row['image'],
-                *(['-I', '-u', '-c', PYTHON_BOOT] if language == 'python' else ['-e', RUBY_BOOT])]
+                '--tmpfs=/work:rw,' + ('exec' if compiled else 'noexec') + ',nosuid,nodev,size=' + ('128m' if compiled else '16m') + ',mode=1777',
+                '--tmpfs=/tmp:rw,noexec,nosuid,nodev,size=' + ('128m' if compiled else '8m') + ',mode=1777', '-i',
+                ]
+        if compiled:
+            command += ['--env=HOME=/work', '--env=GOCACHE=/work/cache', '--env=GOPATH=/work/go', '--env=GOPROXY=off', '--env=GOSUMDB=off', '--env=GOTOOLCHAIN=local', '--env=CGO_ENABLED=0', '--env=GOMAXPROCS=1', '--env=RUSTUP_HOME=/usr/local/rustup', '--env=CARGO_HOME=/usr/local/cargo', '--entrypoint=/bin/sleep', row['image'], '60']
+        else:
+            command += ['--entrypoint', row['executable'], row['image'], *(['-I', '-u', '-c', PYTHON_BOOT] if language == 'python' else ['-e', RUBY_BOOT])]
+        return command
+
+    def compiled_execute(self, job):
+        """No host mounts or artifact execution: compile and run inside one leased container."""
+        name = self.prefix + job['id']; row = self.runtimes[job['language']]
+        _, _, _, compile_seconds, filename, compiler, program = COMPILED[job['language']]
+        started = time.monotonic(); watchdog = None
+        buffers = {'stdout': bytearray(), 'stderr': bytearray()}
+        timings = {}; phase = 'compiling'; exit_code = None
+        def capture(args, seconds, payload=b''):
+            process = subprocess.Popen(args, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            def write():
+                try: process.stdin.write(payload); process.stdin.close()
+                except (OSError, ValueError): pass
+            writer = threading.Thread(target=write, daemon=True); writer.start()
+            reason = None; deadline = time.monotonic() + seconds
+            try:
+                with selectors.DefaultSelector() as selector:
+                    for field in buffers:
+                        stream = getattr(process, field); os.set_blocking(stream.fileno(), False)
+                        selector.register(stream, selectors.EVENT_READ, field)
+                    while selector.get_map():
+                        if job['cancel'].is_set(): reason = 'cancelled'; break
+                        if time.monotonic() >= deadline: reason = 'compile_timed_out' if phase == 'compiling' else 'timed_out'; break
+                        for selected, _ in selector.select(.05):
+                            chunk = os.read(selected.fileobj.fileno(),4096)
+                            if not chunk: selector.unregister(selected.fileobj); continue
+                            available = MAX_OUTPUT - sum(len(b) for b in buffers.values())
+                            buffers[selected.data].extend(chunk[:available])
+                            if len(chunk) > available: reason = 'output_limit'; break
+                        if reason: break
+                if reason:
+                    # Killing docker exec alone does not stop the process inside the container.
+                    process.kill()
+                    process.wait(timeout=3)
+                    self.remove(name)
+                process.wait(timeout=3)
+                return reason, process.returncode
+            finally:
+                if process.poll() is None: process.kill(); process.wait(timeout=3); self.remove(name)
+                for stream in (process.stdin,process.stdout,process.stderr):
+                    try: stream.close()
+                    except OSError: pass
+                writer.join(timeout=1)
+        try:
+            watchdog = subprocess.Popen([sys.executable,str(Path(__file__).resolve()),'--namespace',self.namespace,'--lease','60','--watchdog',name],stdin=subprocess.PIPE,stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL)
+            subprocess.run(self.command(name,job['language']),check=True,capture_output=True,timeout=8)
+            subprocess.run(['docker','start',name],check=True,capture_output=True,timeout=3)
+            if job['cancel'].is_set(): return {'state':'cancelled','stdout':'','stderr':'','exitCode':None}
+            # Docker cp rejects a read-only rootfs even when the target is tmpfs.
+            # Stream bounded source to a fixed filename as the container's non-root user.
+            subprocess.run(['docker','exec','-i',name,'/bin/dd','of=/work/'+filename,'status=none'],input=job['code'].encode('utf-8'),check=True,capture_output=True,timeout=8)
+            job['state'] = 'compiling'
+            tick = time.monotonic(); reason, exit_code = capture(['docker','exec',name,*compiler],compile_seconds)
+            timings['compileMs'] = round((time.monotonic()-tick)*1000)
+            if not reason and exit_code: reason = 'compile_error'
+            if not reason:
+                phase = 'running'; job['state'] = phase
+                tick = time.monotonic(); reason, exit_code = capture(['docker','exec','-i',name,*program],3,job['stdin'].encode('utf-8'))
+                timings['runMs'] = round((time.monotonic()-tick)*1000)
+                reason = reason or ('completed' if exit_code == 0 else 'failed')
+            decoded = {}; remaining = MAX_OUTPUT
+            for field, raw in buffers.items():
+                encoded = raw.decode('utf-8',errors='replace').encode('utf-8')
+                if len(encoded)>remaining: reason='output_limit'
+                decoded[field] = encoded[:remaining].decode('utf-8',errors='ignore'); remaining -= len(decoded[field].encode('utf-8'))
+            return {'state':reason,'phase':phase,'exitCode':exit_code if reason in ('completed','failed','compile_error') else None,**decoded,**timings,'elapsedMs':round((time.monotonic()-started)*1000),'runtimeVersion':row['version']}
+        except (OSError,ValueError,subprocess.SubprocessError,RuntimeError):
+            return {'state':'cancelled' if job['cancel'].is_set() else 'infrastructure_error','phase':phase,'stdout':'','stderr':'Compilation/execution infrastructure unavailable; no fallback was used.','exitCode':None}
+        finally:
+            try: self.remove(name)
+            except (OSError,subprocess.SubprocessError,RuntimeError): self.healthy=False
+            if watchdog:
+                try: watchdog.stdin.write(b'done\n');watchdog.stdin.close();watchdog.wait(timeout=10)
+                except (OSError,subprocess.SubprocessError): self.healthy=False
 
     def execute(self, job):
-        name = PREFIX + job['id']
+        if job['language'] in COMPILED: return self.compiled_execute(job)
+        name = self.prefix + job['id']
         process = watchdog = None
         started = time.monotonic()
         output = {'stdout': bytearray(), 'stderr': bytearray()}
         reason = None
         try:
             # Start the lease before create, covering API death during Docker setup as well.
-            watchdog = subprocess.Popen([sys.executable, str(Path(__file__).resolve()), '--watchdog', name], stdin=subprocess.PIPE, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+            watchdog = subprocess.Popen([sys.executable, str(Path(__file__).resolve()), '--namespace', self.namespace, '--watchdog', name], stdin=subprocess.PIPE, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
             created = subprocess.run(self.command(name, job['language']), capture_output=True, timeout=8)
             if created.returncode:
                 raise RuntimeError('Docker could not create the restricted environment')
@@ -205,7 +298,7 @@ class Manager:
             return self.public(job)
 
     def public(self, job):
-        return {k: job[k] for k in ('id', 'language', 'state', 'stdout', 'stderr', 'exitCode', 'elapsedMs', 'runtimeVersion') if k in job}
+        return {k: job[k] for k in ('id', 'language', 'state', 'phase', 'stdout', 'stderr', 'exitCode', 'elapsedMs', 'compileMs', 'runMs', 'runtimeVersion') if k in job}
 
     def get(self, ident, owner, cancel=False):
         with self.lock:
@@ -241,7 +334,7 @@ class Manager:
             self.stopping = True
             for job in self.jobs.values(): job['cancel'].set()
             self.lock.notify_all()
-        self.worker.join(timeout=20)
+        self.worker.join(timeout=60)
 
 
 def handler(manager, token, origin):
@@ -263,7 +356,7 @@ def handler(manager, token, origin):
         def do_GET(self):
             if self.path == '/api/runtimes':
                 return self.respond(200, {'private': True, 'available': manager.runner.healthy,
-                    'runtimes': [{k: r[k] for k in ('id', 'version', 'memoryMiB', 'source')} for r in manager.runner.runtimes.values()],
+                    'runtimes': [{**{k: r[k] for k in ('id', 'version', 'memoryMiB', 'source')}, 'compileSeconds': COMPILED[r['id']][3] if r['id'] in COMPILED else 0, 'runSeconds':3} for r in manager.runner.runtimes.values()],
                     'limits': {'seconds': 3, 'outputBytes': MAX_OUTPUT, 'concurrency': 1, 'network': False}})
             return self.job(False)
         def do_DELETE(self): return self.job(True)
@@ -312,12 +405,16 @@ def main():
     parser.add_argument('--origin', default='http://127.0.0.1:4173')
     parser.add_argument('--runtime', choices=['runc', 'runsc'], default='runc')
     parser.add_argument('--watchdog')
+    parser.add_argument('--namespace', default='private-v1')
+    parser.add_argument('--lease', type=int, choices=[12,60], default=12)
     args = parser.parse_args()
+    if not re.fullmatch(r'[a-z][a-z0-9-]{0,31}',args.namespace): parser.error('Invalid namespace')
+    prefix = PREFIX if args.namespace == 'private-v1' else 'cm-' + args.namespace + '-'
     if args.watchdog:
-        if not re.fullmatch(PREFIX + r'[a-f0-9]{32}', args.watchdog): parser.error('Invalid container name')
+        if not re.fullmatch(prefix + r'[a-f0-9]{32}', args.watchdog): parser.error('Invalid container name')
         with selectors.DefaultSelector() as selector:
             selector.register(sys.stdin, selectors.EVENT_READ)
-            event = selector.select(12)
+            event = selector.select(args.lease)
             clean = bool(event) and sys.stdin.buffer.readline() == b'done\n'
         # On parent death, retry through the setup budget so a late Docker create cannot leak.
         end = time.monotonic() + (0 if clean else 8)
@@ -329,9 +426,10 @@ def main():
     token = os.environ.get('EXECUTOR_TOKEN', '')
     if len(token) < 32 or not token.isascii(): parser.error('Set a private ASCII EXECUTOR_TOKEN of at least 32 characters')
     import fcntl
-    lock = os.fdopen(os.open(os.environ.get('EXECUTOR_LOCK', '/tmp/code-museum-executor.lock'), os.O_CREAT | os.O_RDWR | os.O_NOFOLLOW, 0o600), 'a')
+    lock_path = '/tmp/code-museum-executor.lock' if args.namespace == 'private-v1' else '/tmp/code-museum-executor-' + args.namespace + '.lock'
+    lock = os.fdopen(os.open(os.environ.get('EXECUTOR_LOCK', lock_path), os.O_CREAT | os.O_RDWR | os.O_NOFOLLOW, 0o600), 'a')
     fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
-    runner = DockerRunner(load_runtimes(args.images), args.runtime);runner.verify()
+    runner = DockerRunner(load_runtimes(args.images), args.runtime,args.namespace);runner.verify()
     manager = Manager(runner)
     server = BoundedServer(('127.0.0.1', args.port), handler(manager, token, args.origin))
     def shutdown(*_): threading.Thread(target=server.shutdown, daemon=True).start()

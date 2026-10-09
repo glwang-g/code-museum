@@ -16,6 +16,8 @@
       ruby:'服务器 Ruby · 私有令牌 · 点击运行才上传 · 3秒执行预算 · 无本地环境'
     };
     const short={javascript:'浏览器 JavaScript · 无需下载',python:local?'浏览器 Python · 约13.53 MB':'服务器 Python · 需要令牌',lua:'浏览器 Lua · 约413 KiB',scheme:'浏览器 Scheme · 约244 KiB',ruby:'服务器 Ruby · 需要令牌'};
+    const compiled={c:['C11',10],cpp:['C++17',10],rust:['Rust 2021',15],go:['Go',30],java:['Java 17',15]};
+    if(compiled[id]){short[id]='服务器 '+compiled[id][0]+' · 需要令牌';descriptions[id]='私有远端编译执行 · 点击运行才上传 · 编译'+compiled[id][1]+'秒 / 运行3秒 · 禁网，不安装外部依赖'+(id==='java'?' · 入口类名 Museum':'')}
     $('lab-environment-summary').textContent=short[id]||'仅编辑 · 未接入在线运行';
     $('lab-environment-detail').textContent=descriptions[id]||'仅编辑示例或草稿 · 尚未接入在线运行环境';
     $('lab-local-suggestion').hidden=id!=='python'||local||$('lab-remote-token').value.length>=32;
@@ -33,12 +35,12 @@
   }
   function activity(){
     const stage=$('lab-runtime-state').dataset.stage;
-    $('lab-stop').hidden=!['downloading','initializing','submitting','queued','running'].includes(stage);
+    $('lab-stop').hidden=!['downloading','initializing','submitting','queued','compiling','running'].includes(stage);
     const result=$('lab-result'),error=$('lab-error-kind');
     error.hidden=result.dataset.state!=='error';
     if(!error.hidden){
       const text=result.textContent;
-      error.textContent=/超过.*秒|超时|timed.out/i.test(text)?'执行超时':/SyntaxError|syntax error|语法错误|unexpected token|unexpected end|expected near|unexpected symbol|found EOS|unterminated/i.test(text)?'语法错误':/令牌|配额|队列已满/.test(text)?'访问限制':/加载|运行环境|连接|响应无效|Worker|资源/.test(text)?'环境不可用':'运行异常';
+      error.textContent=/编译超过/.test(text)?'编译超时':/编译失败/.test(text)?'编译错误':/超过.*秒|超时|timed.out/i.test(text)?'执行超时':/SyntaxError|syntax error|语法错误|unexpected token|unexpected end|expected near|unexpected symbol|found EOS|unterminated/i.test(text)?'语法错误':/令牌|配额|队列已满/.test(text)?'访问限制':/加载|运行环境|连接|响应无效|Worker|资源/.test(text)?'环境不可用':'运行异常';
     }
   }
   document.addEventListener('click',event=>{for(const id of ['lab-file-tools','lab-environment'])if(!$(id).contains(event.target))$(id).open=false});

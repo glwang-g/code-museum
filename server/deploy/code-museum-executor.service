@@ -14,12 +14,12 @@ EnvironmentFile=/etc/code-museum-executor/private.env
 ExecStart=/usr/bin/python3 /opt/code-museum-executor/executor.py --port 4181 --origin https://codemuseum.freexlib.com
 Restart=on-failure
 RestartSec=5
-TimeoutStopSec=30
+TimeoutStopSec=65
 UMask=0077
 NoNewPrivileges=true
 ProtectSystem=strict
 ProtectHome=true
-# Shared lock with SSH prototypes. Do not use PrivateTmp: it would split the singleton lock.
+# Production singleton lock. Tests/previews now use distinct namespaces and locks.
 ReadWritePaths=/tmp
 
 [Install]

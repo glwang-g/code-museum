@@ -1,7 +1,7 @@
 (() => {
   const $=id=>document.getElementById(id),states=new Map();
-  const labels={'not-enabled':'未启用',connecting:'连接中','waiting-token':'等待令牌',idle:'待运行',downloading:'读取资源',initializing:'初始化中',ready:'可运行',submitting:'提交中',queued:'排队中',running:'执行中',completed:'执行完成',failed:'失败',paused:'已暂停',cancelled:'已取消',unsupported:'未接入'};
-  const busy=new Set(['connecting','downloading','initializing','submitting','queued','running']);
+  const labels={'not-enabled':'未启用',connecting:'连接中','waiting-token':'等待令牌',idle:'待运行',downloading:'读取资源',initializing:'初始化中',ready:'可运行',submitting:'提交中',queued:'排队中',compiling:'编译中',running:'执行中',completed:'执行完成',failed:'失败',paused:'已暂停',cancelled:'已取消',unsupported:'未接入'};
+  const busy=new Set(['connecting','downloading','initializing','submitting','queued','compiling','running']);
   let current=null,location='local',retry=null;
   const key=(id,mode)=>id+':'+mode;
   const bytes=value=>value<1024*1024?(value/1024).toFixed(0)+' KiB':(value/(1024*1024)).toFixed(2)+' MiB';

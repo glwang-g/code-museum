@@ -61,7 +61,9 @@ def main():
     was_enabled = subprocess.run(['systemctl','is-enabled','--quiet','code-museum-executor'],stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL).returncode == 0
     if was_active: command('systemctl','stop','code-museum-executor')
     try: fcntl.flock(lock, fcntl.LOCK_EX|fcntl.LOCK_NB)
-    except BlockingIOError: raise SystemExit('Another private executor is active; no installation performed')
+    except BlockingIOError:
+        if was_active: subprocess.run(['systemctl','start','code-museum-executor'],check=True)
+        raise SystemExit('Another private executor owns the production lock; existing service restored')
     nginx = SITE.read_bytes()
     marker = b'    # Code Museum private Docker executor (administrator managed)\n    include /etc/nginx/snippets/code-museum-executor.conf;\n'
     if marker not in nginx:

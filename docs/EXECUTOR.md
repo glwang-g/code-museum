@@ -1,10 +1,10 @@
 # Docker 私有执行首版
 
-本轮实现 Python、Ruby 原生远端执行，先完成SSH私有原型核验，随后按用户指令准备正式域名上的令牌访问部署。Linux 执行服务使用 Python 标准库，不需要 pip/npm 依赖。网站仍可完全离线构建，构建不会启动 Docker、拉镜像或连接服务器。
+当前实现 Python、Ruby 原生远端执行，以及 C、C++、Rust、Go、Java 的编译后执行，先完成SSH私有原型核验，随后按用户指令准备正式域名上的令牌访问部署。Linux 执行服务使用 Python 标准库，不需要 pip/npm 依赖。网站仍可完全离线构建，构建不会启动 Docker、拉镜像或连接服务器。
 
 ## 本机试看（xshow）
 
-前提：本机 Node.js ≥22、SSH alias `xshow` 可连接；远端有 Python 3、Docker、cgroup v2 和清单中两个固定 linux/amd64 镜像。原型核验已在xshow准备镜像；若常驻服务已安装，请使用正式站点，不同时启动临时原型。
+前提：本机 Node.js ≥22、SSH alias `xshow` 可连接；远端有 Python 3、Docker、cgroup v2 和清单中固定 linux/amd64 镜像。原型核验已在xshow准备镜像；预览和集成核验采用独立随机命名空间/锁，不清理生产容器。
 
 ```sh
 npm run build
@@ -12,15 +12,15 @@ export EXECUTOR_TOKEN="$(openssl rand -hex 32)"
 npm run executor:preview
 ```
 
-打开 **http://127.0.0.1:4174/#lab**，切换到 Python 或 Ruby。在启动预览的终端用 `printf '%s\n' "$EXECUTOR_TOKEN"` 查看令牌，复制到网页「私有执行令牌」，点击「运行代码」。令牌只留在当前页面内存中，不写浏览器存储、URL、项目文件或执行日志。
+打开 **http://127.0.0.1:4174/#lab**，切换到 Python、Ruby 或五种编译语言。在启动预览的终端用 `printf '%s\n' "$EXECUTOR_TOKEN"` 查看令牌，复制到网页「私有执行令牌」，点击「运行代码」。令牌只留在当前页面内存中，不写浏览器存储、URL、项目文件或执行日志。
 
 预览程序将本地后端源码和镜像清单通过 SSH stdin 传入远端独立临时目录，启动仅 loopback 可访问的服务，并通过同一 SSH 连接转发。端口冲突会报错，不终止已有服务。Ctrl+C 关闭自己的预览和临时服务、删除临时源码目录；SSH stdin 断开也触发清理，单次试用最长30分钟。网络故障时清理可能延迟到连接断开或到期。Docker 镜像作为显式准备的缓存保留。
 
-可用 `PORT=4175`、`EXECUTOR_SSH_HOST=另一SSH别名`、`EXECUTOR_REMOTE_PORT=4188` 修改配置。后端通过同一个默认锁禁止多实例并行；不能同时运行集成核验和试用。它会清理本执行器标签的旧容器，不操作其他 Docker 容器。
+可用 `PORT=4175`、`EXECUTOR_SSH_HOST=另一SSH别名`、`EXECUTOR_REMOTE_PORT=4188` 修改配置。生产默认锁禁止生产多实例；预览/集成检查有独立随机锁和容器标签。各实例只清理自己的容器，不操作其他 Docker 容器。
 
 ## 交互与边界
 
-- Python、Ruby 默认远端；只在点击运行时上传代码与可选标准输入，编辑不提交。切换语言、离开实验台、编辑正在执行的代码或点取消都会请求停止任务。
+- Python、Ruby、C、C++、Rust、Go、Java 默认远端；只在点击运行时上传代码与可选标准输入，编辑不提交。切换语言、离开实验台、编辑正在执行的代码或点取消都会请求停止任务。
 - Python 可切换浏览器本地，明确点击「下载并启用」后使用现有 Pyodide。Lua/ Scheme 也需明确启用；JavaScript 使用浏览器原生引擎。
 - Ruby 本地选项禁用，本轮没有接入 ruby.wasm。无远端服务时显示未连接，不伪造结果、不自动回退或下载运行时。
 - 本地模式启用后编辑会自动执行；远端一直需要手动运行。标准输入控件只供远端使用。
@@ -29,7 +29,7 @@ npm run executor:preview
 
 ## 固定镜像与独立 Linux 启动
 
-镜像身份、平台、实际版本及来源见 `server/runtime-images.json`。当前实测 Python 3.13.16、Ruby 3.4.11。Docker Official Images 来自官方 python/ruby 镜像项目；Python 按 PSF 许可，Ruby 按 Ruby/BSD 许可，镜像基础系统和依赖各自保留许可。来源入口：
+镜像身份、平台、实际版本及来源见 `server/runtime-images.json`。当前实测 Python 3.13.16、Ruby 3.4.11、GCC/G++ 14.3.0、rustc 1.99.0、Go 1.27.2、javac 17.0.20.1。C按C11、C++按C++17、Rust按2021 edition、Java按--release17编译；Java入口类名Museum。编译语言仅单文件和预装标准库，不联网下载依赖。Docker Official Images 来自官方 python/ruby 镜像项目；Python 按 PSF 许可，Ruby 按 Ruby/BSD 许可，镜像基础系统和依赖各自保留许可。来源入口：
 
 - https://hub.docker.com/_/python ，https://github.com/docker-library/python ，https://docs.python.org/3/license.html
 - https://hub.docker.com/_/ruby ，https://github.com/docker-library/ruby ，https://www.ruby-lang.org/en/about/license.txt
@@ -59,16 +59,16 @@ EXECUTOR_UPSTREAM=http://127.0.0.1:4181 npm run preview
 | 项目 | 首版限制 |
 |---|---|
 | 并发 / 排队 | 1 / 最多10个；排队超30秒取消 |
-| 执行 | Docker start 与代码最多3秒；create另有8秒超时；宿主 watchdog 12秒硬租约并处理清理 |
-| 内存 | Python 256 MiB；Ruby 512 MiB；不额外提供 swap |
-| CPU / 进程 / 文件描述符 | 1核 / 32 / 64 |
-| 文件系统 | 只读根；/work 16 MiB、/tmp 8 MiB tmpfs，noexec/nosuid/nodev |
+| 执行 | 运行3秒；C/C++编译10秒、Rust/Java15秒、Go30秒；create8秒、启动3秒/源码传入8秒；解释器watchdog12秒、编译容器60秒租约 |
+| 内存 | Python256MiB；Ruby/C/C++512MiB；Rust/Go/Java768MiB；不额外提供swap；Java堆256MiB |
+| CPU / 进程 / 文件描述符 | 1核 / 解释器32、编译环境128 / 64 |
+| 文件系统 | 只读根；解释器/work16MiB、/tmp8MiB均noexec；编译环境各128MiB，/work允许执行容器内产物、/tmp仍noexec；均nosuid/nodev |
 | 网络 / 用户 / 权限 | 禁网、uid65534、cap-drop ALL、no-new-privileges、Docker默认seccomp |
 | 源码 / stdin / HTTP body | 64 KiB / 16 KiB / 96 KiB，按UTF-8字节 |
 | stdout + stderr | 合计32 KiB，包括非法UTF-8替换后的结果 |
 | 配额 / 结果查询 | 每session每分钟10次、全局30次；最多100记录，完成结果可查询5分钟 |
 
-任务状态包括 completed、failed、timed_out、cancelled、output_limit、memory_limit、infrastructure_error。源码与输入仅在任务内存和临时容器中使用，完成后从任务记录删除；标准输出/错误可能含用户输入，仍应视为敏感数据。结果超过5分钟不可查询，在新任务提交时移除过期内存记录，服务退出时全部释放；并非定时落盘或精确到秒的内存擦除。无代码日志和 Docker 输出日志。当前配额按私有会话计算，不是公开用户身份认证。
+任务状态包括 queued、compiling、running、completed、failed、compile_error、compile_timed_out、timed_out、cancelled、output_limit、memory_limit、infrastructure_error。源码与输入仅在任务内存和临时容器中使用，完成后从任务记录删除；标准输出/错误可能含用户输入，仍应视为敏感数据。结果超过5分钟不可查询，在新任务提交时移除过期内存记录，服务退出时全部释放；并非定时落盘或精确到秒的内存擦除。无代码日志和 Docker 输出日志。当前配额按私有会话计算，不是公开用户身份认证。
 
 ## 核验与证据
 
@@ -96,7 +96,7 @@ npm run executor:browser         # 本机Chrome -> SSH xshow -> Docker
 ssh xshow "sudo -n cat /etc/code-museum-executor/private.env"
 ```
 
-取等号后的值粘贴到正式站点实验台的私有令牌输入框。常驻执行服务与临时SSH原型共用singleton锁；**常驻服务运行时不要启动原型或Docker集成检查**，它们不是相互隔离的并行实例。正式HTTPS检查可执行：
+取等号后的值粘贴到正式站点实验台的私有令牌输入框。生产保持自己的singleton锁；本版临时预览和集成检查使用独立namespace、锁、容器前缀/标签，可与生产服务共存。旧版脚本仍共用生产标记，不得混用。正式HTTPS检查可执行：
 
 ```sh
 EXECUTOR_BROWSER_ORIGIN=https://codemuseum.freexlib.com npm run executor:browser
@@ -105,3 +105,9 @@ EXECUTOR_BROWSER_ORIGIN=https://codemuseum.freexlib.com npm run executor:browser
 脚本从现有管理员SSH连接读取令牌到内存，不打印或写文件，不停止常驻服务。以上是本轮部署准备与管理约定；最终上线状态另见DEPLOYMENT.md的实际记录。
 
 普通 Docker runc 共享宿主内核，本轮限制实测不等于容器逃逸防护证明。当前只适合自己信任的私有试用。公开匿名执行前应使用独立执行机器/VM与更强沙箱（例如额外安装并核验 gVisor/runsc），加入真正用户认证、IP/用户配额、监控及故障恢复；现有 `--runtime runsc` 参数只是接口，尚未安装或验证 runsc。不能将模板或私有试用称为已经公开上线。
+
+## 编译阶段与新增核验
+
+源码通过docker exec的标准输入写入容器tmpfs，未写宿主源码文件、无宿主挂载。固定白名单编译命令与运行命令分别计时，返回compileMs/runMs/phase；编译失败或超时不启动用户程序。编译诊断和程序输出合计32KiB。超时/输出过量/取消先终止docker客户端管道，再强制移除容器；宿主watchdog处理API死亡。新程序的二进制/类文件只在容器内执行，最后随容器销毁。Go每次冷编译，首版没有跨用户共享可写缓存。
+
+真实Docker检查记录见data/audit/executor-compiled-checks.json；覆盖五语言真实编译/输出/stdin、编译诊断、运行超时和输出上限，保留Python/Ruby限制回归。普通Docker共享内核，资源限制实测不证明容器逃逸防护。

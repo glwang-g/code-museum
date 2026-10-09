@@ -8,6 +8,11 @@ function generateCredits(root){
     for(const entry of group.entries){
       if(ids.has(entry.id)||!/^[a-z][a-z-]+$/.test(entry.id))throw new Error('Invalid credit identity');
       ids.add(entry.id);
+      if(entry.runtimeIds){
+        const rows=read('server/runtime-images.json').runtimes.filter(r=>entry.runtimeIds.includes(r.id));
+        if(rows.length!==entry.runtimeIds.length)throw new Error('Missing credited remote runtime');
+        entry.versionLabel=rows.map(r=>r.version).join(' / ');entry.source=rows[0].source;
+      }
       if(entry.manifest){
         const manifest=read(entry.manifest);
         entry.version=manifest.version;entry.license=manifest.license;

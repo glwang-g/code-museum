@@ -164,7 +164,7 @@ prolog,Prolog,1972,verified-language,,erlang,1,1,0,4,0,,cited-only
 promela,Promela,1997,unreviewed,,,0,0,0,0,0,,no-map-link
 pseint,PSeInt,2003,unreviewed,,,0,0,0,0,0,,no-map-link
 pug,Pug,2010,unreviewed,,,0,0,0,0,0,,no-map-link
-python,Python,1991,verified-language,abc,julia,2,2,0,13,1,f-sharp,cited-only
+python,Python,1991,verified-language,abc,julia,2,2,0,14,1,f-sharp,cited-only
 q-sharp,Q#,2017,unreviewed,,,0,0,0,0,0,,no-map-link
 qalb,Qalb,2012,unreviewed,,,0,0,0,0,0,,no-map-link
 r,R,1993,verified-language,,julia,1,1,0,2,0,,cited-only

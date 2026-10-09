@@ -1,8 +1,83 @@
 {
   "schemaVersion": 1,
-  "resolvedAt": "2026-10-08T03:50:32.368141+00:00",
+  "resolvedAt": "2026-10-09T05:32:03.245426+00:00",
   "runtimes": [
-    {"id":"python","image":"python@sha256:a1165e272e578941b84abc79e4ab38a0305cd12803a5c4247979ac7655f4d641","imageId":"sha256:a1165e272e578941b84abc79e4ab38a0305cd12803a5c4247979ac7655f4d641","architecture":"amd64","os":"linux","version":"Python 3.13.16","memoryMiB":256,"executable":"/usr/local/bin/python","source":"https://hub.docker.com/_/python"},
-    {"id":"ruby","image":"ruby@sha256:22165c5f904d76a8a02fbdd419d0269481369523fd66978232d16c88099730e2","imageId":"sha256:22165c5f904d76a8a02fbdd419d0269481369523fd66978232d16c88099730e2","architecture":"amd64","os":"linux","version":"ruby 3.4.11 (2026-09-23 revision 592f1ffdb3) +PRISM [x86_64-linux]","memoryMiB":512,"executable":"/usr/local/bin/ruby","source":"https://hub.docker.com/_/ruby"}
+    {
+      "id": "python",
+      "image": "python@sha256:a1165e272e578941b84abc79e4ab38a0305cd12803a5c4247979ac7655f4d641",
+      "imageId": "sha256:a1165e272e578941b84abc79e4ab38a0305cd12803a5c4247979ac7655f4d641",
+      "architecture": "amd64",
+      "os": "linux",
+      "version": "Python 3.13.16",
+      "memoryMiB": 256,
+      "executable": "/usr/local/bin/python",
+      "source": "https://hub.docker.com/_/python"
+    },
+    {
+      "id": "ruby",
+      "image": "ruby@sha256:22165c5f904d76a8a02fbdd419d0269481369523fd66978232d16c88099730e2",
+      "imageId": "sha256:22165c5f904d76a8a02fbdd419d0269481369523fd66978232d16c88099730e2",
+      "architecture": "amd64",
+      "os": "linux",
+      "version": "ruby 3.4.11 (2026-09-23 revision 592f1ffdb3) +PRISM [x86_64-linux]",
+      "memoryMiB": 512,
+      "executable": "/usr/local/bin/ruby",
+      "source": "https://hub.docker.com/_/ruby"
+    },
+    {
+      "id": "c",
+      "image": "gcc@sha256:5e927c284bf55a7dc796262e311a0703344f62f41f5621eb56843111b1d37e15",
+      "imageId": "sha256:5e927c284bf55a7dc796262e311a0703344f62f41f5621eb56843111b1d37e15",
+      "architecture": "amd64",
+      "os": "linux",
+      "version": "gcc (GCC) 14.3.0",
+      "memoryMiB": 512,
+      "executable": "/usr/local/bin/gcc",
+      "source": "https://hub.docker.com/_/gcc"
+    },
+    {
+      "id": "cpp",
+      "image": "gcc@sha256:5e927c284bf55a7dc796262e311a0703344f62f41f5621eb56843111b1d37e15",
+      "imageId": "sha256:5e927c284bf55a7dc796262e311a0703344f62f41f5621eb56843111b1d37e15",
+      "architecture": "amd64",
+      "os": "linux",
+      "version": "g++ (GCC) 14.3.0",
+      "memoryMiB": 512,
+      "executable": "/usr/local/bin/g++",
+      "source": "https://hub.docker.com/_/gcc"
+    },
+    {
+      "id": "rust",
+      "image": "rust@sha256:2c3a22f0a5533ea2dd5a16627bc841228151faa2d4de2644ac9987e4a2f1f2fa",
+      "imageId": "sha256:2c3a22f0a5533ea2dd5a16627bc841228151faa2d4de2644ac9987e4a2f1f2fa",
+      "architecture": "amd64",
+      "os": "linux",
+      "version": "rustc 1.99.0 (b940084d7 2026-09-28)",
+      "memoryMiB": 768,
+      "executable": "/usr/local/cargo/bin/rustc",
+      "source": "https://hub.docker.com/_/rust"
+    },
+    {
+      "id": "go",
+      "image": "golang@sha256:5cf287a799e6b94384bad13d16b14904c531f51ba65792237e122ce42b392f61",
+      "imageId": "sha256:5cf287a799e6b94384bad13d16b14904c531f51ba65792237e122ce42b392f61",
+      "architecture": "amd64",
+      "os": "linux",
+      "version": "go version go1.27.2 linux/amd64",
+      "memoryMiB": 768,
+      "executable": "/usr/local/go/bin/go",
+      "source": "https://hub.docker.com/_/golang"
+    },
+    {
+      "id": "java",
+      "image": "eclipse-temurin@sha256:43f4431cc895d37ceb115e2e1f160545ec45caee9c1cb4246fc6bb879d58aeda",
+      "imageId": "sha256:43f4431cc895d37ceb115e2e1f160545ec45caee9c1cb4246fc6bb879d58aeda",
+      "architecture": "amd64",
+      "os": "linux",
+      "version": "javac 17.0.20.1",
+      "memoryMiB": 768,
+      "executable": "/opt/java/openjdk/bin/javac",
+      "source": "https://hub.docker.com/_/eclipse-temurin"
+    }
   ]
 }

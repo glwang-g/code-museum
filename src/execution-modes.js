@@ -1,9 +1,9 @@
 (()=>{
   const config=window.MUSEUM_EXECUTION_CONFIG;if(!config?.enabled)return;
   const $=id=>document.getElementById(id),local=new Map([['python','Python · Pyodide，约13.53 MB未压缩'],['lua','Lua · Wasmoon，约413 KiB未压缩'],['scheme','Scheme · BiwaScheme，约244 KiB，非Wasm']]);
-  const remoteIds=new Set(['python','ruby']),modes=new Map(),consent=new Set();
+  const remoteIds=new Set(['python','ruby','c','cpp','rust','go','java']),modes=new Map(),consent=new Set();
   const status=window.MUSEUM_RUNTIME_STATUS;
-  const terminal=new Set(['completed','failed','timed_out','cancelled','output_limit','memory_limit','infrastructure_error']);
+  const terminal=new Set(['completed','failed','compile_error','compile_timed_out','timed_out','cancelled','output_limit','memory_limit','infrastructure_error']);
   const session=crypto.randomUUID().replaceAll('-','');
   let current=null,capabilities=null,callbacks={},generation=0,active=null,connectionGeneration=0;
   const endpoint=config.endpoint;
@@ -38,10 +38,10 @@
     $('lab-execution-info').textContent=isRemote?(record?'远端 '+shortVersion(record.version)+' · 私有试用 · 点击运行才上传代码':'远端执行服务尚未连接；不会下载本地运行时。'):(allowed(current)?'浏览器本地执行；代码不会发送到执行服务器。':'本地环境尚未启用，点击下载后才加载。');
     if(isRemote){
       $('lab-status').textContent='远端执行 · 代码只在点击“运行代码”时上传。';
-      $('lab-runtime-note').textContent='3秒上限、禁网、独立Docker环境；不自动安装第三方包。';
+      $('lab-runtime-note').textContent=(record?.compileSeconds?'编译'+record.compileSeconds+'秒 / ':'')+'运行3秒上限、禁网、独立Docker环境；不自动安装第三方包。';
       $('lab-runtime-credit').hidden=!record;
-      $('lab-runtime-credit').textContent='Docker 官方镜像 · 项目与许可 ↗';
-      $('lab-runtime-credit').onclick=()=>{if(record)window.open(record.source,'_blank','noopener,noreferrer')};
+      $('lab-runtime-credit').textContent=record?'Docker 官方镜像 · 项目与许可 ↗':'';
+      $('lab-runtime-credit').onclick=()=>{if(record)window.MUSEUM_CREDITS_UI?.openRemoteFor(current)};
     }else{
       const label=window.MUSEUM_CREDITS_UI?.labelFor(current);
       $('lab-runtime-credit').hidden=!label;
@@ -70,23 +70,23 @@
       let job=await request('/executions',{method:'POST',headers:headers(token),body:JSON.stringify({language:id,code,stdin:$('lab-stdin').value})});
       if(gen!==generation){await request('/executions/'+job.id,{method:'DELETE',headers:headers(token)});return}
       active.id=job.id;
-      const deadline=Date.now()+45000;
+      const deadline=Date.now()+90000;
       while(!terminal.has(job.state)){
         if(gen!==generation)return;
         if(Date.now()>deadline)throw new Error('等待远端结果超时。');
-        $('lab-result').textContent=job.state==='queued'?'任务正在排队…':'正在远端执行…';
-        status?.update(id,'remote',{stage:job.state==='queued'?'queued':'running',detail:job.state==='queued'?'等待服务器执行名额。':'代码正在远端独立环境中执行。'});
+        $('lab-result').textContent=job.state==='queued'?'任务正在排队…':job.state==='compiling'?'正在远端编译…':'正在远端执行…';
+        status?.update(id,'remote',{stage:job.state==='queued'?'queued':job.state==='compiling'?'compiling':'running',detail:job.state==='queued'?'等待服务器执行名额。':job.state==='compiling'?'正在受限环境中编译；成功后才执行。':'代码正在远端独立环境中执行。'});
         await new Promise(resolve=>setTimeout(resolve,250));
         if(gen!==generation)return;
         job=await request('/executions/'+job.id,{headers:headers(token)});
       }
       if(gen!==generation)return;
-      const reasons={timed_out:'运行超过3秒，已停止。',output_limit:'输出超过32 KiB，已停止。',memory_limit:'达到内存上限，已停止。',cancelled:'任务已取消。',infrastructure_error:'远端执行环境不可用。'};
+      const reasons={compile_error:'编译失败，未执行程序。',compile_timed_out:'编译超过时间预算，未执行程序。',timed_out:'运行超过3秒，已停止。',output_limit:'编译与运行输出超过32 KiB，已停止。',memory_limit:'达到内存上限，已停止。',cancelled:'任务已取消。',infrastructure_error:'远端执行环境不可用。'};
       $('lab-result').textContent=(job.stdout||'')+(job.stderr?'\n'+job.stderr:'')+(reasons[job.state]?'\n'+reasons[job.state]:'')||'（程序没有输出）';
       $('lab-result').dataset.state=job.state==='completed'?'ok':'error';
       active=null;render();
       status?.update(id,'remote',{stage:job.state==='completed'?'completed':job.state==='cancelled'?'cancelled':'failed',detail:job.state==='completed'?'执行完成 · '+(job.elapsedMs??'?')+' ms':reasons[job.state]||'代码执行失败，请查看运行结果。',version:shortVersion(job.runtimeVersion||id),retryLabel:'重试运行'});
-      $('lab-runtime-note').textContent='远端实际结果 · '+shortVersion(job.runtimeVersion||id)+' · '+(job.elapsedMs??'?')+' ms · '+job.state;
+      $('lab-runtime-note').textContent='远端实际结果 · '+shortVersion(job.runtimeVersion||id)+(job.compileMs!==undefined?' · 编译 '+job.compileMs+' ms':'')+(job.runMs!==undefined?' · 运行 '+job.runMs+' ms':'')+' · 总计 '+(job.elapsedMs??'?')+' ms · '+job.state;
     }catch(error){
       if(gen!==generation)return;
       cancel();$('lab-result').textContent=error.message+' 不会自动切换执行位置。';$('lab-result').dataset.state='error';

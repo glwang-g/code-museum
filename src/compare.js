@@ -3,7 +3,6 @@
   const records=new Map(window.MUSEUM_DATA.records.map(r=>[r.id,r]));
   const audit=window.MUSEUM_RELATIONSHIP_AUDIT.relations;
   const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-  const supported=new Set(['javascript','python','lua','scheme','ruby']);
   const stateNames={'field-only':'来源字段，关系待核','citation-only':'有引用，缺匹配摘录','excerpt-recorded':'论证与引用摘录已存','needs-direct-evidence':'直接设计依据待补'};
   const typeNames={supersetOf:'超集扩展',successorOf:'后继',influencedBy:'设计影响',implementationOf:'语言实现',compatibleWith:'语法兼容',extensionInterface:'扩展接口',hostRuntime:'宿主运行时',interop:'互操作'};
   function relation(edge){
@@ -12,7 +11,7 @@
   function column(id){
     const record=records.get(id),entry=data.languages[id],topic=$('compare-topic').value,example=entry.examples[topic];
     const upstream=audit.filter(e=>e.to===id&&e.layer==='design'),downstream=audit.filter(e=>e.from===id&&e.layer==='design');
-    return `<article class="compare-language" data-compare-language="${id}"><div class="compare-language-heading"><h3>${esc(record.name)}</h3><span class="compare-runtime">${esc(entry.runtime)}</span></div><dl class="compare-facts"><div><dt>来源年代</dt><dd>${esc(record.year||'未记载')} · 具体事件口径见档案</dd></div><div><dt>创造者</dt><dd>${esc(record.creators||'来源未记载')}</dd></div><div><dt>设计取向</dt><dd>${esc(entry.goal)} <a href="${esc(entry.source)}" target="_blank" rel="noreferrer">语言资料 ↗</a></dd></div><div><dt>示例语法</dt><dd>${esc(entry.version)}</dd></div></dl><div class="compare-code-heading"><strong>${esc(data.topics.find(t=>t.id===topic).name)}</strong><button type="button" data-compare-lab="${id}">${supported.has(id)?'去实验台运行 ↗':'去实验台编辑 ↗'}</button></div><pre class="compare-code" tabindex="0" aria-label="${esc(record.name)}示例">${window.MUSEUM_LAB.formatCode(example.code,id)}</pre><p class="compare-code-note">${esc(example.note)} 进入实验台会保留该主题已有草稿。</p><details class="compare-neighbours"><summary>设计上游 ${upstream.length} · 下游 ${downstream.length}</summary><p>以下为当前馆藏已记录关系，包含待核记录。</p>${[...upstream,...downstream].map(relation).join('')||'<p>尚无记录，仍需研究。</p>'}</details><button type="button" data-compare-archive="${id}">查看语言档案与来源 ↗</button></article>`;
+    return `<article class="compare-language" data-compare-language="${id}"><div class="compare-language-heading"><h3>${esc(record.name)}</h3><span class="compare-runtime">${esc(entry.runtime)}</span></div><dl class="compare-facts"><div><dt>来源年代</dt><dd>${esc(record.year||'未记载')} · 具体事件口径见档案</dd></div><div><dt>创造者</dt><dd>${esc(record.creators||'来源未记载')}</dd></div><div><dt>设计取向</dt><dd>${esc(entry.goal)} <a href="${esc(entry.source)}" target="_blank" rel="noreferrer">语言资料 ↗</a></dd></div><div><dt>示例语法</dt><dd>${esc(entry.version)}</dd></div></dl><div class="compare-code-heading"><strong>${esc(data.topics.find(t=>t.id===topic).name)}</strong><button type="button" data-compare-lab="${id}">${window.MUSEUM_LAB.canRun(id)?'去实验台运行 ↗':'去实验台编辑 ↗'}</button></div><pre class="compare-code" tabindex="0" aria-label="${esc(record.name)}示例">${window.MUSEUM_LAB.formatCode(example.code,id)}</pre><p class="compare-code-note">${esc(example.note)} 进入实验台会保留该主题已有草稿。</p><details class="compare-neighbours"><summary>设计上游 ${upstream.length} · 下游 ${downstream.length}</summary><p>以下为当前馆藏已记录关系，包含待核记录。</p>${[...upstream,...downstream].map(relation).join('')||'<p>尚无记录，仍需研究。</p>'}</details><button type="button" data-compare-archive="${id}">查看语言档案与来源 ↗</button></article>`;
   }
   function render(){
     const left=$('compare-left').value,right=$('compare-right').value;
@@ -32,5 +31,6 @@
   for(const id of ['compare-left','compare-right','compare-topic'])$(id).onchange=render;
   $('compare-preset').onchange=()=>{const [left,right]=$('compare-preset').value.split(',');if(!left||!right)return;$('compare-left').value=left;$('compare-right').value=right;render()};
   $('compare-swap').onclick=()=>{const left=$('compare-left').value;$('compare-left').value=$('compare-right').value;$('compare-right').value=left;render()};
+  document.addEventListener('museum-execution-change',render);
   render();
 })();

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-10-08",
+  "checkedAt": "2026-10-09",
   "method": "Manually reviewed public documentation and bibliography, with separate local execution evidence. Not an exhaustive manual verification of the whole PLDB snapshot.",
   "reviews": [
     {
@@ -34,6 +34,54 @@
           "finalUrl": "https://docs.python.org/3/using/cmdline.html",
           "decodedBodySha256": "77f07703897edcda42b6171cdc3396e61cdc5f4364ce827f8cbfd4129e12c11a",
           "excerpt": "The CPython interpreter scans the command line and the environment for various settings. CPython implementation detail: Other implementations’ command line schemes may differ. See Alternate Implementations for further resources. 1.1. Command line ¶ When invoking Python, you may specify any of these "
+        },
+        {
+          "url": "https://docs.python.org/3/faq/general.html",
+          "finalUrl": "https://docs.python.org/3/faq/general.html",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-09T05:27:02.970719+00:00",
+          "decodedBodySha256": "b853041648712331e9f82bae156f1cf41c17c5e82fe71837049d87d7a1f543f1",
+          "role": "关系依据",
+          "reviewed": true,
+          "title": "Python General FAQ",
+          "excerpt": "I had extensive experience with implementing an interpreted language in the ABC group at CWI, and from working with this group I had learned a lot about language design. This is the origin of many Python features, including the use of indentation for statement grouping and the inclusion of very-high-level data types (although the details are all different in Python). I had a number of gripes about the ABC language, but also liked many of its features. It was impossible to extend the ABC language (or its implementation) to remedy my complaints – in fact its lack of extensibility was one of its biggest problems. I had some experience with using Modula-2+ and talked with the designers of Modula-3 and read the Modula-3 report. Modula-3 is the origin of the syntax and semantics used for exceptions, and some other Python features.",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body"
+        },
+        {
+          "url": "https://docs.python.org/3/extending/extending.html",
+          "finalUrl": "https://docs.python.org/3/extending/extending.html",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-09T05:27:03.119783+00:00",
+          "decodedBodySha256": "02769df3c24e25099feae9dac6909f079506c32077ee583a7d70af914e415628",
+          "role": "关系依据",
+          "reviewed": true,
+          "title": "Python: Extending Python with C or C++",
+          "excerpt": "It is quite easy to add new built-in modules to Python, if you know how to program in C. [separate passage] It is possible to write extension modules in C++. Some restrictions apply.",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body"
+        },
+        {
+          "url": "https://www.jython.org/",
+          "finalUrl": "https://www.jython.org/",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-09T05:27:06.091187+00:00",
+          "decodedBodySha256": "09a7f70aed77d33cc5949851e1d03eaa1be5f15db7b819b6dea8960ddb4fbb6e",
+          "role": "关系依据",
+          "reviewed": true,
+          "title": "Jython: What is Jython?",
+          "excerpt": "The Jython project provides implementations of Python in Java, providing to Python the benefits of running on the JVM and access to classes written in Java. The current release (a Jython 2.7.x) only supports Python 2 (sorry).",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body"
+        },
+        {
+          "url": "https://pyo3.rs/",
+          "finalUrl": "https://pyo3.rs/v0.29.3/",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-09T05:27:06.042280+00:00",
+          "decodedBodySha256": "3b260ba994ca34964253685a16fafa61433c440c5cd82e6744dbcf9df03004be",
+          "role": "关系依据",
+          "reviewed": true,
+          "title": "PyO3 0.29.3: Rust bindings for Python",
+          "excerpt": "Rust bindings for Python, including tools for creating native Python extension modules. Running and interacting with Python code from a Rust binary is also supported.",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body"
         }
       ]
     },
@@ -68,6 +116,18 @@
           "finalUrl": "https://clang.llvm.org/docs/UsersManual.html",
           "decodedBodySha256": "6167d81d397567410d3100f068a30d587567c0acbfb70d2d65bbfc17686581cc",
           "excerpt": "Clang is one component in a complete toolchain for C family languages. A separate document describes the other pieces necessary to assemble a complete toolchain . Clang is designed to support the C family of programming languages, which includes C , Objective-C , C++ , and Objective-C++ as well as m"
+        },
+        {
+          "url": "https://www.bell-labs.com/usr/dmr/www/chist.html",
+          "finalUrl": "https://www.nokia.com/bell-labs/about/dennis-m-ritchie/chist.html",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-09T05:27:07.059605+00:00",
+          "decodedBodySha256": "314872b3e5c6aeb0f46e47b0c11775f4e1cafc2a8eec10bc6dbaa47c13fcaca6",
+          "role": "关系依据",
+          "reviewed": true,
+          "title": "Dennis M. Ritchie: The Development of the C Language",
+          "excerpt": "For the sake of brevity, I omit full descriptions of C itself, its parent B [Johnson 73] and its grandparent BCPL [Richards 79], and instead concentrate on characteristic elements of each language and how they evolved. [separate passage] After a rapidly scuttled attempt at Fortran, he created instead a language of his own, which he called B. B can be thought of as C without types; more accurately, it is BCPL squeezed into 8K bytes of memory and filtered through Thompson's brain.",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body"
         }
       ]
     },
@@ -204,6 +264,18 @@
           "finalUrl": "https://docs.oracle.com/en/java/javase/25/docs/specs/man/javac.html",
           "decodedBodySha256": "95641f9082f4111dc170d1d98dc496860d65248eea528e0d1184563caf9629d0",
           "excerpt": "junction with either -source or --release . -encoding encoding Specifies character encoding used by source files, such as EUC-JP and UTF-8. If the -encoding option is not specified, then the platform default converter is used. -endorseddirs directories Overrides the location of the endorsed standard"
+        },
+        {
+          "url": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-1.html",
+          "finalUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-1.html",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-09T05:27:03.490930+00:00",
+          "decodedBodySha256": "58b01f79c7aa1bf2448c06f2dc448d18e69b235980b0a2194c8c1440cfdea6e3",
+          "role": "关系依据",
+          "reviewed": true,
+          "title": "Java Language Specification 25, Chapter 1",
+          "excerpt": "The Java programming language is related to C and C++ but is organized rather differently, with a number of aspects of C and C++ omitted and a few ideas from other languages included. [separate passage] Chapter 3 describes the lexical structure of the Java programming language, which is based on C and C++.",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body"
         }
       ]
     },
@@ -283,6 +355,18 @@
           "finalUrl": "https://go.dev/doc/install",
           "decodedBodySha256": "6a7ac4c8f33edcd599c2cae744e6b45bd366d4510c27ede93f450999ac5ec941",
           "excerpt": "Download and install - The Go Programming Language Skip to Main Content Why Go arrow_drop_down Press Enter to activate/deactivate dropdown Case Studies Common problems companies solve with Go Use Cases Stories about how and why companies use Go Security How Go can help keep you secure by default Lea"
+        },
+        {
+          "url": "https://go.dev/doc/faq",
+          "finalUrl": "https://go.dev/doc/faq",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-09T05:27:05.176223+00:00",
+          "decodedBodySha256": "6ff7e86bad4c6fb71f61a3f46028bca7cc128857e728b153803c6ab282e6f129",
+          "role": "关系依据",
+          "reviewed": true,
+          "title": "Go FAQ: What are Go’s ancestors?",
+          "excerpt": "Go is mostly in the C family (basic syntax), with significant input from the Pascal/Modula/Oberon family (declarations, packages), plus some ideas from languages inspired by Tony Hoare’s CSP, such as Newsqueak and Limbo (concurrency). However, it is a new language across the board.",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body"
         }
       ]
     },
@@ -328,6 +412,18 @@
           "reviewed": true,
           "decodedBodySha256": "a1585e914cc55a3422f7e376456bb5bd31fdfe71a68e1f8d1736a58adea7c892",
           "excerpt": "Rust is not a particularly original language, with design elements coming from a wide range of sources. Some of these are listed below (including elements that have since been removed): SML, OCaml: algebraic data types, pattern matching, type inference, semicolon statement separation; C++: references, RAII, smart pointers, move semantics, monomorphization, memory model; Haskell (GHC): typeclasses, type families; Erlang: message passing, thread failure, linked thread failure, lightweight concurrency; Swift: optional bindings; Scheme: hygienic macros; C#: attributes; Ruby: closure syntax, block syntax. The list covers evolution, including removed features; it is not a claim about the first Rust version."
+        },
+        {
+          "url": "https://doc.rust-lang.org/nomicon/ffi.html",
+          "finalUrl": "https://doc.rust-lang.org/nomicon/ffi.html",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-09T05:27:03.174941+00:00",
+          "decodedBodySha256": "31e6a4e9aaf2b00eb802f64887f1e2319537b8e890f6bd89901eaa093dafc554",
+          "role": "关系依据",
+          "reviewed": true,
+          "title": "Rust Nomicon: FFI",
+          "excerpt": "The extern block is a list of function signatures in a foreign library, in this case with the platform’s C ABI. [separate passage] You may wish to compile Rust code in a way that can be called from C. This is fairly easy, but requires a few things.",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body"
         }
       ]
     },
@@ -407,6 +503,18 @@
           "finalUrl": "https://dlang.org/dmd-windows.html",
           "decodedBodySha256": "2e804b7a0a840b57ab7591c9586e04d87642277f68b93692f17081445bcd33fd",
           "excerpt": " the C preprocessor used by the associated C compiler is used to preprocess ImportC files. -D Generate documentation from source. Note: mind the security considerations . -Dd directory Write documentation file to directory . -op can be used if the original package hierarchy should be retained -Df fi"
+        },
+        {
+          "url": "https://dlang.org/overview.html",
+          "finalUrl": "https://dlang.org/overview.html",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-09T05:27:03.338138+00:00",
+          "decodedBodySha256": "e384470980900102fc6eb6fbddc712fa1c384dee235484b504f858e4194ee4e1",
+          "role": "关系依据",
+          "reviewed": true,
+          "title": "D Overview",
+          "excerpt": "D draws inspiration from those other languages (most especially C++) and tempers it with experience and real world practicality.",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body"
         }
       ]
     },
@@ -475,6 +583,18 @@
           "finalUrl": "https://www.ruby-lang.org/en/documentation/installation/",
           "decodedBodySha256": "4b81c5596e074dcdd5ea0c167535c99cfc1f8cee4bdf1d9bebb829634f49177d",
           "excerpt": "installation methods available on that system. Here are available installation methods: Package Management Systems Debian, Ubuntu CentOS, Fedora, RHEL Snap Gentoo Arch Linux macOS FreeBSD OpenBSD OpenIndiana Windows Package Manager Chocolatey package manager for Windows Other Distributions Installer"
+        },
+        {
+          "url": "https://www.ruby-lang.org/en/about/",
+          "finalUrl": "https://www.ruby-lang.org/en/about/",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-09T05:27:05.936298+00:00",
+          "decodedBodySha256": "771e58119de2adc0b296e0d31f0973b8e2d114acd0dbeaf6505ec7c8c05ad1a4",
+          "role": "关系依据",
+          "reviewed": true,
+          "title": "About Ruby: The Ideals of Ruby’s Creator",
+          "excerpt": "Ruby is a language of careful balance. Its creator, Yukihiro “Matz” Matsumoto, blended parts of his favorite languages (Perl, Smalltalk, Eiffel, Ada, and Lisp) to form a new language that balanced functional programming with imperative programming.",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body"
         }
       ]
     },
@@ -543,6 +663,18 @@
           "finalUrl": "https://www.php.net/manual/en/features.commandline.php",
           "decodedBodySha256": "76c5e9e1e96ac04bd1cecdac9b98d08a21b7e5a6cd2e70452480fc6ccf0069f2",
           "excerpt": " dot edu ¶ 14 years ago You can easily parse command line arguments into the $_GET variable by using the parse_str() function. <?php parse_str ( implode ( '&' , array_slice ( $argv , 1 )), $_GET ); ?> It behaves exactly like you'd expect with cgi-php. $ php -f somefile.php a=1 b[]=2 b[]=3 This will "
+        },
+        {
+          "url": "https://www.php.net/manual/en/history.php.php",
+          "finalUrl": "https://www.php.net/manual/en/history.php.php",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-09T05:27:06.296906+00:00",
+          "decodedBodySha256": "e84f14b3ac0e46b152c14d793e9f684c01a46117e563d6258a243109062d17b0",
+          "role": "关系依据",
+          "reviewed": true,
+          "title": "PHP: History of PHP",
+          "excerpt": "It had Perl-like variables, automatic interpretation of form variables, and HTML embedded syntax. The syntax itself was similar to that of Perl, albeit much more limited, simple, and somewhat inconsistent. [separate passage] The language was deliberately designed to resemble C in structure, making it an easy adoption for developers familiar with C, Perl, and similar languages.",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body"
         }
       ]
     },
@@ -628,6 +760,18 @@
           "finalUrl": "https://docs.julialang.org/en/v1/manual/getting-started/",
           "decodedBodySha256": "54369b53aa7bd21c6058f703915f043ec2dfeaa8e65ec0a3cf6596756515b3bd",
           "excerpt": "To run code in a file non-interactively, you can give it as the first argument to the julia command: $ julia script.jl You can pass additional arguments to Julia, and to your program script.jl . A detailed list of all the available options can be found under Command-line Interface . Resources A cura"
+        },
+        {
+          "url": "https://julialang.org/blog/2012/02/why-we-created-julia/",
+          "finalUrl": "https://julialang.org/blog/2012/02/why-we-created-julia/",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-09T05:27:04.932883+00:00",
+          "decodedBodySha256": "c78002dce7f99e3409307b68b3a6c1dcb2316f08522af0a7924677c3b5a6c9d0",
+          "role": "关系依据",
+          "reviewed": true,
+          "title": "Why We Created Julia — Jeff Bezanson, Stefan Karpinski, Viral B. Shah, Alan Edelman",
+          "excerpt": "We want a language that's open source, with a liberal license. We want the speed of C with the dynamism of Ruby. We want a language that's homoiconic, with true macros like Lisp, but with obvious, familiar mathematical notation like Matlab. We want something as usable for general programming as Python, as easy for statistics as R, as natural for string processing as Perl, as powerful for linear algebra as Matlab, as good at gluing programs together as the shell.",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body"
         }
       ]
     },
@@ -696,6 +840,18 @@
           "finalUrl": "https://docs.octave.org/latest/Running-Octave.html",
           "decodedBodySha256": "9255b397aced7316ee0bbbfb5d1679f2603e127b6fbba7e2d16f456a75577f0a",
           "excerpt": "with the graphical user interface (GUI) or a command line interface (CLI). You can also typically find Octave in the \"Start Menu\" or equivalent of your computer. You can also type octave in a command shell; as long as you have Octave in your path, it will start. If you start Octave with the GUI, the"
+        },
+        {
+          "url": "https://octave.org/about.html",
+          "finalUrl": "https://octave.org/about.html",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-09T05:27:05.168843+00:00",
+          "decodedBodySha256": "3a1d8d7dfa3a8ef048d31bea4c29df425340f240640dcd2f4ec400bec91d9ff9",
+          "role": "关系依据",
+          "reviewed": true,
+          "title": "GNU Octave: About",
+          "excerpt": "GNU Octave is a high-level language, primarily intended for numerical computations. It provides a convenient command line interface for solving linear and nonlinear problems numerically, and for performing other numerical experiments using a language that is mostly compatible with Matlab.",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body"
         }
       ]
     },
@@ -1118,6 +1274,18 @@
           "finalUrl": "https://groovy-lang.org/install.html",
           "decodedBodySha256": "922b7269419d172e27c716924a8520eccfa3f9168d815d5658c42dd2eb7f574b",
           "excerpt": "verflow questions Slack Community The Groovy programming language is supported by the Apache Software Foundation and the Groovy community. Apache, Apache Groovy, Groovy, and the ASF logo are either registered trademarks or trademarks of The Apache Software Foundation. © 2003-2026 The Apache Software"
+        },
+        {
+          "url": "https://groovy-lang.org/differences.html",
+          "finalUrl": "https://groovy-lang.org/differences.html",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-09T05:27:04.386275+00:00",
+          "decodedBodySha256": "6821ebab33547f6308dc27d9bb2b5f6a93ca115698fe7245ac9128b08d11c233",
+          "role": "关系依据",
+          "reviewed": true,
+          "title": "Groovy: Differences with Java",
+          "excerpt": "Groovy tries to be as natural as possible for Java developers. We’ve tried to follow the principle of least surprise when designing Groovy, particularly for developers learning Groovy who’ve come from a Java background. Here we list all the major differences between Java and Groovy.",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body"
         }
       ]
     },
@@ -1152,6 +1320,18 @@
           "finalUrl": "https://learn.microsoft.com/en-us/dotnet/fsharp/tools/fsharp-interactive/",
           "decodedBodySha256": "fbe312073c253038da8f1cee0214428cbeef71ec879d3faf80d548b810fc7cbc",
           "excerpt": " session after executing dotnet fsi from the command line: Microsoft (R) F# Interactive version 11.0.0.0 for F# 5.0 Copyright (c) Microsoft Corporation. All Rights Reserved. For help type #help;; > let square x = x * x;; val square : x:int -> int > square 12;; val it : int = 144 > printfn \"Hello, FS"
+        },
+        {
+          "url": "https://fsharp.org/history/hopl-final/hopl-fsharp.pdf",
+          "finalUrl": "https://fsharp.org/history/hopl-final/hopl-fsharp.pdf",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-09T05:27:05.173052+00:00",
+          "decodedBodySha256": "db336bd4f1f57c5881477ee5e12995ac164255b81ede10d4bee9a055daf1202a",
+          "role": "关系依据",
+          "reviewed": true,
+          "title": "Don Syme: The Early History of F#, HOPL 2020, section 7, PDF p.18",
+          "excerpt": "F# was never fully compatible with any version of OCaml, though it shared a compatible subset, and it took Caml-Light and OCaml as its principal sources of design guidance and inspiration.",
+          "hashScope": "complete downloaded PDF bytes; excerpt extracted with PDFKit and visually checked on page 18"
         }
       ]
     },
@@ -1334,6 +1514,18 @@
           "finalUrl": "https://docs.oracle.com/cd/B28359_01/appdev.111/b28370/overview.htm",
           "decodedBodySha256": "6120f95aa9036ae237861460887ae2063f3ee9b0e5bcdd715cbb01d2fffcc5be",
           "excerpt": "A PL/SQL block is defined by the keywords DECLARE , BEGIN , EXCEPTION , and END . These keywords partition the block into a declarative part, an executable part, and an exception-handling part. Only the executable part is required. Declarations are local to the block and cease to exist when the bloc"
+        },
+        {
+          "url": "https://docs.oracle.com/en/database/oracle/oracle-database/23/lnpls/overview.html",
+          "finalUrl": "https://docs.oracle.com/en/database/oracle/oracle-database/26/lnpls/overview.html",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-09T05:27:05.106470+00:00",
+          "decodedBodySha256": "f1f8c1d014b81a05faa1fb9e1180962316e048a812374eac7ef0a6e04fd9e947",
+          "role": "关系依据",
+          "reviewed": true,
+          "title": "Oracle Database 26: Overview of PL/SQL",
+          "excerpt": "PL/SQL, the Oracle procedural extension of SQL, is a portable, high-performance transaction-processing language.",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body"
         }
       ]
     },
@@ -2008,6 +2200,18 @@
           "finalUrl": "https://doc.guix.gnu.org/guile/latest/en/html_node/Invoking-Guile.html",
           "decodedBodySha256": "6be578ab1673b60db17736ea638aea52669afd8850618cfc9eff5d85a175aaea",
           "excerpt": "nformation to provide and how to provide it. Command-line Options Environment Variables"
+        },
+        {
+          "url": "https://www.scheme.org/",
+          "finalUrl": "https://www.scheme.org/",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-09T05:27:06.980966+00:00",
+          "decodedBodySha256": "8ce153049e77ec378787f3be3c0375e98b95ef6b3197cb3e291215ccf28997a2",
+          "role": "关系依据",
+          "reviewed": true,
+          "title": "The Scheme Programming Language",
+          "excerpt": "Scheme is a classic programming language in the Lisp family. It emphasizes functional programming and domain-specific languages but adapts to other styles.",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body"
         }
       ]
     },
@@ -2195,6 +2399,18 @@
           "finalUrl": "https://www.gnu.org/software/smalltalk/manual/gst.html",
           "decodedBodySha256": "58f2dad4bd606f7baaab9875c9993110290770d2a4df00decb9e2868b6e0bb15",
           "excerpt": "A Simple Overview of Smalltalk Syntax Smalltalk’s power comes from its treatment of objects. In this document, we’ve mostly avoided the issue of syntax by using strictly parenthesized expressions as needed. When this leads to code which is hard to read due to the density of parentheses, a knowledge "
+        },
+        {
+          "url": "https://worrydream.com/EarlyHistoryOfSmalltalk/",
+          "finalUrl": "https://worrydream.com/EarlyHistoryOfSmalltalk/",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-09T05:27:06.238683+00:00",
+          "decodedBodySha256": "ba907dabf57133d02efba4b728cb8d1e700bb773298aff2194fe3014a61ccfca",
+          "role": "关系依据",
+          "reviewed": true,
+          "title": "Alan Kay: The Early History of Smalltalk",
+          "excerpt": "It is not too much of an exaggeration to say that most of my ideas from then on took their roots from Simula—but not as an attempt to improve it. It was the promise of an entirely new way to structure computations that took my fancy. [separate passage] I had originally made the boast because McCarthy's self-describing LISP interpreter was written in itself. It was about \"a page\", and as far as power goes, LISP was the whole nine-yards for functional languages. I was quite sure I could do the same for object-oriented languages plus be able to do a reasonable syntax for the code a la some of the FLEX machine techniques.",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body"
         }
       ]
     },
@@ -2309,6 +2525,18 @@
           "finalUrl": "https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-run",
           "decodedBodySha256": "04ae1e543ef330559733ab0bb48f3b5177f204cf9af034adab7b9e9b269cb44c",
           "excerpt": "ocess. Explicit application arguments on the command line take precedence. For a Project profile, arguments supplied by the project also take precedence. environmentVariables Specifies environment variables for the launched process. Profile values override inherited and SDK-generated environment var"
+        },
+        {
+          "url": "https://learn.microsoft.com/en-us/lifecycle/announcements/visual-basic-6-support-announcement",
+          "finalUrl": "https://learn.microsoft.com/en-us/lifecycle/announcements/visual-basic-6-support-announcement",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-09T05:27:04.581533+00:00",
+          "decodedBodySha256": "a790a40a94e20513a1d3c2f4e7e71446fe0a30ac86b50840c75a977684579063",
+          "role": "关系依据",
+          "reviewed": true,
+          "title": "Microsoft: Visual Basic 6.0 support announcement",
+          "excerpt": "You may find the following resources useful as you migrate your VB6 application to modern application technology: Upgrade and migration partners Upgrading Visual Basic 6.0 Applications to Visual Basic .NET (Guide)",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body"
         }
       ]
     },
@@ -2444,6 +2672,18 @@
           "title": "Getting started with VBA in Office | Microsoft Learn",
           "decodedBodySha256": "99020c4d3c065bea497c9c86647224370baca311c7730c37f69326a288d5b2ad",
           "excerpt": "return to the Excel document, choose Macros on the Developer tab, choose Macro1 , and then choose Run . Cell A1 now contains the text Wow! and has a double-line border around it. Figure 3. Results of your first macro You just combined macro recording, reading the object model documentation, and simple programming to make a VBA program that does something. Congratulations! Did not work? Read on for debugging suggestions in VBA. Programming tips and tricks Start with examples The VBA community is very large; a search on the Web can almost always yield an example of VBA code that does something similar to what you want to do. If you cannot find a good example, try to break the task down into sm"
+        },
+        {
+          "url": "https://learn.microsoft.com/en-us/office/vba/language/concepts/getting-started/64-bit-visual-basic-for-applications-overview",
+          "finalUrl": "https://learn.microsoft.com/en-us/office/vba/language/concepts/getting-started/64-bit-visual-basic-for-applications-overview",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-09T05:27:04.766696+00:00",
+          "decodedBodySha256": "593e40a17ae964705a68b04a3c84b3c94256e5eaf87bc0d09cdc5f19018a2331",
+          "role": "关系依据",
+          "reviewed": true,
+          "title": "Microsoft: 64-bit Visual Basic for Applications overview",
+          "excerpt": "Microsoft Visual Basic for Applications (VBA) is the version of Visual Basic that ships with Microsoft Office.",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body"
         }
       ]
     },
@@ -2496,6 +2736,18 @@
           "title": "Features Removed or No Longer Developed in Windows Server | Microsoft Learn",
           "decodedBodySha256": "fc84cb827822c5d1a27e6cabbf267c7db350bc78e64f95eb3c9932d039e0be37",
           "excerpt": "VBScript VBScript is available as an FOD and preinstalled in Windows Server 2025, before its removal from the operating system in a later release. As a replacement for VBScript, use PowerShell for automating tasks, custom actions, or scripts. To learn more about migrating to PowerShell, see The VBScript-to-Windows PowerShell Conversion Guide . If you're using VBScript within your webpage, functionality is currently limited to browsers predating Internet Explorer 11. We recommend migrating your webpages to JavaScript, which provides cross-browser compatibility and modern browser support. Windows Server Update Services (WSUS) WSUS is no longer actively developed. All the existing capabilities and content continue to be available for your deployments. Rivest Cipher 4 (RC4) usage in Kerberos R"
+        },
+        {
+          "url": "https://learn.microsoft.com/en-us/windows/win32/com/translating-to-vbscript",
+          "finalUrl": "https://learn.microsoft.com/en-us/windows/win32/com/translating-to-vbscript",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-09T05:27:05.408567+00:00",
+          "decodedBodySha256": "867656dc27a383e713996a6c66407713f43192bd09f6a813da969319a50809b1",
+          "role": "关系依据",
+          "reviewed": true,
+          "title": "Microsoft: Translating to VBScript",
+          "excerpt": "VBScript is a subset of the Microsoft Visual Basic for Applications language. Because VBScript is intended to be safe for use in client-side applications such as webpages, it does not provide file input and output or direct access to the underlying operating system.",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body"
         }
       ]
     },
@@ -2912,6 +3164,25 @@
           "reviewed": true,
           "excerpt": "Printed pp28–34 (PDF37–43) define numbering, sequencing, punctuation, names and concrete statements; p34 contains the complete 18-operation inventory program. Statements include INPUT, COMPARE, TRANSFER, MOVE, READ-ITEM, JUMP, SET and STOP. Printed pp83–85 (PDF92–94) document translation, selection, allocation and processing into a machine-code program tape. Appendix D p112 (PDF121) gives compiler/library/code tape allocation and startup instructions. Preface documents English-like programming for UNIVAC. These are historical syntax and implementation evidence, not a newly executed historical binary or modern browser runtime. The 1958 manual version does not replace the catalogue 1955 appearance date.",
           "hashScope": "SHA-256 of complete original scanned PDF response bytes; stated pages rendered and visually read. No OCR text used as authority."
+        }
+      ]
+    },
+    {
+      "id": "visual-basic",
+      "status": "unreviewed",
+      "notes": "本轮仅核读语言关系原文，尚未完成独立语法与实现审查。",
+      "sources": [
+        {
+          "url": "https://techcommunity.microsoft.com/blog/smallbasic/a-brief-history-of-basic/336312",
+          "finalUrl": "https://techcommunity.microsoft.com/blog/smallbasic/a-brief-history-of-basic/336312",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-09T05:27:09.112484+00:00",
+          "decodedBodySha256": "f3d3123d716135d48de9457e5307343f6fda25911f4942c72984d5c6707ee84f",
+          "role": "关系依据",
+          "reviewed": true,
+          "title": "Ed Price: A Brief History of BASIC",
+          "excerpt": "Every BASIC written since then has been based on that early version. Examples include: GW-Basic, QBasic, QuickBasic, Visual Basic.",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body"
         }
       ]
     }

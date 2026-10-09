@@ -3,13 +3,13 @@
   "scope": "全量关系结构检查与常显标签逐项盘点；摘录已存不等于史料论证或关系覆盖全部核实。缺线不表示没有上游。",
   "summary": {
     "labels": 50,
-    "relations": 426,
+    "relations": 427,
     "mapDesignGaps": 4,
     "states": {
-      "citation-only": 39,
+      "excerpt-recorded": 89,
       "field-only": 336,
-      "excerpt-recorded": 50,
-      "needs-direct-evidence": 1
+      "needs-direct-evidence": 1,
+      "citation-only": 1
     },
     "warnings": 5
   },
@@ -30,9 +30,9 @@
       "ecology": [],
       "mapLinks": 2,
       "fieldOnly": 3,
-      "citationOnly": 1,
+      "citationOnly": 0,
       "needsDirectEvidence": 0,
-      "excerptRecorded": 1,
+      "excerptRecorded": 2,
       "state": "needs-review"
     },
     {
@@ -110,10 +110,10 @@
       "ecology": [],
       "mapLinks": 2,
       "fieldOnly": 0,
-      "citationOnly": 2,
+      "citationOnly": 0,
       "needsDirectEvidence": 0,
-      "excerptRecorded": 0,
-      "state": "needs-review"
+      "excerptRecorded": 2,
+      "state": "excerpts-recorded"
     },
     {
       "id": "basic",
@@ -130,10 +130,10 @@
       "ecology": [],
       "mapLinks": 3,
       "fieldOnly": 0,
-      "citationOnly": 1,
+      "citationOnly": 0,
       "needsDirectEvidence": 0,
-      "excerptRecorded": 2,
-      "state": "needs-review"
+      "excerptRecorded": 3,
+      "state": "excerpts-recorded"
     },
     {
       "id": "bcpl",
@@ -147,10 +147,10 @@
       "ecology": [],
       "mapLinks": 1,
       "fieldOnly": 0,
-      "citationOnly": 1,
+      "citationOnly": 0,
       "needsDirectEvidence": 0,
-      "excerptRecorded": 0,
-      "state": "needs-review"
+      "excerptRecorded": 1,
+      "state": "excerpts-recorded"
     },
     {
       "id": "c",
@@ -183,9 +183,9 @@
       ],
       "mapLinks": 8,
       "fieldOnly": 9,
-      "citationOnly": 4,
+      "citationOnly": 0,
       "needsDirectEvidence": 0,
-      "excerptRecorded": 2,
+      "excerptRecorded": 6,
       "state": "needs-review"
     },
     {
@@ -235,9 +235,9 @@
       ],
       "mapLinks": 5,
       "fieldOnly": 10,
-      "citationOnly": 2,
+      "citationOnly": 0,
       "needsDirectEvidence": 0,
-      "excerptRecorded": 2,
+      "excerptRecorded": 4,
       "state": "needs-review"
     },
     {
@@ -281,9 +281,9 @@
       "ecology": [],
       "mapLinks": 1,
       "fieldOnly": 1,
-      "citationOnly": 1,
+      "citationOnly": 0,
       "needsDirectEvidence": 0,
-      "excerptRecorded": 0,
+      "excerptRecorded": 1,
       "state": "needs-review"
     },
     {
@@ -363,9 +363,9 @@
       "ecology": [],
       "mapLinks": 3,
       "fieldOnly": 3,
-      "citationOnly": 3,
+      "citationOnly": 0,
       "needsDirectEvidence": 0,
-      "excerptRecorded": 0,
+      "excerptRecorded": 3,
       "state": "needs-review"
     },
     {
@@ -382,10 +382,10 @@
       "ecology": [],
       "mapLinks": 2,
       "fieldOnly": 0,
-      "citationOnly": 1,
+      "citationOnly": 0,
       "needsDirectEvidence": 0,
-      "excerptRecorded": 1,
-      "state": "needs-review"
+      "excerptRecorded": 2,
+      "state": "excerpts-recorded"
     },
     {
       "id": "haskell",
@@ -437,9 +437,9 @@
       ],
       "mapLinks": 7,
       "fieldOnly": 6,
-      "citationOnly": 3,
+      "citationOnly": 0,
       "needsDirectEvidence": 1,
-      "excerptRecorded": 2,
+      "excerptRecorded": 5,
       "state": "needs-review"
     },
     {
@@ -486,10 +486,10 @@
       "ecology": [],
       "mapLinks": 6,
       "fieldOnly": 0,
-      "citationOnly": 6,
+      "citationOnly": 0,
       "needsDirectEvidence": 0,
-      "excerptRecorded": 0,
-      "state": "needs-review"
+      "excerptRecorded": 6,
+      "state": "excerpts-recorded"
     },
     {
       "id": "kotlin",
@@ -537,9 +537,9 @@
       "ecology": [],
       "mapLinks": 5,
       "fieldOnly": 8,
-      "citationOnly": 4,
+      "citationOnly": 0,
       "needsDirectEvidence": 0,
-      "excerptRecorded": 1,
+      "excerptRecorded": 5,
       "state": "needs-review"
     },
     {
@@ -583,9 +583,9 @@
       ],
       "mapLinks": 1,
       "fieldOnly": 1,
-      "citationOnly": 1,
+      "citationOnly": 0,
       "needsDirectEvidence": 0,
-      "excerptRecorded": 0,
+      "excerptRecorded": 1,
       "state": "needs-review"
     },
     {
@@ -622,9 +622,9 @@
       "ecology": [],
       "mapLinks": 2,
       "fieldOnly": 1,
-      "citationOnly": 1,
+      "citationOnly": 0,
       "needsDirectEvidence": 0,
-      "excerptRecorded": 1,
+      "excerptRecorded": 2,
       "state": "needs-review"
     },
     {
@@ -644,9 +644,9 @@
       "ecology": [],
       "mapLinks": 3,
       "fieldOnly": 3,
-      "citationOnly": 3,
+      "citationOnly": 0,
       "needsDirectEvidence": 0,
-      "excerptRecorded": 0,
+      "excerptRecorded": 3,
       "state": "needs-review"
     },
     {
@@ -664,9 +664,9 @@
       "ecology": [],
       "mapLinks": 2,
       "fieldOnly": 1,
-      "citationOnly": 2,
+      "citationOnly": 0,
       "needsDirectEvidence": 0,
-      "excerptRecorded": 0,
+      "excerptRecorded": 2,
       "state": "needs-review"
     },
     {
@@ -681,10 +681,10 @@
       "ecology": [],
       "mapLinks": 1,
       "fieldOnly": 0,
-      "citationOnly": 1,
+      "citationOnly": 0,
       "needsDirectEvidence": 0,
-      "excerptRecorded": 0,
-      "state": "needs-review"
+      "excerptRecorded": 1,
+      "state": "excerpts-recorded"
     },
     {
       "id": "powershell",
@@ -732,7 +732,8 @@
       "year": 1991,
       "languageStatus": "verified-language",
       "upstream": [
-        "abc|python|influencedBy"
+        "abc|python|influencedBy",
+        "modula-3|python|influencedBy"
       ],
       "downstream": [
         "python|chapel|influencedBy",
@@ -758,9 +759,9 @@
       ],
       "mapLinks": 2,
       "fieldOnly": 13,
-      "citationOnly": 2,
+      "citationOnly": 0,
       "needsDirectEvidence": 0,
-      "excerptRecorded": 0,
+      "excerptRecorded": 3,
       "state": "needs-review"
     },
     {
@@ -778,9 +779,9 @@
       ],
       "mapLinks": 1,
       "fieldOnly": 1,
-      "citationOnly": 1,
+      "citationOnly": 0,
       "needsDirectEvidence": 0,
-      "excerptRecorded": 0,
+      "excerptRecorded": 1,
       "state": "needs-review"
     },
     {
@@ -804,9 +805,9 @@
       "ecology": [],
       "mapLinks": 6,
       "fieldOnly": 2,
-      "citationOnly": 6,
+      "citationOnly": 0,
       "needsDirectEvidence": 0,
-      "excerptRecorded": 1,
+      "excerptRecorded": 7,
       "state": "needs-review"
     },
     {
@@ -884,9 +885,9 @@
       "ecology": [],
       "mapLinks": 4,
       "fieldOnly": 5,
-      "citationOnly": 1,
+      "citationOnly": 0,
       "needsDirectEvidence": 0,
-      "excerptRecorded": 2,
+      "excerptRecorded": 3,
       "state": "needs-review"
     },
     {
@@ -903,10 +904,10 @@
       "ecology": [],
       "mapLinks": 2,
       "fieldOnly": 0,
-      "citationOnly": 1,
+      "citationOnly": 0,
       "needsDirectEvidence": 0,
-      "excerptRecorded": 1,
-      "state": "needs-review"
+      "excerptRecorded": 2,
+      "state": "excerpts-recorded"
     },
     {
       "id": "smalltalk",
@@ -923,10 +924,10 @@
       "ecology": [],
       "mapLinks": 3,
       "fieldOnly": 0,
-      "citationOnly": 3,
+      "citationOnly": 0,
       "needsDirectEvidence": 0,
-      "excerptRecorded": 0,
-      "state": "needs-review"
+      "excerptRecorded": 3,
+      "state": "excerpts-recorded"
     },
     {
       "id": "snobol",
@@ -964,9 +965,9 @@
       "ecology": [],
       "mapLinks": 1,
       "fieldOnly": 6,
-      "citationOnly": 1,
+      "citationOnly": 0,
       "needsDirectEvidence": 0,
-      "excerptRecorded": 0,
+      "excerptRecorded": 1,
       "state": "needs-review"
     },
     {
@@ -1023,10 +1024,10 @@
       "ecology": [],
       "mapLinks": 1,
       "fieldOnly": 0,
-      "citationOnly": 1,
+      "citationOnly": 0,
       "needsDirectEvidence": 0,
-      "excerptRecorded": 0,
-      "state": "needs-review"
+      "excerptRecorded": 1,
+      "state": "excerpts-recorded"
     },
     {
       "id": "vhdl",
@@ -1061,9 +1062,9 @@
       "ecology": [],
       "mapLinks": 3,
       "fieldOnly": 1,
-      "citationOnly": 3,
+      "citationOnly": 0,
       "needsDirectEvidence": 0,
-      "excerptRecorded": 0,
+      "excerptRecorded": 3,
       "state": "needs-review"
     },
     {
@@ -1078,10 +1079,10 @@
       "ecology": [],
       "mapLinks": 1,
       "fieldOnly": 0,
-      "citationOnly": 1,
+      "citationOnly": 0,
       "needsDirectEvidence": 0,
-      "excerptRecorded": 0,
-      "state": "needs-review"
+      "excerptRecorded": 1,
+      "state": "excerpts-recorded"
     },
     {
       "id": "xslt",
@@ -1129,13 +1130,24 @@
       "evidence": "Python 官方 FAQ 引 Guido van Rossum 自述：ABC 团队经验是 Python 许多特性的来源，包括用缩进分组语句和高层数据类型；也明确指出 Python 与 ABC 的实现及细节不同。",
       "key": "abc|python|influencedBy",
       "layer": "design",
-      "state": "citation-only",
+      "state": "excerpt-recorded",
       "issues": [
-        "缺少已阅读原文摘录"
+        "引用哈希与已存摘录版本不同"
       ],
       "reviewNote": "",
       "mapVisible": true,
-      "sources": []
+      "sources": [
+        {
+          "url": "https://docs.python.org/3/faq/general.html",
+          "finalUrl": "https://docs.python.org/3/faq/general.html",
+          "title": "Python General FAQ",
+          "excerpt": "I had extensive experience with implementing an interpreted language in the ABC group at CWI, and from working with this group I had learned a lot about language design. This is the origin of many Python features, including the use of indentation for statement grouping and the inclusion of very-high-level data types (although the details are all different in Python). I had a number of gripes about the ABC language, but also liked many of its features. It was impossible to extend the ABC language (or its implementation) to remedy my complaints – in fact its lack of extensibility was one of its biggest problems. I had some experience with using Modula-2+ and talked with the designers of Modula-3 and read the Modula-3 report. Modula-3 is the origin of the syntax and semantics used for exceptions, and some other Python features.",
+          "checkedAt": "2026-10-09T05:27:02.970719+00:00",
+          "sha256": "b853041648712331e9f82bae156f1cf41c17c5e82fe71837049d87d7a1f543f1",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body",
+          "reviewId": "python"
+        }
+      ]
     },
     {
       "from": "activity-pub",
@@ -1191,13 +1203,22 @@
       "evidence": "Ruby 官方 About 页面称其创造者将 Perl、Smalltalk、Eiffel、Ada 和 Lisp 中喜欢的部分融合成 Ruby。此处的 Ada 指 Ada 编程语言。",
       "key": "ada|ruby|influencedBy",
       "layer": "design",
-      "state": "citation-only",
-      "issues": [
-        "缺少已阅读原文摘录"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": true,
-      "sources": []
+      "sources": [
+        {
+          "url": "https://www.ruby-lang.org/en/about/",
+          "finalUrl": "https://www.ruby-lang.org/en/about/",
+          "title": "About Ruby: The Ideals of Ruby’s Creator",
+          "excerpt": "Ruby is a language of careful balance. Its creator, Yukihiro “Matz” Matsumoto, blended parts of his favorite languages (Perl, Smalltalk, Eiffel, Ada, and Lisp) to form a new language that balanced functional programming with imperative programming.",
+          "checkedAt": "2026-10-09T05:27:05.936298+00:00",
+          "sha256": "771e58119de2adc0b296e0d31f0973b8e2d114acd0dbeaf6505ec7c8c05ad1a4",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body",
+          "reviewId": "ruby"
+        }
+      ]
     },
     {
       "from": "ada",
@@ -1808,17 +1829,27 @@
       "to": "c",
       "type": "influencedBy",
       "label": "承继与演进",
-      "source": "https://doi.org/10.1145/155360.155580",
+      "source": "https://www.bell-labs.com/usr/dmr/www/chist.html",
       "evidence": "Ritchie《The Development of the C Language》及 Bell Labs《The Programming Language B》记载 C 从 B 演进，早期 Unix 的 B 工具逐步转为 C。此处表示历史承继，不推定 C 是 B 的严格超集。",
+      "sourceSha256": "314872b3e5c6aeb0f46e47b0c11775f4e1cafc2a8eec10bc6dbaa47c13fcaca6",
       "key": "b|c|influencedBy",
       "layer": "design",
-      "state": "citation-only",
-      "issues": [
-        "缺少已阅读原文摘录"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": true,
-      "sources": []
+      "sources": [
+        {
+          "url": "https://www.bell-labs.com/usr/dmr/www/chist.html",
+          "finalUrl": "https://www.nokia.com/bell-labs/about/dennis-m-ritchie/chist.html",
+          "title": "Dennis M. Ritchie: The Development of the C Language",
+          "excerpt": "For the sake of brevity, I omit full descriptions of C itself, its parent B [Johnson 73] and its grandparent BCPL [Richards 79], and instead concentrate on characteristic elements of each language and how they evolved. [separate passage] After a rapidly scuttled attempt at Fortran, he created instead a language of his own, which he called B. B can be thought of as C without types; more accurately, it is BCPL squeezed into 8K bytes of memory and filtered through Thompson's brain.",
+          "checkedAt": "2026-10-09T05:27:07.059605+00:00",
+          "sha256": "314872b3e5c6aeb0f46e47b0c11775f4e1cafc2a8eec10bc6dbaa47c13fcaca6",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body",
+          "reviewId": "c"
+        }
+      ]
     },
     {
       "from": "bash",
@@ -1844,13 +1875,22 @@
       "evidence": "微软 Small Basic 社区刊载的 Ed Price《A Brief History of BASIC》明确把 Visual Basic 列为从早期 BASIC 演进而来的例子。本文改编自 Philip Conrod 与 Lou Tylee 的 Small Basic 教材，因此是微软平台刊载的历史概述，并非 Visual Basic 设计者的一手回忆；此边不表示 Visual Basic 与最初 Dartmouth BASIC 源码兼容。",
       "key": "basic|visual-basic|influencedBy",
       "layer": "design",
-      "state": "citation-only",
-      "issues": [
-        "缺少已阅读原文摘录"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": true,
-      "sources": []
+      "sources": [
+        {
+          "url": "https://techcommunity.microsoft.com/blog/smallbasic/a-brief-history-of-basic/336312",
+          "finalUrl": "https://techcommunity.microsoft.com/blog/smallbasic/a-brief-history-of-basic/336312",
+          "title": "Ed Price: A Brief History of BASIC",
+          "excerpt": "Every BASIC written since then has been based on that early version. Examples include: GW-Basic, QBasic, QuickBasic, Visual Basic.",
+          "checkedAt": "2026-10-09T05:27:09.112484+00:00",
+          "sha256": "f3d3123d716135d48de9457e5307343f6fda25911f4942c72984d5c6707ee84f",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body",
+          "reviewId": "visual-basic"
+        }
+      ]
     },
     {
       "from": "bcpl",
@@ -1861,13 +1901,22 @@
       "evidence": "Ritchie《The Development of the C Language》记载：Ken Thompson 基于 BCPL 设计 B，并为早期 Unix 环境做了简化。此处表示历史承继，不推定源码完全兼容。",
       "key": "bcpl|b|influencedBy",
       "layer": "design",
-      "state": "citation-only",
-      "issues": [
-        "缺少已阅读原文摘录"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": true,
-      "sources": []
+      "sources": [
+        {
+          "url": "https://www.bell-labs.com/usr/dmr/www/chist.html",
+          "finalUrl": "https://www.nokia.com/bell-labs/about/dennis-m-ritchie/chist.html",
+          "title": "Dennis M. Ritchie: The Development of the C Language",
+          "excerpt": "For the sake of brevity, I omit full descriptions of C itself, its parent B [Johnson 73] and its grandparent BCPL [Richards 79], and instead concentrate on characteristic elements of each language and how they evolved. [separate passage] After a rapidly scuttled attempt at Fortran, he created instead a language of his own, which he called B. B can be thought of as C without types; more accurately, it is BCPL squeezed into 8K bytes of memory and filtered through Thompson's brain.",
+          "checkedAt": "2026-10-09T05:27:07.059605+00:00",
+          "sha256": "314872b3e5c6aeb0f46e47b0c11775f4e1cafc2a8eec10bc6dbaa47c13fcaca6",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body",
+          "reviewId": "c"
+        }
+      ]
     },
     {
       "from": "binary-notation",
@@ -2026,13 +2075,22 @@
       "evidence": "Go 官方 FAQ 的 What are Go’s ancestors? 明确称 Go 的基础语法主要来自 C 家族；这是语法影响，不表示 Go 是 C 的超集。",
       "key": "c|go|influencedBy",
       "layer": "design",
-      "state": "citation-only",
-      "issues": [
-        "缺少已阅读原文摘录"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": true,
-      "sources": []
+      "sources": [
+        {
+          "url": "https://go.dev/doc/faq",
+          "finalUrl": "https://go.dev/doc/faq",
+          "title": "Go FAQ: What are Go’s ancestors?",
+          "excerpt": "Go is mostly in the C family (basic syntax), with significant input from the Pascal/Modula/Oberon family (declarations, packages), plus some ideas from languages inspired by Tony Hoare’s CSP, such as Newsqueak and Limbo (concurrency). However, it is a new language across the board.",
+          "checkedAt": "2026-10-09T05:27:05.176223+00:00",
+          "sha256": "6ff7e86bad4c6fb71f61a3f46028bca7cc128857e728b153803c6ab282e6f129",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body",
+          "reviewId": "go"
+        }
+      ]
     },
     {
       "from": "c",
@@ -2043,13 +2101,22 @@
       "evidence": "JLS §1.1：词法结构以及块和语句基于 C 与 C++。",
       "key": "c|java|influencedBy",
       "layer": "design",
-      "state": "citation-only",
-      "issues": [
-        "缺少已阅读原文摘录"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": true,
-      "sources": []
+      "sources": [
+        {
+          "url": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-1.html",
+          "finalUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-1.html",
+          "title": "Java Language Specification 25, Chapter 1",
+          "excerpt": "The Java programming language is related to C and C++ but is organized rather differently, with a number of aspects of C and C++ omitted and a few ideas from other languages included. [separate passage] Chapter 3 describes the lexical structure of the Java programming language, which is based on C and C++.",
+          "checkedAt": "2026-10-09T05:27:03.490930+00:00",
+          "sha256": "58b01f79c7aa1bf2448c06f2dc448d18e69b235980b0a2194c8c1440cfdea6e3",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body",
+          "reviewId": "java"
+        }
+      ]
     },
     {
       "from": "c",
@@ -2133,13 +2200,24 @@
       "evidence": "PHP 官方历史记载，早期语言刻意设计成在结构上类似 C，方便熟悉 C 的开发者使用。",
       "key": "c|php|influencedBy",
       "layer": "design",
-      "state": "citation-only",
+      "state": "excerpt-recorded",
       "issues": [
-        "缺少已阅读原文摘录"
+        "引用哈希与已存摘录版本不同"
       ],
       "reviewNote": "",
       "mapVisible": true,
-      "sources": []
+      "sources": [
+        {
+          "url": "https://www.php.net/manual/en/history.php.php",
+          "finalUrl": "https://www.php.net/manual/en/history.php.php",
+          "title": "PHP: History of PHP",
+          "excerpt": "It had Perl-like variables, automatic interpretation of form variables, and HTML embedded syntax. The syntax itself was similar to that of Perl, albeit much more limited, simple, and somewhat inconsistent. [separate passage] The language was deliberately designed to resemble C in structure, making it an easy adoption for developers familiar with C, Perl, and similar languages.",
+          "checkedAt": "2026-10-09T05:27:06.296906+00:00",
+          "sha256": "e84f14b3ac0e46b152c14d793e9f684c01a46117e563d6258a243109062d17b0",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body",
+          "reviewId": "php"
+        }
+      ]
     },
     {
       "from": "c",
@@ -2454,13 +2532,24 @@
       "evidence": "D 官方 Overview 明确称 D 从其他语言，尤其 C++，汲取灵感；并说明采用 C/C++ 的一般外观、代数表达式及多种语句形式。",
       "key": "cpp|d|influencedBy",
       "layer": "design",
-      "state": "citation-only",
+      "state": "excerpt-recorded",
       "issues": [
-        "缺少已阅读原文摘录"
+        "引用哈希与已存摘录版本不同"
       ],
       "reviewNote": "",
       "mapVisible": true,
-      "sources": []
+      "sources": [
+        {
+          "url": "https://dlang.org/overview.html",
+          "finalUrl": "https://dlang.org/overview.html",
+          "title": "D Overview",
+          "excerpt": "D draws inspiration from those other languages (most especially C++) and tempers it with experience and real world practicality.",
+          "checkedAt": "2026-10-09T05:27:03.338138+00:00",
+          "sha256": "e384470980900102fc6eb6fbddc712fa1c384dee235484b504f858e4194ee4e1",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body",
+          "reviewId": "d"
+        }
+      ]
     },
     {
       "from": "cpp",
@@ -2501,13 +2590,22 @@
       "evidence": "JLS §1.1：词法结构以及块和语句基于 C 与 C++。",
       "key": "cpp|java|influencedBy",
       "layer": "design",
-      "state": "citation-only",
-      "issues": [
-        "缺少已阅读原文摘录"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": true,
-      "sources": []
+      "sources": [
+        {
+          "url": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-1.html",
+          "finalUrl": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-1.html",
+          "title": "Java Language Specification 25, Chapter 1",
+          "excerpt": "The Java programming language is related to C and C++ but is organized rather differently, with a number of aspects of C and C++ omitted and a few ideas from other languages included. [separate passage] Chapter 3 describes the lexical structure of the Java programming language, which is based on C and C++.",
+          "checkedAt": "2026-10-09T05:27:03.490930+00:00",
+          "sha256": "58b01f79c7aa1bf2448c06f2dc448d18e69b235980b0a2194c8c1440cfdea6e3",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body",
+          "reviewId": "java"
+        }
+      ]
     },
     {
       "from": "cpp",
@@ -2968,13 +3066,22 @@
       "evidence": "Ruby 官方 About 页面称其创造者将 Perl、Smalltalk、Eiffel、Ada 和 Lisp 中喜欢的部分融合成 Ruby。",
       "key": "eiffel|ruby|influencedBy",
       "layer": "design",
-      "state": "citation-only",
-      "issues": [
-        "缺少已阅读原文摘录"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": false,
-      "sources": []
+      "sources": [
+        {
+          "url": "https://www.ruby-lang.org/en/about/",
+          "finalUrl": "https://www.ruby-lang.org/en/about/",
+          "title": "About Ruby: The Ideals of Ruby’s Creator",
+          "excerpt": "Ruby is a language of careful balance. Its creator, Yukihiro “Matz” Matsumoto, blended parts of his favorite languages (Perl, Smalltalk, Eiffel, Ada, and Lisp) to form a new language that balanced functional programming with imperative programming.",
+          "checkedAt": "2026-10-09T05:27:05.936298+00:00",
+          "sha256": "771e58119de2adc0b296e0d31f0973b8e2d114acd0dbeaf6505ec7c8c05ad1a4",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body",
+          "reviewId": "ruby"
+        }
+      ]
     },
     {
       "from": "elm",
@@ -3893,13 +4000,22 @@
       "evidence": "Groovy 官方《Differences with Java》记载设计时考虑 Java 开发者的预期，并逐项说明两种语言的差异；官网称 Groovy 旨在提供 Java 风格的感受和语法。此处表示语法与设计影响，不表示严格的 Java 超集。",
       "key": "java|groovy|influencedBy",
       "layer": "design",
-      "state": "citation-only",
-      "issues": [
-        "缺少已阅读原文摘录"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": true,
-      "sources": []
+      "sources": [
+        {
+          "url": "https://groovy-lang.org/differences.html",
+          "finalUrl": "https://groovy-lang.org/differences.html",
+          "title": "Groovy: Differences with Java",
+          "excerpt": "Groovy tries to be as natural as possible for Java developers. We’ve tried to follow the principle of least surprise when designing Groovy, particularly for developers learning Groovy who’ve come from a Java background. Here we list all the major differences between Java and Groovy.",
+          "checkedAt": "2026-10-09T05:27:04.386275+00:00",
+          "sha256": "6821ebab33547f6308dc27d9bb2b5f6a93ca115698fe7245ac9128b08d11c233",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body",
+          "reviewId": "groovy"
+        }
+      ]
     },
     {
       "from": "java",
@@ -4724,13 +4840,22 @@
       "evidence": "Julia 四位设计者在 Why We Created Julia 中明确提出希望拥有像 Lisp 那样的同像性与真正的宏；这是设计目标参照。",
       "key": "lisp|julia|influencedBy",
       "layer": "design",
-      "state": "citation-only",
-      "issues": [
-        "缺少已阅读原文摘录"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": true,
-      "sources": []
+      "sources": [
+        {
+          "url": "https://julialang.org/blog/2012/02/why-we-created-julia/",
+          "finalUrl": "https://julialang.org/blog/2012/02/why-we-created-julia/",
+          "title": "Why We Created Julia — Jeff Bezanson, Stefan Karpinski, Viral B. Shah, Alan Edelman",
+          "excerpt": "We want a language that's open source, with a liberal license. We want the speed of C with the dynamism of Ruby. We want a language that's homoiconic, with true macros like Lisp, but with obvious, familiar mathematical notation like Matlab. We want something as usable for general programming as Python, as easy for statistics as R, as natural for string processing as Perl, as powerful for linear algebra as Matlab, as good at gluing programs together as the shell.",
+          "checkedAt": "2026-10-09T05:27:04.932883+00:00",
+          "sha256": "c78002dce7f99e3409307b68b3a6c1dcb2316f08522af0a7924677c3b5a6c9d0",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body",
+          "reviewId": "julia"
+        }
+      ]
     },
     {
       "from": "lisp",
@@ -4812,13 +4937,22 @@
       "evidence": "Ruby 官方 About 页面称其创造者将 Perl、Smalltalk、Eiffel、Ada 和 Lisp 中喜欢的部分融合成 Ruby。",
       "key": "lisp|ruby|influencedBy",
       "layer": "design",
-      "state": "citation-only",
-      "issues": [
-        "缺少已阅读原文摘录"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": true,
-      "sources": []
+      "sources": [
+        {
+          "url": "https://www.ruby-lang.org/en/about/",
+          "finalUrl": "https://www.ruby-lang.org/en/about/",
+          "title": "About Ruby: The Ideals of Ruby’s Creator",
+          "excerpt": "Ruby is a language of careful balance. Its creator, Yukihiro “Matz” Matsumoto, blended parts of his favorite languages (Perl, Smalltalk, Eiffel, Ada, and Lisp) to form a new language that balanced functional programming with imperative programming.",
+          "checkedAt": "2026-10-09T05:27:05.936298+00:00",
+          "sha256": "771e58119de2adc0b296e0d31f0973b8e2d114acd0dbeaf6505ec7c8c05ad1a4",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body",
+          "reviewId": "ruby"
+        }
+      ]
     },
     {
       "from": "lisp",
@@ -4830,13 +4964,22 @@
       "evidence": "Scheme 官方社区首页明确称 Scheme 是 Lisp 家族中的经典编程语言；此边表示家族承接，不表示 Scheme 与所有 Lisp 方言源码兼容。",
       "key": "lisp|scheme|influencedBy",
       "layer": "design",
-      "state": "citation-only",
-      "issues": [
-        "缺少已阅读原文摘录"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": true,
-      "sources": []
+      "sources": [
+        {
+          "url": "https://www.scheme.org/",
+          "finalUrl": "https://www.scheme.org/",
+          "title": "The Scheme Programming Language",
+          "excerpt": "Scheme is a classic programming language in the Lisp family. It emphasizes functional programming and domain-specific languages but adapts to other styles.",
+          "checkedAt": "2026-10-09T05:27:06.980966+00:00",
+          "sha256": "8ce153049e77ec378787f3be3c0375e98b95ef6b3197cb3e291215ccf28997a2",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body",
+          "reviewId": "scheme"
+        }
+      ]
     },
     {
       "from": "lisp",
@@ -4862,13 +5005,22 @@
       "evidence": "Alan Kay 描述理解 Lisp 对其思想的影响，并回忆 Lisp 自描述解释器对 Smalltalk 解释器的启发。",
       "key": "lisp|smalltalk|influencedBy",
       "layer": "design",
-      "state": "citation-only",
-      "issues": [
-        "缺少已阅读原文摘录"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": true,
-      "sources": []
+      "sources": [
+        {
+          "url": "https://worrydream.com/EarlyHistoryOfSmalltalk/",
+          "finalUrl": "https://worrydream.com/EarlyHistoryOfSmalltalk/",
+          "title": "Alan Kay: The Early History of Smalltalk",
+          "excerpt": "It is not too much of an exaggeration to say that most of my ideas from then on took their roots from Simula—but not as an attempt to improve it. It was the promise of an entirely new way to structure computations that took my fancy. [separate passage] I had originally made the boast because McCarthy's self-describing LISP interpreter was written in itself. It was about \"a page\", and as far as power goes, LISP was the whole nine-yards for functional languages. I was quite sure I could do the same for object-oriented languages plus be able to do a reasonable syntax for the code a la some of the FLEX machine techniques.",
+          "checkedAt": "2026-10-09T05:27:06.238683+00:00",
+          "sha256": "ba907dabf57133d02efba4b728cb8d1e700bb773298aff2194fe3014a61ccfca",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body",
+          "reviewId": "smalltalk"
+        }
+      ]
     },
     {
       "from": "livescript",
@@ -5120,13 +5272,22 @@
       "evidence": "Julia 设计者明确提出希望拥有像 MATLAB 那样熟悉的数学记法，并兼顾线性代数；这是语言设计参照，不表示 Julia 与 MATLAB 兼容。",
       "key": "matlab|julia|influencedBy",
       "layer": "design",
-      "state": "citation-only",
-      "issues": [
-        "缺少已阅读原文摘录"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": true,
-      "sources": []
+      "sources": [
+        {
+          "url": "https://julialang.org/blog/2012/02/why-we-created-julia/",
+          "finalUrl": "https://julialang.org/blog/2012/02/why-we-created-julia/",
+          "title": "Why We Created Julia — Jeff Bezanson, Stefan Karpinski, Viral B. Shah, Alan Edelman",
+          "excerpt": "We want a language that's open source, with a liberal license. We want the speed of C with the dynamism of Ruby. We want a language that's homoiconic, with true macros like Lisp, but with obvious, familiar mathematical notation like Matlab. We want something as usable for general programming as Python, as easy for statistics as R, as natural for string processing as Perl, as powerful for linear algebra as Matlab, as good at gluing programs together as the shell.",
+          "checkedAt": "2026-10-09T05:27:04.932883+00:00",
+          "sha256": "c78002dce7f99e3409307b68b3a6c1dcb2316f08522af0a7924677c3b5a6c9d0",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body",
+          "reviewId": "julia"
+        }
+      ]
     },
     {
       "from": "matlab",
@@ -5138,13 +5299,22 @@
       "evidence": "GNU Octave 官方 About 明确称其使用的语言与 MATLAB 大体兼容（mostly compatible）；兼容有范围，不表示 Octave 是 MATLAB 的严格超集。",
       "key": "matlab|octave|compatibleWith",
       "layer": "ecosystem",
-      "state": "citation-only",
-      "issues": [
-        "缺少已阅读原文摘录"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": true,
-      "sources": []
+      "sources": [
+        {
+          "url": "https://octave.org/about.html",
+          "finalUrl": "https://octave.org/about.html",
+          "title": "GNU Octave: About",
+          "excerpt": "GNU Octave is a high-level language, primarily intended for numerical computations. It provides a convenient command line interface for solving linear and nonlinear problems numerically, and for performing other numerical experiments using a language that is mostly compatible with Matlab.",
+          "checkedAt": "2026-10-09T05:27:05.168843+00:00",
+          "sha256": "3a1d8d7dfa3a8ef048d31bea4c29df425340f240640dcd2f4ec400bec91d9ff9",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body",
+          "reviewId": "octave"
+        }
+      ]
     },
     {
       "from": "matlab",
@@ -5390,6 +5560,31 @@
       ]
     },
     {
+      "from": "modula-3",
+      "to": "python",
+      "type": "influencedBy",
+      "source": "https://docs.python.org/3/faq/general.html",
+      "evidence": "Python 官方 FAQ 引 Guido van Rossum 自述，明确把异常的语法与语义，以及其他一些特性，归于 Modula-3 的输入；不表示 Python 是 Modula-3 超集。",
+      "key": "modula-3|python|influencedBy",
+      "layer": "design",
+      "state": "excerpt-recorded",
+      "issues": [],
+      "reviewNote": "",
+      "mapVisible": false,
+      "sources": [
+        {
+          "url": "https://docs.python.org/3/faq/general.html",
+          "finalUrl": "https://docs.python.org/3/faq/general.html",
+          "title": "Python General FAQ",
+          "excerpt": "I had extensive experience with implementing an interpreted language in the ABC group at CWI, and from working with this group I had learned a lot about language design. This is the origin of many Python features, including the use of indentation for statement grouping and the inclusion of very-high-level data types (although the details are all different in Python). I had a number of gripes about the ABC language, but also liked many of its features. It was impossible to extend the ABC language (or its implementation) to remedy my complaints – in fact its lack of extensibility was one of its biggest problems. I had some experience with using Modula-2+ and talked with the designers of Modula-3 and read the Modula-3 report. Modula-3 is the origin of the syntax and semantics used for exceptions, and some other Python features.",
+          "checkedAt": "2026-10-09T05:27:02.970719+00:00",
+          "sha256": "b853041648712331e9f82bae156f1cf41c17c5e82fe71837049d87d7a1f543f1",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body",
+          "reviewId": "python"
+        }
+      ]
+    },
+    {
       "from": "mumps",
       "to": "cache-objectscript",
       "type": "supersetOf",
@@ -5444,13 +5639,22 @@
       "evidence": "Go 官方 FAQ 明确点名 Pascal/Modula/Oberon 家族对声明和包设计有显著输入；Oberon 是其中被点名的语言。",
       "key": "oberon|go|influencedBy",
       "layer": "design",
-      "state": "citation-only",
-      "issues": [
-        "缺少已阅读原文摘录"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": true,
-      "sources": []
+      "sources": [
+        {
+          "url": "https://go.dev/doc/faq",
+          "finalUrl": "https://go.dev/doc/faq",
+          "title": "Go FAQ: What are Go’s ancestors?",
+          "excerpt": "Go is mostly in the C family (basic syntax), with significant input from the Pascal/Modula/Oberon family (declarations, packages), plus some ideas from languages inspired by Tony Hoare’s CSP, such as Newsqueak and Limbo (concurrency). However, it is a new language across the board.",
+          "checkedAt": "2026-10-09T05:27:05.176223+00:00",
+          "sha256": "6ff7e86bad4c6fb71f61a3f46028bca7cc128857e728b153803c6ab282e6f129",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body",
+          "reviewId": "go"
+        }
+      ]
     },
     {
       "from": "oberon",
@@ -5539,13 +5743,22 @@
       "evidence": "F# 设计者 Don Syme《The Early History of F#》回顾：OCaml 原本启发了 F#，并列举 F# 继承的 OCaml 特性、运算符优先级等具体设计；此处表示设计影响，不表示 F# 是 OCaml 的原样 .NET 实现。",
       "key": "ocaml|f-sharp|influencedBy",
       "layer": "design",
-      "state": "citation-only",
-      "issues": [
-        "缺少已阅读原文摘录"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": true,
-      "sources": []
+      "sources": [
+        {
+          "url": "https://fsharp.org/history/hopl-final/hopl-fsharp.pdf",
+          "finalUrl": "https://fsharp.org/history/hopl-final/hopl-fsharp.pdf",
+          "title": "Don Syme: The Early History of F#, HOPL 2020, section 7, PDF p.18",
+          "excerpt": "F# was never fully compatible with any version of OCaml, though it shared a compatible subset, and it took Caml-Light and OCaml as its principal sources of design guidance and inspiration.",
+          "checkedAt": "2026-10-09T05:27:05.173052+00:00",
+          "sha256": "db336bd4f1f57c5881477ee5e12995ac164255b81ede10d4bee9a055daf1202a",
+          "hashScope": "complete downloaded PDF bytes; excerpt extracted with PDFKit and visually checked on page 18",
+          "reviewId": "f-sharp"
+        }
+      ]
     },
     {
       "from": "ocaml",
@@ -5659,13 +5872,22 @@
       "evidence": "Go 官方 FAQ 明确点名 Pascal/Modula/Oberon 家族对声明和包设计有显著输入；Pascal 是其中被点名的语言。",
       "key": "pascal|go|influencedBy",
       "layer": "design",
-      "state": "citation-only",
-      "issues": [
-        "缺少已阅读原文摘录"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": true,
-      "sources": []
+      "sources": [
+        {
+          "url": "https://go.dev/doc/faq",
+          "finalUrl": "https://go.dev/doc/faq",
+          "title": "Go FAQ: What are Go’s ancestors?",
+          "excerpt": "Go is mostly in the C family (basic syntax), with significant input from the Pascal/Modula/Oberon family (declarations, packages), plus some ideas from languages inspired by Tony Hoare’s CSP, such as Newsqueak and Limbo (concurrency). However, it is a new language across the board.",
+          "checkedAt": "2026-10-09T05:27:05.176223+00:00",
+          "sha256": "6ff7e86bad4c6fb71f61a3f46028bca7cc128857e728b153803c6ab282e6f129",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body",
+          "reviewId": "go"
+        }
+      ]
     },
     {
       "from": "pascal",
@@ -5806,13 +6028,22 @@
       "evidence": "Julia 设计者明确提出希望字符串处理像 Perl 一样自然；这是设计目标参照，不表示 Julia 的整体语法来自 Perl。",
       "key": "perl|julia|influencedBy",
       "layer": "design",
-      "state": "citation-only",
-      "issues": [
-        "缺少已阅读原文摘录"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": true,
-      "sources": []
+      "sources": [
+        {
+          "url": "https://julialang.org/blog/2012/02/why-we-created-julia/",
+          "finalUrl": "https://julialang.org/blog/2012/02/why-we-created-julia/",
+          "title": "Why We Created Julia — Jeff Bezanson, Stefan Karpinski, Viral B. Shah, Alan Edelman",
+          "excerpt": "We want a language that's open source, with a liberal license. We want the speed of C with the dynamism of Ruby. We want a language that's homoiconic, with true macros like Lisp, but with obvious, familiar mathematical notation like Matlab. We want something as usable for general programming as Python, as easy for statistics as R, as natural for string processing as Perl, as powerful for linear algebra as Matlab, as good at gluing programs together as the shell.",
+          "checkedAt": "2026-10-09T05:27:04.932883+00:00",
+          "sha256": "c78002dce7f99e3409307b68b3a6c1dcb2316f08522af0a7924677c3b5a6c9d0",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body",
+          "reviewId": "julia"
+        }
+      ]
     },
     {
       "from": "perl",
@@ -5824,13 +6055,24 @@
       "evidence": "PHP 官方历史记载，早期 FI/PHP 有 Perl 风格变量，语法本身与 Perl 相似；不表示 PHP 是 Perl 方言。",
       "key": "perl|php|influencedBy",
       "layer": "design",
-      "state": "citation-only",
+      "state": "excerpt-recorded",
       "issues": [
-        "缺少已阅读原文摘录"
+        "引用哈希与已存摘录版本不同"
       ],
       "reviewNote": "",
       "mapVisible": true,
-      "sources": []
+      "sources": [
+        {
+          "url": "https://www.php.net/manual/en/history.php.php",
+          "finalUrl": "https://www.php.net/manual/en/history.php.php",
+          "title": "PHP: History of PHP",
+          "excerpt": "It had Perl-like variables, automatic interpretation of form variables, and HTML embedded syntax. The syntax itself was similar to that of Perl, albeit much more limited, simple, and somewhat inconsistent. [separate passage] The language was deliberately designed to resemble C in structure, making it an easy adoption for developers familiar with C, Perl, and similar languages.",
+          "checkedAt": "2026-10-09T05:27:06.296906+00:00",
+          "sha256": "e84f14b3ac0e46b152c14d793e9f684c01a46117e563d6258a243109062d17b0",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body",
+          "reviewId": "php"
+        }
+      ]
     },
     {
       "from": "perl",
@@ -5841,13 +6083,22 @@
       "evidence": "Ruby 官方 About 页面称其创造者将 Perl、Smalltalk、Eiffel、Ada 和 Lisp 中喜欢的部分融合成 Ruby。",
       "key": "perl|ruby|influencedBy",
       "layer": "design",
-      "state": "citation-only",
-      "issues": [
-        "缺少已阅读原文摘录"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": true,
-      "sources": []
+      "sources": [
+        {
+          "url": "https://www.ruby-lang.org/en/about/",
+          "finalUrl": "https://www.ruby-lang.org/en/about/",
+          "title": "About Ruby: The Ideals of Ruby’s Creator",
+          "excerpt": "Ruby is a language of careful balance. Its creator, Yukihiro “Matz” Matsumoto, blended parts of his favorite languages (Perl, Smalltalk, Eiffel, Ada, and Lisp) to form a new language that balanced functional programming with imperative programming.",
+          "checkedAt": "2026-10-09T05:27:05.936298+00:00",
+          "sha256": "771e58119de2adc0b296e0d31f0973b8e2d114acd0dbeaf6505ec7c8c05ad1a4",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body",
+          "reviewId": "ruby"
+        }
+      ]
     },
     {
       "from": "perl",
@@ -6065,13 +6316,22 @@
       "evidence": "Julia 设计者明确提出希望通用编程像 Python 一样易用；这是设计目标参照，不表示语法派生。",
       "key": "python|julia|influencedBy",
       "layer": "design",
-      "state": "citation-only",
-      "issues": [
-        "缺少已阅读原文摘录"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": true,
-      "sources": []
+      "sources": [
+        {
+          "url": "https://julialang.org/blog/2012/02/why-we-created-julia/",
+          "finalUrl": "https://julialang.org/blog/2012/02/why-we-created-julia/",
+          "title": "Why We Created Julia — Jeff Bezanson, Stefan Karpinski, Viral B. Shah, Alan Edelman",
+          "excerpt": "We want a language that's open source, with a liberal license. We want the speed of C with the dynamism of Ruby. We want a language that's homoiconic, with true macros like Lisp, but with obvious, familiar mathematical notation like Matlab. We want something as usable for general programming as Python, as easy for statistics as R, as natural for string processing as Perl, as powerful for linear algebra as Matlab, as good at gluing programs together as the shell.",
+          "checkedAt": "2026-10-09T05:27:04.932883+00:00",
+          "sha256": "c78002dce7f99e3409307b68b3a6c1dcb2316f08522af0a7924677c3b5a6c9d0",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body",
+          "reviewId": "julia"
+        }
+      ]
     },
     {
       "from": "python",
@@ -6263,13 +6523,22 @@
       "evidence": "Julia 设计者明确提出希望统计编程像 R 一样便利；这是设计目标参照，不表示 Julia 是 R 的实现。",
       "key": "r|julia|influencedBy",
       "layer": "design",
-      "state": "citation-only",
-      "issues": [
-        "缺少已阅读原文摘录"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": true,
-      "sources": []
+      "sources": [
+        {
+          "url": "https://julialang.org/blog/2012/02/why-we-created-julia/",
+          "finalUrl": "https://julialang.org/blog/2012/02/why-we-created-julia/",
+          "title": "Why We Created Julia — Jeff Bezanson, Stefan Karpinski, Viral B. Shah, Alan Edelman",
+          "excerpt": "We want a language that's open source, with a liberal license. We want the speed of C with the dynamism of Ruby. We want a language that's homoiconic, with true macros like Lisp, but with obvious, familiar mathematical notation like Matlab. We want something as usable for general programming as Python, as easy for statistics as R, as natural for string processing as Perl, as powerful for linear algebra as Matlab, as good at gluing programs together as the shell.",
+          "checkedAt": "2026-10-09T05:27:04.932883+00:00",
+          "sha256": "c78002dce7f99e3409307b68b3a6c1dcb2316f08522af0a7924677c3b5a6c9d0",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body",
+          "reviewId": "julia"
+        }
+      ]
     },
     {
       "from": "r",
@@ -6611,13 +6880,22 @@
       "evidence": "Julia 设计者明确提出希望语言具有 Ruby 的动态性；这是设计目标参照，不表示 Julia 是 Ruby 方言。",
       "key": "ruby|julia|influencedBy",
       "layer": "design",
-      "state": "citation-only",
-      "issues": [
-        "缺少已阅读原文摘录"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": true,
-      "sources": []
+      "sources": [
+        {
+          "url": "https://julialang.org/blog/2012/02/why-we-created-julia/",
+          "finalUrl": "https://julialang.org/blog/2012/02/why-we-created-julia/",
+          "title": "Why We Created Julia — Jeff Bezanson, Stefan Karpinski, Viral B. Shah, Alan Edelman",
+          "excerpt": "We want a language that's open source, with a liberal license. We want the speed of C with the dynamism of Ruby. We want a language that's homoiconic, with true macros like Lisp, but with obvious, familiar mathematical notation like Matlab. We want something as usable for general programming as Python, as easy for statistics as R, as natural for string processing as Perl, as powerful for linear algebra as Matlab, as good at gluing programs together as the shell.",
+          "checkedAt": "2026-10-09T05:27:04.932883+00:00",
+          "sha256": "c78002dce7f99e3409307b68b3a6c1dcb2316f08522af0a7924677c3b5a6c9d0",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body",
+          "reviewId": "julia"
+        }
+      ]
     },
     {
       "from": "ruby",
@@ -7174,13 +7452,22 @@
       "evidence": "Alan Kay 在 Sketchpad and Simula 一节回忆：此后多数想法扎根于 Simula。",
       "key": "simula|smalltalk|influencedBy",
       "layer": "design",
-      "state": "citation-only",
-      "issues": [
-        "缺少已阅读原文摘录"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": true,
-      "sources": []
+      "sources": [
+        {
+          "url": "https://worrydream.com/EarlyHistoryOfSmalltalk/",
+          "finalUrl": "https://worrydream.com/EarlyHistoryOfSmalltalk/",
+          "title": "Alan Kay: The Early History of Smalltalk",
+          "excerpt": "It is not too much of an exaggeration to say that most of my ideas from then on took their roots from Simula—but not as an attempt to improve it. It was the promise of an entirely new way to structure computations that took my fancy. [separate passage] I had originally made the boast because McCarthy's self-describing LISP interpreter was written in itself. It was about \"a page\", and as far as power goes, LISP was the whole nine-yards for functional languages. I was quite sure I could do the same for object-oriented languages plus be able to do a reasonable syntax for the code a la some of the FLEX machine techniques.",
+          "checkedAt": "2026-10-09T05:27:06.238683+00:00",
+          "sha256": "ba907dabf57133d02efba4b728cb8d1e700bb773298aff2194fe3014a61ccfca",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body",
+          "reviewId": "smalltalk"
+        }
+      ]
     },
     {
       "from": "smalltalk",
@@ -7191,13 +7478,22 @@
       "evidence": "Ruby 官方 About 页面称其创造者将 Perl、Smalltalk、Eiffel、Ada 和 Lisp 中喜欢的部分融合成 Ruby。",
       "key": "smalltalk|ruby|influencedBy",
       "layer": "design",
-      "state": "citation-only",
-      "issues": [
-        "缺少已阅读原文摘录"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": true,
-      "sources": []
+      "sources": [
+        {
+          "url": "https://www.ruby-lang.org/en/about/",
+          "finalUrl": "https://www.ruby-lang.org/en/about/",
+          "title": "About Ruby: The Ideals of Ruby’s Creator",
+          "excerpt": "Ruby is a language of careful balance. Its creator, Yukihiro “Matz” Matsumoto, blended parts of his favorite languages (Perl, Smalltalk, Eiffel, Ada, and Lisp) to form a new language that balanced functional programming with imperative programming.",
+          "checkedAt": "2026-10-09T05:27:05.936298+00:00",
+          "sha256": "771e58119de2adc0b296e0d31f0973b8e2d114acd0dbeaf6505ec7c8c05ad1a4",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body",
+          "reviewId": "ruby"
+        }
+      ]
     },
     {
       "from": "smtp",
@@ -7326,13 +7622,22 @@
       "evidence": "Oracle 官方 PL/SQL Overview 明确称其为 SQL 的过程式扩展；不声称 PL/SQL 可原样包含全部 SQL 方言。",
       "key": "sql|pl-sql|influencedBy",
       "layer": "design",
-      "state": "citation-only",
-      "issues": [
-        "缺少已阅读原文摘录"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": true,
-      "sources": []
+      "sources": [
+        {
+          "url": "https://docs.oracle.com/en/database/oracle/oracle-database/23/lnpls/overview.html",
+          "finalUrl": "https://docs.oracle.com/en/database/oracle/oracle-database/26/lnpls/overview.html",
+          "title": "Oracle Database 26: Overview of PL/SQL",
+          "excerpt": "PL/SQL, the Oracle procedural extension of SQL, is a portable, high-performance transaction-processing language.",
+          "checkedAt": "2026-10-09T05:27:05.106470+00:00",
+          "sha256": "f1f8c1d014b81a05faa1fb9e1180962316e048a812374eac7ef0a6e04fd9e947",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body",
+          "reviewId": "pl-sql"
+        }
+      ]
     },
     {
       "from": "sql",
@@ -7704,13 +8009,22 @@
       "evidence": "微软 Win32 文档明确称 VBScript 是 Visual Basic for Applications 语言的子集，并说明它不提供文件输入输出或直接访问底层操作系统的能力。这里记录从 VBA 到 VBScript 的子集化设计；不表示两者运行环境或全部代码兼容。",
       "key": "vba|vbscript|influencedBy",
       "layer": "design",
-      "state": "citation-only",
-      "issues": [
-        "缺少已阅读原文摘录"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": true,
-      "sources": []
+      "sources": [
+        {
+          "url": "https://learn.microsoft.com/en-us/windows/win32/com/translating-to-vbscript",
+          "finalUrl": "https://learn.microsoft.com/en-us/windows/win32/com/translating-to-vbscript",
+          "title": "Microsoft: Translating to VBScript",
+          "excerpt": "VBScript is a subset of the Microsoft Visual Basic for Applications language. Because VBScript is intended to be safe for use in client-side applications such as webpages, it does not provide file input and output or direct access to the underlying operating system.",
+          "checkedAt": "2026-10-09T05:27:05.408567+00:00",
+          "sha256": "867656dc27a383e713996a6c66407713f43192bd09f6a813da969319a50809b1",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body",
+          "reviewId": "vbscript"
+        }
+      ]
     },
     {
       "from": "vi",
@@ -7751,13 +8065,22 @@
       "evidence": "微软 Office VBA 文档明确称 VBA 是随 Microsoft Office 提供的 Visual Basic 版本（the version of Visual Basic that ships with Microsoft Office）。这是语言家族和宿主版本关系，不表示任意 Visual Basic 程序都能直接在 Office VBA 中运行。",
       "key": "visual-basic|vba|influencedBy",
       "layer": "design",
-      "state": "citation-only",
-      "issues": [
-        "缺少已阅读原文摘录"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": true,
-      "sources": []
+      "sources": [
+        {
+          "url": "https://learn.microsoft.com/en-us/office/vba/language/concepts/getting-started/64-bit-visual-basic-for-applications-overview",
+          "finalUrl": "https://learn.microsoft.com/en-us/office/vba/language/concepts/getting-started/64-bit-visual-basic-for-applications-overview",
+          "title": "Microsoft: 64-bit Visual Basic for Applications overview",
+          "excerpt": "Microsoft Visual Basic for Applications (VBA) is the version of Visual Basic that ships with Microsoft Office.",
+          "checkedAt": "2026-10-09T05:27:04.766696+00:00",
+          "sha256": "593e40a17ae964705a68b04a3c84b3c94256e5eaf87bc0d09cdc5f19018a2331",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body",
+          "reviewId": "vba"
+        }
+      ]
     },
     {
       "from": "visual-basic",
@@ -7769,13 +8092,24 @@
       "evidence": "Microsoft Visual Basic 6.0 支持说明直接链接《Upgrading Visual Basic 6.0 Applications to Visual Basic .NET》指南，确认从 VB6 到 VB.NET 的迁移路径；语言与运行时有重大变化，不表示源码直接兼容。",
       "key": "visual-basic|visual-basic.net|successorOf",
       "layer": "design",
-      "state": "citation-only",
+      "state": "excerpt-recorded",
       "issues": [
-        "缺少已阅读原文摘录"
+        "引用哈希与已存摘录版本不同"
       ],
       "reviewNote": "",
       "mapVisible": true,
-      "sources": []
+      "sources": [
+        {
+          "url": "https://learn.microsoft.com/en-us/lifecycle/announcements/visual-basic-6-support-announcement",
+          "finalUrl": "https://learn.microsoft.com/en-us/lifecycle/announcements/visual-basic-6-support-announcement",
+          "title": "Microsoft: Visual Basic 6.0 support announcement",
+          "excerpt": "You may find the following resources useful as you migrate your VB6 application to modern application technology: Upgrade and migration partners Upgrading Visual Basic 6.0 Applications to Visual Basic .NET (Guide)",
+          "checkedAt": "2026-10-09T05:27:04.581533+00:00",
+          "sha256": "a790a40a94e20513a1d3c2f4e7e71446fe0a30ac86b50840c75a977684579063",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body",
+          "reviewId": "visual-basic.net"
+        }
+      ]
     },
     {
       "from": "wasm",
@@ -8086,13 +8420,22 @@
       "evidence": "Python 官方扩展文档说明 CPython 提供用 C 编写扩展模块的接口。这是一个实现的扩展机制，不表示 Python 的语法继承 C。",
       "key": "c|python|extensionInterface",
       "layer": "ecosystem",
-      "state": "citation-only",
-      "issues": [
-        "缺少已阅读原文摘录"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": true,
-      "sources": []
+      "sources": [
+        {
+          "url": "https://docs.python.org/3/extending/extending.html",
+          "finalUrl": "https://docs.python.org/3/extending/extending.html",
+          "title": "Python: Extending Python with C or C++",
+          "excerpt": "It is quite easy to add new built-in modules to Python, if you know how to program in C. [separate passage] It is possible to write extension modules in C++. Some restrictions apply.",
+          "checkedAt": "2026-10-09T05:27:03.119783+00:00",
+          "sha256": "02769df3c24e25099feae9dac6909f079506c32077ee583a7d70af914e415628",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body",
+          "reviewId": "python"
+        }
+      ]
     },
     {
       "from": "c",
@@ -8103,13 +8446,22 @@
       "evidence": "Rust Nomicon 的 FFI 章节说明 Rust 能通过外部函数接口调用 C 代码并向 C 暴露函数。接口关系不等于 Rust 语法由 C 派生。",
       "key": "c|rust|interop",
       "layer": "ecosystem",
-      "state": "citation-only",
-      "issues": [
-        "缺少已阅读原文摘录"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": true,
-      "sources": []
+      "sources": [
+        {
+          "url": "https://doc.rust-lang.org/nomicon/ffi.html",
+          "finalUrl": "https://doc.rust-lang.org/nomicon/ffi.html",
+          "title": "Rust Nomicon: FFI",
+          "excerpt": "The extern block is a list of function signatures in a foreign library, in this case with the platform’s C ABI. [separate passage] You may wish to compile Rust code in a way that can be called from C. This is fairly easy, but requires a few things.",
+          "checkedAt": "2026-10-09T05:27:03.174941+00:00",
+          "sha256": "31e6a4e9aaf2b00eb802f64887f1e2319537b8e890f6bd89901eaa093dafc554",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body",
+          "reviewId": "rust"
+        }
+      ]
     },
     {
       "from": "c",
@@ -8146,13 +8498,22 @@
       "evidence": "Python 官方扩展文档说明扩展模块也可以用 C++ 编写。这是 CPython 生态接口，不表示 Python 是 C++ 的后继。",
       "key": "cpp|python|extensionInterface",
       "layer": "ecosystem",
-      "state": "citation-only",
-      "issues": [
-        "缺少已阅读原文摘录"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": true,
-      "sources": []
+      "sources": [
+        {
+          "url": "https://docs.python.org/3/extending/extending.html",
+          "finalUrl": "https://docs.python.org/3/extending/extending.html",
+          "title": "Python: Extending Python with C or C++",
+          "excerpt": "It is quite easy to add new built-in modules to Python, if you know how to program in C. [separate passage] It is possible to write extension modules in C++. Some restrictions apply.",
+          "checkedAt": "2026-10-09T05:27:03.119783+00:00",
+          "sha256": "02769df3c24e25099feae9dac6909f079506c32077ee583a7d70af914e415628",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body",
+          "reviewId": "python"
+        }
+      ]
     },
     {
       "from": "csharp",
@@ -8189,13 +8550,22 @@
       "evidence": "Jython 官方说明它是在 Java 平台上运行、可使用 Java 类的 Python 实现。官网当前说明支持 Python 2；这不是所有 Python 实现的共同运行方式。",
       "key": "java|python|hostRuntime",
       "layer": "ecosystem",
-      "state": "citation-only",
-      "issues": [
-        "缺少已阅读原文摘录"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": true,
-      "sources": []
+      "sources": [
+        {
+          "url": "https://www.jython.org/",
+          "finalUrl": "https://www.jython.org/",
+          "title": "Jython: What is Jython?",
+          "excerpt": "The Jython project provides implementations of Python in Java, providing to Python the benefits of running on the JVM and access to classes written in Java. The current release (a Jython 2.7.x) only supports Python 2 (sorry).",
+          "checkedAt": "2026-10-09T05:27:06.091187+00:00",
+          "sha256": "09a7f70aed77d33cc5949851e1d03eaa1be5f15db7b819b6dea8960ddb4fbb6e",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body",
+          "reviewId": "python"
+        }
+      ]
     },
     {
       "from": "rust",
@@ -8206,13 +8576,22 @@
       "evidence": "PyO3 官方文档说明可从 Rust 调用 Python，也可用 Rust 编写原生 Python 模块；这是特定工具提供的双向互操作。",
       "key": "rust|python|interop",
       "layer": "ecosystem",
-      "state": "citation-only",
-      "issues": [
-        "缺少已阅读原文摘录"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": true,
-      "sources": []
+      "sources": [
+        {
+          "url": "https://pyo3.rs/",
+          "finalUrl": "https://pyo3.rs/v0.29.3/",
+          "title": "PyO3 0.29.3: Rust bindings for Python",
+          "excerpt": "Rust bindings for Python, including tools for creating native Python extension modules. Running and interacting with Python code from a Rust binary is also supported.",
+          "checkedAt": "2026-10-09T05:27:06.042280+00:00",
+          "sha256": "3b260ba994ca34964253685a16fafa61433c440c5cd82e6744dbcf9df03004be",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body",
+          "reviewId": "python"
+        }
+      ]
     }
   ],
   "warnings": [
@@ -8249,8 +8628,8 @@
   ],
   "inputHashes": {
     "data/raw/pldb.json": "57f45d25bba78ab6bc4af5d969356d2efbfcc7c1ee722dbb5c708d60aa78ba77",
-    "data/audit/reviews.json": "2d909be456c0ae949ae0e77b6d76da6547c20544fc895f4dbe5425ed789bd6e4",
-    "data/relationship-overrides.json": "7691e8ee0179d1eaade1e3ed43cb728edcb3d0edcee5fe257775b4d345dc82d1",
+    "data/audit/reviews.json": "31a5a8d5b45ec4f0290f1b96a26bcfee35b77829f2b14ca4ccf7b8de5ca9416c",
+    "data/relationship-overrides.json": "f9a3c979252efa70f4f4ad59d22ff6aa8ffa4d2d7bbe2d1c58f85e9c2d72e342",
     "data/ecosystem-relations.json": "0d96e92a3853eddc6b32e4a45d5c90223d2096fa35438823f7dcfe72ce161e76",
     "data/audit/relationship-decisions.json": "15c22e52c04c2813e78932805e639c116f40637fd173c82a493b8f34e885c145",
     "data/audit/label-selection.json": "dc5eee62fa662b0d60940375d8a3ec56ac2bbf84ee2b9922a290d46d11cc866f"

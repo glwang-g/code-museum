@@ -4,6 +4,7 @@ const crypto = require('node:crypto');
 const { generateCatalogue } = require('./import-pldb.cjs');
 const { generateCredits } = require('./credits.cjs');
 const { generateRelationshipAudit } = require('./relationship-audit.cjs');
+const { executionCapabilities } = require('./execution-capabilities.cjs');
 
 const root = path.resolve(__dirname, '..');
 
@@ -11,6 +12,7 @@ function build(projectRoot = root) {
   // Generate and validate before touching the previous working site.
   const catalogue = generateCatalogue(projectRoot);
   const relationshipAudit = generateRelationshipAudit(projectRoot,catalogue);
+  const capabilities = executionCapabilities(projectRoot);
   const {credits,linguistLicense} = generateCredits(projectRoot);
   const auditBytes = fs.readFileSync(path.join(projectRoot, 'data/audit/reviews.json'));
   if (crypto.createHash('sha256').update(auditBytes).digest('hex') !== catalogue.meta.reviewEvidence.sha256) {
@@ -74,6 +76,8 @@ function build(projectRoot = root) {
     fs.mkdirSync(path.join(next, 'data'), { recursive: true });
     fs.writeFileSync(path.join(next,'data/runtime-assets.js'),'window.MUSEUM_RUNTIME_ASSETS='+JSON.stringify(runtimeAssets)+';');
     fs.writeFileSync(path.join(next, 'data/catalogue.js'), 'window.MUSEUM_DATA=' + JSON.stringify(catalogue) + ';');
+    fs.writeFileSync(path.join(next,'data/catalogue.json'),JSON.stringify(catalogue)+'\n');
+    fs.writeFileSync(path.join(next,'data/execution-capabilities.json'),JSON.stringify(capabilities,null,2)+'\n');
     fs.writeFileSync(path.join(next, 'data/relationship-status.js'), 'window.MUSEUM_RELATIONSHIP_AUDIT=' + JSON.stringify(relationshipAudit) + ';');
     fs.writeFileSync(path.join(next, 'data/relationship-status.json'), JSON.stringify(relationshipAudit,null,2)+'\n');
     fs.writeFileSync(path.join(next, 'data/credits.js'), 'window.MUSEUM_CREDITS=' + JSON.stringify(credits) + ';');
@@ -82,6 +86,7 @@ function build(projectRoot = root) {
     fs.writeFileSync(path.join(next,'licenses/linguist-LICENSE'),linguistLicense);
     fs.writeFileSync(path.join(next, 'data/audit-reviews.json'), auditBytes);
     fs.writeFileSync(path.join(next, 'data/provenance.json'), JSON.stringify({ meta: catalogue.meta, unresolved: [] }, null, 2));
+    fs.writeFileSync(path.join(next,'data/mcp-manifest.json'),JSON.stringify(Object.fromEntries(['catalogue.json','audit-reviews.json','relationship-status.json','execution-capabilities.json'].map(name=>[name,crypto.createHash('sha256').update(fs.readFileSync(path.join(next,'data',name))).digest('hex')])),null,2)+'\n');
     if (fs.existsSync(output)) fs.renameSync(output, previous);
     try { fs.renameSync(next, output); }
     catch (error) {

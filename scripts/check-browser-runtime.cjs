@@ -183,7 +183,7 @@ async function record(name,detail){results.push({name,detail});console.log('PASS
   for(const width of [1440,390]){
     await page('Emulation.setDeviceMetricsOverride',{width,height:width===390?844:1000,deviceScaleFactor:1,mobile:width===390});
     await evaluate(`document.querySelector('#sources-view').click();document.querySelector('#about').scrollTop=0`);
-    assert.equal(await evaluate(`document.querySelectorAll('.credit-card').length`),7);
+    assert.equal(await evaluate(`document.querySelectorAll('.credit-card').length`),13);
     assert.equal(await evaluate(`document.documentElement.scrollWidth<=innerWidth`),true);
     const links=await evaluate(`Array.from(document.querySelectorAll('#open-source-credits a'),a=>({href:a.getAttribute('href'),external:a.target==='_blank',rel:a.rel}))`);
     assert.ok(links.every(link=>!link.external||link.rel.includes('noreferrer')));
@@ -221,7 +221,7 @@ async function record(name,detail){results.push({name,detail});console.log('PASS
     assert.equal(await evaluate(`document.querySelector('#detail-content h2').textContent`),'Zig');
     assert.equal(await evaluate(`document.querySelector('#detail').classList.contains('open')`),true);
     for(const mode of ['timeline','lineage']){
-      for(const entry of [{key:'csharp|scala|influencedBy',anchor:'scala',layer:'design',state:'excerpt-recorded'}, {key:'java|javascript|influencedBy',anchor:'javascript',layer:'design',state:'field-only'},{key:'java|csharp|influencedBy',anchor:'csharp',layer:'design',state:'needs-direct-evidence'},{key:'c|python|extensionInterface',anchor:'python',layer:'ecosystem',state:'citation-only'}]){
+      for(const entry of [{key:'csharp|scala|influencedBy',anchor:'scala',layer:'design',state:'excerpt-recorded'}, {key:'java|javascript|influencedBy',anchor:'javascript',layer:'design',state:'field-only'},{key:'java|csharp|influencedBy',anchor:'csharp',layer:'design',state:'needs-direct-evidence'},{key:'c|python|extensionInterface',anchor:'python',layer:'ecosystem',state:'excerpt-recorded'},{key:'objective-c|swift|influencedBy',anchor:'swift',layer:'design',state:'citation-only'}]){
         await evaluate(`setView(${JSON.stringify(mode)});setRelationLayer(${JSON.stringify(entry.layer)});select(${JSON.stringify(entry.anchor)});activeId=${JSON.stringify(entry.anchor)};renderLineageFocus(activeId);`);
         await new Promise(resolve=>setTimeout(resolve,600));
         const point=await evaluate(`(()=>{const g=document.querySelector('[data-edge-key="${entry.key}"]'),p=g.querySelector('.relation-hit'),v=document.querySelector('#viewport').getBoundingClientRect();for(let i=2;i<99;i++){const t=p.getPointAtLength(p.getTotalLength()*i/100).matrixTransform(p.getScreenCTM());if(t.x<v.left+3||t.x>v.right-3||t.y<v.top+3||t.y>v.bottom-3)continue;const hit=document.elementFromPoint(t.x,t.y);if(hit?.closest('[data-edge-key]')&&nearestRelations({clientX:t.x,clientY:t.y})[0]?.key==='${entry.key}')return {x:t.x,y:t.y};}return null})()`);
@@ -236,7 +236,7 @@ async function record(name,detail){results.push({name,detail});console.log('PASS
         assert.ok(detail.includes(entry.state==='field-only'?'来源字段，关系待核':entry.state==='needs-direct-evidence'?'直接设计依据待补':entry.state==='citation-only'?'原文摘录待补':'原文摘录已存'));
         if(entry.state==='excerpt-recorded'){
           await evaluate(`document.querySelector('.relation-source').open=true`);
-          assert.ok((await evaluate(`document.querySelector('.relation-source').textContent`)).includes('not a superset'));
+          assert.ok((await evaluate(`document.querySelector('.relation-source').textContent`)).includes(entry.key==='csharp|scala|influencedBy'?'not a superset':'built-in modules'));
           await screenshot('relationship-proof-'+mode+'-'+size.width+'.png');
         }
         await evaluate(`(()=>{document.querySelector('[data-relation-endpoint="${entry.anchor}"]').click();document.querySelector('[data-edge-key="${entry.key}"]').focus();})()`);

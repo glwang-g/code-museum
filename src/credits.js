@@ -16,6 +16,7 @@
   document.querySelectorAll('[data-credit-target]').forEach(button=>button.addEventListener('click',()=>open(button.dataset.creditTarget)));
   window.MUSEUM_CREDITS_UI={
     labelFor(language){const entry=entries.find(entry=>entry.languages?.includes(language));return entry?`${entry.versionLabel||entry.name} · 项目与许可 ↗`:null},
-    openFor(language){const entry=entries.find(entry=>entry.languages?.includes(language));if(entry)open(`credit-${entry.id}`)}
+    openFor(language){const entry=entries.find(entry=>entry.languages?.includes(language));if(entry)open(`credit-${entry.id}`)},
+    openRemoteFor(language){const entry=entries.find(entry=>entry.runtimeIds?.includes(language));if(entry)open(`credit-${entry.id}`)}
   };
 })();

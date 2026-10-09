@@ -35,6 +35,23 @@ class ExecutorTests(unittest.TestCase):
         self.assertIn(RUNTIMES['python']['image'],command)
         self.assertEqual(MAX_OUTPUT,32768)
 
+    def test_compilation_contract_and_isolated_namespace(self):
+        runner=DockerRunner(RUNTIMES,namespace='unit-check')
+        for language in ['c','cpp','rust','go','java']:
+            if language not in RUNTIMES: continue
+            command=runner.command(runner.prefix+'a'*32,language)
+            for flag in ['--read-only','--network=none','--user=65534:65534','--pids-limit=128','--entrypoint=/bin/sleep']:
+                self.assertIn(flag,command)
+            self.assertIn('code-museum.executor=unit-check',command)
+            self.assertIn('--tmpfs=/work:rw,exec,nosuid,nodev,size=128m,mode=1777',command)
+            self.assertFalse(any(x.startswith(('--volume','--mount','--privileged','--device')) for x in command))
+        with self.assertRaises(ValueError): DockerRunner(RUNTIMES,namespace='../private-v1')
+        changed=copy.deepcopy(RUNTIMES['c']);changed['image']='attacker@sha256:'+'a'*64
+        import json,tempfile
+        with tempfile.TemporaryDirectory() as d:
+            f=Path(d)/'images.json';f.write_text(json.dumps({'schemaVersion':1,'runtimes':[RUNTIMES['python'],RUNTIMES['ruby'],changed]}))
+            with self.assertRaises(ValueError): load_runtimes(f)
+
     def test_owner_isolation_cancel_and_source_disposal(self):
         runner=FakeRunner();manager=Manager(runner)
         try:

@@ -21,14 +21,14 @@
     "wikipedia": 1974,
     "semanticScholar": 315
   },
-  "manual_reviews": 83,
-  "reviewed_source_links": 166,
-  "reviewed_source_links_with_url_hash_excerpt": 166,
+  "manual_reviews": 84,
+  "reviewed_source_links": 188,
+  "reviewed_source_links_with_url_hash_excerpt": 188,
   "verified_language_review_gaps": 0,
   "identity_issue_rows": 124,
-  "relationship_count": 419,
+  "relationship_count": 420,
   "relationship_evidence_status_counts": {
-    "claim-with-citation": 83,
+    "claim-with-citation": 84,
     "record-field-only": 336
   },
   "relationship_chronology_flags": 5,

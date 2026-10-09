@@ -147,7 +147,7 @@ window.MUSEUM_LESSONS={
       "version": "C11",
       "goal": "面向系统编程，提供低层数据与操作能力",
       "source": "https://www.open-std.org/jtc1/sc22/wg14/",
-      "runtime": "仅编辑 · 未接入在线运行",
+      "runtime": "私有远端编译执行 · 需令牌",
       "examples": {
         "variables": {
           "code": "#include <stdio.h>\nint main(void) {\n    const char *name = \"Museum\";\n    int year = 2026;\n    printf(\"%s %d\\n\", name, year);\n    return 0;\n}\n",
@@ -171,7 +171,7 @@ window.MUSEUM_LESSONS={
       "version": "C++17",
       "goal": "系统编程并支持抽象、泛型与面向对象",
       "source": "https://isocpp.org/std/the-standard",
-      "runtime": "仅编辑 · 未接入在线运行",
+      "runtime": "私有远端编译执行 · 需令牌",
       "examples": {
         "variables": {
           "code": "#include <iostream>\n#include <string>\nint main() {\n    std::string name = \"Museum\";\n    int year = 2026;\n    std::cout << name << \" \" << year << \"\\n\";\n}\n",
@@ -195,7 +195,7 @@ window.MUSEUM_LESSONS={
       "version": "Java 17",
       "goal": "静态类型、面向对象及跨平台运行",
       "source": "https://docs.oracle.com/javase/specs/jls/se17/html/index.html",
-      "runtime": "仅编辑 · 未接入在线运行",
+      "runtime": "私有远端编译执行 · 需令牌",
       "examples": {
         "variables": {
           "code": "class Museum {\n    public static void main(String[] args) {\n        String name = \"Museum\";\n        int year = 2026;\n        System.out.println(name + \" \" + year);\n    }\n}\n",

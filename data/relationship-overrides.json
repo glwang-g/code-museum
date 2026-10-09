@@ -75,8 +75,9 @@
     "to": "c",
     "type": "influencedBy",
     "label": "承继与演进",
-    "source": "https://doi.org/10.1145/155360.155580",
-    "evidence": "Ritchie《The Development of the C Language》及 Bell Labs《The Programming Language B》记载 C 从 B 演进，早期 Unix 的 B 工具逐步转为 C。此处表示历史承继，不推定 C 是 B 的严格超集。"
+    "source": "https://www.bell-labs.com/usr/dmr/www/chist.html",
+    "evidence": "Ritchie《The Development of the C Language》及 Bell Labs《The Programming Language B》记载 C 从 B 演进，早期 Unix 的 B 工具逐步转为 C。此处表示历史承继，不推定 C 是 B 的严格超集。",
+    "sourceSha256": "314872b3e5c6aeb0f46e47b0c11775f4e1cafc2a8eec10bc6dbaa47c13fcaca6"
   },
   {
     "from": "c",
@@ -720,5 +721,12 @@
     "source": "https://doc.rust-lang.org/reference/influences.html",
     "sourceSha256": "a1585e914cc55a3422f7e376456bb5bd31fdfe71a68e1f8d1736a58adea7c892",
     "evidence": "Rust Reference 的 Influences 明确列出 Swift: optional bindings。清单描述语言演进，包含后来移除的元素；不是 Rust 首版受到尚未发布的 Swift 影响，馆藏初始年份不能代表各特性的引入年份。"
+  },
+  {
+    "from": "modula-3",
+    "to": "python",
+    "type": "influencedBy",
+    "source": "https://docs.python.org/3/faq/general.html",
+    "evidence": "Python 官方 FAQ 引 Guido van Rossum 自述，明确把异常的语法与语义，以及其他一些特性，归于 Modula-3 的输入；不表示 Python 是 Modula-3 超集。"
   }
 ]

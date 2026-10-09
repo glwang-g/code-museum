@@ -312,3 +312,16 @@ UV/PV展示68707e8已推送，Actions37877136008的build/deploy成功；现有Ng
 
 
 学习功能正式发布完成：2032738及Actions37879243826的build/deploy成功，顶部最终使用“访客/访问”，展开保留累计与匿名浏览器/页面加载口径。实际Chrome正式HTTPS通过两主题两尺寸的16种对比组合、四次JavaScript函数示例真实49输出、累计查询、中文名称与14份静态文件SHA匹配；截图已查看。记录data/audit/learning-production-checks.json；不把本次线上检查当作私有Docker或线上Python/Lua/Scheme重新实测。第1/2项本轮实现和发布完成，第3/4/5项保持后续计划。核验文档的后续提交不改变已核验网站源码。
+
+
+## 2026-10-09 推进计划第3/4/5项
+
+按用户继续授权推进关系证据、编译执行与只读MCP。关系续核新增Modula-3→Python，把B→C引用改为可读取作者重印，保存22份原文（F#论文第18页已渲染核读）。420条设计/历史+7条生态关系：89条摘录已存、1条引用缺摘录、336条来源字段待核、1条直接依据待补；84条审查/188条已读来源，语言语法实现核实数量仍60。Swift当前About原文已改变，旧边继续缺摘录；Java→C#继续待直接依据，四个常显设计层缺口保留。详见RELATIONSHIP_RESEARCH_2026-10-09.md，不宣称全馆/地图关系穷尽。
+
+私有Docker执行新增C11/C++17/Rust2021/Go/Java17；官方镜像真实版本与digest固定，编译10/10/15/30/15秒，运行另有3秒，输出合计32KiB。源码通过docker exec stdin传入容器tmpfs，无宿主源码落盘/挂载；只读根、非root禁网保持，/work仅编译容器允许执行，产物最后销毁。API新增compiling、compile_error、compile_timed_out，网页显示编译/运行用时和独立错误，可停止编译。Java入口Museum；单文件/标准库，不下载依赖。生产锁与测试/预览随机命名空间隔离，禁止混用旧版检查。保留私有令牌，不新增匿名执行或CI Docker权限；后端升级仍需管理员安装/备份回滚。
+
+新增stdlib Python stdio MCP，五个只读查询工具与coverage资源；使用与网页同构建的全馆档案、审查摘录、关系报告及配置执行能力，输入SHA核验。配置能力不声称实时连通，无执行/写入工具、无公开HTTP MCP端口；服务端通过既有SSH按需启动。客户端配置见MCP.md。新增六张私有远端开源运行时出处展签，版本由镜像清单生成，保留各上游许可入口。
+
+本地48项npm测试和离线构建通过，真实Chrome→隔离SSH Docker的22组检查通过，覆盖七远端语言两尺寸真实输出/stdin、五种编译用时、本地选项禁用、编译错误、编译中停止恢复、既有本地运行时。宽窄屏/明暗截图已查看；证据executor-compiled-browser-checks.json。完整Chrome回归和最终Docker扩展检查仍待本轮后续完成记录；尚未在本条记录时提交、推送或发布。
+
+最终本地核验完成：48项npm测试、离线构建通过；41项实际隔离Docker检查通过，补验Rust编译超时不执行、编译中API SIGKILL后watchdog清理，源码哈希一致、容器零残留。34组完整Chrome回归通过，四种关系证据状态、地图搜索/标签/上下游、主题/六页签/13张出处卡和JS/Python/Lua/Scheme真实输出保留。截图已查看。记录executor-compiled-checks.json和continuation-regression-checks.json；22组远端浏览器记录另列。发布结果待后续实际记录。
