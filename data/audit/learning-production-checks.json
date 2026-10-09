@@ -1,0 +1,107 @@
+{
+  "checkedAt": "2026-10-09T03:27:43.340Z",
+  "scope": "Actual isolated Chrome on production HTTPS; read-only aggregate counts, both themes, four comparison pairs, JS real output 49. No private Docker or local Python/Lua/Scheme production execution in this check; automated visit is not recorded.",
+  "totals": {
+    "uv": 9,
+    "pv": 20,
+    "startedAt": "2026-10-05T03:43:53.001398+00:00"
+  },
+  "cases": [
+    {
+      "width": 1440,
+      "theme": "dark",
+      "pair": "c,cpp"
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "pair": "java,csharp"
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "pair": "python,javascript"
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "pair": "lua,scheme"
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "pair": "c,cpp"
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "pair": "java,csharp"
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "pair": "python,javascript"
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "pair": "lua,scheme"
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "pair": "c,cpp"
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "pair": "java,csharp"
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "pair": "python,javascript"
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "pair": "lua,scheme"
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "pair": "c,cpp"
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "pair": "java,csharp"
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "pair": "python,javascript"
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "pair": "lua,scheme"
+    }
+  ],
+  "servedInputs": {
+    "index.html": "3fae04738ff5d48cfd065f857016990f01514885bb215d8704729751816620ce",
+    "museum.css": "f30a88e865f94e10e8294aa56e8cdbc5a05f271884e017e472ec3e3bfabe135e",
+    "museum.js": "9313643022be5e9e53af00125068dee0d0afdc674196f99f9ec96710b8c72651",
+    "themes.css": "df167e01d77e34c60e523f70264938726f4eff103bc469f2ecceaeca3f725eaf",
+    "theme.js": "da9661e20f0c9050a4d456d422099bf52795e8f6795811672e32851e38706445",
+    "learning-examples.js": "f9a8ed5f0a4b07a57adfe7b06352a4dce51c14ba543cec02993fa064d3a1dc94",
+    "lab-examples.js": "1d45585edea31db0250dac85093e31a94d2ffcdc108f80a9e088332e8f2667ad",
+    "draft-store.js": "a5c6185dd793fbf6195160c7cd9cb955b058573adeedcad3220a61dc07ef6db2",
+    "lab-tools.js": "39ed684102cde09002d05f93675aa5f3500c31642e8c1075b93f50bf855b7236",
+    "lab.js": "3546e888e2a594badc7dcb7bd7c06057edde66ff49fd8095c7e4c6a918fd0873",
+    "compare.js": "78902008c5cf68e16c19d7c06b01d3e954b644d0ab2448e5a0b10a455c144d92",
+    "execution-modes.js": "b8ef7f67429e4d25535ef346612681e36cf996cdbcf5fb6fcde064ff93194738",
+    "visit-counts.js": "18d075859b4c35fc68898097528e561ab62b3a5250c06668277c024ea19a5826",
+    "data/relationship-status.js": "81cc94d95b17cb01add45df36d0a27d06170bcd49d3a83ab269d3adb6f8b5bdc"
+  }
+}

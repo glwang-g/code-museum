@@ -89,3 +89,6 @@ sudo -u code-museum python3 /var/www/code-museum/current/server/analytics.py --b
 ## 2026-10-09 学习体验与中文统计名称发布准备
 
 沿用用户验证后提交推送授权，准备发布主题示例、按语言/主题草稿、文件操作、停止运行和语言对比第六页签；统计常显名称改为访客/访问，展开保留UV/PV对照。45项npm测试、离线构建、23组最终定向Chrome检查通过；34组完整回归对应最后用词调整前的版本，报告明确记录范围，未改写历史核验哈希。执行服务运行范围与私有权限保持既有实现，未新增C/C++/Java/C#网页运行。最终Actions和正式站点检查结果待实际完成后追加。
+
+
+学习功能发布核验：2032738推送成功，Actions37879243826的build/deploy均成功。正式HTTPS实际隔离Chrome检查顶部“访客/访问”、累计接口仅返回uv/pv/startedAt、两主题1440/390宽度的四组对比（16种组合）、对应函数主题实验台与真实JavaScript输出49；14份线上关键文件与本地构建SHA一致，宽窄屏截图已查看。证据data/audit/learning-production-checks.json。本次未重新执行生产Docker或线上Python/Lua/Scheme，也未核验原生Safari；本地四种运行时的16份新增程序见learning-browser-checks.json。前述“准备发布”的状态由本条实际结果覆盖。后续核验文档提交不改变上述网站源码与被核验文件。
