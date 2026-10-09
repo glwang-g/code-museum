@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-09T15:26:30.985Z",
+  "generatedAt": "2026-10-09T15:41:05.989Z",
   "scope": "Offline inventory of existing evidence gaps; it does not add or infer historical relationships.",
   "counts": {
     "relationships": 428,
@@ -15,10 +15,18 @@
     "dateWarnings": 5,
     "designLayerMapGaps": 3
   },
+  "researchLedger": {
+    "total": 11,
+    "closed": 10,
+    "active": 1,
+    "reopenPolicy": "Reopen a closed item only when a new primary source, a fixed historical version, a resolved endpoint identity, or a materially different relation claim becomes available."
+  },
   "unresolvedResearch": [
     {
-      "id": "assembly-xslt-zig",
-      "reason": "three visible design-layer map gaps remain; Batch 15 reviewed Zig C/toolchain claims and a concrete NASM x86 source, but neither qualifies as a design-layer relation for the generic map nodes"
+      "id": "javascript|objective-j|supersetOf",
+      "status": "blocked",
+      "reason": "The current Objective-J/Cappuccino official entry point was not stably retrievable; the existing field is not upgraded from a third-party summary.",
+      "reopenWhen": "A stable official Objective-J source or fixed repository revision is available."
     }
   ],
   "catalogueNextSteps": [

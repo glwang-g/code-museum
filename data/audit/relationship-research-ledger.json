@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "scope": "Tracks completed relationship research so the same source question is not repeated without a new trigger.",
+  "reopenPolicy": "Reopen a closed item only when a new primary source, a fixed historical version, a resolved endpoint identity, or a materially different relation claim becomes available.",
+  "entries": [
+    {
+      "id": "java|javascript|influencedBy",
+      "status": "verified",
+      "batch": "2026-10-09_BATCH-13",
+      "note": "Brendan Eich author recollection supports Java-like syntax and platform positioning; scope is limited design reference, not succession or compatibility."
+    },
+    {
+      "id": "scheme|javascript|influencedBy",
+      "status": "verified",
+      "batch": "2026-10-09_BATCH-13",
+      "note": "Brendan Eich author recollection supports Scheme-ish first-class functions; scope is limited to that design point."
+    },
+    {
+      "id": "javascript|dart|influencedBy",
+      "status": "verified",
+      "batch": "2026-10-09_BATCH-14",
+      "note": "Dart language specification supports browser/JavaScript compatibility and syntax choices; not general inheritance or compilation-target lineage."
+    },
+    {
+      "id": "python|cython|supersetOf",
+      "status": "verified",
+      "batch": "2026-10-09_BATCH-16",
+      "note": "Cython official About page explicitly calls Cython a superset of Python and names its C/C++ extensions."
+    },
+    {
+      "id": "c2|c3|influencedBy",
+      "status": "verified",
+      "batch": "2026-10-09_BATCH-16",
+      "note": "C3 official compiler README explicitly names C2 as its inspiration."
+    },
+    {
+      "id": "assembly|design-layer-gap",
+      "status": "closed-no-qualifying-source",
+      "batch": "2026-10-09_BATCH-15",
+      "note": "Generic Assembly is not a single historical language; NASM/x86 documentation does not support a generic upstream design edge.",
+      "reopenWhen": "A concrete instruction set or assembler dialect and a specific historical design event are identified."
+    },
+    {
+      "id": "xslt|design-layer-gap",
+      "status": "closed-no-qualifying-source",
+      "batch": "2026-10-09_BATCH-14",
+      "note": "XSLT 1.0 references CSS2 and DSSSL, but the recommendation does not state a qualifying design influence.",
+      "reopenWhen": "An author, working-group record, or fixed language-version source explicitly identifies a design input."
+    },
+    {
+      "id": "zig|design-layer-gap",
+      "status": "closed-no-qualifying-source",
+      "batch": "2026-10-09_BATCH-15",
+      "note": "Zig C import, C ABI export, and better-C-compiler positioning are interoperability/toolchain evidence, not a concrete C design-influence statement.",
+      "reopenWhen": "A Zig design source explicitly identifies a language feature inherited from or designed in response to C/C++."
+    },
+    {
+      "id": "python|mojo|influencedBy",
+      "status": "closed-no-qualifying-source",
+      "batch": "2026-10-09_BATCH-16",
+      "note": "Official Mojo material supports Python interoperability and compatibility, not a sufficiently explicit design-influence claim.",
+      "reopenWhen": "An official Mojo design history or specification explicitly names Python as a design source for a concrete feature."
+    },
+    {
+      "id": "cpp|chapel|influencedBy",
+      "status": "closed-no-qualifying-source",
+      "batch": "2026-10-09_BATCH-16",
+      "note": "The reviewed Chapel material describes large-scale parallel computing but does not identify C++ as a concrete design source.",
+      "reopenWhen": "A Chapel design paper, author account, or official history explicitly names C++ input."
+    },
+    {
+      "id": "javascript|objective-j|supersetOf",
+      "status": "blocked",
+      "batch": "2026-10-09_BATCH-16",
+      "note": "The current Objective-J/Cappuccino official entry point was not stably retrievable; the existing field is not upgraded from a third-party summary.",
+      "reopenWhen": "A stable official Objective-J source or fixed repository revision is available."
+    }
+  ]
+}

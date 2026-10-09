@@ -7,6 +7,7 @@ function load(file) { return JSON.parse(fs.readFileSync(path.join(root, file), '
 function report() {
   const status = load('data/audit/relationship-status.json');
   const reviews = load('data/audit/reviews.json');
+  const ledger = load('data/audit/relationship-research-ledger.json');
   const relations = status.relations || [];
   const issueCount = phrase => relations.filter(r => (r.issues || []).some(issue => issue.includes(phrase))).length;
   const relationGaps = {
@@ -19,15 +20,22 @@ function report() {
   };
   const nextSteps = [...new Set(reviews.reviews.filter(r => r.nextStep && r.nextStep.trim()).map(r => r.nextStep.trim()))]
     .map(nextStep => ({ nextStep, catalogueCount: reviews.reviews.filter(r => r.nextStep?.trim() === nextStep).length }));
+  const ledgerEntries = ledger.entries || [];
+  const activeResearch = ledgerEntries.filter(entry => entry.status === 'blocked' || entry.status === 'active');
+  const closedResearch = ledgerEntries.filter(entry => entry.status === 'verified' || entry.status === 'closed-no-qualifying-source');
   return {
     schemaVersion: 1,
     generatedAt: new Date().toISOString(),
     scope: 'Offline inventory of existing evidence gaps; it does not add or infer historical relationships.',
     counts: { relationships: relations.length, reviews: reviews.reviews.length, reviewedSources: reviews.reviews.reduce((n, r) => n + (r.sources || []).filter(s => s.reviewed).length, 0) },
     relationGaps,
-    unresolvedResearch: [
-      { id: 'assembly-xslt-zig', reason: 'three visible design-layer map gaps remain; Batch 15 reviewed Zig C/toolchain claims and a concrete NASM x86 source, but neither qualifies as a design-layer relation for the generic map nodes' }
-    ],
+    researchLedger: {
+      total: ledgerEntries.length,
+      closed: closedResearch.length,
+      active: activeResearch.length,
+      reopenPolicy: ledger.reopenPolicy
+    },
+    unresolvedResearch: activeResearch.map(entry => ({ id: entry.id, status: entry.status, reason: entry.note, reopenWhen: entry.reopenWhen || null })),
     catalogueNextSteps: nextSteps
   };
 }

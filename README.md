@@ -95,6 +95,7 @@ npm run diagnose:release
 - [只读 MCP 说明](docs/MCP.md)
 - [馆藏完整性审计](docs/audit/INTEGRITY.md)
 - [关系状态与研究记录](docs/audit/RELATIONSHIP_STATUS.md)
+- [关系研究台账](docs/audit/RELATIONSHIP_RESEARCH_LEDGER.md)
 
 ## 网站与源码互链
 
