@@ -54,6 +54,11 @@ function build(projectRoot = root) {
       fs.readFileSync(path.join(schemeRoot, 'biwascheme-core.mjs'), 'utf8') !== schemeSource.split(boundary)[0] + 'export default BiwaScheme$1;\n') {
     throw new Error('Scheme Worker adaptation must match the fixed upstream interpreter core.');
   }
+  const runtimeAssets = {
+    python: {version: 'Pyodide '+pyodideManifest.version, files: Object.fromEntries(['pyodide.asm.wasm','python_stdlib.zip'].map(name=>[name,fs.statSync(path.join(pyodideRoot,name)).size]))},
+    lua: {version: 'Lua '+luaManifest.luaVersion+' · Wasmoon '+luaManifest.version, files: {'glue.wasm':fs.statSync(path.join(luaRoot,'glue.wasm')).size}},
+    scheme: {version:'BiwaScheme '+schemeManifest.version+' · JavaScript 解释器',files:{}}
+  };
   const output = path.join(projectRoot, 'dist');
   if (fs.existsSync(output) && fs.lstatSync(output).isSymbolicLink()) {
     throw new Error('Refusing to replace a symlinked dist directory.');
@@ -67,6 +72,7 @@ function build(projectRoot = root) {
     fs.cpSync(path.join(projectRoot, 'public'), next, { recursive: true });
     fs.cpSync(path.join(projectRoot, 'src'), next, { recursive: true });
     fs.mkdirSync(path.join(next, 'data'), { recursive: true });
+    fs.writeFileSync(path.join(next,'data/runtime-assets.js'),'window.MUSEUM_RUNTIME_ASSETS='+JSON.stringify(runtimeAssets)+';');
     fs.writeFileSync(path.join(next, 'data/catalogue.js'), 'window.MUSEUM_DATA=' + JSON.stringify(catalogue) + ';');
     fs.writeFileSync(path.join(next, 'data/relationship-status.js'), 'window.MUSEUM_RELATIONSHIP_AUDIT=' + JSON.stringify(relationshipAudit) + ';');
     fs.writeFileSync(path.join(next, 'data/relationship-status.json'), JSON.stringify(relationshipAudit,null,2)+'\n');

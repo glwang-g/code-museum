@@ -13,7 +13,7 @@ test('Python worker uses the bundled runtime for actual output, errors and isola
   const self = { location: { href: 'http://localhost/python-worker.js' }, postMessage: message => messages.push(message) };
   // Node's Pyodide loader needs a filesystem path rather than the browser HTTP URL.
   // Adapt only module loading; the worker's execution and output handling run unchanged.
-  const source = fs.readFileSync(path.join(root, 'src/python-worker.js'), 'utf8').replace(/^import .*;\s*$/m, '');
+  const source = fs.readFileSync(path.join(root, 'src/python-worker.js'), 'utf8').replace(/^import .*;\s*$/gm, '');
   vm.runInNewContext(source, { self, URL, loadPyodide: options => loadPyodide({ ...options, indexURL: runtimeRoot + path.sep }) });
   await self.onmessage({ data: { kind: 'init' } });
   assert.equal(messages.pop().kind, 'ready');

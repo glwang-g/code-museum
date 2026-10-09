@@ -6,6 +6,8 @@
   const runButton=document.querySelector('#lab-run'),resetButton=document.querySelector('#lab-reset');
   const escape=text=>text.replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
   const execution=window.MUSEUM_EXECUTION;
+  const runtimeStatus=window.MUSEUM_RUNTIME_STATUS;
+  const localState=(stage,detail,extra={})=>runtimeStatus?.update(current,'local',{stage,detail,retryLabel:'重新加载并运行',...extra});
   const runnableIds=new Set(['javascript','python','lua','scheme']);
   const freshRuntimes={javascript:{file:'lab-worker.js'},lua:{file:'lua-worker.js',name:'Lua'},scheme:{file:'scheme-worker.js',name:'Scheme',module:true}};
   const schemeKeywords=new Set('define lambda let let* letrec if cond else begin set! quote quasiquote unquote and or do delay case define-syntax syntax-rules display newline map apply car cdr cons list'.split(' '));
@@ -30,13 +32,14 @@
   function stopFreshWorker(){
     clearTimeout(timer);timer=null;
     clearTimeout(workerTimeout);workerTimeout=null;
-    if(worker){worker.terminate();worker=null}
+    if(worker){worker.terminate();worker=null;localState('idle','运行已停止；可重新运行。')}
     runId++;
   }
   function stopPython(){
     clearTimeout(pythonTimeout);pythonTimeout=null;
     if(pythonWorker)pythonWorker.terminate();
     pythonWorker=null;pythonReady=false;pythonBusy=false;pythonPending=null;pythonGeneration++;
+    runtimeStatus?.update('python','local',{stage:'idle',detail:'本地环境已释放；再次运行会重新初始化。'});
   }
   function stop(){stopFreshWorker();stopPython()}
   function leave(){
@@ -45,10 +48,10 @@
     clearTimeout(timer);timer=null;
     if(hadPending)needsRun=true;
     if(!!freshRuntimes[current]){
-      if(worker||hadPending){stopFreshWorker();needsRun=true;result.textContent='已离开实验台，运行暂停。';result.dataset.state=''}
+      if(worker||hadPending){stopFreshWorker();needsRun=true;result.textContent='已离开实验台，运行暂停。';result.dataset.state='';localState('paused','回到实验台后重新运行。')}
     }else if(current==='python'){
       if((pythonWorker&&!pythonReady)||pythonBusy){
-        stopPython();needsRun=true;result.textContent='已离开实验台，运行暂停。';result.dataset.state='';
+        stopPython();needsRun=true;result.textContent='已离开实验台，运行暂停。';result.dataset.state='';localState('paused','回到实验台后重新准备环境。');
       }else if(pythonReady){
         clearTimeout(idleTimer);
         idleTimer=setTimeout(()=>{
@@ -69,75 +72,92 @@
     stopFreshWorker();
     const id=runId;
     result.textContent='正在运行…';result.dataset.state='';
+    localState(interpreted?(current==='scheme'?'initializing':'downloading'):'running',interpreted?'正在准备本地解释器；浏览器可能复用缓存。':'正在执行代码。',{loaded:null,total:null});
     try{worker=new Worker(runtime.file,runtime.module?{type:'module'}:undefined)}
-    catch(error){result.textContent=`无法启动浏览器运行环境：${error.message}`;return}
+    catch(error){result.textContent=`无法启动浏览器运行环境：${error.message}`;result.dataset.state='error';localState('failed','无法启动本地环境，点击重新加载并运行。');return}
     const active=worker;
     workerTimeout=setTimeout(()=>{
       if(id!==runId)return;
       active.terminate();worker=null;workerTimeout=null;
       result.textContent=interpreted?`${runtime.name} 运行时加载超过 30 秒，已停止。`:'运行超过 2 秒，已停止。';result.dataset.state='error';
+      localState('failed',interpreted?'环境准备超时，可重试。':'运行超时，已停止。');
     },interpreted?30000:2000);
     active.onmessage=event=>{
       if(id!==runId)return;
+      if(event.data.kind==='progress'){
+        localState(event.data.stage,event.data.stage==='initializing'?'核心资源读取完成，正在初始化。':'正在下载或读取核心资源。',{loaded:event.data.loaded,total:event.data.total});return;
+      }
       if(interpreted&&event.data.kind==='ready'){
         clearTimeout(workerTimeout);
         result.textContent=`正在运行 ${runtime.name}…`;
+        localState('running','环境已就绪，正在执行代码。');
         workerTimeout=setTimeout(()=>{
           if(id!==runId)return;
           active.terminate();worker=null;workerTimeout=null;
           result.textContent=`${runtime.name} 运行超过 2 秒，已停止。`;result.dataset.state='error';
+          localState('failed','运行超时，已停止；修改代码后重试。');
         },2000);
         return;
       }
       clearTimeout(workerTimeout);workerTimeout=null;active.terminate();worker=null;
       result.textContent=event.data.output;
       result.dataset.state=event.data.ok?'ok':'error';
+      localState(event.data.ok?'completed':'failed',event.data.ok?'本次执行完成；再次运行会使用独立环境。':'代码执行失败，请查看运行结果。',{retryLabel:'重试运行'});
     };
     active.onerror=event=>{
       if(id!==runId)return;
       clearTimeout(workerTimeout);workerTimeout=null;active.terminate();worker=null;
       result.textContent=`运行环境错误：${event.message}`;result.dataset.state='error';
+      localState('failed','本地运行环境出错，可重新加载并运行。');
     };
-    active.postMessage({id,code:editor.value});
+    active.postMessage({id,code:editor.value,files:window.MUSEUM_RUNTIME_ASSETS?.[current]?.files});
   }
   function startPythonWorker(){
     const generation=++pythonGeneration;
     try{pythonWorker=new Worker('python-worker.js',{type:'module'})}
-    catch(error){result.textContent=`无法启动 Python Worker：${error.message}`;result.dataset.state='error';document.querySelector('#lab-runtime-note').textContent='本地 Python 运行时未能启动。';return}
+    catch(error){result.textContent=`无法启动 Python Worker：${error.message}`;result.dataset.state='error';document.querySelector('#lab-runtime-note').textContent='本地 Python 运行时未能启动。';localState('failed','无法启动本地 Python，可重新加载并运行。');return}
     const active=pythonWorker;
     pythonReady=false;
     result.textContent='正在加载本地 Python 运行时…';result.dataset.state='';
+    localState('downloading','正在下载或读取核心资源；浏览器可能复用缓存。',{loaded:0,total:window.MUSEUM_RUNTIME_ASSETS?.python?Object.values(window.MUSEUM_RUNTIME_ASSETS.python.files).reduce((sum,size)=>sum+size,0):null});
     document.querySelector('#lab-runtime-note').textContent='正在准备本地 WebAssembly 运行时；只显示真实输出或错误。';
     pythonTimeout=setTimeout(()=>{
       if(generation!==pythonGeneration||pythonReady)return;
       stopPython();result.textContent='Python 运行时加载超过 90 秒，已停止。';result.dataset.state='error';document.querySelector('#lab-runtime-note').textContent='点击「运行代码」可重新加载。';
+      localState('failed','环境准备超过 90 秒，已停止；可重新加载。');
     },90000);
     active.onmessage=event=>{
       if(generation!==pythonGeneration)return;
       const data=event.data;
-      if(data.kind==='ready'){
+      if(data.kind==='progress'){
+        localState(data.stage,data.stage==='initializing'?'核心资源读取完成，正在初始化 Python。':'正在下载或读取核心资源。',{loaded:data.loaded,total:data.total});
+      }else if(data.kind==='ready'){
         clearTimeout(pythonTimeout);pythonTimeout=null;pythonReady=true;
         document.querySelector('#lab-runtime-note').textContent='本地 Pyodide 已就绪；代码在独立 Worker 中真实执行，超过 3 秒会停止。';
+        localState('ready','环境已就绪，运行代码不会上传。',data.version?{version:data.version+' · '+(window.MUSEUM_RUNTIME_ASSETS?.python?.version||'Pyodide')}:{});
         if(pythonPending!==null&&timer===null)dispatchPython();
       }else if(data.kind==='fatal'){
         stopPython();result.textContent=data.output;result.dataset.state='error';document.querySelector('#lab-runtime-note').textContent='点击「运行代码」可重试加载。';
+        localState('failed','Python 环境加载失败，可重新加载并运行。');
       }else if(data.kind==='result'){
         clearTimeout(pythonTimeout);pythonTimeout=null;pythonBusy=false;
-        if(data.id===runId){result.textContent=data.output;result.dataset.state=data.ok?'ok':'error'}
+        if(data.id===runId){result.textContent=data.output;result.dataset.state=data.ok?'ok':'error';localState(data.ok?'completed':'failed',data.ok?'执行完成，Python 环境可继续复用。':'代码执行失败，请查看运行结果。',{retryLabel:'重试运行'})}
         if(pythonPending!==null&&timer===null)dispatchPython();
       }
     };
     active.onerror=event=>{
       if(generation!==pythonGeneration)return;
       stopPython();result.textContent=`Python 运行环境错误：${event.message||'模块文件或资源未能加载'}`;result.dataset.state='error';document.querySelector('#lab-runtime-note').textContent='请通过本地预览服务打开页面，再点击「运行代码」重试。';
+      localState('failed','运行资源未能加载，可重新加载并运行。');
     };
-    active.postMessage({kind:'init'});
+    active.postMessage({kind:'init',files:window.MUSEUM_RUNTIME_ASSETS?.python?.files});
   }
   function dispatchPython(){
     if(!pythonReady||!pythonWorker||pythonBusy||pythonPending===null)return;
     const code=pythonPending;pythonPending=null;pythonBusy=true;
     const id=++runId;
     result.textContent='正在运行 Python…';result.dataset.state='';
+    localState('running','正在执行代码，超过 3 秒会停止。');
     pythonWorker.postMessage({kind:'run',id,code});
     const generation=pythonGeneration;
     pythonTimeout=setTimeout(()=>{
@@ -150,6 +170,7 @@
       }else{
         result.textContent='Python 运行超过 3 秒，已停止。';result.dataset.state='error';
         document.querySelector('#lab-runtime-note').textContent='运行已终止；点击「运行代码」会重新加载 Python。';
+        localState('failed','运行超时，已停止；修改代码后重试。');
       }
     },3000);
   }
@@ -196,6 +217,9 @@
     paint();
     needsRun=runnable;
     execution?.show(id);
+    if(!execution?.handles(id)){
+      runtimeStatus?.select(id,'local');localState(runnable?'idle':'unsupported',runnable?'进入实验台后运行。':'该语言仅支持编辑，尚未接入执行环境。');
+    }
     if(runnable&&!document.querySelector('#lab').hidden&&(!execution?.handles(id)||execution.allowed(id))){needsRun=false;run()}
   }
   editor.addEventListener('input',()=>{
@@ -205,6 +229,7 @@
       if(!!freshRuntimes[current])stopFreshWorker();
       else{runId++;if(!pythonReady)pythonPending=editor.value}
       result.textContent='代码已修改，等待运行…';result.dataset.state='';
+      if(!pythonBusy&&(current!=='python'||pythonReady))localState('idle','代码已修改，即将自动运行。');
       clearTimeout(timer);timer=setTimeout(run,current==='python'?650:450);
     }
   });
@@ -223,5 +248,12 @@
   });
   window.MUSEUM_LAB={canRun:id=>runnableIds.has(id)||!!execution?.canRun(id),useLocal:id=>execution?.useLocal(id),open(id){show(id);document.querySelector('#lab-view').click();editor.focus({preventScroll:true})},show,stop,onTabChange};
   execution?.configure({run,stop});
+  runtimeStatus?.configure((id,mode)=>{
+    if(id!==current)return;
+    if(mode==='remote'){execution?.retry(id,editor.value);return}
+    if(execution?.handles(id)&&!execution.allowed(id))return;
+    if(id!=='python'||!pythonReady)stop();
+    run();
+  });
   show('javascript');
 })();

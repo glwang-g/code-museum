@@ -1,13 +1,17 @@
 // Pyodide is bundled locally. Each module worker can be terminated to stop long-running code.
 import {loadPyodide} from './assets/pyodide/pyodide.mjs';
+import './runtime-progress.js';
 let pyodide;
 const MAX_OUTPUT = 20000;
 self.onmessage = async ({data}) => {
   if (data.kind === 'init') {
     try {
+      globalThis.MUSEUM_RUNTIME_PROGRESS?.start(data.files,message=>self.postMessage(message));
       pyodide = await loadPyodide({indexURL: new URL('assets/pyodide/', self.location.href).href});
-      self.postMessage({kind:'ready'});
+      globalThis.MUSEUM_RUNTIME_PROGRESS?.stop();
+      self.postMessage({kind:'ready',version:'Python '+pyodide.runPython('import sys; sys.version.split()[0]')});
     } catch (error) {
+      globalThis.MUSEUM_RUNTIME_PROGRESS?.stop();
       self.postMessage({kind:'fatal', output:`Python 运行时加载失败：${error.message}`});
     }
     return;

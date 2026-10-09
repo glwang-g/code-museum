@@ -12,7 +12,10 @@ const profileDirectory=fs.mkdtempSync(path.join(os.tmpdir(),'code-museum-chrome-
 if(outputDirectory)fs.mkdirSync(outputDirectory,{recursive:true});
 const {createRequestHandler}=require(path.join(root,'scripts/serve.cjs'));
 const handler=createRequestHandler(path.join(root,'dist'));
+let rejectPythonWorker=false;
 const server=http.createServer((request,response)=>{
+  if(rejectPythonWorker&&request.url==='/python-worker.js'){response.writeHead(503,{'Content-Type':'text/plain','Cache-Control':'no-store'});response.end('Runtime resource deliberately unavailable for retry check');return;}
+
   if(request.url.startsWith('/assets/pyodide/')){
     // Node writeHead-only headers are not exposed by getHeader after finish.
     const writeHead=response.writeHead;
@@ -92,7 +95,7 @@ async function checkLabels(ids){
 async function record(name,detail){results.push({name,detail});console.log('PASS '+name);}
 (async()=>{
  try{
-  for(const file of ['index.html','map-framing.js','museum.js','museum.css','lab.js','lab-examples.js','lab-worker.js','python-worker.js','lua-worker.js','scheme-worker.js','credits.js','relationship-coverage.js','execution-config.js','execution-modes.js'])assert.deepEqual(fs.readFileSync(path.join(root,'dist',file)),fs.readFileSync(path.join(root,'src',file)),'Stale build: run npm run build before browser checks');
+  for(const file of ['index.html','map-framing.js','museum.js','museum.css','lab.js','lab-examples.js','lab-worker.js','python-worker.js','lua-worker.js','scheme-worker.js','credits.js','relationship-coverage.js','execution-config.js','execution-modes.js','runtime-status.js','runtime-progress.js','theme.js','themes.css'])assert.deepEqual(fs.readFileSync(path.join(root,'dist',file)),fs.readFileSync(path.join(root,'src',file)),'Stale build: run npm run build before browser checks');
   await new Promise((resolve,reject)=>{server.once('error',reject);server.listen(0,'127.0.0.1',resolve);});
   browser=spawn(chrome,['--headless=new','--disable-gpu','--disable-background-networking','--no-first-run','--no-default-browser-check','--remote-debugging-pipe','--host-resolver-rules=MAP * ~NOTFOUND, EXCLUDE 127.0.0.1','--user-data-dir='+profileDirectory],{stdio:['ignore','ignore','pipe','pipe','pipe']});
   browser.on('error',error=>{for(const request of pending.values()){clearTimeout(request.timer);request.reject(error);}pending.clear();});
@@ -117,6 +120,64 @@ async function record(name,detail){results.push({name,detail});console.log('PASS
     await screenshot('execution-default-'+width+'.png');
   }
   await record('Remote default requires an explicit run and local interpreters require download consent',{pythonWorkers:0,runtimeDownloads:0});
+  const themeChecks=[];
+  for(const width of [1440,390]){
+    await page('Emulation.setDeviceMetricsOverride',{width,height:width===390?844:1000,deviceScaleFactor:1,mobile:width===390});
+    for(const theme of ['dark','light']){
+      if(await evaluate('document.documentElement.dataset.theme')!==theme){
+        const point=await evaluate(`(()=>{const r=document.querySelector('#theme-toggle').getBoundingClientRect();return {x:r.left+r.width/2,y:r.top+r.height/2}})()`);
+        await page('Input.dispatchMouseEvent',{type:'mousePressed',...point,button:'left',clickCount:1});
+        await page('Input.dispatchMouseEvent',{type:'mouseReleased',...point,button:'left',clickCount:1});
+      }
+      assert.equal(await evaluate('document.documentElement.dataset.theme'),theme);
+      for(const [view,name] of [['timeline-view','river'],['lineage-view','lineage'],['catalogue-view','catalogue'],['lab-view','lab'],['sources-view','sources']]){
+        await evaluate(`document.getElementById(${JSON.stringify(view)}).click()`);
+        assert.equal(await evaluate('document.documentElement.scrollWidth<=innerWidth'),true);
+        await screenshot('theme-'+theme+'-'+name+'-'+width+'.png');
+      }
+      await evaluate(`document.querySelector('#timeline-view').click();document.querySelector('.dock[data-id="python"]').click()`);
+      await evaluate('new Promise(resolve=>setTimeout(resolve,900))');
+      await screenshot('theme-'+theme+'-selected-'+width+'.png');
+      assert.equal(await evaluate(`document.querySelector('.dock[data-id="python"]').classList.contains('selected')`),true);
+      await evaluate(`document.querySelector('#close').click();window.MUSEUM_LAB.open('python')`);
+      assert.equal(await evaluate(`document.querySelector('#lab-code').value`),'print(42)','Theme changes must preserve the code draft');
+      themeChecks.push({width,theme});
+    }
+  }
+  await page('Page.reload');await wait('!!window.MUSEUM_LAB');
+  assert.equal(await evaluate('document.documentElement.dataset.theme'),'light','Theme choice survives reload');
+  await page('Emulation.setEmulatedMedia',{features:[{name:'prefers-color-scheme',value:'dark'}]});
+  assert.equal(await evaluate('document.documentElement.dataset.theme'),'light','Explicit choice overrides system preference');
+  await evaluate(`document.querySelector('#theme-toggle').click();window.MUSEUM_LAB.open('python')`);
+  await edit('print(42)');
+  await record('Theme real mouse switching, all five tabs and selected maps in wide/narrow layouts, persisted choice and draft preservation',themeChecks);
+  await evaluate(`window.__runtimeStages=[];new MutationObserver(()=>{const r=document.querySelector('#lab-runtime-state'),p=document.querySelector('#lab-state-progress');if(window.__runtimeStages.length<2000)window.__runtimeStages.push({language:document.querySelector('#lab-language').value,stage:r.dataset.stage,loaded:p.hasAttribute('value')?p.value:null,total:p.max});}).observe(document.querySelector('#lab-runtime-state'),{attributes:true,attributeFilter:['data-stage']});`);
+  await evaluate(`(()=>{const select=document.querySelector('#lab-execution-mode');select.value='local';select.dispatchEvent(new Event('change'));})()`);
+  assert.equal(await evaluate(`document.querySelector('#lab-execution-mode').value`),'local');
+  assert.equal(await evaluate(`document.querySelector('#lab-state-label').textContent`),'未启用');
+  assert.equal(runtimeResponses.length,0,'Switching modes alone must not download core resources');
+  await page('Network.enable');await page('Network.setCacheDisabled',{cacheDisabled:true});rejectPythonWorker=true;
+  await evaluate(`document.querySelector('#lab-enable-local').click()`);
+  await wait(`document.querySelector('#lab-runtime-state').dataset.stage==='failed'`);
+  assert.equal(await evaluate(`document.querySelector('#lab-runtime-retry').hidden`),false);
+  for(const width of [1440,390]){
+    await page('Emulation.setDeviceMetricsOverride',{width,height:width===390?844:1000,deviceScaleFactor:1,mobile:width===390});
+    assert.equal(await evaluate(`document.documentElement.scrollWidth<=innerWidth`),true);
+    await screenshot('runtime-retry-'+width+'.png');
+  }
+  rejectPythonWorker=false;
+  await page('Network.emulateNetworkConditions',{offline:false,latency:20,downloadThroughput:4*1024*1024,uploadThroughput:4*1024*1024});
+  await evaluate(`document.querySelector('#lab-runtime-retry').click()`);
+  await wait(`document.querySelector('#lab-runtime-state').dataset.stage==='downloading'&&document.querySelector('#lab-state-progress').value>0`);
+  await screenshot('runtime-progress-390.png');
+  await output('42');
+  await page('Network.emulateNetworkConditions',{offline:false,latency:0,downloadThroughput:-1,uploadThroughput:-1});await page('Network.setCacheDisabled',{cacheDisabled:false});
+  assert.equal(await evaluate(`document.querySelector('#lab-runtime-state').dataset.stage`),'completed');
+  assert.match(await evaluate(`document.querySelector('#lab-state-version').textContent`),/Python \d+\.\d+\.\d+.*Pyodide 314\.0\.7/);
+  const runtimeStages=await evaluate(`window.__runtimeStages.filter(entry=>entry.language==='python')`);
+  for(const stage of ['failed','downloading','initializing','running','completed'])assert.ok(runtimeStages.some(entry=>entry.stage===stage),'Missing runtime phase: '+stage);
+  assert.ok(runtimeStages.some(entry=>entry.stage==='downloading'&&entry.loaded>0&&entry.total>entry.loaded),'Core resource progress must observe real streamed bytes');
+  await record('Runtime modes, consent, measured resource progress, initialization and real Python load-failure retry',runtimeStages);
   await evaluate(`document.querySelector('#lab-reset').click();for(const id of ['python','lua','scheme'])window.MUSEUM_LAB.useLocal(id);window.MUSEUM_LAB.open('javascript')`);
   const creditChecks=[];
   for(const width of [1440,390]){
@@ -814,8 +875,8 @@ async function record(name,detail){results.push({name,detail});console.log('PASS
     }
     await record((sweepAll?'All dated map nodes':'Persistent map labels')+' focus and restore across wide/narrow river and lineage',{cases,omitted,scope:(sweepAll?'Fixed current dated mapEligible records':'Fixed current mapLabelIds')+'; design and ecosystem layers; two sizes; reduced motion; no simulated history links. Omitted nodes are not present in lineage.'});
   }
-  const servedInputs=Object.fromEntries(['index.html','map-framing.js','museum.css','museum.js','data/catalogue.js','lab.js','lab-examples.js','lab-worker.js','python-worker.js','lua-worker.js','scheme-worker.js','assets/pyodide/manifest.json','credits.js','relationship-coverage.js','execution-config.js','execution-modes.js','data/relationship-status.js','data/relationship-status.json','data/credits.js','data/credits.json','licenses/linguist-LICENSE'].map(file=>[file,crypto.createHash('sha256').update(fs.readFileSync(path.join(root,'dist',file))).digest('hex')]));
-  const report={servedInputs,checkedAt:new Date().toISOString(),browser:version.product,scope:'Actual headless Chrome over local HTTP; isolated temporary browser profile; external DNS blocked. Worker constructor/termination observed without replacing execution. Does not verify real tab visibility, idle release, production hosting or all languages.',inputs:Object.fromEntries(['src/index.html','src/map-framing.js','src/museum.js','src/museum.css','data/audit/reviews.json','data/audit/map-eligible-ids.json','data/audit/label-selection.json','data/relationship-overrides.json','data/ecosystem-relations.json','src/lab.js','src/lab-examples.js','data/audit/tcsh-runtime-checks.json','data/audit/ksh93-runtime-checks.json','data/audit/runtime-checks.json','src/lab-worker.js','src/python-worker.js','src/lua-worker.js','src/scheme-worker.js','public/assets/scheme/manifest.json','public/assets/scheme/biwascheme-core.mjs','scripts/serve.cjs','scripts/check-browser-runtime.cjs','scripts/credits.cjs','scripts/relationship-audit.cjs','data/audit/relationship-decisions.json','src/relationship-coverage.js','src/execution-config.js','src/execution-modes.js','data/credits.json','src/credits.js','public/assets/pyodide/manifest.json'].map(file=>[file,crypto.createHash('sha256').update(fs.readFileSync(path.join(root,file))).digest('hex')])),checks:results};
+  const servedInputs=Object.fromEntries(['index.html','map-framing.js','museum.css','museum.js','data/catalogue.js','lab.js','lab-examples.js','lab-worker.js','python-worker.js','lua-worker.js','scheme-worker.js','assets/pyodide/manifest.json','credits.js','relationship-coverage.js','execution-config.js','execution-modes.js','runtime-status.js','runtime-progress.js','theme.js','themes.css','data/runtime-assets.js','data/relationship-status.js','data/relationship-status.json','data/credits.js','data/credits.json','licenses/linguist-LICENSE'].map(file=>[file,crypto.createHash('sha256').update(fs.readFileSync(path.join(root,'dist',file))).digest('hex')]));
+  const report={servedInputs,checkedAt:new Date().toISOString(),browser:version.product,scope:'Actual headless Chrome over local HTTP; isolated temporary browser profile; external DNS blocked. Worker constructor/termination observed without replacing execution. Does not verify real tab visibility, idle release, production hosting or all languages.',inputs:Object.fromEntries(['src/index.html','src/map-framing.js','src/museum.js','src/museum.css','data/audit/reviews.json','data/audit/map-eligible-ids.json','data/audit/label-selection.json','data/relationship-overrides.json','data/ecosystem-relations.json','src/lab.js','src/lab-examples.js','data/audit/tcsh-runtime-checks.json','data/audit/ksh93-runtime-checks.json','data/audit/runtime-checks.json','src/lab-worker.js','src/python-worker.js','src/lua-worker.js','src/scheme-worker.js','public/assets/scheme/manifest.json','public/assets/scheme/biwascheme-core.mjs','scripts/serve.cjs','scripts/check-browser-runtime.cjs','scripts/credits.cjs','scripts/relationship-audit.cjs','data/audit/relationship-decisions.json','src/relationship-coverage.js','src/execution-config.js','src/execution-modes.js','src/runtime-status.js','src/runtime-progress.js','src/theme.js','src/themes.css','scripts/build.cjs','data/credits.json','src/credits.js','public/assets/pyodide/manifest.json'].map(file=>[file,crypto.createHash('sha256').update(fs.readFileSync(path.join(root,file))).digest('hex')])),checks:results};
   if(outputDirectory){fs.writeFileSync(path.join(outputDirectory,'checks.json'),JSON.stringify(report,null,2)+'\n');console.log('Report '+path.join(outputDirectory,'checks.json'));}else console.log(JSON.stringify(report,null,2));
  }catch(error){await screenshot('failure.png').catch(()=>{});console.error(error.stack+'\n'+diagnostics);process.exitCode=1;}
  finally{
