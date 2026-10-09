@@ -22,7 +22,7 @@
   }
   function render(){
     const on=handles(current);$('lab-execution-controls').hidden=!on;
-    if(!on)return;
+    if(!on){if(typeof Event!=='undefined')document.dispatchEvent?.(new Event('museum-execution-change'));return;}
     const isRemote=mode(current)==='remote';
     status?.select(current,mode(current));
     if(!isRemote&&!allowed(current))status?.update(current,'local',{stage:'not-enabled',detail:'点击“下载并启用”后才读取本地运行资源。'});
@@ -50,6 +50,7 @@
       $('lab-status').textContent='浏览器本地执行 · 启用后，编辑会自动更新结果。';
       $('lab-runtime-note').textContent=allowed(current)?'浏览器本地执行，不上传代码。':'尚未下载或初始化本地运行环境。';
     }
+    if(typeof Event!=='undefined')document.dispatchEvent?.(new Event('museum-execution-change'));
   }
   function cancel(message=false,redraw=true){
     generation++;
@@ -132,6 +133,7 @@
     if(active||!remoteAvailable(current)||mode(current)!=='remote')return;
     status?.update(current,'remote',{stage:$('lab-remote-token').value.length>=32?'ready':'waiting-token',detail:'服务可用；令牌会在点击运行时验证。'});
   });
-  window.MUSEUM_EXECUTION={handles,allowed,run,show,render,cancel,useLocal,configure:value=>{callbacks=value},canRun:id=>remoteAvailable(id),retry:(id,code)=>remoteAvailable(id)?run(id,code):connect(),edited(){cancel();if(remoteAvailable(current))status?.update(current,'remote',{stage:'idle',detail:'代码已修改，点击运行后执行。'});$('lab-result').textContent='代码已修改；点击运行后执行。';$('lab-result').dataset.state='';}};
+  window.MUSEUM_EXECUTION={handles,allowed,mode,localSupported:id=>local.has(id),
+    chooseLocal(){if(!local.has(current))return;cancel();callbacks.stop?.();modes.set(current,'local');render();$('lab-result').textContent=allowed(current)?'点击运行代码，在浏览器本地执行。':'点击下载并启用本地环境；不会上传代码。';$('lab-result').dataset.state='';},run,show,render,cancel,useLocal,configure:value=>{callbacks=value},canRun:id=>remoteAvailable(id),retry:(id,code)=>remoteAvailable(id)?run(id,code):connect(),edited(){cancel();if(remoteAvailable(current))status?.update(current,'remote',{stage:'idle',detail:'代码已修改，点击运行后执行。'});$('lab-result').textContent='代码已修改；点击运行后执行。';$('lab-result').dataset.state='';}};
   connect();
 })();

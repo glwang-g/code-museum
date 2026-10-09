@@ -15,18 +15,49 @@
   let current=null,timer=null,worker=null,workerTimeout=null,runId=0;
   let pythonWorker=null,pythonReady=false,pythonBusy=false,pythonPending=null,pythonTimeout=null,pythonGeneration=0;
   let idleTimer=null,needsRun=false;
-  const drafts=new Map();
-  function paint(){
-    const source=editor.value,pattern=current==='scheme'?/(;[^\n]*|#\|[\s\S]*?\|#|"(?:\\.|[^"\\])*"|#[tf]|[+-]?\b\d+(?:\.\d+)?\b|[A-Za-z_][A-Za-z_0-9?!*+\/-]*)/g:current==='lua'?/(--\[\[[\s\S]*?\]\]|--[^\n]*|"(?:\\.|[^"\\])*"|'(?:\\.|[^'\\])*'|\b\d+(?:\.\d+)?\b|\b[A-Za-z_]\w*\b)/g:/(\/\/[^\n]*|\/\*[\s\S]*?\*\/|#[^\n]*|"(?:\\.|[^"\\])*"|'(?:\\.|[^'\\])*'|`(?:\\.|[^`\\])*`|\b\d+(?:\.\d+)?\b|\b[A-Za-z_]\w*\b)/g;
+  const store=window.MUSEUM_DRAFT_STORE;
+  const drafts=store?.drafts||new Map(),backups=store?.backups||new Map();
+  const topics=store?.topics||new Map();let currentTopic='default';
+  const draftKey=()=>currentTopic==='default'?current:current+':'+currentTopic;
+  const baseCode=()=>currentTopic==='default'?(examples.get(current)?.code||window.MUSEUM_LESSONS?.languages[current]?.examples.variables.code||''):(window.MUSEUM_LESSONS?.languages[current]?.examples[currentTopic]?.code||'');
+  function changed(){if(typeof CustomEvent!=='undefined')document.dispatchEvent(new CustomEvent('museum-lab-change'))}
+  function remember(){if(current){drafts.set(draftKey(),editor.value);store?.save()}}
+  function backup(){backups.set(draftKey(),editor.value);store?.save()}
+  function replaceCode(code,execute=false){
+    stop();execution?.cancel();needsRun=false;
+    editor.value=code;remember();paint();
+    result.textContent='代码已载入；点击运行后执行。';result.dataset.state='';
+    if(execution?.handles(current)&&!execution.allowed(current))execution.edited();
+    else localState(runnableIds.has(current)?'idle':'unsupported','代码已载入，点击运行后执行。');
+    changed();if(execute&&runnableIds.has(current)&&(!execution?.handles(current)||execution.allowed(current)))run();
+  }
+  function chooseTopic(topic){
+    const available=window.MUSEUM_LESSONS?.languages[current]?.examples||{};
+    if(topic!=='default'&&!available[topic])return;
+    if(topic===currentTopic)return;
+    remember();currentTopic=topic;topics.set(current,topic);
+    const code=drafts.get(draftKey())??baseCode();replaceCode(code,false);
+  }
+  function manualStop(){
+    stop();execution?.cancel();needsRun=false;
+    result.textContent='运行已停止；可修改代码后重新运行。';result.dataset.state='';
+    runtimeStatus?.update(current,execution?.mode?.(current)||'local',{stage:'cancelled',detail:'已停止加载或运行；远端活动任务已请求取消。'});
+    changed();
+  }
+  function formatCode(source,language=current){
+    const pattern=language==='scheme'?/(;[^\n]*|#\|[\s\S]*?\|#|"(?:\\.|[^"\\])*"|#[tf]|[+-]?\b\d+(?:\.\d+)?\b|[A-Za-z_][A-Za-z_0-9?!*+\/-]*)/g:language==='lua'?/(--\[\[[\s\S]*?\]\]|--[^\n]*|"(?:\\.|[^"\\])*"|'(?:\\.|[^'\\])*'|\b\d+(?:\.\d+)?\b|\b[A-Za-z_]\w*\b)/g:/(\/\/[^\n]*|\/\*[\s\S]*?\*\/|#[^\n]*|"(?:\\.|[^"\\])*"|'(?:\\.|[^'\\])*'|`(?:\\.|[^`\\])*`|\b\d+(?:\.\d+)?\b|\b[A-Za-z_]\w*\b)/g;
     let out='',at=0,match;
     while((match=pattern.exec(source))){
       out+=escape(source.slice(at,match.index));
       const token=match[0];
-      const kind=(current==='scheme'?/^(;|#\|)/:/^(\/\/|\/\*|#|--)/).test(token)?'comment':/^["'`]/.test(token)?'string':/^[+-]?\d/.test(token)?'number':(current==='scheme'?schemeKeywords:keywords).has(token)||current==='scheme'&&/^#[tf]$/.test(token)?'keyword':'';
+      const kind=(language==='scheme'?/^(;|#\|)/:/^(\/\/|\/\*|#|--)/).test(token)?'comment':/^["'`]/.test(token)?'string':/^[+-]?\d/.test(token)?'number':(language==='scheme'?schemeKeywords:keywords).has(token)||language==='scheme'&&/^#[tf]$/.test(token)?'keyword':'';
       out+=kind?`<span class="tok-${kind}">${escape(token)}</span>`:escape(token);
       at=pattern.lastIndex;
     }
-    highlight.innerHTML=out+escape(source.slice(at))+'\n';
+    return out+escape(source.slice(at))+'\n';
+  }
+  function paint(){
+    highlight.innerHTML=formatCode(editor.value);
     highlight.scrollTop=editor.scrollTop;highlight.scrollLeft=editor.scrollLeft;
   }
   function stopFreshWorker(){
@@ -190,7 +221,8 @@
   }
   function options(id){
     const entries=[...examples.values()];
-    if(!examples.has(id)&&byId.has(id))entries.unshift({id});
+    for(const extra of Object.keys(window.MUSEUM_LESSONS?.languages||{}))if(!entries.some(entry=>entry.id===extra))entries.push({id:extra});
+    if(!entries.some(entry=>entry.id===id)&&byId.has(id))entries.unshift({id});
     pick.innerHTML=entries.map(entry=>`<option value="${escape(entry.id)}">${escape(byId.get(entry.id)?.name||entry.id)}</option>`).join('');
     pick.value=id;
   }
@@ -199,31 +231,31 @@
     // Reopening an archive entry should preserve its draft, result and loaded runtime.
     if(id===current)return;
     clearTimeout(idleTimer);idleTimer=null;
-    stop();
-    current=id;options(id);
+    remember();stop();
+    current=id;currentTopic=topics.get(id)||'default';if(currentTopic!=='default'&&!window.MUSEUM_LESSONS?.languages[id]?.examples[currentTopic])currentTopic='default';options(id);
     const creditButton=document.querySelector('#lab-runtime-credit'),creditLabel=window.MUSEUM_CREDITS_UI?.labelFor(id);
     if(creditButton){creditButton.hidden=!creditLabel;creditButton.textContent=creditLabel||'';creditButton.onclick=()=>window.MUSEUM_CREDITS_UI?.openFor(current)}
     const record=byId.get(id),example=examples.get(id),runnable=runnableIds.has(id);
     document.querySelector('#lab-title').textContent=`${record.name} · 实验台`;
     document.querySelector('#lab-file').textContent=example?.file||`${record.name} · 草稿`;
-    document.querySelector('#lab-status').textContent=id==='javascript'?'JavaScript 在浏览器 Worker 中执行；改动后自动更新结果。':id==='python'?'Python 在本地 Pyodide Worker 中执行；首次加载需要一些时间。':id==='lua'?'Lua 5.4 在本地 WebAssembly Worker 中执行；改动后自动更新结果。':id==='scheme'?'Scheme 由 BiwaScheme 0.8.3 浏览器解释器执行；改动后自动更新结果。':example?.note||(example?'这是可编辑的语法示例；本页尚未接入该语言的运行环境。':'尚无经审核的示例；可记下草稿，本页尚未接入该语言的运行环境。');
+    document.querySelector('#lab-status').textContent=id==='javascript'?'JavaScript 在浏览器 Worker 中执行；改动后自动更新结果。':id==='python'?'Python 在本地 Pyodide Worker 中执行；首次加载需要一些时间。':id==='lua'?'Lua 5.4 在本地 WebAssembly Worker 中执行；改动后自动更新结果。':id==='scheme'?'Scheme 由 BiwaScheme 0.8.3 浏览器解释器执行；改动后自动更新结果。':example?.note||((example||window.MUSEUM_LESSONS?.languages[id])?'这是可编辑的语法示例；本页尚未接入该语言的运行环境。':'尚无经审核的示例；可记下草稿，本页尚未接入该语言的运行环境。');
     document.querySelector('#lab-runtime-note').textContent=id==='javascript'?'只显示本次代码实际产生的控制台输出或错误；超过 2 秒会停止。':id==='python'?'正在准备本地 WebAssembly 运行时；只显示真实输出或错误。':id==='lua'?'只显示真实输出或错误；超过 2 秒会停止。支持 print 和基础标准库，不提供文件、系统或第三方模块。':id==='scheme'?'BiwaScheme（非 Wasm）；非完整 R7RS，2 秒超时。':'运行环境未接入，不显示模拟结果。';
-    editor.value=drafts.get(id)??example?.code??'';
+    editor.value=drafts.get(draftKey())??baseCode();
     editor.placeholder=example?'':'暂无经审核的代码示例，可在此记录草稿。';
-    resetButton.disabled=!example;
+    resetButton.disabled=!example&&!window.MUSEUM_LESSONS?.languages[id];
     runButton.disabled=!runnable;
     result.textContent=runnable?'进入实验台后运行…':'本语言尚未接入浏览器运行环境。';
     result.dataset.state='';
     paint();
     needsRun=runnable;
-    execution?.show(id);
+    execution?.show(id);changed();
     if(!execution?.handles(id)){
       runtimeStatus?.select(id,'local');localState(runnable?'idle':'unsupported',runnable?'进入实验台后运行。':'该语言仅支持编辑，尚未接入执行环境。');
     }
     if(runnable&&!document.querySelector('#lab').hidden&&(!execution?.handles(id)||execution.allowed(id))){needsRun=false;run()}
   }
   editor.addEventListener('input',()=>{
-    drafts.set(current,editor.value);paint();
+    remember();paint();changed();
     if(execution?.handles(current)&&!execution.allowed(current)){execution.edited();return}
     if(runnableIds.has(current)){
       if(!!freshRuntimes[current])stopFreshWorker();
@@ -240,13 +272,20 @@
     editor.setRangeText('  ',start,end,'end');editor.dispatchEvent(new Event('input'));
   });
   runButton.onclick=run;
-  resetButton.onclick=()=>{const example=examples.get(current);if(!example)return;drafts.delete(current);editor.value=example.code;paint();if(runnableIds.has(current)&&(!execution?.handles(current)||execution.allowed(current)))run();else execution?.edited();editor.focus()};
+  resetButton.onclick=()=>{if(!baseCode())return;backup();replaceCode(baseCode(),false);editor.focus()};
   pick.onchange=()=>show(pick.value);
   document.addEventListener('visibilitychange',()=>{
     if(document.hidden)leave();
     else if(!document.querySelector('#lab').hidden)onTabChange(true);
   });
-  window.MUSEUM_LAB={canRun:id=>runnableIds.has(id)||!!execution?.canRun(id),useLocal:id=>execution?.useLocal(id),open(id){show(id);document.querySelector('#lab-view').click();editor.focus({preventScroll:true})},show,stop,onTabChange};
+  window.MUSEUM_LAB={
+    get current(){return current},get topic(){return currentTopic},get code(){return editor.value},
+    get hasBackup(){return backups.has(draftKey())},get modified(){return editor.value!==baseCode()},
+    formatCode,chooseTopic,manualStop,
+    importCode(code){if(typeof code!=='string'||code.length>131072)throw new Error('文件最多128 KiB字符。');backup();replaceCode(code,false)},
+    undo(){if(!backups.has(draftKey()))return;const code=backups.get(draftKey());backups.set(draftKey(),editor.value);replaceCode(code,false)},
+    openLesson(id,topic){show(id);chooseTopic(topic);document.querySelector('#lab-view').click();editor.focus({preventScroll:true})},
+    canRun:id=>runnableIds.has(id)||!!execution?.canRun(id),useLocal:id=>execution?.useLocal(id),open(id){show(id);document.querySelector('#lab-view').click();editor.focus({preventScroll:true})},show,stop,onTabChange};
   execution?.configure({run,stop});
   runtimeStatus?.configure((id,mode)=>{
     if(id!==current)return;

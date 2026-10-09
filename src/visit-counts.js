@@ -15,8 +15,8 @@
       if (!Number.isSafeInteger(data.uv) || data.uv < 0 || !Number.isSafeInteger(data.pv) || data.pv < data.uv || typeof data.startedAt !== 'string' || !Number.isFinite(Date.parse(data.startedAt))) throw new Error('Invalid totals');
       for (const key of ['uv', 'pv']) document.getElementById('visit-' + key).textContent = format.format(data[key]);
       const start = new Intl.DateTimeFormat('zh-CN', {timeZone: 'Asia/Shanghai', year: 'numeric', month: '2-digit', day: '2-digit'}).format(new Date(data.startedAt));
-      status.textContent = `自 ${start} 起 · UV ${data.uv.toLocaleString('zh-CN')} · PV ${data.pv.toLocaleString('zh-CN')}`;
-      box.querySelector('summary').setAttribute('aria-label', `累计访问：UV ${data.uv}，PV ${data.pv}。展开查看统计口径`);
+      status.textContent = `自 ${start} 起 · 访客 ${data.uv.toLocaleString('zh-CN')} · 访问 ${data.pv.toLocaleString('zh-CN')}`;
+      box.querySelector('summary').setAttribute('aria-label', `累计访客 ${data.uv}，累计访问 ${data.pv}。展开查看统计口径`);
       lastRead = Date.now();
     } catch {
       status.textContent = lastRead ? '暂时无法更新，显示上次读取的累计数字。' : '统计暂不可用；本地预览没有生产访问数据。';

@@ -1,0 +1,118 @@
+{
+  "checkedAt": "2026-10-09T03:16:34.941382+00:00",
+  "scope": "Local native snippet checks only; does not enable browser or server execution for C/C++/Java. C# not executed. Ruby checked locally on 2.6.10, not the production Docker runtime.",
+  "inputSha256": "f9a8ed5f0a4b07a57adfe7b06352a4dce51c14ba543cec02993fa064d3a1dc94",
+  "compilers": {
+    "c": {
+      "version": "Apple clang version 21.0.0 (clang-2100.3.34.2)",
+      "flags": [
+        "-std=c11",
+        "-Wall",
+        "-Wextra",
+        "-Werror"
+      ]
+    },
+    "cpp": {
+      "version": "Apple clang version 21.0.0 (clang-2100.3.34.2)",
+      "flags": [
+        "-std=c++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror"
+      ]
+    },
+    "java": {
+      "version": "openjdk version \"21.0.2\" 2024-01-16",
+      "flags": [
+        "javac",
+        "--release",
+        "17"
+      ]
+    },
+    "ruby": {
+      "version": "ruby 2.6.10p210 (2022-04-12 revision 67958) [universal.arm64e-darwin26]"
+    }
+  },
+  "checks": [
+    {
+      "language": "c",
+      "topic": "variables",
+      "output": "Museum 2026"
+    },
+    {
+      "language": "c",
+      "topic": "loops",
+      "output": "55"
+    },
+    {
+      "language": "c",
+      "topic": "functions",
+      "output": "49"
+    },
+    {
+      "language": "c",
+      "topic": "collections",
+      "output": "6, 2, 4"
+    },
+    {
+      "language": "cpp",
+      "topic": "variables",
+      "output": "Museum 2026"
+    },
+    {
+      "language": "cpp",
+      "topic": "loops",
+      "output": "55"
+    },
+    {
+      "language": "cpp",
+      "topic": "functions",
+      "output": "49"
+    },
+    {
+      "language": "cpp",
+      "topic": "collections",
+      "output": "6, 2, 4"
+    },
+    {
+      "language": "java",
+      "topic": "variables",
+      "output": "Museum 2026"
+    },
+    {
+      "language": "java",
+      "topic": "loops",
+      "output": "55"
+    },
+    {
+      "language": "java",
+      "topic": "functions",
+      "output": "49"
+    },
+    {
+      "language": "java",
+      "topic": "collections",
+      "output": "6, 2, 4"
+    },
+    {
+      "language": "ruby",
+      "topic": "variables",
+      "output": "Museum 2026"
+    },
+    {
+      "language": "ruby",
+      "topic": "loops",
+      "output": "55"
+    },
+    {
+      "language": "ruby",
+      "topic": "functions",
+      "output": "49"
+    },
+    {
+      "language": "ruby",
+      "topic": "collections",
+      "output": "6, 2, 4"
+    }
+  ]
+}

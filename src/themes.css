@@ -63,3 +63,8 @@
 :root[data-theme="light"] #map-search-catalogue{color:var(--gold)}
 :root[data-theme="light"] #map-search-results button:is(:hover,[aria-selected="true"]){background:#e0eadd}
 @media(max-width:650px){#theme-toggle{font-size:11px;padding:4px 8px}}
+
+:root[data-theme="light"] .compare-code .tok-keyword{color:#925422}
+:root[data-theme="light"] .compare-code .tok-string{color:#2f704c}
+:root[data-theme="light"] .compare-code .tok-number{color:#365ca2}
+:root[data-theme="light"] .compare-code .tok-comment{color:#596f69}

@@ -79,3 +79,13 @@ sudo -u code-museum python3 /var/www/code-museum/current/server/analytics.py --b
 ## 2026-10-09 公共累计统计入口（本地实现）
 
 新增头部累计统计与只读GET接口。上线时除静态站点/统计服务正常发布外，需将既有 `/api/visits` Nginx location 的 `limit_except POST` 改为 `limit_except GET POST`（GET隐含允许HEAD）；不新增数据库、权限或访客字段。现有Actions不会自动修改生产Nginx，本轮尚未发布或更改服务器配置。仅上线前端会因GET被旧配置拒绝而显示统计不可用。
+
+
+## 2026-10-09 累计统计已上线
+
+68707e8 已推送，Actions 37877136008 的build/deploy均成功。生产站点既有Nginx统计location已从仅POST改为GET/POST，保留时间戳备份并通过nginx -t和reload；执行API及其他站点未改动。HTTPS累计查询真实返回uv/pv/startedAt，4份线上静态文件与该提交SHA一致；读取不增加访问。统计数据库沿用原文件，起始日期仍为2026-10-05。本条覆盖前述“仅本地实现、待发布”的状态。
+
+
+## 2026-10-09 学习体验与中文统计名称发布准备
+
+沿用用户验证后提交推送授权，准备发布主题示例、按语言/主题草稿、文件操作、停止运行和语言对比第六页签；统计常显名称改为访客/访问，展开保留UV/PV对照。45项npm测试、离线构建、23组最终定向Chrome检查通过；34组完整回归对应最后用词调整前的版本，报告明确记录范围，未改写历史核验哈希。执行服务运行范围与私有权限保持既有实现，未新增C/C++/Java/C#网页运行。最终Actions和正式站点检查结果待实际完成后追加。

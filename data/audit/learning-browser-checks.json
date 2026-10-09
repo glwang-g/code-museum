@@ -1,0 +1,119 @@
+{
+  "checkedAt": "2026-10-09T03:24:03.249Z",
+  "scope": "Actual isolated Chrome over local HTTP; four local runtimes; no production Docker execution. Includes actual file input handler and saved download bytes; all 16 local learning programs really executed.",
+  "checks": [
+    "per-language/topic drafts, reset recovery and reload persistence",
+    "import preserves backup and waits for explicit run",
+    "real file input/import, invalid UTF-8 preserves draft, mouse download matches code",
+    "syntax/runtime categories and manual stop ignores late results",
+    "token-free local suggestion retains explicit download consent",
+    {
+      "runtime": "javascript",
+      "topic": "variables",
+      "output": "Museum 2026"
+    },
+    {
+      "runtime": "javascript",
+      "topic": "loops",
+      "output": "55"
+    },
+    {
+      "runtime": "javascript",
+      "topic": "functions",
+      "output": "49"
+    },
+    {
+      "runtime": "javascript",
+      "topic": "collections",
+      "output": "6, 2, 4"
+    },
+    {
+      "runtime": "python",
+      "topic": "variables",
+      "output": "Museum 2026"
+    },
+    {
+      "runtime": "python",
+      "topic": "loops",
+      "output": "55"
+    },
+    {
+      "runtime": "python",
+      "topic": "functions",
+      "output": "49"
+    },
+    {
+      "runtime": "python",
+      "topic": "collections",
+      "output": "6, 2, 4"
+    },
+    {
+      "runtime": "lua",
+      "topic": "variables",
+      "output": "Museum\t2026"
+    },
+    {
+      "runtime": "lua",
+      "topic": "loops",
+      "output": "55"
+    },
+    {
+      "runtime": "lua",
+      "topic": "functions",
+      "output": "49"
+    },
+    {
+      "runtime": "lua",
+      "topic": "collections",
+      "output": "6, 2, 4"
+    },
+    {
+      "runtime": "scheme",
+      "topic": "variables",
+      "output": "Museum 2026\n"
+    },
+    {
+      "runtime": "scheme",
+      "topic": "loops",
+      "output": "55\n"
+    },
+    {
+      "runtime": "scheme",
+      "topic": "functions",
+      "output": "49\n"
+    },
+    {
+      "runtime": "scheme",
+      "topic": "collections",
+      "output": "6 2 4 \n"
+    },
+    "all four pairs in both themes at 1440/390/320, relation proof and matching lesson entry",
+    "blocked storage retains functioning editor and execution with accurate persistence notice"
+  ],
+  "inputs": {
+    "src/index.html": "3fae04738ff5d48cfd065f857016990f01514885bb215d8704729751816620ce",
+    "src/visit-counts.js": "18d075859b4c35fc68898097528e561ab62b3a5250c06668277c024ea19a5826",
+    "src/lab.js": "3546e888e2a594badc7dcb7bd7c06057edde66ff49fd8095c7e4c6a918fd0873",
+    "src/execution-modes.js": "b8ef7f67429e4d25535ef346612681e36cf996cdbcf5fb6fcde064ff93194738",
+    "src/lab-tools.js": "39ed684102cde09002d05f93675aa5f3500c31642e8c1075b93f50bf855b7236",
+    "src/draft-store.js": "a5c6185dd793fbf6195160c7cd9cb955b058573adeedcad3220a61dc07ef6db2",
+    "src/learning-examples.js": "f9a8ed5f0a4b07a57adfe7b06352a4dce51c14ba543cec02993fa064d3a1dc94",
+    "src/compare.js": "78902008c5cf68e16c19d7c06b01d3e954b644d0ab2448e5a0b10a455c144d92",
+    "src/museum.js": "9313643022be5e9e53af00125068dee0d0afdc674196f99f9ec96710b8c72651",
+    "src/museum.css": "f30a88e865f94e10e8294aa56e8cdbc5a05f271884e017e472ec3e3bfabe135e",
+    "src/themes.css": "df167e01d77e34c60e523f70264938726f4eff103bc469f2ecceaeca3f725eaf"
+  },
+  "servedInputs": {
+    "index.html": "3fae04738ff5d48cfd065f857016990f01514885bb215d8704729751816620ce",
+    "visit-counts.js": "18d075859b4c35fc68898097528e561ab62b3a5250c06668277c024ea19a5826",
+    "museum.js": "9313643022be5e9e53af00125068dee0d0afdc674196f99f9ec96710b8c72651",
+    "museum.css": "f30a88e865f94e10e8294aa56e8cdbc5a05f271884e017e472ec3e3bfabe135e",
+    "themes.css": "df167e01d77e34c60e523f70264938726f4eff103bc469f2ecceaeca3f725eaf",
+    "lab.js": "3546e888e2a594badc7dcb7bd7c06057edde66ff49fd8095c7e4c6a918fd0873",
+    "lab-tools.js": "39ed684102cde09002d05f93675aa5f3500c31642e8c1075b93f50bf855b7236",
+    "draft-store.js": "a5c6185dd793fbf6195160c7cd9cb955b058573adeedcad3220a61dc07ef6db2",
+    "learning-examples.js": "f9a8ed5f0a4b07a57adfe7b06352a4dce51c14ba543cec02993fa064d3a1dc94",
+    "compare.js": "78902008c5cf68e16c19d7c06b01d3e954b644d0ab2448e5a0b10a455c144d92",
+    "execution-modes.js": "b8ef7f67429e4d25535ef346612681e36cf996cdbcf5fb6fcde064ff93194738"
+  }
+}

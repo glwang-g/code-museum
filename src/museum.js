@@ -143,6 +143,7 @@ function activateTab(id){
   $('#catalogue').hidden=id!=='catalogue-view';
   $('#lab').hidden=id!=='lab-view';
   $('#about').hidden=id!=='sources-view';
+  $('#compare').hidden=id!=='compare-view';
   $('#river').setAttribute('aria-labelledby',id==='lineage-view'?'lineage-view':'timeline-view');
   for(const tab of document.querySelectorAll('.museum-tabs [role=tab]')){
     const active=tab.id===id;
@@ -175,6 +176,7 @@ $('#design-layer').onclick=()=>setRelationLayer('design');
 $('#ecosystem-layer').onclick=()=>setRelationLayer('ecosystem');
 $('#catalogue-view').onclick=()=>{showCatalogue();history.replaceState(null,'','#catalogue')};
 $('#lab-view').onclick=()=>{activateTab('lab-view');history.replaceState(null,'','#lab')};
+$('#compare-view').onclick=()=>{activateTab('compare-view');history.replaceState(null,'','#compare')};
 $('#sources-view').onclick=()=>{showSources();history.replaceState(null,'','#about')};
 $('.museum-tabs').addEventListener('keydown',event=>{
   const tabs=[...document.querySelectorAll('.museum-tabs [role=tab]')];
@@ -190,6 +192,7 @@ function restoreHashTab(){
   if(location.hash==='#catalogue')showCatalogue();
   else if(location.hash==='#lab')activateTab('lab-view');
   else if(location.hash==='#about')showSources();
+  else if(location.hash==='#compare')activateTab('compare-view');
   else if(location.hash==='#lineage')setView('lineage');
   else if(location.hash==='#river')setView('timeline');
 }
