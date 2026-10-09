@@ -41,7 +41,7 @@ GitHub 无法读回 xshow Secret 值；需要本机已有授权密钥或用户�
 
 Python 首次运行文件下载及初始化允许最多90秒；程序实际运行仍最多3秒。较慢网络可能达到加载预算，失败时显示真实错误并允许重试。
 
-接口检查同源 Origin、UUID、请求大小、内容类型；同一个 eventId 重复请求只计一次。SQLite WAL 事务持久化，同一标识重复加载增加 PV 不增加 UV。进程仅监听回环地址，Nginx 转发并限制频率；公开接口不提供统计查询。统计起始时间为2026-10-05 11:43:53（Asia/Shanghai）。是否公开展示累计数字仍待用户决定，当前管理员通过 SSH 查询：
+接口检查同源 Origin、UUID、请求大小、内容类型；同一个 eventId 重复请求只计一次。SQLite WAL 事务持久化，同一标识重复加载增加 PV 不增加 UV。进程仅监听回环地址，Nginx 转发并限制频率；`GET /api/visits` 公开返回累计 `uv`、`pv` 和 `startedAt`，不返回访客标识、事件列表或数据库路径。累计查询由服务端缓存30秒，前端成功读取后一分钟内不重复查询。统计起始时间为2026-10-05 11:43:53（Asia/Shanghai）。网站右上角主题按钮旁显示累计 UV/PV，点击可查看准确数字、起始日期和统计口径；接口不可用显示“—”，本地静态预览不伪造数字。管理员仍可通过 SSH 查询：
 
 ```sh
 sudo -u code-museum python3 /var/www/code-museum/current/server/analytics.py --report
@@ -74,3 +74,8 @@ sudo -u code-museum python3 /var/www/code-museum/current/server/analytics.py --b
 正式发布核验：实现提交 `2daa0e148811f5560e8cb940bbfca1adfc9aeb44` 已推送并激活，[Actions 37737054299](https://github.com/glwang-g/code-museum/actions/runs/37737054299) build/deploy均成功。正式HTTPS实际Chrome10项执行检查通过：Python/Ruby在1440/390两种宽度实际求和与stdin输出55/hello，Python语法错误，取消后恢复42，编辑不自动提交，默认无Pyodide下载，明确启用本地Pyodide后43，JavaScript/Lua/Scheme均实际输出42。13份线上页面/数据/Worker/运行时清单SHA与本地构建一致；宽窄屏截图已查看。记录见 [Docker与浏览器线上核验](../data/audit/executor-production-checks.json)。
 
 首次线上检查误用15秒等待本地Pyodide，页面当时仍在加载而非执行失败；脚本改为对齐网站90秒加载预算（95秒观察窗口），并修复关闭Chrome后临时目录删除的等待/重试，再完成全量10项。网站运行时本身未因这个脚本问题改动。原访问统计health204、统计与执行两个服务active；执行配置root-only600、root代码与固定镜像哈希一致。没有重新执行公开站点全地图遍历或原生Safari测试。
+
+
+## 2026-10-09 公共累计统计入口（本地实现）
+
+新增头部累计统计与只读GET接口。上线时除静态站点/统计服务正常发布外，需将既有 `/api/visits` Nginx location 的 `limit_except POST` 改为 `limit_except GET POST`（GET隐含允许HEAD）；不新增数据库、权限或访客字段。现有Actions不会自动修改生产Nginx，本轮尚未发布或更改服务器配置。仅上线前端会因GET被旧配置拒绝而显示统计不可用。

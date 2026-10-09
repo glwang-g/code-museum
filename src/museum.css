@@ -320,3 +320,16 @@ body:not(.lineage-focus) .atlas .relations path.field-edge{opacity:.12}
 #lab-runtime-retry{background:var(--panel);color:var(--ink);border:1px solid #526b71;border-radius:3px;padding:4px 7px;font-size:11px}
 .lab-runtime-state [hidden]{display:none}
 @media(max-width:650px){.lab-runtime-state{gap:5px 8px;padding:6px 0}#lab-state-detail{flex-basis:100%}}
+
+/* Global visit totals: secondary to the museum and available from every tab. */
+.header-tools{display:flex;align-items:center;gap:16px;min-width:0}
+.visit-counts{position:relative;font-size:12px;color:var(--muted)}
+.visit-counts summary{display:flex;gap:12px;cursor:pointer;list-style:none;white-space:nowrap;padding:5px 0;font-variant-numeric:tabular-nums}
+.visit-counts summary::-webkit-details-marker{display:none}
+.visit-counts summary:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:3px}
+.visit-counts b{color:var(--ink);font-weight:500}
+.visit-explanation{position:absolute;right:0;top:calc(100% + 8px);width:300px;max-width:calc(100vw - 24px);background:var(--panel);color:var(--muted);border:1px solid var(--line);border-radius:6px;padding:14px;box-shadow:0 6px 24px #0003;z-index:50;white-space:normal;line-height:1.6}
+.visit-explanation strong{color:var(--ink)}
+.visit-explanation p{margin:8px 0 0}
+@media(max-width:650px){header{gap:8px}.header-tools{gap:10px}.visit-counts{font-size:10px}.visit-counts summary{gap:7px}.visit-explanation{position:fixed;top:50px;right:12px}}
+@media(max-width:359px){header{height:68px;min-height:68px;flex-wrap:wrap;align-content:center;row-gap:0}.header-tools{margin-left:auto}.visit-explanation{top:72px}}

@@ -6,6 +6,8 @@ import json
 import os
 import re
 import sqlite3
+import threading
+import time
 from contextlib import closing
 from datetime import datetime, timezone
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
@@ -45,6 +47,18 @@ def report(database):
 
 
 def handler(database, origin):
+    totals_cache = {"at": 0, "value": None}
+    totals_lock = threading.Lock()
+
+    def public_totals():
+        # Cache aggregate scans; never expose visitor IDs or individual events.
+        with totals_lock:
+            now = time.monotonic()
+            if totals_cache["value"] is None or now - totals_cache["at"] >= 30:
+                totals = report(database)
+                totals_cache.update(at=now, value={key: totals[key] for key in ("uv", "pv", "startedAt")})
+            return totals_cache["value"]
+
     class Handler(BaseHTTPRequestHandler):
         def setup(self):
             super().setup()
@@ -60,7 +74,18 @@ def handler(database, origin):
             self.end_headers()
 
         def do_GET(self):
-            self.respond(204 if self.path == "/healthz" else 404)
+            if self.path != "/api/visits":
+                return self.respond(204 if self.path == "/healthz" else 404)
+            try:
+                body = json.dumps(public_totals(), ensure_ascii=False).encode("utf-8")
+            except sqlite3.Error:
+                return self.respond(503)
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json; charset=utf-8")
+            self.send_header("Cache-Control", "public, max-age=30")
+            self.send_header("Content-Length", str(len(body)))
+            self.end_headers()
+            self.wfile.write(body)
 
         def do_POST(self):
             if self.path != "/api/visits":

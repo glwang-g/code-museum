@@ -124,7 +124,7 @@ PLDB 的公开领域说明见 https://github.com/breck7/pldb/blob/main/readme.sc
 
 ## 服务端发布与访问量
 
-正式站点为 [codemuseum.freexlib.com](https://codemuseum.freexlib.com)，已配置 HTTPS。GitHub Actions 提供 master 分支测试、离线构建和独立 release 发布。生产域名累计 UV/PV 通过同域接口写入独立 SQLite，管理员可经 SSH 查询与备份。上线状态、发布方式和统计边界见 [部署说明](docs/DEPLOYMENT.md)。
+正式站点为 [codemuseum.freexlib.com](https://codemuseum.freexlib.com)，已配置 HTTPS。GitHub Actions 提供 master 分支测试、离线构建和独立 release 发布。生产域名累计 UV/PV 通过同域接口写入独立 SQLite，网站右上角主题按钮旁展示累计 UV/PV，点击可查看统计口径与起始日期；接口不可用时显示“—”。管理员可经 SSH 查询与备份。上线状态、发布方式和统计边界见 [部署说明](docs/DEPLOYMENT.md)。
 
 ## 开源项目与致谢
 
