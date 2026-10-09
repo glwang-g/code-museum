@@ -1,0 +1,140 @@
+{
+  "servedInputs": {
+    "index.html": "ec338f60594b44179f8e45bede7a760029e1ab4b6bef984cf5bc68b8b4f5ad90",
+    "museum.css": "f35c3f4dc17a3d8d3f192eb343db1bff5ce0b3ff85443a18c6293a54e0cbe957",
+    "service-status.js": "5a313ac642c627e4b942088d4e4238c38b17dbbdfd96ee9a9906ec3a6df67f78",
+    "learning-guide.js": "2ec1c367d7baeefa9e46dd006135e916b471b91303828449e0357019b78c3332",
+    "data/learning-paths.json": "ecb1ae8449352a4f3ebfccee925d658e09807c83c89b643118c9a83c6f009aa9",
+    "museum.js": "9313643022be5e9e53af00125068dee0d0afdc674196f99f9ec96710b8c72651",
+    "lab.js": "3546e888e2a594badc7dcb7bd7c06057edde66ff49fd8095c7e4c6a918fd0873",
+    "execution-config.js": "4ed993efee2456e3cc0b0aa3767081211bb5b5509204eed6bea3c4ab5fa883e0",
+    "execution-modes.js": "f24cc9c8102c128c8fb037f91a292cf9532fc69d31f33728cbc00fb8b51b0516",
+    "data/relationship-status.json": "f826ca70c8832483bb8f962dfd1022a9959d76828add52dd1721ea46bf1cbe16",
+    "lab-worker.js": "d2f568c2087c77f9cd211a9e4c01478f1e8da07a088b29831f9d116762987371",
+    "lua-worker.js": "19bf8689ad12082ac10e15a4c099d2171afdfffc81397c5910d7879c2895283c",
+    "scheme-worker.js": "edd85647e32de729a794e1fb3c49135fefc7d24ec7a0437247570e6cf3bac360",
+    "assets/lua/manifest.json": "d803bb6f5b36551703c7d00e63cb5be50f2795fc050d2edacbd7f6f872e914f2",
+    "assets/scheme/manifest.json": "2736ddf2f4a037f868630473dfc9fd21d42b276fad5e6fdc252890cc4b48b390",
+    "assets/pyodide/manifest.json": "3dbcea8d0957a60a80c84966832a201d06aeb190d77b6491d7d50577b65ec3a4"
+  },
+  "checkedAt": "2026-10-09T12:08:37.664Z",
+  "browser": "Chrome/154.0.8037.98",
+  "scope": "Actual Chrome over production HTTPS with private token to persistent Docker runc service. Tokens, sessions and job IDs omitted; no anonymous execution or escape proof.",
+  "checks": [
+    {
+      "name": "Actual HTTP MCP initialize, five read-only tools, notifications, protocol/Accept/method rejection and separated credentials",
+      "passed": true
+    },
+    {
+      "name": "Actual Docker terminal task updates authenticated persistent aggregates and explicit status UI",
+      "passed": true
+    },
+    {
+      "name": "All guide steps, previous/end, bounded layout and no implicit execution/download",
+      "route": "c-lineage",
+      "width": 1440,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "All guide steps, previous/end, bounded layout and no implicit execution/download",
+      "route": "function-expressions",
+      "width": 1440,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "All guide steps, previous/end, bounded layout and no implicit execution/download",
+      "route": "python-rust-go",
+      "width": 1440,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "All guide steps, previous/end, bounded layout and no implicit execution/download",
+      "route": "c-lineage",
+      "width": 1440,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "All guide steps, previous/end, bounded layout and no implicit execution/download",
+      "route": "function-expressions",
+      "width": 1440,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "All guide steps, previous/end, bounded layout and no implicit execution/download",
+      "route": "python-rust-go",
+      "width": 1440,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "All guide steps, previous/end, bounded layout and no implicit execution/download",
+      "route": "c-lineage",
+      "width": 390,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "All guide steps, previous/end, bounded layout and no implicit execution/download",
+      "route": "function-expressions",
+      "width": 390,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "All guide steps, previous/end, bounded layout and no implicit execution/download",
+      "route": "python-rust-go",
+      "width": 390,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "All guide steps, previous/end, bounded layout and no implicit execution/download",
+      "route": "c-lineage",
+      "width": 390,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "All guide steps, previous/end, bounded layout and no implicit execution/download",
+      "route": "function-expressions",
+      "width": 390,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "All guide steps, previous/end, bounded layout and no implicit execution/download",
+      "route": "python-rust-go",
+      "width": 390,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Guide resume saves navigation only, no execution on refresh; missing-token status fails honestly",
+      "passed": true
+    }
+  ],
+  "inputs": {
+    "server/executor.py": "615e2fe15ce4e6c50ad7dcdde32f552af08e04832a0ed74cc06b6e305032c2fa",
+    "server/observability.py": "72f41c17fdcbeffbe3c07549da20fd1cf4f5d953f92ab30c78c2e4a6442092a6",
+    "server/mcp.py": "e759c15caa7e944daa91b99c3a529a31c4f917150cc609d7e22d458acbabda8c",
+    "server/mcp_http.py": "6766f9088fc4efc2c300bd721a1b0e73e98e271ba3bbac76f5e7b61f49596021",
+    "scripts/platform-browser-checks.cjs": "6b583b2108f9ba246453b6e4658b053ea69051b584458499791c7de79f127786",
+    "data/learning-paths.json": "ecb1ae8449352a4f3ebfccee925d658e09807c83c89b643118c9a83c6f009aa9",
+    "src/service-status.js": "5a313ac642c627e4b942088d4e4238c38b17dbbdfd96ee9a9906ec3a6df67f78",
+    "src/learning-guide.js": "2ec1c367d7baeefa9e46dd006135e916b471b91303828449e0357019b78c3332",
+    "server/runtime-images.json": "4782d1897554fbd51bec739d5f1bcdac71289c09a28d7432019f9ef97f7c1ccc",
+    "scripts/serve.cjs": "0a944f08f9af108f046e4255edb1ad26b7f9be3bf4694f8119e4a3bef8d1f64f",
+    "scripts/executor-preview.cjs": "1c889ad66218b5c5ee2ca5bb6823e1833b03b298de4855aba05bbdd7c1ecbe19",
+    "scripts/check-executor-browser.cjs": "be8cde149c96bcef167387d68d91911b243ca02eaf9e068d4e4dca2dbe9701db",
+    "src/index.html": "ec338f60594b44179f8e45bede7a760029e1ab4b6bef984cf5bc68b8b4f5ad90",
+    "src/lab.js": "3546e888e2a594badc7dcb7bd7c06057edde66ff49fd8095c7e4c6a918fd0873",
+    "src/museum.css": "f35c3f4dc17a3d8d3f192eb343db1bff5ce0b3ff85443a18c6293a54e0cbe957",
+    "src/execution-config.js": "4ed993efee2456e3cc0b0aa3767081211bb5b5509204eed6bea3c4ab5fa883e0",
+    "src/execution-modes.js": "f24cc9c8102c128c8fb037f91a292cf9532fc69d31f33728cbc00fb8b51b0516"
+  }
+}

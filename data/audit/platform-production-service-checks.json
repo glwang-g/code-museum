@@ -1,0 +1,28 @@
+{
+  "checks": [
+    "Anonymous MCP/execution and swapped credentials rejected over HTTPS",
+    "HTTPS HTTP method, Origin, protocol, Accept, notifications and initialize verified",
+    "HTTPS read-only tool search_languages",
+    "HTTPS read-only tool get_language",
+    "HTTPS read-only tool get_lineage",
+    "HTTPS read-only tool get_relationship",
+    "HTTPS read-only tool get_execution_capabilities",
+    "Private persistent aggregate status and execution-tool rejection verified",
+    "Installed source hashes, private DB permissions, services and zero executor containers verified"
+  ],
+  "installedInputs": {
+    "executor.py": "615e2fe15ce4e6c50ad7dcdde32f552af08e04832a0ed74cc06b6e305032c2fa",
+    "observability.py": "72f41c17fdcbeffbe3c07549da20fd1cf4f5d953f92ab30c78c2e4a6442092a6",
+    "mcp.py": "e759c15caa7e944daa91b99c3a529a31c4f917150cc609d7e22d458acbabda8c",
+    "mcp_http.py": "6766f9088fc4efc2c300bd721a1b0e73e98e271ba3bbac76f5e7b61f49596021",
+    "runtime-images.json": "4782d1897554fbd51bec739d5f1bcdac71289c09a28d7432019f9ef97f7c1ccc"
+  },
+  "metricsStartedAt": "2026-10-09T12:06:17.912975+00:00",
+  "visits": {
+    "uv": 10,
+    "pv": 23,
+    "startedAt": "2026-10-05T03:43:53.001398+00:00"
+  },
+  "checkedAt": "2026-10-09T12:08:11.827597+00:00",
+  "scope": "Actual production HTTPS from administrator SSH session; no execution task submitted; no credentials, session or job IDs recorded."
+}

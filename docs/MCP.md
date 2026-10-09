@@ -73,3 +73,5 @@ SSH 使用本机既有身份；客户端连接结束时进程退出。查询能�
 只读令牌为执行密钥作为HMAC-SHA256密钥、固定用途字节`code-museum-readonly-mcp-v1`作为消息的十六进制结果（`server/mcp_http.py:readonly_token`）。管理员可在SSH终端读取root-only配置并在本机私有客户端设置中保存派生值；避免粘贴到仓库、日志或截图。无需新增服务端secret文件，轮换执行令牌也会使旧只读令牌失效。派生值不能反推出执行密钥；只读凭据不能用于执行API，执行令牌也不能直接用于MCP。只读令牌不限制某个馆藏子集，获授权持有者可以查询全馆只读数据。
 
 HTTP与现有执行器共用进程、线程上限、账号及Docker健康启动条件，不是独立高可用查询服务。当前release链接或manifest变化时重新加载并校验四份数据；加载失败返回503，不回退旧数据。release内文件按不可变部署管理，缓存不会逐请求重读所有输入。来源范围、配置能力与史料限制仍适用上文。
+
+2026-10-09已完成生产安装及HTTPS核验，`https://codemuseum.freexlib.com/mcp`现已生效，仍需独立只读Bearer。五工具及凭据隔离实际检查记录见`data/audit/platform-production-service-checks.json`；发布备份和运行依赖见DEPLOYMENT.md。
