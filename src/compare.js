@@ -32,5 +32,6 @@
   $('compare-preset').onchange=()=>{const [left,right]=$('compare-preset').value.split(',');if(!left||!right)return;$('compare-left').value=left;$('compare-right').value=right;render()};
   $('compare-swap').onclick=()=>{const left=$('compare-left').value;$('compare-left').value=$('compare-right').value;$('compare-right').value=left;render()};
   document.addEventListener('museum-execution-change',render);
+  window.MUSEUM_COMPARE={open(left,right,topic){if(!data.languages[left]||!data.languages[right]||!data.topics.some(t=>t.id===topic))return;$('compare-left').value=left;$('compare-right').value=right;$('compare-topic').value=topic;render();$('compare-view').click()}};
   render();
 })();

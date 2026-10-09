@@ -1,0 +1,135 @@
+{
+  "schemaVersion": 1,
+  "scope": "Guided reading and original exercises; progress is navigation only, not a correctness or mastery assessment.",
+  "routes": [
+    {
+      "id": "c-lineage",
+      "title": "C 的来处与分支",
+      "description": "沿 BCPL、B、C 的原文依据，再比较 C 与 C++。",
+      "steps": [
+        {
+          "title": "从 BCPL 开始",
+          "note": "先读档案中的年代口径和历史原文；档案有出处不等于馆内可运行。",
+          "action": "archive",
+          "language": "bcpl"
+        },
+        {
+          "title": "BCPL 如何影响 B",
+          "note": "阅读设计者原文，留意为什么不能简单称为严格超集。",
+          "action": "proof",
+          "key": "bcpl|b|influencedBy"
+        },
+        {
+          "title": "从 B 到 C",
+          "note": "看看 Ritchie 对设计演变的描述，再观察图中的前序与后序。",
+          "action": "proof",
+          "key": "b|c|influencedBy"
+        },
+        {
+          "title": "同一道函数题：C 与 C++",
+          "note": "比较参数、返回值和输出写法；C++并非严格兼容所有C程序。",
+          "action": "compare",
+          "left": "c",
+          "right": "cpp",
+          "topic": "functions"
+        },
+        {
+          "title": "自己改写一个 C 循环",
+          "note": "把终点10改成5，预期累加值15。点击运行才上传；远端需要私有令牌。",
+          "action": "lesson",
+          "language": "c",
+          "topic": "loops"
+        }
+      ]
+    },
+    {
+      "id": "function-expressions",
+      "title": "函数可以怎样表达",
+      "description": "从 Lisp 与 Scheme 的设计依据，到 Lua 和 JavaScript 的同题练习。",
+      "steps": [
+        {
+          "title": "Lisp 的历史入口",
+          "note": "阅读历史语言档案；不要把整个语言家族等同于某一个实现。",
+          "action": "archive",
+          "language": "lisp"
+        },
+        {
+          "title": "Lisp 与 Scheme",
+          "note": "打开原文摘录，理解精简设计与词法作用域。",
+          "action": "proof",
+          "key": "lisp|scheme|influencedBy"
+        },
+        {
+          "title": "Lua 与 Scheme 的函数",
+          "note": "同题比较不是继承证明；已记录的关系可在对比页另读依据。",
+          "action": "compare",
+          "left": "lua",
+          "right": "scheme",
+          "topic": "functions"
+        },
+        {
+          "title": "改写 Scheme 平方函数",
+          "note": "把输入7改成9，预期81；本地解释器需你明确下载并启用。",
+          "action": "lesson",
+          "language": "scheme",
+          "topic": "functions"
+        },
+        {
+          "title": "再用 JavaScript 写一遍",
+          "note": "同样把输入改成9；浏览器原生执行，无需下载运行时。观察返回值写法。",
+          "action": "lesson",
+          "language": "javascript",
+          "topic": "functions"
+        }
+      ]
+    },
+    {
+      "id": "python-rust-go",
+      "title": "Python、Rust、Go 怎么运行",
+      "description": "区分设计关系、表达方式、解释器与编译环境。",
+      "steps": [
+        {
+          "title": "Python 的设计来处",
+          "note": "先看ABC对缩进和高层数据类型的具体影响，不把CPython用C实现当成语言继承。",
+          "action": "proof",
+          "key": "abc|python|influencedBy"
+        },
+        {
+          "title": "Python 变量与输出",
+          "note": "远端需要令牌；也可主动切本地并下载Pyodide。导览不会替你启用环境。",
+          "action": "lesson",
+          "language": "python",
+          "topic": "variables"
+        },
+        {
+          "title": "Python 与 Rust 的集合",
+          "note": "比较同题表达，不表示两门语言直接继承。注意静态类型和集合转换。",
+          "action": "compare",
+          "left": "python",
+          "right": "rust",
+          "topic": "collections"
+        },
+        {
+          "title": "Rust 的一个设计参照",
+          "note": "阅读C++→Rust已记录关系的具体范围；影响不代表兼容或后继。",
+          "action": "proof",
+          "key": "cpp|rust|influencedBy"
+        },
+        {
+          "title": "运行 Rust 函数",
+          "note": "把7改成9，预期81；分别观察编译诊断、程序输出和耗时。",
+          "action": "lesson",
+          "language": "rust",
+          "topic": "functions"
+        },
+        {
+          "title": "对照 Go 的循环",
+          "note": "把终点10改成5，预期15；Go会先编译再执行，每次使用独立环境。",
+          "action": "lesson",
+          "language": "go",
+          "topic": "loops"
+        }
+      ]
+    }
+  ]
+}

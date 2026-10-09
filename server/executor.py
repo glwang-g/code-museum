@@ -14,6 +14,9 @@ import sys
 import threading
 import time
 import uuid
+import datetime
+from observability import Metrics
+from mcp_http import MuseumProvider, readonly_token, handle as handle_mcp
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 
@@ -276,7 +279,10 @@ class DockerRunner:
 
 
 class Manager:
-    def __init__(self, runner):
+    def __init__(self, runner, metrics=None):
+        self.metrics = metrics or Metrics()
+        self.started = time.monotonic()
+        self.started_at = datetime.datetime.now(datetime.timezone.utc).isoformat()
         self.runner, self.jobs = runner, {}
         self.lock = threading.Condition()
         self.pending = collections.deque()
@@ -310,7 +316,7 @@ class Manager:
                 job['cancel'].set()
                 if job['state'] == 'queued':
                     job['queueMs'] = round((time.monotonic() - job['updated']) * 1000)
-                    self.pending.remove(job);job['state'] = 'cancelled';job.pop('code', None);job.pop('stdin', None)
+                    self.pending.remove(job);job['state'] = 'cancelled';self.metrics.record(job);job.pop('code', None);job.pop('stdin', None)
                 job['updated'] = time.monotonic()
             return self.public(job)
 
@@ -323,32 +329,45 @@ class Manager:
                 job['queueMs'] = round((time.monotonic() - job['updated']) * 1000)
                 if not self.runner.healthy:
                     job.update(state='infrastructure_error', stderr='Runner disabled', updated=time.monotonic())
-                    job.pop('code', None);job.pop('stdin', None);continue
+                    self.metrics.record(job);job.pop('code', None);job.pop('stdin', None);continue
                 if time.monotonic() - job['updated'] > 30:
                     job.update(state='cancelled', stderr='Queue wait exceeded 30 seconds')
-                    job.pop('code', None);job.pop('stdin', None);continue
+                    self.metrics.record(job);job.pop('code', None);job.pop('stdin', None);continue
                 job['state'] = 'running'
             try: result = self.runner.execute(job)
             except Exception: result = {'state': 'infrastructure_error', 'stderr': 'Runner failed'};self.runner.healthy = False
             with self.lock:
-                job.update(result, updated=time.monotonic());job.pop('code', None);job.pop('stdin', None)
+                job.update(result, updated=time.monotonic());self.metrics.record(job);job.pop('code', None);job.pop('stdin', None)
+
+    def status(self):
+        with self.lock:
+            return {'checkedAt':datetime.datetime.now(datetime.timezone.utc).isoformat(),'available':self.runner.healthy and not self.stopping,'processStartedAt':self.started_at,'uptimeSeconds':round(time.monotonic()-self.started),'queue':len(self.pending),'active':sum(j['state'] in ('compiling','running') for j in self.jobs.values()),'metrics':self.metrics.snapshot()}
 
     def stop(self):
         with self.lock:
             self.stopping = True
-            for job in self.jobs.values(): job['cancel'].set()
+            for job in self.jobs.values():
+                job['cancel'].set()
+                if job['state']=='queued':
+                    job.update(state='cancelled',queueMs=round((time.monotonic()-job['updated'])*1000))
+                    self.metrics.record(job);job.pop('code',None);job.pop('stdin',None)
+            self.pending.clear()
             self.lock.notify_all()
         self.worker.join(timeout=60)
 
 
-def handler(manager, token, origin):
+def handler(manager, token, origin, museum_provider=None):
+    museum_provider = museum_provider or MuseumProvider(None)
+    mcp_token = readonly_token(token)
     class Handler(BaseHTTPRequestHandler):
         def setup(self):
             super().setup();self.connection.settimeout(5)
         def log_message(self, *args): pass
-        def respond(self, status, data):
-            payload = json.dumps(data, ensure_ascii=True).encode()
-            self.send_response(status);self.send_header('Content-Type', 'application/json');self.send_header('Cache-Control', 'no-store');self.send_header('Content-Length', str(len(payload)));self.end_headers()
+        def respond(self, status, data, headers=None):
+            payload = b'' if data is None else json.dumps(data, ensure_ascii=True).encode()
+            self.send_response(status);self.send_header('Content-Type', 'application/json');self.send_header('Cache-Control', 'no-store');self.send_header('Content-Length', str(len(payload)))
+            for key,value in (headers or {}).items(): self.send_header(key,value)
+            self.end_headers()
             try: self.wfile.write(payload)
             except (BrokenPipeError, OSError): pass
         def owner(self):
@@ -358,12 +377,18 @@ def handler(manager, token, origin):
             if not auth.isascii() or not hmac.compare_digest(auth, 'Bearer ' + token) or not re.fullmatch('[a-f0-9]{32}', session): return None
             return hashlib.sha256((token + ':' + session).encode()).hexdigest()
         def do_GET(self):
+            if self.path == '/mcp': return handle_mcp(self,museum_provider,mcp_token,origin)
+            if self.path == '/api/executor-status':
+                if not self.owner(): return self.respond(401, {'error':'Private execution token/session required'})
+                return self.respond(200, manager.status())
             if self.path == '/api/runtimes':
                 return self.respond(200, {'private': True, 'available': manager.runner.healthy,
                     'runtimes': [{**{k: r[k] for k in ('id', 'version', 'memoryMiB', 'source')}, 'compileSeconds': COMPILED[r['id']][3] if r['id'] in COMPILED else 0, 'runSeconds':3} for r in manager.runner.runtimes.values()],
                     'limits': {'seconds': 3, 'outputBytes': MAX_OUTPUT, 'concurrency': 1, 'network': False}})
             return self.job(False)
-        def do_DELETE(self): return self.job(True)
+        def do_DELETE(self):
+            if self.path == '/mcp': return handle_mcp(self,museum_provider,mcp_token,origin)
+            return self.job(True)
         def job(self, cancel):
             owner = self.owner()
             if not owner: return self.respond(401, {'error': 'Private execution token/session required'})
@@ -371,6 +396,7 @@ def handler(manager, token, origin):
             job = manager.get(match[1], owner, cancel) if match else None
             return self.respond(200 if job else 404, job or {'error': 'Job not found'})
         def do_POST(self):
+            if self.path == '/mcp': return handle_mcp(self,museum_provider,mcp_token,origin)
             if self.path != '/api/executions': return self.respond(404, {'error': 'Not found'})
             owner = self.owner()
             if not owner: return self.respond(401, {'error': 'Private execution token/session required'})
@@ -405,6 +431,8 @@ class BoundedServer(ThreadingHTTPServer):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--images', default=str(Path(__file__).with_name('runtime-images.json')))
+    parser.add_argument('--metrics-db')
+    parser.add_argument('--museum-data')
     parser.add_argument('--port', type=int, default=4181)
     parser.add_argument('--origin', default='http://127.0.0.1:4173')
     parser.add_argument('--runtime', choices=['runc', 'runsc'], default='runc')
@@ -434,8 +462,8 @@ def main():
     lock = os.fdopen(os.open(os.environ.get('EXECUTOR_LOCK', lock_path), os.O_CREAT | os.O_RDWR | os.O_NOFOLLOW, 0o600), 'a')
     fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
     runner = DockerRunner(load_runtimes(args.images), args.runtime,args.namespace);runner.verify()
-    manager = Manager(runner)
-    server = BoundedServer(('127.0.0.1', args.port), handler(manager, token, args.origin))
+    manager = Manager(runner,Metrics(args.metrics_db))
+    server = BoundedServer(('127.0.0.1', args.port), handler(manager, token, args.origin,MuseumProvider(args.museum_data)))
     def shutdown(*_): threading.Thread(target=server.shutdown, daemon=True).start()
     signal.signal(signal.SIGTERM, shutdown);signal.signal(signal.SIGINT, shutdown)
     print('Private executor listening on 127.0.0.1:' + str(args.port), flush=True)

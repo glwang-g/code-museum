@@ -11,7 +11,7 @@ Group=code-museum-executor
 SupplementaryGroups=docker
 WorkingDirectory=/opt/code-museum-executor
 EnvironmentFile=/etc/code-museum-executor/private.env
-ExecStart=/usr/bin/python3 /opt/code-museum-executor/executor.py --port 4181 --origin https://codemuseum.freexlib.com
+ExecStart=/usr/bin/python3 /opt/code-museum-executor/executor.py --port 4181 --origin https://codemuseum.freexlib.com --metrics-db /var/lib/code-museum-executor/metrics.sqlite --museum-data /var/www/code-museum/current/dist/data
 Restart=on-failure
 RestartSec=5
 TimeoutStopSec=65
@@ -20,7 +20,7 @@ NoNewPrivileges=true
 ProtectSystem=strict
 ProtectHome=true
 # Production singleton lock. Tests/previews now use distinct namespaces and locks.
-ReadWritePaths=/tmp
+ReadWritePaths=/tmp /var/lib/code-museum-executor
 
 [Install]
 WantedBy=multi-user.target

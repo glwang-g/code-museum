@@ -11,21 +11,31 @@ payload=json.loads(sys.stdin.buffer.readline())
 directory=Path(tempfile.mkdtemp(prefix='code-museum-private-preview-'))
 process=None
 try:
- for name,source in payload['files'].items(): (directory/name).write_text(source)
+ for name,source in payload['files'].items():
+  target=directory/name;target.parent.mkdir(parents=True,exist_ok=True);target.write_text(source)
  namespace='preview-'+secrets.token_hex(6)
  env=dict(os.environ,EXECUTOR_TOKEN=payload['token'],EXECUTOR_LOCK=str(directory/'executor.lock'))
- process=subprocess.Popen(['python3',str(directory/'executor.py'),'--namespace',namespace,'--port',str(payload['port']),'--origin',payload['origin']],env=env,stdout=subprocess.DEVNULL)
- for i in range(100):
-  if process.poll() is not None: raise RuntimeError('Executor startup failed')
-  try:
-   with urllib.request.urlopen('http://127.0.0.1:'+str(payload['port'])+'/api/runtimes',timeout=1) as r:
-    if r.status==200: break
-  except OSError: time.sleep(.1)
- else: raise RuntimeError('Executor startup timeout')
+ def launch():
+  global process
+  process=subprocess.Popen(['python3',str(directory/'executor.py'),'--namespace',namespace,'--port',str(payload['port']),'--origin',payload['origin'],'--metrics-db',str(directory/'metrics.sqlite'),'--museum-data',str(directory/'data')],env=env,stdout=subprocess.DEVNULL)
+  for i in range(100):
+   if process.poll() is not None: raise RuntimeError('Executor startup failed')
+   try:
+    with urllib.request.urlopen('http://127.0.0.1:'+str(payload['port'])+'/api/runtimes',timeout=1) as r:
+     if r.status==200: break
+   except OSError: time.sleep(.1)
+  else: raise RuntimeError('Executor startup timeout')
+  return process
+ process=launch()
  print('READY',flush=True)
  with selectors.DefaultSelector() as selector:
   selector.register(sys.stdin,selectors.EVENT_READ)
-  selector.select(1800)
+  deadline=time.monotonic()+1800
+  while time.monotonic()<deadline and selector.select(max(0,deadline-time.monotonic())):
+   action=sys.stdin.readline().strip()
+   if not action: break
+   if action=='RESTART':
+    process.terminate();process.wait(timeout=60);process=launch();print('RESTARTED',flush=True)
 finally:
  if process and process.poll() is None:
   process.terminate()
@@ -50,10 +60,15 @@ async function startPreview({host='xshow',port=4174,token=process.env.EXECUTOR_T
    ssh.once('error',e=>{clearTimeout(timer);no(e)});
    ssh.once('exit',()=>{clearTimeout(timer);if(!ready)no(new Error('SSH executor failed: '+errors))});
    let output='';ssh.stdout.on('data',c=>{output+=c;if(output.includes('READY')){ready=true;clearTimeout(timer);ok()}});
-   ssh.stdin.write(JSON.stringify({token,port:remotePort,origin,files:Object.fromEntries(['executor.py','runtime-images.json'].map(f=>[f,fs.readFileSync(path.join(root,'server',f),'utf8')]))})+'\n');
+   ssh.stdin.write(JSON.stringify({token,port:remotePort,origin,files:Object.fromEntries([...['executor.py','runtime-images.json','observability.py','mcp.py','mcp_http.py'].map(f=>[f,fs.readFileSync(path.join(root,'server',f),'utf8')]),...['catalogue.json','audit-reviews.json','relationship-status.json','execution-capabilities.json','mcp-manifest.json'].map(f=>['data/'+f,fs.readFileSync(path.join(root,'dist/data',f),'utf8')])])})+'\n');
   });
   ssh.once('exit',()=>{server.closeAllConnections();server.close()});
-  return {origin,stop};
+  const restart=()=>new Promise((ok,no)=>{
+   let received='';const timer=setTimeout(()=>{ssh.stdout.off('data',listen);no(new Error('Preview restart timeout'))},75000);
+   function listen(chunk){received+=chunk;if(received.includes('RESTARTED')){clearTimeout(timer);ssh.stdout.off('data',listen);ok()}}
+   ssh.stdout.on('data',listen);ssh.stdin.write('RESTART\n');
+  });
+  return {origin,stop,restart};
  }catch(e){await stop();throw e}
 }
 module.exports={startPreview};

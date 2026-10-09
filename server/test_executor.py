@@ -71,6 +71,10 @@ class ExecutorTests(unittest.TestCase):
             self.assertNotIn('owner',manager.get(first['id'],'owner-a'))
             self.assertGreaterEqual(manager.get(first['id'],'owner-a')['queueMs'],0)
             self.assertEqual(runner.maximum,1)
+            self.assertEqual(manager.status()['metrics']['total'],2)
+            manager.get(second['id'],'owner-a',True)
+            manager.stop()
+            self.assertEqual(manager.status()['metrics']['total'],2)
         finally: runner.gate.set();manager.stop()
 
     def test_bounded_queue_rate_and_fail_closed(self):

@@ -393,3 +393,24 @@ body:not(.lineage-focus) .atlas .relations path.field-edge{opacity:.12}
   .lab-output:has(.lab-compiler[open]){min-height:340px;flex-basis:auto}
   .lab-output .lab-compiler[open]{max-height:160px}
 }
+
+.lab-service-health{font-size:12px;max-width:100%}
+.lab-service-health summary{cursor:pointer;color:var(--gold);padding:5px 0}
+.lab-service-health[open]{flex-basis:100%;padding:8px;border:1px solid var(--line)}
+.lab-service-health p{font-size:12px;line-height:1.7;margin:6px 0;color:var(--muted)}
+
+.learning-paths{border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:14px}
+.learning-paths h3,.learning-paths h4{margin:0 0 6px;color:var(--gold)}
+.learning-paths p{font-size:12px;color:var(--muted);line-height:1.6}
+#learning-path-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+#learning-path-cards article{padding:10px;border:1px solid var(--line);background:var(--panel)}
+.learning-guide{flex:none;display:flex;align-items:center;justify-content:space-between;gap:10px;border:1px solid var(--line);padding:8px 12px;background:var(--panel)}
+.learning-guide strong{font-size:12px;color:var(--gold)}
+#guide-progress{font-size:11px;margin-left:8px;color:var(--muted)}
+.learning-guide p{font-size:11px;line-height:1.5;margin:3px 0;color:var(--muted)}
+.guide-actions{flex:none;display:flex;gap:5px;flex-wrap:wrap}
+.learning-guide button,.learning-paths button{background:var(--panel);color:var(--ink);border:1px solid var(--line);padding:5px 8px;font-size:11px;cursor:pointer}
+.learning-guide button:disabled{opacity:.4;cursor:default}
+@media(max-width:650px){#learning-path-cards{grid-template-columns:1fr}.learning-guide{display:block}.guide-actions{margin-top:6px}}
+
+.learning-guide[hidden]{display:none}
