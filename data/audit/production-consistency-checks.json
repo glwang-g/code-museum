@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-09T14:40:59.229Z",
+  "origin": "https://codemuseum.freexlib.com",
+  "scope": "Read-only HTTP metadata check; no execution, source upload, token, session, or job ID.",
+  "pass": true,
+  "errors": [],
+  "local": {
+    "runtimeManifest": [
+      {
+        "id": "c",
+        "version": "gcc (GCC) 14.3.0",
+        "memoryMiB": 512,
+        "source": "https://hub.docker.com/_/gcc",
+        "compileSeconds": 10,
+        "runSeconds": 3
+      },
+      {
+        "id": "cpp",
+        "version": "g++ (GCC) 14.3.0",
+        "memoryMiB": 512,
+        "source": "https://hub.docker.com/_/gcc",
+        "compileSeconds": 10,
+        "runSeconds": 3
+      },
+      {
+        "id": "go",
+        "version": "go version go1.27.2 linux/amd64",
+        "memoryMiB": 768,
+        "source": "https://hub.docker.com/_/golang",
+        "compileSeconds": 30,
+        "runSeconds": 3
+      },
+      {
+        "id": "java",
+        "version": "javac 17.0.20.1",
+        "memoryMiB": 768,
+        "source": "https://hub.docker.com/_/eclipse-temurin",
+        "compileSeconds": 15,
+        "runSeconds": 3
+      },
+      {
+        "id": "python",
+        "version": "Python 3.13.16",
+        "memoryMiB": 256,
+        "source": "https://hub.docker.com/_/python",
+        "compileSeconds": 0,
+        "runSeconds": 3
+      },
+      {
+        "id": "ruby",
+        "version": "ruby 3.4.11 (2026-09-23 revision 592f1ffdb3) +PRISM [x86_64-linux]",
+        "memoryMiB": 512,
+        "source": "https://hub.docker.com/_/ruby",
+        "compileSeconds": 0,
+        "runSeconds": 3
+      },
+      {
+        "id": "rust",
+        "version": "rustc 1.99.0 (b940084d7 2026-09-28)",
+        "memoryMiB": 768,
+        "source": "https://hub.docker.com/_/rust",
+        "compileSeconds": 15,
+        "runSeconds": 3
+      }
+    ],
+    "limits": {
+      "seconds": 3,
+      "outputBytes": 32768,
+      "concurrency": 1,
+      "network": false
+    },
+    "relationshipSummary": {
+      "labels": 50,
+      "relations": 427,
+      "mapDesignGaps": 4,
+      "states": {
+        "excerpt-recorded": 94,
+        "field-only": 333
+      },
+      "warnings": 5
+    }
+  },
+  "remote": {
+    "available": true,
+    "runtimeCount": 7,
+    "limits": {
+      "seconds": 3,
+      "outputBytes": 32768,
+      "concurrency": 1,
+      "network": false
+    }
+  },
+  "fileChecks": {
+    "data/provenance.json": {
+      "httpStatus": 200,
+      "remoteSha256": "ddc28105302a0c07e9721b04e70a5ae0ca1484ff048daf0c52b2a0e93fbddaf0",
+      "localSha256": "ddc28105302a0c07e9721b04e70a5ae0ca1484ff048daf0c52b2a0e93fbddaf0",
+      "matchesLocal": true
+    },
+    "data/relationship-status.json": {
+      "httpStatus": 200,
+      "remoteSha256": "f826ca70c8832483bb8f962dfd1022a9959d76828add52dd1721ea46bf1cbe16",
+      "localSha256": "f826ca70c8832483bb8f962dfd1022a9959d76828add52dd1721ea46bf1cbe16",
+      "matchesLocal": true
+    },
+    "data/execution-capabilities.json": {
+      "httpStatus": 200,
+      "remoteSha256": "ea780923a031cd0e2c4eb83b6b7c9bce8ba45aae02106dd767867cd8e63ab612",
+      "localSha256": "ea780923a031cd0e2c4eb83b6b7c9bce8ba45aae02106dd767867cd8e63ab612",
+      "matchesLocal": true
+    }
+  }
+}

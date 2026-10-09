@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-10-09T14:40:44.515Z",
+  "scope": "Offline inventory of existing evidence gaps; it does not add or infer historical relationships.",
+  "counts": {
+    "relationships": 427,
+    "reviews": 85,
+    "reviewedSources": 193
+  },
+  "relationGaps": {
+    "fieldOnly": 333,
+    "excerptRecorded": 94,
+    "citationWithoutExcerpt": 0,
+    "directEvidenceMissing": 0,
+    "dateWarnings": 5,
+    "designLayerMapGaps": 4
+  },
+  "unresolvedResearch": [
+    {
+      "id": "objective-c-swift",
+      "reason": "current official page no longer contains the previously cited passage; locate a stable historical/design source"
+    },
+    {
+      "id": "java-csharp",
+      "reason": "direct design evidence remains missing; do not infer inheritance from syntax similarity"
+    },
+    {
+      "id": "assembly-dart-xslt-zig",
+      "reason": "four visible design-layer map gaps remain; no qualifying source found in the current review batch"
+    }
+  ],
+  "catalogueNextSteps": [
+    {
+      "nextStep": "固定实现版本并补充语法、错误处理和标准库用例；需要馆内运行时则另行接入。",
+      "catalogueCount": 54
+    },
+    {
+      "nextStep": "参照来源继续核实适用范围、历史年代及实现；不得仅据元数据升级结论。",
+      "catalogueCount": 14
+    },
+    {
+      "nextStep": "在有许可的 MATLAB 环境固定版本并运行独立样例；馆内运行时另行接入。",
+      "catalogueCount": 1
+    },
+    {
+      "nextStep": "继续核实原始版本年代及后续方言；馆内运行时另行接入。",
+      "catalogueCount": 1
+    },
+    {
+      "nextStep": "继续核对 Simula I 与 Simula 67 的年代及方言区分；馆内运行时另行接入。",
+      "catalogueCount": 1
+    },
+    {
+      "nextStep": "在明确版本的 Office 宿主中核验原创示例；地图年代沿用快照，未由本次语法审查独立核实。",
+      "catalogueCount": 1
+    },
+    {
+      "nextStep": "在提供 VBScript 引擎的固定 Windows 环境中核验原创示例；不将弃用计划推断成所有现有环境已经移除。",
+      "catalogueCount": 1
+    },
+    {
+      "nextStep": "继续逐条核实 ALGOL 60 的设计输入；补充标准符合性与其他平台核验，生成 C 的按名调用警告需另核。",
+      "catalogueCount": 1
+    },
+    {
+      "nextStep": "继续读取具体版本语言报告与可取得的编译器，固定版本并实测；网页运行时另行评估。",
+      "catalogueCount": 2
+    },
+    {
+      "nextStep": "核实具体版本及可取得的解释器并实测，区分语言、解释器实现和文档格式；网页运行另行评估。",
+      "catalogueCount": 1
+    },
+    {
+      "nextStep": "继续核读作者论文和版本史；执行历史实现需单独固定工具链，不能用现代系统 sh 冒充。",
+      "catalogueCount": 1
+    },
+    {
+      "nextStep": "继续核验模板匹配、命名模板、参数及异常；另核2.0/3.0实现与 XPath 宿主关系，网页运行另行接入。",
+      "catalogueCount": 1
+    },
+    {
+      "nextStep": "固定现代版本官方语法资料，补重定向、函数作用域和关联数组用例；历史实现与网页运行分别核实。",
+      "catalogueCount": 1
+    },
+    {
+      "nextStep": "核对后续 BSD 版本的兼容范围和历史实现；Interlisp历史机制类比仍需独立论证。",
+      "catalogueCount": 1
+    },
+    {
+      "nextStep": "补重定向、历史替换和兼容差异的实际执行证据；网页运行需另行接入。",
+      "catalogueCount": 1
+    },
+    {
+      "nextStep": "寻找可合法复现的原始编译器或模拟环境；继续核对商务语言设计的具体功能输入和不同版本。",
+      "catalogueCount": 1
+    }
+  ]
+}

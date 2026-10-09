@@ -359,3 +359,9 @@ HTTPS MCP采用既有执行器进程的POST-only无会话Streamable HTTP JSON，
 本地核验：52项npm测试与离线构建通过。实际隔离Chrome→SSH临时Docker的16组定向检查通过：真实HTTP五只读工具/初始化/通知/错误边界、凭据互斥、一次真实Python任务汇总、服务重启SQLite保留、三路线全部16步在两主题两尺寸的导航目标/前后/结束/刷新恢复、无隐式POST或运行资源下载。34组原有完整Chrome回归通过；其记录对应最后新增“自定义对比”选项前的HTML，最终下拉显示由定向检查覆盖。宽窄屏截图已实际查看，记录platform-browser-checks.json与platform-regression-checks.json。现阶段无部署结论，后续追加实际发布结果。
 
 本轮第3/4/5项正式发布完成：主提交4b2dc85，Actions37927867005成功；后端备份与安装见DEPLOYMENT。正式HTTPS9组服务、15组实际Chrome导览/指标/查询检查通过，16份静态文件SHA一致，宽窄屏截图已查看；匿名及凭据错用拒绝、五只读工具、一次真实Python汇总均已生效。原访客数据库沿用（10/23、起始日保持）。生产未为测试重启服务；SQLite重启保留由临时真实API验证。当前边界保持：指标仅终态聚合无告警，HTTP MCP需手动独立Bearer且依赖执行进程/Docker，学习进度只记路线位置，无自动判题。三份platform-*生产/本地记录各自保存实际范围，不覆盖旧证据。
+
+## 2026-10-09 计划1/2/3/4：只读一致性、环境边界与研究待办
+
+补充 `npm run executor:production-check`，只读比较正式 HTTPS 的 `/api/runtimes`、执行限制和三份公开构建证据与本地 `dist/`，不上传源码、不执行任务、不需要令牌；本次检查通过，正式执行器报告可用，7 个运行时、预算、限制及三份公开文件 SHA 与本地一致，记录见 `data/audit/production-consistency-checks.json`。由于当前 Intel Ventura 机器无法使用现版 OrbStack/Docker Desktop，新增 `docs/LOCAL_ENVIRONMENT.md`，明确离线、本机浏览器、SSH 临时 Docker 和正式生产四层边界，不把本机 Colima 未启动误称为真实执行环境。
+
+新增 `npm run research:gaps`，将关系审计与馆藏复核状态整理为只读报告 `data/audit/research-gap-report.json`。当前仍是427条关系、94条有摘录、333条来源字段待核、4个常显设计层缺口、5个年代警告；Objective-C→Swift 和 Java→C# 的未解决依据，以及 Assembly/Dart/XSLT/Zig 的缺口均保留，不由脚本推断或补造关系。本轮 `npm test` 54/54、离线构建通过；未重新执行浏览器或生产代码运行核验。

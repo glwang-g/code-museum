@@ -63,6 +63,8 @@ BROWSER_CHECK_OUTPUT=/tmp/code-museum-browser-check npm run runtime:browser
 
 发布诊断可离线检查当前源码提交、`dist/` 文件清单、PLDB 快照和人工审查哈希：`npm run diagnose:release`。也可用 `npm run diagnose:release -- --url https://codemuseum.freexlib.com` 只读比较线上 `/data/provenance.json` 的来源哈希、记录数和关系计数；网络失败或线上版本不一致会以非零状态退出，不会修改本地或线上文件。
 
+执行 `npm run executor:production-check` 可只读比较正式 `/api/runtimes` 的运行时版本、内存、来源、编译/运行预算和限制，并核对线上公开构建证据与本地 `dist/` 的 SHA-256；它不提交代码、不上传源码、不消耗执行配额，也不需要执行令牌。需要保存报告时加 `--json --output data/audit/production-consistency-checks.json`。本机 Ventura/旧 Intel Mac 与真实 Linux Docker 的边界见 [本机与真实运行环境](docs/LOCAL_ENVIRONMENT.md)。
+
 ## 可选的 ALGOL 60 本机核验
 
 已在临时目录构建 GNU MARST 2.8 并实际执行三份原创样例，输出 `55`、`720`、`6`，错误语法被拒绝；传名调用生成的 C 存在求值顺序警告。这不代表已接入网页运行或完整符合性通过。
@@ -147,6 +149,8 @@ PLDB 的公开领域说明见 https://github.com/breck7/pldb/blob/main/readme.sc
 出处页的「关系核对」逐项列出全部常显标签的设计上游、下游、生态关系和证据缺口，支持筛选暂无地图设计连线或仍需复核的条目，并跳回语言档案。全馆入口仍保留。常显标签、关系总数与待核状态由同一次构建生成，不手动维护网页计数。
 
 `npm run relations:audit` 从固定输入离线生成 [逐语言盘点](docs/audit/RELATIONSHIP_STATUS.md)和 `data/audit/relationship-status.json`；构建独立重算并公开 `/data/relationship-status.json`。检查原始人工关系重复、无效/自连端点、类型和来源 URL，列出缺论证、引用缺摘录、引用哈希版本差异、年代顺序及设计环路；结构错误阻止替换旧站点，年代警告保留研究线索。人工复核决定保存在 `data/audit/relationship-decisions.json`。没有来源摘录的引用不会被自动归为已存原文证据。它是当前数据体检，不是历史关系完整性的证明。
+
+执行 `npm run research:gaps` 可把当前关系审计和馆藏复核队列整理成只读研究待办；输出明确保留 Objective-C→Swift、Java→C#、Assembly/Dart/XSLT/Zig 等未解决项，不会因语法相似、实现关系或缺线自动补造历史关系。
 
 2026-10-08 补核 Scala 设计者2006年概述第1页和 Rust 官方影响清单，新增 C#→Scala、Swift→Rust，并为 Java→Scala 和七条既有 Rust 影响补存原文依据。Java→C# 的旧读者定位论证保留为「直接设计依据待补」。Dart、Zig、XSLT、汇编总称仍保留设计层地图缺口，不凭编译目标、接口或文献引用补造设计继承。研究范围见 [本轮记录](docs/audit/RELATIONSHIP_RESEARCH_2026-10-08.md)。
 

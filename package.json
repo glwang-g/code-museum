@@ -15,6 +15,8 @@
     "runtime:budget": "node scripts/runtime-budget.cjs",
     "runtime:browser": "node scripts/check-browser-runtime.cjs",
     "diagnose:release": "node scripts/diagnose-release.cjs",
+    "executor:production-check": "node scripts/check-production-consistency.cjs",
+    "research:gaps": "node scripts/research-gap-report.cjs",
     "test": "node --test tests/*.test.cjs",
     "executor:preview": "node scripts/executor-preview.cjs",
     "executor:check": "python3 scripts/check-executor.py",
