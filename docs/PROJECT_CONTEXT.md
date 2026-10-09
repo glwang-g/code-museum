@@ -364,4 +364,4 @@ HTTPS MCP采用既有执行器进程的POST-only无会话Streamable HTTP JSON，
 
 补充 `npm run executor:production-check`，只读比较正式 HTTPS 的 `/api/runtimes`、执行限制和三份公开构建证据与本地 `dist/`，不上传源码、不执行任务、不需要令牌；本次检查通过，正式执行器报告可用，7 个运行时、预算、限制及三份公开文件 SHA 与本地一致，记录见 `data/audit/production-consistency-checks.json`。由于当前 Intel Ventura 机器无法使用现版 OrbStack/Docker Desktop，新增 `docs/LOCAL_ENVIRONMENT.md`，明确离线、本机浏览器、SSH 临时 Docker 和正式生产四层边界，不把本机 Colima 未启动误称为真实执行环境。
 
-新增 `npm run research:gaps`，将关系审计与馆藏复核状态整理为只读报告 `data/audit/research-gap-report.json`。当前仍是427条关系、94条有摘录、333条来源字段待核、4个常显设计层缺口、5个年代警告；Objective-C→Swift 和 Java→C# 的未解决依据，以及 Assembly/Dart/XSLT/Zig 的缺口均保留，不由脚本推断或补造关系。本轮 `npm test` 54/54、离线构建通过；未重新执行浏览器或生产代码运行核验。
+新增 `npm run research:gaps`，将关系审计与馆藏复核状态整理为只读报告 `data/audit/research-gap-report.json`。本批核读 Brendan Eich 作者回顾，补充 Java→JavaScript 的语法外观/平台定位参照和 Scheme→JavaScript 的一等函数设计影响，均保留范围限制，不表示后继或超集。当前仍是429条关系、96条有摘录、331条来源字段待核、4个常显设计层缺口、5个年代警告；Assembly/Dart/XSLT/Zig 仍是实际待办。细节见 `docs/audit/RELATIONSHIP_RESEARCH_2026-10-09_BATCH-13.md`。本轮 `npm test` 54/54、离线构建通过；未重新执行浏览器或生产代码运行核验。

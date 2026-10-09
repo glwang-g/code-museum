@@ -98,8 +98,8 @@ ioke,Ioke,2008,unreviewed,,,0,0,0,0,0,,no-map-link
 j,J,1990,unreviewed,,,0,0,0,2,0,,no-map-link
 jakt,Jakt,2022,unreviewed,,,0,0,0,0,0,,no-map-link
 janet,Janet,2018,unreviewed,,,0,0,0,0,0,,no-map-link
-java,Java,1995,verified-language,c | cpp,csharp | groovy | javascript | kotlin | scala,7,6,1,5,1,matlab,cited-and-field
-javascript,JavaScript,1995,verified-language,java | scheme,kotlin | typescript,4,2,2,6,1,jsf,cited-and-field
+java,Java,1995,verified-language,c | cpp,csharp | groovy | javascript | kotlin | scala,7,7,0,5,1,matlab,cited-only
+javascript,JavaScript,1995,verified-language,java | scheme,kotlin | typescript,4,4,0,6,1,jsf,cited-only
 jolie,Jolie,2006,unreviewed,,,0,0,0,0,0,,no-map-link
 jq,jq,2012,unreviewed,,,0,0,0,1,0,,no-map-link
 jsf,JSFuck,2012,unreviewed,,,0,0,0,0,1,javascript,no-map-link
@@ -183,7 +183,7 @@ rust,Rust,2010,verified-language,cpp | csharp | erlang | haskell | ocaml | ruby 
 sagemath,Sage,2005,unreviewed,,,0,0,0,0,0,,no-map-link
 sass,Sass,2006,unreviewed,,,0,0,0,0,1,less,no-map-link
 scala,Scala,2004,verified-language,csharp | java,kotlin,3,3,0,1,0,,cited-only
-scheme,Scheme,1975,verified-language,lisp,javascript | lua | rust,4,3,1,4,0,,cited-and-field
+scheme,Scheme,1975,verified-language,lisp,javascript | lua | rust,4,4,0,4,0,,cited-only
 scilab,Scilab,1990,unreviewed,,,0,0,0,0,0,,no-map-link
 scss,SCSS,2006,unreviewed,,,0,0,0,0,0,,no-map-link
 sed,sed,1974,verified-language,,,0,0,0,0,0,,no-map-link

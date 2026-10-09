@@ -7,7 +7,7 @@ test('learning paths use valid archives, examples and specifically recorded rela
  try{
   fs.mkdirSync(path.join(temp,'data'));fs.mkdirSync(path.join(temp,'src'));fs.copyFileSync(path.join(root,'src/learning-examples.js'),path.join(temp,'src/learning-examples.js'));
   const file=path.join(temp,'data/learning-paths.json');
-  const altered=structuredClone(p);altered.routes[0].steps[1].key='java|javascript|influencedBy';fs.writeFileSync(file,JSON.stringify(altered));assert.throws(()=>learningPaths(temp,c,a),/reviewed excerpts/);
+  const altered=structuredClone(p);altered.routes[0].steps[1].key='self|javascript|influencedBy';fs.writeFileSync(file,JSON.stringify(altered));assert.throws(()=>learningPaths(temp,c,a),/reviewed excerpts/);
   altered.routes[0].steps[1].key=p.routes[0].steps[1].key;altered.routes[0].steps[4].topic='invented';fs.writeFileSync(file,JSON.stringify(altered));assert.throws(()=>learningPaths(temp,c,a),/Missing learning example/);
  }finally{fs.rmSync(temp,{recursive:true,force:true})}
 });

@@ -6,8 +6,8 @@
     "relations": 427,
     "mapDesignGaps": 4,
     "states": {
-      "excerpt-recorded": 94,
-      "field-only": 333
+      "excerpt-recorded": 96,
+      "field-only": 331
     },
     "warnings": 5
   },
@@ -434,10 +434,10 @@
         "java|python|hostRuntime"
       ],
       "mapLinks": 7,
-      "fieldOnly": 6,
+      "fieldOnly": 5,
       "citationOnly": 0,
       "needsDirectEvidence": 0,
-      "excerptRecorded": 6,
+      "excerptRecorded": 7,
       "state": "needs-review"
     },
     {
@@ -461,10 +461,10 @@
       ],
       "ecology": [],
       "mapLinks": 4,
-      "fieldOnly": 8,
+      "fieldOnly": 6,
       "citationOnly": 0,
       "needsDirectEvidence": 0,
-      "excerptRecorded": 2,
+      "excerptRecorded": 4,
       "state": "needs-review"
     },
     {
@@ -882,10 +882,10 @@
       ],
       "ecology": [],
       "mapLinks": 4,
-      "fieldOnly": 5,
+      "fieldOnly": 4,
       "citationOnly": 0,
       "needsDirectEvidence": 0,
-      "excerptRecorded": 3,
+      "excerptRecorded": 4,
       "state": "needs-review"
     },
     {
@@ -4042,16 +4042,28 @@
       "from": "java",
       "to": "javascript",
       "type": "influencedBy",
-      "source": "https://github.com/breck7/pldb/blob/main/concepts/javascript.scroll",
+      "label": "语法外观与平台定位取舍",
+      "source": "https://brendaneich.com/2008/04/popularity/",
+      "evidence": "Brendan Eich 回顾称 Netscape 管理层要求新语言必须“look like Java”，并说明 JavaScript 作为 Java 的脚本语言伙伴定位及部分 Java 影响；此处只表示语法外观与定位上的设计参照，不表示 JavaScript 是 Java 的后继、超集或实现兼容层。",
+      "sourceSha256": "d12b80a087f711e80a9479fd641d9bd8c1cae40db7fe4a7dfd6082903ff9de23",
       "key": "java|javascript|influencedBy",
       "layer": "design",
-      "state": "field-only",
-      "issues": [
-        "缺少关系论证"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": true,
-      "sources": []
+      "sources": [
+        {
+          "url": "https://brendaneich.com/2008/04/popularity/",
+          "finalUrl": "https://brendaneich.com/2008/04/popularity/",
+          "title": "Popularity – Brendan Eich",
+          "excerpt": "The diktat from upper engineering management was that the language must “look like Java”. That ruled out Perl, Python, and Tcl, along with Scheme. ... I’m not proud, but I’m happy that I chose Scheme-ish first-class functions and Self-ish (albeit singular) prototypes as the main ingredients. The Java influences, especially y2k Date bugs but also the primitive vs. object distinction (e.g., string vs. String ), were unfortunate.",
+          "checkedAt": "2026-10-09T14:51:12+00:00",
+          "sha256": "d12b80a087f711e80a9479fd641d9bd8c1cae40db7fe4a7dfd6082903ff9de23",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected",
+          "reviewId": "javascript"
+        }
+      ]
     },
     {
       "from": "java",
@@ -7250,16 +7262,28 @@
       "from": "scheme",
       "to": "javascript",
       "type": "influencedBy",
-      "source": "https://github.com/breck7/pldb/blob/main/concepts/javascript.scroll",
+      "label": "一等函数设计",
+      "source": "https://brendaneich.com/2008/04/popularity/",
+      "evidence": "Brendan Eich 回顾称自己选择了“Scheme-ish first-class functions”作为 JavaScript 的主要组成部分之一；此处表示一等函数设计影响，不表示 JavaScript 是 Scheme 方言或整体继承 Scheme。",
+      "sourceSha256": "d12b80a087f711e80a9479fd641d9bd8c1cae40db7fe4a7dfd6082903ff9de23",
       "key": "scheme|javascript|influencedBy",
       "layer": "design",
-      "state": "field-only",
-      "issues": [
-        "缺少关系论证"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": true,
-      "sources": []
+      "sources": [
+        {
+          "url": "https://brendaneich.com/2008/04/popularity/",
+          "finalUrl": "https://brendaneich.com/2008/04/popularity/",
+          "title": "Popularity – Brendan Eich",
+          "excerpt": "The diktat from upper engineering management was that the language must “look like Java”. That ruled out Perl, Python, and Tcl, along with Scheme. ... I’m not proud, but I’m happy that I chose Scheme-ish first-class functions and Self-ish (albeit singular) prototypes as the main ingredients. The Java influences, especially y2k Date bugs but also the primitive vs. object distinction (e.g., string vs. String ), were unfortunate.",
+          "checkedAt": "2026-10-09T14:51:12+00:00",
+          "sha256": "d12b80a087f711e80a9479fd641d9bd8c1cae40db7fe4a7dfd6082903ff9de23",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected",
+          "reviewId": "javascript"
+        }
+      ]
     },
     {
       "from": "scheme",
@@ -8671,8 +8695,8 @@
   ],
   "inputHashes": {
     "data/raw/pldb.json": "57f45d25bba78ab6bc4af5d969356d2efbfcc7c1ee722dbb5c708d60aa78ba77",
-    "data/audit/reviews.json": "2646571696d36b586e10a4b2d74193624f8632fe18864a17caffe4d5dda164b1",
-    "data/relationship-overrides.json": "1d28e08e3185eda32be16cdb46939e86a1ccf4216fd35d07a504ed38156d8e84",
+    "data/audit/reviews.json": "e0c00955c607a1a4d11f2fd7928bd0d5b8f7322589886c80f5fb0e38cb483627",
+    "data/relationship-overrides.json": "b61ba83e24695815e635c15c2429d2b8a996854dc38d7c7117f4bf8e2bafaa5e",
     "data/ecosystem-relations.json": "0d96e92a3853eddc6b32e4a45d5c90223d2096fa35438823f7dcfe72ce161e76",
     "data/audit/relationship-decisions.json": "4339ab007ed91414653b56ddf2dcbe0a9450de5df1705c9ad76c1fbc7db53960",
     "data/audit/label-selection.json": "dc5eee62fa662b0d60940375d8a3ec56ac2bbf84ee2b9922a290d46d11cc866f"

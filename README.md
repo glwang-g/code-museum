@@ -150,7 +150,7 @@ PLDB 的公开领域说明见 https://github.com/breck7/pldb/blob/main/readme.sc
 
 `npm run relations:audit` 从固定输入离线生成 [逐语言盘点](docs/audit/RELATIONSHIP_STATUS.md)和 `data/audit/relationship-status.json`；构建独立重算并公开 `/data/relationship-status.json`。检查原始人工关系重复、无效/自连端点、类型和来源 URL，列出缺论证、引用缺摘录、引用哈希版本差异、年代顺序及设计环路；结构错误阻止替换旧站点，年代警告保留研究线索。人工复核决定保存在 `data/audit/relationship-decisions.json`。没有来源摘录的引用不会被自动归为已存原文证据。它是当前数据体检，不是历史关系完整性的证明。
 
-执行 `npm run research:gaps` 可把当前关系审计和馆藏复核队列整理成只读研究待办；输出明确保留 Objective-C→Swift、Java→C#、Assembly/Dart/XSLT/Zig 等未解决项，不会因语法相似、实现关系或缺线自动补造历史关系。
+执行 `npm run research:gaps` 可把当前关系审计和馆藏复核队列整理成只读研究待办；当前保留 Assembly/Dart/XSLT/Zig 四个设计层缺口；Java→JavaScript 与 Scheme→JavaScript 已有 Brendan Eich 作者回顾的范围受限摘录，不会因语法相似、实现关系或缺线自动补造历史关系。
 
 2026-10-08 补核 Scala 设计者2006年概述第1页和 Rust 官方影响清单，新增 C#→Scala、Swift→Rust，并为 Java→Scala 和七条既有 Rust 影响补存原文依据。Java→C# 的旧读者定位论证保留为「直接设计依据待补」。Dart、Zig、XSLT、汇编总称仍保留设计层地图缺口，不凭编译目标、接口或文献引用补造设计继承。研究范围见 [本轮记录](docs/audit/RELATIONSHIP_RESEARCH_2026-10-08.md)。
 

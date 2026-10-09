@@ -208,6 +208,18 @@
           "finalUrl": "https://nodejs.org/api/synopsis.html",
           "decodedBodySha256": "5ac6928a02398c5a90ed967c969657e541defd051d6bdc9aa487dfaae3cdef2a",
           "excerpt": "API C++ embedder API Child processes Cluster Command-line options Console Crypto Debugger Deprecated APIs Diagnostics Channel DNS Domain Environment Variables Errors Events File system FFI Globals HTTP HTTP/2 HTTPS Inspector Internationalization Iterable Streams API Modules: CommonJS modules Modules"
+        },
+        {
+          "role": "关系依据",
+          "url": "https://brendaneich.com/2008/04/popularity/",
+          "checkedAt": "2026-10-09T14:51:12+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "Popularity – Brendan Eich",
+          "finalUrl": "https://brendaneich.com/2008/04/popularity/",
+          "decodedBodySha256": "d12b80a087f711e80a9479fd641d9bd8c1cae40db7fe4a7dfd6082903ff9de23",
+          "excerpt": "The diktat from upper engineering management was that the language must “look like Java”. That ruled out Perl, Python, and Tcl, along with Scheme. ... I’m not proud, but I’m happy that I chose Scheme-ish first-class functions and Self-ish (albeit singular) prototypes as the main ingredients. The Java influences, especially y2k Date bugs but also the primitive vs. object distinction (e.g., string vs. String ), were unfortunate.",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected"
         }
       ]
     },

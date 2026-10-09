@@ -26,8 +26,6 @@ function report() {
     counts: { relationships: relations.length, reviews: reviews.reviews.length, reviewedSources: reviews.reviews.reduce((n, r) => n + (r.sources || []).filter(s => s.reviewed).length, 0) },
     relationGaps,
     unresolvedResearch: [
-      { id: 'objective-c-swift', reason: 'current official page no longer contains the previously cited passage; locate a stable historical/design source' },
-      { id: 'java-csharp', reason: 'direct design evidence remains missing; do not infer inheritance from syntax similarity' },
       { id: 'assembly-dart-xslt-zig', reason: 'four visible design-layer map gaps remain; no qualifying source found in the current review batch' }
     ],
     catalogueNextSteps: nextSteps

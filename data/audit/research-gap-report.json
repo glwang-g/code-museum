@@ -1,29 +1,21 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-09T14:40:44.515Z",
+  "generatedAt": "2026-10-09T14:52:26.011Z",
   "scope": "Offline inventory of existing evidence gaps; it does not add or infer historical relationships.",
   "counts": {
     "relationships": 427,
     "reviews": 85,
-    "reviewedSources": 193
+    "reviewedSources": 194
   },
   "relationGaps": {
-    "fieldOnly": 333,
-    "excerptRecorded": 94,
+    "fieldOnly": 331,
+    "excerptRecorded": 96,
     "citationWithoutExcerpt": 0,
     "directEvidenceMissing": 0,
     "dateWarnings": 5,
     "designLayerMapGaps": 4
   },
   "unresolvedResearch": [
-    {
-      "id": "objective-c-swift",
-      "reason": "current official page no longer contains the previously cited passage; locate a stable historical/design source"
-    },
-    {
-      "id": "java-csharp",
-      "reason": "direct design evidence remains missing; do not infer inheritance from syntax similarity"
-    },
     {
       "id": "assembly-dart-xslt-zig",
       "reason": "four visible design-layer map gaps remain; no qualifying source found in the current review batch"

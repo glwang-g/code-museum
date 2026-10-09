@@ -98,6 +98,24 @@
   },
   {
     "from": "java",
+    "to": "javascript",
+    "type": "influencedBy",
+    "label": "语法外观与平台定位取舍",
+    "source": "https://brendaneich.com/2008/04/popularity/",
+    "evidence": "Brendan Eich 回顾称 Netscape 管理层要求新语言必须“look like Java”，并说明 JavaScript 作为 Java 的脚本语言伙伴定位及部分 Java 影响；此处只表示语法外观与定位上的设计参照，不表示 JavaScript 是 Java 的后继、超集或实现兼容层。",
+    "sourceSha256": "d12b80a087f711e80a9479fd641d9bd8c1cae40db7fe4a7dfd6082903ff9de23"
+  },
+  {
+    "from": "scheme",
+    "to": "javascript",
+    "type": "influencedBy",
+    "label": "一等函数设计",
+    "source": "https://brendaneich.com/2008/04/popularity/",
+    "evidence": "Brendan Eich 回顾称自己选择了“Scheme-ish first-class functions”作为 JavaScript 的主要组成部分之一；此处表示一等函数设计影响，不表示 JavaScript 是 Scheme 方言或整体继承 Scheme。",
+    "sourceSha256": "d12b80a087f711e80a9479fd641d9bd8c1cae40db7fe4a7dfd6082903ff9de23"
+  },
+  {
+    "from": "java",
     "to": "scala",
     "type": "influencedBy",
     "label": "语法与类型系统设计输入",
