@@ -92,3 +92,16 @@ sudo -u code-museum python3 /var/www/code-museum/current/server/analytics.py --b
 
 
 学习功能发布核验：2032738推送成功，Actions37879243826的build/deploy均成功。正式HTTPS实际隔离Chrome检查顶部“访客/访问”、累计接口仅返回uv/pv/startedAt、两主题1440/390宽度的四组对比（16种组合）、对应函数主题实验台与真实JavaScript输出49；14份线上关键文件与本地构建SHA一致，宽窄屏截图已查看。证据data/audit/learning-production-checks.json。本次未重新执行生产Docker或线上Python/Lua/Scheme，也未核验原生Safari；本地四种运行时的16份新增程序见learning-browser-checks.json。前述“准备发布”的状态由本条实际结果覆盖。后续核验文档提交不改变上述网站源码与被核验文件。
+
+
+## 2026-10-09 第3/4/5项正式发布
+
+功能提交b1665b2推送成功，Actions37890426132的build/deploy成功，正式release为b1665b222d527bb37686b3333ab43ee2e9166e18。静态发布保持现有限权CI账户和原子激活流程；5,155条馆藏与累计访问SQLite沿用。发布诊断核对线上provenance与本地一致。
+
+现有私有执行器经已授权管理员安装升级，备份/var/backups/code-museum-executor/20261009T054846Z；账户、Docker权限和原有令牌不变，新增C/C++/Rust/Go/Java固定官方镜像及分离编译/运行阶段。安装代码SHA：executor.py 4c24e4e1070d0d796632b01e8112fadd9866d60ec41ccf4ce7465f7a68f70430；runtime-images.json 4782d1897554fbd51bec739d5f1bcdac71289c09a28d7432019f9ef97f7c1ccc。Nginx/systemd校验通过，执行与统计服务active；无令牌执行401，CI未获得Docker权限。
+
+实际Chrome正式HTTPS22组检查通过：七种远端语言在1440深色/390亮色真实输出和stdin，五种编译阶段计时/禁用本地选项，编译错误独立展示、Go编译中停止及恢复，Python语法错误/取消恢复，以及Pyodide/JS/Lua/Scheme真实执行。13份浏览器读取文件和额外9份新模块/MCP数据文件SHA与本地dist一致；宽窄屏、编译中和错误截图已查看。记录executor-compiled-production-checks.json和continuation-production-files.json，不含令牌/会话/任务ID。
+
+正式release中的stdio MCP通过既有xshow SSH启动，9项实际协议/工具/资源核验通过，四份数据SHA一致、五工具只读、执行工具拒绝；记录mcp-production-checks.json。没有新增公开MCP端口或常驻权限，客户端接入见MCP.md。
+
+收尾只读确认执行器标签容器零残留，统计仍为2026-10-05开始的数据（核验时9访客/21访问；浏览器自动化不计访问），未重置数据库。上述检查绑定功能发布，后续核验文档提交不改变网站或执行器源码。

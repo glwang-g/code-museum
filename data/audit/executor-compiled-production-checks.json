@@ -1,0 +1,136 @@
+{
+  "servedInputs": {
+    "index.html": "3fae04738ff5d48cfd065f857016990f01514885bb215d8704729751816620ce",
+    "museum.css": "f30a88e865f94e10e8294aa56e8cdbc5a05f271884e017e472ec3e3bfabe135e",
+    "museum.js": "9313643022be5e9e53af00125068dee0d0afdc674196f99f9ec96710b8c72651",
+    "lab.js": "3546e888e2a594badc7dcb7bd7c06057edde66ff49fd8095c7e4c6a918fd0873",
+    "execution-config.js": "4ed993efee2456e3cc0b0aa3767081211bb5b5509204eed6bea3c4ab5fa883e0",
+    "execution-modes.js": "217f317a74ff037ac629e6b922ab014205bd5d4d9610f6fe74ef10bf54b649b6",
+    "data/relationship-status.json": "790233d1fe1dd219b6bb67beb1045866d4319ff477b39c940d2bda52188e39c8",
+    "lab-worker.js": "d2f568c2087c77f9cd211a9e4c01478f1e8da07a088b29831f9d116762987371",
+    "lua-worker.js": "19bf8689ad12082ac10e15a4c099d2171afdfffc81397c5910d7879c2895283c",
+    "scheme-worker.js": "edd85647e32de729a794e1fb3c49135fefc7d24ec7a0437247570e6cf3bac360",
+    "assets/lua/manifest.json": "d803bb6f5b36551703c7d00e63cb5be50f2795fc050d2edacbd7f6f872e914f2",
+    "assets/scheme/manifest.json": "2736ddf2f4a037f868630473dfc9fd21d42b276fad5e6fdc252890cc4b48b390",
+    "assets/pyodide/manifest.json": "3dbcea8d0957a60a80c84966832a201d06aeb190d77b6491d7d50577b65ec3a4"
+  },
+  "checkedAt": "2026-10-09T05:53:54.111Z",
+  "browser": "Chrome/154.0.8037.98",
+  "scope": "Actual Chrome over production HTTPS with private token to persistent Docker runc service. Tokens, sessions and job IDs omitted; no anonymous execution or escape proof.",
+  "checks": [
+    {
+      "name": "Actual python Docker execution and stdin",
+      "width": 1440,
+      "output": "55\nhello\n"
+    },
+    {
+      "name": "Actual ruby Docker execution and stdin",
+      "width": 1440,
+      "output": "55\nhello\n"
+    },
+    {
+      "name": "Actual c Docker execution and stdin",
+      "width": 1440,
+      "output": "55\nhello\n"
+    },
+    {
+      "name": "Actual cpp Docker execution and stdin",
+      "width": 1440,
+      "output": "55\nhello\n"
+    },
+    {
+      "name": "Actual rust Docker execution and stdin",
+      "width": 1440,
+      "output": "55\nhello\n"
+    },
+    {
+      "name": "Actual go Docker execution and stdin",
+      "width": 1440,
+      "output": "55\nhello\n"
+    },
+    {
+      "name": "Actual java Docker execution and stdin",
+      "width": 1440,
+      "output": "55\nhello\n"
+    },
+    {
+      "name": "Actual python Docker execution and stdin",
+      "width": 390,
+      "output": "55\nhello\n"
+    },
+    {
+      "name": "Actual ruby Docker execution and stdin",
+      "width": 390,
+      "output": "55\nhello\n"
+    },
+    {
+      "name": "Actual c Docker execution and stdin",
+      "width": 390,
+      "output": "55\nhello\n"
+    },
+    {
+      "name": "Actual cpp Docker execution and stdin",
+      "width": 390,
+      "output": "55\nhello\n"
+    },
+    {
+      "name": "Actual rust Docker execution and stdin",
+      "width": 390,
+      "output": "55\nhello\n"
+    },
+    {
+      "name": "Actual go Docker execution and stdin",
+      "width": 390,
+      "output": "55\nhello\n"
+    },
+    {
+      "name": "Actual java Docker execution and stdin",
+      "width": 390,
+      "output": "55\nhello\n"
+    },
+    {
+      "name": "Compiler diagnostics identified separately, no execution",
+      "passed": true
+    },
+    {
+      "name": "Stop during actual compilation and recover",
+      "passed": true
+    },
+    {
+      "name": "Actual remote syntax error",
+      "passed": true
+    },
+    {
+      "name": "Cancellation followed by actual remote recovery",
+      "passed": true
+    },
+    {
+      "name": "Local Pyodide requires explicit enable, executes without POST",
+      "output": "43"
+    },
+    {
+      "name": "Actual browser javascript execution",
+      "output": "42"
+    },
+    {
+      "name": "Actual browser lua execution",
+      "output": "42"
+    },
+    {
+      "name": "Actual browser scheme execution",
+      "output": "42"
+    }
+  ],
+  "inputs": {
+    "server/executor.py": "4c24e4e1070d0d796632b01e8112fadd9866d60ec41ccf4ce7465f7a68f70430",
+    "server/runtime-images.json": "4782d1897554fbd51bec739d5f1bcdac71289c09a28d7432019f9ef97f7c1ccc",
+    "scripts/serve.cjs": "6b89ec4d96297a4e5a6ea1d0c97d2a99ff56b4b04ca09e619bcc5afc17ad9038",
+    "scripts/executor-preview.cjs": "50b60523b17916cba7b393e5cddb196496c33f734f5471545aeeb34ab62d785d",
+    "scripts/check-executor-browser.cjs": "fcda3763f69b3ce5d0170a780fd46bea5ec42ed2a509f98cc0f9dc0b5047c264",
+    "src/index.html": "3fae04738ff5d48cfd065f857016990f01514885bb215d8704729751816620ce",
+    "src/lab.js": "3546e888e2a594badc7dcb7bd7c06057edde66ff49fd8095c7e4c6a918fd0873",
+    "src/museum.css": "f30a88e865f94e10e8294aa56e8cdbc5a05f271884e017e472ec3e3bfabe135e",
+    "src/execution-config.js": "4ed993efee2456e3cc0b0aa3767081211bb5b5509204eed6bea3c4ab5fa883e0",
+    "src/execution-modes.js": "217f317a74ff037ac629e6b922ab014205bd5d4d9610f6fe74ef10bf54b649b6"
+  }
+}

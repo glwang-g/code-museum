@@ -41,8 +41,10 @@ SSH 使用本机既有身份；客户端连接结束时进程退出。查询能�
 | `search_languages` | `query`，可选 `category/offset/limit` | 全量馆藏名称、ID、别名与轻微拼写匹配；保留 C++/C# 区别 |
 | `get_language` | `id` | 档案、身份审查、原文摘录、URL、读取时间、响应哈希 |
 | `get_lineage` | `id`，可选 `direction/layer/depth/offset/limit` | 前序/后序，设计/生态层，最多三层，保留每条关系证据状态 |
-| `get_relationship` | `key`，如 `b\|c\|influencedBy` | 精确关系论证、出处、摘录及待核事项 |
+| `get_relationship` | `key`（示例见下文） | 精确关系论证、出处、摘录及待核事项 |
 | `get_execution_capabilities` | 可选 `id` | 固定运行时、版本、默认位置、下载/令牌要求、预算 |
+
+关系 key 示例：`b|c|influencedBy`。
 
 资源 `museum://coverage` 返回覆盖范围、关系状态数量、固定快照与输入哈希。单页最多50条；请求行最多64 KiB。支持协议协商 `2025-11-25`、`2025-06-18`、`2025-03-26`、`2024-11-05`。
 

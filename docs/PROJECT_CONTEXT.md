@@ -325,3 +325,5 @@ UV/PV展示68707e8已推送，Actions37877136008的build/deploy成功；现有Ng
 本地48项npm测试和离线构建通过，真实Chrome→隔离SSH Docker的22组检查通过，覆盖七远端语言两尺寸真实输出/stdin、五种编译用时、本地选项禁用、编译错误、编译中停止恢复、既有本地运行时。宽窄屏/明暗截图已查看；证据executor-compiled-browser-checks.json。完整Chrome回归和最终Docker扩展检查仍待本轮后续完成记录；尚未在本条记录时提交、推送或发布。
 
 最终本地核验完成：48项npm测试、离线构建通过；41项实际隔离Docker检查通过，补验Rust编译超时不执行、编译中API SIGKILL后watchdog清理，源码哈希一致、容器零残留。34组完整Chrome回归通过，四种关系证据状态、地图搜索/标签/上下游、主题/六页签/13张出处卡和JS/Python/Lua/Scheme真实输出保留。截图已查看。记录executor-compiled-checks.json和continuation-regression-checks.json；22组远端浏览器记录另列。发布结果待后续实际记录。
+
+第3/4/5项正式发布与核验完成：b1665b2及Actions37890426132的build/deploy成功；现有私有执行服务已带备份升级，七运行时可用、匿名执行401、执行/统计服务active、容器零残留。正式HTTPS实际Chrome22组执行/编译/错误/停止恢复及宽窄屏明暗检查通过，13+9份线上文件SHA一致、截图已查看；原累计数据库沿用。正式SSH stdio MCP9项检查及四数据SHA核对通过；接入见MCP.md，无公开HTTP MCP接口。发布证据见executor-compiled-production-checks.json、mcp-production-checks.json、continuation-production-files.json与DEPLOYMENT记录。关系证据仍有336条字段待核、Swift1条缺匹配摘录及Java→C#直接依据待补，不能宣称关系全量穷尽。

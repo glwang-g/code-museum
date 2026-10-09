@@ -1,0 +1,138 @@
+{
+  "checkedAt": "2026-10-09T05:51:08.440090+00:00",
+  "scope": "Actual stdio MCP process via existing xshow SSH identity, on current production release. Read-only calls, no token and no code execution.",
+  "checks": [
+    {
+      "name": "Protocol negotiation",
+      "passed": true
+    },
+    {
+      "name": "Five tools advertise read-only annotations",
+      "passed": true
+    },
+    {
+      "name": "search_languages",
+      "passed": true
+    },
+    {
+      "name": "get_language",
+      "passed": true
+    },
+    {
+      "name": "get_lineage",
+      "passed": true
+    },
+    {
+      "name": "get_relationship",
+      "passed": true
+    },
+    {
+      "name": "get_execution_capabilities",
+      "passed": true
+    },
+    {
+      "name": "Coverage and four deployed data hashes equal local build",
+      "passed": true
+    },
+    {
+      "name": "Execution tool rejected",
+      "passed": true
+    }
+  ],
+  "coverage": {
+    "catalogue": {
+      "source": "https://pldb.io/pldb.json",
+      "license": "Public domain (PLDB)",
+      "retrieved": "2026-09-23T12:44:58.205Z",
+      "sha256": "57f45d25bba78ab6bc4af5d969356d2efbfcc7c1ee722dbb5c708d60aa78ba77",
+      "count": 5155,
+      "languages": 4608,
+      "mapLanguageCount": 233,
+      "reviewEvidence": {
+        "file": "data/audit-reviews.json",
+        "sha256": "31a5a8d5b45ec4f0290f1b96a26bcfee35b77829f2b14ca4ccf7b8de5ca9416c",
+        "checkedAt": "2026-10-09",
+        "recordCount": 84,
+        "reviewedSourceCount": 188,
+        "scope": "Manually reviewed public documentation and bibliography, with separate local execution evidence. Not an exhaustive manual verification of the whole PLDB snapshot."
+      },
+      "mapLabelIds": [
+        "ada",
+        "algol-60",
+        "apl",
+        "assembly-language",
+        "b",
+        "basic",
+        "bcpl",
+        "c",
+        "cobol",
+        "cpp",
+        "csharp",
+        "d",
+        "dart",
+        "forth",
+        "fortran",
+        "go",
+        "groovy",
+        "haskell",
+        "java",
+        "javascript",
+        "julia",
+        "kotlin",
+        "lisp",
+        "lua",
+        "matlab",
+        "objective-c",
+        "ocaml",
+        "perl",
+        "php",
+        "pl-sql",
+        "powershell",
+        "prolog",
+        "python",
+        "r",
+        "ruby",
+        "rust",
+        "scala",
+        "scheme",
+        "simula",
+        "smalltalk",
+        "snobol",
+        "sql",
+        "swift",
+        "typescript",
+        "vbscript",
+        "vhdl",
+        "visual-basic",
+        "visual-basic.net",
+        "xslt",
+        "zig"
+      ],
+      "edgeCount": 420,
+      "ecosystemEdgeCount": 7,
+      "unresolved": 0
+    },
+    "relationships": {
+      "labels": 50,
+      "relations": 427,
+      "mapDesignGaps": 4,
+      "states": {
+        "excerpt-recorded": 89,
+        "field-only": 336,
+        "needs-direct-evidence": 1,
+        "citation-only": 1
+      },
+      "warnings": 5
+    },
+    "hashes": {
+      "catalogue.json": "5161a42f624ec0d2a98d0b3f5ddf7e518924321213c8ca1fbc982ea48905360c",
+      "audit-reviews.json": "31a5a8d5b45ec4f0290f1b96a26bcfee35b77829f2b14ca4ccf7b8de5ca9416c",
+      "relationship-status.json": "790233d1fe1dd219b6bb67beb1045866d4319ff477b39c940d2bda52188e39c8",
+      "execution-capabilities.json": "ea780923a031cd0e2c4eb83b6b7c9bce8ba45aae02106dd767867cd8e63ab612"
+    },
+    "limitations": "Pinned snapshot; full catalogue is not complete historical coverage. Source-marked language is not independent verification. Excerpts do not prove all relations. Missing links do not imply no ancestors."
+  },
+  "inputs": {
+    "server/mcp.py": "8cd1abb898a6f998196350e0b860ac817b9004c1b363ecc96cef57c43c336b50"
+  }
+}

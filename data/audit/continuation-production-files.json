@@ -1,0 +1,51 @@
+{
+  "checkedAt": "2026-10-09T05:52:52.845557+00:00",
+  "scope": "Read-only production HTTPS checks of additional changed frontend modules and MCP public data; compares bytes to local dist.",
+  "checks": [
+    {
+      "file": "runtime-status.js",
+      "sha256": "18a0e7d812b96712cb0e3bdfa696a7f2e28fb8703cb7079e97a58af08b34c35e",
+      "passed": true
+    },
+    {
+      "file": "lab-tools.js",
+      "sha256": "0f4634f511d5886d21fff28b9fdff725c5dbf182209a687ed7c27058f97a32b5",
+      "passed": true
+    },
+    {
+      "file": "compare.js",
+      "sha256": "9757fd70345fe05a07041560c4b186f1a742ef5548554550c356957e6d3d5c02",
+      "passed": true
+    },
+    {
+      "file": "credits.js",
+      "sha256": "a973ba6de75fbb79bbf887cfacdbdfa854265316379f7bbd75c9ada44b555587",
+      "passed": true
+    },
+    {
+      "file": "learning-examples.js",
+      "sha256": "6e1a2e87ad8fe3ce57ade1ae87952f1067760b4b06a833f550addb48de1f8171",
+      "passed": true
+    },
+    {
+      "file": "data/catalogue.json",
+      "sha256": "5161a42f624ec0d2a98d0b3f5ddf7e518924321213c8ca1fbc982ea48905360c",
+      "passed": true
+    },
+    {
+      "file": "data/audit-reviews.json",
+      "sha256": "31a5a8d5b45ec4f0290f1b96a26bcfee35b77829f2b14ca4ccf7b8de5ca9416c",
+      "passed": true
+    },
+    {
+      "file": "data/execution-capabilities.json",
+      "sha256": "ea780923a031cd0e2c4eb83b6b7c9bce8ba45aae02106dd767867cd8e63ab612",
+      "passed": true
+    },
+    {
+      "file": "data/mcp-manifest.json",
+      "sha256": "8b0aa548b2c0c2127949a77500c2573455ca8da8a313b2bd17acbb45364cb9a1",
+      "passed": true
+    }
+  ]
+}
