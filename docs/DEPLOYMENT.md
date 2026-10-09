@@ -105,3 +105,10 @@ sudo -u code-museum python3 /var/www/code-museum/current/server/analytics.py --b
 正式release中的stdio MCP通过既有xshow SSH启动，9项实际协议/工具/资源核验通过，四份数据SHA一致、五工具只读、执行工具拒绝；记录mcp-production-checks.json。没有新增公开MCP端口或常驻权限，客户端接入见MCP.md。
 
 收尾只读确认执行器标签容器零残留，统计仍为2026-10-05开始的数据（核验时9访客/21访问；浏览器自动化不计访问），未重置数据库。上述检查绑定功能发布，后续核验文档提交不改变网站或执行器源码。
+
+
+## 2026-10-09 运行体验续版后端升级
+
+主改动dcc6292已由用户/外部操作推送，Actions37898617382的build/deploy成功。私有执行器本轮带备份升级，备份`/var/backups/code-museum-executor/20261009T110023Z`；executor.py SHA `52dca77233bc3b583fd570befa00279fcb458931f8eb73a534b1828dd1fe06b6`，固定镜像清单SHA保持`4782d1897554fbd51bec739d5f1bcdac71289c09a28d7432019f9ef97f7c1ccc`。原令牌、服务身份/权限、CI权限和统计数据库沿用；Nginx/systemd检查通过，两服务active，生产执行器容器零残留。统计仍从2026-10-05开始，读取时10访客/23访问，读取不增计数。
+
+42项实际隔离Docker检查和30项实际Chrome→临时SSH Docker检查通过；后者包含Rust/Go八主题真实输出。窄屏展开诊断区最小高度补丁经实际截图复核，可同时读诊断和“未执行”提示。记录见execution-experience-docker-checks.json及execution-experience-browser-checks.json。最终收尾提交/Actions与正式HTTPS核验待实际完成后追加。

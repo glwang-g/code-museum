@@ -236,7 +236,7 @@ async function record(name,detail){results.push({name,detail});console.log('PASS
         assert.ok(detail.includes(entry.state==='field-only'?'来源字段，关系待核':entry.state==='needs-direct-evidence'?'直接设计依据待补':entry.state==='citation-only'?'原文摘录待补':'原文摘录已存'));
         if(entry.state==='excerpt-recorded'){
           await evaluate(`document.querySelector('.relation-source').open=true`);
-          assert.ok((await evaluate(`document.querySelector('.relation-source').textContent`)).includes(entry.key==='csharp|scala|influencedBy'?'not a superset':'built-in modules'));
+          assert.ok((await evaluate(`document.querySelector('.relation-source').textContent`)).includes(({'csharp|scala|influencedBy':'not a superset','java|csharp|influencedBy':'checked exceptions','objective-c|swift|influencedBy':'named parameters','c|python|extensionInterface':'built-in modules'})[entry.key]));
           await screenshot('relationship-proof-'+mode+'-'+size.width+'.png');
         }
         await evaluate(`(()=>{document.querySelector('[data-relation-endpoint="${entry.anchor}"]').click();document.querySelector('[data-edge-key="${entry.key}"]').focus();})()`);

@@ -388,3 +388,8 @@ body:not(.lineage-focus) .atlas .relations path.field-edge{opacity:.12}
 .lab-compiler{flex:none;max-height:40%;overflow:auto;border-bottom:1px solid var(--line)}
 .lab-compiler summary{cursor:pointer;padding:6px 12px;color:var(--gold);font-size:12px}
 .lab-compiler pre{padding:6px 12px;font-size:12px}
+
+@media(max-width:650px){
+  .lab-output:has(.lab-compiler[open]){min-height:340px;flex-basis:auto}
+  .lab-output .lab-compiler[open]{max-height:160px}
+}
