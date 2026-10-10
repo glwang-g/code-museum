@@ -459,6 +459,8 @@ body:not(.lineage-focus) .atlas .relations path.field-edge{opacity:.12}
 .share-feedback::before{content:"";position:absolute;right:18px;top:-5px;width:8px;height:8px;border-left:1px solid var(--line);border-top:1px solid var(--line);background:var(--panel);transform:rotate(45deg)}
 .share-feedback[hidden]{display:none}.share-feedback input{display:block;width:100%;min-width:0;background:var(--bg);color:var(--ink);border:1px solid var(--line);padding:6px;margin-top:6px}
 .share-feedback input[hidden]{display:none}
+.icp-record{position:fixed;right:12px;bottom:6px;z-index:5;padding:3px 6px;border:1px solid var(--line);border-radius:4px;background:#10262be6;color:var(--muted);font-size:10px;line-height:1;text-decoration:none;backdrop-filter:blur(8px)}
+.icp-record:hover,.icp-record:focus-visible{color:var(--ink)}
 .relation-scope{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--muted)}
 .relation-scope select{max-width:150px;padding:5px;background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:3px}
 .viewport.panning{cursor:grabbing;user-select:none}
@@ -470,7 +472,7 @@ body:not(.lineage-focus) .atlas .relations path.field-edge{opacity:.12}
 #guide-task-content{margin:6px 0;display:grid;grid-template-columns:70px 1fr;gap:5px 10px}#guide-task-content dt{color:var(--gold)}#guide-task-content dd{margin:0;color:var(--ink);overflow-wrap:anywhere}
 @media(max-width:650px){.atlas-controls{flex-wrap:wrap}.relation-scope select{max-width:135px}.share-feedback{padding:8px 12px}.header-tools{gap:7px}#guide-task-content{grid-template-columns:55px 1fr}.learning-guide{max-height:40vh;overflow-y:auto}#build-version{overflow-wrap:anywhere}}
 
-@media(max-width:650px){header{height:66px;min-height:66px}header .brand{position:absolute;top:6px;left:12px;line-height:20px}header .header-tools{bottom:3px}}
+@media(max-width:650px){header{height:66px;min-height:66px}header .brand{position:absolute;top:6px;left:12px;line-height:20px}header .header-tools{bottom:3px}.icp-record{top:calc(4px + env(safe-area-inset-top));right:8px;bottom:auto;font-size:9px}}
 
 .detail-actions{display:flex;gap:6px;flex-wrap:wrap;clear:both;padding-top:8px}.detail.compact{flex-basis:240px!important;width:240px!important}.detail.compact #detail-content{display:none}#relation-count{font-size:11px;color:var(--muted)}.learning-guide.compact #guide-body,.learning-guide.compact .guide-actions{display:none}#guide-feedback[data-state="matched"]{color:var(--gold)}#guide-feedback[data-state="different"],#guide-feedback[data-state="error"]{border-left:2px solid var(--gold);padding-left:8px}
 @media(max-width:650px){.detail.compact{width:100%!important;flex-basis:90px!important;max-height:90px!important;min-height:90px!important;padding:6px 12px}.detail-actions{padding-top:4px}.detail-actions button{padding:4px 8px}.learning-guide.compact{max-height:46px;padding:4px 8px}.atlas-controls{gap:5px}.relation-scope select{max-width:105px}.learning-guide #guide-toggle{float:right}}
