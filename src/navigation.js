@@ -46,13 +46,28 @@
   document.addEventListener('museum-lab-change',save);
   document.addEventListener('change',event=>{if(event.target.closest('#compare'))save()});
   $('compare-swap').addEventListener('click',save);
-  $('share-page').onclick=async()=>{
+  let shareFeedbackTimer=0;
+  function closeShareFeedback(){
+    if(shareFeedbackTimer)clearTimeout(shareFeedbackTimer);
+    shareFeedbackTimer=0;$('share-feedback').hidden=true;$('share-page').setAttribute('aria-expanded','false');
+  }
+  function showShareFeedback(message,shareUrl='',hold=2200){
+    $('share-status').textContent=message;
+    $('share-url').hidden=!shareUrl;$('share-url').value=shareUrl;
+    $('share-feedback').hidden=false;$('share-page').setAttribute('aria-expanded','true');
+    if(shareUrl){$('share-url').focus();$('share-url').select()}
+    if(shareFeedbackTimer)clearTimeout(shareFeedbackTimer);
+    shareFeedbackTimer=setTimeout(closeShareFeedback,hold);
+  }
+  $('share-page').onclick=async event=>{
+    event.stopPropagation();
     const hash=route.serialize(state()),url=new URL(location.href);url.hash=hash;
     url.search=''; // Share navigation only, never incidental query parameters.
-    $('share-feedback').hidden=false;$('share-url').hidden=true;
-    try{await navigator.clipboard.writeText(url.href);$('share-status').textContent='已复制当前页面链接。'}
-    catch{$('share-status').textContent='复制此链接即可分享当前页面：';$('share-url').value=url.href;$('share-url').hidden=false;$('share-url').focus();$('share-url').select()}
+    try{await navigator.clipboard.writeText(url.href);showShareFeedback('已复制当前页面链接')}
+    catch{showShareFeedback('复制此链接即可分享当前页面：',url.href,7000)}
   };
+  document.addEventListener('click',event=>{if(!event.target.closest('.share-control'))closeShareFeedback()});
+  document.addEventListener('keydown',event=>{if(event.key==='Escape')closeShareFeedback()});
   const info=window.MUSEUM_BUILD_INFO;
   $('build-version').textContent='内容版本 '+info.contentSha256.slice(0,12)+' · '+(location.hostname==='codemuseum.freexlib.com'?'正式站':'本地 / 预览')+' · 版本由源码与固定数据生成。';
   window.MUSEUM_NAV={restore,state,save};

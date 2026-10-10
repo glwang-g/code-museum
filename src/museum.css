@@ -168,7 +168,7 @@ main{flex:1;min-height:0;display:flex;flex-direction:column;overflow:hidden}
 .nearby-list button:hover,.nearby-list button:focus-visible{background:#28505a}
 
 /* The editor keeps a native textarea for selection, IME and accessibility. */
-.lab.museum-panel{margin:0 20px;padding:16px 20px;border:1px solid #486066;background:#10262b;display:flex;flex-direction:column;overflow:hidden;gap:14px}
+.lab.museum-panel{margin:0 20px;padding:16px 20px;border:1px solid #486066;background:#10262b;display:flex;flex-direction:column;overflow:hidden;gap:8px}
 .lab.museum-panel[hidden]{display:none}
 .lab-header{display:flex;justify-content:space-between;align-items:center;gap:16px;flex:none}
 .lab-header h2{font-size:23px}
@@ -190,7 +190,7 @@ main{flex:1;min-height:0;display:flex;flex-direction:column;overflow:hidden}
 .credit-revision code{font-size:10px;overflow-wrap:anywhere}
 .historical-sources{border-top:1px solid var(--line);padding-top:24px;margin-top:28px}
 @media(max-width:650px){.credit-grid{grid-template-columns:1fr}.credit-card{padding:12px}.credits-nav{gap:6px}.credits-nav button{padding:4px 7px}}
-.lab-header p{font-size:12px;color:var(--muted)}
+.lab-header p{font-size:12px;color:var(--muted);margin:2px 0}
 .lab-header label{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:12px;white-space:nowrap}
 .lab-header select{max-width:180px;padding:6px;color:var(--ink);background:#112a30;border:1px solid #526b71}
 .lab-body{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(230px,.85fr);gap:12px;flex:1;min-height:0}
@@ -320,7 +320,7 @@ body:not(.lineage-focus) .atlas .relations path.field-edge{opacity:.12}
 
 @media(max-width:650px){.lab-output{min-height:160px}}
 
-.lab-runtime-state{flex:none;display:flex;align-items:center;flex-wrap:wrap;gap:6px 12px;padding:8px 0;font-size:11px;color:var(--muted);min-width:0}
+.lab-runtime-state{flex:none;display:flex;align-items:center;flex-wrap:wrap;gap:6px 12px;padding:4px 0;font-size:11px;color:var(--muted);min-width:0}
 .lab-state-label{border:1px solid #526b71;border-radius:3px;padding:3px 7px;color:var(--ink);white-space:nowrap}
 .lab-runtime-state[data-stage="failed"] .lab-state-label{color:#f3b9a3;border-color:#aa6454}
 .lab-runtime-state[data-stage="completed"] .lab-state-label,.lab-runtime-state[data-stage="ready"] .lab-state-label{color:#b8d8bd;border-color:#65866b}
@@ -347,11 +347,12 @@ body:not(.lineage-focus) .atlas .relations path.field-edge{opacity:.12}
 @media(max-width:359px){header{height:60px;min-height:60px;flex-wrap:wrap;align-content:center;row-gap:0}.header-tools{margin-left:auto}.visit-explanation{top:64px}}
 
 /* Learning workspace and paired language exhibits. */
+.lab-toolbar{display:flex;align-items:center;flex-wrap:wrap;gap:6px 16px;flex:none;min-width:0}
 .lab-study-toolbar{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:12px;flex:none}
 .lab-study-toolbar label{display:flex;gap:7px;align-items:center}
 .lab-study-toolbar select,.lab-study-toolbar button,.lab-environment button,.compare button,.compare select{background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:4px;padding:5px 9px;font-size:12px}
 #lab-draft-status{color:var(--muted);font-size:11px;margin-left:auto}
-.lab-topic-note{font-size:12px;color:var(--muted);margin:0;flex:none}
+.lab-topic-note{font-size:12px;color:var(--muted);margin:0;flex:1 1 220px;min-width:0}
 .lab-environment{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:8px 10px;border:1px solid var(--line);border-radius:4px;color:var(--muted);font-size:12px;flex:none}
 .lab-environment button{margin-left:auto;color:var(--gold)}
 .lab-run-actions{display:flex;gap:6px}
@@ -385,12 +386,12 @@ body:not(.lineage-focus) .atlas .relations path.field-edge{opacity:.12}
 .lab-file-tools{position:relative;flex:none}.lab-file-tools summary{cursor:pointer;padding:5px 9px;border:1px solid var(--line);border-radius:4px;background:var(--panel);color:var(--ink);white-space:nowrap}
 .lab-file-menu{position:absolute;left:0;top:calc(100% + 5px);min-width:170px;display:grid;gap:6px;padding:10px;border:1px solid var(--line);background:var(--panel);border-radius:5px;box-shadow:0 6px 24px #0003;z-index:30}
 .lab-file-menu button{text-align:left}.lab-file-menu button[hidden]{display:none}
-.lab-environment-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:12px;color:var(--muted);flex:none}
+.lab-environment-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:12px;color:var(--muted);flex:0 1 auto}
 .lab-environment-row>button{background:var(--panel);color:var(--gold);border:1px solid var(--line);padding:4px 8px;border-radius:4px;font-size:12px}
 .lab-environment{position:relative;display:block;padding:4px 8px;margin:0}
 .lab-environment summary{cursor:pointer}
 .lab-environment>p{position:absolute;top:calc(100% + 5px);left:0;width:340px;max-width:calc(100vw - 40px);padding:12px;border:1px solid var(--line);border-radius:5px;background:var(--panel);box-shadow:0 6px 24px #0003;z-index:30;margin:0}
-@media(max-width:650px){.lab-study-toolbar{font-size:11px}.lab-study-toolbar select{max-width:145px}#lab-draft-status{font-size:10px}.lab-topic-note{font-size:10px;line-height:1.5}.lab-environment-row{font-size:11px}.lab.museum-panel{gap:6px}.lab-body{min-height:280px}}
+@media(max-width:650px){.lab-toolbar{gap:4px 10px}.lab-topic-note{flex-basis:100%}.lab-study-toolbar{font-size:11px}.lab-study-toolbar select{max-width:145px}#lab-draft-status{font-size:10px}.lab-topic-note{font-size:10px;line-height:1.5}.lab-environment-row{font-size:11px}.lab.museum-panel{gap:6px}.lab-body{min-height:280px}}
 
 .lab-file-feedback{font-size:12px;color:var(--gold);margin:0;flex:none}
 .lab-file-feedback[hidden]{display:none}
@@ -428,15 +429,18 @@ body:not(.lineage-focus) .atlas .relations path.field-edge{opacity:.12}
 .learning-guide[hidden]{display:none}
 /* Keep the next action and navigation tools readable on narrow screens. */
 .header-tools #share-page{border:1px solid var(--line);border-radius:4px;padding:5px 9px;background:var(--panel);color:var(--ink);font-size:12px}
-.share-feedback{padding:8px 20px;background:var(--panel);color:var(--ink);font-size:13px;overflow-wrap:anywhere}
-.share-feedback[hidden]{display:none}.share-feedback input{display:block;width:100%;min-width:0;background:var(--bg);color:var(--ink);border:1px solid var(--line);padding:6px}
+.share-control{position:relative;display:inline-flex;align-items:center}
+.share-feedback{position:absolute;top:calc(100% + 8px);right:0;z-index:60;width:min(360px,calc(100vw - 24px));padding:10px 12px;border:1px solid var(--line);border-radius:6px;background:var(--panel);color:var(--ink);font-size:13px;line-height:1.5;overflow-wrap:anywhere;box-shadow:0 10px 28px #00151bd9}
+.share-feedback::before{content:"";position:absolute;right:18px;top:-5px;width:8px;height:8px;border-left:1px solid var(--line);border-top:1px solid var(--line);background:var(--panel);transform:rotate(45deg)}
+.share-feedback[hidden]{display:none}.share-feedback input{display:block;width:100%;min-width:0;background:var(--bg);color:var(--ink);border:1px solid var(--line);padding:6px;margin-top:6px}
 .share-feedback input[hidden]{display:none}
 .relation-scope{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--muted)}
 .relation-scope select{max-width:150px;padding:5px;background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:3px}
 .viewport.panning{cursor:grabbing;user-select:none}
 .relation-explanation{margin:8px 0;font-size:13px;color:var(--muted)}.relation-explanation summary{cursor:pointer;color:var(--gold)}
 .relationship-summary{border-left:2px solid var(--gold);padding-left:12px}
-.lab-next-action{padding:8px 12px;margin:5px 0;border-left:3px solid var(--gold);background:var(--panel);font-size:13px;color:var(--ink);flex:none}
+.lab-next-action{padding:8px 12px;margin:0;border-left:3px solid var(--gold);background:var(--panel);font-size:13px;color:var(--ink);flex:none}
+.lab-next-action:empty{display:none}
 #guide-task{margin-top:5px;font-size:12px}#guide-task summary{cursor:pointer;color:var(--gold)}
 #guide-task-content{margin:6px 0;display:grid;grid-template-columns:70px 1fr;gap:5px 10px}#guide-task-content dt{color:var(--gold)}#guide-task-content dd{margin:0;color:var(--ink);overflow-wrap:anywhere}
 @media(max-width:650px){.atlas-controls{flex-wrap:wrap}.relation-scope select{max-width:135px}.share-feedback{padding:8px 12px}.header-tools{gap:7px}#guide-task-content{grid-template-columns:55px 1fr}.learning-guide{max-height:40vh;overflow-y:auto}#build-version{overflow-wrap:anywhere}}
