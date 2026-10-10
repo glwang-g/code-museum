@@ -10,6 +10,8 @@ function learningPaths(root,catalogue,audit){
   routes.add(route.id);
   for(const step of route.steps){
    if(!text(step.title)||!text(step.note)||!['archive','proof','compare','lesson'].includes(step.action))throw new Error('Invalid learning step');
+   if(![step.observe,step.change,step.expected].every(text))throw new Error('Learning step requires observation, task and expected result');
+   if(step.check&&(step.action!=='lesson'||!['javascript','scheme'].includes(step.language)||!text(step.check.output)))throw new Error('Output checks require an explicitly supported local exercise');
    if(step.action==='archive'&&!ids.has(step.language))throw new Error('Unknown learning language');
    if(step.action==='proof'&&!audit.relations.some(e=>e.key===step.key&&e.state==='excerpt-recorded'&&e.sources.length))throw new Error('Learning relationship requires reviewed excerpts');
    if(['compare','lesson'].includes(step.action)){

@@ -41,7 +41,7 @@ function auditRelationships(catalogue,reviews,overrides=[],ecosystem=[],decision
     const from=ids.get(e.from),to=ids.get(e.to),layer=ecological.has(e.type)?'ecosystem':'design';
     if(layer==='design'&&from.year&&to.year&&from.year>to.year){issues.push('上游馆藏年代晚于下游，需核对版本或事件');warnings.push({kind:'chronology',key:key(e),fromYear:from.year,toYear:to.year});}
     if(decision?.state==='needs-direct-evidence')issues.push(decision.note);
-    return {...e,key:key(e),layer,state,issues,reviewNote:decision?.note||'',mapVisible:!!(from.mapEligible&&to.mapEligible&&from.year&&to.year),sources:sources.map(s=>({url:s.url,finalUrl:s.finalUrl,title:s.title,excerpt:s.excerpt,checkedAt:s.checkedAt,sha256:s.decodedBodySha256,hashScope:s.hashScope||'decoded response body',reviewId:s.reviewId}))};
+    return {...e,key:key(e),layer,state,issues,reviewNote:decision?.note||'',mapVisible:!!(from.mapEligible&&to.mapEligible&&from.year&&to.year),evidenceVersion:e.sourceSha256?{citedSha256:e.sourceSha256,match:sources.length?(hashes.has(e.sourceSha256)?'matched':'different'):'unread',note:'引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。'}:null,sources:sources.map(s=>({url:s.url,finalUrl:s.finalUrl,title:s.title,excerpt:s.excerpt,checkedAt:s.checkedAt,sha256:s.decodedBodySha256,hashScope:s.hashScope||'decoded response body',reviewId:s.reviewId,locator:s.locator||''}))};
   });
   // Cycles are review leads, not proof that a historical claim is false.
   const adj=new Map(),color=new Map(),stack=[];

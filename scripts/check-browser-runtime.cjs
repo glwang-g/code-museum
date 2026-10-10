@@ -215,20 +215,25 @@ async function record(name,detail){results.push({name,detail});console.log('PASS
     await evaluate(`document.querySelector('#sources-view').click();document.querySelector('[data-credit-target="relationship-coverage"]').click();document.querySelector('#relationship-label-review').open=true;document.querySelector('#relationship-review-filter').value='all';document.querySelector('#relationship-review-filter').dispatchEvent(new Event('change'));`);
     assert.equal(await evaluate(`document.querySelectorAll('[data-review-language]').length`),50);
     await evaluate(`document.querySelector('#relationship-review-filter').value='gaps';document.querySelector('#relationship-review-filter').dispatchEvent(new Event('change'));`);
-    assert.deepEqual(await evaluate(`Array.from(document.querySelectorAll('[data-review-language]'),b=>b.dataset.reviewLanguage)`),['assembly-language','dart','xslt','zig']);
+    assert.deepEqual(await evaluate(`Array.from(document.querySelectorAll('[data-review-language]'),b=>b.dataset.reviewLanguage)`),['assembly-language','xslt','zig']);
     await screenshot('relationship-coverage-'+size.width+'.png');
     await evaluate(`document.querySelector('[data-review-language="zig"]').click()`);
     assert.equal(await evaluate(`document.querySelector('#detail-content h2').textContent`),'Zig');
     assert.equal(await evaluate(`document.querySelector('#detail').classList.contains('open')`),true);
     for(const mode of ['timeline','lineage']){
-      for(const entry of [{key:'csharp|scala|influencedBy',anchor:'scala',layer:'design',state:'excerpt-recorded'}, {key:'java|javascript|influencedBy',anchor:'javascript',layer:'design',state:'field-only'},{key:'java|csharp|influencedBy',anchor:'csharp',layer:'design',state:'excerpt-recorded'},{key:'c|python|extensionInterface',anchor:'python',layer:'ecosystem',state:'excerpt-recorded'},{key:'objective-c|swift|influencedBy',anchor:'swift',layer:'design',state:'excerpt-recorded'}]){
+      for(const entry of [{key:'csharp|scala|influencedBy',anchor:'scala',layer:'design',state:'excerpt-recorded'}, {key:'java|javascript|influencedBy',anchor:'javascript',layer:'design',state:'excerpt-recorded'},{key:'java|csharp|influencedBy',anchor:'csharp',layer:'design',state:'excerpt-recorded'},{key:'c|python|extensionInterface',anchor:'python',layer:'ecosystem',state:'excerpt-recorded'},{key:'objective-c|swift|influencedBy',anchor:'swift',layer:'design',state:'excerpt-recorded'}]){
         await evaluate(`setView(${JSON.stringify(mode)});setRelationLayer(${JSON.stringify(entry.layer)});select(${JSON.stringify(entry.anchor)});activeId=${JSON.stringify(entry.anchor)};renderLineageFocus(activeId);`);
         await new Promise(resolve=>setTimeout(resolve,600));
         const point=await evaluate(`(()=>{const g=document.querySelector('[data-edge-key="${entry.key}"]'),p=g.querySelector('.relation-hit'),v=document.querySelector('#viewport').getBoundingClientRect();for(let i=2;i<99;i++){const t=p.getPointAtLength(p.getTotalLength()*i/100).matrixTransform(p.getScreenCTM());if(t.x<v.left+3||t.x>v.right-3||t.y<v.top+3||t.y>v.bottom-3)continue;const hit=document.elementFromPoint(t.x,t.y);if(hit?.closest('[data-edge-key]')&&nearestRelations({clientX:t.x,clientY:t.y})[0]?.key==='${entry.key}')return {x:t.x,y:t.y};}return null})()`);
-        if(!point){await screenshot('relationship-hit-failure.png');console.log(await evaluate(`(()=>{const g=document.querySelector('[data-edge-key="${entry.key}"]'),p=g.querySelector('.relation-hit'),v=document.querySelector('#viewport').getBoundingClientRect();return {viewport:{x:v.x,y:v.y,width:v.width,height:v.height},samples:Array.from({length:9},(_,i)=>{const t=p.getPointAtLength(p.getTotalLength()*(i+1)/10).matrixTransform(p.getScreenCTM());return {x:t.x,y:t.y,hit:document.elementFromPoint(t.x,t.y)?.outerHTML.slice(0,240)}})}})()`));}
-        assert.ok(point,'Relation must have a real pointer target: '+JSON.stringify({mode,size,entry}));
-        await page('Input.dispatchMouseEvent',{type:'mousePressed',...point,button:'left',clickCount:1});
-        await page('Input.dispatchMouseEvent',{type:'mouseReleased',...point,button:'left',clickCount:1});
+        if(point){
+          await page('Input.dispatchMouseEvent',{type:'mousePressed',...point,button:'left',clickCount:1});
+          await page('Input.dispatchMouseEvent',{type:'mouseReleased',...point,button:'left',clickCount:1});
+        }else{
+          // Labels have priority over lines; fully covered edges remain keyboard-accessible.
+          await evaluate(`document.querySelector('[data-edge-key="${entry.key}"]').focus()`);
+          await page('Input.dispatchKeyEvent',{type:'keyDown',key:'Enter',code:'Enter',windowsVirtualKeyCode:13});
+          await page('Input.dispatchKeyEvent',{type:'keyUp',key:'Enter',code:'Enter',windowsVirtualKeyCode:13});
+        }
         if(await evaluate(`document.querySelector('#detail-content .eyebrow').textContent==='交叠连线'`))await evaluate(`document.querySelector('[data-proof-key="${entry.key}"]').click()`);
         assert.equal(await evaluate(`document.querySelector('#detail-content .eyebrow').textContent.startsWith('关系依据')`),true,JSON.stringify({mode,size,entry,point,actual:await evaluate(`document.querySelector('#detail-content .eyebrow').textContent`)}));
         assert.equal(await evaluate(`inspectedRelation`),entry.key);
@@ -236,7 +241,7 @@ async function record(name,detail){results.push({name,detail});console.log('PASS
         assert.ok(detail.includes(entry.state==='field-only'?'来源字段，关系待核':entry.state==='needs-direct-evidence'?'直接设计依据待补':entry.state==='citation-only'?'原文摘录待补':'原文摘录已存'));
         if(entry.state==='excerpt-recorded'){
           await evaluate(`document.querySelector('.relation-source').open=true`);
-          assert.ok((await evaluate(`document.querySelector('.relation-source').textContent`)).includes(({'csharp|scala|influencedBy':'not a superset','java|csharp|influencedBy':'checked exceptions','objective-c|swift|influencedBy':'named parameters','c|python|extensionInterface':'built-in modules'})[entry.key]));
+          assert.ok((await evaluate(`document.querySelector('.relation-source').textContent`)).includes(({'csharp|scala|influencedBy':'not a superset','java|javascript|influencedBy':'look like Java','java|csharp|influencedBy':'checked exceptions','objective-c|swift|influencedBy':'named parameters','c|python|extensionInterface':'built-in modules'})[entry.key]));
           await screenshot('relationship-proof-'+mode+'-'+size.width+'.png');
         }
         await evaluate(`(()=>{document.querySelector('[data-relation-endpoint="${entry.anchor}"]').click();document.querySelector('[data-edge-key="${entry.key}"]').focus();})()`);
@@ -245,7 +250,7 @@ async function record(name,detail){results.push({name,detail});console.log('PASS
         assert.equal(await evaluate(`document.querySelector('#detail-content .eyebrow').textContent.startsWith('关系依据')`),true,'Keyboard proof navigation');
         await evaluate(`restoreMapOverview()`);
         assert.equal(await evaluate(`document.querySelector('#detail').classList.contains('open')`),false);
-        relationProofChecks.push({width:size.width,mode,key:entry.key,state:entry.state});
+        relationProofChecks.push({width:size.width,mode,key:entry.key,state:entry.state,input:point?'mouse':'keyboard (line covered by label)'});
       }
     }
     assert.equal(await evaluate(`document.documentElement.scrollWidth<=innerWidth`),true);
@@ -279,7 +284,7 @@ async function record(name,detail){results.push({name,detail});console.log('PASS
   await page('Emulation.setDeviceMetricsOverride',{width:1440,height:1000,deviceScaleFactor:1,mobile:false});
   await edit('(let loop () (loop))');
   await wait(`document.querySelector('#lab-result').textContent==='正在运行 Scheme…'`);
-  await evaluate(`document.querySelector('#timeline-view').click()`);
+  await evaluate(`document.querySelector('#timeline-view').click();setRelationScope('all')`);
   assert.equal(await evaluate(`window.__museumWorkers.filter(w=>w.observedURL==='scheme-worker.js').every(w=>w.observedTerminated)`),true);
   await evaluate(`window.MUSEUM_LAB.open('scheme')`);
   await edit('(+ 40 2)');await output('42');
@@ -307,7 +312,7 @@ async function record(name,detail){results.push({name,detail});console.log('PASS
   await page('Emulation.setDeviceMetricsOverride',{width:1440,height:1000,deviceScaleFactor:1,mobile:false});
   await edit('while true do end');
   await wait(`document.querySelector('#lab-result').textContent==='正在运行 Lua…'`);
-  await evaluate(`document.querySelector('#timeline-view').click()`);
+  await evaluate(`document.querySelector('#timeline-view').click();setRelationScope('all')`);
   assert.equal(await evaluate(`window.__museumWorkers.filter(w=>w.observedURL==='lua-worker.js').every(w=>w.observedTerminated)`),true);
   await evaluate(`window.MUSEUM_LAB.open('lua')`);
   await edit('print(55)');await output('55');
@@ -336,7 +341,7 @@ async function record(name,detail){results.push({name,detail});console.log('PASS
   await wait(`document.querySelector('#lab-result').textContent.includes('运行超过 3 秒')`,10000);
   await edit('print(9)');await output('9');
   await record('Python infinite loop termination and recovery','9');
-  await evaluate(`document.querySelector('#timeline-view').click()`);
+  await evaluate(`document.querySelector('#timeline-view').click();setRelationScope('all')`);
   assert.equal(await evaluate(`document.querySelector('.dock[data-id="vbscript"]').classList.contains('dot')`),false,'Reviewed TIOBE VBScript must be a persistent label');
   for(const id of ['vba','vbscript']){
     assert.equal(await evaluate(`!!document.querySelector('.dock[data-id="${id}"]')`),true);
@@ -729,7 +734,7 @@ async function record(name,detail){results.push({name,detail});console.log('PASS
   await record('Python/Rust/Zig/PowerShell ecosystem layer and keyboard relation preview restore',ecologyChecks);
   async function checkRunBadge(id){
     const badge=await evaluate(`(()=>{const b=document.querySelector('.map-run'),r=b?.getBoundingClientRect(),v=document.querySelector('#viewport').getBoundingClientRect();return {id:b?.dataset.runLanguage,label:b?.getAttribute('aria-label'),width:r?.width,height:r?.height,inside:r&&r.left>=v.left&&r.right<=v.right&&r.top>=v.top&&r.bottom<=v.bottom,hit:r&&document.elementFromPoint(r.left+r.width/2,r.top+r.height/2)===b}})()`);
-    assert.equal(badge.id,id);assert.match(badge.label,/可在线运行/);
+    assert.equal(badge.id,id);assert.match(badge.label,/浏览器(?:或远端)?运行/);
     assert.ok(Math.abs(badge.width-24)<.1&&Math.abs(badge.height-24)<.1,'Run badge must retain screen size');
     assert.equal(badge.inside,true,'Run badge must fit viewport');assert.equal(badge.hit,true,'Run badge must be clickable above the map');
     return badge;

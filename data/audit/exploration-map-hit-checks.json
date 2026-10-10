@@ -1,0 +1,810 @@
+{
+  "checkedAt": "2026-10-10T11:36:41.595Z",
+  "browser": "Chrome/154.0.8037.98",
+  "scope": "Actual isolated headless Chrome over local HTTP; JavaScript and Java, two sizes, two themes, both map views; natural run button clicks and forced real SVG hit-area crossings underneath selected and related labels and run buttons, actual hit testing and mouse navigation; exposed lines remain clickable. Java capability advertised by a local navigation-only fixture; no execution endpoint or execution output provided. Only GET /api/runtimes and the page’s read-only GET /api/visits permitted; no code submitted. External DNS blocked; no runtime or production execution tested.",
+  "inputs": {
+    "data/audit/reviews.json": "4c3a9dc3389669913266adf052fac99c4fe5d650035cf8a7fb9153b5330c3831",
+    "data/relationship-overrides.json": "f24f8b51525e3299542b3173b5b09fde68c9f837bcf21c7a36640b6b4db8f52c",
+    "data/audit/map-eligible-ids.json": "9b6e43b20ced203fc09b63d4ad653f3eea79e5da6441d921c911fa655647ef91",
+    "src/museum.js": "9a5d835fc3aeee0cdd8b064a315f9586bbdc1f4af40ee3192a70a2acaea05bf6",
+    "src/museum.css": "749276018fb729afaccdaeff05dd486546d6dd8e5933cd453c5ff4bea4a356eb",
+    "src/themes.css": "df167e01d77e34c60e523f70264938726f4eff103bc469f2ecceaeca3f725eaf",
+    "scripts/check-map-hit-targets.cjs": "b2be7b2558e1fe793669c6dfc7095be3af3f80d5e691850e8c23ba28f5f4f2ea"
+  },
+  "servedInputs": {
+    "index.html": "c9ea5e22565b3ae99db516d49858d8a2adcb3d9c684882e81565d437cd232bbb",
+    "museum.js": "9a5d835fc3aeee0cdd8b064a315f9586bbdc1f4af40ee3192a70a2acaea05bf6",
+    "museum.css": "749276018fb729afaccdaeff05dd486546d6dd8e5933cd453c5ff4bea4a356eb",
+    "themes.css": "df167e01d77e34c60e523f70264938726f4eff103bc469f2ecceaeca3f725eaf",
+    "data/catalogue.js": "347b2852b629498ab2dea1de83bbcec0956922ae76060475b50c1f691ec6582b",
+    "data/relationship-status.js": "72289678e179556c8780746c1b9fc3f92ac30a58a5a18e133fca294248d50307",
+    "data/relationship-status.json": "4cef374ffea16f06c833acaefa867f3ac81a39e969c30794808f43cf59c482e3",
+    "data/audit-reviews.json": "4c3a9dc3389669913266adf052fac99c4fe5d650035cf8a7fb9153b5330c3831"
+  },
+  "checks": [
+    {
+      "width": 1440,
+      "theme": "dark",
+      "mode": "timeline",
+      "kind": "selected-label",
+      "selectedLanguage": "javascript",
+      "language": "javascript",
+      "lineUnder": true,
+      "mouseClick": true
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "mode": "timeline",
+      "kind": "related-label",
+      "selectedLanguage": "javascript",
+      "language": "scheme",
+      "lineUnder": true,
+      "mouseClick": true
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "mode": "timeline",
+      "kind": "run",
+      "selectedLanguage": "javascript",
+      "language": "javascript",
+      "lineUnder": true,
+      "mouseClick": true
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "mode": "timeline",
+      "kind": "run-natural",
+      "selectedLanguage": "javascript",
+      "language": "javascript",
+      "lineUnder": false,
+      "mouseClick": true
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "mode": "timeline",
+      "selectedLanguage": "javascript",
+      "kind": "exposed-line",
+      "key": "java|javascript|influencedBy",
+      "mouseClick": true
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "mode": "timeline",
+      "kind": "selected-label",
+      "selectedLanguage": "java",
+      "language": "java",
+      "lineUnder": true,
+      "mouseClick": true
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "mode": "timeline",
+      "kind": "related-label",
+      "selectedLanguage": "java",
+      "language": "c",
+      "lineUnder": true,
+      "mouseClick": true
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "mode": "timeline",
+      "kind": "run",
+      "selectedLanguage": "java",
+      "language": "java",
+      "lineUnder": true,
+      "mouseClick": true
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "mode": "timeline",
+      "kind": "run-natural",
+      "selectedLanguage": "java",
+      "language": "java",
+      "lineUnder": false,
+      "mouseClick": true
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "mode": "timeline",
+      "selectedLanguage": "java",
+      "kind": "exposed-line",
+      "key": "c|java|influencedBy",
+      "mouseClick": true
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "mode": "lineage",
+      "kind": "selected-label",
+      "selectedLanguage": "javascript",
+      "language": "javascript",
+      "lineUnder": true,
+      "mouseClick": true
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "mode": "lineage",
+      "kind": "related-label",
+      "selectedLanguage": "javascript",
+      "language": "dart",
+      "lineUnder": true,
+      "mouseClick": true
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "mode": "lineage",
+      "kind": "run",
+      "selectedLanguage": "javascript",
+      "language": "javascript",
+      "lineUnder": true,
+      "mouseClick": true
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "mode": "lineage",
+      "kind": "run-natural",
+      "selectedLanguage": "javascript",
+      "language": "javascript",
+      "lineUnder": false,
+      "mouseClick": true
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "mode": "lineage",
+      "selectedLanguage": "javascript",
+      "kind": "exposed-line",
+      "key": "javascript|dart|influencedBy",
+      "mouseClick": true
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "mode": "lineage",
+      "kind": "selected-label",
+      "selectedLanguage": "java",
+      "language": "java",
+      "lineUnder": true,
+      "mouseClick": true
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "mode": "lineage",
+      "kind": "related-label",
+      "selectedLanguage": "java",
+      "language": "c",
+      "lineUnder": true,
+      "mouseClick": true
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "mode": "lineage",
+      "kind": "run",
+      "selectedLanguage": "java",
+      "language": "java",
+      "lineUnder": true,
+      "mouseClick": true
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "mode": "lineage",
+      "kind": "run-natural",
+      "selectedLanguage": "java",
+      "language": "java",
+      "lineUnder": false,
+      "mouseClick": true
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "mode": "lineage",
+      "selectedLanguage": "java",
+      "kind": "exposed-line",
+      "key": "c|java|influencedBy",
+      "mouseClick": true
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "mode": "timeline",
+      "kind": "selected-label",
+      "selectedLanguage": "javascript",
+      "language": "javascript",
+      "lineUnder": true,
+      "mouseClick": true
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "mode": "timeline",
+      "kind": "related-label",
+      "selectedLanguage": "javascript",
+      "language": "scheme",
+      "lineUnder": true,
+      "mouseClick": true
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "mode": "timeline",
+      "kind": "run",
+      "selectedLanguage": "javascript",
+      "language": "javascript",
+      "lineUnder": true,
+      "mouseClick": true
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "mode": "timeline",
+      "kind": "run-natural",
+      "selectedLanguage": "javascript",
+      "language": "javascript",
+      "lineUnder": false,
+      "mouseClick": true
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "mode": "timeline",
+      "selectedLanguage": "javascript",
+      "kind": "exposed-line",
+      "key": "java|javascript|influencedBy",
+      "mouseClick": true
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "mode": "timeline",
+      "kind": "selected-label",
+      "selectedLanguage": "java",
+      "language": "java",
+      "lineUnder": true,
+      "mouseClick": true
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "mode": "timeline",
+      "kind": "related-label",
+      "selectedLanguage": "java",
+      "language": "c",
+      "lineUnder": true,
+      "mouseClick": true
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "mode": "timeline",
+      "kind": "run",
+      "selectedLanguage": "java",
+      "language": "java",
+      "lineUnder": true,
+      "mouseClick": true
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "mode": "timeline",
+      "kind": "run-natural",
+      "selectedLanguage": "java",
+      "language": "java",
+      "lineUnder": false,
+      "mouseClick": true
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "mode": "timeline",
+      "selectedLanguage": "java",
+      "kind": "exposed-line",
+      "key": "c|java|influencedBy",
+      "mouseClick": true
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "mode": "lineage",
+      "kind": "selected-label",
+      "selectedLanguage": "javascript",
+      "language": "javascript",
+      "lineUnder": true,
+      "mouseClick": true
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "mode": "lineage",
+      "kind": "related-label",
+      "selectedLanguage": "javascript",
+      "language": "dart",
+      "lineUnder": true,
+      "mouseClick": true
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "mode": "lineage",
+      "kind": "run",
+      "selectedLanguage": "javascript",
+      "language": "javascript",
+      "lineUnder": true,
+      "mouseClick": true
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "mode": "lineage",
+      "kind": "run-natural",
+      "selectedLanguage": "javascript",
+      "language": "javascript",
+      "lineUnder": false,
+      "mouseClick": true
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "mode": "lineage",
+      "selectedLanguage": "javascript",
+      "kind": "exposed-line",
+      "key": "javascript|dart|influencedBy",
+      "mouseClick": true
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "mode": "lineage",
+      "kind": "selected-label",
+      "selectedLanguage": "java",
+      "language": "java",
+      "lineUnder": true,
+      "mouseClick": true
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "mode": "lineage",
+      "kind": "related-label",
+      "selectedLanguage": "java",
+      "language": "c",
+      "lineUnder": true,
+      "mouseClick": true
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "mode": "lineage",
+      "kind": "run",
+      "selectedLanguage": "java",
+      "language": "java",
+      "lineUnder": true,
+      "mouseClick": true
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "mode": "lineage",
+      "kind": "run-natural",
+      "selectedLanguage": "java",
+      "language": "java",
+      "lineUnder": false,
+      "mouseClick": true
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "mode": "lineage",
+      "selectedLanguage": "java",
+      "kind": "exposed-line",
+      "key": "c|java|influencedBy",
+      "mouseClick": true
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "mode": "timeline",
+      "kind": "selected-label",
+      "selectedLanguage": "javascript",
+      "language": "javascript",
+      "lineUnder": true,
+      "mouseClick": true
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "mode": "timeline",
+      "kind": "related-label",
+      "selectedLanguage": "javascript",
+      "language": "scheme",
+      "lineUnder": true,
+      "mouseClick": true
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "mode": "timeline",
+      "kind": "run",
+      "selectedLanguage": "javascript",
+      "language": "javascript",
+      "lineUnder": true,
+      "mouseClick": true
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "mode": "timeline",
+      "kind": "run-natural",
+      "selectedLanguage": "javascript",
+      "language": "javascript",
+      "lineUnder": false,
+      "mouseClick": true
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "mode": "timeline",
+      "selectedLanguage": "javascript",
+      "kind": "exposed-line",
+      "key": "java|javascript|influencedBy",
+      "mouseClick": true
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "mode": "timeline",
+      "kind": "selected-label",
+      "selectedLanguage": "java",
+      "language": "java",
+      "lineUnder": true,
+      "mouseClick": true
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "mode": "timeline",
+      "kind": "related-label",
+      "selectedLanguage": "java",
+      "language": "c",
+      "lineUnder": true,
+      "mouseClick": true
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "mode": "timeline",
+      "kind": "run",
+      "selectedLanguage": "java",
+      "language": "java",
+      "lineUnder": true,
+      "mouseClick": true
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "mode": "timeline",
+      "kind": "run-natural",
+      "selectedLanguage": "java",
+      "language": "java",
+      "lineUnder": false,
+      "mouseClick": true
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "mode": "timeline",
+      "selectedLanguage": "java",
+      "kind": "exposed-line",
+      "key": "cpp|java|influencedBy",
+      "mouseClick": true
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "mode": "lineage",
+      "kind": "selected-label",
+      "selectedLanguage": "javascript",
+      "language": "javascript",
+      "lineUnder": true,
+      "mouseClick": true
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "mode": "lineage",
+      "kind": "related-label",
+      "selectedLanguage": "javascript",
+      "language": "dart",
+      "lineUnder": true,
+      "mouseClick": true
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "mode": "lineage",
+      "kind": "run",
+      "selectedLanguage": "javascript",
+      "language": "javascript",
+      "lineUnder": true,
+      "mouseClick": true
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "mode": "lineage",
+      "kind": "run-natural",
+      "selectedLanguage": "javascript",
+      "language": "javascript",
+      "lineUnder": false,
+      "mouseClick": true
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "mode": "lineage",
+      "selectedLanguage": "javascript",
+      "kind": "exposed-line",
+      "key": "scheme|javascript|influencedBy",
+      "mouseClick": true
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "mode": "lineage",
+      "kind": "selected-label",
+      "selectedLanguage": "java",
+      "language": "java",
+      "lineUnder": true,
+      "mouseClick": true
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "mode": "lineage",
+      "kind": "related-label",
+      "selectedLanguage": "java",
+      "language": "c",
+      "lineUnder": true,
+      "mouseClick": true
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "mode": "lineage",
+      "kind": "run",
+      "selectedLanguage": "java",
+      "language": "java",
+      "lineUnder": true,
+      "mouseClick": true
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "mode": "lineage",
+      "kind": "run-natural",
+      "selectedLanguage": "java",
+      "language": "java",
+      "lineUnder": false,
+      "mouseClick": true
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "mode": "lineage",
+      "selectedLanguage": "java",
+      "kind": "exposed-line",
+      "key": "c|java|influencedBy",
+      "mouseClick": true
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "mode": "timeline",
+      "kind": "selected-label",
+      "selectedLanguage": "javascript",
+      "language": "javascript",
+      "lineUnder": true,
+      "mouseClick": true
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "mode": "timeline",
+      "kind": "related-label",
+      "selectedLanguage": "javascript",
+      "language": "scheme",
+      "lineUnder": true,
+      "mouseClick": true
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "mode": "timeline",
+      "kind": "run",
+      "selectedLanguage": "javascript",
+      "language": "javascript",
+      "lineUnder": true,
+      "mouseClick": true
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "mode": "timeline",
+      "kind": "run-natural",
+      "selectedLanguage": "javascript",
+      "language": "javascript",
+      "lineUnder": false,
+      "mouseClick": true
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "mode": "timeline",
+      "selectedLanguage": "javascript",
+      "kind": "exposed-line",
+      "key": "java|javascript|influencedBy",
+      "mouseClick": true
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "mode": "timeline",
+      "kind": "selected-label",
+      "selectedLanguage": "java",
+      "language": "java",
+      "lineUnder": true,
+      "mouseClick": true
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "mode": "timeline",
+      "kind": "related-label",
+      "selectedLanguage": "java",
+      "language": "c",
+      "lineUnder": true,
+      "mouseClick": true
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "mode": "timeline",
+      "kind": "run",
+      "selectedLanguage": "java",
+      "language": "java",
+      "lineUnder": true,
+      "mouseClick": true
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "mode": "timeline",
+      "kind": "run-natural",
+      "selectedLanguage": "java",
+      "language": "java",
+      "lineUnder": false,
+      "mouseClick": true
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "mode": "timeline",
+      "selectedLanguage": "java",
+      "kind": "exposed-line",
+      "key": "cpp|java|influencedBy",
+      "mouseClick": true
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "mode": "lineage",
+      "kind": "selected-label",
+      "selectedLanguage": "javascript",
+      "language": "javascript",
+      "lineUnder": true,
+      "mouseClick": true
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "mode": "lineage",
+      "kind": "related-label",
+      "selectedLanguage": "javascript",
+      "language": "dart",
+      "lineUnder": true,
+      "mouseClick": true
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "mode": "lineage",
+      "kind": "run",
+      "selectedLanguage": "javascript",
+      "language": "javascript",
+      "lineUnder": true,
+      "mouseClick": true
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "mode": "lineage",
+      "kind": "run-natural",
+      "selectedLanguage": "javascript",
+      "language": "javascript",
+      "lineUnder": false,
+      "mouseClick": true
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "mode": "lineage",
+      "selectedLanguage": "javascript",
+      "kind": "exposed-line",
+      "key": "scheme|javascript|influencedBy",
+      "mouseClick": true
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "mode": "lineage",
+      "kind": "selected-label",
+      "selectedLanguage": "java",
+      "language": "java",
+      "lineUnder": true,
+      "mouseClick": true
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "mode": "lineage",
+      "kind": "related-label",
+      "selectedLanguage": "java",
+      "language": "c",
+      "lineUnder": true,
+      "mouseClick": true
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "mode": "lineage",
+      "kind": "run",
+      "selectedLanguage": "java",
+      "language": "java",
+      "lineUnder": true,
+      "mouseClick": true
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "mode": "lineage",
+      "kind": "run-natural",
+      "selectedLanguage": "java",
+      "language": "java",
+      "lineUnder": false,
+      "mouseClick": true
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "mode": "lineage",
+      "selectedLanguage": "java",
+      "kind": "exposed-line",
+      "key": "c|java|influencedBy",
+      "mouseClick": true
+    }
+  ]
+}

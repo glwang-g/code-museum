@@ -426,3 +426,27 @@ body:not(.lineage-focus) .atlas .relations path.field-edge{opacity:.12}
 @media(max-width:650px){#learning-path-cards{grid-template-columns:1fr}.learning-guide{display:block}.guide-actions{margin-top:6px}}
 
 .learning-guide[hidden]{display:none}
+/* Keep the next action and navigation tools readable on narrow screens. */
+.header-tools #share-page{border:1px solid var(--line);border-radius:4px;padding:5px 9px;background:var(--panel);color:var(--ink);font-size:12px}
+.share-feedback{padding:8px 20px;background:var(--panel);color:var(--ink);font-size:13px;overflow-wrap:anywhere}
+.share-feedback[hidden]{display:none}.share-feedback input{display:block;width:100%;min-width:0;background:var(--bg);color:var(--ink);border:1px solid var(--line);padding:6px}
+.share-feedback input[hidden]{display:none}
+.relation-scope{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--muted)}
+.relation-scope select{max-width:150px;padding:5px;background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:3px}
+.viewport.panning{cursor:grabbing;user-select:none}
+.relation-explanation{margin:8px 0;font-size:13px;color:var(--muted)}.relation-explanation summary{cursor:pointer;color:var(--gold)}
+.relationship-summary{border-left:2px solid var(--gold);padding-left:12px}
+.lab-next-action{padding:8px 12px;margin:5px 0;border-left:3px solid var(--gold);background:var(--panel);font-size:13px;color:var(--ink);flex:none}
+#guide-task{margin-top:5px;font-size:12px}#guide-task summary{cursor:pointer;color:var(--gold)}
+#guide-task-content{margin:6px 0;display:grid;grid-template-columns:70px 1fr;gap:5px 10px}#guide-task-content dt{color:var(--gold)}#guide-task-content dd{margin:0;color:var(--ink);overflow-wrap:anywhere}
+@media(max-width:650px){.atlas-controls{flex-wrap:wrap}.relation-scope select{max-width:135px}.share-feedback{padding:8px 12px}.header-tools{gap:7px}#guide-task-content{grid-template-columns:55px 1fr}.learning-guide{max-height:40vh;overflow-y:auto}#build-version{overflow-wrap:anywhere}}
+
+@media(max-width:650px){header{height:66px;min-height:66px}header .brand{position:absolute;top:6px;left:12px;line-height:20px}header .header-tools{bottom:3px}}
+
+.detail-actions{display:flex;gap:6px;flex-wrap:wrap;clear:both;padding-top:8px}.detail.compact{flex-basis:240px!important;width:240px!important}.detail.compact #detail-content{display:none}#relation-count{font-size:11px;color:var(--muted)}.learning-guide.compact #guide-body,.learning-guide.compact .guide-actions{display:none}#guide-feedback[data-state="matched"]{color:var(--gold)}#guide-feedback[data-state="different"],#guide-feedback[data-state="error"]{border-left:2px solid var(--gold);padding-left:8px}
+@media(max-width:650px){.detail.compact{width:100%!important;flex-basis:90px!important;max-height:90px!important;min-height:90px!important;padding:6px 12px}.detail-actions{padding-top:4px}.detail-actions button{padding:4px 8px}.learning-guide.compact{max-height:46px;padding:4px 8px}.atlas-controls{gap:5px}.relation-scope select{max-width:105px}.learning-guide #guide-toggle{float:right}}
+
+@media(max-width:650px){.atlas-head .atlas-controls{flex-basis:100%;width:100%;min-width:0;justify-content:flex-start}.atlas-head .relation-scope{white-space:nowrap}.atlas-head .map-zoom{margin-left:auto}.detail-actions{clear:none} .detail-actions button{white-space:nowrap}}
+
+.atlas-head .atlas-controls{max-width:100%;flex-wrap:wrap}
+.evidence-version code{overflow-wrap:anywhere}

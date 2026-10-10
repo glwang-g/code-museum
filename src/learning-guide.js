@@ -1,7 +1,9 @@
 (()=>{
  const $=id=>document.getElementById(id),data=window.MUSEUM_LEARNING_PATHS;
  const key='code-museum-guide',routes=new Map(data.routes.map(r=>[r.id,r]));
- let state=null,persistent=true;
+ let state=null,persistent=true,completed={};
+ try{completed=JSON.parse(localStorage.getItem(key+'-completed'))||{}}catch{}
+ $('guide-toggle').onclick=()=>{const compact=$('learning-guide').classList.toggle('compact');$('guide-toggle').textContent=compact?'展开导览':'收起导览';$('guide-toggle').setAttribute('aria-expanded',String(!compact));$('guide-body').inert=compact};
  const esc=v=>String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
  try{const saved=JSON.parse(localStorage.getItem(key));if(saved&&routes.has(saved.route)&&Number.isInteger(saved.index)&&saved.index>=0&&saved.index<routes.get(saved.route).steps.length)state={route:saved.route,index:saved.index};}catch{persistent=false}
  function save(){try{state?localStorage.setItem(key,JSON.stringify(state)):localStorage.removeItem(key);persistent=true}catch{persistent=false}}
@@ -11,6 +13,9 @@
   $('guide-title').textContent=route.title+' · '+step.title;
   $('guide-progress').textContent=(state.index+1)+' / '+route.steps.length+(persistent?'':' · 进度仅本页面保存');
   $('guide-note').textContent=step.note;
+  $('guide-task-content').innerHTML=[['观察',step.observe],['动手',step.change],['预期',step.expected]].map(([label,value])=>`<dt>${label}</dt><dd>${esc(value)}</dd>`).join('');
+  $('guide-feedback').textContent=step.check?'运行后将比较本次真实输出与练习预期。':'本步为阅读或探索任务，不自动判定完成。';delete $('guide-feedback').dataset.state;
+  $('guide-completion').textContent=completed[state.route+':'+state.index]?'此练习曾得到与预期匹配的输出。':'';
   $('guide-prev').disabled=state.index===0;$('guide-next').disabled=state.index===route.steps.length-1;
  }
  function open(){
@@ -28,6 +33,13 @@
  $('guide-prev').onclick=()=>{if(state&&state.index>0){state.index--;save();open()}};
  $('guide-next').onclick=()=>{if(state&&state.index<routes.get(state.route).steps.length-1){state.index++;save();open()}};
  $('guide-end').onclick=()=>{state=null;save();render()};
+ new MutationObserver(()=>{
+  if(!state)return;const step=routes.get(state.route).steps[state.index],lab=window.MUSEUM_LAB;
+  if(!step.check||lab.current!==step.language||lab.topic!==step.topic)return;
+  const result=$('lab-result'),answer=window.MUSEUM_EXPLORATION.feedback(result.textContent,result.dataset.state,step.check.output);
+  $('guide-feedback').textContent=answer.text;$('guide-feedback').dataset.state=answer.status;
+  if(answer.status==='matched'){completed[state.route+':'+state.index]=true;try{localStorage.setItem(key+'-completed',JSON.stringify(completed))}catch{}$('guide-completion').textContent='此练习已得到与预期匹配的输出；仅核对输出，不评判代码写法。'}
+ }).observe($('lab-result'),{childList:true,subtree:true,characterData:true,attributes:true,attributeFilter:['data-state']});
  window.MUSEUM_GUIDE={start,open,get state(){return state?{...state}:null}};
  render();
 })();

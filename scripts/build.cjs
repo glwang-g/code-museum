@@ -91,6 +91,16 @@ function build(projectRoot = root) {
     fs.writeFileSync(path.join(next, 'data/audit-reviews.json'), auditBytes);
     fs.writeFileSync(path.join(next, 'data/provenance.json'), JSON.stringify({ meta: catalogue.meta, unresolved: [] }, null, 2));
     fs.writeFileSync(path.join(next,'data/mcp-manifest.json'),JSON.stringify(Object.fromEntries(['catalogue.json','audit-reviews.json','relationship-status.json','execution-capabilities.json'].map(name=>[name,crypto.createHash('sha256').update(fs.readFileSync(path.join(next,'data',name))).digest('hex')])),null,2)+'\n');
+    // A content version stays reproducible without Git, a clock, or network access.
+    const versionHash=crypto.createHash('sha256');
+    for(const folder of ['', 'data'])for(const name of fs.readdirSync(path.join(next,folder)).sort()){
+      const file=path.join(next,folder,name);
+      if(fs.statSync(file).isFile()&&/\.(js|css|html|json)$/.test(name))versionHash.update(folder+'/'+name+'\0').update(fs.readFileSync(file));
+    }
+    versionHash.update(JSON.stringify([pyodideManifest,luaManifest,schemeManifest]));
+    const buildInfo={schemaVersion:1,contentSha256:versionHash.digest('hex')};
+    fs.writeFileSync(path.join(next,'data/build-info.json'),JSON.stringify(buildInfo,null,2)+'\n');
+    fs.writeFileSync(path.join(next,'data/build-info.js'),'window.MUSEUM_BUILD_INFO='+JSON.stringify(buildInfo)+';');
     if (fs.existsSync(output)) fs.renameSync(output, previous);
     try { fs.renameSync(next, output); }
     catch (error) {

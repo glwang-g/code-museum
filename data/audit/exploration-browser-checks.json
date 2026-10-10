@@ -1,0 +1,154 @@
+{
+  "checkedAt": "2026-10-10T11:37:28.333Z",
+  "browser": "Chrome/154.0.8037.98",
+  "scope": "Actual isolated Chrome over local HTTP; 1440/390/320 widths, light/dark, two map views; actual mouse/touch/keyboard, navigation history/reload, sharing, evidence disclosure, all 4 routes/21 steps and real JS/Scheme function output. Java advertised by navigation capability fixture; no remote execution endpoint or submitted code",
+  "inputs": {
+    "data/audit/reviews.json": "4c3a9dc3389669913266adf052fac99c4fe5d650035cf8a7fb9153b5330c3831",
+    "data/relationship-overrides.json": "f24f8b51525e3299542b3173b5b09fde68c9f837bcf21c7a36640b6b4db8f52c",
+    "data/audit/map-eligible-ids.json": "9b6e43b20ced203fc09b63d4ad653f3eea79e5da6441d921c911fa655647ef91",
+    "src/museum.js": "9a5d835fc3aeee0cdd8b064a315f9586bbdc1f4af40ee3192a70a2acaea05bf6",
+    "src/museum.css": "749276018fb729afaccdaeff05dd486546d6dd8e5933cd453c5ff4bea4a356eb",
+    "src/themes.css": "df167e01d77e34c60e523f70264938726f4eff103bc469f2ecceaeca3f725eaf",
+    "scripts/check-exploration-browser.cjs": "217c98bf7c1d5f971d4299a03a4794a950602a1a2b3f356ed518072a26d12704",
+    "src/navigation.js": "47a9d9def749e67d1112b71f68fa033384b95f80ebf1b926a0466096f4d49a91",
+    "src/navigation-state.js": "10b372f4c9cf3045c074df1d07dc0d7bdb1f7f81022292981d5b8d11c98affe4",
+    "src/map-interaction.js": "66f1c355a187dc889f38d8468abe6dd86a75e68c3b801561da20a4512449b004",
+    "src/lab-tools.js": "ecedc2d5bbc9f64243f08b6589b0820b824afb3e230e1ddc42b2232be27035e4",
+    "src/learning-guide.js": "cebada58ca2ab13c33f093f05937d709e5200d3aee6591958377f9da31e7c093",
+    "data/learning-paths.json": "b376921913e46aafc775c4d4991e891454745f8127cea945c0dc11475379587e"
+  },
+  "servedInputs": {
+    "index.html": "c9ea5e22565b3ae99db516d49858d8a2adcb3d9c684882e81565d437cd232bbb",
+    "museum.js": "9a5d835fc3aeee0cdd8b064a315f9586bbdc1f4af40ee3192a70a2acaea05bf6",
+    "museum.css": "749276018fb729afaccdaeff05dd486546d6dd8e5933cd453c5ff4bea4a356eb",
+    "themes.css": "df167e01d77e34c60e523f70264938726f4eff103bc469f2ecceaeca3f725eaf",
+    "data/catalogue.js": "347b2852b629498ab2dea1de83bbcec0956922ae76060475b50c1f691ec6582b",
+    "data/relationship-status.js": "72289678e179556c8780746c1b9fc3f92ac30a58a5a18e133fca294248d50307",
+    "data/relationship-status.json": "4cef374ffea16f06c833acaefa867f3ac81a39e969c30794808f43cf59c482e3",
+    "data/audit-reviews.json": "4c3a9dc3389669913266adf052fac99c4fe5d650035cf8a7fb9153b5330c3831",
+    "navigation.js": "47a9d9def749e67d1112b71f68fa033384b95f80ebf1b926a0466096f4d49a91",
+    "navigation-state.js": "10b372f4c9cf3045c074df1d07dc0d7bdb1f7f81022292981d5b8d11c98affe4",
+    "map-interaction.js": "66f1c355a187dc889f38d8468abe6dd86a75e68c3b801561da20a4512449b004",
+    "lab-tools.js": "ecedc2d5bbc9f64243f08b6589b0820b824afb3e230e1ddc42b2232be27035e4",
+    "learning-guide.js": "cebada58ca2ab13c33f093f05937d709e5200d3aee6591958377f9da31e7c093",
+    "data/build-info.js": "4122cd9764590b16b2ef657daf3b58eacea013c7cb7c60a1c60af7978bff31f0",
+    "data/build-info.json": "2af4e074386ef4125b6aff0375c774ddbf48c0f1f37880c678d6ac2d2654e206"
+  },
+  "checks": [
+    {
+      "width": 1440,
+      "theme": "dark",
+      "mode": "timeline",
+      "checks": "direct/all scope; Java run mouse and keyboard; Back/Forward; drag suppression; mobile touch drag/tap; no horizontal overflow"
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "mode": "lineage",
+      "checks": "direct/all scope; Java run mouse and keyboard; Back/Forward; drag suppression; mobile touch drag/tap; no horizontal overflow"
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "checks": "Java/functions reload; share excludes credentials; two Civet proofs disclosure; all 4 routes and 21 structured learning steps; no overflow"
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "mode": "timeline",
+      "checks": "direct/all scope; Java run mouse and keyboard; Back/Forward; drag suppression; mobile touch drag/tap; no horizontal overflow"
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "mode": "lineage",
+      "checks": "direct/all scope; Java run mouse and keyboard; Back/Forward; drag suppression; mobile touch drag/tap; no horizontal overflow"
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "checks": "Java/functions reload; share excludes credentials; two Civet proofs disclosure; all 4 routes and 21 structured learning steps; no overflow"
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "mode": "timeline",
+      "checks": "direct/all scope; Java run mouse and keyboard; Back/Forward; drag suppression; mobile touch drag/tap; no horizontal overflow"
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "mode": "lineage",
+      "checks": "direct/all scope; Java run mouse and keyboard; Back/Forward; drag suppression; mobile touch drag/tap; no horizontal overflow"
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "checks": "Java/functions reload; share excludes credentials; two Civet proofs disclosure; all 4 routes and 21 structured learning steps; no overflow"
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "mode": "timeline",
+      "checks": "direct/all scope; Java run mouse and keyboard; Back/Forward; drag suppression; mobile touch drag/tap; no horizontal overflow"
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "mode": "lineage",
+      "checks": "direct/all scope; Java run mouse and keyboard; Back/Forward; drag suppression; mobile touch drag/tap; no horizontal overflow"
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "checks": "Java/functions reload; share excludes credentials; two Civet proofs disclosure; all 4 routes and 21 structured learning steps; no overflow"
+    },
+    {
+      "width": 320,
+      "theme": "dark",
+      "mode": "timeline",
+      "checks": "direct/all scope; Java run mouse and keyboard; Back/Forward; drag suppression; mobile touch drag/tap; no horizontal overflow"
+    },
+    {
+      "width": 320,
+      "theme": "dark",
+      "mode": "lineage",
+      "checks": "direct/all scope; Java run mouse and keyboard; Back/Forward; drag suppression; mobile touch drag/tap; no horizontal overflow"
+    },
+    {
+      "width": 320,
+      "theme": "dark",
+      "checks": "Java/functions reload; share excludes credentials; two Civet proofs disclosure; all 4 routes and 21 structured learning steps; no overflow"
+    },
+    {
+      "width": 320,
+      "theme": "light",
+      "mode": "timeline",
+      "checks": "direct/all scope; Java run mouse and keyboard; Back/Forward; drag suppression; mobile touch drag/tap; no horizontal overflow"
+    },
+    {
+      "width": 320,
+      "theme": "light",
+      "mode": "lineage",
+      "checks": "direct/all scope; Java run mouse and keyboard; Back/Forward; drag suppression; mobile touch drag/tap; no horizontal overflow"
+    },
+    {
+      "width": 320,
+      "theme": "light",
+      "checks": "Java/functions reload; share excludes credentials; two Civet proofs disclosure; all 4 routes and 21 structured learning steps; no overflow"
+    },
+    {
+      "check": "Local lab restore while lab visible creates no Worker and runs no saved code"
+    },
+    {
+      "exercise": "javascript-functions",
+      "actualOutput": "81",
+      "runtime": "actual bundled browser Worker"
+    },
+    {
+      "exercise": "scheme-functions",
+      "actualOutput": "81",
+      "runtime": "actual bundled BiwaScheme after explicit enable"
+    }
+  ]
+}

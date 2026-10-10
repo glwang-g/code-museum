@@ -21,15 +21,15 @@
     "wikipedia": 1974,
     "semanticScholar": 315
   },
-  "manual_reviews": 91,
-  "reviewed_source_links": 204,
-  "reviewed_source_links_with_url_hash_excerpt": 204,
+  "manual_reviews": 93,
+  "reviewed_source_links": 208,
+  "reviewed_source_links_with_url_hash_excerpt": 208,
   "verified_language_review_gaps": 0,
   "identity_issue_rows": 124,
   "relationship_count": 421,
   "relationship_evidence_status_counts": {
-    "claim-with-citation": 99,
-    "record-field-only": 322
+    "claim-with-citation": 103,
+    "record-field-only": 318
   },
   "relationship_chronology_flags": 5,
   "relationship_self_links": 0,

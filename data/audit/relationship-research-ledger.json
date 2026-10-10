@@ -151,6 +151,30 @@
       "status": "verified",
       "batch": "2026-10-10_BATCH-19",
       "note": "Fixed MLIR Rationale revision explicitly draws on LLVM IR ideas for low-level constructs; old standard dialect integer semantics and operation split provide concrete design scope. Excludes lowering, project affiliation, compatibility and LLVM PHI inheritance."
+    },
+    {
+      "id": "coffeescript|civet|influencedBy",
+      "status": "verified",
+      "batch": "2026-10-10_BATCH-20",
+      "note": "Official Civet Philosophy explicitly names design inputs; Reference gives CoffeeScript opt-in loop/compatibility options and LiveScript boolean-property shorthand. Limited design influence, not blanket source compatibility or runtime inheritance."
+    },
+    {
+      "id": "livescript|civet|influencedBy",
+      "status": "verified",
+      "batch": "2026-10-10_BATCH-20",
+      "note": "Official Civet Philosophy explicitly names design inputs; Reference gives CoffeeScript opt-in loop/compatibility options and LiveScript boolean-property shorthand. Limited design influence, not blanket source compatibility or runtime inheritance."
+    },
+    {
+      "id": "typescript|civet|influencedBy",
+      "status": "verified",
+      "batch": "2026-10-10_BATCH-21",
+      "note": "Official comparison documents intentional incompatibilities; snapshot supersetOf corrected to a scoped design input."
+    },
+    {
+      "id": "java|pizza|supersetOf",
+      "status": "verified",
+      "batch": "2026-10-10_BATCH-21",
+      "note": "Author POPL 1997 summary explicitly calls Pizza a strict superset; limited to historical design, not modern Java or runtime certification."
     }
   ]
 }

@@ -865,5 +865,42 @@
     "sourceSha256": "c4aaf822ba1056c809a8ab8afa81014451a8901b70e9a2fc1068ac91f3e9ef8c",
     "evidence": "MLIR Rationale 固定修订 577ef051fb56335dc453ff368802ed832c05766a 的 Introduction and Motivation 明确说明底层构造借鉴 LLVM 与 Swift 的 IR；Integer signedness semantics 与 Splitting floating point vs integer operations 进一步记录旧 standard dialect 的无符号属性整数及浮点/整数操作拆分与 LLVM 设计的关联。限定为该版本底层 IR 与操作的设计输入，不表示 MLIR 是 LLVM IR 的兼容超集或全部 dialect 均采用该语义；MLIR 的 block arguments 与 LLVM PHI 有区别，降级到 LLVM dialect 和同属 LLVM 项目不是本条影响边的依据。",
     "from": "llvmir"
+  },
+  {
+    "from": "coffeescript",
+    "to": "civet",
+    "type": "influencedBy",
+    "label": "简洁语法与循环设计输入",
+    "source": "https://civet.dev/philosophy",
+    "sourceSha256": "418f1458baef50eb18e4046606fce81de92f8b8551dd9b2db2f5a4e745e411fb",
+    "evidence": "Civet 官方 Design Philosophy 明确列出 CoffeeScript 为设计灵感来源；官方 Reference 的 CoffeeScript Compatibility 与 CoffeeScript For Loops 进一步说明可按指令启用对应循环和语法选项。这支持具体设计输入，不表示默认模式完整兼容所有 CoffeeScript 程序、是其严格超集或继承全部语义。"
+  },
+  {
+    "from": "livescript",
+    "to": "civet",
+    "type": "influencedBy",
+    "label": "对象布尔属性简写的设计输入",
+    "source": "https://civet.dev/reference",
+    "sourceSha256": "b7a356c51eb0dbf295ebc1bebd0e80e80e6eec8f69b0fd5aab9ff852218e2a33",
+    "evidence": "Civet 官方 Reference 的 Flagging Shorthand 明确标注来自 LiveScript 的灵感，并展示用加号、减号及感叹号简写对象布尔属性；Design Philosophy 也列 LiveScript 为设计来源。此处限定为该语法机制的设计输入，不表示完整语言后继、源码兼容或共享运行时。"
+  },
+  {
+    "from": "typescript",
+    "to": "civet",
+    "type": "influencedBy",
+    "replacesType": "supersetOf",
+    "label": "TypeScript语法基础与兼容取舍",
+    "source": "https://civet.dev/comparison",
+    "sourceSha256": "e18ffb230d928be1b609125bd5651804b13b3f1bd9b419fbc956383e1b7b70f8",
+    "evidence": "Civet 官方比较页说明以既有 JavaScript/TypeScript 为兼容基础，但存在有意差异：单参数箭头函数需括号，函数默认隐式返回；另有可选兼容模式。因此保留语法基础与设计取舍关系，纠正快照的严格超集分类，不声称任意 TypeScript 程序或所有版本均兼容。"
+  },
+  {
+    "from": "java",
+    "to": "pizza",
+    "type": "supersetOf",
+    "label": "1997年Pizza的Java扩展",
+    "source": "https://homepages.inf.ed.ac.uk/wadler/topics/gj.html",
+    "sourceSha256": "3490b79ef55ae53459d3307788d8c843ff169520ee10aee8855d32e45fa720f8",
+    "evidence": "Wadler 作者页的1997年POPL Pizza into Java 摘要明确称 Pizza 是 Java 的严格超集，增加参数多态、高阶函数与代数数据类型，并通过翻译为 Java 编译到 JVM。此结论限于当时文献描述的语言设计，不表示现代 Java 所有版本兼容，也不是本馆已经运行历史 Pizza 编译器的认证。"
   }
 ]

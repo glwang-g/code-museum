@@ -226,7 +226,7 @@
     pick.innerHTML=entries.map(entry=>`<option value="${escape(entry.id)}">${escape(byId.get(entry.id)?.name||entry.id)}</option>`).join('');
     pick.value=id;
   }
-  function show(id){
+  function show(id,execute=true){
     if(!byId.has(id))id='javascript';
     // Reopening an archive entry should preserve its draft, result and loaded runtime.
     if(id===current)return;
@@ -247,12 +247,12 @@
     result.textContent=runnable?'进入实验台后运行…':'本语言尚未接入浏览器运行环境。';
     result.dataset.state='';
     paint();
-    needsRun=runnable;
+    needsRun=execute&&runnable;
     execution?.show(id);changed();
     if(!execution?.handles(id)){
       runtimeStatus?.select(id,'local');localState(runnable?'idle':'unsupported',runnable?'进入实验台后运行。':'该语言仅支持编辑，尚未接入执行环境。');
     }
-    if(runnable&&!document.querySelector('#lab').hidden&&(!execution?.handles(id)||execution.allowed(id))){needsRun=false;run()}
+    if(execute&&runnable&&!document.querySelector('#lab').hidden&&(!execution?.handles(id)||execution.allowed(id))){needsRun=false;run()}
   }
   editor.addEventListener('input',()=>{
     remember();paint();changed();
@@ -279,6 +279,12 @@
     else if(!document.querySelector('#lab').hidden)onTabChange(true);
   });
   window.MUSEUM_LAB={
+    restore(id,topic){stop();needsRun=false;show(id,false);chooseTopic(topic==='default'||window.MUSEUM_LESSONS?.languages[current]?.examples[topic]?topic:'default');stop();needsRun=false;},
+    entry(id){
+      if(['javascript','python','lua','scheme'].includes(id))return {kind:'local',label:id==='python'?'浏览器或远端运行':'浏览器运行'};
+      if(['ruby','c','cpp','rust','go','java'].includes(id))return {kind:'remote',label:'远端运行 · 需私有令牌'};
+      return {kind:'editor',label:'仅编辑 · 未接入运行'};
+    },
     get current(){return current},get topic(){return currentTopic},get code(){return editor.value},
     get hasBackup(){return backups.has(draftKey())},get modified(){return editor.value!==baseCode()},
     formatCode,chooseTopic,manualStop,

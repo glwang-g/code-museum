@@ -3432,6 +3432,74 @@
           "locator": "Introduction and Motivation; Integer signedness semantics; Splitting floating point vs integer operations"
         }
       ]
+    },
+    {
+      "id": "civet",
+      "status": "unreviewed",
+      "notes": "本轮仅核读 CoffeeScript/LiveScript→Civet 设计输入，未独立核查完整语法/实现或接入运行时。",
+      "nextStep": "分别核查固定版本语法与实现，兼容模式不自动证明全语言或所有版本兼容。",
+      "sources": [
+        {
+          "url": "https://civet.dev/philosophy",
+          "finalUrl": "https://civet.dev/philosophy",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-10T11:19:42.200396+00:00",
+          "decodedBodySha256": "418f1458baef50eb18e4046606fce81de92f8b8551dd9b2db2f5a4e745e411fb",
+          "role": "关系依据",
+          "reviewed": true,
+          "title": "Civet Design Philosophy",
+          "excerpt": "We've taken inspiration from languages like CoffeeScript, Elm, LiveScript",
+          "locator": "Civet builds on top of history; inspiration list",
+          "hashScope": "complete HTTP response body bytes; short excerpt manually selected"
+        },
+        {
+          "url": "https://civet.dev/reference",
+          "finalUrl": "https://civet.dev/reference",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-10T11:19:43.734917+00:00",
+          "decodedBodySha256": "b7a356c51eb0dbf295ebc1bebd0e80e80e6eec8f69b0fd5aab9ff852218e2a33",
+          "role": "关系依据",
+          "reviewed": true,
+          "title": "Civet Reference",
+          "excerpt": "Inspired by LiveScript. Turn on full CoffeeScript compatibility mode",
+          "locator": "Flagging Shorthand; CoffeeScript Compatibility / CoffeeScript For Loops",
+          "hashScope": "complete HTTP response body bytes; short excerpt manually selected"
+        },
+        {
+          "url": "https://civet.dev/comparison",
+          "finalUrl": "https://civet.dev/comparison",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-10T12:10:20.907551+00:00",
+          "decodedBodySha256": "e18ffb230d928be1b609125bd5651804b13b3f1bd9b419fbc956383e1b7b70f8",
+          "role": "关系依据",
+          "reviewed": true,
+          "title": "Civet Comparison to JavaScript/TypeScript",
+          "excerpt": "Civet aims to be 99% compatible with existing JavaScript/TypeScript code. However, there are a few intentional deviations.",
+          "locator": "Introduction; Single-Argument Arrow Functions; Implicit Return",
+          "hashScope": "complete HTTP response body bytes; short excerpt manually selected"
+        }
+      ]
+    },
+    {
+      "id": "pizza",
+      "status": "unreviewed",
+      "notes": "仅核读作者对1997年Pizza的Java扩展设计；未核验历史编译器或完整语法，不推及现代Java兼容。",
+      "nextStep": "固定原始Pizza编译器与对应Java版本后核验；现代Java运行时不能冒充历史实现。",
+      "sources": [
+        {
+          "url": "https://homepages.inf.ed.ac.uk/wadler/topics/gj.html",
+          "finalUrl": "https://homepages.inf.ed.ac.uk/wadler/topics/gj.html",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-10T12:10:22.666506+00:00",
+          "decodedBodySha256": "3490b79ef55ae53459d3307788d8c843ff169520ee10aee8855d32e45fa720f8",
+          "role": "关系依据",
+          "reviewed": true,
+          "title": "Philip Wadler: GJ, Pizza, and Java — Pizza into Java (POPL 1997)",
+          "excerpt": "Pizza is a strict superset of Java",
+          "locator": "Pizza into Java: Translating theory into practice, January 1997",
+          "hashScope": "complete HTTP response body bytes; short excerpt manually selected"
+        }
+      ]
     }
   ]
 }

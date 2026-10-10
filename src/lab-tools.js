@@ -21,6 +21,11 @@
     $('lab-environment-summary').textContent=short[id]||'仅编辑 · 未接入在线运行';
     $('lab-environment-detail').textContent=descriptions[id]||'仅编辑示例或草稿 · 尚未接入在线运行环境';
     $('lab-local-suggestion').hidden=id!=='python'||local||$('lab-remote-token').value.length>=32;
+    const next=$('lab-next-action');
+    if(lab.entry(id).kind==='editor')next.textContent='此语言目前仅供阅读和编辑，可以下载代码到自己的环境运行。';
+    else if(!local){
+      next.textContent=!execution?.canRun(id)?'远端服务尚未就绪。可展开服务状态或重试连接，编辑内容会保留。':$('lab-remote-token').value.length<32?'远端运行需要私有令牌：先输入令牌，再点击“运行代码”。打开实验台不会上传代码。':'已输入令牌；点击“运行代码”后才上传并验证令牌。';
+    }else next.textContent=id==='javascript'?'浏览器运行，无需下载或令牌。编辑后自动更新结果，也可点击“运行代码”。':execution?.allowed(id)?'本地环境已启用。编辑后自动更新结果，也可点击“运行代码”。':'先点击“下载并启用本地环境”，再运行；代码留在浏览器。';
   }
   function render(){
     const id=lab.current,entry=lessons.languages[id];

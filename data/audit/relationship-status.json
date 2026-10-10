@@ -6,8 +6,8 @@
     "relations": 428,
     "mapDesignGaps": 3,
     "states": {
-      "excerpt-recorded": 106,
-      "field-only": 322
+      "excerpt-recorded": 110,
+      "field-only": 318
     },
     "warnings": 5
   },
@@ -436,10 +436,10 @@
         "java|python|hostRuntime"
       ],
       "mapLinks": 7,
-      "fieldOnly": 5,
+      "fieldOnly": 4,
       "citationOnly": 0,
       "needsDirectEvidence": 0,
-      "excerptRecorded": 7,
+      "excerptRecorded": 8,
       "state": "needs-review"
     },
     {
@@ -1001,16 +1001,16 @@
       ],
       "downstream": [
         "typescript|assemblyscript|influencedBy",
-        "typescript|civet|supersetOf",
+        "typescript|civet|influencedBy",
         "typescript|particles|influencedBy",
         "typescript|static-typescript|supersetOf"
       ],
       "ecology": [],
       "mapLinks": 1,
-      "fieldOnly": 4,
+      "fieldOnly": 3,
       "citationOnly": 0,
       "needsDirectEvidence": 0,
-      "excerptRecorded": 1,
+      "excerptRecorded": 2,
       "state": "needs-review"
     },
     {
@@ -1137,6 +1137,11 @@
       ],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": {
+        "citedSha256": "cf058d750585d9fda7277449356f1425fb4b5a15addd116fdf37d3c1b9002e80",
+        "match": "different",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
       "sources": [
         {
           "url": "https://docs.python.org/3/faq/general.html",
@@ -1146,7 +1151,8 @@
           "checkedAt": "2026-10-09T05:27:02.970719+00:00",
           "sha256": "b853041648712331e9f82bae156f1cf41c17c5e82fe71837049d87d7a1f543f1",
           "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body",
-          "reviewId": "python"
+          "reviewId": "python",
+          "locator": ""
         }
       ]
     },
@@ -1163,6 +1169,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -1178,6 +1185,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -1193,6 +1201,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -1208,6 +1217,7 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": null,
       "sources": [
         {
           "url": "https://www.ruby-lang.org/en/about/",
@@ -1217,7 +1227,8 @@
           "checkedAt": "2026-10-09T05:27:05.936298+00:00",
           "sha256": "771e58119de2adc0b296e0d31f0973b8e2d114acd0dbeaf6505ec7c8c05ad1a4",
           "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body",
-          "reviewId": "ruby"
+          "reviewId": "ruby",
+          "locator": ""
         }
       ]
     },
@@ -1234,6 +1245,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -1249,6 +1261,7 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": null,
       "sources": [
         {
           "url": "https://ghdl.github.io/ghdl/about.html",
@@ -1258,7 +1271,8 @@
           "checkedAt": "2026-10-04T06:26:08.726569+00:00",
           "sha256": "8ecd41e1c73877c6bd991720877be6a952ec54c57a64ab1a01e8e7ac04b80088",
           "hashScope": "decoded response body",
-          "reviewId": "vhdl"
+          "reviewId": "vhdl",
+          "locator": ""
         }
       ]
     },
@@ -1275,6 +1289,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -1291,6 +1306,11 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": {
+        "citedSha256": "642e10845838898768d8ad0649cc58b2a6d5510100abb2ec6abceb120f407456",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
       "sources": [
         {
           "url": "https://time.com/69316/basic/",
@@ -1300,7 +1320,8 @@
           "checkedAt": "2026-10-04T06:00:48.700818+00:00",
           "sha256": "642e10845838898768d8ad0649cc58b2a6d5510100abb2ec6abceb120f407456",
           "hashScope": "decoded response body",
-          "reviewId": "basic"
+          "reviewId": "basic",
+          "locator": ""
         }
       ]
     },
@@ -1317,6 +1338,7 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": null,
       "sources": [
         {
           "url": "https://raw.githubusercontent.com/colorforth/colorforth.github.io/master/HOPL.html",
@@ -1326,7 +1348,8 @@
           "checkedAt": "2026-10-04T06:10:27.085555+00:00",
           "sha256": "aa12ef4cc57fd3cfd57780b8dd0963db9599587cfbe8768624d532b643d1e1bc",
           "hashScope": "decoded response body",
-          "reviewId": "forth"
+          "reviewId": "forth",
+          "locator": ""
         }
       ]
     },
@@ -1343,6 +1366,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -1358,6 +1382,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -1373,6 +1398,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -1388,6 +1414,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -1403,6 +1430,7 @@
       ],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -1418,6 +1446,7 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": null,
       "sources": [
         {
           "url": "https://people.inf.ethz.ch/wirth/Articles/GoodIdeas.pdf",
@@ -1427,7 +1456,8 @@
           "checkedAt": "2026-10-04T01:15:52.885746+00:00",
           "sha256": "ac9c0857a1d39ee73fd8728be076ca36a5f19b3346d7b458ee6f6311648374c0",
           "hashScope": "SHA-256 of complete PDF response bytes.",
-          "reviewId": "pascal"
+          "reviewId": "pascal",
+          "locator": ""
         }
       ]
     },
@@ -1444,6 +1474,7 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": null,
       "sources": [
         {
           "url": "https://www.mn.uio.no/ifi/english/about/ole-johan-dahl/bibliography/the-birth-of-object-orientation-the-simula-languages.pdf",
@@ -1453,7 +1484,8 @@
           "checkedAt": "2026-09-25T16:39:55+00:00",
           "sha256": "9129a185f6a1a991a44dff110a69d098acd3eb3cdf699610d544cfc60155e8df",
           "hashScope": "SHA-256 of complete PDF response bytes; relationship passages reread and visually inspected on 2026-10-04.",
-          "reviewId": "simula"
+          "reviewId": "simula",
+          "locator": ""
         }
       ]
     },
@@ -1470,6 +1502,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -1485,6 +1518,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -1500,6 +1534,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -1515,6 +1550,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -1530,6 +1566,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -1545,6 +1582,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -1560,6 +1598,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -1575,6 +1614,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -1591,6 +1631,11 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": {
+        "citedSha256": "9a9c6123a187d840693a4777a8311e37f84da68ff43796cabf895bf519f80c09",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
       "sources": [
         {
           "url": "https://mlochbaum.github.io/BQN/",
@@ -1600,7 +1645,8 @@
           "checkedAt": "2026-10-09T16:00:00+00:00",
           "sha256": "9a9c6123a187d840693a4777a8311e37f84da68ff43796cabf895bf519f80c09",
           "hashScope": "complete HTTP response body bytes; excerpt is manually selected",
-          "reviewId": "bqn"
+          "reviewId": "bqn",
+          "locator": ""
         }
       ]
     },
@@ -1617,6 +1663,7 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": null,
       "sources": [
         {
           "url": "https://raw.githubusercontent.com/colorforth/colorforth.github.io/master/HOPL.html",
@@ -1626,7 +1673,8 @@
           "checkedAt": "2026-10-04T06:10:27.085555+00:00",
           "sha256": "aa12ef4cc57fd3cfd57780b8dd0963db9599587cfbe8768624d532b643d1e1bc",
           "hashScope": "decoded response body",
-          "reviewId": "forth"
+          "reviewId": "forth",
+          "locator": ""
         }
       ]
     },
@@ -1643,6 +1691,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -1658,6 +1707,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -1673,6 +1723,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -1688,6 +1739,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -1703,6 +1755,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -1718,6 +1771,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -1733,6 +1787,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -1748,6 +1803,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -1763,6 +1819,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -1778,6 +1835,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -1793,6 +1851,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -1808,6 +1867,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -1824,6 +1884,11 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": {
+        "citedSha256": "d3a2c0cf69503e85e40667b3114e3005e50df6f61eeec67b3069dcdc8d4185fe",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
       "sources": [
         {
           "url": "https://www.lua.org/doc/hopl.pdf",
@@ -1833,7 +1898,8 @@
           "checkedAt": "2026-10-03T15:20:27.117462+00:00",
           "sha256": "d3a2c0cf69503e85e40667b3114e3005e50df6f61eeec67b3069dcdc8d4185fe",
           "hashScope": "PDF response bytes after HTTP content decoding; no text encoding conversion",
-          "reviewId": "lua"
+          "reviewId": "lua",
+          "locator": ""
         }
       ]
     },
@@ -1851,6 +1917,11 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": {
+        "citedSha256": "314872b3e5c6aeb0f46e47b0c11775f4e1cafc2a8eec10bc6dbaa47c13fcaca6",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
       "sources": [
         {
           "url": "https://www.bell-labs.com/usr/dmr/www/chist.html",
@@ -1860,7 +1931,8 @@
           "checkedAt": "2026-10-09T05:27:07.059605+00:00",
           "sha256": "314872b3e5c6aeb0f46e47b0c11775f4e1cafc2a8eec10bc6dbaa47c13fcaca6",
           "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body",
-          "reviewId": "c"
+          "reviewId": "c",
+          "locator": ""
         }
       ]
     },
@@ -1877,6 +1949,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -1892,6 +1965,7 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": null,
       "sources": [
         {
           "url": "https://techcommunity.microsoft.com/blog/smallbasic/a-brief-history-of-basic/336312",
@@ -1901,7 +1975,8 @@
           "checkedAt": "2026-10-09T05:27:09.112484+00:00",
           "sha256": "f3d3123d716135d48de9457e5307343f6fda25911f4942c72984d5c6707ee84f",
           "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body",
-          "reviewId": "visual-basic"
+          "reviewId": "visual-basic",
+          "locator": ""
         }
       ]
     },
@@ -1918,6 +1993,7 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": null,
       "sources": [
         {
           "url": "https://www.bell-labs.com/usr/dmr/www/chist.html",
@@ -1927,7 +2003,8 @@
           "checkedAt": "2026-10-09T05:27:07.059605+00:00",
           "sha256": "314872b3e5c6aeb0f46e47b0c11775f4e1cafc2a8eec10bc6dbaa47c13fcaca6",
           "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body",
-          "reviewId": "c"
+          "reviewId": "c",
+          "locator": ""
         }
       ]
     },
@@ -1944,6 +2021,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -1959,6 +2037,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -1974,6 +2053,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -1989,6 +2069,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -2004,6 +2085,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -2019,6 +2101,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -2035,6 +2118,11 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": {
+        "citedSha256": "66da20f0978f3ed5c554b612b1ce832fb8349ac27ce66dfd1a3c5c3824215853",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
       "sources": [
         {
           "url": "https://www.tuhs.org/cgi-bin/utree.pl?file=2BSD/doc/csh",
@@ -2044,7 +2132,8 @@
           "checkedAt": "2026-10-04T12:53:40.355196+00:00",
           "sha256": "66da20f0978f3ed5c554b612b1ce832fb8349ac27ce66dfd1a3c5c3824215853",
           "hashScope": "SHA-256 of complete TUHS HTML response bytes; archived source text read in the embedded listing.",
-          "reviewId": "c-shell"
+          "reviewId": "c-shell",
+          "locator": ""
         }
       ]
     },
@@ -2062,6 +2151,11 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": {
+        "citedSha256": "4424ba16217513218bc1c4ffdcd4c144a1e9cfbfb48a21c1cc3cee9b14603f88",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
       "sources": [
         {
           "url": "https://raw.githubusercontent.com/c3lang/c3c/master/README.md",
@@ -2071,7 +2165,8 @@
           "checkedAt": "2026-10-09T15:35:00+00:00",
           "sha256": "4424ba16217513218bc1c4ffdcd4c144a1e9cfbfb48a21c1cc3cee9b14603f88",
           "hashScope": "complete HTTP response body bytes; excerpt is manually selected",
-          "reviewId": "c3"
+          "reviewId": "c3",
+          "locator": ""
         }
       ]
     },
@@ -2090,6 +2185,11 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": {
+        "citedSha256": "2f0e35a9519217a12dfac5cd033a61c08e78d423671c8ddbcc4257c299c0d87e",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
       "sources": [
         {
           "url": "https://www.stroustrup.com/bs_faq.html",
@@ -2099,7 +2199,8 @@
           "checkedAt": "2026-10-09T06:52:59.137908+00:00",
           "sha256": "2f0e35a9519217a12dfac5cd033a61c08e78d423671c8ddbcc4257c299c0d87e",
           "hashScope": "complete HTTP response body bytes; excerpt is manually selected",
-          "reviewId": "cpp"
+          "reviewId": "cpp",
+          "locator": ""
         }
       ]
     },
@@ -2117,6 +2218,11 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": {
+        "citedSha256": "6ff7e86bad4c6fb71f61a3f46028bca7cc128857e728b153803c6ab282e6f129",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
       "sources": [
         {
           "url": "https://go.dev/doc/faq",
@@ -2126,7 +2232,8 @@
           "checkedAt": "2026-10-09T05:27:05.176223+00:00",
           "sha256": "6ff7e86bad4c6fb71f61a3f46028bca7cc128857e728b153803c6ab282e6f129",
           "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body",
-          "reviewId": "go"
+          "reviewId": "go",
+          "locator": ""
         }
       ]
     },
@@ -2143,6 +2250,7 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": null,
       "sources": [
         {
           "url": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-1.html",
@@ -2152,7 +2260,8 @@
           "checkedAt": "2026-10-09T05:27:03.490930+00:00",
           "sha256": "58b01f79c7aa1bf2448c06f2dc448d18e69b235980b0a2194c8c1440cfdea6e3",
           "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body",
-          "reviewId": "java"
+          "reviewId": "java",
+          "locator": ""
         }
       ]
     },
@@ -2169,6 +2278,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -2185,6 +2295,11 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": {
+        "citedSha256": "1542b6a6bef06ec0840983c3ee2314cd97daea15a8bf00214d05bebd7f2c52ea",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
       "sources": [
         {
           "url": "https://www.usenix.org/legacy/publications/library/proceedings/vhll/full_papers/korn.ksh.a",
@@ -2194,7 +2309,8 @@
           "checkedAt": "2026-10-04T12:41:46.860397+00:00",
           "sha256": "1542b6a6bef06ec0840983c3ee2314cd97daea15a8bf00214d05bebd7f2c52ea",
           "hashScope": "SHA-256 of complete USENIX ASCII response bytes; relevant full-paper sections read.",
-          "reviewId": "korn-shell"
+          "reviewId": "korn-shell",
+          "locator": ""
         }
       ]
     },
@@ -2211,6 +2327,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -2227,6 +2344,11 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": {
+        "citedSha256": "8cc6386df52599fe2a8923d10f61c7e186248269622fc2479939d92405839b78",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
       "sources": [
         {
           "url": "https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/Introduction/Introduction.html",
@@ -2236,7 +2358,8 @@
           "checkedAt": "2026-10-09T06:52:59.137908+00:00",
           "sha256": "8cc6386df52599fe2a8923d10f61c7e186248269622fc2479939d92405839b78",
           "hashScope": "complete HTTP response body bytes; excerpt is manually selected",
-          "reviewId": "objective-c"
+          "reviewId": "objective-c",
+          "locator": ""
         }
       ]
     },
@@ -2256,6 +2379,11 @@
       ],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": {
+        "citedSha256": "854cc7c2b9581a1b1b4a888819f78c5cf8b73f951b4448f23b4709cc0a6ccd8d",
+        "match": "different",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
       "sources": [
         {
           "url": "https://www.php.net/manual/en/history.php.php",
@@ -2265,7 +2393,8 @@
           "checkedAt": "2026-10-09T05:27:06.296906+00:00",
           "sha256": "e84f14b3ac0e46b152c14d793e9f684c01a46117e563d6258a243109062d17b0",
           "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body",
-          "reviewId": "php"
+          "reviewId": "php",
+          "locator": ""
         }
       ]
     },
@@ -2282,6 +2411,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -2297,6 +2427,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -2312,6 +2443,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -2327,6 +2459,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -2343,6 +2476,11 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": {
+        "citedSha256": "0d5cd86965f869a26cf64f4b71be7b96f90a3ba8b3d74e27e8e9d9d5550f31ba",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
       "sources": [
         {
           "url": "https://mirrors.kernel.org/gnu/bash/bash-5.3.tar.gz",
@@ -2352,7 +2490,8 @@
           "checkedAt": "2026-10-04T12:21:42.281439+00:00",
           "sha256": "0d5cd86965f869a26cf64f4b71be7b96f90a3ba8b3d74e27e8e9d9d5550f31ba",
           "hashScope": "SHA-256 of complete GNU Bash 5.3 tar.gz bytes from GNU distribution mirror; member and memberSha256 identify read manual source. No archive code built or installed.",
-          "reviewId": "bash"
+          "reviewId": "bash",
+          "locator": ""
         }
       ]
     },
@@ -2370,6 +2509,11 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": {
+        "citedSha256": "1542b6a6bef06ec0840983c3ee2314cd97daea15a8bf00214d05bebd7f2c52ea",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
       "sources": [
         {
           "url": "https://www.usenix.org/legacy/publications/library/proceedings/vhll/full_papers/korn.ksh.a",
@@ -2379,7 +2523,8 @@
           "checkedAt": "2026-10-04T12:41:46.860397+00:00",
           "sha256": "1542b6a6bef06ec0840983c3ee2314cd97daea15a8bf00214d05bebd7f2c52ea",
           "hashScope": "SHA-256 of complete USENIX ASCII response bytes; relevant full-paper sections read.",
-          "reviewId": "korn-shell"
+          "reviewId": "korn-shell",
+          "locator": ""
         }
       ]
     },
@@ -2397,6 +2542,11 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": {
+        "citedSha256": "6bc1b05e6da45ca0beba8fd466791ea13b5b54a23c1033da4f2d9f8779630a31",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
       "sources": [
         {
           "url": "https://raw.githubusercontent.com/tcsh-org/tcsh/TCSH6_21_00/tcsh.man",
@@ -2406,7 +2556,8 @@
           "checkedAt": "2026-10-04T13:03:11.612120+00:00",
           "sha256": "6bc1b05e6da45ca0beba8fd466791ea13b5b54a23c1033da4f2d9f8779630a31",
           "hashScope": "SHA-256 of complete official TCSH6_21_00 tagged tcsh.man response bytes.",
-          "reviewId": "tcsh"
+          "reviewId": "tcsh",
+          "locator": ""
         }
       ]
     },
@@ -2424,6 +2575,11 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": {
+        "citedSha256": "4424ba16217513218bc1c4ffdcd4c144a1e9cfbfb48a21c1cc3cee9b14603f88",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
       "sources": [
         {
           "url": "https://raw.githubusercontent.com/c3lang/c3c/master/README.md",
@@ -2433,7 +2589,8 @@
           "checkedAt": "2026-10-09T15:35:00+00:00",
           "sha256": "4424ba16217513218bc1c4ffdcd4c144a1e9cfbfb48a21c1cc3cee9b14603f88",
           "hashScope": "complete HTTP response body bytes; excerpt is manually selected",
-          "reviewId": "c3"
+          "reviewId": "c3",
+          "locator": ""
         }
       ]
     },
@@ -2450,6 +2607,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -2466,6 +2624,11 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": {
+        "citedSha256": "d3a2c0cf69503e85e40667b3114e3005e50df6f61eeec67b3069dcdc8d4185fe",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
       "sources": [
         {
           "url": "https://www.lua.org/doc/hopl.pdf",
@@ -2475,7 +2638,8 @@
           "checkedAt": "2026-10-03T15:20:27.117462+00:00",
           "sha256": "d3a2c0cf69503e85e40667b3114e3005e50df6f61eeec67b3069dcdc8d4185fe",
           "hashScope": "PDF response bytes after HTTP content decoding; no text encoding conversion",
-          "reviewId": "lua"
+          "reviewId": "lua",
+          "locator": ""
         }
       ]
     },
@@ -2492,6 +2656,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -2507,22 +2672,41 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
       "from": "coffeescript",
       "to": "civet",
       "type": "influencedBy",
-      "source": "https://github.com/breck7/pldb/blob/main/concepts/civet.scroll",
+      "label": "简洁语法与循环设计输入",
+      "source": "https://civet.dev/philosophy",
+      "sourceSha256": "418f1458baef50eb18e4046606fce81de92f8b8551dd9b2db2f5a4e745e411fb",
+      "evidence": "Civet 官方 Design Philosophy 明确列出 CoffeeScript 为设计灵感来源；官方 Reference 的 CoffeeScript Compatibility 与 CoffeeScript For Loops 进一步说明可按指令启用对应循环和语法选项。这支持具体设计输入，不表示默认模式完整兼容所有 CoffeeScript 程序、是其严格超集或继承全部语义。",
       "key": "coffeescript|civet|influencedBy",
       "layer": "design",
-      "state": "field-only",
-      "issues": [
-        "缺少关系论证"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": false,
-      "sources": []
+      "evidenceVersion": {
+        "citedSha256": "418f1458baef50eb18e4046606fce81de92f8b8551dd9b2db2f5a4e745e411fb",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
+      "sources": [
+        {
+          "url": "https://civet.dev/philosophy",
+          "finalUrl": "https://civet.dev/philosophy",
+          "title": "Civet Design Philosophy",
+          "excerpt": "We've taken inspiration from languages like CoffeeScript, Elm, LiveScript",
+          "checkedAt": "2026-10-10T11:19:42.200396+00:00",
+          "sha256": "418f1458baef50eb18e4046606fce81de92f8b8551dd9b2db2f5a4e745e411fb",
+          "hashScope": "complete HTTP response body bytes; short excerpt manually selected",
+          "reviewId": "civet",
+          "locator": "Civet builds on top of history; inspiration list"
+        }
+      ]
     },
     {
       "from": "coffeescript",
@@ -2537,6 +2721,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -2552,6 +2737,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -2567,6 +2753,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -2582,6 +2769,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -2600,6 +2788,11 @@
       ],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": {
+        "citedSha256": "f6f5ed59d461df23221c1acd5f3c8e7571d901bcdaabb31e732ca180cceaafdd",
+        "match": "different",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
       "sources": [
         {
           "url": "https://dlang.org/overview.html",
@@ -2609,7 +2802,8 @@
           "checkedAt": "2026-10-09T05:27:03.338138+00:00",
           "sha256": "e384470980900102fc6eb6fbddc712fa1c384dee235484b504f858e4194ee4e1",
           "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body",
-          "reviewId": "d"
+          "reviewId": "d",
+          "locator": ""
         }
       ]
     },
@@ -2626,6 +2820,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -2641,6 +2836,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -2656,6 +2852,7 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": null,
       "sources": [
         {
           "url": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-1.html",
@@ -2665,7 +2862,8 @@
           "checkedAt": "2026-10-09T05:27:03.490930+00:00",
           "sha256": "58b01f79c7aa1bf2448c06f2dc448d18e69b235980b0a2194c8c1440cfdea6e3",
           "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body",
-          "reviewId": "java"
+          "reviewId": "java",
+          "locator": ""
         }
       ]
     },
@@ -2682,6 +2880,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -2698,6 +2897,11 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": {
+        "citedSha256": "d3a2c0cf69503e85e40667b3114e3005e50df6f61eeec67b3069dcdc8d4185fe",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
       "sources": [
         {
           "url": "https://www.lua.org/doc/hopl.pdf",
@@ -2707,7 +2911,8 @@
           "checkedAt": "2026-10-03T15:20:27.117462+00:00",
           "sha256": "d3a2c0cf69503e85e40667b3114e3005e50df6f61eeec67b3069dcdc8d4185fe",
           "hashScope": "PDF response bytes after HTTP content decoding; no text encoding conversion",
-          "reviewId": "lua"
+          "reviewId": "lua",
+          "locator": ""
         }
       ]
     },
@@ -2724,6 +2929,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -2739,6 +2945,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -2755,6 +2962,11 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": {
+        "citedSha256": "a1585e914cc55a3422f7e376456bb5bd31fdfe71a68e1f8d1736a58adea7c892",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
       "sources": [
         {
           "url": "https://doc.rust-lang.org/reference/influences.html",
@@ -2764,7 +2976,8 @@
           "checkedAt": "2026-10-08T01:53:19.404988+00:00",
           "sha256": "a1585e914cc55a3422f7e376456bb5bd31fdfe71a68e1f8d1736a58adea7c892",
           "hashScope": "decoded response body",
-          "reviewId": "rust"
+          "reviewId": "rust",
+          "locator": ""
         }
       ]
     },
@@ -2781,6 +2994,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -2796,6 +3010,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -2811,6 +3026,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -2826,6 +3042,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -2841,6 +3058,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -2857,6 +3075,11 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": {
+        "citedSha256": "c52ad62286ecc5d1647999ad445804aea9eecdd847e23b53ed1548700e6a4593",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
       "sources": [
         {
           "url": "https://kotlinlang.org/docs/faq.html",
@@ -2866,7 +3089,8 @@
           "checkedAt": "2026-10-03T15:20:24.009764+00:00",
           "sha256": "c52ad62286ecc5d1647999ad445804aea9eecdd847e23b53ed1548700e6a4593",
           "hashScope": "decoded response body",
-          "reviewId": "kotlin"
+          "reviewId": "kotlin",
+          "locator": ""
         }
       ]
     },
@@ -2883,6 +3107,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -2898,6 +3123,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -2914,6 +3140,11 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": {
+        "citedSha256": "a1585e914cc55a3422f7e376456bb5bd31fdfe71a68e1f8d1736a58adea7c892",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
       "sources": [
         {
           "url": "https://doc.rust-lang.org/reference/influences.html",
@@ -2923,7 +3154,8 @@
           "checkedAt": "2026-10-08T01:53:19.404988+00:00",
           "sha256": "a1585e914cc55a3422f7e376456bb5bd31fdfe71a68e1f8d1736a58adea7c892",
           "hashScope": "decoded response body",
-          "reviewId": "rust"
+          "reviewId": "rust",
+          "locator": ""
         }
       ]
     },
@@ -2941,6 +3173,11 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": {
+        "citedSha256": "293f06b72978ce2f934a6d6aa66e0a40ff9dadabbb605d98a67c6525b1d899bd",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
       "sources": [
         {
           "url": "https://www.scala-lang.org/docu/files/ScalaOverview.pdf",
@@ -2950,7 +3187,8 @@
           "checkedAt": "2026-10-08T01:53:13.740204+00:00",
           "sha256": "293f06b72978ce2f934a6d6aa66e0a40ff9dadabbb605d98a67c6525b1d899bd",
           "hashScope": "完整 PDF 响应字节 SHA-256；摘录及视觉核读为 PDF 第1页",
-          "reviewId": "scala"
+          "reviewId": "scala",
+          "locator": ""
         }
       ]
     },
@@ -2967,6 +3205,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -2982,6 +3221,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -2997,6 +3237,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -3012,6 +3253,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -3027,6 +3269,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -3042,6 +3285,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -3057,6 +3301,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -3072,6 +3317,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -3087,6 +3333,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -3102,6 +3349,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -3117,6 +3365,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -3132,6 +3381,7 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": [
         {
           "url": "https://www.ruby-lang.org/en/about/",
@@ -3141,7 +3391,8 @@
           "checkedAt": "2026-10-09T05:27:05.936298+00:00",
           "sha256": "771e58119de2adc0b296e0d31f0973b8e2d114acd0dbeaf6505ec7c8c05ad1a4",
           "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body",
-          "reviewId": "ruby"
+          "reviewId": "ruby",
+          "locator": ""
         }
       ]
     },
@@ -3158,6 +3409,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -3173,6 +3425,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -3188,6 +3441,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -3204,6 +3458,11 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": {
+        "citedSha256": "a1585e914cc55a3422f7e376456bb5bd31fdfe71a68e1f8d1736a58adea7c892",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
       "sources": [
         {
           "url": "https://doc.rust-lang.org/reference/influences.html",
@@ -3213,7 +3472,8 @@
           "checkedAt": "2026-10-08T01:53:19.404988+00:00",
           "sha256": "a1585e914cc55a3422f7e376456bb5bd31fdfe71a68e1f8d1736a58adea7c892",
           "hashScope": "decoded response body",
-          "reviewId": "rust"
+          "reviewId": "rust",
+          "locator": ""
         }
       ]
     },
@@ -3231,6 +3491,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -3246,6 +3507,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -3261,6 +3523,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -3277,6 +3540,11 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": {
+        "citedSha256": "3f45f870ee8de1ff177282b7ffd900fc6b154e11a9ca72e25b3c7fea63483ed6",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
       "sources": [
         {
           "url": "https://bitsavers.org/pdf/codasyl/COBOL_Report_Apr60.pdf",
@@ -3286,7 +3554,8 @@
           "checkedAt": "2026-10-04T13:25:10.504054+00:00",
           "sha256": "3f45f870ee8de1ff177282b7ffd900fc6b154e11a9ca72e25b3c7fea63483ed6",
           "hashScope": "SHA-256 of complete original scanned PDF response bytes; stated pages rendered and visually read. No OCR text used as authority.",
-          "reviewId": "cobol"
+          "reviewId": "cobol",
+          "locator": ""
         }
       ]
     },
@@ -3303,6 +3572,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -3318,6 +3588,7 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": null,
       "sources": [
         {
           "url": "https://www.adobe.com/jp/print/postscript/pdfs/PLRM.pdf",
@@ -3327,7 +3598,8 @@
           "checkedAt": "2026-10-04T06:10:01.636029+00:00",
           "sha256": "6b29e79e4ab64aaa61a3fb27a0f36838c01f2530362873ac316bdb493a1bab6b",
           "hashScope": "SHA-256 of complete PDF response bytes; selected pages visually read.",
-          "reviewId": "postscript"
+          "reviewId": "postscript",
+          "locator": ""
         }
       ]
     },
@@ -3344,6 +3616,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -3360,6 +3633,11 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": {
+        "citedSha256": "642e10845838898768d8ad0649cc58b2a6d5510100abb2ec6abceb120f407456",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
       "sources": [
         {
           "url": "https://time.com/69316/basic/",
@@ -3369,7 +3647,8 @@
           "checkedAt": "2026-10-04T06:00:48.700818+00:00",
           "sha256": "642e10845838898768d8ad0649cc58b2a6d5510100abb2ec6abceb120f407456",
           "hashScope": "decoded response body",
-          "reviewId": "basic"
+          "reviewId": "basic",
+          "locator": ""
         }
       ]
     },
@@ -3386,6 +3665,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -3401,6 +3681,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -3416,6 +3697,7 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": null,
       "sources": [
         {
           "url": "https://raw.githubusercontent.com/colorforth/colorforth.github.io/master/HOPL.html",
@@ -3425,7 +3707,8 @@
           "checkedAt": "2026-10-04T06:10:27.085555+00:00",
           "sha256": "aa12ef4cc57fd3cfd57780b8dd0963db9599587cfbe8768624d532b643d1e1bc",
           "hashScope": "decoded response body",
-          "reviewId": "forth"
+          "reviewId": "forth",
+          "locator": ""
         }
       ]
     },
@@ -3442,6 +3725,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -3457,6 +3741,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -3472,6 +3757,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -3487,6 +3773,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -3502,6 +3789,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -3517,6 +3805,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -3532,6 +3821,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -3548,6 +3838,11 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": {
+        "citedSha256": "c52ad62286ecc5d1647999ad445804aea9eecdd847e23b53ed1548700e6a4593",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
       "sources": [
         {
           "url": "https://kotlinlang.org/docs/faq.html",
@@ -3557,7 +3852,8 @@
           "checkedAt": "2026-10-03T15:20:24.009764+00:00",
           "sha256": "c52ad62286ecc5d1647999ad445804aea9eecdd847e23b53ed1548700e6a4593",
           "hashScope": "decoded response body",
-          "reviewId": "kotlin"
+          "reviewId": "kotlin",
+          "locator": ""
         }
       ]
     },
@@ -3574,6 +3870,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -3589,6 +3886,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -3604,6 +3902,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -3619,6 +3918,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -3634,6 +3934,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -3650,6 +3951,11 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": {
+        "citedSha256": "e449c7657c92f33bf6f1f81bfa179f5ff96cf669590209f62b00061069c99240",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
       "sources": [
         {
           "url": "https://www.curry-lang.org/docs/report/versions/report_2016_01_13.pdf",
@@ -3659,7 +3965,8 @@
           "checkedAt": "2026-10-10T06:53:48.795823+00:00",
           "sha256": "e449c7657c92f33bf6f1f81bfa179f5ff96cf669590209f62b00061069c99240",
           "hashScope": "complete PDF response body bytes; two short excerpts manually selected from printed pages 28 and 37 (PDF pages 29 and 38)",
-          "reviewId": "curry"
+          "reviewId": "curry",
+          "locator": "§5.5 footnote 10, printed p.28 / PDF p.29; §7, printed p.37 / PDF p.38"
         }
       ]
     },
@@ -3676,6 +3983,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -3691,6 +3999,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -3706,6 +4015,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -3721,6 +4031,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -3737,6 +4048,11 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": {
+        "citedSha256": "a1585e914cc55a3422f7e376456bb5bd31fdfe71a68e1f8d1736a58adea7c892",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
       "sources": [
         {
           "url": "https://doc.rust-lang.org/reference/influences.html",
@@ -3746,7 +4062,8 @@
           "checkedAt": "2026-10-08T01:53:19.404988+00:00",
           "sha256": "a1585e914cc55a3422f7e376456bb5bd31fdfe71a68e1f8d1736a58adea7c892",
           "hashScope": "decoded response body",
-          "reviewId": "rust"
+          "reviewId": "rust",
+          "locator": ""
         }
       ]
     },
@@ -3763,6 +4080,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -3778,6 +4096,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -3793,6 +4112,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -3808,6 +4128,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -3823,6 +4144,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -3838,6 +4160,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -3853,6 +4176,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -3868,6 +4192,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -3883,6 +4208,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -3898,6 +4224,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -3913,6 +4240,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -3929,6 +4257,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -3944,6 +4273,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -3959,6 +4289,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -3974,6 +4305,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -3989,6 +4321,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -4004,6 +4337,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -4020,6 +4354,11 @@
       "issues": [],
       "reviewNote": "2026-10-09 补读 Hejlsberg 本人访谈，仅确认 Java 检查异常参与 C# 异常机制的设计评估与取舍；旧规范导言不足以证明设计影响的判断仍有效。不表示后继、超集或实现兼容。",
       "mapVisible": true,
+      "evidenceVersion": {
+        "citedSha256": "84d17ba6d2f88eb784a211b9b522e4a77048121132ecb829db5d069541883d10",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
       "sources": [
         {
           "url": "https://www.artima.com/articles/the-trouble-with-checked-exceptions",
@@ -4029,7 +4368,8 @@
           "checkedAt": "2026-10-09T06:52:59.137908+00:00",
           "sha256": "84d17ba6d2f88eb784a211b9b522e4a77048121132ecb829db5d069541883d10",
           "hashScope": "complete HTTP response body bytes; excerpt is manually selected",
-          "reviewId": "csharp"
+          "reviewId": "csharp",
+          "locator": ""
         }
       ]
     },
@@ -4046,6 +4386,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -4061,6 +4402,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -4076,6 +4418,7 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": null,
       "sources": [
         {
           "url": "https://groovy-lang.org/differences.html",
@@ -4085,7 +4428,8 @@
           "checkedAt": "2026-10-09T05:27:04.386275+00:00",
           "sha256": "6821ebab33547f6308dc27d9bb2b5f6a93ca115698fe7245ac9128b08d11c233",
           "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body",
-          "reviewId": "groovy"
+          "reviewId": "groovy",
+          "locator": ""
         }
       ]
     },
@@ -4103,6 +4447,11 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": {
+        "citedSha256": "d12b80a087f711e80a9479fd641d9bd8c1cae40db7fe4a7dfd6082903ff9de23",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
       "sources": [
         {
           "url": "https://brendaneich.com/2008/04/popularity/",
@@ -4112,7 +4461,8 @@
           "checkedAt": "2026-10-09T14:51:12+00:00",
           "sha256": "d12b80a087f711e80a9479fd641d9bd8c1cae40db7fe4a7dfd6082903ff9de23",
           "hashScope": "complete HTTP response body bytes; excerpt is manually selected",
-          "reviewId": "javascript"
+          "reviewId": "javascript",
+          "locator": ""
         }
       ]
     },
@@ -4130,6 +4480,11 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": {
+        "citedSha256": "c52ad62286ecc5d1647999ad445804aea9eecdd847e23b53ed1548700e6a4593",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
       "sources": [
         {
           "url": "https://kotlinlang.org/docs/faq.html",
@@ -4139,7 +4494,8 @@
           "checkedAt": "2026-10-03T15:20:24.009764+00:00",
           "sha256": "c52ad62286ecc5d1647999ad445804aea9eecdd847e23b53ed1548700e6a4593",
           "hashScope": "decoded response body",
-          "reviewId": "kotlin"
+          "reviewId": "kotlin",
+          "locator": ""
         }
       ]
     },
@@ -4147,16 +4503,34 @@
       "from": "java",
       "to": "pizza",
       "type": "supersetOf",
-      "source": "https://github.com/breck7/pldb/blob/main/concepts/pizza.scroll",
+      "label": "1997年Pizza的Java扩展",
+      "source": "https://homepages.inf.ed.ac.uk/wadler/topics/gj.html",
+      "sourceSha256": "3490b79ef55ae53459d3307788d8c843ff169520ee10aee8855d32e45fa720f8",
+      "evidence": "Wadler 作者页的1997年POPL Pizza into Java 摘要明确称 Pizza 是 Java 的严格超集，增加参数多态、高阶函数与代数数据类型，并通过翻译为 Java 编译到 JVM。此结论限于当时文献描述的语言设计，不表示现代 Java 所有版本兼容，也不是本馆已经运行历史 Pizza 编译器的认证。",
       "key": "java|pizza|supersetOf",
       "layer": "design",
-      "state": "field-only",
-      "issues": [
-        "缺少关系论证"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": false,
-      "sources": []
+      "evidenceVersion": {
+        "citedSha256": "3490b79ef55ae53459d3307788d8c843ff169520ee10aee8855d32e45fa720f8",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
+      "sources": [
+        {
+          "url": "https://homepages.inf.ed.ac.uk/wadler/topics/gj.html",
+          "finalUrl": "https://homepages.inf.ed.ac.uk/wadler/topics/gj.html",
+          "title": "Philip Wadler: GJ, Pizza, and Java — Pizza into Java (POPL 1997)",
+          "excerpt": "Pizza is a strict superset of Java",
+          "checkedAt": "2026-10-10T12:10:22.666506+00:00",
+          "sha256": "3490b79ef55ae53459d3307788d8c843ff169520ee10aee8855d32e45fa720f8",
+          "hashScope": "complete HTTP response body bytes; short excerpt manually selected",
+          "reviewId": "pizza",
+          "locator": "Pizza into Java: Translating theory into practice, January 1997"
+        }
+      ]
     },
     {
       "from": "java",
@@ -4172,6 +4546,11 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": {
+        "citedSha256": "293f06b72978ce2f934a6d6aa66e0a40ff9dadabbb605d98a67c6525b1d899bd",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
       "sources": [
         {
           "url": "https://www.scala-lang.org/docu/files/ScalaOverview.pdf",
@@ -4181,7 +4560,8 @@
           "checkedAt": "2026-10-08T01:53:13.740204+00:00",
           "sha256": "293f06b72978ce2f934a6d6aa66e0a40ff9dadabbb605d98a67c6525b1d899bd",
           "hashScope": "完整 PDF 响应字节 SHA-256；摘录及视觉核读为 PDF 第1页",
-          "reviewId": "scala"
+          "reviewId": "scala",
+          "locator": ""
         }
       ]
     },
@@ -4198,6 +4578,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -4213,6 +4594,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -4229,6 +4611,11 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": {
+        "citedSha256": "01726188b9069ccd1458ffe480f6eab6aa26beb6500355d7a35ed0310dc0531e",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
       "sources": [
         {
           "url": "https://raw.githubusercontent.com/dart-lang/language/675b500505b9ffeb80fbb507f1911e393e400cd9/specification/dartLangSpec.tex",
@@ -4238,7 +4625,8 @@
           "checkedAt": "2026-10-09T15:06:00+00:00",
           "sha256": "01726188b9069ccd1458ffe480f6eab6aa26beb6500355d7a35ed0310dc0531e",
           "hashScope": "UTF-8 LaTeX 源码完整响应字节 SHA-256; fixed repository commit",
-          "reviewId": "dart"
+          "reviewId": "dart",
+          "locator": ""
         }
       ]
     },
@@ -4256,6 +4644,11 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": {
+        "citedSha256": "7cd9c0dbe49b4ea39c06f67c9899aab876e78f03871c2939fb0071b5db897253",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
       "sources": [
         {
           "url": "https://www.json.org/json-en.html",
@@ -4265,7 +4658,8 @@
           "checkedAt": "2026-10-09T16:00:00+00:00",
           "sha256": "7cd9c0dbe49b4ea39c06f67c9899aab876e78f03871c2939fb0071b5db897253",
           "hashScope": "complete HTTP response body bytes; excerpt is manually selected",
-          "reviewId": "json"
+          "reviewId": "json",
+          "locator": ""
         }
       ]
     },
@@ -4283,6 +4677,11 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": {
+        "citedSha256": "c52ad62286ecc5d1647999ad445804aea9eecdd847e23b53ed1548700e6a4593",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
       "sources": [
         {
           "url": "https://kotlinlang.org/docs/faq.html",
@@ -4292,7 +4691,8 @@
           "checkedAt": "2026-10-03T15:20:24.009764+00:00",
           "sha256": "c52ad62286ecc5d1647999ad445804aea9eecdd847e23b53ed1548700e6a4593",
           "hashScope": "decoded response body",
-          "reviewId": "kotlin"
+          "reviewId": "kotlin",
+          "locator": ""
         }
       ]
     },
@@ -4309,6 +4709,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -4324,6 +4725,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -4339,6 +4741,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -4355,6 +4758,11 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": {
+        "citedSha256": "9a7cccc22284a8a40f7868ff5ac8b177a68c570c9f172acc139186daffd324c4",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
       "sources": [
         {
           "url": "https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html",
@@ -4364,7 +4772,8 @@
           "checkedAt": "2026-10-09T06:52:59.137908+00:00",
           "sha256": "9a7cccc22284a8a40f7868ff5ac8b177a68c570c9f172acc139186daffd324c4",
           "hashScope": "complete HTTP response body bytes; excerpt is manually selected",
-          "reviewId": "typescript"
+          "reviewId": "typescript",
+          "locator": ""
         }
       ]
     },
@@ -4381,6 +4790,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -4396,6 +4806,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -4411,6 +4822,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -4426,6 +4838,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -4441,6 +4854,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -4456,6 +4870,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -4471,6 +4886,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -4486,6 +4902,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -4501,6 +4918,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -4516,6 +4934,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -4531,6 +4950,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -4546,6 +4966,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -4561,6 +4982,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -4576,6 +4998,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -4591,6 +5014,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -4606,6 +5030,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -4621,6 +5046,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -4636,6 +5062,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -4651,6 +5078,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -4666,6 +5094,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -4681,6 +5110,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -4696,6 +5126,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -4711,6 +5142,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -4726,6 +5158,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -4741,6 +5174,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -4756,6 +5190,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -4771,6 +5206,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -4786,6 +5222,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -4802,6 +5239,11 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": {
+        "citedSha256": "0d5cd86965f869a26cf64f4b71be7b96f90a3ba8b3d74e27e8e9d9d5550f31ba",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
       "sources": [
         {
           "url": "https://mirrors.kernel.org/gnu/bash/bash-5.3.tar.gz",
@@ -4811,7 +5253,8 @@
           "checkedAt": "2026-10-04T12:21:42.281439+00:00",
           "sha256": "0d5cd86965f869a26cf64f4b71be7b96f90a3ba8b3d74e27e8e9d9d5550f31ba",
           "hashScope": "SHA-256 of complete GNU Bash 5.3 tar.gz bytes from GNU distribution mirror; member and memberSha256 identify read manual source. No archive code built or installed.",
-          "reviewId": "bash"
+          "reviewId": "bash",
+          "locator": ""
         }
       ]
     },
@@ -4828,6 +5271,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -4843,6 +5287,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -4858,6 +5303,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -4873,6 +5319,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -4889,6 +5336,11 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": {
+        "citedSha256": "c87b0751784f123cf94f6152f9c6bdabe136b1c5a6e3408ba684aca4486abb64",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
       "sources": [
         {
           "url": "https://www-formal.stanford.edu/jmc/recursive/node2.html",
@@ -4898,7 +5350,8 @@
           "checkedAt": "2026-10-10T07:01:16.962941+00:00",
           "sha256": "c87b0751784f123cf94f6152f9c6bdabe136b1c5a6e3408ba684aca4486abb64",
           "hashScope": "complete HTTP response body bytes; excerpt is manually selected",
-          "reviewId": "lisp"
+          "reviewId": "lisp",
+          "locator": "Functions and Forms; paragraph introducing conversion of forms into functions (HTML math image alt text normalized to λ)"
         }
       ]
     },
@@ -4915,6 +5368,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -4930,6 +5384,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -4945,6 +5400,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -4960,6 +5416,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -4975,6 +5432,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -4991,6 +5449,11 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": {
+        "citedSha256": "c78002dce7f99e3409307b68b3a6c1dcb2316f08522af0a7924677c3b5a6c9d0",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
       "sources": [
         {
           "url": "https://julialang.org/blog/2012/02/why-we-created-julia/",
@@ -5000,7 +5463,8 @@
           "checkedAt": "2026-10-09T05:27:04.932883+00:00",
           "sha256": "c78002dce7f99e3409307b68b3a6c1dcb2316f08522af0a7924677c3b5a6c9d0",
           "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body",
-          "reviewId": "julia"
+          "reviewId": "julia",
+          "locator": ""
         }
       ]
     },
@@ -5017,6 +5481,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -5032,6 +5497,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -5047,6 +5513,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -5062,6 +5529,7 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": null,
       "sources": [
         {
           "url": "https://www.adobe.com/jp/print/postscript/pdfs/PLRM.pdf",
@@ -5071,7 +5539,8 @@
           "checkedAt": "2026-10-04T06:10:01.636029+00:00",
           "sha256": "6b29e79e4ab64aaa61a3fb27a0f36838c01f2530362873ac316bdb493a1bab6b",
           "hashScope": "SHA-256 of complete PDF response bytes; selected pages visually read.",
-          "reviewId": "postscript"
+          "reviewId": "postscript",
+          "locator": ""
         }
       ]
     },
@@ -5088,6 +5557,7 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": null,
       "sources": [
         {
           "url": "https://www.ruby-lang.org/en/about/",
@@ -5097,7 +5567,8 @@
           "checkedAt": "2026-10-09T05:27:05.936298+00:00",
           "sha256": "771e58119de2adc0b296e0d31f0973b8e2d114acd0dbeaf6505ec7c8c05ad1a4",
           "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body",
-          "reviewId": "ruby"
+          "reviewId": "ruby",
+          "locator": ""
         }
       ]
     },
@@ -5115,6 +5586,11 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": {
+        "citedSha256": "8ce153049e77ec378787f3be3c0375e98b95ef6b3197cb3e291215ccf28997a2",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
       "sources": [
         {
           "url": "https://www.scheme.org/",
@@ -5124,7 +5600,8 @@
           "checkedAt": "2026-10-09T05:27:06.980966+00:00",
           "sha256": "8ce153049e77ec378787f3be3c0375e98b95ef6b3197cb3e291215ccf28997a2",
           "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body",
-          "reviewId": "scheme"
+          "reviewId": "scheme",
+          "locator": ""
         }
       ]
     },
@@ -5141,6 +5618,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -5156,6 +5634,7 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": null,
       "sources": [
         {
           "url": "https://worrydream.com/EarlyHistoryOfSmalltalk/",
@@ -5165,7 +5644,8 @@
           "checkedAt": "2026-10-09T05:27:06.238683+00:00",
           "sha256": "ba907dabf57133d02efba4b728cb8d1e700bb773298aff2194fe3014a61ccfca",
           "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body",
-          "reviewId": "smalltalk"
+          "reviewId": "smalltalk",
+          "locator": ""
         }
       ]
     },
@@ -5173,16 +5653,34 @@
       "from": "livescript",
       "to": "civet",
       "type": "influencedBy",
-      "source": "https://github.com/breck7/pldb/blob/main/concepts/civet.scroll",
+      "label": "对象布尔属性简写的设计输入",
+      "source": "https://civet.dev/reference",
+      "sourceSha256": "b7a356c51eb0dbf295ebc1bebd0e80e80e6eec8f69b0fd5aab9ff852218e2a33",
+      "evidence": "Civet 官方 Reference 的 Flagging Shorthand 明确标注来自 LiveScript 的灵感，并展示用加号、减号及感叹号简写对象布尔属性；Design Philosophy 也列 LiveScript 为设计来源。此处限定为该语法机制的设计输入，不表示完整语言后继、源码兼容或共享运行时。",
       "key": "livescript|civet|influencedBy",
       "layer": "design",
-      "state": "field-only",
-      "issues": [
-        "缺少关系论证"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": false,
-      "sources": []
+      "evidenceVersion": {
+        "citedSha256": "b7a356c51eb0dbf295ebc1bebd0e80e80e6eec8f69b0fd5aab9ff852218e2a33",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
+      "sources": [
+        {
+          "url": "https://civet.dev/reference",
+          "finalUrl": "https://civet.dev/reference",
+          "title": "Civet Reference",
+          "excerpt": "Inspired by LiveScript. Turn on full CoffeeScript compatibility mode",
+          "checkedAt": "2026-10-10T11:19:43.734917+00:00",
+          "sha256": "b7a356c51eb0dbf295ebc1bebd0e80e80e6eec8f69b0fd5aab9ff852218e2a33",
+          "hashScope": "complete HTTP response body bytes; short excerpt manually selected",
+          "reviewId": "civet",
+          "locator": "Flagging Shorthand; CoffeeScript Compatibility / CoffeeScript For Loops"
+        }
+      ]
     },
     {
       "to": "mlir",
@@ -5198,6 +5696,11 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": {
+        "citedSha256": "c4aaf822ba1056c809a8ab8afa81014451a8901b70e9a2fc1068ac91f3e9ef8c",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
       "sources": [
         {
           "url": "https://llvm.googlesource.com/llvm-project/mlir/+/577ef051fb56335dc453ff368802ed832c05766a/docs/Rationale.md",
@@ -5207,7 +5710,8 @@
           "checkedAt": "2026-10-10T07:01:18.462116+00:00",
           "sha256": "c4aaf822ba1056c809a8ab8afa81014451a8901b70e9a2fc1068ac91f3e9ef8c",
           "hashScope": "complete HTTP response body bytes; excerpt is manually selected",
-          "reviewId": "mlir"
+          "reviewId": "mlir",
+          "locator": "Introduction and Motivation; Integer signedness semantics; Splitting floating point vs integer operations"
         }
       ]
     },
@@ -5224,6 +5728,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -5239,6 +5744,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -5254,6 +5760,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -5269,6 +5776,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -5284,6 +5792,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -5299,6 +5808,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -5314,6 +5824,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -5329,6 +5840,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -5344,6 +5856,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -5359,6 +5872,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -5374,6 +5888,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -5389,6 +5904,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -5404,6 +5920,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -5419,6 +5936,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -5435,6 +5953,11 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": {
+        "citedSha256": "c78002dce7f99e3409307b68b3a6c1dcb2316f08522af0a7924677c3b5a6c9d0",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
       "sources": [
         {
           "url": "https://julialang.org/blog/2012/02/why-we-created-julia/",
@@ -5444,7 +5967,8 @@
           "checkedAt": "2026-10-09T05:27:04.932883+00:00",
           "sha256": "c78002dce7f99e3409307b68b3a6c1dcb2316f08522af0a7924677c3b5a6c9d0",
           "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body",
-          "reviewId": "julia"
+          "reviewId": "julia",
+          "locator": ""
         }
       ]
     },
@@ -5462,6 +5986,11 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": {
+        "citedSha256": "3a1d8d7dfa3a8ef048d31bea4c29df425340f240640dcd2f4ec400bec91d9ff9",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
       "sources": [
         {
           "url": "https://octave.org/about.html",
@@ -5471,7 +6000,8 @@
           "checkedAt": "2026-10-09T05:27:05.168843+00:00",
           "sha256": "3a1d8d7dfa3a8ef048d31bea4c29df425340f240640dcd2f4ec400bec91d9ff9",
           "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body",
-          "reviewId": "octave"
+          "reviewId": "octave",
+          "locator": ""
         }
       ]
     },
@@ -5488,6 +6018,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -5503,6 +6034,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -5518,6 +6050,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -5534,6 +6067,11 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": {
+        "citedSha256": "7b445f8f28e52b711daf2db2b6132203985cad45f586756cdb718ec8cacf8183",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
       "sources": [
         {
           "url": "https://people.inf.ethz.ch/wirth/Articles/Modula-Oberon-June.pdf",
@@ -5543,7 +6081,8 @@
           "checkedAt": "2026-10-04T05:50:39.726737+00:00",
           "sha256": "7b445f8f28e52b711daf2db2b6132203985cad45f586756cdb718ec8cacf8183",
           "hashScope": "SHA-256 of complete PDF response bytes.",
-          "reviewId": "oberon"
+          "reviewId": "oberon",
+          "locator": ""
         }
       ]
     },
@@ -5560,6 +6099,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -5575,6 +6115,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -5590,6 +6131,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -5605,6 +6147,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -5621,6 +6164,11 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": {
+        "citedSha256": "d3a2c0cf69503e85e40667b3114e3005e50df6f61eeec67b3069dcdc8d4185fe",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
       "sources": [
         {
           "url": "https://www.lua.org/doc/hopl.pdf",
@@ -5630,7 +6178,8 @@
           "checkedAt": "2026-10-03T15:20:27.117462+00:00",
           "sha256": "d3a2c0cf69503e85e40667b3114e3005e50df6f61eeec67b3069dcdc8d4185fe",
           "hashScope": "PDF response bytes after HTTP content decoding; no text encoding conversion",
-          "reviewId": "lua"
+          "reviewId": "lua",
+          "locator": ""
         }
       ]
     },
@@ -5648,6 +6197,11 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": {
+        "citedSha256": "7b445f8f28e52b711daf2db2b6132203985cad45f586756cdb718ec8cacf8183",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
       "sources": [
         {
           "url": "https://people.inf.ethz.ch/wirth/Articles/Modula-Oberon-June.pdf",
@@ -5657,7 +6211,8 @@
           "checkedAt": "2026-10-04T05:50:39.726737+00:00",
           "sha256": "7b445f8f28e52b711daf2db2b6132203985cad45f586756cdb718ec8cacf8183",
           "hashScope": "SHA-256 of complete PDF response bytes.",
-          "reviewId": "oberon"
+          "reviewId": "oberon",
+          "locator": ""
         }
       ]
     },
@@ -5674,6 +6229,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -5689,6 +6245,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -5705,6 +6262,11 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": {
+        "citedSha256": "7b445f8f28e52b711daf2db2b6132203985cad45f586756cdb718ec8cacf8183",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
       "sources": [
         {
           "url": "https://people.inf.ethz.ch/wirth/Articles/Modula-Oberon-June.pdf",
@@ -5714,7 +6276,8 @@
           "checkedAt": "2026-10-04T05:50:39.726737+00:00",
           "sha256": "7b445f8f28e52b711daf2db2b6132203985cad45f586756cdb718ec8cacf8183",
           "hashScope": "SHA-256 of complete PDF response bytes.",
-          "reviewId": "oberon"
+          "reviewId": "oberon",
+          "locator": ""
         }
       ]
     },
@@ -5730,6 +6293,7 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": [
         {
           "url": "https://docs.python.org/3/faq/general.html",
@@ -5739,7 +6303,8 @@
           "checkedAt": "2026-10-09T05:27:02.970719+00:00",
           "sha256": "b853041648712331e9f82bae156f1cf41c17c5e82fe71837049d87d7a1f543f1",
           "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body",
-          "reviewId": "python"
+          "reviewId": "python",
+          "locator": ""
         }
       ]
     },
@@ -5756,6 +6321,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -5771,6 +6337,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -5786,6 +6353,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -5802,6 +6370,11 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": {
+        "citedSha256": "6ff7e86bad4c6fb71f61a3f46028bca7cc128857e728b153803c6ab282e6f129",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
       "sources": [
         {
           "url": "https://go.dev/doc/faq",
@@ -5811,7 +6384,8 @@
           "checkedAt": "2026-10-09T05:27:05.176223+00:00",
           "sha256": "6ff7e86bad4c6fb71f61a3f46028bca7cc128857e728b153803c6ab282e6f129",
           "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body",
-          "reviewId": "go"
+          "reviewId": "go",
+          "locator": ""
         }
       ]
     },
@@ -5828,6 +6402,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -5843,6 +6418,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -5858,6 +6434,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -5873,6 +6450,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -5889,6 +6467,11 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": {
+        "citedSha256": "482b22698499f2b54c1c226e4969d22aa80b7bd30be2bb3023be089461a05d4f",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
       "sources": [
         {
           "url": "https://raw.githubusercontent.com/swiftlang/swift-org-website/ccf11a958db44ae501a84329455e89fa46fc5d61/about/index.md",
@@ -5898,7 +6481,8 @@
           "checkedAt": "2026-10-09T06:47:50.280282+00:00",
           "sha256": "482b22698499f2b54c1c226e4969d22aa80b7bd30be2bb3023be089461a05d4f",
           "hashScope": "complete HTTP response body bytes; fixed official repository commit; excerpt is manually selected",
-          "reviewId": "swift"
+          "reviewId": "swift",
+          "locator": ""
         }
       ]
     },
@@ -5916,6 +6500,11 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": {
+        "citedSha256": "db336bd4f1f57c5881477ee5e12995ac164255b81ede10d4bee9a055daf1202a",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
       "sources": [
         {
           "url": "https://fsharp.org/history/hopl-final/hopl-fsharp.pdf",
@@ -5925,7 +6514,8 @@
           "checkedAt": "2026-10-09T05:27:05.173052+00:00",
           "sha256": "db336bd4f1f57c5881477ee5e12995ac164255b81ede10d4bee9a055daf1202a",
           "hashScope": "complete downloaded PDF bytes; excerpt extracted with PDFKit and visually checked on page 18",
-          "reviewId": "f-sharp"
+          "reviewId": "f-sharp",
+          "locator": ""
         }
       ]
     },
@@ -5942,6 +6532,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -5958,6 +6549,11 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": {
+        "citedSha256": "a1585e914cc55a3422f7e376456bb5bd31fdfe71a68e1f8d1736a58adea7c892",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
       "sources": [
         {
           "url": "https://doc.rust-lang.org/reference/influences.html",
@@ -5967,7 +6563,8 @@
           "checkedAt": "2026-10-08T01:53:19.404988+00:00",
           "sha256": "a1585e914cc55a3422f7e376456bb5bd31fdfe71a68e1f8d1736a58adea7c892",
           "hashScope": "decoded response body",
-          "reviewId": "rust"
+          "reviewId": "rust",
+          "locator": ""
         }
       ]
     },
@@ -5984,6 +6581,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -5999,6 +6597,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -6014,6 +6613,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -6029,6 +6629,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -6045,6 +6646,11 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": {
+        "citedSha256": "6ff7e86bad4c6fb71f61a3f46028bca7cc128857e728b153803c6ab282e6f129",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
       "sources": [
         {
           "url": "https://go.dev/doc/faq",
@@ -6054,7 +6660,8 @@
           "checkedAt": "2026-10-09T05:27:05.176223+00:00",
           "sha256": "6ff7e86bad4c6fb71f61a3f46028bca7cc128857e728b153803c6ab282e6f129",
           "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body",
-          "reviewId": "go"
+          "reviewId": "go",
+          "locator": ""
         }
       ]
     },
@@ -6071,6 +6678,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -6087,6 +6695,11 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": {
+        "citedSha256": "7b445f8f28e52b711daf2db2b6132203985cad45f586756cdb718ec8cacf8183",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
       "sources": [
         {
           "url": "https://people.inf.ethz.ch/wirth/Articles/Modula-Oberon-June.pdf",
@@ -6096,7 +6709,8 @@
           "checkedAt": "2026-10-04T05:50:39.726737+00:00",
           "sha256": "7b445f8f28e52b711daf2db2b6132203985cad45f586756cdb718ec8cacf8183",
           "hashScope": "SHA-256 of complete PDF response bytes.",
-          "reviewId": "oberon"
+          "reviewId": "oberon",
+          "locator": ""
         }
       ]
     },
@@ -6114,6 +6728,11 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": {
+        "citedSha256": "7b445f8f28e52b711daf2db2b6132203985cad45f586756cdb718ec8cacf8183",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
       "sources": [
         {
           "url": "https://people.inf.ethz.ch/wirth/Articles/Modula-Oberon-June.pdf",
@@ -6123,7 +6742,8 @@
           "checkedAt": "2026-10-04T05:50:39.726737+00:00",
           "sha256": "7b445f8f28e52b711daf2db2b6132203985cad45f586756cdb718ec8cacf8183",
           "hashScope": "SHA-256 of complete PDF response bytes.",
-          "reviewId": "oberon"
+          "reviewId": "oberon",
+          "locator": ""
         }
       ]
     },
@@ -6140,6 +6760,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -6155,6 +6776,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -6170,6 +6792,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -6185,6 +6808,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -6201,6 +6825,11 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": {
+        "citedSha256": "c78002dce7f99e3409307b68b3a6c1dcb2316f08522af0a7924677c3b5a6c9d0",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
       "sources": [
         {
           "url": "https://julialang.org/blog/2012/02/why-we-created-julia/",
@@ -6210,7 +6839,8 @@
           "checkedAt": "2026-10-09T05:27:04.932883+00:00",
           "sha256": "c78002dce7f99e3409307b68b3a6c1dcb2316f08522af0a7924677c3b5a6c9d0",
           "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body",
-          "reviewId": "julia"
+          "reviewId": "julia",
+          "locator": ""
         }
       ]
     },
@@ -6230,6 +6860,11 @@
       ],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": {
+        "citedSha256": "854cc7c2b9581a1b1b4a888819f78c5cf8b73f951b4448f23b4709cc0a6ccd8d",
+        "match": "different",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
       "sources": [
         {
           "url": "https://www.php.net/manual/en/history.php.php",
@@ -6239,7 +6874,8 @@
           "checkedAt": "2026-10-09T05:27:06.296906+00:00",
           "sha256": "e84f14b3ac0e46b152c14d793e9f684c01a46117e563d6258a243109062d17b0",
           "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body",
-          "reviewId": "php"
+          "reviewId": "php",
+          "locator": ""
         }
       ]
     },
@@ -6256,6 +6892,7 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": null,
       "sources": [
         {
           "url": "https://www.ruby-lang.org/en/about/",
@@ -6265,7 +6902,8 @@
           "checkedAt": "2026-10-09T05:27:05.936298+00:00",
           "sha256": "771e58119de2adc0b296e0d31f0973b8e2d114acd0dbeaf6505ec7c8c05ad1a4",
           "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body",
-          "reviewId": "ruby"
+          "reviewId": "ruby",
+          "locator": ""
         }
       ]
     },
@@ -6282,6 +6920,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -6297,6 +6936,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -6312,6 +6952,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -6327,6 +6968,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -6342,6 +6984,7 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": null,
       "sources": [
         {
           "url": "https://www.erlang.org/download/armstrong_thesis_2003.pdf",
@@ -6351,7 +6994,8 @@
           "checkedAt": "2026-10-04T06:18:48.528852+00:00",
           "sha256": "da585b914eb07350e2d6f727db5eb0fb1551f49fc1270f7d4dc079f2c8c1ab7a",
           "hashScope": "SHA-256 of complete PDF response bytes; PDF pp. 15–17 visually read.",
-          "reviewId": "erlang"
+          "reviewId": "erlang",
+          "locator": ""
         }
       ]
     },
@@ -6368,6 +7012,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -6383,6 +7028,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -6398,6 +7044,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -6413,6 +7060,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -6428,6 +7076,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -6443,6 +7092,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -6459,6 +7109,11 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": {
+        "citedSha256": "6e268e8d41870a17f3cced3093de02dcbd324cec1dd9949eb76f8510518d0aac",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
       "sources": [
         {
           "url": "https://cython.org/",
@@ -6468,7 +7123,8 @@
           "checkedAt": "2026-10-09T15:35:00+00:00",
           "sha256": "6e268e8d41870a17f3cced3093de02dcbd324cec1dd9949eb76f8510518d0aac",
           "hashScope": "complete HTTP response body bytes; excerpt is manually selected",
-          "reviewId": "cython"
+          "reviewId": "cython",
+          "locator": ""
         }
       ]
     },
@@ -6485,6 +7141,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -6501,6 +7158,11 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": {
+        "citedSha256": "c78002dce7f99e3409307b68b3a6c1dcb2316f08522af0a7924677c3b5a6c9d0",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
       "sources": [
         {
           "url": "https://julialang.org/blog/2012/02/why-we-created-julia/",
@@ -6510,7 +7172,8 @@
           "checkedAt": "2026-10-09T05:27:04.932883+00:00",
           "sha256": "c78002dce7f99e3409307b68b3a6c1dcb2316f08522af0a7924677c3b5a6c9d0",
           "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body",
-          "reviewId": "julia"
+          "reviewId": "julia",
+          "locator": ""
         }
       ]
     },
@@ -6527,6 +7190,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -6542,6 +7206,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -6557,6 +7222,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -6572,6 +7238,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -6587,6 +7254,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -6602,6 +7270,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -6617,6 +7286,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -6632,6 +7302,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -6647,6 +7318,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -6662,6 +7334,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -6677,6 +7350,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -6692,6 +7366,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -6708,6 +7383,11 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": {
+        "citedSha256": "c78002dce7f99e3409307b68b3a6c1dcb2316f08522af0a7924677c3b5a6c9d0",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
       "sources": [
         {
           "url": "https://julialang.org/blog/2012/02/why-we-created-julia/",
@@ -6717,7 +7397,8 @@
           "checkedAt": "2026-10-09T05:27:04.932883+00:00",
           "sha256": "c78002dce7f99e3409307b68b3a6c1dcb2316f08522af0a7924677c3b5a6c9d0",
           "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body",
-          "reviewId": "julia"
+          "reviewId": "julia",
+          "locator": ""
         }
       ]
     },
@@ -6734,6 +7415,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -6749,6 +7431,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -6764,6 +7447,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -6779,6 +7463,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -6794,6 +7479,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -6809,6 +7495,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -6824,6 +7511,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -6839,6 +7527,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -6854,6 +7543,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -6869,6 +7559,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -6884,6 +7575,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -6899,6 +7591,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -6914,6 +7607,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -6929,6 +7623,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -6944,6 +7639,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -6959,6 +7655,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -6974,6 +7671,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -6989,6 +7687,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -7004,6 +7703,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -7019,6 +7719,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -7034,6 +7735,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -7049,6 +7751,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -7065,6 +7768,11 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": {
+        "citedSha256": "c78002dce7f99e3409307b68b3a6c1dcb2316f08522af0a7924677c3b5a6c9d0",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
       "sources": [
         {
           "url": "https://julialang.org/blog/2012/02/why-we-created-julia/",
@@ -7074,7 +7782,8 @@
           "checkedAt": "2026-10-09T05:27:04.932883+00:00",
           "sha256": "c78002dce7f99e3409307b68b3a6c1dcb2316f08522af0a7924677c3b5a6c9d0",
           "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body",
-          "reviewId": "julia"
+          "reviewId": "julia",
+          "locator": ""
         }
       ]
     },
@@ -7092,6 +7801,11 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": {
+        "citedSha256": "a1585e914cc55a3422f7e376456bb5bd31fdfe71a68e1f8d1736a58adea7c892",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
       "sources": [
         {
           "url": "https://doc.rust-lang.org/reference/influences.html",
@@ -7101,7 +7815,8 @@
           "checkedAt": "2026-10-08T01:53:19.404988+00:00",
           "sha256": "a1585e914cc55a3422f7e376456bb5bd31fdfe71a68e1f8d1736a58adea7c892",
           "hashScope": "decoded response body",
-          "reviewId": "rust"
+          "reviewId": "rust",
+          "locator": ""
         }
       ]
     },
@@ -7118,6 +7833,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -7133,6 +7849,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -7148,6 +7865,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -7163,6 +7881,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -7178,6 +7897,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -7193,6 +7913,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -7208,6 +7929,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -7224,6 +7946,11 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": {
+        "citedSha256": "bd38e34e0335d2c6b9e3a0d9cff8fb2ffeb28d80f9f69b03d8ad25bd2650d7fb",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
       "sources": [
         {
           "url": "https://cran.r-project.org/doc/manuals/r-release/R-intro.html",
@@ -7233,7 +7960,8 @@
           "checkedAt": "2026-09-24T07:33:01.277829+00:00",
           "sha256": "bd38e34e0335d2c6b9e3a0d9cff8fb2ffeb28d80f9f69b03d8ad25bd2650d7fb",
           "hashScope": "decoded response body",
-          "reviewId": "r"
+          "reviewId": "r",
+          "locator": ""
         }
       ]
     },
@@ -7250,6 +7978,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -7265,6 +7994,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -7280,6 +8010,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -7295,6 +8026,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -7310,6 +8042,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -7326,6 +8059,11 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": {
+        "citedSha256": "c52ad62286ecc5d1647999ad445804aea9eecdd847e23b53ed1548700e6a4593",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
       "sources": [
         {
           "url": "https://kotlinlang.org/docs/faq.html",
@@ -7335,7 +8073,8 @@
           "checkedAt": "2026-10-03T15:20:24.009764+00:00",
           "sha256": "c52ad62286ecc5d1647999ad445804aea9eecdd847e23b53ed1548700e6a4593",
           "hashScope": "decoded response body",
-          "reviewId": "kotlin"
+          "reviewId": "kotlin",
+          "locator": ""
         }
       ]
     },
@@ -7352,6 +8091,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -7367,6 +8107,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -7382,6 +8123,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -7398,6 +8140,11 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": {
+        "citedSha256": "d12b80a087f711e80a9479fd641d9bd8c1cae40db7fe4a7dfd6082903ff9de23",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
       "sources": [
         {
           "url": "https://brendaneich.com/2008/04/popularity/",
@@ -7407,7 +8154,8 @@
           "checkedAt": "2026-10-09T14:51:12+00:00",
           "sha256": "d12b80a087f711e80a9479fd641d9bd8c1cae40db7fe4a7dfd6082903ff9de23",
           "hashScope": "complete HTTP response body bytes; excerpt is manually selected",
-          "reviewId": "javascript"
+          "reviewId": "javascript",
+          "locator": ""
         }
       ]
     },
@@ -7425,6 +8173,11 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": {
+        "citedSha256": "d3a2c0cf69503e85e40667b3114e3005e50df6f61eeec67b3069dcdc8d4185fe",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
       "sources": [
         {
           "url": "https://www.lua.org/doc/hopl.pdf",
@@ -7434,7 +8187,8 @@
           "checkedAt": "2026-10-03T15:20:27.117462+00:00",
           "sha256": "d3a2c0cf69503e85e40667b3114e3005e50df6f61eeec67b3069dcdc8d4185fe",
           "hashScope": "PDF response bytes after HTTP content decoding; no text encoding conversion",
-          "reviewId": "lua"
+          "reviewId": "lua",
+          "locator": ""
         }
       ]
     },
@@ -7451,6 +8205,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -7467,6 +8222,11 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": {
+        "citedSha256": "a1585e914cc55a3422f7e376456bb5bd31fdfe71a68e1f8d1736a58adea7c892",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
       "sources": [
         {
           "url": "https://doc.rust-lang.org/reference/influences.html",
@@ -7476,7 +8236,8 @@
           "checkedAt": "2026-10-08T01:53:19.404988+00:00",
           "sha256": "a1585e914cc55a3422f7e376456bb5bd31fdfe71a68e1f8d1736a58adea7c892",
           "hashScope": "decoded response body",
-          "reviewId": "rust"
+          "reviewId": "rust",
+          "locator": ""
         }
       ]
     },
@@ -7493,6 +8254,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -7508,6 +8270,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -7523,6 +8286,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -7539,6 +8303,11 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": {
+        "citedSha256": "d12b80a087f711e80a9479fd641d9bd8c1cae40db7fe4a7dfd6082903ff9de23",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
       "sources": [
         {
           "url": "https://brendaneich.com/2008/04/popularity/",
@@ -7548,7 +8317,8 @@
           "checkedAt": "2026-10-09T14:51:12+00:00",
           "sha256": "d12b80a087f711e80a9479fd641d9bd8c1cae40db7fe4a7dfd6082903ff9de23",
           "hashScope": "complete HTTP response body bytes; excerpt is manually selected",
-          "reviewId": "javascript"
+          "reviewId": "javascript",
+          "locator": ""
         }
       ]
     },
@@ -7565,6 +8335,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -7581,6 +8352,11 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": {
+        "citedSha256": "0d5cd86965f869a26cf64f4b71be7b96f90a3ba8b3d74e27e8e9d9d5550f31ba",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
       "sources": [
         {
           "url": "https://mirrors.kernel.org/gnu/bash/bash-5.3.tar.gz",
@@ -7590,7 +8366,8 @@
           "checkedAt": "2026-10-04T12:21:42.281439+00:00",
           "sha256": "0d5cd86965f869a26cf64f4b71be7b96f90a3ba8b3d74e27e8e9d9d5550f31ba",
           "hashScope": "SHA-256 of complete GNU Bash 5.3 tar.gz bytes from GNU distribution mirror; member and memberSha256 identify read manual source. No archive code built or installed.",
-          "reviewId": "bash"
+          "reviewId": "bash",
+          "locator": ""
         }
       ]
     },
@@ -7608,6 +8385,11 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": {
+        "citedSha256": "1542b6a6bef06ec0840983c3ee2314cd97daea15a8bf00214d05bebd7f2c52ea",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
       "sources": [
         {
           "url": "https://www.usenix.org/legacy/publications/library/proceedings/vhll/full_papers/korn.ksh.a",
@@ -7617,7 +8399,8 @@
           "checkedAt": "2026-10-04T12:41:46.860397+00:00",
           "sha256": "1542b6a6bef06ec0840983c3ee2314cd97daea15a8bf00214d05bebd7f2c52ea",
           "hashScope": "SHA-256 of complete USENIX ASCII response bytes; relevant full-paper sections read.",
-          "reviewId": "korn-shell"
+          "reviewId": "korn-shell",
+          "locator": ""
         }
       ]
     },
@@ -7635,6 +8418,11 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": {
+        "citedSha256": "b16605109e6c8394c7c68d346fd3d1062b61a07cf31982b42087edbbe2d30574",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
       "sources": [
         {
           "url": "https://www.jsnover.com/Docs/MonadManifesto.pdf",
@@ -7644,7 +8432,8 @@
           "checkedAt": "2026-10-04T11:55:26.411058+00:00",
           "sha256": "b16605109e6c8394c7c68d346fd3d1062b61a07cf31982b42087edbbe2d30574",
           "hashScope": "SHA-256 of complete PDF response bytes; selected pages visually read.",
-          "reviewId": "powershell"
+          "reviewId": "powershell",
+          "locator": ""
         }
       ]
     },
@@ -7661,6 +8450,7 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": null,
       "sources": [
         {
           "url": "https://worrydream.com/EarlyHistoryOfSmalltalk/",
@@ -7670,7 +8460,8 @@
           "checkedAt": "2026-10-09T05:27:06.238683+00:00",
           "sha256": "ba907dabf57133d02efba4b728cb8d1e700bb773298aff2194fe3014a61ccfca",
           "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body",
-          "reviewId": "smalltalk"
+          "reviewId": "smalltalk",
+          "locator": ""
         }
       ]
     },
@@ -7687,6 +8478,7 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": null,
       "sources": [
         {
           "url": "https://www.ruby-lang.org/en/about/",
@@ -7696,7 +8488,8 @@
           "checkedAt": "2026-10-09T05:27:05.936298+00:00",
           "sha256": "771e58119de2adc0b296e0d31f0973b8e2d114acd0dbeaf6505ec7c8c05ad1a4",
           "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body",
-          "reviewId": "ruby"
+          "reviewId": "ruby",
+          "locator": ""
         }
       ]
     },
@@ -7713,6 +8506,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -7729,6 +8523,11 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": {
+        "citedSha256": "d3a2c0cf69503e85e40667b3114e3005e50df6f61eeec67b3069dcdc8d4185fe",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
       "sources": [
         {
           "url": "https://www.lua.org/doc/hopl.pdf",
@@ -7738,7 +8537,8 @@
           "checkedAt": "2026-10-03T15:20:27.117462+00:00",
           "sha256": "d3a2c0cf69503e85e40667b3114e3005e50df6f61eeec67b3069dcdc8d4185fe",
           "hashScope": "PDF response bytes after HTTP content decoding; no text encoding conversion",
-          "reviewId": "lua"
+          "reviewId": "lua",
+          "locator": ""
         }
       ]
     },
@@ -7755,6 +8555,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -7770,6 +8571,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -7785,6 +8587,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -7800,6 +8603,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -7815,6 +8619,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -7831,6 +8636,11 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": {
+        "citedSha256": "f1f8c1d014b81a05faa1fb9e1180962316e048a812374eac7ef0a6e04fd9e947",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
       "sources": [
         {
           "url": "https://docs.oracle.com/en/database/oracle/oracle-database/23/lnpls/overview.html",
@@ -7840,7 +8650,8 @@
           "checkedAt": "2026-10-09T05:27:05.106470+00:00",
           "sha256": "f1f8c1d014b81a05faa1fb9e1180962316e048a812374eac7ef0a6e04fd9e947",
           "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body",
-          "reviewId": "pl-sql"
+          "reviewId": "pl-sql",
+          "locator": ""
         }
       ]
     },
@@ -7857,6 +8668,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -7872,6 +8684,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -7887,6 +8700,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -7902,6 +8716,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -7917,6 +8732,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -7932,6 +8748,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -7950,6 +8767,11 @@
       ],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": {
+        "citedSha256": "a1585e914cc55a3422f7e376456bb5bd31fdfe71a68e1f8d1736a58adea7c892",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
       "sources": [
         {
           "url": "https://doc.rust-lang.org/reference/influences.html",
@@ -7959,7 +8781,8 @@
           "checkedAt": "2026-10-08T01:53:19.404988+00:00",
           "sha256": "a1585e914cc55a3422f7e376456bb5bd31fdfe71a68e1f8d1736a58adea7c892",
           "hashScope": "decoded response body",
-          "reviewId": "rust"
+          "reviewId": "rust",
+          "locator": ""
         }
       ]
     },
@@ -7976,6 +8799,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -7991,6 +8815,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -8006,6 +8831,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -8021,6 +8847,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -8036,6 +8863,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -8051,6 +8879,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -8067,6 +8896,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -8082,6 +8912,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -8098,6 +8929,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -8113,6 +8945,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -8128,22 +8961,42 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
       "from": "typescript",
       "to": "civet",
-      "type": "supersetOf",
-      "source": "https://github.com/breck7/pldb/blob/main/concepts/civet.scroll",
-      "key": "typescript|civet|supersetOf",
+      "type": "influencedBy",
+      "replacesType": "supersetOf",
+      "label": "TypeScript语法基础与兼容取舍",
+      "source": "https://civet.dev/comparison",
+      "sourceSha256": "e18ffb230d928be1b609125bd5651804b13b3f1bd9b419fbc956383e1b7b70f8",
+      "evidence": "Civet 官方比较页说明以既有 JavaScript/TypeScript 为兼容基础，但存在有意差异：单参数箭头函数需括号，函数默认隐式返回；另有可选兼容模式。因此保留语法基础与设计取舍关系，纠正快照的严格超集分类，不声称任意 TypeScript 程序或所有版本均兼容。",
+      "key": "typescript|civet|influencedBy",
       "layer": "design",
-      "state": "field-only",
-      "issues": [
-        "缺少关系论证"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": false,
-      "sources": []
+      "evidenceVersion": {
+        "citedSha256": "e18ffb230d928be1b609125bd5651804b13b3f1bd9b419fbc956383e1b7b70f8",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
+      "sources": [
+        {
+          "url": "https://civet.dev/comparison",
+          "finalUrl": "https://civet.dev/comparison",
+          "title": "Civet Comparison to JavaScript/TypeScript",
+          "excerpt": "Civet aims to be 99% compatible with existing JavaScript/TypeScript code. However, there are a few intentional deviations.",
+          "checkedAt": "2026-10-10T12:10:20.907551+00:00",
+          "sha256": "e18ffb230d928be1b609125bd5651804b13b3f1bd9b419fbc956383e1b7b70f8",
+          "hashScope": "complete HTTP response body bytes; short excerpt manually selected",
+          "reviewId": "civet",
+          "locator": "Introduction; Single-Argument Arrow Functions; Implicit Return"
+        }
+      ]
     },
     {
       "from": "typescript",
@@ -8158,6 +9011,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -8173,6 +9027,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -8188,6 +9043,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -8203,6 +9059,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -8218,6 +9075,7 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": null,
       "sources": [
         {
           "url": "https://learn.microsoft.com/en-us/windows/win32/com/translating-to-vbscript",
@@ -8227,7 +9085,8 @@
           "checkedAt": "2026-10-09T05:27:05.408567+00:00",
           "sha256": "867656dc27a383e713996a6c66407713f43192bd09f6a813da969319a50809b1",
           "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body",
-          "reviewId": "vbscript"
+          "reviewId": "vbscript",
+          "locator": ""
         }
       ]
     },
@@ -8244,6 +9103,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -8259,6 +9119,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -8274,6 +9135,7 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": null,
       "sources": [
         {
           "url": "https://learn.microsoft.com/en-us/office/vba/language/concepts/getting-started/64-bit-visual-basic-for-applications-overview",
@@ -8283,7 +9145,8 @@
           "checkedAt": "2026-10-09T05:27:04.766696+00:00",
           "sha256": "593e40a17ae964705a68b04a3c84b3c94256e5eaf87bc0d09cdc5f19018a2331",
           "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body",
-          "reviewId": "vba"
+          "reviewId": "vba",
+          "locator": ""
         }
       ]
     },
@@ -8303,6 +9166,11 @@
       ],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": {
+        "citedSha256": "1c4eda50a63e5ea0036160bbbe6c2d21ebdbb6051c8acbc033f81602387c2a37",
+        "match": "different",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
       "sources": [
         {
           "url": "https://learn.microsoft.com/en-us/lifecycle/announcements/visual-basic-6-support-announcement",
@@ -8312,7 +9180,8 @@
           "checkedAt": "2026-10-09T05:27:04.581533+00:00",
           "sha256": "a790a40a94e20513a1d3c2f4e7e71446fe0a30ac86b50840c75a977684579063",
           "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body",
-          "reviewId": "visual-basic.net"
+          "reviewId": "visual-basic.net",
+          "locator": ""
         }
       ]
     },
@@ -8329,6 +9198,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -8344,6 +9214,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -8359,6 +9230,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -8374,6 +9246,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -8389,6 +9262,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -8404,6 +9278,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -8419,6 +9294,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -8434,6 +9310,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -8449,6 +9326,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -8464,6 +9342,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -8479,6 +9358,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -8494,6 +9374,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -8509,6 +9390,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -8524,6 +9406,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -8539,6 +9422,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -8554,6 +9438,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -8569,6 +9454,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -8584,6 +9470,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -8599,6 +9486,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -8614,6 +9502,7 @@
       ],
       "reviewNote": "",
       "mapVisible": false,
+      "evidenceVersion": null,
       "sources": []
     },
     {
@@ -8629,6 +9518,7 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": null,
       "sources": [
         {
           "url": "https://docs.python.org/3/extending/extending.html",
@@ -8638,7 +9528,8 @@
           "checkedAt": "2026-10-09T05:27:03.119783+00:00",
           "sha256": "02769df3c24e25099feae9dac6909f079506c32077ee583a7d70af914e415628",
           "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body",
-          "reviewId": "python"
+          "reviewId": "python",
+          "locator": ""
         }
       ]
     },
@@ -8655,6 +9546,7 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": null,
       "sources": [
         {
           "url": "https://doc.rust-lang.org/nomicon/ffi.html",
@@ -8664,7 +9556,8 @@
           "checkedAt": "2026-10-09T05:27:03.174941+00:00",
           "sha256": "31e6a4e9aaf2b00eb802f64887f1e2319537b8e890f6bd89901eaa093dafc554",
           "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body",
-          "reviewId": "rust"
+          "reviewId": "rust",
+          "locator": ""
         }
       ]
     },
@@ -8681,6 +9574,7 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": null,
       "sources": [
         {
           "url": "https://ziglang.org/learn/overview/",
@@ -8690,7 +9584,8 @@
           "checkedAt": "2026-10-04T00:42:42.079299+00:00",
           "sha256": "fe022370ce3b694fbbe97bf5a28207cd2e88ed3260a89068db69d360b5de01b2",
           "hashScope": "decoded response body",
-          "reviewId": "zig"
+          "reviewId": "zig",
+          "locator": ""
         }
       ]
     },
@@ -8707,6 +9602,7 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": null,
       "sources": [
         {
           "url": "https://docs.python.org/3/extending/extending.html",
@@ -8716,7 +9612,8 @@
           "checkedAt": "2026-10-09T05:27:03.119783+00:00",
           "sha256": "02769df3c24e25099feae9dac6909f079506c32077ee583a7d70af914e415628",
           "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body",
-          "reviewId": "python"
+          "reviewId": "python",
+          "locator": ""
         }
       ]
     },
@@ -8733,6 +9630,7 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": null,
       "sources": [
         {
           "url": "https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/add-type",
@@ -8742,7 +9640,8 @@
           "checkedAt": "2026-10-04T11:57:42.922264+00:00",
           "sha256": "6d86d7485852b36dd2106e57a589b74e2b185f62e90207936bed1b22931e2cad",
           "hashScope": "decoded response body",
-          "reviewId": "powershell"
+          "reviewId": "powershell",
+          "locator": ""
         }
       ]
     },
@@ -8759,6 +9658,7 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": null,
       "sources": [
         {
           "url": "https://www.jython.org/",
@@ -8768,7 +9668,8 @@
           "checkedAt": "2026-10-09T05:27:06.091187+00:00",
           "sha256": "09a7f70aed77d33cc5949851e1d03eaa1be5f15db7b819b6dea8960ddb4fbb6e",
           "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body",
-          "reviewId": "python"
+          "reviewId": "python",
+          "locator": ""
         }
       ]
     },
@@ -8785,6 +9686,7 @@
       "issues": [],
       "reviewNote": "",
       "mapVisible": true,
+      "evidenceVersion": null,
       "sources": [
         {
           "url": "https://pyo3.rs/",
@@ -8794,7 +9696,8 @@
           "checkedAt": "2026-10-09T05:27:06.042280+00:00",
           "sha256": "3b260ba994ca34964253685a16fafa61433c440c5cd82e6744dbcf9df03004be",
           "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body",
-          "reviewId": "python"
+          "reviewId": "python",
+          "locator": ""
         }
       ]
     }
@@ -8833,8 +9736,8 @@
   ],
   "inputHashes": {
     "data/raw/pldb.json": "57f45d25bba78ab6bc4af5d969356d2efbfcc7c1ee722dbb5c708d60aa78ba77",
-    "data/audit/reviews.json": "480e429b2ed3e43b1a0f2b7691399e1cffdbb31772f4636f5bd1cc65eb380939",
-    "data/relationship-overrides.json": "1fc3887c20fc820bc342a1b831ae7f1a9490ff307fd608905d45888f5554e0cd",
+    "data/audit/reviews.json": "549da44e36364656f3d5864a5187fe49aed6bf1618b93786b60d5f99f3df467b",
+    "data/relationship-overrides.json": "fad3acbe4f93309a997e93fa73a04f34cf5d481e339665376bc38d62016f9474",
     "data/ecosystem-relations.json": "0d96e92a3853eddc6b32e4a45d5c90223d2096fa35438823f7dcfe72ce161e76",
     "data/audit/relationship-decisions.json": "4339ab007ed91414653b56ddf2dcbe0a9450de5df1705c9ad76c1fbc7db53960",
     "data/audit/label-selection.json": "dc5eee62fa662b0d60940375d8a3ec56ac2bbf84ee2b9922a290d46d11cc866f"
