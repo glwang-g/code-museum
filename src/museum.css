@@ -190,6 +190,8 @@ main{flex:1;min-height:0;display:flex;flex-direction:column;overflow:hidden}
 .lab-credit[hidden]{display:none}
 .credits-nav{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 12px}
 .credits-nav button{border:1px solid #526b71;border-radius:3px;padding:5px 10px;background:#112a30;color:var(--ink);font-size:12px}
+.credits-nav button[aria-selected="true"]{border-color:var(--gold);background:#1b3338;color:var(--gold)}
+.credit-panel[hidden],.relationship-coverage[hidden],.historical-sources[hidden]{display:none}
 .credit-group{margin:16px 0}
 .provenance .credit-group h3,.historical-sources h3{font-size:18px;color:var(--ink);margin:0 0 8px}
 .credit-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:12px}
