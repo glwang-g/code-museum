@@ -136,8 +136,17 @@ $('#zoom-in').onclick=()=>zoomBy(1.45);
 $('#zoom-out').onclick=()=>zoomBy(1/1.45);
 new ResizeObserver(()=>{if(zoomMode==='fit'){fitMap();repackFocusLabels()}else if(zoomMode==='focus'&&activeId&&!$('#river').hidden)renderLineageFocus(activeId);else {applyZoom(zoomScale);repackFocusLabels()}}).observe($('#viewport'));
 let previewScroll=null;
+const tabIntro={
+  'timeline-view':{title:'千流有来处，沿岸皆可停。',note:'从可编程机器的构想到今天。沿河漫游，点亮一门语言，看看它从哪里来，又流向哪里。'},
+  'lineage-view':{title:'语言不是孤岛，关系要能回到出处。',note:'查看已记录的设计影响、后继与扩展；实现和生态关系单独呈现。'},
+  'catalogue-view':{title:'从流行名单之外，继续往里找。',note:'检索完整馆藏，按语言、别名、创造者或馆藏 ID 定位。'},
+  'lab-view':{title:'写一行，跑一次，看到真实结果。',note:'浏览器运行已接入的实验；远端执行只在明确提交后进入临时环境。'},
+  'compare-view':{title:'同一个问题，看看不同语言怎么回答。',note:'并排阅读语法与示例，再沿已记录关系继续探索。'},
+  'sources-view':{title:'看见的不只结果，还有来处。',note:'集中查看运行环境、数据快照、许可、关系证据与馆藏边界。'}
+};
 function activateTab(id){
   closeMapSearch();
+  const copy=tabIntro[id]||tabIntro['timeline-view'];$('.intro h1').textContent=copy.title;$('.intro-copy p').textContent=copy.note;
   const previous=document.querySelector('.museum-tabs .active')?.id;
   $('#river').hidden=!['timeline-view','lineage-view'].includes(id);
   $('#catalogue').hidden=id!=='catalogue-view';

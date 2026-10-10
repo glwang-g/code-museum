@@ -105,6 +105,8 @@ async function screenshot(name){if(!outputDirectory)return;await evaluate('new P
     await click('.relation-source summary');assert.ok((await evaluate("document.querySelector('.relation-source').textContent")).includes(key.startsWith('coffeescript')?'CoffeeScript':'LiveScript'));assert.ok((await evaluate('location.hash')).includes('relation='));await screenshot(`civet-${key.split('|')[0]}-${theme}-${width}.png`);
     await page('Page.reload',{ignoreCache:true});await wait(`window.MUSEUM_NAV && inspectedRelation===${JSON.stringify(key)} && !!document.querySelector('.relationship-summary')`);
    }
+   const introChecks=[['timeline-view','千流有来处，沿岸皆可停。'],['lineage-view','语言不是孤岛，关系要能回到出处。'],['catalogue-view','从流行名单之外，继续往里找。'],['lab-view','写一行，跑一次，看到真实结果。'],['compare-view','同一个问题，看看不同语言怎么回答。'],['sources-view','看见的不只结果，还有来处。']];
+   for(const [tab,title] of introChecks){await click('#'+tab);await wait(`document.querySelector('.intro h1').textContent===${JSON.stringify(title)}`);assert.equal(await evaluate("document.querySelector('.intro h1').textContent"),title)}
    for(const route of JSON.parse(fs.readFileSync(path.join(root,'data/learning-paths.json'))).routes){
     await evaluate(`window.MUSEUM_GUIDE.start(${JSON.stringify(route.id)})`);
     for(let i=0;i<route.steps.length;i++){
@@ -117,7 +119,7 @@ async function screenshot(name){if(!outputDirectory)return;await evaluate('new P
     }
     await click('#guide-end');
    }
-   results.push({width,theme,checks:'Java/functions reload; share excludes credentials; two Civet proofs disclosure; all 4 routes and 21 structured learning steps; no overflow'});console.log('PASS exploration '+theme+' '+width);
+   results.push({width,theme,checks:'Java/functions reload; share excludes credentials; two Civet proofs disclosure; all 4 routes and 21 structured learning steps; tab-specific intro; no overflow'});console.log('PASS exploration '+theme+' '+width);
   }
   await evaluate("window.MUSEUM_LAB.open('java')");
   await evaluate(`window.restoreWorkers=[];window.savedWorker=window.Worker;window.Worker=class extends window.savedWorker{constructor(...args){super(...args);window.restoreWorkers.push(String(args[0]))}};location.hash='#lab?language=javascript&topic=functions'`);
