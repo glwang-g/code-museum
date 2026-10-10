@@ -26,13 +26,15 @@
   else window.MUSEUM_COMPARE.open(step.left,step.right,step.topic);
   render();
  }
- function start(route){if(!routes.has(route))return;state={route,index:0};save();open()}
+ function start(route){if(!routes.has(route))return;$('learning-paths').open=false;state={route,index:0};save();open()}
  $('learning-path-cards').innerHTML=data.routes.map(r=>`<article><h4>${esc(r.title)}</h4><p>${esc(r.description)}</p><button type="button" data-guide-start="${esc(r.id)}">开始 · ${r.steps.length} 步</button></article>`).join('');
  for(const b of document.querySelectorAll('[data-guide-start]'))b.onclick=()=>start(b.dataset.guideStart);
  $('guide-open').onclick=open;
  $('guide-prev').onclick=()=>{if(state&&state.index>0){state.index--;save();open()}};
  $('guide-next').onclick=()=>{if(state&&state.index<routes.get(state.route).steps.length-1){state.index++;save();open()}};
  $('guide-end').onclick=()=>{state=null;save();render()};
+ document.addEventListener('click',event=>{const paths=$('learning-paths');if(paths.open&&!paths.contains(event.target))paths.open=false});
+ document.addEventListener('keydown',event=>{if(event.key==='Escape')$('learning-paths').open=false});
  new MutationObserver(()=>{
   if(!state)return;const step=routes.get(state.route).steps[state.index],lab=window.MUSEUM_LAB;
   if(!step.check||lab.current!==step.language||lab.topic!==step.topic)return;
