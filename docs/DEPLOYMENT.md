@@ -131,3 +131,7 @@ HTTP MCP共用执行器进程及Docker启动依赖，手工Bearer无OAuth/SSE；
 用户明确授权推送发布本轮已完成改动：Self→JavaScript、Haskell→Curry、λ演算→Lisp、LLVM IR→MLIR 四条既有关系补证，以及地图标签/执行按钮优先于关系连线的点击修复。106条关系匹配摘录、322条字段待核；未新增运行时或调整后端。
 
 54项npm测试、离线构建与80项实际Chrome点击定向检查通过，其中Java40项；前两批关系各16项定向检查通过。发布前读到正式站仍为旧JS/CSS，不将本地结论视为已上线。本次沿用master的现有Actions限权静态发布，后端无改动、无需升级。最终commit、Actions和正式站检查结果在完成后追加。
+
+本轮正式发布与核验完成：功能提交 `2911cc5e5573b452630609a03b35518a862f353d` 已推送，[Actions 38046491074](https://github.com/glwang-g/code-museum/actions/runs/38046491074) 的build/deploy均成功。实际隔离Chrome正式HTTPS64项鼠标导航检查通过：Java/JavaScript×1440/390×明暗×时间长河/关系谱系×已选标签/关联标签/自然运行按钮/裸露连线。Java按钮进入对应实验台、标签打开档案、裸露线打开关系；无人工路径修改或能力夹具，使用正式GET /api/runtimes，未提交代码或执行API变更。
+
+8份线上文件逐字节匹配本地构建，正式宽窄屏截图已查看；证据 `data/audit/map-hit-target-production-checks.json`。四条关系补证随本次数据发布，后端没有升级。本次不代表实际Java编译执行或原生Safari鼠标实测。后续仅核验文档/报告提交不改变已核验网站源码与文件字节，沿用同一发布流程。

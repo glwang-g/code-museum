@@ -404,3 +404,7 @@ HTTPS MCP采用既有执行器进程的POST-only无会话Streamable HTTP JSON，
 用户反馈 Java 运行按钮似乎仍打开关系。通过 Safari 当前页面确认用户浏览正式 `codemuseum.freexlib.com/#lab`；只读获取正式站 museum.js/museum.css，HTTP200，两文件SHA均不同于本地修复，正式JS无控件capture排除、CSS无#docks独立高层。上一轮补丁尚未发布，不能把本地通过当成正式站已修复。
 
 上一轮浏览器回归仅JavaScript。本次扩展脚本加入Java和自然路径按钮点击：两语言×两尺寸×两主题×两视图×五场景，共80项实际Chrome鼠标检查（Java40项），全部通过。五场景为已选标签/关联标签/按钮下强制SVG路径交叠、无人工修改路径的自然按钮点击、裸露连线；Java进入对应实验台而非关系面板。Java按钮仅由本地GET /api/runtimes导航能力夹具显露，无实际执行端点或模拟输出；除该请求与页面既有只读GET /api/visits外，断言没有其他API操作或提交代码。54项npm测试、离线构建通过；Java代表截图核读、报告输入与服务文件SHA一致，记录 `data/audit/map-hit-target-java-browser-checks.json`。保留前轮报告作为历史记录；没有进一步改动产品源码，没有提交、推送或部署。
+
+## 2026-10-10 本轮关系证据与地图点击修复正式发布
+
+用户明确授权推送发布。2911cc5 已推送，Actions38046491074 build/deploy均成功；包含此前四条关系补证和标签/执行按钮点击优先级修复。正式HTTPS64项实际Chrome鼠标导航通过（Java32项），覆盖两语言、两尺寸、两主题、两地图视图及标签/运行按钮/裸露线，8份线上文件与本地构建逐字节相同，代表截图已核读。报告 `data/audit/map-hit-target-production-checks.json`。正式能力来自真实GET /api/runtimes，无夹具或人工改线，无代码提交/执行API变更，不代表Java编译执行、原生Safari点击或全量浏览器回归。前述“尚未发布”由本条覆盖；后端无改动。随后仅核验报告与文档提交沿用现有Actions，网站输入字节保持。
