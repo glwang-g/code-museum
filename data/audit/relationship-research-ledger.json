@@ -127,6 +127,30 @@
       "batch": "2026-10-10_BATCH-17",
       "note": "The IBM SEQUEL 2 paper identity is present, but the batch could not obtain a stable readable primary copy that directly supports the SQL endpoint claim; the PLDB field remains unupgraded.",
       "reopenWhen": "A stable IBM paper copy or fixed archival source explicitly connects SQL to the specific SEQUEL 2 version."
+    },
+    {
+      "id": "self|javascript|influencedBy",
+      "status": "verified",
+      "batch": "2026-10-10_BATCH-18",
+      "note": "Re-read Brendan Eich’s Popularity author account; response SHA matches the existing saved source. Explicit Self-ish singular prototypes support a limited prototype-object design input, not full Self semantics, succession or source compatibility."
+    },
+    {
+      "id": "haskell|curry|influencedBy",
+      "status": "verified",
+      "batch": "2026-10-10_BATCH-18",
+      "note": "Fixed Curry 0.9.0 report (2016-01-13), §5.5 footnote 10 and §7, explicitly adopts Haskell field-label description and monadic I/O. Version-specific design input; neither syntax similarity nor the KiCS2 Haskell back end establishes inheritance or whole-language compatibility."
+    },
+    {
+      "id": "lambda-calculus|lisp|influencedBy",
+      "status": "verified",
+      "batch": "2026-10-10_BATCH-19",
+      "note": "McCarthy 1960 Functions and Forms explicitly adopts Church notation; author prehistory item c limits the mechanism. Supports function notation, not full lambda calculus implementation or runtime identity."
+    },
+    {
+      "id": "llvmir|mlir|influencedBy",
+      "status": "verified",
+      "batch": "2026-10-10_BATCH-19",
+      "note": "Fixed MLIR Rationale revision explicitly draws on LLVM IR ideas for low-level constructs; old standard dialect integer semantics and operation split provide concrete design scope. Excludes lowering, project affiliation, compatibility and LLVM PHI inheritance."
     }
   ]
 }

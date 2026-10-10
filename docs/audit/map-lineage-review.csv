@@ -47,7 +47,7 @@ common-workflow-language,CWL,2014,unreviewed,,,0,0,0,0,0,,no-map-link
 cpp,C++,1985,verified-language,c,d | java | lua | rust,5,5,0,9,0,,cited-only
 crystal,Crystal,2014,unreviewed,,,0,0,0,1,0,,no-map-link
 csharp,C#,2000,verified-language,java,kotlin | rust | scala,4,4,0,4,0,,cited-only
-curry,Curry,1990,unreviewed,haskell,,1,0,1,0,0,,field-only
+curry,Curry,1990,unreviewed,haskell,,1,1,0,0,0,,cited-only
 d,D,2001,verified-language,cpp,,1,1,0,1,0,,cited-only
 dafny,Dafny,2009,unreviewed,,,0,0,0,0,0,,no-map-link
 dart,Dart,2011,verified-language,javascript,,1,1,0,0,0,,cited-only
@@ -84,7 +84,7 @@ golfscript,GolfScript,2007,unreviewed,,,0,0,0,0,0,,no-map-link
 grass,GRASS,1977,unreviewed,,,0,0,0,0,0,,no-map-link
 groovy,Groovy,2003,verified-language,java,kotlin,2,2,0,0,0,,cited-only
 hack,Hack,2014,unreviewed,,,0,0,0,0,0,,no-map-link
-haskell,Haskell,1990,verified-language,,curry | rust,2,1,1,6,1,miranda,cited-and-field
+haskell,Haskell,1990,verified-language,,curry | rust,2,2,0,6,1,miranda,cited-only
 haxe,Haxe,2005,unreviewed,,,0,0,0,0,0,,no-map-link
 hexagony,hexagony,2015,unreviewed,,,0,0,0,0,0,,no-map-link
 hmmm,HMMM,2006,unreviewed,,,0,0,0,0,0,,no-map-link
@@ -114,7 +114,7 @@ limbo,Limbo,1995,unreviewed,,,0,0,0,0,0,,no-map-link
 lisaac,Lisaac,2003,unreviewed,,,0,0,0,0,0,,no-map-link
 lisp,Lisp,1958,historical-primary-source,,julia | postscript | ruby | scheme | smalltalk,5,5,0,8,3,clojure | common-lisp | hy,cited-only
 livescript,LiveScript,2011,unreviewed,,,0,0,0,1,0,,no-map-link
-llvmir,LLVM IR,2003,unreviewed,,mlir,1,0,1,1,0,,field-only
+llvmir,LLVM IR,2003,unreviewed,,mlir,1,1,0,1,0,,cited-only
 lolcode,LOLCODE,2007,unreviewed,,,0,0,0,0,0,,no-map-link
 lsl,Linden Scripting Language,2003,unreviewed,,,0,0,0,0,0,,no-map-link
 lua,Lua,1993,verified-language,awk | cpp | scheme | snobol,,4,4,0,5,0,,cited-only
@@ -124,7 +124,7 @@ matlab,MATLAB,1984,verified-language,,julia | octave,2,2,0,1,1,java,cited-only
 mercury,Mercury,1995,unreviewed,,,0,0,0,0,0,,no-map-link
 minizinc,MiniZinc,2012,unreviewed,,,0,0,0,0,0,,no-map-link
 miranda,Miranda,1985,unreviewed,,,0,0,0,0,1,haskell,no-map-link
-mlir,MLIR,2019,unreviewed,llvmir,,1,0,1,3,0,,field-only
+mlir,MLIR,2019,unreviewed,llvmir,,1,1,0,3,0,,cited-only
 modula-2,Modula-2,1978,historical-primary-source,pascal,oberon,2,2,0,4,0,,cited-only
 moonscript,MoonScript,2011,unreviewed,,,0,0,0,0,0,,no-map-link
 mumps,MUMPS,1966,unreviewed,,,0,0,0,2,0,,no-map-link

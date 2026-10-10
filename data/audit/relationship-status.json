@@ -6,8 +6,8 @@
     "relations": 428,
     "mapDesignGaps": 3,
     "states": {
-      "excerpt-recorded": 102,
-      "field-only": 326
+      "excerpt-recorded": 106,
+      "field-only": 322
     },
     "warnings": 5
   },
@@ -405,10 +405,10 @@
       ],
       "ecology": [],
       "mapLinks": 2,
-      "fieldOnly": 7,
+      "fieldOnly": 6,
       "citationOnly": 0,
       "needsDirectEvidence": 0,
-      "excerptRecorded": 1,
+      "excerptRecorded": 2,
       "state": "needs-review"
     },
     {
@@ -464,10 +464,10 @@
       ],
       "ecology": [],
       "mapLinks": 5,
-      "fieldOnly": 5,
+      "fieldOnly": 4,
       "citationOnly": 0,
       "needsDirectEvidence": 0,
-      "excerptRecorded": 6,
+      "excerptRecorded": 7,
       "state": "needs-review"
     },
     {
@@ -537,10 +537,10 @@
       ],
       "ecology": [],
       "mapLinks": 5,
-      "fieldOnly": 8,
+      "fieldOnly": 7,
       "citationOnly": 0,
       "needsDirectEvidence": 0,
-      "excerptRecorded": 5,
+      "excerptRecorded": 6,
       "state": "needs-review"
     },
     {
@@ -3640,16 +3640,28 @@
       "from": "haskell",
       "to": "curry",
       "type": "influencedBy",
-      "source": "https://github.com/breck7/pldb/blob/main/concepts/curry.scroll",
+      "label": "字段标签与单子式 I/O 设计输入",
+      "source": "https://www.curry-lang.org/docs/report/versions/report_2016_01_13.pdf",
+      "sourceSha256": "e449c7657c92f33bf6f1f81bfa179f5ff96cf669590209f62b00061069c99240",
+      "evidence": "Curry 0.9.0（2016-01-13）正式报告 §5.5 印刷第28页/PDF第29页脚注10明确采用 Haskell 的字段标签描述；§7 印刷第37页/PDF第38页明确使用 Haskell 的单子式 I/O，并限制 I/O 不出现在允许非确定性搜索的程序部分。此处限定为该版本记录的具体设计输入；字段构造/导出及求值机制仍有差异，不表示 Curry 是 Haskell 严格超集、所有程序源码兼容，也不由 KiCS2 的 Haskell 后端推导关系。",
       "key": "haskell|curry|influencedBy",
       "layer": "design",
-      "state": "field-only",
-      "issues": [
-        "缺少关系论证"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": true,
-      "sources": []
+      "sources": [
+        {
+          "url": "https://www.curry-lang.org/docs/report/versions/report_2016_01_13.pdf",
+          "finalUrl": "https://www.curry-lang.org/docs/report/versions/report_2016_01_13.pdf",
+          "title": "Curry: An Integrated Functional Logic Language — Version 0.9.0, January 13, 2016",
+          "excerpt": "[§5.5, p.28, footnote 10] we adopt most of the description of Haskell here. [§7, p.37] using the monadic I/O approach [42] of Haskell",
+          "checkedAt": "2026-10-10T06:53:48.795823+00:00",
+          "sha256": "e449c7657c92f33bf6f1f81bfa179f5ff96cf669590209f62b00061069c99240",
+          "hashScope": "complete PDF response body bytes; two short excerpts manually selected from printed pages 28 and 37 (PDF pages 29 and 38)",
+          "reviewId": "curry"
+        }
+      ]
     },
     {
       "from": "haskell",
@@ -4864,19 +4876,31 @@
       "sources": []
     },
     {
-      "from": "lambda-calculus",
       "to": "lisp",
       "type": "influencedBy",
-      "source": "https://github.com/breck7/pldb/blob/main/concepts/lisp.scroll",
+      "label": "λ 记法与函数表示的设计输入",
+      "source": "https://www-formal.stanford.edu/jmc/recursive/node2.html",
+      "sourceSha256": "c87b0751784f123cf94f6152f9c6bdabe136b1c5a6e3408ba684aca4486abb64",
+      "evidence": "McCarthy 1960 原文 Functions and Forms 明确采用 Church 的 λ 记法把形式表达为函数；作者的 LISP prehistory（条目 c）说明为把函数用作参数而选用该记法，并未采用 Church 更一般的函数定义机制。这是理论记法与函数表示的局部设计输入，不表示早期 Lisp 实现完整 λ 演算、β 归约语义或与之源码兼容；本批不升级 λ 演算的地图或运行资格。",
+      "from": "lambda-calculus",
       "key": "lambda-calculus|lisp|influencedBy",
       "layer": "design",
-      "state": "field-only",
-      "issues": [
-        "缺少关系论证"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": false,
-      "sources": []
+      "sources": [
+        {
+          "url": "https://www-formal.stanford.edu/jmc/recursive/node2.html",
+          "finalUrl": "https://www-formal.stanford.edu/jmc/recursive/node2.html",
+          "title": "McCarthy — Recursive Functions of Symbolic Expressions, Functions and Forms",
+          "excerpt": "This is accomplished by Church's λ-notation.",
+          "checkedAt": "2026-10-10T07:01:16.962941+00:00",
+          "sha256": "c87b0751784f123cf94f6152f9c6bdabe136b1c5a6e3408ba684aca4486abb64",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected",
+          "reviewId": "lisp"
+        }
+      ]
     },
     {
       "from": "lambda-calculus",
@@ -5161,19 +5185,31 @@
       "sources": []
     },
     {
-      "from": "llvmir",
       "to": "mlir",
       "type": "influencedBy",
-      "source": "https://github.com/breck7/pldb/blob/main/concepts/mlir.scroll",
+      "label": "底层 IR 与操作设计输入",
+      "source": "https://llvm.googlesource.com/llvm-project/mlir/+/577ef051fb56335dc453ff368802ed832c05766a/docs/Rationale.md",
+      "sourceSha256": "c4aaf822ba1056c809a8ab8afa81014451a8901b70e9a2fc1068ac91f3e9ef8c",
+      "evidence": "MLIR Rationale 固定修订 577ef051fb56335dc453ff368802ed832c05766a 的 Introduction and Motivation 明确说明底层构造借鉴 LLVM 与 Swift 的 IR；Integer signedness semantics 与 Splitting floating point vs integer operations 进一步记录旧 standard dialect 的无符号属性整数及浮点/整数操作拆分与 LLVM 设计的关联。限定为该版本底层 IR 与操作的设计输入，不表示 MLIR 是 LLVM IR 的兼容超集或全部 dialect 均采用该语义；MLIR 的 block arguments 与 LLVM PHI 有区别，降级到 LLVM dialect 和同属 LLVM 项目不是本条影响边的依据。",
+      "from": "llvmir",
       "key": "llvmir|mlir|influencedBy",
       "layer": "design",
-      "state": "field-only",
-      "issues": [
-        "缺少关系论证"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": true,
-      "sources": []
+      "sources": [
+        {
+          "url": "https://llvm.googlesource.com/llvm-project/mlir/+/577ef051fb56335dc453ff368802ed832c05766a/docs/Rationale.md",
+          "finalUrl": "https://llvm.googlesource.com/llvm-project/mlir/+/577ef051fb56335dc453ff368802ed832c05766a/docs/Rationale.md",
+          "title": "MLIR Rationale — fixed revision 577ef051fb56335dc453ff368802ed832c05766a",
+          "excerpt": "MLIR uses ideas drawn from IRs of LLVM and Swift for lower level constructs",
+          "checkedAt": "2026-10-10T07:01:18.462116+00:00",
+          "sha256": "c4aaf822ba1056c809a8ab8afa81014451a8901b70e9a2fc1068ac91f3e9ef8c",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected",
+          "reviewId": "mlir"
+        }
+      ]
     },
     {
       "from": "llvmir",
@@ -7493,16 +7529,28 @@
       "from": "self",
       "to": "javascript",
       "type": "influencedBy",
-      "source": "https://github.com/breck7/pldb/blob/main/concepts/javascript.scroll",
+      "label": "原型对象设计输入",
+      "source": "https://brendaneich.com/2008/04/popularity/",
+      "sourceSha256": "d12b80a087f711e80a9479fd641d9bd8c1cae40db7fe4a7dfd6082903ff9de23",
+      "evidence": "JavaScript 设计者 Brendan Eich 在2008年作者回顾 Popularity 中明确把 Self 式原型（albeit singular，单一原型）列为主要设计材料。此处限定为原型对象机制的设计输入，不表示 JavaScript 继承了 Self 的全部对象语义、是其超集或与其源码兼容。",
       "key": "self|javascript|influencedBy",
       "layer": "design",
-      "state": "field-only",
-      "issues": [
-        "缺少关系论证"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": false,
-      "sources": []
+      "sources": [
+        {
+          "url": "https://brendaneich.com/2008/04/popularity/",
+          "finalUrl": "https://brendaneich.com/2008/04/popularity/",
+          "title": "Popularity – Brendan Eich",
+          "excerpt": "The diktat from upper engineering management was that the language must “look like Java”. That ruled out Perl, Python, and Tcl, along with Scheme. ... I’m not proud, but I’m happy that I chose Scheme-ish first-class functions and Self-ish (albeit singular) prototypes as the main ingredients. The Java influences, especially y2k Date bugs but also the primitive vs. object distinction (e.g., string vs. String ), were unfortunate.",
+          "checkedAt": "2026-10-09T14:51:12+00:00",
+          "sha256": "d12b80a087f711e80a9479fd641d9bd8c1cae40db7fe4a7dfd6082903ff9de23",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected",
+          "reviewId": "javascript"
+        }
+      ]
     },
     {
       "from": "sgml",
@@ -8785,8 +8833,8 @@
   ],
   "inputHashes": {
     "data/raw/pldb.json": "57f45d25bba78ab6bc4af5d969356d2efbfcc7c1ee722dbb5c708d60aa78ba77",
-    "data/audit/reviews.json": "b5b67633decafff2baf545b529d902add2af8d07c483e88d48d7374dad38c8d7",
-    "data/relationship-overrides.json": "b5a84f5f4b23aeba1e789283feba07ded2285d1a6135aea2a392e54be0d239cb",
+    "data/audit/reviews.json": "480e429b2ed3e43b1a0f2b7691399e1cffdbb31772f4636f5bd1cc65eb380939",
+    "data/relationship-overrides.json": "1fc3887c20fc820bc342a1b831ae7f1a9490ff307fd608905d45888f5554e0cd",
     "data/ecosystem-relations.json": "0d96e92a3853eddc6b32e4a45d5c90223d2096fa35438823f7dcfe72ce161e76",
     "data/audit/relationship-decisions.json": "4339ab007ed91414653b56ddf2dcbe0a9450de5df1705c9ad76c1fbc7db53960",
     "data/audit/label-selection.json": "dc5eee62fa662b0d60940375d8a3ec56ac2bbf84ee2b9922a290d46d11cc866f"

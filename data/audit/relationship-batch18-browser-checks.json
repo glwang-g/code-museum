@@ -1,0 +1,185 @@
+{
+  "checkedAt": "2026-10-10T06:57:27.656Z",
+  "browser": "Chrome/154.0.8037.98",
+  "scope": "Actual isolated headless Chrome over local HTTP; two relationships, two sizes, two themes, both map views; real mouse proof/endpoint navigation and recorded excerpt/hash/source checks. External DNS blocked; no runtime or production execution tested.",
+  "inputs": {
+    "data/audit/reviews.json": "8acb408ff6cecba032ad7aaf33c7a6dc348ed540ba1a6b34e6e649a0d2c7e986",
+    "data/relationship-overrides.json": "33e2c250c577347e19e3d05780f8356ca6bec1f581ec304f4e66abc58a0694e8",
+    "data/audit/map-eligible-ids.json": "b3350c71465006fd4d341c48e15501fd7c8da708c29b902732b72e375c6e5ea1",
+    "src/museum.js": "9313643022be5e9e53af00125068dee0d0afdc674196f99f9ec96710b8c72651",
+    "src/museum.css": "860a9626468b3e3e542cb00885d3295d8c0e6a8ff246d7753823e00e9ea2bd65",
+    "src/themes.css": "df167e01d77e34c60e523f70264938726f4eff103bc469f2ecceaeca3f725eaf"
+  },
+  "servedInputs": {
+    "index.html": "4627e5d6740281f2f68200138515d894cb4596b14935dc6f27b765f2dd54f5ae",
+    "museum.js": "9313643022be5e9e53af00125068dee0d0afdc674196f99f9ec96710b8c72651",
+    "museum.css": "860a9626468b3e3e542cb00885d3295d8c0e6a8ff246d7753823e00e9ea2bd65",
+    "themes.css": "df167e01d77e34c60e523f70264938726f4eff103bc469f2ecceaeca3f725eaf",
+    "data/catalogue.js": "68d36246b28ff212b78e4c7c9b67ae65a65bf50306bf7e97ea11a0d1ed047dff",
+    "data/relationship-status.js": "c1239ed184d07db7dc8e667b7ac4142ee73ccfc7868b942b2a30ec0c8db4e5ca",
+    "data/relationship-status.json": "1da15f485dcdf2c8a41fc141558c07f83a4cfee85d8dc5bf0f60613b7252509d",
+    "data/audit-reviews.json": "8acb408ff6cecba032ad7aaf33c7a6dc348ed540ba1a6b34e6e649a0d2c7e986"
+  },
+  "checks": [
+    {
+      "width": 1440,
+      "theme": "dark",
+      "mode": "timeline",
+      "key": "self|javascript|influencedBy",
+      "state": "excerpt-recorded",
+      "mapVisible": false,
+      "sourceSha": "d12b80a087f711e80a9479fd641d9bd8c1cae40db7fe4a7dfd6082903ff9de23",
+      "mouseProofAndEndpoints": true
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "mode": "timeline",
+      "key": "haskell|curry|influencedBy",
+      "state": "excerpt-recorded",
+      "mapVisible": true,
+      "sourceSha": "e449c7657c92f33bf6f1f81bfa179f5ff96cf669590209f62b00061069c99240",
+      "mouseProofAndEndpoints": true
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "mode": "lineage",
+      "key": "self|javascript|influencedBy",
+      "state": "excerpt-recorded",
+      "mapVisible": false,
+      "sourceSha": "d12b80a087f711e80a9479fd641d9bd8c1cae40db7fe4a7dfd6082903ff9de23",
+      "mouseProofAndEndpoints": true
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "mode": "lineage",
+      "key": "haskell|curry|influencedBy",
+      "state": "excerpt-recorded",
+      "mapVisible": true,
+      "sourceSha": "e449c7657c92f33bf6f1f81bfa179f5ff96cf669590209f62b00061069c99240",
+      "mouseProofAndEndpoints": true
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "mode": "timeline",
+      "key": "self|javascript|influencedBy",
+      "state": "excerpt-recorded",
+      "mapVisible": false,
+      "sourceSha": "d12b80a087f711e80a9479fd641d9bd8c1cae40db7fe4a7dfd6082903ff9de23",
+      "mouseProofAndEndpoints": true
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "mode": "timeline",
+      "key": "haskell|curry|influencedBy",
+      "state": "excerpt-recorded",
+      "mapVisible": true,
+      "sourceSha": "e449c7657c92f33bf6f1f81bfa179f5ff96cf669590209f62b00061069c99240",
+      "mouseProofAndEndpoints": true
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "mode": "lineage",
+      "key": "self|javascript|influencedBy",
+      "state": "excerpt-recorded",
+      "mapVisible": false,
+      "sourceSha": "d12b80a087f711e80a9479fd641d9bd8c1cae40db7fe4a7dfd6082903ff9de23",
+      "mouseProofAndEndpoints": true
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "mode": "lineage",
+      "key": "haskell|curry|influencedBy",
+      "state": "excerpt-recorded",
+      "mapVisible": true,
+      "sourceSha": "e449c7657c92f33bf6f1f81bfa179f5ff96cf669590209f62b00061069c99240",
+      "mouseProofAndEndpoints": true
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "mode": "timeline",
+      "key": "self|javascript|influencedBy",
+      "state": "excerpt-recorded",
+      "mapVisible": false,
+      "sourceSha": "d12b80a087f711e80a9479fd641d9bd8c1cae40db7fe4a7dfd6082903ff9de23",
+      "mouseProofAndEndpoints": true
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "mode": "timeline",
+      "key": "haskell|curry|influencedBy",
+      "state": "excerpt-recorded",
+      "mapVisible": true,
+      "sourceSha": "e449c7657c92f33bf6f1f81bfa179f5ff96cf669590209f62b00061069c99240",
+      "mouseProofAndEndpoints": true
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "mode": "lineage",
+      "key": "self|javascript|influencedBy",
+      "state": "excerpt-recorded",
+      "mapVisible": false,
+      "sourceSha": "d12b80a087f711e80a9479fd641d9bd8c1cae40db7fe4a7dfd6082903ff9de23",
+      "mouseProofAndEndpoints": true
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "mode": "lineage",
+      "key": "haskell|curry|influencedBy",
+      "state": "excerpt-recorded",
+      "mapVisible": true,
+      "sourceSha": "e449c7657c92f33bf6f1f81bfa179f5ff96cf669590209f62b00061069c99240",
+      "mouseProofAndEndpoints": true
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "mode": "timeline",
+      "key": "self|javascript|influencedBy",
+      "state": "excerpt-recorded",
+      "mapVisible": false,
+      "sourceSha": "d12b80a087f711e80a9479fd641d9bd8c1cae40db7fe4a7dfd6082903ff9de23",
+      "mouseProofAndEndpoints": true
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "mode": "timeline",
+      "key": "haskell|curry|influencedBy",
+      "state": "excerpt-recorded",
+      "mapVisible": true,
+      "sourceSha": "e449c7657c92f33bf6f1f81bfa179f5ff96cf669590209f62b00061069c99240",
+      "mouseProofAndEndpoints": true
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "mode": "lineage",
+      "key": "self|javascript|influencedBy",
+      "state": "excerpt-recorded",
+      "mapVisible": false,
+      "sourceSha": "d12b80a087f711e80a9479fd641d9bd8c1cae40db7fe4a7dfd6082903ff9de23",
+      "mouseProofAndEndpoints": true
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "mode": "lineage",
+      "key": "haskell|curry|influencedBy",
+      "state": "excerpt-recorded",
+      "mapVisible": true,
+      "sourceSha": "e449c7657c92f33bf6f1f81bfa179f5ff96cf669590209f62b00061069c99240",
+      "mouseProofAndEndpoints": true
+    }
+  ]
+}

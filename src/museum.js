@@ -440,9 +440,8 @@ function nearestRelations(event,hitTolerance=8,anchorId=null){
   return candidates.filter(c=>c.distance<=candidates[0].distance+.6);
 }
 document.addEventListener('click',event=>{
-  if(!document.body.classList.contains('lineage-focus')||!event.target.closest('#viewport')||event.target.closest('.relation-control'))return;
-  const dock=event.target.closest('.dock');
-  const relation=nearestRelations(event,24,dock?.dataset.id||null)[0];
+  if(!document.body.classList.contains('lineage-focus')||!event.target.closest('#viewport')||event.target.closest('.relation-control,.dock,.map-run'))return;
+  const relation=nearestRelations(event,24)[0];
   if(!relation)return;
   event.preventDefault();event.stopImmediatePropagation();openRelationship(relation.key);
 },true);
@@ -462,10 +461,6 @@ const nearby=document.createElement('div');nearby.className='nearby-list';nearby
 function hideNearby(){nearby.hidden=true;nearby.innerHTML=''}
 $('#docks').addEventListener('click',e=>{
   const b=e.target.closest('[data-id]');if(!b)return;
-  if(document.body.classList.contains('lineage-focus')){
-    const relation=nearestRelations(e)[0];
-    if(relation){openRelationship(relation.key);return;}
-  }
   if(b.classList.contains('dot')){
     const center=b.getBoundingClientRect(),x=(center.left+center.right)/2,y=(center.top+center.bottom)/2;
     const close=[...document.querySelectorAll('#docks [data-id]')].filter(node=>{const rect=node.getBoundingClientRect();return Math.hypot((rect.left+rect.right)/2-x,(rect.top+rect.bottom)/2-y)<28});

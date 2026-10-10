@@ -125,3 +125,9 @@ sudo -u code-museum python3 /var/www/code-museum/current/server/analytics.py --b
 实际Chrome生产HTTPS15组检查通过（临时服务版另有一次进程重启保留检查，生产不为测试重启）：一次真实Python执行更新聚合，五查询/凭据隔离、三条全部16步的导航目标和前后/结束/刷新恢复、两主题两尺寸、无隐式POST或环境下载。16份静态文件与本地构建SHA一致，宽窄屏截图已查看。记录platform-production-service-checks.json与platform-production-browser-checks.json。不把一次Python执行当作本轮重跑全部七种生产镜像或安全逃逸证明；镜像与资源权限契约沿用上一轮。
 
 HTTP MCP共用执行器进程及Docker启动依赖，手工Bearer无OAuth/SSE；聚合指标无告警/趋势/完整可用率；导览仅导航进度不评判学习成果。接入见MCP.md、EXECUTOR.md。
+
+## 2026-10-10 关系证据与地图点击修复发布准备
+
+用户明确授权推送发布本轮已完成改动：Self→JavaScript、Haskell→Curry、λ演算→Lisp、LLVM IR→MLIR 四条既有关系补证，以及地图标签/执行按钮优先于关系连线的点击修复。106条关系匹配摘录、322条字段待核；未新增运行时或调整后端。
+
+54项npm测试、离线构建与80项实际Chrome点击定向检查通过，其中Java40项；前两批关系各16项定向检查通过。发布前读到正式站仍为旧JS/CSS，不将本地结论视为已上线。本次沿用master的现有Actions限权静态发布，后端无改动、无需升级。最终commit、Actions和正式站检查结果在完成后追加。

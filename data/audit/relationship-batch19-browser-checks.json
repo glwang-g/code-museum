@@ -1,0 +1,185 @@
+{
+  "checkedAt": "2026-10-10T07:03:32.231Z",
+  "browser": "Chrome/154.0.8037.98",
+  "scope": "Actual isolated headless Chrome over local HTTP; two relationships, two sizes, two themes, both map views; real mouse proof/endpoint navigation and recorded excerpt/hash/source checks. External DNS blocked; no runtime or production execution tested.",
+  "inputs": {
+    "data/audit/reviews.json": "480e429b2ed3e43b1a0f2b7691399e1cffdbb31772f4636f5bd1cc65eb380939",
+    "data/relationship-overrides.json": "1fc3887c20fc820bc342a1b831ae7f1a9490ff307fd608905d45888f5554e0cd",
+    "data/audit/map-eligible-ids.json": "1d5ce8ef16c8c5c72cacaa2bcee15113c4ec00cc91b75d7dc87569722575dcbe",
+    "src/museum.js": "9313643022be5e9e53af00125068dee0d0afdc674196f99f9ec96710b8c72651",
+    "src/museum.css": "860a9626468b3e3e542cb00885d3295d8c0e6a8ff246d7753823e00e9ea2bd65",
+    "src/themes.css": "df167e01d77e34c60e523f70264938726f4eff103bc469f2ecceaeca3f725eaf"
+  },
+  "servedInputs": {
+    "index.html": "4627e5d6740281f2f68200138515d894cb4596b14935dc6f27b765f2dd54f5ae",
+    "museum.js": "9313643022be5e9e53af00125068dee0d0afdc674196f99f9ec96710b8c72651",
+    "museum.css": "860a9626468b3e3e542cb00885d3295d8c0e6a8ff246d7753823e00e9ea2bd65",
+    "themes.css": "df167e01d77e34c60e523f70264938726f4eff103bc469f2ecceaeca3f725eaf",
+    "data/catalogue.js": "d67b5acedbd6a27b8f9f6b03d61c5fca6ab41bc681b16ef3c85d7162a83a10c3",
+    "data/relationship-status.js": "5d4a0cd8187c83c71d4b171809201d991ff0329f1657a55ecfd9c7f9c5881ee6",
+    "data/relationship-status.json": "3c97329ebf9120efbaa210a96d965121027b798fbe3c03ab22fd1e8053ff6051",
+    "data/audit-reviews.json": "480e429b2ed3e43b1a0f2b7691399e1cffdbb31772f4636f5bd1cc65eb380939"
+  },
+  "checks": [
+    {
+      "width": 1440,
+      "theme": "dark",
+      "mode": "timeline",
+      "key": "lambda-calculus|lisp|influencedBy",
+      "state": "excerpt-recorded",
+      "mapVisible": false,
+      "sourceSha": "c87b0751784f123cf94f6152f9c6bdabe136b1c5a6e3408ba684aca4486abb64",
+      "mouseProofAndEndpoints": true
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "mode": "timeline",
+      "key": "llvmir|mlir|influencedBy",
+      "state": "excerpt-recorded",
+      "mapVisible": true,
+      "sourceSha": "c4aaf822ba1056c809a8ab8afa81014451a8901b70e9a2fc1068ac91f3e9ef8c",
+      "mouseProofAndEndpoints": true
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "mode": "lineage",
+      "key": "lambda-calculus|lisp|influencedBy",
+      "state": "excerpt-recorded",
+      "mapVisible": false,
+      "sourceSha": "c87b0751784f123cf94f6152f9c6bdabe136b1c5a6e3408ba684aca4486abb64",
+      "mouseProofAndEndpoints": true
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "mode": "lineage",
+      "key": "llvmir|mlir|influencedBy",
+      "state": "excerpt-recorded",
+      "mapVisible": true,
+      "sourceSha": "c4aaf822ba1056c809a8ab8afa81014451a8901b70e9a2fc1068ac91f3e9ef8c",
+      "mouseProofAndEndpoints": true
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "mode": "timeline",
+      "key": "lambda-calculus|lisp|influencedBy",
+      "state": "excerpt-recorded",
+      "mapVisible": false,
+      "sourceSha": "c87b0751784f123cf94f6152f9c6bdabe136b1c5a6e3408ba684aca4486abb64",
+      "mouseProofAndEndpoints": true
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "mode": "timeline",
+      "key": "llvmir|mlir|influencedBy",
+      "state": "excerpt-recorded",
+      "mapVisible": true,
+      "sourceSha": "c4aaf822ba1056c809a8ab8afa81014451a8901b70e9a2fc1068ac91f3e9ef8c",
+      "mouseProofAndEndpoints": true
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "mode": "lineage",
+      "key": "lambda-calculus|lisp|influencedBy",
+      "state": "excerpt-recorded",
+      "mapVisible": false,
+      "sourceSha": "c87b0751784f123cf94f6152f9c6bdabe136b1c5a6e3408ba684aca4486abb64",
+      "mouseProofAndEndpoints": true
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "mode": "lineage",
+      "key": "llvmir|mlir|influencedBy",
+      "state": "excerpt-recorded",
+      "mapVisible": true,
+      "sourceSha": "c4aaf822ba1056c809a8ab8afa81014451a8901b70e9a2fc1068ac91f3e9ef8c",
+      "mouseProofAndEndpoints": true
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "mode": "timeline",
+      "key": "lambda-calculus|lisp|influencedBy",
+      "state": "excerpt-recorded",
+      "mapVisible": false,
+      "sourceSha": "c87b0751784f123cf94f6152f9c6bdabe136b1c5a6e3408ba684aca4486abb64",
+      "mouseProofAndEndpoints": true
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "mode": "timeline",
+      "key": "llvmir|mlir|influencedBy",
+      "state": "excerpt-recorded",
+      "mapVisible": true,
+      "sourceSha": "c4aaf822ba1056c809a8ab8afa81014451a8901b70e9a2fc1068ac91f3e9ef8c",
+      "mouseProofAndEndpoints": true
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "mode": "lineage",
+      "key": "lambda-calculus|lisp|influencedBy",
+      "state": "excerpt-recorded",
+      "mapVisible": false,
+      "sourceSha": "c87b0751784f123cf94f6152f9c6bdabe136b1c5a6e3408ba684aca4486abb64",
+      "mouseProofAndEndpoints": true
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "mode": "lineage",
+      "key": "llvmir|mlir|influencedBy",
+      "state": "excerpt-recorded",
+      "mapVisible": true,
+      "sourceSha": "c4aaf822ba1056c809a8ab8afa81014451a8901b70e9a2fc1068ac91f3e9ef8c",
+      "mouseProofAndEndpoints": true
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "mode": "timeline",
+      "key": "lambda-calculus|lisp|influencedBy",
+      "state": "excerpt-recorded",
+      "mapVisible": false,
+      "sourceSha": "c87b0751784f123cf94f6152f9c6bdabe136b1c5a6e3408ba684aca4486abb64",
+      "mouseProofAndEndpoints": true
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "mode": "timeline",
+      "key": "llvmir|mlir|influencedBy",
+      "state": "excerpt-recorded",
+      "mapVisible": true,
+      "sourceSha": "c4aaf822ba1056c809a8ab8afa81014451a8901b70e9a2fc1068ac91f3e9ef8c",
+      "mouseProofAndEndpoints": true
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "mode": "lineage",
+      "key": "lambda-calculus|lisp|influencedBy",
+      "state": "excerpt-recorded",
+      "mapVisible": false,
+      "sourceSha": "c87b0751784f123cf94f6152f9c6bdabe136b1c5a6e3408ba684aca4486abb64",
+      "mouseProofAndEndpoints": true
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "mode": "lineage",
+      "key": "llvmir|mlir|influencedBy",
+      "state": "excerpt-recorded",
+      "mapVisible": true,
+      "sourceSha": "c4aaf822ba1056c809a8ab8afa81014451a8901b70e9a2fc1068ac91f3e9ef8c",
+      "mouseProofAndEndpoints": true
+    }
+  ]
+}

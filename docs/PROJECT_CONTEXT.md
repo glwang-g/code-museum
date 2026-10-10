@@ -1,6 +1,6 @@
 # Code Museum · 产品上下文与交接
 
-整理于 2026-09-24，更新于 2026-10-08，依据项目讨论及当前源码。本文是上下文摘要，不是完整聊天记录，也不是所有讨论项均已实施的承诺。构建方法见 [README](../README.md)。
+整理于 2026-09-24，更新于 2026-10-10，依据项目讨论及当前源码。本文是上下文摘要，不是完整聊天记录，也不是所有讨论项均已实施的承诺。构建方法见 [README](../README.md)。
 
 ## 1. 我们在做什么
 
@@ -375,3 +375,32 @@ HTTPS MCP采用既有执行器进程的POST-only无会话Streamable HTTP JSON，
 ## 2026-10-09 关系证据续核批次16：Python/Cython 与 C2/C3
 
 本批从高展示价值候选中核查五条关系。Cython 官方 About 页面明确称 Cython 是 Python 的超集，补入 `Python → Cython`；C3 官方编译器仓库 README 明确称 C3 的灵感来自 C2，补入 `C2 → C3`。Python→Mojo 仅取得兼容/互操作说明，C++→Chapel 未取得具体设计来源原文，JavaScript→Objective-J 的官方入口本批无法稳定回溯，三条继续待核。当前关系证据为99条有摘录、329条仅来源字段，完整记录见 `docs/audit/RELATIONSHIP_RESEARCH_2026-10-09_BATCH-16.md`。
+
+
+## 2026-10-10 Top 5 第1/3项：Self 与 Curry 设计关系
+
+按用户要求先完成 Self→JavaScript 和 Haskell→Curry。Self 边复读 Eich 的 Popularity 作者原文，完整响应哈希与既存来源相同，复用摘录且不重复计来源；限定为 Self 式单一原型的对象设计输入，Self 仍无地图资格，关系只由档案追溯。Curry 使用官方固定2016-01-13/0.9.0报告，实际渲染核读封面、印刷28页脚注10与37页（PDF29/38页），明确字段标签描述与单子式I/O设计输入及非确定性搜索的限制，不由语法相似或KiCS2后端推定继承。新 Curry 审查只保存关系证据，身份仍待核，无新增运行时或年代校订。
+
+当前428条关系：104条匹配摘录、324条字段待核；90条审查、201份已读来源。地图233、已核语法实现60、常显设计缺口3、年代警告5保持。研究台账、缺口报告、README及自动审计摘要同步；批次详情见 `audit/RELATIONSHIP_RESEARCH_2026-10-10_BATCH-18.md`。
+
+54项npm测试、离线构建和审计通过。16个实际隔离Chrome定向场景覆盖两边、两地图、两尺寸、明暗主题，鼠标依据/档案往返及证据/哈希/URL和地图边界核对通过，截图已查看，报告 `data/audit/relationship-batch18-browser-checks.json` 的输入/服务文件SHA一致。测试中原来把Self边固定当作待核样例的假设改为受控缺证据数据；台账闭环数量不再写死。未重跑完整浏览器/地图遍历或生产运行；本轮未提交、推送或部署。
+
+## 2026-10-10 Top 5 第2/4项：Lisp 与 MLIR 设计关系
+
+核读 McCarthy 1960 原文 Functions and Forms 及作者 LISP prehistory 条目 c，补证 λ 演算→Lisp 的函数记法设计输入，并明确不等于实现完整 λ 演算；理论端点仍无地图资格。核读官方 MLIR Rationale 固定修订 577ef051fb56335dc453ff368802ed832c05766a，补证 LLVM IR→MLIR 底层设计与旧 standard dialect 操作/整数语义输入；排除项目归属、降级目标、兼容超集及 PHI 继承等扩大结论。MLIR 新审查仅关系证据，身份仍待核。
+
+428条关系中106条匹配摘录、322条字段待核；91条审查、204份已读来源。地图233、语法实现已核60、历史一手11、常显设计缺口3、年代警告5保持。审计、54项测试与离线构建通过；16个实际Chrome定向场景验证宽窄屏、明暗主题和两种视图的证据及鼠标导航，代表性截图实际核读；不代表完整回归或生产执行。详情见 `audit/RELATIONSHIP_RESEARCH_2026-10-10_BATCH-19.md`，报告 `data/audit/relationship-batch19-browser-checks.json`。没有提交、推送或部署。
+
+此前每项半天到一天为人力工作量预算；模型执行耗时应单独记录，不直接套用人天，也不预设所有研究都能十分钟内闭环。
+
+## 2026-10-10 地图标签与执行按钮点击优先级修复
+
+用户反馈点击标签或其执行按钮有时打开关系。原因有两处：聚焦关系 SVG 的 z-index 11 高于标签所在层，以及 capture 阶段24px近线捕获/标签自身8px近线捕获会把控件点击改成关系操作。将 #docks 建为高于连线的独立层，容器 pointer-events:none，标签与执行按钮可命中；保留隐藏非关联节点不可点击。capture 阶段排除标签与执行按钮，移除标签处理器内的关系抢占。空白近线捕获和 SVG 连线点击/键盘入口保留。
+
+54项npm测试、离线构建通过。新增 `scripts/check-map-hit-targets.cjs` 实际Chrome定向回归：1440/390宽度、明暗主题、时间长河/关系谱系，共32项鼠标场景。人工把真实SVG关系路径放到已选标签、关联标签和执行按钮下，确认控件为顶部命中对象、下方确有连线且点击到正确档案/实验台；裸露连线仍可打开关系。仅此人工重叠场景为SVG设overflow:visible，确保移到世界边缘之外的标签下也能制造交叠；不改变产品样式。代表性宽窄屏截图实际核读，源码与构建SHA一致；报告 `data/audit/map-hit-target-browser-checks.json`。重跑方式：构建后用 `BROWSER_CHECK_OUTPUT=/tmp/code-museum-map-hit-browser node scripts/check-map-hit-targets.cjs`。没有完整浏览器回归、生产核验、提交或部署。
+
+### Java 运行入口与正式站版本续核
+
+用户反馈 Java 运行按钮似乎仍打开关系。通过 Safari 当前页面确认用户浏览正式 `codemuseum.freexlib.com/#lab`；只读获取正式站 museum.js/museum.css，HTTP200，两文件SHA均不同于本地修复，正式JS无控件capture排除、CSS无#docks独立高层。上一轮补丁尚未发布，不能把本地通过当成正式站已修复。
+
+上一轮浏览器回归仅JavaScript。本次扩展脚本加入Java和自然路径按钮点击：两语言×两尺寸×两主题×两视图×五场景，共80项实际Chrome鼠标检查（Java40项），全部通过。五场景为已选标签/关联标签/按钮下强制SVG路径交叠、无人工修改路径的自然按钮点击、裸露连线；Java进入对应实验台而非关系面板。Java按钮仅由本地GET /api/runtimes导航能力夹具显露，无实际执行端点或模拟输出；除该请求与页面既有只读GET /api/visits外，断言没有其他API操作或提交代码。54项npm测试、离线构建通过；Java代表截图核读、报告输入与服务文件SHA一致，记录 `data/audit/map-hit-target-java-browser-checks.json`。保留前轮报告作为历史记录；没有进一步改动产品源码，没有提交、推送或部署。

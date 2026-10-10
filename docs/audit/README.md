@@ -1,8 +1,8 @@
 # 馆藏语言证据审查
 
-核查日期：2026-10-09。
+核查日期：2026-10-10。
 
-全量初筛覆盖 **5,155** 条馆藏，其中来源标为语言的 **4,608** 条。逐项外部文档核查覆盖 **89** 条；其余条目的证据线索已逐条列出，仍未完成人工核实。
+全量初筛覆盖 **5,155** 条馆藏，其中来源标为语言的 **4,608** 条。逐项外部文档核查覆盖 **91** 条；其余条目的证据线索已逐条列出，仍未完成人工核实。
 
 已核到语法资料和实现依据的语言/方言 **60** 条；本机独立示例通过 **17** 条。主图按明确的语法/执行线索收录 **233** 个节点。二者是不同维度。
 
@@ -128,7 +128,7 @@
 |HTTP|已核相关技术：不是独立程序语言|应用层协议，不是编程语言。 [技术分类](https://www.rfc-editor.org/rfc/rfc9110.html)|
 |JSON|已核形式语言/数据语法|数据交换语法；不是独立编程语言。 [规范](https://www.rfc-editor.org/rfc/rfc8259.html) · [关系依据](https://www.json.org/json-en.html)|
 |Korn shell|历史语言：一手文献支持|作者1994年论文明确叙述在 Bourne shell 上增补并形成 ksh，借鉴 C shell 的历史记录、别名和作业控制，算术及 for 语法借鉴 C；有函数、数组和完整程序，以及实际发行描述。兼容叙述限定历史版本，不能扩成全版本超集；C实现与 ALGOL-like 源码风格不是新增继承依据。本机另以 Version AJM 93u+ 2012-08-01 执行原创算术循环、数组/函数，实际输出55与12，非法语法被拒绝。这不等于执行1988/1993原始二进制或完整符合性，未接入网页运行。 [历史原文](https://www.usenix.org/legacy/publications/library/proceedings/vhll/full_papers/korn.ksh.a)|
-|Lisp|历史语言：一手文献支持|McCarthy 1960 年原文描述 S 表达式、函数、解释器及 IBM 704 上已开发的 LISP 系统。此证据针对早期 LISP，不把现代 Lisp 方言视为同一实现。 [历史原文](https://www-formal.stanford.edu/jmc/recursive.pdf)|
+|Lisp|历史语言：一手文献支持|McCarthy 1960 年原文描述 S 表达式、函数、解释器及 IBM 704 上已开发的 LISP 系统。此证据针对早期 LISP，不把现代 Lisp 方言视为同一实现。 本批关系核读只确认 Church λ 记法用于函数表示；作者回顾明确未采用其更一般的函数定义机制，不据此声称实现完整 λ 演算。 [历史原文](https://www-formal.stanford.edu/jmc/recursive.pdf) · [关系依据](https://www-formal.stanford.edu/jmc/recursive/node2.html) · [关系依据](https://www-formal.stanford.edu/jmc/history/lisp/node2.html)|
 |METAPI|有论文书目：语法与实现待核|Crossref 与 Semantic Scholar 书目一致：Gerald D. Chandler，METAPI - a language for extensions，1971，DOI 10.1145/800006.807972。仅书目支持；未取得全文语法或可运行实现。快照记录 1967，论文出版年 1971，年代口径待核。 [书目](https://hopl.info/showlanguage.prx?exp=5090) · [书目](https://api.semanticscholar.org/graph/v1/paper/a617a6ef72375bfcc912fdbdb645fc66db3c6abc?fields=title,authors,year,abstract,url) · [出版书目交叉核实](https://api.crossref.org/works/10.1145/800006.807972)|
 |Modula-2|历史语言：一手文献支持|作者给出模块语法与代码示例、Mesa/Pascal/Modula 的具体设计输入，并叙述 Lilith 等历史编译器；本轮未重现执行。快照1978年与作者所述1979年定义报告是不同事件，保留来源年代并明确口径待补，不自动改年。 [历史原文](https://people.inf.ethz.ch/wirth/Articles/Modula-Oberon-June.pdf)|
 |Oberon|历史语言：一手文献支持|作者叙述从 Modula-2 简化设计、语法与类型机制、1986年语言定义及 Ceres 编译器；不是本机重现声明。语言 Oberon 与同名操作系统分开理解，语言定义与系统1989年发布不可混用。ALGOL 60 的家族祖先叙述不自动升级现有直接关系。 [历史原文](https://people.inf.ethz.ch/wirth/Articles/Modula-Oberon-June.pdf)|

@@ -1,23 +1,23 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-09T15:41:05.989Z",
+  "generatedAt": "2026-10-10T07:03:08.713Z",
   "scope": "Offline inventory of existing evidence gaps; it does not add or infer historical relationships.",
   "counts": {
     "relationships": 428,
-    "reviews": 87,
-    "reviewedSources": 197
+    "reviews": 91,
+    "reviewedSources": 204
   },
   "relationGaps": {
-    "fieldOnly": 329,
-    "excerptRecorded": 99,
+    "fieldOnly": 322,
+    "excerptRecorded": 106,
     "citationWithoutExcerpt": 0,
     "directEvidenceMissing": 0,
     "dateWarnings": 5,
     "designLayerMapGaps": 3
   },
   "researchLedger": {
-    "total": 11,
-    "closed": 10,
+    "total": 23,
+    "closed": 22,
     "active": 1,
     "reopenPolicy": "Reopen a closed item only when a new primary source, a fixed historical version, a resolved endpoint identity, or a materially different relation claim becomes available."
   },
@@ -92,6 +92,14 @@
     },
     {
       "nextStep": "寻找可合法复现的原始编译器或模拟环境；继续核对商务语言设计的具体功能输入和不同版本。",
+      "catalogueCount": 1
+    },
+    {
+      "nextStep": "分别核查 Curry 的语法、实现与早期版本史；具体设计输入按版本记录，不把 Haskell 后端或语法相似当作继承。",
+      "catalogueCount": 1
+    },
+    {
+      "nextStep": "独立核查 MLIR 的语言/IR 身份、版本与实现；区分 LLVM IR、LLVM dialect 和 LLVM 项目生态。",
       "catalogueCount": 1
     }
   ]
