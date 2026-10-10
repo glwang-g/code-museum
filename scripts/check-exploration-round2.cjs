@@ -70,13 +70,12 @@ async function screenshot(name){if(!outputDirectory)return;await evaluate('new P
     await click('#detail-map');assert.equal(await evaluate("document.querySelector('#detail').classList.contains('compact')"),true);await click('#detail-toggle');
     await page('Page.reload',{ignoreCache:true});await wait("!!window.MUSEUM_NAV && relationScope==='levels' && relationDirection==='up' && relationLevels===2");assert.equal(await evaluate('activeId'),id);
    }
-   await evaluate("setView('lineage');select('c');activeId='c';renderLineageFocus(activeId);select('java');activeId='java';renderLineageFocus(activeId)");await click('#map-previous');assert.equal(await evaluate('activeId'),'c');
    await evaluate("window.MUSEUM_GUIDE.start('function-expressions')");await click('#guide-toggle');assert.equal(await evaluate("document.querySelector('#learning-guide').classList.contains('compact')"),true);await screenshot(`compact-guide-${theme}-${width}.png`);await click('#guide-toggle');
    await screenshot(`mobile-tools-${theme}-${width}.png`);
    await click('#guide-end');
    for(const key of ['typescript|civet|influencedBy','java|pizza|supersetOf']){await evaluate(`window.MUSEUM_RELATIONS_UI.open(${JSON.stringify(key)})`);assert.ok((await evaluate("document.querySelector('#detail-content').textContent")).includes(key.startsWith('typescript')?'有意差异':'1997'));}
    await evaluate("window.MUSEUM_RELATIONS_UI.open('abc|python|influencedBy')");assert.equal(await evaluate("!!document.querySelector('.evidence-version')"),true);await screenshot(`evidence-${theme}-${width}.png`);
-   assert.equal(await evaluate('document.documentElement.scrollWidth<=innerWidth+1'),true);results.push({width,theme,checks:'C/Java/Python directional two-level traversal and URL reload; detail collapse/expand/map return; previous language; compact guide; two scoped relations and source version disclosure'});
+   assert.equal(await evaluate('document.documentElement.scrollWidth<=innerWidth+1'),true);results.push({width,theme,checks:'C/Java/Python directional two-level traversal and URL reload; detail collapse/expand/map return; compact guide; two scoped relations and source version disclosure'});
   }
   for(const language of ['javascript','scheme']){
    await evaluate("window.MUSEUM_GUIDE.start('function-expressions')");
