@@ -10550,29 +10550,17 @@
     "data/ecosystem-relations.json": "0d96e92a3853eddc6b32e4a45d5c90223d2096fa35438823f7dcfe72ce161e76",
     "data/audit/relationship-decisions.json": "5261a7c64734441c96694a1a0b9b8a34cad0195e541e3485807a2a66061055c8",
     "data/audit/label-selection.json": "dc5eee62fa662b0d60940375d8a3ec56ac2bbf84ee2b9922a290d46d11cc866f",
-    "data/audit/relationship-research-ledger.json": "c3bab9cc34c45434c2f4a9dc8705702a3d39619d2992c04e4bf848c506d2d8d6"
+    "data/audit/relationship-research-ledger.json": "54c77005a48700f33356664f8b0f8c448fe7d738d4d834093edb8b1c7d7a6998"
   },
   "research": {
     "reopenPolicy": "Reopen a closed item only when a new primary source, a fixed historical version, a resolved endpoint identity, or a materially different relation claim becomes available.",
     "summary": {
-      "total": 52,
+      "total": 54,
       "verified": 40,
-      "closed": 8,
+      "closed": 10,
       "blocked": 4
     },
     "recent": [
-      {
-        "id": "fp|haskell|influencedBy",
-        "status": "verified",
-        "batch": "2026-10-11_BATCH-29",
-        "note": "Haskell 98 Report Preface lists Backus’s FP as a particularly influential forerunner; overall acknowledged influence only."
-      },
-      {
-        "id": "ml|haskell|influencedBy",
-        "status": "verified",
-        "batch": "2026-10-11_BATCH-29",
-        "note": "Haskell 98 Report Preface lists ML as a particularly influential forerunner; overall acknowledged influence only."
-      },
       {
         "id": "hope|haskell|influencedBy",
         "status": "verified",
@@ -10608,6 +10596,18 @@
         "status": "verified",
         "batch": "2026-10-11_BATCH-34",
         "note": "Less official About page says Less was originally inspired by Sass and chose a leaner CSS-like syntax; scope is design input, not bidirectional source compatibility or superset."
+      },
+      {
+        "id": "c|csharp|influencedBy",
+        "status": "closed-no-qualifying-source",
+        "batch": "2026-10-11_BATCH-35",
+        "note": "Official C# specification introduction emphasizes portability and familiarity for programmers already familiar with C/C++, but does not state that C or C++ is a design source for concrete C# language features. Similarity/familiarity is not upgraded to inheritance."
+      },
+      {
+        "id": "cpp|csharp|influencedBy",
+        "status": "closed-no-qualifying-source",
+        "batch": "2026-10-11_BATCH-35",
+        "note": "Official C# specification introduction emphasizes portability and familiarity for programmers already familiar with C/C++, but does not state that C or C++ is a design source for concrete C# language features. Similarity/familiarity is not upgraded to inheritance."
       }
     ]
   }
