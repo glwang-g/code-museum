@@ -45,7 +45,7 @@ coffeescript,CoffeeScript,2009,unreviewed,,,0,0,0,2,0,,no-map-link
 common-lisp,Common Lisp,1984,verified-language,lisp | scheme,haskell,3,3,0,3,1,dylan,cited-only
 common-workflow-language,CWL,2014,unreviewed,,,0,0,0,0,0,,no-map-link
 cpp,C++,1985,verified-language,c,d | java | lua | rust,5,5,0,9,0,,cited-only
-crystal,Crystal,2014,unreviewed,,,0,0,0,1,0,,no-map-link
+crystal,Crystal,2014,unreviewed,ruby,,1,1,0,1,0,,cited-only
 csharp,C#,2000,verified-language,java,f-sharp | kotlin | rust | scala,5,5,0,4,0,,cited-only
 curry,Curry,1990,unreviewed,haskell,,1,1,0,0,0,,cited-only
 d,D,2001,verified-language,cpp,,1,1,0,1,0,,cited-only
@@ -178,7 +178,7 @@ rebol,REBOL,1997,unreviewed,,,0,0,0,2,0,,no-map-link
 red,Red,2011,unreviewed,,,0,0,0,1,0,,no-map-link
 rescript,Rescript,2020,unreviewed,,,0,0,0,0,0,,no-map-link
 rexx,Rexx,1979,unreviewed,,,0,0,0,0,0,,no-map-link
-ruby,Ruby,1995,verified-language,ada | lisp | perl | smalltalk,julia | rust,6,6,0,3,0,,cited-only
+ruby,Ruby,1995,verified-language,ada | lisp | perl | smalltalk,crystal | julia | rust,7,7,0,3,0,,cited-only
 rust,Rust,2010,verified-language,cpp | csharp | erlang | haskell | ocaml | ruby | scheme | swift,,8,8,0,6,0,,cited-only
 sagemath,Sage,2005,unreviewed,,,0,0,0,0,0,,no-map-link
 sass,Sass,2006,unreviewed,,less,1,1,0,0,0,,cited-only

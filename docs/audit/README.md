@@ -90,7 +90,7 @@
 |Python|CPython|示例通过|[语法](https://docs.python.org/3/reference/) · [实现](https://docs.python.org/3/using/cmdline.html) · [关系依据](https://docs.python.org/3/faq/general.html) · [关系依据](https://docs.python.org/3/extending/extending.html) · [关系依据](https://www.jython.org/) · [关系依据](https://pyo3.rs/)||
 |R|R|未测试|[语法](https://cran.r-project.org/doc/manuals/r-release/R-lang.html) · [实现](https://cran.r-project.org/doc/manuals/r-release/R-intro.html)||
 |Racket|Racket|未测试|[语法](https://docs.racket-lang.org/guide/syntax-overview.html) · [实现](https://docs.racket-lang.org/guide/intro.html)||
-|Ruby|CRuby|示例通过|[语法](https://docs.ruby-lang.org/en/master/syntax_rdoc.html) · [实现](https://www.ruby-lang.org/en/documentation/installation/) · [关系依据](https://www.ruby-lang.org/en/about/)||
+|Ruby|CRuby|示例通过|[语法](https://docs.ruby-lang.org/en/master/syntax_rdoc.html) · [实现](https://www.ruby-lang.org/en/documentation/installation/) · [关系依据](https://www.ruby-lang.org/en/about/) · [关系依据](https://crystal-lang.org/)||
 |Rust|rustc / Cargo|示例通过|[语法](https://doc.rust-lang.org/reference/) · [实现](https://doc.rust-lang.org/book/ch01-01-installation.html) · [设计关系](https://doc.rust-lang.org/reference/influences.html) · [关系依据](https://doc.rust-lang.org/nomicon/ffi.html)||
 |Scala|Scala compiler / JVM|未测试|[语法](https://docs.scala-lang.org/scala3/reference/syntax.html) · [实现](https://docs.scala-lang.org/getting-started/install-scala.html) · [设计者论文](https://www.scala-lang.org/docu/files/ScalaOverview.pdf)|Scala 3。|
 |Scheme|GNU Guile|未测试|[语法](https://www.gnu.org/software/guile/manual/html_node/Scheme-Syntax.html) · [实现](https://www.gnu.org/software/guile/manual/html_node/Invoking-Guile.html) · [关系依据](https://www.scheme.org/)|Scheme 家族，具体实现为 Guile；不等同于每个 Scheme 方言。|

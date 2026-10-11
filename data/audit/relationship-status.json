@@ -3,10 +3,10 @@
   "scope": "全量关系结构检查与常显标签逐项盘点；摘录已存不等于史料论证或关系覆盖全部核实。缺线不表示没有上游。",
   "summary": {
     "labels": 50,
-    "relations": 451,
+    "relations": 452,
     "mapDesignGaps": 2,
     "states": {
-      "excerpt-recorded": 134,
+      "excerpt-recorded": 135,
       "field-only": 317
     },
     "warnings": 6
@@ -819,16 +819,17 @@
       ],
       "downstream": [
         "ruby|civet|influencedBy",
+        "ruby|crystal|influencedBy",
         "ruby|julia|influencedBy",
         "ruby|rust|influencedBy",
         "ruby|slash|influencedBy"
       ],
       "ecology": [],
-      "mapLinks": 6,
+      "mapLinks": 7,
       "fieldOnly": 2,
       "citationOnly": 0,
       "needsDirectEvidence": 0,
-      "excerptRecorded": 7,
+      "excerptRecorded": 8,
       "state": "needs-review"
     },
     {
@@ -8361,6 +8362,39 @@
     },
     {
       "from": "ruby",
+      "to": "crystal",
+      "type": "influencedBy",
+      "label": "Ruby 风格语法的设计启发",
+      "source": "https://crystal-lang.org/",
+      "sourceSha256": "e5a699978723961dea5a83697d54a991c218c1af80caf137c4326d53f258803c",
+      "evidence": "Crystal 官方首页明确写其“syntax inspired by Ruby”，并强调 Crystal 是带静态类型检查的编译语言；Crystal 风格指南进一步写“Crystal’s syntax is heavily inspired by Ruby’s.” 这里表示 Ruby 对 Crystal 语法和语言体验的具体设计启发，不表示兼容 Ruby、继承其动态对象模型或形成超集。",
+      "key": "ruby|crystal|influencedBy",
+      "layer": "design",
+      "state": "excerpt-recorded",
+      "issues": [],
+      "reviewNote": "",
+      "mapVisible": true,
+      "evidenceVersion": {
+        "citedSha256": "e5a699978723961dea5a83697d54a991c218c1af80caf137c4326d53f258803c",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
+      "sources": [
+        {
+          "url": "https://crystal-lang.org/",
+          "finalUrl": "https://crystal-lang.org/",
+          "title": "The Crystal Programming Language",
+          "excerpt": "With syntax inspired by Ruby, it’s a compiled language with static type-checking.",
+          "checkedAt": "2026-10-11T07:40:00+00:00",
+          "sha256": "e5a699978723961dea5a83697d54a991c218c1af80caf137c4326d53f258803c",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected",
+          "reviewId": "ruby",
+          "locator": "Homepage description"
+        }
+      ]
+    },
+    {
+      "from": "ruby",
       "to": "julia",
       "type": "influencedBy",
       "label": "动态性设计参照",
@@ -10545,28 +10579,22 @@
   ],
   "inputHashes": {
     "data/raw/pldb.json": "57f45d25bba78ab6bc4af5d969356d2efbfcc7c1ee722dbb5c708d60aa78ba77",
-    "data/audit/reviews.json": "20255f2dbb5d7b1be3b186955378da4336dfffeeebf37dc49b26388444a00a26",
-    "data/relationship-overrides.json": "e912513dc558b275a52ed5e28467247e9c90b2a155e29dda57661814686d1e03",
+    "data/audit/reviews.json": "b8d9a65aa52cd9101f5cc816c4accc9caf9dac7045743bc9a112a5c8b18b3cb5",
+    "data/relationship-overrides.json": "321b42e5dce99c17820588ffd27f737a14c147c614e86f7c0e84d23d1b277987",
     "data/ecosystem-relations.json": "0d96e92a3853eddc6b32e4a45d5c90223d2096fa35438823f7dcfe72ce161e76",
     "data/audit/relationship-decisions.json": "5261a7c64734441c96694a1a0b9b8a34cad0195e541e3485807a2a66061055c8",
     "data/audit/label-selection.json": "dc5eee62fa662b0d60940375d8a3ec56ac2bbf84ee2b9922a290d46d11cc866f",
-    "data/audit/relationship-research-ledger.json": "54c77005a48700f33356664f8b0f8c448fe7d738d4d834093edb8b1c7d7a6998"
+    "data/audit/relationship-research-ledger.json": "8ab702bce2e1fb8fa422d53a8e1eae4b4e6d61c8681147577d7f72a61fbae520"
   },
   "research": {
     "reopenPolicy": "Reopen a closed item only when a new primary source, a fixed historical version, a resolved endpoint identity, or a materially different relation claim becomes available.",
     "summary": {
-      "total": 54,
-      "verified": 40,
+      "total": 55,
+      "verified": 41,
       "closed": 10,
       "blocked": 4
     },
     "recent": [
-      {
-        "id": "hope|haskell|influencedBy",
-        "status": "verified",
-        "batch": "2026-10-11_BATCH-29",
-        "note": "Haskell 98 Report Preface lists Hope/Hope+ as particularly influential forerunners; overall acknowledged influence only."
-      },
       {
         "id": "gofer|haskell|influencedBy",
         "status": "verified",
@@ -10608,6 +10636,12 @@
         "status": "closed-no-qualifying-source",
         "batch": "2026-10-11_BATCH-35",
         "note": "Official C# specification introduction emphasizes portability and familiarity for programmers already familiar with C/C++, but does not state that C or C++ is a design source for concrete C# language features. Similarity/familiarity is not upgraded to inheritance."
+      },
+      {
+        "id": "ruby|crystal|influencedBy",
+        "status": "verified",
+        "batch": "2026-10-11_BATCH-36",
+        "note": "Crystal official homepage says its syntax is inspired by Ruby and its style guide says heavily inspired; scope is syntax/language-experience input, not Ruby compatibility, dynamic object-model inheritance, or superset."
       }
     ]
   }

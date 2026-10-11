@@ -643,6 +643,19 @@
           "title": "About Ruby: The Ideals of Ruby’s Creator",
           "excerpt": "Ruby is a language of careful balance. Its creator, Yukihiro “Matz” Matsumoto, blended parts of his favorite languages (Perl, Smalltalk, Eiffel, Ada, and Lisp) to form a new language that balanced functional programming with imperative programming.",
           "hashScope": "complete HTTP response body bytes; excerpt is manually selected, not the hashed body"
+        },
+        {
+          "role": "关系依据",
+          "url": "https://crystal-lang.org/",
+          "checkedAt": "2026-10-11T07:40:00+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "The Crystal Programming Language",
+          "finalUrl": "https://crystal-lang.org/",
+          "decodedBodySha256": "e5a699978723961dea5a83697d54a991c218c1af80caf137c4326d53f258803c",
+          "excerpt": "With syntax inspired by Ruby, it’s a compiled language with static type-checking.",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected",
+          "locator": "Homepage description"
         }
       ]
     },

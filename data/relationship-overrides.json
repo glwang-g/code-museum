@@ -1118,5 +1118,14 @@
     "source": "https://lesscss.org/about/",
     "sourceSha256": "3e0923742938c4b737bf8c985acfef9c972d3e5a2f17aba759328ce44df5cbe3",
     "evidence": "Less 官方 About 页面明确写：“Less was originally inspired by Sass, with a leaner feature set and a syntax closely matching CSS, which Sass did not have at the time.” 同时说明 Sass 后来受 Less 启发形成 SCSS 语法。本边只记录 Less 的设计启发和 CSS-like 语法取舍，不声称当前 Sass/Less 彼此源码兼容或一方是另一方的完整超集。"
+  },
+  {
+    "from": "ruby",
+    "to": "crystal",
+    "type": "influencedBy",
+    "label": "Ruby 风格语法的设计启发",
+    "source": "https://crystal-lang.org/",
+    "sourceSha256": "e5a699978723961dea5a83697d54a991c218c1af80caf137c4326d53f258803c",
+    "evidence": "Crystal 官方首页明确写其“syntax inspired by Ruby”，并强调 Crystal 是带静态类型检查的编译语言；Crystal 风格指南进一步写“Crystal’s syntax is heavily inspired by Ruby’s.” 这里表示 Ruby 对 Crystal 语法和语言体验的具体设计启发，不表示兼容 Ruby、继承其动态对象模型或形成超集。"
   }
 ]

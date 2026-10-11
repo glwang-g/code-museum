@@ -340,6 +340,12 @@
       "batch": "2026-10-11_BATCH-35",
       "note": "Official C# specification introduction emphasizes portability and familiarity for programmers already familiar with C/C++, but does not state that C or C++ is a design source for concrete C# language features. Similarity/familiarity is not upgraded to inheritance.",
       "reopenWhen": "A Microsoft/C# specification or principal-designer source explicitly names a concrete C or C++ design input."
+    },
+    {
+      "id": "ruby|crystal|influencedBy",
+      "status": "verified",
+      "batch": "2026-10-11_BATCH-36",
+      "note": "Crystal official homepage says its syntax is inspired by Ruby and its style guide says heavily inspired; scope is syntax/language-experience input, not Ruby compatibility, dynamic object-model inheritance, or superset."
     }
   ]
 }

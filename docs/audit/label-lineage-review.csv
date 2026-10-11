@@ -33,7 +33,7 @@ powershell,PowerShell,2006,verified-language,sh,,1,1,0,0,0,,cited-only
 prolog,Prolog,1972,verified-language,,erlang,1,1,0,4,0,,cited-only
 python,Python,1991,verified-language,abc,julia,2,2,0,14,1,f-sharp,cited-only
 r,R,1993,verified-language,,julia,1,1,0,2,0,,cited-only
-ruby,Ruby,1995,verified-language,ada | lisp | perl | smalltalk,julia | rust,6,6,0,3,0,,cited-only
+ruby,Ruby,1995,verified-language,ada | lisp | perl | smalltalk,crystal | julia | rust,7,7,0,3,0,,cited-only
 rust,Rust,2010,verified-language,cpp | csharp | erlang | haskell | ocaml | ruby | scheme | swift,,8,8,0,6,0,,cited-only
 scala,Scala,2004,verified-language,csharp | java,kotlin,3,3,0,1,0,,cited-only
 scheme,Scheme,1975,verified-language,lisp,common-lisp | haskell | javascript | lua | rust,6,6,0,4,0,,cited-only

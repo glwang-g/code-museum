@@ -1,6 +1,6 @@
 {
   "snapshot_sha256": "57f45d25bba78ab6bc4af5d969356d2efbfcc7c1ee722dbb5c708d60aa78ba77",
-  "reviews_sha256": "20255f2dbb5d7b1be3b186955378da4336dfffeeebf37dc49b26388444a00a26",
+  "reviews_sha256": "b8d9a65aa52cd9101f5cc816c4accc9caf9dac7045743bc9a112a5c8b18b3cb5",
   "curation_sha256": "4c2052f3b68ad6b553a1de9a7056402f6f95887460230b412f184a86951b1b90",
   "criteria": "Source marks it as a language and snapshot has syntax/example plus compiler/interpreter/runner evidence, or manual review confirms a historical language or its syntax and implementation. Notation, tool, protocol, encoding, and format categories are excluded unless a curated executable language exception is recorded. Explicit product and tool exclusions are recorded in map-curation.json.",
   "ids": [
