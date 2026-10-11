@@ -3,10 +3,10 @@
   "scope": "全量关系结构检查与常显标签逐项盘点；摘录已存不等于史料论证或关系覆盖全部核实。缺线不表示没有上游。",
   "summary": {
     "labels": 50,
-    "relations": 442,
+    "relations": 443,
     "mapDesignGaps": 3,
     "states": {
-      "excerpt-recorded": 124,
+      "excerpt-recorded": 125,
       "field-only": 318
     },
     "warnings": 5
@@ -9166,6 +9166,39 @@
     },
     {
       "from": "standard-ml",
+      "to": "alice",
+      "type": "influencedBy",
+      "label": "基于 Standard ML 的扩展方言",
+      "source": "https://www.ps.uni-saarland.de/alice/manual/language.html",
+      "sourceSha256": "4f60e5975dd43761338899e78fb8654468420b69ffd14490be4083ce79b46882",
+      "evidence": "Alice ML 官方 Language Manual 明确写：“Alice ML is based on the Standard ML programming language (SML)”，并说明 Alice 相对 SML 增加 futures、惰性、并发、扩展类型和高阶模块等扩展。这里表示以 Standard ML 为基础的设计扩展，不声称完整超集、所有 SML 程序兼容或同一实现。",
+      "key": "standard-ml|alice|influencedBy",
+      "layer": "design",
+      "state": "excerpt-recorded",
+      "issues": [],
+      "reviewNote": "",
+      "mapVisible": false,
+      "evidenceVersion": {
+        "citedSha256": "4f60e5975dd43761338899e78fb8654468420b69ffd14490be4083ce79b46882",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
+      "sources": [
+        {
+          "url": "https://www.ps.uni-saarland.de/alice/manual/language.html",
+          "finalUrl": "https://www.ps.uni-saarland.de/alice/manual/language.html",
+          "title": "Alice Manual — The Language",
+          "excerpt": "Alice ML is based on the Standard ML programming language (SML), as defined in The Definition of Standard ML (Revised). However, Alice ML features a number of extensions relative to SML.",
+          "checkedAt": "2026-10-11T07:00:00+00:00",
+          "sha256": "4f60e5975dd43761338899e78fb8654468420b69ffd14490be4083ce79b46882",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected",
+          "reviewId": "standard-ml",
+          "locator": "Overview"
+        }
+      ]
+    },
+    {
+      "from": "standard-ml",
       "to": "haskell",
       "type": "influencedBy",
       "label": "作为类型系统与函数式语言的设计前驱",
@@ -10214,8 +10247,8 @@
   ],
   "inputHashes": {
     "data/raw/pldb.json": "57f45d25bba78ab6bc4af5d969356d2efbfcc7c1ee722dbb5c708d60aa78ba77",
-    "data/audit/reviews.json": "6366c54934bb44500d7e8f246dd3d11fcbe8983e0bda09ca31d00eef57e6d6fe",
-    "data/relationship-overrides.json": "f3e94e122103279098b7e228bb2e35ab1f2de4914e0bc2eefa91c7d68645059f",
+    "data/audit/reviews.json": "f752bf1b71ca06a6235c9659e5176cef9d8265389923bf93c3f27c7975ea2352",
+    "data/relationship-overrides.json": "b6a89a44850168a62539c454f4b705eaa45c0d1859d265ed852335a690c13037",
     "data/ecosystem-relations.json": "0d96e92a3853eddc6b32e4a45d5c90223d2096fa35438823f7dcfe72ce161e76",
     "data/audit/relationship-decisions.json": "4339ab007ed91414653b56ddf2dcbe0a9450de5df1705c9ad76c1fbc7db53960",
     "data/audit/label-selection.json": "dc5eee62fa662b0d60940375d8a3ec56ac2bbf84ee2b9922a290d46d11cc866f"

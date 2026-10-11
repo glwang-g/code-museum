@@ -2719,6 +2719,19 @@
           "finalUrl": "https://www.smlnj.org/doc/interact.html",
           "decodedBodySha256": "86dca2999051e3187834aaf4804ff253398a3eda0d173790e29d066aa3bd7dd1",
           "excerpt": "Input to the top level interpreter ( i.e. , declarations and expressions) must be terminated by a semicolon followed by a carriage return before the system will evaluate it. The system then prints out a response indicating the effect of the evaluation. Expressions are treated as implicit declaration"
+        },
+        {
+          "role": "关系依据",
+          "url": "https://www.ps.uni-saarland.de/alice/manual/language.html",
+          "checkedAt": "2026-10-11T07:00:00+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "Alice Manual — The Language",
+          "finalUrl": "https://www.ps.uni-saarland.de/alice/manual/language.html",
+          "decodedBodySha256": "4f60e5975dd43761338899e78fb8654468420b69ffd14490be4083ce79b46882",
+          "excerpt": "Alice ML is based on the Standard ML programming language (SML), as defined in The Definition of Standard ML (Revised). However, Alice ML features a number of extensions relative to SML.",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected",
+          "locator": "Overview"
         }
       ]
     },

@@ -36,6 +36,7 @@
 | Python → F# | Batch 25 | 作者论文未写 Python 是 F# 设计输入；Python 只影响 C# 4.0 dynamic，保留为不补线 |
 | F# → TypeScript | Batch 26 | 作者论文明确称 TypeScript 直接受 F# 影响，并指出起源者来自 F# 团队 |
 | Lisp → Clojure | Batch 27 | Clojure 官方明确称其为 Lisp 家族成员并承继 code-as-data/宏系统 |
+| Standard ML → Alice | Batch 28 | Alice 官方手册明确称其基于 Standard ML 并列出扩展 |
 
 ### 批次 24：Haskell 报告序言列出的地图可见前驱
 

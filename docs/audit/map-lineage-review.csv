@@ -198,7 +198,7 @@ snobol,SNOBOL,1962,unreviewed,,lua,1,1,0,0,0,,cited-only
 solidity,Solidity,2014,unreviewed,,,0,0,0,0,0,,no-map-link
 sql,SQL,1974,verified-language,,pl-sql,1,1,0,6,0,,cited-only
 squirrel,Squirrel,2003,unreviewed,,,0,0,0,0,0,,no-map-link
-standard-ml,Standard ML,1990,verified-language,,haskell,1,1,0,1,0,,cited-only
+standard-ml,Standard ML,1990,verified-language,,haskell,1,1,0,2,0,,cited-only
 supercollider,SuperCollider,1996,unreviewed,,,0,0,0,0,0,,no-map-link
 swift,Swift,2014,verified-language,objective-c,rust,2,2,0,1,0,,cited-only
 tabloid,Tabloid,2020,unreviewed,,,0,0,0,0,0,,no-map-link

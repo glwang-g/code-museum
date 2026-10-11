@@ -97,7 +97,7 @@
 |sed|sed / GNU sed|示例通过|[语法与实现](https://www.gnu.org/software/sed/manual/sed.html)|文本变换脚本语言及流编辑器。 手册为 GNU sed；实测为 macOS 系统 sed，仅验证共有替换命令。|
 |Smalltalk|GNU Smalltalk|未测试|[语法与实现](https://www.gnu.org/software/smalltalk/manual/gst.html) · [关系依据](https://worrydream.com/EarlyHistoryOfSmalltalk/)|Smalltalk 家族，证据针对 GNU Smalltalk。|
 |SQL|SQLite / PostgreSQL|示例通过|[语法](https://www.sqlite.org/lang.html) · [实现](https://www.sqlite.org/cli.html)|查询语言；核实的是 SQLite SQL 方言，非所有 SQL 标准特性。|
-|Standard ML|Standard ML of New Jersey|未测试|[语法与实现](https://www.smlnj.org/doc/interact.html)|具体实现为 SML/NJ。|
+|Standard ML|Standard ML of New Jersey|未测试|[语法与实现](https://www.smlnj.org/doc/interact.html) · [关系依据](https://www.ps.uni-saarland.de/alice/manual/language.html)|具体实现为 SML/NJ。|
 |Swift|Swift compiler|未测试|[语法](https://raw.githubusercontent.com/swiftlang/swift-book/main/TSPL.docc/ReferenceManual/LexicalStructure.md) · [实现](https://www.swift.org/install/) · [关系依据](https://raw.githubusercontent.com/swiftlang/swift-org-website/ccf11a958db44ae501a84329455e89fa46fc5d61/about/index.md)||
 |Tcl|Tcl / tclsh|未测试|[语法](https://www.tcl-lang.org/man/tcl8.6/TclCmd/Tcl.htm) · [实现](https://www.tcl-lang.org/man/tcl8.6/UserCmd/tclsh.htm)||
 |tcsh|tcsh 6.21.00; official source releases|示例通过|[语法](https://raw.githubusercontent.com/tcsh-org/tcsh/TCSH6_21_00/tcsh.man) · [实现](https://www.tcsh.org/)|固定6.21.00官方手册明确命令语言、脚本处理和控制语法，项目官网提供实现源码入口；手册称为 Berkeley C shell 的兼容增强版，并以4.4BSD csh说明扩展标记。本机 /bin/tcsh 与 /bin/csh 指向同一实现，版本6.21.00；另以 tcsh -f 执行两份原创程序，算术循环输出55，列表/条件输出Lisp；错误引号语法被拒绝。执行证据只覆盖本机版本与样例，不证明原始C shell或完整历史兼容性。未接入网页运行。|

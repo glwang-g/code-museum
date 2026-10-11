@@ -22,13 +22,13 @@
     "semanticScholar": 315
   },
   "manual_reviews": 93,
-  "reviewed_source_links": 212,
-  "reviewed_source_links_with_url_hash_excerpt": 212,
+  "reviewed_source_links": 213,
+  "reviewed_source_links_with_url_hash_excerpt": 213,
   "verified_language_review_gaps": 0,
   "identity_issue_rows": 124,
-  "relationship_count": 435,
+  "relationship_count": 436,
   "relationship_evidence_status_counts": {
-    "claim-with-citation": 117,
+    "claim-with-citation": 118,
     "record-field-only": 318
   },
   "relationship_chronology_flags": 5,
@@ -40,5 +40,5 @@
   "map_nodes_with_field_only_links": 0,
   "map_label_nodes": 50,
   "map_labels_without_visible_links": 3,
-  "phrase_based_relationship_candidates": 181
+  "phrase_based_relationship_candidates": 180
 }
