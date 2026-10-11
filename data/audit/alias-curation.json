@@ -106,5 +106,96 @@
     ],
     "reason": "Clipper 与 Visual FoxPro 都有独立的语言参考和独立记录；它们属于 xBase 家族或兼容方言，但不能作为 xBase 家族总称的等价别名。",
     "source": "https://harbour.github.io/doc/clc53.html"
+  },
+  {
+    "id": "apacheconf",
+    "exclude": [
+      "apache"
+    ],
+    "reason": "Apache HTTP Server 官方文档将 Apache 明确为服务器，并说明其由文本配置文件和 directives 配置。ApacheConf 是独立的配置语法记录，不能把 Apache 作为 ApacheConf 的等价语言别名。",
+    "source": "https://httpd.apache.org/docs/current/en/getting-started.html"
+  },
+  {
+    "id": "emacs-lisp",
+    "exclude": [
+      "emacs"
+    ],
+    "reason": "GNU Emacs Lisp 手册明确区分 GNU Emacs 文本编辑器与用于编写其大部分代码的 Emacs Lisp，并称后者是独立的完整编程语言。编辑器名称不能作为该语言的等价别名。",
+    "source": "https://www.gnu.org/software/emacs/manual/html_node/elisp/Introduction.html"
+  },
+  {
+    "id": "json",
+    "exclude": [
+      "geojson"
+    ],
+    "reason": "RFC 7946 将 GeoJSON 定义为基于 JSON 的地理空间数据交换格式；它定义 JSON 对象的地理数据语义，并非 JSON 本身的等价名称。因此 GeoJSON 不能作为 JSON 的等价别名。",
+    "source": "https://www.rfc-editor.org/rfc/rfc7946.html"
+  },
+  {
+    "id": "tex",
+    "exclude": [
+      "latex"
+    ],
+    "reason": "LaTeX Project 将 LaTeX 与 TeX 及相关文档分开表述，并维护 LaTeX 自身的格式、命令和文档。二者可有历史/实现关系，但不能把 LaTeX 作为 TeX 的等价搜索别名合并。",
+    "source": "https://www.latex-project.org/help/documentation/"
+  },
+  {
+    "id": "nix",
+    "exclude": [
+      "nixos"
+    ],
+    "reason": "NixOS 手册定义 NixOS 为基于 Nix 包管理系统的 Linux 发行版；NixOS 与 Nix 的系统/语言或包管理身份不同，不能把 NixOS 作为 Nix 的等价别名。",
+    "source": "https://nixos.org/manual/nixos/stable/"
+  },
+  {
+    "id": "bash",
+    "exclude": [
+      "sh"
+    ],
+    "reason": "GNU Bash 手册说明 Bash 与 sh 大体兼容，但也明确提供相对 sh 的功能改进。兼容和共同祖源不能使 Bash 与独立的 sh 记录成为等价搜索别名。",
+    "source": "https://www.gnu.org/software/bash/manual/bash.html"
+  },
+  {
+    "id": "xml",
+    "exclude": [
+      "rss",
+      "wsdl"
+    ],
+    "reason": "RSS 2.0 规范称 RSS 是 XML 方言；WSDL 2.0 规范称 WSDL 是描述 Web 服务的 XML 语言/格式。二者是建立在 XML 上的独立格式，不能作为 XML 的等价别名。",
+    "source": "https://www.w3.org/TR/wsdl/"
+  },
+  {
+    "id": "html",
+    "exclude": [
+      "xhtml"
+    ],
+    "reason": "W3C 将 XHTML 1.0 定义为 HTML 4 在 XML 1.0 上的重构，并规定自己的 XML 文档约束；即使存在兼容模式，也不能作为 HTML 的等价别名合并。",
+    "source": "https://www.w3.org/TR/xhtml1/"
+  },
+  {
+    "id": "lex",
+    "exclude": [
+      "flex"
+    ],
+    "reason": "Flex 官方手册将 Flex 标为 lex replacement，并说明与 Lex 的兼容存在例外。替代实现与兼容关系不能把 Flex 合并为 Lex 的等价别名。",
+    "source": "https://raw.githubusercontent.com/westes/flex/master/doc/flex.texi"
+  },
+  {
+    "id": "roff",
+    "exclude": ["groff", "nroff", "troff"],
+    "reason": "GNU roff 手册说明 groff 是对 AT&T Unix troff 及相关程序的重实现和扩展，并把 groff 语言称为 roff 语言的扩展方言；troff、nroff 与 groff 均有独立馆藏记录，不能作为 ROFF 的等价搜索别名合并。",
+    "source": "https://www.gnu.org/software/groff/manual/groff.html"
+  },
+  {
+    "id": "pascal",
+    "exclude": ["delphi"],
+    "reason": "Embarcadero 文档将 Delphi 语言定义为标准 Pascal 的面向对象扩展；这是相关的方言/产品身份，不是 Pascal 的等价名称，不能把独立 Delphi 记录并入 Pascal。",
+    "source": "https://docwiki.embarcadero.com/RADStudio/Sydney/en/Using_the_Object_Model"
+  },
+  {
+    "id": "cython",
+    "exclude": ["pyrex"],
+    "reason": "Cython 官方文档称 Cython 最初基于 Pyrex 编译器项目，且其主要特性和设计决定源于该项目；这是明确的历史设计来源，不能把仍有独立馆藏记录的 Pyrex 当作 Cython 的等价别名。",
+    "source": "https://docs.cython.org/en/latest/src/tutorial/related_work.html"
   }
 ]

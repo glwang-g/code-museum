@@ -1,0 +1,4486 @@
+{
+  "schemaVersion": 1,
+  "scope": "Relation-level coverage of the current field-only backlog; this report classifies research history and does not infer historical relationships.",
+  "source": {
+    "relationshipStatus": "data/audit/relationship-status.json",
+    "researchLedger": "data/audit/relationship-research-ledger.json",
+    "statusInputHashes": {
+      "data/raw/pldb.json": "57f45d25bba78ab6bc4af5d969356d2efbfcc7c1ee722dbb5c708d60aa78ba77",
+      "data/audit/reviews.json": "4d09e9f6e9610253496769f3b07639b2002d67e3b11c858b6028186464bb9a9d",
+      "data/relationship-overrides.json": "1a437915a0d390f29559822e434bb383149e5ff122bf1ff0e3f8663cca6f8b1c",
+      "data/ecosystem-relations.json": "0f9762c08634b271476a8b82e8ddd96f9f688434766c43329059dea5a59436c8",
+      "data/audit/relationship-decisions.json": "5261a7c64734441c96694a1a0b9b8a34cad0195e541e3485807a2a66061055c8",
+      "data/audit/label-selection.json": "dc5eee62fa662b0d60940375d8a3ec56ac2bbf84ee2b9922a290d46d11cc866f",
+      "data/audit/identity-summary.json": "9a2258ba8a6adb67960c9d1f72c31595d93f84f09bbcac3b13354b61e30587db",
+      "data/audit/relationship-research-ledger.json": "e22d036efee8efc14d65ef98ad10c5c564f4f04985e5cf35c148ec1b8146a34c"
+    }
+  },
+  "counts": {
+    "allRelations": 461,
+    "fieldOnly": 280,
+    "excerptRecorded": 178,
+    "fieldOnlyResearchedNoResult": 47,
+    "fieldOnlyNeverResearched": 233
+  },
+  "categories": {
+    "researchedNoResultClosed": [
+      {
+        "key": "ada|chapel|influencedBy",
+        "from": "ada",
+        "to": "chapel",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/chapel.scroll",
+        "mapVisible": false,
+        "state": "field-only",
+        "research": {
+          "id": "ada|chapel|influencedBy",
+          "status": "closed-no-qualifying-source",
+          "batch": "2026-10-11_BATCH-41",
+          "note": "The Chapel overview paper's primary-influence list (C, Modula, Fortran, C++, Java, C#, CLU, Scala, ML, Perl, Matlab) does not include Ada.",
+          "reopenWhen": "Chapel's own material lists Ada as an overall design influence."
+        }
+      },
+      {
+        "key": "algol-60|modula|influencedBy",
+        "from": "algol-60",
+        "to": "modula",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/modula.scroll",
+        "mapVisible": false,
+        "state": "field-only",
+        "research": {
+          "id": "algol-60|modula|influencedBy",
+          "status": "closed-no-qualifying-source",
+          "batch": "2026-10-10_BATCH-17",
+          "note": "Wirth-family continuity and later Modula documentation were not treated as proof of a direct ALGOL 60 design edge; no qualifying direct statement was secured in this batch.",
+          "reopenWhen": "A Modula primary report or author account explicitly identifies a concrete ALGOL 60 design input."
+        }
+      },
+      {
+        "key": "algol-60|oberon|influencedBy",
+        "from": "algol-60",
+        "to": "oberon",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/oberon.scroll",
+        "mapVisible": true,
+        "state": "field-only",
+        "research": {
+          "id": "algol-60|oberon|influencedBy",
+          "status": "closed-no-qualifying-source",
+          "batch": "2026-10-10_BATCH-17",
+          "note": "The official Oberon report is useful for Oberon’s own specification, but this batch did not obtain a direct ALGOL 60 design-source statement; intervening Modula history is not collapsed into a direct edge.",
+          "reopenWhen": "An Oberon or Wirth primary source explicitly identifies ALGOL 60 as a concrete design input rather than only a family background."
+        }
+      },
+      {
+        "key": "c|jule|influencedBy",
+        "from": "c",
+        "to": "jule",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/jule.scroll",
+        "mapVisible": false,
+        "state": "field-only",
+        "research": {
+          "id": "c|jule|influencedBy",
+          "status": "closed-no-qualifying-source",
+          "batch": "2026-10-11_BATCH-40",
+          "note": "Jule's design mission page states C/C++ only as a first-class interoperability goal and compile target, not as an overall design influence.",
+          "reopenWhen": "Jule primary documentation states C as a design influence rather than interoperability."
+        }
+      },
+      {
+        "key": "c|mojo|influencedBy",
+        "from": "c",
+        "to": "mojo",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/mojo.scroll",
+        "mapVisible": false,
+        "state": "field-only",
+        "research": {
+          "id": "c|mojo|influencedBy",
+          "status": "closed-no-qualifying-source",
+          "batch": "2026-10-11_BATCH-40",
+          "note": "Mojo's official documentation discusses lessons from other languages (e.g. Swift, C++, Rust, Zig) but does not list C as a design influence; scope is a missing listed influence, not proof of absence.",
+          "reopenWhen": "Modular documentation lists C as a Mojo design influence."
+        }
+      },
+      {
+        "key": "c|speedie|influencedBy",
+        "from": "c",
+        "to": "speedie",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/speedie.scroll",
+        "mapVisible": false,
+        "state": "field-only",
+        "research": {
+          "id": "c|speedie|influencedBy",
+          "status": "closed-no-qualifying-source",
+          "batch": "2026-10-11_BATCH-40",
+          "note": "Speedie documentation only notes C-library integration and performance comparison, not C as an overall design source.",
+          "reopenWhen": "Speedie's own documentation states C as an overall design influence."
+        }
+      },
+      {
+        "key": "c|wa|influencedBy",
+        "from": "c",
+        "to": "wa",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/wa.scroll",
+        "mapVisible": false,
+        "state": "field-only",
+        "research": {
+          "id": "c|wa|influencedBy",
+          "status": "closed-no-qualifying-source",
+          "batch": "2026-10-11_BATCH-41",
+          "note": "The Wa README describes a WebAssembly-oriented design goal but states no C design influence.",
+          "reopenWhen": "Wa's own documentation states C as an overall design influence."
+        }
+      },
+      {
+        "key": "cpp|jule|influencedBy",
+        "from": "cpp",
+        "to": "jule",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/jule.scroll",
+        "mapVisible": false,
+        "state": "field-only",
+        "research": {
+          "id": "cpp|jule|influencedBy",
+          "status": "closed-no-qualifying-source",
+          "batch": "2026-10-11_BATCH-40",
+          "note": "Jule's design mission page states C/C++ only as a first-class interoperability goal and compile target, not as an overall design influence.",
+          "reopenWhen": "Jule primary documentation states C/C++ as a design influence rather than interoperability."
+        }
+      },
+      {
+        "key": "cpp|particles|influencedBy",
+        "from": "cpp",
+        "to": "particles",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/particles.scroll",
+        "mapVisible": false,
+        "state": "field-only",
+        "research": {
+          "id": "cpp|particles|influencedBy",
+          "status": "closed-no-qualifying-source",
+          "batch": "2026-10-11_BATCH-41",
+          "note": "The Particles project page is a minimal index and states no C++ design influence.",
+          "reopenWhen": "Particles' own documentation states C++ as an overall design influence."
+        }
+      },
+      {
+        "key": "cpp|speedie|influencedBy",
+        "from": "cpp",
+        "to": "speedie",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/speedie.scroll",
+        "mapVisible": false,
+        "state": "field-only",
+        "research": {
+          "id": "cpp|speedie|influencedBy",
+          "status": "closed-no-qualifying-source",
+          "batch": "2026-10-11_BATCH-40",
+          "note": "Speedie documentation only compares against idiomatic C++ performance and notes C-library integration; it does not state C++ as an overall design source.",
+          "reopenWhen": "Speedie's own documentation states C++ as an overall design influence."
+        }
+      },
+      {
+        "key": "cpp|wa|influencedBy",
+        "from": "cpp",
+        "to": "wa",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/wa.scroll",
+        "mapVisible": false,
+        "state": "field-only",
+        "research": {
+          "id": "cpp|wa|influencedBy",
+          "status": "closed-no-qualifying-source",
+          "batch": "2026-10-11_BATCH-40",
+          "note": "The wa-lang README describes a WebAssembly-oriented design goal but does not state C++ as a design-influence source.",
+          "reopenWhen": "wa-lang primary documentation states C++ as a design influence."
+        }
+      },
+      {
+        "key": "csharp|particles|influencedBy",
+        "from": "csharp",
+        "to": "particles",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/particles.scroll",
+        "mapVisible": false,
+        "state": "field-only",
+        "research": {
+          "id": "csharp|particles|influencedBy",
+          "status": "closed-no-qualifying-source",
+          "batch": "2026-10-11_BATCH-41",
+          "note": "The Particles project page is a minimal index and states no C# design influence.",
+          "reopenWhen": "Particles' own documentation states C# as an overall design influence."
+        }
+      },
+      {
+        "key": "fortran|balgol|influencedBy",
+        "from": "fortran",
+        "to": "balgol",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/balgol.scroll",
+        "mapVisible": false,
+        "state": "field-only",
+        "research": {
+          "id": "fortran|balgol|influencedBy",
+          "status": "closed-no-qualifying-source",
+          "batch": "2026-10-12_BATCH-42",
+          "note": "Balgol history describes it as \"an early dialect of the Algol-58 language\"; the compiler focus \"shifted from FORTRAN to Algol-58\", so FORTRAN is not its design source.",
+          "reopenWhen": "A primary source that states FORTRAN as an overall design influence on BALGOL is obtained."
+        }
+      },
+      {
+        "key": "fortran|explor|influencedBy",
+        "from": "fortran",
+        "to": "explor",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/explor.scroll",
+        "mapVisible": false,
+        "state": "field-only",
+        "research": {
+          "id": "fortran|explor|influencedBy",
+          "status": "closed-no-qualifying-source",
+          "batch": "2026-10-12_BATCH-42",
+          "note": "MINI-EXPLOR is described as \"A FORTRAN-Coded Version of the EXPLOR Language\": FORTRAN is the implementation language, not the design source of EXPLOR.",
+          "reopenWhen": "A primary source that states FORTRAN as an overall design influence on EXPLOR is obtained."
+        }
+      },
+      {
+        "key": "fortran|particles|influencedBy",
+        "from": "fortran",
+        "to": "particles",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/particles.scroll",
+        "mapVisible": false,
+        "state": "field-only",
+        "research": {
+          "id": "fortran|particles|influencedBy",
+          "status": "closed-no-qualifying-source",
+          "batch": "2026-10-12_BATCH-42",
+          "note": "The Particles project page is a minimal index and states no Fortran design influence.",
+          "reopenWhen": "Particles' own documentation states Fortran as an overall design influence."
+        }
+      },
+      {
+        "key": "go|wa|influencedBy",
+        "from": "go",
+        "to": "wa",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/wa.scroll",
+        "mapVisible": false,
+        "state": "field-only",
+        "research": {
+          "id": "go|wa|influencedBy",
+          "status": "closed-no-qualifying-source",
+          "batch": "2026-10-11_BATCH-41",
+          "note": "The Wa README describes a WebAssembly-oriented design goal but states no Go design influence.",
+          "reopenWhen": "Wa's own documentation states Go as an overall design influence."
+        }
+      },
+      {
+        "key": "javascript|amber|influencedBy",
+        "from": "javascript",
+        "to": "amber",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/amber.scroll",
+        "mapVisible": false,
+        "state": "field-only",
+        "research": {
+          "id": "javascript|amber|influencedBy",
+          "status": "closed-no-qualifying-source",
+          "batch": "2026-10-11_BATCH-41",
+          "note": "Amber's official README and docs describe a language compiled to Bash and state no JavaScript design influence.",
+          "reopenWhen": "Amber's official material states JavaScript as an overall design influence."
+        }
+      },
+      {
+        "key": "javascript|scroll|influencedBy",
+        "from": "javascript",
+        "to": "scroll",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/scroll.scroll",
+        "mapVisible": false,
+        "state": "field-only",
+        "research": {
+          "id": "javascript|scroll|influencedBy",
+          "status": "closed-no-qualifying-source",
+          "batch": "2026-10-11_BATCH-41",
+          "note": "Scroll's site presents the language for scientific writing and lists no design influences.",
+          "reopenWhen": "Scroll's own documentation states JavaScript as an overall design influence."
+        }
+      },
+      {
+        "key": "javascript|speedie|influencedBy",
+        "from": "javascript",
+        "to": "speedie",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/speedie.scroll",
+        "mapVisible": false,
+        "state": "field-only",
+        "research": {
+          "id": "javascript|speedie|influencedBy",
+          "status": "closed-no-qualifying-source",
+          "batch": "2026-10-11_BATCH-41",
+          "note": "Speedie's README references JavaScript only as a negative comparison (\"Doesn't infantilise you like Javascript or Java\"), not as a design source.",
+          "reopenWhen": "Speedie's own documentation states JavaScript as an overall design influence."
+        }
+      },
+      {
+        "key": "lua|lil|influencedBy",
+        "from": "lua",
+        "to": "lil",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/lil.scroll",
+        "mapVisible": false,
+        "state": "field-only",
+        "research": {
+          "id": "lua|lil|influencedBy",
+          "status": "closed-no-qualifying-source",
+          "batch": "2026-10-11_BATCH-41",
+          "note": "Lil's documentation does not name Lua among its stated influences.",
+          "reopenWhen": "Lil's own documentation states Lua as an overall design influence."
+        }
+      },
+      {
+        "key": "lua|speedie|influencedBy",
+        "from": "lua",
+        "to": "speedie",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/speedie.scroll",
+        "mapVisible": false,
+        "state": "field-only",
+        "research": {
+          "id": "lua|speedie|influencedBy",
+          "status": "closed-no-qualifying-source",
+          "batch": "2026-10-11_BATCH-41",
+          "note": "Speedie's documentation does not name Lua as a design influence.",
+          "reopenWhen": "Speedie's own documentation states Lua as an overall design influence."
+        }
+      },
+      {
+        "key": "ocaml|mlscript|influencedBy",
+        "from": "ocaml",
+        "to": "mlscript",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/mlscript.scroll",
+        "mapVisible": false,
+        "state": "field-only",
+        "research": {
+          "id": "ocaml|mlscript|influencedBy",
+          "status": "closed-no-qualifying-source",
+          "batch": "2026-10-12_BATCH-42",
+          "note": "MLscript's README notes only that a paper \"used v1 with an OCaml-syntax parser and heavily modified type checker\", an implementation detail rather than an overall design influence.",
+          "reopenWhen": "MLscript's own documentation states OCaml as an overall design influence."
+        }
+      },
+      {
+        "key": "prolog|gaea|supersetOf",
+        "from": "prolog",
+        "to": "gaea",
+        "type": "supersetOf",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/gaea.scroll",
+        "mapVisible": false,
+        "state": "field-only",
+        "research": {
+          "id": "prolog|gaea|supersetOf",
+          "status": "closed-no-qualifying-source",
+          "batch": "2026-10-12_BATCH-42",
+          "note": "The Gaea authors' ICMAS-96 paper describes Gaea as a logic programming language with \"Prolog-like backward chain reasoning\" but does not declare it a superset of Prolog; the superset claim appears only on PLDB.",
+          "reopenWhen": "A primary source states Gaea is a superset/extension of Prolog."
+        }
+      },
+      {
+        "key": "prolog|progol|supersetOf",
+        "from": "prolog",
+        "to": "progol",
+        "type": "supersetOf",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/progol.scroll",
+        "mapVisible": false,
+        "state": "field-only",
+        "research": {
+          "id": "prolog|progol|supersetOf",
+          "status": "closed-no-qualifying-source",
+          "batch": "2026-10-12_BATCH-42",
+          "note": "The Progol page describes an ILP system that \"allows arbitrary Prolog programs as background knowledge\"; it does not state that Progol is a superset of the Prolog language.",
+          "reopenWhen": "A primary source states Progol is a superset of the Prolog language."
+        }
+      },
+      {
+        "key": "python|chapel|influencedBy",
+        "from": "python",
+        "to": "chapel",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/chapel.scroll",
+        "mapVisible": false,
+        "state": "field-only",
+        "research": {
+          "id": "python|chapel|influencedBy",
+          "status": "closed-no-qualifying-source",
+          "batch": "2026-10-11_BATCH-40",
+          "note": "Chapel's official overview paper lists its primary influences (C, Modula, Fortran, C++, Java, C#, CLU, Scala, ML, Perl, Matlab) and does not include Python.",
+          "reopenWhen": "A primary Chapel source lists Python as a design influence or the influence list is materially revised."
+        }
+      },
+      {
+        "key": "python|mojo|influencedBy",
+        "from": "python",
+        "to": "mojo",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/mojo.scroll",
+        "mapVisible": false,
+        "state": "field-only",
+        "research": {
+          "id": "python|mojo|influencedBy",
+          "status": "closed-no-qualifying-source",
+          "batch": "2026-10-09_BATCH-16",
+          "note": "Official Mojo material supports Python interoperability and compatibility, not a sufficiently explicit design-influence claim.",
+          "reopenWhen": "An official Mojo design history or specification explicitly names Python as a design source for a concrete feature."
+        }
+      },
+      {
+        "key": "python|mojo|supersetOf",
+        "from": "python",
+        "to": "mojo",
+        "type": "supersetOf",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/mojo.scroll",
+        "mapVisible": false,
+        "state": "field-only",
+        "research": {
+          "id": "python|mojo|influencedBy",
+          "status": "closed-no-qualifying-source",
+          "batch": "2026-10-09_BATCH-16",
+          "note": "Official Mojo material supports Python interoperability and compatibility, not a sufficiently explicit design-influence claim.",
+          "reopenWhen": "An official Mojo design history or specification explicitly names Python as a design source for a concrete feature."
+        }
+      },
+      {
+        "key": "python|morloc|influencedBy",
+        "from": "python",
+        "to": "morloc",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/morloc.scroll",
+        "mapVisible": false,
+        "state": "field-only",
+        "research": {
+          "id": "python|morloc|influencedBy",
+          "status": "closed-no-qualifying-source",
+          "batch": "2026-10-11_BATCH-40",
+          "note": "Morloc README/docs present cross-language interoperability as the goal and do not state Python as a design-influence source.",
+          "reopenWhen": "Morloc primary documentation states a Python design influence."
+        }
+      },
+      {
+        "key": "python|particles|influencedBy",
+        "from": "python",
+        "to": "particles",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/particles.scroll",
+        "mapVisible": false,
+        "state": "field-only",
+        "research": {
+          "id": "python|particles|influencedBy",
+          "status": "closed-no-qualifying-source",
+          "batch": "2026-10-11_BATCH-41",
+          "note": "The Particles project page is a minimal index and states no Python design influence.",
+          "reopenWhen": "Particles' own documentation states Python as an overall design influence."
+        }
+      },
+      {
+        "key": "python|scroll|influencedBy",
+        "from": "python",
+        "to": "scroll",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/scroll.scroll",
+        "mapVisible": false,
+        "state": "field-only",
+        "research": {
+          "id": "python|scroll|influencedBy",
+          "status": "closed-no-qualifying-source",
+          "batch": "2026-10-11_BATCH-41",
+          "note": "Scroll's site presents the language for scientific writing and lists no design influences; the PLDB list mixes related notation/technology rather than design sources.",
+          "reopenWhen": "Scroll's own documentation states Python as an overall design influence."
+        }
+      },
+      {
+        "key": "python|speedie|influencedBy",
+        "from": "python",
+        "to": "speedie",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/speedie.scroll",
+        "mapVisible": false,
+        "state": "field-only",
+        "research": {
+          "id": "python|speedie|influencedBy",
+          "status": "closed-no-qualifying-source",
+          "batch": "2026-10-11_BATCH-40",
+          "note": "Speedie documentation only compares against Python (expressiveness) and notes one borrowed syntax form; it does not state Python as an overall design source.",
+          "reopenWhen": "Speedie's own documentation states Python as an overall design influence."
+        }
+      },
+      {
+        "key": "r|particles|influencedBy",
+        "from": "r",
+        "to": "particles",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/particles.scroll",
+        "mapVisible": false,
+        "state": "field-only",
+        "research": {
+          "id": "r|particles|influencedBy",
+          "status": "closed-no-qualifying-source",
+          "batch": "2026-10-12_BATCH-42",
+          "note": "The Particles project page is a minimal index and states no R design influence.",
+          "reopenWhen": "Particles' own documentation states R as an overall design influence."
+        }
+      },
+      {
+        "key": "rust|jule|influencedBy",
+        "from": "rust",
+        "to": "jule",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/jule.scroll",
+        "mapVisible": false,
+        "state": "field-only",
+        "research": {
+          "id": "rust|jule|influencedBy",
+          "status": "closed-no-qualifying-source",
+          "batch": "2026-10-11_BATCH-40",
+          "note": "Jule's mission page describes an immutable-by-default model 'similar to Rust' as a comparison and states Jule is not functional; it does not declare Rust as a design-influence source.",
+          "reopenWhen": "Jule primary documentation states Rust as a design influence rather than a similarity comparison."
+        }
+      },
+      {
+        "key": "rust|mlscript|influencedBy",
+        "from": "rust",
+        "to": "mlscript",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/mlscript.scroll",
+        "mapVisible": false,
+        "state": "field-only",
+        "research": {
+          "id": "rust|mlscript|influencedBy",
+          "status": "closed-no-qualifying-source",
+          "batch": "2026-10-11_BATCH-40",
+          "note": "The MLscript README frames the language around type inference, soundness, and pattern matching and does not state Rust as a design-influence source.",
+          "reopenWhen": "MLscript primary documentation states Rust as a design influence."
+        }
+      },
+      {
+        "key": "sql|lil|influencedBy",
+        "from": "sql",
+        "to": "lil",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/lil.scroll",
+        "mapVisible": false,
+        "state": "field-only",
+        "research": {
+          "id": "sql|lil|influencedBy",
+          "status": "closed-no-qualifying-source",
+          "batch": "2026-10-11_BATCH-41",
+          "note": "Lil's documentation lists APL, J, K and Q as vector-oriented influences and describes its query syntax as only resembling SQL.",
+          "reopenWhen": "Lil's own documentation states SQL as an overall design influence."
+        }
+      },
+      {
+        "key": "sql|particles|influencedBy",
+        "from": "sql",
+        "to": "particles",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/particles.scroll",
+        "mapVisible": false,
+        "state": "field-only",
+        "research": {
+          "id": "sql|particles|influencedBy",
+          "status": "closed-no-qualifying-source",
+          "batch": "2026-10-12_BATCH-42",
+          "note": "The Particles project page is a minimal index and states no SQL design influence.",
+          "reopenWhen": "Particles' own documentation states SQL as an overall design influence."
+        }
+      },
+      {
+        "key": "sql|sequel-2|influencedBy",
+        "from": "sql",
+        "to": "sequel-2",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/sequel-2.scroll",
+        "mapVisible": false,
+        "state": "field-only",
+        "research": {
+          "id": "sql|sequel-2|influencedBy",
+          "status": "closed-no-qualifying-source",
+          "batch": "2026-10-10_BATCH-17",
+          "note": "The IBM SEQUEL 2 paper identity is present, but the batch could not obtain a stable readable primary copy that directly supports the SQL endpoint claim; the PLDB field remains unupgraded.",
+          "reopenWhen": "A stable IBM paper copy or fixed archival source explicitly connects SQL to the specific SEQUEL 2 version."
+        }
+      },
+      {
+        "key": "sql|square|influencedBy",
+        "from": "sql",
+        "to": "square",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/square.scroll",
+        "mapVisible": false,
+        "state": "field-only",
+        "research": {
+          "id": "sql|square|influencedBy",
+          "status": "closed-no-qualifying-source",
+          "batch": "2026-10-12_BATCH-42",
+          "note": "The SQUARE data sublanguage (Boyce & Chamberlin, 1973) predates SEQUEL/SQL, and the IBM Research entries read do not state that SQUARE was influenced by SQL; the recorded direction is chronologically reversed.",
+          "reopenWhen": "A primary source supports SQL influencing SQUARE, or the edge is corrected to SQUARE → SQL with a qualifying source."
+        }
+      },
+      {
+        "key": "sql|tql|influencedBy",
+        "from": "sql",
+        "to": "tql",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/tql.scroll",
+        "mapVisible": false,
+        "state": "field-only",
+        "research": {
+          "id": "sql|tql|influencedBy",
+          "status": "closed-no-qualifying-source",
+          "batch": "2026-10-11_BATCH-41",
+          "note": "TQL's page compares itself to SQL (plain-text vs binary databases) but states no SQL design influence.",
+          "reopenWhen": "TQL's own documentation states SQL as an overall design influence."
+        }
+      },
+      {
+        "key": "typescript|assemblyscript|influencedBy",
+        "from": "typescript",
+        "to": "assemblyscript",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/assemblyscript.scroll",
+        "mapVisible": false,
+        "state": "field-only",
+        "research": {
+          "id": "typescript|assemblyscript|influencedBy",
+          "status": "closed-no-qualifying-source",
+          "batch": "2026-10-10_BATCH-17",
+          "note": "AssemblyScript official homepage says TypeScript-like and highlights similarity, but this batch found no explicit design-source statement sufficient to upgrade the field relation.",
+          "reopenWhen": "An official AssemblyScript design history or fixed source explicitly names TypeScript as a design input for concrete features."
+        }
+      },
+      {
+        "key": "visual-basic|speedie|influencedBy",
+        "from": "visual-basic",
+        "to": "speedie",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/speedie.scroll",
+        "mapVisible": false,
+        "state": "field-only",
+        "research": {
+          "id": "visual-basic|speedie|influencedBy",
+          "status": "closed-no-qualifying-source",
+          "batch": "2026-10-12_BATCH-42",
+          "note": "Speedie's README lists its influences and does not name Visual Basic as a design source.",
+          "reopenWhen": "Speedie's own documentation states Visual Basic as an overall design influence."
+        }
+      }
+    ],
+    "researchedNoResultBlocked": [
+      {
+        "key": "cpp|real-time-concurrent-c|supersetOf",
+        "from": "cpp",
+        "to": "real-time-concurrent-c",
+        "type": "supersetOf",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/real-time-concurrent-c.scroll",
+        "mapVisible": false,
+        "state": "field-only",
+        "research": {
+          "id": "cpp|real-time-concurrent-c|supersetOf",
+          "status": "blocked",
+          "batch": "2026-10-11_BATCH-40",
+          "note": "Author papers state 'Concurrent C (C++) is a parallel superset of C (C++)', but no hashable full-text copy of the Real-Time Concurrent C paper or the 'Implementing Concurrent C' paper could be secured for the review record.",
+          "reopenWhen": "A hashable primary copy (paper PDF or abstract page) stating Real-Time Concurrent C's superset relation to C++ is obtained."
+        }
+      },
+      {
+        "key": "java|deesel|supersetOf",
+        "from": "java",
+        "to": "deesel",
+        "type": "supersetOf",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/deesel.scroll",
+        "mapVisible": false,
+        "state": "field-only",
+        "research": {
+          "id": "java|deesel|supersetOf",
+          "status": "blocked",
+          "batch": "2026-10-11_BATCH-41",
+          "note": "Deesel was a Java-based metaprogramming language described in encyclopedic sources as \"nearly a superset of Java\", but its official site is defunct (the archived domain shows a parked/for-sale page), so no hashable primary statement was secured.",
+          "reopenWhen": "A hashable primary Deesel/G page or paper stating the superset relation to Java is obtained."
+        }
+      },
+      {
+        "key": "javascript|objective-j|supersetOf",
+        "from": "javascript",
+        "to": "objective-j",
+        "type": "supersetOf",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/objective-j.scroll",
+        "mapVisible": false,
+        "state": "field-only",
+        "research": {
+          "id": "javascript|objective-j|supersetOf",
+          "status": "blocked",
+          "batch": "2026-10-09_BATCH-16",
+          "note": "The current Objective-J/Cappuccino official entry point was not stably retrievable; the existing field is not upgraded from a third-party summary.",
+          "reopenWhen": "A stable official Objective-J source or fixed repository revision is available."
+        }
+      },
+      {
+        "key": "perl|slash|influencedBy",
+        "from": "perl",
+        "to": "slash",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/slash.scroll",
+        "mapVisible": false,
+        "state": "field-only",
+        "research": {
+          "id": "perl|slash|influencedBy",
+          "status": "blocked",
+          "batch": "2026-10-12_BATCH-42",
+          "note": "slash-lang.org is expired or suspended (the archived page shows a domain notice), so no hashable primary source could be secured.",
+          "reopenWhen": "A hashable Slash language primary source (project site, docs or paper) is obtained."
+        }
+      },
+      {
+        "key": "php|slash|influencedBy",
+        "from": "php",
+        "to": "slash",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/slash.scroll",
+        "mapVisible": false,
+        "state": "field-only",
+        "research": {
+          "id": "php|slash|influencedBy",
+          "status": "blocked",
+          "batch": "2026-10-11_BATCH-41",
+          "note": "slash-lang.org is expired or suspended (the archived page shows a domain notice), so no hashable primary source could be secured.",
+          "reopenWhen": "A hashable Slash language primary source (project site, docs or paper) is obtained."
+        }
+      },
+      {
+        "key": "ruby|slash|influencedBy",
+        "from": "ruby",
+        "to": "slash",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/slash.scroll",
+        "mapVisible": false,
+        "state": "field-only",
+        "research": {
+          "id": "ruby|slash|influencedBy",
+          "status": "blocked",
+          "batch": "2026-10-12_BATCH-42",
+          "note": "slash-lang.org is expired or suspended (the archived page shows a domain notice), so no hashable primary source could be secured.",
+          "reopenWhen": "A hashable Slash language primary source (project site, docs or paper) is obtained."
+        }
+      }
+    ],
+    "neverResearched": [
+      {
+        "key": "activity-pub|farcaster|influencedBy",
+        "from": "activity-pub",
+        "to": "farcaster",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/farcaster.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "agda|axio|influencedBy",
+        "from": "agda",
+        "to": "axio",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/axio.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "algol-58|balgol|influencedBy",
+        "from": "algol-58",
+        "to": "balgol",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/balgol.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "algol-60|espol|supersetOf",
+        "from": "algol-60",
+        "to": "espol",
+        "type": "supersetOf",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/espol.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "algol-68|mary|supersetOf",
+        "from": "algol-68",
+        "to": "mary",
+        "type": "supersetOf",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/mary.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "alohanet|ethernet|influencedBy",
+        "from": "alohanet",
+        "to": "ethernet",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/ethernet.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "alpaca|gleam|influencedBy",
+        "from": "alpaca",
+        "to": "gleam",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/gleam.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "antlr|lllpg|influencedBy",
+        "from": "antlr",
+        "to": "lllpg",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/lllpg.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "antlr|parsers|influencedBy",
+        "from": "antlr",
+        "to": "parsers",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/parsers.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "antlr|particles|influencedBy",
+        "from": "antlr",
+        "to": "particles",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/particles.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "antlr|scroll|influencedBy",
+        "from": "antlr",
+        "to": "scroll",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/scroll.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "apl|axio|influencedBy",
+        "from": "apl",
+        "to": "axio",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/axio.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "apl|futhark|influencedBy",
+        "from": "apl",
+        "to": "futhark",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/futhark.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "apl|goal|influencedBy",
+        "from": "apl",
+        "to": "goal",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/goal.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "apl|klong|influencedBy",
+        "from": "apl",
+        "to": "klong",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/klong.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "apl|particles|influencedBy",
+        "from": "apl",
+        "to": "particles",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/particles.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "apl|u|influencedBy",
+        "from": "apl",
+        "to": "u",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/u.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "atari-basic|turbo-basic-xl|supersetOf",
+        "from": "atari-basic",
+        "to": "turbo-basic-xl",
+        "type": "supersetOf",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/turbo-basic-xl.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "atx|markdown|influencedBy",
+        "from": "atx",
+        "to": "markdown",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/markdown.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "automath|axio|influencedBy",
+        "from": "automath",
+        "to": "axio",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/axio.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "automath|lego|influencedBy",
+        "from": "automath",
+        "to": "lego",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/lego.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "automath|mltt|influencedBy",
+        "from": "automath",
+        "to": "mltt",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/mltt.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "automath|nuprl|influencedBy",
+        "from": "automath",
+        "to": "nuprl",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/nuprl.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "awk|bawk|supersetOf",
+        "from": "awk",
+        "to": "bawk",
+        "type": "supersetOf",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/bawk.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "bash|civet|influencedBy",
+        "from": "bash",
+        "to": "civet",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/civet.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "binary-notation|begriffsschrift|influencedBy",
+        "from": "binary-notation",
+        "to": "begriffsschrift",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/begriffsschrift.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "bison|lemon|influencedBy",
+        "from": "bison",
+        "to": "lemon",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/lemon.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "bitsy|decker|influencedBy",
+        "from": "bitsy",
+        "to": "decker",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/decker.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "bnf|parsers|influencedBy",
+        "from": "bnf",
+        "to": "parsers",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/parsers.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "bnf|square|influencedBy",
+        "from": "bnf",
+        "to": "square",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/square.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "brainfuck|semicolon|influencedBy",
+        "from": "brainfuck",
+        "to": "semicolon",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/semicolon.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "clojure|shrubbery|influencedBy",
+        "from": "clojure",
+        "to": "shrubbery",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/shrubbery.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "cobol|particles|influencedBy",
+        "from": "cobol",
+        "to": "particles",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/particles.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "coffeekup|jedi|influencedBy",
+        "from": "coffeekup",
+        "to": "jedi",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/jedi.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "coffeescript|kode|influencedBy",
+        "from": "coffeescript",
+        "to": "kode",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/kode.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "common-lisp|flare|influencedBy",
+        "from": "common-lisp",
+        "to": "flare",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/flare.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "commonmark|djot|influencedBy",
+        "from": "commonmark",
+        "to": "djot",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/djot.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "crystal|civet|influencedBy",
+        "from": "crystal",
+        "to": "civet",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/civet.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "css|particles|influencedBy",
+        "from": "css",
+        "to": "particles",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/particles.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "css|speedie|influencedBy",
+        "from": "css",
+        "to": "speedie",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/speedie.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "csv|scroll|influencedBy",
+        "from": "csv",
+        "to": "scroll",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/scroll.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "curl|hurl|influencedBy",
+        "from": "curl",
+        "to": "hurl",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/hurl.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "curl|hurl|supersetOf",
+        "from": "curl",
+        "to": "hurl",
+        "type": "supersetOf",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/hurl.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "d|sdlang|influencedBy",
+        "from": "d",
+        "to": "sdlang",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/sdlang.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "dplyr|scroll|influencedBy",
+        "from": "dplyr",
+        "to": "scroll",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/scroll.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "ebnf|parsers|influencedBy",
+        "from": "ebnf",
+        "to": "parsers",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/parsers.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "ed-editor|ex-editor|influencedBy",
+        "from": "ed-editor",
+        "to": "ex-editor",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/ex-editor.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "eiffel|flare|influencedBy",
+        "from": "eiffel",
+        "to": "flare",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/flare.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "elm|civet|influencedBy",
+        "from": "elm",
+        "to": "civet",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/civet.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "elm|scrapscript|influencedBy",
+        "from": "elm",
+        "to": "scrapscript",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/scrapscript.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "erlang|axio|influencedBy",
+        "from": "erlang",
+        "to": "axio",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/axio.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "ex-editor|vi|influencedBy",
+        "from": "ex-editor",
+        "to": "vi",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/vi.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "false|apter-f|influencedBy",
+        "from": "false",
+        "to": "apter-f",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/apter-f.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "flow|civet|influencedBy",
+        "from": "flow",
+        "to": "civet",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/civet.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "forth|particles|influencedBy",
+        "from": "forth",
+        "to": "particles",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/particles.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "fortran-77|fortran-90|supersetOf",
+        "from": "fortran-77",
+        "to": "fortran-90",
+        "type": "supersetOf",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/fortran-90.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "gemini|susn|influencedBy",
+        "from": "gemini",
+        "to": "susn",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/susn.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "gopher|gemini|influencedBy",
+        "from": "gopher",
+        "to": "gemini",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/gemini.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "guile|poke|influencedBy",
+        "from": "guile",
+        "to": "poke",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/poke.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "hackage-pm|scrapscript|influencedBy",
+        "from": "hackage-pm",
+        "to": "scrapscript",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/scrapscript.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "haml|particles|influencedBy",
+        "from": "haml",
+        "to": "particles",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/particles.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "haml|scroll|influencedBy",
+        "from": "haml",
+        "to": "scroll",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/scroll.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "haskell|flare|influencedBy",
+        "from": "haskell",
+        "to": "flare",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/flare.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "haskell|mlscript|influencedBy",
+        "from": "haskell",
+        "to": "mlscript",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/mlscript.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "haskell|morloc|influencedBy",
+        "from": "haskell",
+        "to": "morloc",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/morloc.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "haskell|particles|influencedBy",
+        "from": "haskell",
+        "to": "particles",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/particles.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "haskell|scrapscript|influencedBy",
+        "from": "haskell",
+        "to": "scrapscript",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/scrapscript.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "homebrew-pm|tea-pm|influencedBy",
+        "from": "homebrew-pm",
+        "to": "tea-pm",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/tea-pm.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "html|particles|influencedBy",
+        "from": "html",
+        "to": "particles",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/particles.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "html|scroll|influencedBy",
+        "from": "html",
+        "to": "scroll",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/scroll.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "html|speedie|influencedBy",
+        "from": "html",
+        "to": "speedie",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/speedie.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "hypercard|decker|influencedBy",
+        "from": "hypercard",
+        "to": "decker",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/decker.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "hypercard|lil|influencedBy",
+        "from": "hypercard",
+        "to": "lil",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/lil.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "hypercard|speedie|influencedBy",
+        "from": "hypercard",
+        "to": "speedie",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/speedie.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "hypertalk|applescript|influencedBy",
+        "from": "hypertalk",
+        "to": "applescript",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/applescript.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "hypertalk|supertalk|supersetOf",
+        "from": "hypertalk",
+        "to": "supertalk",
+        "type": "supersetOf",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/supertalk.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "i-expressions|shrubbery|influencedBy",
+        "from": "i-expressions",
+        "to": "shrubbery",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/shrubbery.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "interpress|interscript|supersetOf",
+        "from": "interpress",
+        "to": "interscript",
+        "type": "supersetOf",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/interscript.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "ipfs|filecoin|influencedBy",
+        "from": "ipfs",
+        "to": "filecoin",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/filecoin.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "it|runcible|supersetOf",
+        "from": "it",
+        "to": "runcible",
+        "type": "supersetOf",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/runcible.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "j|goal|influencedBy",
+        "from": "j",
+        "to": "goal",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/goal.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "j|u|influencedBy",
+        "from": "j",
+        "to": "u",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/u.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "jeebox|speedie|supersetOf",
+        "from": "jeebox",
+        "to": "speedie",
+        "type": "supersetOf",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/speedie.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "jekyll|scroll|influencedBy",
+        "from": "jekyll",
+        "to": "scroll",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/scroll.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "joy|apter-f|influencedBy",
+        "from": "joy",
+        "to": "apter-f",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/apter-f.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "joy|ck|influencedBy",
+        "from": "joy",
+        "to": "ck",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/ck.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "joy|xy|influencedBy",
+        "from": "joy",
+        "to": "xy",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/xy.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "jq|mdq|influencedBy",
+        "from": "jq",
+        "to": "mdq",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/mdq.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "json|hocon|supersetOf",
+        "from": "json",
+        "to": "hocon",
+        "type": "supersetOf",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/hocon.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "json|ion|supersetOf",
+        "from": "json",
+        "to": "ion",
+        "type": "supersetOf",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/ion.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "json|json-with-comments|supersetOf",
+        "from": "json",
+        "to": "json-with-comments",
+        "type": "supersetOf",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/json-with-comments.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "json|json5|supersetOf",
+        "from": "json",
+        "to": "json5",
+        "type": "supersetOf",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/json5.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "json|jsoniq|supersetOf",
+        "from": "json",
+        "to": "jsoniq",
+        "type": "supersetOf",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/jsoniq.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "json|jsonnet|supersetOf",
+        "from": "json",
+        "to": "jsonnet",
+        "type": "supersetOf",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/jsonnet.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "json|kaml|supersetOf",
+        "from": "json",
+        "to": "kaml",
+        "type": "supersetOf",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/kaml.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "json|particles|influencedBy",
+        "from": "json",
+        "to": "particles",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/particles.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "json|scrapscript|influencedBy",
+        "from": "json",
+        "to": "scrapscript",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/scrapscript.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "json|sdlang|influencedBy",
+        "from": "json",
+        "to": "sdlang",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/sdlang.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "json|speedie|influencedBy",
+        "from": "json",
+        "to": "speedie",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/speedie.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "json|superjson|supersetOf",
+        "from": "json",
+        "to": "superjson",
+        "type": "supersetOf",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/superjson.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "json|susn|influencedBy",
+        "from": "json",
+        "to": "susn",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/susn.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "k|apter-f|influencedBy",
+        "from": "k",
+        "to": "apter-f",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/apter-f.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "k|ck|influencedBy",
+        "from": "k",
+        "to": "ck",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/ck.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "k|earnest-ok|influencedBy",
+        "from": "k",
+        "to": "earnest-ok",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/earnest-ok.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "k|goal|influencedBy",
+        "from": "k",
+        "to": "goal",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/goal.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "k|klong|influencedBy",
+        "from": "k",
+        "to": "klong",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/klong.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "k|lil|influencedBy",
+        "from": "k",
+        "to": "lil",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/lil.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "k|slack|influencedBy",
+        "from": "k",
+        "to": "slack",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/slack.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "k|u|influencedBy",
+        "from": "k",
+        "to": "u",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/u.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "k|xy|influencedBy",
+        "from": "k",
+        "to": "xy",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/xy.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "lambda-calculus|automath|influencedBy",
+        "from": "lambda-calculus",
+        "to": "automath",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/automath.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "lambda-calculus|cosmicos|influencedBy",
+        "from": "lambda-calculus",
+        "to": "cosmicos",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/cosmicos.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "lambda-calculus|de-bruijn-notation|influencedBy",
+        "from": "lambda-calculus",
+        "to": "de-bruijn-notation",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/de-bruijn-notation.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "lambda-calculus|lego|influencedBy",
+        "from": "lambda-calculus",
+        "to": "lego",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/lego.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "lambda-calculus|mltt|influencedBy",
+        "from": "lambda-calculus",
+        "to": "mltt",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/mltt.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "latex|typst|influencedBy",
+        "from": "latex",
+        "to": "typst",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/typst.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "lisp|autolisp|influencedBy",
+        "from": "lisp",
+        "to": "autolisp",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/autolisp.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "lisp|axio|influencedBy",
+        "from": "lisp",
+        "to": "axio",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/axio.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "lisp|cosmicos|influencedBy",
+        "from": "lisp",
+        "to": "cosmicos",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/cosmicos.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "lisp|kamby|influencedBy",
+        "from": "lisp",
+        "to": "kamby",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/kamby.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "lisp|nemerle|influencedBy",
+        "from": "lisp",
+        "to": "nemerle",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/nemerle.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "lisp|particles|influencedBy",
+        "from": "lisp",
+        "to": "particles",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/particles.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "lisp|scroll|influencedBy",
+        "from": "lisp",
+        "to": "scroll",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/scroll.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "llvmir|mojo|influencedBy",
+        "from": "llvmir",
+        "to": "mojo",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/mojo.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "markdown|krml|influencedBy",
+        "from": "markdown",
+        "to": "krml",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/krml.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "markdown|markwhen|influencedBy",
+        "from": "markdown",
+        "to": "markwhen",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/markwhen.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "markdown|marp|supersetOf",
+        "from": "markdown",
+        "to": "marp",
+        "type": "supersetOf",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/marp.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "markdown|mathpix-markdown|supersetOf",
+        "from": "markdown",
+        "to": "mathpix-markdown",
+        "type": "supersetOf",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/mathpix-markdown.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "markdown|scroll|influencedBy",
+        "from": "markdown",
+        "to": "scroll",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/scroll.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "markdown|slashdown|influencedBy",
+        "from": "markdown",
+        "to": "slashdown",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/slashdown.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "markdown|susn|influencedBy",
+        "from": "markdown",
+        "to": "susn",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/susn.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "markdown|typst|influencedBy",
+        "from": "markdown",
+        "to": "typst",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/typst.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "mathematica|particles|influencedBy",
+        "from": "mathematica",
+        "to": "particles",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/particles.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "mathematica|scroll|influencedBy",
+        "from": "mathematica",
+        "to": "scroll",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/scroll.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "mdx|slashdown|influencedBy",
+        "from": "mdx",
+        "to": "slashdown",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/slashdown.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "mesa|cedar|supersetOf",
+        "from": "mesa",
+        "to": "cedar",
+        "type": "supersetOf",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/cedar.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "ml|mlite|influencedBy",
+        "from": "ml",
+        "to": "mlite",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/mlite.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "ml|mlscript|influencedBy",
+        "from": "ml",
+        "to": "mlscript",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/mlscript.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "ml|nemerle|influencedBy",
+        "from": "ml",
+        "to": "nemerle",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/nemerle.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "mlir|mojo|influencedBy",
+        "from": "mlir",
+        "to": "mojo",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/mojo.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "modula-2|hla|influencedBy",
+        "from": "modula-2",
+        "to": "hla",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/hla.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "modula-2|modula-2p|supersetOf",
+        "from": "modula-2",
+        "to": "modula-2p",
+        "type": "supersetOf",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/modula-2p.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "mumps|cache-objectscript|supersetOf",
+        "from": "mumps",
+        "to": "cache-objectscript",
+        "type": "supersetOf",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/cache-objectscript.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "mumps|proto-gnosis|influencedBy",
+        "from": "mumps",
+        "to": "proto-gnosis",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/proto-gnosis.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "nial|u|influencedBy",
+        "from": "nial",
+        "to": "u",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/u.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "oberon|oberon-2|supersetOf",
+        "from": "oberon",
+        "to": "oberon-2",
+        "type": "supersetOf",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/oberon-2.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "oberon-2|component-pascal|supersetOf",
+        "from": "oberon-2",
+        "to": "component-pascal",
+        "type": "supersetOf",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/component-pascal.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "obj|maude|influencedBy",
+        "from": "obj",
+        "to": "maude",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/maude.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "opml|bike|influencedBy",
+        "from": "opml",
+        "to": "bike",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/bike.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "org|bike|influencedBy",
+        "from": "org",
+        "to": "bike",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/bike.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "pascal|adlib|supersetOf",
+        "from": "pascal",
+        "to": "adlib",
+        "type": "supersetOf",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/adlib.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "pascal|extended-pascal|supersetOf",
+        "from": "pascal",
+        "to": "extended-pascal",
+        "type": "supersetOf",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/extended-pascal.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "pascal|hla|influencedBy",
+        "from": "pascal",
+        "to": "hla",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/hla.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "pascal|plz|influencedBy",
+        "from": "pascal",
+        "to": "plz",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/plz.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "pascal|virt|influencedBy",
+        "from": "pascal",
+        "to": "virt",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/virt.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "pl-i|pl-i-formac|supersetOf",
+        "from": "pl-i",
+        "to": "pl-i-formac",
+        "type": "supersetOf",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/pl-i-formac.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "prolog|proto-gnosis|influencedBy",
+        "from": "prolog",
+        "to": "proto-gnosis",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/proto-gnosis.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "q|lil|influencedBy",
+        "from": "q",
+        "to": "lil",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/lil.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "q|xs-lang|influencedBy",
+        "from": "q",
+        "to": "xs-lang",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/xs-lang.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "qed-editor|ed-editor|influencedBy",
+        "from": "qed-editor",
+        "to": "ed-editor",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/ed-editor.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "query-by-example|sba|supersetOf",
+        "from": "query-by-example",
+        "to": "sba",
+        "type": "supersetOf",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/sba.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "racket|particles|influencedBy",
+        "from": "racket",
+        "to": "particles",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/particles.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "racket|zuo|influencedBy",
+        "from": "racket",
+        "to": "zuo",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/zuo.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "ratfor|efl|supersetOf",
+        "from": "ratfor",
+        "to": "efl",
+        "type": "supersetOf",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/efl.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "rdf|krml|influencedBy",
+        "from": "rdf",
+        "to": "krml",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/krml.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "rdf|sdlang|influencedBy",
+        "from": "rdf",
+        "to": "sdlang",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/sdlang.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "rdf|susn|influencedBy",
+        "from": "rdf",
+        "to": "susn",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/susn.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "reactjs|scroll|influencedBy",
+        "from": "reactjs",
+        "to": "scroll",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/scroll.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "rebol|boron|influencedBy",
+        "from": "rebol",
+        "to": "boron",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/boron.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "rebol|particles|influencedBy",
+        "from": "rebol",
+        "to": "particles",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/particles.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "recfiles|susn|influencedBy",
+        "from": "recfiles",
+        "to": "susn",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/susn.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "red|particles|influencedBy",
+        "from": "red",
+        "to": "particles",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/particles.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "relational-data-file|relational-model|influencedBy",
+        "from": "relational-data-file",
+        "to": "relational-model",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/relational-model.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "relational-model|alpha-programming-language|influencedBy",
+        "from": "relational-model",
+        "to": "alpha-programming-language",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/alpha-programming-language.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "relational-model|isbl|influencedBy",
+        "from": "relational-model",
+        "to": "isbl",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/isbl.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "relational-model|quel|influencedBy",
+        "from": "relational-model",
+        "to": "quel",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/quel.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "relational-model|sequel-2|influencedBy",
+        "from": "relational-model",
+        "to": "sequel-2",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/sequel-2.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "relational-model|square|influencedBy",
+        "from": "relational-model",
+        "to": "square",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/square.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "roc|scrapscript|influencedBy",
+        "from": "roc",
+        "to": "scrapscript",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/scrapscript.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "rss|yess|influencedBy",
+        "from": "rss",
+        "to": "yess",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/yess.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "s-expressions|l-expressions|influencedBy",
+        "from": "s-expressions",
+        "to": "l-expressions",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/l-expressions.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "s-expressions|shrubbery|influencedBy",
+        "from": "s-expressions",
+        "to": "shrubbery",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/shrubbery.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "s-expressions|susn|influencedBy",
+        "from": "s-expressions",
+        "to": "susn",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/susn.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "s-expressions|sxml|influencedBy",
+        "from": "s-expressions",
+        "to": "sxml",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/sxml.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "sasl|slack|influencedBy",
+        "from": "sasl",
+        "to": "slack",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/slack.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "scala|mlscript|influencedBy",
+        "from": "scala",
+        "to": "mlscript",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/mlscript.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "scheme|bio|influencedBy",
+        "from": "scheme",
+        "to": "bio",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/bio.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "scheme|flare|influencedBy",
+        "from": "scheme",
+        "to": "flare",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/flare.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "scheme|particles|influencedBy",
+        "from": "scheme",
+        "to": "particles",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/particles.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "scheme|slope|influencedBy",
+        "from": "scheme",
+        "to": "slope",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/slope.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "scratch|microblocks|influencedBy",
+        "from": "scratch",
+        "to": "microblocks",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/microblocks.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "sdlang|kdl|influencedBy",
+        "from": "sdlang",
+        "to": "kdl",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/kdl.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "sgml|topic-maps|influencedBy",
+        "from": "sgml",
+        "to": "topic-maps",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/topic-maps.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "smtp|nntp|influencedBy",
+        "from": "smtp",
+        "to": "nntp",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/nntp.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "snobol3|snobol4|supersetOf",
+        "from": "snobol3",
+        "to": "snobol4",
+        "type": "supersetOf",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/snobol4.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "snobol4|s-snobol|supersetOf",
+        "from": "snobol4",
+        "to": "s-snobol",
+        "type": "supersetOf",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/s-snobol.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "spec-sharp|sing-sharp|supersetOf",
+        "from": "spec-sharp",
+        "to": "sing-sharp",
+        "type": "supersetOf",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/sing-sharp.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "ssb|farcaster|influencedBy",
+        "from": "ssb",
+        "to": "farcaster",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/farcaster.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "standard-ml|mlscript|influencedBy",
+        "from": "standard-ml",
+        "to": "mlscript",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/mlscript.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "swift-il|mlir|influencedBy",
+        "from": "swift-il",
+        "to": "mlir",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/mlir.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "tcp|homa|influencedBy",
+        "from": "tcp",
+        "to": "homa",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/homa.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "tex|scroll|influencedBy",
+        "from": "tex",
+        "to": "scroll",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/scroll.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "tex|typst|influencedBy",
+        "from": "tex",
+        "to": "typst",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/typst.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "tla|quint|influencedBy",
+        "from": "tla",
+        "to": "quint",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/quint.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "treesheets|explorer|influencedBy",
+        "from": "treesheets",
+        "to": "explorer",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/explorer.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "treesheets|particles|influencedBy",
+        "from": "treesheets",
+        "to": "particles",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/particles.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "tsv|scroll|influencedBy",
+        "from": "tsv",
+        "to": "scroll",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/scroll.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "turtle|notation3|supersetOf",
+        "from": "turtle",
+        "to": "notation3",
+        "type": "supersetOf",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/notation3.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "twine|decker|influencedBy",
+        "from": "twine",
+        "to": "decker",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/decker.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "typescript|particles|influencedBy",
+        "from": "typescript",
+        "to": "particles",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/particles.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "typescript|static-typescript|supersetOf",
+        "from": "typescript",
+        "to": "static-typescript",
+        "type": "supersetOf",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/static-typescript.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "unified-parallel-c|chapel|influencedBy",
+        "from": "unified-parallel-c",
+        "to": "chapel",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/chapel.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "url|uri|supersetOf",
+        "from": "url",
+        "to": "uri",
+        "type": "supersetOf",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/uri.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "vi|vim|influencedBy",
+        "from": "vi",
+        "to": "vim",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/vim.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "wasm|wa|influencedBy",
+        "from": "wasm",
+        "to": "wa",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/wa.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "wasm|wah|supersetOf",
+        "from": "wasm",
+        "to": "wah",
+        "type": "supersetOf",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/wah.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "wordpress|scroll|influencedBy",
+        "from": "wordpress",
+        "to": "scroll",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/scroll.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "xla|mlir|influencedBy",
+        "from": "xla",
+        "to": "mlir",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/mlir.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "xml|flare|influencedBy",
+        "from": "xml",
+        "to": "flare",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/flare.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "xml|particles|influencedBy",
+        "from": "xml",
+        "to": "particles",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/particles.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "xml|sdlang|influencedBy",
+        "from": "xml",
+        "to": "sdlang",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/sdlang.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "xml|speedie|influencedBy",
+        "from": "xml",
+        "to": "speedie",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/speedie.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "xml|susn|influencedBy",
+        "from": "xml",
+        "to": "susn",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/susn.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "xml|sxml|influencedBy",
+        "from": "xml",
+        "to": "sxml",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/sxml.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "yacc|lemon|influencedBy",
+        "from": "yacc",
+        "to": "lemon",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/lemon.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "yacc|menhir|influencedBy",
+        "from": "yacc",
+        "to": "menhir",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/menhir.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "yacc|parsers|influencedBy",
+        "from": "yacc",
+        "to": "parsers",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/parsers.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "yaml|kaml|supersetOf",
+        "from": "yaml",
+        "to": "kaml",
+        "type": "supersetOf",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/kaml.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "yaml|krml|influencedBy",
+        "from": "yaml",
+        "to": "krml",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/krml.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "yaml|scroll|influencedBy",
+        "from": "yaml",
+        "to": "scroll",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/scroll.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "yaml|sdlang|influencedBy",
+        "from": "yaml",
+        "to": "sdlang",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/sdlang.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "yaml|yamp|supersetOf",
+        "from": "yaml",
+        "to": "yamp",
+        "type": "supersetOf",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/yamp.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      },
+      {
+        "key": "zig|mojo|influencedBy",
+        "from": "zig",
+        "to": "mojo",
+        "type": "influencedBy",
+        "source": "https://github.com/breck7/pldb/blob/main/concepts/mojo.scroll",
+        "mapVisible": false,
+        "state": "field-only"
+      }
+    ],
+    "completedWithResult": [
+      {
+        "key": "abc|python|influencedBy",
+        "from": "abc",
+        "to": "python",
+        "type": "influencedBy",
+        "source": "https://docs.python.org/3/faq/general.html",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "ada|hla|influencedBy",
+        "from": "ada",
+        "to": "hla",
+        "type": "influencedBy",
+        "source": "https://www.plantation-productions.com/Webster/HighLevelAsm/HLADoc/HLARef/HLARef_html/HLAReference.htm",
+        "mapVisible": false,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "ada|ruby|influencedBy",
+        "from": "ada",
+        "to": "ruby",
+        "type": "influencedBy",
+        "source": "https://www.ruby-lang.org/en/about/",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "ada|spark-pl|influencedBy",
+        "from": "ada",
+        "to": "spark-pl",
+        "type": "influencedBy",
+        "source": "https://docs.adacore.com/spark2014-docs/html/lrm/introduction.html",
+        "mapVisible": false,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "ada|vhdl|influencedBy",
+        "from": "ada",
+        "to": "vhdl",
+        "type": "influencedBy",
+        "source": "https://ghdl.github.io/ghdl/about.html",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "algol|basic|influencedBy",
+        "from": "algol",
+        "to": "basic",
+        "type": "influencedBy",
+        "source": "https://time.com/69316/basic/",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "algol|forth|influencedBy",
+        "from": "algol",
+        "to": "forth",
+        "type": "influencedBy",
+        "source": "https://raw.githubusercontent.com/colorforth/colorforth.github.io/master/HOPL.html",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "algol-60|algol-w|influencedBy",
+        "from": "algol-60",
+        "to": "algol-w",
+        "type": "influencedBy",
+        "source": "https://www.algol60.org/docsW/AlgolW_STAN.pdf",
+        "mapVisible": false,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "algol-60|pascal|influencedBy",
+        "from": "algol-60",
+        "to": "pascal",
+        "type": "influencedBy",
+        "source": "https://people.inf.ethz.ch/wirth/Articles/GoodIdeas.pdf",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "algol-60|simula|influencedBy",
+        "from": "algol-60",
+        "to": "simula",
+        "type": "influencedBy",
+        "source": "https://www.mn.uio.no/ifi/english/about/ole-johan-dahl/bibliography/the-birth-of-object-orientation-the-simula-languages.pdf",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "apl|bqn|influencedBy",
+        "from": "apl",
+        "to": "bqn",
+        "type": "influencedBy",
+        "source": "https://mlochbaum.github.io/BQN/",
+        "mapVisible": false,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "apl|forth|influencedBy",
+        "from": "apl",
+        "to": "forth",
+        "type": "influencedBy",
+        "source": "https://raw.githubusercontent.com/colorforth/colorforth.github.io/master/HOPL.html",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "apl|haskell|influencedBy",
+        "from": "apl",
+        "to": "haskell",
+        "type": "influencedBy",
+        "source": "https://www.haskell.org/onlinereport/preface-jfp.html",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "awk|lua|influencedBy",
+        "from": "awk",
+        "to": "lua",
+        "type": "influencedBy",
+        "source": "https://www.lua.org/doc/hopl.pdf",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "b|c|influencedBy",
+        "from": "b",
+        "to": "c",
+        "type": "influencedBy",
+        "source": "https://www.bell-labs.com/usr/dmr/www/chist.html",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "basic|visual-basic|influencedBy",
+        "from": "basic",
+        "to": "visual-basic",
+        "type": "influencedBy",
+        "source": "https://techcommunity.microsoft.com/blog/smallbasic/a-brief-history-of-basic/336312",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "bcpl|b|influencedBy",
+        "from": "bcpl",
+        "to": "b",
+        "type": "influencedBy",
+        "source": "https://www.bell-labs.com/usr/dmr/www/chist.html",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "c|c-shell|influencedBy",
+        "from": "c",
+        "to": "c-shell",
+        "type": "influencedBy",
+        "source": "https://www.tuhs.org/cgi-bin/utree.pl?file=2BSD/doc/csh",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "c|c3|influencedBy",
+        "from": "c",
+        "to": "c3",
+        "type": "influencedBy",
+        "source": "https://raw.githubusercontent.com/c3lang/c3c/master/README.md",
+        "mapVisible": false,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "c|chapel|influencedBy",
+        "from": "c",
+        "to": "chapel",
+        "type": "influencedBy",
+        "source": "https://chapel-lang.org/papers/BriefOverviewChapel.pdf",
+        "mapVisible": false,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "c|cpp|influencedBy",
+        "from": "c",
+        "to": "cpp",
+        "type": "influencedBy",
+        "source": "https://www.stroustrup.com/bs_faq.html",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "c|go|influencedBy",
+        "from": "c",
+        "to": "go",
+        "type": "influencedBy",
+        "source": "https://go.dev/doc/faq",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "c|java|influencedBy",
+        "from": "c",
+        "to": "java",
+        "type": "influencedBy",
+        "source": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-1.html",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "c|korn-shell|influencedBy",
+        "from": "c",
+        "to": "korn-shell",
+        "type": "influencedBy",
+        "source": "https://www.usenix.org/legacy/publications/library/proceedings/vhll/full_papers/korn.ksh.a",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "c|objective-c|supersetOf",
+        "from": "c",
+        "to": "objective-c",
+        "type": "supersetOf",
+        "source": "https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/Introduction/Introduction.html",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "c|php|influencedBy",
+        "from": "c",
+        "to": "php",
+        "type": "influencedBy",
+        "source": "https://www.php.net/manual/en/history.php.php",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "c|sdlang|influencedBy",
+        "from": "c",
+        "to": "sdlang",
+        "type": "influencedBy",
+        "source": "https://sdlang.org/",
+        "mapVisible": false,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "c|tick-c|supersetOf",
+        "from": "c",
+        "to": "tick-c",
+        "type": "supersetOf",
+        "source": "https://pdos.csail.mit.edu/archive/tickc/index.html",
+        "mapVisible": false,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "c|zig|influencedBy",
+        "from": "c",
+        "to": "zig",
+        "type": "influencedBy",
+        "source": "https://andrewkelley.me/post/intro-to-zig.html",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "c-shell|bash|influencedBy",
+        "from": "c-shell",
+        "to": "bash",
+        "type": "influencedBy",
+        "source": "https://mirrors.kernel.org/gnu/bash/bash-5.3.tar.gz",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "c-shell|korn-shell|influencedBy",
+        "from": "c-shell",
+        "to": "korn-shell",
+        "type": "influencedBy",
+        "source": "https://www.usenix.org/legacy/publications/library/proceedings/vhll/full_papers/korn.ksh.a",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "c-shell|tcsh|supersetOf",
+        "from": "c-shell",
+        "to": "tcsh",
+        "type": "supersetOf",
+        "source": "https://raw.githubusercontent.com/tcsh-org/tcsh/TCSH6_21_00/tcsh.man",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "c2|c3|influencedBy",
+        "from": "c2",
+        "to": "c3",
+        "type": "influencedBy",
+        "source": "https://raw.githubusercontent.com/c3lang/c3c/master/README.md",
+        "mapVisible": false,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "clean|haskell|influencedBy",
+        "from": "clean",
+        "to": "haskell",
+        "type": "influencedBy",
+        "source": "https://www.haskell.org/onlinereport/preface-jfp.html",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "clu|chapel|influencedBy",
+        "from": "clu",
+        "to": "chapel",
+        "type": "influencedBy",
+        "source": "https://chapel-lang.org/papers/BriefOverviewChapel.pdf",
+        "mapVisible": false,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "clu|lua|influencedBy",
+        "from": "clu",
+        "to": "lua",
+        "type": "influencedBy",
+        "source": "https://www.lua.org/doc/hopl.pdf",
+        "mapVisible": false,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "coffeescript|civet|influencedBy",
+        "from": "coffeescript",
+        "to": "civet",
+        "type": "influencedBy",
+        "source": "https://civet.dev/philosophy",
+        "mapVisible": false,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "common-lisp|haskell|influencedBy",
+        "from": "common-lisp",
+        "to": "haskell",
+        "type": "influencedBy",
+        "source": "https://www.haskell.org/onlinereport/preface-jfp.html",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "cpp|chapel|influencedBy",
+        "from": "cpp",
+        "to": "chapel",
+        "type": "influencedBy",
+        "source": "https://chapel-lang.org/papers/BriefOverviewChapel.pdf",
+        "mapVisible": false,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "cpp|d|influencedBy",
+        "from": "cpp",
+        "to": "d",
+        "type": "influencedBy",
+        "source": "https://dlang.org/overview.html",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "cpp|flare|influencedBy",
+        "from": "cpp",
+        "to": "flare",
+        "type": "influencedBy",
+        "source": "https://web.archive.org/web/20250724221509id_/https://flarelang.sourceforge.net/prog-overview.html",
+        "mapVisible": false,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "cpp|hla|influencedBy",
+        "from": "cpp",
+        "to": "hla",
+        "type": "influencedBy",
+        "source": "https://www.plantation-productions.com/Webster/HighLevelAsm/HLADoc/HLARef/HLARef_html/HLAReference.htm",
+        "mapVisible": false,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "cpp|java|influencedBy",
+        "from": "cpp",
+        "to": "java",
+        "type": "influencedBy",
+        "source": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-1.html",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "cpp|lua|influencedBy",
+        "from": "cpp",
+        "to": "lua",
+        "type": "influencedBy",
+        "source": "https://www.lua.org/doc/hopl.pdf",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "cpp|rust|influencedBy",
+        "from": "cpp",
+        "to": "rust",
+        "type": "influencedBy",
+        "source": "https://doc.rust-lang.org/reference/influences.html",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "cpp|sdlang|influencedBy",
+        "from": "cpp",
+        "to": "sdlang",
+        "type": "influencedBy",
+        "source": "https://sdlang.org/",
+        "mapVisible": false,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "csharp|chapel|influencedBy",
+        "from": "csharp",
+        "to": "chapel",
+        "type": "influencedBy",
+        "source": "https://chapel-lang.org/papers/BriefOverviewChapel.pdf",
+        "mapVisible": false,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "csharp|f-sharp|influencedBy",
+        "from": "csharp",
+        "to": "f-sharp",
+        "type": "influencedBy",
+        "source": "https://fsharp.org/history/hopl-final/hopl-fsharp.pdf",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "csharp|kotlin|influencedBy",
+        "from": "csharp",
+        "to": "kotlin",
+        "type": "influencedBy",
+        "source": "https://kotlinlang.org/docs/faq.html",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "csharp|nemerle|influencedBy",
+        "from": "csharp",
+        "to": "nemerle",
+        "type": "influencedBy",
+        "source": "https://web.archive.org/web/20190101112551id_/http://nemerle.org/About/",
+        "mapVisible": false,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "csharp|rust|influencedBy",
+        "from": "csharp",
+        "to": "rust",
+        "type": "influencedBy",
+        "source": "https://doc.rust-lang.org/reference/influences.html",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "csharp|scala|influencedBy",
+        "from": "csharp",
+        "to": "scala",
+        "type": "influencedBy",
+        "source": "https://www.scala-lang.org/docu/files/ScalaOverview.pdf",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "csharp|sdlang|influencedBy",
+        "from": "csharp",
+        "to": "sdlang",
+        "type": "influencedBy",
+        "source": "https://sdlang.org/",
+        "mapVisible": false,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "eiffel|ruby|influencedBy",
+        "from": "eiffel",
+        "to": "ruby",
+        "type": "influencedBy",
+        "source": "https://www.ruby-lang.org/en/about/",
+        "mapVisible": false,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "erlang|rust|influencedBy",
+        "from": "erlang",
+        "to": "rust",
+        "type": "influencedBy",
+        "source": "https://doc.rust-lang.org/reference/influences.html",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "f-sharp|typescript|influencedBy",
+        "from": "f-sharp",
+        "to": "typescript",
+        "type": "influencedBy",
+        "source": "https://fsharp.org/history/hopl-final/hopl-fsharp.pdf",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "flow-matic|cobol|influencedBy",
+        "from": "flow-matic",
+        "to": "cobol",
+        "type": "influencedBy",
+        "source": "https://bitsavers.org/pdf/codasyl/COBOL_Report_Apr60.pdf",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "forth|postscript|influencedBy",
+        "from": "forth",
+        "to": "postscript",
+        "type": "influencedBy",
+        "source": "https://www.adobe.com/jp/print/postscript/pdfs/PLRM.pdf",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "fortran|basic|influencedBy",
+        "from": "fortran",
+        "to": "basic",
+        "type": "influencedBy",
+        "source": "https://time.com/69316/basic/",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "fortran|chapel|influencedBy",
+        "from": "fortran",
+        "to": "chapel",
+        "type": "influencedBy",
+        "source": "https://chapel-lang.org/papers/BriefOverviewChapel.pdf",
+        "mapVisible": false,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "fortran|forth|influencedBy",
+        "from": "fortran",
+        "to": "forth",
+        "type": "influencedBy",
+        "source": "https://raw.githubusercontent.com/colorforth/colorforth.github.io/master/HOPL.html",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "fp|haskell|influencedBy",
+        "from": "fp",
+        "to": "haskell",
+        "type": "influencedBy",
+        "source": "https://www.haskell.org/onlinereport/preface-jfp.html",
+        "mapVisible": false,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "go|jule|influencedBy",
+        "from": "go",
+        "to": "jule",
+        "type": "influencedBy",
+        "source": "https://manual.jule.dev/the-mission.html",
+        "mapVisible": false,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "gofer|haskell|influencedBy",
+        "from": "gofer",
+        "to": "haskell",
+        "type": "influencedBy",
+        "source": "https://www.haskell.org/onlinereport/preface-jfp.html",
+        "mapVisible": false,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "groovy|kotlin|influencedBy",
+        "from": "groovy",
+        "to": "kotlin",
+        "type": "influencedBy",
+        "source": "https://kotlinlang.org/docs/faq.html",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "haskell|civet|influencedBy",
+        "from": "haskell",
+        "to": "civet",
+        "type": "influencedBy",
+        "source": "https://civet.dev/philosophy",
+        "mapVisible": false,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "haskell|curry|influencedBy",
+        "from": "haskell",
+        "to": "curry",
+        "type": "influencedBy",
+        "source": "https://www.curry-lang.org/docs/report/versions/report_2016_01_13.pdf",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "haskell|rust|influencedBy",
+        "from": "haskell",
+        "to": "rust",
+        "type": "influencedBy",
+        "source": "https://doc.rust-lang.org/reference/influences.html",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "hope|haskell|influencedBy",
+        "from": "hope",
+        "to": "haskell",
+        "type": "influencedBy",
+        "source": "https://www.haskell.org/onlinereport/preface-jfp.html",
+        "mapVisible": false,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "interlisp|common-lisp|influencedBy",
+        "from": "interlisp",
+        "to": "common-lisp",
+        "type": "influencedBy",
+        "source": "https://www.cs.cmu.edu/Groups/AI/html/cltl/clm/node5.html",
+        "mapVisible": false,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "iswim|haskell|influencedBy",
+        "from": "iswim",
+        "to": "haskell",
+        "type": "influencedBy",
+        "source": "https://www.haskell.org/onlinereport/preface-jfp.html",
+        "mapVisible": false,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "java|chapel|influencedBy",
+        "from": "java",
+        "to": "chapel",
+        "type": "influencedBy",
+        "source": "https://chapel-lang.org/papers/BriefOverviewChapel.pdf",
+        "mapVisible": false,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "java|csharp|influencedBy",
+        "from": "java",
+        "to": "csharp",
+        "type": "influencedBy",
+        "source": "https://www.artima.com/articles/the-trouble-with-checked-exceptions",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "java|flare|influencedBy",
+        "from": "java",
+        "to": "flare",
+        "type": "influencedBy",
+        "source": "https://web.archive.org/web/20250724221509id_/https://flarelang.sourceforge.net/prog-overview.html",
+        "mapVisible": false,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "java|groovy|influencedBy",
+        "from": "java",
+        "to": "groovy",
+        "type": "influencedBy",
+        "source": "https://groovy-lang.org/differences.html",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "java|javascript|influencedBy",
+        "from": "java",
+        "to": "javascript",
+        "type": "influencedBy",
+        "source": "https://brendaneich.com/2008/04/popularity/",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "java|kotlin|influencedBy",
+        "from": "java",
+        "to": "kotlin",
+        "type": "influencedBy",
+        "source": "https://kotlinlang.org/docs/faq.html",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "java|pizza|supersetOf",
+        "from": "java",
+        "to": "pizza",
+        "type": "supersetOf",
+        "source": "https://homepages.inf.ed.ac.uk/wadler/topics/gj.html",
+        "mapVisible": false,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "java|scala|influencedBy",
+        "from": "java",
+        "to": "scala",
+        "type": "influencedBy",
+        "source": "https://www.scala-lang.org/docu/files/ScalaOverview.pdf",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "java|sdlang|influencedBy",
+        "from": "java",
+        "to": "sdlang",
+        "type": "influencedBy",
+        "source": "https://sdlang.org/",
+        "mapVisible": false,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "javascript|dart|influencedBy",
+        "from": "javascript",
+        "to": "dart",
+        "type": "influencedBy",
+        "source": "https://raw.githubusercontent.com/dart-lang/language/675b500505b9ffeb80fbb507f1911e393e400cd9/specification/dartLangSpec.tex",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "javascript|json|influencedBy",
+        "from": "javascript",
+        "to": "json",
+        "type": "influencedBy",
+        "source": "https://www.json.org/json-en.html",
+        "mapVisible": false,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "javascript|kotlin|influencedBy",
+        "from": "javascript",
+        "to": "kotlin",
+        "type": "influencedBy",
+        "source": "https://kotlinlang.org/docs/faq.html",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "javascript|typescript|supersetOf",
+        "from": "javascript",
+        "to": "typescript",
+        "type": "supersetOf",
+        "source": "https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "korn-shell|bash|influencedBy",
+        "from": "korn-shell",
+        "to": "bash",
+        "type": "influencedBy",
+        "source": "https://mirrors.kernel.org/gnu/bash/bash-5.3.tar.gz",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "lambda-calculus|lisp|influencedBy",
+        "from": "lambda-calculus",
+        "to": "lisp",
+        "type": "influencedBy",
+        "source": "https://www-formal.stanford.edu/jmc/recursive/node2.html",
+        "mapVisible": false,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "lisp|clojure|influencedBy",
+        "from": "lisp",
+        "to": "clojure",
+        "type": "influencedBy",
+        "source": "https://clojure.org/about/lisp",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "lisp|common-lisp|influencedBy",
+        "from": "lisp",
+        "to": "common-lisp",
+        "type": "influencedBy",
+        "source": "https://www.cs.cmu.edu/Groups/AI/html/cltl/clm/node5.html",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "lisp|haskell|influencedBy",
+        "from": "lisp",
+        "to": "haskell",
+        "type": "influencedBy",
+        "source": "https://www.haskell.org/onlinereport/preface-jfp.html",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "lisp|julia|influencedBy",
+        "from": "lisp",
+        "to": "julia",
+        "type": "influencedBy",
+        "source": "https://julialang.org/blog/2012/02/why-we-created-julia/",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "lisp|postscript|influencedBy",
+        "from": "lisp",
+        "to": "postscript",
+        "type": "influencedBy",
+        "source": "https://www.adobe.com/jp/print/postscript/pdfs/PLRM.pdf",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "lisp|ruby|influencedBy",
+        "from": "lisp",
+        "to": "ruby",
+        "type": "influencedBy",
+        "source": "https://www.ruby-lang.org/en/about/",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "lisp|scheme|influencedBy",
+        "from": "lisp",
+        "to": "scheme",
+        "type": "influencedBy",
+        "source": "https://www.scheme.org/",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "lisp|smalltalk|influencedBy",
+        "from": "lisp",
+        "to": "smalltalk",
+        "type": "influencedBy",
+        "source": "https://worrydream.com/EarlyHistoryOfSmalltalk/",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "livescript|civet|influencedBy",
+        "from": "livescript",
+        "to": "civet",
+        "type": "influencedBy",
+        "source": "https://civet.dev/reference",
+        "mapVisible": false,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "llvmir|mlir|influencedBy",
+        "from": "llvmir",
+        "to": "mlir",
+        "type": "influencedBy",
+        "source": "https://llvm.googlesource.com/llvm-project/mlir/+/577ef051fb56335dc453ff368802ed832c05766a/docs/Rationale.md",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "lua|buzz|influencedBy",
+        "from": "lua",
+        "to": "buzz",
+        "type": "influencedBy",
+        "source": "https://buzz-lang.dev/main/guide/fibers.html",
+        "mapVisible": false,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "maclisp|common-lisp|successorOf",
+        "from": "maclisp",
+        "to": "common-lisp",
+        "type": "successorOf",
+        "source": "https://www.cs.cmu.edu/Groups/AI/html/cltl/clm/node5.html",
+        "mapVisible": false,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "matlab|chapel|influencedBy",
+        "from": "matlab",
+        "to": "chapel",
+        "type": "influencedBy",
+        "source": "https://chapel-lang.org/papers/BriefOverviewChapel.pdf",
+        "mapVisible": false,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "matlab|julia|influencedBy",
+        "from": "matlab",
+        "to": "julia",
+        "type": "influencedBy",
+        "source": "https://julialang.org/blog/2012/02/why-we-created-julia/",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "matlab|octave|compatibleWith",
+        "from": "matlab",
+        "to": "octave",
+        "type": "compatibleWith",
+        "source": "https://octave.org/about.html",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "matlab|simit|influencedBy",
+        "from": "matlab",
+        "to": "simit",
+        "type": "influencedBy",
+        "source": "http://simit-lang.org/language",
+        "mapVisible": false,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "mesa|modula-2|influencedBy",
+        "from": "mesa",
+        "to": "modula-2",
+        "type": "influencedBy",
+        "source": "https://people.inf.ethz.ch/wirth/Articles/Modula-Oberon-June.pdf",
+        "mapVisible": false,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "miranda|haskell|influencedBy",
+        "from": "miranda",
+        "to": "haskell",
+        "type": "influencedBy",
+        "source": "https://www.cs.kent.ac.uk/people/staff/dat/miranda/3.8.html",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "ml|chapel|influencedBy",
+        "from": "ml",
+        "to": "chapel",
+        "type": "influencedBy",
+        "source": "https://chapel-lang.org/papers/BriefOverviewChapel.pdf",
+        "mapVisible": false,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "ml|haskell|influencedBy",
+        "from": "ml",
+        "to": "haskell",
+        "type": "influencedBy",
+        "source": "https://www.haskell.org/onlinereport/preface-jfp.html",
+        "mapVisible": false,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "modula|chapel|influencedBy",
+        "from": "modula",
+        "to": "chapel",
+        "type": "influencedBy",
+        "source": "https://chapel-lang.org/papers/BriefOverviewChapel.pdf",
+        "mapVisible": false,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "modula|lua|influencedBy",
+        "from": "modula",
+        "to": "lua",
+        "type": "influencedBy",
+        "source": "https://www.lua.org/doc/hopl.pdf",
+        "mapVisible": false,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "modula|modula-2|influencedBy",
+        "from": "modula",
+        "to": "modula-2",
+        "type": "influencedBy",
+        "source": "https://people.inf.ethz.ch/wirth/Articles/Modula-Oberon-June.pdf",
+        "mapVisible": false,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "modula-2|oberon|influencedBy",
+        "from": "modula-2",
+        "to": "oberon",
+        "type": "influencedBy",
+        "source": "https://people.inf.ethz.ch/wirth/Articles/Modula-Oberon-June.pdf",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "modula-3|python|influencedBy",
+        "from": "modula-3",
+        "to": "python",
+        "type": "influencedBy",
+        "source": "https://docs.python.org/3/faq/general.html",
+        "mapVisible": false,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "oberon|go|influencedBy",
+        "from": "oberon",
+        "to": "go",
+        "type": "influencedBy",
+        "source": "https://go.dev/doc/faq",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "objective-c|cooc|supersetOf",
+        "from": "objective-c",
+        "to": "cooc",
+        "type": "supersetOf",
+        "source": "https://web.archive.org/web/2023id_/https://www.tenon.com/products/codebuilder/Objective-C.shtml",
+        "mapVisible": false,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "objective-c|swift|influencedBy",
+        "from": "objective-c",
+        "to": "swift",
+        "type": "influencedBy",
+        "source": "https://raw.githubusercontent.com/swiftlang/swift-org-website/ccf11a958db44ae501a84329455e89fa46fc5d61/about/index.md",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "ocaml|f-sharp|influencedBy",
+        "from": "ocaml",
+        "to": "f-sharp",
+        "type": "influencedBy",
+        "source": "https://fsharp.org/history/hopl-final/hopl-fsharp.pdf",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "ocaml|rust|influencedBy",
+        "from": "ocaml",
+        "to": "rust",
+        "type": "influencedBy",
+        "source": "https://doc.rust-lang.org/reference/influences.html",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "pascal|go|influencedBy",
+        "from": "pascal",
+        "to": "go",
+        "type": "influencedBy",
+        "source": "https://go.dev/doc/faq",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "pascal|mesa|influencedBy",
+        "from": "pascal",
+        "to": "mesa",
+        "type": "influencedBy",
+        "source": "https://people.inf.ethz.ch/wirth/Articles/Modula-Oberon-June.pdf",
+        "mapVisible": false,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "pascal|modula-2|successorOf",
+        "from": "pascal",
+        "to": "modula-2",
+        "type": "successorOf",
+        "source": "https://people.inf.ethz.ch/wirth/Articles/Modula-Oberon-June.pdf",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "perl|chapel|influencedBy",
+        "from": "perl",
+        "to": "chapel",
+        "type": "influencedBy",
+        "source": "https://chapel-lang.org/papers/BriefOverviewChapel.pdf",
+        "mapVisible": false,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "perl|civet|influencedBy",
+        "from": "perl",
+        "to": "civet",
+        "type": "influencedBy",
+        "source": "https://civet.dev/philosophy",
+        "mapVisible": false,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "perl|flare|influencedBy",
+        "from": "perl",
+        "to": "flare",
+        "type": "influencedBy",
+        "source": "https://web.archive.org/web/20250724221509id_/https://flarelang.sourceforge.net/prog-overview.html",
+        "mapVisible": false,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "perl|julia|influencedBy",
+        "from": "perl",
+        "to": "julia",
+        "type": "influencedBy",
+        "source": "https://julialang.org/blog/2012/02/why-we-created-julia/",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "perl|php|influencedBy",
+        "from": "perl",
+        "to": "php",
+        "type": "influencedBy",
+        "source": "https://www.php.net/manual/en/history.php.php",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "perl|ruby|influencedBy",
+        "from": "perl",
+        "to": "ruby",
+        "type": "influencedBy",
+        "source": "https://www.ruby-lang.org/en/about/",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "prolog|clpr|supersetOf",
+        "from": "prolog",
+        "to": "clpr",
+        "type": "supersetOf",
+        "source": "https://www.swi-prolog.org/pldoc/man?section=clp",
+        "mapVisible": false,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "prolog|erlang|influencedBy",
+        "from": "prolog",
+        "to": "erlang",
+        "type": "influencedBy",
+        "source": "https://www.erlang.org/download/armstrong_thesis_2003.pdf",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "python|civet|influencedBy",
+        "from": "python",
+        "to": "civet",
+        "type": "influencedBy",
+        "source": "https://civet.dev/philosophy",
+        "mapVisible": false,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "python|cobrust|influencedBy",
+        "from": "python",
+        "to": "cobrust",
+        "type": "influencedBy",
+        "source": "https://raw.githubusercontent.com/Cobrust-lang/cobrust/main/README.md",
+        "mapVisible": false,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "python|cython|supersetOf",
+        "from": "python",
+        "to": "cython",
+        "type": "supersetOf",
+        "source": "https://cython.org/",
+        "mapVisible": false,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "python|flare|influencedBy",
+        "from": "python",
+        "to": "flare",
+        "type": "influencedBy",
+        "source": "https://web.archive.org/web/20250724221509id_/https://flarelang.sourceforge.net/prog-overview.html",
+        "mapVisible": false,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "python|julia|influencedBy",
+        "from": "python",
+        "to": "julia",
+        "type": "influencedBy",
+        "source": "https://julialang.org/blog/2012/02/why-we-created-julia/",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "python|please-build|influencedBy",
+        "from": "python",
+        "to": "please-build",
+        "type": "influencedBy",
+        "source": "https://raw.githubusercontent.com/thought-machine/please/master/README.md",
+        "mapVisible": false,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "python|shrubbery|influencedBy",
+        "from": "python",
+        "to": "shrubbery",
+        "type": "influencedBy",
+        "source": "https://docs.racket-lang.org/shrubbery/Design_Considerations.html",
+        "mapVisible": false,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "r|julia|influencedBy",
+        "from": "r",
+        "to": "julia",
+        "type": "influencedBy",
+        "source": "https://julialang.org/blog/2012/02/why-we-created-julia/",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "relational-model|sql|influencedBy",
+        "from": "relational-model",
+        "to": "sql",
+        "type": "influencedBy",
+        "source": "https://www.redbooks.ibm.com/redbooks/pdfs/sg245511.pdf",
+        "mapVisible": false,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "ruby|civet|influencedBy",
+        "from": "ruby",
+        "to": "civet",
+        "type": "influencedBy",
+        "source": "https://civet.dev/philosophy",
+        "mapVisible": false,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "ruby|crystal|influencedBy",
+        "from": "ruby",
+        "to": "crystal",
+        "type": "influencedBy",
+        "source": "https://crystal-lang.org/",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "ruby|julia|influencedBy",
+        "from": "ruby",
+        "to": "julia",
+        "type": "influencedBy",
+        "source": "https://julialang.org/blog/2012/02/why-we-created-julia/",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "ruby|rust|influencedBy",
+        "from": "ruby",
+        "to": "rust",
+        "type": "influencedBy",
+        "source": "https://doc.rust-lang.org/reference/influences.html",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "rust|alumina|influencedBy",
+        "from": "rust",
+        "to": "alumina",
+        "type": "influencedBy",
+        "source": "https://docs.alumina-lang.net/",
+        "mapVisible": false,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "rust|cairo|influencedBy",
+        "from": "rust",
+        "to": "cairo",
+        "type": "influencedBy",
+        "source": "https://www.cairo-lang.org/",
+        "mapVisible": false,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "rust|cobrust|influencedBy",
+        "from": "rust",
+        "to": "cobrust",
+        "type": "influencedBy",
+        "source": "https://raw.githubusercontent.com/Cobrust-lang/cobrust/main/README.md",
+        "mapVisible": false,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "s|r|implementationOf",
+        "from": "s",
+        "to": "r",
+        "type": "implementationOf",
+        "source": "https://cran.r-project.org/doc/manuals/r-release/R-intro.html",
+        "mapVisible": false,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "sass|less|influencedBy",
+        "from": "sass",
+        "to": "less",
+        "type": "influencedBy",
+        "source": "https://lesscss.org/about/",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "scala|chapel|influencedBy",
+        "from": "scala",
+        "to": "chapel",
+        "type": "influencedBy",
+        "source": "https://chapel-lang.org/papers/BriefOverviewChapel.pdf",
+        "mapVisible": false,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "scala|kotlin|influencedBy",
+        "from": "scala",
+        "to": "kotlin",
+        "type": "influencedBy",
+        "source": "https://kotlinlang.org/docs/faq.html",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "scheme|common-lisp|influencedBy",
+        "from": "scheme",
+        "to": "common-lisp",
+        "type": "influencedBy",
+        "source": "https://www.cs.cmu.edu/Groups/AI/html/cltl/clm/node5.html",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "scheme|haskell|influencedBy",
+        "from": "scheme",
+        "to": "haskell",
+        "type": "influencedBy",
+        "source": "https://www.haskell.org/onlinereport/preface-jfp.html",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "scheme|javascript|influencedBy",
+        "from": "scheme",
+        "to": "javascript",
+        "type": "influencedBy",
+        "source": "https://brendaneich.com/2008/04/popularity/",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "scheme|lua|influencedBy",
+        "from": "scheme",
+        "to": "lua",
+        "type": "influencedBy",
+        "source": "https://www.lua.org/doc/hopl.pdf",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "scheme|rust|influencedBy",
+        "from": "scheme",
+        "to": "rust",
+        "type": "influencedBy",
+        "source": "https://doc.rust-lang.org/reference/influences.html",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "self|javascript|influencedBy",
+        "from": "self",
+        "to": "javascript",
+        "type": "influencedBy",
+        "source": "https://brendaneich.com/2008/04/popularity/",
+        "mapVisible": false,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "sh|bash|influencedBy",
+        "from": "sh",
+        "to": "bash",
+        "type": "influencedBy",
+        "source": "https://mirrors.kernel.org/gnu/bash/bash-5.3.tar.gz",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "sh|korn-shell|influencedBy",
+        "from": "sh",
+        "to": "korn-shell",
+        "type": "influencedBy",
+        "source": "https://www.usenix.org/legacy/publications/library/proceedings/vhll/full_papers/korn.ksh.a",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "sh|powershell|influencedBy",
+        "from": "sh",
+        "to": "powershell",
+        "type": "influencedBy",
+        "source": "https://www.jsnover.com/Docs/MonadManifesto.pdf",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "simula|smalltalk|influencedBy",
+        "from": "simula",
+        "to": "smalltalk",
+        "type": "influencedBy",
+        "source": "https://worrydream.com/EarlyHistoryOfSmalltalk/",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "sisal|haskell|influencedBy",
+        "from": "sisal",
+        "to": "haskell",
+        "type": "influencedBy",
+        "source": "https://www.haskell.org/onlinereport/preface-jfp.html",
+        "mapVisible": false,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "smalltalk|ruby|influencedBy",
+        "from": "smalltalk",
+        "to": "ruby",
+        "type": "influencedBy",
+        "source": "https://www.ruby-lang.org/en/about/",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "snobol|lua|influencedBy",
+        "from": "snobol",
+        "to": "lua",
+        "type": "influencedBy",
+        "source": "https://www.lua.org/doc/hopl.pdf",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "sql|pl-sql|influencedBy",
+        "from": "sql",
+        "to": "pl-sql",
+        "type": "influencedBy",
+        "source": "https://docs.oracle.com/en/database/oracle/oracle-database/23/lnpls/overview.html",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "standard-ml|alice|influencedBy",
+        "from": "standard-ml",
+        "to": "alice",
+        "type": "influencedBy",
+        "source": "https://www.ps.uni-saarland.de/alice/manual/language.html",
+        "mapVisible": false,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "standard-ml|haskell|influencedBy",
+        "from": "standard-ml",
+        "to": "haskell",
+        "type": "influencedBy",
+        "source": "https://www.haskell.org/onlinereport/preface-jfp.html",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "swift|mojo|influencedBy",
+        "from": "swift",
+        "to": "mojo",
+        "type": "influencedBy",
+        "source": "https://mojolang.org/docs/vision/",
+        "mapVisible": false,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "swift|rust|influencedBy",
+        "from": "swift",
+        "to": "rust",
+        "type": "influencedBy",
+        "source": "https://doc.rust-lang.org/reference/influences.html",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "typescript|civet|influencedBy",
+        "from": "typescript",
+        "to": "civet",
+        "type": "influencedBy",
+        "source": "https://civet.dev/comparison",
+        "mapVisible": false,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "vba|vbscript|influencedBy",
+        "from": "vba",
+        "to": "vbscript",
+        "type": "influencedBy",
+        "source": "https://learn.microsoft.com/en-us/windows/win32/com/translating-to-vbscript",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "visual-basic|vba|influencedBy",
+        "from": "visual-basic",
+        "to": "vba",
+        "type": "influencedBy",
+        "source": "https://learn.microsoft.com/en-us/office/vba/language/concepts/getting-started/64-bit-visual-basic-for-applications-overview",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "visual-basic|visual-basic.net|successorOf",
+        "from": "visual-basic",
+        "to": "visual-basic.net",
+        "type": "successorOf",
+        "source": "https://learn.microsoft.com/en-us/lifecycle/announcements/visual-basic-6-support-announcement",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "zpl|chapel|influencedBy",
+        "from": "zpl",
+        "to": "chapel",
+        "type": "influencedBy",
+        "source": "https://chapel-lang.org/papers/BriefOverviewChapel.pdf",
+        "mapVisible": false,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "c|python|extensionInterface",
+        "from": "c",
+        "to": "python",
+        "type": "extensionInterface",
+        "source": "https://docs.python.org/3/extending/extending.html",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "c|rust|interop",
+        "from": "c",
+        "to": "rust",
+        "type": "interop",
+        "source": "https://doc.rust-lang.org/nomicon/ffi.html",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "c|zig|interop",
+        "from": "c",
+        "to": "zig",
+        "type": "interop",
+        "source": "https://ziglang.org/learn/overview/",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "cpp|python|extensionInterface",
+        "from": "cpp",
+        "to": "python",
+        "type": "extensionInterface",
+        "source": "https://docs.python.org/3/extending/extending.html",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "csharp|powershell|extensionInterface",
+        "from": "csharp",
+        "to": "powershell",
+        "type": "extensionInterface",
+        "source": "https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/add-type",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "erlang|elixir|hostRuntime",
+        "from": "erlang",
+        "to": "elixir",
+        "type": "hostRuntime",
+        "source": "https://elixir-lang.org/",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "java|python|hostRuntime",
+        "from": "java",
+        "to": "python",
+        "type": "hostRuntime",
+        "source": "https://www.jython.org/",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      },
+      {
+        "key": "rust|python|interop",
+        "from": "rust",
+        "to": "python",
+        "type": "interop",
+        "source": "https://pyo3.rs/",
+        "mapVisible": true,
+        "state": "excerpt-recorded"
+      }
+    ]
+  }
+}

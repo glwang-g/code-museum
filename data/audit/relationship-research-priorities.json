@@ -1,0 +1,7521 @@
+{
+  "schemaVersion": 1,
+  "scope": "A deterministic triage pool for never-researched field-only relationships. Scores prioritize visitor relevance and available project context; they do not verify, infer, or rank historical truth.",
+  "source": {
+    "relationshipCoverage": "data/audit/relationship-research-coverage.json",
+    "relationshipStatus": "data/audit/relationship-status.json",
+    "labelSelection": "data/audit/label-selection.json",
+    "learningPaths": "data/learning-paths.json",
+    "catalogue": "data/raw/pldb.json",
+    "statusInputHashes": {
+      "data/raw/pldb.json": "57f45d25bba78ab6bc4af5d969356d2efbfcc7c1ee722dbb5c708d60aa78ba77",
+      "data/audit/reviews.json": "4d09e9f6e9610253496769f3b07639b2002d67e3b11c858b6028186464bb9a9d",
+      "data/relationship-overrides.json": "1a437915a0d390f29559822e434bb383149e5ff122bf1ff0e3f8663cca6f8b1c",
+      "data/ecosystem-relations.json": "0f9762c08634b271476a8b82e8ddd96f9f688434766c43329059dea5a59436c8",
+      "data/audit/relationship-decisions.json": "5261a7c64734441c96694a1a0b9b8a34cad0195e541e3485807a2a66061055c8",
+      "data/audit/label-selection.json": "dc5eee62fa662b0d60940375d8a3ec56ac2bbf84ee2b9922a290d46d11cc866f",
+      "data/audit/identity-summary.json": "9a2258ba8a6adb67960c9d1f72c31595d93f84f09bbcac3b13354b61e30587db",
+      "data/audit/relationship-research-ledger.json": "e22d036efee8efc14d65ef98ad10c5c564f4f04985e5cf35c148ec1b8146a34c"
+    }
+  },
+  "exclusions": {
+    "researchedNoResultClosed": 41,
+    "researchedNoResultBlocked": 6,
+    "rule": "Closed and blocked entries are excluded until their ledger reopenWhen condition is met."
+  },
+  "scoring": {
+    "mapVisibleBothEndpoints": 40,
+    "relationType": {
+      "supersetOf": 30,
+      "successorOf": 24,
+      "influencedBy": 15
+    },
+    "top50Endpoint": "32 + (51 - TIOBE rank) per endpoint",
+    "narrativeAnchorEndpoint": 20,
+    "learningGuideEndpoint": 12,
+    "verifiedLanguageEndpoint": 8,
+    "historicalPrimarySourceEndpoint": 7,
+    "websiteCueEndpoint": 10,
+    "creatorCueEndpoint": 5,
+    "relatedTechnologyOrNotationEndpoint": -16,
+    "sourceAvailability": "Not scored: a PLDB source field is only a lead. Each selected item still needs a separately recorded primary or official source."
+  },
+  "counts": {
+    "candidates": 233,
+    "top20": 20
+  },
+  "candidates": [
+    {
+      "key": "typescript|static-typescript|supersetOf",
+      "from": "typescript",
+      "to": "static-typescript",
+      "type": "supersetOf",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/static-typescript.scroll",
+      "mapVisible": false,
+      "score": 97,
+      "reasons": [
+        {
+          "points": 30,
+          "reason": "关系类型为 supersetOf"
+        },
+        {
+          "points": 44,
+          "reason": "常显关注语言（TIOBE #39）"
+        },
+        {
+          "points": 8,
+          "reason": "端点已有语法与实现核验"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "zig|mojo|influencedBy",
+      "from": "zig",
+      "to": "mojo",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/mojo.scroll",
+      "mapVisible": false,
+      "score": 96,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 43,
+          "reason": "常显关注语言（TIOBE #40）"
+        },
+        {
+          "points": 8,
+          "reason": "端点已有语法与实现核验"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "lisp|axio|influencedBy",
+      "from": "lisp",
+      "to": "axio",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/axio.scroll",
+      "mapVisible": false,
+      "score": 94,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 40,
+          "reason": "常显关注语言（TIOBE #43）"
+        },
+        {
+          "points": 12,
+          "reason": "当前学习导览直接使用的端点"
+        },
+        {
+          "points": 7,
+          "reason": "端点已有历史一手资料"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "lisp|cosmicos|influencedBy",
+      "from": "lisp",
+      "to": "cosmicos",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/cosmicos.scroll",
+      "mapVisible": false,
+      "score": 94,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 40,
+          "reason": "常显关注语言（TIOBE #43）"
+        },
+        {
+          "points": 12,
+          "reason": "当前学习导览直接使用的端点"
+        },
+        {
+          "points": 7,
+          "reason": "端点已有历史一手资料"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "lisp|kamby|influencedBy",
+      "from": "lisp",
+      "to": "kamby",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/kamby.scroll",
+      "mapVisible": false,
+      "score": 94,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 40,
+          "reason": "常显关注语言（TIOBE #43）"
+        },
+        {
+          "points": 12,
+          "reason": "当前学习导览直接使用的端点"
+        },
+        {
+          "points": 7,
+          "reason": "端点已有历史一手资料"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "lisp|nemerle|influencedBy",
+      "from": "lisp",
+      "to": "nemerle",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/nemerle.scroll",
+      "mapVisible": false,
+      "score": 94,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 40,
+          "reason": "常显关注语言（TIOBE #43）"
+        },
+        {
+          "points": 12,
+          "reason": "当前学习导览直接使用的端点"
+        },
+        {
+          "points": 7,
+          "reason": "端点已有历史一手资料"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "scala|mlscript|influencedBy",
+      "from": "scala",
+      "to": "mlscript",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/mlscript.scroll",
+      "mapVisible": false,
+      "score": 92,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 39,
+          "reason": "常显关注语言（TIOBE #44）"
+        },
+        {
+          "points": 8,
+          "reason": "端点已有语法与实现核验"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "cobol|particles|influencedBy",
+      "from": "cobol",
+      "to": "particles",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/particles.scroll",
+      "mapVisible": false,
+      "score": 90,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 63,
+          "reason": "常显关注语言（TIOBE #20）"
+        },
+        {
+          "points": 8,
+          "reason": "端点已有语法与实现核验"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "d|sdlang|influencedBy",
+      "from": "d",
+      "to": "sdlang",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/sdlang.scroll",
+      "mapVisible": false,
+      "score": 87,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 50,
+          "reason": "常显关注语言（TIOBE #33）"
+        },
+        {
+          "points": 8,
+          "reason": "端点已有语法与实现核验"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "haskell|flare|influencedBy",
+      "from": "haskell",
+      "to": "flare",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/flare.scroll",
+      "mapVisible": false,
+      "score": 87,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 34,
+          "reason": "常显关注语言（TIOBE #49）"
+        },
+        {
+          "points": 8,
+          "reason": "端点已有语法与实现核验"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "haskell|mlscript|influencedBy",
+      "from": "haskell",
+      "to": "mlscript",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/mlscript.scroll",
+      "mapVisible": false,
+      "score": 87,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 34,
+          "reason": "常显关注语言（TIOBE #49）"
+        },
+        {
+          "points": 8,
+          "reason": "端点已有语法与实现核验"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "haskell|morloc|influencedBy",
+      "from": "haskell",
+      "to": "morloc",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/morloc.scroll",
+      "mapVisible": false,
+      "score": 87,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 34,
+          "reason": "常显关注语言（TIOBE #49）"
+        },
+        {
+          "points": 8,
+          "reason": "端点已有语法与实现核验"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "haskell|scrapscript|influencedBy",
+      "from": "haskell",
+      "to": "scrapscript",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/scrapscript.scroll",
+      "mapVisible": false,
+      "score": 87,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 34,
+          "reason": "常显关注语言（TIOBE #49）"
+        },
+        {
+          "points": 8,
+          "reason": "端点已有语法与实现核验"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "scheme|flare|influencedBy",
+      "from": "scheme",
+      "to": "flare",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/flare.scroll",
+      "mapVisible": false,
+      "score": 85,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 20,
+          "reason": "历史或关系叙事锚点"
+        },
+        {
+          "points": 12,
+          "reason": "当前学习导览直接使用的端点"
+        },
+        {
+          "points": 8,
+          "reason": "端点已有语法与实现核验"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "scheme|slope|influencedBy",
+      "from": "scheme",
+      "to": "slope",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/slope.scroll",
+      "mapVisible": false,
+      "score": 85,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 20,
+          "reason": "历史或关系叙事锚点"
+        },
+        {
+          "points": 12,
+          "reason": "当前学习导览直接使用的端点"
+        },
+        {
+          "points": 8,
+          "reason": "端点已有语法与实现核验"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "lisp|autolisp|influencedBy",
+      "from": "lisp",
+      "to": "autolisp",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/autolisp.scroll",
+      "mapVisible": false,
+      "score": 84,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 40,
+          "reason": "常显关注语言（TIOBE #43）"
+        },
+        {
+          "points": 12,
+          "reason": "当前学习导览直接使用的端点"
+        },
+        {
+          "points": 7,
+          "reason": "端点已有历史一手资料"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "prolog|proto-gnosis|influencedBy",
+      "from": "prolog",
+      "to": "proto-gnosis",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/proto-gnosis.scroll",
+      "mapVisible": false,
+      "score": 82,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 54,
+          "reason": "常显关注语言（TIOBE #29）"
+        },
+        {
+          "points": 8,
+          "reason": "端点已有语法与实现核验"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "typescript|particles|influencedBy",
+      "from": "typescript",
+      "to": "particles",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/particles.scroll",
+      "mapVisible": false,
+      "score": 81,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 44,
+          "reason": "常显关注语言（TIOBE #39）"
+        },
+        {
+          "points": 8,
+          "reason": "端点已有语法与实现核验"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "lisp|particles|influencedBy",
+      "from": "lisp",
+      "to": "particles",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/particles.scroll",
+      "mapVisible": false,
+      "score": 78,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 40,
+          "reason": "常显关注语言（TIOBE #43）"
+        },
+        {
+          "points": 12,
+          "reason": "当前学习导览直接使用的端点"
+        },
+        {
+          "points": 7,
+          "reason": "端点已有历史一手资料"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "lisp|scroll|influencedBy",
+      "from": "lisp",
+      "to": "scroll",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/scroll.scroll",
+      "mapVisible": false,
+      "score": 78,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 40,
+          "reason": "常显关注语言（TIOBE #43）"
+        },
+        {
+          "points": 12,
+          "reason": "当前学习导览直接使用的端点"
+        },
+        {
+          "points": 7,
+          "reason": "端点已有历史一手资料"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "haskell|particles|influencedBy",
+      "from": "haskell",
+      "to": "particles",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/particles.scroll",
+      "mapVisible": false,
+      "score": 71,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 34,
+          "reason": "常显关注语言（TIOBE #49）"
+        },
+        {
+          "points": 8,
+          "reason": "端点已有语法与实现核验"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "scheme|bio|influencedBy",
+      "from": "scheme",
+      "to": "bio",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/bio.scroll",
+      "mapVisible": false,
+      "score": 70,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 20,
+          "reason": "历史或关系叙事锚点"
+        },
+        {
+          "points": 12,
+          "reason": "当前学习导览直接使用的端点"
+        },
+        {
+          "points": 8,
+          "reason": "端点已有语法与实现核验"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "scheme|particles|influencedBy",
+      "from": "scheme",
+      "to": "particles",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/particles.scroll",
+      "mapVisible": false,
+      "score": 69,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 20,
+          "reason": "历史或关系叙事锚点"
+        },
+        {
+          "points": 12,
+          "reason": "当前学习导览直接使用的端点"
+        },
+        {
+          "points": 8,
+          "reason": "端点已有语法与实现核验"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "algol-60|espol|supersetOf",
+      "from": "algol-60",
+      "to": "espol",
+      "type": "supersetOf",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/espol.scroll",
+      "mapVisible": false,
+      "score": 63,
+      "reasons": [
+        {
+          "points": 30,
+          "reason": "关系类型为 supersetOf"
+        },
+        {
+          "points": 20,
+          "reason": "历史或关系叙事锚点"
+        },
+        {
+          "points": 8,
+          "reason": "端点已有语法与实现核验"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "jeebox|speedie|supersetOf",
+      "from": "jeebox",
+      "to": "speedie",
+      "type": "supersetOf",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/speedie.scroll",
+      "mapVisible": false,
+      "score": 60,
+      "reasons": [
+        {
+          "points": 30,
+          "reason": "关系类型为 supersetOf"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "bash|civet|influencedBy",
+      "from": "bash",
+      "to": "civet",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/civet.scroll",
+      "mapVisible": false,
+      "score": 57,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 12,
+          "reason": "当前学习导览直接使用的端点"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "crystal|civet|influencedBy",
+      "from": "crystal",
+      "to": "civet",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/civet.scroll",
+      "mapVisible": false,
+      "score": 57,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 12,
+          "reason": "当前学习导览直接使用的端点"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "elm|civet|influencedBy",
+      "from": "elm",
+      "to": "civet",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/civet.scroll",
+      "mapVisible": false,
+      "score": 57,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 12,
+          "reason": "当前学习导览直接使用的端点"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "flow|civet|influencedBy",
+      "from": "flow",
+      "to": "civet",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/civet.scroll",
+      "mapVisible": false,
+      "score": 57,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 12,
+          "reason": "当前学习导览直接使用的端点"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "apl|axio|influencedBy",
+      "from": "apl",
+      "to": "axio",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/axio.scroll",
+      "mapVisible": false,
+      "score": 55,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 20,
+          "reason": "历史或关系叙事锚点"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "apl|futhark|influencedBy",
+      "from": "apl",
+      "to": "futhark",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/futhark.scroll",
+      "mapVisible": false,
+      "score": 55,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 20,
+          "reason": "历史或关系叙事锚点"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "apl|klong|influencedBy",
+      "from": "apl",
+      "to": "klong",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/klong.scroll",
+      "mapVisible": false,
+      "score": 55,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 20,
+          "reason": "历史或关系叙事锚点"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "apl|u|influencedBy",
+      "from": "apl",
+      "to": "u",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/u.scroll",
+      "mapVisible": false,
+      "score": 55,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 20,
+          "reason": "历史或关系叙事锚点"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "awk|bawk|supersetOf",
+      "from": "awk",
+      "to": "bawk",
+      "type": "supersetOf",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/bawk.scroll",
+      "mapVisible": false,
+      "score": 50,
+      "reasons": [
+        {
+          "points": 30,
+          "reason": "关系类型为 supersetOf"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "oberon|oberon-2|supersetOf",
+      "from": "oberon",
+      "to": "oberon-2",
+      "type": "supersetOf",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/oberon-2.scroll",
+      "mapVisible": false,
+      "score": 50,
+      "reasons": [
+        {
+          "points": 30,
+          "reason": "关系类型为 supersetOf"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "snobol3|snobol4|supersetOf",
+      "from": "snobol3",
+      "to": "snobol4",
+      "type": "supersetOf",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/snobol4.scroll",
+      "mapVisible": false,
+      "score": 50,
+      "reasons": [
+        {
+          "points": 30,
+          "reason": "关系类型为 supersetOf"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "wasm|wah|supersetOf",
+      "from": "wasm",
+      "to": "wah",
+      "type": "supersetOf",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/wah.scroll",
+      "mapVisible": false,
+      "score": 50,
+      "reasons": [
+        {
+          "points": 30,
+          "reason": "关系类型为 supersetOf"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "coffeescript|kode|influencedBy",
+      "from": "coffeescript",
+      "to": "kode",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/kode.scroll",
+      "mapVisible": false,
+      "score": 47,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 12,
+          "reason": "当前学习导览直接使用的端点"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "forth|particles|influencedBy",
+      "from": "forth",
+      "to": "particles",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/particles.scroll",
+      "mapVisible": false,
+      "score": 47,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 20,
+          "reason": "历史或关系叙事锚点"
+        },
+        {
+          "points": 8,
+          "reason": "端点已有语法与实现核验"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "agda|axio|influencedBy",
+      "from": "agda",
+      "to": "axio",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/axio.scroll",
+      "mapVisible": false,
+      "score": 45,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "alpaca|gleam|influencedBy",
+      "from": "alpaca",
+      "to": "gleam",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/gleam.scroll",
+      "mapVisible": false,
+      "score": 45,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "antlr|parsers|influencedBy",
+      "from": "antlr",
+      "to": "parsers",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/parsers.scroll",
+      "mapVisible": false,
+      "score": 45,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "apl|goal|influencedBy",
+      "from": "apl",
+      "to": "goal",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/goal.scroll",
+      "mapVisible": false,
+      "score": 45,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 20,
+          "reason": "历史或关系叙事锚点"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "automath|axio|influencedBy",
+      "from": "automath",
+      "to": "axio",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/axio.scroll",
+      "mapVisible": false,
+      "score": 45,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "automath|lego|influencedBy",
+      "from": "automath",
+      "to": "lego",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/lego.scroll",
+      "mapVisible": false,
+      "score": 45,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "automath|nuprl|influencedBy",
+      "from": "automath",
+      "to": "nuprl",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/nuprl.scroll",
+      "mapVisible": false,
+      "score": 45,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "bison|lemon|influencedBy",
+      "from": "bison",
+      "to": "lemon",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/lemon.scroll",
+      "mapVisible": false,
+      "score": 45,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "common-lisp|flare|influencedBy",
+      "from": "common-lisp",
+      "to": "flare",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/flare.scroll",
+      "mapVisible": false,
+      "score": 45,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "eiffel|flare|influencedBy",
+      "from": "eiffel",
+      "to": "flare",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/flare.scroll",
+      "mapVisible": false,
+      "score": 45,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "elm|scrapscript|influencedBy",
+      "from": "elm",
+      "to": "scrapscript",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/scrapscript.scroll",
+      "mapVisible": false,
+      "score": 45,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "erlang|axio|influencedBy",
+      "from": "erlang",
+      "to": "axio",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/axio.scroll",
+      "mapVisible": false,
+      "score": 45,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "false|apter-f|influencedBy",
+      "from": "false",
+      "to": "apter-f",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/apter-f.scroll",
+      "mapVisible": false,
+      "score": 45,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "guile|poke|influencedBy",
+      "from": "guile",
+      "to": "poke",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/poke.scroll",
+      "mapVisible": false,
+      "score": 45,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "j|u|influencedBy",
+      "from": "j",
+      "to": "u",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/u.scroll",
+      "mapVisible": false,
+      "score": 45,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "llvmir|mojo|influencedBy",
+      "from": "llvmir",
+      "to": "mojo",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/mojo.scroll",
+      "mapVisible": false,
+      "score": 45,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "mlir|mojo|influencedBy",
+      "from": "mlir",
+      "to": "mojo",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/mojo.scroll",
+      "mapVisible": false,
+      "score": 45,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "rebol|boron|influencedBy",
+      "from": "rebol",
+      "to": "boron",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/boron.scroll",
+      "mapVisible": false,
+      "score": 45,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "roc|scrapscript|influencedBy",
+      "from": "roc",
+      "to": "scrapscript",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/scrapscript.scroll",
+      "mapVisible": false,
+      "score": 45,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "scratch|microblocks|influencedBy",
+      "from": "scratch",
+      "to": "microblocks",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/microblocks.scroll",
+      "mapVisible": false,
+      "score": 45,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "snobol4|s-snobol|supersetOf",
+      "from": "snobol4",
+      "to": "s-snobol",
+      "type": "supersetOf",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/s-snobol.scroll",
+      "mapVisible": false,
+      "score": 45,
+      "reasons": [
+        {
+          "points": 30,
+          "reason": "关系类型为 supersetOf"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "wasm|wa|influencedBy",
+      "from": "wasm",
+      "to": "wa",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/wa.scroll",
+      "mapVisible": false,
+      "score": 45,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "curl|hurl|supersetOf",
+      "from": "curl",
+      "to": "hurl",
+      "type": "supersetOf",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/hurl.scroll",
+      "mapVisible": false,
+      "score": 44,
+      "reasons": [
+        {
+          "points": 30,
+          "reason": "关系类型为 supersetOf"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "ratfor|efl|supersetOf",
+      "from": "ratfor",
+      "to": "efl",
+      "type": "supersetOf",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/efl.scroll",
+      "mapVisible": false,
+      "score": 40,
+      "reasons": [
+        {
+          "points": 30,
+          "reason": "关系类型为 supersetOf"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "standard-ml|mlscript|influencedBy",
+      "from": "standard-ml",
+      "to": "mlscript",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/mlscript.scroll",
+      "mapVisible": false,
+      "score": 40,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "swift-il|mlir|influencedBy",
+      "from": "swift-il",
+      "to": "mlir",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/mlir.scroll",
+      "mapVisible": false,
+      "score": 40,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "unified-parallel-c|chapel|influencedBy",
+      "from": "unified-parallel-c",
+      "to": "chapel",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/chapel.scroll",
+      "mapVisible": false,
+      "score": 40,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "apl|particles|influencedBy",
+      "from": "apl",
+      "to": "particles",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/particles.scroll",
+      "mapVisible": false,
+      "score": 39,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 20,
+          "reason": "历史或关系叙事锚点"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "json|jsoniq|supersetOf",
+      "from": "json",
+      "to": "jsoniq",
+      "type": "supersetOf",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/jsoniq.scroll",
+      "mapVisible": false,
+      "score": 39,
+      "reasons": [
+        {
+          "points": 30,
+          "reason": "关系类型为 supersetOf"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "algol-68|mary|supersetOf",
+      "from": "algol-68",
+      "to": "mary",
+      "type": "supersetOf",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/mary.scroll",
+      "mapVisible": false,
+      "score": 35,
+      "reasons": [
+        {
+          "points": 30,
+          "reason": "关系类型为 supersetOf"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "automath|mltt|influencedBy",
+      "from": "automath",
+      "to": "mltt",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/mltt.scroll",
+      "mapVisible": false,
+      "score": 35,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "bnf|parsers|influencedBy",
+      "from": "bnf",
+      "to": "parsers",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/parsers.scroll",
+      "mapVisible": false,
+      "score": 35,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "brainfuck|semicolon|influencedBy",
+      "from": "brainfuck",
+      "to": "semicolon",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/semicolon.scroll",
+      "mapVisible": false,
+      "score": 35,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "coffeekup|jedi|influencedBy",
+      "from": "coffeekup",
+      "to": "jedi",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/jedi.scroll",
+      "mapVisible": false,
+      "score": 35,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "ebnf|parsers|influencedBy",
+      "from": "ebnf",
+      "to": "parsers",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/parsers.scroll",
+      "mapVisible": false,
+      "score": 35,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "hypercard|decker|influencedBy",
+      "from": "hypercard",
+      "to": "decker",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/decker.scroll",
+      "mapVisible": false,
+      "score": 35,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "hypercard|lil|influencedBy",
+      "from": "hypercard",
+      "to": "lil",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/lil.scroll",
+      "mapVisible": false,
+      "score": 35,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "hypercard|speedie|influencedBy",
+      "from": "hypercard",
+      "to": "speedie",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/speedie.scroll",
+      "mapVisible": false,
+      "score": 35,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "hypertalk|supertalk|supersetOf",
+      "from": "hypertalk",
+      "to": "supertalk",
+      "type": "supersetOf",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/supertalk.scroll",
+      "mapVisible": false,
+      "score": 35,
+      "reasons": [
+        {
+          "points": 30,
+          "reason": "关系类型为 supersetOf"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "it|runcible|supersetOf",
+      "from": "it",
+      "to": "runcible",
+      "type": "supersetOf",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/runcible.scroll",
+      "mapVisible": false,
+      "score": 35,
+      "reasons": [
+        {
+          "points": 30,
+          "reason": "关系类型为 supersetOf"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "j|goal|influencedBy",
+      "from": "j",
+      "to": "goal",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/goal.scroll",
+      "mapVisible": false,
+      "score": 35,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "joy|apter-f|influencedBy",
+      "from": "joy",
+      "to": "apter-f",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/apter-f.scroll",
+      "mapVisible": false,
+      "score": 35,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "joy|ck|influencedBy",
+      "from": "joy",
+      "to": "ck",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/ck.scroll",
+      "mapVisible": false,
+      "score": 35,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "joy|xy|influencedBy",
+      "from": "joy",
+      "to": "xy",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/xy.scroll",
+      "mapVisible": false,
+      "score": 35,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "jq|mdq|influencedBy",
+      "from": "jq",
+      "to": "mdq",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/mdq.scroll",
+      "mapVisible": false,
+      "score": 35,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "k|apter-f|influencedBy",
+      "from": "k",
+      "to": "apter-f",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/apter-f.scroll",
+      "mapVisible": false,
+      "score": 35,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "k|ck|influencedBy",
+      "from": "k",
+      "to": "ck",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/ck.scroll",
+      "mapVisible": false,
+      "score": 35,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "k|earnest-ok|influencedBy",
+      "from": "k",
+      "to": "earnest-ok",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/earnest-ok.scroll",
+      "mapVisible": false,
+      "score": 35,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "k|klong|influencedBy",
+      "from": "k",
+      "to": "klong",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/klong.scroll",
+      "mapVisible": false,
+      "score": 35,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "k|lil|influencedBy",
+      "from": "k",
+      "to": "lil",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/lil.scroll",
+      "mapVisible": false,
+      "score": 35,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "k|slack|influencedBy",
+      "from": "k",
+      "to": "slack",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/slack.scroll",
+      "mapVisible": false,
+      "score": 35,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "k|u|influencedBy",
+      "from": "k",
+      "to": "u",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/u.scroll",
+      "mapVisible": false,
+      "score": 35,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "k|xy|influencedBy",
+      "from": "k",
+      "to": "xy",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/xy.scroll",
+      "mapVisible": false,
+      "score": 35,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "ml|mlite|influencedBy",
+      "from": "ml",
+      "to": "mlite",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/mlite.scroll",
+      "mapVisible": false,
+      "score": 35,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "ml|mlscript|influencedBy",
+      "from": "ml",
+      "to": "mlscript",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/mlscript.scroll",
+      "mapVisible": false,
+      "score": 35,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "ml|nemerle|influencedBy",
+      "from": "ml",
+      "to": "nemerle",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/nemerle.scroll",
+      "mapVisible": false,
+      "score": 35,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "modula-2|hla|influencedBy",
+      "from": "modula-2",
+      "to": "hla",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/hla.scroll",
+      "mapVisible": false,
+      "score": 35,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "modula-2|modula-2p|supersetOf",
+      "from": "modula-2",
+      "to": "modula-2p",
+      "type": "supersetOf",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/modula-2p.scroll",
+      "mapVisible": false,
+      "score": 35,
+      "reasons": [
+        {
+          "points": 30,
+          "reason": "关系类型为 supersetOf"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "mumps|cache-objectscript|supersetOf",
+      "from": "mumps",
+      "to": "cache-objectscript",
+      "type": "supersetOf",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/cache-objectscript.scroll",
+      "mapVisible": false,
+      "score": 35,
+      "reasons": [
+        {
+          "points": 30,
+          "reason": "关系类型为 supersetOf"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "nial|u|influencedBy",
+      "from": "nial",
+      "to": "u",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/u.scroll",
+      "mapVisible": false,
+      "score": 35,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "oberon-2|component-pascal|supersetOf",
+      "from": "oberon-2",
+      "to": "component-pascal",
+      "type": "supersetOf",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/component-pascal.scroll",
+      "mapVisible": false,
+      "score": 35,
+      "reasons": [
+        {
+          "points": 30,
+          "reason": "关系类型为 supersetOf"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "pascal|adlib|supersetOf",
+      "from": "pascal",
+      "to": "adlib",
+      "type": "supersetOf",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/adlib.scroll",
+      "mapVisible": false,
+      "score": 35,
+      "reasons": [
+        {
+          "points": 30,
+          "reason": "关系类型为 supersetOf"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "pascal|extended-pascal|supersetOf",
+      "from": "pascal",
+      "to": "extended-pascal",
+      "type": "supersetOf",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/extended-pascal.scroll",
+      "mapVisible": false,
+      "score": 35,
+      "reasons": [
+        {
+          "points": 30,
+          "reason": "关系类型为 supersetOf"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "pascal|hla|influencedBy",
+      "from": "pascal",
+      "to": "hla",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/hla.scroll",
+      "mapVisible": false,
+      "score": 35,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "q|lil|influencedBy",
+      "from": "q",
+      "to": "lil",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/lil.scroll",
+      "mapVisible": false,
+      "score": 35,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "query-by-example|sba|supersetOf",
+      "from": "query-by-example",
+      "to": "sba",
+      "type": "supersetOf",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/sba.scroll",
+      "mapVisible": false,
+      "score": 35,
+      "reasons": [
+        {
+          "points": 30,
+          "reason": "关系类型为 supersetOf"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "racket|zuo|influencedBy",
+      "from": "racket",
+      "to": "zuo",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/zuo.scroll",
+      "mapVisible": false,
+      "score": 35,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "sasl|slack|influencedBy",
+      "from": "sasl",
+      "to": "slack",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/slack.scroll",
+      "mapVisible": false,
+      "score": 35,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "treesheets|explorer|influencedBy",
+      "from": "treesheets",
+      "to": "explorer",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/explorer.scroll",
+      "mapVisible": false,
+      "score": 35,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "yacc|lemon|influencedBy",
+      "from": "yacc",
+      "to": "lemon",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/lemon.scroll",
+      "mapVisible": false,
+      "score": 35,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "yacc|menhir|influencedBy",
+      "from": "yacc",
+      "to": "menhir",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/menhir.scroll",
+      "mapVisible": false,
+      "score": 35,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "yacc|parsers|influencedBy",
+      "from": "yacc",
+      "to": "parsers",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/parsers.scroll",
+      "mapVisible": false,
+      "score": 35,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "atari-basic|turbo-basic-xl|supersetOf",
+      "from": "atari-basic",
+      "to": "turbo-basic-xl",
+      "type": "supersetOf",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/turbo-basic-xl.scroll",
+      "mapVisible": false,
+      "score": 30,
+      "reasons": [
+        {
+          "points": 30,
+          "reason": "关系类型为 supersetOf"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "fortran-77|fortran-90|supersetOf",
+      "from": "fortran-77",
+      "to": "fortran-90",
+      "type": "supersetOf",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/fortran-90.scroll",
+      "mapVisible": false,
+      "score": 30,
+      "reasons": [
+        {
+          "points": 30,
+          "reason": "关系类型为 supersetOf"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "hypertalk|applescript|influencedBy",
+      "from": "hypertalk",
+      "to": "applescript",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/applescript.scroll",
+      "mapVisible": false,
+      "score": 30,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "mesa|cedar|supersetOf",
+      "from": "mesa",
+      "to": "cedar",
+      "type": "supersetOf",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/cedar.scroll",
+      "mapVisible": false,
+      "score": 30,
+      "reasons": [
+        {
+          "points": 30,
+          "reason": "关系类型为 supersetOf"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "pl-i|pl-i-formac|supersetOf",
+      "from": "pl-i",
+      "to": "pl-i-formac",
+      "type": "supersetOf",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/pl-i-formac.scroll",
+      "mapVisible": false,
+      "score": 30,
+      "reasons": [
+        {
+          "points": 30,
+          "reason": "关系类型为 supersetOf"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "spec-sharp|sing-sharp|supersetOf",
+      "from": "spec-sharp",
+      "to": "sing-sharp",
+      "type": "supersetOf",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/sing-sharp.scroll",
+      "mapVisible": false,
+      "score": 30,
+      "reasons": [
+        {
+          "points": 30,
+          "reason": "关系类型为 supersetOf"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "tla|quint|influencedBy",
+      "from": "tla",
+      "to": "quint",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/quint.scroll",
+      "mapVisible": false,
+      "score": 30,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "antlr|lllpg|influencedBy",
+      "from": "antlr",
+      "to": "lllpg",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/lllpg.scroll",
+      "mapVisible": false,
+      "score": 29,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "antlr|particles|influencedBy",
+      "from": "antlr",
+      "to": "particles",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/particles.scroll",
+      "mapVisible": false,
+      "score": 29,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "antlr|scroll|influencedBy",
+      "from": "antlr",
+      "to": "scroll",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/scroll.scroll",
+      "mapVisible": false,
+      "score": 29,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "bitsy|decker|influencedBy",
+      "from": "bitsy",
+      "to": "decker",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/decker.scroll",
+      "mapVisible": false,
+      "score": 29,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "clojure|shrubbery|influencedBy",
+      "from": "clojure",
+      "to": "shrubbery",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/shrubbery.scroll",
+      "mapVisible": false,
+      "score": 29,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "css|speedie|influencedBy",
+      "from": "css",
+      "to": "speedie",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/speedie.scroll",
+      "mapVisible": false,
+      "score": 29,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "curl|hurl|influencedBy",
+      "from": "curl",
+      "to": "hurl",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/hurl.scroll",
+      "mapVisible": false,
+      "score": 29,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "dplyr|scroll|influencedBy",
+      "from": "dplyr",
+      "to": "scroll",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/scroll.scroll",
+      "mapVisible": false,
+      "score": 29,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "haml|particles|influencedBy",
+      "from": "haml",
+      "to": "particles",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/particles.scroll",
+      "mapVisible": false,
+      "score": 29,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "haml|scroll|influencedBy",
+      "from": "haml",
+      "to": "scroll",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/scroll.scroll",
+      "mapVisible": false,
+      "score": 29,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "json|ion|supersetOf",
+      "from": "json",
+      "to": "ion",
+      "type": "supersetOf",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/ion.scroll",
+      "mapVisible": false,
+      "score": 29,
+      "reasons": [
+        {
+          "points": 30,
+          "reason": "关系类型为 supersetOf"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "json|scrapscript|influencedBy",
+      "from": "json",
+      "to": "scrapscript",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/scrapscript.scroll",
+      "mapVisible": false,
+      "score": 29,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "json|speedie|influencedBy",
+      "from": "json",
+      "to": "speedie",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/speedie.scroll",
+      "mapVisible": false,
+      "score": 29,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "mathematica|particles|influencedBy",
+      "from": "mathematica",
+      "to": "particles",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/particles.scroll",
+      "mapVisible": false,
+      "score": 29,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "mathematica|scroll|influencedBy",
+      "from": "mathematica",
+      "to": "scroll",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/scroll.scroll",
+      "mapVisible": false,
+      "score": 29,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "racket|particles|influencedBy",
+      "from": "racket",
+      "to": "particles",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/particles.scroll",
+      "mapVisible": false,
+      "score": 29,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "rebol|particles|influencedBy",
+      "from": "rebol",
+      "to": "particles",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/particles.scroll",
+      "mapVisible": false,
+      "score": 29,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "red|particles|influencedBy",
+      "from": "red",
+      "to": "particles",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/particles.scroll",
+      "mapVisible": false,
+      "score": 29,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "tex|scroll|influencedBy",
+      "from": "tex",
+      "to": "scroll",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/scroll.scroll",
+      "mapVisible": false,
+      "score": 29,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "tex|typst|influencedBy",
+      "from": "tex",
+      "to": "typst",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/typst.scroll",
+      "mapVisible": false,
+      "score": 29,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "treesheets|particles|influencedBy",
+      "from": "treesheets",
+      "to": "particles",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/particles.scroll",
+      "mapVisible": false,
+      "score": 29,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "twine|decker|influencedBy",
+      "from": "twine",
+      "to": "decker",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/decker.scroll",
+      "mapVisible": false,
+      "score": 29,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "json|json5|supersetOf",
+      "from": "json",
+      "to": "json5",
+      "type": "supersetOf",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/json5.scroll",
+      "mapVisible": false,
+      "score": 28,
+      "reasons": [
+        {
+          "points": 30,
+          "reason": "关系类型为 supersetOf"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "json|jsonnet|supersetOf",
+      "from": "json",
+      "to": "jsonnet",
+      "type": "supersetOf",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/jsonnet.scroll",
+      "mapVisible": false,
+      "score": 28,
+      "reasons": [
+        {
+          "points": 30,
+          "reason": "关系类型为 supersetOf"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "bnf|square|influencedBy",
+      "from": "bnf",
+      "to": "square",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/square.scroll",
+      "mapVisible": false,
+      "score": 25,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "k|goal|influencedBy",
+      "from": "k",
+      "to": "goal",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/goal.scroll",
+      "mapVisible": false,
+      "score": 25,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "pascal|plz|influencedBy",
+      "from": "pascal",
+      "to": "plz",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/plz.scroll",
+      "mapVisible": false,
+      "score": 25,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "q|xs-lang|influencedBy",
+      "from": "q",
+      "to": "xs-lang",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/xs-lang.scroll",
+      "mapVisible": false,
+      "score": 25,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "relational-data-file|relational-model|influencedBy",
+      "from": "relational-data-file",
+      "to": "relational-model",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/relational-model.scroll",
+      "mapVisible": false,
+      "score": 25,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "relational-model|alpha-programming-language|influencedBy",
+      "from": "relational-model",
+      "to": "alpha-programming-language",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/alpha-programming-language.scroll",
+      "mapVisible": false,
+      "score": 25,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "relational-model|quel|influencedBy",
+      "from": "relational-model",
+      "to": "quel",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/quel.scroll",
+      "mapVisible": false,
+      "score": 25,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "relational-model|sequel-2|influencedBy",
+      "from": "relational-model",
+      "to": "sequel-2",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/sequel-2.scroll",
+      "mapVisible": false,
+      "score": 25,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "relational-model|square|influencedBy",
+      "from": "relational-model",
+      "to": "square",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/square.scroll",
+      "mapVisible": false,
+      "score": 25,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "hackage-pm|scrapscript|influencedBy",
+      "from": "hackage-pm",
+      "to": "scrapscript",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/scrapscript.scroll",
+      "mapVisible": false,
+      "score": 24,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "sdlang|kdl|influencedBy",
+      "from": "sdlang",
+      "to": "kdl",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/kdl.scroll",
+      "mapVisible": false,
+      "score": 24,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "xla|mlir|influencedBy",
+      "from": "xla",
+      "to": "mlir",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/mlir.scroll",
+      "mapVisible": false,
+      "score": 24,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "json|hocon|supersetOf",
+      "from": "json",
+      "to": "hocon",
+      "type": "supersetOf",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/hocon.scroll",
+      "mapVisible": false,
+      "score": 23,
+      "reasons": [
+        {
+          "points": 30,
+          "reason": "关系类型为 supersetOf"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "markdown|marp|supersetOf",
+      "from": "markdown",
+      "to": "marp",
+      "type": "supersetOf",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/marp.scroll",
+      "mapVisible": false,
+      "score": 23,
+      "reasons": [
+        {
+          "points": 30,
+          "reason": "关系类型为 supersetOf"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "algol-58|balgol|influencedBy",
+      "from": "algol-58",
+      "to": "balgol",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/balgol.scroll",
+      "mapVisible": false,
+      "score": 20,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "mumps|proto-gnosis|influencedBy",
+      "from": "mumps",
+      "to": "proto-gnosis",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/proto-gnosis.scroll",
+      "mapVisible": false,
+      "score": 20,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "pascal|virt|influencedBy",
+      "from": "pascal",
+      "to": "virt",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/virt.scroll",
+      "mapVisible": false,
+      "score": 20,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "relational-model|isbl|influencedBy",
+      "from": "relational-model",
+      "to": "isbl",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/isbl.scroll",
+      "mapVisible": false,
+      "score": 20,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "html|speedie|influencedBy",
+      "from": "html",
+      "to": "speedie",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/speedie.scroll",
+      "mapVisible": false,
+      "score": 19,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "lambda-calculus|automath|influencedBy",
+      "from": "lambda-calculus",
+      "to": "automath",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/automath.scroll",
+      "mapVisible": false,
+      "score": 19,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "lambda-calculus|cosmicos|influencedBy",
+      "from": "lambda-calculus",
+      "to": "cosmicos",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/cosmicos.scroll",
+      "mapVisible": false,
+      "score": 19,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "lambda-calculus|lego|influencedBy",
+      "from": "lambda-calculus",
+      "to": "lego",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/lego.scroll",
+      "mapVisible": false,
+      "score": 19,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "xml|flare|influencedBy",
+      "from": "xml",
+      "to": "flare",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/flare.scroll",
+      "mapVisible": false,
+      "score": 19,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "xml|speedie|influencedBy",
+      "from": "xml",
+      "to": "speedie",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/speedie.scroll",
+      "mapVisible": false,
+      "score": 19,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "json|json-with-comments|supersetOf",
+      "from": "json",
+      "to": "json-with-comments",
+      "type": "supersetOf",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/json-with-comments.scroll",
+      "mapVisible": false,
+      "score": 18,
+      "reasons": [
+        {
+          "points": 30,
+          "reason": "关系类型为 supersetOf"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "json|superjson|supersetOf",
+      "from": "json",
+      "to": "superjson",
+      "type": "supersetOf",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/superjson.scroll",
+      "mapVisible": false,
+      "score": 18,
+      "reasons": [
+        {
+          "points": 30,
+          "reason": "关系类型为 supersetOf"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "obj|maude|influencedBy",
+      "from": "obj",
+      "to": "maude",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/maude.scroll",
+      "mapVisible": false,
+      "score": 15,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "activity-pub|farcaster|influencedBy",
+      "from": "activity-pub",
+      "to": "farcaster",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/farcaster.scroll",
+      "mapVisible": false,
+      "score": 13,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "commonmark|djot|influencedBy",
+      "from": "commonmark",
+      "to": "djot",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/djot.scroll",
+      "mapVisible": false,
+      "score": 13,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "css|particles|influencedBy",
+      "from": "css",
+      "to": "particles",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/particles.scroll",
+      "mapVisible": false,
+      "score": 13,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "homebrew-pm|tea-pm|influencedBy",
+      "from": "homebrew-pm",
+      "to": "tea-pm",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/tea-pm.scroll",
+      "mapVisible": false,
+      "score": 13,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "ipfs|filecoin|influencedBy",
+      "from": "ipfs",
+      "to": "filecoin",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/filecoin.scroll",
+      "mapVisible": false,
+      "score": 13,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "jekyll|scroll|influencedBy",
+      "from": "jekyll",
+      "to": "scroll",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/scroll.scroll",
+      "mapVisible": false,
+      "score": 13,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "json|kaml|supersetOf",
+      "from": "json",
+      "to": "kaml",
+      "type": "supersetOf",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/kaml.scroll",
+      "mapVisible": false,
+      "score": 13,
+      "reasons": [
+        {
+          "points": 30,
+          "reason": "关系类型为 supersetOf"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "json|particles|influencedBy",
+      "from": "json",
+      "to": "particles",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/particles.scroll",
+      "mapVisible": false,
+      "score": 13,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "json|sdlang|influencedBy",
+      "from": "json",
+      "to": "sdlang",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/sdlang.scroll",
+      "mapVisible": false,
+      "score": 13,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "latex|typst|influencedBy",
+      "from": "latex",
+      "to": "typst",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/typst.scroll",
+      "mapVisible": false,
+      "score": 13,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "markdown|krml|influencedBy",
+      "from": "markdown",
+      "to": "krml",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/krml.scroll",
+      "mapVisible": false,
+      "score": 13,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "markdown|markwhen|influencedBy",
+      "from": "markdown",
+      "to": "markwhen",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/markwhen.scroll",
+      "mapVisible": false,
+      "score": 13,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "markdown|mathpix-markdown|supersetOf",
+      "from": "markdown",
+      "to": "mathpix-markdown",
+      "type": "supersetOf",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/mathpix-markdown.scroll",
+      "mapVisible": false,
+      "score": 13,
+      "reasons": [
+        {
+          "points": 30,
+          "reason": "关系类型为 supersetOf"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "markdown|scroll|influencedBy",
+      "from": "markdown",
+      "to": "scroll",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/scroll.scroll",
+      "mapVisible": false,
+      "score": 13,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "markdown|slashdown|influencedBy",
+      "from": "markdown",
+      "to": "slashdown",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/slashdown.scroll",
+      "mapVisible": false,
+      "score": 13,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "markdown|typst|influencedBy",
+      "from": "markdown",
+      "to": "typst",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/typst.scroll",
+      "mapVisible": false,
+      "score": 13,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "mdx|slashdown|influencedBy",
+      "from": "mdx",
+      "to": "slashdown",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/slashdown.scroll",
+      "mapVisible": false,
+      "score": 13,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "opml|bike|influencedBy",
+      "from": "opml",
+      "to": "bike",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/bike.scroll",
+      "mapVisible": false,
+      "score": 13,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "org|bike|influencedBy",
+      "from": "org",
+      "to": "bike",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/bike.scroll",
+      "mapVisible": false,
+      "score": 13,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "reactjs|scroll|influencedBy",
+      "from": "reactjs",
+      "to": "scroll",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/scroll.scroll",
+      "mapVisible": false,
+      "score": 13,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "wordpress|scroll|influencedBy",
+      "from": "wordpress",
+      "to": "scroll",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/scroll.scroll",
+      "mapVisible": false,
+      "score": 13,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "yaml|kaml|supersetOf",
+      "from": "yaml",
+      "to": "kaml",
+      "type": "supersetOf",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/kaml.scroll",
+      "mapVisible": false,
+      "score": 13,
+      "reasons": [
+        {
+          "points": 30,
+          "reason": "关系类型为 supersetOf"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "yaml|krml|influencedBy",
+      "from": "yaml",
+      "to": "krml",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/krml.scroll",
+      "mapVisible": false,
+      "score": 13,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "yaml|scroll|influencedBy",
+      "from": "yaml",
+      "to": "scroll",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/scroll.scroll",
+      "mapVisible": false,
+      "score": 13,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "yaml|sdlang|influencedBy",
+      "from": "yaml",
+      "to": "sdlang",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/sdlang.scroll",
+      "mapVisible": false,
+      "score": 13,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "yaml|yamp|supersetOf",
+      "from": "yaml",
+      "to": "yamp",
+      "type": "supersetOf",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/yamp.scroll",
+      "mapVisible": false,
+      "score": 13,
+      "reasons": [
+        {
+          "points": 30,
+          "reason": "关系类型为 supersetOf"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "lambda-calculus|mltt|influencedBy",
+      "from": "lambda-calculus",
+      "to": "mltt",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/mltt.scroll",
+      "mapVisible": false,
+      "score": 9,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "rdf|krml|influencedBy",
+      "from": "rdf",
+      "to": "krml",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/krml.scroll",
+      "mapVisible": false,
+      "score": 8,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "rdf|sdlang|influencedBy",
+      "from": "rdf",
+      "to": "sdlang",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/sdlang.scroll",
+      "mapVisible": false,
+      "score": 8,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "ssb|farcaster|influencedBy",
+      "from": "ssb",
+      "to": "farcaster",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/farcaster.scroll",
+      "mapVisible": false,
+      "score": 8,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "url|uri|supersetOf",
+      "from": "url",
+      "to": "uri",
+      "type": "supersetOf",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/uri.scroll",
+      "mapVisible": false,
+      "score": 8,
+      "reasons": [
+        {
+          "points": 30,
+          "reason": "关系类型为 supersetOf"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "atx|markdown|influencedBy",
+      "from": "atx",
+      "to": "markdown",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/markdown.scroll",
+      "mapVisible": false,
+      "score": 3,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "html|particles|influencedBy",
+      "from": "html",
+      "to": "particles",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/particles.scroll",
+      "mapVisible": false,
+      "score": 3,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "html|scroll|influencedBy",
+      "from": "html",
+      "to": "scroll",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/scroll.scroll",
+      "mapVisible": false,
+      "score": 3,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "i-expressions|shrubbery|influencedBy",
+      "from": "i-expressions",
+      "to": "shrubbery",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/shrubbery.scroll",
+      "mapVisible": false,
+      "score": 3,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "json|susn|influencedBy",
+      "from": "json",
+      "to": "susn",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/susn.scroll",
+      "mapVisible": false,
+      "score": 3,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "markdown|susn|influencedBy",
+      "from": "markdown",
+      "to": "susn",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/susn.scroll",
+      "mapVisible": false,
+      "score": 3,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "recfiles|susn|influencedBy",
+      "from": "recfiles",
+      "to": "susn",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/susn.scroll",
+      "mapVisible": false,
+      "score": 3,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "tcp|homa|influencedBy",
+      "from": "tcp",
+      "to": "homa",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/homa.scroll",
+      "mapVisible": false,
+      "score": 3,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "turtle|notation3|supersetOf",
+      "from": "turtle",
+      "to": "notation3",
+      "type": "supersetOf",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/notation3.scroll",
+      "mapVisible": false,
+      "score": 3,
+      "reasons": [
+        {
+          "points": 30,
+          "reason": "关系类型为 supersetOf"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "vi|vim|influencedBy",
+      "from": "vi",
+      "to": "vim",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/vim.scroll",
+      "mapVisible": false,
+      "score": 3,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "xml|particles|influencedBy",
+      "from": "xml",
+      "to": "particles",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/particles.scroll",
+      "mapVisible": false,
+      "score": 3,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "xml|sdlang|influencedBy",
+      "from": "xml",
+      "to": "sdlang",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/sdlang.scroll",
+      "mapVisible": false,
+      "score": 3,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "xml|sxml|influencedBy",
+      "from": "xml",
+      "to": "sxml",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/sxml.scroll",
+      "mapVisible": false,
+      "score": 3,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "csv|scroll|influencedBy",
+      "from": "csv",
+      "to": "scroll",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/scroll.scroll",
+      "mapVisible": false,
+      "score": -2,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "gemini|susn|influencedBy",
+      "from": "gemini",
+      "to": "susn",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/susn.scroll",
+      "mapVisible": false,
+      "score": -2,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "gopher|gemini|influencedBy",
+      "from": "gopher",
+      "to": "gemini",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/gemini.scroll",
+      "mapVisible": false,
+      "score": -2,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "interpress|interscript|supersetOf",
+      "from": "interpress",
+      "to": "interscript",
+      "type": "supersetOf",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/interscript.scroll",
+      "mapVisible": false,
+      "score": -2,
+      "reasons": [
+        {
+          "points": 30,
+          "reason": "关系类型为 supersetOf"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "rdf|susn|influencedBy",
+      "from": "rdf",
+      "to": "susn",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/susn.scroll",
+      "mapVisible": false,
+      "score": -2,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "s-expressions|shrubbery|influencedBy",
+      "from": "s-expressions",
+      "to": "shrubbery",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/shrubbery.scroll",
+      "mapVisible": false,
+      "score": -2,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "s-expressions|sxml|influencedBy",
+      "from": "s-expressions",
+      "to": "sxml",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/sxml.scroll",
+      "mapVisible": false,
+      "score": -2,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "sgml|topic-maps|influencedBy",
+      "from": "sgml",
+      "to": "topic-maps",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/topic-maps.scroll",
+      "mapVisible": false,
+      "score": -2,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "tsv|scroll|influencedBy",
+      "from": "tsv",
+      "to": "scroll",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/scroll.scroll",
+      "mapVisible": false,
+      "score": -2,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": 10,
+          "reason": "馆藏保留了项目网站线索（仍须核验归属）"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "alohanet|ethernet|influencedBy",
+      "from": "alohanet",
+      "to": "ethernet",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/ethernet.scroll",
+      "mapVisible": false,
+      "score": -7,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "binary-notation|begriffsschrift|influencedBy",
+      "from": "binary-notation",
+      "to": "begriffsschrift",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/begriffsschrift.scroll",
+      "mapVisible": false,
+      "score": -7,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "ed-editor|ex-editor|influencedBy",
+      "from": "ed-editor",
+      "to": "ex-editor",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/ex-editor.scroll",
+      "mapVisible": false,
+      "score": -7,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "ex-editor|vi|influencedBy",
+      "from": "ex-editor",
+      "to": "vi",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/vi.scroll",
+      "mapVisible": false,
+      "score": -7,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "lambda-calculus|de-bruijn-notation|influencedBy",
+      "from": "lambda-calculus",
+      "to": "de-bruijn-notation",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/de-bruijn-notation.scroll",
+      "mapVisible": false,
+      "score": -7,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "qed-editor|ed-editor|influencedBy",
+      "from": "qed-editor",
+      "to": "ed-editor",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/ed-editor.scroll",
+      "mapVisible": false,
+      "score": -7,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "rss|yess|influencedBy",
+      "from": "rss",
+      "to": "yess",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/yess.scroll",
+      "mapVisible": false,
+      "score": -7,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "smtp|nntp|influencedBy",
+      "from": "smtp",
+      "to": "nntp",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/nntp.scroll",
+      "mapVisible": false,
+      "score": -7,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "xml|susn|influencedBy",
+      "from": "xml",
+      "to": "susn",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/susn.scroll",
+      "mapVisible": false,
+      "score": -7,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "s-expressions|l-expressions|influencedBy",
+      "from": "s-expressions",
+      "to": "l-expressions",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/l-expressions.scroll",
+      "mapVisible": false,
+      "score": -12,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    },
+    {
+      "key": "s-expressions|susn|influencedBy",
+      "from": "s-expressions",
+      "to": "susn",
+      "type": "influencedBy",
+      "source": "https://github.com/breck7/pldb/blob/main/concepts/susn.scroll",
+      "mapVisible": false,
+      "score": -12,
+      "reasons": [
+        {
+          "points": 15,
+          "reason": "关系类型为 influencedBy"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        },
+        {
+          "points": 5,
+          "reason": "馆藏保留了作者线索"
+        },
+        {
+          "points": -16,
+          "reason": "端点当前归为相关技术/记法，展示优先级下调"
+        }
+      ],
+      "sourceStatus": "PLDB 来源字段；尚未按本排序证明一手或官方来源可用。"
+    }
+  ]
+}

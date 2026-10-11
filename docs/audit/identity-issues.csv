@@ -1,50 +1,50 @@
 ﻿kind,name_or_alias,record_ids,finding
-alias-equals-other-name,apache,apacheconf | apache,The source alias may merge distinct languages; review before indexing.
 alias-equals-other-name,arexx,rexx | arexx,The source alias may merge distinct languages; review before indexing.
 alias-equals-other-name,autoconf,m4sugar | autoconf,The source alias may merge distinct languages; review before indexing.
 alias-equals-other-name,blitz3d,blitzbasic | blitz3d,The source alias may merge distinct languages; review before indexing.
 alias-equals-other-name,blitzplus,blitzbasic | blitzplus,The source alias may merge distinct languages; review before indexing.
 alias-equals-other-name,bro,zeek | bro,The source alias may merge distinct languages; review before indexing.
-alias-equals-other-name,delphi,pascal | delphi,The source alias may merge distinct languages; review before indexing.
-alias-equals-other-name,emacs,emacs-lisp | emacs-editor,The source alias may merge distinct languages; review before indexing.
-alias-equals-other-name,flex,lex | flex,The source alias may merge distinct languages; review before indexing.
-alias-equals-other-name,geojson,json | geojson,The source alias may merge distinct languages; review before indexing.
-alias-equals-other-name,groff,roff | groff,The source alias may merge distinct languages; review before indexing.
 alias-equals-other-name,irc,irc-log | irc,The source alias may merge distinct languages; review before indexing.
-alias-equals-other-name,latex,tex | latex,The source alias may merge distinct languages; review before indexing.
-alias-equals-other-name,nixos,nix | nixos,The source alias may merge distinct languages; review before indexing.
-alias-equals-other-name,nroff,roff | nroff,The source alias may merge distinct languages; review before indexing.
-alias-equals-other-name,pyrex,cython | pyrex,The source alias may merge distinct languages; review before indexing.
 alias-equals-other-name,rhtml,erb | rhtml,The source alias may merge distinct languages; review before indexing.
-alias-equals-other-name,rss,xml | rss,The source alias may merge distinct languages; review before indexing.
-alias-equals-other-name,sh,bash | sh,The source alias may merge distinct languages; review before indexing.
 alias-equals-other-name,soy,closure-templates | soy,The source alias may merge distinct languages; review before indexing.
 alias-equals-other-name,squeak,smalltalk | squeak,The source alias may merge distinct languages; review before indexing.
-alias-equals-other-name,troff,roff | troff,The source alias may merge distinct languages; review before indexing.
 alias-equals-other-name,ts,typescript | ts,The source alias may merge distinct languages; review before indexing.
 alias-equals-other-name,velocity,vtl-lang | apache-velocity,The source alias may merge distinct languages; review before indexing.
 alias-equals-other-name,wolfram language,mathematica | wolfram,The source alias may merge distinct languages; review before indexing.
-alias-equals-other-name,wsdl,xml | wsdl,The source alias may merge distinct languages; review before indexing.
-alias-equals-other-name,xhtml,html | xhtml,The source alias may merge distinct languages; review before indexing.
 alias-equals-other-name,xsd,xml | xsd,The source alias may merge distinct languages; review before indexing.
 corrected-name-overlap,Bourne shell,sh | bourne-shell,Reviewed display name overlaps another pinned record; resolve identity and date events before merging or treating as distinct languages.
+curated-false-alias,apache,apacheconf,Apache HTTP Server 官方文档将 Apache 明确为服务器，并说明其由文本配置文件和 directives 配置。ApacheConf 是独立的配置语法记录，不能把 Apache 作为 ApacheConf 的等价语言别名。
 curated-false-alias,bazel,starlark,Bazel 官方说明 BUILD 文件使用 Starlark 求值；Bazel 是构建工具/平台，Starlark 是配置与规则语言。工具名称不能作为语言别名合并。
 curated-false-alias,cfm,coldfusion,Adobe 官方把 Adobe ColdFusion 描述为应用服务器/脚本环境，把 CFML 描述为标记式脚本语言；文件扩展名 cfm 也不是语言等价别名。平台、语言和文件后缀必须分开。
 curated-false-alias,cfml,coldfusion,Adobe 官方把 Adobe ColdFusion 描述为应用服务器/脚本环境，把 CFML 描述为标记式脚本语言；文件扩展名 cfm 也不是语言等价别名。平台、语言和文件后缀必须分开。
 curated-false-alias,clipper,xbase,Clipper 与 Visual FoxPro 都有独立的语言参考和独立记录；它们属于 xBase 家族或兼容方言，但不能作为 xBase 家族总称的等价别名。
 curated-false-alias,coldfusion html,coldfusion,Adobe 官方把 Adobe ColdFusion 描述为应用服务器/脚本环境，把 CFML 描述为标记式脚本语言；文件扩展名 cfm 也不是语言等价别名。平台、语言和文件后缀必须分开。
 curated-false-alias,cperl,perl,PLDB 将 cperl 列为 Perl 的 GitHub 别名，但同一快照有独立 cperl 记录；cperl 官方页面描述其为带类、类型和编译器的 perl5 变体。保留独立身份，不据此合并。
+curated-false-alias,delphi,pascal,Embarcadero 文档将 Delphi 语言定义为标准 Pascal 的面向对象扩展；这是相关的方言/产品身份，不是 Pascal 的等价名称，不能把独立 Delphi 记录并入 Pascal。
 curated-false-alias,django,jinja,Django 官方模板文档把自身模板系统称为 Django template language (DTL)，并把 Jinja2 列为独立后端；框架名不能作为 Jinja 的等价别名。
+curated-false-alias,emacs,emacs-lisp,GNU Emacs Lisp 手册明确区分 GNU Emacs 文本编辑器与用于编写其大部分代码的 Emacs Lisp，并称后者是独立的完整编程语言。编辑器名称不能作为该语言的等价别名。
+curated-false-alias,flex,lex,Flex 官方手册将 Flex 标为 lex replacement，并说明与 Lex 的兼容存在例外。替代实现与兼容关系不能把 Flex 合并为 Lex 的等价别名。
 curated-false-alias,foxpro,xbase,Clipper 与 Visual FoxPro 都有独立的语言参考和独立记录；它们属于 xBase 家族或兼容方言，但不能作为 xBase 家族总称的等价别名。
+curated-false-alias,geojson,json,RFC 7946 将 GeoJSON 定义为基于 JSON 的地理空间数据交换格式；它定义 JSON 对象的地理数据语义，并非 JSON 本身的等价名称。因此 GeoJSON 不能作为 JSON 的等价别名。
+curated-false-alias,groff,roff,GNU roff 手册说明 groff 是对 AT&T Unix troff 及相关程序的重实现和扩展，并把 groff 语言称为 roff 语言的扩展方言；troff、nroff 与 groff 均有独立馆藏记录，不能作为 ROFF 的等价搜索别名合并。
 curated-false-alias,inc,php,PHP 官方说明 include 是 PHP 构造并用于包含和求值文件；`inc` 是文件名/包含约定，不能据此把独立 INC 记录合并到 PHP。INC 自身身份仍待核。
 curated-false-alias,jruby,ruby,PLDB 将 JRuby 列为 Ruby 别名，但 JRuby 官方明确说明它是运行在 JVM 上的 Ruby 实现；实现身份应通过生态/实现关系处理，不把名称当作等价语言。
+curated-false-alias,latex,tex,LaTeX Project 将 LaTeX 与 TeX 及相关文档分开表述，并维护 LaTeX 自身的格式、命令和文档。二者可有历史/实现关系，但不能把 LaTeX 作为 TeX 的等价搜索别名合并。
 curated-false-alias,lisp,common-lisp,Common Lisp the Language 将 Common Lisp 描述为具体 Lisp 标准与实现平台；馆藏另有独立 Lisp 历史记录。别名不得把家族节点和标准语言合并。
+curated-false-alias,nixos,nix,NixOS 手册定义 NixOS 为基于 Nix 包管理系统的 Linux 发行版；NixOS 与 Nix 的系统/语言或包管理身份不同，不能把 NixOS 作为 Nix 的等价别名。
+curated-false-alias,nroff,roff,GNU roff 手册说明 groff 是对 AT&T Unix troff 及相关程序的重实现和扩展，并把 groff 语言称为 roff 语言的扩展方言；troff、nroff 与 groff 均有独立馆藏记录，不能作为 ROFF 的等价搜索别名合并。
 curated-false-alias,pandoc,markdown,Pandoc 官方把自身描述为 universal document converter；Pandoc 是转换工具，不是 Markdown 语言别名。
+curated-false-alias,pyrex,cython,Cython 官方文档称 Cython 最初基于 Pyrex 编译器项目，且其主要特性和设计决定源于该项目；这是明确的历史设计来源，不能把仍有独立馆藏记录的 Pyrex 当作 Cython 的等价别名。
+curated-false-alias,rss,xml,RSS 2.0 规范称 RSS 是 XML 方言；WSDL 2.0 规范称 WSDL 是描述 Web 服务的 XML 语言/格式。二者是建立在 XML 上的独立格式，不能作为 XML 的等价别名。
+curated-false-alias,sh,bash,GNU Bash 手册说明 Bash 与 sh 大体兼容，但也明确提供相对 sh 的功能改进。兼容和共同祖源不能使 Bash 与独立的 sh 记录成为等价搜索别名。
+curated-false-alias,troff,roff,GNU roff 手册说明 groff 是对 AT&T Unix troff 及相关程序的重实现和扩展，并把 groff 语言称为 roff 语言的扩展方言；troff、nroff 与 groff 均有独立馆藏记录，不能作为 ROFF 的等价搜索别名合并。
 curated-false-alias,vb6,vba,"The PLDB GitHub Linguist alias field treats VBA as VB6. The same snapshot describes VBA as a separate implementation of Visual Basic 6, so these names must not resolve to VBA."
 curated-false-alias,vim,vim-script,Vim 官方用户手册把 Vim script 作为用于 vimrc、语法文件等脚本语言；Vim 本身是编辑器，不能作为该语言的等价身份。
 curated-false-alias,visual basic,visual-basic.net,Microsoft 将 Visual Basic 6.0 旧文档与 Visual Basic .NET 文档分开维护；馆藏同时存在 legacy Visual Basic 与 VB.NET 记录，不能把泛称 Visual Basic 直接解析为 .NET 版本。
 curated-false-alias,visual basic 6,vba,"The PLDB GitHub Linguist alias field treats VBA as VB6. The same snapshot describes VBA as a separate implementation of Visual Basic 6, so these names must not resolve to VBA."
 curated-false-alias,winbatch,batch,WinBatch 官方把自身描述为 Windows 宏脚本语言并提供 WIL；它和 Windows Batchfile 不是同一语言。
+curated-false-alias,wsdl,xml,RSS 2.0 规范称 RSS 是 XML 方言；WSDL 2.0 规范称 WSDL 是描述 Web 服务的 XML 语言/格式。二者是建立在 XML 上的独立格式，不能作为 XML 的等价别名。
+curated-false-alias,xhtml,html,W3C 将 XHTML 1.0 定义为 HTML 4 在 XML 1.0 上的重构，并规定自己的 XML 文档约束；即使存在兼容模式，也不能作为 HTML 的等价别名合并。
 same-display-name,alma,alma | alma-007,"Check whether these are homonyms, versions, or duplicates."
 same-display-name,alphard,alphard | alphard-programming-language,"Check whether these are homonyms, versions, or duplicates."
 same-display-name,amber,amber | amber-lang,"Check whether these are homonyms, versions, or duplicates."

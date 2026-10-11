@@ -3639,6 +3639,720 @@
           "locator": "About, history paragraph"
         }
       ]
+    },
+    {
+      "id": "chapel",
+      "status": "unreviewed",
+      "notes": "本批只核读 Chapel 官方概述所列的主要语言设计影响，未独立核查 Chapel 的完整语法、实现或运行环境。",
+      "nextStep": "分别核实 Chapel 语言规范、实现版本和运行范围；设计影响不自动证明兼容或运行时关系。",
+      "sources": [
+        {
+          "role": "关系依据",
+          "url": "https://chapel-lang.org/papers/BriefOverviewChapel.pdf",
+          "finalUrl": "https://chapel-lang.org/papers/BriefOverviewChapel.pdf",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-11T11:41:00+00:00",
+          "reviewed": true,
+          "title": "Brief Overview of Chapel",
+          "decodedBodySha256": "036a9c522596fda0e9adba155358e3f7b16446558c4de234cf7cf150636e404e",
+          "excerpt": "Chapel’s primary influences include C, Modula, Fortran, C++, Java, C#, CLU, Scala, ML, Perl, Matlab.",
+          "hashScope": "complete PDF response body bytes; excerpt is manually selected",
+          "locator": "Introduction, language-design influences paragraph"
+        }
+      ]
+    },
+    {
+      "id": "cobrust",
+      "status": "unreviewed",
+      "notes": "本批只核读 Cobrust 仓库 README 对 Python 人体工学与 Rust 语义的设计取向，未独立核查其语法、实现或运行环境。",
+      "nextStep": "分别核实 Cobrust 语言规范与实现版本；设计取向不自动证明兼容或运行时关系。",
+      "sources": [
+        {
+          "role": "关系依据",
+          "url": "https://raw.githubusercontent.com/Cobrust-lang/cobrust/main/README.md",
+          "finalUrl": "https://raw.githubusercontent.com/Cobrust-lang/cobrust/main/README.md",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-11T13:30:00+00:00",
+          "reviewed": true,
+          "title": "Cobrust repository README",
+          "decodedBodySha256": "61f33661f0b5250e9355294b5841336735b9034a808abf9626ed2feec2b35fb9",
+          "excerpt": "Python ergonomics, Rust safety, zero migration cost. ... Python ergonomics (indentation, comprehensions, f-strings, decorators, structural pattern matching), Rust semantics (ownership, `Result<T, E>`, no GIL, no implicit truthiness, no mutable defaults).",
+          "hashScope": "complete HTTP response body bytes; short excerpt manually selected",
+          "locator": "README, project tagline and feature list"
+        }
+      ]
+    },
+    {
+      "id": "flare",
+      "status": "unreviewed",
+      "notes": "本批只核读 Flare 官方项目概述所列的设计灵感语言，未独立核查其语法、实现或运行环境。",
+      "nextStep": "分别核实 Flare 语言规范与实现版本；设计灵感不自动证明兼容或运行时关系。",
+      "sources": [
+        {
+          "role": "关系依据",
+          "url": "https://web.archive.org/web/20250724221509id_/https://flarelang.sourceforge.net/prog-overview.html",
+          "finalUrl": "https://web.archive.org/web/20250724221509id_/https://flarelang.sourceforge.net/prog-overview.html",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-11T13:30:00+00:00",
+          "reviewed": true,
+          "title": "Overview of the Flare Programming Language",
+          "decodedBodySha256": "d4b27d4bf5fa98c832414df0c0fa62a120d2da6983bf5fc05505f2691ab19a19",
+          "excerpt": "The current proposed design for Flare has many proposed features intended to increase cleanliness, modularity, and safety; some of them wholly innovative, others inspired by languages including Python, Java, C++, Eiffel, Common LISP, Scheme, Perl, MOO, Haskell, and more.",
+          "hashScope": "complete decoded HTTP response body bytes of the archived snapshot (Wayback id_ replay); short excerpt manually selected",
+          "locator": "prog-overview.html, 'What is Flare?' section"
+        }
+      ]
+    },
+    {
+      "id": "hla",
+      "status": "unreviewed",
+      "notes": "本批只核读 HLA 官方参考手册关于语法与标准库设计借鉴的表述，未独立核查其完整语法、实现或运行环境。",
+      "nextStep": "分别核实 HLA 语言规范与实现版本；设计借鉴不自动证明源码兼容或运行时关系。",
+      "sources": [
+        {
+          "role": "关系依据",
+          "url": "https://www.plantation-productions.com/Webster/HighLevelAsm/HLADoc/HLARef/HLARef_html/HLAReference.htm",
+          "finalUrl": "https://www.plantation-productions.com/Webster/HighLevelAsm/HLADoc/HLARef/HLARef_html/HLAReference.htm",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-11T13:30:00+00:00",
+          "reviewed": true,
+          "title": "HLA Reference Manual",
+          "decodedBodySha256": "6033ff9690068de510e942907b9266a29eb8c53888740d9099ad20ed137ff884",
+          "excerpt": "When designing the HLA language, I chose a syntax that is very similar to common imperative high-level languages such as Pascal/Delphi, Ada, Modula-2, FORTRAN77, C/C++, and Java. ... The HLA Standard Library was modeled after the standard libraries found in C, C++, and other high level languages.",
+          "hashScope": "complete HTTP response body bytes; short excerpt manually selected",
+          "locator": "HLA Reference Manual, language design note (chapter 1)"
+        }
+      ]
+    },
+    {
+      "id": "please-build",
+      "status": "unreviewed",
+      "notes": "本批只核读 Please 仓库 README 对其构建语言语法取向的表述，未独立核查其完整语言、实现或运行环境。",
+      "nextStep": "分别核实 Please 构建语言的规范与实现版本；语法取向不自动证明兼容或运行时关系。",
+      "sources": [
+        {
+          "role": "关系依据",
+          "url": "https://raw.githubusercontent.com/thought-machine/please/master/README.md",
+          "finalUrl": "https://raw.githubusercontent.com/thought-machine/please/master/README.md",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-11T13:30:00+00:00",
+          "reviewed": true,
+          "title": "Please (thought-machine/please) README",
+          "decodedBodySha256": "0a9016272334a30824fbcfb099b1fceb39ad315f87b78271e9af5858d9c3bc9b",
+          "excerpt": "There are a high level set of build rules that make up a declarative DSL to define build targets, however you can drop into an imperative language that resembles python when necessary",
+          "hashScope": "complete HTTP response body bytes; short excerpt manually selected",
+          "locator": "README, build language section"
+        }
+      ]
+    },
+    {
+      "id": "tick-c",
+      "status": "unreviewed",
+      "notes": "本批只核读 MIT PDOS 的 Tick C 项目页对其与 ANSI C 关系的定性，未独立核查其编译器实现或运行环境。",
+      "nextStep": "分别核实 Tick C 的语言规范与实现版本；扩展定性不自动证明 ABI 或全部方言兼容。",
+      "sources": [
+        {
+          "role": "关系依据",
+          "url": "https://pdos.csail.mit.edu/archive/tickc/index.html",
+          "finalUrl": "https://pdos.csail.mit.edu/archive/tickc/index.html",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-11T13:30:00+00:00",
+          "reviewed": true,
+          "title": "`C and tcc (Tick C) - MIT PDOS",
+          "decodedBodySha256": "77e9cb902a11dc193417796c5fff38c163678d5df8a925ce245838736ed2a9f3",
+          "excerpt": "`C is an extension of ANSI C that provides the programmer with the ability to explicitly denote dynamic code generation (the creation of executable code at run time, while the application is running) at the level of C statements and expressions.",
+          "hashScope": "complete HTTP response body bytes; short excerpt manually selected",
+          "locator": "index.html, introduction"
+        }
+      ]
+    },
+    {
+      "id": "jule",
+      "status": "unreviewed",
+      "notes": "本批只核读 Jule 官方手册 The Mission 关于设计取向的自述，未独立核查其编译器与运行时。",
+      "nextStep": "如需运行时关系，另行核实 Jule 工具链；设计影响不等同源码或 ABI 兼容。",
+      "sources": [
+        {
+          "role": "关系依据",
+          "url": "https://manual.jule.dev/the-mission.html",
+          "finalUrl": "https://manual.jule.dev/the-mission.html",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-11T15:40:00+00:00",
+          "reviewed": true,
+          "title": "The Mission | Jule Manual",
+          "decodedBodySha256": "50899e34bbd9bdfbea498efc790be0ee74ce884905ef7150825a0c72aebad5b5",
+          "excerpt": "In terms of simplicity and maintainability, Jule is heavily influenced by Go. Go succeeds in providing a clear, readable, and productive development experience, and Jule aims to preserve that level of simplicity as much as possible.",
+          "hashScope": "complete HTTP response body bytes; short excerpt manually selected",
+          "locator": "The Mission, \"Simplicity and Maintainability\""
+        }
+      ]
+    },
+    {
+      "id": "alumina",
+      "status": "unreviewed",
+      "notes": "本批只核读 Alumina 官方文档首页关于受 Rust 启发并保留 C 式内存管理的自述。",
+      "nextStep": "如需实现对照，另行核实其编译器；启发关系不等同借用检查器或源码兼容。",
+      "sources": [
+        {
+          "role": "关系依据",
+          "url": "https://docs.alumina-lang.net/",
+          "finalUrl": "https://docs.alumina-lang.net/",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-11T15:40:00+00:00",
+          "reviewed": true,
+          "title": "Alumina — Welcome to the Alumina programming language",
+          "decodedBodySha256": "bc9fef2ffb9bc51b7fb3b0d29f9c19154d421307d4b1b480862384a57892bbbb",
+          "excerpt": "Alumina is an imperative, general-purpose, statically typed, compiled system programming language. It is heavily inspired by Rust, but it keeps C-style manual memory management and memory unsafety.",
+          "hashScope": "complete HTTP response body bytes; short excerpt manually selected",
+          "locator": "docs home, opening paragraph"
+        }
+      ]
+    },
+    {
+      "id": "cairo",
+      "status": "unreviewed",
+      "notes": "本批只核读 Cairo 官方站点首页的定位文案，未核对其编译器实现。",
+      "nextStep": "如需运行时或工具链关系，另行核实 StarkNet/Cairo 工具链。",
+      "sources": [
+        {
+          "role": "关系依据",
+          "url": "https://www.cairo-lang.org/",
+          "finalUrl": "https://www.cairo-lang.org/",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-11T15:40:00+00:00",
+          "reviewed": true,
+          "title": "Cairo Programming Language",
+          "decodedBodySha256": "16fa6ab7086d00bc97dde815a62cbe874c76d074487db3214a769e4e915c055e",
+          "excerpt": "WELCOME TO CAIRO The Rust-inspired language that makes it easy to build scalable dApps with the power of validity proofs.",
+          "hashScope": "complete HTTP response body bytes; short excerpt manually selected",
+          "locator": "home hero"
+        }
+      ]
+    },
+    {
+      "id": "nemerle",
+      "status": "unreviewed",
+      "notes": "本批通过 Wayback 快照核读 Nemerle 官方站 About 页的语言概况；原站当前不可直连。",
+      "nextStep": "Nemerle 项目已停更，如需二进制或库兼容结论须另行核实。",
+      "sources": [
+        {
+          "role": "关系依据",
+          "url": "https://web.archive.org/web/20190101112551id_/http://nemerle.org/About/",
+          "finalUrl": "https://web.archive.org/web/20190101112551id_/http://nemerle.org/About/",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-11T15:40:00+00:00",
+          "reviewed": true,
+          "title": "About - Nemerle programming language official site (Wayback 2019-01-01)",
+          "decodedBodySha256": "c86b545290fb1c4919d9456d4c7ce5f642407a0b16e6da24bbfe655dd6430bce",
+          "excerpt": "Nemerle is a general-purpose, multi-paradigm programming language for the .Net platform. It is as easy to learn and use as C# or VB.NET but Nemerle is by far more powerful. ... Influenced by : C# (OOP & Imperative support), ML (FP support), Lisp (macros support).",
+          "hashScope": "complete HTTP response body bytes; short excerpt manually selected",
+          "locator": "About, General information"
+        }
+      ]
+    },
+    {
+      "id": "shrubbery",
+      "status": "unreviewed",
+      "notes": "本批只核读 Racket 官方 Shrubbery 文档的设计考量一节，未评估 Rhombus 整体实现。",
+      "nextStep": "如需 Rhombus 全语言结论，另行核读 Rhombus 文档；此处仅缩进解析受 Python 影响的声明。",
+      "sources": [
+        {
+          "role": "关系依据",
+          "url": "https://docs.racket-lang.org/shrubbery/Design_Considerations.html",
+          "finalUrl": "https://docs.racket-lang.org/shrubbery/Design_Considerations.html",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-11T15:40:00+00:00",
+          "reviewed": true,
+          "title": "Shrubbery Notation — Design Considerations (Racket docs)",
+          "decodedBodySha256": "680a1be2d7c2a2a9bdacc9640829cf39d4df6978d98f176d1e345b8a8f65c813",
+          "excerpt": "Indentation-sensitive parsing and the use of : is obviously informed by Python.",
+          "hashScope": "complete HTTP response body bytes; short excerpt manually selected",
+          "locator": "6.2 Prior Art"
+        }
+      ]
+    },
+    {
+      "id": "sdlang",
+      "status": "unreviewed",
+      "notes": "本批只核读 SDLang 官网首页对语法来源的自述；SDLang 为数据序列化/配置语言。",
+      "nextStep": "如需与 C/C++/Java 的实现关系，另行核实其各语言绑定；语法族自述不等同运行时关系。",
+      "sources": [
+        {
+          "role": "关系依据",
+          "url": "https://sdlang.org/",
+          "finalUrl": "https://sdlang.org/",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-11T15:40:00+00:00",
+          "reviewed": true,
+          "title": "SDLang — Simple Declarative Language",
+          "decodedBodySha256": "019a1fd61be699e14055f7ea059bf1c445e956ef3dd70521eac780a95e247ae3",
+          "excerpt": "It has an XML-like structure – tags, values and attributes – which makes it a versatile choice for data serialization, configuration files, or declarative languages. Its syntax was inspired by the C family of languages (C/C++, C#, D, Java, …).",
+          "hashScope": "complete HTTP response body bytes; short excerpt manually selected",
+          "locator": "home, introduction"
+        }
+      ]
+    },
+    {
+      "id": "mojo",
+      "status": "unreviewed",
+      "notes": "本批只核读 Mojo 官方 vision 文档关于借鉴系统语言经验的表述，未核对其编译器。",
+      "nextStep": "如需实现关系，另行核实 Mojo/MLIR 工具链；借鉴经验不等同源码或 ABI 关系。",
+      "sources": [
+        {
+          "role": "关系依据",
+          "url": "https://mojolang.org/docs/vision/",
+          "finalUrl": "https://mojolang.org/docs/vision/",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-11T15:40:00+00:00",
+          "reviewed": true,
+          "title": "Mojo vision | Mojo",
+          "decodedBodySha256": "fca76b7c1b6d321a96e6257e7597b7ccf26feafb02d7c03b447c7b5262f782e9",
+          "excerpt": "It draws on lessons from languages like Swift, C++, Rust, and Zig—and goes beyond them by embracing new techniques that allow Mojo to support the wide range of hardware that AI developers must face today and in the future.",
+          "hashScope": "complete HTTP response body bytes; short excerpt manually selected",
+          "locator": "vision, \"Why Mojo was built from scratch\""
+        }
+      ]
+    },
+    {
+      "id": "buzz",
+      "status": "unreviewed",
+      "notes": "本批只核读 Buzz 官方指南 Fibers 章关于 Lua 协程的表述，未核对其 VM 实现。",
+      "nextStep": "如需运行时关系，另行核实 Buzz/MIR 实现；机制启发不等同语法兼容。",
+      "sources": [
+        {
+          "role": "关系依据",
+          "url": "https://buzz-lang.dev/main/guide/fibers.html",
+          "finalUrl": "https://buzz-lang.dev/main/guide/fibers.html",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-11T15:40:00+00:00",
+          "reviewed": true,
+          "title": "Fibers | buzz (buzz-lang.dev)",
+          "decodedBodySha256": "1dfe99937e32b6bd334dfa5fb184634dee948fe53ebe5875cb8c44dbd4dea2ff",
+          "excerpt": "Buzz fibers are lightweight execution contexts inspired by Lua coroutines. Each fiber keeps its own call stack, local variables, and current execution state, which means buzz can pause an entire chain of function calls and later continue it exactly where it stopped.",
+          "hashScope": "complete HTTP response body bytes; short excerpt manually selected",
+          "locator": "guide/fibers"
+        }
+      ]
+    },
+    {
+      "id": "wa",
+      "status": "unreviewed",
+      "notes": "本批核读 Wa 官方 README(master)用于收口 C/C++/Go 设计来源问题；README 只描述面向 WebAssembly 的设计目标。",
+      "nextStep": "若官方文档新增明确的设计来源声明，可按台账条件重开。",
+      "sources": [
+        {
+          "role": "关系依据",
+          "url": "https://raw.githubusercontent.com/wa-lang/wa/master/README.md",
+          "finalUrl": "https://raw.githubusercontent.com/wa-lang/wa/master/README.md",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-11T15:40:00+00:00",
+          "reviewed": true,
+          "title": "The Wa Programming Language (README, master)",
+          "decodedBodySha256": "87c1eb7691289564da69e869dcc56f18f824e60d148cbf189272f5896963645a",
+          "excerpt": "Wa (Chinese name \"凹\", which pronounced \"Wa\") is a general-purpose programming language designed for for WebAssembly. The goal is to provide a simple, reliable, easy-to-use, statically typed language for high-performance web applications. The code generator and runtime are fully independently developed (not a binding).",
+          "hashScope": "complete HTTP response body bytes; short excerpt manually selected",
+          "locator": "README, introduction"
+        }
+      ]
+    },
+    {
+      "id": "amber",
+      "status": "unreviewed",
+      "notes": "本批核读 Amber 官方 README 用于收口 JavaScript 设计来源问题；官方材料只描述「编译到 Bash」。",
+      "nextStep": "若 Amber 官方文档新增设计来源声明，可按台账条件重开。",
+      "sources": [
+        {
+          "role": "关系依据",
+          "url": "https://raw.githubusercontent.com/amber-lang/amber/master/README.md",
+          "finalUrl": "https://raw.githubusercontent.com/amber-lang/amber/master/README.md",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-11T15:40:00+00:00",
+          "reviewed": true,
+          "title": "Amber — Programming language that compiles to Bash (README, master)",
+          "decodedBodySha256": "93f4c218cd385c90e7ba1c22b66d8458dd47c648b1c4ff2b2261467ce6a2572e",
+          "excerpt": "Amber Programming language that compiles to Bash. It's a high level programming language that makes it easy to create shell scripts. It's particularly well suited for cloud services.",
+          "hashScope": "complete HTTP response body bytes; short excerpt manually selected",
+          "locator": "README, opening"
+        }
+      ]
+    },
+    {
+      "id": "speedie",
+      "status": "unreviewed",
+      "notes": "本批核读 Speedie 官方 README 用于收口 JavaScript/C/Lua 设计来源问题；README 只把 JavaScript/Java 作为反面比较，并注明 C 库集成。",
+      "nextStep": "若 Speedie 官方文档新增明确的设计来源声明，可按台账条件重开。",
+      "sources": [
+        {
+          "role": "关系依据",
+          "url": "https://raw.githubusercontent.com/gamblevore/speedie/main/README.md",
+          "finalUrl": "https://raw.githubusercontent.com/gamblevore/speedie/main/README.md",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-11T15:40:00+00:00",
+          "reviewed": true,
+          "title": "Speedie README (gamblevore/speedie)",
+          "decodedBodySha256": "d7c4b97726171f53034a4d1c6b2eb7096f705f9e9ddf863cf446f698e9587348",
+          "excerpt": "Integrates with C easily, so you can call C-library functions easily, if you need to, with no overhead. ... Doesn't infantilise you like Javascript or Java. Allows you to mess around with pointers if you need... (but try to avoid pointers anyhow).",
+          "hashScope": "complete HTTP response body bytes; short excerpt manually selected",
+          "locator": "README, features list"
+        }
+      ]
+    },
+    {
+      "id": "particles",
+      "status": "unreviewed",
+      "notes": "本批核读 Particles 官方项目页(Wayback 快照)用于收口 Python/C++/C# 设计来源问题；页面只是极简索引，未列出设计来源。",
+      "nextStep": "若 Particles 官方文档新增设计来源声明，可按台账条件重开。",
+      "sources": [
+        {
+          "role": "关系依据",
+          "url": "https://web.archive.org/web/20241122113338id_/https://particles.scroll.pub/",
+          "finalUrl": "https://web.archive.org/web/20241122113338id_/https://particles.scroll.pub/",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-11T15:40:00+00:00",
+          "reviewed": true,
+          "title": "Particle Syntax (Wayback 2024-11-22)",
+          "decodedBodySha256": "657863dba7751ae556a1d8ca0a3bf8180c6b066b7be69e0c61af03645c204953",
+          "excerpt": "Particle Syntax | Particles Scroll | Scroll SDK Parsers Designer | Particles Sandbox FAQ | Twitter Built with Scroll v143.0.0",
+          "hashScope": "complete HTTP response body bytes; short excerpt manually selected",
+          "locator": "particles.scroll.pub index"
+        }
+      ]
+    },
+    {
+      "id": "scroll",
+      "status": "unreviewed",
+      "notes": "本批核读 Scroll 官方站点(Wayback 快照)用于收口 Python/JavaScript 设计来源问题；首页只描述面向科研写作的定位，未列出设计来源。",
+      "nextStep": "若 Scroll 官方文档新增设计来源声明，可按台账条件重开；PLDB 的同名列表更像是相关记号/技术。",
+      "sources": [
+        {
+          "role": "关系依据",
+          "url": "https://web.archive.org/web/20250102050538id_/https://scroll.pub/",
+          "finalUrl": "https://web.archive.org/web/20250102050538id_/https://scroll.pub/",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-11T15:40:00+00:00",
+          "reviewed": true,
+          "title": "Scroll — a language for scientists of all ages (Wayback 2025-01-02)",
+          "decodedBodySha256": "dd44e5bbe7efa34c4b3a646cd2da8d4c9a01ca345d6c4edfbdd4aa5421d7085a",
+          "excerpt": "Scroll is a language for scientists of all ages ... Publish and evolve your most intelligent ideas With Scroll your Words become Atoms Consumed by Parsers To guide the world",
+          "hashScope": "complete HTTP response body bytes; short excerpt manually selected",
+          "locator": "scroll.pub hero"
+        }
+      ]
+    },
+    {
+      "id": "lil",
+      "status": "unreviewed",
+      "notes": "本批核读 Decker/Lil 官方语言文档用于收口 SQL/Lua 设计来源问题；文档只把 SQL 描述为「resembles」并列出 APL/J/K/Q 为向量语言来源。",
+      "nextStep": "若 Lil 官方文档新增设计来源声明，可按台账条件重开。",
+      "sources": [
+        {
+          "role": "关系依据",
+          "url": "https://beyondloom.com/decker/lil.html",
+          "finalUrl": "https://beyondloom.com/decker/lil.html",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-11T15:40:00+00:00",
+          "reviewed": true,
+          "title": "Lil: A Scripting Language (Decker)",
+          "decodedBodySha256": "040adcb7af71650ab9fe9c9ad024bcaef31d9baf742d7be9fdd5d33faeed0d42",
+          "excerpt": "Lil has a number of features influenced by \"Vector-oriented\" languages like APL, J, K, and Q. ... tables comes from Lil's query syntax, which resembles a simplified version of SQL.",
+          "hashScope": "complete HTTP response body bytes; short excerpt manually selected",
+          "locator": "lil.html, Vector Language / Tables"
+        }
+      ]
+    },
+    {
+      "id": "tql",
+      "status": "unreviewed",
+      "notes": "本批核读 TQL 官方页面(Wayback 快照)用于收口 SQL 设计来源问题；页面把 TQL 与 SQL 作为对照(纯文本 vs 二进制数据库)。",
+      "nextStep": "若 TQL 官方文档新增设计来源声明，可按台账条件重开。",
+      "sources": [
+        {
+          "role": "关系依据",
+          "url": "https://web.archive.org/web/20230929205347id_/https://truebase.pub/tql/",
+          "finalUrl": "https://web.archive.org/web/20230929205347id_/https://truebase.pub/tql/",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-11T15:40:00+00:00",
+          "reviewed": true,
+          "title": "TQL: A plain text language for querying plain text databases (Wayback 2023-09-29)",
+          "decodedBodySha256": "fcf869a59a0ac7af42396937cd13406c72cb87fe490e2375d4f3c9db8ab07771",
+          "excerpt": "SQL is designed for querying binary databases storied in various binary formats. TQL is designed for querying plain text databases stored in Tree Notation format. SQL is a plain text language for querying binary databases. TQL is a plain text language for querying plain text databases.",
+          "hashScope": "complete HTTP response body bytes; short excerpt manually selected",
+          "locator": "How does TQL compare to SQL?"
+        }
+      ]
+    },
+    {
+      "id": "deesel",
+      "status": "unreviewed",
+      "notes": "本批尝试定位 Deesel(原名 G)官方来源；Wayback 的 deesel.org 快照已是域名待售页面，未能取得一手超集声明。",
+      "nextStep": "若取得 Deesel/G 官方站、文档或论文的可哈希副本，可按台账条件重开。",
+      "sources": [
+        {
+          "role": "关系依据",
+          "url": "https://web.archive.org/web/20070928081608id_/http://www.deesel.org/",
+          "finalUrl": "https://web.archive.org/web/20070928081608id_/http://www.deesel.org/",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-11T15:40:00+00:00",
+          "reviewed": true,
+          "title": "deesel.org (Wayback 2007-09-28; parked/for-sale domain page)",
+          "decodedBodySha256": "94260ce82fac019dd2ff6a6dab97f819343db8cd8a7744e4fdfdce96e5da1d1f",
+          "excerpt": "deesel.org deesel.org Related Searches: Software Download | Cheap Software | Multimedia | Bulk Software | Palm Software | Accounting Software Buy this Domain",
+          "hashScope": "complete HTTP response body bytes; short excerpt manually selected",
+          "locator": "archived deesel.org root"
+        }
+      ]
+    },
+    {
+      "id": "slash",
+      "status": "unreviewed",
+      "notes": "本批尝试定位 Slash 语言官方来源；Wayback 快照显示 slash-lang.org 域名已过期或暂停，未能取得一手资料。",
+      "nextStep": "若取得 Slash 语言官方站、文档或论文的可哈希副本，可按台账条件重开。",
+      "sources": [
+        {
+          "role": "关系依据",
+          "url": "https://web.archive.org/web/20180406041632id_/http://slash-lang.org/",
+          "finalUrl": "https://web.archive.org/web/20180406041632id_/http://slash-lang.org/",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-11T15:40:00+00:00",
+          "reviewed": true,
+          "title": "slash-lang.org (Wayback 2018-04-06; domain expired/suspended notice)",
+          "decodedBodySha256": "0ca443d226929fc699b8307cf52a8932823922df1fc7cd952bcadc926b268ff3",
+          "excerpt": "slash-lang.org is Expired or Suspended. 「 slash-lang.org 」のページは、ドメインが無効な状態です。 「 slash-lang.org 」is Expired or Suspended.",
+          "hashScope": "complete HTTP response body bytes; short excerpt manually selected",
+          "locator": "archived slash-lang.org root"
+        }
+      ]
+    },
+    {
+      "id": "simit",
+      "status": "unreviewed",
+      "notes": "本批只核读 Simit 官方语言页关于沿用 MATLAB 语法的自述（矩阵字面量与多返回值）。",
+      "nextStep": "如需整体设计或工具链关系，另行核实 Simit 论文与实现；语法沿用不等同语义或运行时等价。",
+      "sources": [
+        {
+          "role": "关系依据",
+          "url": "http://simit-lang.org/language",
+          "finalUrl": "http://simit-lang.org/language",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-12T00:20:00+00:00",
+          "reviewed": true,
+          "title": "Simit — Language",
+          "decodedBodySha256": "3b942d2d3eb75d015906160fd3bc2e98fdae9ab3483b6cda72228a5b657b0428",
+          "excerpt": "Simit also supports the MATLAB syntax for declaring matrix literals in addition to an alternative more regular syntax:",
+          "hashScope": "complete HTTP response body bytes; short excerpt manually selected",
+          "locator": "Language, Matrix literals"
+        }
+      ]
+    },
+    {
+      "id": "cooc",
+      "status": "unreviewed",
+      "notes": "本批核读 Tenon 官方页面转录的 cooC 文章摘要（原载 ACM SIGPLAN Notices 1993），确认超集表述。",
+      "nextStep": "如需实现细节，另行核对 cooC 原始论文；该表述来自论文摘要，非官方实现文档。",
+      "sources": [
+        {
+          "role": "关系依据",
+          "url": "https://web.archive.org/web/2023id_/https://www.tenon.com/products/codebuilder/Objective-C.shtml",
+          "finalUrl": "https://web.archive.org/web/2023id_/https://www.tenon.com/products/codebuilder/Objective-C.shtml",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-12T00:20:00+00:00",
+          "reviewed": true,
+          "title": "Tenon — objective-c bibliography (cooC article abstract)",
+          "decodedBodySha256": "0436c517572411370ed9d83d30e7507a27791b66ce1f337c6a41bee8efd1f2e9",
+          "excerpt": "This article discusses cooC, a language based on the premise that an object not only provides an encapsulation boundary but should also form a process boundary. cooC is a superset of Objective-C.",
+          "hashScope": "complete HTTP response body bytes; short excerpt manually selected",
+          "locator": "cooC entry, Rajiv Trehan et al., ACM SIGPLAN Notices Vol. 28 No 2, Feb 1993"
+        }
+      ]
+    },
+    {
+      "id": "relational-model",
+      "status": "unreviewed",
+      "notes": "本批只核读 IBM Redbook 关于 SQL 与 Codd 关系模型关系的表述；未核对其形式化定义。",
+      "nextStep": "如需规范级依据，另行核对 Codd 原著或 SQL 标准；本边记录的是访问语法基于关系模型。",
+      "sources": [
+        {
+          "role": "关系依据",
+          "url": "https://www.redbooks.ibm.com/redbooks/pdfs/sg245511.pdf",
+          "finalUrl": "https://www.redbooks.ibm.com/redbooks/pdfs/sg245511.pdf",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-12T00:20:00+00:00",
+          "reviewed": true,
+          "title": "IBM Redbooks — (databases/DB2 基础, 第 2.4.2 节 Structured Query Language)",
+          "decodedBodySha256": "5b81c2bff2d0e04ed08b17fc2dbdcfc33535e616ae0c63063a5a0f38cac1d78f",
+          "excerpt": "SQL is a standard syntax for accessing relational database systems based on a relational theory, which is documented in The Relational Model for Database Management by E. F. Codd.",
+          "hashScope": "complete HTTP response body bytes; short excerpt manually selected",
+          "locator": "Chapter 2.4.2 Structured Query Language"
+        }
+      ]
+    },
+    {
+      "id": "spark-pl",
+      "status": "unreviewed",
+      "notes": "本批只核读 SPARK 官方语言参考手册（LRM）导言的定位自述。",
+      "nextStep": "如需工具链或证明语义关系，另行核实 SPARK 工具与 Gnatprove；基于 Ada 不等同工具等价。",
+      "sources": [
+        {
+          "role": "关系依据",
+          "url": "https://docs.adacore.com/spark2014-docs/html/lrm/introduction.html",
+          "finalUrl": "https://docs.adacore.com/spark2014-docs/html/lrm/introduction.html",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-12T00:20:00+00:00",
+          "reviewed": true,
+          "title": "SPARK 2014 Reference Manual — 1. Introduction",
+          "decodedBodySha256": "8a8d947af573ef4f2df258cdec016f01f7aa742bca20e8a7afdfba4e5c10b64c",
+          "excerpt": "SPARK is based on Ada, both subsetting the language to remove features that defy verification and also extending the system of contracts by defining new Ada aspects to support modular, constructive, formal verification.",
+          "hashScope": "complete HTTP response body bytes; short excerpt manually selected",
+          "locator": "1. Introduction"
+        }
+      ]
+    },
+    {
+      "id": "clpr",
+      "status": "unreviewed",
+      "notes": "本批只核读 SWI-Prolog 官方文档关于 CLP 与普通 Prolog 关系的表述。",
+      "nextStep": "如需具体求解器语义，另行核实 CLP(FD) 等文档；本边记录普通 Prolog 视为 CLP 特例。",
+      "sources": [
+        {
+          "role": "关系依据",
+          "url": "https://www.swi-prolog.org/pldoc/man?section=clp",
+          "finalUrl": "https://www.swi-prolog.org/pldoc/man?section=clp",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-12T00:20:00+00:00",
+          "reviewed": true,
+          "title": "SWI-Prolog — Constraint Logic Programming (clp)",
+          "decodedBodySha256": "98cc78f512530f5bba222fc07f15025556be7a250915c56bc1aaeffc10707bf6",
+          "excerpt": "Plain Prolog can thus be regarded as a special case of CLP. There are dedicated constraint solvers for several important domains:",
+          "hashScope": "complete HTTP response body bytes; short excerpt manually selected",
+          "locator": "section clp, opening"
+        }
+      ]
+    },
+    {
+      "id": "balgol",
+      "status": "unreviewed",
+      "notes": "本批核读 BALGOL 历史说明，用于收口 FORTRAN → BALGOL 设计来源。",
+      "nextStep": "若一手材料改写 BALGOL 的设计来源，可按台账条件重开。",
+      "sources": [
+        {
+          "role": "关系依据",
+          "url": "https://datatron.blogspot.com/2018/08/balgol-burroughs-algebraic-compiler.html",
+          "finalUrl": "https://datatron.blogspot.com/2018/08/balgol-burroughs-algebraic-compiler.html",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-12T00:20:00+00:00",
+          "reviewed": true,
+          "title": "BALGOL – The Burroughs Algebraic Compiler (Datatron blog)",
+          "decodedBodySha256": "f77d6ef0aa50ae0cfb1c6e6da07128477d667981f48f30aa5ed8cdb5a36b5786",
+          "excerpt": "The Burroughs Algebraic Compiler for the 220 computer system was an early dialect of the Algol-58 language. ... Somewhere in this time frame, the focus for the \"scientific compiler\" shifted from FORTRAN to Algol-58.",
+          "hashScope": "complete HTTP response body bytes; short excerpt manually selected",
+          "locator": "opening paragraph and compiler-history paragraph"
+        }
+      ]
+    },
+    {
+      "id": "explor",
+      "status": "unreviewed",
+      "notes": "本批核读 MINI-EXPLOR 官方说明，用于收口 FORTRAN → EXPLOR 设计来源。",
+      "nextStep": "若一手材料声明 FORTRAN 为 EXPLOR 的设计来源，可按台账条件重开。",
+      "sources": [
+        {
+          "role": "关系依据",
+          "url": "https://www.content-animation.org.uk/htmls/miniexplor.htm",
+          "finalUrl": "https://www.content-animation.org.uk/htmls/miniexplor.htm",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-12T00:20:00+00:00",
+          "reviewed": true,
+          "title": "MINI-EXPLOR — A FORTRAN-Coded Version of the EXPLOR Language",
+          "decodedBodySha256": "392d74b4365914da1caa7d9b0878132e4eca2d974f4c628e2e161d01c410cd38",
+          "excerpt": "MINI-EXPLOR A FORTRAN-Coded Version of the EXPLOR Language for Mini (and larger) Computers",
+          "hashScope": "complete HTTP response body bytes; short excerpt manually selected",
+          "locator": "page title/heading"
+        }
+      ]
+    },
+    {
+      "id": "mlscript",
+      "status": "unreviewed",
+      "notes": "本批核读 MLscript 官方 README 的论文列表，用于收口 OCaml → MLscript 设计来源。",
+      "nextStep": "若一手材料声明 OCaml 为 MLscript 的整体设计来源，可按台账条件重开。",
+      "sources": [
+        {
+          "role": "关系依据",
+          "url": "https://raw.githubusercontent.com/hkust-taco/mlscript/master/README.md",
+          "finalUrl": "https://raw.githubusercontent.com/hkust-taco/mlscript/master/README.md",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-12T00:20:00+00:00",
+          "reviewed": true,
+          "title": "hkust-taco/mlscript README",
+          "decodedBodySha256": "4fd26f7207c109a7fe0545ad69c316554749a5b421bacfe8c64f2e26ce63695c",
+          "excerpt": "used v1 with an OCaml-syntax parser and heavily modified type checker.",
+          "hashScope": "complete HTTP response body bytes; short excerpt manually selected",
+          "locator": "publications list, OOPSLA '23 entry"
+        }
+      ]
+    },
+    {
+      "id": "square",
+      "status": "unreviewed",
+      "notes": "本批核读 IBM Research 的 SQUARE 论文条目，用于处理 SQL → SQUARE 关系方向。",
+      "nextStep": "若一手材料支持 SQL 影响了 SQUARE，或将该边改为 SQUARE → SQL 并给出合格来源，可按台账条件重开。",
+      "sources": [
+        {
+          "role": "关系依据",
+          "url": "https://research.ibm.com/publications/specifying-queries-as-relational-expressions",
+          "finalUrl": "https://research.ibm.com/publications/specifying-queries-as-relational-expressions",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-12T00:20:00+00:00",
+          "reviewed": true,
+          "title": "IBM Research — Specifying queries as relational expressions (SQUARE, 1973)",
+          "decodedBodySha256": "dcfccc7406d203b54af15d73aa693387e12dd5430b7a27c6bfd53c97062fec69",
+          "excerpt": "SQUARE (Specifying Queries As Relational Expressions) is a set oriented data sublanguage for expressing queries (access, modification, insertion, and deletion) to a data base consisting of a collection of relations.",
+          "hashScope": "complete HTTP response body bytes; short excerpt manually selected",
+          "locator": "abstract, ACM SIGIR Forum, 04 Nov 1973"
+        }
+      ]
+    },
+    {
+      "id": "gaea",
+      "status": "unreviewed",
+      "notes": "本批核读 Gaea 作者的 AAAI/ICMAS-96 论文，用于收口 Prolog → Gaea 超集关系。",
+      "nextStep": "若一手材料明确声明 Gaea 为 Prolog 的超集或其扩展，可按台账条件重开。",
+      "sources": [
+        {
+          "role": "关系依据",
+          "url": "https://cdn.aaai.org/ICMAS/1996/ICMAS96-030.pdf",
+          "finalUrl": "https://cdn.aaai.org/ICMAS/1996/ICMAS96-030.pdf",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-12T00:20:00+00:00",
+          "reviewed": true,
+          "title": "Organic Programming Language GAEA for Multi-Agents (Nakashima, Noda, Handa; ICMAS-96)",
+          "decodedBodySha256": "a24e47e6bfe62186dc6d352b6f9b79f687f772904aaf380b60af7c8ff3645beb",
+          "excerpt": "Gaea is a logic programming language. ... This form of constraint is used to form Prolog-like backward chain reasoning.",
+          "hashScope": "complete HTTP response body bytes; short excerpt manually selected",
+          "locator": "The Language Features of Gaea; Constraints"
+        }
+      ]
+    },
+    {
+      "id": "progol",
+      "status": "unreviewed",
+      "notes": "本批核读 Progol 官方页面，用于收口 Prolog → Progol 超集关系。",
+      "nextStep": "若一手材料声明 Progol 是 Prolog 语言的超集（而非使用 Prolog 程序作为背景知识），可按台账条件重开。",
+      "sources": [
+        {
+          "role": "关系依据",
+          "url": "https://www.doc.ic.ac.uk/~shm/progol.html",
+          "finalUrl": "https://www.doc.ic.ac.uk/~shm/progol.html",
+          "httpStatus": 200,
+          "checkedAt": "2026-10-12T00:20:00+00:00",
+          "reviewed": true,
+          "title": "Progol (S. Muggleton) — ILP system page",
+          "decodedBodySha256": "25d2edddc354afc7fb0f57c3508f16484b8d24495389ee19be327325b8ee2d2b",
+          "excerpt": "Progol allows arbitrary Prolog programs as background knowledge and arbitrary definite clauses as examples.",
+          "hashScope": "complete HTTP response body bytes; short excerpt manually selected",
+          "locator": "opening description"
+        }
+      ]
     }
   ]
 }

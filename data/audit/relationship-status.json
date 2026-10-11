@@ -3,11 +3,12 @@
   "scope": "全量关系结构检查与常显标签逐项盘点；摘录已存不等于史料论证或关系覆盖全部核实。缺线不表示没有上游。",
   "summary": {
     "labels": 50,
-    "relations": 453,
+    "relations": 461,
     "mapDesignGaps": 2,
     "states": {
-      "excerpt-recorded": 136,
-      "field-only": 317
+      "excerpt-recorded": 178,
+      "field-only": 280,
+      "citation-only": 3
     },
     "warnings": 6
   },
@@ -27,10 +28,10 @@
       ],
       "ecology": [],
       "mapLinks": 2,
-      "fieldOnly": 3,
+      "fieldOnly": 1,
       "citationOnly": 0,
       "needsDirectEvidence": 0,
-      "excerptRecorded": 2,
+      "excerptRecorded": 4,
       "state": "needs-review"
     },
     {
@@ -162,6 +163,7 @@
       "downstream": [
         "c|c-shell|influencedBy",
         "c|c3|influencedBy",
+        "c|chapel|influencedBy",
         "c|cpp|influencedBy",
         "c|go|influencedBy",
         "c|java|influencedBy",
@@ -182,10 +184,10 @@
         "c|zig|interop"
       ],
       "mapLinks": 9,
-      "fieldOnly": 6,
+      "fieldOnly": 4,
       "citationOnly": 0,
       "needsDirectEvidence": 0,
-      "excerptRecorded": 10,
+      "excerptRecorded": 13,
       "state": "needs-review"
     },
     {
@@ -234,10 +236,10 @@
         "cpp|python|extensionInterface"
       ],
       "mapLinks": 5,
-      "fieldOnly": 9,
+      "fieldOnly": 5,
       "citationOnly": 0,
       "needsDirectEvidence": 0,
-      "excerptRecorded": 5,
+      "excerptRecorded": 9,
       "state": "needs-review"
     },
     {
@@ -262,10 +264,10 @@
         "csharp|powershell|extensionInterface"
       ],
       "mapLinks": 5,
-      "fieldOnly": 4,
+      "fieldOnly": 1,
       "citationOnly": 0,
       "needsDirectEvidence": 0,
-      "excerptRecorded": 5,
+      "excerptRecorded": 8,
       "state": "needs-review"
     },
     {
@@ -342,10 +344,10 @@
       ],
       "ecology": [],
       "mapLinks": 2,
-      "fieldOnly": 4,
+      "fieldOnly": 3,
       "citationOnly": 0,
       "needsDirectEvidence": 0,
-      "excerptRecorded": 2,
+      "excerptRecorded": 3,
       "state": "needs-review"
     },
     {
@@ -365,10 +367,10 @@
       ],
       "ecology": [],
       "mapLinks": 3,
-      "fieldOnly": 3,
-      "citationOnly": 0,
+      "fieldOnly": 1,
+      "citationOnly": 1,
       "needsDirectEvidence": 0,
-      "excerptRecorded": 3,
+      "excerptRecorded": 4,
       "state": "needs-review"
     },
     {
@@ -422,10 +424,10 @@
       ],
       "ecology": [],
       "mapLinks": 9,
-      "fieldOnly": 6,
+      "fieldOnly": 5,
       "citationOnly": 0,
       "needsDirectEvidence": 0,
-      "excerptRecorded": 15,
+      "excerptRecorded": 16,
       "state": "needs-review"
     },
     {
@@ -453,10 +455,10 @@
         "java|python|hostRuntime"
       ],
       "mapLinks": 7,
-      "fieldOnly": 4,
+      "fieldOnly": 1,
       "citationOnly": 0,
       "needsDirectEvidence": 0,
-      "excerptRecorded": 8,
+      "excerptRecorded": 11,
       "state": "needs-review"
     },
     {
@@ -583,10 +585,10 @@
       ],
       "ecology": [],
       "mapLinks": 4,
-      "fieldOnly": 3,
+      "fieldOnly": 2,
       "citationOnly": 0,
       "needsDirectEvidence": 0,
-      "excerptRecorded": 6,
+      "excerptRecorded": 7,
       "state": "needs-review"
     },
     {
@@ -596,6 +598,7 @@
       "languageStatus": "verified-language",
       "upstream": [],
       "downstream": [
+        "matlab|chapel|influencedBy",
         "matlab|julia|influencedBy",
         "matlab|simit|influencedBy"
       ],
@@ -603,11 +606,11 @@
         "matlab|octave|compatibleWith"
       ],
       "mapLinks": 1,
-      "fieldOnly": 1,
+      "fieldOnly": 0,
       "citationOnly": 0,
       "needsDirectEvidence": 0,
-      "excerptRecorded": 1,
-      "state": "needs-review"
+      "excerptRecorded": 3,
+      "state": "excerpts-recorded"
     },
     {
       "id": "objective-c",
@@ -623,11 +626,11 @@
       ],
       "ecology": [],
       "mapLinks": 2,
-      "fieldOnly": 1,
+      "fieldOnly": 0,
       "citationOnly": 0,
       "needsDirectEvidence": 0,
-      "excerptRecorded": 2,
-      "state": "needs-review"
+      "excerptRecorded": 3,
+      "state": "excerpts-recorded"
     },
     {
       "id": "ocaml",
@@ -655,6 +658,7 @@
       "languageStatus": "verified-language",
       "upstream": [],
       "downstream": [
+        "perl|chapel|influencedBy",
         "perl|civet|influencedBy",
         "perl|flare|influencedBy",
         "perl|julia|influencedBy",
@@ -664,10 +668,10 @@
       ],
       "ecology": [],
       "mapLinks": 3,
-      "fieldOnly": 3,
+      "fieldOnly": 1,
       "citationOnly": 0,
       "needsDirectEvidence": 0,
-      "excerptRecorded": 3,
+      "excerptRecorded": 6,
       "state": "needs-review"
     },
     {
@@ -741,10 +745,10 @@
       ],
       "ecology": [],
       "mapLinks": 1,
-      "fieldOnly": 4,
+      "fieldOnly": 3,
       "citationOnly": 0,
       "needsDirectEvidence": 0,
-      "excerptRecorded": 1,
+      "excerptRecorded": 2,
       "state": "needs-review"
     },
     {
@@ -779,10 +783,10 @@
         "rust|python|interop"
       ],
       "mapLinks": 2,
-      "fieldOnly": 12,
+      "fieldOnly": 7,
       "citationOnly": 0,
       "needsDirectEvidence": 0,
-      "excerptRecorded": 4,
+      "excerptRecorded": 9,
       "state": "needs-review"
     },
     {
@@ -826,10 +830,10 @@
       ],
       "ecology": [],
       "mapLinks": 7,
-      "fieldOnly": 2,
+      "fieldOnly": 1,
       "citationOnly": 0,
       "needsDirectEvidence": 0,
-      "excerptRecorded": 8,
+      "excerptRecorded": 9,
       "state": "needs-review"
     },
     {
@@ -860,10 +864,10 @@
         "rust|python|interop"
       ],
       "mapLinks": 8,
-      "fieldOnly": 6,
-      "citationOnly": 0,
+      "fieldOnly": 2,
+      "citationOnly": 1,
       "needsDirectEvidence": 0,
-      "excerptRecorded": 8,
+      "excerptRecorded": 11,
       "state": "needs-review"
     },
     {
@@ -876,6 +880,7 @@
         "java|scala|influencedBy"
       ],
       "downstream": [
+        "scala|chapel|influencedBy",
         "scala|kotlin|influencedBy",
         "scala|mlscript|influencedBy"
       ],
@@ -884,7 +889,7 @@
       "fieldOnly": 1,
       "citationOnly": 0,
       "needsDirectEvidence": 0,
-      "excerptRecorded": 3,
+      "excerptRecorded": 4,
       "state": "needs-review"
     },
     {
@@ -988,10 +993,10 @@
       ],
       "ecology": [],
       "mapLinks": 1,
-      "fieldOnly": 6,
+      "fieldOnly": 5,
       "citationOnly": 0,
       "needsDirectEvidence": 0,
-      "excerptRecorded": 1,
+      "excerptRecorded": 2,
       "state": "needs-review"
     },
     {
@@ -1008,11 +1013,11 @@
       ],
       "ecology": [],
       "mapLinks": 2,
-      "fieldOnly": 1,
+      "fieldOnly": 0,
       "citationOnly": 0,
       "needsDirectEvidence": 0,
-      "excerptRecorded": 2,
-      "state": "needs-review"
+      "excerptRecorded": 3,
+      "state": "excerpts-recorded"
     },
     {
       "id": "typescript",
@@ -1218,17 +1223,34 @@
       "from": "ada",
       "to": "hla",
       "type": "influencedBy",
-      "source": "https://github.com/breck7/pldb/blob/main/concepts/hla.scroll",
+      "label": "HLA 作者列举的语法借鉴语言包含 Ada",
+      "source": "https://www.plantation-productions.com/Webster/HighLevelAsm/HLADoc/HLARef/HLARef_html/HLAReference.htm",
+      "sourceSha256": "6033ff9690068de510e942907b9266a29eb8c53888740d9099ad20ed137ff884",
+      "evidence": "HLA 官方参考手册：\"When designing the HLA language, I chose a syntax that is very similar to common imperative high-level languages such as Pascal/Delphi, Ada, Modula-2, FORTRAN77, C/C++, and Java.\"。本边只记录作者列举的语法设计借鉴包含 Ada；不推断 HLA 与 Ada 的源码兼容或运行时关系。",
       "key": "ada|hla|influencedBy",
       "layer": "design",
-      "state": "field-only",
-      "issues": [
-        "缺少关系论证"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": false,
-      "evidenceVersion": null,
-      "sources": []
+      "evidenceVersion": {
+        "citedSha256": "6033ff9690068de510e942907b9266a29eb8c53888740d9099ad20ed137ff884",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
+      "sources": [
+        {
+          "url": "https://www.plantation-productions.com/Webster/HighLevelAsm/HLADoc/HLARef/HLARef_html/HLAReference.htm",
+          "finalUrl": "https://www.plantation-productions.com/Webster/HighLevelAsm/HLADoc/HLARef/HLARef_html/HLAReference.htm",
+          "title": "HLA Reference Manual",
+          "excerpt": "When designing the HLA language, I chose a syntax that is very similar to common imperative high-level languages such as Pascal/Delphi, Ada, Modula-2, FORTRAN77, C/C++, and Java. ... The HLA Standard Library was modeled after the standard libraries found in C, C++, and other high level languages.",
+          "checkedAt": "2026-10-11T13:30:00+00:00",
+          "sha256": "6033ff9690068de510e942907b9266a29eb8c53888740d9099ad20ed137ff884",
+          "hashScope": "complete HTTP response body bytes; short excerpt manually selected",
+          "reviewId": "hla",
+          "locator": "HLA Reference Manual, language design note (chapter 1)"
+        }
+      ]
     },
     {
       "from": "ada",
@@ -1262,17 +1284,34 @@
       "from": "ada",
       "to": "spark-pl",
       "type": "influencedBy",
-      "source": "https://github.com/breck7/pldb/blob/main/concepts/spark-pl.scroll",
+      "label": "SPARK 以 Ada 为基础（子集并扩展契约）",
+      "source": "https://docs.adacore.com/spark2014-docs/html/lrm/introduction.html",
+      "sourceSha256": "8a8d947af573ef4f2df258cdec016f01f7aa742bca20e8a7afdfba4e5c10b64c",
+      "evidence": "SPARK 官方语言参考手册导言写道：\"SPARK is based on Ada, both subsetting the language to remove features that defy verification and also extending the system of contracts…\"。本边记录作者自述的 Ada 基础；不推断工具链或证明语义等价。",
       "key": "ada|spark-pl|influencedBy",
       "layer": "design",
-      "state": "field-only",
-      "issues": [
-        "缺少关系论证"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": false,
-      "evidenceVersion": null,
-      "sources": []
+      "evidenceVersion": {
+        "citedSha256": "8a8d947af573ef4f2df258cdec016f01f7aa742bca20e8a7afdfba4e5c10b64c",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
+      "sources": [
+        {
+          "url": "https://docs.adacore.com/spark2014-docs/html/lrm/introduction.html",
+          "finalUrl": "https://docs.adacore.com/spark2014-docs/html/lrm/introduction.html",
+          "title": "SPARK 2014 Reference Manual — 1. Introduction",
+          "excerpt": "SPARK is based on Ada, both subsetting the language to remove features that defy verification and also extending the system of contracts by defining new Ada aspects to support modular, constructive, formal verification.",
+          "checkedAt": "2026-10-12T00:20:00+00:00",
+          "sha256": "8a8d947af573ef4f2df258cdec016f01f7aa742bca20e8a7afdfba4e5c10b64c",
+          "hashScope": "complete HTTP response body bytes; short excerpt manually selected",
+          "reviewId": "spark-pl",
+          "locator": "1. Introduction"
+        }
+      ]
     },
     {
       "from": "ada",
@@ -2248,6 +2287,39 @@
     },
     {
       "from": "c",
+      "to": "chapel",
+      "type": "influencedBy",
+      "label": "主要语言设计影响",
+      "source": "https://chapel-lang.org/papers/BriefOverviewChapel.pdf",
+      "sourceSha256": "036a9c522596fda0e9adba155358e3f7b16446558c4de234cf7cf150636e404e",
+      "evidence": "Chapel 官方概述将 C 列为 Chapel 的 “primary influences”。这里只记录该论文明确列出的整体语言设计影响；不推断 C API、ABI、源码兼容、后继或超集关系。",
+      "key": "c|chapel|influencedBy",
+      "layer": "design",
+      "state": "excerpt-recorded",
+      "issues": [],
+      "reviewNote": "",
+      "mapVisible": false,
+      "evidenceVersion": {
+        "citedSha256": "036a9c522596fda0e9adba155358e3f7b16446558c4de234cf7cf150636e404e",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
+      "sources": [
+        {
+          "url": "https://chapel-lang.org/papers/BriefOverviewChapel.pdf",
+          "finalUrl": "https://chapel-lang.org/papers/BriefOverviewChapel.pdf",
+          "title": "Brief Overview of Chapel",
+          "excerpt": "Chapel’s primary influences include C, Modula, Fortran, C++, Java, C#, CLU, Scala, ML, Perl, Matlab.",
+          "checkedAt": "2026-10-11T11:41:00+00:00",
+          "sha256": "036a9c522596fda0e9adba155358e3f7b16446558c4de234cf7cf150636e404e",
+          "hashScope": "complete PDF response body bytes; excerpt is manually selected",
+          "reviewId": "chapel",
+          "locator": "Introduction, language-design influences paragraph"
+        }
+      ]
+    },
+    {
+      "from": "c",
       "to": "cpp",
       "type": "influencedBy",
       "label": "直接发展与近兼容设计",
@@ -2478,17 +2550,34 @@
       "from": "c",
       "to": "sdlang",
       "type": "influencedBy",
-      "source": "https://github.com/breck7/pldb/blob/main/concepts/sdlang.scroll",
+      "label": "SDLang 自述语法受 C 系语言（含 C）影响",
+      "source": "https://sdlang.org/",
+      "sourceSha256": "019a1fd61be699e14055f7ea059bf1c445e956ef3dd70521eac780a95e247ae3",
+      "evidence": "SDLang 官网首页写道：\"Its syntax was inspired by the C family of languages (C/C++, C#, D, Java, …).\"。本边只记录作者对语法族来源的整体自述，不推断与 C 的编译、ABI 或运行时关系。",
       "key": "c|sdlang|influencedBy",
       "layer": "design",
-      "state": "field-only",
-      "issues": [
-        "缺少关系论证"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": false,
-      "evidenceVersion": null,
-      "sources": []
+      "evidenceVersion": {
+        "citedSha256": "019a1fd61be699e14055f7ea059bf1c445e956ef3dd70521eac780a95e247ae3",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
+      "sources": [
+        {
+          "url": "https://sdlang.org/",
+          "finalUrl": "https://sdlang.org/",
+          "title": "SDLang — Simple Declarative Language",
+          "excerpt": "It has an XML-like structure – tags, values and attributes – which makes it a versatile choice for data serialization, configuration files, or declarative languages. Its syntax was inspired by the C family of languages (C/C++, C#, D, Java, …).",
+          "checkedAt": "2026-10-11T15:40:00+00:00",
+          "sha256": "019a1fd61be699e14055f7ea059bf1c445e956ef3dd70521eac780a95e247ae3",
+          "hashScope": "complete HTTP response body bytes; short excerpt manually selected",
+          "reviewId": "sdlang",
+          "locator": "home, introduction"
+        }
+      ]
     },
     {
       "from": "c",
@@ -2510,17 +2599,34 @@
       "from": "c",
       "to": "tick-c",
       "type": "supersetOf",
-      "source": "https://github.com/breck7/pldb/blob/main/concepts/tick-c.scroll",
+      "label": "ANSI C 的扩展（Tick C）",
+      "source": "https://pdos.csail.mit.edu/archive/tickc/index.html",
+      "sourceSha256": "77e9cb902a11dc193417796c5fff38c163678d5df8a925ce245838736ed2a9f3",
+      "evidence": "MIT PDOS 的 Tick C 项目页写道：\"`C is an extension of ANSI C that provides the programmer with the ability to explicitly denote dynamic code generation (the creation of executable code at run time, while the application is running) at the level of C statements and expressions.\"。这里只记录作者对 ANSI C 的扩展（超集）定性；不推断编译器实现、ABI 或全部方言兼容。",
       "key": "c|tick-c|supersetOf",
       "layer": "design",
-      "state": "field-only",
-      "issues": [
-        "缺少关系论证"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": false,
-      "evidenceVersion": null,
-      "sources": []
+      "evidenceVersion": {
+        "citedSha256": "77e9cb902a11dc193417796c5fff38c163678d5df8a925ce245838736ed2a9f3",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
+      "sources": [
+        {
+          "url": "https://pdos.csail.mit.edu/archive/tickc/index.html",
+          "finalUrl": "https://pdos.csail.mit.edu/archive/tickc/index.html",
+          "title": "`C and tcc (Tick C) - MIT PDOS",
+          "excerpt": "`C is an extension of ANSI C that provides the programmer with the ability to explicitly denote dynamic code generation (the creation of executable code at run time, while the application is running) at the level of C statements and expressions.",
+          "checkedAt": "2026-10-11T13:30:00+00:00",
+          "sha256": "77e9cb902a11dc193417796c5fff38c163678d5df8a925ce245838736ed2a9f3",
+          "hashScope": "complete HTTP response body bytes; short excerpt manually selected",
+          "reviewId": "tick-c",
+          "locator": "index.html, introduction"
+        }
+      ]
     },
     {
       "from": "c",
@@ -2754,6 +2860,39 @@
     },
     {
       "from": "clu",
+      "to": "chapel",
+      "type": "influencedBy",
+      "label": "主要语言设计影响",
+      "source": "https://chapel-lang.org/papers/BriefOverviewChapel.pdf",
+      "sourceSha256": "036a9c522596fda0e9adba155358e3f7b16446558c4de234cf7cf150636e404e",
+      "evidence": "Chapel 官方概述将 CLU 列为 Chapel 的 “primary influences”。这里只记录该论文明确列出的整体语言设计影响；不推断模块、异常或抽象数据类型等具体机制的完整承继、兼容或超集关系。",
+      "key": "clu|chapel|influencedBy",
+      "layer": "design",
+      "state": "excerpt-recorded",
+      "issues": [],
+      "reviewNote": "",
+      "mapVisible": false,
+      "evidenceVersion": {
+        "citedSha256": "036a9c522596fda0e9adba155358e3f7b16446558c4de234cf7cf150636e404e",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
+      "sources": [
+        {
+          "url": "https://chapel-lang.org/papers/BriefOverviewChapel.pdf",
+          "finalUrl": "https://chapel-lang.org/papers/BriefOverviewChapel.pdf",
+          "title": "Brief Overview of Chapel",
+          "excerpt": "Chapel’s primary influences include C, Modula, Fortran, C++, Java, C#, CLU, Scala, ML, Perl, Matlab.",
+          "checkedAt": "2026-10-11T11:41:00+00:00",
+          "sha256": "036a9c522596fda0e9adba155358e3f7b16446558c4de234cf7cf150636e404e",
+          "hashScope": "complete PDF response body bytes; excerpt is manually selected",
+          "reviewId": "chapel",
+          "locator": "Introduction, language-design influences paragraph"
+        }
+      ]
+    },
+    {
+      "from": "clu",
       "to": "lua",
       "type": "influencedBy",
       "label": "多重赋值与多返回值",
@@ -2935,17 +3074,34 @@
       "from": "cpp",
       "to": "chapel",
       "type": "influencedBy",
-      "source": "https://github.com/breck7/pldb/blob/main/concepts/chapel.scroll",
+      "label": "主要语言设计影响",
+      "source": "https://chapel-lang.org/papers/BriefOverviewChapel.pdf",
+      "sourceSha256": "036a9c522596fda0e9adba155358e3f7b16446558c4de234cf7cf150636e404e",
+      "evidence": "Chapel 官方概述将 C++ 列为 Chapel 的 “primary influences”。这里只记录该论文明确列出的整体语言设计影响；不推断 C++ 兼容、继承其对象模型、后继或超集关系。",
       "key": "cpp|chapel|influencedBy",
       "layer": "design",
-      "state": "field-only",
-      "issues": [
-        "缺少关系论证"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": false,
-      "evidenceVersion": null,
-      "sources": []
+      "evidenceVersion": {
+        "citedSha256": "036a9c522596fda0e9adba155358e3f7b16446558c4de234cf7cf150636e404e",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
+      "sources": [
+        {
+          "url": "https://chapel-lang.org/papers/BriefOverviewChapel.pdf",
+          "finalUrl": "https://chapel-lang.org/papers/BriefOverviewChapel.pdf",
+          "title": "Brief Overview of Chapel",
+          "excerpt": "Chapel’s primary influences include C, Modula, Fortran, C++, Java, C#, CLU, Scala, ML, Perl, Matlab.",
+          "checkedAt": "2026-10-11T11:41:00+00:00",
+          "sha256": "036a9c522596fda0e9adba155358e3f7b16446558c4de234cf7cf150636e404e",
+          "hashScope": "complete PDF response body bytes; excerpt is manually selected",
+          "reviewId": "chapel",
+          "locator": "Introduction, language-design influences paragraph"
+        }
+      ]
     },
     {
       "from": "cpp",
@@ -2986,33 +3142,67 @@
       "from": "cpp",
       "to": "flare",
       "type": "influencedBy",
-      "source": "https://github.com/breck7/pldb/blob/main/concepts/flare.scroll",
+      "label": "Flare 设计灵感中的 C++ 影响",
+      "source": "https://web.archive.org/web/20250724221509id_/https://flarelang.sourceforge.net/prog-overview.html",
+      "sourceSha256": "d4b27d4bf5fa98c832414df0c0fa62a120d2da6983bf5fc05505f2691ab19a19",
+      "evidence": "Flare 官方项目概述写道：\"...others inspired by languages including Python, Java, C++, Eiffel, Common LISP, Scheme, Perl, MOO, Haskell, and more.\"。这里只记录作者列举的整体语言设计灵感（含 C++）；不推断语法、类型系统或运行时的具体继承。",
       "key": "cpp|flare|influencedBy",
       "layer": "design",
-      "state": "field-only",
-      "issues": [
-        "缺少关系论证"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": false,
-      "evidenceVersion": null,
-      "sources": []
+      "evidenceVersion": {
+        "citedSha256": "d4b27d4bf5fa98c832414df0c0fa62a120d2da6983bf5fc05505f2691ab19a19",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
+      "sources": [
+        {
+          "url": "https://web.archive.org/web/20250724221509id_/https://flarelang.sourceforge.net/prog-overview.html",
+          "finalUrl": "https://web.archive.org/web/20250724221509id_/https://flarelang.sourceforge.net/prog-overview.html",
+          "title": "Overview of the Flare Programming Language",
+          "excerpt": "The current proposed design for Flare has many proposed features intended to increase cleanliness, modularity, and safety; some of them wholly innovative, others inspired by languages including Python, Java, C++, Eiffel, Common LISP, Scheme, Perl, MOO, Haskell, and more.",
+          "checkedAt": "2026-10-11T13:30:00+00:00",
+          "sha256": "d4b27d4bf5fa98c832414df0c0fa62a120d2da6983bf5fc05505f2691ab19a19",
+          "hashScope": "complete decoded HTTP response body bytes of the archived snapshot (Wayback id_ replay); short excerpt manually selected",
+          "reviewId": "flare",
+          "locator": "prog-overview.html, 'What is Flare?' section"
+        }
+      ]
     },
     {
       "from": "cpp",
       "to": "hla",
       "type": "influencedBy",
-      "source": "https://github.com/breck7/pldb/blob/main/concepts/hla.scroll",
+      "label": "HLA 语法与标准库借鉴 C/C++",
+      "source": "https://www.plantation-productions.com/Webster/HighLevelAsm/HLADoc/HLARef/HLARef_html/HLAReference.htm",
+      "sourceSha256": "6033ff9690068de510e942907b9266a29eb8c53888740d9099ad20ed137ff884",
+      "evidence": "HLA 官方参考手册写道：\"When designing the HLA language, I chose a syntax that is very similar to common imperative high-level languages such as Pascal/Delphi, Ada, Modula-2, FORTRAN77, C/C++, and Java.\"，并称 \"The HLA Standard Library was modeled after the standard libraries found in C, C++, and other high level languages.\"。这里只记录作者明确列举的语法与标准库设计借鉴（含 C/C++）；不推断 HLA 与 C/C++ 的源码兼容或可在 C++ 运行时之上运行。",
       "key": "cpp|hla|influencedBy",
       "layer": "design",
-      "state": "field-only",
-      "issues": [
-        "缺少关系论证"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": false,
-      "evidenceVersion": null,
-      "sources": []
+      "evidenceVersion": {
+        "citedSha256": "6033ff9690068de510e942907b9266a29eb8c53888740d9099ad20ed137ff884",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
+      "sources": [
+        {
+          "url": "https://www.plantation-productions.com/Webster/HighLevelAsm/HLADoc/HLARef/HLARef_html/HLAReference.htm",
+          "finalUrl": "https://www.plantation-productions.com/Webster/HighLevelAsm/HLADoc/HLARef/HLARef_html/HLAReference.htm",
+          "title": "HLA Reference Manual",
+          "excerpt": "When designing the HLA language, I chose a syntax that is very similar to common imperative high-level languages such as Pascal/Delphi, Ada, Modula-2, FORTRAN77, C/C++, and Java. ... The HLA Standard Library was modeled after the standard libraries found in C, C++, and other high level languages.",
+          "checkedAt": "2026-10-11T13:30:00+00:00",
+          "sha256": "6033ff9690068de510e942907b9266a29eb8c53888740d9099ad20ed137ff884",
+          "hashScope": "complete HTTP response body bytes; short excerpt manually selected",
+          "reviewId": "hla",
+          "locator": "HLA Reference Manual, language design note (chapter 1)"
+        }
+      ]
     },
     {
       "from": "cpp",
@@ -3160,17 +3350,34 @@
       "from": "cpp",
       "to": "sdlang",
       "type": "influencedBy",
-      "source": "https://github.com/breck7/pldb/blob/main/concepts/sdlang.scroll",
+      "label": "SDLang 自述语法受 C 系语言（含 C/C++）影响",
+      "source": "https://sdlang.org/",
+      "sourceSha256": "019a1fd61be699e14055f7ea059bf1c445e956ef3dd70521eac780a95e247ae3",
+      "evidence": "SDLang 官网首页写道：\"Its syntax was inspired by the C family of languages (C/C++, C#, D, Java, …).\"。本边只记录作者对语法族来源的整体自述；SDLang 是数据序列化/配置语言，不推断与 C/C++ 的编译、ABI 或运行时关系。",
       "key": "cpp|sdlang|influencedBy",
       "layer": "design",
-      "state": "field-only",
-      "issues": [
-        "缺少关系论证"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": false,
-      "evidenceVersion": null,
-      "sources": []
+      "evidenceVersion": {
+        "citedSha256": "019a1fd61be699e14055f7ea059bf1c445e956ef3dd70521eac780a95e247ae3",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
+      "sources": [
+        {
+          "url": "https://sdlang.org/",
+          "finalUrl": "https://sdlang.org/",
+          "title": "SDLang — Simple Declarative Language",
+          "excerpt": "It has an XML-like structure – tags, values and attributes – which makes it a versatile choice for data serialization, configuration files, or declarative languages. Its syntax was inspired by the C family of languages (C/C++, C#, D, Java, …).",
+          "checkedAt": "2026-10-11T15:40:00+00:00",
+          "sha256": "019a1fd61be699e14055f7ea059bf1c445e956ef3dd70521eac780a95e247ae3",
+          "hashScope": "complete HTTP response body bytes; short excerpt manually selected",
+          "reviewId": "sdlang",
+          "locator": "home, introduction"
+        }
+      ]
     },
     {
       "from": "cpp",
@@ -3224,17 +3431,34 @@
       "from": "csharp",
       "to": "chapel",
       "type": "influencedBy",
-      "source": "https://github.com/breck7/pldb/blob/main/concepts/chapel.scroll",
+      "label": "主要语言设计影响",
+      "source": "https://chapel-lang.org/papers/BriefOverviewChapel.pdf",
+      "sourceSha256": "036a9c522596fda0e9adba155358e3f7b16446558c4de234cf7cf150636e404e",
+      "evidence": "Chapel 官方概述将 C# 列为 Chapel 的 “primary influences”。这里只记录该论文明确列出的整体语言设计影响；不推断 .NET 运行时关系、源码兼容、后继或超集关系。",
       "key": "csharp|chapel|influencedBy",
       "layer": "design",
-      "state": "field-only",
-      "issues": [
-        "缺少关系论证"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": false,
-      "evidenceVersion": null,
-      "sources": []
+      "evidenceVersion": {
+        "citedSha256": "036a9c522596fda0e9adba155358e3f7b16446558c4de234cf7cf150636e404e",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
+      "sources": [
+        {
+          "url": "https://chapel-lang.org/papers/BriefOverviewChapel.pdf",
+          "finalUrl": "https://chapel-lang.org/papers/BriefOverviewChapel.pdf",
+          "title": "Brief Overview of Chapel",
+          "excerpt": "Chapel’s primary influences include C, Modula, Fortran, C++, Java, C#, CLU, Scala, ML, Perl, Matlab.",
+          "checkedAt": "2026-10-11T11:41:00+00:00",
+          "sha256": "036a9c522596fda0e9adba155358e3f7b16446558c4de234cf7cf150636e404e",
+          "hashScope": "complete PDF response body bytes; excerpt is manually selected",
+          "reviewId": "chapel",
+          "locator": "Introduction, language-design influences paragraph"
+        }
+      ]
     },
     {
       "from": "csharp",
@@ -3306,17 +3530,34 @@
       "from": "csharp",
       "to": "nemerle",
       "type": "influencedBy",
-      "source": "https://github.com/breck7/pldb/blob/main/concepts/nemerle.scroll",
+      "label": "Nemerle 官网把 C# 列为设计影响之一",
+      "source": "https://web.archive.org/web/20190101112551id_/http://nemerle.org/About/",
+      "sourceSha256": "c86b545290fb1c4919d9456d4c7ce5f642407a0b16e6da24bbfe655dd6430bce",
+      "evidence": "Nemerle 官方站 About 页列出：\"Influenced by : C# (OOP & Imperative support), ML (FP support), Lisp (macros support).\"，并称 Nemerle \"as easy to learn and use as C# or VB.NET\"。本边只记录官网自述的 C# 影响（面向对象与命令式支持）；不推断二进制、库或运行时兼容。",
       "key": "csharp|nemerle|influencedBy",
       "layer": "design",
-      "state": "field-only",
-      "issues": [
-        "缺少关系论证"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": false,
-      "evidenceVersion": null,
-      "sources": []
+      "evidenceVersion": {
+        "citedSha256": "c86b545290fb1c4919d9456d4c7ce5f642407a0b16e6da24bbfe655dd6430bce",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
+      "sources": [
+        {
+          "url": "https://web.archive.org/web/20190101112551id_/http://nemerle.org/About/",
+          "finalUrl": "https://web.archive.org/web/20190101112551id_/http://nemerle.org/About/",
+          "title": "About - Nemerle programming language official site (Wayback 2019-01-01)",
+          "excerpt": "Nemerle is a general-purpose, multi-paradigm programming language for the .Net platform. It is as easy to learn and use as C# or VB.NET but Nemerle is by far more powerful. ... Influenced by : C# (OOP & Imperative support), ML (FP support), Lisp (macros support).",
+          "checkedAt": "2026-10-11T15:40:00+00:00",
+          "sha256": "c86b545290fb1c4919d9456d4c7ce5f642407a0b16e6da24bbfe655dd6430bce",
+          "hashScope": "complete HTTP response body bytes; short excerpt manually selected",
+          "reviewId": "nemerle",
+          "locator": "About, General information"
+        }
+      ]
     },
     {
       "from": "csharp",
@@ -3404,17 +3645,34 @@
       "from": "csharp",
       "to": "sdlang",
       "type": "influencedBy",
-      "source": "https://github.com/breck7/pldb/blob/main/concepts/sdlang.scroll",
+      "label": "SDLang 自述语法受 C 系语言（含 C#）影响",
+      "source": "https://sdlang.org/",
+      "sourceSha256": "019a1fd61be699e14055f7ea059bf1c445e956ef3dd70521eac780a95e247ae3",
+      "evidence": "SDLang 官网首页写道：\"Its syntax was inspired by the C family of languages (C/C++, C#, D, Java, …).\"。本边只记录作者对语法族来源的整体自述；SDLang 是数据序列化/配置语言，不推断与 C# 的编译、CLR 或运行时关系。",
       "key": "csharp|sdlang|influencedBy",
       "layer": "design",
-      "state": "field-only",
-      "issues": [
-        "缺少关系论证"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": false,
-      "evidenceVersion": null,
-      "sources": []
+      "evidenceVersion": {
+        "citedSha256": "019a1fd61be699e14055f7ea059bf1c445e956ef3dd70521eac780a95e247ae3",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
+      "sources": [
+        {
+          "url": "https://sdlang.org/",
+          "finalUrl": "https://sdlang.org/",
+          "title": "SDLang — Simple Declarative Language",
+          "excerpt": "It has an XML-like structure – tags, values and attributes – which makes it a versatile choice for data serialization, configuration files, or declarative languages. Its syntax was inspired by the C family of languages (C/C++, C#, D, Java, …).",
+          "checkedAt": "2026-10-11T15:40:00+00:00",
+          "sha256": "019a1fd61be699e14055f7ea059bf1c445e956ef3dd70521eac780a95e247ae3",
+          "hashScope": "complete HTTP response body bytes; short excerpt manually selected",
+          "reviewId": "sdlang",
+          "locator": "home, introduction"
+        }
+      ]
     },
     {
       "from": "css",
@@ -3897,17 +4155,34 @@
       "from": "fortran",
       "to": "chapel",
       "type": "influencedBy",
-      "source": "https://github.com/breck7/pldb/blob/main/concepts/chapel.scroll",
+      "label": "主要语言设计影响",
+      "source": "https://chapel-lang.org/papers/BriefOverviewChapel.pdf",
+      "sourceSha256": "036a9c522596fda0e9adba155358e3f7b16446558c4de234cf7cf150636e404e",
+      "evidence": "Chapel 官方概述将 Fortran 列为 Chapel 的 “primary influences”。这里只记录该论文明确列出的整体语言设计影响；不推断 Fortran 程序兼容、运行时承继、后继或超集关系。",
       "key": "fortran|chapel|influencedBy",
       "layer": "design",
-      "state": "field-only",
-      "issues": [
-        "缺少关系论证"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": false,
-      "evidenceVersion": null,
-      "sources": []
+      "evidenceVersion": {
+        "citedSha256": "036a9c522596fda0e9adba155358e3f7b16446558c4de234cf7cf150636e404e",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
+      "sources": [
+        {
+          "url": "https://chapel-lang.org/papers/BriefOverviewChapel.pdf",
+          "finalUrl": "https://chapel-lang.org/papers/BriefOverviewChapel.pdf",
+          "title": "Brief Overview of Chapel",
+          "excerpt": "Chapel’s primary influences include C, Modula, Fortran, C++, Java, C#, CLU, Scala, ML, Perl, Matlab.",
+          "checkedAt": "2026-10-11T11:41:00+00:00",
+          "sha256": "036a9c522596fda0e9adba155358e3f7b16446558c4de234cf7cf150636e404e",
+          "hashScope": "complete PDF response body bytes; excerpt is manually selected",
+          "reviewId": "chapel",
+          "locator": "Introduction, language-design influences paragraph"
+        }
+      ]
     },
     {
       "from": "fortran",
@@ -4038,32 +4313,56 @@
       "from": "go",
       "to": "jule",
       "type": "influencedBy",
-      "source": "https://github.com/breck7/pldb/blob/main/concepts/jule.scroll",
+      "label": "Jule 的简洁性与可维护性取向以 Go 为主要设计影响",
+      "source": "https://manual.jule.dev/the-mission.html",
+      "sourceSha256": "50899e34bbd9bdfbea498efc790be0ee74ce884905ef7150825a0c72aebad5b5",
+      "evidence": "Jule 官方手册 The Mission 写道：\"In terms of simplicity and maintainability, Jule is heavily influenced by Go.\"，并说明 Jule 有意保留 Go 那种无需迁就编译器的开发体验。本边只记录作者自述的整体设计影响；不推断源码兼容、运行时或 ABI 关系。",
       "key": "go|jule|influencedBy",
       "layer": "design",
-      "state": "field-only",
-      "issues": [
-        "缺少关系论证"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": false,
-      "evidenceVersion": null,
-      "sources": []
+      "evidenceVersion": {
+        "citedSha256": "50899e34bbd9bdfbea498efc790be0ee74ce884905ef7150825a0c72aebad5b5",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
+      "sources": [
+        {
+          "url": "https://manual.jule.dev/the-mission.html",
+          "finalUrl": "https://manual.jule.dev/the-mission.html",
+          "title": "The Mission | Jule Manual",
+          "excerpt": "In terms of simplicity and maintainability, Jule is heavily influenced by Go. Go succeeds in providing a clear, readable, and productive development experience, and Jule aims to preserve that level of simplicity as much as possible.",
+          "checkedAt": "2026-10-11T15:40:00+00:00",
+          "sha256": "50899e34bbd9bdfbea498efc790be0ee74ce884905ef7150825a0c72aebad5b5",
+          "hashScope": "complete HTTP response body bytes; short excerpt manually selected",
+          "reviewId": "jule",
+          "locator": "The Mission, \"Simplicity and Maintainability\""
+        }
+      ]
     },
     {
       "from": "go",
       "to": "moonbit",
       "type": "influencedBy",
-      "source": "https://github.com/breck7/pldb/blob/main/concepts/moonbit.scroll",
+      "label": "整合 Go 与 Rust 的设计取向",
+      "source": "https://www.moonbitlang.com/blog/js-support",
+      "sourceSha256": "75b343fd26e790f434c08e72e2cc7d85c875e6108287a050ec4e20ddee35c5ff",
+      "evidence": "MoonBit 官方博客称其通过整合 Rust 和 Go 的精华，实现设计上的简洁易用及健壮的容错类型系统。这里只记录作者明确的整体设计取向；不推断 Go 语法、工具链、运行时或源码兼容。",
       "key": "go|moonbit|influencedBy",
       "layer": "design",
-      "state": "field-only",
+      "state": "citation-only",
       "issues": [
-        "缺少关系论证"
+        "缺少已阅读原文摘录"
       ],
       "reviewNote": "",
       "mapVisible": false,
-      "evidenceVersion": null,
+      "evidenceVersion": {
+        "citedSha256": "75b343fd26e790f434c08e72e2cc7d85c875e6108287a050ec4e20ddee35c5ff",
+        "match": "unread",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
       "sources": []
     },
     {
@@ -4234,17 +4533,34 @@
       "from": "haskell",
       "to": "civet",
       "type": "influencedBy",
-      "source": "https://github.com/breck7/pldb/blob/main/concepts/civet.scroll",
+      "label": "Civet 官方灵感列表含 Haskell",
+      "source": "https://civet.dev/philosophy",
+      "sourceSha256": "418f1458baef50eb18e4046606fce81de92f8b8551dd9b2db2f5a4e745e411fb",
+      "evidence": "Civet 官方 Design Philosophy 原文：\"We've taken inspiration from languages like CoffeeScript, Elm, LiveScript, Flow, Haskell, Elixir, Erlang, Python, Perl, Ruby, Crystal, Bash, and others.\"。本边只记录作者列举的灵感列表包含 Haskell。",
       "key": "haskell|civet|influencedBy",
       "layer": "design",
-      "state": "field-only",
-      "issues": [
-        "缺少关系论证"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": false,
-      "evidenceVersion": null,
-      "sources": []
+      "evidenceVersion": {
+        "citedSha256": "418f1458baef50eb18e4046606fce81de92f8b8551dd9b2db2f5a4e745e411fb",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
+      "sources": [
+        {
+          "url": "https://civet.dev/philosophy",
+          "finalUrl": "https://civet.dev/philosophy",
+          "title": "Civet Design Philosophy",
+          "excerpt": "We've taken inspiration from languages like CoffeeScript, Elm, LiveScript",
+          "checkedAt": "2026-10-10T11:19:42.200396+00:00",
+          "sha256": "418f1458baef50eb18e4046606fce81de92f8b8551dd9b2db2f5a4e745e411fb",
+          "hashScope": "complete HTTP response body bytes; short excerpt manually selected",
+          "reviewId": "civet",
+          "locator": "Civet builds on top of history; inspiration list"
+        }
+      ]
     },
     {
       "from": "haskell",
@@ -4736,17 +5052,34 @@
       "from": "java",
       "to": "chapel",
       "type": "influencedBy",
-      "source": "https://github.com/breck7/pldb/blob/main/concepts/chapel.scroll",
+      "label": "主要语言设计影响",
+      "source": "https://chapel-lang.org/papers/BriefOverviewChapel.pdf",
+      "sourceSha256": "036a9c522596fda0e9adba155358e3f7b16446558c4de234cf7cf150636e404e",
+      "evidence": "Chapel 官方概述将 Java 列为 Chapel 的 “primary influences”。这里只记录该论文明确列出的整体语言设计影响；不推断 JVM 关系、Java 兼容、后继或超集关系。",
       "key": "java|chapel|influencedBy",
       "layer": "design",
-      "state": "field-only",
-      "issues": [
-        "缺少关系论证"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": false,
-      "evidenceVersion": null,
-      "sources": []
+      "evidenceVersion": {
+        "citedSha256": "036a9c522596fda0e9adba155358e3f7b16446558c4de234cf7cf150636e404e",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
+      "sources": [
+        {
+          "url": "https://chapel-lang.org/papers/BriefOverviewChapel.pdf",
+          "finalUrl": "https://chapel-lang.org/papers/BriefOverviewChapel.pdf",
+          "title": "Brief Overview of Chapel",
+          "excerpt": "Chapel’s primary influences include C, Modula, Fortran, C++, Java, C#, CLU, Scala, ML, Perl, Matlab.",
+          "checkedAt": "2026-10-11T11:41:00+00:00",
+          "sha256": "036a9c522596fda0e9adba155358e3f7b16446558c4de234cf7cf150636e404e",
+          "hashScope": "complete PDF response body bytes; excerpt is manually selected",
+          "reviewId": "chapel",
+          "locator": "Introduction, language-design influences paragraph"
+        }
+      ]
     },
     {
       "from": "java",
@@ -4801,17 +5134,34 @@
       "from": "java",
       "to": "flare",
       "type": "influencedBy",
-      "source": "https://github.com/breck7/pldb/blob/main/concepts/flare.scroll",
+      "label": "Flare 官方设计说明把 Java 列为灵感语言之一",
+      "source": "https://web.archive.org/web/20250724221509id_/https://flarelang.sourceforge.net/prog-overview.html",
+      "sourceSha256": "d4b27d4bf5fa98c832414df0c0fa62a120d2da6983bf5fc05505f2691ab19a19",
+      "evidence": "Flare 项目概述原文：\"...others inspired by languages including Python, Java, C++, Eiffel, Common LISP, Scheme, Perl, MOO, Haskell, and more.\"。本边只记录作者列举的灵感列表包含 Java，与同源 Python/C++ → Flare 边共用同一份 Wayback id_ 快照与哈希。",
       "key": "java|flare|influencedBy",
       "layer": "design",
-      "state": "field-only",
-      "issues": [
-        "缺少关系论证"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": false,
-      "evidenceVersion": null,
-      "sources": []
+      "evidenceVersion": {
+        "citedSha256": "d4b27d4bf5fa98c832414df0c0fa62a120d2da6983bf5fc05505f2691ab19a19",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
+      "sources": [
+        {
+          "url": "https://web.archive.org/web/20250724221509id_/https://flarelang.sourceforge.net/prog-overview.html",
+          "finalUrl": "https://web.archive.org/web/20250724221509id_/https://flarelang.sourceforge.net/prog-overview.html",
+          "title": "Overview of the Flare Programming Language",
+          "excerpt": "The current proposed design for Flare has many proposed features intended to increase cleanliness, modularity, and safety; some of them wholly innovative, others inspired by languages including Python, Java, C++, Eiffel, Common LISP, Scheme, Perl, MOO, Haskell, and more.",
+          "checkedAt": "2026-10-11T13:30:00+00:00",
+          "sha256": "d4b27d4bf5fa98c832414df0c0fa62a120d2da6983bf5fc05505f2691ab19a19",
+          "hashScope": "complete decoded HTTP response body bytes of the archived snapshot (Wayback id_ replay); short excerpt manually selected",
+          "reviewId": "flare",
+          "locator": "prog-overview.html, 'What is Flare?' section"
+        }
+      ]
     },
     {
       "from": "java",
@@ -4977,17 +5327,34 @@
       "from": "java",
       "to": "sdlang",
       "type": "influencedBy",
-      "source": "https://github.com/breck7/pldb/blob/main/concepts/sdlang.scroll",
+      "label": "SDLang 自述语法受 C 系语言（含 Java）影响",
+      "source": "https://sdlang.org/",
+      "sourceSha256": "019a1fd61be699e14055f7ea059bf1c445e956ef3dd70521eac780a95e247ae3",
+      "evidence": "SDLang 官网首页写道：\"Its syntax was inspired by the C family of languages (C/C++, C#, D, Java, …).\"。本边只记录作者对语法族来源的整体自述，不推断与 Java 的编译、字节码或运行时关系。",
       "key": "java|sdlang|influencedBy",
       "layer": "design",
-      "state": "field-only",
-      "issues": [
-        "缺少关系论证"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": false,
-      "evidenceVersion": null,
-      "sources": []
+      "evidenceVersion": {
+        "citedSha256": "019a1fd61be699e14055f7ea059bf1c445e956ef3dd70521eac780a95e247ae3",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
+      "sources": [
+        {
+          "url": "https://sdlang.org/",
+          "finalUrl": "https://sdlang.org/",
+          "title": "SDLang — Simple Declarative Language",
+          "excerpt": "It has an XML-like structure – tags, values and attributes – which makes it a versatile choice for data serialization, configuration files, or declarative languages. Its syntax was inspired by the C family of languages (C/C++, C#, D, Java, …).",
+          "checkedAt": "2026-10-11T15:40:00+00:00",
+          "sha256": "019a1fd61be699e14055f7ea059bf1c445e956ef3dd70521eac780a95e247ae3",
+          "hashScope": "complete HTTP response body bytes; short excerpt manually selected",
+          "reviewId": "sdlang",
+          "locator": "home, introduction"
+        }
+      ]
     },
     {
       "from": "javascript",
@@ -6242,17 +6609,34 @@
       "from": "lua",
       "to": "buzz",
       "type": "influencedBy",
-      "source": "https://github.com/breck7/pldb/blob/main/concepts/buzz.scroll",
+      "label": "Buzz 官方文档称 Fiber 受 Lua 协程启发",
+      "source": "https://buzz-lang.dev/main/guide/fibers.html",
+      "sourceSha256": "1dfe99937e32b6bd334dfa5fb184634dee948fe53ebe5875cb8c44dbd4dea2ff",
+      "evidence": "Buzz 官方指南 Fibers 章：\"Buzz fibers are lightweight execution contexts inspired by Lua coroutines.\"。本边只记录作者自述 Fiber 机制受 Lua 协程启发；不推断 Buzz 与 Lua 的语法兼容或运行时关系。",
       "key": "lua|buzz|influencedBy",
       "layer": "design",
-      "state": "field-only",
-      "issues": [
-        "缺少关系论证"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": false,
-      "evidenceVersion": null,
-      "sources": []
+      "evidenceVersion": {
+        "citedSha256": "1dfe99937e32b6bd334dfa5fb184634dee948fe53ebe5875cb8c44dbd4dea2ff",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
+      "sources": [
+        {
+          "url": "https://buzz-lang.dev/main/guide/fibers.html",
+          "finalUrl": "https://buzz-lang.dev/main/guide/fibers.html",
+          "title": "Fibers | buzz (buzz-lang.dev)",
+          "excerpt": "Buzz fibers are lightweight execution contexts inspired by Lua coroutines. Each fiber keeps its own call stack, local variables, and current execution state, which means buzz can pause an entire chain of function calls and later continue it exactly where it stopped.",
+          "checkedAt": "2026-10-11T15:40:00+00:00",
+          "sha256": "1dfe99937e32b6bd334dfa5fb184634dee948fe53ebe5875cb8c44dbd4dea2ff",
+          "hashScope": "complete HTTP response body bytes; short excerpt manually selected",
+          "reviewId": "buzz",
+          "locator": "guide/fibers"
+        }
+      ]
     },
     {
       "from": "lua",
@@ -6481,6 +6865,39 @@
     },
     {
       "from": "matlab",
+      "to": "chapel",
+      "type": "influencedBy",
+      "label": "主要语言设计影响",
+      "source": "https://chapel-lang.org/papers/BriefOverviewChapel.pdf",
+      "sourceSha256": "036a9c522596fda0e9adba155358e3f7b16446558c4de234cf7cf150636e404e",
+      "evidence": "Chapel 官方概述将 Matlab 列为 Chapel 的 “primary influences”。这里只记录该论文明确列出的整体语言设计影响；不推断 MATLAB 工具箱、数值库、运行时或源码兼容关系。",
+      "key": "matlab|chapel|influencedBy",
+      "layer": "design",
+      "state": "excerpt-recorded",
+      "issues": [],
+      "reviewNote": "",
+      "mapVisible": false,
+      "evidenceVersion": {
+        "citedSha256": "036a9c522596fda0e9adba155358e3f7b16446558c4de234cf7cf150636e404e",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
+      "sources": [
+        {
+          "url": "https://chapel-lang.org/papers/BriefOverviewChapel.pdf",
+          "finalUrl": "https://chapel-lang.org/papers/BriefOverviewChapel.pdf",
+          "title": "Brief Overview of Chapel",
+          "excerpt": "Chapel’s primary influences include C, Modula, Fortran, C++, Java, C#, CLU, Scala, ML, Perl, Matlab.",
+          "checkedAt": "2026-10-11T11:41:00+00:00",
+          "sha256": "036a9c522596fda0e9adba155358e3f7b16446558c4de234cf7cf150636e404e",
+          "hashScope": "complete PDF response body bytes; excerpt is manually selected",
+          "reviewId": "chapel",
+          "locator": "Introduction, language-design influences paragraph"
+        }
+      ]
+    },
+    {
+      "from": "matlab",
       "to": "julia",
       "type": "influencedBy",
       "label": "数学记法参照",
@@ -6549,17 +6966,34 @@
       "from": "matlab",
       "to": "simit",
       "type": "influencedBy",
-      "source": "https://github.com/breck7/pldb/blob/main/concepts/simit.scroll",
+      "label": "Simit 沿用 MATLAB 的矩阵字面量语法",
+      "source": "http://simit-lang.org/language",
+      "sourceSha256": "3b942d2d3eb75d015906160fd3bc2e98fdae9ab3483b6cda72228a5b657b0428",
+      "evidence": "Simit 官方语言页写道：\"Simit also supports the MATLAB syntax for declaring matrix literals in addition to an alternative more regular syntax:\"，并说明其函数可像 MATLAB 一样返回任意个结果。本边只记录语法层面自述的 MATLAB 来源；不推断整体设计、语义或运行时等价。",
       "key": "matlab|simit|influencedBy",
       "layer": "design",
-      "state": "field-only",
-      "issues": [
-        "缺少关系论证"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": false,
-      "evidenceVersion": null,
-      "sources": []
+      "evidenceVersion": {
+        "citedSha256": "3b942d2d3eb75d015906160fd3bc2e98fdae9ab3483b6cda72228a5b657b0428",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
+      "sources": [
+        {
+          "url": "http://simit-lang.org/language",
+          "finalUrl": "http://simit-lang.org/language",
+          "title": "Simit — Language",
+          "excerpt": "Simit also supports the MATLAB syntax for declaring matrix literals in addition to an alternative more regular syntax:",
+          "checkedAt": "2026-10-12T00:20:00+00:00",
+          "sha256": "3b942d2d3eb75d015906160fd3bc2e98fdae9ab3483b6cda72228a5b657b0428",
+          "hashScope": "complete HTTP response body bytes; short excerpt manually selected",
+          "reviewId": "simit",
+          "locator": "Language, Matrix literals"
+        }
+      ]
     },
     {
       "from": "mdx",
@@ -6661,6 +7095,39 @@
     },
     {
       "from": "ml",
+      "to": "chapel",
+      "type": "influencedBy",
+      "label": "主要语言设计影响",
+      "source": "https://chapel-lang.org/papers/BriefOverviewChapel.pdf",
+      "sourceSha256": "036a9c522596fda0e9adba155358e3f7b16446558c4de234cf7cf150636e404e",
+      "evidence": "Chapel 官方概述将 ML 列为 Chapel 的 “primary influences”。这里只记录该论文明确列出的整体语言设计影响；不推断 Chapel 是 ML 方言、兼容实现、后继或超集。",
+      "key": "ml|chapel|influencedBy",
+      "layer": "design",
+      "state": "excerpt-recorded",
+      "issues": [],
+      "reviewNote": "",
+      "mapVisible": false,
+      "evidenceVersion": {
+        "citedSha256": "036a9c522596fda0e9adba155358e3f7b16446558c4de234cf7cf150636e404e",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
+      "sources": [
+        {
+          "url": "https://chapel-lang.org/papers/BriefOverviewChapel.pdf",
+          "finalUrl": "https://chapel-lang.org/papers/BriefOverviewChapel.pdf",
+          "title": "Brief Overview of Chapel",
+          "excerpt": "Chapel’s primary influences include C, Modula, Fortran, C++, Java, C#, CLU, Scala, ML, Perl, Matlab.",
+          "checkedAt": "2026-10-11T11:41:00+00:00",
+          "sha256": "036a9c522596fda0e9adba155358e3f7b16446558c4de234cf7cf150636e404e",
+          "hashScope": "complete PDF response body bytes; excerpt is manually selected",
+          "reviewId": "chapel",
+          "locator": "Introduction, language-design influences paragraph"
+        }
+      ]
+    },
+    {
+      "from": "ml",
       "to": "haskell",
       "type": "influencedBy",
       "label": "作为 ML 家族设计前驱",
@@ -6755,6 +7222,39 @@
       "mapVisible": false,
       "evidenceVersion": null,
       "sources": []
+    },
+    {
+      "from": "modula",
+      "to": "chapel",
+      "type": "influencedBy",
+      "label": "主要语言设计影响",
+      "source": "https://chapel-lang.org/papers/BriefOverviewChapel.pdf",
+      "sourceSha256": "036a9c522596fda0e9adba155358e3f7b16446558c4de234cf7cf150636e404e",
+      "evidence": "Chapel 官方概述将 Modula 列为 Chapel 的 “primary influences”。这里只记录该论文明确列出的整体语言设计影响；不把家族连续性、具体 Modula 方言或模块系统相似性扩大为兼容、后继或超集结论。",
+      "key": "modula|chapel|influencedBy",
+      "layer": "design",
+      "state": "excerpt-recorded",
+      "issues": [],
+      "reviewNote": "",
+      "mapVisible": false,
+      "evidenceVersion": {
+        "citedSha256": "036a9c522596fda0e9adba155358e3f7b16446558c4de234cf7cf150636e404e",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
+      "sources": [
+        {
+          "url": "https://chapel-lang.org/papers/BriefOverviewChapel.pdf",
+          "finalUrl": "https://chapel-lang.org/papers/BriefOverviewChapel.pdf",
+          "title": "Brief Overview of Chapel",
+          "excerpt": "Chapel’s primary influences include C, Modula, Fortran, C++, Java, C#, CLU, Scala, ML, Perl, Matlab.",
+          "checkedAt": "2026-10-11T11:41:00+00:00",
+          "sha256": "036a9c522596fda0e9adba155358e3f7b16446558c4de234cf7cf150636e404e",
+          "hashScope": "complete PDF response body bytes; excerpt is manually selected",
+          "reviewId": "chapel",
+          "locator": "Introduction, language-design influences paragraph"
+        }
+      ]
     },
     {
       "from": "modula",
@@ -7047,17 +7547,34 @@
       "from": "objective-c",
       "to": "cooc",
       "type": "supersetOf",
-      "source": "https://github.com/breck7/pldb/blob/main/concepts/cooc.scroll",
+      "label": "cooC 在官方文献摘要中被表述为 Objective-C 的超集",
+      "source": "https://web.archive.org/web/2023id_/https://www.tenon.com/products/codebuilder/Objective-C.shtml",
+      "sourceSha256": "0436c517572411370ed9d83d30e7507a27791b66ce1f337c6a41bee8efd1f2e9",
+      "evidence": "cooC 文章摘要（Rajiv Trehan 等，ACM SIGPLAN Notices 1993）写道：\"cooC is a superset of Objective-C.\"。本边记录该文献摘要的超集表述；不推断工具链、运行时或 ABI 兼容。",
       "key": "objective-c|cooc|supersetOf",
       "layer": "design",
-      "state": "field-only",
-      "issues": [
-        "缺少关系论证"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": false,
-      "evidenceVersion": null,
-      "sources": []
+      "evidenceVersion": {
+        "citedSha256": "0436c517572411370ed9d83d30e7507a27791b66ce1f337c6a41bee8efd1f2e9",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
+      "sources": [
+        {
+          "url": "https://web.archive.org/web/2023id_/https://www.tenon.com/products/codebuilder/Objective-C.shtml",
+          "finalUrl": "https://web.archive.org/web/2023id_/https://www.tenon.com/products/codebuilder/Objective-C.shtml",
+          "title": "Tenon — objective-c bibliography (cooC article abstract)",
+          "excerpt": "This article discusses cooC, a language based on the premise that an object not only provides an encapsulation boundary but should also form a process boundary. cooC is a superset of Objective-C.",
+          "checkedAt": "2026-10-12T00:20:00+00:00",
+          "sha256": "0436c517572411370ed9d83d30e7507a27791b66ce1f337c6a41bee8efd1f2e9",
+          "hashScope": "complete HTTP response body bytes; short excerpt manually selected",
+          "reviewId": "cooc",
+          "locator": "cooC entry, Rajiv Trehan et al., ACM SIGPLAN Notices Vol. 28 No 2, Feb 1993"
+        }
+      ]
     },
     {
       "from": "objective-c",
@@ -7387,35 +7904,102 @@
     },
     {
       "from": "perl",
-      "to": "civet",
+      "to": "chapel",
       "type": "influencedBy",
-      "source": "https://github.com/breck7/pldb/blob/main/concepts/civet.scroll",
-      "key": "perl|civet|influencedBy",
+      "label": "主要语言设计影响",
+      "source": "https://chapel-lang.org/papers/BriefOverviewChapel.pdf",
+      "sourceSha256": "036a9c522596fda0e9adba155358e3f7b16446558c4de234cf7cf150636e404e",
+      "evidence": "Chapel 官方概述将 Perl 列为 Chapel 的 “primary influences”。这里只记录该论文明确列出的整体语言设计影响；不推断 Perl 语法、CPAN 生态、运行时或源码兼容关系。",
+      "key": "perl|chapel|influencedBy",
       "layer": "design",
-      "state": "field-only",
-      "issues": [
-        "缺少关系论证"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": false,
-      "evidenceVersion": null,
-      "sources": []
+      "evidenceVersion": {
+        "citedSha256": "036a9c522596fda0e9adba155358e3f7b16446558c4de234cf7cf150636e404e",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
+      "sources": [
+        {
+          "url": "https://chapel-lang.org/papers/BriefOverviewChapel.pdf",
+          "finalUrl": "https://chapel-lang.org/papers/BriefOverviewChapel.pdf",
+          "title": "Brief Overview of Chapel",
+          "excerpt": "Chapel’s primary influences include C, Modula, Fortran, C++, Java, C#, CLU, Scala, ML, Perl, Matlab.",
+          "checkedAt": "2026-10-11T11:41:00+00:00",
+          "sha256": "036a9c522596fda0e9adba155358e3f7b16446558c4de234cf7cf150636e404e",
+          "hashScope": "complete PDF response body bytes; excerpt is manually selected",
+          "reviewId": "chapel",
+          "locator": "Introduction, language-design influences paragraph"
+        }
+      ]
+    },
+    {
+      "from": "perl",
+      "to": "civet",
+      "type": "influencedBy",
+      "label": "Civet 官方灵感列表含 Perl",
+      "source": "https://civet.dev/philosophy",
+      "sourceSha256": "418f1458baef50eb18e4046606fce81de92f8b8551dd9b2db2f5a4e745e411fb",
+      "evidence": "Civet 官方 Design Philosophy 原文：\"We've taken inspiration from languages like CoffeeScript, Elm, LiveScript, Flow, Haskell, Elixir, Erlang, Python, Perl, Ruby, Crystal, Bash, and others.\"。本边只记录作者列举的灵感列表包含 Perl。",
+      "key": "perl|civet|influencedBy",
+      "layer": "design",
+      "state": "excerpt-recorded",
+      "issues": [],
+      "reviewNote": "",
+      "mapVisible": false,
+      "evidenceVersion": {
+        "citedSha256": "418f1458baef50eb18e4046606fce81de92f8b8551dd9b2db2f5a4e745e411fb",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
+      "sources": [
+        {
+          "url": "https://civet.dev/philosophy",
+          "finalUrl": "https://civet.dev/philosophy",
+          "title": "Civet Design Philosophy",
+          "excerpt": "We've taken inspiration from languages like CoffeeScript, Elm, LiveScript",
+          "checkedAt": "2026-10-10T11:19:42.200396+00:00",
+          "sha256": "418f1458baef50eb18e4046606fce81de92f8b8551dd9b2db2f5a4e745e411fb",
+          "hashScope": "complete HTTP response body bytes; short excerpt manually selected",
+          "reviewId": "civet",
+          "locator": "Civet builds on top of history; inspiration list"
+        }
+      ]
     },
     {
       "from": "perl",
       "to": "flare",
       "type": "influencedBy",
-      "source": "https://github.com/breck7/pldb/blob/main/concepts/flare.scroll",
+      "label": "Flare 官方设计说明把 Perl 列为灵感语言之一",
+      "source": "https://web.archive.org/web/20250724221509id_/https://flarelang.sourceforge.net/prog-overview.html",
+      "sourceSha256": "d4b27d4bf5fa98c832414df0c0fa62a120d2da6983bf5fc05505f2691ab19a19",
+      "evidence": "Flare 项目概述原文：\"...others inspired by languages including Python, Java, C++, Eiffel, Common LISP, Scheme, Perl, MOO, Haskell, and more.\"。本边只记录作者列举的灵感列表包含 Perl，与同源 python/java/cpp → Flare 边共用同一份 Wayback id_ 快照与哈希。",
       "key": "perl|flare|influencedBy",
       "layer": "design",
-      "state": "field-only",
-      "issues": [
-        "缺少关系论证"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": false,
-      "evidenceVersion": null,
-      "sources": []
+      "evidenceVersion": {
+        "citedSha256": "d4b27d4bf5fa98c832414df0c0fa62a120d2da6983bf5fc05505f2691ab19a19",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
+      "sources": [
+        {
+          "url": "https://web.archive.org/web/20250724221509id_/https://flarelang.sourceforge.net/prog-overview.html",
+          "finalUrl": "https://web.archive.org/web/20250724221509id_/https://flarelang.sourceforge.net/prog-overview.html",
+          "title": "Overview of the Flare Programming Language",
+          "excerpt": "The current proposed design for Flare has many proposed features intended to increase cleanliness, modularity, and safety; some of them wholly innovative, others inspired by languages including Python, Java, C++, Eiffel, Common LISP, Scheme, Perl, MOO, Haskell, and more.",
+          "checkedAt": "2026-10-11T13:30:00+00:00",
+          "sha256": "d4b27d4bf5fa98c832414df0c0fa62a120d2da6983bf5fc05505f2691ab19a19",
+          "hashScope": "complete decoded HTTP response body bytes of the archived snapshot (Wayback id_ replay); short excerpt manually selected",
+          "reviewId": "flare",
+          "locator": "prog-overview.html, 'What is Flare?' section"
+        }
+      ]
     },
     {
       "from": "perl",
@@ -7565,17 +8149,34 @@
       "from": "prolog",
       "to": "clpr",
       "type": "supersetOf",
-      "source": "https://github.com/breck7/pldb/blob/main/concepts/clpr.scroll",
+      "label": "普通 Prolog 被视为 CLP 的特例",
+      "source": "https://www.swi-prolog.org/pldoc/man?section=clp",
+      "sourceSha256": "98cc78f512530f5bba222fc07f15025556be7a250915c56bc1aaeffc10707bf6",
+      "evidence": "SWI-Prolog 官方文档写道：\"Plain Prolog can thus be regarded as a special case of CLP.\"。本边记录 CLP 相对普通 Prolog 的包容关系（CLP 为超集）；不推断具体求解器或实现兼容。",
       "key": "prolog|clpr|supersetOf",
       "layer": "design",
-      "state": "field-only",
-      "issues": [
-        "缺少关系论证"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": false,
-      "evidenceVersion": null,
-      "sources": []
+      "evidenceVersion": {
+        "citedSha256": "98cc78f512530f5bba222fc07f15025556be7a250915c56bc1aaeffc10707bf6",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
+      "sources": [
+        {
+          "url": "https://www.swi-prolog.org/pldoc/man?section=clp",
+          "finalUrl": "https://www.swi-prolog.org/pldoc/man?section=clp",
+          "title": "SWI-Prolog — Constraint Logic Programming (clp)",
+          "excerpt": "Plain Prolog can thus be regarded as a special case of CLP. There are dedicated constraint solvers for several important domains:",
+          "checkedAt": "2026-10-12T00:20:00+00:00",
+          "sha256": "98cc78f512530f5bba222fc07f15025556be7a250915c56bc1aaeffc10707bf6",
+          "hashScope": "complete HTTP response body bytes; short excerpt manually selected",
+          "reviewId": "clpr",
+          "locator": "section clp, opening"
+        }
+      ]
     },
     {
       "from": "prolog",
@@ -7654,6 +8255,29 @@
       "sources": []
     },
     {
+      "from": "pyrex",
+      "to": "cython",
+      "type": "influencedBy",
+      "label": "项目起源与主要设计输入",
+      "source": "https://docs.cython.org/en/latest/src/tutorial/related_work.html",
+      "sourceSha256": "06fc04d813bb182336142074a9f0a4d18c55a2d5240d6cb0a13ce23be86c21d1",
+      "evidence": "Cython 官方文档明确称 Cython 最初基于 Pyrex 编译器项目，且许多特性和主要设计决定在 Pyrex 项目中形成。这里只记录该明确的项目起源与设计输入；不把它扩大为源码、扩展模块或运行时的全面兼容承诺。",
+      "key": "pyrex|cython|influencedBy",
+      "layer": "design",
+      "state": "citation-only",
+      "issues": [
+        "缺少已阅读原文摘录"
+      ],
+      "reviewNote": "",
+      "mapVisible": false,
+      "evidenceVersion": {
+        "citedSha256": "06fc04d813bb182336142074a9f0a4d18c55a2d5240d6cb0a13ce23be86c21d1",
+        "match": "unread",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
+      "sources": []
+    },
+    {
       "from": "python",
       "to": "chapel",
       "type": "influencedBy",
@@ -7673,33 +8297,67 @@
       "from": "python",
       "to": "civet",
       "type": "influencedBy",
-      "source": "https://github.com/breck7/pldb/blob/main/concepts/civet.scroll",
+      "label": "Civet 设计灵感中的 Python 影响",
+      "source": "https://civet.dev/philosophy",
+      "sourceSha256": "418f1458baef50eb18e4046606fce81de92f8b8551dd9b2db2f5a4e745e411fb",
+      "evidence": "Civet 官方《Design Philosophy》在列举设计灵感时写道：\"We've taken inspiration from languages like CoffeeScript, Elm, LiveScript, Flow, Haskell, Elixir, Erlang, Python, Perl, Ruby, Crystal, Bash, and others.\"。这里只记录作者列举的整体语言设计灵感（含 Python）；不推断语法、类型系统或编译产物层面的兼容或继承。",
       "key": "python|civet|influencedBy",
       "layer": "design",
-      "state": "field-only",
-      "issues": [
-        "缺少关系论证"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": false,
-      "evidenceVersion": null,
-      "sources": []
+      "evidenceVersion": {
+        "citedSha256": "418f1458baef50eb18e4046606fce81de92f8b8551dd9b2db2f5a4e745e411fb",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
+      "sources": [
+        {
+          "url": "https://civet.dev/philosophy",
+          "finalUrl": "https://civet.dev/philosophy",
+          "title": "Civet Design Philosophy",
+          "excerpt": "We've taken inspiration from languages like CoffeeScript, Elm, LiveScript",
+          "checkedAt": "2026-10-10T11:19:42.200396+00:00",
+          "sha256": "418f1458baef50eb18e4046606fce81de92f8b8551dd9b2db2f5a4e745e411fb",
+          "hashScope": "complete HTTP response body bytes; short excerpt manually selected",
+          "reviewId": "civet",
+          "locator": "Civet builds on top of history; inspiration list"
+        }
+      ]
     },
     {
       "from": "python",
       "to": "cobrust",
       "type": "influencedBy",
-      "source": "https://github.com/breck7/pldb/blob/main/concepts/cobrust.scroll",
+      "label": "Cobrust 的 Python 人体工学取向",
+      "source": "https://raw.githubusercontent.com/Cobrust-lang/cobrust/main/README.md",
+      "sourceSha256": "61f33661f0b5250e9355294b5841336735b9034a808abf9626ed2feec2b35fb9",
+      "evidence": "Cobrust 仓库 README 自述 \"Python ergonomics, Rust safety, zero migration cost\"，并说明其采用 Python 式人体工学（缩进、推导式、f-string、装饰器、结构化模式匹配）。这里只记录作者对 Python 人体工学取向的设计承接；不推断源码级兼容或 CPython 运行时关系。",
       "key": "python|cobrust|influencedBy",
       "layer": "design",
-      "state": "field-only",
-      "issues": [
-        "缺少关系论证"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": false,
-      "evidenceVersion": null,
-      "sources": []
+      "evidenceVersion": {
+        "citedSha256": "61f33661f0b5250e9355294b5841336735b9034a808abf9626ed2feec2b35fb9",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/Cobrust-lang/cobrust/main/README.md",
+          "finalUrl": "https://raw.githubusercontent.com/Cobrust-lang/cobrust/main/README.md",
+          "title": "Cobrust repository README",
+          "excerpt": "Python ergonomics, Rust safety, zero migration cost. ... Python ergonomics (indentation, comprehensions, f-strings, decorators, structural pattern matching), Rust semantics (ownership, `Result<T, E>`, no GIL, no implicit truthiness, no mutable defaults).",
+          "checkedAt": "2026-10-11T13:30:00+00:00",
+          "sha256": "61f33661f0b5250e9355294b5841336735b9034a808abf9626ed2feec2b35fb9",
+          "hashScope": "complete HTTP response body bytes; short excerpt manually selected",
+          "reviewId": "cobrust",
+          "locator": "README, project tagline and feature list"
+        }
+      ]
     },
     {
       "from": "python",
@@ -7738,17 +8396,34 @@
       "from": "python",
       "to": "flare",
       "type": "influencedBy",
-      "source": "https://github.com/breck7/pldb/blob/main/concepts/flare.scroll",
+      "label": "Flare 设计灵感中的 Python 影响",
+      "source": "https://web.archive.org/web/20250724221509id_/https://flarelang.sourceforge.net/prog-overview.html",
+      "sourceSha256": "d4b27d4bf5fa98c832414df0c0fa62a120d2da6983bf5fc05505f2691ab19a19",
+      "evidence": "Flare 官方项目概述写道：\"The current proposed design for Flare has many proposed features intended to increase cleanliness, modularity, and safety; some of them wholly innovative, others inspired by languages including Python, Java, C++, Eiffel, Common LISP, Scheme, Perl, MOO, Haskell, and more.\"。这里只记录作者列举的整体语言设计灵感（含 Python）；不推断语法、类型系统或运行时的具体继承。",
       "key": "python|flare|influencedBy",
       "layer": "design",
-      "state": "field-only",
-      "issues": [
-        "缺少关系论证"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": false,
-      "evidenceVersion": null,
-      "sources": []
+      "evidenceVersion": {
+        "citedSha256": "d4b27d4bf5fa98c832414df0c0fa62a120d2da6983bf5fc05505f2691ab19a19",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
+      "sources": [
+        {
+          "url": "https://web.archive.org/web/20250724221509id_/https://flarelang.sourceforge.net/prog-overview.html",
+          "finalUrl": "https://web.archive.org/web/20250724221509id_/https://flarelang.sourceforge.net/prog-overview.html",
+          "title": "Overview of the Flare Programming Language",
+          "excerpt": "The current proposed design for Flare has many proposed features intended to increase cleanliness, modularity, and safety; some of them wholly innovative, others inspired by languages including Python, Java, C++, Eiffel, Common LISP, Scheme, Perl, MOO, Haskell, and more.",
+          "checkedAt": "2026-10-11T13:30:00+00:00",
+          "sha256": "d4b27d4bf5fa98c832414df0c0fa62a120d2da6983bf5fc05505f2691ab19a19",
+          "hashScope": "complete decoded HTTP response body bytes of the archived snapshot (Wayback id_ replay); short excerpt manually selected",
+          "reviewId": "flare",
+          "locator": "prog-overview.html, 'What is Flare?' section"
+        }
+      ]
     },
     {
       "from": "python",
@@ -7851,17 +8526,34 @@
       "from": "python",
       "to": "please-build",
       "type": "influencedBy",
-      "source": "https://github.com/breck7/pldb/blob/main/concepts/please-build.scroll",
+      "label": "Please 构建语言的 Python 语法取向",
+      "source": "https://raw.githubusercontent.com/thought-machine/please/master/README.md",
+      "sourceSha256": "0a9016272334a30824fbcfb099b1fceb39ad315f87b78271e9af5858d9c3bc9b",
+      "evidence": "Please 仓库 README 说明其构建语言是完整的编程语言，声明式 DSL 之外 \"you can drop into an imperative language that resembles python when necessary\"，示例以 python 标注。这里只记录作者明确的 Python 语法取向设计；不推断与 CPython 的运行时或标准库关系。",
       "key": "python|please-build|influencedBy",
       "layer": "design",
-      "state": "field-only",
-      "issues": [
-        "缺少关系论证"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": false,
-      "evidenceVersion": null,
-      "sources": []
+      "evidenceVersion": {
+        "citedSha256": "0a9016272334a30824fbcfb099b1fceb39ad315f87b78271e9af5858d9c3bc9b",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/thought-machine/please/master/README.md",
+          "finalUrl": "https://raw.githubusercontent.com/thought-machine/please/master/README.md",
+          "title": "Please (thought-machine/please) README",
+          "excerpt": "There are a high level set of build rules that make up a declarative DSL to define build targets, however you can drop into an imperative language that resembles python when necessary",
+          "checkedAt": "2026-10-11T13:30:00+00:00",
+          "sha256": "0a9016272334a30824fbcfb099b1fceb39ad315f87b78271e9af5858d9c3bc9b",
+          "hashScope": "complete HTTP response body bytes; short excerpt manually selected",
+          "reviewId": "please-build",
+          "locator": "README, build language section"
+        }
+      ]
     },
     {
       "from": "python",
@@ -7883,17 +8575,34 @@
       "from": "python",
       "to": "shrubbery",
       "type": "influencedBy",
-      "source": "https://github.com/breck7/pldb/blob/main/concepts/shrubbery.scroll",
+      "label": "Shrubbery 缩进解析与冒号用法受 Python 影响",
+      "source": "https://docs.racket-lang.org/shrubbery/Design_Considerations.html",
+      "sourceSha256": "680a1be2d7c2a2a9bdacc9640829cf39d4df6978d98f176d1e345b8a8f65c813",
+      "evidence": "Racket 官方文档《Design Considerations》第 6.2 节写明：\"Indentation-sensitive parsing and the use of : is obviously informed by Python.\"。本边只记录作者自述的缩进解析设计来源；不推断整体语法兼容或与 CPython 的运行时关系。",
       "key": "python|shrubbery|influencedBy",
       "layer": "design",
-      "state": "field-only",
-      "issues": [
-        "缺少关系论证"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": false,
-      "evidenceVersion": null,
-      "sources": []
+      "evidenceVersion": {
+        "citedSha256": "680a1be2d7c2a2a9bdacc9640829cf39d4df6978d98f176d1e345b8a8f65c813",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
+      "sources": [
+        {
+          "url": "https://docs.racket-lang.org/shrubbery/Design_Considerations.html",
+          "finalUrl": "https://docs.racket-lang.org/shrubbery/Design_Considerations.html",
+          "title": "Shrubbery Notation — Design Considerations (Racket docs)",
+          "excerpt": "Indentation-sensitive parsing and the use of : is obviously informed by Python.",
+          "checkedAt": "2026-10-11T15:40:00+00:00",
+          "sha256": "680a1be2d7c2a2a9bdacc9640829cf39d4df6978d98f176d1e345b8a8f65c813",
+          "hashScope": "complete HTTP response body bytes; short excerpt manually selected",
+          "reviewId": "shrubbery",
+          "locator": "6.2 Prior Art"
+        }
+      ]
     },
     {
       "from": "python",
@@ -8284,17 +8993,34 @@
       "from": "relational-model",
       "to": "sql",
       "type": "influencedBy",
-      "source": "https://github.com/breck7/pldb/blob/main/concepts/sql.scroll",
+      "label": "SQL 的访问语法基于 Codd 关系模型",
+      "source": "https://www.redbooks.ibm.com/redbooks/pdfs/sg245511.pdf",
+      "sourceSha256": "5b81c2bff2d0e04ed08b17fc2dbdcfc33535e616ae0c63063a5a0f38cac1d78f",
+      "evidence": "IBM Redbook 写道：\"SQL is a standard syntax for accessing relational database systems based on a relational theory, which is documented in The Relational Model for Database Management by E. F. Codd.\"。本边记录 SQL 访问语法与 Codd 关系模型的来源关系；不推断实现或产品兼容。",
       "key": "relational-model|sql|influencedBy",
       "layer": "design",
-      "state": "field-only",
-      "issues": [
-        "缺少关系论证"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": false,
-      "evidenceVersion": null,
-      "sources": []
+      "evidenceVersion": {
+        "citedSha256": "5b81c2bff2d0e04ed08b17fc2dbdcfc33535e616ae0c63063a5a0f38cac1d78f",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
+      "sources": [
+        {
+          "url": "https://www.redbooks.ibm.com/redbooks/pdfs/sg245511.pdf",
+          "finalUrl": "https://www.redbooks.ibm.com/redbooks/pdfs/sg245511.pdf",
+          "title": "IBM Redbooks — (databases/DB2 基础, 第 2.4.2 节 Structured Query Language)",
+          "excerpt": "SQL is a standard syntax for accessing relational database systems based on a relational theory, which is documented in The Relational Model for Database Management by E. F. Codd.",
+          "checkedAt": "2026-10-12T00:20:00+00:00",
+          "sha256": "5b81c2bff2d0e04ed08b17fc2dbdcfc33535e616ae0c63063a5a0f38cac1d78f",
+          "hashScope": "complete HTTP response body bytes; short excerpt manually selected",
+          "reviewId": "relational-model",
+          "locator": "Chapter 2.4.2 Structured Query Language"
+        }
+      ]
     },
     {
       "from": "relational-model",
@@ -8348,17 +9074,34 @@
       "from": "ruby",
       "to": "civet",
       "type": "influencedBy",
-      "source": "https://github.com/breck7/pldb/blob/main/concepts/civet.scroll",
+      "label": "Civet 官方灵感列表含 Ruby",
+      "source": "https://civet.dev/philosophy",
+      "sourceSha256": "418f1458baef50eb18e4046606fce81de92f8b8551dd9b2db2f5a4e745e411fb",
+      "evidence": "Civet 官方 Design Philosophy 原文：\"We've taken inspiration from languages like CoffeeScript, Elm, LiveScript, Flow, Haskell, Elixir, Erlang, Python, Perl, Ruby, Crystal, Bash, and others.\"。本边只记录作者列举的灵感列表包含 Ruby。",
       "key": "ruby|civet|influencedBy",
       "layer": "design",
-      "state": "field-only",
-      "issues": [
-        "缺少关系论证"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": false,
-      "evidenceVersion": null,
-      "sources": []
+      "evidenceVersion": {
+        "citedSha256": "418f1458baef50eb18e4046606fce81de92f8b8551dd9b2db2f5a4e745e411fb",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
+      "sources": [
+        {
+          "url": "https://civet.dev/philosophy",
+          "finalUrl": "https://civet.dev/philosophy",
+          "title": "Civet Design Philosophy",
+          "excerpt": "We've taken inspiration from languages like CoffeeScript, Elm, LiveScript",
+          "checkedAt": "2026-10-10T11:19:42.200396+00:00",
+          "sha256": "418f1458baef50eb18e4046606fce81de92f8b8551dd9b2db2f5a4e745e411fb",
+          "hashScope": "complete HTTP response body bytes; short excerpt manually selected",
+          "reviewId": "civet",
+          "locator": "Civet builds on top of history; inspiration list"
+        }
+      ]
     },
     {
       "from": "ruby",
@@ -8479,49 +9222,100 @@
       "from": "rust",
       "to": "alumina",
       "type": "influencedBy",
-      "source": "https://github.com/breck7/pldb/blob/main/concepts/alumina.scroll",
+      "label": "Alumina 自述受 Rust 启发但保留 C 式手动内存管理",
+      "source": "https://docs.alumina-lang.net/",
+      "sourceSha256": "bc9fef2ffb9bc51b7fb3b0d29f9c19154d421307d4b1b480862384a57892bbbb",
+      "evidence": "Alumina 官方文档首页写道：\"It is heavily inspired by Rust, but it keeps C-style manual memory management and memory unsafety.\"，同句也说明它与 Rust 借用检查器的差异。本边只记录作者自述的整体设计来源；不推断源码兼容或运行时关系。",
       "key": "rust|alumina|influencedBy",
       "layer": "design",
-      "state": "field-only",
-      "issues": [
-        "缺少关系论证"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": false,
-      "evidenceVersion": null,
-      "sources": []
+      "evidenceVersion": {
+        "citedSha256": "bc9fef2ffb9bc51b7fb3b0d29f9c19154d421307d4b1b480862384a57892bbbb",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
+      "sources": [
+        {
+          "url": "https://docs.alumina-lang.net/",
+          "finalUrl": "https://docs.alumina-lang.net/",
+          "title": "Alumina — Welcome to the Alumina programming language",
+          "excerpt": "Alumina is an imperative, general-purpose, statically typed, compiled system programming language. It is heavily inspired by Rust, but it keeps C-style manual memory management and memory unsafety.",
+          "checkedAt": "2026-10-11T15:40:00+00:00",
+          "sha256": "bc9fef2ffb9bc51b7fb3b0d29f9c19154d421307d4b1b480862384a57892bbbb",
+          "hashScope": "complete HTTP response body bytes; short excerpt manually selected",
+          "reviewId": "alumina",
+          "locator": "docs home, opening paragraph"
+        }
+      ]
     },
     {
       "from": "rust",
       "to": "cairo",
       "type": "influencedBy",
-      "source": "https://github.com/breck7/pldb/blob/main/concepts/cairo.scroll",
+      "label": "Cairo 官方定位为 Rust 启发语言",
+      "source": "https://www.cairo-lang.org/",
+      "sourceSha256": "16fa6ab7086d00bc97dde815a62cbe874c76d074487db3214a769e4e915c055e",
+      "evidence": "Cairo 官方站点首页标题为 \"WELCOME TO CAIRO — The Rust-inspired language that makes it easy to build scalable dApps with the power of validity proofs.\"。本边只记录项目自述的 Rust 启发取向；不推断源码兼容、工具链或运行时关系。",
       "key": "rust|cairo|influencedBy",
       "layer": "design",
-      "state": "field-only",
-      "issues": [
-        "缺少关系论证"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": false,
-      "evidenceVersion": null,
-      "sources": []
+      "evidenceVersion": {
+        "citedSha256": "16fa6ab7086d00bc97dde815a62cbe874c76d074487db3214a769e4e915c055e",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
+      "sources": [
+        {
+          "url": "https://www.cairo-lang.org/",
+          "finalUrl": "https://www.cairo-lang.org/",
+          "title": "Cairo Programming Language",
+          "excerpt": "WELCOME TO CAIRO The Rust-inspired language that makes it easy to build scalable dApps with the power of validity proofs.",
+          "checkedAt": "2026-10-11T15:40:00+00:00",
+          "sha256": "16fa6ab7086d00bc97dde815a62cbe874c76d074487db3214a769e4e915c055e",
+          "hashScope": "complete HTTP response body bytes; short excerpt manually selected",
+          "reviewId": "cairo",
+          "locator": "home hero"
+        }
+      ]
     },
     {
       "from": "rust",
       "to": "cobrust",
       "type": "influencedBy",
-      "source": "https://github.com/breck7/pldb/blob/main/concepts/cobrust.scroll",
+      "label": "Cobrust 的 Rust 语义取向",
+      "source": "https://raw.githubusercontent.com/Cobrust-lang/cobrust/main/README.md",
+      "sourceSha256": "61f33661f0b5250e9355294b5841336735b9034a808abf9626ed2feec2b35fb9",
+      "evidence": "Cobrust 仓库 README 自述 \"Python ergonomics, Rust safety, zero migration cost\"，并列出 Rust 语义（所有权、Result<T, E>、无 GIL、无隐式真值判断、无可变默认参数等）。这里只记录作者对 Rust 语义取向的设计承接；不推断 Cargo 工具链、crate 生态或与 rustc 的兼容。",
       "key": "rust|cobrust|influencedBy",
       "layer": "design",
-      "state": "field-only",
-      "issues": [
-        "缺少关系论证"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": false,
-      "evidenceVersion": null,
-      "sources": []
+      "evidenceVersion": {
+        "citedSha256": "61f33661f0b5250e9355294b5841336735b9034a808abf9626ed2feec2b35fb9",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/Cobrust-lang/cobrust/main/README.md",
+          "finalUrl": "https://raw.githubusercontent.com/Cobrust-lang/cobrust/main/README.md",
+          "title": "Cobrust repository README",
+          "excerpt": "Python ergonomics, Rust safety, zero migration cost. ... Python ergonomics (indentation, comprehensions, f-strings, decorators, structural pattern matching), Rust semantics (ownership, `Result<T, E>`, no GIL, no implicit truthiness, no mutable defaults).",
+          "checkedAt": "2026-10-11T13:30:00+00:00",
+          "sha256": "61f33661f0b5250e9355294b5841336735b9034a808abf9626ed2feec2b35fb9",
+          "hashScope": "complete HTTP response body bytes; short excerpt manually selected",
+          "reviewId": "cobrust",
+          "locator": "README, project tagline and feature list"
+        }
+      ]
     },
     {
       "from": "rust",
@@ -8559,16 +9353,23 @@
       "from": "rust",
       "to": "moonbit",
       "type": "influencedBy",
-      "source": "https://github.com/breck7/pldb/blob/main/concepts/moonbit.scroll",
+      "label": "整合 Rust 与 Go 的设计取向",
+      "source": "https://www.moonbitlang.com/blog/js-support",
+      "sourceSha256": "75b343fd26e790f434c08e72e2cc7d85c875e6108287a050ec4e20ddee35c5ff",
+      "evidence": "MoonBit 官方博客称其通过整合 Rust 和 Go 的精华，实现设计上的简洁易用及健壮的容错类型系统。这里只记录作者明确的整体设计取向；不推断 Rust 的所有权模型、ABI、工具链或源码兼容。",
       "key": "rust|moonbit|influencedBy",
       "layer": "design",
-      "state": "field-only",
+      "state": "citation-only",
       "issues": [
-        "缺少关系论证"
+        "缺少已阅读原文摘录"
       ],
       "reviewNote": "",
       "mapVisible": false,
-      "evidenceVersion": null,
+      "evidenceVersion": {
+        "citedSha256": "75b343fd26e790f434c08e72e2cc7d85c875e6108287a050ec4e20ddee35c5ff",
+        "match": "unread",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
       "sources": []
     },
     {
@@ -8714,6 +9515,39 @@
           "hashScope": "complete HTTP response body bytes; excerpt is manually selected",
           "reviewId": "less",
           "locator": "About, history paragraph"
+        }
+      ]
+    },
+    {
+      "from": "scala",
+      "to": "chapel",
+      "type": "influencedBy",
+      "label": "主要语言设计影响",
+      "source": "https://chapel-lang.org/papers/BriefOverviewChapel.pdf",
+      "sourceSha256": "036a9c522596fda0e9adba155358e3f7b16446558c4de234cf7cf150636e404e",
+      "evidence": "Chapel 官方概述将 Scala 列为 Chapel 的 “primary influences”。这里只记录该论文明确列出的整体语言设计影响；不推断 JVM、对象模型、类型系统或源码兼容关系。",
+      "key": "scala|chapel|influencedBy",
+      "layer": "design",
+      "state": "excerpt-recorded",
+      "issues": [],
+      "reviewNote": "",
+      "mapVisible": false,
+      "evidenceVersion": {
+        "citedSha256": "036a9c522596fda0e9adba155358e3f7b16446558c4de234cf7cf150636e404e",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
+      "sources": [
+        {
+          "url": "https://chapel-lang.org/papers/BriefOverviewChapel.pdf",
+          "finalUrl": "https://chapel-lang.org/papers/BriefOverviewChapel.pdf",
+          "title": "Brief Overview of Chapel",
+          "excerpt": "Chapel’s primary influences include C, Modula, Fortran, C++, Java, C#, CLU, Scala, ML, Perl, Matlab.",
+          "checkedAt": "2026-10-11T11:41:00+00:00",
+          "sha256": "036a9c522596fda0e9adba155358e3f7b16446558c4de234cf7cf150636e404e",
+          "hashScope": "complete PDF response body bytes; excerpt is manually selected",
+          "reviewId": "chapel",
+          "locator": "Introduction, language-design influences paragraph"
         }
       ]
     },
@@ -9576,17 +10410,34 @@
       "from": "swift",
       "to": "mojo",
       "type": "influencedBy",
-      "source": "https://github.com/breck7/pldb/blob/main/concepts/mojo.scroll",
+      "label": "Mojo 官方愿景称借鉴 Swift 等系统语言经验",
+      "source": "https://mojolang.org/docs/vision/",
+      "sourceSha256": "fca76b7c1b6d321a96e6257e7597b7ccf26feafb02d7c03b447c7b5262f782e9",
+      "evidence": "Mojo 官方 vision 文档：\"It draws on lessons from languages like Swift, C++, Rust, and Zig—and goes beyond them by embracing new techniques...\"。本边只记录作者自述从 Swift 等语言借鉴经验；不推断与 Swift 的源码、工具链或运行时关系。",
       "key": "swift|mojo|influencedBy",
       "layer": "design",
-      "state": "field-only",
-      "issues": [
-        "缺少关系论证"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": false,
-      "evidenceVersion": null,
-      "sources": []
+      "evidenceVersion": {
+        "citedSha256": "fca76b7c1b6d321a96e6257e7597b7ccf26feafb02d7c03b447c7b5262f782e9",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
+      "sources": [
+        {
+          "url": "https://mojolang.org/docs/vision/",
+          "finalUrl": "https://mojolang.org/docs/vision/",
+          "title": "Mojo vision | Mojo",
+          "excerpt": "It draws on lessons from languages like Swift, C++, Rust, and Zig—and goes beyond them by embracing new techniques that allow Mojo to support the wide range of hardware that AI developers must face today and in the future.",
+          "checkedAt": "2026-10-11T15:40:00+00:00",
+          "sha256": "fca76b7c1b6d321a96e6257e7597b7ccf26feafb02d7c03b447c7b5262f782e9",
+          "hashScope": "complete HTTP response body bytes; short excerpt manually selected",
+          "reviewId": "mojo",
+          "locator": "vision, \"Why Mojo was built from scratch\""
+        }
+      ]
     },
     {
       "from": "swift",
@@ -10330,17 +11181,34 @@
       "from": "zpl",
       "to": "chapel",
       "type": "influencedBy",
-      "source": "https://github.com/breck7/pldb/blob/main/concepts/chapel.scroll",
+      "label": "主要语言设计影响",
+      "source": "https://chapel-lang.org/papers/BriefOverviewChapel.pdf",
+      "sourceSha256": "036a9c522596fda0e9adba155358e3f7b16446558c4de234cf7cf150636e404e",
+      "evidence": "Chapel 官方概述将 ZPL 列为 Chapel 的 “primary influences”。这里只记录该论文明确列出的整体语言设计影响；不推断并行运行时、数组语义或源码兼容关系。",
       "key": "zpl|chapel|influencedBy",
       "layer": "design",
-      "state": "field-only",
-      "issues": [
-        "缺少关系论证"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": false,
-      "evidenceVersion": null,
-      "sources": []
+      "evidenceVersion": {
+        "citedSha256": "036a9c522596fda0e9adba155358e3f7b16446558c4de234cf7cf150636e404e",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
+      "sources": [
+        {
+          "url": "https://chapel-lang.org/papers/BriefOverviewChapel.pdf",
+          "finalUrl": "https://chapel-lang.org/papers/BriefOverviewChapel.pdf",
+          "title": "Brief Overview of Chapel",
+          "excerpt": "Chapel’s primary influences include C, Modula, Fortran, C++, Java, C#, CLU, Scala, ML, Perl, Matlab.",
+          "checkedAt": "2026-10-11T11:41:00+00:00",
+          "sha256": "036a9c522596fda0e9adba155358e3f7b16446558c4de234cf7cf150636e404e",
+          "hashScope": "complete PDF response body bytes; excerpt is manually selected",
+          "reviewId": "chapel",
+          "locator": "Introduction, language-design influences paragraph"
+        }
+      ]
     },
     {
       "from": "c",
@@ -10607,75 +11475,75 @@
   ],
   "inputHashes": {
     "data/raw/pldb.json": "57f45d25bba78ab6bc4af5d969356d2efbfcc7c1ee722dbb5c708d60aa78ba77",
-    "data/audit/reviews.json": "a8e2eafc8264fed953a8645b6003df5cd0ad46986d770c84687a1108c8ed01ad",
-    "data/relationship-overrides.json": "321b42e5dce99c17820588ffd27f737a14c147c614e86f7c0e84d23d1b277987",
+    "data/audit/reviews.json": "4d09e9f6e9610253496769f3b07639b2002d67e3b11c858b6028186464bb9a9d",
+    "data/relationship-overrides.json": "1a437915a0d390f29559822e434bb383149e5ff122bf1ff0e3f8663cca6f8b1c",
     "data/ecosystem-relations.json": "0f9762c08634b271476a8b82e8ddd96f9f688434766c43329059dea5a59436c8",
     "data/audit/relationship-decisions.json": "5261a7c64734441c96694a1a0b9b8a34cad0195e541e3485807a2a66061055c8",
     "data/audit/label-selection.json": "dc5eee62fa662b0d60940375d8a3ec56ac2bbf84ee2b9922a290d46d11cc866f",
-    "data/audit/identity-summary.json": "e8c198fdd1b221279b5ab8d4d9a49cf18390c56c52d4a9a41b00ab1a5c68a331",
-    "data/audit/relationship-research-ledger.json": "a929360aa53cb79f7d930b8fc89bef7c10b315c10444f20cd2f26319ddbbd5c8"
+    "data/audit/identity-summary.json": "9a2258ba8a6adb67960c9d1f72c31595d93f84f09bbcac3b13354b61e30587db",
+    "data/audit/relationship-research-ledger.json": "e22d036efee8efc14d65ef98ad10c5c564f4f04985e5cf35c148ec1b8146a34c"
   },
   "identity": {
     "total": 126,
-    "unresolved": 109,
-    "curated": 17
+    "unresolved": 94,
+    "curated": 32
   },
   "research": {
     "reopenPolicy": "Reopen a closed item only when a new primary source, a fixed historical version, a resolved endpoint identity, or a materially different relation claim becomes available.",
     "summary": {
-      "total": 56,
-      "verified": 42,
-      "closed": 10,
-      "blocked": 4
+      "total": 135,
+      "verified": 82,
+      "closed": 44,
+      "blocked": 9
     },
     "recent": [
       {
-        "id": "sisal|haskell|influencedBy",
-        "status": "verified",
-        "batch": "2026-10-11_BATCH-29",
-        "note": "Haskell 98 Report Preface lists Sisal as a particularly influential forerunner; overall acknowledged influence only."
+        "id": "fortran|explor|influencedBy",
+        "status": "closed-no-qualifying-source",
+        "batch": "2026-10-12_BATCH-42",
+        "note": "MINI-EXPLOR is described as \"A FORTRAN-Coded Version of the EXPLOR Language\": FORTRAN is the implementation language, not the design source of EXPLOR."
       },
       {
-        "id": "haskell|id-gap|influencedBy",
+        "id": "ocaml|mlscript|influencedBy",
+        "status": "closed-no-qualifying-source",
+        "batch": "2026-10-12_BATCH-42",
+        "note": "MLscript's README notes only that a paper \"used v1 with an OCaml-syntax parser and heavily modified type checker\", an implementation detail rather than an overall design influence."
+      },
+      {
+        "id": "visual-basic|speedie|influencedBy",
+        "status": "closed-no-qualifying-source",
+        "batch": "2026-10-12_BATCH-42",
+        "note": "Speedie's README lists its influences and does not name Visual Basic as a design source."
+      },
+      {
+        "id": "sql|square|influencedBy",
+        "status": "closed-no-qualifying-source",
+        "batch": "2026-10-12_BATCH-42",
+        "note": "The SQUARE data sublanguage (Boyce & Chamberlin, 1973) predates SEQUEL/SQL, and the IBM Research entries read do not state that SQUARE was influenced by SQL; the recorded direction is chronologically reversed."
+      },
+      {
+        "id": "prolog|gaea|supersetOf",
+        "status": "closed-no-qualifying-source",
+        "batch": "2026-10-12_BATCH-42",
+        "note": "The Gaea authors' ICMAS-96 paper describes Gaea as a logic programming language with \"Prolog-like backward chain reasoning\" but does not declare it a superset of Prolog; the superset claim appears only on PLDB."
+      },
+      {
+        "id": "prolog|progol|supersetOf",
+        "status": "closed-no-qualifying-source",
+        "batch": "2026-10-12_BATCH-42",
+        "note": "The Progol page describes an ILP system that \"allows arbitrary Prolog programs as background knowledge\"; it does not state that Progol is a superset of the Prolog language."
+      },
+      {
+        "id": "ruby|slash|influencedBy",
         "status": "blocked",
-        "batch": "2026-10-11_BATCH-29",
-        "note": "Haskell 98 Report Preface lists Id as a particularly influential forerunner, but the fixed PLDB snapshot has no Id endpoint."
+        "batch": "2026-10-12_BATCH-42",
+        "note": "slash-lang.org is expired or suspended (the archived page shows a domain notice), so no hashable primary source could be secured."
       },
       {
-        "id": "c|zig|influencedBy",
-        "status": "verified",
-        "batch": "2026-10-11_BATCH-32",
-        "note": "Andrew Kelley’s primary introduction explicitly sets “more pragmatic than C” and discusses concrete C comparisons in performance, undefined behavior, error representation, libc and preprocessor policy. Scope is design response/reference, not succession, superset or source compatibility."
-      },
-      {
-        "id": "sass|less|influencedBy",
-        "status": "verified",
-        "batch": "2026-10-11_BATCH-34",
-        "note": "Less official About page says Less was originally inspired by Sass and chose a leaner CSS-like syntax; scope is design input, not bidirectional source compatibility or superset."
-      },
-      {
-        "id": "c|csharp|influencedBy",
-        "status": "closed-no-qualifying-source",
-        "batch": "2026-10-11_BATCH-35",
-        "note": "Official C# specification introduction emphasizes portability and familiarity for programmers already familiar with C/C++, but does not state that C or C++ is a design source for concrete C# language features. Similarity/familiarity is not upgraded to inheritance."
-      },
-      {
-        "id": "cpp|csharp|influencedBy",
-        "status": "closed-no-qualifying-source",
-        "batch": "2026-10-11_BATCH-35",
-        "note": "Official C# specification introduction emphasizes portability and familiarity for programmers already familiar with C/C++, but does not state that C or C++ is a design source for concrete C# language features. Similarity/familiarity is not upgraded to inheritance."
-      },
-      {
-        "id": "ruby|crystal|influencedBy",
-        "status": "verified",
-        "batch": "2026-10-11_BATCH-36",
-        "note": "Crystal official homepage says its syntax is inspired by Ruby and its style guide says heavily inspired; scope is syntax/language-experience input, not Ruby compatibility, dynamic object-model inheritance, or superset."
-      },
-      {
-        "id": "erlang|elixir|hostRuntime",
-        "status": "verified",
-        "batch": "2026-10-11_BATCH-37",
-        "note": "Elixir official homepage identifies the Erlang VM as the host runtime. This is an implementation/ecosystem relationship, not design inheritance or source compatibility."
+        "id": "perl|slash|influencedBy",
+        "status": "blocked",
+        "batch": "2026-10-12_BATCH-42",
+        "note": "slash-lang.org is expired or suspended (the archived page shows a domain notice), so no hashable primary source could be secured."
       }
     ]
   }

@@ -56,10 +56,9 @@
     },
     {
       "id": "cpp|chapel|influencedBy",
-      "status": "closed-no-qualifying-source",
-      "batch": "2026-10-09_BATCH-16",
-      "note": "The reviewed Chapel material describes large-scale parallel computing but does not identify C++ as a concrete design source.",
-      "reopenWhen": "A Chapel design paper, author account, or official history explicitly names C++ input."
+      "status": "verified",
+      "batch": "2026-10-11_BATCH-38",
+      "note": "Reopens Batch 16: Chapel official overview now provides direct primary-source wording naming C++ as a primary influence; no inheritance or compatibility claim."
     },
     {
       "id": "javascript|objective-j|supersetOf",
@@ -352,6 +351,520 @@
       "status": "verified",
       "batch": "2026-10-11_BATCH-37",
       "note": "Elixir official homepage identifies the Erlang VM as the host runtime. This is an implementation/ecosystem relationship, not design inheritance or source compatibility."
+    },
+    {
+      "id": "c|chapel|influencedBy",
+      "status": "verified",
+      "batch": "2026-10-11_BATCH-38",
+      "note": "Chapel official overview lists C among Chapel's primary influences; recorded as design influence only, not ABI, API, or source compatibility."
+    },
+    {
+      "id": "fortran|chapel|influencedBy",
+      "status": "verified",
+      "batch": "2026-10-11_BATCH-38",
+      "note": "Chapel official overview lists Fortran among Chapel's primary influences; recorded as design influence only, not program or runtime compatibility."
+    },
+    {
+      "id": "java|chapel|influencedBy",
+      "status": "verified",
+      "batch": "2026-10-11_BATCH-38",
+      "note": "Chapel official overview lists Java among Chapel's primary influences; no JVM, succession, or compatibility claim."
+    },
+    {
+      "id": "matlab|chapel|influencedBy",
+      "status": "verified",
+      "batch": "2026-10-11_BATCH-38",
+      "note": "Chapel official overview lists Matlab among Chapel's primary influences; recorded as language-design influence only, not toolchain, library, or runtime relationship."
+    },
+    {
+      "id": "csharp|chapel|influencedBy",
+      "status": "verified",
+      "batch": "2026-10-11_BATCH-39",
+      "note": "Chapel official overview lists C# among Chapel's primary influences; recorded as design influence only, not .NET/runtime or source compatibility."
+    },
+    {
+      "id": "clu|chapel|influencedBy",
+      "status": "verified",
+      "batch": "2026-10-11_BATCH-39",
+      "note": "Chapel official overview lists CLU among Chapel's primary influences; no claim that individual CLU mechanisms or programs are inherited wholesale."
+    },
+    {
+      "id": "ml|chapel|influencedBy",
+      "status": "verified",
+      "batch": "2026-10-11_BATCH-39",
+      "note": "Chapel official overview lists ML among Chapel's primary influences; no dialect, succession, compatibility, or superset claim."
+    },
+    {
+      "id": "modula|chapel|influencedBy",
+      "status": "verified",
+      "batch": "2026-10-11_BATCH-39",
+      "note": "Chapel official overview lists Modula among Chapel's primary influences; no direct claim about a particular Modula dialect or module-system compatibility."
+    },
+    {
+      "id": "scala|chapel|influencedBy",
+      "status": "verified",
+      "batch": "2026-10-11_BATCH-39",
+      "note": "Chapel official overview lists Scala among Chapel's primary influences; no JVM, object-model, type-system, or source-compatibility claim."
+    },
+    {
+      "id": "python|civet|influencedBy",
+      "status": "verified",
+      "batch": "2026-10-11_BATCH-40",
+      "note": "Civet's official Design Philosophy lists Python among the languages it took inspiration from; scope is a listed overall design influence, not syntax, type-system, or output compatibility."
+    },
+    {
+      "id": "python|cobrust|influencedBy",
+      "status": "verified",
+      "batch": "2026-10-11_BATCH-40",
+      "note": "Cobrust's README states it adopts Python ergonomics (indentation, comprehensions, f-strings, decorators, pattern matching); scope is a stated ergonomics orientation, not source-level or runtime compatibility with CPython."
+    },
+    {
+      "id": "rust|cobrust|influencedBy",
+      "status": "verified",
+      "batch": "2026-10-11_BATCH-40",
+      "note": "Cobrust's README states it adopts Rust semantics (ownership, Result<T,E>, no GIL, no implicit truthiness); scope is a stated semantic orientation, not toolchain or crate compatibility."
+    },
+    {
+      "id": "python|flare|influencedBy",
+      "status": "verified",
+      "batch": "2026-10-11_BATCH-40",
+      "note": "Flare's official project overview lists Python among the languages that inspired its proposed design; scope is a listed overall design inspiration."
+    },
+    {
+      "id": "cpp|flare|influencedBy",
+      "status": "verified",
+      "batch": "2026-10-11_BATCH-40",
+      "note": "Flare's official project overview lists C++ among the languages that inspired its proposed design; scope is a listed overall design inspiration."
+    },
+    {
+      "id": "cpp|hla|influencedBy",
+      "status": "verified",
+      "batch": "2026-10-11_BATCH-40",
+      "note": "HLA's official reference manual states the author chose a syntax very similar to C/C++-class imperative languages and modeled the standard library after C/C++ libraries; scope is stated syntax and standard-library borrowing, not source compatibility."
+    },
+    {
+      "id": "python|please-build|influencedBy",
+      "status": "verified",
+      "batch": "2026-10-11_BATCH-40",
+      "note": "Please's README states its build language can drop into an imperative language that resembles Python; scope is a stated syntax orientation, not CPython runtime or standard-library compatibility."
+    },
+    {
+      "id": "c|tick-c|supersetOf",
+      "status": "verified",
+      "batch": "2026-10-11_BATCH-40",
+      "note": "MIT PDOS Tick C page states that Tick C ('C) is an extension of ANSI C; scope is the author's extension (superset) classification, not ABI or full dialect compatibility."
+    },
+    {
+      "id": "python|chapel|influencedBy",
+      "status": "closed-no-qualifying-source",
+      "batch": "2026-10-11_BATCH-40",
+      "note": "Chapel's official overview paper lists its primary influences (C, Modula, Fortran, C++, Java, C#, CLU, Scala, ML, Perl, Matlab) and does not include Python.",
+      "reopenWhen": "A primary Chapel source lists Python as a design influence or the influence list is materially revised."
+    },
+    {
+      "id": "python|morloc|influencedBy",
+      "status": "closed-no-qualifying-source",
+      "batch": "2026-10-11_BATCH-40",
+      "note": "Morloc README/docs present cross-language interoperability as the goal and do not state Python as a design-influence source.",
+      "reopenWhen": "Morloc primary documentation states a Python design influence."
+    },
+    {
+      "id": "python|speedie|influencedBy",
+      "status": "closed-no-qualifying-source",
+      "batch": "2026-10-11_BATCH-40",
+      "note": "Speedie documentation only compares against Python (expressiveness) and notes one borrowed syntax form; it does not state Python as an overall design source.",
+      "reopenWhen": "Speedie's own documentation states Python as an overall design influence."
+    },
+    {
+      "id": "cpp|jule|influencedBy",
+      "status": "closed-no-qualifying-source",
+      "batch": "2026-10-11_BATCH-40",
+      "note": "Jule's design mission page states C/C++ only as a first-class interoperability goal and compile target, not as an overall design influence.",
+      "reopenWhen": "Jule primary documentation states C/C++ as a design influence rather than interoperability."
+    },
+    {
+      "id": "cpp|speedie|influencedBy",
+      "status": "closed-no-qualifying-source",
+      "batch": "2026-10-11_BATCH-40",
+      "note": "Speedie documentation only compares against idiomatic C++ performance and notes C-library integration; it does not state C++ as an overall design source.",
+      "reopenWhen": "Speedie's own documentation states C++ as an overall design influence."
+    },
+    {
+      "id": "cpp|wa|influencedBy",
+      "status": "closed-no-qualifying-source",
+      "batch": "2026-10-11_BATCH-40",
+      "note": "The wa-lang README describes a WebAssembly-oriented design goal but does not state C++ as a design-influence source.",
+      "reopenWhen": "wa-lang primary documentation states C++ as a design influence."
+    },
+    {
+      "id": "rust|jule|influencedBy",
+      "status": "closed-no-qualifying-source",
+      "batch": "2026-10-11_BATCH-40",
+      "note": "Jule's mission page describes an immutable-by-default model 'similar to Rust' as a comparison and states Jule is not functional; it does not declare Rust as a design-influence source.",
+      "reopenWhen": "Jule primary documentation states Rust as a design influence rather than a similarity comparison."
+    },
+    {
+      "id": "rust|mlscript|influencedBy",
+      "status": "closed-no-qualifying-source",
+      "batch": "2026-10-11_BATCH-40",
+      "note": "The MLscript README frames the language around type inference, soundness, and pattern matching and does not state Rust as a design-influence source.",
+      "reopenWhen": "MLscript primary documentation states Rust as a design influence."
+    },
+    {
+      "id": "c|jule|influencedBy",
+      "status": "closed-no-qualifying-source",
+      "batch": "2026-10-11_BATCH-40",
+      "note": "Jule's design mission page states C/C++ only as a first-class interoperability goal and compile target, not as an overall design influence.",
+      "reopenWhen": "Jule primary documentation states C as a design influence rather than interoperability."
+    },
+    {
+      "id": "c|mojo|influencedBy",
+      "status": "closed-no-qualifying-source",
+      "batch": "2026-10-11_BATCH-40",
+      "note": "Mojo's official documentation discusses lessons from other languages (e.g. Swift, C++, Rust, Zig) but does not list C as a design influence; scope is a missing listed influence, not proof of absence.",
+      "reopenWhen": "Modular documentation lists C as a Mojo design influence."
+    },
+    {
+      "id": "c|speedie|influencedBy",
+      "status": "closed-no-qualifying-source",
+      "batch": "2026-10-11_BATCH-40",
+      "note": "Speedie documentation only notes C-library integration and performance comparison, not C as an overall design source.",
+      "reopenWhen": "Speedie's own documentation states C as an overall design influence."
+    },
+    {
+      "id": "cpp|real-time-concurrent-c|supersetOf",
+      "status": "blocked",
+      "batch": "2026-10-11_BATCH-40",
+      "note": "Author papers state 'Concurrent C (C++) is a parallel superset of C (C++)', but no hashable full-text copy of the Real-Time Concurrent C paper or the 'Implementing Concurrent C' paper could be secured for the review record.",
+      "reopenWhen": "A hashable primary copy (paper PDF or abstract page) stating Real-Time Concurrent C's superset relation to C++ is obtained."
+    },
+    {
+      "id": "go|jule|influencedBy",
+      "status": "verified",
+      "batch": "2026-10-11_BATCH-41",
+      "note": "Jule's official manual (The Mission) states \"In terms of simplicity and maintainability, Jule is heavily influenced by Go.\""
+    },
+    {
+      "id": "rust|alumina|influencedBy",
+      "status": "verified",
+      "batch": "2026-10-11_BATCH-41",
+      "note": "Alumina's official docs state \"It is heavily inspired by Rust, but it keeps C-style manual memory management and memory unsafety.\""
+    },
+    {
+      "id": "rust|cairo|influencedBy",
+      "status": "verified",
+      "batch": "2026-10-11_BATCH-41",
+      "note": "Cairo's official site describes it as \"The Rust-inspired language that makes it easy to build scalable dApps\"."
+    },
+    {
+      "id": "java|flare|influencedBy",
+      "status": "verified",
+      "batch": "2026-10-11_BATCH-41",
+      "note": "Flare's design overview lists Java among the languages its proposed features were inspired by."
+    },
+    {
+      "id": "csharp|nemerle|influencedBy",
+      "status": "verified",
+      "batch": "2026-10-11_BATCH-41",
+      "note": "Nemerle's official About page lists \"Influenced by: C# (OOP & Imperative support), ML (FP support), Lisp (macros support).\""
+    },
+    {
+      "id": "python|shrubbery|influencedBy",
+      "status": "verified",
+      "batch": "2026-10-11_BATCH-41",
+      "note": "Racket's Shrubbery Design Considerations states \"Indentation-sensitive parsing and the use of : is obviously informed by Python.\""
+    },
+    {
+      "id": "cpp|sdlang|influencedBy",
+      "status": "verified",
+      "batch": "2026-10-11_BATCH-41",
+      "note": "sdlang.org states \"Its syntax was inspired by the C family of languages (C/C++, C#, D, Java, …).\""
+    },
+    {
+      "id": "ruby|civet|influencedBy",
+      "status": "verified",
+      "batch": "2026-10-11_BATCH-41",
+      "note": "Civet's official Design Philosophy page lists Ruby among its inspirations."
+    },
+    {
+      "id": "perl|civet|influencedBy",
+      "status": "verified",
+      "batch": "2026-10-11_BATCH-41",
+      "note": "Civet's official Design Philosophy page lists Perl among its inspirations."
+    },
+    {
+      "id": "c|sdlang|influencedBy",
+      "status": "verified",
+      "batch": "2026-10-11_BATCH-41",
+      "note": "sdlang.org states \"Its syntax was inspired by the C family of languages (C/C++, C#, D, Java, …).\""
+    },
+    {
+      "id": "ada|hla|influencedBy",
+      "status": "verified",
+      "batch": "2026-10-11_BATCH-41",
+      "note": "HLA's reference manual lists Ada among the common imperative languages whose syntax the author chose to resemble."
+    },
+    {
+      "id": "swift|mojo|influencedBy",
+      "status": "verified",
+      "batch": "2026-10-11_BATCH-41",
+      "note": "Mojo's official vision document says it \"draws on lessons from languages like Swift, C++, Rust, and Zig\"."
+    },
+    {
+      "id": "lua|buzz|influencedBy",
+      "status": "verified",
+      "batch": "2026-10-11_BATCH-41",
+      "note": "Buzz's official fibers guide states fibers are \"inspired by Lua coroutines\"."
+    },
+    {
+      "id": "java|sdlang|influencedBy",
+      "status": "verified",
+      "batch": "2026-10-11_BATCH-41",
+      "note": "sdlang.org states \"Its syntax was inspired by the C family of languages (C/C++, C#, D, Java, …).\""
+    },
+    {
+      "id": "c|wa|influencedBy",
+      "status": "closed-no-qualifying-source",
+      "batch": "2026-10-11_BATCH-41",
+      "note": "The Wa README describes a WebAssembly-oriented design goal but states no C design influence.",
+      "reopenWhen": "Wa's own documentation states C as an overall design influence."
+    },
+    {
+      "id": "go|wa|influencedBy",
+      "status": "closed-no-qualifying-source",
+      "batch": "2026-10-11_BATCH-41",
+      "note": "The Wa README describes a WebAssembly-oriented design goal but states no Go design influence.",
+      "reopenWhen": "Wa's own documentation states Go as an overall design influence."
+    },
+    {
+      "id": "javascript|amber|influencedBy",
+      "status": "closed-no-qualifying-source",
+      "batch": "2026-10-11_BATCH-41",
+      "note": "Amber's official README and docs describe a language compiled to Bash and state no JavaScript design influence.",
+      "reopenWhen": "Amber's official material states JavaScript as an overall design influence."
+    },
+    {
+      "id": "javascript|speedie|influencedBy",
+      "status": "closed-no-qualifying-source",
+      "batch": "2026-10-11_BATCH-41",
+      "note": "Speedie's README references JavaScript only as a negative comparison (\"Doesn't infantilise you like Javascript or Java\"), not as a design source.",
+      "reopenWhen": "Speedie's own documentation states JavaScript as an overall design influence."
+    },
+    {
+      "id": "python|particles|influencedBy",
+      "status": "closed-no-qualifying-source",
+      "batch": "2026-10-11_BATCH-41",
+      "note": "The Particles project page is a minimal index and states no Python design influence.",
+      "reopenWhen": "Particles' own documentation states Python as an overall design influence."
+    },
+    {
+      "id": "cpp|particles|influencedBy",
+      "status": "closed-no-qualifying-source",
+      "batch": "2026-10-11_BATCH-41",
+      "note": "The Particles project page is a minimal index and states no C++ design influence.",
+      "reopenWhen": "Particles' own documentation states C++ as an overall design influence."
+    },
+    {
+      "id": "csharp|particles|influencedBy",
+      "status": "closed-no-qualifying-source",
+      "batch": "2026-10-11_BATCH-41",
+      "note": "The Particles project page is a minimal index and states no C# design influence.",
+      "reopenWhen": "Particles' own documentation states C# as an overall design influence."
+    },
+    {
+      "id": "python|scroll|influencedBy",
+      "status": "closed-no-qualifying-source",
+      "batch": "2026-10-11_BATCH-41",
+      "note": "Scroll's site presents the language for scientific writing and lists no design influences; the PLDB list mixes related notation/technology rather than design sources.",
+      "reopenWhen": "Scroll's own documentation states Python as an overall design influence."
+    },
+    {
+      "id": "javascript|scroll|influencedBy",
+      "status": "closed-no-qualifying-source",
+      "batch": "2026-10-11_BATCH-41",
+      "note": "Scroll's site presents the language for scientific writing and lists no design influences.",
+      "reopenWhen": "Scroll's own documentation states JavaScript as an overall design influence."
+    },
+    {
+      "id": "ada|chapel|influencedBy",
+      "status": "closed-no-qualifying-source",
+      "batch": "2026-10-11_BATCH-41",
+      "note": "The Chapel overview paper's primary-influence list (C, Modula, Fortran, C++, Java, C#, CLU, Scala, ML, Perl, Matlab) does not include Ada.",
+      "reopenWhen": "Chapel's own material lists Ada as an overall design influence."
+    },
+    {
+      "id": "sql|lil|influencedBy",
+      "status": "closed-no-qualifying-source",
+      "batch": "2026-10-11_BATCH-41",
+      "note": "Lil's documentation lists APL, J, K and Q as vector-oriented influences and describes its query syntax as only resembling SQL.",
+      "reopenWhen": "Lil's own documentation states SQL as an overall design influence."
+    },
+    {
+      "id": "lua|lil|influencedBy",
+      "status": "closed-no-qualifying-source",
+      "batch": "2026-10-11_BATCH-41",
+      "note": "Lil's documentation does not name Lua among its stated influences.",
+      "reopenWhen": "Lil's own documentation states Lua as an overall design influence."
+    },
+    {
+      "id": "sql|tql|influencedBy",
+      "status": "closed-no-qualifying-source",
+      "batch": "2026-10-11_BATCH-41",
+      "note": "TQL's page compares itself to SQL (plain-text vs binary databases) but states no SQL design influence.",
+      "reopenWhen": "TQL's own documentation states SQL as an overall design influence."
+    },
+    {
+      "id": "lua|speedie|influencedBy",
+      "status": "closed-no-qualifying-source",
+      "batch": "2026-10-11_BATCH-41",
+      "note": "Speedie's documentation does not name Lua as a design influence.",
+      "reopenWhen": "Speedie's own documentation states Lua as an overall design influence."
+    },
+    {
+      "id": "java|deesel|supersetOf",
+      "status": "blocked",
+      "batch": "2026-10-11_BATCH-41",
+      "note": "Deesel was a Java-based metaprogramming language described in encyclopedic sources as \"nearly a superset of Java\", but its official site is defunct (the archived domain shows a parked/for-sale page), so no hashable primary statement was secured.",
+      "reopenWhen": "A hashable primary Deesel/G page or paper stating the superset relation to Java is obtained."
+    },
+    {
+      "id": "php|slash|influencedBy",
+      "status": "blocked",
+      "batch": "2026-10-11_BATCH-41",
+      "note": "slash-lang.org is expired or suspended (the archived page shows a domain notice), so no hashable primary source could be secured.",
+      "reopenWhen": "A hashable Slash language primary source (project site, docs or paper) is obtained."
+    },
+    {
+      "id": "csharp|sdlang|influencedBy",
+      "status": "verified",
+      "batch": "2026-10-12_BATCH-42",
+      "note": "SDLang's official site states \"Its syntax was inspired by the C family of languages (C/C++, C#, D, Java, …).\""
+    },
+    {
+      "id": "perl|flare|influencedBy",
+      "status": "verified",
+      "batch": "2026-10-12_BATCH-42",
+      "note": "Flare's design overview lists languages including \"Python, Java, C++, Eiffel, Common LISP, Scheme, Perl, MOO, Haskell\" among its inspirations."
+    },
+    {
+      "id": "matlab|simit|influencedBy",
+      "status": "verified",
+      "batch": "2026-10-12_BATCH-42",
+      "note": "Simit's official language page states \"Simit also supports the MATLAB syntax for declaring matrix literals in addition to an alternative more regular syntax.\""
+    },
+    {
+      "id": "objective-c|cooc|supersetOf",
+      "status": "verified",
+      "batch": "2026-10-12_BATCH-42",
+      "note": "The cooC article abstract (ACM SIGPLAN Notices 1993) states \"cooC is a superset of Objective-C.\""
+    },
+    {
+      "id": "relational-model|sql|influencedBy",
+      "status": "verified",
+      "batch": "2026-10-12_BATCH-42",
+      "note": "IBM Redbook states \"SQL is a standard syntax for accessing relational database systems based on a relational theory, which is documented in The Relational Model for Database Management by E. F. Codd.\""
+    },
+    {
+      "id": "ada|spark-pl|influencedBy",
+      "status": "verified",
+      "batch": "2026-10-12_BATCH-42",
+      "note": "The SPARK 2014 Reference Manual states \"SPARK is based on Ada, both subsetting the language ... and also extending the system of contracts.\""
+    },
+    {
+      "id": "haskell|civet|influencedBy",
+      "status": "verified",
+      "batch": "2026-10-12_BATCH-42",
+      "note": "Civet's official Design Philosophy lists Haskell among the languages it took inspiration from."
+    },
+    {
+      "id": "prolog|clpr|supersetOf",
+      "status": "verified",
+      "batch": "2026-10-12_BATCH-42",
+      "note": "SWI-Prolog's official documentation states \"Plain Prolog can thus be regarded as a special case of CLP.\""
+    },
+    {
+      "id": "r|particles|influencedBy",
+      "status": "closed-no-qualifying-source",
+      "batch": "2026-10-12_BATCH-42",
+      "note": "The Particles project page is a minimal index and states no R design influence.",
+      "reopenWhen": "Particles' own documentation states R as an overall design influence."
+    },
+    {
+      "id": "sql|particles|influencedBy",
+      "status": "closed-no-qualifying-source",
+      "batch": "2026-10-12_BATCH-42",
+      "note": "The Particles project page is a minimal index and states no SQL design influence.",
+      "reopenWhen": "Particles' own documentation states SQL as an overall design influence."
+    },
+    {
+      "id": "fortran|particles|influencedBy",
+      "status": "closed-no-qualifying-source",
+      "batch": "2026-10-12_BATCH-42",
+      "note": "The Particles project page is a minimal index and states no Fortran design influence.",
+      "reopenWhen": "Particles' own documentation states Fortran as an overall design influence."
+    },
+    {
+      "id": "fortran|balgol|influencedBy",
+      "status": "closed-no-qualifying-source",
+      "batch": "2026-10-12_BATCH-42",
+      "note": "Balgol history describes it as \"an early dialect of the Algol-58 language\"; the compiler focus \"shifted from FORTRAN to Algol-58\", so FORTRAN is not its design source.",
+      "reopenWhen": "A primary source that states FORTRAN as an overall design influence on BALGOL is obtained."
+    },
+    {
+      "id": "fortran|explor|influencedBy",
+      "status": "closed-no-qualifying-source",
+      "batch": "2026-10-12_BATCH-42",
+      "note": "MINI-EXPLOR is described as \"A FORTRAN-Coded Version of the EXPLOR Language\": FORTRAN is the implementation language, not the design source of EXPLOR.",
+      "reopenWhen": "A primary source that states FORTRAN as an overall design influence on EXPLOR is obtained."
+    },
+    {
+      "id": "ocaml|mlscript|influencedBy",
+      "status": "closed-no-qualifying-source",
+      "batch": "2026-10-12_BATCH-42",
+      "note": "MLscript's README notes only that a paper \"used v1 with an OCaml-syntax parser and heavily modified type checker\", an implementation detail rather than an overall design influence.",
+      "reopenWhen": "MLscript's own documentation states OCaml as an overall design influence."
+    },
+    {
+      "id": "visual-basic|speedie|influencedBy",
+      "status": "closed-no-qualifying-source",
+      "batch": "2026-10-12_BATCH-42",
+      "note": "Speedie's README lists its influences and does not name Visual Basic as a design source.",
+      "reopenWhen": "Speedie's own documentation states Visual Basic as an overall design influence."
+    },
+    {
+      "id": "sql|square|influencedBy",
+      "status": "closed-no-qualifying-source",
+      "batch": "2026-10-12_BATCH-42",
+      "note": "The SQUARE data sublanguage (Boyce & Chamberlin, 1973) predates SEQUEL/SQL, and the IBM Research entries read do not state that SQUARE was influenced by SQL; the recorded direction is chronologically reversed.",
+      "reopenWhen": "A primary source supports SQL influencing SQUARE, or the edge is corrected to SQUARE → SQL with a qualifying source."
+    },
+    {
+      "id": "prolog|gaea|supersetOf",
+      "status": "closed-no-qualifying-source",
+      "batch": "2026-10-12_BATCH-42",
+      "note": "The Gaea authors' ICMAS-96 paper describes Gaea as a logic programming language with \"Prolog-like backward chain reasoning\" but does not declare it a superset of Prolog; the superset claim appears only on PLDB.",
+      "reopenWhen": "A primary source states Gaea is a superset/extension of Prolog."
+    },
+    {
+      "id": "prolog|progol|supersetOf",
+      "status": "closed-no-qualifying-source",
+      "batch": "2026-10-12_BATCH-42",
+      "note": "The Progol page describes an ILP system that \"allows arbitrary Prolog programs as background knowledge\"; it does not state that Progol is a superset of the Prolog language.",
+      "reopenWhen": "A primary source states Progol is a superset of the Prolog language."
+    },
+    {
+      "id": "ruby|slash|influencedBy",
+      "status": "blocked",
+      "batch": "2026-10-12_BATCH-42",
+      "note": "slash-lang.org is expired or suspended (the archived page shows a domain notice), so no hashable primary source could be secured.",
+      "reopenWhen": "A hashable Slash language primary source (project site, docs or paper) is obtained."
+    },
+    {
+      "id": "perl|slash|influencedBy",
+      "status": "blocked",
+      "batch": "2026-10-12_BATCH-42",
+      "note": "slash-lang.org is expired or suspended (the archived page shows a domain notice), so no hashable primary source could be secured.",
+      "reopenWhen": "A hashable Slash language primary source (project site, docs or paper) is obtained."
     }
   ]
 }

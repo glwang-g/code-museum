@@ -501,3 +501,49 @@ GitHub 推送同时报告仓库已正式迁至 `glwang-g/code-museum`。站点�
 最新计数：451 条总关系（444 条设计/历史 + 7 条生态）；设计关系 127 条摘录已存、317 条字段待核；人工审查 94 条、已阅读来源 216 条。地图节点 233、无可见设计关系节点 158、地图孤立节点 143；常显设计层缺口 2（Assembly、XSLT）；年代审查线索 6。身份总线索 126、未决 115、已明确处理 11。
 
 生产 `diagnose:release` 在提交 `3657d33` 上再次通过：本地与线上 provenance 的记录数、语言数、地图标签、444 条设计关系、7 条生态关系和审查来源完全一致，errors/warnings 为空。此后仅做文档记录，不再改变已核验网络输入。
+
+## 2026-10-11 身份批次 6 与 Chapel 关系批次 38（本地待提交）
+
+本批在不改动 PLDB 原始快照的前提下完成 10 条可审计修订：从等价搜索别名中排除 `ApacheConf → Apache`、`Emacs Lisp → Emacs`、`JSON → GeoJSON`、`TeX → LaTeX`、`Nix → NixOS` 五个误合并方向；前者为配置语法/服务器，后四者分别是编辑器、数据格式、相关排版系统和 Linux 发行版/包管理系统，均保留独立身份。
+
+Chapel 官方概述明确将 C、C++、Fortran、Java、Matlab 列为 primary influences，故以同一篇带字节 SHA 的论文补入五条 `influencedBy` 设计关系。C++ → Chapel 取代 Batch 16 的“缺少直接出处”结论；所有五条均不表示 ABI/API、运行时、源码兼容、后继或超集关系。
+
+本地审计结果：5,155 条馆藏、4,608 条来源标记语言、233 地图节点、50 常显标签；455 条总关系（447 设计/历史 + 8 生态），141 条有原文摘录、314 条字段待核、6 项年代审查线索、常显设计缺口仍为 Assembly 与 XSLT。身份总线索 126，未决从 109 降至 104，已明确处理 22；人工审查 95 条、已读来源 219 条。`npm run audit`、`npm run relations:audit`、`npm test`（63/63）与 `npm run build` 均已通过。本批尚未提交、推送或部署。
+
+## 2026-10-11 身份批次 7 与 Chapel 关系批次 39（本地待提交）
+
+本批继续做 10 条可审计修订：排除 `Bash → sh`、`XML → RSS/WSDL`、`HTML → XHTML`、`Lex → Flex` 五个错误等价别名。依据分别限定为 Bash 的兼容但功能增量、RSS/WSDL 的 XML 派生格式、XHTML 的 XML 重构、Flex 对 Lex 的替代与兼容例外；不否定相关性，只阻止搜索结果误合并。
+
+Chapel 官方概述继续补入 `C# / CLU / ML / Modula / Scala → Chapel` 五条 `influencedBy` 设计关系。它们均只表示作者列举的整体设计影响，不推断 .NET/JVM、具体类型或模块机制、源码兼容、后继或超集关系。
+
+当前本地审计口径：459 条总关系（451 设计/历史 + 8 生态）、146 条摘录已存、313 条字段待核；身份未决从 104 降至 99，已明确处理 27。地图节点、常显设计缺口和年代审查线索分别仍为 233、2（Assembly/XSLT）与 6。本批尚未提交、推送或部署。
+
+## 2026-10-11 关系优先级 top20 核实批次 40（本地待提交）
+
+本批按 `data/audit/relationship-research-priorities.json` 的分数排序，对 top20（分数 136–159）逐条核实，产出 8 条补线、11 条收口、1 条受阻。所有新增来源均保存完整响应字节 SHA-256 与原文摘录，未修改 PLDB 原始快照，未增加网页运行时。
+
+已核实补线 8 条：`Python → Civet`、`Python → Cobrust`、`Rust → Cobrust`、`Python → Flare`、`C++ → Flare`、`C++ → HLA`、`Python → Please`、`C → Tick C`（`supersetOf`）。来源依次为 Civet Design Philosophy、Cobrust README、Flare prog-overview（官方站被 Cloudflare 拦截，改用 Wayback `id_` 原样归档字节）、HLA Reference Manual、please README、MIT PDOS Tick C 页。这些边只记录作者列举或自述的整体设计取向、语法借鉴或扩展定性，不推断源码兼容、运行时、ABI、工具链或生态继承。
+
+收口 11 条（`closed-no-qualifying-source`）：`Python → Chapel`、`Python → Morloc`、`Python → Speedie`、`C++ → Jule`、`C++ → Speedie`、`C++ → wa`、`Rust → Jule`、`Rust → MLscript`、`C → Jule`、`C → Mojo`、`C → Speedie`。对应官方材料只涉及互操作、相似性或性能比较，未把来源语言列为整体设计来源；每条都带 `reopenWhen`。受阻 1 条（`blocked`）：`C++ → Real-Time Concurrent C`，作者论文称 “parallel superset of C (and of C++)”，但出版商与聚合站均屏蔽或限流，未取得可哈希一手副本，故不计为否定结论。
+
+本轮重新生成审计后的口径：总关系 461 条（451 设计/历史 + 10 生态）、摘录已存 156、字段待核 302、仅引用 3；研究台账 85 条（verified 60 / closed 20 / blocked 5），研究候选由 303 降至 283，排除 19 条（closed 17 / blocked 2）；人工审查 100 条、已读来源 224 条（来源条目 226）。身份总线索 126、未决 94、已明确处理 32。地图节点 233、常显设计缺口 2（Assembly/XSLT）、年代审查线索 6。注意：本轮重跑把生态关系计为 10 条（此前同日本地段落写作 8 条），总关系随之调整，以 `data/audit/relationship-status.json` 为准。`npm run audit`、`npm run relations:audit`、`npm run research:coverage`、`npm run research:priorities` 与 `npm run build` 均已通过。本批尚未提交、推送或部署。
+
+## 2026-10-11 关系优先级 top20 核实批次 41（本地待提交）
+
+本批按 `data/audit/relationship-research-priorities.json` 的分数排序，对 top20（分数 105–115）逐条核实，产出 14 条既有字段待核关系升级为已存摘录、14 条收口、2 条受阻；本批不新增关系边，只改变证据等级。所有新增来源均保存完整响应字节 SHA-256 与原文摘录，未修改 PLDB 原始快照，未增加网页运行时。
+
+已核实并补入摘录 14 条：`Go → Jule`、`Rust → Alumina`、`Rust → Cairo`、`Java → Flare`、`C# → Nemerle`、`Python → Shrubbery`、`C/C++/Java → SDLang`、`Ruby/Perl → Civet`、`Ada → HLA`、`Swift → Mojo`、`Lua → Buzz`。来源为 Jule 官方手册 The Mission、Alumina 官方文档、Cairo 官方站、Flare prog-overview 与 Nemerle About（官方站不可稳定回溯，改用 Wayback `id_` 原样归档字节）、Racket Shrubbery Design Considerations、sdlang.org、Civet Design Philosophy、HLA Reference Manual、Mojo vision 文档、Buzz fibers 教程。这些边只记录作者列举或自述的整体设计取向或语法借鉴，不推断源码兼容、运行时、ABI、工具链或生态继承。
+
+收口 14 条（`closed-no-qualifying-source`）：`C/Go → Wa`、`JavaScript → Amber`、`JavaScript/Lua → Speedie`、`Python/C++/C# → Particles`、`Python/JavaScript → Scroll`、`Ada → Chapel`、`SQL/Lua → Lil`、`SQL → TQL`。对应官方材料只涉及互操作、相似性、反面比较或对照，未把来源语言列为整体设计来源；每条都带 `reopenWhen`。受阻 2 条（`blocked`）：`Java → Deesel`（`supersetOf`，官方站失效、仅存百科二手描述）、`PHP → Slash`（`slash-lang.org` 域名过期），均未取得可哈希一手来源，不计为否定结论。
+
+本轮重新生成审计后的口径：总关系 461 条（451 设计/历史 + 10 生态）、摘录已存 170、字段待核 288、仅引用 3；研究台账 115 条（verified 74 / closed 34 / blocked 7），研究候选由 283 降至 253，排除 35 条（closed 31 / blocked 4）；人工审查 117 条、已读来源 241 条（来源条目 243）。身份总线索 126、未决 94、已明确处理 32。地图节点 233、常显设计缺口 2（Assembly/XSLT）、年代审查线索 6。`npm run audit`、`npm run relations:audit`、`npm run research:coverage`、`npm run research:priorities`、`npm test` 与 `npm run build` 均已通过。本批尚未提交、推送或部署。
+
+## 2026-10-12 关系优先级 top20 核实批次 42（本地待提交）
+
+本批按 `data/audit/relationship-research-priorities.json` 的分数排序，对 top20（分数 97–115）逐条核实，产出 8 条既有字段待核关系升级为已存摘录、10 条收口、2 条受阻；与批次 41 相同，本批不新增关系边，只改变证据等级。所有新增来源均保存完整响应字节 SHA-256 与原文摘录，未修改 PLDB 原始快照，未增加网页运行时。
+
+已核实并补入摘录 8 条：`C# → SDLang`、`Perl → Flare`、`MATLAB → Simit`、`Objective-C → cooC (supersetOf)`、`Relational Model → SQL`、`Ada → Spark`、`Haskell → Civet`、`Prolog → CLPR (supersetOf)`。来源为 sdlang.org、Flare prog-overview（Wayback `id_`）、simit-lang.org 语言页、Tenon 转录的 cooC 论文摘要（Wayback `id_`）、IBM Redbooks sg245511.pdf、SPARK 2014 Reference Manual、civet.dev/philosophy、SWI-Prolog clp 文档。这些边只记录作者自述的整体设计取向、语法借用或形式包容（超集/特例），不推断源码兼容、运行时、ABI、工具链或生态继承。
+
+收口 10 条（无可 qualifying 原文，均带 `reopenWhen`）：`R/SQL/Fortran → Particles`（极简索引页）、`Fortran → BALGOL`（Algol-58 方言，编译器取向由 FORTRAN 转向 Algol-58）、`Fortran → EXPLOR`（MINI-EXPLOR 为 FORTRAN 编码版本，FORTRAN 是实现语言）、`OCaml → MLscript`（仅论文实现细节）、`Visual Basic → Speedie`（README 未列 VB）、`SQL → SQUARE`（SQUARE 1973 早于 SEQUEL/SQL，记录方向与史实相反）、`Prolog → Gaea` 与 `Prolog → Progol`（均为 supersetOf，但一手材料只称 logic programming / 允许 Prolog 程序作背景知识，未声明语言超集）。受阻 2 条：`Ruby → Slash`、`Perl → Slash`，因 slash-lang.org 域名过期或停用，未取得可哈希一手来源。
+
+本轮重新生成审计后的口径：总关系 461 条（451 设计/历史 + 10 生态）、摘录已存 178（+8）、字段待核 280（−8）、仅引用 3；研究台账 135 条（verified 82 / closed 44 / blocked 9），研究候选由 253 降至 233，排除 47 条（closed 41 / blocked 6）；人工审查 128 条、已读来源 252 条（来源条目 254）。身份总线索 126、未决 94、已明确处理 32。地图节点 233、常显设计缺口 2（Assembly/XSLT）、年代审查线索 6。`npm run audit`、`npm run relations:audit`、`npm run research:coverage`、`npm run research:priorities`、`npm test` 与 `npm run build` 均已通过。详情见 `docs/audit/RELATIONSHIP_RESEARCH_2026-10-12_BATCH-42.md`。

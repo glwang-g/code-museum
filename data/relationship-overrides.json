@@ -1127,5 +1127,410 @@
     "source": "https://crystal-lang.org/",
     "sourceSha256": "e5a699978723961dea5a83697d54a991c218c1af80caf137c4326d53f258803c",
     "evidence": "Crystal 官方首页明确写其“syntax inspired by Ruby”，并强调 Crystal 是带静态类型检查的编译语言；Crystal 风格指南进一步写“Crystal’s syntax is heavily inspired by Ruby’s.” 这里表示 Ruby 对 Crystal 语法和语言体验的具体设计启发，不表示兼容 Ruby、继承其动态对象模型或形成超集。"
+  },
+  {
+    "from": "c",
+    "to": "chapel",
+    "type": "influencedBy",
+    "label": "主要语言设计影响",
+    "source": "https://chapel-lang.org/papers/BriefOverviewChapel.pdf",
+    "sourceSha256": "036a9c522596fda0e9adba155358e3f7b16446558c4de234cf7cf150636e404e",
+    "evidence": "Chapel 官方概述将 C 列为 Chapel 的 “primary influences”。这里只记录该论文明确列出的整体语言设计影响；不推断 C API、ABI、源码兼容、后继或超集关系。"
+  },
+  {
+    "from": "cpp",
+    "to": "chapel",
+    "type": "influencedBy",
+    "label": "主要语言设计影响",
+    "source": "https://chapel-lang.org/papers/BriefOverviewChapel.pdf",
+    "sourceSha256": "036a9c522596fda0e9adba155358e3f7b16446558c4de234cf7cf150636e404e",
+    "evidence": "Chapel 官方概述将 C++ 列为 Chapel 的 “primary influences”。这里只记录该论文明确列出的整体语言设计影响；不推断 C++ 兼容、继承其对象模型、后继或超集关系。"
+  },
+  {
+    "from": "fortran",
+    "to": "chapel",
+    "type": "influencedBy",
+    "label": "主要语言设计影响",
+    "source": "https://chapel-lang.org/papers/BriefOverviewChapel.pdf",
+    "sourceSha256": "036a9c522596fda0e9adba155358e3f7b16446558c4de234cf7cf150636e404e",
+    "evidence": "Chapel 官方概述将 Fortran 列为 Chapel 的 “primary influences”。这里只记录该论文明确列出的整体语言设计影响；不推断 Fortran 程序兼容、运行时承继、后继或超集关系。"
+  },
+  {
+    "from": "java",
+    "to": "chapel",
+    "type": "influencedBy",
+    "label": "主要语言设计影响",
+    "source": "https://chapel-lang.org/papers/BriefOverviewChapel.pdf",
+    "sourceSha256": "036a9c522596fda0e9adba155358e3f7b16446558c4de234cf7cf150636e404e",
+    "evidence": "Chapel 官方概述将 Java 列为 Chapel 的 “primary influences”。这里只记录该论文明确列出的整体语言设计影响；不推断 JVM 关系、Java 兼容、后继或超集关系。"
+  },
+  {
+    "from": "matlab",
+    "to": "chapel",
+    "type": "influencedBy",
+    "label": "主要语言设计影响",
+    "source": "https://chapel-lang.org/papers/BriefOverviewChapel.pdf",
+    "sourceSha256": "036a9c522596fda0e9adba155358e3f7b16446558c4de234cf7cf150636e404e",
+    "evidence": "Chapel 官方概述将 Matlab 列为 Chapel 的 “primary influences”。这里只记录该论文明确列出的整体语言设计影响；不推断 MATLAB 工具箱、数值库、运行时或源码兼容关系。"
+  },
+  {
+    "from": "csharp",
+    "to": "chapel",
+    "type": "influencedBy",
+    "label": "主要语言设计影响",
+    "source": "https://chapel-lang.org/papers/BriefOverviewChapel.pdf",
+    "sourceSha256": "036a9c522596fda0e9adba155358e3f7b16446558c4de234cf7cf150636e404e",
+    "evidence": "Chapel 官方概述将 C# 列为 Chapel 的 “primary influences”。这里只记录该论文明确列出的整体语言设计影响；不推断 .NET 运行时关系、源码兼容、后继或超集关系。"
+  },
+  {
+    "from": "clu",
+    "to": "chapel",
+    "type": "influencedBy",
+    "label": "主要语言设计影响",
+    "source": "https://chapel-lang.org/papers/BriefOverviewChapel.pdf",
+    "sourceSha256": "036a9c522596fda0e9adba155358e3f7b16446558c4de234cf7cf150636e404e",
+    "evidence": "Chapel 官方概述将 CLU 列为 Chapel 的 “primary influences”。这里只记录该论文明确列出的整体语言设计影响；不推断模块、异常或抽象数据类型等具体机制的完整承继、兼容或超集关系。"
+  },
+  {
+    "from": "ml",
+    "to": "chapel",
+    "type": "influencedBy",
+    "label": "主要语言设计影响",
+    "source": "https://chapel-lang.org/papers/BriefOverviewChapel.pdf",
+    "sourceSha256": "036a9c522596fda0e9adba155358e3f7b16446558c4de234cf7cf150636e404e",
+    "evidence": "Chapel 官方概述将 ML 列为 Chapel 的 “primary influences”。这里只记录该论文明确列出的整体语言设计影响；不推断 Chapel 是 ML 方言、兼容实现、后继或超集。"
+  },
+  {
+    "from": "modula",
+    "to": "chapel",
+    "type": "influencedBy",
+    "label": "主要语言设计影响",
+    "source": "https://chapel-lang.org/papers/BriefOverviewChapel.pdf",
+    "sourceSha256": "036a9c522596fda0e9adba155358e3f7b16446558c4de234cf7cf150636e404e",
+    "evidence": "Chapel 官方概述将 Modula 列为 Chapel 的 “primary influences”。这里只记录该论文明确列出的整体语言设计影响；不把家族连续性、具体 Modula 方言或模块系统相似性扩大为兼容、后继或超集结论。"
+  },
+  {
+    "from": "scala",
+    "to": "chapel",
+    "type": "influencedBy",
+    "label": "主要语言设计影响",
+    "source": "https://chapel-lang.org/papers/BriefOverviewChapel.pdf",
+    "sourceSha256": "036a9c522596fda0e9adba155358e3f7b16446558c4de234cf7cf150636e404e",
+    "evidence": "Chapel 官方概述将 Scala 列为 Chapel 的 “primary influences”。这里只记录该论文明确列出的整体语言设计影响；不推断 JVM、对象模型、类型系统或源码兼容关系。"
+  },
+  {
+    "from": "perl",
+    "to": "chapel",
+    "type": "influencedBy",
+    "label": "主要语言设计影响",
+    "source": "https://chapel-lang.org/papers/BriefOverviewChapel.pdf",
+    "sourceSha256": "036a9c522596fda0e9adba155358e3f7b16446558c4de234cf7cf150636e404e",
+    "evidence": "Chapel 官方概述将 Perl 列为 Chapel 的 “primary influences”。这里只记录该论文明确列出的整体语言设计影响；不推断 Perl 语法、CPAN 生态、运行时或源码兼容关系。"
+  },
+  {
+    "from": "zpl",
+    "to": "chapel",
+    "type": "influencedBy",
+    "label": "主要语言设计影响",
+    "source": "https://chapel-lang.org/papers/BriefOverviewChapel.pdf",
+    "sourceSha256": "036a9c522596fda0e9adba155358e3f7b16446558c4de234cf7cf150636e404e",
+    "evidence": "Chapel 官方概述将 ZPL 列为 Chapel 的 “primary influences”。这里只记录该论文明确列出的整体语言设计影响；不推断并行运行时、数组语义或源码兼容关系。"
+  },
+  {
+    "from": "pyrex",
+    "to": "cython",
+    "type": "influencedBy",
+    "label": "项目起源与主要设计输入",
+    "source": "https://docs.cython.org/en/latest/src/tutorial/related_work.html",
+    "sourceSha256": "06fc04d813bb182336142074a9f0a4d18c55a2d5240d6cb0a13ce23be86c21d1",
+    "evidence": "Cython 官方文档明确称 Cython 最初基于 Pyrex 编译器项目，且许多特性和主要设计决定在 Pyrex 项目中形成。这里只记录该明确的项目起源与设计输入；不把它扩大为源码、扩展模块或运行时的全面兼容承诺。"
+  },
+  {
+    "from": "go",
+    "to": "moonbit",
+    "type": "influencedBy",
+    "label": "整合 Go 与 Rust 的设计取向",
+    "source": "https://www.moonbitlang.com/blog/js-support",
+    "sourceSha256": "75b343fd26e790f434c08e72e2cc7d85c875e6108287a050ec4e20ddee35c5ff",
+    "evidence": "MoonBit 官方博客称其通过整合 Rust 和 Go 的精华，实现设计上的简洁易用及健壮的容错类型系统。这里只记录作者明确的整体设计取向；不推断 Go 语法、工具链、运行时或源码兼容。"
+  },
+  {
+    "from": "rust",
+    "to": "moonbit",
+    "type": "influencedBy",
+    "label": "整合 Rust 与 Go 的设计取向",
+    "source": "https://www.moonbitlang.com/blog/js-support",
+    "sourceSha256": "75b343fd26e790f434c08e72e2cc7d85c875e6108287a050ec4e20ddee35c5ff",
+    "evidence": "MoonBit 官方博客称其通过整合 Rust 和 Go 的精华，实现设计上的简洁易用及健壮的容错类型系统。这里只记录作者明确的整体设计取向；不推断 Rust 的所有权模型、ABI、工具链或源码兼容。"
+  },
+  {
+    "from": "python",
+    "to": "civet",
+    "type": "influencedBy",
+    "label": "Civet 设计灵感中的 Python 影响",
+    "source": "https://civet.dev/philosophy",
+    "sourceSha256": "418f1458baef50eb18e4046606fce81de92f8b8551dd9b2db2f5a4e745e411fb",
+    "evidence": "Civet 官方《Design Philosophy》在列举设计灵感时写道：\"We've taken inspiration from languages like CoffeeScript, Elm, LiveScript, Flow, Haskell, Elixir, Erlang, Python, Perl, Ruby, Crystal, Bash, and others.\"。这里只记录作者列举的整体语言设计灵感（含 Python）；不推断语法、类型系统或编译产物层面的兼容或继承。"
+  },
+  {
+    "from": "python",
+    "to": "cobrust",
+    "type": "influencedBy",
+    "label": "Cobrust 的 Python 人体工学取向",
+    "source": "https://raw.githubusercontent.com/Cobrust-lang/cobrust/main/README.md",
+    "sourceSha256": "61f33661f0b5250e9355294b5841336735b9034a808abf9626ed2feec2b35fb9",
+    "evidence": "Cobrust 仓库 README 自述 \"Python ergonomics, Rust safety, zero migration cost\"，并说明其采用 Python 式人体工学（缩进、推导式、f-string、装饰器、结构化模式匹配）。这里只记录作者对 Python 人体工学取向的设计承接；不推断源码级兼容或 CPython 运行时关系。"
+  },
+  {
+    "from": "rust",
+    "to": "cobrust",
+    "type": "influencedBy",
+    "label": "Cobrust 的 Rust 语义取向",
+    "source": "https://raw.githubusercontent.com/Cobrust-lang/cobrust/main/README.md",
+    "sourceSha256": "61f33661f0b5250e9355294b5841336735b9034a808abf9626ed2feec2b35fb9",
+    "evidence": "Cobrust 仓库 README 自述 \"Python ergonomics, Rust safety, zero migration cost\"，并列出 Rust 语义（所有权、Result<T, E>、无 GIL、无隐式真值判断、无可变默认参数等）。这里只记录作者对 Rust 语义取向的设计承接；不推断 Cargo 工具链、crate 生态或与 rustc 的兼容。"
+  },
+  {
+    "from": "python",
+    "to": "flare",
+    "type": "influencedBy",
+    "label": "Flare 设计灵感中的 Python 影响",
+    "source": "https://web.archive.org/web/20250724221509id_/https://flarelang.sourceforge.net/prog-overview.html",
+    "sourceSha256": "d4b27d4bf5fa98c832414df0c0fa62a120d2da6983bf5fc05505f2691ab19a19",
+    "evidence": "Flare 官方项目概述写道：\"The current proposed design for Flare has many proposed features intended to increase cleanliness, modularity, and safety; some of them wholly innovative, others inspired by languages including Python, Java, C++, Eiffel, Common LISP, Scheme, Perl, MOO, Haskell, and more.\"。这里只记录作者列举的整体语言设计灵感（含 Python）；不推断语法、类型系统或运行时的具体继承。"
+  },
+  {
+    "from": "cpp",
+    "to": "flare",
+    "type": "influencedBy",
+    "label": "Flare 设计灵感中的 C++ 影响",
+    "source": "https://web.archive.org/web/20250724221509id_/https://flarelang.sourceforge.net/prog-overview.html",
+    "sourceSha256": "d4b27d4bf5fa98c832414df0c0fa62a120d2da6983bf5fc05505f2691ab19a19",
+    "evidence": "Flare 官方项目概述写道：\"...others inspired by languages including Python, Java, C++, Eiffel, Common LISP, Scheme, Perl, MOO, Haskell, and more.\"。这里只记录作者列举的整体语言设计灵感（含 C++）；不推断语法、类型系统或运行时的具体继承。"
+  },
+  {
+    "from": "cpp",
+    "to": "hla",
+    "type": "influencedBy",
+    "label": "HLA 语法与标准库借鉴 C/C++",
+    "source": "https://www.plantation-productions.com/Webster/HighLevelAsm/HLADoc/HLARef/HLARef_html/HLAReference.htm",
+    "sourceSha256": "6033ff9690068de510e942907b9266a29eb8c53888740d9099ad20ed137ff884",
+    "evidence": "HLA 官方参考手册写道：\"When designing the HLA language, I chose a syntax that is very similar to common imperative high-level languages such as Pascal/Delphi, Ada, Modula-2, FORTRAN77, C/C++, and Java.\"，并称 \"The HLA Standard Library was modeled after the standard libraries found in C, C++, and other high level languages.\"。这里只记录作者明确列举的语法与标准库设计借鉴（含 C/C++）；不推断 HLA 与 C/C++ 的源码兼容或可在 C++ 运行时之上运行。"
+  },
+  {
+    "from": "python",
+    "to": "please-build",
+    "type": "influencedBy",
+    "label": "Please 构建语言的 Python 语法取向",
+    "source": "https://raw.githubusercontent.com/thought-machine/please/master/README.md",
+    "sourceSha256": "0a9016272334a30824fbcfb099b1fceb39ad315f87b78271e9af5858d9c3bc9b",
+    "evidence": "Please 仓库 README 说明其构建语言是完整的编程语言，声明式 DSL 之外 \"you can drop into an imperative language that resembles python when necessary\"，示例以 python 标注。这里只记录作者明确的 Python 语法取向设计；不推断与 CPython 的运行时或标准库关系。"
+  },
+  {
+    "from": "c",
+    "to": "tick-c",
+    "type": "supersetOf",
+    "label": "ANSI C 的扩展（Tick C）",
+    "source": "https://pdos.csail.mit.edu/archive/tickc/index.html",
+    "sourceSha256": "77e9cb902a11dc193417796c5fff38c163678d5df8a925ce245838736ed2a9f3",
+    "evidence": "MIT PDOS 的 Tick C 项目页写道：\"`C is an extension of ANSI C that provides the programmer with the ability to explicitly denote dynamic code generation (the creation of executable code at run time, while the application is running) at the level of C statements and expressions.\"。这里只记录作者对 ANSI C 的扩展（超集）定性；不推断编译器实现、ABI 或全部方言兼容。"
+  },
+  {
+    "from": "go",
+    "to": "jule",
+    "type": "influencedBy",
+    "label": "Jule 的简洁性与可维护性取向以 Go 为主要设计影响",
+    "source": "https://manual.jule.dev/the-mission.html",
+    "sourceSha256": "50899e34bbd9bdfbea498efc790be0ee74ce884905ef7150825a0c72aebad5b5",
+    "evidence": "Jule 官方手册 The Mission 写道：\"In terms of simplicity and maintainability, Jule is heavily influenced by Go.\"，并说明 Jule 有意保留 Go 那种无需迁就编译器的开发体验。本边只记录作者自述的整体设计影响；不推断源码兼容、运行时或 ABI 关系。"
+  },
+  {
+    "from": "rust",
+    "to": "alumina",
+    "type": "influencedBy",
+    "label": "Alumina 自述受 Rust 启发但保留 C 式手动内存管理",
+    "source": "https://docs.alumina-lang.net/",
+    "sourceSha256": "bc9fef2ffb9bc51b7fb3b0d29f9c19154d421307d4b1b480862384a57892bbbb",
+    "evidence": "Alumina 官方文档首页写道：\"It is heavily inspired by Rust, but it keeps C-style manual memory management and memory unsafety.\"，同句也说明它与 Rust 借用检查器的差异。本边只记录作者自述的整体设计来源；不推断源码兼容或运行时关系。"
+  },
+  {
+    "from": "rust",
+    "to": "cairo",
+    "type": "influencedBy",
+    "label": "Cairo 官方定位为 Rust 启发语言",
+    "source": "https://www.cairo-lang.org/",
+    "sourceSha256": "16fa6ab7086d00bc97dde815a62cbe874c76d074487db3214a769e4e915c055e",
+    "evidence": "Cairo 官方站点首页标题为 \"WELCOME TO CAIRO — The Rust-inspired language that makes it easy to build scalable dApps with the power of validity proofs.\"。本边只记录项目自述的 Rust 启发取向；不推断源码兼容、工具链或运行时关系。"
+  },
+  {
+    "from": "java",
+    "to": "flare",
+    "type": "influencedBy",
+    "label": "Flare 官方设计说明把 Java 列为灵感语言之一",
+    "source": "https://web.archive.org/web/20250724221509id_/https://flarelang.sourceforge.net/prog-overview.html",
+    "sourceSha256": "d4b27d4bf5fa98c832414df0c0fa62a120d2da6983bf5fc05505f2691ab19a19",
+    "evidence": "Flare 项目概述原文：\"...others inspired by languages including Python, Java, C++, Eiffel, Common LISP, Scheme, Perl, MOO, Haskell, and more.\"。本边只记录作者列举的灵感列表包含 Java，与同源 Python/C++ → Flare 边共用同一份 Wayback id_ 快照与哈希。"
+  },
+  {
+    "from": "csharp",
+    "to": "nemerle",
+    "type": "influencedBy",
+    "label": "Nemerle 官网把 C# 列为设计影响之一",
+    "source": "https://web.archive.org/web/20190101112551id_/http://nemerle.org/About/",
+    "sourceSha256": "c86b545290fb1c4919d9456d4c7ce5f642407a0b16e6da24bbfe655dd6430bce",
+    "evidence": "Nemerle 官方站 About 页列出：\"Influenced by : C# (OOP & Imperative support), ML (FP support), Lisp (macros support).\"，并称 Nemerle \"as easy to learn and use as C# or VB.NET\"。本边只记录官网自述的 C# 影响（面向对象与命令式支持）；不推断二进制、库或运行时兼容。"
+  },
+  {
+    "from": "python",
+    "to": "shrubbery",
+    "type": "influencedBy",
+    "label": "Shrubbery 缩进解析与冒号用法受 Python 影响",
+    "source": "https://docs.racket-lang.org/shrubbery/Design_Considerations.html",
+    "sourceSha256": "680a1be2d7c2a2a9bdacc9640829cf39d4df6978d98f176d1e345b8a8f65c813",
+    "evidence": "Racket 官方文档《Design Considerations》第 6.2 节写明：\"Indentation-sensitive parsing and the use of : is obviously informed by Python.\"。本边只记录作者自述的缩进解析设计来源；不推断整体语法兼容或与 CPython 的运行时关系。"
+  },
+  {
+    "from": "cpp",
+    "to": "sdlang",
+    "type": "influencedBy",
+    "label": "SDLang 自述语法受 C 系语言（含 C/C++）影响",
+    "source": "https://sdlang.org/",
+    "sourceSha256": "019a1fd61be699e14055f7ea059bf1c445e956ef3dd70521eac780a95e247ae3",
+    "evidence": "SDLang 官网首页写道：\"Its syntax was inspired by the C family of languages (C/C++, C#, D, Java, …).\"。本边只记录作者对语法族来源的整体自述；SDLang 是数据序列化/配置语言，不推断与 C/C++ 的编译、ABI 或运行时关系。"
+  },
+  {
+    "from": "ruby",
+    "to": "civet",
+    "type": "influencedBy",
+    "label": "Civet 官方灵感列表含 Ruby",
+    "source": "https://civet.dev/philosophy",
+    "sourceSha256": "418f1458baef50eb18e4046606fce81de92f8b8551dd9b2db2f5a4e745e411fb",
+    "evidence": "Civet 官方 Design Philosophy 原文：\"We've taken inspiration from languages like CoffeeScript, Elm, LiveScript, Flow, Haskell, Elixir, Erlang, Python, Perl, Ruby, Crystal, Bash, and others.\"。本边只记录作者列举的灵感列表包含 Ruby。"
+  },
+  {
+    "from": "perl",
+    "to": "civet",
+    "type": "influencedBy",
+    "label": "Civet 官方灵感列表含 Perl",
+    "source": "https://civet.dev/philosophy",
+    "sourceSha256": "418f1458baef50eb18e4046606fce81de92f8b8551dd9b2db2f5a4e745e411fb",
+    "evidence": "Civet 官方 Design Philosophy 原文：\"We've taken inspiration from languages like CoffeeScript, Elm, LiveScript, Flow, Haskell, Elixir, Erlang, Python, Perl, Ruby, Crystal, Bash, and others.\"。本边只记录作者列举的灵感列表包含 Perl。"
+  },
+  {
+    "from": "c",
+    "to": "sdlang",
+    "type": "influencedBy",
+    "label": "SDLang 自述语法受 C 系语言（含 C）影响",
+    "source": "https://sdlang.org/",
+    "sourceSha256": "019a1fd61be699e14055f7ea059bf1c445e956ef3dd70521eac780a95e247ae3",
+    "evidence": "SDLang 官网首页写道：\"Its syntax was inspired by the C family of languages (C/C++, C#, D, Java, …).\"。本边只记录作者对语法族来源的整体自述，不推断与 C 的编译、ABI 或运行时关系。"
+  },
+  {
+    "from": "ada",
+    "to": "hla",
+    "type": "influencedBy",
+    "label": "HLA 作者列举的语法借鉴语言包含 Ada",
+    "source": "https://www.plantation-productions.com/Webster/HighLevelAsm/HLADoc/HLARef/HLARef_html/HLAReference.htm",
+    "sourceSha256": "6033ff9690068de510e942907b9266a29eb8c53888740d9099ad20ed137ff884",
+    "evidence": "HLA 官方参考手册：\"When designing the HLA language, I chose a syntax that is very similar to common imperative high-level languages such as Pascal/Delphi, Ada, Modula-2, FORTRAN77, C/C++, and Java.\"。本边只记录作者列举的语法设计借鉴包含 Ada；不推断 HLA 与 Ada 的源码兼容或运行时关系。"
+  },
+  {
+    "from": "swift",
+    "to": "mojo",
+    "type": "influencedBy",
+    "label": "Mojo 官方愿景称借鉴 Swift 等系统语言经验",
+    "source": "https://mojolang.org/docs/vision/",
+    "sourceSha256": "fca76b7c1b6d321a96e6257e7597b7ccf26feafb02d7c03b447c7b5262f782e9",
+    "evidence": "Mojo 官方 vision 文档：\"It draws on lessons from languages like Swift, C++, Rust, and Zig—and goes beyond them by embracing new techniques...\"。本边只记录作者自述从 Swift 等语言借鉴经验；不推断与 Swift 的源码、工具链或运行时关系。"
+  },
+  {
+    "from": "lua",
+    "to": "buzz",
+    "type": "influencedBy",
+    "label": "Buzz 官方文档称 Fiber 受 Lua 协程启发",
+    "source": "https://buzz-lang.dev/main/guide/fibers.html",
+    "sourceSha256": "1dfe99937e32b6bd334dfa5fb184634dee948fe53ebe5875cb8c44dbd4dea2ff",
+    "evidence": "Buzz 官方指南 Fibers 章：\"Buzz fibers are lightweight execution contexts inspired by Lua coroutines.\"。本边只记录作者自述 Fiber 机制受 Lua 协程启发；不推断 Buzz 与 Lua 的语法兼容或运行时关系。"
+  },
+  {
+    "from": "java",
+    "to": "sdlang",
+    "type": "influencedBy",
+    "label": "SDLang 自述语法受 C 系语言（含 Java）影响",
+    "source": "https://sdlang.org/",
+    "sourceSha256": "019a1fd61be699e14055f7ea059bf1c445e956ef3dd70521eac780a95e247ae3",
+    "evidence": "SDLang 官网首页写道：\"Its syntax was inspired by the C family of languages (C/C++, C#, D, Java, …).\"。本边只记录作者对语法族来源的整体自述，不推断与 Java 的编译、字节码或运行时关系。"
+  },
+  {
+    "from": "csharp",
+    "to": "sdlang",
+    "type": "influencedBy",
+    "label": "SDLang 自述语法受 C 系语言（含 C#）影响",
+    "source": "https://sdlang.org/",
+    "sourceSha256": "019a1fd61be699e14055f7ea059bf1c445e956ef3dd70521eac780a95e247ae3",
+    "evidence": "SDLang 官网首页写道：\"Its syntax was inspired by the C family of languages (C/C++, C#, D, Java, …).\"。本边只记录作者对语法族来源的整体自述；SDLang 是数据序列化/配置语言，不推断与 C# 的编译、CLR 或运行时关系。"
+  },
+  {
+    "from": "perl",
+    "to": "flare",
+    "type": "influencedBy",
+    "label": "Flare 官方设计说明把 Perl 列为灵感语言之一",
+    "source": "https://web.archive.org/web/20250724221509id_/https://flarelang.sourceforge.net/prog-overview.html",
+    "sourceSha256": "d4b27d4bf5fa98c832414df0c0fa62a120d2da6983bf5fc05505f2691ab19a19",
+    "evidence": "Flare 项目概述原文：\"...others inspired by languages including Python, Java, C++, Eiffel, Common LISP, Scheme, Perl, MOO, Haskell, and more.\"。本边只记录作者列举的灵感列表包含 Perl，与同源 python/java/cpp → Flare 边共用同一份 Wayback id_ 快照与哈希。"
+  },
+  {
+    "from": "matlab",
+    "to": "simit",
+    "type": "influencedBy",
+    "label": "Simit 沿用 MATLAB 的矩阵字面量语法",
+    "source": "http://simit-lang.org/language",
+    "sourceSha256": "3b942d2d3eb75d015906160fd3bc2e98fdae9ab3483b6cda72228a5b657b0428",
+    "evidence": "Simit 官方语言页写道：\"Simit also supports the MATLAB syntax for declaring matrix literals in addition to an alternative more regular syntax:\"，并说明其函数可像 MATLAB 一样返回任意个结果。本边只记录语法层面自述的 MATLAB 来源；不推断整体设计、语义或运行时等价。"
+  },
+  {
+    "from": "objective-c",
+    "to": "cooc",
+    "type": "supersetOf",
+    "label": "cooC 在官方文献摘要中被表述为 Objective-C 的超集",
+    "source": "https://web.archive.org/web/2023id_/https://www.tenon.com/products/codebuilder/Objective-C.shtml",
+    "sourceSha256": "0436c517572411370ed9d83d30e7507a27791b66ce1f337c6a41bee8efd1f2e9",
+    "evidence": "cooC 文章摘要（Rajiv Trehan 等，ACM SIGPLAN Notices 1993）写道：\"cooC is a superset of Objective-C.\"。本边记录该文献摘要的超集表述；不推断工具链、运行时或 ABI 兼容。"
+  },
+  {
+    "from": "relational-model",
+    "to": "sql",
+    "type": "influencedBy",
+    "label": "SQL 的访问语法基于 Codd 关系模型",
+    "source": "https://www.redbooks.ibm.com/redbooks/pdfs/sg245511.pdf",
+    "sourceSha256": "5b81c2bff2d0e04ed08b17fc2dbdcfc33535e616ae0c63063a5a0f38cac1d78f",
+    "evidence": "IBM Redbook 写道：\"SQL is a standard syntax for accessing relational database systems based on a relational theory, which is documented in The Relational Model for Database Management by E. F. Codd.\"。本边记录 SQL 访问语法与 Codd 关系模型的来源关系；不推断实现或产品兼容。"
+  },
+  {
+    "from": "ada",
+    "to": "spark-pl",
+    "type": "influencedBy",
+    "label": "SPARK 以 Ada 为基础（子集并扩展契约）",
+    "source": "https://docs.adacore.com/spark2014-docs/html/lrm/introduction.html",
+    "sourceSha256": "8a8d947af573ef4f2df258cdec016f01f7aa742bca20e8a7afdfba4e5c10b64c",
+    "evidence": "SPARK 官方语言参考手册导言写道：\"SPARK is based on Ada, both subsetting the language to remove features that defy verification and also extending the system of contracts…\"。本边记录作者自述的 Ada 基础；不推断工具链或证明语义等价。"
+  },
+  {
+    "from": "haskell",
+    "to": "civet",
+    "type": "influencedBy",
+    "label": "Civet 官方灵感列表含 Haskell",
+    "source": "https://civet.dev/philosophy",
+    "sourceSha256": "418f1458baef50eb18e4046606fce81de92f8b8551dd9b2db2f5a4e745e411fb",
+    "evidence": "Civet 官方 Design Philosophy 原文：\"We've taken inspiration from languages like CoffeeScript, Elm, LiveScript, Flow, Haskell, Elixir, Erlang, Python, Perl, Ruby, Crystal, Bash, and others.\"。本边只记录作者列举的灵感列表包含 Haskell。"
+  },
+  {
+    "from": "prolog",
+    "to": "clpr",
+    "type": "supersetOf",
+    "label": "普通 Prolog 被视为 CLP 的特例",
+    "source": "https://www.swi-prolog.org/pldoc/man?section=clp",
+    "sourceSha256": "98cc78f512530f5bba222fc07f15025556be7a250915c56bc1aaeffc10707bf6",
+    "evidence": "SWI-Prolog 官方文档写道：\"Plain Prolog can thus be regarded as a special case of CLP.\"。本边记录 CLP 相对普通 Prolog 的包容关系（CLP 为超集）；不推断具体求解器或实现兼容。"
   }
 ]

@@ -29,7 +29,7 @@ boo,Boo,2003,unreviewed,,,0,0,0,0,0,,no-map-link
 boogie,Boogie,2008,unreviewed,,,0,0,0,0,0,,no-map-link
 brainfuck,Brainfuck,1993,unreviewed,,,0,0,0,1,0,,no-map-link
 bython,Bython,2016,unreviewed,,,0,0,0,0,0,,no-map-link
-c,C,1972,verified-language,b,c-shell | cpp | go | java | korn-shell | objective-c | php | zig,9,9,0,7,0,,cited-only
+c,C,1972,verified-language,b,c-shell | cpp | go | java | korn-shell | objective-c | php | zig,9,9,0,8,0,,cited-only
 c-shell,C shell,1978,historical-primary-source,c,bash | korn-shell | tcsh,4,4,0,0,1,tcsh,cited-only
 carbon,Carbon,2020,unreviewed,,,0,0,0,0,0,,no-map-link
 cat,cat,2016,unreviewed,,,0,0,0,0,0,,no-map-link
@@ -120,7 +120,7 @@ lsl,Linden Scripting Language,2003,unreviewed,,,0,0,0,0,0,,no-map-link
 lua,Lua,1993,verified-language,awk | cpp | scheme | snobol,,4,4,0,5,0,,cited-only
 m4,M4,1977,unreviewed,,,0,0,0,0,0,,no-map-link
 malbolge,Malbolge,1998,unreviewed,,,0,0,0,0,0,,no-map-link
-matlab,MATLAB,1984,verified-language,,julia | octave,2,2,0,1,1,java,cited-only
+matlab,MATLAB,1984,verified-language,,julia | octave,2,2,0,2,1,java,cited-only
 mercury,Mercury,1995,unreviewed,,,0,0,0,0,0,,no-map-link
 minizinc,MiniZinc,2012,unreviewed,,,0,0,0,0,0,,no-map-link
 miranda,Miranda,1985,unreviewed,,haskell,1,1,0,0,0,,cited-only
@@ -151,7 +151,7 @@ parrot-internal-representation,PIR,2006,unreviewed,,,0,0,0,0,0,,no-map-link
 parser,Parser 3,1997,unreviewed,,,0,0,0,0,0,,no-map-link
 pascal,Pascal,1970,verified-language,algol-60,go | modula-2,3,3,0,6,0,,cited-only
 pawn,PAWN,2006,unreviewed,,,0,0,0,0,0,,no-map-link
-perl,Perl,1987,verified-language,,julia | php | ruby,3,3,0,3,1,raku,cited-only
+perl,Perl,1987,verified-language,,julia | php | ruby,3,3,0,4,1,raku,cited-only
 php,PHP,1995,verified-language,c | perl,,2,2,0,1,0,,cited-only
 picolisp,PicoLisp,1988,unreviewed,,,0,0,0,0,0,,no-map-link
 pikachu,pikachu,2017,unreviewed,,,0,0,0,0,0,,no-map-link
@@ -182,7 +182,7 @@ ruby,Ruby,1995,verified-language,ada | lisp | perl | smalltalk,crystal | julia |
 rust,Rust,2010,verified-language,cpp | csharp | erlang | haskell | ocaml | ruby | scheme | swift,,8,8,0,6,0,,cited-only
 sagemath,Sage,2005,unreviewed,,,0,0,0,0,0,,no-map-link
 sass,Sass,2006,unreviewed,,less,1,1,0,0,0,,cited-only
-scala,Scala,2004,verified-language,csharp | java,kotlin,3,3,0,1,0,,cited-only
+scala,Scala,2004,verified-language,csharp | java,kotlin,3,3,0,2,0,,cited-only
 scheme,Scheme,1975,verified-language,lisp,common-lisp | haskell | javascript | lua | rust,6,6,0,4,0,,cited-only
 scilab,Scilab,1990,unreviewed,,,0,0,0,0,0,,no-map-link
 scss,SCSS,2006,unreviewed,,,0,0,0,0,0,,no-map-link
