@@ -65,5 +65,37 @@
     ],
     "reason": "Adobe 官方把 Adobe ColdFusion 描述为应用服务器/脚本环境，把 CFML 描述为标记式脚本语言；文件扩展名 cfm 也不是语言等价别名。平台、语言和文件后缀必须分开。",
     "source": "https://guides.adobe.com/coldfusion/en/docs/develop-coldfusion-applications/introducing-coldfusion/about-coldfusion.html"
+  },
+  {
+    "id": "markdown",
+    "exclude": [
+      "pandoc"
+    ],
+    "reason": "Pandoc 官方把自身描述为 universal document converter；Pandoc 是转换工具，不是 Markdown 语言别名。",
+    "source": "https://pandoc.org/"
+  },
+  {
+    "id": "batch",
+    "exclude": [
+      "winbatch"
+    ],
+    "reason": "WinBatch 官方把自身描述为 Windows 宏脚本语言并提供 WIL；它和 Windows Batchfile 不是同一语言。",
+    "source": "https://www.winbatch.com/"
+  },
+  {
+    "id": "vim-script",
+    "exclude": [
+      "vim"
+    ],
+    "reason": "Vim 官方用户手册把 Vim script 作为用于 vimrc、语法文件等脚本语言；Vim 本身是编辑器，不能作为该语言的等价身份。",
+    "source": "https://vimhelp.org/usr_41.txt.html"
+  },
+  {
+    "id": "jinja",
+    "exclude": [
+      "django"
+    ],
+    "reason": "Django 官方模板文档把自身模板系统称为 Django template language (DTL)，并把 Jinja2 列为独立后端；框架名不能作为 Jinja 的等价别名。",
+    "source": "https://docs.djangoproject.com/en/stable/topics/templates/"
   }
 ]
