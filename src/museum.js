@@ -34,6 +34,7 @@ function xpos(y){if(!y)return 2540;if(y<1800)return 30;for(let i=1;i<epochs.leng
 const hash=s=>[...s].reduce((h,c)=>(h*31+c.charCodeAt(0))>>>0,0);
 let viewMode='timeline',relationLayer='design',relationScope='direct',relationDirection='both',relationLevels=1,activeId=null,zoomScale=1,zoomMode='fit',focusParts=null;
 function setAtlasFeedback(note,context='浏览全景'){$('#atlas-note').textContent=note;$('#atlas-context').textContent=context}
+function setResearchGapButton(id){const button=$('#atlas-research-gap'),gap=!!id&&selectedIds.has(id)&&!designEdges.some(e=>e.from===id||e.to===id);if(!button)return;button.hidden=!gap;button.setAttribute('aria-label',gap?`查看 ${byId.get(id)?.name||''} 的关系研究待办`:'');button.onclick=()=>gap&&window.MUSEUM_RELATIONSHIP_COVERAGE?.focusLanguage(id)}
 function updateRelationSettingsSummary(){const direction={both:'上下游',up:'上游',down:'下游'}[relationDirection]||'上下游';const detail=relationScope==='direct'?'直接关联':relationScope==='all'?'全部前序与后续':`${direction} · ${relationLevels} 层`;$('#relation-settings-summary').textContent=`探索设置 · ${detail}`}
 $('#epochs').innerHTML=epochs.map(([,x,n])=>`<span class="epoch" style="left:${x}px">${n}</span>`).join('');
 const verifiedCount=records.filter(r=>['verified-language','historical-primary-source'].includes(r.review?.status)).length;
@@ -302,6 +303,7 @@ function placeFocusLabels(direct,originX,originY,targetLeft,targetTop){
   syncMapRunButton();
 }
 function renderLineageFocus(id){
+  setResearchGapButton(id);
   resetFocusLabels();
   const currentEdges=activeMapEdges();
   const related=new Set([id]),ancestors=new Set([id]);
@@ -377,6 +379,7 @@ function renderLineageFocus(id){
 }
 let opener=null;
 function restoreMapOverview(){
+  setResearchGapButton(null);
   inspectedRelation=null;
   clearRelationPreview();
   activeId=null;
