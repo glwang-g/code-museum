@@ -161,3 +161,20 @@ GitHub remote 已迁至 `glwang-g/code-museum`。提交 `0aa352e` 将站点顶�
 ## 2026-10-11 身份别名批次 1
 
 提交 `ac87ec1` 记录 cperl、JRuby、Lisp/Common Lisp、Visual Basic/.NET 的别名排除及来源，Actions `38117111217` build/deploy 成功。`npm test` 62/62，审计重生成后 124 行身份问题中 6 行已明确、118 行待核；没有修改原始 PLDB 快照或新增关系。
+
+## 2026-10-11 关系证据扩展批次 22–29
+
+以下提交均通过 master 自动 build/deploy，没有修改后端执行器、令牌、统计数据库或 Nginx：
+
+| 批次 | 提交 | Actions | 内容 |
+| --- | --- | --- | --- |
+| 22 | `9c6a2d5` | `38117678764` | Common Lisp 上游关系 |
+| 23 | `6f151dc` | `38118039837` | Miranda → Haskell |
+| 24 | `ea643b3` | `38118396929` | Haskell 报告地图可见前驱 |
+| 25 | `2dffb52` | `38118759653` | C# → F#；Python → F# 否决 |
+| 26 | `dacba1b` | `38119074848` | F# → TypeScript |
+| 27 | `1e9ea29` | `38119458824` | Lisp → Clojure |
+| 28 | `fc54cce` | `38119507787` | Standard ML → Alice |
+| 29 | `eb0b591` | `38119590563` | Haskell 报告非地图前驱 |
+
+最终当前状态：442 条设计/历史关系、7 条生态关系；设计关系中 318 条字段待核、6 项年代线索；地图节点 233、无可见设计关系节点 161、常显标签缺口 3（Assembly、XSLT、Zig）。研究限制与逐条来源见 `docs/audit/RELATIONSHIP_RESEARCH_LEDGER.md` 和各批次报告。

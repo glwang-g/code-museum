@@ -458,3 +458,18 @@ GitHub 推送同时报告仓库已正式迁至 `glwang-g/code-museum`。站点�
 ## 2026-10-11 身份别名批次 1
 
 处理 4 条与常显语言相关的别名碰撞：`cperl` 不并入 Perl，`jruby` 不并入 Ruby，`lisp` 不并入 Common Lisp，`visual basic` 不并入 Visual Basic .NET。核读对应官方/规范页面并保存响应 SHA；原始 PLDB 字段不改，关系与实现身份仍单独研究。审计规则不再重复计算已人工声明的误别名，当前 124 行身份问题中 6 行已明确，118 行待核。`INTEGRITY.md` 已同步到当前 93 审查、208 来源、421 设计关系、318 字段待核、233 地图节点。`npm test` 62/62、构建通过；提交 `ac87ec1`，Actions `38117111217` build/deploy 成功。
+
+## 2026-10-11 关系证据扩展：批次 22–29
+
+本轮从固定原始资料连续补齐 Common Lisp、Haskell、F#、Clojure 和 Alice 的直接设计来源，并同步研究台账、关系状态、审计报告和浏览器回归。新增关系全部保存完整响应/字节哈希、原文摘录和关系边界；未增加网页运行时，未修改 PLDB 原始快照。
+
+- Batch 22：`Lisp`、`MacLisp`、`Scheme`、`Interlisp → Common Lisp`；提交 `9c6a2d5`，Actions `38117678764`。
+- Batch 23：`Miranda → Haskell`；提交 `6f151dc`，Actions `38118039837`。
+- Batch 24：Haskell 官方报告列出的地图可见前驱 `Lisp / Common Lisp / Scheme / APL / Standard ML / Clean → Haskell`；提交 `ea643b3`，Actions `38118396929`。
+- Batch 25：`C# → F#`；“Python → F#”核查后否决，论文只说明 Python 影响 C# 4.0 dynamic。提交 `2dffb52`，Actions `38118759653`。
+- Batch 26：`F# → TypeScript`；提交 `dacba1b`，Actions `38119074848`。
+- Batch 27：`Lisp → Clojure`；提交 `1e9ea29`，Actions `38119458824`。
+- Batch 28：`Standard ML → Alice`；提交 `fc54cce`，Actions `38119507787`。
+- Batch 29：Haskell 报告的非地图前驱 `ISWIM / FP / ML / Hope / Gofer / Sisal → Haskell`；`Id` 无馆藏端点保留缺口。提交 `eb0b591`，Actions `38119590563`。
+
+当前审计口径：5,155 馆藏记录、4,608 条来源标记语言、233 个地图节点、50 个常显标签；442 条设计/历史关系、7 条生态关系；设计关系中 318 条仍只有来源字段，另有 6 项年代审查线索。地图无可见设计关系节点降至 161，但仍不能把这解释为关系已基本穷尽。Assembly、XSLT、Zig 仍是常显设计层缺口；Zetalisp 和 Id 缺少馆藏端点。
