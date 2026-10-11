@@ -8,7 +8,6 @@ alias-equals-other-name,blitzplus,blitzbasic | blitzplus,The source alias may me
 alias-equals-other-name,bro,zeek | bro,The source alias may merge distinct languages; review before indexing.
 alias-equals-other-name,cfml,coldfusion | cfml,The source alias may merge distinct languages; review before indexing.
 alias-equals-other-name,clipper,xbase | clipper,The source alias may merge distinct languages; review before indexing.
-alias-equals-other-name,cperl,perl | cperl,The source alias may merge distinct languages; review before indexing.
 alias-equals-other-name,delphi,pascal | delphi,The source alias may merge distinct languages; review before indexing.
 alias-equals-other-name,django,jinja | django,The source alias may merge distinct languages; review before indexing.
 alias-equals-other-name,emacs,emacs-lisp | emacs-editor,The source alias may merge distinct languages; review before indexing.
@@ -18,9 +17,7 @@ alias-equals-other-name,geojson,json | geojson,The source alias may merge distin
 alias-equals-other-name,groff,roff | groff,The source alias may merge distinct languages; review before indexing.
 alias-equals-other-name,inc,php | inc,The source alias may merge distinct languages; review before indexing.
 alias-equals-other-name,irc,irc-log | irc,The source alias may merge distinct languages; review before indexing.
-alias-equals-other-name,jruby,ruby | jruby,The source alias may merge distinct languages; review before indexing.
 alias-equals-other-name,latex,tex | latex,The source alias may merge distinct languages; review before indexing.
-alias-equals-other-name,lisp,common-lisp | lisp,The source alias may merge distinct languages; review before indexing.
 alias-equals-other-name,nixos,nix | nixos,The source alias may merge distinct languages; review before indexing.
 alias-equals-other-name,nroff,roff | nroff,The source alias may merge distinct languages; review before indexing.
 alias-equals-other-name,pandoc,markdown | pandoc-app,The source alias may merge distinct languages; review before indexing.
@@ -34,14 +31,17 @@ alias-equals-other-name,troff,roff | troff,The source alias may merge distinct l
 alias-equals-other-name,ts,typescript | ts,The source alias may merge distinct languages; review before indexing.
 alias-equals-other-name,velocity,vtl-lang | apache-velocity,The source alias may merge distinct languages; review before indexing.
 alias-equals-other-name,vim,vim-script | vim,The source alias may merge distinct languages; review before indexing.
-alias-equals-other-name,visual basic,visual-basic.net | visual-basic,The source alias may merge distinct languages; review before indexing.
 alias-equals-other-name,winbatch,batch | winbatch,The source alias may merge distinct languages; review before indexing.
 alias-equals-other-name,wolfram language,mathematica | wolfram,The source alias may merge distinct languages; review before indexing.
 alias-equals-other-name,wsdl,xml | wsdl,The source alias may merge distinct languages; review before indexing.
 alias-equals-other-name,xhtml,html | xhtml,The source alias may merge distinct languages; review before indexing.
 alias-equals-other-name,xsd,xml | xsd,The source alias may merge distinct languages; review before indexing.
 corrected-name-overlap,Bourne shell,sh | bourne-shell,Reviewed display name overlaps another pinned record; resolve identity and date events before merging or treating as distinct languages.
+curated-false-alias,cperl,perl,PLDB 将 cperl 列为 Perl 的 GitHub 别名，但同一快照有独立 cperl 记录；cperl 官方页面描述其为带类、类型和编译器的 perl5 变体。保留独立身份，不据此合并。
+curated-false-alias,jruby,ruby,PLDB 将 JRuby 列为 Ruby 别名，但 JRuby 官方明确说明它是运行在 JVM 上的 Ruby 实现；实现身份应通过生态/实现关系处理，不把名称当作等价语言。
+curated-false-alias,lisp,common-lisp,Common Lisp the Language 将 Common Lisp 描述为具体 Lisp 标准与实现平台；馆藏另有独立 Lisp 历史记录。别名不得把家族节点和标准语言合并。
 curated-false-alias,vb6,vba,"The PLDB GitHub Linguist alias field treats VBA as VB6. The same snapshot describes VBA as a separate implementation of Visual Basic 6, so these names must not resolve to VBA."
+curated-false-alias,visual basic,visual-basic.net,Microsoft 将 Visual Basic 6.0 旧文档与 Visual Basic .NET 文档分开维护；馆藏同时存在 legacy Visual Basic 与 VB.NET 记录，不能把泛称 Visual Basic 直接解析为 .NET 版本。
 curated-false-alias,visual basic 6,vba,"The PLDB GitHub Linguist alias field treats VBA as VB6. The same snapshot describes VBA as a separate implementation of Visual Basic 6, so these names must not resolve to VBA."
 same-display-name,alma,alma | alma-007,"Check whether these are homonyms, versions, or duplicates."
 same-display-name,alphard,alphard | alphard-programming-language,"Check whether these are homonyms, versions, or duplicates."

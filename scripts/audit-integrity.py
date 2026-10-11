@@ -104,6 +104,7 @@ def main():
         raise ValueError('Duplicate IDs or snapshot count mismatch')
     reviews = {review['id']: review for review in read_json('data/audit/reviews.json')['reviews']}
     alias_curation = read_json('data/audit/alias-curation.json')
+    excluded_aliases = {item['id']: {normalized(alias) for alias in item['exclude']} for item in alias_curation}
     map_ids = set(read_json('data/audit/map-eligible-ids.json')['ids'])
     label_selection = read_json('data/audit/label-selection.json')
     label_ids = {row['mapId'] for row in label_selection['top50'] if row['mapId']}
@@ -140,6 +141,8 @@ def main():
         for alias in re.split(r'\s+or\s+', record.get('githubLanguage_aliases') or ''):
             alias = alias.strip()
             if not alias:
+                continue
+            if normalized(alias) in excluded_aliases.get(record['id'], set()):
                 continue
             other_ids = sorted(set(names.get(normalized(alias), [])) - {record['id']})
             if other_ids:

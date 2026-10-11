@@ -1,8 +1,43 @@
 [
   {
     "id": "vba",
-    "exclude": ["vb6", "visual basic 6"],
+    "exclude": [
+      "vb6",
+      "visual basic 6"
+    ],
     "reason": "The PLDB GitHub Linguist alias field treats VBA as VB6. The same snapshot describes VBA as a separate implementation of Visual Basic 6, so these names must not resolve to VBA.",
     "source": "https://github.com/breck7/pldb/blob/main/concepts/vba.scroll"
+  },
+  {
+    "id": "perl",
+    "exclude": [
+      "cperl"
+    ],
+    "reason": "PLDB 将 cperl 列为 Perl 的 GitHub 别名，但同一快照有独立 cperl 记录；cperl 官方页面描述其为带类、类型和编译器的 perl5 变体。保留独立身份，不据此合并。",
+    "source": "https://perl11.github.io/cperl/"
+  },
+  {
+    "id": "ruby",
+    "exclude": [
+      "jruby"
+    ],
+    "reason": "PLDB 将 JRuby 列为 Ruby 别名，但 JRuby 官方明确说明它是运行在 JVM 上的 Ruby 实现；实现身份应通过生态/实现关系处理，不把名称当作等价语言。",
+    "source": "https://www.jruby.org/"
+  },
+  {
+    "id": "common-lisp",
+    "exclude": [
+      "lisp"
+    ],
+    "reason": "Common Lisp the Language 将 Common Lisp 描述为具体 Lisp 标准与实现平台；馆藏另有独立 Lisp 历史记录。别名不得把家族节点和标准语言合并。",
+    "source": "https://www.cs.cmu.edu/Groups/AI/html/cltl/clm/node2.html"
+  },
+  {
+    "id": "visual-basic.net",
+    "exclude": [
+      "visual basic"
+    ],
+    "reason": "Microsoft 将 Visual Basic 6.0 旧文档与 Visual Basic .NET 文档分开维护；馆藏同时存在 legacy Visual Basic 与 VB.NET 记录，不能把泛称 Visual Basic 直接解析为 .NET 版本。",
+    "source": "https://learn.microsoft.com/en-us/previous-versions/visualstudio/visual-basic-6/visual-basic-6.0-documentation"
   }
 ]
