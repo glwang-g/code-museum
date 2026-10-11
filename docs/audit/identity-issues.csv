@@ -5,11 +5,9 @@ alias-equals-other-name,autoconf,m4sugar | autoconf,The source alias may merge d
 alias-equals-other-name,blitz3d,blitzbasic | blitz3d,The source alias may merge distinct languages; review before indexing.
 alias-equals-other-name,blitzplus,blitzbasic | blitzplus,The source alias may merge distinct languages; review before indexing.
 alias-equals-other-name,bro,zeek | bro,The source alias may merge distinct languages; review before indexing.
-alias-equals-other-name,clipper,xbase | clipper,The source alias may merge distinct languages; review before indexing.
 alias-equals-other-name,delphi,pascal | delphi,The source alias may merge distinct languages; review before indexing.
 alias-equals-other-name,emacs,emacs-lisp | emacs-editor,The source alias may merge distinct languages; review before indexing.
 alias-equals-other-name,flex,lex | flex,The source alias may merge distinct languages; review before indexing.
-alias-equals-other-name,foxpro,xbase | foxpro,The source alias may merge distinct languages; review before indexing.
 alias-equals-other-name,geojson,json | geojson,The source alias may merge distinct languages; review before indexing.
 alias-equals-other-name,groff,roff | groff,The source alias may merge distinct languages; review before indexing.
 alias-equals-other-name,irc,irc-log | irc,The source alias may merge distinct languages; review before indexing.
@@ -33,9 +31,11 @@ corrected-name-overlap,Bourne shell,sh | bourne-shell,Reviewed display name over
 curated-false-alias,bazel,starlark,Bazel 官方说明 BUILD 文件使用 Starlark 求值；Bazel 是构建工具/平台，Starlark 是配置与规则语言。工具名称不能作为语言别名合并。
 curated-false-alias,cfm,coldfusion,Adobe 官方把 Adobe ColdFusion 描述为应用服务器/脚本环境，把 CFML 描述为标记式脚本语言；文件扩展名 cfm 也不是语言等价别名。平台、语言和文件后缀必须分开。
 curated-false-alias,cfml,coldfusion,Adobe 官方把 Adobe ColdFusion 描述为应用服务器/脚本环境，把 CFML 描述为标记式脚本语言；文件扩展名 cfm 也不是语言等价别名。平台、语言和文件后缀必须分开。
+curated-false-alias,clipper,xbase,Clipper 与 Visual FoxPro 都有独立的语言参考和独立记录；它们属于 xBase 家族或兼容方言，但不能作为 xBase 家族总称的等价别名。
 curated-false-alias,coldfusion html,coldfusion,Adobe 官方把 Adobe ColdFusion 描述为应用服务器/脚本环境，把 CFML 描述为标记式脚本语言；文件扩展名 cfm 也不是语言等价别名。平台、语言和文件后缀必须分开。
 curated-false-alias,cperl,perl,PLDB 将 cperl 列为 Perl 的 GitHub 别名，但同一快照有独立 cperl 记录；cperl 官方页面描述其为带类、类型和编译器的 perl5 变体。保留独立身份，不据此合并。
 curated-false-alias,django,jinja,Django 官方模板文档把自身模板系统称为 Django template language (DTL)，并把 Jinja2 列为独立后端；框架名不能作为 Jinja 的等价别名。
+curated-false-alias,foxpro,xbase,Clipper 与 Visual FoxPro 都有独立的语言参考和独立记录；它们属于 xBase 家族或兼容方言，但不能作为 xBase 家族总称的等价别名。
 curated-false-alias,inc,php,PHP 官方说明 include 是 PHP 构造并用于包含和求值文件；`inc` 是文件名/包含约定，不能据此把独立 INC 记录合并到 PHP。INC 自身身份仍待核。
 curated-false-alias,jruby,ruby,PLDB 将 JRuby 列为 Ruby 别名，但 JRuby 官方明确说明它是运行在 JVM 上的 Ruby 实现；实现身份应通过生态/实现关系处理，不把名称当作等价语言。
 curated-false-alias,lisp,common-lisp,Common Lisp the Language 将 Common Lisp 描述为具体 Lisp 标准与实现平台；馆藏另有独立 Lisp 历史记录。别名不得把家族节点和标准语言合并。

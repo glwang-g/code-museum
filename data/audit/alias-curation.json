@@ -97,5 +97,14 @@
     ],
     "reason": "Django 官方模板文档把自身模板系统称为 Django template language (DTL)，并把 Jinja2 列为独立后端；框架名不能作为 Jinja 的等价别名。",
     "source": "https://docs.djangoproject.com/en/stable/topics/templates/"
+  },
+  {
+    "id": "xbase",
+    "exclude": [
+      "clipper",
+      "foxpro"
+    ],
+    "reason": "Clipper 与 Visual FoxPro 都有独立的语言参考和独立记录；它们属于 xBase 家族或兼容方言，但不能作为 xBase 家族总称的等价别名。",
+    "source": "https://harbour.github.io/doc/clc53.html"
   }
 ]

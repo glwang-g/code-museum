@@ -10,6 +10,10 @@ test('curated false aliases are explicit and do not rewrite the raw snapshot',()
     assert.ok(String(byId.get(id)?.githubLanguage_aliases||'').includes(alias),`raw snapshot must retain ${alias}`);
     assert.ok(curation.find(item=>item.id===id&&item.exclude.includes(alias)).source.startsWith('https://'));
   }
+  const xbase=curation.find(item=>item.id==='xbase');
+  assert.deepEqual(new Set(xbase.exclude),new Set(['clipper','foxpro']));
+  assert.match(String(byId.get('xbase')?.githubLanguage_aliases||''),/clipper/);
+  assert.match(String(byId.get('xbase')?.githubLanguage_aliases||''),/foxpro/);
   const cold=curation.find(item=>item.id==='coldfusion');
   assert.deepEqual(new Set(cold.exclude),new Set(['cfm','cfml','coldfusion html']));
   assert.match(String(byId.get('coldfusion')?.githubLanguage_aliases||''),/cfml/);
