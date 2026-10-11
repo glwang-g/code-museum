@@ -3,10 +3,10 @@
   "scope": "全量关系结构检查与常显标签逐项盘点；摘录已存不等于史料论证或关系覆盖全部核实。缺线不表示没有上游。",
   "summary": {
     "labels": 50,
-    "relations": 433,
+    "relations": 439,
     "mapDesignGaps": 3,
     "states": {
-      "excerpt-recorded": 115,
+      "excerpt-recorded": 121,
       "field-only": 318
     },
     "warnings": 5
@@ -67,16 +67,17 @@
         "apl|forth|influencedBy",
         "apl|futhark|influencedBy",
         "apl|goal|influencedBy",
+        "apl|haskell|influencedBy",
         "apl|klong|influencedBy",
         "apl|particles|influencedBy",
         "apl|u|influencedBy"
       ],
       "ecology": [],
-      "mapLinks": 1,
+      "mapLinks": 2,
       "fieldOnly": 6,
       "citationOnly": 0,
       "needsDirectEvidence": 0,
-      "excerptRecorded": 2,
+      "excerptRecorded": 3,
       "state": "needs-review"
     },
     {
@@ -393,7 +394,13 @@
       "year": 1990,
       "languageStatus": "verified-language",
       "upstream": [
-        "miranda|haskell|influencedBy"
+        "apl|haskell|influencedBy",
+        "clean|haskell|influencedBy",
+        "common-lisp|haskell|influencedBy",
+        "lisp|haskell|influencedBy",
+        "miranda|haskell|influencedBy",
+        "scheme|haskell|influencedBy",
+        "standard-ml|haskell|influencedBy"
       ],
       "downstream": [
         "haskell|civet|influencedBy",
@@ -406,11 +413,11 @@
         "haskell|scrapscript|influencedBy"
       ],
       "ecology": [],
-      "mapLinks": 3,
+      "mapLinks": 9,
       "fieldOnly": 6,
       "citationOnly": 0,
       "needsDirectEvidence": 0,
-      "excerptRecorded": 3,
+      "excerptRecorded": 9,
       "state": "needs-review"
     },
     {
@@ -528,6 +535,7 @@
         "lisp|axio|influencedBy",
         "lisp|common-lisp|influencedBy",
         "lisp|cosmicos|influencedBy",
+        "lisp|haskell|influencedBy",
         "lisp|julia|influencedBy",
         "lisp|kamby|influencedBy",
         "lisp|nemerle|influencedBy",
@@ -539,11 +547,11 @@
         "lisp|smalltalk|influencedBy"
       ],
       "ecology": [],
-      "mapLinks": 6,
+      "mapLinks": 7,
       "fieldOnly": 7,
       "citationOnly": 0,
       "needsDirectEvidence": 0,
-      "excerptRecorded": 7,
+      "excerptRecorded": 8,
       "state": "needs-review"
     },
     {
@@ -881,6 +889,7 @@
         "scheme|bio|influencedBy",
         "scheme|common-lisp|influencedBy",
         "scheme|flare|influencedBy",
+        "scheme|haskell|influencedBy",
         "scheme|javascript|influencedBy",
         "scheme|lua|influencedBy",
         "scheme|particles|influencedBy",
@@ -888,11 +897,11 @@
         "scheme|slope|influencedBy"
       ],
       "ecology": [],
-      "mapLinks": 5,
+      "mapLinks": 6,
       "fieldOnly": 4,
       "citationOnly": 0,
       "needsDirectEvidence": 0,
-      "excerptRecorded": 5,
+      "excerptRecorded": 6,
       "state": "needs-review"
     },
     {
@@ -1713,6 +1722,39 @@
       "mapVisible": false,
       "evidenceVersion": null,
       "sources": []
+    },
+    {
+      "from": "apl",
+      "to": "haskell",
+      "type": "influencedBy",
+      "label": "作为数组语言的设计前驱",
+      "source": "https://www.haskell.org/onlinereport/preface-jfp.html",
+      "sourceSha256": "5d22e79fe81fdba3c05d3474550f1976112f7dac02491c32d1fd76aba6407749",
+      "evidence": "Haskell 官方报告序言由 Simon Peyton Jones 明确列出对这些语言/语言系列的“particularly influential”感谢，并写道“Without these forerunners Haskell would not have been possible.” 这里表示报告方确认的整体设计前驱影响，不把这句总括文字细化为未指明的具体机制、版本兼容或超集关系。",
+      "key": "apl|haskell|influencedBy",
+      "layer": "design",
+      "state": "excerpt-recorded",
+      "issues": [],
+      "reviewNote": "",
+      "mapVisible": true,
+      "evidenceVersion": {
+        "citedSha256": "5d22e79fe81fdba3c05d3474550f1976112f7dac02491c32d1fd76aba6407749",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
+      "sources": [
+        {
+          "url": "https://www.haskell.org/onlinereport/preface-jfp.html",
+          "finalUrl": "https://www.haskell.org/onlinereport/preface-jfp.html",
+          "title": "The Haskell 98 Report: Preface",
+          "excerpt": "the following languages were particularly influential: Lisp (and its modern-day incarnations Common Lisp and Scheme); Landin’s ISWIM; APL; Backus’s FP; ML and Standard ML; Hope and Hope+; Clean; Id; Gofer; Sisal; and Turner’s series of languages culminating in Miranda. Without these forerunners Haskell would not have been possible.",
+          "checkedAt": "2026-10-11T06:35:00+00:00",
+          "sha256": "5d22e79fe81fdba3c05d3474550f1976112f7dac02491c32d1fd76aba6407749",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected",
+          "reviewId": "haskell",
+          "locator": "Preface, Simon Peyton Jones, September 2002"
+        }
+      ]
     },
     {
       "from": "apl",
@@ -2599,6 +2641,39 @@
       ]
     },
     {
+      "from": "clean",
+      "to": "haskell",
+      "type": "influencedBy",
+      "label": "作为惰性函数式语言的设计前驱",
+      "source": "https://www.haskell.org/onlinereport/preface-jfp.html",
+      "sourceSha256": "5d22e79fe81fdba3c05d3474550f1976112f7dac02491c32d1fd76aba6407749",
+      "evidence": "Haskell 官方报告序言由 Simon Peyton Jones 明确列出对这些语言/语言系列的“particularly influential”感谢，并写道“Without these forerunners Haskell would not have been possible.” 这里表示报告方确认的整体设计前驱影响，不把这句总括文字细化为未指明的具体机制、版本兼容或超集关系。",
+      "key": "clean|haskell|influencedBy",
+      "layer": "design",
+      "state": "excerpt-recorded",
+      "issues": [],
+      "reviewNote": "",
+      "mapVisible": true,
+      "evidenceVersion": {
+        "citedSha256": "5d22e79fe81fdba3c05d3474550f1976112f7dac02491c32d1fd76aba6407749",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
+      "sources": [
+        {
+          "url": "https://www.haskell.org/onlinereport/preface-jfp.html",
+          "finalUrl": "https://www.haskell.org/onlinereport/preface-jfp.html",
+          "title": "The Haskell 98 Report: Preface",
+          "excerpt": "the following languages were particularly influential: Lisp (and its modern-day incarnations Common Lisp and Scheme); Landin’s ISWIM; APL; Backus’s FP; ML and Standard ML; Hope and Hope+; Clean; Id; Gofer; Sisal; and Turner’s series of languages culminating in Miranda. Without these forerunners Haskell would not have been possible.",
+          "checkedAt": "2026-10-11T06:35:00+00:00",
+          "sha256": "5d22e79fe81fdba3c05d3474550f1976112f7dac02491c32d1fd76aba6407749",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected",
+          "reviewId": "haskell",
+          "locator": "Preface, Simon Peyton Jones, September 2002"
+        }
+      ]
+    },
+    {
       "from": "clojure",
       "to": "shrubbery",
       "type": "influencedBy",
@@ -2743,6 +2818,39 @@
       "mapVisible": false,
       "evidenceVersion": null,
       "sources": []
+    },
+    {
+      "from": "common-lisp",
+      "to": "haskell",
+      "type": "influencedBy",
+      "label": "作为 Common Lisp 标准的设计前驱",
+      "source": "https://www.haskell.org/onlinereport/preface-jfp.html",
+      "sourceSha256": "5d22e79fe81fdba3c05d3474550f1976112f7dac02491c32d1fd76aba6407749",
+      "evidence": "Haskell 官方报告序言由 Simon Peyton Jones 明确列出对这些语言/语言系列的“particularly influential”感谢，并写道“Without these forerunners Haskell would not have been possible.” 这里表示报告方确认的整体设计前驱影响，不把这句总括文字细化为未指明的具体机制、版本兼容或超集关系。",
+      "key": "common-lisp|haskell|influencedBy",
+      "layer": "design",
+      "state": "excerpt-recorded",
+      "issues": [],
+      "reviewNote": "",
+      "mapVisible": true,
+      "evidenceVersion": {
+        "citedSha256": "5d22e79fe81fdba3c05d3474550f1976112f7dac02491c32d1fd76aba6407749",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
+      "sources": [
+        {
+          "url": "https://www.haskell.org/onlinereport/preface-jfp.html",
+          "finalUrl": "https://www.haskell.org/onlinereport/preface-jfp.html",
+          "title": "The Haskell 98 Report: Preface",
+          "excerpt": "the following languages were particularly influential: Lisp (and its modern-day incarnations Common Lisp and Scheme); Landin’s ISWIM; APL; Backus’s FP; ML and Standard ML; Hope and Hope+; Clean; Id; Gofer; Sisal; and Turner’s series of languages culminating in Miranda. Without these forerunners Haskell would not have been possible.",
+          "checkedAt": "2026-10-11T06:35:00+00:00",
+          "sha256": "5d22e79fe81fdba3c05d3474550f1976112f7dac02491c32d1fd76aba6407749",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected",
+          "reviewId": "haskell",
+          "locator": "Preface, Simon Peyton Jones, September 2002"
+        }
+      ]
     },
     {
       "from": "commonmark",
@@ -5504,6 +5612,39 @@
       "mapVisible": false,
       "evidenceVersion": null,
       "sources": []
+    },
+    {
+      "from": "lisp",
+      "to": "haskell",
+      "type": "influencedBy",
+      "label": "作为 Lisp 家族的设计前驱",
+      "source": "https://www.haskell.org/onlinereport/preface-jfp.html",
+      "sourceSha256": "5d22e79fe81fdba3c05d3474550f1976112f7dac02491c32d1fd76aba6407749",
+      "evidence": "Haskell 官方报告序言由 Simon Peyton Jones 明确列出对这些语言/语言系列的“particularly influential”感谢，并写道“Without these forerunners Haskell would not have been possible.” 这里表示报告方确认的整体设计前驱影响，不把这句总括文字细化为未指明的具体机制、版本兼容或超集关系。",
+      "key": "lisp|haskell|influencedBy",
+      "layer": "design",
+      "state": "excerpt-recorded",
+      "issues": [],
+      "reviewNote": "",
+      "mapVisible": true,
+      "evidenceVersion": {
+        "citedSha256": "5d22e79fe81fdba3c05d3474550f1976112f7dac02491c32d1fd76aba6407749",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
+      "sources": [
+        {
+          "url": "https://www.haskell.org/onlinereport/preface-jfp.html",
+          "finalUrl": "https://www.haskell.org/onlinereport/preface-jfp.html",
+          "title": "The Haskell 98 Report: Preface",
+          "excerpt": "the following languages were particularly influential: Lisp (and its modern-day incarnations Common Lisp and Scheme); Landin’s ISWIM; APL; Backus’s FP; ML and Standard ML; Hope and Hope+; Clean; Id; Gofer; Sisal; and Turner’s series of languages culminating in Miranda. Without these forerunners Haskell would not have been possible.",
+          "checkedAt": "2026-10-11T06:35:00+00:00",
+          "sha256": "5d22e79fe81fdba3c05d3474550f1976112f7dac02491c32d1fd76aba6407749",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected",
+          "reviewId": "haskell",
+          "locator": "Preface, Simon Peyton Jones, September 2002"
+        }
+      ]
     },
     {
       "from": "lisp",
@@ -8297,6 +8438,39 @@
     },
     {
       "from": "scheme",
+      "to": "haskell",
+      "type": "influencedBy",
+      "label": "作为函数式语言的设计前驱",
+      "source": "https://www.haskell.org/onlinereport/preface-jfp.html",
+      "sourceSha256": "5d22e79fe81fdba3c05d3474550f1976112f7dac02491c32d1fd76aba6407749",
+      "evidence": "Haskell 官方报告序言由 Simon Peyton Jones 明确列出对这些语言/语言系列的“particularly influential”感谢，并写道“Without these forerunners Haskell would not have been possible.” 这里表示报告方确认的整体设计前驱影响，不把这句总括文字细化为未指明的具体机制、版本兼容或超集关系。",
+      "key": "scheme|haskell|influencedBy",
+      "layer": "design",
+      "state": "excerpt-recorded",
+      "issues": [],
+      "reviewNote": "",
+      "mapVisible": true,
+      "evidenceVersion": {
+        "citedSha256": "5d22e79fe81fdba3c05d3474550f1976112f7dac02491c32d1fd76aba6407749",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
+      "sources": [
+        {
+          "url": "https://www.haskell.org/onlinereport/preface-jfp.html",
+          "finalUrl": "https://www.haskell.org/onlinereport/preface-jfp.html",
+          "title": "The Haskell 98 Report: Preface",
+          "excerpt": "the following languages were particularly influential: Lisp (and its modern-day incarnations Common Lisp and Scheme); Landin’s ISWIM; APL; Backus’s FP; ML and Standard ML; Hope and Hope+; Clean; Id; Gofer; Sisal; and Turner’s series of languages culminating in Miranda. Without these forerunners Haskell would not have been possible.",
+          "checkedAt": "2026-10-11T06:35:00+00:00",
+          "sha256": "5d22e79fe81fdba3c05d3474550f1976112f7dac02491c32d1fd76aba6407749",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected",
+          "reviewId": "haskell",
+          "locator": "Preface, Simon Peyton Jones, September 2002"
+        }
+      ]
+    },
+    {
+      "from": "scheme",
       "to": "javascript",
       "type": "influencedBy",
       "label": "一等函数设计",
@@ -8887,6 +9061,39 @@
       "mapVisible": false,
       "evidenceVersion": null,
       "sources": []
+    },
+    {
+      "from": "standard-ml",
+      "to": "haskell",
+      "type": "influencedBy",
+      "label": "作为类型系统与函数式语言的设计前驱",
+      "source": "https://www.haskell.org/onlinereport/preface-jfp.html",
+      "sourceSha256": "5d22e79fe81fdba3c05d3474550f1976112f7dac02491c32d1fd76aba6407749",
+      "evidence": "Haskell 官方报告序言由 Simon Peyton Jones 明确列出对这些语言/语言系列的“particularly influential”感谢，并写道“Without these forerunners Haskell would not have been possible.” 这里表示报告方确认的整体设计前驱影响，不把这句总括文字细化为未指明的具体机制、版本兼容或超集关系。",
+      "key": "standard-ml|haskell|influencedBy",
+      "layer": "design",
+      "state": "excerpt-recorded",
+      "issues": [],
+      "reviewNote": "",
+      "mapVisible": true,
+      "evidenceVersion": {
+        "citedSha256": "5d22e79fe81fdba3c05d3474550f1976112f7dac02491c32d1fd76aba6407749",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
+      "sources": [
+        {
+          "url": "https://www.haskell.org/onlinereport/preface-jfp.html",
+          "finalUrl": "https://www.haskell.org/onlinereport/preface-jfp.html",
+          "title": "The Haskell 98 Report: Preface",
+          "excerpt": "the following languages were particularly influential: Lisp (and its modern-day incarnations Common Lisp and Scheme); Landin’s ISWIM; APL; Backus’s FP; ML and Standard ML; Hope and Hope+; Clean; Id; Gofer; Sisal; and Turner’s series of languages culminating in Miranda. Without these forerunners Haskell would not have been possible.",
+          "checkedAt": "2026-10-11T06:35:00+00:00",
+          "sha256": "5d22e79fe81fdba3c05d3474550f1976112f7dac02491c32d1fd76aba6407749",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected",
+          "reviewId": "haskell",
+          "locator": "Preface, Simon Peyton Jones, September 2002"
+        }
+      ]
     },
     {
       "from": "standard-ml",
@@ -9905,8 +10112,8 @@
   ],
   "inputHashes": {
     "data/raw/pldb.json": "57f45d25bba78ab6bc4af5d969356d2efbfcc7c1ee722dbb5c708d60aa78ba77",
-    "data/audit/reviews.json": "9998b3dabcfd9be7f1d6e23cee99afe1024ae28fd9e6fdc650f99e60f47c8513",
-    "data/relationship-overrides.json": "4daaa2067553177b711cddc1ad6a5d583a20ecd4d13201b324df2e0b59430439",
+    "data/audit/reviews.json": "3ba14cf70f687b7664969bc11c4ec1b387ea3585e8bb8a66c8d71e7b830c4516",
+    "data/relationship-overrides.json": "4ee4359ddd743c9d16f5fcdbd554aae853f7abebc59f165636a4b3365c76a65e",
     "data/ecosystem-relations.json": "0d96e92a3853eddc6b32e4a45d5c90223d2096fa35438823f7dcfe72ce161e76",
     "data/audit/relationship-decisions.json": "4339ab007ed91414653b56ddf2dcbe0a9450de5df1705c9ad76c1fbc7db53960",
     "data/audit/label-selection.json": "dc5eee62fa662b0d60940375d8a3ec56ac2bbf84ee2b9922a290d46d11cc866f"

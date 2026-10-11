@@ -6,7 +6,7 @@ aheui,Aheui,2012,unreviewed,,,0,0,0,0,0,,no-map-link
 algol,Algol,1958,unreviewed,,basic | forth,2,2,0,0,0,,cited-only
 algol-60,ALGOL 60,1960,verified-language,,oberon | pascal | simula,3,2,1,3,0,,cited-and-field
 ante,Ante,2015,unreviewed,,,0,0,0,0,0,,no-map-link
-apl,APL,1964,unreviewed,,forth,1,1,0,7,0,,cited-only
+apl,APL,1964,unreviewed,,forth | haskell,2,2,0,7,0,,cited-only
 aplus,A+,1988,unreviewed,,,0,0,0,0,0,,no-map-link
 applescript,Applescript,1993,unreviewed,,,0,0,0,1,0,,no-map-link
 aspectcpp,AspectC++,2001,unreviewed,,,0,0,0,0,0,,no-map-link
@@ -36,13 +36,13 @@ cat,cat,2016,unreviewed,,,0,0,0,0,0,,no-map-link
 ceylon,Ceylon,2011,unreviewed,,,0,0,0,0,0,,no-map-link
 chef,chef,2002,unreviewed,,,0,0,0,0,0,,no-map-link
 cil,CIL,2000,unreviewed,,,0,0,0,0,0,,no-map-link
-clean,Clean,1987,unreviewed,,,0,0,0,0,0,,no-map-link
+clean,Clean,1987,unreviewed,,haskell,1,1,0,0,0,,cited-only
 clojure,Clojure,2007,verified-language,,,0,0,0,1,1,lisp,no-map-link
 clojurescript,ClojureScript,2011,unreviewed,,,0,0,0,0,0,,no-map-link
 cobol,COBOL,1959,verified-language,flow-matic,,1,1,0,1,0,,cited-only
 coconut,Coconut,2014,unreviewed,,,0,0,0,0,0,,no-map-link
 coffeescript,CoffeeScript,2009,unreviewed,,,0,0,0,2,0,,no-map-link
-common-lisp,Common Lisp,1984,verified-language,lisp | scheme,,2,2,0,3,1,dylan,cited-only
+common-lisp,Common Lisp,1984,verified-language,lisp | scheme,haskell,3,3,0,3,1,dylan,cited-only
 common-workflow-language,CWL,2014,unreviewed,,,0,0,0,0,0,,no-map-link
 cpp,C++,1985,verified-language,c,d | java | lua | rust,5,5,0,9,0,,cited-only
 crystal,Crystal,2014,unreviewed,,,0,0,0,1,0,,no-map-link
@@ -84,7 +84,7 @@ golfscript,GolfScript,2007,unreviewed,,,0,0,0,0,0,,no-map-link
 grass,GRASS,1977,unreviewed,,,0,0,0,0,0,,no-map-link
 groovy,Groovy,2003,verified-language,java,kotlin,2,2,0,0,0,,cited-only
 hack,Hack,2014,unreviewed,,,0,0,0,0,0,,no-map-link
-haskell,Haskell,1990,verified-language,miranda,curry | rust,3,3,0,6,0,,cited-only
+haskell,Haskell,1990,verified-language,apl | clean | common-lisp | lisp | miranda | scheme | standard-ml,curry | rust,9,9,0,6,0,,cited-only
 haxe,Haxe,2005,unreviewed,,,0,0,0,0,0,,no-map-link
 hexagony,hexagony,2015,unreviewed,,,0,0,0,0,0,,no-map-link
 hmmm,HMMM,2006,unreviewed,,,0,0,0,0,0,,no-map-link
@@ -112,7 +112,7 @@ lazy-k,Lazy K,2002,unreviewed,,,0,0,0,0,0,,no-map-link
 less,Less,2009,unreviewed,,,0,0,0,0,1,sass,no-map-link
 limbo,Limbo,1995,unreviewed,,,0,0,0,0,0,,no-map-link
 lisaac,Lisaac,2003,unreviewed,,,0,0,0,0,0,,no-map-link
-lisp,Lisp,1958,historical-primary-source,,common-lisp | julia | postscript | ruby | scheme | smalltalk,6,6,0,8,2,clojure | hy,cited-only
+lisp,Lisp,1958,historical-primary-source,,common-lisp | haskell | julia | postscript | ruby | scheme | smalltalk,7,7,0,8,2,clojure | hy,cited-only
 livescript,LiveScript,2011,unreviewed,,,0,0,0,1,0,,no-map-link
 llvmir,LLVM IR,2003,unreviewed,,mlir,1,1,0,1,0,,cited-only
 lolcode,LOLCODE,2007,unreviewed,,,0,0,0,0,0,,no-map-link
@@ -183,7 +183,7 @@ rust,Rust,2010,verified-language,cpp | csharp | erlang | haskell | ocaml | ruby 
 sagemath,Sage,2005,unreviewed,,,0,0,0,0,0,,no-map-link
 sass,Sass,2006,unreviewed,,,0,0,0,0,1,less,no-map-link
 scala,Scala,2004,verified-language,csharp | java,kotlin,3,3,0,1,0,,cited-only
-scheme,Scheme,1975,verified-language,lisp,common-lisp | javascript | lua | rust,5,5,0,4,0,,cited-only
+scheme,Scheme,1975,verified-language,lisp,common-lisp | haskell | javascript | lua | rust,6,6,0,4,0,,cited-only
 scilab,Scilab,1990,unreviewed,,,0,0,0,0,0,,no-map-link
 scss,SCSS,2006,unreviewed,,,0,0,0,0,0,,no-map-link
 sed,sed,1974,verified-language,,,0,0,0,0,0,,no-map-link
@@ -198,7 +198,7 @@ snobol,SNOBOL,1962,unreviewed,,lua,1,1,0,0,0,,cited-only
 solidity,Solidity,2014,unreviewed,,,0,0,0,0,0,,no-map-link
 sql,SQL,1974,verified-language,,pl-sql,1,1,0,6,0,,cited-only
 squirrel,Squirrel,2003,unreviewed,,,0,0,0,0,0,,no-map-link
-standard-ml,Standard ML,1990,verified-language,,,0,0,0,1,0,,no-map-link
+standard-ml,Standard ML,1990,verified-language,,haskell,1,1,0,1,0,,cited-only
 supercollider,SuperCollider,1996,unreviewed,,,0,0,0,0,0,,no-map-link
 swift,Swift,2014,verified-language,objective-c,rust,2,2,0,1,0,,cited-only
 tabloid,Tabloid,2020,unreviewed,,,0,0,0,0,0,,no-map-link

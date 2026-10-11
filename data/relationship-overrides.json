@@ -947,5 +947,59 @@
     "source": "https://www.cs.kent.ac.uk/people/staff/dat/miranda/3.8.html",
     "sourceSha256": "8100faaf117101235c3c65c9d2780e20577286d6cf1780178b18e0b8f012ba0d",
     "evidence": "Hudak、Hughes、Peyton Jones、Wadler《A History of Haskell: Being Lazy with Class》第3.8节明确写：“Haskell's design was, therefore, strongly influenced by Miranda.” 同段说明 Miranda 是当时最成熟、广泛使用的非严格函数式语言，并在 purity、higher order、laziness、static typing 及语法观感上影响 Haskell。此处表示强设计影响，不声称 Haskell 是 Miranda 的超集或全部程序兼容。"
+  },
+  {
+    "from": "lisp",
+    "to": "haskell",
+    "type": "influencedBy",
+    "label": "作为 Lisp 家族的设计前驱",
+    "source": "https://www.haskell.org/onlinereport/preface-jfp.html",
+    "sourceSha256": "5d22e79fe81fdba3c05d3474550f1976112f7dac02491c32d1fd76aba6407749",
+    "evidence": "Haskell 官方报告序言由 Simon Peyton Jones 明确列出对这些语言/语言系列的“particularly influential”感谢，并写道“Without these forerunners Haskell would not have been possible.” 这里表示报告方确认的整体设计前驱影响，不把这句总括文字细化为未指明的具体机制、版本兼容或超集关系。"
+  },
+  {
+    "from": "common-lisp",
+    "to": "haskell",
+    "type": "influencedBy",
+    "label": "作为 Common Lisp 标准的设计前驱",
+    "source": "https://www.haskell.org/onlinereport/preface-jfp.html",
+    "sourceSha256": "5d22e79fe81fdba3c05d3474550f1976112f7dac02491c32d1fd76aba6407749",
+    "evidence": "Haskell 官方报告序言由 Simon Peyton Jones 明确列出对这些语言/语言系列的“particularly influential”感谢，并写道“Without these forerunners Haskell would not have been possible.” 这里表示报告方确认的整体设计前驱影响，不把这句总括文字细化为未指明的具体机制、版本兼容或超集关系。"
+  },
+  {
+    "from": "scheme",
+    "to": "haskell",
+    "type": "influencedBy",
+    "label": "作为函数式语言的设计前驱",
+    "source": "https://www.haskell.org/onlinereport/preface-jfp.html",
+    "sourceSha256": "5d22e79fe81fdba3c05d3474550f1976112f7dac02491c32d1fd76aba6407749",
+    "evidence": "Haskell 官方报告序言由 Simon Peyton Jones 明确列出对这些语言/语言系列的“particularly influential”感谢，并写道“Without these forerunners Haskell would not have been possible.” 这里表示报告方确认的整体设计前驱影响，不把这句总括文字细化为未指明的具体机制、版本兼容或超集关系。"
+  },
+  {
+    "from": "apl",
+    "to": "haskell",
+    "type": "influencedBy",
+    "label": "作为数组语言的设计前驱",
+    "source": "https://www.haskell.org/onlinereport/preface-jfp.html",
+    "sourceSha256": "5d22e79fe81fdba3c05d3474550f1976112f7dac02491c32d1fd76aba6407749",
+    "evidence": "Haskell 官方报告序言由 Simon Peyton Jones 明确列出对这些语言/语言系列的“particularly influential”感谢，并写道“Without these forerunners Haskell would not have been possible.” 这里表示报告方确认的整体设计前驱影响，不把这句总括文字细化为未指明的具体机制、版本兼容或超集关系。"
+  },
+  {
+    "from": "standard-ml",
+    "to": "haskell",
+    "type": "influencedBy",
+    "label": "作为类型系统与函数式语言的设计前驱",
+    "source": "https://www.haskell.org/onlinereport/preface-jfp.html",
+    "sourceSha256": "5d22e79fe81fdba3c05d3474550f1976112f7dac02491c32d1fd76aba6407749",
+    "evidence": "Haskell 官方报告序言由 Simon Peyton Jones 明确列出对这些语言/语言系列的“particularly influential”感谢，并写道“Without these forerunners Haskell would not have been possible.” 这里表示报告方确认的整体设计前驱影响，不把这句总括文字细化为未指明的具体机制、版本兼容或超集关系。"
+  },
+  {
+    "from": "clean",
+    "to": "haskell",
+    "type": "influencedBy",
+    "label": "作为惰性函数式语言的设计前驱",
+    "source": "https://www.haskell.org/onlinereport/preface-jfp.html",
+    "sourceSha256": "5d22e79fe81fdba3c05d3474550f1976112f7dac02491c32d1fd76aba6407749",
+    "evidence": "Haskell 官方报告序言由 Simon Peyton Jones 明确列出对这些语言/语言系列的“particularly influential”感谢，并写道“Without these forerunners Haskell would not have been possible.” 这里表示报告方确认的整体设计前驱影响，不把这句总括文字细化为未指明的具体机制、版本兼容或超集关系。"
   }
 ]

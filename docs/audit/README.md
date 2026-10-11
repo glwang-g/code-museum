@@ -1,6 +1,6 @@
 # 馆藏语言证据审查
 
-核查日期：2026-10-11。
+核查日期：2026-10-10。
 
 全量初筛覆盖 **5,155** 条馆藏，其中来源标为语言的 **4,608** 条。逐项外部文档核查覆盖 **93** 条；其余条目的证据线索已逐条列出，仍未完成人工核实。
 
@@ -72,7 +72,7 @@
 |GNU Octave|GNU Octave|未测试|[语法](https://docs.octave.org/latest/Statements.html) · [实现](https://docs.octave.org/latest/Running-Octave.html) · [关系依据](https://octave.org/about.html)|GNU Octave；与 MATLAB 存在兼容范围和差异。|
 |Go|Go toolchain|示例通过|[语法](https://go.dev/ref/spec) · [实现](https://go.dev/doc/install) · [关系依据](https://go.dev/doc/faq)| 本机为 Go 1.24.0；在线规范版本更新不代表该版本支持全部新增特性。|
 |Groovy|Groovy / JVM|未测试|[语法](https://groovy-lang.org/syntax.html) · [实现](https://groovy-lang.org/install.html) · [关系依据](https://groovy-lang.org/differences.html)||
-|Haskell|GHC|未测试|[语法](https://www.haskell.org/onlinereport/haskell2010/haskellch2.html) · [实现](https://downloads.haskell.org/ghc/latest/docs/users_guide/ghci.html) · [关系依据](https://www.cs.kent.ac.uk/people/staff/dat/miranda/3.8.html)|Haskell 2010 与 GHC 扩展有区别。|
+|Haskell|GHC|未测试|[语法](https://www.haskell.org/onlinereport/haskell2010/haskellch2.html) · [实现](https://downloads.haskell.org/ghc/latest/docs/users_guide/ghci.html) · [关系依据](https://www.cs.kent.ac.uk/people/staff/dat/miranda/3.8.html) · [关系依据](https://www.haskell.org/onlinereport/preface-jfp.html)|Haskell 2010 与 GHC 扩展有区别。|
 |Java|JDK / javac|示例通过|[语法](https://docs.oracle.com/javase/specs/jls/se25/html/jls-2.html) · [实现](https://docs.oracle.com/en/java/javase/25/docs/specs/man/javac.html) · [关系依据](https://docs.oracle.com/javase/specs/jls/se25/html/jls-1.html)| 规范文档为 Java SE 25；本机小程序使用 JDK 21，未测试新版特性。|
 |JavaScript|Node.js|示例通过|[语法](https://tc39.es/ecma262/multipage/ecmascript-language-lexical-grammar.html) · [实现](https://nodejs.org/api/synopsis.html) · [关系依据](https://brendaneich.com/2008/04/popularity/)|ECMAScript 与 Node.js；浏览器 API 不等同于语言本身。 ECMAScript 在线规范为滚动草案；Node.js 实测只涉及基础循环。|
 |Julia|Julia|未测试|[语法](https://docs.julialang.org/en/v1/manual/variables/) · [实现](https://docs.julialang.org/en/v1/manual/getting-started/) · [关系依据](https://julialang.org/blog/2012/02/why-we-created-julia/)||

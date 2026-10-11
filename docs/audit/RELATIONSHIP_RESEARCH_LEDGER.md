@@ -28,6 +28,17 @@
 | Interlisp → Common Lisp | Batch 22 | 作者明确写受 Interlisp 有限度影响 |
 | Miranda → Haskell | Batch 23 | Haskell 设计者历史论文明确称设计受 Miranda 强烈影响 |
 
+### 批次 24：Haskell 报告序言列出的地图可见前驱
+
+| 关系 | 批次 | 结论 |
+| --- | --- | --- |
+| Lisp → Haskell | Batch 24 | 官方报告列为 particularly influential forerunner |
+| Common Lisp → Haskell | Batch 24 | 官方报告列为 particularly influential forerunner |
+| Scheme → Haskell | Batch 24 | 官方报告列为 particularly influential forerunner |
+| APL → Haskell | Batch 24 | 官方报告列为 particularly influential forerunner |
+| Standard ML → Haskell | Batch 24 | 官方报告列为 particularly influential forerunner |
+| Clean → Haskell | Batch 24 | 官方报告列为 particularly influential forerunner |
+
 ## 当前范围内不补线
 
 | 项目 | 批次 | 原因 |

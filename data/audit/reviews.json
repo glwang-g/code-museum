@@ -1062,6 +1062,19 @@
           "excerpt": "Haskell's design was, therefore, strongly influenced by Miranda.",
           "hashScope": "complete HTTP response body bytes; excerpt is manually selected",
           "locator": "Section 3.8, Haskell and Miranda"
+        },
+        {
+          "role": "关系依据",
+          "url": "https://www.haskell.org/onlinereport/preface-jfp.html",
+          "checkedAt": "2026-10-11T06:35:00+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "The Haskell 98 Report: Preface",
+          "finalUrl": "https://www.haskell.org/onlinereport/preface-jfp.html",
+          "decodedBodySha256": "5d22e79fe81fdba3c05d3474550f1976112f7dac02491c32d1fd76aba6407749",
+          "excerpt": "the following languages were particularly influential: Lisp (and its modern-day incarnations Common Lisp and Scheme); Landin’s ISWIM; APL; Backus’s FP; ML and Standard ML; Hope and Hope+; Clean; Id; Gofer; Sisal; and Turner’s series of languages culminating in Miranda. Without these forerunners Haskell would not have been possible.",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected",
+          "locator": "Preface, Simon Peyton Jones, September 2002"
         }
       ]
     },
