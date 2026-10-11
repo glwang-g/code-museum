@@ -135,3 +135,9 @@ HTTP MCP共用执行器进程及Docker启动依赖，手工Bearer无OAuth/SSE；
 本轮正式发布与核验完成：功能提交 `2911cc5e5573b452630609a03b35518a862f353d` 已推送，[Actions 38046491074](https://github.com/glwang-g/code-museum/actions/runs/38046491074) 的build/deploy均成功。实际隔离Chrome正式HTTPS64项鼠标导航检查通过：Java/JavaScript×1440/390×明暗×时间长河/关系谱系×已选标签/关联标签/自然运行按钮/裸露连线。Java按钮进入对应实验台、标签打开档案、裸露线打开关系；无人工路径修改或能力夹具，使用正式GET /api/runtimes，未提交代码或执行API变更。
 
 8份线上文件逐字节匹配本地构建，正式宽窄屏截图已查看；证据 `data/audit/map-hit-target-production-checks.json`。四条关系补证随本次数据发布，后端没有升级。本次不代表实际Java编译执行或原生Safari鼠标实测。后续仅核验文档/报告提交不改变已核验网站源码与文件字节，沿用同一发布流程。
+
+## 2026-10-11 信息层级与交互闭环上线
+
+信息层级首轮提交 `3fd9537` 对应 Actions `38101158448`；交互闭环提交 `e047043` 对应 Actions `38102455759`。两次 build/deploy 均成功，沿用 master 自动发布、限权部署账户及现有生产目录，没有修改后端执行权限、令牌、统计数据库或 Nginx。
+
+第二轮上线后读取正式站 `index.html`、`museum.js`、`museum.css`、`credits.js`、`exploration-tools.js`，SHA-256 与本地构建分别为 `02345222…`、`40ce6b6f…`、`8e3f2628…`、`e2fb2a6c…`、`b329729a…`。实际生产 HTTPS Chrome 探针通过：实验台“项目与许可”打开并聚焦 `credit-browser-javascript`；关系设置摘要显示“探索设置 · 上游 · 2 层”；设置打开时按 Escape 只关闭设置，档案保持 open 且非 inert。完整本地浏览器证据见 `data/audit/exploration-hierarchy-round2-checks.json` 与 `data/audit/exploration-hierarchy-runtime-browser-checks.json`。

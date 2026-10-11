@@ -383,7 +383,7 @@ HTTPS MCP采用既有执行器进程的POST-only无会话Streamable HTTP JSON，
 
 当前428条关系：104条匹配摘录、324条字段待核；90条审查、201份已读来源。地图233、已核语法实现60、常显设计缺口3、年代警告5保持。研究台账、缺口报告、README及自动审计摘要同步；批次详情见 `audit/RELATIONSHIP_RESEARCH_2026-10-10_BATCH-18.md`。
 
-54项npm测试、离线构建和审计通过。16个实际隔离Chrome定向场景覆盖两边、两地图、两尺寸、明暗主题，鼠标依据/档案往返及证据/哈希/URL和地图边界核对通过，截图已查看，报告 `data/audit/relationship-batch18-browser-checks.json` 的输入/服务文件SHA一致。测试中原来把Self边固定当作待核样例的假设改为受控缺证据数据；台账闭环数量不再写死。未重跑完整浏览器/地图遍历或生产运行；本轮未提交、推送或部署。
+54项npm测试、离线构建和审计通过。16个实际隔离Chrome定向场景覆盖两边、两地图、两尺寸、明暗主题，鼠标依据/档案往返及证据/哈希/URL和地图边界核对通过，截图已查看，报告 `data/audit/relationship-batch18-browser-checks.json` 的输入/服务文件SHA一致。测试中原来把Self边固定当作待核样例的假设改为受控缺证据数据；台账闭环数量不再写死。未重跑完整浏览器/地图遍历或生产运行；本轮当时未提交、推送或部署；后续状态由下一条发布记录覆盖。
 
 ## 2026-10-10 Top 5 第2/4项：Lisp 与 MLIR 设计关系
 
@@ -438,3 +438,5 @@ URL 保留语言 ID、层、展开范围、依据和实验台主题，兼容旧�
 继续修复上线后暴露的交互闭环：实验台“项目与许可”现在会打开对应出处标签并定位到具体许可卡片；折叠的「探索设置」始终显示当前展开范围与方向层数；Escape 只关闭最上层设置，不再连带关闭下方档案。浏览器回归同时改为使用整数像素命中连线，并在折叠区先展开再检查键盘焦点，避免把测试夹具问题误判为产品故障。
 
 本地 `npm test` 60/60、离线构建通过。实际隔离 Chrome 的探索回归覆盖 1440、390、320 三种宽度、明暗主题、真实鼠标设置/收起/返回地图、URL 恢复、证据说明及 JavaScript/Scheme 练习，8 组通过；完整运行时浏览器回归从远端默认、主题、出处、关系证据、四种浏览器运行时、历史关系和地图检索一路到最终地图搜索全部通过。证据见 `data/audit/exploration-hierarchy-round2-checks.json` 与 `data/audit/exploration-hierarchy-runtime-browser-checks.json`。本轮代码与证据待提交、推送和正式站核验。
+
+本轮发布完成：`e047043` 已推送，Actions `38102455759` 的 build/deploy 成功。正式站 `index.html`、`museum.js`、`museum.css`、`credits.js`、`exploration-tools.js` 与本地构建 SHA 逐字节一致；实际生产 HTTPS Chrome 探针确认实验台直接定位 `credit-browser-javascript`、设置摘要显示“探索设置 · 上游 · 2 层”，以及 Escape 只关闭设置且档案仍打开。
