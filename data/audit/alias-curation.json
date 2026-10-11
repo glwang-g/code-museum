@@ -55,5 +55,15 @@
     ],
     "reason": "PHP 官方说明 include 是 PHP 构造并用于包含和求值文件；`inc` 是文件名/包含约定，不能据此把独立 INC 记录合并到 PHP。INC 自身身份仍待核。",
     "source": "https://www.php.net/manual/en/function.include.php"
+  },
+  {
+    "id": "coldfusion",
+    "exclude": [
+      "cfm",
+      "cfml",
+      "coldfusion html"
+    ],
+    "reason": "Adobe 官方把 Adobe ColdFusion 描述为应用服务器/脚本环境，把 CFML 描述为标记式脚本语言；文件扩展名 cfm 也不是语言等价别名。平台、语言和文件后缀必须分开。",
+    "source": "https://guides.adobe.com/coldfusion/en/docs/develop-coldfusion-applications/introducing-coldfusion/about-coldfusion.html"
   }
 ]

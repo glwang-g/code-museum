@@ -346,6 +346,8 @@ def main():
         'reviewed_source_links': len(reviewed_sources), 'reviewed_source_links_with_url_hash_excerpt':
             sum(bool(s.get('url') and s.get('decodedBodySha256') and s.get('excerpt')) for s in reviewed_sources),
         'verified_language_review_gaps': len(review_gaps), 'identity_issue_rows': len(issues),
+        'unresolved_identity_issue_rows': sum(1 for issue in issues if issue['kind'] != 'curated-false-alias'),
+        'curated_false_alias_rows': sum(1 for issue in issues if issue['kind'] == 'curated-false-alias'),
         'relationship_count': len(edge_rows), 'relationship_evidence_status_counts':
             dict(collections.Counter(row['evidence_status'] for row in edge_rows)),
         'relationship_chronology_flags': sum(bool(row['chronology_flag']) for row in edge_rows),
