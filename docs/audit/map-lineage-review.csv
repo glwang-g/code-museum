@@ -29,7 +29,7 @@ boo,Boo,2003,unreviewed,,,0,0,0,0,0,,no-map-link
 boogie,Boogie,2008,unreviewed,,,0,0,0,0,0,,no-map-link
 brainfuck,Brainfuck,1993,unreviewed,,,0,0,0,1,0,,no-map-link
 bython,Bython,2016,unreviewed,,,0,0,0,0,0,,no-map-link
-c,C,1972,verified-language,b,c-shell | cpp | go | java | korn-shell | objective-c | php,8,8,0,7,0,,cited-only
+c,C,1972,verified-language,b,c-shell | cpp | go | java | korn-shell | objective-c | php | zig,9,9,0,7,0,,cited-only
 c-shell,C shell,1978,historical-primary-source,c,bash | korn-shell | tcsh,4,4,0,0,1,tcsh,cited-only
 carbon,Carbon,2020,unreviewed,,,0,0,0,0,0,,no-map-link
 cat,cat,2016,unreviewed,,,0,0,0,0,0,,no-map-link
@@ -229,6 +229,6 @@ xslt,XSLT,1998,verified-language,,,0,0,0,0,0,,no-map-link
 yoptascript,YoptaScript,2016,unreviewed,,,0,0,0,0,0,,no-map-link
 yorick,Yorick,1996,unreviewed,,,0,0,0,0,0,,no-map-link
 z-shell,Z shell,1990,unreviewed,,,0,0,0,0,0,,no-map-link
-zig,Zig,2015,verified-language,,,0,0,0,1,0,,no-map-link
+zig,Zig,2015,verified-language,c,,1,1,0,1,0,,cited-only
 zoem,Zoem,2005,unreviewed,,,0,0,0,0,0,,no-map-link
 zot,Zot,2015,unreviewed,,,0,0,0,0,0,,no-map-link

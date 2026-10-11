@@ -6,7 +6,7 @@ assembly-language,Assembly language,1960,unreviewed,,,0,0,0,0,0,,no-map-link
 b,B,1969,historical-primary-source,bcpl,c,2,2,0,0,0,,cited-only
 basic,BASIC,1964,verified-language,algol | fortran,visual-basic,3,3,0,0,1,gambas,cited-only
 bcpl,BCPL,1966,historical-primary-source,,b,1,1,0,0,0,,cited-only
-c,C,1972,verified-language,b,c-shell | cpp | go | java | korn-shell | objective-c | php,8,8,0,7,0,,cited-only
+c,C,1972,verified-language,b,c-shell | cpp | go | java | korn-shell | objective-c | php | zig,9,9,0,7,0,,cited-only
 cobol,COBOL,1959,verified-language,flow-matic,,1,1,0,1,0,,cited-only
 cpp,C++,1985,verified-language,c,d | java | lua | rust,5,5,0,9,0,,cited-only
 csharp,C#,2000,verified-language,java,f-sharp | kotlin | rust | scala,5,5,0,4,0,,cited-only
@@ -48,4 +48,4 @@ vhdl,VHDL,1983,verified-language,ada,,1,1,0,0,0,,cited-only
 visual-basic,Visual Basic,1991,unreviewed,basic,vba | visual-basic.net,3,3,0,1,1,vbscript,cited-only
 visual-basic.net,Visual Basic .NET,2001,verified-language,visual-basic,,1,1,0,0,0,,cited-only
 xslt,XSLT,1998,verified-language,,,0,0,0,0,0,,no-map-link
-zig,Zig,2015,verified-language,,,0,0,0,1,0,,no-map-link
+zig,Zig,2015,verified-language,c,,1,1,0,1,0,,cited-only

@@ -48,13 +48,6 @@
       "reopenWhen": "An author, working-group record, or fixed language-version source explicitly identifies a design input."
     },
     {
-      "id": "zig|design-layer-gap",
-      "status": "closed-no-qualifying-source",
-      "batch": "2026-10-09_BATCH-15",
-      "note": "Zig C import, C ABI export, and better-C-compiler positioning are interoperability/toolchain evidence, not a concrete C design-influence statement.",
-      "reopenWhen": "A Zig design source explicitly identifies a language feature inherited from or designed in response to C/C++."
-    },
-    {
       "id": "python|mojo|influencedBy",
       "status": "closed-no-qualifying-source",
       "batch": "2026-10-09_BATCH-16",
@@ -321,6 +314,12 @@
       "batch": "2026-10-11_BATCH-29",
       "note": "Haskell 98 Report Preface lists Id as a particularly influential forerunner, but the fixed PLDB snapshot has no Id endpoint.",
       "reopenWhen": "A fixed Id record or stable identity source becomes available."
+    },
+    {
+      "id": "c|zig|influencedBy",
+      "status": "verified",
+      "batch": "2026-10-11_BATCH-32",
+      "note": "Andrew Kelley’s primary introduction explicitly sets “more pragmatic than C” and discusses concrete C comparisons in performance, undefined behavior, error representation, libc and preprocessor policy. Scope is design response/reference, not succession, superset or source compatibility."
     }
   ]
 }

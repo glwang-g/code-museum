@@ -22,6 +22,7 @@
 | APL → BQN | Batch 17 | BQN 官方说明保留并重做 APL 传统中的核心思想 |
 | JavaScript → JSON | Batch 17 | JSON 官方明确称其基于 JavaScript 标准的一个子集 |
 | C → C3 | Batch 17 | C3 官方 README 明确说保留并现代化 C 的语法与语义 |
+| C → Zig | Batch 32 | 作者明确以“more pragmatic than C”为目标并逐项说明 C 对照设计，但不称继承/超集 |
 | ALGOL 60 → ALGOL W | Batch 31 | Stanford 归档实现报告明确以 Wirth/Hoare ALGOL 改造工作为编译器基础 |
 | Lisp → Common Lisp | Batch 22 | 作者明确称 Common Lisp 是 Lisp 的新方言 |
 | MacLisp → Common Lisp | Batch 22 | 作者明确称 Common Lisp 是 MacLisp 的后继 |
@@ -69,7 +70,6 @@ Id 在报告中被列为前驱，但当前 PLDB 快照没有对应端点，保�
 | --- | --- | --- |
 | 泛称 Assembly | Batch 15 | 不是单一历史语言；需先确定具体方言和设计事件 |
 | XSLT | Batch 14 | 参考文献不等于设计影响声明 |
-| Zig 设计边 | Batch 15 | C ABI/工具链说明不等于 C 语言设计继承 |
 | Python → Mojo | Batch 16 | 当前官方材料只支持兼容/互操作说明 |
 | C++ → Chapel | Batch 16 | 未取得 C++ 作为具体设计来源的官方原文 |
 | TypeScript → AssemblyScript | Batch 17 | 官方只说明 TypeScript-like 与相似性，未取得设计来源声明 |

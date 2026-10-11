@@ -1100,5 +1100,14 @@
     "source": "https://www.algol60.org/docsW/AlgolW_STAN.pdf",
     "sourceSha256": "d21c183f5ffaffea75a202ab549283d60432838d5488af3a72aad8f1e48b3306",
     "evidence": "Stanford 归档的 ALGOL W 实现报告明确说：Wirth 与 Hoare 的《A Contribution to the Development of ALGOL》是该编译器的“basis”，本报告描述由该工作实现的 ALGOL W；报告把语言历史背景和目标指向该论文。关系限定为 ALGOL 60 上的改造与实现设计输入，不声称 ALGOL W 是完整超集或所有 ALGOL 60 程序兼容。"
+  },
+  {
+    "from": "c",
+    "to": "zig",
+    "type": "influencedBy",
+    "label": "以 C 为设计对照与目标",
+    "source": "https://andrewkelley.me/post/intro-to-zig.html",
+    "sourceSha256": "3f657aefb1859f485b5bd3c31a7100d0fd98cd1df72e796c7629adb5ffbf11dc",
+    "evidence": "Zig 作者 Andrew Kelley 在 2016 年官方介绍中明确把“more pragmatic than C”设为设计目标，并逐项对照 C 说明优先级：runtime performance 要“equivalent to or better than C”、debug/release 的 undefined behavior 处理、以 error type 传递错误、替代 libc 与预处理器。这里表示对 C 的具体设计回应与对照，不声称 Zig 是 C 的后继、超集、源码兼容或继承 C ABI 之外的语义。"
   }
 ]

@@ -2233,7 +2233,7 @@
       "syntax": "documented",
       "implementation": "documented",
       "implementationName": "Zig compiler",
-      "notes": "Zig 文档为开发分支，具体版本要固定。 2026-10-04 补核官方 Overview：@cImport 导入 C 类型、函数等，export 导出 C ABI；录入 C/Zig 互操作，不据此推断 Zig 继承 C。",
+      "notes": "Zig 文档为开发分支，具体版本要固定。 2026-10-04 补核官方 Overview：@cImport 导入 C 类型、函数等，export 导出 C ABI，保留为实现/生态关系。 2026-10-11 补核作者 Introduction：明确以“more pragmatic than C”为目标并逐项讨论性能、未定义行为、错误类型、libc 和预处理器取舍；新增受限的 C→Zig 设计对照关系，不推断继承或源码兼容。",
       "nextStep": "固定实现版本并补充语法、错误处理和标准库用例；需要馆内运行时则另行接入。",
       "sources": [
         {
@@ -2268,6 +2268,19 @@
           "role": "实现与生态关系",
           "reviewed": true,
           "excerpt": "Integration with C libraries without FFI/bindings @cImport directly imports types, variables, functions, and simple macros for use in Zig. It even translates inline functions from C into Zig. Here is an example of emitting a sine wave using libsoundio : 22-sine-wave.zig const c = @cImport ( @cInclude ( \"soundio/soundio.h\" )); const std = @import ( \"std\" ); f … Export functions, variables, and types for C code to depend on One of the primary use cases for Zig is exporting a library with the C ABI for other programming languages to call into. The export keyword in front of functions, variables, and types causes them to be part of the library API: 23-math-test.zig export fn add (a: i32 , b: i32 ) i32 { return a + b; } To make a static library: $ zig build-lib mathtest.zig To make a shared library: $ zig build-lib mathtest.zig -dynamic Here is an example with the Zig Build System : test.c #incl"
+        },
+        {
+          "role": "关系依据",
+          "url": "https://andrewkelley.me/post/intro-to-zig.html",
+          "checkedAt": "2026-10-11T07:20:00+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "Introduction to the Zig Programming Language — Andrew Kelley",
+          "finalUrl": "https://andrewkelley.me/post/intro-to-zig.html",
+          "decodedBodySha256": "3f657aefb1859f485b5bd3c31a7100d0fd98cd1df72e796c7629adb5ffbf11dc",
+          "excerpt": "I am nothing if not ambitious, and my goal is to create a new programming language that is more pragmatic than C. ... Optimal: The most natural way to write a program should result in top-of-the-line runtime performance, equivalent to or better than C.",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected",
+          "locator": "Introduction and priorities; Design Decisions"
         }
       ]
     },

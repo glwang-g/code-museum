@@ -37,7 +37,7 @@ test('chronology and cycles are review leads and ecosystem links do not become l
 });
 test('pinned report covers every current label and preserves review decisions and research sources',()=>{
  const report=generateRelationshipAudit(root,generateCatalogue(root));
- assert.equal(report.summary.labels,50);assert.equal(report.summary.mapDesignGaps,3);
+ assert.equal(report.summary.labels,50);assert.equal(report.summary.mapDesignGaps,2);
  assert.deepEqual(report,JSON.parse(fs.readFileSync(path.join(root,'data/audit/relationship-status.json'))));
  const find=(from,to)=>report.relations.find(e=>e.from===from&&e.to===to);
  assert.equal(find('java','csharp').state,'excerpt-recorded');

@@ -110,7 +110,7 @@
 |WebAssembly|WebAssembly / Wasmtime|未测试|[语法](https://webassembly.github.io/spec/core/text/index.html) · [实现](https://docs.wasmtime.dev/cli.html)|包含文本格式与二进制指令；执行需宿主运行时。|
 |x86 Assembly|NASM|未测试|[语法](https://www.nasm.us/doc/nasm03.html) · [实现](https://www.nasm.us/doc/nasm02.html)|仅核实 NASM 的 x86 汇编语法；不是所有汇编语言。|
 |XSLT|libxslt / xsltproc (XSLT 1.0)|示例通过|[语法](https://www.w3.org/TR/1999/REC-xslt-19991116) · [实现](https://raw.githubusercontent.com/GNOME/libxslt/v1.1.35/doc/intro.html)|W3C XSLT 1.0 原始标准定义模板、变量、参数、条件与结果树的执行语义，是可执行转换语言，不只是 XML 记法。libxslt 有真实处理器；本机 xsltproc 使用 libxslt 1.1.35。标准明确嵌入 XPath 表达式，不以规范引用或同属 XML 推定设计继承。1998馆藏年代与1999年正式 Recommendation 为不同事件，暂保留原值。未接入网页运行，后续版本需分别核实。 本轮已用本机 xsltproc --nonet 执行两份原创 XSLT 1.0：求和实际输出55，排序与条件实际输出8,9,10,，非法 XPath 表达式退出失败；证据与复现脚本保存在项目，属于样例核验而非完整符合性。|
-|Zig|Zig compiler|未测试|[语法](https://ziglang.org/documentation/master/) · [实现](https://ziglang.org/learn/getting-started/) · [实现与生态关系](https://ziglang.org/learn/overview/)|Zig 文档为开发分支，具体版本要固定。 2026-10-04 补核官方 Overview：@cImport 导入 C 类型、函数等，export 导出 C ABI；录入 C/Zig 互操作，不据此推断 Zig 继承 C。|
+|Zig|Zig compiler|未测试|[语法](https://ziglang.org/documentation/master/) · [实现](https://ziglang.org/learn/getting-started/) · [实现与生态关系](https://ziglang.org/learn/overview/) · [关系依据](https://andrewkelley.me/post/intro-to-zig.html)|Zig 文档为开发分支，具体版本要固定。 2026-10-04 补核官方 Overview：@cImport 导入 C 类型、函数等，export 导出 C ABI，保留为实现/生态关系。 2026-10-11 补核作者 Introduction：明确以“more pragmatic than C”为目标并逐项讨论性能、未定义行为、错误类型、libc 和预处理器取舍；新增受限的 C→Zig 设计对照关系，不推断继承或源码兼容。|
 
 ## 历史、形式语言、相关技术与受阻条目
 

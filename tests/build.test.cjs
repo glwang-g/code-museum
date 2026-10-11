@@ -79,7 +79,8 @@ test('source-only rebuild is offline, complete, and byte-for-byte repeatable', (
     assert.equal(zigInterop.type, 'interop');
     assert.equal(zigInterop.source, 'https://ziglang.org/learn/overview/');
     assert.ok(audit.reviews.find(r => r.id === 'zig').sources.some(source => source.url === zigInterop.source && source.reviewed && source.excerpt.includes('@cImport')));
-    assert.ok(!db.edges.some(e => e.from === 'c' && e.to === 'zig'), 'Interop evidence must not become a design inheritance claim');
+    const zigDesign=db.edges.find(e => e.from === 'c' && e.to === 'zig' && e.type === 'influencedBy');
+    assert.ok(zigDesign);assert.equal(zigDesign.source, 'https://andrewkelley.me/post/intro-to-zig.html');assert.match(zigDesign.evidence, /more pragmatic than C/);assert.ok(!/\@cImport/.test(zigDesign.evidence), 'Interop evidence must remain separate from design evidence');
     assert.ok(db.edges.some(e => e.from === 'bcpl' && e.to === 'b' && e.type === 'influencedBy' && e.evidence));
     assert.ok(db.edges.some(e => e.from === 'b' && e.to === 'c' && e.type === 'influencedBy' && e.evidence));
     assert.equal(db.records.find(r => r.id === 'bcpl').category, 'language');

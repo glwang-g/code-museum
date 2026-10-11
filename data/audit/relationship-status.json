@@ -3,10 +3,10 @@
   "scope": "全量关系结构检查与常显标签逐项盘点；摘录已存不等于史料论证或关系覆盖全部核实。缺线不表示没有上游。",
   "summary": {
     "labels": 50,
-    "relations": 449,
-    "mapDesignGaps": 3,
+    "relations": 450,
+    "mapDesignGaps": 2,
     "states": {
-      "excerpt-recorded": 132,
+      "excerpt-recorded": 133,
       "field-only": 317
     },
     "warnings": 6
@@ -173,18 +173,19 @@
         "c|sdlang|influencedBy",
         "c|speedie|influencedBy",
         "c|tick-c|supersetOf",
-        "c|wa|influencedBy"
+        "c|wa|influencedBy",
+        "c|zig|influencedBy"
       ],
       "ecology": [
         "c|python|extensionInterface",
         "c|rust|interop",
         "c|zig|interop"
       ],
-      "mapLinks": 8,
+      "mapLinks": 9,
       "fieldOnly": 6,
       "citationOnly": 0,
       "needsDirectEvidence": 0,
-      "excerptRecorded": 9,
+      "excerptRecorded": 10,
       "state": "needs-review"
     },
     {
@@ -1127,18 +1128,20 @@
       "name": "Zig",
       "year": 2015,
       "languageStatus": "verified-language",
-      "upstream": [],
+      "upstream": [
+        "c|zig|influencedBy"
+      ],
       "downstream": [
         "zig|mojo|influencedBy"
       ],
       "ecology": [
         "c|zig|interop"
       ],
-      "mapLinks": 0,
+      "mapLinks": 1,
       "fieldOnly": 1,
       "citationOnly": 0,
       "needsDirectEvidence": 0,
-      "excerptRecorded": 0,
+      "excerptRecorded": 1,
       "state": "needs-review"
     }
   ],
@@ -2533,6 +2536,39 @@
       "mapVisible": false,
       "evidenceVersion": null,
       "sources": []
+    },
+    {
+      "from": "c",
+      "to": "zig",
+      "type": "influencedBy",
+      "label": "以 C 为设计对照与目标",
+      "source": "https://andrewkelley.me/post/intro-to-zig.html",
+      "sourceSha256": "3f657aefb1859f485b5bd3c31a7100d0fd98cd1df72e796c7629adb5ffbf11dc",
+      "evidence": "Zig 作者 Andrew Kelley 在 2016 年官方介绍中明确把“more pragmatic than C”设为设计目标，并逐项对照 C 说明优先级：runtime performance 要“equivalent to or better than C”、debug/release 的 undefined behavior 处理、以 error type 传递错误、替代 libc 与预处理器。这里表示对 C 的具体设计回应与对照，不声称 Zig 是 C 的后继、超集、源码兼容或继承 C ABI 之外的语义。",
+      "key": "c|zig|influencedBy",
+      "layer": "design",
+      "state": "excerpt-recorded",
+      "issues": [],
+      "reviewNote": "",
+      "mapVisible": true,
+      "evidenceVersion": {
+        "citedSha256": "3f657aefb1859f485b5bd3c31a7100d0fd98cd1df72e796c7629adb5ffbf11dc",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
+      "sources": [
+        {
+          "url": "https://andrewkelley.me/post/intro-to-zig.html",
+          "finalUrl": "https://andrewkelley.me/post/intro-to-zig.html",
+          "title": "Introduction to the Zig Programming Language — Andrew Kelley",
+          "excerpt": "I am nothing if not ambitious, and my goal is to create a new programming language that is more pragmatic than C. ... Optimal: The most natural way to write a program should result in top-of-the-line runtime performance, equivalent to or better than C.",
+          "checkedAt": "2026-10-11T07:20:00+00:00",
+          "sha256": "3f657aefb1859f485b5bd3c31a7100d0fd98cd1df72e796c7629adb5ffbf11dc",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected",
+          "reviewId": "zig",
+          "locator": "Introduction and priorities; Design Decisions"
+        }
+      ]
     },
     {
       "from": "c-shell",
@@ -10476,28 +10512,22 @@
   ],
   "inputHashes": {
     "data/raw/pldb.json": "57f45d25bba78ab6bc4af5d969356d2efbfcc7c1ee722dbb5c708d60aa78ba77",
-    "data/audit/reviews.json": "f44ce2dd17a3cbe8ea86078a339a5a5d143111b894020148e4c515293beb83e0",
-    "data/relationship-overrides.json": "c47e52d5b0d37a75c4bec8c4ebe462234b3d1340bd1dc64315dc3f15a1e87d76",
+    "data/audit/reviews.json": "edb579d8e86a4d1fdecbc7c786c5dc3fc68b97a934e351b9fcf93c1aec324e65",
+    "data/relationship-overrides.json": "81e3ea13bd64c1f5c46c5b12fb216cc4d917757775dffe821838ae1e87751a36",
     "data/ecosystem-relations.json": "0d96e92a3853eddc6b32e4a45d5c90223d2096fa35438823f7dcfe72ce161e76",
     "data/audit/relationship-decisions.json": "5261a7c64734441c96694a1a0b9b8a34cad0195e541e3485807a2a66061055c8",
     "data/audit/label-selection.json": "dc5eee62fa662b0d60940375d8a3ec56ac2bbf84ee2b9922a290d46d11cc866f",
-    "data/audit/relationship-research-ledger.json": "c63ac30550fc8e77b3e0e447e1078810214adea8a21aeaa0ff489c405b309d9d"
+    "data/audit/relationship-research-ledger.json": "5c195ba1df4d616c4d040e61ee62d1d4af04febc44312ad26127706d354993a1"
   },
   "research": {
     "reopenPolicy": "Reopen a closed item only when a new primary source, a fixed historical version, a resolved endpoint identity, or a materially different relation claim becomes available.",
     "summary": {
       "total": 51,
-      "verified": 38,
-      "closed": 10,
+      "verified": 39,
+      "closed": 9,
       "blocked": 3
     },
     "recent": [
-      {
-        "id": "standard-ml|alice|influencedBy",
-        "status": "verified",
-        "batch": "2026-10-11_BATCH-28",
-        "note": "Alice official manual says it is based on Standard ML and lists extensions; not a complete superset or all-program compatibility claim."
-      },
       {
         "id": "iswim|haskell|influencedBy",
         "status": "verified",
@@ -10539,6 +10569,12 @@
         "status": "blocked",
         "batch": "2026-10-11_BATCH-29",
         "note": "Haskell 98 Report Preface lists Id as a particularly influential forerunner, but the fixed PLDB snapshot has no Id endpoint."
+      },
+      {
+        "id": "c|zig|influencedBy",
+        "status": "verified",
+        "batch": "2026-10-11_BATCH-32",
+        "note": "Andrew Kelley’s primary introduction explicitly sets “more pragmatic than C” and discusses concrete C comparisons in performance, undefined behavior, error representation, libc and preprocessor policy. Scope is design response/reference, not succession, superset or source compatibility."
       }
     ]
   }
