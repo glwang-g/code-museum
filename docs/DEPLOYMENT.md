@@ -155,3 +155,5 @@ GitHub remote 已迁至 `glwang-g/code-museum`。提交 `0aa352e` 将站点顶�
 提交 `6de9d65` 将无设计层关联常显语言的研究入口补到地图底部，Actions `38115707001` build/deploy 成功。1440/390 实际 Chrome 回归覆盖地图入口和档案入口、gaps 过滤与 XSLT 聚焦。
 
 提交 `3f9b2ac` 将地图研究缺口入口明确为“设计层待补”，Actions `38115889027` build/deploy 成功；正式 `index.html` SHA-256 `fe659e80…` 与本地构建一致。
+
+提交 `58e3c09` 将研究缺口判断修正为地图内设计关系，Actions `38116156431` build/deploy 成功。正式 HTTPS 验证 Assembly、XSLT、Zig 在 1440/390 的 gaps 入口和聚焦行为。
