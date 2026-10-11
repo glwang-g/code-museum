@@ -60,7 +60,10 @@ function generateRelationshipAudit(root,catalogue){
   const report=auditRelationships(catalogue,read('data/audit/reviews.json'),read('data/relationship-overrides.json'),read('data/ecosystem-relations.json'),read('data/audit/relationship-decisions.json'));
   report.inputHashes=Object.fromEntries(['data/raw/pldb.json','data/audit/reviews.json','data/relationship-overrides.json','data/ecosystem-relations.json','data/audit/relationship-decisions.json','data/audit/label-selection.json'].map(file=>[file,crypto.createHash('sha256').update(fs.readFileSync(path.join(root,file))).digest('hex')]));
   const ledger=read('data/audit/relationship-research-ledger.json');
+  const identity=read('data/audit/identity-summary.json');
   const researchEntries=ledger.entries||[];
+  report.identity={total:identity.identity_issue_rows,unresolved:identity.unresolved_identity_issue_rows,curated:identity.curated_false_alias_rows};
+  report.inputHashes['data/audit/identity-summary.json']=crypto.createHash('sha256').update(fs.readFileSync(path.join(root,'data/audit/identity-summary.json'))).digest('hex');
   report.research={reopenPolicy:ledger.reopenPolicy,summary:{total:researchEntries.length,verified:researchEntries.filter(e=>e.status==='verified').length,closed:researchEntries.filter(e=>e.status==='closed-no-qualifying-source').length,blocked:researchEntries.filter(e=>e.status==='blocked').length},recent:researchEntries.slice(-8).map(e=>({id:e.id,status:e.status,batch:e.batch,note:e.note}))};
   report.inputHashes['data/audit/relationship-research-ledger.json']=crypto.createHash('sha256').update(fs.readFileSync(path.join(root,'data/audit/relationship-research-ledger.json'))).digest('hex');
   return report;

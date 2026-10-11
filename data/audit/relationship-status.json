@@ -10612,7 +10612,13 @@
     "data/ecosystem-relations.json": "0f9762c08634b271476a8b82e8ddd96f9f688434766c43329059dea5a59436c8",
     "data/audit/relationship-decisions.json": "5261a7c64734441c96694a1a0b9b8a34cad0195e541e3485807a2a66061055c8",
     "data/audit/label-selection.json": "dc5eee62fa662b0d60940375d8a3ec56ac2bbf84ee2b9922a290d46d11cc866f",
+    "data/audit/identity-summary.json": "e8c198fdd1b221279b5ab8d4d9a49cf18390c56c52d4a9a41b00ab1a5c68a331",
     "data/audit/relationship-research-ledger.json": "a929360aa53cb79f7d930b8fc89bef7c10b315c10444f20cd2f26319ddbbd5c8"
+  },
+  "identity": {
+    "total": 126,
+    "unresolved": 109,
+    "curated": 17
   },
   "research": {
     "reopenPolicy": "Reopen a closed item only when a new primary source, a fixed historical version, a resolved endpoint identity, or a materially different relation claim becomes available.",

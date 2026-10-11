@@ -361,6 +361,8 @@ def main():
         'phrase_based_relationship_candidates': len(lead_rows)
     }
     write_json('integrity-summary.json', summary)
+    identity_summary = {key: summary[key] for key in ('identity_issue_rows', 'unresolved_identity_issue_rows', 'curated_false_alias_rows')}
+    (ROOT / 'data/audit/identity-summary.json').write_text(json.dumps(identity_summary, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     write_map_status(summary, label_review)
     print(json.dumps(summary, ensure_ascii=False, indent=2))
 

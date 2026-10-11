@@ -217,7 +217,7 @@ async function record(name,detail){results.push({name,detail});console.log('PASS
     await evaluate(`document.querySelector('#relationship-review-filter').value='gaps';document.querySelector('#relationship-review-filter').dispatchEvent(new Event('change'));`);
     assert.deepEqual(await evaluate(`Array.from(document.querySelectorAll('[data-review-language]'),b=>b.dataset.reviewLanguage)`),['assembly-language','xslt']);
     const researchLedger=await evaluate(`(()=>{const box=document.querySelector('.research-ledger');return {exists:!!box,text:box?.textContent||'',items:box?.querySelectorAll('li').length||0,overflow:document.documentElement.scrollWidth>innerWidth}})()`);
-    assert.equal(researchLedger.exists,true);assert.match(researchLedger.text,/已核实/);assert.match(researchLedger.text,/受阻/);assert.equal(researchLedger.items,8);assert.equal(researchLedger.overflow,false,'Research ledger must not overflow the viewport');
+    assert.equal(researchLedger.exists,true);assert.match(researchLedger.text,/已核实/);assert.match(researchLedger.text,/受阻/);assert.equal(researchLedger.items,8);assert.equal(researchLedger.overflow,false,'Research ledger must not overflow the viewport');const identityReview=await evaluate(`(()=>{const box=document.querySelector('.identity-review');return {exists:!!box,text:box?.textContent||''}})()`);assert.equal(identityReview.exists,true);assert.match(identityReview.text,/身份审查/);assert.match(identityReview.text,/未决/);
     await screenshot('relationship-coverage-'+size.width+'.png');
     await evaluate(`document.querySelector('[data-review-language="xslt"]').click()`);
     assert.equal(await evaluate(`document.querySelector('#detail-content h2').textContent`),'XSLT');
