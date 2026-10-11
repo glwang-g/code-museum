@@ -10463,6 +10463,66 @@
     "data/relationship-overrides.json": "c565d252de6a6d666e75e9586252b1f9f8cc3e649345492cc4f90fab11fc17ce",
     "data/ecosystem-relations.json": "0d96e92a3853eddc6b32e4a45d5c90223d2096fa35438823f7dcfe72ce161e76",
     "data/audit/relationship-decisions.json": "4339ab007ed91414653b56ddf2dcbe0a9450de5df1705c9ad76c1fbc7db53960",
-    "data/audit/label-selection.json": "dc5eee62fa662b0d60940375d8a3ec56ac2bbf84ee2b9922a290d46d11cc866f"
+    "data/audit/label-selection.json": "dc5eee62fa662b0d60940375d8a3ec56ac2bbf84ee2b9922a290d46d11cc866f",
+    "data/audit/relationship-research-ledger.json": "5edc18346fa788c310eac0a350a26e58267b5d25fd4af9a168597be46785e83f"
+  },
+  "research": {
+    "reopenPolicy": "Reopen a closed item only when a new primary source, a fixed historical version, a resolved endpoint identity, or a materially different relation claim becomes available.",
+    "summary": {
+      "total": 51,
+      "verified": 37,
+      "closed": 11,
+      "blocked": 3
+    },
+    "recent": [
+      {
+        "id": "standard-ml|alice|influencedBy",
+        "status": "verified",
+        "batch": "2026-10-11_BATCH-28",
+        "note": "Alice official manual says it is based on Standard ML and lists extensions; not a complete superset or all-program compatibility claim."
+      },
+      {
+        "id": "iswim|haskell|influencedBy",
+        "status": "verified",
+        "batch": "2026-10-11_BATCH-29",
+        "note": "Haskell 98 Report Preface lists ISWIM as a particularly influential forerunner; overall acknowledged influence only."
+      },
+      {
+        "id": "fp|haskell|influencedBy",
+        "status": "verified",
+        "batch": "2026-10-11_BATCH-29",
+        "note": "Haskell 98 Report Preface lists Backus’s FP as a particularly influential forerunner; overall acknowledged influence only."
+      },
+      {
+        "id": "ml|haskell|influencedBy",
+        "status": "verified",
+        "batch": "2026-10-11_BATCH-29",
+        "note": "Haskell 98 Report Preface lists ML as a particularly influential forerunner; overall acknowledged influence only."
+      },
+      {
+        "id": "hope|haskell|influencedBy",
+        "status": "verified",
+        "batch": "2026-10-11_BATCH-29",
+        "note": "Haskell 98 Report Preface lists Hope/Hope+ as particularly influential forerunners; overall acknowledged influence only."
+      },
+      {
+        "id": "gofer|haskell|influencedBy",
+        "status": "verified",
+        "batch": "2026-10-11_BATCH-29",
+        "note": "Haskell 98 Report Preface lists Gofer as a particularly influential forerunner; PLDB year 1994 conflicts with Haskell 1990 and remains a chronology review lead."
+      },
+      {
+        "id": "sisal|haskell|influencedBy",
+        "status": "verified",
+        "batch": "2026-10-11_BATCH-29",
+        "note": "Haskell 98 Report Preface lists Sisal as a particularly influential forerunner; overall acknowledged influence only."
+      },
+      {
+        "id": "haskell|id-gap|influencedBy",
+        "status": "blocked",
+        "batch": "2026-10-11_BATCH-29",
+        "note": "Haskell 98 Report Preface lists Id as a particularly influential forerunner, but the fixed PLDB snapshot has no Id endpoint."
+      }
+    ]
   }
 }

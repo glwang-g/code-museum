@@ -896,6 +896,6 @@ async function record(name,detail){results.push({name,detail});console.log('PASS
  finally{
   if(browser){try{await send('Browser.close');}catch{}if(browser.exitCode===null&&browser.signalCode===null){const closed=new Promise(resolve=>browser.once('exit',resolve));browser.kill('SIGKILL');await closed;}}
   server.closeAllConnections();await new Promise(resolve=>server.close(resolve));
-  fs.rmSync(profileDirectory,{recursive:true,force:true});
+  try{fs.rmSync(profileDirectory,{recursive:true,force:true,maxRetries:5,retryDelay:100})}catch(error){if(error.code!=='ENOTEMPTY')throw error};
  }
 })().catch(error=>{console.error(error);process.exitCode=1;});
