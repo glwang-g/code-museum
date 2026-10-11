@@ -145,3 +145,7 @@ HTTP MCP共用执行器进程及Docker启动依赖，手工Bearer无OAuth/SSE；
 ## 2026-10-11 仓库链接规范化
 
 GitHub remote 已迁至 `glwang-g/code-museum`。提交 `0aa352e` 将站点顶部项目入口、出处页源码与 README 链接、仓库 README 内外链统一到新地址，Actions `38102639824` build/deploy 成功。正式站 `index.html` SHA-256 `ac3b4f16…`、`credits.js` `3ebeec93…` 与本地构建一致。`npm run diagnose:release -- --url https://codemuseum.freexlib.com --json` 返回 errors/warnings 均为空，线上与本地 provenance 的 PLDB 快照、人工审查、地图节点、421 条设计关系与 7 条生态关系完全一致。本次没有后端或运行权限改动。
+
+## 2026-10-11 关系缺口研究入口上线
+
+提交 `9cbb69b` 增加档案到关系核对 gaps 视图的直达入口，Actions `38115359630` build/deploy 成功，无后端或权限改动。正式站 `museum.js` SHA-256 `55edf131…`、`relationship-coverage.js` `113cfe69…` 与本地构建一致；本地真实 Chrome 回归覆盖 1440/390、gaps 筛选、XSLT 聚焦和历史折叠区访问，证据见 `data/audit/relationship-gap-research-browser-checks.json`。

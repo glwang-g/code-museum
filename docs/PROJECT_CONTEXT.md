@@ -442,3 +442,9 @@ URL 保留语言 ID、层、展开范围、依据和实验台主题，兼容旧�
 本轮发布完成：`e047043` 已推送，Actions `38102455759` 的 build/deploy 成功。正式站 `index.html`、`museum.js`、`museum.css`、`credits.js`、`exploration-tools.js` 与本地构建 SHA 逐字节一致；实际生产 HTTPS Chrome 探针确认实验台直接定位 `credit-browser-javascript`、设置摘要显示“探索设置 · 上游 · 2 层”，以及 Escape 只关闭设置且档案仍打开。
 
 GitHub 推送同时报告仓库已正式迁至 `glwang-g/code-museum`。站点顶部“项目”、出处页源码/README 与 README 本文件链接已统一改为新地址，并新增测试禁止旧 `codemuseum` 仓库路径回流。`npm test` 61/61、离线构建通过；提交 `0aa352e` 对应 Actions `38102639824` build/deploy 成功，正式 `index.html`/`credits.js` 与本地构建 SHA 一致，`diagnose:release` 无错误或警告且线上/本地 provenance 一致。
+
+## 2026-10-11 关系缺口研究入口
+
+常显标签若没有设计层地图内关系，档案现在会显示“查看研究待办”，直接进入「出处与说明 → 关系核对」，展开清单、切换到“暂无设计层地图连线”并聚焦当前语言。Assembly、XSLT、Zig 不新增关系，也不把互操作或相似性升级为设计继承。
+
+`npm test` 61/61、离线构建通过；探索浏览器回归在 1440/390 验证 XSLT 缺口入口、3 行 gaps 过滤、焦点定位及无横向溢出。提交 `9cbb69b`，Actions `38115359630` build/deploy 成功，正式站 `museum.js` 与 `relationship-coverage.js` 哈希和本地构建一致。证据见 `data/audit/relationship-gap-research-browser-checks.json`。
