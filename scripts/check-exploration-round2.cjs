@@ -56,7 +56,7 @@ async function screenshot(name){if(!outputDirectory)return;await evaluate('new P
 
 
   async function click(selector){await evaluate(`document.querySelector(${JSON.stringify(selector)}).scrollIntoView({block:'center'})`);const r=await evaluate(`(()=>{const r=document.querySelector(${JSON.stringify(selector)}).getBoundingClientRect();return {x:r.left+r.width/2,y:r.top+r.height/2}})()`);await mouse(r)}
-  async function mouse(p){await page('Input.dispatchMouseEvent',{type:'mousePressed',...p,button:'left',clickCount:1});await page('Input.dispatchMouseEvent',{type:'mouseReleased',...p,button:'left',clickCount:1})}
+  async function mouse(p){p={x:Math.round(p.x),y:Math.round(p.y)};await page('Input.dispatchMouseEvent',{type:'mouseMoved',...p,button:'none'});await page('Input.dispatchMouseEvent',{type:'mousePressed',...p,button:'left',clickCount:1});await page('Input.dispatchMouseEvent',{type:'mouseReleased',...p,button:'left',clickCount:1})}
   async function focus(mode){await evaluate(`setView(${JSON.stringify(mode)});setRelationLayer('design');setRelationScope('direct');select('java');activeId='java';renderLineageFocus(activeId)`);await evaluate('new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)))')}
   for(const width of [1440,390,320])for(const theme of ['dark','light']){
    await page('Emulation.setDeviceMetricsOverride',{width,height:844,deviceScaleFactor:1,mobile:width<500});
@@ -64,6 +64,8 @@ async function screenshot(name){if(!outputDirectory)return;await evaluate('new P
    for(const id of ['c','java','python']){
     await evaluate(`setView('lineage');select(${JSON.stringify(id)});activeId=${JSON.stringify(id)};renderLineageFocus(activeId);relationDirection='up';relationLevels=2;setRelationScope('levels')`);
     assert.equal(await evaluate("relationScope==='levels' && relationDirection==='up' && document.querySelector('#relation-count').textContent.includes('条关系')"),true);
+    assert.equal(await evaluate("document.querySelector('#relation-settings-summary').textContent"),'探索设置 · 上游 · 2 层');
+    await evaluate("document.querySelector('.relation-settings>summary').click()");assert.equal(await evaluate("document.querySelector('.relation-settings').open"),true);await page('Input.dispatchKeyEvent',{type:'keyDown',key:'Escape',code:'Escape',windowsVirtualKeyCode:27});assert.equal(await evaluate("document.querySelector('.relation-settings').open"),false);
     const route=await evaluate('location.hash');assert.ok(route.includes('direction=up')&&route.includes('levels=2'));
     await click('#detail-toggle');assert.equal(await evaluate("document.querySelector('#detail').classList.contains('compact') && document.querySelector('#detail-content').hidden"),true);await screenshot(`compact-detail-${theme}-${width}-${id}.png`);
     assert.ok(await evaluate("document.querySelector('#viewport').clientHeight")>70);await click('#detail-toggle');assert.equal(await evaluate("document.querySelector('#detail-content').hidden"),false);

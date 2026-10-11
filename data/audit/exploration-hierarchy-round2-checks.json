@@ -1,0 +1,81 @@
+{
+  "checkedAt": "2026-10-11T01:31:31.906Z",
+  "browser": "Chrome/154.0.8037.98",
+  "scope": "Actual isolated Chrome round 2 over local HTTP; 1440/390/320 widths, light/dark, two map views; actual mouse controls, URL reload, evidence disclosure, directional graph and compact details/guide; real JS/Scheme exercise wrong/matched/timeout/recovery/persistence. Java advertised by navigation capability fixture; no remote execution endpoint or submitted code",
+  "inputs": {
+    "data/audit/reviews.json": "549da44e36364656f3d5864a5187fe49aed6bf1618b93786b60d5f99f3df467b",
+    "data/relationship-overrides.json": "fad3acbe4f93309a997e93fa73a04f34cf5d481e339665376bc38d62016f9474",
+    "data/audit/map-eligible-ids.json": "c5397167d4f481ba1e2d3787a4207137930e9c4d9c0f645a1e6945acac129f6e",
+    "src/museum.js": "40ce6b6f345501d977f394b6348974fd07793feb375339d7ec6daf3c0d822a9d",
+    "src/museum.css": "8e3f2628728df0f543820547013cd3c2022a8e47b6debd0c3a51cdb0110f716a",
+    "src/themes.css": "df167e01d77e34c60e523f70264938726f4eff103bc469f2ecceaeca3f725eaf",
+    "scripts/check-exploration-round2.cjs": "62e753e603b1bdce4539ad37cf509ad62d2767b26498e1305335418371556d53",
+    "src/exploration-state.js": "915ebed9bdddb9cd4d68e37cac35770dc58500bf9672b65fbb3c099bfde75263",
+    "src/exploration-tools.js": "b329729a6b9febaf9a0da92d05c55cee8ca1d6d9a4d5b44187bf8ea8cbff615c",
+    "src/navigation.js": "f263b8aa71476c6e19cc391703440ba962562408659ec45294881102356876e4",
+    "src/navigation-state.js": "90bd2c47926cc1f22aee47e5507007351391020137f8528118e17b6abfe8405c",
+    "src/map-interaction.js": "66f1c355a187dc889f38d8468abe6dd86a75e68c3b801561da20a4512449b004",
+    "src/lab-tools.js": "ecedc2d5bbc9f64243f08b6589b0820b824afb3e230e1ddc42b2232be27035e4",
+    "src/learning-guide.js": "8614b8ff58594edd639462d8bc8a56c098f8010fe07a648f6eb22bf484f1f4a5",
+    "data/learning-paths.json": "1e707fd586562baa753a35e989447d1609252f84005dcacbd3c75299cc44cc29"
+  },
+  "servedInputs": {
+    "index.html": "02345222f54fba6a2ae95b4a046382761646a9b071d65e8fbfdc890cb89b3cff",
+    "museum.js": "40ce6b6f345501d977f394b6348974fd07793feb375339d7ec6daf3c0d822a9d",
+    "museum.css": "8e3f2628728df0f543820547013cd3c2022a8e47b6debd0c3a51cdb0110f716a",
+    "themes.css": "df167e01d77e34c60e523f70264938726f4eff103bc469f2ecceaeca3f725eaf",
+    "data/catalogue.js": "bf88efbdc388216904e30128f80ae425c052a8fff8a0fb9f82126b2a64721210",
+    "data/relationship-status.js": "96e901c22d2b71eab262df576d077fbb9f3e960dd3e4f3bb59ebddd567b2baf3",
+    "data/relationship-status.json": "e60a4c8546b5d6b61ee7894098c2508065833d963a80a76a9f206ac92045aa54",
+    "data/audit-reviews.json": "549da44e36364656f3d5864a5187fe49aed6bf1618b93786b60d5f99f3df467b",
+    "exploration-state.js": "915ebed9bdddb9cd4d68e37cac35770dc58500bf9672b65fbb3c099bfde75263",
+    "exploration-tools.js": "b329729a6b9febaf9a0da92d05c55cee8ca1d6d9a4d5b44187bf8ea8cbff615c",
+    "navigation.js": "f263b8aa71476c6e19cc391703440ba962562408659ec45294881102356876e4",
+    "navigation-state.js": "90bd2c47926cc1f22aee47e5507007351391020137f8528118e17b6abfe8405c",
+    "map-interaction.js": "66f1c355a187dc889f38d8468abe6dd86a75e68c3b801561da20a4512449b004",
+    "lab-tools.js": "ecedc2d5bbc9f64243f08b6589b0820b824afb3e230e1ddc42b2232be27035e4",
+    "learning-guide.js": "8614b8ff58594edd639462d8bc8a56c098f8010fe07a648f6eb22bf484f1f4a5",
+    "data/build-info.js": "f34e48caa1c019b0f56de6e0ee6ca479101d49a4b39feca2cebe676642e2b3ee",
+    "data/build-info.json": "034c6c2bd81c53a9b7813f9a0bd29d5871ac0e7ff325656560d4c13b4bd45070"
+  },
+  "checks": [
+    {
+      "width": 1440,
+      "theme": "dark",
+      "checks": "C/Java/Python directional two-level traversal and URL reload; detail collapse/expand/map return; compact guide; two scoped relations and source version disclosure"
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "checks": "C/Java/Python directional two-level traversal and URL reload; detail collapse/expand/map return; compact guide; two scoped relations and source version disclosure"
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "checks": "C/Java/Python directional two-level traversal and URL reload; detail collapse/expand/map return; compact guide; two scoped relations and source version disclosure"
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "checks": "C/Java/Python directional two-level traversal and URL reload; detail collapse/expand/map return; compact guide; two scoped relations and source version disclosure"
+    },
+    {
+      "width": 320,
+      "theme": "dark",
+      "checks": "C/Java/Python directional two-level traversal and URL reload; detail collapse/expand/map return; compact guide; two scoped relations and source version disclosure"
+    },
+    {
+      "width": 320,
+      "theme": "light",
+      "checks": "C/Java/Python directional two-level traversal and URL reload; detail collapse/expand/map return; compact guide; two scoped relations and source version disclosure"
+    },
+    {
+      "language": "javascript",
+      "checks": "actual wrong/matching output, timeout, rerun recovery, completion persistence"
+    },
+    {
+      "language": "scheme",
+      "checks": "actual wrong/matching output, timeout, rerun recovery, completion persistence"
+    }
+  ]
+}

@@ -9,4 +9,5 @@ test('provenance categories are real tabs and render one panel at a time',()=>{
   assert.equal((nav.match(/aria-selected="true"/g)||[]).length,1);
   assert.match(js,/class="credit-panel"/);
   assert.match(js,/panel\.hidden=panel\.id!=='credit-panel-'\+id/);
+  assert.match(js,/,'credit-'\+entry\.id\)/);
 });

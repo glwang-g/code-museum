@@ -34,6 +34,7 @@ function xpos(y){if(!y)return 2540;if(y<1800)return 30;for(let i=1;i<epochs.leng
 const hash=s=>[...s].reduce((h,c)=>(h*31+c.charCodeAt(0))>>>0,0);
 let viewMode='timeline',relationLayer='design',relationScope='direct',relationDirection='both',relationLevels=1,activeId=null,zoomScale=1,zoomMode='fit',focusParts=null;
 function setAtlasFeedback(note,context='浏览全景'){$('#atlas-note').textContent=note;$('#atlas-context').textContent=context}
+function updateRelationSettingsSummary(){const direction={both:'上下游',up:'上游',down:'下游'}[relationDirection]||'上下游';const detail=relationScope==='direct'?'直接关联':relationScope==='all'?'全部前序与后续':`${direction} · ${relationLevels} 层`;$('#relation-settings-summary').textContent=`探索设置 · ${detail}`}
 $('#epochs').innerHTML=epochs.map(([,x,n])=>`<span class="epoch" style="left:${x}px">${n}</span>`).join('');
 const verifiedCount=records.filter(r=>['verified-language','historical-primary-source'].includes(r.review?.status)).length;
 $('#counts').innerHTML=`<b>${meta.count.toLocaleString()}</b> 馆藏条目<br><b>${verifiedCount}</b> 条人工核实 · <b>${meta.mapLanguageCount.toLocaleString()}</b> 个有线索地图节点`;
@@ -186,7 +187,7 @@ $('#design-layer').onclick=()=>setRelationLayer('design');
 $('#ecosystem-layer').onclick=()=>setRelationLayer('ecosystem');
 function setRelationScope(scope){
   relationScope=['all','levels'].includes(scope)?scope:'direct';
-  $('#relation-scope').value=relationScope;
+  $('#relation-scope').value=relationScope;updateRelationSettingsSummary();
   if(activeId)renderLineageFocus(activeId);
 }
 $('#relation-scope').onchange=()=>setRelationScope($('#relation-scope').value);
@@ -330,7 +331,7 @@ function renderLineageFocus(id){
   }).join('');
   $('#relations').innerHTML=arrowDefinitions()+paths;
   $('#relation-count').textContent=`${related.size} 个节点 · ${$('#relations').querySelectorAll('[data-edge-key]').length} 条关系`;
-  $('#relation-direction').value=relationDirection;$('#relation-levels').value=String(relationLevels);
+  $('#relation-direction').value=relationDirection;$('#relation-levels').value=String(relationLevels);updateRelationSettingsSummary();
   const edgeCount=$('#relations').querySelectorAll('[data-edge-key]').length;
   setAtlasFeedback(paths?((relationScope==='direct'?'仅显示直接关联；可切换为全部前序与后续。':'展开已记录的更远关联。')+(relationLayer==='design'?'较淡连线依据待核。':'青色线不表示语言继承。')+'点击空白恢复全景。'):'当前层没有地图内关联；可切换关系层或查看档案。点击空白恢复全景。',`正在查看 ${byId.get(id).name} · ${related.size} 个节点 · ${edgeCount} 条关系`);
   const direct=new Set([id]);
@@ -494,7 +495,7 @@ $('#docks').addEventListener('click',e=>{
 });
 nearby.addEventListener('click',event=>{const choice=event.target.closest('[data-nearby]');if(!choice)return;const id=choice.dataset.nearby;hideNearby();select(id);activeId=id;renderLineageFocus(id)});
 document.addEventListener('pointerdown',event=>{if(!nearby.hidden&&!event.target.closest('.nearby-list,#docks .dot'))hideNearby()});
-$('#detail').inert=true;$('#close').onclick=()=>{clearRelationPreview();$('#detail').classList.remove('open');$('#detail').setAttribute('aria-hidden','true');$('#detail').inert=true;opener?.focus()};document.addEventListener('keydown',e=>{if(e.key==='Escape')$('#close').click()});
+$('#detail').inert=true;$('#close').onclick=()=>{clearRelationPreview();$('#detail').classList.remove('open');$('#detail').setAttribute('aria-hidden','true');$('#detail').inert=true;opener?.focus()};document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!document.querySelector('.relation-settings[open]'))$('#close').click()});
 const workspace=$('.workspace'),resizer=$('#detail-resizer');
 const savedSize=key=>{try{return Number(localStorage.getItem(key))||null}catch{return null}};
 const rememberSize=(key,value)=>{try{localStorage.setItem(key,String(value))}catch{}};

@@ -28,7 +28,7 @@
     panel.scrollTo({top:panel.scrollTop+target.getBoundingClientRect().top-panel.getBoundingClientRect().top-16,behavior:'instant'});
     target.focus({preventScroll:true});
   }
-  function open(id){document.querySelector('#sources-view').click();activate(id)}
+  function open(id,anchorId){document.querySelector('#sources-view').click();activate(id,anchorId)}
   buttons.forEach((button,index)=>button.addEventListener('click',()=>open(button.dataset.creditTarget)));
   buttons.forEach(button=>button.addEventListener('keydown',event=>{
     if(!['ArrowLeft','ArrowRight','Home','End'].includes(event.key))return;
@@ -39,8 +39,8 @@
   }));
   window.MUSEUM_CREDITS_UI={
     labelFor(language){const entry=data.groups.flatMap(group=>group.entries).find(item=>item.languages?.includes(language));return entry?`${entry.versionLabel||entry.name} · 项目与许可 ↗`:null},
-    openFor(language){const entry=data.groups.flatMap(group=>group.entries).find(item=>item.languages?.includes(language));if(entry)open(entryTabs.get(entry.id)||'runtime-credits')},
-    openRemoteFor(language){const entry=data.groups.flatMap(group=>group.entries).find(item=>item.runtimeIds?.includes(language));if(entry)open(entryTabs.get(entry.id)||'runtime-credits')}
+    openFor(language){const entry=data.groups.flatMap(group=>group.entries).find(item=>item.languages?.includes(language));if(entry)open(entryTabs.get(entry.id)||'runtime-credits','credit-'+entry.id)},
+    openRemoteFor(language){const entry=data.groups.flatMap(group=>group.entries).find(item=>item.runtimeIds?.includes(language));if(entry)open(entryTabs.get(entry.id)||'runtime-credits','credit-'+entry.id)}
   };
   activate(ids[0]);
 })();

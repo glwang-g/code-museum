@@ -224,8 +224,9 @@ async function record(name,detail){results.push({name,detail});console.log('PASS
       for(const entry of [{key:'csharp|scala|influencedBy',anchor:'scala',layer:'design',state:'excerpt-recorded'}, {key:'java|javascript|influencedBy',anchor:'javascript',layer:'design',state:'excerpt-recorded'},{key:'java|csharp|influencedBy',anchor:'csharp',layer:'design',state:'excerpt-recorded'},{key:'c|python|extensionInterface',anchor:'python',layer:'ecosystem',state:'excerpt-recorded'},{key:'objective-c|swift|influencedBy',anchor:'swift',layer:'design',state:'excerpt-recorded'}]){
         await evaluate(`setView(${JSON.stringify(mode)});setRelationLayer(${JSON.stringify(entry.layer)});select(${JSON.stringify(entry.anchor)});activeId=${JSON.stringify(entry.anchor)};renderLineageFocus(activeId);`);
         await new Promise(resolve=>setTimeout(resolve,600));
-        const point=await evaluate(`(()=>{const g=document.querySelector('[data-edge-key="${entry.key}"]'),p=g.querySelector('.relation-hit'),v=document.querySelector('#viewport').getBoundingClientRect();for(let i=2;i<99;i++){const t=p.getPointAtLength(p.getTotalLength()*i/100).matrixTransform(p.getScreenCTM());if(t.x<v.left+3||t.x>v.right-3||t.y<v.top+3||t.y>v.bottom-3)continue;const hit=document.elementFromPoint(t.x,t.y);if(hit?.closest('[data-edge-key]')&&nearestRelations({clientX:t.x,clientY:t.y})[0]?.key==='${entry.key}')return {x:t.x,y:t.y};}return null})()`);
+        const point=await evaluate(`(()=>{const g=document.querySelector('[data-edge-key="${entry.key}"]'),p=g.querySelector('.relation-hit'),v=document.querySelector('#viewport').getBoundingClientRect();for(let i=2;i<99;i++){const t=p.getPointAtLength(p.getTotalLength()*i/100).matrixTransform(p.getScreenCTM());if(t.x<v.left+3||t.x>v.right-3||t.y<v.top+3||t.y>v.bottom-3)continue;for(const dx of [0,-1,1])for(const dy of [0,-1,1]){const x=Math.round(t.x)+dx,y=Math.round(t.y)+dy,hit=document.elementFromPoint(x,y);if(hit?.closest('[data-edge-key]')&&nearestRelations({clientX:x,clientY:y})[0]?.key==='${entry.key}')return {x,y};}}return null})()`);
         if(point){
+          await page('Input.dispatchMouseEvent',{type:'mouseMoved',...point,button:'none'});
           await page('Input.dispatchMouseEvent',{type:'mousePressed',...point,button:'left',clickCount:1});
           await page('Input.dispatchMouseEvent',{type:'mouseReleased',...point,button:'left',clickCount:1});
         }else{
@@ -428,6 +429,7 @@ async function record(name,detail){results.push({name,detail});console.log('PASS
         assert.equal(await evaluate(`document.querySelector('#detail-content .relation-link[data-related="${to}"]').dataset.evidenceState`),'claim-with-citation','ALGOL 60 relationship must expose its new primary-source argument');
         assert.equal(await evaluate(`document.querySelector('#relations .related-edge[data-from="algol-60"][data-to="${to}"]').dataset.evidenceState`),'claim-with-citation','ALGOL 60 edge must match the cited card');
       }
+      await evaluate(`document.querySelector('#detail-content .relation-link[data-related="pascal"]').closest('details').open=true`);
       assert.equal(await evaluate(`document.querySelector('#detail-content').innerText.includes('参数机制的设计回应')`),true,'Pascal parameter influence must be described specifically');
       await evaluate(`document.querySelector('#detail-content .relation-link[data-related="pascal"]').scrollIntoView({block:'center'})`);
       await screenshot(`algol60-${mode}-${size.width}.png`);algolChecks.push({mode,width:size.width});
@@ -546,6 +548,7 @@ async function record(name,detail){results.push({name,detail});console.log('PASS
       const description=await evaluate(`document.querySelector('#detail-content').textContent`);
       assert.ok(description.includes('实现项目')&&description.includes('事件驱动')&&description.includes('非原始设计者论文'),'VHDL influence must retain source level and hardware semantics');
       assert.equal(await evaluate(`document.querySelectorAll('.map-run').length`),0,'GHDL documentation must not imply an online runtime');
+      await evaluate(`document.querySelector('#detail-content .relation-link[data-related="ada"]').closest('details').open=true`);
       await evaluate(`document.querySelector('#detail-content .relation-link[data-related="ada"]').focus({preventScroll:true})`);
       assert.equal(await evaluate(`!!document.querySelector('.dock[data-id="ada"].preview-target')&&!!document.querySelector('#relations .preview-edge[data-from="ada"][data-to="vhdl"]')`),true);
       await evaluate(`document.querySelector('#detail-content .relation-link[data-related="ada"]').blur()`);
@@ -718,6 +721,7 @@ async function record(name,detail){results.push({name,detail});console.log('PASS
       assert.equal(await evaluate(`document.querySelectorAll('#relations .ecology-edge').length`),0,'Switching back must clear ecosystem edges');
       await evaluate(`document.querySelector('#zoom-in').click();document.querySelector('#zoom-in').click();document.querySelector('#zoom-in').click();`);
       const before=await evaluate(`({left:document.querySelector('#viewport').scrollLeft,top:document.querySelector('#viewport').scrollTop})`);
+      await evaluate(`document.querySelector('#detail-content .relation-link[data-related="abc"]').closest('details').open=true`);
       await evaluate(`document.querySelector('#detail-content .relation-link[data-related="abc"]').focus({preventScroll:true})`);
       assert.equal(await evaluate(`!!document.querySelector('.dock[data-id="abc"].preview-target')&&!!document.querySelector('#relations .preview-edge')`),true,'Keyboard preview must highlight ABC and its actual edge');
       const during=await evaluate(`({left:document.querySelector('#viewport').scrollLeft,top:document.querySelector('#viewport').scrollTop})`);
