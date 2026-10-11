@@ -157,3 +157,7 @@ GitHub remote 已迁至 `glwang-g/code-museum`。提交 `0aa352e` 将站点顶�
 提交 `3f9b2ac` 将地图研究缺口入口明确为“设计层待补”，Actions `38115889027` build/deploy 成功；正式 `index.html` SHA-256 `fe659e80…` 与本地构建一致。
 
 提交 `58e3c09` 将研究缺口判断修正为地图内设计关系，Actions `38116156431` build/deploy 成功。正式 HTTPS 验证 Assembly、XSLT、Zig 在 1440/390 的 gaps 入口和聚焦行为。
+
+## 2026-10-11 身份别名批次 1
+
+提交 `ac87ec1` 记录 cperl、JRuby、Lisp/Common Lisp、Visual Basic/.NET 的别名排除及来源，Actions `38117111217` build/deploy 成功。`npm test` 62/62，审计重生成后 124 行身份问题中 6 行已明确、118 行待核；没有修改原始 PLDB 快照或新增关系。

@@ -454,3 +454,7 @@ GitHub 推送同时报告仓库已正式迁至 `glwang-g/code-museum`。站点�
 地图缺口按钮文案进一步收紧为“设计层待补 · 查看研究待办”，避免在实现与生态层误读。`npm test` 61/61、构建与 1440/390 聚焦回归通过；提交 `3f9b2ac` 对应 Actions `38115889027` build/deploy 成功，正式 `index.html` SHA-256 `fe659e80…` 与本地构建一致。
 
 关系缺口判断进一步修正为“地图内设计关系”，避免 Zig 因未上图的 Mojo 字段关系而漏掉入口。提交 `58e3c09` 对应 Actions `38116156431` build/deploy 成功；正式 HTTPS 在 1440/390 分别验证 Assembly、XSLT、Zig 的地图入口、gaps 过滤、聚焦与无横向溢出。
+
+## 2026-10-11 身份别名批次 1
+
+处理 4 条与常显语言相关的别名碰撞：`cperl` 不并入 Perl，`jruby` 不并入 Ruby，`lisp` 不并入 Common Lisp，`visual basic` 不并入 Visual Basic .NET。核读对应官方/规范页面并保存响应 SHA；原始 PLDB 字段不改，关系与实现身份仍单独研究。审计规则不再重复计算已人工声明的误别名，当前 124 行身份问题中 6 行已明确，118 行待核。`INTEGRITY.md` 已同步到当前 93 审查、208 来源、421 设计关系、318 字段待核、233 地图节点。`npm test` 62/62、构建通过；提交 `ac87ec1`，Actions `38117111217` build/deploy 成功。
