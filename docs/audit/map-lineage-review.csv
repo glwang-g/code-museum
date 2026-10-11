@@ -84,7 +84,7 @@ golfscript,GolfScript,2007,unreviewed,,,0,0,0,0,0,,no-map-link
 grass,GRASS,1977,unreviewed,,,0,0,0,0,0,,no-map-link
 groovy,Groovy,2003,verified-language,java,kotlin,2,2,0,0,0,,cited-only
 hack,Hack,2014,unreviewed,,,0,0,0,0,0,,no-map-link
-haskell,Haskell,1990,verified-language,apl | clean | common-lisp | lisp | miranda | scheme | standard-ml,curry | rust,9,9,0,6,0,,cited-only
+haskell,Haskell,1990,verified-language,apl | clean | common-lisp | lisp | miranda | scheme | standard-ml,curry | rust,9,9,0,12,0,,cited-only
 haxe,Haxe,2005,unreviewed,,,0,0,0,0,0,,no-map-link
 hexagony,hexagony,2015,unreviewed,,,0,0,0,0,0,,no-map-link
 hmmm,HMMM,2006,unreviewed,,,0,0,0,0,0,,no-map-link

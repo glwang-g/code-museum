@@ -1037,5 +1037,59 @@
     "source": "https://www.ps.uni-saarland.de/alice/manual/language.html",
     "sourceSha256": "4f60e5975dd43761338899e78fb8654468420b69ffd14490be4083ce79b46882",
     "evidence": "Alice ML 官方 Language Manual 明确写：“Alice ML is based on the Standard ML programming language (SML)”，并说明 Alice 相对 SML 增加 futures、惰性、并发、扩展类型和高阶模块等扩展。这里表示以 Standard ML 为基础的设计扩展，不声称完整超集、所有 SML 程序兼容或同一实现。"
+  },
+  {
+    "from": "iswim",
+    "to": "haskell",
+    "type": "influencedBy",
+    "label": "作为函数式语言设计前驱",
+    "source": "https://www.haskell.org/onlinereport/preface-jfp.html",
+    "sourceSha256": "5d22e79fe81fdba3c05d3474550f1976112f7dac02491c32d1fd76aba6407749",
+    "evidence": "Haskell 官方报告序言由 Simon Peyton Jones 明确列出这些语言为 “particularly influential”，并写“Without these forerunners Haskell would not have been possible.” 这里表示报告方确认的整体设计前驱影响；不细化到未说明的具体机制、版本兼容或超集关系，也不因为端点在馆藏中而自动加入地图。"
+  },
+  {
+    "from": "fp",
+    "to": "haskell",
+    "type": "influencedBy",
+    "label": "作为函数级语言设计前驱",
+    "source": "https://www.haskell.org/onlinereport/preface-jfp.html",
+    "sourceSha256": "5d22e79fe81fdba3c05d3474550f1976112f7dac02491c32d1fd76aba6407749",
+    "evidence": "Haskell 官方报告序言由 Simon Peyton Jones 明确列出这些语言为 “particularly influential”，并写“Without these forerunners Haskell would not have been possible.” 这里表示报告方确认的整体设计前驱影响；不细化到未说明的具体机制、版本兼容或超集关系，也不因为端点在馆藏中而自动加入地图。"
+  },
+  {
+    "from": "ml",
+    "to": "haskell",
+    "type": "influencedBy",
+    "label": "作为 ML 家族设计前驱",
+    "source": "https://www.haskell.org/onlinereport/preface-jfp.html",
+    "sourceSha256": "5d22e79fe81fdba3c05d3474550f1976112f7dac02491c32d1fd76aba6407749",
+    "evidence": "Haskell 官方报告序言由 Simon Peyton Jones 明确列出这些语言为 “particularly influential”，并写“Without these forerunners Haskell would not have been possible.” 这里表示报告方确认的整体设计前驱影响；不细化到未说明的具体机制、版本兼容或超集关系，也不因为端点在馆藏中而自动加入地图。"
+  },
+  {
+    "from": "hope",
+    "to": "haskell",
+    "type": "influencedBy",
+    "label": "作为惰性函数式语言设计前驱",
+    "source": "https://www.haskell.org/onlinereport/preface-jfp.html",
+    "sourceSha256": "5d22e79fe81fdba3c05d3474550f1976112f7dac02491c32d1fd76aba6407749",
+    "evidence": "Haskell 官方报告序言由 Simon Peyton Jones 明确列出这些语言为 “particularly influential”，并写“Without these forerunners Haskell would not have been possible.” 这里表示报告方确认的整体设计前驱影响；不细化到未说明的具体机制、版本兼容或超集关系，也不因为端点在馆藏中而自动加入地图。"
+  },
+  {
+    "from": "gofer",
+    "to": "haskell",
+    "type": "influencedBy",
+    "label": "作为 Haskell 前身实现设计前驱",
+    "source": "https://www.haskell.org/onlinereport/preface-jfp.html",
+    "sourceSha256": "5d22e79fe81fdba3c05d3474550f1976112f7dac02491c32d1fd76aba6407749",
+    "evidence": "Haskell 官方报告序言由 Simon Peyton Jones 明确列出这些语言为 “particularly influential”，并写“Without these forerunners Haskell would not have been possible.” 这里表示报告方确认的整体设计前驱影响；不细化到未说明的具体机制、版本兼容或超集关系，也不因为端点在馆藏中而自动加入地图。"
+  },
+  {
+    "from": "sisal",
+    "to": "haskell",
+    "type": "influencedBy",
+    "label": "作为数据流/并行函数语言设计前驱",
+    "source": "https://www.haskell.org/onlinereport/preface-jfp.html",
+    "sourceSha256": "5d22e79fe81fdba3c05d3474550f1976112f7dac02491c32d1fd76aba6407749",
+    "evidence": "Haskell 官方报告序言由 Simon Peyton Jones 明确列出这些语言为 “particularly influential”，并写“Without these forerunners Haskell would not have been possible.” 这里表示报告方确认的整体设计前驱影响；不细化到未说明的具体机制、版本兼容或超集关系，也不因为端点在馆藏中而自动加入地图。"
   }
 ]

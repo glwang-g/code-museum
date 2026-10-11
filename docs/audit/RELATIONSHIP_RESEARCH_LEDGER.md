@@ -38,6 +38,19 @@
 | Lisp → Clojure | Batch 27 | Clojure 官方明确称其为 Lisp 家族成员并承继 code-as-data/宏系统 |
 | Standard ML → Alice | Batch 28 | Alice 官方手册明确称其基于 Standard ML 并列出扩展 |
 
+### 批次 29：Haskell 报告的非地图前驱
+
+| 关系 | 批次 | 结论 |
+| --- | --- | --- |
+| ISWIM → Haskell | Batch 29 | 官方报告列为 particularly influential forerunner |
+| FP → Haskell | Batch 29 | 官方报告列为 particularly influential forerunner |
+| ML → Haskell | Batch 29 | 官方报告列为 particularly influential forerunner |
+| Hope → Haskell | Batch 29 | 官方报告列为 particularly influential forerunner |
+| Gofer → Haskell | Batch 29 | 官方报告列为 particularly influential forerunner |
+| Sisal → Haskell | Batch 29 | 官方报告列为 particularly influential forerunner |
+
+Id 在报告中被列为前驱，但当前 PLDB 快照没有对应端点，保留为馆藏/关系待办。
+
 ### 批次 24：Haskell 报告序言列出的地图可见前驱
 
 | 关系 | 批次 | 结论 |
