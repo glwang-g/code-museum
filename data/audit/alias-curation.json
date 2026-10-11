@@ -39,5 +39,21 @@
     ],
     "reason": "Microsoft 将 Visual Basic 6.0 旧文档与 Visual Basic .NET 文档分开维护；馆藏同时存在 legacy Visual Basic 与 VB.NET 记录，不能把泛称 Visual Basic 直接解析为 .NET 版本。",
     "source": "https://learn.microsoft.com/en-us/previous-versions/visualstudio/visual-basic-6/visual-basic-6.0-documentation"
+  },
+  {
+    "id": "starlark",
+    "exclude": [
+      "bazel"
+    ],
+    "reason": "Bazel 官方说明 BUILD 文件使用 Starlark 求值；Bazel 是构建工具/平台，Starlark 是配置与规则语言。工具名称不能作为语言别名合并。",
+    "source": "https://bazel.build/concepts/build-files"
+  },
+  {
+    "id": "php",
+    "exclude": [
+      "inc"
+    ],
+    "reason": "PHP 官方说明 include 是 PHP 构造并用于包含和求值文件；`inc` 是文件名/包含约定，不能据此把独立 INC 记录合并到 PHP。INC 自身身份仍待核。",
+    "source": "https://www.php.net/manual/en/function.include.php"
   }
 ]

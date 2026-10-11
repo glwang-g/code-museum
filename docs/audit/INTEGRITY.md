@@ -7,7 +7,7 @@
 - [PLDB 固定快照](../../data/raw/pldb.snapshot.json)有 5,155 条记录，4,608 条被该来源标为语言。这是该快照的完整导入，不能推导出历史编程语言的完整收录。
 - [GitHub Linguist 固定清单](../../data/raw/linguist.snapshot.json)来自提交 `76f88c6d3c22f8560d22d29854f24d9607f9edde`，原文件和 [MIT 许可](../../data/raw/linguist-LICENSE)一并保存。其 836 个文件语言/类型条目中，563 个标记为 `programming`。与 PLDB 对照有 402 个同名、1 个来源别名匹配、25 个可按 ID 猜测对应、135 个名称未匹配。逐项队列见 [linguist-crosscheck.csv](linguist-crosscheck.csv)。ID 猜测可能混淆不同语言，未匹配也可能是名称不同、方言/版本粒度不同、PLDB 缺条，或 Linguist 的文件类型分类不适合本馆；**不能把 135 当成已证实缺失语言数**。PLDB 自身也引用 Linguist 字段，这两个来源并非完全独立。
 - HOPL [首页](https://hopl.info/)在 2026-09-25 显示其历史名录有 8,945 条语言。它与 PLDB 的口径不同，不能直接算覆盖率；页面同时声明不得复制或再发布内容，因此本项目没有搬运它的完整名录。PLDB 中有 1,808 条带 HOPL 链接，说明有可进一步逐项核对的出处，但不表示反向覆盖已核完。
-- [identity-issues.csv](identity-issues.csv)列出 124 行同名或别名冲突审查线索：80 行同名、37 行别名等于其他记录名、6 行已人工确认的误别名和 1 行校订名称重叠。已明确排除 `cperl`→Perl、`jruby`→Ruby、`lisp`→Common Lisp、`visual basic`→Visual Basic .NET，以及 PLDB 把 VBA 叫做 `vb6`、`visual basic 6` 的误别名；理由与来源记录在 [alias-curation.json](../../data/audit/alias-curation.json)，原始快照未被修改。其他碰撞保留为待核，不自动合并。
+- [identity-issues.csv](identity-issues.csv)列出 124 行同名或别名冲突审查线索：80 行同名、35 行别名等于其他记录名、8 行已人工确认的误别名和 1 行校订名称重叠。已明确排除 `cperl`→Perl、`jruby`→Ruby、`lisp`→Common Lisp、`visual basic`→Visual Basic .NET、`bazel`→Starlark、`inc`→PHP，以及 PLDB 把 VBA 叫做 `vb6`、`visual basic 6` 的误别名；理由与来源记录在 [alias-curation.json](../../data/audit/alias-curation.json)，原始快照未被修改。其他碰撞保留为待核，不自动合并。
 
 ## 2. 语言证据与可回溯性
 
