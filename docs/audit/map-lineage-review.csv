@@ -84,7 +84,7 @@ golfscript,GolfScript,2007,unreviewed,,,0,0,0,0,0,,no-map-link
 grass,GRASS,1977,unreviewed,,,0,0,0,0,0,,no-map-link
 groovy,Groovy,2003,verified-language,java,kotlin,2,2,0,0,0,,cited-only
 hack,Hack,2014,unreviewed,,,0,0,0,0,0,,no-map-link
-haskell,Haskell,1990,verified-language,,curry | rust,2,2,0,6,1,miranda,cited-only
+haskell,Haskell,1990,verified-language,miranda,curry | rust,3,3,0,6,0,,cited-only
 haxe,Haxe,2005,unreviewed,,,0,0,0,0,0,,no-map-link
 hexagony,hexagony,2015,unreviewed,,,0,0,0,0,0,,no-map-link
 hmmm,HMMM,2006,unreviewed,,,0,0,0,0,0,,no-map-link
@@ -123,7 +123,7 @@ malbolge,Malbolge,1998,unreviewed,,,0,0,0,0,0,,no-map-link
 matlab,MATLAB,1984,verified-language,,julia | octave,2,2,0,1,1,java,cited-only
 mercury,Mercury,1995,unreviewed,,,0,0,0,0,0,,no-map-link
 minizinc,MiniZinc,2012,unreviewed,,,0,0,0,0,0,,no-map-link
-miranda,Miranda,1985,unreviewed,,,0,0,0,0,1,haskell,no-map-link
+miranda,Miranda,1985,unreviewed,,haskell,1,1,0,0,0,,cited-only
 mlir,MLIR,2019,unreviewed,llvmir,,1,1,0,3,0,,cited-only
 modula-2,Modula-2,1978,historical-primary-source,pascal,oberon,2,2,0,4,0,,cited-only
 moonscript,MoonScript,2011,unreviewed,,,0,0,0,0,0,,no-map-link

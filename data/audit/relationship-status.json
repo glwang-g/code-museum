@@ -3,10 +3,10 @@
   "scope": "全量关系结构检查与常显标签逐项盘点；摘录已存不等于史料论证或关系覆盖全部核实。缺线不表示没有上游。",
   "summary": {
     "labels": 50,
-    "relations": 432,
+    "relations": 433,
     "mapDesignGaps": 3,
     "states": {
-      "excerpt-recorded": 114,
+      "excerpt-recorded": 115,
       "field-only": 318
     },
     "warnings": 5
@@ -392,7 +392,9 @@
       "name": "Haskell",
       "year": 1990,
       "languageStatus": "verified-language",
-      "upstream": [],
+      "upstream": [
+        "miranda|haskell|influencedBy"
+      ],
       "downstream": [
         "haskell|civet|influencedBy",
         "haskell|curry|influencedBy",
@@ -404,11 +406,11 @@
         "haskell|scrapscript|influencedBy"
       ],
       "ecology": [],
-      "mapLinks": 2,
+      "mapLinks": 3,
       "fieldOnly": 6,
       "citationOnly": 0,
       "needsDirectEvidence": 0,
-      "excerptRecorded": 2,
+      "excerptRecorded": 3,
       "state": "needs-review"
     },
     {
@@ -6188,6 +6190,39 @@
       ]
     },
     {
+      "from": "miranda",
+      "to": "haskell",
+      "type": "influencedBy",
+      "label": "惰性纯函数语言设计影响",
+      "source": "https://www.cs.kent.ac.uk/people/staff/dat/miranda/3.8.html",
+      "sourceSha256": "8100faaf117101235c3c65c9d2780e20577286d6cf1780178b18e0b8f012ba0d",
+      "evidence": "Hudak、Hughes、Peyton Jones、Wadler《A History of Haskell: Being Lazy with Class》第3.8节明确写：“Haskell's design was, therefore, strongly influenced by Miranda.” 同段说明 Miranda 是当时最成熟、广泛使用的非严格函数式语言，并在 purity、higher order、laziness、static typing 及语法观感上影响 Haskell。此处表示强设计影响，不声称 Haskell 是 Miranda 的超集或全部程序兼容。",
+      "key": "miranda|haskell|influencedBy",
+      "layer": "design",
+      "state": "excerpt-recorded",
+      "issues": [],
+      "reviewNote": "",
+      "mapVisible": true,
+      "evidenceVersion": {
+        "citedSha256": "8100faaf117101235c3c65c9d2780e20577286d6cf1780178b18e0b8f012ba0d",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
+      "sources": [
+        {
+          "url": "https://www.cs.kent.ac.uk/people/staff/dat/miranda/3.8.html",
+          "finalUrl": "https://www.cs.kent.ac.uk/people/staff/dat/miranda/3.8.html",
+          "title": "A History of Haskell: Being Lazy with Class — 3.8 Haskell and Miranda",
+          "excerpt": "Haskell's design was, therefore, strongly influenced by Miranda.",
+          "checkedAt": "2026-10-11T06:20:00+00:00",
+          "sha256": "8100faaf117101235c3c65c9d2780e20577286d6cf1780178b18e0b8f012ba0d",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected",
+          "reviewId": "haskell",
+          "locator": "Section 3.8, Haskell and Miranda"
+        }
+      ]
+    },
+    {
       "from": "ml",
       "to": "mlite",
       "type": "influencedBy",
@@ -9870,8 +9905,8 @@
   ],
   "inputHashes": {
     "data/raw/pldb.json": "57f45d25bba78ab6bc4af5d969356d2efbfcc7c1ee722dbb5c708d60aa78ba77",
-    "data/audit/reviews.json": "324b7a5654790b2a95da3d773f27a4008795ef67136a67b287aa5e31cb71de7b",
-    "data/relationship-overrides.json": "545c4439eb728adf47b2ff88064a325069b20eae7c301a94f924904c154d5093",
+    "data/audit/reviews.json": "9998b3dabcfd9be7f1d6e23cee99afe1024ae28fd9e6fdc650f99e60f47c8513",
+    "data/relationship-overrides.json": "4daaa2067553177b711cddc1ad6a5d583a20ecd4d13201b324df2e0b59430439",
     "data/ecosystem-relations.json": "0d96e92a3853eddc6b32e4a45d5c90223d2096fa35438823f7dcfe72ce161e76",
     "data/audit/relationship-decisions.json": "4339ab007ed91414653b56ddf2dcbe0a9450de5df1705c9ad76c1fbc7db53960",
     "data/audit/label-selection.json": "dc5eee62fa662b0d60940375d8a3ec56ac2bbf84ee2b9922a290d46d11cc866f"

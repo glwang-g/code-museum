@@ -26,6 +26,7 @@
 | MacLisp → Common Lisp | Batch 22 | 作者明确称 Common Lisp 是 MacLisp 的后继 |
 | Scheme → Common Lisp | Batch 22 | 作者明确写受 Scheme 有限度影响 |
 | Interlisp → Common Lisp | Batch 22 | 作者明确写受 Interlisp 有限度影响 |
+| Miranda → Haskell | Batch 23 | Haskell 设计者历史论文明确称设计受 Miranda 强烈影响 |
 
 ## 当前范围内不补线
 

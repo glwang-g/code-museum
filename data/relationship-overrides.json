@@ -938,5 +938,14 @@
     "source": "https://www.cs.cmu.edu/Groups/AI/html/cltl/clm/node5.html",
     "sourceSha256": "d3265cc9788d2cdf996b6ef1773671f28d074f4c5cc381c1c6cbc6612e8420c2",
     "evidence": "同一章称 Common Lisp 受 Interlisp “to some extent”影响。只记录为局部设计输入，不表示版本兼容或完整继承 Interlisp 环境。"
+  },
+  {
+    "from": "miranda",
+    "to": "haskell",
+    "type": "influencedBy",
+    "label": "惰性纯函数语言设计影响",
+    "source": "https://www.cs.kent.ac.uk/people/staff/dat/miranda/3.8.html",
+    "sourceSha256": "8100faaf117101235c3c65c9d2780e20577286d6cf1780178b18e0b8f012ba0d",
+    "evidence": "Hudak、Hughes、Peyton Jones、Wadler《A History of Haskell: Being Lazy with Class》第3.8节明确写：“Haskell's design was, therefore, strongly influenced by Miranda.” 同段说明 Miranda 是当时最成熟、广泛使用的非严格函数式语言，并在 purity、higher order、laziness、static typing 及语法观感上影响 Haskell。此处表示强设计影响，不声称 Haskell 是 Miranda 的超集或全部程序兼容。"
   }
 ]

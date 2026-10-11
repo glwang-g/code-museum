@@ -1049,6 +1049,19 @@
           "finalUrl": "https://downloads.haskell.org/ghc/latest/docs/users_guide/ghci.html",
           "decodedBodySha256": "4b672a9c70dddd164accbdd0fd6334a03e43500446a429252e1a155a26c3c98a",
           "excerpt": "hem in future expressions or statements. The syntax of a statement accepted at the GHCi prompt is exactly the same as the syntax of a statement in a Haskell do expression. However, there’s no monad overloading here: statements typed at the prompt must be in the IO monad. ghci> x <- return 42 ghci> p"
+        },
+        {
+          "role": "关系依据",
+          "url": "https://www.cs.kent.ac.uk/people/staff/dat/miranda/3.8.html",
+          "checkedAt": "2026-10-11T06:20:00+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "A History of Haskell: Being Lazy with Class — 3.8 Haskell and Miranda",
+          "finalUrl": "https://www.cs.kent.ac.uk/people/staff/dat/miranda/3.8.html",
+          "decodedBodySha256": "8100faaf117101235c3c65c9d2780e20577286d6cf1780178b18e0b8f012ba0d",
+          "excerpt": "Haskell's design was, therefore, strongly influenced by Miranda.",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected",
+          "locator": "Section 3.8, Haskell and Miranda"
         }
       ]
     },
