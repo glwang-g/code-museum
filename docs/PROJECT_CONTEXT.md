@@ -450,3 +450,5 @@ GitHub 推送同时报告仓库已正式迁至 `glwang-g/code-museum`。站点�
 `npm test` 61/61、离线构建通过；探索浏览器回归在 1440/390 验证 XSLT 缺口入口、3 行 gaps 过滤、焦点定位及无横向溢出。提交 `9cbb69b`，Actions `38115359630` build/deploy 成功，正式站 `museum.js` 与 `relationship-coverage.js` 哈希和本地构建一致。证据见 `data/audit/relationship-gap-research-browser-checks.json`。
 
 地图层进一步补上同一入口：选中无设计层关系的常显语言时，底部状态旁显示“查看研究待办”，点击复用关系核对的 gaps 聚焦流程；恢复全景自动隐藏。`npm test` 61/61、构建和 1440/390 浏览器回归通过，提交 `6de9d65` 对应 Actions `38115707001` build/deploy 成功。
+
+地图缺口按钮文案进一步收紧为“设计层待补 · 查看研究待办”，避免在实现与生态层误读。`npm test` 61/61、构建与 1440/390 聚焦回归通过；提交 `3f9b2ac` 对应 Actions `38115889027` build/deploy 成功，正式 `index.html` SHA-256 `fe659e80…` 与本地构建一致。
