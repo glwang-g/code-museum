@@ -42,7 +42,7 @@ smalltalk,Smalltalk,1972,verified-language,lisp | simula,ruby,3,3,0,0,0,,cited-o
 snobol,SNOBOL,1962,unreviewed,,lua,1,1,0,0,0,,cited-only
 sql,SQL,1974,verified-language,,pl-sql,1,1,0,6,0,,cited-only
 swift,Swift,2014,verified-language,objective-c,rust,2,2,0,1,0,,cited-only
-typescript,TypeScript,2012,verified-language,javascript,,1,1,0,4,0,,cited-only
+typescript,TypeScript,2012,verified-language,f-sharp | javascript,,2,2,0,4,0,,cited-only
 vbscript,VBScript,1996,verified-language,vba,,1,1,0,0,1,visual-basic,cited-only
 vhdl,VHDL,1983,verified-language,ada,,1,1,0,0,0,,cited-only
 visual-basic,Visual Basic,1991,unreviewed,basic,vba | visual-basic.net,3,3,0,1,1,vbscript,cited-only

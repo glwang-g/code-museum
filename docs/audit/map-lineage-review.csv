@@ -65,7 +65,7 @@ entropy,Entropy,2021,unreviewed,,,0,0,0,0,0,,no-map-link
 erlang,Erlang,1986,verified-language,prolog,rust,2,2,0,1,0,,cited-only
 euphoria,Euphoria,1993,unreviewed,,,0,0,0,0,0,,no-map-link
 ezhil,Ezhil,2007,unreviewed,,,0,0,0,0,0,,no-map-link
-f-sharp,F#,2005,verified-language,csharp | ocaml,,2,2,0,0,1,python,cited-only
+f-sharp,F#,2005,verified-language,csharp | ocaml,typescript,3,3,0,0,1,python,cited-only
 factor,Factor,2003,unreviewed,,,0,0,0,0,0,,no-map-link
 false,False,1993,unreviewed,,,0,0,0,1,0,,no-map-link
 fennel,Fennel,2016,unreviewed,,,0,0,0,0,0,,no-map-link
@@ -208,7 +208,7 @@ teco,TECO,1963,unreviewed,,,0,0,0,0,0,,no-map-link
 terra,Terra,2012,unreviewed,,,0,0,0,0,0,,no-map-link
 text-executive-programming-language,Text Executive Programming Language,1979,unreviewed,,,0,0,0,0,0,,no-map-link
 thue-programming-language,Thue,2004,unreviewed,,,0,0,0,0,0,,no-map-link
-typescript,TypeScript,2012,verified-language,javascript,,1,1,0,4,0,,cited-only
+typescript,TypeScript,2012,verified-language,f-sharp | javascript,,2,2,0,4,0,,cited-only
 unison,unison,2015,unreviewed,,,0,0,0,0,0,,no-map-link
 unlambda,UNLAMBDA,1999,unreviewed,,,0,0,0,0,0,,no-map-link
 v,V,2019,unreviewed,,,0,0,0,0,0,,no-map-link

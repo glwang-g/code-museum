@@ -1010,5 +1010,14 @@
     "source": "https://fsharp.org/history/hopl-final/hopl-fsharp.pdf",
     "sourceSha256": "db336bd4f1f57c5881477ee5e12995ac164255b81ede10d4bee9a055daf1202a",
     "evidence": "Don Syme《The Early History of F#》第50页回顾两种语言的双向影响时明确写：“F# also influenced by C# 1.0 (objects, properties, events), C# 3.0 (LINQ) and C# 7.0 (Span)”。这里只记录具体语言特性层面的设计输入，不声称 F# 是 C# 的后继、超集或源码兼容实现。"
+  },
+  {
+    "from": "f-sharp",
+    "to": "typescript",
+    "type": "influencedBy",
+    "label": "早期类型检查与类型推断设计输入",
+    "source": "https://fsharp.org/history/hopl-final/hopl-fsharp.pdf",
+    "sourceSha256": "db336bd4f1f57c5881477ee5e12995ac164255b81ede10d4bee9a055daf1202a",
+    "evidence": "Don Syme《The Early History of F#》第50页写：“TypeScript was directly influenced by F#: one of the originators of TypeScript was Luke Hoban, who began TypeScript (then called Strada) immediately after working on F# 2.0.” 作者并引述 Hoban 关于 F# 影响 TypeScript 早期设计部分的说明。这里只记录设计来源，不声称 TypeScript 是 F# 的后继、超集或类型系统兼容实现。"
   }
 ]

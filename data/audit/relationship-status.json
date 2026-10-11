@@ -3,10 +3,10 @@
   "scope": "全量关系结构检查与常显标签逐项盘点；摘录已存不等于史料论证或关系覆盖全部核实。缺线不表示没有上游。",
   "summary": {
     "labels": 50,
-    "relations": 440,
+    "relations": 441,
     "mapDesignGaps": 3,
     "states": {
-      "excerpt-recorded": 122,
+      "excerpt-recorded": 123,
       "field-only": 318
     },
     "warnings": 5
@@ -1011,6 +1011,7 @@
       "year": 2012,
       "languageStatus": "verified-language",
       "upstream": [
+        "f-sharp|typescript|influencedBy",
         "javascript|typescript|supersetOf"
       ],
       "downstream": [
@@ -1020,11 +1021,11 @@
         "typescript|static-typescript|supersetOf"
       ],
       "ecology": [],
-      "mapLinks": 1,
+      "mapLinks": 2,
       "fieldOnly": 3,
       "citationOnly": 0,
       "needsDirectEvidence": 0,
-      "excerptRecorded": 2,
+      "excerptRecorded": 3,
       "state": "needs-review"
     },
     {
@@ -3639,6 +3640,39 @@
       "mapVisible": false,
       "evidenceVersion": null,
       "sources": []
+    },
+    {
+      "from": "f-sharp",
+      "to": "typescript",
+      "type": "influencedBy",
+      "label": "早期类型检查与类型推断设计输入",
+      "source": "https://fsharp.org/history/hopl-final/hopl-fsharp.pdf",
+      "sourceSha256": "db336bd4f1f57c5881477ee5e12995ac164255b81ede10d4bee9a055daf1202a",
+      "evidence": "Don Syme《The Early History of F#》第50页写：“TypeScript was directly influenced by F#: one of the originators of TypeScript was Luke Hoban, who began TypeScript (then called Strada) immediately after working on F# 2.0.” 作者并引述 Hoban 关于 F# 影响 TypeScript 早期设计部分的说明。这里只记录设计来源，不声称 TypeScript 是 F# 的后继、超集或类型系统兼容实现。",
+      "key": "f-sharp|typescript|influencedBy",
+      "layer": "design",
+      "state": "excerpt-recorded",
+      "issues": [],
+      "reviewNote": "",
+      "mapVisible": true,
+      "evidenceVersion": {
+        "citedSha256": "db336bd4f1f57c5881477ee5e12995ac164255b81ede10d4bee9a055daf1202a",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
+      "sources": [
+        {
+          "url": "https://fsharp.org/history/hopl-final/hopl-fsharp.pdf",
+          "finalUrl": "https://fsharp.org/history/hopl-final/hopl-fsharp.pdf",
+          "title": "Don Syme: The Early History of F#, HOPL 2020, section 7, PDF p.18",
+          "excerpt": "F# was never fully compatible with any version of OCaml, though it shared a compatible subset, and it took Caml-Light and OCaml as its principal sources of design guidance and inspiration.",
+          "checkedAt": "2026-10-09T05:27:05.173052+00:00",
+          "sha256": "db336bd4f1f57c5881477ee5e12995ac164255b81ede10d4bee9a055daf1202a",
+          "hashScope": "complete downloaded PDF bytes; excerpt extracted with PDFKit and visually checked on page 18",
+          "reviewId": "f-sharp",
+          "locator": ""
+        }
+      ]
     },
     {
       "from": "false",
@@ -10147,7 +10181,7 @@
   "inputHashes": {
     "data/raw/pldb.json": "57f45d25bba78ab6bc4af5d969356d2efbfcc7c1ee722dbb5c708d60aa78ba77",
     "data/audit/reviews.json": "3ba14cf70f687b7664969bc11c4ec1b387ea3585e8bb8a66c8d71e7b830c4516",
-    "data/relationship-overrides.json": "143e0bca8c7895082485045188776145472e8c66c402e91b3b0018caa63b2dc4",
+    "data/relationship-overrides.json": "04a5582c1e36a1f4a302c2a8886ae102dd7e88554370002ee06f418a1682ce70",
     "data/ecosystem-relations.json": "0d96e92a3853eddc6b32e4a45d5c90223d2096fa35438823f7dcfe72ce161e76",
     "data/audit/relationship-decisions.json": "4339ab007ed91414653b56ddf2dcbe0a9450de5df1705c9ad76c1fbc7db53960",
     "data/audit/label-selection.json": "dc5eee62fa662b0d60940375d8a3ec56ac2bbf84ee2b9922a290d46d11cc866f"
