@@ -2969,6 +2969,19 @@
           "role": "实现",
           "reviewed": true,
           "excerpt": "GNU MARST includes three components:\n\n*  the translator, MARST, which allows translating Algol 60 programs to\n   the C programming language;\n\n*  the library, ALGLIB, which contains pre-compiled standard Algol 60\n   procedures and additional library routines. This library is used at\n   the linking stage.\n\n*  the converter, MACVT, which allows converting Algol 60 programs from\n   some other (old) representations to the MARST representation.\n\nThe input language of the translator is the hardware representation of\nfull (i.e. Level 0) Algol 60 as described in the IFIP document:\n\nModified Report on the Algorithmic Language Algol 60, The Computer\nJournal, v.19, No.4, Nov. 1976, pp.364-79. (This document is an\nofficial standard IFIP document. It is *not* a part of GNU MARST.)\n\nNote that there are some differences between the Revised Report and\nthe Modified Report since the latter is a result of application of the\nfollowing IFIP document to the Revised Report:\n\nR.M.De Morgan, I.D.Hill, and B.A.Wichmann. A Supplement to the ALGOL 60\nRevised Report. The Computer Journal, Vol. 19, No. 3, 1976, pp. 276-88.\n(This document is an official standard IFIP document. It is *not* part\nof GNU MARST.)\n\nThe translator and all library routines are written in a basic dialect\nof the C programming language known as ANSI C89 and described in the\nfollowing document:\n\nAmerican National Standard for Information Systems - Programming\nLanguage C, ANSI X3.159-1989. (This document is an official standard\nANSI/ISO document. It is *not* part of GNU MARST.)\n\nThe output code produced by the translator is in the sam"
+        },
+        {
+          "role": "关系依据",
+          "url": "https://www.algol60.org/docsW/AlgolW_STAN.pdf",
+          "checkedAt": "2026-10-11T07:10:00+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "ALGOL W Implementation Report (Stanford)",
+          "finalUrl": "https://www.algol60.org/docsW/AlgolW_STAN.pdf",
+          "decodedBodySha256": "d21c183f5ffaffea75a202ab549283d60432838d5488af3a72aad8f1e48b3306",
+          "excerpt": "\"A Contribution to the Development of ALGOL\" by Niklaus Wirth and C. A. R. Hoare was the basis for a compiler developed for the IBM 360 at Stanford University. This report is a description of the implemented language, ALGOL W. Historical background and the goals of the language may be found in the Wirth and Hoare paper.",
+          "hashScope": "complete downloaded PDF bytes; excerpt extracted with PDFKit",
+          "locator": "page 3, preface and historical note"
         }
       ]
     },

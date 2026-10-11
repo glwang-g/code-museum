@@ -102,10 +102,9 @@
     },
     {
       "id": "algol-60|algol-w|influencedBy",
-      "status": "closed-no-qualifying-source",
-      "batch": "2026-10-10_BATCH-17",
-      "note": "The batch confirmed a historical endpoint candidate but did not obtain a stable first-party ALGOL W/ALGOL-X source with a directly quotable design statement.",
-      "reopenWhen": "A stable primary ALGOL W or ALGOL-X report, author account, or fixed archival copy explicitly connects the language to ALGOL 60."
+      "status": "verified",
+      "batch": "2026-10-11_BATCH-31",
+      "note": "Stanford-hosted ALGOL W implementation report states the implemented language was based on Wirth/Hoare’s development work and points to that paper for historical background and goals. Scope is design/implementation input, not strict superset or source compatibility."
     },
     {
       "id": "algol-60|modula|influencedBy",

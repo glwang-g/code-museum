@@ -6,8 +6,8 @@
     "relations": 449,
     "mapDesignGaps": 3,
     "states": {
-      "excerpt-recorded": 131,
-      "field-only": 318
+      "excerpt-recorded": 132,
+      "field-only": 317
     },
     "warnings": 6
   },
@@ -49,10 +49,10 @@
       ],
       "ecology": [],
       "mapLinks": 3,
-      "fieldOnly": 4,
+      "fieldOnly": 3,
       "citationOnly": 0,
       "needsDirectEvidence": 0,
-      "excerptRecorded": 2,
+      "excerptRecorded": 3,
       "state": "needs-review"
     },
     {
@@ -1395,17 +1395,34 @@
       "from": "algol-60",
       "to": "algol-w",
       "type": "influencedBy",
-      "source": "https://github.com/breck7/pldb/blob/main/concepts/algol-w.scroll",
+      "label": "ALGOL 60 的改造与实现基础",
+      "source": "https://www.algol60.org/docsW/AlgolW_STAN.pdf",
+      "sourceSha256": "d21c183f5ffaffea75a202ab549283d60432838d5488af3a72aad8f1e48b3306",
+      "evidence": "Stanford 归档的 ALGOL W 实现报告明确说：Wirth 与 Hoare 的《A Contribution to the Development of ALGOL》是该编译器的“basis”，本报告描述由该工作实现的 ALGOL W；报告把语言历史背景和目标指向该论文。关系限定为 ALGOL 60 上的改造与实现设计输入，不声称 ALGOL W 是完整超集或所有 ALGOL 60 程序兼容。",
       "key": "algol-60|algol-w|influencedBy",
       "layer": "design",
-      "state": "field-only",
-      "issues": [
-        "缺少关系论证"
-      ],
+      "state": "excerpt-recorded",
+      "issues": [],
       "reviewNote": "",
       "mapVisible": false,
-      "evidenceVersion": null,
-      "sources": []
+      "evidenceVersion": {
+        "citedSha256": "d21c183f5ffaffea75a202ab549283d60432838d5488af3a72aad8f1e48b3306",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
+      "sources": [
+        {
+          "url": "https://www.algol60.org/docsW/AlgolW_STAN.pdf",
+          "finalUrl": "https://www.algol60.org/docsW/AlgolW_STAN.pdf",
+          "title": "ALGOL W Implementation Report (Stanford)",
+          "excerpt": "\"A Contribution to the Development of ALGOL\" by Niklaus Wirth and C. A. R. Hoare was the basis for a compiler developed for the IBM 360 at Stanford University. This report is a description of the implemented language, ALGOL W. Historical background and the goals of the language may be found in the Wirth and Hoare paper.",
+          "checkedAt": "2026-10-11T07:10:00+00:00",
+          "sha256": "d21c183f5ffaffea75a202ab549283d60432838d5488af3a72aad8f1e48b3306",
+          "hashScope": "complete downloaded PDF bytes; excerpt extracted with PDFKit",
+          "reviewId": "algol-60",
+          "locator": "page 3, preface and historical note"
+        }
+      ]
     },
     {
       "from": "algol-60",
@@ -10459,19 +10476,19 @@
   ],
   "inputHashes": {
     "data/raw/pldb.json": "57f45d25bba78ab6bc4af5d969356d2efbfcc7c1ee722dbb5c708d60aa78ba77",
-    "data/audit/reviews.json": "f752bf1b71ca06a6235c9659e5176cef9d8265389923bf93c3f27c7975ea2352",
-    "data/relationship-overrides.json": "a6d9ec8cf8aa01e2923f47c0aa2ddffb4b859454860de1c5fe07f8e2213c529b",
+    "data/audit/reviews.json": "f44ce2dd17a3cbe8ea86078a339a5a5d143111b894020148e4c515293beb83e0",
+    "data/relationship-overrides.json": "c47e52d5b0d37a75c4bec8c4ebe462234b3d1340bd1dc64315dc3f15a1e87d76",
     "data/ecosystem-relations.json": "0d96e92a3853eddc6b32e4a45d5c90223d2096fa35438823f7dcfe72ce161e76",
     "data/audit/relationship-decisions.json": "5261a7c64734441c96694a1a0b9b8a34cad0195e541e3485807a2a66061055c8",
     "data/audit/label-selection.json": "dc5eee62fa662b0d60940375d8a3ec56ac2bbf84ee2b9922a290d46d11cc866f",
-    "data/audit/relationship-research-ledger.json": "a8a858305f3f9e870b3c2ab3914afb54e154a5603f931507281129bb92ecf0be"
+    "data/audit/relationship-research-ledger.json": "c63ac30550fc8e77b3e0e447e1078810214adea8a21aeaa0ff489c405b309d9d"
   },
   "research": {
     "reopenPolicy": "Reopen a closed item only when a new primary source, a fixed historical version, a resolved endpoint identity, or a materially different relation claim becomes available.",
     "summary": {
       "total": 51,
-      "verified": 37,
-      "closed": 11,
+      "verified": 38,
+      "closed": 10,
       "blocked": 3
     },
     "recent": [

@@ -22,6 +22,7 @@
 | APL → BQN | Batch 17 | BQN 官方说明保留并重做 APL 传统中的核心思想 |
 | JavaScript → JSON | Batch 17 | JSON 官方明确称其基于 JavaScript 标准的一个子集 |
 | C → C3 | Batch 17 | C3 官方 README 明确说保留并现代化 C 的语法与语义 |
+| ALGOL 60 → ALGOL W | Batch 31 | Stanford 归档实现报告明确以 Wirth/Hoare ALGOL 改造工作为编译器基础 |
 | Lisp → Common Lisp | Batch 22 | 作者明确称 Common Lisp 是 Lisp 的新方言 |
 | MacLisp → Common Lisp | Batch 22 | 作者明确称 Common Lisp 是 MacLisp 的后继 |
 | Scheme → Common Lisp | Batch 22 | 作者明确写受 Scheme 有限度影响 |
@@ -72,7 +73,6 @@ Id 在报告中被列为前驱，但当前 PLDB 快照没有对应端点，保�
 | Python → Mojo | Batch 16 | 当前官方材料只支持兼容/互操作说明 |
 | C++ → Chapel | Batch 16 | 未取得 C++ 作为具体设计来源的官方原文 |
 | TypeScript → AssemblyScript | Batch 17 | 官方只说明 TypeScript-like 与相似性，未取得设计来源声明 |
-| ALGOL 60 → ALGOL W | Batch 17 | 本批未取得稳定、可直接引用的 ALGOL W/ALGOL-X 一手设计说明 |
 | ALGOL 60 → Modula | Batch 17 | Wirth 家族连续性不足以证明直接设计边，本批未取得具体输入声明 |
 | ALGOL 60 → Oberon | Batch 17 | 未把中间 Modula 历史折算成直接边，本批未取得直接输入声明 |
 | SQL → SEQUEL 2 | Batch 17 | IBM 论文身份可定位，但本批未取得稳定可读且直接支持该端点的原文 |

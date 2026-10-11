@@ -1091,5 +1091,14 @@
     "source": "https://www.haskell.org/onlinereport/preface-jfp.html",
     "sourceSha256": "5d22e79fe81fdba3c05d3474550f1976112f7dac02491c32d1fd76aba6407749",
     "evidence": "Haskell 官方报告序言由 Simon Peyton Jones 明确列出这些语言为 “particularly influential”，并写“Without these forerunners Haskell would not have been possible.” 这里表示报告方确认的整体设计前驱影响；不细化到未说明的具体机制、版本兼容或超集关系，也不因为端点在馆藏中而自动加入地图。"
+  },
+  {
+    "from": "algol-60",
+    "to": "algol-w",
+    "type": "influencedBy",
+    "label": "ALGOL 60 的改造与实现基础",
+    "source": "https://www.algol60.org/docsW/AlgolW_STAN.pdf",
+    "sourceSha256": "d21c183f5ffaffea75a202ab549283d60432838d5488af3a72aad8f1e48b3306",
+    "evidence": "Stanford 归档的 ALGOL W 实现报告明确说：Wirth 与 Hoare 的《A Contribution to the Development of ALGOL》是该编译器的“basis”，本报告描述由该工作实现的 ALGOL W；报告把语言历史背景和目标指向该论文。关系限定为 ALGOL 60 上的改造与实现设计输入，不声称 ALGOL W 是完整超集或所有 ALGOL 60 程序兼容。"
   }
 ]
