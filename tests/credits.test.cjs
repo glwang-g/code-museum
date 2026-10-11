@@ -26,3 +26,10 @@ test('Runtime credit notices and provenance artifacts are local source inputs',(
     assert.match(entry.source,/^https:\/\//);
   }
 });
+
+test('project links use the canonical repository name after the GitHub move',()=>{
+  for(const file of ['README.md','src/index.html','src/credits.js']){
+    const text=fs.readFileSync(path.join(root,file),'utf8');
+    assert.doesNotMatch(text,/github\.com\/glwang-g\/codemuseum/);
+  }
+});

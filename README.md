@@ -2,7 +2,7 @@
 
 **The Museum of Programming Languages** — 一座可以漫游、检索、比较和动手运行的编程语言博物馆。
 
-[进入正式网站](https://codemuseum.freexlib.com) · [查看源码仓库](https://github.com/glwang-g/codemuseum) · [在线阅读本文档](https://github.com/glwang-g/codemuseum/blob/master/README.md)
+[进入正式网站](https://codemuseum.freexlib.com) · [查看源码仓库](https://github.com/glwang-g/code-museum) · [在线阅读本文档](https://github.com/glwang-g/code-museum/blob/master/README.md)
 
 ## 这是一个什么项目
 
@@ -99,4 +99,4 @@ npm run diagnose:release
 
 ## 网站与源码互链
 
-正式网站的“出处与说明”页提供返回本 README 和 [GitHub 源码仓库](https://github.com/glwang-g/codemuseum) 的链接；README 也提供 [正式网站](https://codemuseum.freexlib.com) 入口。网站内容以实际发布版本为准，源码中的构建、审计和历史记录则保留完整复现依据。
+正式网站的“出处与说明”页提供返回本 README 和 [GitHub 源码仓库](https://github.com/glwang-g/code-museum) 的链接；README 也提供 [正式网站](https://codemuseum.freexlib.com) 入口。网站内容以实际发布版本为准，源码中的构建、审计和历史记录则保留完整复现依据。
