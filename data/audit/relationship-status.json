@@ -3,10 +3,10 @@
   "scope": "全量关系结构检查与常显标签逐项盘点；摘录已存不等于史料论证或关系覆盖全部核实。缺线不表示没有上游。",
   "summary": {
     "labels": 50,
-    "relations": 439,
+    "relations": 440,
     "mapDesignGaps": 3,
     "states": {
-      "excerpt-recorded": 121,
+      "excerpt-recorded": 122,
       "field-only": 318
     },
     "warnings": 5
@@ -249,6 +249,7 @@
       ],
       "downstream": [
         "csharp|chapel|influencedBy",
+        "csharp|f-sharp|influencedBy",
         "csharp|kotlin|influencedBy",
         "csharp|nemerle|influencedBy",
         "csharp|particles|influencedBy",
@@ -259,11 +260,11 @@
       "ecology": [
         "csharp|powershell|extensionInterface"
       ],
-      "mapLinks": 4,
+      "mapLinks": 5,
       "fieldOnly": 4,
       "citationOnly": 0,
       "needsDirectEvidence": 0,
-      "excerptRecorded": 4,
+      "excerptRecorded": 5,
       "state": "needs-review"
     },
     {
@@ -3172,6 +3173,39 @@
       "mapVisible": false,
       "evidenceVersion": null,
       "sources": []
+    },
+    {
+      "from": "csharp",
+      "to": "f-sharp",
+      "type": "influencedBy",
+      "label": "对象、属性、事件与 LINQ 设计输入",
+      "source": "https://fsharp.org/history/hopl-final/hopl-fsharp.pdf",
+      "sourceSha256": "db336bd4f1f57c5881477ee5e12995ac164255b81ede10d4bee9a055daf1202a",
+      "evidence": "Don Syme《The Early History of F#》第50页回顾两种语言的双向影响时明确写：“F# also influenced by C# 1.0 (objects, properties, events), C# 3.0 (LINQ) and C# 7.0 (Span)”。这里只记录具体语言特性层面的设计输入，不声称 F# 是 C# 的后继、超集或源码兼容实现。",
+      "key": "csharp|f-sharp|influencedBy",
+      "layer": "design",
+      "state": "excerpt-recorded",
+      "issues": [],
+      "reviewNote": "",
+      "mapVisible": true,
+      "evidenceVersion": {
+        "citedSha256": "db336bd4f1f57c5881477ee5e12995ac164255b81ede10d4bee9a055daf1202a",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
+      "sources": [
+        {
+          "url": "https://fsharp.org/history/hopl-final/hopl-fsharp.pdf",
+          "finalUrl": "https://fsharp.org/history/hopl-final/hopl-fsharp.pdf",
+          "title": "Don Syme: The Early History of F#, HOPL 2020, section 7, PDF p.18",
+          "excerpt": "F# was never fully compatible with any version of OCaml, though it shared a compatible subset, and it took Caml-Light and OCaml as its principal sources of design guidance and inspiration.",
+          "checkedAt": "2026-10-09T05:27:05.173052+00:00",
+          "sha256": "db336bd4f1f57c5881477ee5e12995ac164255b81ede10d4bee9a055daf1202a",
+          "hashScope": "complete downloaded PDF bytes; excerpt extracted with PDFKit and visually checked on page 18",
+          "reviewId": "f-sharp",
+          "locator": ""
+        }
+      ]
     },
     {
       "from": "csharp",
@@ -10113,7 +10147,7 @@
   "inputHashes": {
     "data/raw/pldb.json": "57f45d25bba78ab6bc4af5d969356d2efbfcc7c1ee722dbb5c708d60aa78ba77",
     "data/audit/reviews.json": "3ba14cf70f687b7664969bc11c4ec1b387ea3585e8bb8a66c8d71e7b830c4516",
-    "data/relationship-overrides.json": "4ee4359ddd743c9d16f5fcdbd554aae853f7abebc59f165636a4b3365c76a65e",
+    "data/relationship-overrides.json": "143e0bca8c7895082485045188776145472e8c66c402e91b3b0018caa63b2dc4",
     "data/ecosystem-relations.json": "0d96e92a3853eddc6b32e4a45d5c90223d2096fa35438823f7dcfe72ce161e76",
     "data/audit/relationship-decisions.json": "4339ab007ed91414653b56ddf2dcbe0a9450de5df1705c9ad76c1fbc7db53960",
     "data/audit/label-selection.json": "dc5eee62fa662b0d60940375d8a3ec56ac2bbf84ee2b9922a290d46d11cc866f"

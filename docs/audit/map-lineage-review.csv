@@ -46,7 +46,7 @@ common-lisp,Common Lisp,1984,verified-language,lisp | scheme,haskell,3,3,0,3,1,d
 common-workflow-language,CWL,2014,unreviewed,,,0,0,0,0,0,,no-map-link
 cpp,C++,1985,verified-language,c,d | java | lua | rust,5,5,0,9,0,,cited-only
 crystal,Crystal,2014,unreviewed,,,0,0,0,1,0,,no-map-link
-csharp,C#,2000,verified-language,java,kotlin | rust | scala,4,4,0,4,0,,cited-only
+csharp,C#,2000,verified-language,java,f-sharp | kotlin | rust | scala,5,5,0,4,0,,cited-only
 curry,Curry,1990,unreviewed,haskell,,1,1,0,0,0,,cited-only
 d,D,2001,verified-language,cpp,,1,1,0,1,0,,cited-only
 dafny,Dafny,2009,unreviewed,,,0,0,0,0,0,,no-map-link
@@ -65,7 +65,7 @@ entropy,Entropy,2021,unreviewed,,,0,0,0,0,0,,no-map-link
 erlang,Erlang,1986,verified-language,prolog,rust,2,2,0,1,0,,cited-only
 euphoria,Euphoria,1993,unreviewed,,,0,0,0,0,0,,no-map-link
 ezhil,Ezhil,2007,unreviewed,,,0,0,0,0,0,,no-map-link
-f-sharp,F#,2005,verified-language,ocaml,,1,1,0,0,1,python,cited-only
+f-sharp,F#,2005,verified-language,csharp | ocaml,,2,2,0,0,1,python,cited-only
 factor,Factor,2003,unreviewed,,,0,0,0,0,0,,no-map-link
 false,False,1993,unreviewed,,,0,0,0,1,0,,no-map-link
 fennel,Fennel,2016,unreviewed,,,0,0,0,0,0,,no-map-link

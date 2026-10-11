@@ -1001,5 +1001,14 @@
     "source": "https://www.haskell.org/onlinereport/preface-jfp.html",
     "sourceSha256": "5d22e79fe81fdba3c05d3474550f1976112f7dac02491c32d1fd76aba6407749",
     "evidence": "Haskell 官方报告序言由 Simon Peyton Jones 明确列出对这些语言/语言系列的“particularly influential”感谢，并写道“Without these forerunners Haskell would not have been possible.” 这里表示报告方确认的整体设计前驱影响，不把这句总括文字细化为未指明的具体机制、版本兼容或超集关系。"
+  },
+  {
+    "from": "csharp",
+    "to": "f-sharp",
+    "type": "influencedBy",
+    "label": "对象、属性、事件与 LINQ 设计输入",
+    "source": "https://fsharp.org/history/hopl-final/hopl-fsharp.pdf",
+    "sourceSha256": "db336bd4f1f57c5881477ee5e12995ac164255b81ede10d4bee9a055daf1202a",
+    "evidence": "Don Syme《The Early History of F#》第50页回顾两种语言的双向影响时明确写：“F# also influenced by C# 1.0 (objects, properties, events), C# 3.0 (LINQ) and C# 7.0 (Span)”。这里只记录具体语言特性层面的设计输入，不声称 F# 是 C# 的后继、超集或源码兼容实现。"
   }
 ]
