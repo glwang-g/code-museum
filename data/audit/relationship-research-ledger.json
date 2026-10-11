@@ -42,10 +42,10 @@
     },
     {
       "id": "xslt|design-layer-gap",
-      "status": "closed-no-qualifying-source",
-      "batch": "2026-10-09_BATCH-14",
-      "note": "XSLT 1.0 references CSS2 and DSSSL, but the recommendation does not state a qualifying design influence.",
-      "reopenWhen": "An author, working-group record, or fixed language-version source explicitly identifies a design input."
+      "status": "blocked",
+      "batch": "2026-10-11_BATCH-33",
+      "note": "W3C 1997 XSL proposal explicitly says “XSL is based on DSSSL,” but the fixed PLDB snapshot has no DSSSL endpoint, so no valid relationship can be written without a curated-record/external-endpoint mechanism.",
+      "reopenWhen": "A curated DSSSL record or an explicitly supported external endpoint is added to the catalogue model."
     },
     {
       "id": "python|mojo|influencedBy",

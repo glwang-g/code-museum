@@ -69,7 +69,7 @@ Id 在报告中被列为前驱，但当前 PLDB 快照没有对应端点，保�
 | 项目 | 批次 | 原因 |
 | --- | --- | --- |
 | 泛称 Assembly | Batch 15 | 不是单一历史语言；需先确定具体方言和设计事件 |
-| XSLT | Batch 14 | 参考文献不等于设计影响声明 |
+| XSLT | Batch 33 | W3C 1997 XSL 提案明确称 XSL 基于 DSSSL；因馆藏无 DSSSL 端点而受阻，不造 ID |
 | Python → Mojo | Batch 16 | 当前官方材料只支持兼容/互操作说明 |
 | C++ → Chapel | Batch 16 | 未取得 C++ 作为具体设计来源的官方原文 |
 | TypeScript → AssemblyScript | Batch 17 | 官方只说明 TypeScript-like 与相似性，未取得设计来源声明 |

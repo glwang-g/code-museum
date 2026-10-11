@@ -10517,15 +10517,15 @@
     "data/ecosystem-relations.json": "0d96e92a3853eddc6b32e4a45d5c90223d2096fa35438823f7dcfe72ce161e76",
     "data/audit/relationship-decisions.json": "5261a7c64734441c96694a1a0b9b8a34cad0195e541e3485807a2a66061055c8",
     "data/audit/label-selection.json": "dc5eee62fa662b0d60940375d8a3ec56ac2bbf84ee2b9922a290d46d11cc866f",
-    "data/audit/relationship-research-ledger.json": "5c195ba1df4d616c4d040e61ee62d1d4af04febc44312ad26127706d354993a1"
+    "data/audit/relationship-research-ledger.json": "a4f2721db146ef89afe9f10f12e0e2e435be5135949fa318b6dad1301ed9cf47"
   },
   "research": {
     "reopenPolicy": "Reopen a closed item only when a new primary source, a fixed historical version, a resolved endpoint identity, or a materially different relation claim becomes available.",
     "summary": {
       "total": 51,
       "verified": 39,
-      "closed": 9,
-      "blocked": 3
+      "closed": 8,
+      "blocked": 4
     },
     "recent": [
       {
