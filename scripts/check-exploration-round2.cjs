@@ -79,6 +79,12 @@ async function screenshot(name){if(!outputDirectory)return;await evaluate('new P
    await evaluate("window.MUSEUM_RELATIONS_UI.open('abc|python|influencedBy')");assert.equal(await evaluate("!!document.querySelector('.evidence-version')"),true);await screenshot(`evidence-${theme}-${width}.png`);
    assert.equal(await evaluate('document.documentElement.scrollWidth<=innerWidth+1'),true);results.push({width,theme,checks:'C/Java/Python directional two-level traversal and URL reload; detail collapse/expand/map return; compact guide; two scoped relations and source version disclosure'});
   }
+  for(const width of [1440,390]){
+   await page('Emulation.setDeviceMetricsOverride',{width,height:width===390?844:1000,deviceScaleFactor:1,mobile:width<500});
+   await evaluate("window.MUSEUM_RELATIONS_UI.openLanguage('xslt')");await wait("!!document.querySelector('#detail-review-gaps')");await evaluate("document.querySelector('#detail-review-gaps').click()");await wait("!document.querySelector('#about').hidden&&!document.querySelector('#relationship-coverage').hidden");
+   const gapState=await evaluate("(()=>{const row=document.querySelector('#relationship-label-rows [data-review-language=\"xslt\"]');return {filter:document.querySelector('#relationship-review-filter').value,active:document.activeElement?.dataset?.reviewLanguage||'',row:!!row,rows:document.querySelectorAll('#relationship-label-rows [data-review-language]').length,overflow:document.documentElement.scrollWidth>innerWidth+1}})()");
+   assert.equal(gapState.filter,'gaps');assert.equal(gapState.active,'xslt');assert.equal(gapState.row,true);assert.equal(gapState.rows,3);assert.equal(gapState.overflow,false);results.push({width,checks:'XSLT design gap opens filtered relationship coverage and focuses XSLT'});
+  }
   for(const language of ['javascript','scheme']){
    await evaluate("window.MUSEUM_GUIDE.start('function-expressions')");
    await evaluate(`(()=>{for(let i=0;i<${language==='javascript'?5:4};i++)document.querySelector('#guide-next').click()})()`);

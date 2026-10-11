@@ -38,6 +38,7 @@
     buttons[next].focus();activate(ids[next]);
   }));
   window.MUSEUM_CREDITS_UI={
+    open(id,anchorId){open(id,anchorId)},
     labelFor(language){const entry=data.groups.flatMap(group=>group.entries).find(item=>item.languages?.includes(language));return entry?`${entry.versionLabel||entry.name} · 项目与许可 ↗`:null},
     openFor(language){const entry=data.groups.flatMap(group=>group.entries).find(item=>item.languages?.includes(language));if(entry)open(entryTabs.get(entry.id)||'runtime-credits','credit-'+entry.id)},
     openRemoteFor(language){const entry=data.groups.flatMap(group=>group.entries).find(item=>item.runtimeIds?.includes(language));if(entry)open(entryTabs.get(entry.id)||'runtime-credits','credit-'+entry.id)}

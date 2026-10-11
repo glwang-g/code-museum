@@ -15,5 +15,6 @@
     rows.innerHTML=shown.map(r=>`<article class="relationship-review-row"><button type="button" data-review-language="${escape(r.id)}">${escape(r.name)} ↗</button><p>设计上游 ${r.upstream.length} · 下游 ${r.downstream.length} · 生态 ${r.ecology.length} · 地图内设计线 ${r.mapLinks}</p><p>${r.state==='excerpts-recorded'?'现有设计关系摘录已存，覆盖仍需持续核对':r.state==='no-design-link'?'未收录设计关系；不表示没有历史上游':`字段待核 ${r.fieldOnly} · 引用缺摘录 ${r.citationOnly} · 直接依据待补 ${r.needsDirectEvidence}`}</p>${notes[r.id]?`<p>${escape(notes[r.id])}</p>`:''}</article>`).join('');
   }
   filter.onchange=render;render();
+  window.MUSEUM_RELATIONSHIP_COVERAGE={focusLanguage(id){window.MUSEUM_CREDITS_UI?.open('relationship-coverage');const review=section.querySelector('#relationship-label-review');if(review)review.open=true;const row=report.labels.find(item=>item.id===id);filter.value=row?.mapLinks?'all':'gaps';render();const target=rows.querySelector('[data-review-language="'+CSS.escape(id)+'"]');target?.scrollIntoView({block:'center'});target?.focus({preventScroll:true})}};
   rows.addEventListener('click',event=>{const button=event.target.closest('[data-review-language]');if(button)window.MUSEUM_RELATIONS_UI.openLanguage(button.dataset.reviewLanguage)});
 })();
