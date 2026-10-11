@@ -216,6 +216,8 @@ async function record(name,detail){results.push({name,detail});console.log('PASS
     assert.equal(await evaluate(`document.querySelectorAll('[data-review-language]').length`),50);
     await evaluate(`document.querySelector('#relationship-review-filter').value='gaps';document.querySelector('#relationship-review-filter').dispatchEvent(new Event('change'));`);
     assert.deepEqual(await evaluate(`Array.from(document.querySelectorAll('[data-review-language]'),b=>b.dataset.reviewLanguage)`),['assembly-language','xslt','zig']);
+    const researchLedger=await evaluate(`(()=>{const box=document.querySelector('.research-ledger');return {exists:!!box,text:box?.textContent||'',items:box?.querySelectorAll('li').length||0,overflow:document.documentElement.scrollWidth>innerWidth}})()`);
+    assert.equal(researchLedger.exists,true);assert.match(researchLedger.text,/已核实/);assert.match(researchLedger.text,/受阻/);assert.equal(researchLedger.items,8);assert.equal(researchLedger.overflow,false,'Research ledger must not overflow the viewport');
     await screenshot('relationship-coverage-'+size.width+'.png');
     await evaluate(`document.querySelector('[data-review-language="zig"]').click()`);
     assert.equal(await evaluate(`document.querySelector('#detail-content h2').textContent`),'Zig');
