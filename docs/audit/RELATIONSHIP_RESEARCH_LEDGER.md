@@ -23,6 +23,7 @@
 | JavaScript → JSON | Batch 17 | JSON 官方明确称其基于 JavaScript 标准的一个子集 |
 | C → C3 | Batch 17 | C3 官方 README 明确说保留并现代化 C 的语法与语义 |
 | C → Zig | Batch 32 | 作者明确以“more pragmatic than C”为目标并逐项说明 C 对照设计，但不称继承/超集 |
+| Sass → Less | Batch 34 | Less 官方明确称最初受 Sass 启发并选择更接近 CSS 的语法 |
 | ALGOL 60 → ALGOL W | Batch 31 | Stanford 归档实现报告明确以 Wirth/Hoare ALGOL 改造工作为编译器基础 |
 | Lisp → Common Lisp | Batch 22 | 作者明确称 Common Lisp 是 Lisp 的新方言 |
 | MacLisp → Common Lisp | Batch 22 | 作者明确称 Common Lisp 是 MacLisp 的后继 |

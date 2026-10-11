@@ -320,6 +320,12 @@
       "status": "verified",
       "batch": "2026-10-11_BATCH-32",
       "note": "Andrew Kelley’s primary introduction explicitly sets “more pragmatic than C” and discusses concrete C comparisons in performance, undefined behavior, error representation, libc and preprocessor policy. Scope is design response/reference, not succession, superset or source compatibility."
+    },
+    {
+      "id": "sass|less|influencedBy",
+      "status": "verified",
+      "batch": "2026-10-11_BATCH-34",
+      "note": "Less official About page says Less was originally inspired by Sass and chose a leaner CSS-like syntax; scope is design input, not bidirectional source compatibility or superset."
     }
   ]
 }

@@ -1109,5 +1109,14 @@
     "source": "https://andrewkelley.me/post/intro-to-zig.html",
     "sourceSha256": "3f657aefb1859f485b5bd3c31a7100d0fd98cd1df72e796c7629adb5ffbf11dc",
     "evidence": "Zig 作者 Andrew Kelley 在 2016 年官方介绍中明确把“more pragmatic than C”设为设计目标，并逐项对照 C 说明优先级：runtime performance 要“equivalent to or better than C”、debug/release 的 undefined behavior 处理、以 error type 传递错误、替代 libc 与预处理器。这里表示对 C 的具体设计回应与对照，不声称 Zig 是 C 的后继、超集、源码兼容或继承 C ABI 之外的语义。"
+  },
+  {
+    "from": "sass",
+    "to": "less",
+    "type": "influencedBy",
+    "label": "CSS-like 语法与精简特性集的设计启发",
+    "source": "https://lesscss.org/about/",
+    "sourceSha256": "3e0923742938c4b737bf8c985acfef9c972d3e5a2f17aba759328ce44df5cbe3",
+    "evidence": "Less 官方 About 页面明确写：“Less was originally inspired by Sass, with a leaner feature set and a syntax closely matching CSS, which Sass did not have at the time.” 同时说明 Sass 后来受 Less 启发形成 SCSS 语法。本边只记录 Less 的设计启发和 CSS-like 语法取舍，不声称当前 Sass/Less 彼此源码兼容或一方是另一方的完整超集。"
   }
 ]

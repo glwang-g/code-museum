@@ -215,12 +215,12 @@ async function record(name,detail){results.push({name,detail});console.log('PASS
     await evaluate(`document.querySelector('#sources-view').click();document.querySelector('[data-credit-target="relationship-coverage"]').click();document.querySelector('#relationship-label-review').open=true;document.querySelector('#relationship-review-filter').value='all';document.querySelector('#relationship-review-filter').dispatchEvent(new Event('change'));`);
     assert.equal(await evaluate(`document.querySelectorAll('[data-review-language]').length`),50);
     await evaluate(`document.querySelector('#relationship-review-filter').value='gaps';document.querySelector('#relationship-review-filter').dispatchEvent(new Event('change'));`);
-    assert.deepEqual(await evaluate(`Array.from(document.querySelectorAll('[data-review-language]'),b=>b.dataset.reviewLanguage)`),['assembly-language','xslt','zig']);
+    assert.deepEqual(await evaluate(`Array.from(document.querySelectorAll('[data-review-language]'),b=>b.dataset.reviewLanguage)`),['assembly-language','xslt']);
     const researchLedger=await evaluate(`(()=>{const box=document.querySelector('.research-ledger');return {exists:!!box,text:box?.textContent||'',items:box?.querySelectorAll('li').length||0,overflow:document.documentElement.scrollWidth>innerWidth}})()`);
     assert.equal(researchLedger.exists,true);assert.match(researchLedger.text,/已核实/);assert.match(researchLedger.text,/受阻/);assert.equal(researchLedger.items,8);assert.equal(researchLedger.overflow,false,'Research ledger must not overflow the viewport');
     await screenshot('relationship-coverage-'+size.width+'.png');
-    await evaluate(`document.querySelector('[data-review-language="zig"]').click()`);
-    assert.equal(await evaluate(`document.querySelector('#detail-content h2').textContent`),'Zig');
+    await evaluate(`document.querySelector('[data-review-language="xslt"]').click()`);
+    assert.equal(await evaluate(`document.querySelector('#detail-content h2').textContent`),'XSLT');
     assert.equal(await evaluate(`document.querySelector('#detail').classList.contains('open')`),true);
     for(const mode of ['timeline','lineage']){
       for(const entry of [{key:'csharp|scala|influencedBy',anchor:'scala',layer:'design',state:'excerpt-recorded'}, {key:'java|javascript|influencedBy',anchor:'javascript',layer:'design',state:'excerpt-recorded'},{key:'java|csharp|influencedBy',anchor:'csharp',layer:'design',state:'excerpt-recorded'},{key:'c|python|extensionInterface',anchor:'python',layer:'ecosystem',state:'excerpt-recorded'},{key:'objective-c|swift|influencedBy',anchor:'swift',layer:'design',state:'excerpt-recorded'}]){
@@ -431,7 +431,7 @@ async function record(name,detail){results.push({name,detail});console.log('PASS
       assert.equal(await evaluate(`!!document.querySelector('#detail-content a[href="https://ftp.gnu.org/gnu/marst/marst-2.8.tar.gz"]')`),true,'ALGOL 60 implementation source must be available');
       assert.equal(await evaluate(`document.querySelector('#detail-content').textContent.includes('实际输出55、720、6')`),true);
       await checkLabels(['algol-60','pascal','simula','oberon']);
-      assert.equal(await evaluate(`Array.from(document.querySelectorAll('#detail-content .relation-link')).filter(button=>button.dataset.evidenceState==='record-field-only').length`),4,'Four remaining ALGOL 60 field-only relations must stay pending');
+      assert.equal(await evaluate(`Array.from(document.querySelectorAll('#detail-content .relation-link')).filter(button=>button.dataset.evidenceState==='record-field-only').length`),3,'Three remaining ALGOL 60 field-only relations must stay pending');
       for(const to of ['pascal','simula']){
         assert.equal(await evaluate(`document.querySelector('#detail-content .relation-link[data-related="${to}"]').dataset.evidenceState`),'claim-with-citation','ALGOL 60 relationship must expose its new primary-source argument');
         assert.equal(await evaluate(`document.querySelector('#relations .related-edge[data-from="algol-60"][data-to="${to}"]').dataset.evidenceState`),'claim-with-citation','ALGOL 60 edge must match the cited card');

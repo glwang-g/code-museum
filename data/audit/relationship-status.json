@@ -3,10 +3,10 @@
   "scope": "全量关系结构检查与常显标签逐项盘点；摘录已存不等于史料论证或关系覆盖全部核实。缺线不表示没有上游。",
   "summary": {
     "labels": 50,
-    "relations": 450,
+    "relations": 451,
     "mapDesignGaps": 2,
     "states": {
-      "excerpt-recorded": 133,
+      "excerpt-recorded": 134,
       "field-only": 317
     },
     "warnings": 6
@@ -8651,6 +8651,39 @@
       "sources": []
     },
     {
+      "from": "sass",
+      "to": "less",
+      "type": "influencedBy",
+      "label": "CSS-like 语法与精简特性集的设计启发",
+      "source": "https://lesscss.org/about/",
+      "sourceSha256": "3e0923742938c4b737bf8c985acfef9c972d3e5a2f17aba759328ce44df5cbe3",
+      "evidence": "Less 官方 About 页面明确写：“Less was originally inspired by Sass, with a leaner feature set and a syntax closely matching CSS, which Sass did not have at the time.” 同时说明 Sass 后来受 Less 启发形成 SCSS 语法。本边只记录 Less 的设计启发和 CSS-like 语法取舍，不声称当前 Sass/Less 彼此源码兼容或一方是另一方的完整超集。",
+      "key": "sass|less|influencedBy",
+      "layer": "design",
+      "state": "excerpt-recorded",
+      "issues": [],
+      "reviewNote": "",
+      "mapVisible": true,
+      "evidenceVersion": {
+        "citedSha256": "3e0923742938c4b737bf8c985acfef9c972d3e5a2f17aba759328ce44df5cbe3",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
+      "sources": [
+        {
+          "url": "https://lesscss.org/about/",
+          "finalUrl": "https://lesscss.org/about/",
+          "title": "About | Less.js",
+          "excerpt": "Less was originally inspired by Sass, with a leaner feature set and a syntax closely matching CSS, which Sass did not have at the time. (Sass was later inspired by Less to create SCSS, its own CSS-like syntax.)",
+          "checkedAt": "2026-10-11T07:30:00+00:00",
+          "sha256": "3e0923742938c4b737bf8c985acfef9c972d3e5a2f17aba759328ce44df5cbe3",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected",
+          "reviewId": "less",
+          "locator": "About, history paragraph"
+        }
+      ]
+    },
+    {
       "from": "scala",
       "to": "kotlin",
       "type": "influencedBy",
@@ -10512,28 +10545,22 @@
   ],
   "inputHashes": {
     "data/raw/pldb.json": "57f45d25bba78ab6bc4af5d969356d2efbfcc7c1ee722dbb5c708d60aa78ba77",
-    "data/audit/reviews.json": "edb579d8e86a4d1fdecbc7c786c5dc3fc68b97a934e351b9fcf93c1aec324e65",
-    "data/relationship-overrides.json": "81e3ea13bd64c1f5c46c5b12fb216cc4d917757775dffe821838ae1e87751a36",
+    "data/audit/reviews.json": "20255f2dbb5d7b1be3b186955378da4336dfffeeebf37dc49b26388444a00a26",
+    "data/relationship-overrides.json": "e912513dc558b275a52ed5e28467247e9c90b2a155e29dda57661814686d1e03",
     "data/ecosystem-relations.json": "0d96e92a3853eddc6b32e4a45d5c90223d2096fa35438823f7dcfe72ce161e76",
     "data/audit/relationship-decisions.json": "5261a7c64734441c96694a1a0b9b8a34cad0195e541e3485807a2a66061055c8",
     "data/audit/label-selection.json": "dc5eee62fa662b0d60940375d8a3ec56ac2bbf84ee2b9922a290d46d11cc866f",
-    "data/audit/relationship-research-ledger.json": "a4f2721db146ef89afe9f10f12e0e2e435be5135949fa318b6dad1301ed9cf47"
+    "data/audit/relationship-research-ledger.json": "c3bab9cc34c45434c2f4a9dc8705702a3d39619d2992c04e4bf848c506d2d8d6"
   },
   "research": {
     "reopenPolicy": "Reopen a closed item only when a new primary source, a fixed historical version, a resolved endpoint identity, or a materially different relation claim becomes available.",
     "summary": {
-      "total": 51,
-      "verified": 39,
+      "total": 52,
+      "verified": 40,
       "closed": 8,
       "blocked": 4
     },
     "recent": [
-      {
-        "id": "iswim|haskell|influencedBy",
-        "status": "verified",
-        "batch": "2026-10-11_BATCH-29",
-        "note": "Haskell 98 Report Preface lists ISWIM as a particularly influential forerunner; overall acknowledged influence only."
-      },
       {
         "id": "fp|haskell|influencedBy",
         "status": "verified",
@@ -10575,6 +10602,12 @@
         "status": "verified",
         "batch": "2026-10-11_BATCH-32",
         "note": "Andrew Kelley’s primary introduction explicitly sets “more pragmatic than C” and discusses concrete C comparisons in performance, undefined behavior, error representation, libc and preprocessor policy. Scope is design response/reference, not succession, superset or source compatibility."
+      },
+      {
+        "id": "sass|less|influencedBy",
+        "status": "verified",
+        "batch": "2026-10-11_BATCH-34",
+        "note": "Less official About page says Less was originally inspired by Sass and chose a leaner CSS-like syntax; scope is design input, not bidirectional source compatibility or superset."
       }
     ]
   }

@@ -109,7 +109,7 @@ kitten,kitten,2012,unreviewed,,,0,0,0,0,0,,no-map-link
 korn-shell,Korn shell,1983,historical-primary-source,c | c-shell | sh,bash,4,4,0,0,0,,cited-only
 kotlin,Kotlin,2011,verified-language,csharp | groovy | java | javascript | scala,,5,5,0,0,0,,cited-only
 lazy-k,Lazy K,2002,unreviewed,,,0,0,0,0,0,,no-map-link
-less,Less,2009,unreviewed,,,0,0,0,0,1,sass,no-map-link
+less,Less,2009,unreviewed,sass,,1,1,0,0,0,,cited-only
 limbo,Limbo,1995,unreviewed,,,0,0,0,0,0,,no-map-link
 lisaac,Lisaac,2003,unreviewed,,,0,0,0,0,0,,no-map-link
 lisp,Lisp,1958,historical-primary-source,,clojure | common-lisp | haskell | julia | postscript | ruby | scheme | smalltalk,8,8,0,8,1,hy,cited-only
@@ -181,7 +181,7 @@ rexx,Rexx,1979,unreviewed,,,0,0,0,0,0,,no-map-link
 ruby,Ruby,1995,verified-language,ada | lisp | perl | smalltalk,julia | rust,6,6,0,3,0,,cited-only
 rust,Rust,2010,verified-language,cpp | csharp | erlang | haskell | ocaml | ruby | scheme | swift,,8,8,0,6,0,,cited-only
 sagemath,Sage,2005,unreviewed,,,0,0,0,0,0,,no-map-link
-sass,Sass,2006,unreviewed,,,0,0,0,0,1,less,no-map-link
+sass,Sass,2006,unreviewed,,less,1,1,0,0,0,,cited-only
 scala,Scala,2004,verified-language,csharp | java,kotlin,3,3,0,1,0,,cited-only
 scheme,Scheme,1975,verified-language,lisp,common-lisp | haskell | javascript | lua | rust,6,6,0,4,0,,cited-only
 scilab,Scilab,1990,unreviewed,,,0,0,0,0,0,,no-map-link

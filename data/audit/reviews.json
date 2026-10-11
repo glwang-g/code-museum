@@ -3591,6 +3591,28 @@
           "hashScope": "complete HTTP response body bytes; short excerpt manually selected"
         }
       ]
+    },
+    {
+      "id": "less",
+      "status": "unreviewed",
+      "kind": "domain-language",
+      "notes": "本批只核读官方关系来源；Less 的完整语法、实现与版本审查仍待补。",
+      "nextStep": "继续核实 Less 语法、实现版本和运行范围；关系证据不自动升级语言身份。",
+      "sources": [
+        {
+          "role": "关系依据",
+          "url": "https://lesscss.org/about/",
+          "checkedAt": "2026-10-11T07:30:00+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "About | Less.js",
+          "finalUrl": "https://lesscss.org/about/",
+          "decodedBodySha256": "3e0923742938c4b737bf8c985acfef9c972d3e5a2f17aba759328ce44df5cbe3",
+          "excerpt": "Less was originally inspired by Sass, with a leaner feature set and a syntax closely matching CSS, which Sass did not have at the time. (Sass was later inspired by Less to create SCSS, its own CSS-like syntax.)",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected",
+          "locator": "About, history paragraph"
+        }
+      ]
     }
   ]
 }
