@@ -59,7 +59,7 @@
 |C|GCC / Clang|示例通过|[语法](https://www.gnu.org/software/c-intro-and-ref/manual/html_node/index.html) · [实现](https://clang.llvm.org/docs/UsersManual.html) · [关系依据](https://www.bell-labs.com/usr/dmr/www/chist.html)|现代 C；具体标准版本依编译器选项。|
 |C#|.NET SDK / Roslyn|未测试|[语法](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/) · [实现](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-run) · [关系复核：依据不足](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/introduction) · [关系依据](https://www.artima.com/articles/the-trouble-with-checked-exceptions)||
 |C++|GCC / Clang|示例通过|[语法](https://eel.is/c++draft/lex) · [实现](https://clang.llvm.org/docs/UsersManual.html) · [关系依据](https://www.stroustrup.com/bs_faq.html)|C++ 工作草案和编译器文档；具体标准版本需选择。|
-|Clojure|Clojure JVM|未测试|[语法](https://clojure.org/reference/reader) · [实现](https://clojure.org/guides/install_clojure)||
+|Clojure|Clojure JVM|未测试|[语法](https://clojure.org/reference/reader) · [实现](https://clojure.org/guides/install_clojure) · [关系依据](https://clojure.org/about/lisp)||
 |COBOL|GnuCOBOL|未测试|[语法与实现](https://gnucobol.sourceforge.io/doc/gnucobol.html) · [历史原文](https://bitsavers.org/pdf/codasyl/COBOL_Report_Apr60.pdf)|GnuCOBOL 支持的方言，不等同于所有历史版本。 1960年初始规格报告明确列出FLOW-MATIC、IBM Commercial Translator和AIMACO的资料/思想输入；本次先核实FLOW-MATIC端点及历史语法实现，另外两个端点继续独立核对。1959年报告形成与1960年批准分开记录；历史资料输入不代表现代GnuCOBOL方言是FLOW-MATIC超集或源码兼容。|
 |Common Lisp|SBCL|未测试|[语法](https://www.lispworks.com/documentation/HyperSpec/Body/02_a.htm) · [实现](https://www.sbcl.org/manual/) · [关系依据](https://www.cs.cmu.edu/Groups/AI/html/cltl/clm/node5.html)|ANSI Common Lisp；不代替所有早期 Lisp 方言。|
 |D|DMD|未测试|[语法](https://dlang.org/spec/lex.html) · [实现](https://dlang.org/dmd.html) · [关系依据](https://dlang.org/overview.html)||

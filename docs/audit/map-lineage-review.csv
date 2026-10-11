@@ -37,7 +37,7 @@ ceylon,Ceylon,2011,unreviewed,,,0,0,0,0,0,,no-map-link
 chef,chef,2002,unreviewed,,,0,0,0,0,0,,no-map-link
 cil,CIL,2000,unreviewed,,,0,0,0,0,0,,no-map-link
 clean,Clean,1987,unreviewed,,haskell,1,1,0,0,0,,cited-only
-clojure,Clojure,2007,verified-language,,,0,0,0,1,1,lisp,no-map-link
+clojure,Clojure,2007,verified-language,lisp,,1,1,0,1,0,,cited-only
 clojurescript,ClojureScript,2011,unreviewed,,,0,0,0,0,0,,no-map-link
 cobol,COBOL,1959,verified-language,flow-matic,,1,1,0,1,0,,cited-only
 coconut,Coconut,2014,unreviewed,,,0,0,0,0,0,,no-map-link
@@ -112,7 +112,7 @@ lazy-k,Lazy K,2002,unreviewed,,,0,0,0,0,0,,no-map-link
 less,Less,2009,unreviewed,,,0,0,0,0,1,sass,no-map-link
 limbo,Limbo,1995,unreviewed,,,0,0,0,0,0,,no-map-link
 lisaac,Lisaac,2003,unreviewed,,,0,0,0,0,0,,no-map-link
-lisp,Lisp,1958,historical-primary-source,,common-lisp | haskell | julia | postscript | ruby | scheme | smalltalk,7,7,0,8,2,clojure | hy,cited-only
+lisp,Lisp,1958,historical-primary-source,,clojure | common-lisp | haskell | julia | postscript | ruby | scheme | smalltalk,8,8,0,8,1,hy,cited-only
 livescript,LiveScript,2011,unreviewed,,,0,0,0,1,0,,no-map-link
 llvmir,LLVM IR,2003,unreviewed,,mlir,1,1,0,1,0,,cited-only
 lolcode,LOLCODE,2007,unreviewed,,,0,0,0,0,0,,no-map-link

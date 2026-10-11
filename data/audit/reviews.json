@@ -1190,6 +1190,19 @@
           "finalUrl": "https://clojure.org/guides/install_clojure",
           "decodedBodySha256": "f5a18d7bb7d6c8ea5af4ea2d36ce592cdd8fd7d50d00580566f4d5c4ce71ee25",
           "excerpt": "on the Releases page. This page concerns the command-line tool (the Clojure CLI). This tool (used by the commands clojure and clj ) can download Clojure itself and other Clojure or JVM-based libraries. Any version of the Clojure CLI can download or use any version of the Clojure language itself (the"
+        },
+        {
+          "role": "关系依据",
+          "url": "https://clojure.org/about/lisp",
+          "checkedAt": "2026-10-11T06:50:00+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "Clojure as a Dialect of Lisp",
+          "finalUrl": "https://clojure.org/about/lisp",
+          "decodedBodySha256": "185b1894d4062a9ded6c8aab6d99bbbd909219b88e15bdbd6eaefcf2eedbcb81",
+          "excerpt": "Clojure is a member of the Lisp family of languages. ... Clojure extends the code-as-data system beyond parenthesized lists (s-expressions) to vectors and maps.",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected",
+          "locator": "Overview and code-as-data discussion"
         }
       ]
     },

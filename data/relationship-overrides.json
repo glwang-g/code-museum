@@ -1019,5 +1019,14 @@
     "source": "https://fsharp.org/history/hopl-final/hopl-fsharp.pdf",
     "sourceSha256": "db336bd4f1f57c5881477ee5e12995ac164255b81ede10d4bee9a055daf1202a",
     "evidence": "Don Syme《The Early History of F#》第50页写：“TypeScript was directly influenced by F#: one of the originators of TypeScript was Luke Hoban, who began TypeScript (then called Strada) immediately after working on F# 2.0.” 作者并引述 Hoban 关于 F# 影响 TypeScript 早期设计部分的说明。这里只记录设计来源，不声称 TypeScript 是 F# 的后继、超集或类型系统兼容实现。"
+  },
+  {
+    "from": "lisp",
+    "to": "clojure",
+    "type": "influencedBy",
+    "label": "Lisp 方言与 code-as-data 承继",
+    "source": "https://clojure.org/about/lisp",
+    "sourceSha256": "185b1894d4062a9ded6c8aab6d99bbbd909219b88e15bdbd6eaefcf2eedbcb81",
+    "evidence": "Clojure 官方 “Clojure as a Dialect of Lisp” 页面说明 Clojure 是 Lisp 家族成员，并承继 Lisp 的 code-as-data 与宏系统；它还把 reader/宏机制扩展到 vector、map 等数据结构。这里表示 Lisp 家族与具体设计承继，不声称 Clojure 是某一历史 Lisp 方言的超集或源码兼容实现。"
   }
 ]

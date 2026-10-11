@@ -3,10 +3,10 @@
   "scope": "全量关系结构检查与常显标签逐项盘点；摘录已存不等于史料论证或关系覆盖全部核实。缺线不表示没有上游。",
   "summary": {
     "labels": 50,
-    "relations": 441,
+    "relations": 442,
     "mapDesignGaps": 3,
     "states": {
-      "excerpt-recorded": 123,
+      "excerpt-recorded": 124,
       "field-only": 318
     },
     "warnings": 5
@@ -534,6 +534,7 @@
       "downstream": [
         "lisp|autolisp|influencedBy",
         "lisp|axio|influencedBy",
+        "lisp|clojure|influencedBy",
         "lisp|common-lisp|influencedBy",
         "lisp|cosmicos|influencedBy",
         "lisp|haskell|influencedBy",
@@ -548,11 +549,11 @@
         "lisp|smalltalk|influencedBy"
       ],
       "ecology": [],
-      "mapLinks": 7,
+      "mapLinks": 8,
       "fieldOnly": 7,
       "citationOnly": 0,
       "needsDirectEvidence": 0,
-      "excerptRecorded": 8,
+      "excerptRecorded": 9,
       "state": "needs-review"
     },
     {
@@ -5634,6 +5635,39 @@
     },
     {
       "from": "lisp",
+      "to": "clojure",
+      "type": "influencedBy",
+      "label": "Lisp 方言与 code-as-data 承继",
+      "source": "https://clojure.org/about/lisp",
+      "sourceSha256": "185b1894d4062a9ded6c8aab6d99bbbd909219b88e15bdbd6eaefcf2eedbcb81",
+      "evidence": "Clojure 官方 “Clojure as a Dialect of Lisp” 页面说明 Clojure 是 Lisp 家族成员，并承继 Lisp 的 code-as-data 与宏系统；它还把 reader/宏机制扩展到 vector、map 等数据结构。这里表示 Lisp 家族与具体设计承继，不声称 Clojure 是某一历史 Lisp 方言的超集或源码兼容实现。",
+      "key": "lisp|clojure|influencedBy",
+      "layer": "design",
+      "state": "excerpt-recorded",
+      "issues": [],
+      "reviewNote": "",
+      "mapVisible": true,
+      "evidenceVersion": {
+        "citedSha256": "185b1894d4062a9ded6c8aab6d99bbbd909219b88e15bdbd6eaefcf2eedbcb81",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
+      "sources": [
+        {
+          "url": "https://clojure.org/about/lisp",
+          "finalUrl": "https://clojure.org/about/lisp",
+          "title": "Clojure as a Dialect of Lisp",
+          "excerpt": "Clojure is a member of the Lisp family of languages. ... Clojure extends the code-as-data system beyond parenthesized lists (s-expressions) to vectors and maps.",
+          "checkedAt": "2026-10-11T06:50:00+00:00",
+          "sha256": "185b1894d4062a9ded6c8aab6d99bbbd909219b88e15bdbd6eaefcf2eedbcb81",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected",
+          "reviewId": "clojure",
+          "locator": "Overview and code-as-data discussion"
+        }
+      ]
+    },
+    {
+      "from": "lisp",
       "to": "common-lisp",
       "type": "influencedBy",
       "label": "作为 Lisp 新方言的家族承接",
@@ -10180,8 +10214,8 @@
   ],
   "inputHashes": {
     "data/raw/pldb.json": "57f45d25bba78ab6bc4af5d969356d2efbfcc7c1ee722dbb5c708d60aa78ba77",
-    "data/audit/reviews.json": "3ba14cf70f687b7664969bc11c4ec1b387ea3585e8bb8a66c8d71e7b830c4516",
-    "data/relationship-overrides.json": "04a5582c1e36a1f4a302c2a8886ae102dd7e88554370002ee06f418a1682ce70",
+    "data/audit/reviews.json": "6366c54934bb44500d7e8f246dd3d11fcbe8983e0bda09ca31d00eef57e6d6fe",
+    "data/relationship-overrides.json": "f3e94e122103279098b7e228bb2e35ab1f2de4914e0bc2eefa91c7d68645059f",
     "data/ecosystem-relations.json": "0d96e92a3853eddc6b32e4a45d5c90223d2096fa35438823f7dcfe72ce161e76",
     "data/audit/relationship-decisions.json": "4339ab007ed91414653b56ddf2dcbe0a9450de5df1705c9ad76c1fbc7db53960",
     "data/audit/label-selection.json": "dc5eee62fa662b0d60940375d8a3ec56ac2bbf84ee2b9922a290d46d11cc866f"
