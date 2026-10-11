@@ -54,5 +54,13 @@
     "label": "Add-Type 的 C# 类型扩展",
     "source": "https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/add-type",
     "evidence": "微软 Add-Type 文档说明该命令可把 C# 源码编译为包含 .NET 类型的内存程序集，并在 PowerShell 会话中创建对象、调用静态或实例方法。C# 是默认语言，类型及命名受会话限制。这是明确的扩展接口，不代表 PowerShell 语法继承 C#、源码兼容或已接入馆内浏览器编译；本轮未执行该接口。"
+  },
+  {
+    "from": "erlang",
+    "to": "elixir",
+    "type": "hostRuntime",
+    "label": "Elixir 运行在 Erlang VM 上",
+    "source": "https://elixir-lang.org/",
+    "evidence": "Elixir 官方首页说明其优势来自 Erlang VM，并称 Elixir 在 IoT、分布式系统和 Erlang 著称的领域表现出色。这里是具体运行时宿主关系，不表示 Elixir 的语法、类型系统或语言设计继承 Erlang。"
   }
 ]

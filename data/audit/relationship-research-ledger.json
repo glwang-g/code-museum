@@ -346,6 +346,12 @@
       "status": "verified",
       "batch": "2026-10-11_BATCH-36",
       "note": "Crystal official homepage says its syntax is inspired by Ruby and its style guide says heavily inspired; scope is syntax/language-experience input, not Ruby compatibility, dynamic object-model inheritance, or superset."
+    },
+    {
+      "id": "erlang|elixir|hostRuntime",
+      "status": "verified",
+      "batch": "2026-10-11_BATCH-37",
+      "note": "Elixir official homepage identifies the Erlang VM as the host runtime. This is an implementation/ecosystem relationship, not design inheritance or source compatibility."
     }
   ]
 }

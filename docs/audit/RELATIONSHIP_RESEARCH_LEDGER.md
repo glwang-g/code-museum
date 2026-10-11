@@ -25,6 +25,7 @@
 | C → Zig | Batch 32 | 作者明确以“more pragmatic than C”为目标并逐项说明 C 对照设计，但不称继承/超集 |
 | Sass → Less | Batch 34 | Less 官方明确称最初受 Sass 启发并选择更接近 CSS 的语法 |
 | Ruby → Crystal | Batch 36 | Crystal 官方明确称语法受 Ruby 启发，且兼容不是目标 |
+| Erlang → Elixir | Batch 37 | Elixir 官方明确说明运行在 Erlang VM 上；仅生态宿主关系 |
 | ALGOL 60 → ALGOL W | Batch 31 | Stanford 归档实现报告明确以 Wirth/Hoare ALGOL 改造工作为编译器基础 |
 | Lisp → Common Lisp | Batch 22 | 作者明确称 Common Lisp 是 Lisp 的新方言 |
 | MacLisp → Common Lisp | Batch 22 | 作者明确称 Common Lisp 是 MacLisp 的后继 |

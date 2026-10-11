@@ -3,10 +3,10 @@
   "scope": "全量关系结构检查与常显标签逐项盘点；摘录已存不等于史料论证或关系覆盖全部核实。缺线不表示没有上游。",
   "summary": {
     "labels": 50,
-    "relations": 452,
+    "relations": 453,
     "mapDesignGaps": 2,
     "states": {
-      "excerpt-recorded": 135,
+      "excerpt-recorded": 136,
       "field-only": 317
     },
     "warnings": 6
@@ -10483,6 +10483,34 @@
       ]
     },
     {
+      "from": "erlang",
+      "to": "elixir",
+      "type": "hostRuntime",
+      "label": "Elixir 运行在 Erlang VM 上",
+      "source": "https://elixir-lang.org/",
+      "evidence": "Elixir 官方首页说明其优势来自 Erlang VM，并称 Elixir 在 IoT、分布式系统和 Erlang 著称的领域表现出色。这里是具体运行时宿主关系，不表示 Elixir 的语法、类型系统或语言设计继承 Erlang。",
+      "key": "erlang|elixir|hostRuntime",
+      "layer": "ecosystem",
+      "state": "excerpt-recorded",
+      "issues": [],
+      "reviewNote": "",
+      "mapVisible": true,
+      "evidenceVersion": null,
+      "sources": [
+        {
+          "url": "https://elixir-lang.org/",
+          "finalUrl": "https://elixir-lang.org/",
+          "title": "Elixir — The Language",
+          "excerpt": "Thanks to the Erlang VM, Elixir also excels at IoT, distributed systems, and everything Erlang is renowned for.",
+          "checkedAt": "2026-10-11T07:50:00+00:00",
+          "sha256": "887aa8e14cf659c6474683afd500163c52d08898b082c1636c9f2bf184b8eabd",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected",
+          "reviewId": "erlang",
+          "locator": "IoT & Distributed Systems section"
+        }
+      ]
+    },
+    {
       "from": "java",
       "to": "python",
       "type": "hostRuntime",
@@ -10579,28 +10607,22 @@
   ],
   "inputHashes": {
     "data/raw/pldb.json": "57f45d25bba78ab6bc4af5d969356d2efbfcc7c1ee722dbb5c708d60aa78ba77",
-    "data/audit/reviews.json": "b8d9a65aa52cd9101f5cc816c4accc9caf9dac7045743bc9a112a5c8b18b3cb5",
+    "data/audit/reviews.json": "a8e2eafc8264fed953a8645b6003df5cd0ad46986d770c84687a1108c8ed01ad",
     "data/relationship-overrides.json": "321b42e5dce99c17820588ffd27f737a14c147c614e86f7c0e84d23d1b277987",
-    "data/ecosystem-relations.json": "0d96e92a3853eddc6b32e4a45d5c90223d2096fa35438823f7dcfe72ce161e76",
+    "data/ecosystem-relations.json": "0f9762c08634b271476a8b82e8ddd96f9f688434766c43329059dea5a59436c8",
     "data/audit/relationship-decisions.json": "5261a7c64734441c96694a1a0b9b8a34cad0195e541e3485807a2a66061055c8",
     "data/audit/label-selection.json": "dc5eee62fa662b0d60940375d8a3ec56ac2bbf84ee2b9922a290d46d11cc866f",
-    "data/audit/relationship-research-ledger.json": "8ab702bce2e1fb8fa422d53a8e1eae4b4e6d61c8681147577d7f72a61fbae520"
+    "data/audit/relationship-research-ledger.json": "a929360aa53cb79f7d930b8fc89bef7c10b315c10444f20cd2f26319ddbbd5c8"
   },
   "research": {
     "reopenPolicy": "Reopen a closed item only when a new primary source, a fixed historical version, a resolved endpoint identity, or a materially different relation claim becomes available.",
     "summary": {
-      "total": 55,
-      "verified": 41,
+      "total": 56,
+      "verified": 42,
       "closed": 10,
       "blocked": 4
     },
     "recent": [
-      {
-        "id": "gofer|haskell|influencedBy",
-        "status": "verified",
-        "batch": "2026-10-11_BATCH-29",
-        "note": "Haskell report lists Gofer as an influential forerunner, but Hugs history dates Gofer’s first public release to September 1991. Scope is limited to retrospective/later influence; no claim about Haskell 1.0 in 1990. Chronology warning remains."
-      },
       {
         "id": "sisal|haskell|influencedBy",
         "status": "verified",
@@ -10642,6 +10664,12 @@
         "status": "verified",
         "batch": "2026-10-11_BATCH-36",
         "note": "Crystal official homepage says its syntax is inspired by Ruby and its style guide says heavily inspired; scope is syntax/language-experience input, not Ruby compatibility, dynamic object-model inheritance, or superset."
+      },
+      {
+        "id": "erlang|elixir|hostRuntime",
+        "status": "verified",
+        "batch": "2026-10-11_BATCH-37",
+        "note": "Elixir official homepage identifies the Erlang VM as the host runtime. This is an implementation/ecosystem relationship, not design inheritance or source compatibility."
       }
     ]
   }

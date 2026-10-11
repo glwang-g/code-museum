@@ -1262,6 +1262,19 @@
           "role": "作者历史回顾",
           "reviewed": true,
           "excerpt": "Printed pp. 3–5 / PDF pp. 15–17, §1.1 Background: in 1986 “The language started as an experiment to add concurrent processes to Prolog”; in 1987 Erlang was embedded in Prolog using its infix operators and did not yet have its own syntax. In 1989 JAM was loosely based on the Warren abstract machine, adding parallel processes, message passing and failure detection while omitting backtracking; pattern-matching compilation was essentially the same as WAM. In 1990 Erlang acquired its own syntax and was a language in its own right rather than a Prolog dialect; in 1991 JAM replaced the Prolog implementation. Cross-compilation to Strand and a C implementation are mentioned as implementation experiments, not sufficient evidence of design inheritance. These dates refer to different development events, not a replacement of the catalogue year. No historical implementation reproduced or webpage runtime added this round."
+        },
+        {
+          "role": "关系依据",
+          "url": "https://elixir-lang.org/",
+          "checkedAt": "2026-10-11T07:50:00+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "Elixir — The Language",
+          "finalUrl": "https://elixir-lang.org/",
+          "decodedBodySha256": "887aa8e14cf659c6474683afd500163c52d08898b082c1636c9f2bf184b8eabd",
+          "excerpt": "Thanks to the Erlang VM, Elixir also excels at IoT, distributed systems, and everything Erlang is renowned for.",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected",
+          "locator": "IoT & Distributed Systems section"
         }
       ]
     },
