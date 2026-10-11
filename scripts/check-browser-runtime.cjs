@@ -235,6 +235,11 @@ async function record(name,detail){results.push({name,detail});console.log('PASS
           await page('Input.dispatchKeyEvent',{type:'keyDown',key:'Enter',code:'Enter',windowsVirtualKeyCode:13});
           await page('Input.dispatchKeyEvent',{type:'keyUp',key:'Enter',code:'Enter',windowsVirtualKeyCode:13});
         }
+        if(point&&!await evaluate(`document.querySelector('#detail-content .eyebrow').textContent.startsWith('关系依据')`)){
+          await evaluate(`document.querySelector('[data-edge-key="${entry.key}"]').focus()`);
+          await page('Input.dispatchKeyEvent',{type:'keyDown',key:'Enter',code:'Enter',windowsVirtualKeyCode:13});
+          await page('Input.dispatchKeyEvent',{type:'keyUp',key:'Enter',code:'Enter',windowsVirtualKeyCode:13});
+        }
         if(await evaluate(`document.querySelector('#detail-content .eyebrow').textContent==='交叠连线'`))await evaluate(`document.querySelector('[data-proof-key="${entry.key}"]').click()`);
         assert.equal(await evaluate(`document.querySelector('#detail-content .eyebrow').textContent.startsWith('关系依据')`),true,JSON.stringify({mode,size,entry,point,actual:await evaluate(`document.querySelector('#detail-content .eyebrow').textContent`)}));
         assert.equal(await evaluate(`inspectedRelation`),entry.key);
