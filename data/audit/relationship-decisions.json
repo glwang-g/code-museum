@@ -3,5 +3,10 @@
     "key": "java|csharp|influencedBy",
     "state": "supported",
     "note": "2026-10-09 补读 Hejlsberg 本人访谈，仅确认 Java 检查异常参与 C# 异常机制的设计评估与取舍；旧规范导言不足以证明设计影响的判断仍有效。不表示后继、超集或实现兼容。"
+  },
+  {
+    "key": "gofer|haskell|influencedBy",
+    "state": "supported",
+    "note": "官方 Haskell 报告列为前驱，但 Hugs 历史确认 Gofer 1991 年首次发布。该边只表示报告方的总体历史回顾及后续影响，不证明对 1990 年 Haskell 1.0 的时间因果；保留年代警告。"
   }
 ]

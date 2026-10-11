@@ -1081,7 +1081,7 @@
     "label": "作为 Haskell 前身实现设计前驱",
     "source": "https://www.haskell.org/onlinereport/preface-jfp.html",
     "sourceSha256": "5d22e79fe81fdba3c05d3474550f1976112f7dac02491c32d1fd76aba6407749",
-    "evidence": "Haskell 官方报告序言由 Simon Peyton Jones 明确列出这些语言为 “particularly influential”，并写“Without these forerunners Haskell would not have been possible.” 这里表示报告方确认的整体设计前驱影响；不细化到未说明的具体机制、版本兼容或超集关系，也不因为端点在馆藏中而自动加入地图。"
+    "evidence": "Haskell 官方报告序言把 Gofer 列为 particularly influential forerunner；但 Hugs 官方历史说明 Gofer 于 1991 年 9 月首次发布，并称其类型系统扩展后来成为 Haskell 的一部分。该关系因此限定为报告方的历史回顾及后续 Haskell/生态影响，不证明 Gofer 影响了 1990 年的 Haskell 1.0；年代冲突继续保留为审查线索。"
   },
   {
     "from": "sisal",

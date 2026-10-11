@@ -308,7 +308,7 @@
       "id": "gofer|haskell|influencedBy",
       "status": "verified",
       "batch": "2026-10-11_BATCH-29",
-      "note": "Haskell 98 Report Preface lists Gofer as a particularly influential forerunner; PLDB year 1994 conflicts with Haskell 1990 and remains a chronology review lead."
+      "note": "Haskell report lists Gofer as an influential forerunner, but Hugs history dates Gofer’s first public release to September 1991. Scope is limited to retrospective/later influence; no claim about Haskell 1.0 in 1990. Chronology warning remains."
     },
     {
       "id": "sisal|haskell|influencedBy",

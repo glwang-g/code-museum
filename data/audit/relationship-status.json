@@ -4035,14 +4035,14 @@
       "label": "作为 Haskell 前身实现设计前驱",
       "source": "https://www.haskell.org/onlinereport/preface-jfp.html",
       "sourceSha256": "5d22e79fe81fdba3c05d3474550f1976112f7dac02491c32d1fd76aba6407749",
-      "evidence": "Haskell 官方报告序言由 Simon Peyton Jones 明确列出这些语言为 “particularly influential”，并写“Without these forerunners Haskell would not have been possible.” 这里表示报告方确认的整体设计前驱影响；不细化到未说明的具体机制、版本兼容或超集关系，也不因为端点在馆藏中而自动加入地图。",
+      "evidence": "Haskell 官方报告序言把 Gofer 列为 particularly influential forerunner；但 Hugs 官方历史说明 Gofer 于 1991 年 9 月首次发布，并称其类型系统扩展后来成为 Haskell 的一部分。该关系因此限定为报告方的历史回顾及后续 Haskell/生态影响，不证明 Gofer 影响了 1990 年的 Haskell 1.0；年代冲突继续保留为审查线索。",
       "key": "gofer|haskell|influencedBy",
       "layer": "design",
       "state": "excerpt-recorded",
       "issues": [
         "上游馆藏年代晚于下游，需核对版本或事件"
       ],
-      "reviewNote": "",
+      "reviewNote": "官方 Haskell 报告列为前驱，但 Hugs 历史确认 Gofer 1991 年首次发布。该边只表示报告方的总体历史回顾及后续影响，不证明对 1990 年 Haskell 1.0 的时间因果；保留年代警告。",
       "mapVisible": false,
       "evidenceVersion": {
         "citedSha256": "5d22e79fe81fdba3c05d3474550f1976112f7dac02491c32d1fd76aba6407749",
@@ -10460,11 +10460,11 @@
   "inputHashes": {
     "data/raw/pldb.json": "57f45d25bba78ab6bc4af5d969356d2efbfcc7c1ee722dbb5c708d60aa78ba77",
     "data/audit/reviews.json": "f752bf1b71ca06a6235c9659e5176cef9d8265389923bf93c3f27c7975ea2352",
-    "data/relationship-overrides.json": "c565d252de6a6d666e75e9586252b1f9f8cc3e649345492cc4f90fab11fc17ce",
+    "data/relationship-overrides.json": "a6d9ec8cf8aa01e2923f47c0aa2ddffb4b859454860de1c5fe07f8e2213c529b",
     "data/ecosystem-relations.json": "0d96e92a3853eddc6b32e4a45d5c90223d2096fa35438823f7dcfe72ce161e76",
-    "data/audit/relationship-decisions.json": "4339ab007ed91414653b56ddf2dcbe0a9450de5df1705c9ad76c1fbc7db53960",
+    "data/audit/relationship-decisions.json": "5261a7c64734441c96694a1a0b9b8a34cad0195e541e3485807a2a66061055c8",
     "data/audit/label-selection.json": "dc5eee62fa662b0d60940375d8a3ec56ac2bbf84ee2b9922a290d46d11cc866f",
-    "data/audit/relationship-research-ledger.json": "5edc18346fa788c310eac0a350a26e58267b5d25fd4af9a168597be46785e83f"
+    "data/audit/relationship-research-ledger.json": "a8a858305f3f9e870b3c2ab3914afb54e154a5603f931507281129bb92ecf0be"
   },
   "research": {
     "reopenPolicy": "Reopen a closed item only when a new primary source, a fixed historical version, a resolved endpoint identity, or a materially different relation claim becomes available.",
@@ -10509,7 +10509,7 @@
         "id": "gofer|haskell|influencedBy",
         "status": "verified",
         "batch": "2026-10-11_BATCH-29",
-        "note": "Haskell 98 Report Preface lists Gofer as a particularly influential forerunner; PLDB year 1994 conflicts with Haskell 1990 and remains a chronology review lead."
+        "note": "Haskell report lists Gofer as an influential forerunner, but Hugs history dates Gofer’s first public release to September 1991. Scope is limited to retrospective/later influence; no claim about Haskell 1.0 in 1990. Chronology warning remains."
       },
       {
         "id": "sisal|haskell|influencedBy",
