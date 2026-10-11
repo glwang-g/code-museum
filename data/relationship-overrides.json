@@ -902,5 +902,41 @@
     "source": "https://homepages.inf.ed.ac.uk/wadler/topics/gj.html",
     "sourceSha256": "3490b79ef55ae53459d3307788d8c843ff169520ee10aee8855d32e45fa720f8",
     "evidence": "Wadler 作者页的1997年POPL Pizza into Java 摘要明确称 Pizza 是 Java 的严格超集，增加参数多态、高阶函数与代数数据类型，并通过翻译为 Java 编译到 JVM。此结论限于当时文献描述的语言设计，不表示现代 Java 所有版本兼容，也不是本馆已经运行历史 Pizza 编译器的认证。"
+  },
+  {
+    "from": "lisp",
+    "to": "common-lisp",
+    "type": "influencedBy",
+    "label": "作为 Lisp 新方言的家族承接",
+    "source": "https://www.cs.cmu.edu/Groups/AI/html/cltl/clm/node5.html",
+    "sourceSha256": "d3265cc9788d2cdf996b6ef1773671f28d074f4c5cc381c1c6cbc6612e8420c2",
+    "evidence": "Guy L. Steele Jr.《Common Lisp the Language》第2版第1章明确称 Common Lisp 是“a new dialect of Lisp”。这里表示 Lisp 家族到 Common Lisp 标准的直接身份承接，不表示 Common Lisp 是所有早期 Lisp 方言的超集，也不声称源码兼容。"
+  },
+  {
+    "from": "maclisp",
+    "to": "common-lisp",
+    "type": "successorOf",
+    "label": "从 MacLisp 标准化演进",
+    "source": "https://www.cs.cmu.edu/Groups/AI/html/cltl/clm/node5.html",
+    "sourceSha256": "d3265cc9788d2cdf996b6ef1773671f28d074f4c5cc381c1c6cbc6612e8420c2",
+    "evidence": "同一章称 Common Lisp 是“a successor to MacLisp”。这里表示作者明确的历史后继关系；Common Lisp 是多方标准化成果，不能简化成 MacLisp 的单线版本或全部源码兼容。"
+  },
+  {
+    "from": "scheme",
+    "to": "common-lisp",
+    "type": "influencedBy",
+    "label": "局部语言设计输入",
+    "source": "https://www.cs.cmu.edu/Groups/AI/html/cltl/clm/node5.html",
+    "sourceSha256": "d3265cc9788d2cdf996b6ef1773671f28d074f4c5cc381c1c6cbc6612e8420c2",
+    "evidence": "同一章称 Common Lisp 受 Scheme “to some extent”影响。只记录为局部设计输入，不表示 Common Lisp 是 Scheme 的后继、超集或语义兼容实现。"
+  },
+  {
+    "from": "interlisp",
+    "to": "common-lisp",
+    "type": "influencedBy",
+    "label": "局部语言设计输入",
+    "source": "https://www.cs.cmu.edu/Groups/AI/html/cltl/clm/node5.html",
+    "sourceSha256": "d3265cc9788d2cdf996b6ef1773671f28d074f4c5cc381c1c6cbc6612e8420c2",
+    "evidence": "同一章称 Common Lisp 受 Interlisp “to some extent”影响。只记录为局部设计输入，不表示版本兼容或完整继承 Interlisp 环境。"
   }
 ]

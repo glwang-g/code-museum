@@ -22,6 +22,10 @@
 | APL → BQN | Batch 17 | BQN 官方说明保留并重做 APL 传统中的核心思想 |
 | JavaScript → JSON | Batch 17 | JSON 官方明确称其基于 JavaScript 标准的一个子集 |
 | C → C3 | Batch 17 | C3 官方 README 明确说保留并现代化 C 的语法与语义 |
+| Lisp → Common Lisp | Batch 22 | 作者明确称 Common Lisp 是 Lisp 的新方言 |
+| MacLisp → Common Lisp | Batch 22 | 作者明确称 Common Lisp 是 MacLisp 的后继 |
+| Scheme → Common Lisp | Batch 22 | 作者明确写受 Scheme 有限度影响 |
+| Interlisp → Common Lisp | Batch 22 | 作者明确写受 Interlisp 有限度影响 |
 
 ## 当前范围内不补线
 

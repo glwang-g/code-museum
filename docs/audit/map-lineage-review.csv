@@ -42,7 +42,7 @@ clojurescript,ClojureScript,2011,unreviewed,,,0,0,0,0,0,,no-map-link
 cobol,COBOL,1959,verified-language,flow-matic,,1,1,0,1,0,,cited-only
 coconut,Coconut,2014,unreviewed,,,0,0,0,0,0,,no-map-link
 coffeescript,CoffeeScript,2009,unreviewed,,,0,0,0,2,0,,no-map-link
-common-lisp,Common Lisp,1984,verified-language,,,0,0,0,1,2,dylan | lisp,no-map-link
+common-lisp,Common Lisp,1984,verified-language,lisp | scheme,,2,2,0,3,1,dylan,cited-only
 common-workflow-language,CWL,2014,unreviewed,,,0,0,0,0,0,,no-map-link
 cpp,C++,1985,verified-language,c,d | java | lua | rust,5,5,0,9,0,,cited-only
 crystal,Crystal,2014,unreviewed,,,0,0,0,1,0,,no-map-link
@@ -112,7 +112,7 @@ lazy-k,Lazy K,2002,unreviewed,,,0,0,0,0,0,,no-map-link
 less,Less,2009,unreviewed,,,0,0,0,0,1,sass,no-map-link
 limbo,Limbo,1995,unreviewed,,,0,0,0,0,0,,no-map-link
 lisaac,Lisaac,2003,unreviewed,,,0,0,0,0,0,,no-map-link
-lisp,Lisp,1958,historical-primary-source,,julia | postscript | ruby | scheme | smalltalk,5,5,0,8,3,clojure | common-lisp | hy,cited-only
+lisp,Lisp,1958,historical-primary-source,,common-lisp | julia | postscript | ruby | scheme | smalltalk,6,6,0,8,2,clojure | hy,cited-only
 livescript,LiveScript,2011,unreviewed,,,0,0,0,1,0,,no-map-link
 llvmir,LLVM IR,2003,unreviewed,,mlir,1,1,0,1,0,,cited-only
 lolcode,LOLCODE,2007,unreviewed,,,0,0,0,0,0,,no-map-link
@@ -183,7 +183,7 @@ rust,Rust,2010,verified-language,cpp | csharp | erlang | haskell | ocaml | ruby 
 sagemath,Sage,2005,unreviewed,,,0,0,0,0,0,,no-map-link
 sass,Sass,2006,unreviewed,,,0,0,0,0,1,less,no-map-link
 scala,Scala,2004,verified-language,csharp | java,kotlin,3,3,0,1,0,,cited-only
-scheme,Scheme,1975,verified-language,lisp,javascript | lua | rust,4,4,0,4,0,,cited-only
+scheme,Scheme,1975,verified-language,lisp,common-lisp | javascript | lua | rust,5,5,0,4,0,,cited-only
 scilab,Scilab,1990,unreviewed,,,0,0,0,0,0,,no-map-link
 scss,SCSS,2006,unreviewed,,,0,0,0,0,0,,no-map-link
 sed,sed,1974,verified-language,,,0,0,0,0,0,,no-map-link

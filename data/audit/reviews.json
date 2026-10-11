@@ -1083,6 +1083,19 @@
           "finalUrl": "https://www.sbcl.org/manual/",
           "decodedBodySha256": "ed78dd4e14b51363453f4a22facd3d7627dd6256b7f855bd45049fcddbdeadfe",
           "excerpt": "agnostic Severity ¶ There are four levels of compiler diagnostic severity: error warning style warning note The first three levels correspond to condition classes which are defined in the ANSI standard for Common Lisp and which have special significance to the compile and compile-file functions. The"
+        },
+        {
+          "role": "关系依据",
+          "url": "https://www.cs.cmu.edu/Groups/AI/html/cltl/clm/node5.html",
+          "checkedAt": "2026-10-11T06:10:00+00:00",
+          "httpStatus": 200,
+          "reviewed": true,
+          "title": "Common Lisp the Language, 2nd Edition: Introduction",
+          "finalUrl": "https://www.cs.cmu.edu/Groups/AI/html/cltl/clm/node5.html",
+          "decodedBodySha256": "d3265cc9788d2cdf996b6ef1773671f28d074f4c5cc381c1c6cbc6612e8420c2",
+          "excerpt": "Common Lisp is a new dialect of Lisp, a successor to MacLisp, influenced strongly by Zetalisp and to some extent by Scheme and Interlisp.",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected",
+          "locator": "Chapter 1, Introduction"
         }
       ]
     },

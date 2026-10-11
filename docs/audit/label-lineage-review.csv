@@ -21,7 +21,7 @@ java,Java,1995,verified-language,c | cpp,csharp | groovy | javascript | kotlin |
 javascript,JavaScript,1995,verified-language,java | scheme,dart | kotlin | typescript,5,5,0,6,1,jsf,cited-only
 julia,Julia,2012,verified-language,lisp | matlab | perl | python | r | ruby,,6,6,0,0,0,,cited-only
 kotlin,Kotlin,2011,verified-language,csharp | groovy | java | javascript | scala,,5,5,0,0,0,,cited-only
-lisp,Lisp,1958,historical-primary-source,,julia | postscript | ruby | scheme | smalltalk,5,5,0,8,3,clojure | common-lisp | hy,cited-only
+lisp,Lisp,1958,historical-primary-source,,common-lisp | julia | postscript | ruby | scheme | smalltalk,6,6,0,8,2,clojure | hy,cited-only
 lua,Lua,1993,verified-language,awk | cpp | scheme | snobol,,4,4,0,5,0,,cited-only
 matlab,MATLAB,1984,verified-language,,julia | octave,2,2,0,1,1,java,cited-only
 objective-c,Objective-C,1984,unreviewed,c,swift,2,2,0,1,0,,cited-only
@@ -36,7 +36,7 @@ r,R,1993,verified-language,,julia,1,1,0,2,0,,cited-only
 ruby,Ruby,1995,verified-language,ada | lisp | perl | smalltalk,julia | rust,6,6,0,3,0,,cited-only
 rust,Rust,2010,verified-language,cpp | csharp | erlang | haskell | ocaml | ruby | scheme | swift,,8,8,0,6,0,,cited-only
 scala,Scala,2004,verified-language,csharp | java,kotlin,3,3,0,1,0,,cited-only
-scheme,Scheme,1975,verified-language,lisp,javascript | lua | rust,4,4,0,4,0,,cited-only
+scheme,Scheme,1975,verified-language,lisp,common-lisp | javascript | lua | rust,5,5,0,4,0,,cited-only
 simula,Simula,1965,historical-primary-source,algol-60,smalltalk,2,2,0,0,0,,cited-only
 smalltalk,Smalltalk,1972,verified-language,lisp | simula,ruby,3,3,0,0,0,,cited-only
 snobol,SNOBOL,1962,unreviewed,,lua,1,1,0,0,0,,cited-only

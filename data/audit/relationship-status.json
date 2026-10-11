@@ -3,10 +3,10 @@
   "scope": "全量关系结构检查与常显标签逐项盘点；摘录已存不等于史料论证或关系覆盖全部核实。缺线不表示没有上游。",
   "summary": {
     "labels": 50,
-    "relations": 428,
+    "relations": 432,
     "mapDesignGaps": 3,
     "states": {
-      "excerpt-recorded": 110,
+      "excerpt-recorded": 114,
       "field-only": 318
     },
     "warnings": 5
@@ -524,6 +524,7 @@
       "downstream": [
         "lisp|autolisp|influencedBy",
         "lisp|axio|influencedBy",
+        "lisp|common-lisp|influencedBy",
         "lisp|cosmicos|influencedBy",
         "lisp|julia|influencedBy",
         "lisp|kamby|influencedBy",
@@ -536,11 +537,11 @@
         "lisp|smalltalk|influencedBy"
       ],
       "ecology": [],
-      "mapLinks": 5,
+      "mapLinks": 6,
       "fieldOnly": 7,
       "citationOnly": 0,
       "needsDirectEvidence": 0,
-      "excerptRecorded": 6,
+      "excerptRecorded": 7,
       "state": "needs-review"
     },
     {
@@ -876,6 +877,7 @@
       ],
       "downstream": [
         "scheme|bio|influencedBy",
+        "scheme|common-lisp|influencedBy",
         "scheme|flare|influencedBy",
         "scheme|javascript|influencedBy",
         "scheme|lua|influencedBy",
@@ -884,11 +886,11 @@
         "scheme|slope|influencedBy"
       ],
       "ecology": [],
-      "mapLinks": 4,
+      "mapLinks": 5,
       "fieldOnly": 4,
       "citationOnly": 0,
       "needsDirectEvidence": 0,
-      "excerptRecorded": 4,
+      "excerptRecorded": 5,
       "state": "needs-review"
     },
     {
@@ -4244,6 +4246,39 @@
       "sources": []
     },
     {
+      "from": "interlisp",
+      "to": "common-lisp",
+      "type": "influencedBy",
+      "label": "局部语言设计输入",
+      "source": "https://www.cs.cmu.edu/Groups/AI/html/cltl/clm/node5.html",
+      "sourceSha256": "d3265cc9788d2cdf996b6ef1773671f28d074f4c5cc381c1c6cbc6612e8420c2",
+      "evidence": "同一章称 Common Lisp 受 Interlisp “to some extent”影响。只记录为局部设计输入，不表示版本兼容或完整继承 Interlisp 环境。",
+      "key": "interlisp|common-lisp|influencedBy",
+      "layer": "design",
+      "state": "excerpt-recorded",
+      "issues": [],
+      "reviewNote": "",
+      "mapVisible": false,
+      "evidenceVersion": {
+        "citedSha256": "d3265cc9788d2cdf996b6ef1773671f28d074f4c5cc381c1c6cbc6612e8420c2",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
+      "sources": [
+        {
+          "url": "https://www.cs.cmu.edu/Groups/AI/html/cltl/clm/node5.html",
+          "finalUrl": "https://www.cs.cmu.edu/Groups/AI/html/cltl/clm/node5.html",
+          "title": "Common Lisp the Language, 2nd Edition: Introduction",
+          "excerpt": "Common Lisp is a new dialect of Lisp, a successor to MacLisp, influenced strongly by Zetalisp and to some extent by Scheme and Interlisp.",
+          "checkedAt": "2026-10-11T06:10:00+00:00",
+          "sha256": "d3265cc9788d2cdf996b6ef1773671f28d074f4c5cc381c1c6cbc6612e8420c2",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected",
+          "reviewId": "common-lisp",
+          "locator": "Chapter 1, Introduction"
+        }
+      ]
+    },
+    {
       "from": "interpress",
       "to": "interscript",
       "type": "supersetOf",
@@ -5421,6 +5456,39 @@
     },
     {
       "from": "lisp",
+      "to": "common-lisp",
+      "type": "influencedBy",
+      "label": "作为 Lisp 新方言的家族承接",
+      "source": "https://www.cs.cmu.edu/Groups/AI/html/cltl/clm/node5.html",
+      "sourceSha256": "d3265cc9788d2cdf996b6ef1773671f28d074f4c5cc381c1c6cbc6612e8420c2",
+      "evidence": "Guy L. Steele Jr.《Common Lisp the Language》第2版第1章明确称 Common Lisp 是“a new dialect of Lisp”。这里表示 Lisp 家族到 Common Lisp 标准的直接身份承接，不表示 Common Lisp 是所有早期 Lisp 方言的超集，也不声称源码兼容。",
+      "key": "lisp|common-lisp|influencedBy",
+      "layer": "design",
+      "state": "excerpt-recorded",
+      "issues": [],
+      "reviewNote": "",
+      "mapVisible": true,
+      "evidenceVersion": {
+        "citedSha256": "d3265cc9788d2cdf996b6ef1773671f28d074f4c5cc381c1c6cbc6612e8420c2",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
+      "sources": [
+        {
+          "url": "https://www.cs.cmu.edu/Groups/AI/html/cltl/clm/node5.html",
+          "finalUrl": "https://www.cs.cmu.edu/Groups/AI/html/cltl/clm/node5.html",
+          "title": "Common Lisp the Language, 2nd Edition: Introduction",
+          "excerpt": "Common Lisp is a new dialect of Lisp, a successor to MacLisp, influenced strongly by Zetalisp and to some extent by Scheme and Interlisp.",
+          "checkedAt": "2026-10-11T06:10:00+00:00",
+          "sha256": "d3265cc9788d2cdf996b6ef1773671f28d074f4c5cc381c1c6cbc6612e8420c2",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected",
+          "reviewId": "common-lisp",
+          "locator": "Chapter 1, Introduction"
+        }
+      ]
+    },
+    {
+      "from": "lisp",
       "to": "cosmicos",
       "type": "influencedBy",
       "source": "https://github.com/breck7/pldb/blob/main/concepts/cosmicos.scroll",
@@ -5778,6 +5846,39 @@
       "mapVisible": false,
       "evidenceVersion": null,
       "sources": []
+    },
+    {
+      "from": "maclisp",
+      "to": "common-lisp",
+      "type": "successorOf",
+      "label": "从 MacLisp 标准化演进",
+      "source": "https://www.cs.cmu.edu/Groups/AI/html/cltl/clm/node5.html",
+      "sourceSha256": "d3265cc9788d2cdf996b6ef1773671f28d074f4c5cc381c1c6cbc6612e8420c2",
+      "evidence": "同一章称 Common Lisp 是“a successor to MacLisp”。这里表示作者明确的历史后继关系；Common Lisp 是多方标准化成果，不能简化成 MacLisp 的单线版本或全部源码兼容。",
+      "key": "maclisp|common-lisp|successorOf",
+      "layer": "design",
+      "state": "excerpt-recorded",
+      "issues": [],
+      "reviewNote": "",
+      "mapVisible": false,
+      "evidenceVersion": {
+        "citedSha256": "d3265cc9788d2cdf996b6ef1773671f28d074f4c5cc381c1c6cbc6612e8420c2",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
+      "sources": [
+        {
+          "url": "https://www.cs.cmu.edu/Groups/AI/html/cltl/clm/node5.html",
+          "finalUrl": "https://www.cs.cmu.edu/Groups/AI/html/cltl/clm/node5.html",
+          "title": "Common Lisp the Language, 2nd Edition: Introduction",
+          "excerpt": "Common Lisp is a new dialect of Lisp, a successor to MacLisp, influenced strongly by Zetalisp and to some extent by Scheme and Interlisp.",
+          "checkedAt": "2026-10-11T06:10:00+00:00",
+          "sha256": "d3265cc9788d2cdf996b6ef1773671f28d074f4c5cc381c1c6cbc6612e8420c2",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected",
+          "reviewId": "common-lisp",
+          "locator": "Chapter 1, Introduction"
+        }
+      ]
     },
     {
       "from": "markdown",
@@ -8112,6 +8213,39 @@
     },
     {
       "from": "scheme",
+      "to": "common-lisp",
+      "type": "influencedBy",
+      "label": "局部语言设计输入",
+      "source": "https://www.cs.cmu.edu/Groups/AI/html/cltl/clm/node5.html",
+      "sourceSha256": "d3265cc9788d2cdf996b6ef1773671f28d074f4c5cc381c1c6cbc6612e8420c2",
+      "evidence": "同一章称 Common Lisp 受 Scheme “to some extent”影响。只记录为局部设计输入，不表示 Common Lisp 是 Scheme 的后继、超集或语义兼容实现。",
+      "key": "scheme|common-lisp|influencedBy",
+      "layer": "design",
+      "state": "excerpt-recorded",
+      "issues": [],
+      "reviewNote": "",
+      "mapVisible": true,
+      "evidenceVersion": {
+        "citedSha256": "d3265cc9788d2cdf996b6ef1773671f28d074f4c5cc381c1c6cbc6612e8420c2",
+        "match": "matched",
+        "note": "引用响应与已读响应分别保留；字节差异不自动说明历史关系错误。"
+      },
+      "sources": [
+        {
+          "url": "https://www.cs.cmu.edu/Groups/AI/html/cltl/clm/node5.html",
+          "finalUrl": "https://www.cs.cmu.edu/Groups/AI/html/cltl/clm/node5.html",
+          "title": "Common Lisp the Language, 2nd Edition: Introduction",
+          "excerpt": "Common Lisp is a new dialect of Lisp, a successor to MacLisp, influenced strongly by Zetalisp and to some extent by Scheme and Interlisp.",
+          "checkedAt": "2026-10-11T06:10:00+00:00",
+          "sha256": "d3265cc9788d2cdf996b6ef1773671f28d074f4c5cc381c1c6cbc6612e8420c2",
+          "hashScope": "complete HTTP response body bytes; excerpt is manually selected",
+          "reviewId": "common-lisp",
+          "locator": "Chapter 1, Introduction"
+        }
+      ]
+    },
+    {
+      "from": "scheme",
       "to": "flare",
       "type": "influencedBy",
       "source": "https://github.com/breck7/pldb/blob/main/concepts/flare.scroll",
@@ -9736,8 +9870,8 @@
   ],
   "inputHashes": {
     "data/raw/pldb.json": "57f45d25bba78ab6bc4af5d969356d2efbfcc7c1ee722dbb5c708d60aa78ba77",
-    "data/audit/reviews.json": "549da44e36364656f3d5864a5187fe49aed6bf1618b93786b60d5f99f3df467b",
-    "data/relationship-overrides.json": "fad3acbe4f93309a997e93fa73a04f34cf5d481e339665376bc38d62016f9474",
+    "data/audit/reviews.json": "324b7a5654790b2a95da3d773f27a4008795ef67136a67b287aa5e31cb71de7b",
+    "data/relationship-overrides.json": "545c4439eb728adf47b2ff88064a325069b20eae7c301a94f924904c154d5093",
     "data/ecosystem-relations.json": "0d96e92a3853eddc6b32e4a45d5c90223d2096fa35438823f7dcfe72ce161e76",
     "data/audit/relationship-decisions.json": "4339ab007ed91414653b56ddf2dcbe0a9450de5df1705c9ad76c1fbc7db53960",
     "data/audit/label-selection.json": "dc5eee62fa662b0d60940375d8a3ec56ac2bbf84ee2b9922a290d46d11cc866f"
