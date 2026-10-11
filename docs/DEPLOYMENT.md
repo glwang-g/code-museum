@@ -141,3 +141,7 @@ HTTP MCP共用执行器进程及Docker启动依赖，手工Bearer无OAuth/SSE；
 信息层级首轮提交 `3fd9537` 对应 Actions `38101158448`；交互闭环提交 `e047043` 对应 Actions `38102455759`。两次 build/deploy 均成功，沿用 master 自动发布、限权部署账户及现有生产目录，没有修改后端执行权限、令牌、统计数据库或 Nginx。
 
 第二轮上线后读取正式站 `index.html`、`museum.js`、`museum.css`、`credits.js`、`exploration-tools.js`，SHA-256 与本地构建分别为 `02345222…`、`40ce6b6f…`、`8e3f2628…`、`e2fb2a6c…`、`b329729a…`。实际生产 HTTPS Chrome 探针通过：实验台“项目与许可”打开并聚焦 `credit-browser-javascript`；关系设置摘要显示“探索设置 · 上游 · 2 层”；设置打开时按 Escape 只关闭设置，档案保持 open 且非 inert。完整本地浏览器证据见 `data/audit/exploration-hierarchy-round2-checks.json` 与 `data/audit/exploration-hierarchy-runtime-browser-checks.json`。
+
+## 2026-10-11 仓库链接规范化
+
+GitHub remote 已迁至 `glwang-g/code-museum`。提交 `0aa352e` 将站点顶部项目入口、出处页源码与 README 链接、仓库 README 内外链统一到新地址，Actions `38102639824` build/deploy 成功。正式站 `index.html` SHA-256 `ac3b4f16…`、`credits.js` `3ebeec93…` 与本地构建一致。`npm run diagnose:release -- --url https://codemuseum.freexlib.com --json` 返回 errors/warnings 均为空，线上与本地 provenance 的 PLDB 快照、人工审查、地图节点、421 条设计关系与 7 条生态关系完全一致。本次没有后端或运行权限改动。

@@ -440,3 +440,5 @@ URL 保留语言 ID、层、展开范围、依据和实验台主题，兼容旧�
 本地 `npm test` 60/60、离线构建通过。实际隔离 Chrome 的探索回归覆盖 1440、390、320 三种宽度、明暗主题、真实鼠标设置/收起/返回地图、URL 恢复、证据说明及 JavaScript/Scheme 练习，8 组通过；完整运行时浏览器回归从远端默认、主题、出处、关系证据、四种浏览器运行时、历史关系和地图检索一路到最终地图搜索全部通过。证据见 `data/audit/exploration-hierarchy-round2-checks.json` 与 `data/audit/exploration-hierarchy-runtime-browser-checks.json`。本轮代码与证据待提交、推送和正式站核验。
 
 本轮发布完成：`e047043` 已推送，Actions `38102455759` 的 build/deploy 成功。正式站 `index.html`、`museum.js`、`museum.css`、`credits.js`、`exploration-tools.js` 与本地构建 SHA 逐字节一致；实际生产 HTTPS Chrome 探针确认实验台直接定位 `credit-browser-javascript`、设置摘要显示“探索设置 · 上游 · 2 层”，以及 Escape 只关闭设置且档案仍打开。
+
+GitHub 推送同时报告仓库已正式迁至 `glwang-g/code-museum`。站点顶部“项目”、出处页源码/README 与 README 本文件链接已统一改为新地址，并新增测试禁止旧 `codemuseum` 仓库路径回流。`npm test` 61/61、离线构建通过；提交 `0aa352e` 对应 Actions `38102639824` build/deploy 成功，正式 `index.html`/`credits.js` 与本地构建 SHA 一致，`diagnose:release` 无错误或警告且线上/本地 provenance 一致。
