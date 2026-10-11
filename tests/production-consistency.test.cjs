@@ -15,7 +15,8 @@ test('research gap report preserves explicit unresolved items without inventing 
   const result = report();
   assert.equal(result.scope.includes('does not add'), true);
   assert.ok(result.relationGaps.fieldOnly >= 0);
-  assert.deepEqual(result.unresolvedResearch.map(item => item.id), ['javascript|objective-j|supersetOf']);
+  const active = ledger.entries.filter(entry => ['blocked', 'active'].includes(entry.status));
+  assert.deepEqual(result.unresolvedResearch.map(item => item.id), active.map(entry => entry.id));
   assert.equal(result.researchLedger.closed, ledger.entries.filter(entry => ['verified', 'closed-no-qualifying-source'].includes(entry.status)).length);
-  assert.equal(result.researchLedger.active, 1);
+  assert.equal(result.researchLedger.active, active.length);
 });

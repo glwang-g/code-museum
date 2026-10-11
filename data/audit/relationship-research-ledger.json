@@ -175,6 +175,153 @@
       "status": "verified",
       "batch": "2026-10-10_BATCH-21",
       "note": "Author POPL 1997 summary explicitly calls Pizza a strict superset; limited to historical design, not modern Java or runtime certification."
+    },
+    {
+      "id": "lisp|common-lisp|influencedBy",
+      "status": "verified",
+      "batch": "2026-10-11_BATCH-22",
+      "note": "CLtL2 explicitly calls Common Lisp a new dialect of Lisp; family identity, not strict superset or source compatibility."
+    },
+    {
+      "id": "maclisp|common-lisp|successorOf",
+      "status": "verified",
+      "batch": "2026-10-11_BATCH-22",
+      "note": "CLtL2 explicitly calls Common Lisp a successor to MacLisp; multi-party standardization is not reduced to a single-line version."
+    },
+    {
+      "id": "scheme|common-lisp|influencedBy",
+      "status": "verified",
+      "batch": "2026-10-11_BATCH-22",
+      "note": "CLtL2 says Common Lisp was influenced by Scheme to some extent; limited design input, not succession or compatibility."
+    },
+    {
+      "id": "interlisp|common-lisp|influencedBy",
+      "status": "verified",
+      "batch": "2026-10-11_BATCH-22",
+      "note": "CLtL2 says Common Lisp was influenced by Interlisp to some extent; limited design input, not environment compatibility."
+    },
+    {
+      "id": "common-lisp|zetalisp-gap|influencedBy",
+      "status": "blocked",
+      "batch": "2026-10-11_BATCH-22",
+      "note": "CLtL2 says Common Lisp was strongly influenced by Zetalisp, but the fixed PLDB snapshot has no Zetalisp endpoint.",
+      "reopenWhen": "A fixed Zetalisp record or stable identity source becomes available."
+    },
+    {
+      "id": "miranda|haskell|influencedBy",
+      "status": "verified",
+      "batch": "2026-10-11_BATCH-23",
+      "note": "Haskell designers history explicitly says Haskell design was strongly influenced by Miranda; scope includes purity, higher order, laziness, static typing and syntax feel."
+    },
+    {
+      "id": "lisp|haskell|influencedBy",
+      "status": "verified",
+      "batch": "2026-10-11_BATCH-24",
+      "note": "Haskell 98 Report Preface lists Lisp as a particularly influential forerunner; overall acknowledged influence only."
+    },
+    {
+      "id": "common-lisp|haskell|influencedBy",
+      "status": "verified",
+      "batch": "2026-10-11_BATCH-24",
+      "note": "Haskell 98 Report Preface lists Common Lisp as a particularly influential forerunner; overall acknowledged influence only."
+    },
+    {
+      "id": "scheme|haskell|influencedBy",
+      "status": "verified",
+      "batch": "2026-10-11_BATCH-24",
+      "note": "Haskell 98 Report Preface lists Scheme as a particularly influential forerunner; overall acknowledged influence only."
+    },
+    {
+      "id": "apl|haskell|influencedBy",
+      "status": "verified",
+      "batch": "2026-10-11_BATCH-24",
+      "note": "Haskell 98 Report Preface lists APL as a particularly influential forerunner; overall acknowledged influence only."
+    },
+    {
+      "id": "standard-ml|haskell|influencedBy",
+      "status": "verified",
+      "batch": "2026-10-11_BATCH-24",
+      "note": "Haskell 98 Report Preface lists Standard ML as a particularly influential forerunner; overall acknowledged influence only."
+    },
+    {
+      "id": "clean|haskell|influencedBy",
+      "status": "verified",
+      "batch": "2026-10-11_BATCH-24",
+      "note": "Haskell 98 Report Preface lists Clean as a particularly influential forerunner; overall acknowledged influence only."
+    },
+    {
+      "id": "csharp|f-sharp|influencedBy",
+      "status": "verified",
+      "batch": "2026-10-11_BATCH-25",
+      "note": "F# author history names C# 1.0 objects/properties/events, C# 3.0 LINQ and C# 7.0 Span as design inputs; no succession or source-compatibility claim."
+    },
+    {
+      "id": "python|f-sharp|influencedBy",
+      "status": "closed-no-qualifying-source",
+      "batch": "2026-10-11_BATCH-25",
+      "note": "F# author history does not identify Python as an F# design source; Python is mentioned as an influence on C# 4.0 dynamic.",
+      "reopenWhen": "An F# design source explicitly names Python as an input for a concrete feature."
+    },
+    {
+      "id": "f-sharp|typescript|influencedBy",
+      "status": "verified",
+      "batch": "2026-10-11_BATCH-26",
+      "note": "F# author history says TypeScript was directly influenced by F# and identifies the TypeScript originator’s preceding F# work; design-source claim only."
+    },
+    {
+      "id": "lisp|clojure|influencedBy",
+      "status": "verified",
+      "batch": "2026-10-11_BATCH-27",
+      "note": "Clojure official page says it is a member of the Lisp family and inherits code-as-data and macro design; not a claim about every Lisp dialect or source compatibility."
+    },
+    {
+      "id": "standard-ml|alice|influencedBy",
+      "status": "verified",
+      "batch": "2026-10-11_BATCH-28",
+      "note": "Alice official manual says it is based on Standard ML and lists extensions; not a complete superset or all-program compatibility claim."
+    },
+    {
+      "id": "iswim|haskell|influencedBy",
+      "status": "verified",
+      "batch": "2026-10-11_BATCH-29",
+      "note": "Haskell 98 Report Preface lists ISWIM as a particularly influential forerunner; overall acknowledged influence only."
+    },
+    {
+      "id": "fp|haskell|influencedBy",
+      "status": "verified",
+      "batch": "2026-10-11_BATCH-29",
+      "note": "Haskell 98 Report Preface lists Backus’s FP as a particularly influential forerunner; overall acknowledged influence only."
+    },
+    {
+      "id": "ml|haskell|influencedBy",
+      "status": "verified",
+      "batch": "2026-10-11_BATCH-29",
+      "note": "Haskell 98 Report Preface lists ML as a particularly influential forerunner; overall acknowledged influence only."
+    },
+    {
+      "id": "hope|haskell|influencedBy",
+      "status": "verified",
+      "batch": "2026-10-11_BATCH-29",
+      "note": "Haskell 98 Report Preface lists Hope/Hope+ as particularly influential forerunners; overall acknowledged influence only."
+    },
+    {
+      "id": "gofer|haskell|influencedBy",
+      "status": "verified",
+      "batch": "2026-10-11_BATCH-29",
+      "note": "Haskell 98 Report Preface lists Gofer as a particularly influential forerunner; PLDB year 1994 conflicts with Haskell 1990 and remains a chronology review lead."
+    },
+    {
+      "id": "sisal|haskell|influencedBy",
+      "status": "verified",
+      "batch": "2026-10-11_BATCH-29",
+      "note": "Haskell 98 Report Preface lists Sisal as a particularly influential forerunner; overall acknowledged influence only."
+    },
+    {
+      "id": "haskell|id-gap|influencedBy",
+      "status": "blocked",
+      "batch": "2026-10-11_BATCH-29",
+      "note": "Haskell 98 Report Preface lists Id as a particularly influential forerunner, but the fixed PLDB snapshot has no Id endpoint.",
+      "reopenWhen": "A fixed Id record or stable identity source becomes available."
     }
   ]
 }
