@@ -149,3 +149,7 @@ GitHub remote 已迁至 `glwang-g/code-museum`。提交 `0aa352e` 将站点顶�
 ## 2026-10-11 关系缺口研究入口上线
 
 提交 `9cbb69b` 增加档案到关系核对 gaps 视图的直达入口，Actions `38115359630` build/deploy 成功，无后端或权限改动。正式站 `museum.js` SHA-256 `55edf131…`、`relationship-coverage.js` `113cfe69…` 与本地构建一致；本地真实 Chrome 回归覆盖 1440/390、gaps 筛选、XSLT 聚焦和历史折叠区访问，证据见 `data/audit/relationship-gap-research-browser-checks.json`。
+
+## 2026-10-11 地图关系缺口入口
+
+提交 `6de9d65` 将无设计层关联常显语言的研究入口补到地图底部，Actions `38115707001` build/deploy 成功。1440/390 实际 Chrome 回归覆盖地图入口和档案入口、gaps 过滤与 XSLT 聚焦。
