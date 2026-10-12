@@ -169,6 +169,8 @@
 6. 工程深化：目前 HTML/CSS/JS 已迁出 `dist`，但仍较紧凑，交互集中在 `src/museum.js`。本轮解决的是源码归属与可复现构建，不是组件化、领域分层或全面可维护性重构。
 7. 完整国际化、自动化交互/视觉回归、部署流程及其他项目整合，均未在本轮完成。
 
+> 当前快照口径（2026-10-12，`30b6c4c` 已上线，以 `data/audit/relationship-status.json` 为准）：461 条关系（451 设计/历史 + 10 生态），摘录已存 178、字段待核 280、仅引用 3；研究候选 233（均为从未研究过的字段待核关系）、已排除 47（closed 41 / blocked 6）；研究台账 135（verified 82 / closed 44 / blocked 9）；身份线索 126（未决 94 / 已明确 32）；地图节点 233、常显设计缺口 2（Assembly/XSLT）、年代与环路警告 6。上面 1–7 项是 backlog，不是已实现能力；数字只描述当前固定输入与审计状态，不表示已找全。
+
 ## 7. 后续协作方式
 
 - 用户不希望只有口头承诺或方案说明。要求实现时应实际修改、构建、验证，明确展示做了什么和没做什么。
@@ -502,6 +504,8 @@ GitHub 推送同时报告仓库已正式迁至 `glwang-g/code-museum`。站点�
 
 生产 `diagnose:release` 在提交 `3657d33` 上再次通过：本地与线上 provenance 的记录数、语言数、地图标签、444 条设计关系、7 条生态关系和审查来源完全一致，errors/warnings 为空。此后仅做文档记录，不再改变已核验网络输入。
 
+> 说明：下面批次 38–42 与身份批次 6–7 标题里的「本地待提交」是当时状态，它们已在 2026-10-12 随提交 `30b6c4c` 提交、推送并部署上线，见文末「2026-10-12 发布记录」。
+
 ## 2026-10-11 身份批次 6 与 Chapel 关系批次 38（本地待提交）
 
 本批在不改动 PLDB 原始快照的前提下完成 10 条可审计修订：从等价搜索别名中排除 `ApacheConf → Apache`、`Emacs Lisp → Emacs`、`JSON → GeoJSON`、`TeX → LaTeX`、`Nix → NixOS` 五个误合并方向；前者为配置语法/服务器，后四者分别是编辑器、数据格式、相关排版系统和 Linux 发行版/包管理系统，均保留独立身份。
@@ -547,3 +551,11 @@ Chapel 官方概述继续补入 `C# / CLU / ML / Modula / Scala → Chapel` 五�
 收口 10 条（无可 qualifying 原文，均带 `reopenWhen`）：`R/SQL/Fortran → Particles`（极简索引页）、`Fortran → BALGOL`（Algol-58 方言，编译器取向由 FORTRAN 转向 Algol-58）、`Fortran → EXPLOR`（MINI-EXPLOR 为 FORTRAN 编码版本，FORTRAN 是实现语言）、`OCaml → MLscript`（仅论文实现细节）、`Visual Basic → Speedie`（README 未列 VB）、`SQL → SQUARE`（SQUARE 1973 早于 SEQUEL/SQL，记录方向与史实相反）、`Prolog → Gaea` 与 `Prolog → Progol`（均为 supersetOf，但一手材料只称 logic programming / 允许 Prolog 程序作背景知识，未声明语言超集）。受阻 2 条：`Ruby → Slash`、`Perl → Slash`，因 slash-lang.org 域名过期或停用，未取得可哈希一手来源。
 
 本轮重新生成审计后的口径：总关系 461 条（451 设计/历史 + 10 生态）、摘录已存 178（+8）、字段待核 280（−8）、仅引用 3；研究台账 135 条（verified 82 / closed 44 / blocked 9），研究候选由 253 降至 233，排除 47 条（closed 41 / blocked 6）；人工审查 128 条、已读来源 252 条（来源条目 254）。身份总线索 126、未决 94、已明确处理 32。地图节点 233、常显设计缺口 2（Assembly/XSLT）、年代审查线索 6。`npm run audit`、`npm run relations:audit`、`npm run research:coverage`、`npm run research:priorities`、`npm test` 与 `npm run build` 均已通过。详情见 `docs/audit/RELATIONSHIP_RESEARCH_2026-10-12_BATCH-42.md`。
+
+## 2026-10-12 发布记录：身份批次 6–7 与关系批次 38–42 已上线
+
+本节覆盖上面批次段落里的「本地待提交／尚未提交、推送或部署」表述。身份批次 6–7 与关系批次 38–42 已随提交 `30b6c4c`（Advance relationship and identity research through batch 42，2026-10-12 00:15 +0800）提交、推送并部署。GitHub Actions 运行 #97（head `30b6c4c`）的 build 与 deploy 两个 job 均成功，deploy 的 `Upload an independent immutable release` 与 `Check HTTPS release` 步骤通过，说明部署开关已启用且公网发布成功。
+
+上线核验：`node scripts/diagnose-release.cjs --url https://codemuseum.freexlib.com` 返回 PASS，线上 `data/provenance.json` 与本机构建在 sha256、记录数、语言数、地图语言数、边数与生态边数上逐项一致；线上为 5,155 条记录、4,608 条来源标记语言、453 条设计/历史边与 8 条生态边。另将站点与文档里的项目链接改指规范仓库 `glwang-g/code-museum`。
+
+发布后工作区保持干净（唯一未跟踪项是 gitignore 的 `dist/`）。本批只改变证据等级与身份处理状态，不新增关系边、不修改 PLDB 原始快照、不增加网页运行时。仍未完成的是 §6 的方向与快照里的待核项（280 条字段待核、233 条未研究候选、94 条身份未决、Assembly/XSLT 两个常显设计缺口、6 条年代警告）；这些是 backlog，既非已实现能力，也不是已知缺陷。
