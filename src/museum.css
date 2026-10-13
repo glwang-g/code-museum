@@ -26,7 +26,7 @@ body:not(.lineage-focus) .atlas .dock.dot:not(.selected):is(:hover,:focus-visibl
 .lineage-mode .dock{font-size:12px;padding:4px 7px;min-height:28px}
 .lineage-mode .dock.dot{width:8px;height:8px;padding:0}
 .lineage-mode .dock:hover,.lineage-mode .dock.selected{z-index:8}
-.lineage-focus .atlas .dock:not(.related){opacity:.035;filter:blur(2.4px);z-index:0;pointer-events:none;color:transparent;border-color:transparent;background:transparent;box-shadow:none}
+.lineage-focus .atlas .dock:not(.related){opacity:.035;z-index:0;pointer-events:none;color:transparent;border-color:transparent;background:transparent;box-shadow:none}
 .lineage-focus .atlas .dock.related{opacity:1;filter:none;z-index:8}
 .lineage-focus .atlas .dock.dot.related:not(.selected)::before{content:attr(data-name);position:absolute;left:11px;top:-10px;z-index:10;padding:4px 7px;border:1px solid #bcd6ca80;border-radius:3px;background:#0b2028ed;color:#f2f6ef;font:12px/1.35 system-ui,-apple-system,'PingFang SC',sans-serif;white-space:nowrap;box-shadow:0 2px 8px #00151b80;pointer-events:none}
 .lineage-focus .atlas .relations path{opacity:.035;filter:blur(1.2px)}

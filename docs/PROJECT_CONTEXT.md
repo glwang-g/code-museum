@@ -559,3 +559,12 @@ Chapel 官方概述继续补入 `C# / CLU / ML / Modula / Scala → Chapel` 五�
 上线核验：`node scripts/diagnose-release.cjs --url https://codemuseum.freexlib.com` 返回 PASS，线上 `data/provenance.json` 与本机构建在 sha256、记录数、语言数、地图语言数、边数与生态边数上逐项一致；线上为 5,155 条记录、4,608 条来源标记语言、453 条设计/历史边与 8 条生态边。另将站点与文档里的项目链接改指规范仓库 `glwang-g/code-museum`。
 
 发布后工作区保持干净（唯一未跟踪项是 gitignore 的 `dist/`）。本批只改变证据等级与身份处理状态，不新增关系边、不修改 PLDB 原始快照、不增加网页运行时。仍未完成的是 §6 的方向与快照里的待核项（280 条字段待核、233 条未研究候选、94 条身份未决、Assembly/XSLT 两个常显设计缺口、6 条年代警告）；这些是 backlog，既非已实现能力，也不是已知缺陷。
+
+## 2026-10-13 时间长河点击性能修复（本地待提交）
+
+用户反馈：在「时间长河」视图点击某个标签后反应很慢。用真实无头 Chrome（CDP，1440×900）复现并定位，问题不是单个慢函数，而是同一次点击被重复放大。
+
+- 根因：`#detail` 档案面板展开会连续改变 `#viewport` 尺寸（一次点击测得 5 次变化）；旧的 `ResizeObserver` 与 `transitionend(flex-basis)` 每次都调用 `renderLineageFocus()`，而该函数是整轮渲染——重算 related 集合、`innerHTML` 重建 `#relations` 全部 SVG、重设所有节点 class，并读写 `#world` transform。一次点击因此触发 5 次整轮渲染（基线：`renderLineageFocus` 调用 5 次、`#relations` 变更 6 次、4 个长任务、最长 178ms）。`applyZoom()` 还先写样式再经 `minimumZoom()` 读 `clientWidth`，造成强制同步布局；`.lineage-focus .atlas .dock:not(.related)` 又对约 230 个节点加 `filter:blur(2.4px)`，制造大量绘制层。
+- 修复（`src/museum.js`、`src/museum.css`）：把「缩放＋取景＋标签避让＋滚动」从 `renderLineageFocus` 抽成独立 `focusGeometry()`，整轮内容渲染与几何重排分离；新增 `scheduleFocusGeometry()` 以 60ms 去抖合并连续请求，`ResizeObserver` 与 `transitionend` 改走该入口；`applyZoom()` 缓存视口尺寸并内联计算 `minimumScale`，去掉 `minimumZoom()` 的二次 `clientWidth` 读；删除非关联节点的 `filter:blur`（保留 opacity .035）。
+- 前后对比（同一 CDP 脚本，点击 `javascript` 标签）：基线 `renderLineageFocus` 5 次、`#relations` 变更 6 次、窗口缩放触发 1 次整轮渲染；修复后 `renderLineageFocus` 1 次、`#relations` 变更 2 次、窗口缩放不再整轮渲染（该次点击 5 个 `scheduleFocusGeometry` 请求合并为 1 次 `focusGeometry`）。CPU 采样热点 `minimumZoom` 15%→0、`renderLineageFocus` 7.8%→0.1%。首次点击仍有约 140ms 一次性绘制开销（地图与面板首帧合成），后续点击同步约 4ms、到绘制约 46ms。
+- 验证：`npm test` 63/63、`npm run build` 通过；`npm run runtime:browser`（真实 Chrome，1440/390）全部 PASS，含 `lua/kotlin focus labels avoid overlaps and guides remain aligned after zoom and fit` 与 `Relationship evidence … 50 label coverage`。本改动只在本地，尚未提交、推送或部署。
