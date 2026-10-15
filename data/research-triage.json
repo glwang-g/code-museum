@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "scope": "对现有固定证据的分诊，非新增一手史料研究；不修改关系、身份或年代警告计数。",
+  "items": [
+    {
+      "key": "gofer|haskell|influencedBy",
+      "status": "scoped",
+      "title": "回顾性影响，不能解释为首版因果",
+      "note": "已有说明区分 Gofer 后续影响与 Haskell 1.0。报告列举先驱不等于证明 Gofer 影响了 1990 年首版；馆藏 1994 与历史材料的 1991 也需分别校订。",
+      "nextStep": "补齐具体特性与 Haskell 版本的对应时间；继续保留年代警告。"
+    },
+    {
+      "key": "swift|rust|influencedBy",
+      "status": "scoped",
+      "title": "演进中的局部输入",
+      "note": "Rust 官方清单明确列出 Swift 的 optional bindings，并声明包括演进中已移除的设计；它不表示 2010 年的 Rust 已受到 2014 年 Swift 的影响。",
+      "nextStep": "取得具体特性引入、变更或移除的版本记录后，才能建立事件级时间线。"
+    },
+    {
+      "key": "ex-editor|vi|influencedBy",
+      "status": "needs-primary-source",
+      "title": "编辑器身份与版本待分开核实",
+      "note": "固定来源将编辑器条目记为影响关系；1978 → 1976 的年代倒序本身不能证明方向错误，也不能据此改写年份。",
+      "nextStep": "读取 ex / vi 的作者历史与版本资料，分别确认条目身份、事件和设计关系。"
+    },
+    {
+      "key": "interpress|interscript|supersetOf",
+      "status": "needs-primary-source",
+      "title": "超集主张与事件时间待核",
+      "note": "当前只有来源字段；1986 → 1984 的倒序尚无匹配原文解释。不将引用名称或文档格式相似视为超集证据。",
+      "nextStep": "取得原始规范中明确的包容关系，并分别核对设计、发表和版本年代。"
+    },
+    {
+      "key": "treesheets|particles|influencedBy",
+      "status": "needs-primary-source",
+      "title": "设计影响与实现对照待核",
+      "note": "当前只有来源字段；2019 → 2017 的馆藏年份不能代表某一功能的引入事件。尚无匹配摘录支持整体设计输入。",
+      "nextStep": "取得作者明确归因的文档或版本记录；仅实现工具、性能比较或语法相似不足以升级。"
+    },
+    {
+      "key": "turtle|notation3|supersetOf",
+      "status": "needs-primary-source",
+      "title": "关系方向与版本范围待核",
+      "note": "当前只有来源字段；2011 → 1998 的倒序与 supersetOf 主张需要分别查证，不把晚出的子集表述自动反向改写成历史继承。",
+      "nextStep": "对读固定版本的 Turtle 与 Notation3 规范，核对超集方向、语法范围和发表事件。"
+    },
+    {
+      "key": "language:xslt",
+      "status": "blocked-endpoint",
+      "title": "已有 XSL 史料，馆藏端点受阻",
+      "note": "台账记录 W3C 1997 提案称 XSL 基于 DSSSL；这与 XSLT 1.0 的规范引用是不同证据。当前快照缺 DSSSL 端点，且 XSL 与具体 XSLT 版本仍需明确区分。",
+      "nextStep": "先建立有来源的补充馆藏端点机制，并核定 XSL → XSLT 的适用范围，再决定是否补线。"
+    },
+    {
+      "key": "language:assembly-language",
+      "status": "needs-specific-identity",
+      "title": "先确定具体汇编方言",
+      "note": "Assembly 是集合性称呼。NASM / x86 的资料不能直接支持整个汇编家族的单一上游；缺少连线不表示没有历史来源。",
+      "nextStep": "选定具体指令集、汇编器方言及历史事件，核实独立身份和来源后再建关系。"
+    }
+  ]
+}

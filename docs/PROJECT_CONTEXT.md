@@ -1,6 +1,6 @@
 # Code Museum · 产品上下文与交接
 
-整理于 2026-09-24，更新于 2026-10-10，依据项目讨论及当前源码。本文是上下文摘要，不是完整聊天记录，也不是所有讨论项均已实施的承诺。构建方法见 [README](../README.md)。
+整理于 2026-09-24，更新于 2026-10-15，依据项目讨论及当前源码。本文是上下文摘要，不是完整聊天记录，也不是所有讨论项均已实施的承诺。构建方法见 [README](../README.md)。
 
 ## 1. 我们在做什么
 
@@ -568,3 +568,18 @@ Chapel 官方概述继续补入 `C# / CLU / ML / Modula / Scala → Chapel` 五�
 - 修复（`src/museum.js`、`src/museum.css`）：把「缩放＋取景＋标签避让＋滚动」从 `renderLineageFocus` 抽成独立 `focusGeometry()`，整轮内容渲染与几何重排分离；新增 `scheduleFocusGeometry()` 以 60ms 去抖合并连续请求，`ResizeObserver` 与 `transitionend` 改走该入口；`applyZoom()` 缓存视口尺寸并内联计算 `minimumScale`，去掉 `minimumZoom()` 的二次 `clientWidth` 读；删除非关联节点的 `filter:blur`（保留 opacity .035）。
 - 前后对比（同一 CDP 脚本，点击 `javascript` 标签）：基线 `renderLineageFocus` 5 次、`#relations` 变更 6 次、窗口缩放触发 1 次整轮渲染；修复后 `renderLineageFocus` 1 次、`#relations` 变更 2 次、窗口缩放不再整轮渲染（该次点击 5 个 `scheduleFocusGeometry` 请求合并为 1 次 `focusGeometry`）。CPU 采样热点 `minimumZoom` 15%→0、`renderLineageFocus` 7.8%→0.1%。首次点击仍有约 140ms 一次性绘制开销（地图与面板首帧合成），后续点击同步约 4ms、到绘制约 46ms。
 - 验证：`npm test` 63/63、`npm run build` 通过；`npm run runtime:browser`（真实 Chrome，1440/390）全部 PASS，含 `lua/kotlin focus labels avoid overlaps and guides remain aligned after zoom and fit` 与 `Relationship evidence … 50 label coverage`。本改动只在本地，尚未提交、推送或部署。
+
+
+## 2026-10-15 下一轮五项：首批本地交付
+
+本节覆盖 2026-10-13 段落的「本地待提交」状态：该次地图点击修复已在本轮开始前成为 Git 提交 `2137056`。本轮不根据这条提交记录推断生产发布状态。
+
+- 地图性能与维护：将取景、直接关联边界测量和延迟调度拆到 `src/map-focus.js`，`museum.js` 保留选择、导航与关系内容渲染。同步取景取消旧任务，延迟任务在手动缩放、选择变化或离开地图后不再执行；窗口及档案分隔条尺寸变化只走几何重排。`applyZoom` 继续使用同一批读取的视口高度，避免写后再次读取。
+- 语言展品：`data/language-exhibits.json` 为 JavaScript、Python、Lua、Scheme、C、C++、Java、Rust 提供设计背景、3 条核心规则、原创注释函数示例、版本与执行边界；档案可跳往历史依据或对应实验台主题，保留草稿。引用已有匹配摘录，不新增历史边或运行时。`scripts/curated-content.cjs` 在构建前验证语言身份、示例主题与历史摘录。
+- 历史证据分诊：`data/research-triage.json` 覆盖 6 个年代警告和 Assembly/XSLT 两个常显缺口，相关关系或档案显示范围说明及下一步。Gofer/Haskell 与 Swift/Rust 的说明仍限于既有回顾/演进证据，其余四项仍需一手资料；Assembly 需具体方言身份，XSLT 仍有端点与版本适用范围问题。本轮没有新检索一手史料，没有关闭 94 条身份未决或减少 280 条字段待核，不能将分诊算作核实完成。
+- 学习闭环：增加 JavaScript 六步路线（先读展品，再做变量、分支、循环、函数、列表五题），总计 5 条路线、27 步。五题都只比较真实输出，保存本机匹配记录，不判断代码结构或掌握程度；11 种同题语言增加原创分支例子，运行能力沿用现状。
+- 回归入口：`npm run museum:browser` 使用已安装 Chrome、本机临时服务和固定运行时，无远端执行接口；覆盖正常动画下两种地图的鼠标选中与尺寸变化、宽窄屏明暗展品导航、四种浏览器解释器分支执行、完整 JS 路线反馈/超时/恢复/进度恢复。截图默认写到 `output/iteration-2026-10-15/`，不参与构建。延迟数字是点击捕获到两次 rAF 的本机观察值，不能等同于实际完成绘制、生产或 Safari 性能。
+
+提交前验证：`npm test` 66/66、`npm run build` 通过；新增真实 Chrome 回归 63 项通过，涵盖 32 个展品尺寸/主题组合、四种浏览器运行时的真实分支结果、完整 JavaScript 路线及 1440/390/320 明暗导览文字对比度。既有 `npm run runtime:browser` 完整运行时回归也全部通过（非全馆节点 sweep）。已实际查看代表宽窄屏截图；检查报告保存在 `data/audit/museum-advance-browser-checks.json`，报告源码和被服务文件哈希均与当前输入一致。首轮检查脚本误把页面成功状态 `ok` 写成 `success`，导致已输出 large 仍等待超时；修正脚本后完整复跑通过。截图核读发现亮色导览背景与文字对比度不足，修正后重新构建、测试并复跑通过。
+
+本轮经用户授权提交并推送；生产部署结果另行核验，不将推送成功视作上线成功。

@@ -1,0 +1,134 @@
+{
+  "schemaVersion": 1,
+  "scope": "首批 8 门编辑策展；引用已有语法资料和已存关系摘录，不新增历史关系或运行能力。",
+  "exhibits": [
+    {
+      "id": "javascript",
+      "title": "函数也是值",
+      "purpose": "把交互逻辑写进网页，也把函数作为可以传递的值。",
+      "history": "Brendan Eich 回顾早期设计时，明确提到 Scheme 风格的一等函数、Self 风格的原型，以及 Java 外观要求。这是多种设计输入的组合。",
+      "relation": "scheme|javascript|influencedBy",
+      "rules": [
+        "const 声明的绑定不能重新赋值；这不等于对象内容不可变。",
+        "function 定义函数；return 把计算结果交给调用者。",
+        "console.log 属于当前宿主提供的输出接口，不是 ECMAScript 核心语法。"
+      ],
+      "boundary": "浏览器实验在独立 Worker 中执行，没有页面 DOM；ECMAScript 2015+ 示例不代表所有旧浏览器。",
+      "topic": "functions",
+      "comment": "// 定义可重复调用的计算，再把结果交给宿主输出。",
+      "exercise": "把调用参数 7 改为 9，保留函数定义。预期数学结果为 81；实际输出请在已接入的环境中运行查看。"
+    },
+    {
+      "id": "python",
+      "title": "缩进表达结构",
+      "purpose": "用清楚的块结构和高层数据类型组织通用程序。",
+      "history": "Python 官方 FAQ 将缩进分组与高层数据类型追溯到 ABC 的经验，同时强调两门语言的细节不同。CPython 的实现语言是另一类事实。",
+      "relation": "abc|python|influencedBy",
+      "rules": [
+        "缩进划定函数体，不使用大括号表示块。",
+        "def 把参数化的计算绑定到名字；return 显式返回结果。",
+        "名字绑定到对象；本例的整数计算不需要声明静态类型。"
+      ],
+      "boundary": "示例采用 Python 3；本地使用固定 Pyodide，第三方包和系统接口受环境限制。",
+      "topic": "functions",
+      "comment": "# 缩进属于结构：return 在函数体内，print 在调用处。",
+      "exercise": "把调用参数 7 改为 9，保留函数定义。预期数学结果为 81；实际输出请在已接入的环境中运行查看。"
+    },
+    {
+      "id": "lua",
+      "title": "小语言，可嵌入",
+      "purpose": "用简洁的控制结构和可传递的函数表达计算。",
+      "history": "Lua 作者回顾 Scheme 对匿名函数与完整词法作用域的启发，也明确提到来自 Modula、CLU 等语言的局部输入；不能据此归为某门语言的简单后继。",
+      "relation": "scheme|lua|influencedBy",
+      "rules": [
+        "local 将名字限制在当前词法作用域。",
+        "function … end 界定函数，return 返回结果。",
+        "table 兼任序列与映射；本例只使用数值与函数。"
+      ],
+      "boundary": "语法采用 Lua 5.4；浏览器用 Wasmoon / Lua 5.4.5，不开放 io、os 或第三方模块。",
+      "topic": "functions",
+      "comment": "-- local 保持名字在当前作用域，end 结束函数体。",
+      "exercise": "把调用参数 7 改为 9，保留函数定义。预期数学结果为 81；实际输出请在已接入的环境中运行查看。"
+    },
+    {
+      "id": "scheme",
+      "title": "用过程表达计算",
+      "purpose": "以统一的前缀形式、过程与词法作用域探索程序。",
+      "history": "Scheme 属于 Lisp 家族。已存设计文献用于说明词法作用域等设计输入；家族名称、语言标准和某个具体解释器需要分开理解。",
+      "relation": "lisp|scheme|influencedBy",
+      "rules": [
+        "调用形式是 (过程 参数…)；乘法同样遵守前缀写法。",
+        "define 可绑定名字，也可使用简写形式定义过程。",
+        "过程可以作为值传递，列表是常用的数据结构。"
+      ],
+      "boundary": "馆内为 BiwaScheme 0.8.3 的 Scheme 子集，非 Guile；整数精度受 JavaScript 数值限制，不宣称完整 R7RS 符合性。",
+      "topic": "functions",
+      "comment": "; 前缀调用：乘法过程 * 接收两个参数。",
+      "exercise": "把调用参数 7 改为 9，保留函数定义。预期数学结果为 81；实际输出请在已接入的环境中运行查看。"
+    },
+    {
+      "id": "c",
+      "title": "明确类型，接近系统",
+      "purpose": "把数据类型、函数与底层操作组织成可编译程序。",
+      "history": "Ritchie 的发展史将 BCPL、B、C 放在连续的设计演变中。本展品使用现代 C11 写法，不将它等同于早期 C 的全部语法。",
+      "relation": "b|c|influencedBy",
+      "rules": [
+        "函数签名明确参数和返回值类型。",
+        "main 是此完整程序的入口；分号结束语句。",
+        "printf 来自标准库，格式串与实参类型需要对应。"
+      ],
+      "boundary": "例子采用 C11 和标准库；网站未提供浏览器 C 编译器，私有远端是否可用以实验台状态为准。",
+      "topic": "functions",
+      "comment": "/* square 接收并返回 int；本例 7 的平方在 int 范围内。 */",
+      "exercise": "把调用参数 7 改为 9，保留函数定义。预期数学结果为 81；实际输出请在已接入的环境中运行查看。"
+    },
+    {
+      "id": "cpp",
+      "title": "抽象与系统能力并存",
+      "purpose": "在系统编程中使用类型、函数和更高层的数据抽象。",
+      "history": "Stroustrup 将 C++ 称为 C 的直接后裔，保留了几乎所有 C 的子集，同时明确区分 C99 与 C++ 的发展；不能推断所有 C 程序都兼容。",
+      "relation": "c|cpp|influencedBy",
+      "rules": [
+        "函数声明明确 int 参数与返回值类型。",
+        "std::cout 和流插入运算符组合输出。",
+        "标准库提供 string、vector 等抽象；本例不需要类或模板。"
+      ],
+      "boundary": "例子采用 C++17；滚动工作草案并非 C++17 的固定标准文本。私有编译环境以实际版本为准。",
+      "topic": "functions",
+      "comment": "// 普通函数足以表达这个任务；不必为每次计算定义类。",
+      "exercise": "把调用参数 7 改为 9，保留函数定义。预期数学结果为 81；实际输出请在已接入的环境中运行查看。"
+    },
+    {
+      "id": "java",
+      "title": "类中的静态方法",
+      "purpose": "在明确的类型与类结构中组织可移植的程序。",
+      "history": "Java 规范明确说明词法结构基于 C 和 C++，同时在组织方式上有显著差异，并省略了它们的一些机制；这不是 C++ 超集声明。",
+      "relation": "cpp|java|influencedBy",
+      "rules": [
+        "方法声明给出参数与返回值类型。",
+        "static 方法可在不创建 Museum 实例时调用。",
+        "main 是本例入口；System.out.println 是库调用。"
+      ],
+      "boundary": "示例采用 Java 17 的传统 class/main 写法；馆藏审查所读 SE 25 规范、本机 JDK 与私有执行版本不应混为一谈。",
+      "topic": "functions",
+      "comment": "// square 是类方法；main 调用它并输出，不需要创建实例。",
+      "exercise": "把调用参数 7 改为 9，保留函数定义。预期数学结果为 81；实际输出请在已接入的环境中运行查看。"
+    },
+    {
+      "id": "rust",
+      "title": "类型与资源管理",
+      "purpose": "在静态类型程序中明确数据的使用方式。",
+      "history": "Rust Reference 列出多种设计输入，其中 C++ 对应 RAII、移动语义等机制。该清单描述演进过程，也含后来移除的元素，不是首版的完整配方。",
+      "relation": "cpp|rust|influencedBy",
+      "rules": [
+        "参数与返回值类型显式写出。",
+        "块的末尾表达式没有分号时可以作为返回值。",
+        "所有权与借用管理资源；这个整数例子只展示类型和表达式，不足以演示借用规则。"
+      ],
+      "boundary": "采用 Rust 2021 风格；馆内没有浏览器 Rust 编译器，私有远端需明确提交。",
+      "topic": "functions",
+      "comment": "// 末尾的 n * n 不加分号，成为函数返回值。",
+      "exercise": "把调用参数 7 改为 9，保留函数定义。预期数学结果为 81；实际输出请在已接入的环境中运行查看。"
+    }
+  ]
+}

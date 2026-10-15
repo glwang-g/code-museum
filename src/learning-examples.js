@@ -7,6 +7,11 @@ window.MUSEUM_LESSONS={
       "task": "定义名字与年份并输出；观察类型声明与字符串。"
     },
     {
+      "id": "branches",
+      "name": "条件与分支",
+      "task": "判断数值是否至少为 10，观察比较、分支和输出。"
+    },
+    {
       "id": "loops",
       "name": "循环与累加",
       "task": "计算 1 到 10 的总和；观察范围端点与循环结构。"
@@ -44,6 +49,10 @@ window.MUSEUM_LESSONS={
         "collections": {
           "code": "const values = [3, 1, 2];\nconst doubled = values.map(n => n * 2);\nconsole.log(doubled.join(\", \"));\n",
           "note": "这是原创完整示例，展示一种常见写法。"
+        },
+        "branches": {
+          "code": "const value = 12;\nif (value >= 10) {\n  console.log(\"large\");\n} else {\n  console.log(\"small\");\n}\n",
+          "note": "原创示例：>= 包含边界 10；把 12 改为 9 后进入另一个分支。"
         }
       }
     },
@@ -68,6 +77,10 @@ window.MUSEUM_LESSONS={
         "collections": {
           "code": "values = [3, 1, 2]\ndoubled = [n * 2 for n in values]\nprint(\", \".join(str(n) for n in doubled))\n",
           "note": "这是原创完整示例，展示一种常见写法。"
+        },
+        "branches": {
+          "code": "value = 12\nif value >= 10:\n    print(\"large\")\nelse:\n    print(\"small\")\n",
+          "note": "原创示例：>= 包含边界 10；把 12 改为 9 后进入另一个分支。"
         }
       }
     },
@@ -92,6 +105,10 @@ window.MUSEUM_LESSONS={
         "collections": {
           "code": "local values = {3, 1, 2}\nlocal doubled = {}\nfor i, n in ipairs(values) do\n  doubled[i] = n * 2\nend\nprint(table.concat(doubled, \", \"))\n",
           "note": "table 作为连续序列，ipairs 遍历，索引从 1 开始。"
+        },
+        "branches": {
+          "code": "local value = 12\nif value >= 10 then\n  print(\"large\")\nelse\n  print(\"small\")\nend\n",
+          "note": "原创示例：>= 包含边界 10；把 12 改为 9 后进入另一个分支。"
         }
       }
     },
@@ -116,6 +133,10 @@ window.MUSEUM_LESSONS={
         "collections": {
           "code": "(define values '(3 1 2))\n(define doubled (map (lambda (n) (* n 2)) values))\n(for-each (lambda (n) (display n) (display \" \")) doubled)\n(newline)\n",
           "note": "这里使用链表；for-each 的输出是空格分隔。"
+        },
+        "branches": {
+          "code": "(define value 12)\n(display (if (>= value 10) \"large\" \"small\"))\n(newline)\n",
+          "note": "原创示例：>= 包含边界 10；把 12 改为 9 后进入另一个分支。"
         }
       }
     },
@@ -140,6 +161,10 @@ window.MUSEUM_LESSONS={
         "collections": {
           "code": "values = [3, 1, 2]\ndoubled = values.map { |n| n * 2 }\nputs doubled.join(\", \")\n",
           "note": "这是原创完整示例，展示一种常见写法。"
+        },
+        "branches": {
+          "code": "value = 12\nif value >= 10\n  puts \"large\"\nelse\n  puts \"small\"\nend\n",
+          "note": "原创示例：>= 包含边界 10；把 12 改为 9 后进入另一个分支。"
         }
       }
     },
@@ -164,6 +189,10 @@ window.MUSEUM_LESSONS={
         "collections": {
           "code": "#include <stdio.h>\nint main(void) {\n    int values[] = {3, 1, 2};\n    for (int i = 0; i < 3; ++i) {\n        printf(\"%s%d\", i ? \", \" : \"\", values[i] * 2);\n    }\n    puts(\"\");\n    return 0;\n}\n",
           "note": "固定长度数组，逐项处理；此例不使用动态集合。"
+        },
+        "branches": {
+          "code": "#include <stdio.h>\nint main(void) {\n    int value = 12;\n    if (value >= 10) puts(\"large\");\n    else puts(\"small\");\n    return 0;\n}\n",
+          "note": "原创示例：>= 包含边界 10；把 12 改为 9 后进入另一个分支。"
         }
       }
     },
@@ -188,6 +217,10 @@ window.MUSEUM_LESSONS={
         "collections": {
           "code": "#include <iostream>\n#include <vector>\nint main() {\n    std::vector<int> values{3, 1, 2};\n    for (std::size_t i = 0; i < values.size(); ++i)\n        std::cout << (i ? \", \" : \"\") << values[i] * 2;\n    std::cout << \"\\n\";\n}\n",
           "note": "这是原创完整示例，展示一种常见写法。"
+        },
+        "branches": {
+          "code": "#include <iostream>\nint main() {\n    int value = 12;\n    if (value >= 10) std::cout << \"large\\n\";\n    else std::cout << \"small\\n\";\n}\n",
+          "note": "原创示例：>= 包含边界 10；把 12 改为 9 后进入另一个分支。"
         }
       }
     },
@@ -212,6 +245,10 @@ window.MUSEUM_LESSONS={
         "collections": {
           "code": "class Museum {\n    public static void main(String[] args) {\n        int[] values = {3, 1, 2};\n        for (int i = 0; i < values.length; i++)\n            System.out.print((i == 0 ? \"\" : \", \") + values[i] * 2);\n        System.out.println();\n    }\n}\n",
           "note": "这是原创完整示例，展示一种常见写法。"
+        },
+        "branches": {
+          "code": "class Museum {\n    public static void main(String[] args) {\n        int value = 12;\n        if (value >= 10) System.out.println(\"large\");\n        else System.out.println(\"small\");\n    }\n}\n",
+          "note": "原创示例：>= 包含边界 10；把 12 改为 9 后进入另一个分支。"
         }
       }
     },
@@ -236,6 +273,10 @@ window.MUSEUM_LESSONS={
         "collections": {
           "code": "using System;\nint[] values = {3, 1, 2};\nint[] doubled = Array.ConvertAll(values, n => n * 2);\nConsole.WriteLine(string.Join(\", \", doubled));\n",
           "note": "这是原创完整示例，展示一种常见写法。"
+        },
+        "branches": {
+          "code": "using System;\nint value = 12;\nif (value >= 10) Console.WriteLine(\"large\");\nelse Console.WriteLine(\"small\");\n",
+          "note": "原创示例：>= 包含边界 10；把 12 改为 9 后进入另一个分支。"
         }
       }
     },
@@ -260,6 +301,10 @@ window.MUSEUM_LESSONS={
         "collections": {
           "code": "fn main() {\n    let values = vec![3, 1, 2];\n    let doubled: Vec<String> = values.iter().map(|n| (n * 2).to_string()).collect();\n    println!(\"{}\", doubled.join(\", \"));\n}\n",
           "note": "Vec 是动态数组，迭代器把逐项结果收集成新集合。"
+        },
+        "branches": {
+          "code": "fn main() {\n    let value = 12;\n    let label = if value >= 10 { \"large\" } else { \"small\" };\n    println!(\"{}\", label);\n}\n",
+          "note": "原创示例：>= 包含边界 10；把 12 改为 9 后进入另一个分支。"
         }
       }
     },
@@ -284,6 +329,10 @@ window.MUSEUM_LESSONS={
         "collections": {
           "code": "package main\nimport (\"fmt\"; \"strconv\"; \"strings\")\nfunc main() {\n    values := []int{3, 1, 2}\n    doubled := make([]string, 0, len(values))\n    for _, n := range values { doubled = append(doubled, strconv.Itoa(n * 2)) }\n    fmt.Println(strings.Join(doubled, \", \"))\n}\n",
           "note": "slice 表示序列，range 遍历；这里只使用标准库。"
+        },
+        "branches": {
+          "code": "package main\nimport \"fmt\"\nfunc main() {\n    value := 12\n    if value >= 10 {\n        fmt.Println(\"large\")\n    } else {\n        fmt.Println(\"small\")\n    }\n}\n",
+          "note": "原创示例：>= 包含边界 10；把 12 改为 9 后进入另一个分支。"
         }
       }
     }

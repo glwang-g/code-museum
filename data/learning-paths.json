@@ -236,6 +236,87 @@
           "expected": "能区分馆藏记录、历史证据与当前运行能力。"
         }
       ]
+    },
+    {
+      "id": "javascript-first-program",
+      "title": "从变量到列表：第一组程序",
+      "description": "从 JavaScript 展品出发，依次改写变量、分支、循环、函数与列表，得到五次真实输出反馈。",
+      "steps": [
+        {
+          "title": "先认识语言展品",
+          "note": "从档案中的语言展品展开背景、规则与代码；再逐步改写五个小程序。",
+          "action": "archive",
+          "language": "javascript",
+          "observe": "阅读一等函数的设计输入，分清语言核心与浏览器宿主。",
+          "change": "展开“设计背景与核心规则”和“读一段代码”，然后进入下一步。",
+          "expected": "能找到函数的写法、版本边界与历史出处。"
+        },
+        {
+          "title": "变量与输出",
+          "note": "浏览器原生执行；只核对本次输出，已有主题草稿会保留。需要原例时可点击“恢复示例”。",
+          "action": "lesson",
+          "language": "javascript",
+          "topic": "variables",
+          "observe": "const 的名字和值，以及 console.log 的输出顺序。",
+          "change": "将 year 从 2026 改成 2030，保留 Museum。",
+          "expected": "原示例输出 Museum 2026；改写后应输出 Museum 2030。",
+          "check": {
+            "output": "Museum 2030"
+          }
+        },
+        {
+          "title": "条件与分支",
+          "note": "浏览器原生执行；只核对本次输出，已有主题草稿会保留。需要原例时可点击“恢复示例”。",
+          "action": "lesson",
+          "language": "javascript",
+          "topic": "branches",
+          "observe": ">= 包含边界；只有一个分支会输出。",
+          "change": "把 value 从 12 改为 9，保留 >= 10 的条件。",
+          "expected": "原示例输出 large；改写后应输出 small。",
+          "check": {
+            "output": "small"
+          }
+        },
+        {
+          "title": "循环与累加",
+          "note": "浏览器原生执行；只核对本次输出，已有主题草稿会保留。需要原例时可点击“恢复示例”。",
+          "action": "lesson",
+          "language": "javascript",
+          "topic": "loops",
+          "observe": "let 累加器、循环终点与 <= 的含义。",
+          "change": "将循环终点 10 改成 5，保留累加和输出。",
+          "expected": "原示例输出 55；改写后应输出 15。",
+          "check": {
+            "output": "15"
+          }
+        },
+        {
+          "title": "定义并调用函数",
+          "note": "浏览器原生执行；只核对本次输出，已有主题草稿会保留。需要原例时可点击“恢复示例”。",
+          "action": "lesson",
+          "language": "javascript",
+          "topic": "functions",
+          "observe": "定义处的参数，与调用处的实际输入。",
+          "change": "将 square 的调用参数 7 改为 9。",
+          "expected": "原示例输出 49；改写后应输出 81。",
+          "check": {
+            "output": "81"
+          }
+        },
+        {
+          "title": "列表与变换",
+          "note": "浏览器原生执行；只核对本次输出，已有主题草稿会保留。需要原例时可点击“恢复示例”。",
+          "action": "lesson",
+          "language": "javascript",
+          "topic": "collections",
+          "observe": "map 为每个元素计算新值，join 决定输出格式。",
+          "change": "将乘数 2 改为 3，保留列表 [3, 1, 2] 和逗号空格分隔。",
+          "expected": "原示例输出 6, 2, 4；改写后应输出 9, 3, 6。",
+          "check": {
+            "output": "9, 3, 6"
+          }
+        }
+      ]
     }
   ]
 }

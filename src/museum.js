@@ -116,7 +116,7 @@ function applyZoom(scale){
   const height=Math.max(worldSize.height*zoomScale,bounds?.bottom||0)+insetY+(bounds?18:0);
   stage.style.width=`${width}px`;
   stage.style.height=`${height}px`;
-  stage.style.marginTop=`${Math.max(0,(viewport.clientHeight-height)/2)}px`;
+  stage.style.marginTop=`${Math.max(0,(viewHeight-height)/2)}px`;
   $('#world').style.left=`${insetX}px`;$('#world').style.top=`${insetY}px`;
   $('#world').style.transform=`scale(${zoomScale})`;
   $('#world').style.setProperty('--tooltip-scale',String(1/zoomScale));
@@ -125,6 +125,7 @@ function applyZoom(scale){
 }
 function fitMap(){focusParts=null;zoomMode='fit';applyZoom(minimumZoom())}
 function zoomBy(factor){
+  mapFocus.cancel();
   const viewport=$('#viewport');
   const focus=activeId&&positions.has(activeId)?positions.get(activeId):null;
   const view=viewport.getBoundingClientRect(),before=$('#world').getBoundingClientRect();
@@ -342,61 +343,18 @@ function renderLineageFocus(id){
   const previewButton=$('#detail-content .relation-link.preview');
   if(previewButton)previewRelation(previewButton);
 }
-// 几何重排：只重算缩放、取景、标签避让与滚动，不重建 #relations 连线，也不重设节点类。
-// 详情面板展开、窗口缩放和平稳滚动会连续改变视口尺寸，重复请求由 scheduleFocusGeometry 合并。
-function focusGeometry(id){
-  if(id==null||activeId!==id||!document.body.classList.contains('lineage-focus')||$('#river').hidden)return;
-  resetFocusLabels();
-  const currentEdges=activeMapEdges();
-  const visible=new Set([...document.querySelectorAll('#docks .dock')].map(n=>n.dataset.id));
-  const direct=new Set([id]);
-  for(const edge of currentEdges){
-    if(edge.from===id&&visible.has(edge.to))direct.add(edge.to);
-    if(edge.to===id&&visible.has(edge.from))direct.add(edge.from);
-  }
-  if(relationScope==='levels')document.querySelectorAll('#docks .dock.related').forEach(node=>direct.add(node.dataset.id));
-  if(direct.size){
-    const viewport=$('#viewport'),parts=[];
-    const number=value=>parseFloat(value)||0;
-    for(const nodeId of direct){
-      const node=document.querySelector(`#docks .dock[data-id="${CSS.escape(nodeId)}"]`),point=positions.get(nodeId);
-      const width=node.offsetWidth,height=node.offsetHeight;
-      if(!node.classList.contains('selected')&&!node.classList.contains('dot')){
-        parts.push({left:point.x,right:point.x,top:point.y,bottom:point.y,fixedLeft:-width/2,fixedWidth:width/2,fixedTop:-height/2,fixedHeight:height/2});
-      }else parts.push({left:point.x-width/2,right:point.x+width/2,top:point.y-height/2,bottom:point.y+height/2});
-      if(node.classList.contains('selected')||node.classList.contains('dot')){
-        const style=getComputedStyle(node,node.classList.contains('selected')?'::after':'::before');
-        const textWidth=number(style.width),textHeight=number(style.height);
-        const fixedWidth=textWidth+(style.boxSizing==='border-box'?0:number(style.paddingLeft)+number(style.paddingRight)+number(style.borderLeftWidth)+number(style.borderRightWidth));
-        const fixedHeight=textHeight+(style.boxSizing==='border-box'?0:number(style.paddingTop)+number(style.paddingBottom)+number(style.borderTopWidth)+number(style.borderBottomWidth));
-        const nodeStyle=getComputedStyle(node);
-        const left=point.x-width/2+number(nodeStyle.borderLeftWidth)+number(style.left);
-        const top=point.y-height/2+number(nodeStyle.borderTopWidth)+number(style.top);
-        parts.push({left,right:left,top,bottom:top,fixedWidth,fixedHeight});
-      }
-    }
-    const frame=window.MUSEUM_MAP_FRAME;
-    focusParts=parts;
-    zoomMode='focus';
-    applyZoom(frame.fitScale(parts,viewport.clientWidth,viewport.clientHeight,Math.max(.9,minimumZoom())));
-    const bounds=frame.boundsAt(parts,zoomScale),world=$('#world').getBoundingClientRect(),view=viewport.getBoundingClientRect();
-    const originX=world.left-view.left+viewport.scrollLeft,originY=world.top-view.top+viewport.scrollTop;
-    const point=positions.get(id);
-    const left=frame.scrollAxis(originX+bounds.left,originX+bounds.right,viewport.clientWidth,originX+point.x*zoomScale,viewport.scrollWidth-viewport.clientWidth);
-    const top=frame.scrollAxis(originY+bounds.top,originY+bounds.bottom,viewport.clientHeight,originY+point.y*zoomScale,viewport.scrollHeight-viewport.clientHeight,18,.5);
-    placeFocusLabels(direct,originX,originY,left,top);
-    viewport.scrollTo({left,top,behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'instant':'smooth'});
-  }
-}
+// Geometry and its deferred work are isolated from content/relationship rendering.
+const mapFocus=window.MUSEUM_MAP_FOCUS.createFocusController({
+ document,getState:()=>({activeId,relationScope,mode:zoomMode,visibleMap:document.body.classList.contains('lineage-focus')&&!$('#river').hidden}),
+ activeMapEdges,positions,frame:window.MUSEUM_MAP_FRAME,resetFocusLabels,
+ setFrame:(parts,scale)=>{focusParts=parts;zoomMode='focus';applyZoom(scale)},getScale:()=>zoomScale,
+ minimumZoom,placeFocusLabels
+});
+function focusGeometry(id){mapFocus.focus(id)}
+function scheduleFocusGeometry(id){mapFocus.schedule(id)}
 let opener=null;
-let focusGeometryTimer=0,focusGeometryTarget=null;
-function scheduleFocusGeometry(id){
-  if(id==null)return;
-  focusGeometryTarget=id;
-  clearTimeout(focusGeometryTimer);
-  focusGeometryTimer=setTimeout(()=>{focusGeometryTimer=0;focusGeometry(focusGeometryTarget)},60);
-}
 function restoreMapOverview(){
+  mapFocus.cancel();
   setResearchGapButton(null);
   inspectedRelation=null;
   clearRelationPreview();
@@ -422,6 +380,7 @@ $('#viewport').addEventListener('click',event=>{
 function openPanel(html){
   opener=document.activeElement;
   $('#detail-content').innerHTML=html;
+  window.MUSEUM_EXHIBIT_UI.bind($('#detail-content'));
   const panel=$('#detail');
   panel.classList.add('open');panel.setAttribute('aria-hidden','false');panel.inert=false;
   // A new archive starts at its title, including when the close button already has focus.
@@ -437,7 +396,7 @@ const correction=r.review?.catalogueCorrection;
 const correctionHTML=correction?`<h3>馆藏校订</h3>${correction.changes.map(change=>`<p>${esc({name:'名称',year:'年代',creators:'创造者'}[change.field])}：${esc(change.from===null?'未记载':String(change.from))} → ${esc(String(change.to))}${change.event?` · ${esc(change.event)}`:''}</p>`).join('')}<p>${esc(correction.reason)}</p>${correction.sources.map(url=>`<p><a href="${esc(url)}" target="_blank" rel="noreferrer">校订出处 ↗</a></p>`).join('')}`:'';
 const designGap=selectedIds.has(id)&&!mapDesignEdges.some(e=>e.from===id||e.to===id);
 const gap=designGap?'<button type="button" id="detail-review-gaps" class="archive-gap">常显标签暂无设计层关系 · 查看研究待办 ↗</button>':'';
-openPanel(`<div class="archive-hero"><div class="eyebrow">馆藏 / ${esc(r.id)}</div><h2>${esc(r.name)}</h2><p>${r.year||'年代待考'} · ${esc(categoryLabel(r))} · ${esc(statusLabel(r))}</p></div><section class="archive-overview"><h3>馆藏概览</h3><p>创造者：${esc(r.creators||'来源未记载')}</p><p>原始分类：${esc(r.tags||'未分类')}</p><p>别名：${esc(r.aliases||'未记载')}</p></section>${gap}${evidence?`<details class="archive-section"><summary>证据与地图分类</summary>${evidence}${correctionHTML}</details>`:correctionHTML?`<details class="archive-section"><summary>馆藏校订</summary>${correctionHTML}</details>`:''}${relationSection('设计脉络 · 上游',incoming.length,rel(incoming,true))}${relationSection('设计脉络 · 下游',outgoing.length,rel(outgoing,false))}${relationSection('实现与生态',ecology.length,rel(ecology.map(e=>({...e,auditKey:relationKey(e),from:e.from===id?e.to:e.from,to:id})),true,'ecosystem'))}<details class="archive-section"><summary>来源与延伸阅读</summary><p><a target="_blank" rel="noreferrer" href="${esc(r.source)}">PLDB 原始记录 ↗</a></p>${r.website&&/^https?:/.test(r.website)?`<p><a target="_blank" rel="noreferrer" href="${esc(r.website)}">官方网站 ↗</a></p>`:''}${r.wiki?`<p><a target="_blank" rel="noreferrer" href="${esc(r.wiki)}">百科条目 ↗</a></p>`:''}</details><details class="archive-section"><summary>实验台</summary><p>${r.id==='javascript'?'JavaScript 可在浏览器中实际运行。':r.id==='python'?'Python 可用本地 Pyodide 在浏览器 Worker 中实际运行。':r.id==='lua'?'Lua 5.4 可用本地 WebAssembly 在浏览器 Worker 中实际运行。':r.id==='scheme'?'Scheme 可用 BiwaScheme 0.8.3 浏览器解释器运行；非 Guile，不代表完整 R7RS 兼容。':'此语言尚未接入浏览器运行环境。'}</p>${r.language?'<button type="button" id="detail-open-lab">'+esc(window.MUSEUM_LAB?.entry(r.id).label||'打开语言实验台')+' ↗</button>':''}</details>`);
+openPanel(`<div class="archive-hero"><div class="eyebrow">馆藏 / ${esc(r.id)}</div><h2>${esc(r.name)}</h2><p>${r.year||'年代待考'} · ${esc(categoryLabel(r))} · ${esc(statusLabel(r))}</p></div><section class="archive-overview"><h3>馆藏概览</h3><p>创造者：${esc(r.creators||'来源未记载')}</p><p>原始分类：${esc(r.tags||'未分类')}</p><p>别名：${esc(r.aliases||'未记载')}</p></section>${window.MUSEUM_EXHIBIT_UI.render(id)}${gap}${window.MUSEUM_RESEARCH_NOTES.render('language:'+id)}${evidence?`<details class="archive-section"><summary>证据与地图分类</summary>${evidence}${correctionHTML}</details>`:correctionHTML?`<details class="archive-section"><summary>馆藏校订</summary>${correctionHTML}</details>`:''}${relationSection('设计脉络 · 上游',incoming.length,rel(incoming,true))}${relationSection('设计脉络 · 下游',outgoing.length,rel(outgoing,false))}${relationSection('实现与生态',ecology.length,rel(ecology.map(e=>({...e,auditKey:relationKey(e),from:e.from===id?e.to:e.from,to:id})),true,'ecosystem'))}<details class="archive-section"><summary>来源与延伸阅读</summary><p><a target="_blank" rel="noreferrer" href="${esc(r.source)}">PLDB 原始记录 ↗</a></p>${r.website&&/^https?:/.test(r.website)?`<p><a target="_blank" rel="noreferrer" href="${esc(r.website)}">官方网站 ↗</a></p>`:''}${r.wiki?`<p><a target="_blank" rel="noreferrer" href="${esc(r.wiki)}">百科条目 ↗</a></p>`:''}</details><details class="archive-section"><summary>实验台</summary><p>${r.id==='javascript'?'JavaScript 可在浏览器中实际运行。':r.id==='python'?'Python 可用本地 Pyodide 在浏览器 Worker 中实际运行。':r.id==='lua'?'Lua 5.4 可用本地 WebAssembly 在浏览器 Worker 中实际运行。':r.id==='scheme'?'Scheme 可用 BiwaScheme 0.8.3 浏览器解释器运行；非 Guile，不代表完整 R7RS 兼容。':'此语言尚未接入浏览器运行环境。'}</p>${r.language?'<button type="button" id="detail-open-lab">'+esc(window.MUSEUM_LAB?.entry(r.id).label||'打开语言实验台')+' ↗</button>':''}</details>`);
 $('#detail-open-lab')?.addEventListener('click',()=>window.MUSEUM_LAB.open(r.id));
 $('#detail-review-gaps')?.addEventListener('click',()=>window.MUSEUM_RELATIONSHIP_COVERAGE?.focusLanguage(r.id));
 bindRelationProofs();
@@ -457,7 +416,7 @@ function openRelationship(key){
   const shortClaim=edge.evidence?edge.evidence.split(/[。；]/)[0]+'。':'当前仅记录来源字段，设计关系仍待核。';
   const stateLabel={'field-only':'来源字段，关系待核','citation-only':'有关系说明，原文摘录待补','excerpt-recorded':'关系说明与原文摘录已存','needs-direct-evidence':'直接设计依据待补'}[edge.state];
   const sources=edge.sources.map(source=>`<details class="relation-source"><summary>${esc(source.title)}</summary><blockquote>${esc(source.excerpt)}</blockquote><p>读取：${esc(source.checkedAt)}<br>定位：${esc(source.locator||source.title)}<br>哈希口径：${esc(source.hashScope)}</p><code class="source-hash">SHA-256 ${esc(source.sha256)}</code><p><a href="${esc(source.url)}" target="_blank" rel="noreferrer">原文 ↗</a></p></details>`).join('');
-  openPanel(`<div class="eyebrow">关系依据 / ${edge.layer==='design'?'设计脉络':'实现与生态'}</div><h2 class="relationship-title">${esc(byId.get(edge.from).name)} → ${esc(byId.get(edge.to).name)}</h2><p>${esc(relationLabel(edge))} · ${esc(stateLabel)}</p><h3>为什么关联</h3><p class="relationship-summary">${esc(shortClaim)}</p><details class="relation-explanation"><summary>完整说明与边界</summary><p>${esc(edge.evidence||'固定 PLDB 快照记录了此关系字段，尚未保存独立史料论证；不能视为已核实关系。')}</p></details>${edge.reviewNote?`<p class="relationship-warning">${esc(edge.reviewNote)}</p>`:''}${edge.issues.length?`<h3>待核事项</h3><ul>${edge.issues.map(issue=>`<li>${esc(issue)}</li>`).join('')}</ul>`:''}<p>${edge.layer==='ecosystem'?'这条线描述具体实现、接口或互操作，不表示语言继承。':'设计输入不自动表示严格后继、超集或源码兼容。'}</p><p><a href="${esc(edge.source)}" target="_blank" rel="noreferrer">关系引用 ↗</a></p><h3>可回溯证据</h3>${edge.evidenceVersion?.match==='different'?`<details class="evidence-version"><summary>来源版本有字节差异 · 查看记录</summary><p>${esc(edge.evidenceVersion.note)}</p><p>引用 SHA-256：<code>${esc(edge.evidenceVersion.citedSha256)}</code></p><p>已读响应哈希、读取时间与定位见下方来源。</p></details>`:''}${sources||'<p>尚无匹配此引用的已阅读原文摘录，仍需补证。</p>'}<p>摘录和哈希用于回溯这次阅读记录，不证明历史关系已经全部核实。</p><p><a href="data/relationship-status.json">完整关系核对清单 ↗</a></p><h3>继续探索</h3><button type="button" data-relation-endpoint="${esc(edge.from)}">${esc(byId.get(edge.from).name)} 档案</button> <button type="button" data-relation-endpoint="${esc(edge.to)}">${esc(byId.get(edge.to).name)} 档案</button>`);
+  openPanel(`<div class="eyebrow">关系依据 / ${edge.layer==='design'?'设计脉络':'实现与生态'}</div><h2 class="relationship-title">${esc(byId.get(edge.from).name)} → ${esc(byId.get(edge.to).name)}</h2><p>${esc(relationLabel(edge))} · ${esc(stateLabel)}</p><h3>为什么关联</h3><p class="relationship-summary">${esc(shortClaim)}</p><details class="relation-explanation"><summary>完整说明与边界</summary><p>${esc(edge.evidence||'固定 PLDB 快照记录了此关系字段，尚未保存独立史料论证；不能视为已核实关系。')}</p></details>${window.MUSEUM_RESEARCH_NOTES.render(key)}${edge.reviewNote?`<p class="relationship-warning">${esc(edge.reviewNote)}</p>`:''}${edge.issues.length?`<h3>待核事项</h3><ul>${edge.issues.map(issue=>`<li>${esc(issue)}</li>`).join('')}</ul>`:''}<p>${edge.layer==='ecosystem'?'这条线描述具体实现、接口或互操作，不表示语言继承。':'设计输入不自动表示严格后继、超集或源码兼容。'}</p><p><a href="${esc(edge.source)}" target="_blank" rel="noreferrer">关系引用 ↗</a></p><h3>可回溯证据</h3>${edge.evidenceVersion?.match==='different'?`<details class="evidence-version"><summary>来源版本有字节差异 · 查看记录</summary><p>${esc(edge.evidenceVersion.note)}</p><p>引用 SHA-256：<code>${esc(edge.evidenceVersion.citedSha256)}</code></p><p>已读响应哈希、读取时间与定位见下方来源。</p></details>`:''}${sources||'<p>尚无匹配此引用的已阅读原文摘录，仍需补证。</p>'}<p>摘录和哈希用于回溯这次阅读记录，不证明历史关系已经全部核实。</p><p><a href="data/relationship-status.json">完整关系核对清单 ↗</a></p><h3>继续探索</h3><button type="button" data-relation-endpoint="${esc(edge.from)}">${esc(byId.get(edge.from).name)} 档案</button> <button type="button" data-relation-endpoint="${esc(edge.to)}">${esc(byId.get(edge.to).name)} 档案</button>`);
   $('#detail-content').querySelectorAll('[data-relation-endpoint]').forEach(button=>button.onclick=()=>{const id=button.dataset.relationEndpoint;select(id);activeId=mapLanguageIds.has(id)?id:null;if(activeId)renderLineageFocus(id)});
 }
 function nearestRelations(event,hitTolerance=8,anchorId=null){
@@ -553,7 +512,7 @@ resizer.addEventListener('pointerdown',event=>{
     window.removeEventListener('pointermove',move);window.removeEventListener('pointerup',end);
     workspace.classList.remove('resizing');
     rememberSize(mobile?'museum-detail-height':'museum-detail-width',mobile?$('#detail').getBoundingClientRect().height:$('#detail').getBoundingClientRect().width);
-    if(activeId&&!$('#river').hidden)renderLineageFocus(activeId);
+    if(activeId&&!$('#river').hidden)scheduleFocusGeometry(activeId);
   };
   window.addEventListener('pointermove',move);window.addEventListener('pointerup',end,{once:true});
 });
@@ -566,7 +525,7 @@ resizer.addEventListener('keydown',event=>{
   const current=mobile?$('#detail').getBoundingClientRect().height:$('#detail').getBoundingClientRect().width;
   const value=setDetailSize(current+(increase?24:-24),mobile);
   rememberSize(mobile?'museum-detail-height':'museum-detail-width',value);
-  if(activeId&&!$('#river').hidden)renderLineageFocus(activeId);
+  if(activeId&&!$('#river').hidden)scheduleFocusGeometry(activeId);
 });
 let page=0,filtered=records;const size=60;
 function update(reset=true){if(reset)page=0;const q=$('#search').value.trim().toLowerCase(),scope=$('#scope').value;filtered=records.filter(r=>(scope==='all'||r.category===(scope==='languages'?'language':scope==='other'?'related':'pending'))&&`${r.name} ${r.id} ${r.aliases} ${r.creators}`.toLowerCase().includes(q));if($('#sort').value==='year')filtered.sort((a,b)=>(a.year||9999)-(b.year||9999)||a.name.localeCompare(b.name));$('#result-count').textContent=`${filtered.length.toLocaleString()} 条匹配 / ${meta.count.toLocaleString()} 条馆藏`;$('#list').innerHTML=filtered.slice(page*size,(page+1)*size).map(r=>`<button class="record" data-id="${esc(r.id)}"><strong>${esc(r.name)}</strong><span>${r.year||'年代待考'} · ${esc(statusLabel(r))}</span></button>`).join('')||'<div class="empty">这次快照没有匹配条目。</div>';$('#page').textContent=`${filtered.length?page+1:0} / ${Math.ceil(filtered.length/size)}`;$('#prev').disabled=page===0;$('#next').disabled=(page+1)*size>=filtered.length;}

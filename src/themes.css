@@ -1,5 +1,6 @@
 #theme-toggle{flex:none;background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:5px;padding:5px 10px;font-size:12px;white-space:nowrap}
 :root[data-theme="light"]{color-scheme:light;--bg:#f6f4ed;--panel:#fffdf7;--ink:#203c43;--muted:#52676b;--gold:#8a5c19;--line:#c6d2cd}
+:root[data-theme="light"] .learning-guide{background:#fffdf7f5;box-shadow:0 14px 40px #203c4333}
 :root[data-theme="light"] :is(.atlas,.museum-tabs,.archive.museum-panel,.provenance.museum-panel,.lab.museum-panel){border-color:var(--line);background:#edf1e9}
 :root[data-theme="light"] :is(.atlas-head,.atlas-foot){background:#edf1e9}
 :root[data-theme="light"] .museum-tabs button{border-right-color:var(--line)}

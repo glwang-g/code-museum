@@ -4,6 +4,7 @@ const crypto = require('node:crypto');
 const { generateCatalogue } = require('./import-pldb.cjs');
 const { generateCredits } = require('./credits.cjs');
 const { generateRelationshipAudit } = require('./relationship-audit.cjs');
+const { curatedContent } = require('./curated-content.cjs');
 const { learningPaths } = require('./learning-paths.cjs');
 const { executionCapabilities } = require('./execution-capabilities.cjs');
 
@@ -15,6 +16,7 @@ function build(projectRoot = root) {
   const relationshipAudit = generateRelationshipAudit(projectRoot,catalogue);
   const capabilities = executionCapabilities(projectRoot);
   const paths = learningPaths(projectRoot,catalogue,relationshipAudit);
+  const {exhibits,triage}=curatedContent(projectRoot,catalogue,relationshipAudit);
   const {credits,linguistLicense} = generateCredits(projectRoot);
   const auditBytes = fs.readFileSync(path.join(projectRoot, 'data/audit/reviews.json'));
   if (crypto.createHash('sha256').update(auditBytes).digest('hex') !== catalogue.meta.reviewEvidence.sha256) {
@@ -76,6 +78,10 @@ function build(projectRoot = root) {
     fs.cpSync(path.join(projectRoot, 'public'), next, { recursive: true });
     fs.cpSync(path.join(projectRoot, 'src'), next, { recursive: true });
     fs.mkdirSync(path.join(next, 'data'), { recursive: true });
+    for(const [name,globalName,data] of [['language-exhibits','MUSEUM_EXHIBITS',exhibits],['research-triage','MUSEUM_RESEARCH_TRIAGE',triage]]){
+      fs.writeFileSync(path.join(next,'data',name+'.js'),'window.'+globalName+'='+JSON.stringify(data)+';');
+      fs.writeFileSync(path.join(next,'data',name+'.json'),JSON.stringify(data,null,2)+'\n');
+    }
     fs.writeFileSync(path.join(next,'data/learning-paths.js'),'window.MUSEUM_LEARNING_PATHS='+JSON.stringify(paths)+';');
     fs.writeFileSync(path.join(next,'data/learning-paths.json'),JSON.stringify(paths,null,2)+'\n');
     fs.writeFileSync(path.join(next,'data/runtime-assets.js'),'window.MUSEUM_RUNTIME_ASSETS='+JSON.stringify(runtimeAssets)+';');

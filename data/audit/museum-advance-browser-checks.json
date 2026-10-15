@@ -1,0 +1,536 @@
+{
+  "checkedAt": "2026-10-15T11:47:01.351Z",
+  "browser": "Chrome/155.0.8059.41",
+  "scope": "Local isolated headless Chrome; real mouse selection with normal animation, 1440/390 widths, two maps; exhibit navigation in both themes; real JS/Python/Lua/Scheme branch execution; full JavaScript route wrong/matched/timeout/recovery/persistence; guide contrast at 1440/390/320 in both themes. No remote execution. Latency is click capture to two requestAnimationFrame callbacks, not a paint/compositing measurement or a production/Safari guarantee.",
+  "inputs": {
+    "src/museum.js": "edf5a117f9eab12a55ab90663db3fe1174e6b05f2d37354a4e51001b9ec4ba59",
+    "src/map-focus.js": "9275175f3545b3bf43b9dd28fb46a7691803567d8979f50f019ca3f18174d2e2",
+    "src/language-exhibits.js": "e9f5f17c895347f4117a72a89522e486972d16efc80d6aafc5b172e4d8965eee",
+    "src/museum.css": "2712bac7e0b714e21e7f400bfd74a6b8669eb16b5adf5b2e0a17167e9043bfc0",
+    "src/themes.css": "e308b38a4c29961470749b21da0b85599a4504d78b8ef34068ad263258b261a1",
+    "src/learning-examples.js": "b855d296be941b4c7aef6d029ca8ff8d965d9c2cad1093001c632a38bdc68b44",
+    "data/language-exhibits.json": "1a79b7caccfcc1cecdbc0699659a7c42d4cfd074493ffe577e567de42ad03153",
+    "data/research-triage.json": "d940c0a5867df83b052b26f5cc33a25cd21791d6d5bc07b1cd0186cb8f1a9b8d",
+    "data/learning-paths.json": "4c6d815976d9bbf6c3f495b972e5d6e35245361fbec477c39dd6ecc024b7aab7",
+    "scripts/curated-content.cjs": "008e9d5cef48d0768a0c2181f923acea79044a1bc141a51f39db70cd499c0ad4",
+    "scripts/check-museum-advance.cjs": "61f30270d25920f08bc8bf8e671914ff6b11e191d3d8c47caa53d2e96c10e8a5"
+  },
+  "servedInputs": {
+    "museum.js": "edf5a117f9eab12a55ab90663db3fe1174e6b05f2d37354a4e51001b9ec4ba59",
+    "map-focus.js": "9275175f3545b3bf43b9dd28fb46a7691803567d8979f50f019ca3f18174d2e2",
+    "language-exhibits.js": "e9f5f17c895347f4117a72a89522e486972d16efc80d6aafc5b172e4d8965eee",
+    "museum.css": "2712bac7e0b714e21e7f400bfd74a6b8669eb16b5adf5b2e0a17167e9043bfc0",
+    "themes.css": "e308b38a4c29961470749b21da0b85599a4504d78b8ef34068ad263258b261a1",
+    "learning-examples.js": "b855d296be941b4c7aef6d029ca8ff8d965d9c2cad1093001c632a38bdc68b44",
+    "data/language-exhibits.js": "3433f5ed7922bc290e87364767654877f591948781f044a85c02e76a57bf1301",
+    "data/research-triage.js": "124f4c4a1a4eaa2986e5434e8974c23e75fe970cf6b86b728b191a7e469cbb7a",
+    "data/learning-paths.js": "d91c4e3ebe308c3d0a9e4b8a5cd5ca493860cdd8145cf15071d35e7c4bedb857"
+  },
+  "checks": [
+    {
+      "kind": "performance",
+      "width": 1440,
+      "mode": "timeline",
+      "pass": 0,
+      "renders": [
+        {
+          "id": "javascript",
+          "duration": 9.899999976158142
+        }
+      ],
+      "longTasks": [],
+      "clickToTwoAnimationFrames": 27.5
+    },
+    {
+      "kind": "performance",
+      "width": 1440,
+      "mode": "timeline",
+      "pass": 1,
+      "renders": [
+        {
+          "id": "javascript",
+          "duration": 5.199999928474426
+        }
+      ],
+      "longTasks": [],
+      "clickToTwoAnimationFrames": 30.800000071525574
+    },
+    {
+      "kind": "performance",
+      "width": 1440,
+      "mode": "timeline",
+      "pass": 2,
+      "renders": [
+        {
+          "id": "javascript",
+          "duration": 5.699999928474426
+        }
+      ],
+      "longTasks": [],
+      "clickToTwoAnimationFrames": 31.399999976158142
+    },
+    {
+      "kind": "resize",
+      "width": 1440,
+      "mode": "timeline",
+      "renders": 0,
+      "manualZoomPreserved": true
+    },
+    {
+      "kind": "performance",
+      "width": 1440,
+      "mode": "lineage",
+      "pass": 0,
+      "renders": [
+        {
+          "id": "javascript",
+          "duration": 6.399999976158142
+        }
+      ],
+      "longTasks": [],
+      "clickToTwoAnimationFrames": 28.5
+    },
+    {
+      "kind": "performance",
+      "width": 1440,
+      "mode": "lineage",
+      "pass": 1,
+      "renders": [
+        {
+          "id": "javascript",
+          "duration": 3.3000000715255737
+        }
+      ],
+      "longTasks": [],
+      "clickToTwoAnimationFrames": 29.899999976158142
+    },
+    {
+      "kind": "performance",
+      "width": 1440,
+      "mode": "lineage",
+      "pass": 2,
+      "renders": [
+        {
+          "id": "javascript",
+          "duration": 4.700000047683716
+        }
+      ],
+      "longTasks": [],
+      "clickToTwoAnimationFrames": 24.399999976158142
+    },
+    {
+      "kind": "resize",
+      "width": 1440,
+      "mode": "lineage",
+      "renders": 0,
+      "manualZoomPreserved": true
+    },
+    {
+      "kind": "performance",
+      "width": 390,
+      "mode": "timeline",
+      "pass": 0,
+      "renders": [
+        {
+          "id": "javascript",
+          "duration": 12.800000071525574
+        }
+      ],
+      "longTasks": [],
+      "clickToTwoAnimationFrames": 27
+    },
+    {
+      "kind": "performance",
+      "width": 390,
+      "mode": "timeline",
+      "pass": 1,
+      "renders": [
+        {
+          "id": "javascript",
+          "duration": 12
+        }
+      ],
+      "longTasks": [],
+      "clickToTwoAnimationFrames": 28.300000071525574
+    },
+    {
+      "kind": "performance",
+      "width": 390,
+      "mode": "timeline",
+      "pass": 2,
+      "renders": [
+        {
+          "id": "javascript",
+          "duration": 13.399999976158142
+        }
+      ],
+      "longTasks": [],
+      "clickToTwoAnimationFrames": 29.200000047683716
+    },
+    {
+      "kind": "resize",
+      "width": 390,
+      "mode": "timeline",
+      "renders": 0,
+      "manualZoomPreserved": true
+    },
+    {
+      "kind": "performance",
+      "width": 390,
+      "mode": "lineage",
+      "pass": 0,
+      "renders": [
+        {
+          "id": "javascript",
+          "duration": 7.700000047683716
+        }
+      ],
+      "longTasks": [],
+      "clickToTwoAnimationFrames": 25.399999976158142
+    },
+    {
+      "kind": "performance",
+      "width": 390,
+      "mode": "lineage",
+      "pass": 1,
+      "renders": [
+        {
+          "id": "javascript",
+          "duration": 2.399999976158142
+        }
+      ],
+      "longTasks": [],
+      "clickToTwoAnimationFrames": 31.300000071525574
+    },
+    {
+      "kind": "performance",
+      "width": 390,
+      "mode": "lineage",
+      "pass": 2,
+      "renders": [
+        {
+          "id": "javascript",
+          "duration": 8.199999928474426
+        }
+      ],
+      "longTasks": [],
+      "clickToTwoAnimationFrames": 22.40000009536743
+    },
+    {
+      "kind": "resize",
+      "width": 390,
+      "mode": "lineage",
+      "renders": 0,
+      "manualZoomPreserved": true
+    },
+    {
+      "kind": "exhibit",
+      "id": "javascript",
+      "width": 1440,
+      "theme": "dark",
+      "checks": "rules, annotated code, proof navigation, lesson and editor focus, page overflow"
+    },
+    {
+      "kind": "exhibit",
+      "id": "python",
+      "width": 1440,
+      "theme": "dark",
+      "checks": "rules, annotated code, proof navigation, lesson and editor focus, page overflow"
+    },
+    {
+      "kind": "exhibit",
+      "id": "lua",
+      "width": 1440,
+      "theme": "dark",
+      "checks": "rules, annotated code, proof navigation, lesson and editor focus, page overflow"
+    },
+    {
+      "kind": "exhibit",
+      "id": "scheme",
+      "width": 1440,
+      "theme": "dark",
+      "checks": "rules, annotated code, proof navigation, lesson and editor focus, page overflow"
+    },
+    {
+      "kind": "exhibit",
+      "id": "c",
+      "width": 1440,
+      "theme": "dark",
+      "checks": "rules, annotated code, proof navigation, lesson and editor focus, page overflow"
+    },
+    {
+      "kind": "exhibit",
+      "id": "cpp",
+      "width": 1440,
+      "theme": "dark",
+      "checks": "rules, annotated code, proof navigation, lesson and editor focus, page overflow"
+    },
+    {
+      "kind": "exhibit",
+      "id": "java",
+      "width": 1440,
+      "theme": "dark",
+      "checks": "rules, annotated code, proof navigation, lesson and editor focus, page overflow"
+    },
+    {
+      "kind": "exhibit",
+      "id": "rust",
+      "width": 1440,
+      "theme": "dark",
+      "checks": "rules, annotated code, proof navigation, lesson and editor focus, page overflow"
+    },
+    {
+      "kind": "exhibit",
+      "id": "javascript",
+      "width": 1440,
+      "theme": "light",
+      "checks": "rules, annotated code, proof navigation, lesson and editor focus, page overflow"
+    },
+    {
+      "kind": "exhibit",
+      "id": "python",
+      "width": 1440,
+      "theme": "light",
+      "checks": "rules, annotated code, proof navigation, lesson and editor focus, page overflow"
+    },
+    {
+      "kind": "exhibit",
+      "id": "lua",
+      "width": 1440,
+      "theme": "light",
+      "checks": "rules, annotated code, proof navigation, lesson and editor focus, page overflow"
+    },
+    {
+      "kind": "exhibit",
+      "id": "scheme",
+      "width": 1440,
+      "theme": "light",
+      "checks": "rules, annotated code, proof navigation, lesson and editor focus, page overflow"
+    },
+    {
+      "kind": "exhibit",
+      "id": "c",
+      "width": 1440,
+      "theme": "light",
+      "checks": "rules, annotated code, proof navigation, lesson and editor focus, page overflow"
+    },
+    {
+      "kind": "exhibit",
+      "id": "cpp",
+      "width": 1440,
+      "theme": "light",
+      "checks": "rules, annotated code, proof navigation, lesson and editor focus, page overflow"
+    },
+    {
+      "kind": "exhibit",
+      "id": "java",
+      "width": 1440,
+      "theme": "light",
+      "checks": "rules, annotated code, proof navigation, lesson and editor focus, page overflow"
+    },
+    {
+      "kind": "exhibit",
+      "id": "rust",
+      "width": 1440,
+      "theme": "light",
+      "checks": "rules, annotated code, proof navigation, lesson and editor focus, page overflow"
+    },
+    {
+      "kind": "exhibit",
+      "id": "javascript",
+      "width": 390,
+      "theme": "dark",
+      "checks": "rules, annotated code, proof navigation, lesson and editor focus, page overflow"
+    },
+    {
+      "kind": "exhibit",
+      "id": "python",
+      "width": 390,
+      "theme": "dark",
+      "checks": "rules, annotated code, proof navigation, lesson and editor focus, page overflow"
+    },
+    {
+      "kind": "exhibit",
+      "id": "lua",
+      "width": 390,
+      "theme": "dark",
+      "checks": "rules, annotated code, proof navigation, lesson and editor focus, page overflow"
+    },
+    {
+      "kind": "exhibit",
+      "id": "scheme",
+      "width": 390,
+      "theme": "dark",
+      "checks": "rules, annotated code, proof navigation, lesson and editor focus, page overflow"
+    },
+    {
+      "kind": "exhibit",
+      "id": "c",
+      "width": 390,
+      "theme": "dark",
+      "checks": "rules, annotated code, proof navigation, lesson and editor focus, page overflow"
+    },
+    {
+      "kind": "exhibit",
+      "id": "cpp",
+      "width": 390,
+      "theme": "dark",
+      "checks": "rules, annotated code, proof navigation, lesson and editor focus, page overflow"
+    },
+    {
+      "kind": "exhibit",
+      "id": "java",
+      "width": 390,
+      "theme": "dark",
+      "checks": "rules, annotated code, proof navigation, lesson and editor focus, page overflow"
+    },
+    {
+      "kind": "exhibit",
+      "id": "rust",
+      "width": 390,
+      "theme": "dark",
+      "checks": "rules, annotated code, proof navigation, lesson and editor focus, page overflow"
+    },
+    {
+      "kind": "exhibit",
+      "id": "javascript",
+      "width": 390,
+      "theme": "light",
+      "checks": "rules, annotated code, proof navigation, lesson and editor focus, page overflow"
+    },
+    {
+      "kind": "exhibit",
+      "id": "python",
+      "width": 390,
+      "theme": "light",
+      "checks": "rules, annotated code, proof navigation, lesson and editor focus, page overflow"
+    },
+    {
+      "kind": "exhibit",
+      "id": "lua",
+      "width": 390,
+      "theme": "light",
+      "checks": "rules, annotated code, proof navigation, lesson and editor focus, page overflow"
+    },
+    {
+      "kind": "exhibit",
+      "id": "scheme",
+      "width": 390,
+      "theme": "light",
+      "checks": "rules, annotated code, proof navigation, lesson and editor focus, page overflow"
+    },
+    {
+      "kind": "exhibit",
+      "id": "c",
+      "width": 390,
+      "theme": "light",
+      "checks": "rules, annotated code, proof navigation, lesson and editor focus, page overflow"
+    },
+    {
+      "kind": "exhibit",
+      "id": "cpp",
+      "width": 390,
+      "theme": "light",
+      "checks": "rules, annotated code, proof navigation, lesson and editor focus, page overflow"
+    },
+    {
+      "kind": "exhibit",
+      "id": "java",
+      "width": 390,
+      "theme": "light",
+      "checks": "rules, annotated code, proof navigation, lesson and editor focus, page overflow"
+    },
+    {
+      "kind": "exhibit",
+      "id": "rust",
+      "width": 390,
+      "theme": "light",
+      "checks": "rules, annotated code, proof navigation, lesson and editor focus, page overflow"
+    },
+    {
+      "kind": "branch-runtime",
+      "language": "javascript",
+      "original": "large",
+      "changed": "small"
+    },
+    {
+      "kind": "branch-runtime",
+      "language": "python",
+      "original": "large",
+      "changed": "small"
+    },
+    {
+      "kind": "branch-runtime",
+      "language": "lua",
+      "original": "large",
+      "changed": "small"
+    },
+    {
+      "kind": "branch-runtime",
+      "language": "scheme",
+      "original": "large",
+      "changed": "small"
+    },
+    {
+      "kind": "guide",
+      "step": 1,
+      "checks": "original output differs, changed output matches, completion saved"
+    },
+    {
+      "kind": "guide",
+      "step": 2,
+      "checks": "original output differs, changed output matches, completion saved"
+    },
+    {
+      "kind": "guide",
+      "step": 3,
+      "checks": "original output differs, changed output matches, completion saved"
+    },
+    {
+      "kind": "guide",
+      "step": 4,
+      "checks": "original output differs, changed output matches, completion saved"
+    },
+    {
+      "kind": "guide",
+      "step": 5,
+      "checks": "original output differs, changed output matches, completion saved"
+    },
+    {
+      "kind": "guide-theme",
+      "width": 1440,
+      "theme": "dark",
+      "contrast": 7.299607298527143
+    },
+    {
+      "kind": "guide-theme",
+      "width": 1440,
+      "theme": "light",
+      "contrast": 5.879854129106038
+    },
+    {
+      "kind": "guide-theme",
+      "width": 390,
+      "theme": "dark",
+      "contrast": 7.299607298527143
+    },
+    {
+      "kind": "guide-theme",
+      "width": 390,
+      "theme": "light",
+      "contrast": 5.879854129106038
+    },
+    {
+      "kind": "guide-theme",
+      "width": 320,
+      "theme": "dark",
+      "contrast": 7.299607298527143
+    },
+    {
+      "kind": "guide-theme",
+      "width": 320,
+      "theme": "light",
+      "contrast": 5.879854129106038
+    }
+  ]
+}
