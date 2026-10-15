@@ -491,7 +491,7 @@ body:not(.lineage-focus) .atlas .relations path.field-edge{opacity:.12}
 
 /* Voluntary support stays available but never interrupts exploration. */
 .support-trigger{border:1px solid var(--line);border-radius:4px;padding:5px 9px;background:var(--panel);color:var(--ink);font-size:12px;white-space:nowrap}
-.support-trigger span{color:var(--gold);font-size:11px}.support-trigger:hover,.support-trigger:focus-visible{border-color:#806437;color:var(--ink);background:#1b3033}
+.support-trigger span{color:var(--gold);font-size:11px}.support-trigger:hover,.support-trigger:focus-visible{border-color:#806437;color:var(--ink);background:#172a31}
 .project-support button{border:1px solid var(--gold);border-radius:4px;padding:5px 9px;background:transparent;color:var(--gold);font-size:12px;white-space:nowrap}.project-support button:hover{background:#695020}
 .project-support{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 14px;border:1px solid #665232;border-radius:6px;background:#251e14;margin:10px 0 14px;max-width:850px}
 .project-support h3{margin:0;color:var(--ink);font-size:15px;font-weight:500}.project-support p{margin:3px 0 0;font-size:12px;color:var(--muted)}
