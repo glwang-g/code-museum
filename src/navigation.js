@@ -68,6 +68,25 @@
   };
   document.addEventListener('click',event=>{if(!event.target.closest('.share-control'))closeShareFeedback()});
   document.addEventListener('keydown',event=>{if(event.key==='Escape')closeShareFeedback()});
+  // Support is deliberately separate from exploration: it opens only on request,
+  // does not report payments, and does not gate any museum content.
+  const supportButton=document.createElement('button');
+  supportButton.id='support-open';supportButton.className='support-trigger';supportButton.type='button';
+  supportButton.setAttribute('aria-haspopup','dialog');supportButton.setAttribute('aria-label','请作者喝杯咖啡');supportButton.innerHTML='<span aria-hidden="true">☕</span> 请作者喝杯咖啡';
+  document.querySelector('.header-tools .share-control').before(supportButton);
+  const supportDialog=document.createElement('dialog');
+  supportDialog.id='support-dialog';supportDialog.className='support-dialog';supportDialog.setAttribute('aria-labelledby','support-title');
+  supportDialog.innerHTML='<button class="support-close" type="button" aria-label="关闭赞赏码">关闭 ×</button><div class="support-dialog-content"><img src="assets/support/coffee-appreciation-code.jpg" width="1152" height="1152" alt="微信赞赏码：心有戚戚焉，与君共饮。"><div><p class="eyebrow">VOLUNTARY SUPPORT</p><h2 id="support-title">请作者喝杯咖啡</h2><p>如果这座博物馆对你有一点帮助，欢迎扫码赞赏。</p><p class="support-boundary">完全自愿，所有内容仍免费开放；赞赏不购买功能，也不影响馆藏、研究或历史结论。</p></div></div>';
+  document.body.append(supportDialog);
+  const closeSupport=()=>supportDialog.close();
+  supportButton.onclick=()=>{if(!supportDialog.open)supportDialog.showModal()};
+  supportDialog.querySelector('.support-close').onclick=closeSupport;
+  supportDialog.addEventListener('click',event=>{if(event.target===supportDialog)closeSupport()});
+  const supportCard=document.createElement('section');
+  supportCard.className='project-support';supportCard.setAttribute('aria-labelledby','project-support-title');
+  supportCard.innerHTML='<div><h3 id="project-support-title">支持这座博物馆</h3><p>如果它对你有一点帮助，欢迎请作者喝杯咖啡。完全自愿，所有内容仍免费开放。</p></div><button type="button" aria-haspopup="dialog">查看微信赞赏码</button>';
+  document.querySelector('.provenance-intro').after(supportCard);
+  supportCard.querySelector('button').onclick=()=>{if(!supportDialog.open)supportDialog.showModal()};
   const info=window.MUSEUM_BUILD_INFO;
   $('build-version').textContent='内容版本 '+info.contentSha256.slice(0,12)+' · '+(location.hostname==='codemuseum.freexlib.com'?'正式站':'本地 / 预览')+' · 版本由源码与固定数据生成。';
   window.MUSEUM_NAV={restore,state,save};

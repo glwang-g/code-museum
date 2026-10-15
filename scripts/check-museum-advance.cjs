@@ -51,6 +51,18 @@ async function screenshot(name){if(!outputDirectory)return;await evaluate('new P
   await page('Emulation.setDeviceMetricsOverride',{width:1440,height:1000,deviceScaleFactor:1,mobile:false});
   await page('Page.navigate',{url:'http://127.0.0.1:'+server.address().port});
   await wait("!!window.MUSEUM_RELATIONS_UI && !!window.MUSEUM_LAB");
+  await click('#support-open');await wait("document.querySelector('#support-dialog').open");
+  assert.equal(await evaluate("document.querySelector('#support-dialog img').naturalWidth"),1152);
+  await screenshot('support-dialog-desktop.png');
+  await page('Emulation.setDeviceMetricsOverride',{width:390,height:844,deviceScaleFactor:1,mobile:true});
+  assert.equal(await evaluate('document.documentElement.scrollWidth<=innerWidth+1'),true);
+  await screenshot('support-dialog-mobile.png');
+  await page('Input.dispatchKeyEvent',{type:'keyDown',key:'Escape',code:'Escape',windowsVirtualKeyCode:27});
+  await wait("!document.querySelector('#support-dialog').open");
+  await click('#sources-view');await click('.project-support button');await wait("document.querySelector('#support-dialog').open");
+  await page('Input.dispatchKeyEvent',{type:'keyDown',key:'Escape',code:'Escape',windowsVirtualKeyCode:27});
+  await wait("!document.querySelector('#support-dialog').open");
+  results.push({kind:'support',checks:'header and provenance entry, public QR image, Escape close'});
 
 
 
@@ -166,9 +178,9 @@ async function screenshot(name){if(!outputDirectory)return;await evaluate('new P
    await screenshot(`guide-${theme}-${width}.png`);results.push({kind:'guide-theme',width,theme,contrast});
   }
   assert.deepEqual(unexpectedApiRequests,[],'No code submitted to a remote endpoint');
-  const names=['src/museum.js','src/map-focus.js','src/language-exhibits.js','src/museum.css','src/themes.css','src/learning-examples.js','data/language-exhibits.json','data/research-triage.json','data/learning-paths.json','scripts/curated-content.cjs','scripts/check-museum-advance.cjs'];
+  const names=['src/museum.js','src/map-focus.js','src/language-exhibits.js','src/navigation.js','src/museum.css','src/themes.css','src/learning-examples.js','public/assets/support/coffee-appreciation-code.jpg','data/language-exhibits.json','data/research-triage.json','data/learning-paths.json','scripts/curated-content.cjs','scripts/check-museum-advance.cjs'];
   const hashes=(base,names)=>Object.fromEntries(names.map(f=>[f,crypto.createHash('sha256').update(fs.readFileSync(path.join(base,f))).digest('hex')]));
-  fs.writeFileSync(path.join(outputDirectory,'checks.json'),JSON.stringify({checkedAt:new Date().toISOString(),browser:version.product,scope:'Local isolated headless Chrome; real mouse selection with normal animation, 1440/390 widths, two maps; exhibit navigation in both themes; real JS/Python/Lua/Scheme branch execution; full JavaScript route wrong/matched/timeout/recovery/persistence; guide contrast at 1440/390/320 in both themes. No remote execution. Latency is click capture to two requestAnimationFrame callbacks, not a paint/compositing measurement or a production/Safari guarantee.',inputs:hashes(root,names),servedInputs:hashes(path.join(root,'dist'),['museum.js','map-focus.js','language-exhibits.js','museum.css','themes.css','learning-examples.js','data/language-exhibits.js','data/research-triage.js','data/learning-paths.js']),checks:results},null,2)+'\n');
+  fs.writeFileSync(path.join(outputDirectory,'checks.json'),JSON.stringify({checkedAt:new Date().toISOString(),browser:version.product,scope:'Local isolated headless Chrome; voluntary-support dialog opened by header and provenance entry, QR image loaded and Escape close checked; real mouse selection with normal animation, 1440/390 widths, two maps; exhibit navigation in both themes; real JS/Python/Lua/Scheme branch execution; full JavaScript route wrong/matched/timeout/recovery/persistence; guide contrast at 1440/390/320 in both themes. No remote execution. Latency is click capture to two requestAnimationFrame callbacks, not a paint/compositing measurement or a production/Safari guarantee.',inputs:hashes(root,names),servedInputs:hashes(path.join(root,'dist'),['museum.js','map-focus.js','language-exhibits.js','navigation.js','museum.css','themes.css','learning-examples.js','assets/support/coffee-appreciation-code.jpg','data/language-exhibits.js','data/research-triage.js','data/learning-paths.js']),checks:results},null,2)+'\n');
   console.log(`PASS: ${results.length} checks. Report and screenshots: ${outputDirectory}`);
  }catch(e){await screenshot('failure.png').catch(()=>{});console.error(e.stack+'\n'+diagnostics);process.exitCode=1}
  finally{if(browser){try{await send('Browser.close')}catch{}if(browser.exitCode===null&&browser.signalCode===null)browser.kill('SIGKILL')}server.closeAllConnections();await new Promise(r=>server.close(r));try{fs.rmSync(profileDirectory,{recursive:true,force:true,maxRetries:5,retryDelay:100})}catch(error){if(error.code!=='ENOTEMPTY')throw error}}
