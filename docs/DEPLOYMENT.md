@@ -205,14 +205,14 @@ GitHub remote 已迁至 `glwang-g/code-museum`。提交 `0aa352e` 将站点顶�
 
 生产诊断在 `3657d33` 通过：451 条总关系、444 条设计关系、7 条生态关系；94 条人工审查、216 条已阅读来源；地图无可见设计关系节点 158、常显缺口 2（Assembly、XSLT）；无 provenance mismatch。
 
-## 2026-10-16 公开留言板（本地实现，未发布）
+## 2026-10-16 公开留言板
 
 网站新增公开留言板：意见同时发到维护者 QQ 邮箱 `1956341482@qq.com`，并在页面上以日志形式公开显示。实现位于 `server/messages.py`，由既有 `server/analytics.py` 进程加载，因此**不新增 systemd 单元**，发布仍只重启 `code-museum-analytics`。留言数据库固定为 `/var/lib/code-museum/messages.sqlite3`（`--messages-database` 或 `MESSAGES_DB` 可覆盖），落在服务已有的 `StateDirectory`/`ReadWritePaths` 内，无需新增权限。若 `messages` 模块或该数据库不可用，服务打印 `Guest book disabled...`，访问计数继续工作。
 
-管理员需要在服务器端手工完成以下步骤；`deploy/nginx.conf` 只是模板，本轮改动**尚未合并、尚未发布**。
+部署配置如下；`deploy/nginx.conf` 是可复现模板，生产 Nginx 使用独立 snippet 合并。
 
 1. Nginx：在 http 上下文新增 `limit_req_zone ... zone=code_museum_messages:1m rate=2r/s;`，并在 code-museum 虚拟主机内加入模板中的 `location = /api/messages` 与正则 location `"^/api/messages/[a-f0-9]{32}/visibility$"`（正则花括号必须加引号）。前者允许 GET/POST、限制 8k 请求体、关闭访问日志；后者只允许 POST，并在后端二次校验 Bearer 令牌。先备份现有配置，`nginx -t` 通过后再 reload；`access_log off` 用于避免把留言正文写入日志。
-2. SMTP 凭据：创建 `/etc/code-museum/messages.env`（root:root、0600，与 release 目录分离，不进入 Git）：
+2. SMTP 凭据：创建 `/etc/code-museum/messages.env`（目录为 `root:code-museum`、0750；文件为 `root:code-museum`、0640，与 release 目录分离，不进入 Git）。服务以 `code-museum` 用户运行，必须能穿过目录并只读该文件；其他用户均不可读取：
 
    ```ini
    MESSAGES_SMTP_USER=1956341482@qq.com
@@ -238,4 +238,8 @@ sudo python3 /var/www/code-museum/current/server/messages.py --deliver     # 立
 
 本地已核验（仅回环环境，用无头 Chrome + `dist/` 预览 + 真实 `server/analytics.py`）：提交返回 201 并立即出现在公开日志、角标与 `共 N 条` 计数正确、20 秒冷却与每次访客限流生效、空列表与「服务未接入」降级文案正确、`--hide` 后公开列表与角标同步变化、1440 与 390 两档无横向溢出、无 console 异常。注意本地启动后端时必须把预览站的实际来源（含端口，例如 `https://codemuseum.freexlib.com:4173`）传给 `--origin`，否则 POST 返回 403。
 
-边界与未验证项：本轮没有配置 SMTP 凭据，也没有合并 Nginx 配置，因此“邮件真的送达 QQ 邮箱”“生产 `/api/messages` 写入”“生产限流与并发表现”都未在生产核实，上述本地核验也不代表生产效果。`POST /api/messages` 只做同源 Origin 校验（依赖 Nginx 转发 Origin），不是防滥用身份系统；限流按匿名标识哈希，清除浏览器数据即可重置。留言公开显示，界面已提示不要填写隐私信息，但公开内容仍需人工关注，必要时用 `--hide` 处理。
+生产上线记录：提交 `661ec75` 的 Actions `38828385194` build/deploy 成功。生产 Nginx 将留言代理置于独立 `/etc/nginx/snippets/code-museum-messages.conf`，主虚拟主机只追加 include 与 `code_museum_messages` 限流 zone；原配置备份在 `/var/backups/code-museum-nginx/code-museum.pre-messages-20261016T001638Z`。`nginx -t` 通过后 reload，统计/留言服务 active。
+
+HTTPS 探针实际 POST 201、GET 可见、管理员命令隐藏后公开列表不再返回该记录；探针保留为隐藏记录以验证审计路径。随后 `--deliver` 返回 1，`pendingNotification` 从 1 变为 0，证明 SMTP 服务端接受了该通知；不把这替代为收件箱人工确认。第一次备份若放在 `sites-enabled` 会被 Nginx 当成第二个站点并触发重复 zone 错误；该次校验未 reload，已将备份移至 `/var/backups/code-museum-nginx/` 并恢复基线后重试成功。
+
+仍需持续观察：`POST /api/messages` 只做同源 Origin 校验（依赖 Nginx 转发 Origin），不是防滥用身份系统；限流按匿名标识哈希，清除浏览器数据即可重置。留言公开显示，界面已提示不要填写隐私信息，但公开内容仍需人工关注，必要时用 `--hide` 处理。

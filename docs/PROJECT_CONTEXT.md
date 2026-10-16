@@ -617,4 +617,4 @@ Chapel 官方概述继续补入 `C# / CLU / ML / Modula / Scala → Chapel` 五�
 1. `src/index.html` 里 `<script src="visit-counts.js" defer>` 缺了闭合标签，`messages.js` 被当成前一个脚本的文本内容，浏览器实际只解析出 33 个 script 元素，留言板永远不会初始化。已补回 `</script>`，并新增测试断言每个 script 标签都成对闭合。
 2. `#guest-badge` 挂在顶部入口按钮里，而取值函数 `$()` 只在对话框内部查询，`load()` 与 `setUnavailable()` 都会抛 `TypeError`，结果是**即使后端正常也一律退化成「服务未接入」**。已改为从触发按钮上解析角标，并新增测试禁止再用 `$('guest-badge')`。
 
-尚未验证的部分：生产 SMTP 凭据未配置，因此“邮件真的送到 QQ 邮箱”“生产 `/api/messages` 写入”“真实限流与并发行为”都还未在生产核实；以上核验都发生在本机回环环境，不代表生产效果。`deploy/nginx.conf` 的 `/api/messages` location 需要管理员在服务器端合并。本轮未提交、推送或部署。
+生产上线补记（2026-10-16）：提交 `661ec75` 已由 Actions `38828385194` build/deploy 成功发布；生产 Nginx 以独立 snippet 代理留言接口并通过 `nginx -t` 后 reload。SMTP 配置目录/文件必须分别为 `root:code-museum` 0750 与 `root:code-museum` 0640，不能使用 root-only 0600，否则服务会安全降级关闭留言板。HTTPS 实测 POST→公开 GET→`--hide` 完整通过，临时探针已隐藏；`--deliver` 成功发送 1 条待通知记录并将 pending 数清零。这证明 SMTP 服务器接受通知，不替代收件箱人工确认；生产并发与长期反滥用效果仍待持续观察。
