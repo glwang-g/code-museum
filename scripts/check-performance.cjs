@@ -104,6 +104,46 @@ async function screenshot(name){if(!outputDirectory)return;await evaluate('new P
    searchStyles.push({width,theme,map,catalogue});
   }
   fs.writeFileSync(path.join(outputDirectory,'search-styles.json'),JSON.stringify(searchStyles,null,2)+'\n');
+  // Use real pointer input: DOM .click() misses blur/pointer ordering regressions.
+  const focusedTabChecks=[];
+  for(const width of [1440,1052,390]){
+   await page('Emulation.setDeviceMetricsOverride',{width,height:900,deviceScaleFactor:1,mobile:width<500});
+   for(const source of ['timeline-view','lineage-view','catalogue-view'])for(const query of ['', 'Python'])for(const target of ['timeline-view','lineage-view','catalogue-view','lab-view','compare-view','sources-view'].filter(id=>id!==source)){
+    await click('#'+source);
+    const input=source==='catalogue-view'?'#search':'#map-search';
+    await click(input);
+    await evaluate(`(()=>{const e=document.querySelector(${JSON.stringify(input)});e.value=${JSON.stringify(query)};e.dispatchEvent(new Event('input',{bubbles:true}));window.tabClicks=0;document.querySelector(${JSON.stringify('#'+target)}).addEventListener('click',()=>window.tabClicks++,{once:true})})()`);
+    assert.equal(await evaluate('document.activeElement.id'),input.slice(1));
+    const point=await evaluate(`(()=>{const r=document.querySelector(${JSON.stringify('#'+target)}).getBoundingClientRect();return {x:r.left+r.width/2,y:r.top+r.height/2}})()`);
+    await page('Input.dispatchMouseEvent',{type:'mouseMoved',...point,button:'none'});
+    await page('Input.dispatchMouseEvent',{type:'mousePressed',...point,button:'left',clickCount:1});
+    assert.equal(await evaluate('document.activeElement.id'),input.slice(1),'Search retains focus until click is delivered');
+    assert.equal(await evaluate("document.querySelector('.museum-tabs .active').id"),source,'Press alone does not navigate');
+    await page('Input.dispatchMouseEvent',{type:'mouseReleased',...point,button:'left',clickCount:1});
+    assert.equal(await evaluate('document.activeElement.id'),target,'Click transfers focus to the tab');
+    assert.equal(await evaluate("document.querySelector('.museum-tabs .active').id"),target,`First click switches ${source} to ${target}, query=${query}, width=${width}`);
+    assert.equal(await evaluate('window.tabClicks'),1,'Exactly one click is delivered');
+    assert.equal(await evaluate("document.querySelector('#map-search-popup').hidden"),true,'Search popup closes on navigation');
+    focusedTabChecks.push({width,source,target,query,order:'press-first'});
+    // macOS "tap to click" can deliver the release before its press while a text
+    // field owns the input context; WebKit then drops the click. One tap must switch.
+    await click('#'+source);
+    await click(input);
+    await evaluate(`(()=>{const e=document.querySelector(${JSON.stringify(input)});e.value=${JSON.stringify(query)};e.dispatchEvent(new Event('input',{bubbles:true}));window.tabClicks=0;document.querySelector(${JSON.stringify('#'+target)}).addEventListener('click',()=>window.tabClicks++,{once:true})})()`);
+    assert.equal(await evaluate('document.activeElement.id'),input.slice(1));
+    const tapPoint=await evaluate(`(()=>{const r=document.querySelector(${JSON.stringify('#'+target)}).getBoundingClientRect();return {x:r.left+r.width/2,y:r.top+r.height/2}})()`);
+    await page('Input.dispatchMouseEvent',{type:'mouseMoved',...tapPoint,button:'none'});
+    await page('Input.dispatchMouseEvent',{type:'mouseReleased',...tapPoint,button:'left',clickCount:1});
+    assert.equal(await evaluate("document.querySelector('.museum-tabs .active').id"),target,`Release-first tap switches ${source} to ${target}, query=${query}, width=${width}`);
+    assert.equal(await evaluate('document.activeElement.id'),target,'Release-first tap transfers focus to the tab');
+    assert.equal(await evaluate('window.tabClicks'),1,'Release-first tap delivers exactly one click');
+    assert.equal(await evaluate("document.querySelector('#map-search-popup').hidden"),true,'Search popup closes on release-first tap');
+    focusedTabChecks.push({width,source,target,query,order:'release-first'});
+   }
+  }
+  fs.writeFileSync(path.join(outputDirectory,'focused-tabs.json'),JSON.stringify(focusedTabChecks,null,2)+'\n');
+  console.log(`Focused search → first-click navigation: ${focusedTabChecks.length} checks passed`);
+
   assert.deepEqual(pageErrors,[]);
   const files=['src/museum.js','src/museum.css','src/search.css','src/themes.css','src/index.html','src/map-focus.js','src/exploration-tools.js','scripts/build.cjs','scripts/serve.cjs','scripts/check-performance.cjs'];
   const hash=names=>Object.fromEntries(names.map(f=>[f,crypto.createHash('sha256').update(fs.readFileSync(path.join(root,f))).digest('hex')]));

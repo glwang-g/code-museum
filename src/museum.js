@@ -228,6 +228,35 @@ $('#catalogue-view').onclick=showCatalogue;
 $('#lab-view').onclick=()=>activateTab('lab-view');
 $('#compare-view').onclick=()=>activateTab('compare-view');
 $('#sources-view').onclick=showSources;
+// Safari can blur search inputs without focusing the pressed button. Keep the
+// search focused through mousedown; move focus once click is actually delivered.
+// Do not activate on pointerdown: dragging away must still cancel navigation.
+const searchHasFocus=()=>document.activeElement?.matches('#map-search,#search');
+// macOS "tap to click" can deliver the release before its press while a text
+// field owns the input context (WebKit bug 219670). WebKit pairs clicks from
+// press order, so that tap arrives as pointerup with no click and the tab never
+// switches. Run the click ourselves when no click reaches the page for it.
+let pendingTabClick=null,pendingTabTimer=0;
+const dropPendingTabClick=()=>{clearTimeout(pendingTabTimer);pendingTabTimer=0;pendingTabClick=null};
+window.addEventListener('click',dropPendingTabClick,true);
+$('.museum-tabs').addEventListener('pointerup',event=>{
+  if(event.button!==0||event.pointerType!=='mouse')return;
+  const tab=event.target.closest('[role=tab]');
+  if(!tab)return;
+  dropPendingTabClick();
+  pendingTabClick=tab;
+  pendingTabTimer=setTimeout(()=>{
+    const target=pendingTabClick;dropPendingTabClick();
+    if(target){target.focus({preventScroll:true});target.click()}
+  },0);
+});
+$('.museum-tabs').addEventListener('mousedown',event=>{
+  if(event.button===0&&event.target.closest('[role=tab]')&&searchHasFocus())event.preventDefault();
+});
+$('.museum-tabs').addEventListener('click',event=>{
+  const tab=event.target.closest('[role=tab]');
+  if(tab&&searchHasFocus())tab.focus({preventScroll:true});
+},true);
 $('.museum-tabs').addEventListener('keydown',event=>{
   const tabs=[...document.querySelectorAll('.museum-tabs [role=tab]')];
   const index=tabs.indexOf(document.activeElement);
