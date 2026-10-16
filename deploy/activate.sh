@@ -6,6 +6,7 @@ base=/var/www/code-museum
 release="$base/releases/$sha"
 test -f "$release/dist/index.html"
 test -f "$release/server/analytics.py"
+test -f "$release/server/messages.py"
 old_target="$(readlink "$base/current" || true)"
 if [[ -n "$old_target" ]]; then
   [[ "$old_target" =~ ^releases/[0-9a-f]{40}$ ]]

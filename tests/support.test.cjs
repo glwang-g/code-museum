@@ -9,4 +9,5 @@ test('voluntary support is a dismissible dialog with a tracked public code asset
   assert.ok(fs.statSync(path.join(root,'public/assets/support/coffee-appreciation-code.jpg')).size>10000);
   assert.match(js,/supportDialog\.showModal\(\)/);
   assert.match(js,/event\.target===supportDialog/);
+  assert.match(js,/supportDialog\.addEventListener\('close',\(\)=>supportButton\.focus\(\)\)/);
 });

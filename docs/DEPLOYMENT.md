@@ -204,3 +204,38 @@ GitHub remote 已迁至 `glwang-g/code-museum`。提交 `0aa352e` 将站点顶�
 | `3657d33` | `38121871540` | C/C++ → C# 候选收口为无合格来源 |
 
 生产诊断在 `3657d33` 通过：451 条总关系、444 条设计关系、7 条生态关系；94 条人工审查、216 条已阅读来源；地图无可见设计关系节点 158、常显缺口 2（Assembly、XSLT）；无 provenance mismatch。
+
+## 2026-10-16 公开留言板（本地实现，未发布）
+
+网站新增公开留言板：意见同时发到维护者 QQ 邮箱 `1956341482@qq.com`，并在页面上以日志形式公开显示。实现位于 `server/messages.py`，由既有 `server/analytics.py` 进程加载，因此**不新增 systemd 单元**，发布仍只重启 `code-museum-analytics`。留言数据库固定为 `/var/lib/code-museum/messages.sqlite3`（`--messages-database` 或 `MESSAGES_DB` 可覆盖），落在服务已有的 `StateDirectory`/`ReadWritePaths` 内，无需新增权限。若 `messages` 模块或该数据库不可用，服务打印 `Guest book disabled...`，访问计数继续工作。
+
+管理员需要在服务器端手工完成以下步骤；`deploy/nginx.conf` 只是模板，本轮改动**尚未合并、尚未发布**。
+
+1. Nginx：在 http 上下文新增 `limit_req_zone ... zone=code_museum_messages:1m rate=2r/s;`，并在 code-museum 虚拟主机内加入模板中的 `location = /api/messages` 与正则 location `"^/api/messages/[a-f0-9]{32}/visibility$"`（正则花括号必须加引号）。前者允许 GET/POST、限制 8k 请求体、关闭访问日志；后者只允许 POST，并在后端二次校验 Bearer 令牌。先备份现有配置，`nginx -t` 通过后再 reload；`access_log off` 用于避免把留言正文写入日志。
+2. SMTP 凭据：创建 `/etc/code-museum/messages.env`（root:root、0600，与 release 目录分离，不进入 Git）：
+
+   ```ini
+   MESSAGES_SMTP_USER=1956341482@qq.com
+   MESSAGES_SMTP_PASSWORD=<QQ 邮箱 SMTP 授权码，不是登录密码>
+   MESSAGES_SMTP_HOST=smtp.qq.com
+   MESSAGES_SMTP_PORT=465
+   MESSAGES_MAIL_TO=1956341482@qq.com
+   MESSAGES_ADMIN_TOKEN=<随机隐藏令牌>
+   ```
+
+   `MESSAGES_MAIL_TO` 缺省与发信账号相同；`MESSAGES_ADMIN_TOKEN` 只用于隐藏违规留言，不是发信凭据。单元文件的 `ProtectSystem=strict` 只让 `/etc` 只读，仍可读取该文件。文件不存在或缺少账号/授权码时，留言照常保存和公开展示，但不会发信，服务日志会打印 `mail notifications not configured`。
+3. 出站网络：发信需要服务器到 `smtp.qq.com:465` 的出站 TCP 连通（非 465 端口走 STARTTLS）。若被防火墙阻断，留言保持 `notified_at IS NULL` 并记录 `notify_error`，后台线程每 120 秒重试；这属于“未确认送达”，不能对外说成已发送。
+4. 发布后核验：`curl -s https://codemuseum.freexlib.com/api/messages?limit=3` 应返回 JSON；在页面上提交一条真实留言，确认公开日志与邮箱都收到；`/api/visits`、`/healthz` 与执行 API 行为不变。
+
+维护命令（在服务器上运行，数据库属于服务账户）：
+
+```sh
+sudo python3 /var/www/code-museum/current/server/messages.py --report      # 总数/可见数/未确认送达数
+sudo python3 /var/www/code-museum/current/server/messages.py --list 20     # 最新 20 条，含已隐藏
+sudo python3 /var/www/code-museum/current/server/messages.py --hide <id>   # 隐藏 / --show 恢复
+sudo python3 /var/www/code-museum/current/server/messages.py --deliver     # 立即重试一次待发通知
+```
+
+本地已核验（仅回环环境，用无头 Chrome + `dist/` 预览 + 真实 `server/analytics.py`）：提交返回 201 并立即出现在公开日志、角标与 `共 N 条` 计数正确、20 秒冷却与每次访客限流生效、空列表与「服务未接入」降级文案正确、`--hide` 后公开列表与角标同步变化、1440 与 390 两档无横向溢出、无 console 异常。注意本地启动后端时必须把预览站的实际来源（含端口，例如 `https://codemuseum.freexlib.com:4173`）传给 `--origin`，否则 POST 返回 403。
+
+边界与未验证项：本轮没有配置 SMTP 凭据，也没有合并 Nginx 配置，因此“邮件真的送达 QQ 邮箱”“生产 `/api/messages` 写入”“生产限流与并发表现”都未在生产核实，上述本地核验也不代表生产效果。`POST /api/messages` 只做同源 Origin 校验（依赖 Nginx 转发 Origin），不是防滥用身份系统；限流按匿名标识哈希，清除浏览器数据即可重置。留言公开显示，界面已提示不要填写隐私信息，但公开内容仍需人工关注，必要时用 `--hide` 处理。

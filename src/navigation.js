@@ -82,6 +82,7 @@
   supportButton.onclick=()=>{if(!supportDialog.open)supportDialog.showModal()};
   supportDialog.querySelector('.support-close').onclick=closeSupport;
   supportDialog.addEventListener('click',event=>{if(event.target===supportDialog)closeSupport()});
+  supportDialog.addEventListener('close',()=>supportButton.focus());
   const supportCard=document.createElement('section');
   supportCard.className='project-support';supportCard.setAttribute('aria-labelledby','project-support-title');
   supportCard.innerHTML='<div><h3 id="project-support-title">支持这座博物馆</h3><p>如果它对你有一点帮助，欢迎请作者喝杯咖啡。完全自愿，所有内容仍免费开放。</p></div><button type="button" aria-haspopup="dialog">查看微信赞赏码</button>';

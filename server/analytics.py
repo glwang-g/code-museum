@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
-"""Same-origin page-load counters. Python 3 standard library only."""
+"""Code Museum public API on the loopback interface. Python 3 standard library only.
+
+Same-origin page-load counters plus the guest book in messages.py. Both are
+public, both store only what the feature needs, and neither one keeps IP
+addresses, user agents or accounts. The guest book is optional at runtime: if
+its module or its SQLite file is unavailable the counters keep working.
+"""
 import argparse
 import hashlib
 import json
@@ -14,6 +20,11 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import urlsplit
 from uuid import UUID
+
+try:
+    import messages
+except ImportError:  # Counting visits must not depend on the guest book module.
+    messages = None
 
 
 def connect(database):
@@ -46,7 +57,7 @@ def report(database):
                 "definition": "UV: distinct anonymous browser IDs; PV: deduplicated page-load events"}
 
 
-def handler(database, origin):
+def handler(database, origin, guest_book=None):
     totals_cache = {"at": 0, "value": None}
     totals_lock = threading.Lock()
 
@@ -73,7 +84,28 @@ def handler(database, origin):
             self.send_header("Content-Length", "0")
             self.end_headers()
 
+        def json_response(self, status, payload):
+            body = json.dumps(payload, ensure_ascii=False).encode("utf-8")
+            self.send_response(status)
+            self.send_header("Content-Type", "application/json; charset=utf-8")
+            self.send_header("Cache-Control", "no-store")
+            self.send_header("Content-Length", str(len(body)))
+            self.end_headers()
+            self.wfile.write(body)
+
+        def read_body(self, maximum):
+            try:
+                length = int(self.headers.get("Content-Length", "0"))
+            except ValueError:
+                return None
+            if length < 0 or length > maximum:
+                return None
+            return self.rfile.read(length) if length else b""
+
         def do_GET(self):
+            if guest_book is not None and self.path.split("?")[0] == "/api/messages":
+                status, payload = guest_book.read(self.path.partition("?")[2])
+                return self.json_response(status, payload)
             if self.path != "/api/visits":
                 return self.respond(204 if self.path == "/healthz" else 404)
             try:
@@ -88,6 +120,21 @@ def handler(database, origin):
             self.wfile.write(body)
 
         def do_POST(self):
+            if guest_book is not None:
+                target = self.path.split("?")[0]
+                if target == "/api/messages":
+                    body = self.read_body(messages.MAX_REQUEST)
+                    if body is None:
+                        return self.respond(413)
+                    status, payload = guest_book.submit(self.headers, body)
+                    return self.json_response(status, payload)
+                message_id = guest_book.visibility_path(self.path)
+                if message_id:
+                    body = self.read_body(4096)
+                    if body is None:
+                        return self.respond(413)
+                    status, payload = guest_book.hide(self.headers, body, message_id)
+                    return self.json_response(status, payload)
             if self.path != "/api/visits":
                 return self.respond(404)
             if self.headers.get("Origin") != origin:
@@ -119,6 +166,7 @@ def handler(database, origin):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--database", default=os.environ.get("ANALYTICS_DB", "/var/lib/code-museum/visits.sqlite3"))
+    parser.add_argument("--messages-database", default=os.environ.get("MESSAGES_DB", "/var/lib/code-museum/messages.sqlite3"))
     parser.add_argument("--origin", default="https://codemuseum.freexlib.com")
     parser.add_argument("--port", type=int, default=4180)
     parser.add_argument("--report", action="store_true")
@@ -138,10 +186,30 @@ def main():
         parser.error("--origin must be an HTTPS origin without a path")
     Path(args.database).parent.mkdir(parents=True, exist_ok=True)
     connect(args.database).close()
-    server = ThreadingHTTPServer(("127.0.0.1", args.port), handler(args.database, args.origin))
+    guest_book = None
+    if messages is not None:
+        try:
+            Path(args.messages_database).parent.mkdir(parents=True, exist_ok=True)
+            messages.connect(args.messages_database).close()
+            guest_book = messages.Messages(args.messages_database, args.origin, messages.load_mail_config())
+        except (sqlite3.Error, OSError):
+            guest_book = None
+    server = ThreadingHTTPServer(("127.0.0.1", args.port), handler(args.database, args.origin, guest_book))
     server.timeout = 10
     print("Code Museum visit recorder on 127.0.0.1:" + str(args.port), flush=True)
-    server.serve_forever()
+    if guest_book is None:
+        print("Guest book disabled: messages module or database unavailable", flush=True)
+    else:
+        mail = guest_book.config
+        print("Guest book enabled; mail notifications " + ("configured for " + mail["to"] if mail["enabled"] else "not configured"), flush=True)
+    worker = messages.MailWorker(args.messages_database, guest_book.config) if guest_book and guest_book.config["enabled"] else None
+    if worker:
+        worker.start()
+    try:
+        server.serve_forever()
+    finally:
+        if worker:
+            worker.stop()
 
 
 if __name__ == "__main__":

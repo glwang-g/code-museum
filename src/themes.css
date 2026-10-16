@@ -72,3 +72,7 @@
 :root[data-theme="light"] .compare-code .tok-string{color:#2f704c}
 :root[data-theme="light"] .compare-code .tok-number{color:#365ca2}
 :root[data-theme="light"] .compare-code .tok-comment{color:#596f69}
+:root[data-theme="light"] .guest-trigger:is(:hover,:focus-visible){background:#f2ece0;border-color:#a98140}
+:root[data-theme="light"] .guest-trigger span{background:#e6dfcd}
+:root[data-theme="light"] #guest-submit:hover:not([disabled]){background:#8a5c1924}
+:root[data-theme="light"] #guest-status[data-state="error"]{color:#a43c2e}

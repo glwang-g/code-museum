@@ -587,3 +587,34 @@ Chapel 官方概述继续补入 `C# / CLU / ML / Modula / Scala → Chapel` 五�
 ## 2026-10-15 自愿支持入口
 
 用户提供并授权公开使用微信「Coffee 的赞赏码」图片。网站顶部增加「请作者喝杯咖啡」入口，出处与说明页也保留相同入口；两者打开同一个可关闭、支持 Escape 的原生对话框。文案明确：完全自愿、全站内容继续免费、赞赏不购买功能，也不影响馆藏、研究或历史结论。二维码作为公开静态资源 `public/assets/support/coffee-appreciation-code.jpg` 随离线构建复制；它不包含银行卡号、余额或登录凭据，但属于公开收款入口，后续更换时应替换该资源并重新核验。未提交、推送或部署。
+
+## 2026-10-16 公开留言板（本地实现）
+
+用户要求增加留言功能：意见发到维护者 QQ 邮箱 `1956341482@qq.com`，同时在页面上以日志形式公开展示。
+
+- 后端：新增 `server/messages.py`（仅标准库），与访问计数共用同一个进程与 systemd 服务，不新增单元。表 `messages` 保存 `id`（来自提交端 eventId）、`created_at`、`author`、`body`、`page`、`visitor`（浏览器匿名标识的 SHA-256）、`visible`、`notified_at`、`notify_attempts`、`notify_error`。不保存 IP、User-Agent、邮箱或账号。
+- 接口：`GET /api/messages?limit&offset` 公开读取（默认 20 条，最多 50）；`POST /api/messages` 要求同源 Origin、`application/json`、正文 2–600 字、昵称 ≤24 字、位置 ≤80 字、单请求 ≤8 KB；同一 `eventId` 重复提交只保存一条；每个匿名标识 20 秒内一条、每天最多 8 条；`POST /api/messages/<32hex>/visibility` 需要配置的管理员令牌，用常量时间比较。
+- 通知：当 `/etc/code-museum/messages.env` 或环境变量提供 `MESSAGES_SMTP_USER`、`MESSAGES_SMTP_PASSWORD`（`MESSAGES_MAIL_TO` 可选，缺省与发信账号相同）时，后台线程重试发送待通知留言；未确认送达的留言保持 `notified_at IS NULL`，失败原因记在 `notify_error`。界面与文档都只说明「已保存并公开显示」，不把已保存说成已送达。
+- 前端 `src/messages.js`：顶部工具栏增加「留言板」入口，打开原生对话框；上方是昵称/留言表单与字数提示，下方是公开日志（最新 20 条与总数）。所有用户内容都用 `textContent` 渲染，不使用 `innerHTML`。服务不可用时（例如本地预览没有后端）明确显示不可用并禁用表单，不显示任何占位或伪造留言。
+- 本地核验入口：`scripts/serve.cjs` 增加可选回环代理 `MUSEUM_API_UPSTREAM`，可用真实 `server/analytics.py` 在本机验证表单、日志和限流，生产路径仍是 Nginx 直连后端。后端按精确 Origin 校验且要求 `https`，所以本地必须把预览站的实际来源（含端口）传给 `--origin`，例如 `--origin https://codemuseum.freexlib.com:4173`；用不带端口的值启动会让 POST 一律返回 403。
+
+隐私与降级边界：留言公开显示，因此界面明确提示不要填写隐私信息；服务只保存昵称、内容、页面位置和匿名标识哈希。如果 `messages` 模块或留言数据库不可用，访问计数继续工作，留言板整体停用并打印一行说明，不会显示空列表冒充“没有留言”。
+
+## 2026-10-16 留言板浏览器核验（本地）
+
+用本机无头 Chrome（Chrome/155.0.8059.40）在 `dist/` 预览 + 真实 `server/analytics.py` 上跑完整流程，核验内容与结果：
+
+- 提交走真实接口：`POST /api/messages` 返回 201，日志立即出现该条（昵称、时间、正文、页面位置），顶部入口角标变为 `1`，正文清空，按钮进入 `请稍候 19s 再发`；等待 20 秒冷却后可再发一条，最新一条排在最前。
+- 只读窗口与计数：灌入 122 条夹具数据后，日志只渲染最新 20 条，标题右侧显示 `共 122 条`，角标显示 `99+`；`.guest-body` 内部滚动，最后一条可达，不裁切。
+- 状态与可达性：空列表显示「还没有留言，欢迎写下第一条。」；关闭按钮与 Escape 都能关闭并把焦点还给入口；`#guest-dialog` 为模态对话框，背景不可点。
+- 布局：1440×900 与 390×844 两档都没有横向溢出（`scrollWidth` 等于视口宽），窄屏对话框宽 352px，表单与日志都可用。
+- 降级：没有接入后端的预览站（`http://127.0.0.1:4174`）显示「留言服务未接入…」，禁用昵称与留言输入，日志显示「服务不可用，暂时无法读取留言。」，`GET /api/messages` 为 404，不显示任何伪造留言。
+- 管理端：`python3 server/messages.py --hide <id>` 之后，公开 `GET /api/messages` 的 `total` 变 0，页面重新加载后日志为空、角标隐藏。
+- 全程无 console 异常；仓库自带 `npm run runtime:browser` 套件 34 项全部通过。
+
+本轮发现并修复两个真实缺陷（都由浏览器核验暴露，静态测试没能发现）：
+
+1. `src/index.html` 里 `<script src="visit-counts.js" defer>` 缺了闭合标签，`messages.js` 被当成前一个脚本的文本内容，浏览器实际只解析出 33 个 script 元素，留言板永远不会初始化。已补回 `</script>`，并新增测试断言每个 script 标签都成对闭合。
+2. `#guest-badge` 挂在顶部入口按钮里，而取值函数 `$()` 只在对话框内部查询，`load()` 与 `setUnavailable()` 都会抛 `TypeError`，结果是**即使后端正常也一律退化成「服务未接入」**。已改为从触发按钮上解析角标，并新增测试禁止再用 `$('guest-badge')`。
+
+尚未验证的部分：生产 SMTP 凭据未配置，因此“邮件真的送到 QQ 邮箱”“生产 `/api/messages` 写入”“真实限流与并发行为”都还未在生产核实；以上核验都发生在本机回环环境，不代表生产效果。`deploy/nginx.conf` 的 `/api/messages` location 需要管理员在服务器端合并。本轮未提交、推送或部署。

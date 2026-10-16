@@ -8,14 +8,15 @@ const zlib = require('node:zlib');
 const { Writable } = require('node:stream');
 const { createRequestHandler } = require('../scripts/serve.cjs');
 
-function request(handler, url, method = 'GET', headers = {}) {
+function request(handler, url, method = 'GET', headers = {}, body = null) {
   return new Promise((resolve, reject) => {
     const chunks = [];
     const res = new Writable({ write(chunk, encoding, callback) { chunks.push(Buffer.from(chunk)); callback(); } });
     res.writeHead = (status, responseHeaders = {}) => { res.status = status; res.headers = responseHeaders; return res; };
     res.on('error', reject);
     res.on('finish', () => resolve({ status: res.status, headers: res.headers, body: Buffer.concat(chunks) }));
-    handler({ url, method, headers }, res);
+    const req = { url, method, headers, on() {}, pipe(destination) { destination.end(body === null ? undefined : body); } };
+    handler(req, res);
   });
 }
 
@@ -110,4 +111,14 @@ test('compressed delivery preserves the actual bundled Python WebAssembly bytes'
   assert.equal(response.headers['Content-Encoding'], 'br');
   assert.deepEqual(zlib.brotliDecompressSync(response.body), original);
   assert.ok(response.body.length < original.length);
+});
+
+test('preview refuses a non-loopback API upstream and reports an offline guest book as unavailable', async t => {
+  const { root } = fixture(t);
+  assert.throws(() => createRequestHandler(root, { api: 'https://example.com/' }), /API proxy must target local HTTP/);
+  const handler = createRequestHandler(root, { api: 'http://127.0.0.1:9/' });
+  const offline = await request(handler, '/api/messages?limit=5');
+  assert.equal(offline.status, 503);
+  assert.equal(JSON.parse(offline.body).error, 'Guest book unavailable');
+  assert.equal((await request(handler, '/api/messages', 'DELETE')).status, 405);
 });
