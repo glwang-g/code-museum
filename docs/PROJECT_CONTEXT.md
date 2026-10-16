@@ -656,4 +656,6 @@ Safari 视觉补核：在原生 Safari 的约 1052px 窗口实际对照 Kotlin �
 
 修正改为按 pointerup 兜底：页签上的鼠标释放后，若本轮没有任何 click 到达页面（在 window 捕获阶段断定已由浏览器接管），下一次宏任务自行聚焦并补发 click；任何 click（含拖拽落在祖先元素上的那种）到达都会取消兜底，pointerdown 仍不导航，拖离页签后释放仍不切换，触摸指针与键盘导航不受影响。
 
-核验：`npm test` 79/79、`npm run build` 通过；性能专项扩为 180 组真实鼠标检查（90 组按下优先 + 90 组抬起优先），抬起优先时同样一次切换、只投递一次 click 并聚焦目标，其余原有场景与搜索样式检查不变，报告在 `tmp/performance-2026-10-16/tap-fix/`。隔离 Chrome 中用真实指针输入先发 mouseReleased 不发 mousePressed 复现了原始故障（只收到 pointerup/mouseup、无 click、不切换），拖到页签上释放仍不切换，证据与脚本在 `tmp/tab-tap-probe/`；`tmp/tap-diagnostic/server.cjs` 可在用户机器上对照记录鼠标事件（`?baseline=1` 为未修正版）。仍未在用户自己的 Mac/Safari 上用真实触控板复测，因此不能宣布用户环境已修复；修正尚未提交、推送或部署。
+核验：`npm test` 79/79、`npm run build` 通过；性能专项扩为 180 组真实鼠标检查（90 组按下优先 + 90 组抬起优先），抬起优先时同样一次切换、只投递一次 click 并聚焦目标，其余原有场景与搜索样式检查不变，报告在 `tmp/performance-2026-10-16/tap-fix/`。隔离 Chrome 中用真实指针输入先发 mouseReleased 不发 mousePressed 复现了原始故障（只收到 pointerup/mouseup、无 click、不切换），拖到页签上释放仍不切换，证据与脚本在 `tmp/tab-tap-probe/`；`tmp/tap-diagnostic/server.cjs` 可在用户机器上对照记录鼠标事件（`?baseline=1` 为未修正版）。
+
+提交补记：用户已授权提交并推送，实现提交 `6a4fdfc`（`src/museum.js`、`scripts/check-performance.cjs`、本文件）推送到 `origin/master`；Actions run `38862152688` 的 build 与 deploy 均成功，`Check HTTPS release` 通过，生产 https://codemuseum.freexlib.com 的 index.html 引用 `museum.41525883b414.js`，与本地构建指纹一致且包含新的 pointerup 兜底逻辑。以上是内容与部署核验，仍未在用户自己的 Mac/Safari 上用真实触控板复测，因此不宣布用户环境的问题已解决，也不把本次推送视为用户侧已验证。
