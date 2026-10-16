@@ -58,7 +58,6 @@
 :root[data-theme="light"] .map-run{background:#edf1d8;border-color:#a98140;color:#76521b}
 :root[data-theme="light"] .map-run:hover{background:#d8e7cc;color:#203c43}
 :root[data-theme="light"] :is(.map-search,#map-search-popup){background:var(--panel);border-color:var(--line);box-shadow:0 8px 20px #294d3925}
-:root[data-theme="light"] #map-search{background:var(--panel);border-color:#a4b8ac;color:var(--ink)}
 :root[data-theme="light"] :is(#map-search-clear,#map-search-results button){color:var(--ink)}
 :root[data-theme="light"] :is(.map-search-hint,#map-search-results small,#map-search-status){color:var(--muted)}
 :root[data-theme="light"] #map-search-catalogue{color:var(--gold)}

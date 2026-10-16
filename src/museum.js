@@ -48,7 +48,7 @@ for(const [id,p] of positions)timelinePositions.set(id,p);
 $('#docks').innerHTML=dated.map(r=>{let p=positions.get(r.id);return `<button type="button" class="dock ${p.label?'':'dot'}" data-id="${esc(r.id)}" data-name="${esc(r.name)}" style="left:${p.x}px;top:${p.y}px" aria-label="${esc(r.name)}，${r.year}">${p.label?esc(r.name)+`<small>${r.year}</small>`:''}</button>`}).join('');
 const events=[{name:'Jacquard · 提花织机',year:1804,url:'https://www.computerhistory.org/babbage/engines/'},{name:'Babbage · 分析机',year:1837,url:'https://www.computerhistory.org/babbage/engines/'},{name:'Ada · 分析机笔记',year:1843,url:'https://www.fourmilab.ch/babbage/sketch.html'},{name:'Church / Turing · 可计算性',year:1936,url:'https://plato.stanford.edu/entries/computability/'}];
 events.forEach((e,i)=>{const b=document.createElement('button');b.className='dock';b.style.cssText=`left:${90+i*100}px;top:${120+i*95}px`;b.textContent=e.name;b.onclick=()=>openPanel(`<div class="eyebrow">序厅 · ${e.year}</div><h2>${esc(e.name)}</h2><p>计算史背景事件，不是现代语言的直接派生节点。序厅事件为叙事排布。</p><h3>史料入口</h3><a href="${e.url}" target="_blank" rel="noreferrer">阅读来源 ↗</a>`);$('#docks').append(b)});
-// Coordinates follow visible water in history-river.png (1536 × 1024), not the timeline layout.
+// Water coordinates retain the original 1536 × 1024 composition; the WebP is a smaller encoding.
 const riverCurrents=[
   'M 145 258 C 205 294 278 300 367 300',
   'M 58 390 C 146 365 186 350 245 366 S 348 405 420 397',
@@ -176,9 +176,38 @@ function activateTab(id){
 }
 function showCatalogue(){activateTab('catalogue-view')}
 function showSources(){activateTab('sources-view')}
-function setView(mode){viewMode=mode;const lineage=mode==='lineage';activateTab(lineage?'lineage-view':'timeline-view');document.body.classList.toggle('lineage-mode',lineage);$('#atlas-title').innerHTML=lineage?'关系谱系 <small>／ 按已记录关系分层，连线有来源</small>':'时间长河 <small>／ 按来源年代定位，非等距时间轴</small>';setAtlasFeedback(lineage?'仅显示已收录地图节点之间有明确来源的关系；全量馆藏仍可检索。':'淡线显示已记录关系；点选语言放大查看上下游，点空白恢复全貌。其余馆藏仍可检索。',lineage?'关系谱系 · 浏览全景':'时间长河 · 浏览全景');const shown=lineage?records.filter(r=>graphIds.has(r.id)):dated;positions.clear();for(const [id,p] of (lineage?lineagePositions:timelinePositions))positions.set(id,p);const layout=lineage?lineagePositions:null;$('#docks').innerHTML=shown.map(r=>{const p=layout?layout.get(r.id):positions.get(r.id);const label=layout?selectedIds.has(r.id):p.label;return '<button type="button" class="dock '+(label?'':'dot')+'" data-id="'+esc(r.id)+'" data-name="'+esc(r.name)+'" style="left:'+p.x+'px;top:'+p.y+'px" aria-label="'+esc(r.name)+'">'+(label?esc(r.name)+(r.year?'<small>'+r.year+'</small>':''):'')+'</button>'}).join('');$('#relations').innerHTML=overviewRelationMarkup();zoomMode='fit';fitMap();$('#viewport').scrollTo({left:0,top:0,behavior:'instant'});}
-$('#timeline-view').onclick=()=>{setView('timeline');if(activeId)renderLineageFocus(activeId)};
-$('#lineage-view').onclick=()=>{setView('lineage');if(activeId&&graphIds.has(activeId))renderLineageFocus(activeId);else restoreMapOverview()};
+// Each view owns reusable buttons; switching views detaches rather than recreates them.
+const dockLayouts=new Map();let mountedDockLayout=null;
+function mountDockLayout(mode){
+  if(mountedDockLayout===mode)return;
+  resetFocusLabels();
+  let layout=dockLayouts.get(mode);
+  if(!layout){
+    const lineage=mode==='lineage',shown=lineage?records.filter(r=>graphIds.has(r.id)):dated;
+    layout=shown.map(r=>{
+      const p=(lineage?lineagePositions:timelinePositions).get(r.id),label=lineage?selectedIds.has(r.id):p.label;
+      const node=document.createElement('button');node.type='button';node.className='dock '+(label?'':'dot');
+      node.dataset.id=r.id;node.dataset.name=r.name;node.style.left=p.x+'px';node.style.top=p.y+'px';node.setAttribute('aria-label',r.name);
+      if(label)node.innerHTML=esc(r.name)+(r.year?'<small>'+r.year+'</small>':'');
+      return {node,baseClass:node.className};
+    });
+    dockLayouts.set(mode,layout);
+  }
+  for(const {node,baseClass} of layout){node.className=baseClass;node.removeAttribute('data-runnable');delete node.dataset.labelPlacement;node.style.removeProperty('--label-shift-x');node.style.removeProperty('--label-shift-y')}
+  $('#docks').replaceChildren(...layout.map(({node})=>node));mountedDockLayout=mode;
+}
+function setView(mode){
+  if(viewMode===mode&&mountedDockLayout===mode&&!$('#river').hidden)return;
+  mapFocus.cancel();viewMode=mode;const lineage=mode==='lineage';
+  activateTab(lineage?'lineage-view':'timeline-view');document.body.classList.toggle('lineage-mode',lineage);
+  $('#atlas-title').innerHTML=lineage?'关系谱系 <small>／ 按已记录关系分层，连线有来源</small>':'时间长河 <small>／ 按来源年代定位，非等距时间轴</small>';
+  setAtlasFeedback(lineage?'仅显示已收录地图节点之间有明确来源的关系；全量馆藏仍可检索。':'淡线显示已记录关系；点选语言放大查看上下游，点空白恢复全貌。其余馆藏仍可检索。',lineage?'关系谱系 · 浏览全景':'时间长河 · 浏览全景');
+  positions.clear();for(const [id,p] of (lineage?lineagePositions:timelinePositions))positions.set(id,p);
+  mountDockLayout(mode);$('#relations').innerHTML=overviewRelationMarkup();
+  fitMap();$('#viewport').scrollTo({left:0,top:0,behavior:'instant'});
+}
+$('#timeline-view').onclick=()=>{if(viewMode==='timeline'&&!$('#river').hidden)return;setView('timeline');if(activeId)renderLineageFocus(activeId)};
+$('#lineage-view').onclick=()=>{if(viewMode==='lineage'&&!$('#river').hidden)return;setView('lineage');if(activeId&&graphIds.has(activeId))renderLineageFocus(activeId);else restoreMapOverview()};
 function setRelationLayer(layer){
   relationLayer=layer;
   $('#design-layer').setAttribute('aria-pressed',String(layer==='design'));
@@ -528,8 +557,8 @@ resizer.addEventListener('keydown',event=>{
   if(activeId&&!$('#river').hidden)scheduleFocusGeometry(activeId);
 });
 let page=0,filtered=records;const size=60;
-function update(reset=true){if(reset)page=0;const q=$('#search').value.trim().toLowerCase(),scope=$('#scope').value;filtered=records.filter(r=>(scope==='all'||r.category===(scope==='languages'?'language':scope==='other'?'related':'pending'))&&`${r.name} ${r.id} ${r.aliases} ${r.creators}`.toLowerCase().includes(q));if($('#sort').value==='year')filtered.sort((a,b)=>(a.year||9999)-(b.year||9999)||a.name.localeCompare(b.name));$('#result-count').textContent=`${filtered.length.toLocaleString()} 条匹配 / ${meta.count.toLocaleString()} 条馆藏`;$('#list').innerHTML=filtered.slice(page*size,(page+1)*size).map(r=>`<button class="record" data-id="${esc(r.id)}"><strong>${esc(r.name)}</strong><span>${r.year||'年代待考'} · ${esc(statusLabel(r))}</span></button>`).join('')||'<div class="empty">这次快照没有匹配条目。</div>';$('#page').textContent=`${filtered.length?page+1:0} / ${Math.ceil(filtered.length/size)}`;$('#prev').disabled=page===0;$('#next').disabled=(page+1)*size>=filtered.length;}
-$('#list').onclick=e=>{let b=e.target.closest('[data-id]');if(b){const id=b.dataset.id;if(!mapLanguageIds.has(id)&&document.body.classList.contains('lineage-focus'))restoreMapOverview();select(id);if(mapLanguageIds.has(id)){activeId=id;renderLineageFocus(activeId)}else activeId=null}};$('#search').oninput=()=>update();$('#scope').onchange=()=>update();$('#sort').onchange=()=>update();$('#prev').onclick=()=>{page--;update(false)};$('#next').onclick=()=>{page++;update(false)};update();$('#relations').innerHTML=overviewRelationMarkup();requestAnimationFrame(fitMap);
+function update(reset=true){if(reset)page=0;const q=$('#search').value.trim().toLowerCase(),scope=$('#scope').value;$('#search-clear').hidden=!$('#search').value;filtered=records.filter(r=>(scope==='all'||r.category===(scope==='languages'?'language':scope==='other'?'related':'pending'))&&`${r.name} ${r.id} ${r.aliases} ${r.creators}`.toLowerCase().includes(q));if($('#sort').value==='year')filtered.sort((a,b)=>(a.year||9999)-(b.year||9999)||a.name.localeCompare(b.name));$('#result-count').textContent=`${filtered.length.toLocaleString()} 条匹配 / ${meta.count.toLocaleString()} 条馆藏`;$('#list').innerHTML=filtered.slice(page*size,(page+1)*size).map(r=>`<button class="record" data-id="${esc(r.id)}"><strong>${esc(r.name)}</strong><span>${r.year||'年代待考'} · ${esc(statusLabel(r))}</span></button>`).join('')||'<div class="empty">这次快照没有匹配条目。</div>';$('#page').textContent=`${filtered.length?page+1:0} / ${Math.ceil(filtered.length/size)}`;$('#prev').disabled=page===0;$('#next').disabled=(page+1)*size>=filtered.length;}
+$('#list').onclick=e=>{let b=e.target.closest('[data-id]');if(b){const id=b.dataset.id;if(!mapLanguageIds.has(id)&&document.body.classList.contains('lineage-focus'))restoreMapOverview();select(id);if(mapLanguageIds.has(id)){activeId=id;renderLineageFocus(activeId)}else activeId=null}};$('#search').oninput=()=>update();$('#search-clear').onclick=()=>{$('#search').value='';update();$('#search').focus()};$('#scope').onchange=()=>update();$('#sort').onchange=()=>update();$('#prev').onclick=()=>{page--;update(false)};$('#next').onclick=()=>{page++;update(false)};update();$('#relations').innerHTML=overviewRelationMarkup();requestAnimationFrame(fitMap);
 
 // Search dated map nodes; full collection remains available through catalogue search.
 const mapSearchInput=$('#map-search'),mapSearchPopup=$('#map-search-popup');

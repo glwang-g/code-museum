@@ -25,7 +25,9 @@ Code Museum 把编程语言当作一座可以探索的博物馆：你可以沿�
 
 ### 视觉预览
 
-![时间长河视觉资产](public/assets/history-river.png)
+![时间长河视觉资产](public/assets/history-river.0992af42abfd.webp)
+
+当前页面背景为 640 × 427 的 WebP，9,064 字节；原始插画留存在 `archive/assets/`，不进入站点构建。
 
 这张图是网站中的视觉资产，不是自动生成的关系结论；地图上的语言关系仍以馆藏数据和对应出处为准。早期的“语言世界树”原型仍保存在 `public/assets/` 作为历史资产，但不再代表当前产品的主要叙事或关系模型。
 
@@ -82,6 +84,7 @@ npm run audit
 npm run relations:audit
 npm run diagnose:release
 npm run museum:browser # 需已安装 Chrome，验证地图性能、展品与学习路线
+npm run performance:browser # 测量点击后取景稳定时间、节点复用与缓存
 ```
 
 `npm test` 会在独立临时目录中从源码输入重建网站，并检查构建可复现、坏输入保护和预览服务边界。已安装 Chrome/Chromium 时，可按 [浏览器核验说明](docs/PROJECT_CONTEXT.md) 中的范围运行真实浏览器检查。

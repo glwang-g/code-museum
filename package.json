@@ -2,7 +2,7 @@
   "name": "code-museum",
   "version": "0.1.0",
   "private": true,
-  "description": "FreeXLib programming language museum \u2014 reproducible static site",
+  "description": "FreeXLib programming language museum — reproducible static site",
   "engines": {
     "node": ">=22"
   },
@@ -24,6 +24,7 @@
     "executor:check": "python3 scripts/check-executor.py",
     "executor:browser": "node scripts/check-executor-browser.cjs",
     "mcp": "python3 server/mcp.py",
-    "museum:browser": "node scripts/check-museum-advance.cjs"
+    "museum:browser": "node scripts/check-museum-advance.cjs",
+    "performance:browser": "node scripts/check-performance.cjs"
   }
 }

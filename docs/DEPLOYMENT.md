@@ -243,3 +243,10 @@ sudo python3 /var/www/code-museum/current/server/messages.py --deliver     # 立
 HTTPS 探针实际 POST 201、GET 可见、管理员命令隐藏后公开列表不再返回该记录；探针保留为隐藏记录以验证审计路径。随后 `--deliver` 返回 1，`pendingNotification` 从 1 变为 0，证明 SMTP 服务端接受了该通知；不把这替代为收件箱人工确认。第一次备份若放在 `sites-enabled` 会被 Nginx 当成第二个站点并触发重复 zone 错误；该次校验未 reload，已将备份移至 `/var/backups/code-museum-nginx/` 并恢复基线后重试成功。
 
 仍需持续观察：`POST /api/messages` 只做同源 Origin 校验（依赖 Nginx 转发 Origin），不是防滥用身份系统；限流按匿名标识哈希，清除浏览器数据即可重置。留言公开显示，界面已提示不要填写隐私信息，但公开内容仍需人工关注，必要时用 `--hide` 处理。
+
+
+## 2026-10-16 内容指纹与静态缓存（本地配置，未部署）
+
+构建保留原始 JS/CSS 稳定地址供 Worker 与诊断使用，同时为 HTML 直接引用的脚本、样式和生成数据创建 `name.<sha256前12位>.js/css` 副本；`dist/data/asset-manifest.json` 记录对应关系。内容版本基于生成别名前的固定输入计算，别名和清单都是确定性派生物。HTML 不长期缓存，稳定文件地址继续 `no-cache`，只有带内容指纹的文件可用 `public, max-age=31536000, immutable`。河景采用同样带内容哈希的 WebP 文件名，构建强制校验小于 10,000 字节。
+
+本机 `scripts/serve.cjs` 已实现相同缓存规则。生产需在现有 Code Museum HTTPS server 块中、通用扩展名 location 之前，合入 `deploy/nginx.conf` 中新增的内容指纹 location，再执行 `nginx -t` 和 reload；不能整份覆盖现有虚拟主机，以免丢失执行接口、MCP、留言板与 TLS 配置。现有 `deploy/activate.sh` 只切换 release，并不自动更改 Nginx，所以推送本身不会启用这条缓存策略。每次新 HTML 会引用新的指纹地址，避免长缓存混用新旧脚本；旧 release 仍按现有回滚策略保留。

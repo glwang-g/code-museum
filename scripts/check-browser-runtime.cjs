@@ -95,7 +95,16 @@ async function checkLabels(ids){
 async function record(name,detail){results.push({name,detail});console.log('PASS '+name);}
 (async()=>{
  try{
-  for(const file of ['index.html','learning-examples.js','draft-store.js','lab-tools.js','compare.js','analytics.js','visit-counts.js','map-framing.js','museum.js','museum.css','lab.js','lab-examples.js','lab-worker.js','python-worker.js','lua-worker.js','scheme-worker.js','credits.js','relationship-coverage.js','execution-config.js','execution-modes.js','runtime-status.js','runtime-progress.js','theme.js','themes.css'])assert.deepEqual(fs.readFileSync(path.join(root,'dist',file)),fs.readFileSync(path.join(root,'src',file)),'Stale build: run npm run build before browser checks');
+  for(const file of ['learning-examples.js','draft-store.js','lab-tools.js','compare.js','analytics.js','visit-counts.js','map-framing.js','museum.js','museum.css','search.css','lab.js','lab-examples.js','lab-worker.js','python-worker.js','lua-worker.js','scheme-worker.js','credits.js','relationship-coverage.js','execution-config.js','execution-modes.js','runtime-status.js','runtime-progress.js','theme.js','themes.css'])assert.deepEqual(fs.readFileSync(path.join(root,'dist',file)),fs.readFileSync(path.join(root,'src',file)),'Stale build: run npm run build before browser checks');
+  const manifest=JSON.parse(fs.readFileSync(path.join(root,'dist/data/asset-manifest.json')));
+  let canonicalHTML=fs.readFileSync(path.join(root,'dist/index.html'),'utf8');
+  for(const [name,versioned] of Object.entries(manifest)){
+    const bytes=fs.readFileSync(path.join(root,'dist',versioned));
+    assert.deepEqual(bytes,fs.readFileSync(path.join(root,'dist',name)),'Stale fingerprint: '+name);
+    assert.ok(versioned.includes('.'+crypto.createHash('sha256').update(bytes).digest('hex').slice(0,12)+'.'));
+    canonicalHTML=canonicalHTML.replaceAll('"'+versioned+'"','"'+name+'"');
+  }
+  assert.equal(canonicalHTML,fs.readFileSync(path.join(root,'src/index.html'),'utf8'),'Stale HTML: run npm run build');
   await new Promise((resolve,reject)=>{server.once('error',reject);server.listen(0,'127.0.0.1',resolve);});
   browser=spawn(chrome,['--headless=new','--disable-gpu','--disable-background-networking','--no-first-run','--no-default-browser-check','--remote-debugging-pipe','--host-resolver-rules=MAP * ~NOTFOUND, EXCLUDE 127.0.0.1','--user-data-dir='+profileDirectory],{stdio:['ignore','ignore','pipe','pipe','pipe']});
   browser.on('error',error=>{for(const request of pending.values()){clearTimeout(request.timer);request.reject(error);}pending.clear();});

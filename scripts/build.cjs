@@ -7,10 +7,13 @@ const { generateRelationshipAudit } = require('./relationship-audit.cjs');
 const { curatedContent } = require('./curated-content.cjs');
 const { learningPaths } = require('./learning-paths.cjs');
 const { executionCapabilities } = require('./execution-capabilities.cjs');
+const { fingerprintAssets } = require('./fingerprint-assets.cjs');
 
 const root = path.resolve(__dirname, '..');
 
 function build(projectRoot = root) {
+  const river=fs.readFileSync(path.join(projectRoot,'public/assets/history-river.0992af42abfd.webp'));
+  if(river.length>=10000||crypto.createHash('sha256').update(river).digest('hex').slice(0,12)!=='0992af42abfd')throw new Error('River image must match its content address and stay below 10 KB.');
   // Generate and validate before touching the previous working site.
   const catalogue = generateCatalogue(projectRoot);
   const relationshipAudit = generateRelationshipAudit(projectRoot,catalogue);
@@ -107,6 +110,7 @@ function build(projectRoot = root) {
     const buildInfo={schemaVersion:1,contentSha256:versionHash.digest('hex')};
     fs.writeFileSync(path.join(next,'data/build-info.json'),JSON.stringify(buildInfo,null,2)+'\n');
     fs.writeFileSync(path.join(next,'data/build-info.js'),'window.MUSEUM_BUILD_INFO='+JSON.stringify(buildInfo)+';');
+    fingerprintAssets(next);
     if (fs.existsSync(output)) fs.renameSync(output, previous);
     try { fs.renameSync(next, output); }
     catch (error) {

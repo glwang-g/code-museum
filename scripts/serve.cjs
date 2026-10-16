@@ -3,7 +3,7 @@ const path = require('node:path');
 const http = require('node:http');
 const zlib = require('node:zlib');
 const { pipeline } = require('node:stream');
-const mime = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.mjs': 'text/javascript; charset=utf-8', '.wasm': 'application/wasm', '.zip': 'application/zip', '.json': 'application/json; charset=utf-8', '.svg': 'image/svg+xml', '.png': 'image/png' };
+const mime = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.mjs': 'text/javascript; charset=utf-8', '.wasm': 'application/wasm', '.zip': 'application/zip', '.json': 'application/json; charset=utf-8', '.svg': 'image/svg+xml', '.png': 'image/png', '.webp':'image/webp', '.jpg':'image/jpeg' };
 const compressible = new Set(['.html', '.css', '.js', '.mjs', '.wasm', '.json', '.svg']);
 function chooseEncoding(header, canCompress) {
   if (!header) return null;
@@ -65,7 +65,8 @@ function createRequestHandler(directory, options={}) {
     // Read the current build's manifest, including when dist was replaced without restarting preview.
     const hash = pyodideName && JSON.parse(fs.readFileSync(path.join(root, 'assets/pyodide/manifest.json'), 'utf8')).files[pyodideName];
     const etag = encoding ? `W/"${hash || `${stat.size}-${stat.mtimeMs}`}-${encoding}"` : hash ? `"${hash}"` : `W/"${stat.size}-${stat.mtimeMs}"`;
-    const headers = { 'Content-Type': mime[path.extname(file)] || 'application/octet-stream', 'Cache-Control': 'no-cache', ETag: etag, Vary: 'Accept-Encoding' };
+    const immutable=/\.[a-f0-9]{12}\.(?:js|css|webp)$/.test(relative);
+    const headers = { 'Content-Type': mime[path.extname(file)] || 'application/octet-stream', 'Cache-Control': immutable?'public, max-age=31536000, immutable':'no-cache', ETag: etag, Vary: 'Accept-Encoding' };
     if (encoding) headers['Content-Encoding'] = encoding;
     if (req.headers['if-none-match']?.split(',').some(value => value.trim().replace(/^W\//, '') === etag.replace(/^W\//, '') || value.trim() === '*')) {
       res.writeHead(304, headers).end(); return;

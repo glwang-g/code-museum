@@ -1,9 +1,9 @@
 // Viewport geometry owns no catalogue, navigation or archive state.
 (function(root){
 function createFocusController({document, getState, activeMapEdges, positions, frame, resetFocusLabels,
-  setFrame, getScale, minimumZoom, placeFocusLabels, later=setTimeout, clear=clearTimeout}){
+  setFrame, getScale, minimumZoom, placeFocusLabels, later=fn=>document.defaultView.requestAnimationFrame(fn), clear=id=>document.defaultView.cancelAnimationFrame(id)}){
  const $=selector=>document.querySelector(selector);
- let timer=null;
+ let timer=null,lastViewport=null;
  function cancel(){if(timer!==null)clear(timer);timer=null}
 function focus(id){
   cancel();
@@ -46,13 +46,19 @@ function focus(id){
     const left=frame.scrollAxis(originX+bounds.left,originX+bounds.right,viewport.clientWidth,originX+point.x*zoomScale,viewport.scrollWidth-viewport.clientWidth);
     const top=frame.scrollAxis(originY+bounds.top,originY+bounds.bottom,viewport.clientHeight,originY+point.y*zoomScale,viewport.scrollHeight-viewport.clientHeight,18,.5);
     placeFocusLabels(direct,originX,originY,left,top);
-    viewport.scrollTo({left,top,behavior:document.defaultView.matchMedia('(prefers-reduced-motion:reduce)').matches?'instant':'smooth'});
+    viewport.scrollTo({left,top,behavior:'instant'});
+    lastViewport={id,width:viewport.clientWidth,height:viewport.clientHeight};
   }
 }
  function schedule(id){
   cancel();
   if(id==null)return;
-  timer=later(()=>{timer=null;const state=getState();if(state.mode==='focus'&&state.activeId===id&&state.visibleMap)focus(id)},60);
+  timer=later(()=>{
+   timer=null;const state=getState(),viewport=$('#viewport');
+   if(state.mode!=='focus'||state.activeId!==id||!state.visibleMap)return;
+   if(lastViewport?.id===id&&lastViewport.width===viewport.clientWidth&&lastViewport.height===viewport.clientHeight)return;
+   focus(id);
+  });
  }
  return {focus,schedule,cancel};
 }

@@ -34,12 +34,21 @@ test('source-only rebuild is offline, complete, and byte-for-byte repeatable', (
     // Invoke outside the project: no reliance on the caller's working directory.
     execFileSync(process.execPath, [command], { cwd: os.tmpdir() });
     const first = hashes(path.join(dir, 'dist'));
-    for (const file of ['index.html', 'museum.css', 'museum.js', 'favicon.svg', 'assets/history-river.png', 'data/catalogue.js', 'data/provenance.json', 'data/audit-reviews.json']) {
+    for (const file of ['index.html', 'museum.css', 'museum.js', 'favicon.svg', 'assets/history-river.0992af42abfd.webp', 'data/catalogue.js', 'data/provenance.json', 'data/audit-reviews.json']) {
       assert.ok(first[file], file);
     }
-    for (const file of ['index.html', 'museum.css', 'museum.js']) {
+    for (const file of ['museum.css', 'museum.js']) {
       assert.deepEqual(fs.readFileSync(path.join(dir, 'dist', file)), fs.readFileSync(path.join(root, 'src', file)));
     }
+    const manifest=JSON.parse(fs.readFileSync(path.join(dir,'dist/data/asset-manifest.json')));
+    let canonicalHTML=fs.readFileSync(path.join(dir,'dist/index.html'),'utf8');
+    for(const [name,versioned] of Object.entries(manifest)){
+      const bytes=fs.readFileSync(path.join(dir,'dist',versioned));
+      assert.deepEqual(bytes,fs.readFileSync(path.join(dir,'dist',name)));
+      assert.ok(versioned.includes('.'+crypto.createHash('sha256').update(bytes).digest('hex').slice(0,12)+'.'));
+      canonicalHTML=canonicalHTML.replaceAll('"'+versioned+'"','"'+name+'"');
+    }
+    assert.equal(canonicalHTML,fs.readFileSync(path.join(root,'src/index.html'),'utf8'));
     new vm.Script(fs.readFileSync(path.join(dir, 'dist/museum.js'), 'utf8'));
     const context = { window: {} };
     vm.runInNewContext(fs.readFileSync(path.join(dir, 'dist/data/catalogue.js'), 'utf8'), context);

@@ -4,10 +4,10 @@
     const changed=panel.classList.contains('compact')!==value;
     panel.classList.toggle('compact',value);content.hidden=value;content.inert=value;
     $('detail-toggle').textContent=value?'展开档案':'收起档案';$('detail-toggle').setAttribute('aria-expanded',String(!value));
-    if(changed&&activeId&&!$('river').hidden)requestAnimationFrame(()=>renderLineageFocus(activeId));
+    if(changed&&activeId&&!$('river').hidden)scheduleFocusGeometry(activeId);
   }
   $('detail-toggle').onclick=()=>compact(!panel.classList.contains('compact'));
-  $('detail-map').onclick=()=>{if($('river').hidden)setView(viewMode);compact(true);$('viewport').tabIndex=0;$('viewport').focus({preventScroll:true})};
+  $('detail-map').onclick=()=>{if($('river').hidden){setView(viewMode);if(activeId)renderLineageFocus(activeId)}compact(true);$('viewport').tabIndex=0;$('viewport').focus({preventScroll:true})};
   const original=openPanel;openPanel=function(html){compact(false);original(html)};
   const relationSettings=document.querySelector('.relation-settings');
   $('relation-direction').onchange=()=>{relationDirection=$('relation-direction').value;setRelationScope('levels')};

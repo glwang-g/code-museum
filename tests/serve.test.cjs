@@ -65,6 +65,19 @@ test('preview HEAD and invalid requests preserve response and filesystem boundar
   assert.equal((await request(handler, '/..%2foutside.txt')).status, 403);
 });
 
+test('only content-addressed assets are immutable; entry points and stable worker URLs revalidate',async t=>{
+ const {root,handler}=fixture(t);
+ fs.writeFileSync(path.join(root,'museum.0123456789ab.js'),'console.log(1)');
+ fs.writeFileSync(path.join(root,'museum.js'),'console.log(1)');
+ fs.writeFileSync(path.join(root,'assets/river.0123456789ab.webp'),'webp');
+ const hashed=await request(handler,'/museum.0123456789ab.js');
+ assert.equal(hashed.headers['Cache-Control'],'public, max-age=31536000, immutable');
+ assert.equal((await request(handler,'/museum.js')).headers['Cache-Control'],'no-cache');
+ assert.equal((await request(handler,'/')).headers['Cache-Control'],'no-cache');
+ const image=await request(handler,'/assets/river.0123456789ab.webp');assert.equal(image.headers['Content-Type'],'image/webp');
+ assert.equal(image.headers['Cache-Control'],hashed.headers['Cache-Control']);
+});
+
 test('preview negotiates compression, separates cached encodings and reads rebuilt content', async t => {
   const { handler, root, updateRuntime } = fixture(t);
   const body = 'runtime bytes '.repeat(2000);

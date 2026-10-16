@@ -1,0 +1,1746 @@
+{
+  "scope": "Isolated local Chrome, actual mouse input, normal motion, 1440/390, CPU 1x/4x. settledMs is the last viewport/scroll/transform change in a one-second rAF observation; excludes decorative animations and is not an actual GPU presentation timestamp.",
+  "baseline": {
+    "browser": "Chrome/155.0.8059.80",
+    "scope": "Isolated local Chrome, actual mouse input, normal motion, 1440/390, CPU 1x/4x. settledMs is the last viewport/scroll/transform change in a one-second rAF observation; excludes decorative animations and is not an actual GPU presentation timestamp.",
+    "inputs": {
+      "src/museum.js": "edf5a117f9eab12a55ab90663db3fe1174e6b05f2d37354a4e51001b9ec4ba59",
+      "src/museum.css": "96e9dc223957cc31cd73290cc641c77f72d6f00ff7d013cf7869c0175fcd934b",
+      "src/map-focus.js": "9275175f3545b3bf43b9dd28fb46a7691803567d8979f50f019ca3f18174d2e2",
+      "src/exploration-tools.js": "b329729a6b9febaf9a0da92d05c55cee8ca1d6d9a4d5b44187bf8ea8cbff615c",
+      "scripts/build.cjs": "98e01547da2cac51f6e139680cdd9a4da6c20855ec0a510b5cc7447b0e6b49a7",
+      "scripts/serve.cjs": "01a41d612e863176896369e5a5bf3f24aab0996ac23fbc612a61c6b409c1ca52",
+      "scripts/check-performance.cjs": "a9163585e460c54e0bb80f3a8f6406dd789621dfe266a61ff428db1df4ccc57c"
+    },
+    "samples": [
+      {
+        "name": "first-selection",
+        "width": 1440,
+        "cpu": 1,
+        "settledMs": 563.4999999955296,
+        "maxFrameGap": 16.800000000000068,
+        "frameCount": 61,
+        "renders": 1,
+        "dockAdds": 0,
+        "events": [
+          {
+            "start": 539.7000000029802,
+            "duration": 80,
+            "processing": 16.799999997019768
+          }
+        ]
+      },
+      {
+        "name": "next-selection",
+        "width": 1440,
+        "cpu": 1,
+        "settledMs": 293.4999999970198,
+        "maxFrameGap": 16.800000000000182,
+        "frameCount": 61,
+        "renders": 1,
+        "dockAdds": 0,
+        "events": [
+          {
+            "start": 1609.5,
+            "duration": 72,
+            "processing": 11.100000001490116
+          }
+        ]
+      },
+      {
+        "name": "lineage-view",
+        "width": 1440,
+        "cpu": 1,
+        "settledMs": 443.0999999985097,
+        "maxFrameGap": 16.800000000000182,
+        "frameCount": 61,
+        "renders": 1,
+        "dockAdds": 77,
+        "events": [
+          {
+            "start": 2659.60000000149,
+            "duration": 64,
+            "processing": 21.100000001490116
+          }
+        ]
+      },
+      {
+        "name": "timeline-view",
+        "width": 1440,
+        "cpu": 1,
+        "settledMs": 445.99999999552983,
+        "maxFrameGap": 16.800000000000182,
+        "frameCount": 61,
+        "renders": 1,
+        "dockAdds": 233,
+        "events": [
+          {
+            "start": 3723.39999999851,
+            "duration": 32,
+            "processing": 23.100000001490116
+          }
+        ]
+      },
+      {
+        "name": "catalogue-view",
+        "width": 1440,
+        "cpu": 1,
+        "settledMs": 13.599999998509702,
+        "maxFrameGap": 16.700000000000728,
+        "frameCount": 61,
+        "renders": 0,
+        "dockAdds": 0,
+        "events": [
+          {
+            "start": 4789.5,
+            "duration": 32,
+            "processing": 10.299999997019768
+          }
+        ]
+      },
+      {
+        "name": "compare-view",
+        "width": 1440,
+        "cpu": 1,
+        "settledMs": 12.70000000149048,
+        "maxFrameGap": 16.800000000000182,
+        "frameCount": 61,
+        "renders": 0,
+        "dockAdds": 0,
+        "events": [
+          {
+            "start": 5840.10000000149,
+            "duration": 32,
+            "processing": 5.100000001490116
+          }
+        ]
+      },
+      {
+        "name": "sources-view",
+        "width": 1440,
+        "cpu": 1,
+        "settledMs": 14.565999999999804,
+        "maxFrameGap": 16.800000000000182,
+        "frameCount": 61,
+        "renders": 0,
+        "dockAdds": 0,
+        "events": [
+          {
+            "start": 6888.39999999851,
+            "duration": 32,
+            "processing": 1.5
+          }
+        ]
+      },
+      {
+        "name": "timeline-view",
+        "width": 1440,
+        "cpu": 1,
+        "settledMs": 462.59999999701904,
+        "maxFrameGap": 29.29799999701936,
+        "frameCount": 61,
+        "renders": 1,
+        "dockAdds": 233,
+        "events": [
+          {
+            "start": 7923.39999999851,
+            "duration": 40,
+            "processing": 31
+          }
+        ]
+      },
+      {
+        "name": "reopen-selection",
+        "width": 1440,
+        "cpu": 1,
+        "settledMs": 494.49999999851025,
+        "maxFrameGap": 16.80000000000109,
+        "frameCount": 61,
+        "renders": 1,
+        "dockAdds": 0,
+        "events": [
+          {
+            "start": 9025,
+            "duration": 48,
+            "processing": 8.5
+          }
+        ]
+      },
+      {
+        "name": "first-selection",
+        "width": 1440,
+        "cpu": 4,
+        "settledMs": 558.29999999851,
+        "maxFrameGap": 24.96399999850985,
+        "frameCount": 61,
+        "renders": 1,
+        "dockAdds": 0,
+        "events": [
+          {
+            "start": 510.29999999701977,
+            "duration": 72,
+            "processing": 30
+          }
+        ]
+      },
+      {
+        "name": "next-selection",
+        "width": 1440,
+        "cpu": 4,
+        "settledMs": 292.20000000149,
+        "maxFrameGap": 33.26999999999998,
+        "frameCount": 60,
+        "renders": 1,
+        "dockAdds": 0,
+        "events": [
+          {
+            "start": 1610.1000000014901,
+            "duration": 72,
+            "processing": 18.100000001490116
+          }
+        ]
+      },
+      {
+        "name": "lineage-view",
+        "width": 1440,
+        "cpu": 4,
+        "settledMs": 441.80000000148993,
+        "maxFrameGap": 25.232000001490178,
+        "frameCount": 61,
+        "renders": 1,
+        "dockAdds": 77,
+        "events": [
+          {
+            "start": 2676.6999999955297,
+            "duration": 48,
+            "processing": 24.700000002980232
+          }
+        ]
+      },
+      {
+        "name": "timeline-view",
+        "width": 1440,
+        "cpu": 4,
+        "settledMs": 479.00000000447017,
+        "maxFrameGap": 33.36799999999994,
+        "frameCount": 60,
+        "renders": 1,
+        "dockAdds": 233,
+        "events": [
+          {
+            "start": 3739.6999999955297,
+            "duration": 48,
+            "processing": 36.80000000447035
+          }
+        ]
+      },
+      {
+        "name": "catalogue-view",
+        "width": 1440,
+        "cpu": 4,
+        "settledMs": 13.56400000297981,
+        "maxFrameGap": 16.800000000000182,
+        "frameCount": 61,
+        "renders": 0,
+        "dockAdds": 0,
+        "events": [
+          {
+            "start": 4821.60000000149,
+            "duration": 32,
+            "processing": 7.700000002980232
+          }
+        ]
+      },
+      {
+        "name": "compare-view",
+        "width": 1440,
+        "cpu": 4,
+        "settledMs": 12.599999998509702,
+        "maxFrameGap": 16.700000000000728,
+        "frameCount": 61,
+        "renders": 0,
+        "dockAdds": 0,
+        "events": [
+          {
+            "start": 5855.89999999851,
+            "duration": 16,
+            "processing": 4.600000001490116
+          }
+        ]
+      },
+      {
+        "name": "sources-view",
+        "width": 1440,
+        "cpu": 4,
+        "settledMs": 13.132000002980021,
+        "maxFrameGap": 16.800000000000182,
+        "frameCount": 61,
+        "renders": 0,
+        "dockAdds": 0,
+        "events": [
+          {
+            "start": 6888.60000000149,
+            "duration": 16,
+            "processing": 3.600000001490116
+          }
+        ]
+      },
+      {
+        "name": "timeline-view",
+        "width": 1440,
+        "cpu": 4,
+        "settledMs": 478.6000000044696,
+        "maxFrameGap": 28.732000004470137,
+        "frameCount": 60,
+        "renders": 1,
+        "dockAdds": 233,
+        "events": [
+          {
+            "start": 7923.29999999702,
+            "duration": 56,
+            "processing": 40.100000001490116
+          }
+        ]
+      },
+      {
+        "name": "first-selection",
+        "width": 390,
+        "cpu": 1,
+        "settledMs": 278.70000000149014,
+        "maxFrameGap": 66.69999999999993,
+        "frameCount": 49,
+        "renders": 1,
+        "dockAdds": 0,
+        "events": [
+          {
+            "start": 347.29999999701977,
+            "duration": 48,
+            "processing": 11.899999998509884
+          }
+        ]
+      },
+      {
+        "name": "next-selection",
+        "width": 390,
+        "cpu": 1,
+        "settledMs": 260.80000000149016,
+        "maxFrameGap": 16.799999999999955,
+        "frameCount": 61,
+        "renders": 1,
+        "dockAdds": 0,
+        "events": [
+          {
+            "start": 1431.7000000029802,
+            "duration": 64,
+            "processing": 11.699999995529652
+          }
+        ]
+      },
+      {
+        "name": "lineage-view",
+        "width": 390,
+        "cpu": 1,
+        "settledMs": 268.0000000014902,
+        "maxFrameGap": 17.998000001490254,
+        "frameCount": 60,
+        "renders": 1,
+        "dockAdds": 77,
+        "events": [
+          {
+            "start": 2490.89999999851,
+            "duration": 56,
+            "processing": 17.5
+          }
+        ]
+      },
+      {
+        "name": "timeline-view",
+        "width": 390,
+        "cpu": 1,
+        "settledMs": 363.19999999701986,
+        "maxFrameGap": 29.83199999701992,
+        "frameCount": 61,
+        "renders": 1,
+        "dockAdds": 233,
+        "events": [
+          {
+            "start": 3545.89999999851,
+            "duration": 56,
+            "processing": 29.100000001490116
+          }
+        ]
+      },
+      {
+        "name": "catalogue-view",
+        "width": 390,
+        "cpu": 1,
+        "settledMs": 9.098000001489709,
+        "maxFrameGap": 16.800000000000182,
+        "frameCount": 61,
+        "renders": 0,
+        "dockAdds": 0,
+        "events": [
+          {
+            "start": 4616.5,
+            "duration": 32,
+            "processing": 8.5
+          }
+        ]
+      },
+      {
+        "name": "compare-view",
+        "width": 390,
+        "cpu": 1,
+        "settledMs": 12.166000002980581,
+        "maxFrameGap": 33.30000000000018,
+        "frameCount": 60,
+        "renders": 0,
+        "dockAdds": 0,
+        "events": [
+          {
+            "start": 5663.5,
+            "duration": 24,
+            "processing": 5
+          }
+        ]
+      },
+      {
+        "name": "sources-view",
+        "width": 390,
+        "cpu": 1,
+        "settledMs": 14.399999999999636,
+        "maxFrameGap": 16.799999999999272,
+        "frameCount": 61,
+        "renders": 0,
+        "dockAdds": 0,
+        "events": [
+          {
+            "start": 6711.39999999851,
+            "duration": 16,
+            "processing": 1.7000000029802322
+          }
+        ]
+      },
+      {
+        "name": "timeline-view",
+        "width": 390,
+        "cpu": 1,
+        "settledMs": 362.7000000014905,
+        "maxFrameGap": 29.498000001490254,
+        "frameCount": 61,
+        "renders": 1,
+        "dockAdds": 233,
+        "events": [
+          {
+            "start": 7746.10000000149,
+            "duration": 48,
+            "processing": 29.5
+          }
+        ]
+      },
+      {
+        "name": "reopen-selection",
+        "width": 390,
+        "cpu": 1,
+        "settledMs": 260.99999999851025,
+        "maxFrameGap": 49.899999999999636,
+        "frameCount": 54,
+        "renders": 1,
+        "dockAdds": 0,
+        "events": [
+          {
+            "start": 8847.79999999702,
+            "duration": 32,
+            "processing": 11.600000001490116
+          }
+        ]
+      },
+      {
+        "name": "first-selection",
+        "width": 390,
+        "cpu": 4,
+        "settledMs": 276,
+        "maxFrameGap": 33.30000000000007,
+        "frameCount": 57,
+        "renders": 1,
+        "dockAdds": 0,
+        "events": [
+          {
+            "start": 472.8999999985099,
+            "duration": 80,
+            "processing": 28.299999997019768
+          }
+        ]
+      },
+      {
+        "name": "next-selection",
+        "width": 390,
+        "cpu": 4,
+        "settledMs": 275.90000000149007,
+        "maxFrameGap": 33.26999999999998,
+        "frameCount": 60,
+        "renders": 1,
+        "dockAdds": 0,
+        "events": [
+          {
+            "start": 1606.7999999970198,
+            "duration": 80,
+            "processing": 20.399999998509884
+          }
+        ]
+      },
+      {
+        "name": "lineage-view",
+        "width": 390,
+        "cpu": 4,
+        "settledMs": 263.3000000000002,
+        "maxFrameGap": 16.800000000000182,
+        "frameCount": 61,
+        "renders": 1,
+        "dockAdds": 77,
+        "events": [
+          {
+            "start": 2668.7999999970198,
+            "duration": 48,
+            "processing": 24.799999997019768
+          }
+        ]
+      },
+      {
+        "name": "timeline-view",
+        "width": 390,
+        "cpu": 4,
+        "settledMs": 379.60000000297987,
+        "maxFrameGap": 29.664000002980174,
+        "frameCount": 60,
+        "renders": 1,
+        "dockAdds": 233,
+        "events": [
+          {
+            "start": 3719.6999999955297,
+            "duration": 56,
+            "processing": 37.399999998509884
+          }
+        ]
+      },
+      {
+        "name": "catalogue-view",
+        "width": 390,
+        "cpu": 4,
+        "settledMs": 13.266000002980036,
+        "maxFrameGap": 16.800000000000182,
+        "frameCount": 61,
+        "renders": 0,
+        "dockAdds": 0,
+        "events": [
+          {
+            "start": 4802.39999999851,
+            "duration": 32,
+            "processing": 8.399999998509884
+          }
+        ]
+      },
+      {
+        "name": "compare-view",
+        "width": 390,
+        "cpu": 4,
+        "settledMs": 12.76599999850987,
+        "maxFrameGap": 16.800000000000182,
+        "frameCount": 61,
+        "renders": 0,
+        "dockAdds": 0,
+        "events": [
+          {
+            "start": 5836,
+            "duration": 16,
+            "processing": 4.199999995529652
+          }
+        ]
+      },
+      {
+        "name": "sources-view",
+        "width": 390,
+        "cpu": 4,
+        "settledMs": 13.432000004469955,
+        "maxFrameGap": 16.800000000000182,
+        "frameCount": 61,
+        "renders": 0,
+        "dockAdds": 0,
+        "events": [
+          {
+            "start": 6869.19999999553,
+            "duration": 16,
+            "processing": 3.7000000029802322
+          }
+        ]
+      },
+      {
+        "name": "timeline-view",
+        "width": 390,
+        "cpu": 4,
+        "settledMs": 380.2000000014905,
+        "maxFrameGap": 30.198000001490072,
+        "frameCount": 60,
+        "renders": 1,
+        "dockAdds": 233,
+        "events": [
+          {
+            "start": 7902,
+            "duration": 56,
+            "processing": 39.399999998509884
+          }
+        ]
+      }
+    ]
+  },
+  "optimized": {
+    "browser": "Chrome/155.0.8059.80",
+    "scope": "Isolated local Chrome, actual mouse input, normal motion, 1440/390, CPU 1x/4x. settledMs is the last viewport/scroll/transform change in a one-second rAF observation; excludes decorative animations and is not an actual GPU presentation timestamp.",
+    "inputs": {
+      "src/museum.js": "0fcf404c27a87056867d6220d861174988f68ea98bfd042bf84c920faba33ccb",
+      "src/museum.css": "462449d9891111dbd474bcf09ab343e64cd4f9ed62dc10ab0b32c8d49a626e6b",
+      "src/search.css": "c5d15eeee3d6a07348765a42feb97f20170cdbcf89ba4fe85c0a11e38bf397d7",
+      "src/themes.css": "f8efe70b9c8565d91e2293e626725a393a850ab2f4e9166c302101035fac6f04",
+      "src/index.html": "97ac7c7e8adf50a41e634fd7e446984c856fd1d25e03d3929a9bbb52e4628034",
+      "src/map-focus.js": "07dade45b0515784c7fa67f0b41bebabfc4223f1b434a10bce2f791e1c637471",
+      "src/exploration-tools.js": "65b84f78f1ce07750af9f0e5453c75b8ecc57e6f94d12845eabf2a676887e5f7",
+      "scripts/build.cjs": "39e9820d6c10943ef3d6e7f503bb0f98c53d88eafe159758f2aee93df71f7280",
+      "scripts/serve.cjs": "5e4ce3fcf5de506f65892e7fd0dc509d26f6cb0c0c1cf4a113fe437a8304f9bb",
+      "scripts/check-performance.cjs": "2817c8b5d0b8e21642eb5240121fdc61b0ad758387b44ea4bd09dd3a6fcccc97"
+    },
+    "samples": [
+      {
+        "name": "first-selection",
+        "width": 1440,
+        "cpu": 1,
+        "settledMs": 13.031999999999982,
+        "maxFrameGap": 16.800000000000182,
+        "frameCount": 61,
+        "renders": 1,
+        "dockAdds": 0,
+        "reusedTimeline": true,
+        "events": [
+          {
+            "start": 482.79999999701977,
+            "duration": 72,
+            "processing": 14.899999998509884
+          }
+        ]
+      },
+      {
+        "name": "next-selection",
+        "width": 1440,
+        "cpu": 1,
+        "settledMs": 13.66599999999994,
+        "maxFrameGap": 33.399999999999864,
+        "frameCount": 60,
+        "renders": 1,
+        "dockAdds": 0,
+        "reusedTimeline": true,
+        "events": [
+          {
+            "start": 1548.8999999985099,
+            "duration": 56,
+            "processing": 10
+          }
+        ]
+      },
+      {
+        "name": "lineage-view",
+        "width": 1440,
+        "cpu": 1,
+        "settledMs": 12.565999998510051,
+        "maxFrameGap": 16.800000000000182,
+        "frameCount": 61,
+        "renders": 1,
+        "dockAdds": 77,
+        "reusedTimeline": false,
+        "events": [
+          {
+            "start": 2599.6999999955297,
+            "duration": 40,
+            "processing": 15.299999997019768
+          }
+        ]
+      },
+      {
+        "name": "timeline-view",
+        "width": 1440,
+        "cpu": 1,
+        "settledMs": 12.200000001490025,
+        "maxFrameGap": 16.800000000000182,
+        "frameCount": 61,
+        "renders": 1,
+        "dockAdds": 233,
+        "reusedTimeline": true,
+        "events": [
+          {
+            "start": 3649.89999999851,
+            "duration": 56,
+            "processing": 20.899999998509884
+          }
+        ]
+      },
+      {
+        "name": "catalogue-view",
+        "width": 1440,
+        "cpu": 1,
+        "settledMs": 11.199999999999818,
+        "maxFrameGap": 16.799999999999272,
+        "frameCount": 61,
+        "renders": 0,
+        "dockAdds": 0,
+        "reusedTimeline": true,
+        "events": [
+          {
+            "start": 4717.19999999553,
+            "duration": 32,
+            "processing": 11.600000001490116
+          }
+        ]
+      },
+      {
+        "name": "compare-view",
+        "width": 1440,
+        "cpu": 1,
+        "settledMs": 12.666000000000167,
+        "maxFrameGap": 16.800000000000182,
+        "frameCount": 61,
+        "renders": 0,
+        "dockAdds": 0,
+        "reusedTimeline": true,
+        "events": [
+          {
+            "start": 5766.19999999553,
+            "duration": 32,
+            "processing": 4.100000001490116
+          }
+        ]
+      },
+      {
+        "name": "sources-view",
+        "width": 1440,
+        "cpu": 1,
+        "settledMs": 13.499999998510248,
+        "maxFrameGap": 16.800000000000182,
+        "frameCount": 61,
+        "renders": 0,
+        "dockAdds": 0,
+        "reusedTimeline": true,
+        "events": [
+          {
+            "start": 6815.29999999702,
+            "duration": 32,
+            "processing": 2.899999998509884
+          }
+        ]
+      },
+      {
+        "name": "timeline-view",
+        "width": 1440,
+        "cpu": 1,
+        "settledMs": 11.999999998510248,
+        "maxFrameGap": 16.80000000000109,
+        "frameCount": 61,
+        "renders": 1,
+        "dockAdds": 0,
+        "reusedTimeline": true,
+        "events": [
+          {
+            "start": 7866.69999999553,
+            "duration": 72,
+            "processing": 24.200000002980232
+          }
+        ]
+      },
+      {
+        "name": "reopen-selection",
+        "width": 1440,
+        "cpu": 1,
+        "settledMs": 9.998000001489345,
+        "maxFrameGap": 16.80000000000109,
+        "frameCount": 61,
+        "renders": 1,
+        "dockAdds": 0,
+        "reusedTimeline": true,
+        "events": [
+          {
+            "start": 8952.19999999553,
+            "duration": 40,
+            "processing": 8.799999997019768
+          }
+        ]
+      },
+      {
+        "name": "first-selection",
+        "width": 1440,
+        "cpu": 4,
+        "settledMs": 23.09800000447035,
+        "maxFrameGap": 23.09800000447035,
+        "frameCount": 60,
+        "renders": 1,
+        "dockAdds": 0,
+        "reusedTimeline": true,
+        "events": [
+          {
+            "start": 495.09999999403954,
+            "duration": 96,
+            "processing": 34.5
+          }
+        ]
+      },
+      {
+        "name": "next-selection",
+        "width": 1440,
+        "cpu": 4,
+        "settledMs": 21.39799999999991,
+        "maxFrameGap": 21.39799999999991,
+        "frameCount": 61,
+        "renders": 1,
+        "dockAdds": 0,
+        "reusedTimeline": true,
+        "events": [
+          {
+            "start": 1614,
+            "duration": 64,
+            "processing": 24.799999997019768
+          }
+        ]
+      },
+      {
+        "name": "lineage-view",
+        "width": 1440,
+        "cpu": 4,
+        "settledMs": 27.164000001489967,
+        "maxFrameGap": 27.164000001489967,
+        "frameCount": 60,
+        "renders": 1,
+        "dockAdds": 77,
+        "reusedTimeline": false,
+        "events": [
+          {
+            "start": 2674.6999999955297,
+            "duration": 56,
+            "processing": 28.80000000447035
+          }
+        ]
+      },
+      {
+        "name": "timeline-view",
+        "width": 1440,
+        "cpu": 4,
+        "settledMs": 29.964000004470563,
+        "maxFrameGap": 29.964000004470563,
+        "frameCount": 60,
+        "renders": 1,
+        "dockAdds": 233,
+        "reusedTimeline": true,
+        "events": [
+          {
+            "start": 3739,
+            "duration": 64,
+            "processing": 42.30000000447035
+          }
+        ]
+      },
+      {
+        "name": "catalogue-view",
+        "width": 1440,
+        "cpu": 4,
+        "settledMs": 9.966000002979854,
+        "maxFrameGap": 16.800000000000182,
+        "frameCount": 61,
+        "renders": 0,
+        "dockAdds": 0,
+        "reusedTimeline": true,
+        "events": [
+          {
+            "start": 4825.0999999940395,
+            "duration": 16,
+            "processing": 8.600000001490116
+          }
+        ]
+      },
+      {
+        "name": "compare-view",
+        "width": 1440,
+        "cpu": 4,
+        "settledMs": 13.932000005960617,
+        "maxFrameGap": 16.800000000000182,
+        "frameCount": 61,
+        "renders": 0,
+        "dockAdds": 0,
+        "reusedTimeline": true,
+        "events": [
+          {
+            "start": 5854.5,
+            "duration": 16,
+            "processing": 4.300000004470348
+          }
+        ]
+      },
+      {
+        "name": "sources-view",
+        "width": 1440,
+        "cpu": 4,
+        "settledMs": 12.066000002980218,
+        "maxFrameGap": 16.800000000000182,
+        "frameCount": 61,
+        "renders": 0,
+        "dockAdds": 0,
+        "reusedTimeline": true,
+        "events": [
+          {
+            "start": 6889.69999999553,
+            "duration": 16,
+            "processing": 3.899999998509884
+          }
+        ]
+      },
+      {
+        "name": "timeline-view",
+        "width": 1440,
+        "cpu": 4,
+        "settledMs": 30.43200000149045,
+        "maxFrameGap": 33.26800000000003,
+        "frameCount": 60,
+        "renders": 1,
+        "dockAdds": 0,
+        "reusedTimeline": true,
+        "events": [
+          {
+            "start": 7921.29999999702,
+            "duration": 80,
+            "processing": 36.5
+          }
+        ]
+      },
+      {
+        "name": "first-selection",
+        "width": 390,
+        "cpu": 1,
+        "settledMs": 12.466000002980252,
+        "maxFrameGap": 33.299999999999955,
+        "frameCount": 60,
+        "renders": 1,
+        "dockAdds": 0,
+        "reusedTimeline": true,
+        "events": [
+          {
+            "start": 386.19999999552965,
+            "duration": 56,
+            "processing": 10.399999998509884
+          }
+        ]
+      },
+      {
+        "name": "next-selection",
+        "width": 390,
+        "cpu": 1,
+        "settledMs": 11.900000000000091,
+        "maxFrameGap": 16.800000000000182,
+        "frameCount": 61,
+        "renders": 1,
+        "dockAdds": 0,
+        "reusedTimeline": true,
+        "events": [
+          {
+            "start": 1453.5,
+            "duration": 64,
+            "processing": 10.299999997019768
+          }
+        ]
+      },
+      {
+        "name": "lineage-view",
+        "width": 390,
+        "cpu": 1,
+        "settledMs": 9.699999998510066,
+        "maxFrameGap": 16.800000000000182,
+        "frameCount": 61,
+        "renders": 1,
+        "dockAdds": 77,
+        "reusedTimeline": false,
+        "events": [
+          {
+            "start": 2505.2999999970198,
+            "duration": 40,
+            "processing": 13.099999994039536
+          }
+        ]
+      },
+      {
+        "name": "timeline-view",
+        "width": 390,
+        "cpu": 1,
+        "settledMs": 11.998000002980007,
+        "maxFrameGap": 16.800000000000182,
+        "frameCount": 61,
+        "renders": 1,
+        "dockAdds": 233,
+        "reusedTimeline": true,
+        "events": [
+          {
+            "start": 3553,
+            "duration": 80,
+            "processing": 22.299999997019768
+          }
+        ]
+      },
+      {
+        "name": "catalogue-view",
+        "width": 390,
+        "cpu": 1,
+        "settledMs": 13.632000002980021,
+        "maxFrameGap": 16.800000000000182,
+        "frameCount": 61,
+        "renders": 0,
+        "dockAdds": 0,
+        "reusedTimeline": true,
+        "events": [
+          {
+            "start": 4618,
+            "duration": 24,
+            "processing": 8.300000004470348
+          }
+        ]
+      },
+      {
+        "name": "compare-view",
+        "width": 390,
+        "cpu": 1,
+        "settledMs": 12.100000002979868,
+        "maxFrameGap": 16.799999999999272,
+        "frameCount": 61,
+        "renders": 0,
+        "dockAdds": 0,
+        "reusedTimeline": true,
+        "events": [
+          {
+            "start": 5669.39999999851,
+            "duration": 24,
+            "processing": 4.200000002980232
+          }
+        ]
+      },
+      {
+        "name": "sources-view",
+        "width": 390,
+        "cpu": 1,
+        "settledMs": 14.797999998510022,
+        "maxFrameGap": 16.800000000000182,
+        "frameCount": 61,
+        "renders": 0,
+        "dockAdds": 0,
+        "reusedTimeline": true,
+        "events": [
+          {
+            "start": 6717,
+            "duration": 16,
+            "processing": 1.6999999955296516
+          }
+        ]
+      },
+      {
+        "name": "timeline-view",
+        "width": 390,
+        "cpu": 1,
+        "settledMs": 12.300000002980596,
+        "maxFrameGap": 16.800000000000182,
+        "frameCount": 61,
+        "renders": 1,
+        "dockAdds": 0,
+        "reusedTimeline": true,
+        "events": [
+          {
+            "start": 7752.39999999851,
+            "duration": 80,
+            "processing": 24.19999999552965
+          }
+        ]
+      },
+      {
+        "name": "reopen-selection",
+        "width": 390,
+        "cpu": 1,
+        "settledMs": 9.829999998510175,
+        "maxFrameGap": 16.80000000000109,
+        "frameCount": 61,
+        "renders": 1,
+        "dockAdds": 0,
+        "reusedTimeline": true,
+        "events": [
+          {
+            "start": 8838.29999999702,
+            "duration": 72,
+            "processing": 11.199999995529652
+          }
+        ]
+      },
+      {
+        "name": "first-selection",
+        "width": 390,
+        "cpu": 4,
+        "settledMs": 24.829999998509834,
+        "maxFrameGap": 24.829999998509834,
+        "frameCount": 60,
+        "renders": 1,
+        "dockAdds": 0,
+        "reusedTimeline": true,
+        "events": [
+          {
+            "start": 499.20000000298023,
+            "duration": 88,
+            "processing": 34.5
+          }
+        ]
+      },
+      {
+        "name": "next-selection",
+        "width": 390,
+        "cpu": 4,
+        "settledMs": 9.066000002980218,
+        "maxFrameGap": 16.800000000000182,
+        "frameCount": 61,
+        "renders": 1,
+        "dockAdds": 0,
+        "reusedTimeline": true,
+        "events": [
+          {
+            "start": 1614.7000000029802,
+            "duration": 80,
+            "processing": 24
+          }
+        ]
+      },
+      {
+        "name": "lineage-view",
+        "width": 390,
+        "cpu": 4,
+        "settledMs": 26.09799999850975,
+        "maxFrameGap": 26.09799999850975,
+        "frameCount": 61,
+        "renders": 1,
+        "dockAdds": 77,
+        "reusedTimeline": false,
+        "events": [
+          {
+            "start": 2681.10000000149,
+            "duration": 40,
+            "processing": 29.19999999552965
+          }
+        ]
+      },
+      {
+        "name": "timeline-view",
+        "width": 390,
+        "cpu": 4,
+        "settledMs": 29.964000002980356,
+        "maxFrameGap": 29.964000002980356,
+        "frameCount": 60,
+        "renders": 1,
+        "dockAdds": 233,
+        "reusedTimeline": true,
+        "events": [
+          {
+            "start": 3744.10000000149,
+            "duration": 96,
+            "processing": 41.900000005960464
+          }
+        ]
+      },
+      {
+        "name": "catalogue-view",
+        "width": 390,
+        "cpu": 4,
+        "settledMs": 12.231999997019557,
+        "maxFrameGap": 16.800000000000182,
+        "frameCount": 61,
+        "renders": 0,
+        "dockAdds": 0,
+        "reusedTimeline": true,
+        "events": [
+          {
+            "start": 4827.89999999851,
+            "duration": 16,
+            "processing": 9
+          }
+        ]
+      },
+      {
+        "name": "compare-view",
+        "width": 390,
+        "cpu": 4,
+        "settledMs": 11.8660000029804,
+        "maxFrameGap": 16.800000000000182,
+        "frameCount": 61,
+        "renders": 0,
+        "dockAdds": 0,
+        "reusedTimeline": true,
+        "events": [
+          {
+            "start": 5861.70000000298,
+            "duration": 16,
+            "processing": 4.700000002980232
+          }
+        ]
+      },
+      {
+        "name": "sources-view",
+        "width": 390,
+        "cpu": 4,
+        "settledMs": 11.666000002980581,
+        "maxFrameGap": 16.800000000000182,
+        "frameCount": 61,
+        "renders": 0,
+        "dockAdds": 0,
+        "reusedTimeline": true,
+        "events": [
+          {
+            "start": 6895.20000000298,
+            "duration": 16,
+            "processing": 4.100000001490116
+          }
+        ]
+      },
+      {
+        "name": "timeline-view",
+        "width": 390,
+        "cpu": 4,
+        "settledMs": 29.197999997019906,
+        "maxFrameGap": 29.197999997019906,
+        "frameCount": 60,
+        "renders": 1,
+        "dockAdds": 0,
+        "reusedTimeline": true,
+        "events": [
+          {
+            "start": 7927.5,
+            "duration": 96,
+            "processing": 37.69999999552965
+          }
+        ]
+      }
+    ]
+  },
+  "cache": [
+    {
+      "name": "http://127.0.0.1:58788/theme.da9661e20f0c.js",
+      "transfer": 0,
+      "decoded": 1371
+    },
+    {
+      "name": "http://127.0.0.1:58788/museum.462449d98911.css",
+      "transfer": 0,
+      "decoded": 58090
+    },
+    {
+      "name": "http://127.0.0.1:58788/themes.f8efe70b9c85.css",
+      "transfer": 0,
+      "decoded": 7627
+    },
+    {
+      "name": "http://127.0.0.1:58788/search.c5d15eeee3d6.css",
+      "transfer": 0,
+      "decoded": 1412
+    },
+    {
+      "name": "http://127.0.0.1:58788/analytics.d50c460b9e80.js",
+      "transfer": 0,
+      "decoded": 1299
+    },
+    {
+      "name": "http://127.0.0.1:58788/visit-counts.18d075859b4c.js",
+      "transfer": 0,
+      "decoded": 2217
+    },
+    {
+      "name": "http://127.0.0.1:58788/messages.1e22f80394e2.js",
+      "transfer": 0,
+      "decoded": 10108
+    },
+    {
+      "name": "http://127.0.0.1:58788/data/catalogue.217135fc406f.js",
+      "transfer": 0,
+      "decoded": 1988001
+    },
+    {
+      "name": "http://127.0.0.1:58788/lab-examples.1d45585edea3.js",
+      "transfer": 0,
+      "decoded": 2237
+    },
+    {
+      "name": "http://127.0.0.1:58788/learning-examples.b855d296be94.js",
+      "transfer": 0,
+      "decoded": 17642
+    },
+    {
+      "name": "http://127.0.0.1:58788/draft-store.a5c6185dd793.js",
+      "transfer": 0,
+      "decoded": 1191
+    },
+    {
+      "name": "http://127.0.0.1:58788/map-framing.6f3952f57a76.js",
+      "transfer": 0,
+      "decoded": 3162
+    },
+    {
+      "name": "http://127.0.0.1:58788/data/relationship-status.c48a174b3be6.js",
+      "transfer": 0,
+      "decoded": 406529
+    },
+    {
+      "name": "http://127.0.0.1:58788/data/build-info.812f35be480c.js",
+      "transfer": 0,
+      "decoded": 128
+    },
+    {
+      "name": "http://127.0.0.1:58788/navigation-state.90bd2c47926c.js",
+      "transfer": 0,
+      "decoded": 1721
+    },
+    {
+      "name": "http://127.0.0.1:58788/exploration-state.915ebed9bddd.js",
+      "transfer": 0,
+      "decoded": 1314
+    },
+    {
+      "name": "http://127.0.0.1:58788/map-focus.07dade45b051.js",
+      "transfer": 0,
+      "decoded": 4290
+    },
+    {
+      "name": "http://127.0.0.1:58788/data/language-exhibits.3433f5ed7922.js",
+      "transfer": 0,
+      "decoded": 10512
+    },
+    {
+      "name": "http://127.0.0.1:58788/data/research-triage.124f4c4a1a4e.js",
+      "transfer": 0,
+      "decoded": 3801
+    },
+    {
+      "name": "http://127.0.0.1:58788/language-exhibits.e9f5f17c8953.js",
+      "transfer": 0,
+      "decoded": 2265
+    },
+    {
+      "name": "http://127.0.0.1:58788/museum.0fcf404c27a8.js",
+      "transfer": 0,
+      "decoded": 60562
+    },
+    {
+      "name": "http://127.0.0.1:58788/relationship-coverage.31ec2d53762a.js",
+      "transfer": 0,
+      "decoded": 4843
+    },
+    {
+      "name": "http://127.0.0.1:58788/data/credits.0ddaf8ecacf0.js",
+      "transfer": 0,
+      "decoded": 13592
+    },
+    {
+      "name": "http://127.0.0.1:58788/credits.299e87c02c69.js",
+      "transfer": 0,
+      "decoded": 5001
+    },
+    {
+      "name": "http://127.0.0.1:58788/data/runtime-assets.1152d2949952.js",
+      "transfer": 0,
+      "decoded": 287
+    },
+    {
+      "name": "http://127.0.0.1:58788/runtime-status.18a0e7d812b9.js",
+      "transfer": 0,
+      "decoded": 2357
+    },
+    {
+      "name": "http://127.0.0.1:58788/execution-config.4ed993efee24.js",
+      "transfer": 0,
+      "decoded": 153
+    },
+    {
+      "name": "http://127.0.0.1:58788/execution-modes.f24cc9c8102c.js",
+      "transfer": 0,
+      "decoded": 13135
+    },
+    {
+      "name": "http://127.0.0.1:58788/lab.0c25561b4979.js",
+      "transfer": 0,
+      "decoded": 21782
+    },
+    {
+      "name": "http://127.0.0.1:58788/lab-tools.ecedc2d5bbc9.js",
+      "transfer": 0,
+      "decoded": 7502
+    },
+    {
+      "name": "http://127.0.0.1:58788/service-status.5a313ac642c6.js",
+      "transfer": 0,
+      "decoded": 2383
+    },
+    {
+      "name": "http://127.0.0.1:58788/compare.c2ce06693c17.js",
+      "transfer": 0,
+      "decoded": 5456
+    },
+    {
+      "name": "http://127.0.0.1:58788/data/learning-paths.d91c4e3ebe30.js",
+      "transfer": 0,
+      "decoded": 12562
+    },
+    {
+      "name": "http://127.0.0.1:58788/learning-guide.8614b8ff5859.js",
+      "transfer": 0,
+      "decoded": 4429
+    },
+    {
+      "name": "http://127.0.0.1:58788/navigation.db535c51c70c.js",
+      "transfer": 0,
+      "decoded": 7565
+    },
+    {
+      "name": "http://127.0.0.1:58788/map-interaction.66f1c355a187.js",
+      "transfer": 0,
+      "decoded": 1779
+    },
+    {
+      "name": "http://127.0.0.1:58788/exploration-tools.65b84f78f1ce.js",
+      "transfer": 0,
+      "decoded": 1503
+    },
+    {
+      "name": "http://127.0.0.1:58788/assets/history-river.0992af42abfd.webp",
+      "transfer": 0,
+      "decoded": 9064
+    }
+  ],
+  "searchStyles": [
+    {
+      "width": 1440,
+      "theme": "dark",
+      "map": {
+        "height": "34px",
+        "fontSize": "13px",
+        "fontFamily": "system-ui, -apple-system, \"PingFang SC\", sans-serif",
+        "fontWeight": "400",
+        "lineHeight": "20px",
+        "borderRadius": "6px",
+        "borderTopWidth": "1px",
+        "borderTopStyle": "solid",
+        "borderTopColor": "rgb(82, 107, 113)",
+        "backgroundColor": "rgb(17, 35, 42)",
+        "color": "rgb(230, 238, 232)",
+        "paddingTop": "6px",
+        "paddingRight": "34px",
+        "paddingBottom": "6px",
+        "paddingLeft": "10px",
+        "appearance": "none"
+      },
+      "catalogue": {
+        "height": "34px",
+        "fontSize": "13px",
+        "fontFamily": "system-ui, -apple-system, \"PingFang SC\", sans-serif",
+        "fontWeight": "400",
+        "lineHeight": "20px",
+        "borderRadius": "6px",
+        "borderTopWidth": "1px",
+        "borderTopStyle": "solid",
+        "borderTopColor": "rgb(82, 107, 113)",
+        "backgroundColor": "rgb(17, 35, 42)",
+        "color": "rgb(230, 238, 232)",
+        "paddingTop": "6px",
+        "paddingRight": "34px",
+        "paddingBottom": "6px",
+        "paddingLeft": "10px",
+        "appearance": "none"
+      }
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "map": {
+        "height": "34px",
+        "fontSize": "13px",
+        "fontFamily": "system-ui, -apple-system, \"PingFang SC\", sans-serif",
+        "fontWeight": "400",
+        "lineHeight": "20px",
+        "borderRadius": "6px",
+        "borderTopWidth": "1px",
+        "borderTopStyle": "solid",
+        "borderTopColor": "rgb(164, 184, 172)",
+        "backgroundColor": "rgb(255, 253, 247)",
+        "color": "rgb(32, 60, 67)",
+        "paddingTop": "6px",
+        "paddingRight": "34px",
+        "paddingBottom": "6px",
+        "paddingLeft": "10px",
+        "appearance": "none"
+      },
+      "catalogue": {
+        "height": "34px",
+        "fontSize": "13px",
+        "fontFamily": "system-ui, -apple-system, \"PingFang SC\", sans-serif",
+        "fontWeight": "400",
+        "lineHeight": "20px",
+        "borderRadius": "6px",
+        "borderTopWidth": "1px",
+        "borderTopStyle": "solid",
+        "borderTopColor": "rgb(164, 184, 172)",
+        "backgroundColor": "rgb(255, 253, 247)",
+        "color": "rgb(32, 60, 67)",
+        "paddingTop": "6px",
+        "paddingRight": "34px",
+        "paddingBottom": "6px",
+        "paddingLeft": "10px",
+        "appearance": "none"
+      }
+    },
+    {
+      "width": 1052,
+      "theme": "dark",
+      "map": {
+        "height": "34px",
+        "fontSize": "13px",
+        "fontFamily": "system-ui, -apple-system, \"PingFang SC\", sans-serif",
+        "fontWeight": "400",
+        "lineHeight": "20px",
+        "borderRadius": "6px",
+        "borderTopWidth": "1px",
+        "borderTopStyle": "solid",
+        "borderTopColor": "rgb(82, 107, 113)",
+        "backgroundColor": "rgb(17, 35, 42)",
+        "color": "rgb(230, 238, 232)",
+        "paddingTop": "6px",
+        "paddingRight": "34px",
+        "paddingBottom": "6px",
+        "paddingLeft": "10px",
+        "appearance": "none"
+      },
+      "catalogue": {
+        "height": "34px",
+        "fontSize": "13px",
+        "fontFamily": "system-ui, -apple-system, \"PingFang SC\", sans-serif",
+        "fontWeight": "400",
+        "lineHeight": "20px",
+        "borderRadius": "6px",
+        "borderTopWidth": "1px",
+        "borderTopStyle": "solid",
+        "borderTopColor": "rgb(82, 107, 113)",
+        "backgroundColor": "rgb(17, 35, 42)",
+        "color": "rgb(230, 238, 232)",
+        "paddingTop": "6px",
+        "paddingRight": "34px",
+        "paddingBottom": "6px",
+        "paddingLeft": "10px",
+        "appearance": "none"
+      }
+    },
+    {
+      "width": 1052,
+      "theme": "light",
+      "map": {
+        "height": "34px",
+        "fontSize": "13px",
+        "fontFamily": "system-ui, -apple-system, \"PingFang SC\", sans-serif",
+        "fontWeight": "400",
+        "lineHeight": "20px",
+        "borderRadius": "6px",
+        "borderTopWidth": "1px",
+        "borderTopStyle": "solid",
+        "borderTopColor": "rgb(164, 184, 172)",
+        "backgroundColor": "rgb(255, 253, 247)",
+        "color": "rgb(32, 60, 67)",
+        "paddingTop": "6px",
+        "paddingRight": "34px",
+        "paddingBottom": "6px",
+        "paddingLeft": "10px",
+        "appearance": "none"
+      },
+      "catalogue": {
+        "height": "34px",
+        "fontSize": "13px",
+        "fontFamily": "system-ui, -apple-system, \"PingFang SC\", sans-serif",
+        "fontWeight": "400",
+        "lineHeight": "20px",
+        "borderRadius": "6px",
+        "borderTopWidth": "1px",
+        "borderTopStyle": "solid",
+        "borderTopColor": "rgb(164, 184, 172)",
+        "backgroundColor": "rgb(255, 253, 247)",
+        "color": "rgb(32, 60, 67)",
+        "paddingTop": "6px",
+        "paddingRight": "34px",
+        "paddingBottom": "6px",
+        "paddingLeft": "10px",
+        "appearance": "none"
+      }
+    },
+    {
+      "width": 800,
+      "theme": "dark",
+      "map": {
+        "height": "34px",
+        "fontSize": "13px",
+        "fontFamily": "system-ui, -apple-system, \"PingFang SC\", sans-serif",
+        "fontWeight": "400",
+        "lineHeight": "20px",
+        "borderRadius": "6px",
+        "borderTopWidth": "1px",
+        "borderTopStyle": "solid",
+        "borderTopColor": "rgb(82, 107, 113)",
+        "backgroundColor": "rgb(17, 35, 42)",
+        "color": "rgb(230, 238, 232)",
+        "paddingTop": "6px",
+        "paddingRight": "34px",
+        "paddingBottom": "6px",
+        "paddingLeft": "10px",
+        "appearance": "none"
+      },
+      "catalogue": {
+        "height": "34px",
+        "fontSize": "13px",
+        "fontFamily": "system-ui, -apple-system, \"PingFang SC\", sans-serif",
+        "fontWeight": "400",
+        "lineHeight": "20px",
+        "borderRadius": "6px",
+        "borderTopWidth": "1px",
+        "borderTopStyle": "solid",
+        "borderTopColor": "rgb(82, 107, 113)",
+        "backgroundColor": "rgb(17, 35, 42)",
+        "color": "rgb(230, 238, 232)",
+        "paddingTop": "6px",
+        "paddingRight": "34px",
+        "paddingBottom": "6px",
+        "paddingLeft": "10px",
+        "appearance": "none"
+      }
+    },
+    {
+      "width": 800,
+      "theme": "light",
+      "map": {
+        "height": "34px",
+        "fontSize": "13px",
+        "fontFamily": "system-ui, -apple-system, \"PingFang SC\", sans-serif",
+        "fontWeight": "400",
+        "lineHeight": "20px",
+        "borderRadius": "6px",
+        "borderTopWidth": "1px",
+        "borderTopStyle": "solid",
+        "borderTopColor": "rgb(164, 184, 172)",
+        "backgroundColor": "rgb(255, 253, 247)",
+        "color": "rgb(32, 60, 67)",
+        "paddingTop": "6px",
+        "paddingRight": "34px",
+        "paddingBottom": "6px",
+        "paddingLeft": "10px",
+        "appearance": "none"
+      },
+      "catalogue": {
+        "height": "34px",
+        "fontSize": "13px",
+        "fontFamily": "system-ui, -apple-system, \"PingFang SC\", sans-serif",
+        "fontWeight": "400",
+        "lineHeight": "20px",
+        "borderRadius": "6px",
+        "borderTopWidth": "1px",
+        "borderTopStyle": "solid",
+        "borderTopColor": "rgb(164, 184, 172)",
+        "backgroundColor": "rgb(255, 253, 247)",
+        "color": "rgb(32, 60, 67)",
+        "paddingTop": "6px",
+        "paddingRight": "34px",
+        "paddingBottom": "6px",
+        "paddingLeft": "10px",
+        "appearance": "none"
+      }
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "map": {
+        "height": "34px",
+        "fontSize": "13px",
+        "fontFamily": "system-ui, -apple-system, \"PingFang SC\", sans-serif",
+        "fontWeight": "400",
+        "lineHeight": "20px",
+        "borderRadius": "6px",
+        "borderTopWidth": "1px",
+        "borderTopStyle": "solid",
+        "borderTopColor": "rgb(82, 107, 113)",
+        "backgroundColor": "rgb(17, 35, 42)",
+        "color": "rgb(230, 238, 232)",
+        "paddingTop": "6px",
+        "paddingRight": "34px",
+        "paddingBottom": "6px",
+        "paddingLeft": "10px",
+        "appearance": "none"
+      },
+      "catalogue": {
+        "height": "34px",
+        "fontSize": "13px",
+        "fontFamily": "system-ui, -apple-system, \"PingFang SC\", sans-serif",
+        "fontWeight": "400",
+        "lineHeight": "20px",
+        "borderRadius": "6px",
+        "borderTopWidth": "1px",
+        "borderTopStyle": "solid",
+        "borderTopColor": "rgb(82, 107, 113)",
+        "backgroundColor": "rgb(17, 35, 42)",
+        "color": "rgb(230, 238, 232)",
+        "paddingTop": "6px",
+        "paddingRight": "34px",
+        "paddingBottom": "6px",
+        "paddingLeft": "10px",
+        "appearance": "none"
+      }
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "map": {
+        "height": "34px",
+        "fontSize": "13px",
+        "fontFamily": "system-ui, -apple-system, \"PingFang SC\", sans-serif",
+        "fontWeight": "400",
+        "lineHeight": "20px",
+        "borderRadius": "6px",
+        "borderTopWidth": "1px",
+        "borderTopStyle": "solid",
+        "borderTopColor": "rgb(164, 184, 172)",
+        "backgroundColor": "rgb(255, 253, 247)",
+        "color": "rgb(32, 60, 67)",
+        "paddingTop": "6px",
+        "paddingRight": "34px",
+        "paddingBottom": "6px",
+        "paddingLeft": "10px",
+        "appearance": "none"
+      },
+      "catalogue": {
+        "height": "34px",
+        "fontSize": "13px",
+        "fontFamily": "system-ui, -apple-system, \"PingFang SC\", sans-serif",
+        "fontWeight": "400",
+        "lineHeight": "20px",
+        "borderRadius": "6px",
+        "borderTopWidth": "1px",
+        "borderTopStyle": "solid",
+        "borderTopColor": "rgb(164, 184, 172)",
+        "backgroundColor": "rgb(255, 253, 247)",
+        "color": "rgb(32, 60, 67)",
+        "paddingTop": "6px",
+        "paddingRight": "34px",
+        "paddingBottom": "6px",
+        "paddingLeft": "10px",
+        "appearance": "none"
+      }
+    }
+  ],
+  "river": {
+    "path": "public/assets/history-river.0992af42abfd.webp",
+    "bytes": 9064,
+    "originalBytes": 3357530,
+    "sha256": "0992af42abfdcb27bf847556f50f0567bba3be0fe43a1d0389d06e125cc0daa8"
+  }
+}
