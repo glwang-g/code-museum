@@ -29,6 +29,7 @@
 - 点击语言要能进入档案、查看并追溯上下游。用户也期待点击后的展开效果；当前有详情面板与关系高亮，不要据此声称复杂展开动画已经完成。
 - 用户反复反馈字号过大、缩小不明显，偏好克制的文字尺度；介绍文案有意境即可，不要生硬说教或靠换文案冒充视觉改进。
 - 用户对后期河景版本反馈“很帅”。本次结构重构保留了该版页面与插画；后续不要无故推倒重做。
+- 2026-10-17 品牌图形按用户提供的参考图调整为“博物馆建筑 + 金色代码符号”：深蓝屋顶、立柱与馆体，金色 `</>`。favicon 与页头共用米白底图标；独立透明标记及深浅背景横版 Logo 位于 `public/assets/brand/`。此前河流括号方案保留在下方历史记录，本次不改变河景与历史叙事。
 
 “长河落日圆，欲穷语言树，到此不需还”表达的是可探索、能追根溯源的整体体验，不是要求把这句话固定为页面标题。
 
@@ -659,3 +660,30 @@ Safari 视觉补核：在原生 Safari 的约 1052px 窗口实际对照 Kotlin �
 核验：`npm test` 79/79、`npm run build` 通过；性能专项扩为 180 组真实鼠标检查（90 组按下优先 + 90 组抬起优先），抬起优先时同样一次切换、只投递一次 click 并聚焦目标，其余原有场景与搜索样式检查不变，报告在 `tmp/performance-2026-10-16/tap-fix/`。隔离 Chrome 中用真实指针输入先发 mouseReleased 不发 mousePressed 复现了原始故障（只收到 pointerup/mouseup、无 click、不切换），拖到页签上释放仍不切换，证据与脚本在 `tmp/tab-tap-probe/`；`tmp/tap-diagnostic/server.cjs` 可在用户机器上对照记录鼠标事件（`?baseline=1` 为未修正版）。
 
 提交补记：用户已授权提交并推送，实现提交 `6a4fdfc`（`src/museum.js`、`scripts/check-performance.cjs`、本文件）推送到 `origin/master`；Actions run `38862152688` 的 build 与 deploy 均成功，`Check HTTPS release` 通过，生产 https://codemuseum.freexlib.com 的 index.html 引用 `museum.41525883b414.js`，与本地构建指纹一致且包含新的 pointerup 兜底逻辑。以上是内容与部署核验，仍未在用户自己的 Mac/Safari 上用真实触控板复测，因此不宣布用户环境的问题已解决，也不把本次推送视为用户侧已验证。
+
+## 2026-10-17 品牌图标：favicon 与页头标记（本地）
+
+用户指出站点还没有像样的 LOGO。原 `public/favicon.svg` 是橙底 `</>` 方块，属于通用开发工具图标，与站点深青底、金色、Georgia 衬线的视觉体系不协调。确认范围为「favicon + 页头 logo」，设计方向为「河道汇成代码括号」。
+
+实现：`public/favicon.svg` 重绘为深青圆角方块（`#0e1f26`，圆角 14/64）上的金色（`#eec785`）描边字形，左右两条略向外弓的流线合成 `<` 与 `>`，中间一段更短更斜的流线作为 `/`。线宽 4.4，圆头圆角。页头在 `src/index.html` 的 `.brand` 内联同一字形（`aria-hidden`，可访问名称仍由相邻文字 "Code Museum" 提供），`src/museum.css` 用 `--panel` 与 `--gold` 覆盖填充色和描边色，因此跟随明暗主题；桌面 26px、≤650px 为 22px，`.brand` 改为 flex 并让 `small` 的 `margin-left` 与 `gap` 合计保持原来的 18px 间距。
+
+小尺寸核对：把 SVG 用 canvas 栅格化后逐像素打印为文本读图，16px 下三段线互不粘连，`<` 与 `>` 之间的斜线可辨；期间修掉了斜杠底部与左括号在 16px 融成一团的一版。
+
+会话限制：本会话无法直接查看图片，因此形状与美感判断未经我目视确认；已用命中测试和像素掩码代替框选判断。把页头分别隐藏 `.brand` 与 `.header-tools` 后对比截图，在 1440/650/430/414/390/375/360 七个宽度下两者墨迹重叠像素均为 0（414px 的 1px 为抗锯齿噪点），说明 390px 以下原本就存在的容器框相交只是内边距，并未造成文字压字，本次标记也没有引入新的可见重叠。
+
+核验：`npm test` 79/79、`npm run build` 通过，`npm run museum:browser` 的 64 项检查通过，`dist/favicon.svg` 与源文件一致并经 HTTP 以 `image/svg+xml` 返回。未做原生 Safari 实际核对，也未提交、推送或部署；最终视觉取舍仍待用户确认。
+
+
+## 2026-10-17 参考图品牌更新（本地）
+
+用户提供深蓝博物馆建筑与金色代码参考图，要求制作 favicon 与 Logo。以原生 SVG 重绘简化建筑，去掉参考图的纹理、阴影和大面积留白，统一深蓝 `#102b46`、金色 `#f5b83d` 与米白 `#fbf6eb`。favicon 与页头共用 64×64 图形；`public/assets/brand/code-museum-mark.svg` 为透明底独立图标，`code-museum-logo.svg` 与 `code-museum-logo-light.svg` 为浅色／深色背景用横版 Logo（文字使用系统衬线字体，无在线字体依赖）。构建直接复制固定 SVG，可离线复现。更改前的未提交图标与相关文件副本留在 `tmp/brand-before-temple/`，不参与构建。未提交、推送或发布。
+
+验证：`npm test` 79/79 与离线构建通过；实际 Chrome 查看 1440px、390px 明暗页面，品牌标记分别为 26px、22px，无页面横向溢出，并目视检查品牌总览与 16/24/32/48/64px 图标。预览截图见 `output/brand/brand-preview.png`（不参与构建）。补充固定的 16/32/48px PNG 编码多尺寸 `public/favicon.ico`、180px Apple 图标及 512px PNG；PNG 经本机 Chrome 从 SVG 栅格化，构建直接复制这些已落盘输入，不依赖浏览器或在线服务。
+
+Safari 补核：本地服务返回 200、强制刷新页面成功，但标签仍保留红底旧图标。HTML 追加明确的 32×32 PNG favicon 新地址 `assets/brand/favicon-32.png`，为标签提供常规栅格格式并避开原图标地址的缓存；保留 SVG、ICO 与 Apple 图标。实际浏览器结果另行确认，不删除用户 Safari 数据。
+
+本次 Safari 实测结果：强制刷新、重开标签、独立页面 URL 及无痕窗口仍显示旧红底图标；不能宣布图标缓存已解决。再为 ICO/SVG 引用追加固定版本参数 `v=museum-20261017`，构建成功，最终 Safari 复核时检测到用户正在切换页面，因此停止 UI 操作；此版本参数的实际刷新效果仍待确认。没有删除缓存数据库、Cookie、历史记录或重启 Safari。
+
+最终改用实体新文件名 `assets/brand/code-museum-tab.ico` / `.svg`，代替查询参数，兼容现有构建资源存在性校验；默认根路径 favicon 仍保留供浏览器自动发现。
+
+提交说明：用户授权提交并推送本轮 Logo/favicon 更新。最终文件名版本 `npm test` 79/79、`npm run build` 通过；本轮发布状态以远端工作流和生产响应另行核验为准，Safari 既有缓存更新效果仍待确认。临时备份、预览截图及其他无关未跟踪文件不纳入提交。

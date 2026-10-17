@@ -60,6 +60,10 @@ body:not(.lineage-mode):not(.lineage-focus) .atlas .relations path{opacity:.25;s
 html,body{height:100%;overflow:hidden}
 body{height:100dvh;display:flex;flex-direction:column}
 header{height:56px;min-height:56px;padding:0 20px;flex:none}
+/* Museum facade and code glyph share the favicon’s fixed, high-contrast palette. */
+.brand{display:flex;align-items:center;gap:9px}
+.brand small{margin-left:9px}
+.brand-mark{width:26px;height:26px;flex:none}
 main{flex:1;min-height:0;display:flex;flex-direction:column;overflow:hidden}
 .intro{flex:none;align-items:center;padding:10px 20px;gap:16px}
 .intro-copy{display:flex;align-items:baseline;gap:16px;min-width:0}
@@ -483,7 +487,7 @@ body:not(.lineage-focus) .atlas .relations path.field-edge{opacity:.12}
 #guide-task-content{margin:6px 0;display:grid;grid-template-columns:70px 1fr;gap:5px 10px}#guide-task-content dt{color:var(--gold)}#guide-task-content dd{margin:0;color:var(--ink);overflow-wrap:anywhere}
 @media(max-width:650px){.atlas-controls{flex-wrap:wrap}.relation-scope select{max-width:135px}.share-feedback{padding:8px 12px}.header-tools{gap:7px}#guide-task-content{grid-template-columns:55px 1fr}.learning-guide{max-height:40vh;overflow-y:auto}#build-version{overflow-wrap:anywhere}}
 
-@media(max-width:650px){header{height:66px;min-height:66px}header .brand{position:absolute;top:6px;left:12px;line-height:20px}header .header-tools{bottom:3px}.icp-record{top:calc(4px + env(safe-area-inset-top));right:8px;bottom:auto;font-size:9px}}
+@media(max-width:650px){header{height:66px;min-height:66px}header .brand{position:absolute;top:6px;left:12px;line-height:20px}.brand-mark{width:22px;height:22px}header .header-tools{bottom:3px}.icp-record{top:calc(4px + env(safe-area-inset-top));right:8px;bottom:auto;font-size:9px}}
 
 /* Voluntary support stays available but never interrupts exploration. */
 .support-trigger{border:1px solid var(--line);border-radius:4px;padding:5px 9px;background:var(--panel);color:var(--ink);font-size:12px;white-space:nowrap}
