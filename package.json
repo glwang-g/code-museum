@@ -28,6 +28,7 @@
     "runtime:cli-browser": "node scripts/check-executor-browser.cjs --cli",
     "mcp": "python3 server/mcp.py",
     "museum:browser": "node scripts/check-museum-advance.cjs",
-    "performance:browser": "node scripts/check-performance.cjs"
+    "performance:browser": "node scripts/check-performance.cjs",
+    "runtime:pascal-r-build": "python3 scripts/build-pascal-r-runtime.py"
   }
 }

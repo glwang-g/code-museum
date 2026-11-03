@@ -10,9 +10,11 @@ module.exports=async function({evaluate,wait,page,screenshot,results,token}){
     ['perl','my $total = 0; $total += $_ for 1 .. 10; print "$total\\n";','','55\n'],
     ['xslt','<?xml version="1.0"?><xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"><xsl:output method="text"/><xsl:template match="/"><xsl:value-of select="sum(/museum/year)"/><xsl:text>&#10;</xsl:text></xsl:template></xsl:stylesheet>','<?xml version="1.0"?><museum><year>1972</year><year>1958</year><year>1991</year></museum>','5921\n'],
     ['csharp','using System; class Museum { static void Main() { Console.WriteLine(1972 + 1958 + 1991); } }','','5921\n'],
-    ['fortran','program museum\n  implicit none\n  print \'(I0)\', 1972 + 1958 + 1991\nend program museum\n','','5921\n']
+    ['fortran','program museum\n  implicit none\n  print \'(I0)\', 1972 + 1958 + 1991\nend program museum\n','','5921\n'],
+    ['pascal','program Museum; var total,i: integer; begin total:=0; for i:=1 to 10 do total:=total+i; writeln(total); end.','','55\n'],
+    ['r','cat(sum(1:10), "\\n", sep="")','','55\n']
   ];
-  const compiled=new Set(['typescript','csharp','fortran']);
+  const compiled=new Set(['typescript','csharp','fortran','pascal']);
   let lastRun=0;
   async function edit(code){await evaluate(`(()=>{const e=document.querySelector('#lab-code');e.value=${JSON.stringify(code)};e.dispatchEvent(new Event('input',{bubbles:true}))})()`)}
   async function clickRun(){
@@ -20,7 +22,7 @@ module.exports=async function({evaluate,wait,page,screenshot,results,token}){
     await evaluate(`document.querySelector('#lab-run').click()`);
   }
   async function output(text){await wait(`document.querySelector('#lab-result').dataset.state==='ok'&&document.querySelector('#lab-result').textContent===${JSON.stringify(text)}`,45000)}
-  await wait(`window.MUSEUM_EXECUTION.canRun('typescript')&&window.MUSEUM_EXECUTION.canRun('sed')&&window.MUSEUM_EXECUTION.canRun('csharp')&&window.MUSEUM_EXECUTION.canRun('fortran')`);
+  await wait(`window.MUSEUM_EXECUTION.canRun('typescript')&&window.MUSEUM_EXECUTION.canRun('sed')&&window.MUSEUM_EXECUTION.canRun('pascal')&&window.MUSEUM_EXECUTION.canRun('r')`);
   for(const width of [1440,390]){
     await page('Emulation.setDeviceMetricsOverride',{width,height:width===1440?1000:844,mobile:width===390,deviceScaleFactor:1});
     await evaluate(`document.documentElement.dataset.theme=${JSON.stringify(width===1440?'dark':'light')}`);
@@ -48,6 +50,26 @@ module.exports=async function({evaluate,wait,page,screenshot,results,token}){
       results.push({name:'Actual '+language+' browser editing, remote execution, output and input controls',width,output:expected});
     }
   }
+  await evaluate(`window.MUSEUM_LAB.open('pascal')`);
+  await edit('program Museum; var n: integer; begin writeln(\'MUST_NOT_RUN\'); n:=\'wrong\'; end.');await clickRun();
+  await wait(`document.querySelector('#lab-result').textContent.includes('编译失败，未执行程序。')`,30000);
+  assert.match(await evaluate(`document.querySelector('#lab-compiler-result').textContent`),/Error/i);
+  assert.equal(await evaluate(`document.querySelector('#lab-result').textContent.includes('MUST_NOT_RUN')`),false);
+  assert.doesNotMatch(await evaluate(`document.querySelector('#lab-timings').textContent`),/ · 运行/);
+  results.push({name:'Pascal compiler errors are separate and prevent program execution',passed:true});
+  await edit('program Museum; begin writeln(42); end.');await clickRun();await output('42\n');
+  results.push({name:'Pascal edited source recovers from compilation error',passed:true});
+  await evaluate(`window.MUSEUM_LAB.open('r');document.querySelector('#lab-stdin').value='hello\\n博物馆\\n'`);
+  await edit('lines <- readLines(file("stdin"), warn=FALSE); cat(paste0("[", lines, "]"), sep="\\n")');await clickRun();await output('[hello]\n[博物馆]\n');
+  assert.match(await evaluate(`document.querySelector('#lab-state-version').textContent`),/R 4\.2\.2/);
+  results.push({name:'Rscript multiline UTF-8 input and actual version are visible',passed:true});
+  await edit('stop("intentional error")');await clickRun();
+  await wait(`document.querySelector('#lab-result').dataset.state==='error'`);
+  assert.match(await evaluate(`document.querySelector('#lab-result').textContent`),/intentional error/);
+  assert.equal(await evaluate(`document.querySelector('#lab-compiler').hidden`),true);
+  results.push({name:'R runtime errors remain real errors without compiler diagnostics',passed:true});
+  await edit('cat(42, "\\n", sep="")');await clickRun();await output('42\n');
+  results.push({name:'R edited source recovers from runtime error',passed:true});
   await evaluate(`window.MUSEUM_LAB.open('typescript')`);
   await edit('console.log("MUST_NOT_RUN");const value:number="wrong";');await clickRun();
   await wait(`document.querySelector('#lab-result').textContent.includes('编译失败，未执行程序。')`,30000);
@@ -82,7 +104,7 @@ module.exports=async function({evaluate,wait,page,screenshot,results,token}){
     assert.equal(await evaluate(`document.querySelector('#docks .dock.selected').hasAttribute('data-runnable')`),true);
     assert.match(await evaluate(`document.querySelector('#detail-open-lab').textContent`),language==='xslt'?/转换/:/运行/);
   }
-  results.push({name:'Ten map labels/dots and archive entries expose available real runtimes',passed:true});
+  results.push({name:'Twelve map labels/dots and archive entries expose available real runtimes',passed:true});
   await evaluate(`window.MUSEUM_LAB.open('sql');document.querySelector('#lab-runtime-credit').click()`);
   await wait(`!document.querySelector('#about').hidden`);
   assert.match(await evaluate(`document.querySelector('#about').textContent`),/SQLite/);

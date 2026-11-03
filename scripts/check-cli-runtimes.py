@@ -59,6 +59,26 @@ with tempfile.TemporaryDirectory(prefix='code-museum-cli-check-') as directory:
         print('PASS ' + name, flush=True)
         return result
     try:
+        run('Pascal ObjFPC compile and actual execution', 'pascal', 'program Museum; var total,i: integer; begin total:=0; for i:=1 to 10 do total:=total+i; writeln(total); end.', '55\n')
+        run('Pascal edited function changes actual output', 'pascal', 'program Museum; function Twice(value: integer): integer; begin Twice:=value*2; end; begin writeln(Twice(6)); end.', '12\n')
+        run('Pascal multi-line UTF-8 stdin', 'pascal', 'program Museum; var line: ansistring; begin while not eof(input) do begin readln(line); writeln(\'[\',line,\']\'); end; end.', '[hello]\n[博物馆]\n', stdin='hello\n博物馆\n')
+        error = run('Pascal compile error prevents execution', 'pascal', 'program Museum; var n: integer; begin writeln(\'MUST_NOT_RUN\'); n:=\'wrong\'; end.', '', 'compile_error')
+        assert 'runMs' not in error and error.get('compilerStdout', '') + error.get('compilerStderr', '')
+        run('Pascal timeout terminates actual program', 'pascal', 'program Museum; begin while true do begin end; end.', state='timed_out')
+        run('Pascal bounded output', 'pascal', 'program Museum; begin while true do writeln(\'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\'); end.', state='output_limit')
+        run('Pascal cancellation removes active container', 'pascal', 'program Museum; begin while true do begin end; end.', state='cancelled', cancel_after=1)
+        run('R base vector sum', 'r', 'cat(sum(1:10), "\\n", sep="")', '55\n')
+        run('R edited statistical computation changes output', 'r', 'cat(mean(c(2,5,8)), "\\n", sep="")', '5\n')
+        run('R multi-line UTF-8 stdin', 'r', 'lines <- readLines(file("stdin"), warn=FALSE); cat(paste0("[", lines, "]"), sep="\\n")', '[hello]\n[博物馆]\n', stdin='hello\n博物馆\n')
+        run('R syntax error is rejected', 'r', 'x <- function( {', '', 'failed')
+        run('R real runtime error', 'r', 'stop("intentional error")', '', 'failed')
+        run('R unavailable CRAN package fails without restore', 'r', 'library(code_museum_missing_package)', '', 'failed')
+        run('R task workspace can hold disposable files', 'r', 'writeLines("stop(1)", "/work/.Rprofile"); cat(sum(1:3), "\\n", sep="")', '6\n')
+        run('R next task does not inherit files', 'r', 'cat(file.exists("/work/.Rprofile"), "\\n", sep="")', 'FALSE\n')
+        run('R timeout terminates actual program', 'r', 'repeat {}', state='timed_out')
+        run('R bounded output', 'r', 'repeat {cat("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\\n")}', state='output_limit')
+        run('R cancellation removes active container', 'r', 'repeat {}', state='cancelled', cancel_after=1)
+        run('R recovery after cancellation', 'r', 'cat(42, "\\n", sep="")', '42\n')
         run('TypeScript strict compile and actual execution', 'typescript', 'function sum(n:number):number {let total=0;for(let i=1;i<=n;i++)total+=i;return total;}console.log(sum(10));', '55\n')
         run('TypeScript edited source changes actual output', 'typescript', 'const values:number[]=[3,4,5];console.log(values.reduce((a,b)=>a+b,0));', '12\n')
         error = run('Type errors prevent JavaScript execution', 'typescript', 'console.log("MUST_NOT_RUN");const count:number="wrong";', '', 'compile_error')
@@ -114,7 +134,7 @@ with tempfile.TemporaryDirectory(prefix='code-museum-cli-check-') as directory:
     finally: runner.cleanup_stale()
     remaining = subprocess.check_output(['docker', 'ps', '-a', '--filter', 'label=' + runner.label, '--format', '{{.Names}}']).decode().strip()
     assert not remaining, remaining
-    report = dict(checkedAt=time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()), scope='Actual isolated Docker runc on the existing Linux preparation host; no production API changes, no downloads during tasks, not a container escape proof.', inputs={f: hashlib.sha256((ROOT / f).read_bytes()).hexdigest() for f in FILES}, runtimes=[runtimes[k] for k in ['typescript','sql','bash','awk','sed','php','perl','xslt','fortran','csharp']], checks=checks, leftoverContainers=0)
+    report = dict(checkedAt=time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()), scope='Actual isolated Docker runc on the existing Linux preparation host; no production API changes, no downloads during tasks, not a container escape proof.', inputs={f: hashlib.sha256((ROOT / f).read_bytes()).hexdigest() for f in FILES}, runtimes=[runtimes[k] for k in ['typescript','sql','bash','awk','sed','php','perl','xslt','fortran','csharp','pascal','r']], checks=checks, leftoverContainers=0)
     Path(args.output).write_text(json.dumps(report, ensure_ascii=False, indent=2)+'\n')
 
 

@@ -4,3 +4,5 @@ data/raw/pldb.json -text
 # Preserve exact checksums and upstream formatting of pinned runtime inputs.
 server/runtimes/cli/** -text
 server/runtimes/cli/licenses/*.txt -whitespace
+server/runtimes/pascal-r/** -text
+server/runtimes/pascal-r/licenses/* -whitespace

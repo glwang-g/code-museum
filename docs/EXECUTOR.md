@@ -1,6 +1,32 @@
 # Docker 私有执行首版
 
-当前源码支持 Python、Ruby 原生远端执行，C、C++、Rust、Go、Java、C#、Fortran 的编译后执行，以及 TypeScript、SQL（SQLite）、Bash、AWK、sed、PHP、Perl、XSLT（libxslt）。原七门与两批新增语言的生产记录分开：新增语言尚未升级生产服务。Linux 执行服务使用 Python 标准库，不需要 pip/npm 依赖。网站仍可完全离线构建，构建不会启动 Docker、拉镜像或连接服务器。
+当前源码支持 Python、Ruby、R 原生远端执行，C、C++、Rust、Go、Java、C#、Fortran、Pascal 的编译后执行，以及 TypeScript、SQL（SQLite）、Bash、AWK、sed、PHP、Perl、XSLT（libxslt），共 19 门。原七门与 P1 新增十二门的生产记录分开：新增语言尚未升级生产服务。Linux 执行服务使用 Python 标准库，不需要 pip/npm 依赖。网站仍可完全离线构建，构建不会启动 Docker、拉镜像或连接服务器。
+
+## 2026-11-03：Pascal、R（独立临时环境）
+
+两门使用独立的固定镜像。`server/runtimes/pascal-r/` 保存 14 个 Debian 12 官方发行包及依赖（约 40.4 MB）、原始版权文件、来源/版本/SHA-256 清单和 Dockerfile，复用已缓存且 digest 固定的官方 GCC / Debian 12 基础镜像。准备时以 `--network=none` 执行 `dpkg -i`，不读取软件源；网站构建只离线校验文件。采用该发行版本是为了固定与基础镜像兼容的工具链，不宣称最新版本。
+
+| 馆藏 ID | 真实实现 | 首版范围 |
+| --- | --- | --- |
+| `pascal` | Free Pascal 3.2.2，Debian `3.2.2+dfsg-20` | 单文件；`-n -Mobjfpc -Sh -O-`，不读取配置文件，显式使用预装基础 RTL；编译成功后才执行，诊断与运行输出分开。默认 ObjFPC 模式和 AnsiString，不保证 ISO Pascal、Turbo Pascal 或其他历史版本兼容。编译 10 秒、运行 3 秒、512 MiB。 |
+| `r` | Rscript / R 4.2.2 Patched，Debian `4.2.2.20221110-2` | 单文件；`--vanilla --default-packages=stats,utils`，不读取启动配置和历史工作区；可使用预装基础包，任务不安装 CRAN 包。文本输出；绘图和文件不导出。使用 `file("stdin")` 或 `scan("stdin", ...)` 读取进程标准输入，`stdin()` 不是交互终端。运行 3 秒、512 MiB。 |
+
+R 启动实测需要 `nofile=256`，64 会报告文件数上限过低；其余解释脚本容器仍为 64。R 的 `/work` 16 MiB、`/tmp` 8 MiB 均 noexec，Pascal 沿用编译容器的可执行临时工作区。两门均禁网、非 root、只读根、无宿主挂载、限制输出及进程数量，超时或取消销毁任务容器。R 镜像内的 BLAS/OpenMP 线程数固定为 1。资源限制不等于对抗恶意代码的完整安全边界。
+
+真实容器回归见 [p1-runtime-checks.json](../data/audit/p1-runtime-checks.json)：72 项，含两门的修改源码后真实执行、错误、多行中文输入、超时、输出上限、取消、任务隔离和恢复，以及前十门回归和 Perl 中文源码；结束残留容器为 0。旧 52 项记录仍保留为前两批快照。
+
+[真实浏览器专项](../data/audit/p1-runtime-browser-checks.json) 36 项通过：覆盖十二门的 1440/390 实际执行、明暗主题、Pascal 编译错误不执行及恢复、R 多行中文输入/实际版本/错误恢复、地图和档案入口。已查看 Pascal/R 的两档截图。`npm test` 83/83 与离线构建通过；以上均为临时 API 的核验，不是生产上线。
+
+显式准备与复测（不部署生产）：
+
+```sh
+npm run runtime:pascal-r-build -- --ssh-host xshow --write-manifest
+npm run runtime:cli-check -- --ssh-host xshow --output data/audit/p1-runtime-checks.json
+npm run build
+BROWSER_CHECK_OUTPUT=tmp/p1-browser npm run runtime:cli-browser
+```
+
+完整 P1 检查还要求原先的 CLI、.NET、GCC 等固定镜像已缓存。每个新主机都需运行显式构建并核对其实际镜像 ID；不能对项目 image ID 执行 `docker pull`，也不能只改清单冒充兼容。基础包出处见 [固定清单](../server/runtimes/pascal-r/manifest.json) 和 [许可说明](../server/runtimes/pascal-r/NOTICE.md)；语义边界依据 [ObjFPC 模式](https://docs.freepascal.org/daily/doc/prog/progse76.html) 与 [Rscript 标准输入约定](https://stat.ethz.ch/R-manual/R-devel/library/utils/html/Rscript.html)。
 
 ## 2026-11-02：PHP、Perl、XSLT、C#、Fortran（临时环境核验）
 
@@ -57,7 +83,7 @@ export EXECUTOR_TOKEN="$(openssl rand -hex 32)"
 npm run executor:preview
 ```
 
-打开 **http://127.0.0.1:4174/#lab**，切换到 Python、Ruby 或五种编译语言。在启动预览的终端用 `printf '%s\n' "$EXECUTOR_TOKEN"` 查看令牌，复制到网页「私有执行令牌」，点击「运行代码」。令牌只留在当前页面内存中，不写浏览器存储、URL、项目文件或执行日志。
+打开 **http://127.0.0.1:4174/#lab**，选择已经准备好的远端语言。在启动预览的终端用 `printf '%s\n' "$EXECUTOR_TOKEN"` 查看令牌，复制到网页「私有执行令牌」，点击「运行代码」。令牌只留在当前页面内存中，不写浏览器存储、URL、项目文件或执行日志。
 
 预览程序将本地后端源码和镜像清单通过 SSH stdin 传入远端独立临时目录，启动仅 loopback 可访问的服务，并通过同一 SSH 连接转发。端口冲突会报错，不终止已有服务。Ctrl+C 关闭自己的预览和临时服务、删除临时源码目录；SSH stdin 断开也触发清理，单次试用最长30分钟。网络故障时清理可能延迟到连接断开或到期。Docker 镜像作为显式准备的缓存保留。
 
@@ -65,7 +91,7 @@ npm run executor:preview
 
 ## 交互与边界
 
-- Python、Ruby、C、C++、Rust、Go、Java 默认远端；只在点击运行时上传代码与可选标准输入，编辑不提交。切换语言、离开实验台、编辑正在执行的代码或点取消都会请求停止任务。
+- 清单中的 19 门语言默认远端；只在点击运行时上传代码与可选标准输入，编辑不提交。切换语言、离开实验台、编辑正在执行的代码或点取消都会请求停止任务。
 - Python 可切换浏览器本地，明确点击「下载并启用」后使用现有 Pyodide。Lua/ Scheme 也需明确启用；JavaScript 使用浏览器原生引擎。
 - Ruby 本地选项禁用，本轮没有接入 ruby.wasm。无远端服务时显示未连接，不伪造结果、不自动回退或下载运行时。
 - 本地模式启用后编辑会自动执行；远端一直需要手动运行。标准输入控件只供远端使用。
@@ -85,6 +111,7 @@ npm run executor:preview
 python3 - <<'PY'
 import json, subprocess
 for r in json.load(open('server/runtime-images.json'))['runtimes']:
+    if r['image'].startswith('sha256:'): continue  # 项目镜像需按上文显式离线构建
     subprocess.run(['docker','pull','--platform=linux/'+r['architecture'],r['image']],check=True)
 PY
 export EXECUTOR_TOKEN="$(openssl rand -hex 32)"

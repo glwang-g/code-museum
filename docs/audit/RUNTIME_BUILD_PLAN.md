@@ -1,6 +1,6 @@
 # 地图语言运行环境盘点与分批构建清单
 
-盘点日期：2026-11-02。范围：当前源码对应的 233 个时间长河语言节点，含 50 个常显标签与 183 个微光点；关系谱系是其中的子集。本文同时记录研究排期与实施进度。两批共十门已接入源码并完成独立临时环境核验：首批 TypeScript、SQL（SQLite）、Bash、AWK、sed；第二批 PHP、Perl、XSLT、C#、Fortran。均尚未部署生产。
+盘点日期：2026-11-02。范围：当前源码对应的 233 个时间长河语言节点，含 50 个常显标签与 183 个微光点；关系谱系是其中的子集。本文同时记录研究排期与实施进度。P1 十二门已接入源码：首批 TypeScript、SQL（SQLite）、Bash、AWK、sed；第二批 PHP、Perl、XSLT、C#、Fortran；2026-11-03 补齐 Pascal、R。均未升级生产执行服务，核验范围见下文。
 
 ## 结论与判定口径
 
@@ -8,8 +8,8 @@
 
 | 分组 | 总数 | 常显标签 | 微光点 | 含义 |
 | --- | ---: | ---: | ---: | --- |
-| A | 20 | 17 | 3 | 已接入（两批新增十门为临时环境核验） |
-| B | 39 | 21 | 18 | 实现资料已核，待接入 |
+| A | 22 | 18 | 4 | 已接入（P1 十二门为临时环境核验） |
+| B | 37 | 20 | 17 | 实现资料已核，待接入 |
 | C | 126 | 2 | 124 | 已有构建配方，待复现 |
 | D | 24 | 0 | 24 | 实现候选明确，构建待核 |
 | E | 20 | 10 | 10 | 先明确方言、宿主或历史版本 |
@@ -19,16 +19,16 @@ A+B+C 共 185 个已有馆内接入、经人工核实的实现资料或具体安
 
 233 个节点的入图线索不能直接当作 233 个已验证执行环境。地图内外的历史关系证据与运行环境证据分别处理。
 
-50 个常显标签中，17 个已接入、23 个有已核实现或构建配方、10 个需先选方言/宿主；没有标签落入本轮“资料不足”组。183 个点中，3 个已接入、142 个有已核实现或构建配方、24 个有实现候选、10 个需先明确条件、4 个资料不足。
+50 个常显标签中，18 个已接入、22 个有已核实现或构建配方、10 个需先选方言/宿主；没有标签落入本轮“资料不足”组。183 个点中，4 个已接入、141 个有已核实现或构建配方、24 个有实现候选、10 个需先明确条件、4 个资料不足。
 
 ## 已接入基线
 
-2026-11-03 review 修正（本地）：XSLT 的 XML 标准输入现按语言在当前页面内存中保留，切换语言往返及主动清空均不再被默认 XML 覆盖；Perl 默认示例已加入 `use utf8;`，本机中文源码输出回归通过。此修正不增加语言数量、不代表生产升级；原 52 项容器和 27 项远端浏览器报告仍是上轮核验快照，新增中文固定镜像用例待重跑。详见 [项目上下文](../PROJECT_CONTEXT.md)。
+2026-11-03 review 修正（本地）：XSLT 的 XML 标准输入现按语言在当前页面内存中保留，切换语言往返及主动清空均不再被默认 XML 覆盖；Perl 默认示例已加入 `use utf8;`，本机中文源码输出回归通过。此修正不增加语言数量、不代表生产升级；原 52 项容器和 27 项远端浏览器报告仍是上轮核验快照；本次补齐 Pascal/R 时，Perl 中文源码用例已纳入最新 72 项固定镜像回归通过。详见 [项目上下文](../PROJECT_CONTEXT.md)。
 
 - 浏览器：JavaScript、Python、Lua、Scheme，共 4 个。
-- 私有远端源码现支持 Python、Ruby、C、C++、Rust、Go、Java、TypeScript、SQL（SQLite）、Bash、AWK、sed、PHP、Perl、XSLT、C#、Fortran，共 17 个；Python 两种模式重叠，合计 20 个语言节点。两批新增语言的生产服务仍未升级。
+- 私有远端源码现支持 Python、Ruby、C、C++、Rust、Go、Java、TypeScript、SQL（SQLite）、Bash、AWK、sed、PHP、Perl、XSLT、C#、Fortran、Pascal、R，共 19 个；Python 两种模式重叠，合计 22 个语言节点。P1 新增语言的生产服务仍未升级。
 - 依据当前源码 `scripts/execution-capabilities.cjs`、`server/runtime-images.json` 与 [执行说明](../EXECUTOR.md)。本轮未探测生产服务、令牌或远端实时健康；“已接入”指代码与既有核验基线。
-- 原 10 个环境保留；两批新增十门复用私有执行协议。真实容器记录见 [cli-runtime-checks.json](../../data/audit/cli-runtime-checks.json)，新增工具链和复测命令见 [执行说明](../EXECUTOR.md)。
+- 原 10 个环境保留；P1 新增十二门复用私有执行协议。最新 72 项真实容器回归见 [p1-runtime-checks.json](../../data/audit/p1-runtime-checks.json)，前两批快照保留在 [cli-runtime-checks.json](../../data/audit/cli-runtime-checks.json)。新增工具链和复测命令见 [执行说明](../EXECUTOR.md)。最新 [P1 浏览器记录](../../data/audit/p1-runtime-browser-checks.json) 36 项覆盖十二门的真实执行、1440/390 和编译/运行诊断；当前默认测试 83/83、离线构建通过。
 
 ## 推荐构建顺序
 
@@ -36,7 +36,7 @@ A+B+C 共 185 个已有馆内接入、经人工核实的实现资料或具体安
 
 ### P1：先完成最有把握的一批
 
-进度：顺序 1–10 已完成源码接入和独立临时网页核验（2026-11-02）；没有发布。顺序 11–12 继续待办，未自动开始。
+进度：顺序 1–12 已完成源码接入及独立临时网页核验，2026-11-03 补齐 Pascal、R，72 项真实容器回归、36 项真实浏览器专项和 83 项默认测试通过；生产执行服务尚未升级，网页核验记录见已接入基线。
 
 | 顺序 | 语言 | 推荐首版路径 | 原因 / 首版边界 |
 | ---: | --- | --- | --- |
@@ -53,7 +53,7 @@ A+B+C 共 185 个已有馆内接入、经人工核实的实现资料或具体安
 | 11 | Pascal | Free Pascal → 私有远端 | 清晰编译链、适合历史比较；固定模式与标准库。 |
 | 12 | R | Rscript → 私有远端 | 补统计语言常显标签；先只用基础包和文本输出，绘图之后再做。 |
 
-首批按用户指令完成 **TypeScript → SQLite → Bash → AWK → sed**，第二批完成 **PHP → Perl → XSLT → C# → Fortran**。TypeScript 首版选用受控服务端 tsc，避免向浏览器增加整套编译器下载；严格类型检查失败不执行。SQLite 首版使用安全模式和独立内存库。PHP 使用最小 CLI 配置并限制文件与网络访问；Perl 不安装 CPAN 包；XSLT 固定 1.0 并禁用网络和写出；C# 直接调用 Roslyn 与预装参考程序集，不还原 NuGet；Fortran 固定 Fortran 2008 标准选项。生产升级单独审核，不把临时核验视为上线。
+首批按用户指令完成 **TypeScript → SQLite → Bash → AWK → sed**，第二批完成 **PHP → Perl → XSLT → C# → Fortran**，第三批补齐 **Pascal → R**。TypeScript 首版选用受控服务端 tsc，避免向浏览器增加整套编译器下载；严格类型检查失败不执行。SQLite 首版使用安全模式和独立内存库。PHP 使用最小 CLI 配置并限制文件与网络访问；Perl 不安装 CPAN 包；XSLT 固定 1.0 并禁用网络和写出；C# 直接调用 Roslyn 与预装参考程序集，不还原 NuGet；Fortran 固定 Fortran 2008 标准选项；Pascal 固定 Free Pascal 3.2.2 / ObjFPC 模式与基础 RTL，R 固定 Rscript 4.2.2 / --vanilla / 基础包与文本输出。生产升级单独审核，不把临时核验视为上线。
 
 ### P2：历史与范式展品，按编号推进
 
@@ -150,7 +150,7 @@ LSL 的 OpenSimulator 候选见 [官方脚本文档](https://opensimulator.dev/w
 
 表中“标签”指常显标签，“点”指默认微光点，不影响能否执行。B 组依据项目既有人工审查，不代表本轮重跑实现；C 组依据固定 Riju 配方，不代表当前上游下载地址、软件包或旧依赖仍可用；D 组只定位候选。配方命令为识别执行链的摘要，**不是可以直接复制用于生产的安装脚本**。所有未接入项仍需上节验收。
 
-### A · 已接入（20）
+### A · 已接入（22）
 
 | 名称 / ID | 地图 | 优先级 | 环境或构建链 | 依据 / 待办 |
 | --- | --- | --- | --- | --- |
@@ -174,8 +174,10 @@ LSL 的 OpenSimulator 候选见 [官方脚本文档](https://opensimulator.dev/w
 | XSLT (`xslt`) | 标签 | P1 已核验 | libxslt 1.1.43 / libxml2 2.13.9 | [真实容器记录](../../data/audit/cli-runtime-checks.json)；XSLT 1.0，禁网、禁写出；生产未部署 |
 | C# (`csharp`) | 标签 | P1 已核验 | .NET SDK 10.0.403 / Roslyn | [真实容器记录](../../data/audit/cli-runtime-checks.json)；预装参考程序集，不还原 NuGet；生产未部署 |
 | Fortran (`fortran`) | 标签 | P1 已核验 | GNU Fortran (GCC) 14.3.0 | [真实容器记录](../../data/audit/cli-runtime-checks.json)；Fortran 2008 标准选项；生产未部署 |
+| Pascal (`pascal`) | 点 | P1 已核验 | Free Pascal 3.2.2 / ObjFPC / 基础 RTL | [真实容器记录](../../data/audit/p1-runtime-checks.json)；[接入边界](../EXECUTOR.md)；生产未部署 |
+| R (`r`) | 标签 | P1 已核验 | Rscript / R 4.2.2 Patched / 基础包与文本输出 | [真实容器记录](../../data/audit/p1-runtime-checks.json)；[接入边界](../EXECUTOR.md)；生产未部署 |
 
-### B · 实现资料已核，待接入（39）
+### B · 实现资料已核，待接入（37）
 
 | 名称 / ID | 地图 | 优先级 | 环境或构建链 | 依据 / 待办 |
 | --- | --- | --- | --- | --- |
@@ -200,11 +202,9 @@ LSL 的 OpenSimulator 候选见 [官方脚本文档](https://opensimulator.dev/w
 | Nim (`nim`) | 点 | P3-5 | Nim compiler | [已核资料](https://nim-lang.org/docs/manual.html)；[构建配方](https://github.com/radian-software/riju/blob/ace9df7cd8f186b869af14d721e055864ed8f3e4/langs/nim.yaml) |
 | Oberon (`oberon`) | 点 | P3-20 | Oberon / Ceres 历史编译器 | [已核资料](https://people.inf.ethz.ch/wirth/Articles/Modula-Oberon-June.pdf)；[构建配方](https://github.com/radian-software/riju/blob/ace9df7cd8f186b869af14d721e055864ed8f3e4/langs/oberon.yaml)；历史证据与现代 OBNC 方言分开；Riju 提供 obnc 构建链。 |
 | OCaml (`ocaml`) | 标签 | P2-13 | OCaml | [已核资料](https://ocaml.org/manual/5.3/lex.html)；[构建配方](https://github.com/radian-software/riju/blob/ace9df7cd8f186b869af14d721e055864ed8f3e4/langs/ocaml.yaml) |
-| Pascal (`pascal`) | 点 | P1-11 | Free Pascal | [已核资料](https://www.freepascal.org/docs-html/ref/ref.html)；[构建配方](https://github.com/radian-software/riju/blob/ace9df7cd8f186b869af14d721e055864ed8f3e4/langs/pascal.yaml) |
 | PostScript (`postscript`) | 点 | P3-18 | Adobe PostScript 历史解释器 | [已核资料](https://www.adobe.com/jp/print/postscript/pdfs/PLRM.pdf)；[构建配方](https://github.com/radian-software/riju/blob/ace9df7cd8f186b869af14d721e055864ed8f3e4/langs/postscript.yaml) |
 | PowerShell (`powershell`) | 标签 | P3-11 | PowerShell | [已核资料](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_language_keywords)；[构建配方](https://github.com/radian-software/riju/blob/ace9df7cd8f186b869af14d721e055864ed8f3e4/langs/powershell.yaml) |
 | Prolog (`prolog`) | 标签 | P2-3 | SWI-Prolog | [已核资料](https://www.swi-prolog.org/man/syntax.html)；[构建配方](https://github.com/radian-software/riju/blob/ace9df7cd8f186b869af14d721e055864ed8f3e4/langs/prolog.yaml) |
-| R (`r`) | 标签 | P1-12 | R | [已核资料](https://cran.r-project.org/doc/manuals/r-release/R-lang.html)；[构建配方](https://github.com/radian-software/riju/blob/ace9df7cd8f186b869af14d721e055864ed8f3e4/langs/r.yaml) |
 | Racket (`racket`) | 点 | P2-5 | Racket | [已核资料](https://docs.racket-lang.org/guide/syntax-overview.html)；[构建配方](https://github.com/radian-software/riju/blob/ace9df7cd8f186b869af14d721e055864ed8f3e4/langs/racket.yaml) |
 | Scala (`scala`) | 标签 | P3-1 | Scala compiler / JVM | [已核资料](https://docs.scala-lang.org/scala3/reference/syntax.html)；[构建配方](https://github.com/radian-software/riju/blob/ace9df7cd8f186b869af14d721e055864ed8f3e4/langs/scala.yaml) |
 | Smalltalk (`smalltalk`) | 标签 | P2-6 | GNU Smalltalk | [已核资料](https://www.gnu.org/software/smalltalk/manual/gst.html)；[构建配方](https://github.com/radian-software/riju/blob/ace9df7cd8f186b869af14d721e055864ed8f3e4/langs/smalltalk.yaml) |

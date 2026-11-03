@@ -196,6 +196,30 @@
       "executable": "/usr/bin/xsltproc",
       "source": "http://xmlsoft.org/XSLT/",
       "buildManifestSha256": "182d22634434a05bd32a12325dedeebc4f60b3d3a09032f63812ee09f031a605"
+    },
+    {
+      "id": "pascal",
+      "image": "sha256:06aab87eaa8f33b0270f9ce69b99bc436390f9ff87ba94e515d6d8368bb3ca96",
+      "imageId": "sha256:06aab87eaa8f33b0270f9ce69b99bc436390f9ff87ba94e515d6d8368bb3ca96",
+      "architecture": "amd64",
+      "os": "linux",
+      "version": "Free Pascal 3.2.2",
+      "memoryMiB": 512,
+      "executable": "/usr/bin/fpc",
+      "source": "https://www.freepascal.org/",
+      "buildManifestSha256": "b9ecd40a13848934f8e86e2975cac15e0b47082e48a14abe8820233584e22f5d"
+    },
+    {
+      "id": "r",
+      "image": "sha256:06aab87eaa8f33b0270f9ce69b99bc436390f9ff87ba94e515d6d8368bb3ca96",
+      "imageId": "sha256:06aab87eaa8f33b0270f9ce69b99bc436390f9ff87ba94e515d6d8368bb3ca96",
+      "architecture": "amd64",
+      "os": "linux",
+      "version": "Rscript (R) version 4.2.2 Patched (2022-11-10 r83330)",
+      "memoryMiB": 512,
+      "executable": "/usr/bin/Rscript",
+      "source": "https://www.r-project.org/",
+      "buildManifestSha256": "b9ecd40a13848934f8e86e2975cac15e0b47082e48a14abe8820233584e22f5d"
     }
   ]
 }

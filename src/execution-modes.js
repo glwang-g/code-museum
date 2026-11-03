@@ -1,14 +1,14 @@
 (()=>{
   const config=window.MUSEUM_EXECUTION_CONFIG;if(!config?.enabled)return;
   const $=id=>document.getElementById(id),local=new Map([['python','Python · Pyodide，约13.53 MB未压缩'],['lua','Lua · Wasmoon，约413 KiB未压缩'],['scheme','Scheme · BiwaScheme，约244 KiB，非Wasm']]);
-  const remoteIds=new Set(['python','ruby','c','cpp','rust','go','java','typescript','sql','bash','awk','sed','php','perl','xslt','csharp','fortran']),modes=new Map(),consent=new Set();
+  const remoteIds=new Set(['python','ruby','c','cpp','rust','go','java','typescript','sql','bash','awk','sed','php','perl','xslt','csharp','fortran','pascal','r']),modes=new Map(),consent=new Set();
   const status=window.MUSEUM_RUNTIME_STATUS;
   const terminal=new Set(['completed','failed','compile_error','compile_timed_out','timed_out','cancelled','output_limit','memory_limit','infrastructure_error']);
   const session=crypto.randomUUID().replaceAll('-','');
   let current=null,capabilities=null,callbacks={},generation=0,active=null,connectionGeneration=0;
   const endpoint=config.endpoint;
   if(endpoint!=='/api')throw new Error('Executor must use the same-origin /api endpoint');
-  const shortVersion=value=>{const text=String(value).split(' / ')[0].replace(/\s*\(.*$/,'').trim();return text||String(value)};
+  const shortVersion=value=>{const r=String(value).match(/^Rscript \(R\) version ([\d.]+)/);if(r)return 'R '+r[1];const text=String(value).split(' / ')[0].replace(/\s*\(.*$/,'').trim();return text||String(value)};
   const mode=id=>modes.get(id)||(remoteIds.has(id)?'remote':'local');
   const handles=id=>local.has(id)||remoteIds.has(id);
   const allowed=id=>mode(id)==='local'&&consent.has(id)&&local.has(id);
@@ -31,7 +31,7 @@
     $('lab-execution-mode').querySelector('[value="local"]').disabled=!local.has(current);
     $('lab-remote-access').hidden=!isRemote;
     $('lab-stdin').disabled=current==='sql';
-    $('lab-stdin').placeholder=current==='sql'?'SQLite 直接读取编辑区 SQL，不使用独立标准输入':current==='xslt'?'XSLT 样式表读取编辑区；在此填写 XML 输入文档':'可选；AWK/sed 可读取多行文本';
+    $('lab-stdin').placeholder=current==='sql'?'SQLite 直接读取编辑区 SQL，不使用独立标准输入':current==='xslt'?'XSLT 样式表读取编辑区；在此填写 XML 输入文档':current==='r'?'Rscript 用 file("stdin") 或 scan("stdin", ...) 读取':'可选；AWK/sed 可读取多行文本';
     $('lab-enable-local').hidden=isRemote||allowed(current)||!local.has(current);
     $('lab-enable-local').textContent=local.get(current)+' · 下载并启用';
     $('lab-cancel-remote').hidden=!active||!isRemote;

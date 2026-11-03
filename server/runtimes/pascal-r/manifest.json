@@ -1,0 +1,260 @@
+{
+  "schemaVersion": 1,
+  "preparedAt": "2026-11-03",
+  "sourceDateEpoch": 1793664000,
+  "platform": "linux/amd64",
+  "baseImage": "gcc@sha256:5e927c284bf55a7dc796262e311a0703344f62f41f5621eb56843111b1d37e15",
+  "scope": "Explicit offline Pascal/R image preparation from fixed Debian 12 packages; requires cached base image; not a runtime download or production deployment.",
+  "packageIndex": "https://deb.debian.org/debian/dists/bookworm/main/binary-amd64/Packages.xz",
+  "packageIndexSha256": "9e0b5aabb2465b3d2e7a7fe27f9913846277833f7a2826e7767acccff5b588c5",
+  "files": [
+    {
+      "file": "assets/fp-compiler-3.2.2_3.2.2+dfsg-20_amd64.deb",
+      "package": "fp-compiler-3.2.2",
+      "version": "3.2.2+dfsg-20",
+      "source": "https://deb.debian.org/debian/pool/main/f/fpc/fp-compiler-3.2.2_3.2.2+dfsg-20_amd64.deb",
+      "sourcePackage": "fpc",
+      "sourceVersion": "3.2.2+dfsg-20",
+      "sourceRecipe": "https://sources.debian.org/src/fpc/3.2.2+dfsg-20/",
+      "license": "See bundled licenses/fp-compiler-3.2.2.copyright",
+      "sha256": "f433f825b2428cfd577e9eb269423016a767ba4de51cf6d284cfc46a1618ff69",
+      "bytes": 2044308
+    },
+    {
+      "file": "assets/fp-units-rtl-3.2.2_3.2.2+dfsg-20_amd64.deb",
+      "package": "fp-units-rtl-3.2.2",
+      "version": "3.2.2+dfsg-20",
+      "source": "https://deb.debian.org/debian/pool/main/f/fpc/fp-units-rtl-3.2.2_3.2.2+dfsg-20_amd64.deb",
+      "sourcePackage": "fpc",
+      "sourceVersion": "3.2.2+dfsg-20",
+      "sourceRecipe": "https://sources.debian.org/src/fpc/3.2.2+dfsg-20/",
+      "license": "See bundled licenses/fp-units-rtl-3.2.2.copyright",
+      "sha256": "15af1f59aaf5f1fc4361627a64ed10f0d01c269a904375ac78e1693bba60a444",
+      "bytes": 6874008
+    },
+    {
+      "file": "assets/r-base-core_4.2.2.20221110-2_amd64.deb",
+      "package": "r-base-core",
+      "version": "4.2.2.20221110-2",
+      "source": "https://deb.debian.org/debian/pool/main/r/r-base/r-base-core_4.2.2.20221110-2_amd64.deb",
+      "sourcePackage": "r-base",
+      "sourceVersion": "4.2.2.20221110-2",
+      "sourceRecipe": "https://sources.debian.org/src/r-base/4.2.2.20221110-2/",
+      "license": "See bundled licenses/r-base-core.copyright",
+      "sha256": "cfc8aafc639333d16d9019c7d498ced00fc3565b153682a9d9baa48b9eb96a38",
+      "bytes": 25962164
+    },
+    {
+      "file": "assets/zip_3.0-13_amd64.deb",
+      "package": "zip",
+      "version": "3.0-13",
+      "source": "https://deb.debian.org/debian/pool/main/z/zip/zip_3.0-13_amd64.deb",
+      "sourcePackage": "zip",
+      "sourceVersion": "3.0-13",
+      "sourceRecipe": "https://sources.debian.org/src/zip/3.0-13/",
+      "license": "See bundled licenses/zip.copyright",
+      "sha256": "8877a360e455c7b9b6d448503eeaacc6b9a1325b548f3fb7eef69a87ab558b96",
+      "bytes": 229532
+    },
+    {
+      "file": "assets/libpaper-utils_1.1.29_amd64.deb",
+      "package": "libpaper-utils",
+      "version": "1.1.29",
+      "source": "https://deb.debian.org/debian/pool/main/libp/libpaper/libpaper-utils_1.1.29_amd64.deb",
+      "sourcePackage": "libpaper",
+      "sourceVersion": "1.1.29",
+      "sourceRecipe": "https://sources.debian.org/src/libpaper/1.1.29/",
+      "license": "See bundled licenses/libpaper-utils.copyright",
+      "sha256": "0a85d6ede34c0ea3d5d86a170e641421aae5144c82a87dd967ea597a9749c96a",
+      "bytes": 8868
+    },
+    {
+      "file": "assets/libpaper1_1.1.29_amd64.deb",
+      "package": "libpaper1",
+      "version": "1.1.29",
+      "source": "https://deb.debian.org/debian/pool/main/libp/libpaper/libpaper1_1.1.29_amd64.deb",
+      "sourcePackage": "libpaper",
+      "sourceVersion": "1.1.29",
+      "sourceRecipe": "https://sources.debian.org/src/libpaper/1.1.29/",
+      "license": "See bundled licenses/libpaper1.copyright",
+      "sha256": "4735ccb9e891f6ac7d91254e929213786ed0835536a930a8ff36a50c6a291a1d",
+      "bytes": 12536
+    },
+    {
+      "file": "assets/xdg-utils_1.1.3-4.1_all.deb",
+      "package": "xdg-utils",
+      "version": "1.1.3-4.1",
+      "source": "https://deb.debian.org/debian/pool/main/x/xdg-utils/xdg-utils_1.1.3-4.1_all.deb",
+      "sourcePackage": "xdg-utils",
+      "sourceVersion": "1.1.3-4.1",
+      "sourceRecipe": "https://sources.debian.org/src/xdg-utils/1.1.3-4.1/",
+      "license": "See bundled licenses/xdg-utils.copyright",
+      "sha256": "0e31caa8c34643f7eedb4d373ee61943c09061275b5fa727524fc568d0a9e332",
+      "bytes": 75496
+    },
+    {
+      "file": "assets/libblas3_3.11.0-2_amd64.deb",
+      "package": "libblas3",
+      "version": "3.11.0-2",
+      "source": "https://deb.debian.org/debian/pool/main/l/lapack/libblas3_3.11.0-2_amd64.deb",
+      "sourcePackage": "lapack",
+      "sourceVersion": "3.11.0-2",
+      "sourceRecipe": "https://sources.debian.org/src/lapack/3.11.0-2/",
+      "license": "See bundled licenses/libblas3.copyright",
+      "sha256": "9aae8058b8d02b800bdafc5b340614df1442a2d2abbc2d351947c0fdd67aa08a",
+      "bytes": 148592
+    },
+    {
+      "file": "assets/liblapack3_3.11.0-2_amd64.deb",
+      "package": "liblapack3",
+      "version": "3.11.0-2",
+      "source": "https://deb.debian.org/debian/pool/main/l/lapack/liblapack3_3.11.0-2_amd64.deb",
+      "sourcePackage": "lapack",
+      "sourceVersion": "3.11.0-2",
+      "sourceRecipe": "https://sources.debian.org/src/lapack/3.11.0-2/",
+      "license": "See bundled licenses/liblapack3.copyright",
+      "sha256": "4cb4ba9c36ee0242d91c8bcd69286db59a6a0c86f8c522b72f5eb0053e127d7d",
+      "bytes": 2322744
+    },
+    {
+      "file": "assets/libgfortran5_12.2.0-14+deb12u1_amd64.deb",
+      "package": "libgfortran5",
+      "version": "12.2.0-14+deb12u1",
+      "source": "https://deb.debian.org/debian/pool/main/g/gcc-12/libgfortran5_12.2.0-14+deb12u1_amd64.deb",
+      "sourcePackage": "gcc-12",
+      "sourceVersion": "12.2.0-14+deb12u1",
+      "sourceRecipe": "https://sources.debian.org/src/gcc-12/12.2.0-14+deb12u1/",
+      "license": "See bundled licenses/libgfortran5.copyright",
+      "sha256": "63d38775d20c425c1f00914b52167ae0e3b4639facdb0aa734877279fb716fbb",
+      "bytes": 792696
+    },
+    {
+      "file": "assets/libtcl8.6_8.6.13+dfsg-2_amd64.deb",
+      "package": "libtcl8.6",
+      "version": "8.6.13+dfsg-2",
+      "source": "https://deb.debian.org/debian/pool/main/t/tcl8.6/libtcl8.6_8.6.13+dfsg-2_amd64.deb",
+      "sourcePackage": "tcl8.6",
+      "sourceVersion": "8.6.13+dfsg-2",
+      "sourceRecipe": "https://sources.debian.org/src/tcl8.6/8.6.13+dfsg-2/",
+      "license": "See bundled licenses/libtcl8.6.copyright",
+      "sha256": "976c4235b816635e1756016f3adbabb634e8b97a9f6b97cf901be099e4fd2487",
+      "bytes": 1034548
+    },
+    {
+      "file": "assets/libtk8.6_8.6.13-2_amd64.deb",
+      "package": "libtk8.6",
+      "version": "8.6.13-2",
+      "source": "https://deb.debian.org/debian/pool/main/t/tk8.6/libtk8.6_8.6.13-2_amd64.deb",
+      "sourcePackage": "tk8.6",
+      "sourceVersion": "8.6.13-2",
+      "sourceRecipe": "https://sources.debian.org/src/tk8.6/8.6.13-2/",
+      "license": "See bundled licenses/libtk8.6.copyright",
+      "sha256": "b1c4042e5357d37170f210a106f3910c3eac21ae3ad9304d685d1f42dfd18d2e",
+      "bytes": 780580
+    },
+    {
+      "file": "assets/libxft2_2.3.6-1_amd64.deb",
+      "package": "libxft2",
+      "version": "2.3.6-1",
+      "source": "https://deb.debian.org/debian/pool/main/x/xft/libxft2_2.3.6-1_amd64.deb",
+      "sourcePackage": "xft",
+      "sourceVersion": "2.3.6-1",
+      "sourceRecipe": "https://sources.debian.org/src/xft/2.3.6-1/",
+      "license": "See bundled licenses/libxft2.copyright",
+      "sha256": "cedaedf108a8c18e9d9ae8d773801db7c7f9a70b50ecd7723c607d549dacccee",
+      "bytes": 61784
+    },
+    {
+      "file": "assets/libxss1_1.2.3-1_amd64.deb",
+      "package": "libxss1",
+      "version": "1:1.2.3-1",
+      "source": "https://deb.debian.org/debian/pool/main/libx/libxss/libxss1_1.2.3-1_amd64.deb",
+      "sourcePackage": "libxss",
+      "sourceVersion": "1:1.2.3-1",
+      "sourceRecipe": "https://sources.debian.org/src/libxss/1%3A1.2.3-1/",
+      "license": "See bundled licenses/libxss1.copyright",
+      "sha256": "85cce16368f08a878fa892fbc54520fc654d00769cde6d300b8b802734a993c0",
+      "bytes": 17812
+    },
+    {
+      "file": "Dockerfile",
+      "sha256": "0e1f799e66cd2adf2404db5f11ba5e53f20afdc722246e94530f2a765f6a8bcf",
+      "bytes": 330
+    },
+    {
+      "file": "NOTICE.md",
+      "sha256": "f6e9a8144ca1ad94435712b8b6cc490b4d559caaa538b1865646ce2a2a988d4c",
+      "bytes": 2891
+    },
+    {
+      "file": "licenses/fp-compiler-3.2.2.copyright",
+      "sha256": "258d468e2d5fd0a36cbd6c06f5c601e8a414181d0063456994ba70e888edb878",
+      "bytes": 90559
+    },
+    {
+      "file": "licenses/fp-units-rtl-3.2.2.copyright",
+      "sha256": "258d468e2d5fd0a36cbd6c06f5c601e8a414181d0063456994ba70e888edb878",
+      "bytes": 90559
+    },
+    {
+      "file": "licenses/libblas3.copyright",
+      "sha256": "e7381ebec88ee34b83d4f33e7e32b24a438fef8915489a48c94557a17ac745f3",
+      "bytes": 4906
+    },
+    {
+      "file": "licenses/libgfortran5.copyright",
+      "sha256": "da8191658b3452ce9caf31638ba61dab31a38c619fa39df119812e050f592fd3",
+      "bytes": 68194
+    },
+    {
+      "file": "licenses/liblapack3.copyright",
+      "sha256": "e7381ebec88ee34b83d4f33e7e32b24a438fef8915489a48c94557a17ac745f3",
+      "bytes": 4906
+    },
+    {
+      "file": "licenses/libpaper-utils.copyright",
+      "sha256": "cad3983751aa8b828cc68d8d4080f1ad164cbf78ed896c73fe94abd50e697d8a",
+      "bytes": 501
+    },
+    {
+      "file": "licenses/libpaper1.copyright",
+      "sha256": "cad3983751aa8b828cc68d8d4080f1ad164cbf78ed896c73fe94abd50e697d8a",
+      "bytes": 501
+    },
+    {
+      "file": "licenses/libtcl8.6.copyright",
+      "sha256": "e925aa8863f0c9eda3625ce2cb16c0d5017fca248c5bd6af97006df5d9c6199c",
+      "bytes": 7062
+    },
+    {
+      "file": "licenses/libtk8.6.copyright",
+      "sha256": "55756939bc322e1ddb187794a0deb8bdf72349ecba34b429446782cd04ea4cef",
+      "bytes": 3657
+    },
+    {
+      "file": "licenses/libxft2.copyright",
+      "sha256": "5960983c962c864d7d73eae6bb9b3b06c1940a23fc6d22ce10ef0f0cde8fd48d",
+      "bytes": 1438
+    },
+    {
+      "file": "licenses/libxss1.copyright",
+      "sha256": "3ebbe713ac6980aefc18dcf407c94f51bbf02852463294bbb6dc1ee1f9fad9c3",
+      "bytes": 2679
+    },
+    {
+      "file": "licenses/r-base-core.copyright",
+      "sha256": "9fee36836da255b21a30a2f73be6e1185ff2d6547be4f32ec75e54cbfeab76a6",
+      "bytes": 20761
+    },
+    {
+      "file": "licenses/xdg-utils.copyright",
+      "sha256": "11731682e81d0d3de1aa60d9436554b2106252f090a2a6134c44999a1a1e019f",
+      "bytes": 1889
+    },
+    {
+      "file": "licenses/zip.copyright",
+      "sha256": "03733b4bcdbe83fc4a2d087d3eed34f70c4de08f833eb24a7075b76e80ee8c8d",
+      "bytes": 3811
+    }
+  ]
+}

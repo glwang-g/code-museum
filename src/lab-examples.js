@@ -1,5 +1,7 @@
 // Original short examples. Browser execution is available for JavaScript, Python, Lua and Scheme.
 window.MUSEUM_LAB_EXAMPLES = [
+  {id:'pascal',file:'museum.pas',note:'Free Pascal 3.2.2 私有远端编译执行；默认 ObjFPC 模式、AnsiString，仅预装 RTL，不冒充历史方言。',code:'program Museum;\nvar\n  total, i: integer;\nbegin\n  total := 0;\n  for i := 1 to 10 do\n    total := total + i;\n  writeln(total);\nend.\n'},
+  {id:'r',file:'museum.R',note:'Rscript 私有远端执行；预装基础包与文本输出，不安装 CRAN 包；标准输入用 file("stdin") 或 scan("stdin", ...) 读取。',code:'values <- 1:10\ncat(sum(values), "\\n", sep = "")\n'},
   {id:'javascript',file:'museum.js',code:'const languages = ["C", "Lisp", "JavaScript"];\nfor (const name of languages) {\n  console.log(`Hello, ${name}!`);\n}\n'},
   {id:'typescript',file:'museum.ts',note:'私有远端 TypeScript；严格类型检查通过后才由 Node.js 执行。',code:'function sumTo(n: number): number {\n  let total: number = 0;\n  for (let i = 1; i <= n; i++) total += i;\n  return total;\n}\nconsole.log(sumTo(10));\n'},
   {id:'sql',file:'museum.sql',note:'SQL 使用 SQLite 方言；每次运行创建独立内存数据库。',code:'-- SQLite SQL: create data, then query it.\nCREATE TABLE languages (name TEXT, year INTEGER);\nINSERT INTO languages VALUES (\'C\', 1972), (\'Python\', 1991), (\'TypeScript\', 2012);\nSELECT name, year FROM languages WHERE year >= 1990 ORDER BY year;\n'},

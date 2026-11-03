@@ -83,6 +83,60 @@
             }
           ],
           "evidence": "assets/scheme/manifest.json"
+        },
+        {
+          "id": "remote-freepascal",
+          "name": "Free Pascal",
+          "languages": [
+            "pascal"
+          ],
+          "runtimeIds": [
+            "pascal"
+          ],
+          "kind": "私有远端",
+          "project": "https://www.freepascal.org/",
+          "usage": "固定 Debian 12 发行包中的 Free Pascal 3.2.2；构建输入、来源与镜像 ID 固定，需私有令牌。",
+          "adaptation": "独立非 root、禁网、只读根容器；默认 ObjFPC 模式和 AnsiString，单文件编译成功后才执行，编译诊断与程序输出分开。",
+          "limits": "仅预装 RTL；不读取编译器配置文件，不在线安装库；不是 ISO Pascal 或历史 Turbo Pascal 的兼容承诺。",
+          "licenseNote": "编译器 GPL-2.0-or-later；RTL 使用 LGPL 及静态链接例外，详见随附版权。",
+          "notices": [
+            {
+              "label": "固定版本、来源与许可",
+              "href": "licenses/pascal-r/NOTICE.md"
+            },
+            {
+              "label": "上游版权全文",
+              "href": "licenses/pascal-r/licenses/fp-compiler-3.2.2.copyright"
+            }
+          ],
+          "evidence": "data/pascal-r-runtime-build.json"
+        },
+        {
+          "id": "remote-r",
+          "name": "R / Rscript",
+          "languages": [
+            "r"
+          ],
+          "runtimeIds": [
+            "r"
+          ],
+          "kind": "私有远端",
+          "project": "https://www.r-project.org/",
+          "usage": "固定 Debian 12 发行包中的 R 4.2.2；构建输入、来源与镜像 ID 固定，需私有令牌。",
+          "adaptation": "独立非 root、禁网、只读根容器；Rscript --vanilla，不读取用户启动文件或工作区；提供预装基础包和文本输出。",
+          "limits": "不在线安装 CRAN 包；绘图与文件不导出。标准输入通过 file(\"stdin\") 或 scan(\"stdin\", ...) 读取；不是交互式 R 控制台。",
+          "licenseNote": "GPL-2.0-or-later，R 各组件及依赖按随附 Debian 版权声明。",
+          "notices": [
+            {
+              "label": "固定版本、来源与许可",
+              "href": "licenses/pascal-r/NOTICE.md"
+            },
+            {
+              "label": "上游版权全文",
+              "href": "licenses/pascal-r/licenses/r-base-core.copyright"
+            }
+          ],
+          "evidence": "data/pascal-r-runtime-build.json"
         }
       ]
     },

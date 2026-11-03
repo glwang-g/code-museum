@@ -28,7 +28,7 @@ class ExecutorTests(unittest.TestCase):
 
     def test_cli_languages_use_fixed_commands_and_readonly_noexec_workdir(self):
         runner = DockerRunner(RUNTIMES, namespace='cli-unit-check')
-        for language in ['typescript', 'sql', 'bash', 'awk', 'sed', 'php', 'perl', 'xslt']:
+        for language in ['typescript', 'sql', 'bash', 'awk', 'sed', 'php', 'perl', 'xslt', 'r']:
             self.assertEqual(validate_submission({'language':language,'code':'x'},RUNTIMES)['language'],language)
             command = runner.command(runner.prefix+'a'*32,language)
             for flag in ['--pull=never','--network=none','--read-only','--user=65534:65534','--cap-drop=ALL','--entrypoint=/bin/sleep']:
@@ -41,6 +41,9 @@ class ExecutorTests(unittest.TestCase):
         self.assertIn('open_basedir=/work:/tmp',SCRIPTED['php'][2])
         self.assertIn('-std=f2008',COMPILED['fortran'][5])
         self.assertIn('@/work/refs.rsp',COMPILED['csharp'][5])
+        self.assertIn('-Mobjfpc',COMPILED['pascal'][5]);self.assertIn('-n',COMPILED['pascal'][5])
+        self.assertIn('--vanilla',SCRIPTED['r'][2])
+        self.assertIn('--ulimit=nofile=256:256',runner.command(runner.prefix+'a'*32,'r'))
 
     def test_docker_contract(self):
         runner = DockerRunner(RUNTIMES)
@@ -53,7 +56,7 @@ class ExecutorTests(unittest.TestCase):
 
     def test_compilation_contract_and_isolated_namespace(self):
         runner=DockerRunner(RUNTIMES,namespace='unit-check')
-        for language in ['c','cpp','rust','go','java','fortran','csharp']:
+        for language in ['c','cpp','rust','go','java','fortran','csharp','pascal']:
             if language not in RUNTIMES: continue
             command=runner.command(runner.prefix+'a'*32,language)
             for flag in ['--read-only','--network=none','--user=65534:65534','--pids-limit=128','--entrypoint=/bin/sleep']:

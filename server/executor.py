@@ -25,6 +25,7 @@ PREFIX = 'cm-exec-'
 MAX_BODY, MAX_CODE, MAX_STDIN, MAX_OUTPUT = 98304, 65536, 16384, 32768
 FINAL = {'completed', 'failed', 'compile_error', 'compile_timed_out', 'timed_out', 'cancelled', 'output_limit', 'memory_limit', 'infrastructure_error'}
 COMPILED = {
+    'pascal': ('code-museum-pascal-r', '/usr/bin/fpc', 512, 10, 'main.pas', ['/usr/bin/fpc', '-n', '-Mobjfpc', '-Sh', '-O-', '-Fu/usr/lib/x86_64-linux-gnu/fpc/3.2.2/units/x86_64-linux/rtl', '-o/work/program', '/work/main.pas'], ['/work/program']),
     'c': ('gcc', '/usr/local/bin/gcc', 512, 10, 'main.c', ['gcc', '-std=c11', '-O0', '-Wall', '-Wextra', '/work/main.c', '-o', '/work/program'], ['/work/program']),
     'cpp': ('gcc', '/usr/local/bin/g++', 512, 10, 'main.cpp', ['g++', '-std=c++17', '-O0', '-Wall', '-Wextra', '/work/main.cpp', '-o', '/work/program'], ['/work/program']),
     'rust': ('rust', '/usr/local/cargo/bin/rustc', 768, 15, 'main.rs', ['rustc', '--edition=2021', '/work/main.rs', '-o', '/work/program'], ['/work/program']),
@@ -38,6 +39,7 @@ PREPARE = {
     'csharp': ['/bin/sh', '-c', 'find /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref -path "*/ref/net*/*.dll" -printf "-r:%p\\n" > /work/refs.rsp']
 }
 SCRIPTED = {
+    'r': ('/usr/bin/Rscript', 'main.R', ['/usr/bin/Rscript', '--vanilla', '--default-packages=stats,utils', '/work/main.R']),
     'sql': ('/usr/bin/sqlite3', 'main.sql', ['/usr/bin/sqlite3', '-safe', '-batch', '-bail', '-noheader', ':memory:']),
     'bash': ('/bin/bash', 'main.bash', ['/bin/bash', '--noprofile', '--norc', '/work/main.bash']),
     'awk': ('/usr/bin/gawk', 'main.awk', ['/usr/bin/gawk', '-f', '/work/main.awk', '--']),
@@ -58,14 +60,15 @@ def load_runtimes(file):
     for r in rows:
         if r['id'] not in {'python', 'ruby', *COMPILED, *SCRIPTED}: raise ValueError('Unsupported runtime')
         if r['id'] in SCRIPTED:
-            repository, executable, memory = 'code-museum-cli', SCRIPTED[r['id']][0], 256
+            repository, executable, memory = ('code-museum-pascal-r' if r['id'] == 'r' else 'code-museum-cli'), SCRIPTED[r['id']][0], (512 if r['id'] == 'r' else 256)
         else:
             repository, executable, memory = COMPILED[r['id']][:3] if r['id'] in COMPILED else (r['id'], '/usr/local/bin/' + r['id'], {'python':256, 'ruby':512}[r['id']])
         # Project-built images are addressed by immutable local image ID, never a mutable tag.
-        valid_image = r['image'] == r['imageId'] if repository == 'code-museum-cli' else re.fullmatch(re.escape(repository) + r'@sha256:[a-f0-9]{64}', r['image'])
+        project_image = repository in {'code-museum-cli', 'code-museum-pascal-r'}
+        valid_image = r['image'] == r['imageId'] if project_image else re.fullmatch(re.escape(repository) + r'@sha256:[a-f0-9]{64}', r['image'])
         if not valid_image:
             raise ValueError('Runtime must use a pinned official digest or immutable project image ID')
-        if repository == 'code-museum-cli' and not re.fullmatch('[a-f0-9]{64}', r.get('buildManifestSha256', '')):
+        if project_image and not re.fullmatch('[a-f0-9]{64}', r.get('buildManifestSha256', '')):
             raise ValueError('Project runtime requires a fixed build manifest hash')
         if not re.fullmatch(r'sha256:[a-f0-9]{64}', r['imageId']) or r['os'] != 'linux':
             raise ValueError('Invalid image identity')
@@ -137,7 +140,7 @@ class DockerRunner:
                 '--runtime', self.runtime, '--network=none', '--read-only', '--init', '--ipc=none',
                 '--user=65534:65534', '--cap-drop=ALL', '--security-opt=no-new-privileges:true',
                 '--memory=' + str(row['memoryMiB']) + 'm', '--memory-swap=' + str(row['memoryMiB']) + 'm',
-                '--cpus=1', '--pids-limit=' + ('128' if compiled else '32'), '--ulimit=nofile=' + ('256:256' if language == 'csharp' else '64:64'), '--ulimit=fsize=' + ('67108864:67108864' if language == 'csharp' else '16777216:16777216'),
+                '--cpus=1', '--pids-limit=' + ('128' if compiled else '32'), '--ulimit=nofile=' + ('256:256' if language in {'csharp', 'r'} else '64:64'), '--ulimit=fsize=' + ('67108864:67108864' if language == 'csharp' else '16777216:16777216'),
                 '--log-driver=none', '--stop-timeout=1', '--workdir=/work',
                 '--tmpfs=/work:rw,' + ('exec' if compiled else 'noexec') + ',nosuid,nodev,size=' + ('128m' if compiled else '16m') + ',mode=1777',
                 '--tmpfs=/tmp:rw,noexec,nosuid,nodev,size=' + ('128m' if compiled else '8m') + ',mode=1777', '-i',
