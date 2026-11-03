@@ -1,0 +1,69 @@
+{
+  "checkedAt": "2026-11-03T07:24:02.711220+00:00",
+  "origin": "https://codemuseum.freexlib.com",
+  "scope": "Authenticated production HTTPS service checks after P1 browser execution; no credentials, user source, session IDs or job IDs recorded.",
+  "checks": [
+    {
+      "name": "Anonymous /api/executions rejected",
+      "httpStatus": 401
+    },
+    {
+      "name": "Anonymous /api/executor-status rejected",
+      "httpStatus": 401
+    },
+    {
+      "name": "Anonymous /mcp rejected",
+      "httpStatus": 401
+    },
+    {
+      "name": "Foreign Origin execution rejected",
+      "httpStatus": 401
+    },
+    {
+      "name": "Read-only MCP credential cannot execute",
+      "httpStatus": 401
+    },
+    {
+      "name": "Execution credential cannot query read-only MCP",
+      "httpStatus": 401
+    },
+    {
+      "name": "Five authenticated read-only MCP tools available",
+      "count": 5
+    },
+    {
+      "name": "Persistent metrics preserved and task queue idle",
+      "metricsStartedAt": "2026-10-09T12:06:17.912975+00:00",
+      "total": 48
+    },
+    {
+      "name": "All five installed backend modules match reviewed source",
+      "hashes": {
+        "executor.py": "f76e56995058159d8890d3ae7efa125351afb6b54b89a03f2e963c3f2dab8f9f",
+        "runtime-images.json": "a8a4cb3d24c541d5569cd13795044eed581f4859b273b2a9a6416c36a77684b9",
+        "observability.py": "72f41c17fdcbeffbe3c07549da20fd1cf4f5d953f92ab30c78c2e4a6442092a6",
+        "mcp.py": "e759c15caa7e944daa91b99c3a529a31c4f917150cc609d7e22d458acbabda8c",
+        "mcp_http.py": "6766f9088fc4efc2c300bd721a1b0e73e98e271ba3bbac76f5e7b61f49596021"
+      }
+    },
+    {
+      "name": "Credential and aggregate database permissions preserved"
+    },
+    {
+      "name": "Production services active",
+      "services": {
+        "code-museum-executor": "active",
+        "code-museum-analytics": "active",
+        "nginx": "active"
+      }
+    },
+    {
+      "name": "No leftover production task containers",
+      "count": 0
+    },
+    {
+      "name": "Code/configuration rollback and consistent metrics backup available",
+      "backup": "/var/backups/code-museum-executor/20261103T042729Z"
+    }
+  ]
+}

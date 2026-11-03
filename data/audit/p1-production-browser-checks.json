@@ -1,0 +1,221 @@
+{
+  "servedInputs": {
+    "index.html": "3c75d472013fa52c05c1c546cd87f29c8a199908801375935a3a18fce99aacab",
+    "museum.css": "361b519b7d7ce35c21eb37b31c907dcc353148e22fec4e7c108eede367c1cb9b",
+    "service-status.js": "5a313ac642c627e4b942088d4e4238c38b17dbbdfd96ee9a9906ec3a6df67f78",
+    "learning-guide.js": "8614b8ff58594edd639462d8bc8a56c098f8010fe07a648f6eb22bf484f1f4a5",
+    "lab-tools.js": "a9dd30d0911fec43dcae290b929959e81cff6d1c14ff962d369123ce40b9c918",
+    "lab-examples.js": "1cb10be766ae9fc06a8f01b8d714895f137e1e5a0b1c5221091de54b17eaddbe",
+    "data/cli-runtime-build.json": "182d22634434a05bd32a12325dedeebc4f60b3d3a09032f63812ee09f031a605",
+    "data/pascal-r-runtime-build.json": "b9ecd40a13848934f8e86e2975cac15e0b47082e48a14abe8820233584e22f5d",
+    "data/learning-paths.json": "4c6d815976d9bbf6c3f495b972e5d6e35245361fbec477c39dd6ecc024b7aab7",
+    "museum.js": "733e84b5f6f8efc7038470f081237a45be12812ca02d84b31afc5e3fc5974d61",
+    "lab.js": "428d35376d5e0d50ea40f67a51f809470e2f520eb5c735e28da6ce5b19a74cc8",
+    "execution-config.js": "4ed993efee2456e3cc0b0aa3767081211bb5b5509204eed6bea3c4ab5fa883e0",
+    "execution-modes.js": "38e40192423f32b890806b5371fbbf34366a55aa416dad593dfb5e69aeb1166e",
+    "data/relationship-status.json": "a2d98eb0fdfb0b4f52cbe3bd036c0c65a09e4b372784c1aa057d3b5645be7625",
+    "lab-worker.js": "d2f568c2087c77f9cd211a9e4c01478f1e8da07a088b29831f9d116762987371",
+    "lua-worker.js": "19bf8689ad12082ac10e15a4c099d2171afdfffc81397c5910d7879c2895283c",
+    "scheme-worker.js": "edd85647e32de729a794e1fb3c49135fefc7d24ec7a0437247570e6cf3bac360",
+    "assets/lua/manifest.json": "d803bb6f5b36551703c7d00e63cb5be50f2795fc050d2edacbd7f6f872e914f2",
+    "assets/scheme/manifest.json": "2736ddf2f4a037f868630473dfc9fd21d42b276fad5e6fdc252890cc4b48b390",
+    "assets/pyodide/manifest.json": "3dbcea8d0957a60a80c84966832a201d06aeb190d77b6491d7d50577b65ec3a4"
+  },
+  "checkedAt": "2026-11-03T04:31:48.898Z",
+  "browser": "Chrome/156.0.8078.80",
+  "scope": "Actual Chrome over production HTTPS with private token to persistent Docker runc service. Tokens, sessions and job IDs omitted; no anonymous execution or escape proof.",
+  "checks": [
+    {
+      "name": "Actual typescript browser editing, remote execution, output and input controls",
+      "width": 1440,
+      "output": "55\n"
+    },
+    {
+      "name": "Actual sql browser editing, remote execution, output and input controls",
+      "width": 1440,
+      "output": "15\n"
+    },
+    {
+      "name": "Actual bash browser editing, remote execution, output and input controls",
+      "width": 1440,
+      "output": "[hello]\n[博物馆]\n"
+    },
+    {
+      "name": "Actual awk browser editing, remote execution, output and input controls",
+      "width": 1440,
+      "output": "3 15\n"
+    },
+    {
+      "name": "Actual sed browser editing, remote execution, output and input controls",
+      "width": 1440,
+      "output": "Hello Museum\nMuseum river\n"
+    },
+    {
+      "name": "Actual php browser editing, remote execution, output and input controls",
+      "width": 1440,
+      "output": "55\n"
+    },
+    {
+      "name": "Actual perl browser editing, remote execution, output and input controls",
+      "width": 1440,
+      "output": "55\n"
+    },
+    {
+      "name": "Actual xslt browser editing, remote execution, output and input controls",
+      "width": 1440,
+      "output": "5921\n"
+    },
+    {
+      "name": "Actual csharp browser editing, remote execution, output and input controls",
+      "width": 1440,
+      "output": "5921\n"
+    },
+    {
+      "name": "Actual fortran browser editing, remote execution, output and input controls",
+      "width": 1440,
+      "output": "5921\n"
+    },
+    {
+      "name": "Actual pascal browser editing, remote execution, output and input controls",
+      "width": 1440,
+      "output": "55\n"
+    },
+    {
+      "name": "Actual r browser editing, remote execution, output and input controls",
+      "width": 1440,
+      "output": "55\n"
+    },
+    {
+      "name": "Actual typescript browser editing, remote execution, output and input controls",
+      "width": 390,
+      "output": "55\n"
+    },
+    {
+      "name": "Actual sql browser editing, remote execution, output and input controls",
+      "width": 390,
+      "output": "15\n"
+    },
+    {
+      "name": "Actual bash browser editing, remote execution, output and input controls",
+      "width": 390,
+      "output": "[hello]\n[博物馆]\n"
+    },
+    {
+      "name": "Actual awk browser editing, remote execution, output and input controls",
+      "width": 390,
+      "output": "3 15\n"
+    },
+    {
+      "name": "Actual sed browser editing, remote execution, output and input controls",
+      "width": 390,
+      "output": "Hello Museum\nMuseum river\n"
+    },
+    {
+      "name": "Actual php browser editing, remote execution, output and input controls",
+      "width": 390,
+      "output": "55\n"
+    },
+    {
+      "name": "Actual perl browser editing, remote execution, output and input controls",
+      "width": 390,
+      "output": "55\n"
+    },
+    {
+      "name": "Actual xslt browser editing, remote execution, output and input controls",
+      "width": 390,
+      "output": "5921\n"
+    },
+    {
+      "name": "Actual csharp browser editing, remote execution, output and input controls",
+      "width": 390,
+      "output": "5921\n"
+    },
+    {
+      "name": "Actual fortran browser editing, remote execution, output and input controls",
+      "width": 390,
+      "output": "5921\n"
+    },
+    {
+      "name": "Actual pascal browser editing, remote execution, output and input controls",
+      "width": 390,
+      "output": "55\n"
+    },
+    {
+      "name": "Actual r browser editing, remote execution, output and input controls",
+      "width": 390,
+      "output": "55\n"
+    },
+    {
+      "name": "Pascal compiler errors are separate and prevent program execution",
+      "passed": true
+    },
+    {
+      "name": "Pascal edited source recovers from compilation error",
+      "passed": true
+    },
+    {
+      "name": "Rscript multiline UTF-8 input and actual version are visible",
+      "passed": true
+    },
+    {
+      "name": "R runtime errors remain real errors without compiler diagnostics",
+      "passed": true
+    },
+    {
+      "name": "R edited source recovers from runtime error",
+      "passed": true
+    },
+    {
+      "name": "TypeScript type diagnostics are visible; failed typing never executes JavaScript",
+      "passed": true
+    },
+    {
+      "name": "TypeScript recovers and executes changed source",
+      "passed": true
+    },
+    {
+      "name": "SQLite does not reuse previous task database and ignores disabled separate stdin",
+      "passed": true
+    },
+    {
+      "name": "SQLite safe-mode rejection appears as a real execution error",
+      "passed": true
+    },
+    {
+      "name": "Stop an actual AWK run, then recover",
+      "passed": true
+    },
+    {
+      "name": "Twelve map labels/dots and archive entries expose available real runtimes",
+      "passed": true
+    },
+    {
+      "name": "Runtime credits open and server tools are not downloaded into the browser",
+      "passed": true
+    }
+  ],
+  "inputs": {
+    "server/executor.py": "f76e56995058159d8890d3ae7efa125351afb6b54b89a03f2e963c3f2dab8f9f",
+    "server/observability.py": "72f41c17fdcbeffbe3c07549da20fd1cf4f5d953f92ab30c78c2e4a6442092a6",
+    "server/mcp.py": "e759c15caa7e944daa91b99c3a529a31c4f917150cc609d7e22d458acbabda8c",
+    "server/mcp_http.py": "6766f9088fc4efc2c300bd721a1b0e73e98e271ba3bbac76f5e7b61f49596021",
+    "scripts/platform-browser-checks.cjs": "6b583b2108f9ba246453b6e4658b053ea69051b584458499791c7de79f127786",
+    "scripts/cli-browser-checks.cjs": "a839ea419844fd4acade0a6b907cd6dd8f8a31789b6a0d4ddcf8020ca4e27115",
+    "src/lab-tools.js": "a9dd30d0911fec43dcae290b929959e81cff6d1c14ff962d369123ce40b9c918",
+    "src/lab-examples.js": "1cb10be766ae9fc06a8f01b8d714895f137e1e5a0b1c5221091de54b17eaddbe",
+    "data/learning-paths.json": "4c6d815976d9bbf6c3f495b972e5d6e35245361fbec477c39dd6ecc024b7aab7",
+    "src/service-status.js": "5a313ac642c627e4b942088d4e4238c38b17dbbdfd96ee9a9906ec3a6df67f78",
+    "src/learning-guide.js": "8614b8ff58594edd639462d8bc8a56c098f8010fe07a648f6eb22bf484f1f4a5",
+    "server/runtime-images.json": "a8a4cb3d24c541d5569cd13795044eed581f4859b273b2a9a6416c36a77684b9",
+    "server/runtimes/pascal-r/manifest.json": "b9ecd40a13848934f8e86e2975cac15e0b47082e48a14abe8820233584e22f5d",
+    "scripts/pascal-r-runtime.cjs": "e6c84f2b917f2cec8566e445526c8d24004b79c51d1279182e8bc7874f2232e2",
+    "scripts/serve.cjs": "5e4ce3fcf5de506f65892e7fd0dc509d26f6cb0c0c1cf4a113fe437a8304f9bb",
+    "scripts/executor-preview.cjs": "1c889ad66218b5c5ee2ca5bb6823e1833b03b298de4855aba05bbdd7c1ecbe19",
+    "scripts/check-executor-browser.cjs": "7a1c7978c2cecb42991234dd454c195c817eb475724b8035486a295ba6927cab",
+    "src/index.html": "527e665b8b5c39970d847851e459a6efd8df533395658c6892ef8fa24e8988d4",
+    "src/lab.js": "428d35376d5e0d50ea40f67a51f809470e2f520eb5c735e28da6ce5b19a74cc8",
+    "src/museum.css": "361b519b7d7ce35c21eb37b31c907dcc353148e22fec4e7c108eede367c1cb9b",
+    "src/execution-config.js": "4ed993efee2456e3cc0b0aa3767081211bb5b5509204eed6bea3c4ab5fa883e0",
+    "src/execution-modes.js": "38e40192423f32b890806b5371fbbf34366a55aa416dad593dfb5e69aeb1166e"
+  }
+}

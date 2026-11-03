@@ -1,5 +1,15 @@
 # Code Museum 首版部署
 
+## 2026-11-03 P1 十二门私有运行时上线
+
+实现提交 `a585bc02489caa973cd33ee85c95e1413ad6ff02` 的 [Actions 41575243748](https://github.com/glwang-g/code-museum/actions/runs/41575243748) 构建、部署与 HTTPS 检查均成功。站点静态发布后，管理员从该提交逐文件校验的 root 专属暂存目录运行现有安装器，生产执行器从原 7 门升级至 19 门，P1 十二门已全部接入生产私有运行。没有增加 CI/Docker 权限，仍需原私有执行令牌。
+
+代码、Nginx/unit 与一致性聚合指标备份在 `/var/backups/code-museum-executor/20261103T042729Z`；原令牌及指标起始时间、原 13 条聚合任务记录保留，核验任务正常累计。未清空访客、历史或留言数据。
+
+证据：[部署与安装哈希](../data/audit/p1-executor-deployment.json)、[生产一致性](../data/audit/p1-production-consistency.json)、[实际 Chrome 正式 HTTPS 回归 36 项](../data/audit/p1-production-browser-checks.json)、[生产服务检查 13 项](../data/audit/p1-production-service-checks.json)。已查看正式 Pascal/R 的宽窄屏截图；匿名访问、跨 Origin、凭据用途隔离、持久指标、三个服务 active 与任务容器零残留均已核验。
+
+本次没有接入微信扫码/OAuth 登录。当前微信二维码仅为自愿赞赏入口，不能替代执行令牌。后续仅部署文档与证据的提交不改变已核验后端模块或前端程序字节。
+
 目标仓库：`glwang-g/code-museum`，主分支 `master`。正式站点：<https://codemuseum.freexlib.com>，与 xshow 的 `labs.freexlib.com` 同在 `82.156.83.121`（Ubuntu 24.04 / Nginx 1.24）。2026-10-05 已完成独立站点、Let's Encrypt HTTPS 和统计服务部署；证书有效至2027-01-03，Certbot续期 timer 已启用，新域名续期成功后专用 hook 校验并 reload Nginx。
 
 首次发布 release 为 `0a0b19e2656c962dccb5ce18c272b05e300463f8`。管理员使用本机 SSH alias `xshow`；经用户明确批准，专用 `code-museum-deploy` 账户只可写 `/var/www/code-museum`，sudo仅允许 restart `code-museum-analytics`，已实际验证无 xshow 目录写权限。GitHub Actions 使用单独密钥及已记录的主机公钥，Secrets不进入源码。自动部署启用后仍需看对应 Actions 的deploy结果，不能仅凭build成功判断已发布。

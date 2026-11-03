@@ -1,6 +1,6 @@
 # 地图语言运行环境盘点与分批构建清单
 
-盘点日期：2026-11-02。范围：当前源码对应的 233 个时间长河语言节点，含 50 个常显标签与 183 个微光点；关系谱系是其中的子集。本文同时记录研究排期与实施进度。P1 十二门已接入源码：首批 TypeScript、SQL（SQLite）、Bash、AWK、sed；第二批 PHP、Perl、XSLT、C#、Fortran；2026-11-03 补齐 Pascal、R。均未升级生产执行服务，核验范围见下文。
+盘点日期：2026-11-02。范围：当前源码对应的 233 个时间长河语言节点，含 50 个常显标签与 183 个微光点；关系谱系是其中的子集。本文同时记录研究排期与实施进度。P1 十二门已接入源码：首批 TypeScript、SQL（SQLite）、Bash、AWK、sed；第二批 PHP、Perl、XSLT、C#、Fortran；2026-11-03 补齐 Pascal、R。十二门均已于 2026-11-03 升级生产执行服务，并完成正式 HTTPS 核验；核验范围见下文。
 
 ## 结论与判定口径
 
@@ -26,9 +26,11 @@ A+B+C 共 185 个已有馆内接入、经人工核实的实现资料或具体安
 2026-11-03 review 修正（本地）：XSLT 的 XML 标准输入现按语言在当前页面内存中保留，切换语言往返及主动清空均不再被默认 XML 覆盖；Perl 默认示例已加入 `use utf8;`，本机中文源码输出回归通过。此修正不增加语言数量、不代表生产升级；原 52 项容器和 27 项远端浏览器报告仍是上轮核验快照；本次补齐 Pascal/R 时，Perl 中文源码用例已纳入最新 72 项固定镜像回归通过。详见 [项目上下文](../PROJECT_CONTEXT.md)。
 
 - 浏览器：JavaScript、Python、Lua、Scheme，共 4 个。
-- 私有远端源码现支持 Python、Ruby、C、C++、Rust、Go、Java、TypeScript、SQL（SQLite）、Bash、AWK、sed、PHP、Perl、XSLT、C#、Fortran、Pascal、R，共 19 个；Python 两种模式重叠，合计 22 个语言节点。P1 新增语言的生产服务仍未升级。
+- 私有远端源码现支持 Python、Ruby、C、C++、Rust、Go、Java、TypeScript、SQL（SQLite）、Bash、AWK、sed、PHP、Perl、XSLT、C#、Fortran、Pascal、R，共 19 个；Python 两种模式重叠，合计 22 个语言节点。P1 新增语言的生产服务已升级；运行仍需私有令牌。
 - 依据当前源码 `scripts/execution-capabilities.cjs`、`server/runtime-images.json` 与 [执行说明](../EXECUTOR.md)。本轮未探测生产服务、令牌或远端实时健康；“已接入”指代码与既有核验基线。
 - 原 10 个环境保留；P1 新增十二门复用私有执行协议。最新 72 项真实容器回归见 [p1-runtime-checks.json](../../data/audit/p1-runtime-checks.json)，前两批快照保留在 [cli-runtime-checks.json](../../data/audit/cli-runtime-checks.json)。新增工具链和复测命令见 [执行说明](../EXECUTOR.md)。最新 [P1 浏览器记录](../../data/audit/p1-runtime-browser-checks.json) 36 项覆盖十二门的真实执行、1440/390 和编译/运行诊断；当前默认测试 83/83、离线构建通过。
+
+生产补记：[正式 HTTPS 浏览器记录](../../data/audit/p1-production-browser-checks.json) 36 项、[服务检查](../../data/audit/p1-production-service-checks.json) 13 项与[一致性检查](../../data/audit/p1-production-consistency.json)通过；[部署记录](../../data/audit/p1-executor-deployment.json)绑定实现提交、安装哈希与回退备份。P1 为 12/12 已接入并上线，不代表其他 211 个节点已具备执行环境；微信扫码授权仍未接入。
 
 ## 推荐构建顺序
 
@@ -36,7 +38,7 @@ A+B+C 共 185 个已有馆内接入、经人工核实的实现资料或具体安
 
 ### P1：先完成最有把握的一批
 
-进度：顺序 1–12 已完成源码接入及独立临时网页核验，2026-11-03 补齐 Pascal、R，72 项真实容器回归、36 项真实浏览器专项和 83 项默认测试通过；生产执行服务尚未升级，网页核验记录见已接入基线。
+进度：顺序 1–12 已完成源码接入及独立临时网页核验，2026-11-03 补齐 Pascal、R，72 项真实容器回归、36 项真实浏览器专项和 83 项默认测试通过；生产执行服务已升级，网页核验记录见已接入基线。
 
 | 顺序 | 语言 | 推荐首版路径 | 原因 / 首版边界 |
 | ---: | --- | --- | --- |
@@ -164,18 +166,18 @@ LSL 的 OpenSimulator 候选见 [官方脚本文档](https://opensimulator.dev/w
 | Ruby (`ruby`) | 标签 | 维护 | 私有远端 CRuby | [当前执行能力](../../scripts/execution-capabilities.cjs) |
 | Rust (`rust`) | 标签 | 维护 | 私有远端 rustc / edition 2021 | [当前执行能力](../../scripts/execution-capabilities.cjs) |
 | Scheme (`scheme`) | 标签 | 维护 | BiwaScheme 0.8.3 子集 | [当前执行能力](../../scripts/execution-capabilities.cjs) |
-| TypeScript (`typescript`) | 标签 | P1 已核验 | TypeScript 5.9.3 严格类型检查 → Node.js 22.23.2 | [真实容器记录](../../data/audit/cli-runtime-checks.json)；[接入边界](../EXECUTOR.md)；生产未部署 |
-| SQL (`sql`) | 标签 | P1 已核验 | SQLite 3.53.4 安全模式 / 独立内存库 | [真实容器记录](../../data/audit/cli-runtime-checks.json)；[接入边界](../EXECUTOR.md)；生产未部署 |
-| Bash (`bash`) | 点 | P1 已核验 | GNU Bash 5.3.9 | [真实容器记录](../../data/audit/cli-runtime-checks.json)；[接入边界](../EXECUTOR.md)；生产未部署 |
-| awk (`awk`) | 点 | P1 已核验 | GNU awk 5.3.2 | [真实容器记录](../../data/audit/cli-runtime-checks.json)；[接入边界](../EXECUTOR.md)；生产未部署 |
-| sed (`sed`) | 点 | P1 已核验 | GNU sed 4.9 | [真实容器记录](../../data/audit/cli-runtime-checks.json)；[接入边界](../EXECUTOR.md)；生产未部署 |
-| PHP (`php`) | 标签 | P1 已核验 | PHP 8.3.36 CLI | [真实容器记录](../../data/audit/cli-runtime-checks.json)；最小配置，禁用系统命令与网络函数；生产未部署 |
-| Perl (`perl`) | 标签 | P1 已核验 | Perl 5.42.2 | [真实容器记录](../../data/audit/cli-runtime-checks.json)；仅预装核心模块，不安装 CPAN；生产未部署 |
-| XSLT (`xslt`) | 标签 | P1 已核验 | libxslt 1.1.43 / libxml2 2.13.9 | [真实容器记录](../../data/audit/cli-runtime-checks.json)；XSLT 1.0，禁网、禁写出；生产未部署 |
-| C# (`csharp`) | 标签 | P1 已核验 | .NET SDK 10.0.403 / Roslyn | [真实容器记录](../../data/audit/cli-runtime-checks.json)；预装参考程序集，不还原 NuGet；生产未部署 |
-| Fortran (`fortran`) | 标签 | P1 已核验 | GNU Fortran (GCC) 14.3.0 | [真实容器记录](../../data/audit/cli-runtime-checks.json)；Fortran 2008 标准选项；生产未部署 |
-| Pascal (`pascal`) | 点 | P1 已核验 | Free Pascal 3.2.2 / ObjFPC / 基础 RTL | [真实容器记录](../../data/audit/p1-runtime-checks.json)；[接入边界](../EXECUTOR.md)；生产未部署 |
-| R (`r`) | 标签 | P1 已核验 | Rscript / R 4.2.2 Patched / 基础包与文本输出 | [真实容器记录](../../data/audit/p1-runtime-checks.json)；[接入边界](../EXECUTOR.md)；生产未部署 |
+| TypeScript (`typescript`) | 标签 | P1 已核验 | TypeScript 5.9.3 严格类型检查 → Node.js 22.23.2 | [真实容器记录](../../data/audit/cli-runtime-checks.json)；[接入边界](../EXECUTOR.md)；生产已核验 |
+| SQL (`sql`) | 标签 | P1 已核验 | SQLite 3.53.4 安全模式 / 独立内存库 | [真实容器记录](../../data/audit/cli-runtime-checks.json)；[接入边界](../EXECUTOR.md)；生产已核验 |
+| Bash (`bash`) | 点 | P1 已核验 | GNU Bash 5.3.9 | [真实容器记录](../../data/audit/cli-runtime-checks.json)；[接入边界](../EXECUTOR.md)；生产已核验 |
+| awk (`awk`) | 点 | P1 已核验 | GNU awk 5.3.2 | [真实容器记录](../../data/audit/cli-runtime-checks.json)；[接入边界](../EXECUTOR.md)；生产已核验 |
+| sed (`sed`) | 点 | P1 已核验 | GNU sed 4.9 | [真实容器记录](../../data/audit/cli-runtime-checks.json)；[接入边界](../EXECUTOR.md)；生产已核验 |
+| PHP (`php`) | 标签 | P1 已核验 | PHP 8.3.36 CLI | [真实容器记录](../../data/audit/cli-runtime-checks.json)；最小配置，禁用系统命令与网络函数；生产已核验 |
+| Perl (`perl`) | 标签 | P1 已核验 | Perl 5.42.2 | [真实容器记录](../../data/audit/cli-runtime-checks.json)；仅预装核心模块，不安装 CPAN；生产已核验 |
+| XSLT (`xslt`) | 标签 | P1 已核验 | libxslt 1.1.43 / libxml2 2.13.9 | [真实容器记录](../../data/audit/cli-runtime-checks.json)；XSLT 1.0，禁网、禁写出；生产已核验 |
+| C# (`csharp`) | 标签 | P1 已核验 | .NET SDK 10.0.403 / Roslyn | [真实容器记录](../../data/audit/cli-runtime-checks.json)；预装参考程序集，不还原 NuGet；生产已核验 |
+| Fortran (`fortran`) | 标签 | P1 已核验 | GNU Fortran (GCC) 14.3.0 | [真实容器记录](../../data/audit/cli-runtime-checks.json)；Fortran 2008 标准选项；生产已核验 |
+| Pascal (`pascal`) | 点 | P1 已核验 | Free Pascal 3.2.2 / ObjFPC / 基础 RTL | [真实容器记录](../../data/audit/p1-runtime-checks.json)；[接入边界](../EXECUTOR.md)；生产已核验 |
+| R (`r`) | 标签 | P1 已核验 | Rscript / R 4.2.2 Patched / 基础包与文本输出 | [真实容器记录](../../data/audit/p1-runtime-checks.json)；[接入边界](../EXECUTOR.md)；生产已核验 |
 
 ### B · 实现资料已核，待接入（37）
 

@@ -1,8 +1,8 @@
 # Docker 私有执行首版
 
-当前源码支持 Python、Ruby、R 原生远端执行，C、C++、Rust、Go、Java、C#、Fortran、Pascal 的编译后执行，以及 TypeScript、SQL（SQLite）、Bash、AWK、sed、PHP、Perl、XSLT（libxslt），共 19 门。原七门与 P1 新增十二门的生产记录分开：新增语言尚未升级生产服务。Linux 执行服务使用 Python 标准库，不需要 pip/npm 依赖。网站仍可完全离线构建，构建不会启动 Docker、拉镜像或连接服务器。
+当前源码支持 Python、Ruby、R 原生远端执行，C、C++、Rust、Go、Java、C#、Fortran、Pascal 的编译后执行，以及 TypeScript、SQL（SQLite）、Bash、AWK、sed、PHP、Perl、XSLT（libxslt），共 19 门。当前 19 门已于 2026-11-03 升级生产执行服务；P1 新增十二门的正式 HTTPS 记录见下文。Linux 执行服务使用 Python 标准库，不需要 pip/npm 依赖。网站仍可完全离线构建，构建不会启动 Docker、拉镜像或连接服务器。
 
-## 2026-11-03：Pascal、R（独立临时环境）
+## 2026-11-03：Pascal、R（本机与生产已核验）
 
 两门使用独立的固定镜像。`server/runtimes/pascal-r/` 保存 14 个 Debian 12 官方发行包及依赖（约 40.4 MB）、原始版权文件、来源/版本/SHA-256 清单和 Dockerfile，复用已缓存且 digest 固定的官方 GCC / Debian 12 基础镜像。准备时以 `--network=none` 执行 `dpkg -i`，不读取软件源；网站构建只离线校验文件。采用该发行版本是为了固定与基础镜像兼容的工具链，不宣称最新版本。
 
@@ -15,7 +15,9 @@ R 启动实测需要 `nofile=256`，64 会报告文件数上限过低；其余�
 
 真实容器回归见 [p1-runtime-checks.json](../data/audit/p1-runtime-checks.json)：72 项，含两门的修改源码后真实执行、错误、多行中文输入、超时、输出上限、取消、任务隔离和恢复，以及前十门回归和 Perl 中文源码；结束残留容器为 0。旧 52 项记录仍保留为前两批快照。
 
-[真实浏览器专项](../data/audit/p1-runtime-browser-checks.json) 36 项通过：覆盖十二门的 1440/390 实际执行、明暗主题、Pascal 编译错误不执行及恢复、R 多行中文输入/实际版本/错误恢复、地图和档案入口。已查看 Pascal/R 的两档截图。`npm test` 83/83 与离线构建通过；以上均为临时 API 的核验，不是生产上线。
+[真实浏览器专项](../data/audit/p1-runtime-browser-checks.json) 36 项通过：覆盖十二门的 1440/390 实际执行、明暗主题、Pascal 编译错误不执行及恢复、R 多行中文输入/实际版本/错误恢复、地图和档案入口。已查看 Pascal/R 的两档截图。`npm test` 83/83 与离线构建通过；这份记录为临时 API 核验；随后完成的生产上线与核验见下一段。
+
+生产补记：实现提交 `a585bc0` 的 [Actions 41575243748](https://github.com/glwang-g/code-museum/actions/runs/41575243748) 构建与部署成功，管理员安装器随后将执行服务从 7 门升级到 19 门。[部署记录](../data/audit/p1-executor-deployment.json)、[正式 HTTPS 浏览器记录](../data/audit/p1-production-browser-checks.json) 36 项、[服务检查](../data/audit/p1-production-service-checks.json) 13 项及[生产一致性](../data/audit/p1-production-consistency.json)均通过。原令牌、原指标起始时间和 13 条既有聚合任务记录保留；备份在 `/var/backups/code-museum-executor/20261103T042729Z`。匿名执行仍被拒绝，微信扫码授权尚未接入。
 
 显式准备与复测（不部署生产）：
 
