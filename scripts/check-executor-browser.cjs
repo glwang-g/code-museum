@@ -18,6 +18,9 @@ async function edit(code){await evaluate(`(()=>{const e=document.querySelector('
 async function output(expected,timeout=15000){await wait(`document.querySelector('#lab-result').dataset.state==='ok' && document.querySelector('#lab-result').textContent===${JSON.stringify(expected)}`,timeout);}
 async function screenshot(name){if(!outputDirectory)return;await evaluate('new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)))');const r=await page('Page.captureScreenshot',{format:'png'});fs.writeFileSync(path.join(outputDirectory,name),Buffer.from(r.data,'base64'));}
 
+const inputHashes=()=>Object.fromEntries(['server/executor.py','server/observability.py','server/mcp.py','server/mcp_http.py','scripts/platform-browser-checks.cjs','scripts/cli-browser-checks.cjs','src/lab-tools.js','src/lab-examples.js','data/learning-paths.json','src/service-status.js','src/learning-guide.js','server/runtime-images.json','scripts/serve.cjs','scripts/executor-preview.cjs','scripts/check-executor-browser.cjs','src/index.html','src/lab.js','src/museum.css','src/execution-config.js','src/execution-modes.js'].map(f=>[f,crypto.createHash('sha256').update(fs.readFileSync(path.join(root,f))).digest('hex')]));
+const startedInputs=inputHashes();
+
 (async()=>{
  let preview;
  try{
@@ -39,7 +42,8 @@ async function screenshot(name){if(!outputDirectory)return;await evaluate('new P
   assert.equal(await evaluate(`window.__posts`),0);
   assert.equal(await evaluate(`performance.getEntriesByType('resource').some(r=>r.name.includes('/assets/pyodide/'))`),false);
   await evaluate(`document.querySelector('#lab-remote-token').value=${JSON.stringify(token)}`);
-  if(process.env.PLATFORM_ONLY==='1'){await require('./platform-browser-checks.cjs')({evaluate,wait,page,screenshot,results,token,root,restart:preview.restart});}
+  if(process.argv.includes('--cli')){await require('./cli-browser-checks.cjs')({evaluate,wait,page,screenshot,results,token,root,restart:preview.restart});}
+  else if(process.env.PLATFORM_ONLY==='1'){await require('./platform-browser-checks.cjs')({evaluate,wait,page,screenshot,results,token,root,restart:preview.restart});}
   else {
   let lastRun=0;
   async function clickRun(){const delay=Math.max(0,6500-(Date.now()-lastRun));if(delay)await new Promise(ok=>setTimeout(ok,delay));lastRun=Date.now();await evaluate(`document.querySelector('#lab-run').click()`)}
@@ -106,8 +110,9 @@ async function screenshot(name){if(!outputDirectory)return;await evaluate('new P
   await evaluate(`document.querySelector('.lab-output').scrollIntoView({block:'center'})`);
   await screenshot('go-learning-collections-390.png');
   }
-  const servedInputs={};for(const f of ['index.html','museum.css','service-status.js','learning-guide.js','data/learning-paths.json','museum.js','lab.js','execution-config.js','execution-modes.js','data/relationship-status.json','lab-worker.js','lua-worker.js','scheme-worker.js','assets/lua/manifest.json','assets/scheme/manifest.json','assets/pyodide/manifest.json']){const bytes=Buffer.from(await evaluate(`fetch(${JSON.stringify(f)}).then(r=>{if(!r.ok)throw new Error('Failed served input');return r.arrayBuffer()}).then(b=>Array.from(new Uint8Array(b)))`));assert.deepEqual(bytes,fs.readFileSync(path.join(root,'dist',f)),'Served build must match local: '+f);servedInputs[f]=crypto.createHash('sha256').update(bytes).digest('hex')}
-  const report={servedInputs,checkedAt:new Date().toISOString(),browser:version.product,scope:production?'Actual Chrome over production HTTPS with private token to persistent Docker runc service. Tokens, sessions and job IDs omitted; no anonymous execution or escape proof.':'Actual browser over private SSH tunnel to ephemeral Docker runc API on xshow. Tokens, sessions and job IDs omitted; not a public deployment or escape proof.',checks:results,inputs:Object.fromEntries(['server/executor.py','server/observability.py','server/mcp.py','server/mcp_http.py','scripts/platform-browser-checks.cjs','data/learning-paths.json','src/service-status.js','src/learning-guide.js','server/runtime-images.json','scripts/serve.cjs','scripts/executor-preview.cjs','scripts/check-executor-browser.cjs','src/index.html','src/lab.js','src/museum.css','src/execution-config.js','src/execution-modes.js'].map(f=>[f,crypto.createHash('sha256').update(fs.readFileSync(path.join(root,f))).digest('hex')]))};
+  const servedInputs={};for(const f of ['index.html','museum.css','service-status.js','learning-guide.js','lab-tools.js','lab-examples.js','data/cli-runtime-build.json','data/learning-paths.json','museum.js','lab.js','execution-config.js','execution-modes.js','data/relationship-status.json','lab-worker.js','lua-worker.js','scheme-worker.js','assets/lua/manifest.json','assets/scheme/manifest.json','assets/pyodide/manifest.json']){const bytes=Buffer.from(await evaluate(`fetch(${JSON.stringify(f)}).then(r=>{if(!r.ok)throw new Error('Failed served input');return r.arrayBuffer()}).then(b=>Array.from(new Uint8Array(b)))`));assert.deepEqual(bytes,fs.readFileSync(path.join(root,'dist',f)),'Served build must match local: '+f);servedInputs[f]=crypto.createHash('sha256').update(bytes).digest('hex')}
+  assert.deepEqual(inputHashes(),startedInputs,'Checked source inputs changed during browser verification');
+  const report={servedInputs,checkedAt:new Date().toISOString(),browser:version.product,scope:production?'Actual Chrome over production HTTPS with private token to persistent Docker runc service. Tokens, sessions and job IDs omitted; no anonymous execution or escape proof.':'Actual browser over private SSH tunnel to ephemeral Docker runc API on xshow. Tokens, sessions and job IDs omitted; not a public deployment or escape proof.',checks:results,inputs:startedInputs};
   fs.writeFileSync(path.join(outputDirectory,'checks.json'),JSON.stringify(report,null,2)+'\n');console.log('PASS '+results.length+' actual Docker/browser checks; report '+path.join(outputDirectory,'checks.json'));
  }catch(e){await screenshot('failure.png').catch(()=>{});console.error(e.stack+'\n'+diagnostics);process.exitCode=1}
  finally{

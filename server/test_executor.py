@@ -22,9 +22,25 @@ class FakeRunner:
 
 class ExecutorTests(unittest.TestCase):
     def test_whitelist_and_utf8_limits(self):
-        for data in [{'language':'bash','code':'x'}, {'language':'python','stdin':'x'}, {'language':'python','code':'x','image':'attacker'}, {'language':[],'code':'x'}, {'language':'python','code':'界'*(MAX_CODE//3+1)}]:
+        for data in [{'language':'unknown-shell','code':'x'}, {'language':'python','stdin':'x'}, {'language':'python','code':'x','image':'attacker'}, {'language':[],'code':'x'}, {'language':'python','code':'界'*(MAX_CODE//3+1)}, {'language':'sql','code':'SELECT 1;','stdin':'ambiguous input'}]:
             with self.assertRaises(ValueError): validate_submission(data,RUNTIMES)
         self.assertEqual(validate_submission({'language':'ruby','code':'puts 42'},RUNTIMES)['stdin'],'')
+
+    def test_cli_languages_use_fixed_commands_and_readonly_noexec_workdir(self):
+        runner = DockerRunner(RUNTIMES, namespace='cli-unit-check')
+        for language in ['typescript', 'sql', 'bash', 'awk', 'sed', 'php', 'perl', 'xslt']:
+            self.assertEqual(validate_submission({'language':language,'code':'x'},RUNTIMES)['language'],language)
+            command = runner.command(runner.prefix+'a'*32,language)
+            for flag in ['--pull=never','--network=none','--read-only','--user=65534:65534','--cap-drop=ALL','--entrypoint=/bin/sleep']:
+                self.assertIn(flag,command)
+            self.assertIn('--tmpfs=/work:rw,'+('exec,nosuid,nodev,size=128m,mode=1777' if language=='typescript' else 'noexec,nosuid,nodev,size=16m,mode=1777'),command)
+        from executor import COMPILED, SCRIPTED
+        self.assertIn('--strict',COMPILED['typescript'][5]);self.assertIn('--noEmitOnError',COMPILED['typescript'][5])
+        self.assertIn('-safe',SCRIPTED['sql'][2]);self.assertIn(':memory:',SCRIPTED['sql'][2])
+        self.assertIn('--nonet',SCRIPTED['xslt'][2])
+        self.assertIn('open_basedir=/work:/tmp',SCRIPTED['php'][2])
+        self.assertIn('-std=f2008',COMPILED['fortran'][5])
+        self.assertIn('@/work/refs.rsp',COMPILED['csharp'][5])
 
     def test_docker_contract(self):
         runner = DockerRunner(RUNTIMES)
@@ -37,11 +53,12 @@ class ExecutorTests(unittest.TestCase):
 
     def test_compilation_contract_and_isolated_namespace(self):
         runner=DockerRunner(RUNTIMES,namespace='unit-check')
-        for language in ['c','cpp','rust','go','java']:
+        for language in ['c','cpp','rust','go','java','fortran','csharp']:
             if language not in RUNTIMES: continue
             command=runner.command(runner.prefix+'a'*32,language)
             for flag in ['--read-only','--network=none','--user=65534:65534','--pids-limit=128','--entrypoint=/bin/sleep']:
                 self.assertIn(flag,command)
+            self.assertIn('--ulimit=nofile='+('256:256' if language=='csharp' else '64:64'),command)
             self.assertIn('code-museum.executor=unit-check',command)
             self.assertIn('--tmpfs=/work:rw,exec,nosuid,nodev,size=128m,mode=1777',command)
             self.assertFalse(any(x.startswith(('--volume','--mount','--privileged','--device')) for x in command))

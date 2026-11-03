@@ -11,12 +11,14 @@
   const runnableIds=new Set(['javascript','python','lua','scheme']);
   const freshRuntimes={javascript:{file:'lab-worker.js'},lua:{file:'lua-worker.js',name:'Lua'},scheme:{file:'scheme-worker.js',name:'Scheme',module:true}};
   const schemeKeywords=new Set('define lambda let let* letrec if cond else begin set! quote quasiquote unquote and or do delay case define-syntax syntax-rules display newline map apply car cdr cons list'.split(' '));
-  const keywords=new Set('async await break case catch class const continue default do else export extends false finally for from function if import in instanceof let new null of return static super switch this throw true try typeof undefined var void while yield def print range pass lambda None True False import as is not and or with int char return public private package namespace using fn mut impl use mod struct enum match pub crate let typeset done then fi foreach end endif echo set local nil repeat until elseif ipairs pairs true false'.split(' '));
+  const keywords=new Set('BEGIN END NR NF select SELECT from FROM where WHERE create CREATE table TABLE insert INSERT into INTO values VALUES with WITH recursive RECURSIVE sum SUM order ORDER by BY as AS number string boolean interface type readonly async await break case catch class const continue default do else export extends false finally for from function if import in instanceof let new null of return static super switch this throw true try typeof undefined var void while yield def print range pass lambda None True False import as is not and or with int char return public private package namespace using fn mut impl use mod struct enum match pub crate let typeset done then fi foreach end endif echo set local nil repeat until elseif ipairs pairs true false echo my sub program implicit none integer real logical character contains subroutine module call stop write format sizeof operator template apply'.split(' '));
   let current=null,timer=null,worker=null,workerTimeout=null,runId=0;
   let pythonWorker=null,pythonReady=false,pythonBusy=false,pythonPending=null,pythonTimeout=null,pythonGeneration=0;
   let idleTimer=null,needsRun=false;
   const store=window.MUSEUM_DRAFT_STORE;
   const drafts=store?.drafts||new Map(),backups=store?.backups||new Map();
+  // Standard input stays in page memory, separate from persistent code drafts.
+  const inputs=new Map();
   const topics=store?.topics||new Map();let currentTopic='default';
   const draftKey=()=>currentTopic==='default'?current:current+':'+currentTopic;
   const baseCode=()=>currentTopic==='default'?(examples.get(current)?.code||window.MUSEUM_LESSONS?.languages[current]?.examples.variables.code||''):(window.MUSEUM_LESSONS?.languages[current]?.examples[currentTopic]?.code||'');
@@ -45,7 +47,7 @@
     changed();
   }
   function formatCode(source,language=current){
-    const pattern=language==='scheme'?/(;[^\n]*|#\|[\s\S]*?\|#|"(?:\\.|[^"\\])*"|#[tf]|[+-]?\b\d+(?:\.\d+)?\b|[A-Za-z_][A-Za-z_0-9?!*+\/-]*)/g:language==='lua'?/(--\[\[[\s\S]*?\]\]|--[^\n]*|"(?:\\.|[^"\\])*"|'(?:\\.|[^'\\])*'|\b\d+(?:\.\d+)?\b|\b[A-Za-z_]\w*\b)/g:/(\/\/[^\n]*|\/\*[\s\S]*?\*\/|#[^\n]*|"(?:\\.|[^"\\])*"|'(?:\\.|[^'\\])*'|`(?:\\.|[^`\\])*`|\b\d+(?:\.\d+)?\b|\b[A-Za-z_]\w*\b)/g;
+    const pattern=language==='sql'?/(--[^\n]*|\/\*[\s\S]*?\*\/|'(?:''|[^'])*'|"(?:""|[^"])*"|\b\d+(?:\.\d+)?\b|\b[A-Za-z_]\w*\b)/g:language==='scheme'?/(;[^\n]*|#\|[\s\S]*?\|#|"(?:\\.|[^"\\])*"|#[tf]|[+-]?\b\d+(?:\.\d+)?\b|[A-Za-z_][A-Za-z_0-9?!*+\/-]*)/g:language==='lua'?/(--\[\[[\s\S]*?\]\]|--[^\n]*|"(?:\\.|[^"\\])*"|'(?:\\.|[^'\\])*'|\b\d+(?:\.\d+)?\b|\b[A-Za-z_]\w*\b)/g:/(\/\/[^\n]*|\/\*[\s\S]*?\*\/|#[^\n]*|"(?:\\.|[^"\\])*"|'(?:\\.|[^'\\])*'|`(?:\\.|[^`\\])*`|\b\d+(?:\.\d+)?\b|\b[A-Za-z_]\w*\b)/g;
     let out='',at=0,match;
     while((match=pattern.exec(source))){
       out+=escape(source.slice(at,match.index));
@@ -231,11 +233,13 @@
     // Reopening an archive entry should preserve its draft, result and loaded runtime.
     if(id===current)return;
     clearTimeout(idleTimer);idleTimer=null;
+    if(current)inputs.set(current,document.querySelector('#lab-stdin').value);
     remember();stop();
     current=id;currentTopic=topics.get(id)||'default';if(currentTopic!=='default'&&!window.MUSEUM_LESSONS?.languages[id]?.examples[currentTopic])currentTopic='default';options(id);
     const creditButton=document.querySelector('#lab-runtime-credit'),creditLabel=window.MUSEUM_CREDITS_UI?.labelFor(id);
     if(creditButton){creditButton.hidden=!creditLabel;creditButton.textContent=creditLabel||'';creditButton.onclick=()=>window.MUSEUM_CREDITS_UI?.openFor(current)}
     const record=byId.get(id),example=examples.get(id),runnable=runnableIds.has(id);
+    document.querySelector('#lab-stdin').value=inputs.get(id)??example?.stdin??'';
     document.querySelector('#lab-title').textContent=`${record.name} · 实验台`;
     document.querySelector('#lab-file').textContent=example?.file||`${record.name} · 草稿`;
     document.querySelector('#lab-status').textContent=id==='javascript'?'JavaScript 在浏览器 Worker 中执行；改动后自动更新结果。':id==='python'?'Python 在本地 Pyodide Worker 中执行；首次加载需要一些时间。':id==='lua'?'Lua 5.4 在本地 WebAssembly Worker 中执行；改动后自动更新结果。':id==='scheme'?'Scheme 由 BiwaScheme 0.8.3 浏览器解释器执行；改动后自动更新结果。':example?.note||((example||window.MUSEUM_LESSONS?.languages[id])?'这是可编辑的语法示例；本页尚未接入该语言的运行环境。':'尚无经审核的示例；可记下草稿，本页尚未接入该语言的运行环境。');
@@ -282,7 +286,7 @@
     restore(id,topic){stop();needsRun=false;show(id,false);chooseTopic(topic==='default'||window.MUSEUM_LESSONS?.languages[current]?.examples[topic]?topic:'default');stop();needsRun=false;},
     entry(id){
       if(['javascript','python','lua','scheme'].includes(id))return {kind:'local',label:id==='python'?'浏览器或远端运行':'浏览器运行'};
-      if(['ruby','c','cpp','rust','go','java'].includes(id))return {kind:'remote',label:'远端运行 · 需私有令牌'};
+      if(['ruby','c','cpp','rust','go','java','typescript','sql','bash','awk','sed','php','perl','xslt','csharp','fortran'].includes(id))return {kind:'remote',label:id==='sql'?'SQLite 运行 · 需私有令牌':id==='xslt'?'XSLT 转换 · 需私有令牌和 XML 输入':id==='csharp'?'C# 编译运行 · 需私有令牌':id==='fortran'?'Fortran 编译运行 · 需私有令牌':'远端运行 · 需私有令牌'};
       return {kind:'editor',label:'仅编辑 · 未接入运行'};
     },
     get current(){return current},get topic(){return currentTopic},get code(){return editor.value},

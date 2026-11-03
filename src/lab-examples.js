@@ -1,6 +1,8 @@
 // Original short examples. Browser execution is available for JavaScript, Python, Lua and Scheme.
 window.MUSEUM_LAB_EXAMPLES = [
   {id:'javascript',file:'museum.js',code:'const languages = ["C", "Lisp", "JavaScript"];\nfor (const name of languages) {\n  console.log(`Hello, ${name}!`);\n}\n'},
+  {id:'typescript',file:'museum.ts',note:'私有远端 TypeScript；严格类型检查通过后才由 Node.js 执行。',code:'function sumTo(n: number): number {\n  let total: number = 0;\n  for (let i = 1; i <= n; i++) total += i;\n  return total;\n}\nconsole.log(sumTo(10));\n'},
+  {id:'sql',file:'museum.sql',note:'SQL 使用 SQLite 方言；每次运行创建独立内存数据库。',code:'-- SQLite SQL: create data, then query it.\nCREATE TABLE languages (name TEXT, year INTEGER);\nINSERT INTO languages VALUES (\'C\', 1972), (\'Python\', 1991), (\'TypeScript\', 2012);\nSELECT name, year FROM languages WHERE year >= 1990 ORDER BY year;\n'},
   {id:'python',file:'museum.py',code:'languages = ["C", "Lisp", "Python"]\nfor name in languages:\n    print(f"Hello, {name}!")\n'},
   {id:'lua',file:'museum.lua',code:'local languages = {"C", "Lisp", "Lua"}\nfor _, name in ipairs(languages) do\n  print("Hello, " .. name .. "!")\nend\n'},
   {id:'scheme',file:'museum.scm',code:'; Sum the integers from 1 to 10\n(define (sum-to n)\n  (let loop ((i n) (total 0))\n    (if (= i 0) total\n        (loop (- i 1) (+ total i)))))\n(display (sum-to 10))\n(newline)\n'},
@@ -10,7 +12,14 @@ window.MUSEUM_LAB_EXAMPLES = [
   {id:'ruby',file:'museum.rb',code:'["C", "Lisp", "Ruby"].each do |name|\n  puts "Hello, #{name}!"\nend\n'},
   {id:'go',file:'museum.go',code:'package main\n\nimport "fmt"\n\nfunc main() {\n    fmt.Println("Hello, Code Museum!")\n}\n'},
   {id:'rust',file:'museum.rs',code:'fn main() {\n    println!("Hello, Code Museum!");\n}\n'},
-  {id:'bash',file:'museum.bash',note:'本示例已在 Bash 3.2 本机核验；网页尚未接入该语言的运行环境。',code:'s=0; for ((i=1;i<=10;i++)); do s=$((s+i)); done; printf "%s\\n" "$s"\n'},
+  {id:'bash',file:'museum.bash',note:'GNU Bash 私有远端执行；文件与命令仅作用于临时容器。',code:'total=0\nfor ((i=1; i<=10; i++)); do\n  total=$((total+i))\ndone\nprintf "%s\\n" "$total"\n'},
+  {id:'awk',file:'museum.awk',note:'GNU awk；可在标准输入填写多行文本，编辑区填写 AWK 程序。',code:'BEGIN {\n  total = 0\n  for (i = 1; i <= 10; i++) total += i\n  print total\n}\n'},
+  {id:'sed',file:'museum.sed',note:'GNU sed；在标准输入填写待处理文本，默认示例在没有输入时不产生输出。',code:'# In stdin, try: Hello, world!\ns/world/Code Museum/g\n'},
+  {id:'php',file:'museum.php',note:'PHP 8.3 CLI 私有远端执行；文件与网络函数受限，仅使用临时容器。',code:'<?php\n$total = 0;\nfor ($i = 1; $i <= 10; $i++) {\n    $total += $i;\n}\necho $total, PHP_EOL;\n'},
+  {id:'perl',file:'museum.pl',note:'Perl 5 私有远端执行；只能使用预装核心模块，不在线安装 CPAN 包。',code:'use utf8;\nmy $total = 0;\n$total += $_ for 1 .. 10;\nprint "$total\\n";\n'},
+  {id:'xslt',file:'museum.xsl',note:'XSLT 1.0（libxslt/xsltproc）：编辑区是样式表，标准输入是 XML 文档。',stdin:'<?xml version="1.0"?>\n<museum>\n  <language><name>C</name><year>1972</year></language>\n  <language><name>Lisp</name><year>1958</year></language>\n  <language><name>Python</name><year>1991</year></language>\n</museum>\n',code:'<?xml version="1.0"?>\n<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">\n  <xsl:output method="text"/>\n  <xsl:template match="/">\n    <xsl:for-each select="museum/language">\n      <xsl:value-of select="name"/>:<xsl:value-of select="year"/>\n      <xsl:text>&#10;</xsl:text>\n    </xsl:for-each>\n  </xsl:template>\n</xsl:stylesheet>\n'},
+  {id:'csharp',file:'Museum.cs',note:'C# / .NET 私有远端编译执行；单文件、预装参考程序集，不在线还原 NuGet 包。',code:'using System;\nusing System.Linq;\n\nclass Museum\n{\n    static void Main()\n    {\n        int[] years = { 1972, 1958, 1991 };\n        Console.WriteLine(years.Sum());\n    }\n}\n'},
+  {id:'fortran',file:'museum.f90',note:'GNU Fortran 私有远端编译执行；固定 Fortran 2008 标准选项。',code:'program museum\n  implicit none\n  integer :: total, i\n  total = 0\n  do i = 1, 10\n    total = total + i\n  end do\n  print \'(I0)\', total\nend program museum\n'},
   {id:'korn-shell',file:'museum.ksh',note:'本示例已在 ksh93u+ 本机核验；网页尚未接入该语言的运行环境。',code:'typeset -i total=0\nfor ((i=1; i<=10; i++)); do total=$((total+i)); done\nprint -r -- "$total"\n'},
   {id:'tcsh',file:'museum.tcsh',note:'本示例已在 tcsh 6.21 本机核验；网页尚未接入该语言的运行环境。',code:'@ total = 0\nforeach number (1 2 3 4 5 6 7 8 9 10)\n  @ total = $total + $number\nend\necho "$total"\n'}
 ];

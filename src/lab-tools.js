@@ -3,7 +3,7 @@
   if(!lab)return;
   const lessons=window.MUSEUM_LESSONS,execution=window.MUSEUM_EXECUTION;
   const names=new Map(window.MUSEUM_DATA.records.map(r=>[r.id,r.name]));
-  const extensions={javascript:'js',python:'py',lua:'lua',scheme:'scm',ruby:'rb',c:'c',cpp:'cpp',java:'java',csharp:'cs',go:'go',rust:'rs',bash:'bash','korn-shell':'ksh',tcsh:'tcsh'};
+  const extensions={javascript:'js',typescript:'ts',sql:'sql',awk:'awk',sed:'sed',php:'php',perl:'pl',xslt:'xsl',python:'py',lua:'lua',scheme:'scm',ruby:'rb',c:'c',cpp:'cpp',java:'java',csharp:'cs',fortran:'f90',go:'go',rust:'rs',bash:'bash','korn-shell':'ksh',tcsh:'tcsh'};
   let importing=false;
   function environment(){
     const id=lab.current,mode=execution?.handles(id)?execution.mode(id):'local';
@@ -13,10 +13,19 @@
       python:local?'浏览器 Python · Pyodide · 约13.53 MB未压缩 · 加载90秒 / 执行3秒 · 不上传代码':'服务器 Python · 私有令牌 · 点击运行才上传 · 3秒执行预算',
       lua:'浏览器 Lua 5.4 · Wasmoon · 约413 KiB未压缩 · 加载30秒 / 执行2秒 · 不上传代码',
       scheme:'浏览器 Scheme · BiwaScheme 0.8.3 · 约244 KiB · 非Wasm / 非完整R7RS · 加载30秒 / 执行2秒',
-      ruby:'服务器 Ruby · 私有令牌 · 点击运行才上传 · 3秒执行预算 · 无本地环境'
+      ruby:'服务器 Ruby · 私有令牌 · 点击运行才上传 · 3秒执行预算 · 无本地环境',
+      sql:'SQLite SQL · 每次使用独立内存数据库 · 不使用独立标准输入 · 禁用文件和系统命令 · 非完整 SQL 标准',
+      bash:'GNU Bash · 私有远端 · 可读取标准输入 · 禁网、临时容器内执行',
+      awk:'GNU awk · 私有远端 · 编辑区填写 AWK 程序，标准输入填写待处理文本',
+      sed:'GNU sed · 私有远端 · 编辑区填写 sed 脚本，标准输入填写待处理文本',
+      php:'PHP 8.3 · 私有远端 · 可读取标准输入 · 禁网、临时容器内执行 · 禁用系统命令与网络函数',
+      perl:'Perl 5.42 · 私有远端 · 可读取标准输入 · 禁网、临时容器内执行 · 不提供 CPAN 在线安装',
+      xslt:'XSLT 1.0 · libxslt / xsltproc · 编辑区为样式表，标准输入为 XML 文档 · 禁网'
     };
     const short={javascript:'浏览器 JavaScript · 无需下载',python:local?'浏览器 Python · 约13.53 MB':'服务器 Python · 需要令牌',lua:'浏览器 Lua · 约413 KiB',scheme:'浏览器 Scheme · 约244 KiB',ruby:'服务器 Ruby · 需要令牌'};
-    const compiled={c:['C11',10],cpp:['C++17',10],rust:['Rust 2021',15],go:['Go',30],java:['Java 17',15]};
+    const compiled={c:['C11',10],cpp:['C++17',10],rust:['Rust 2021',15],go:['Go',30],java:['Java 17',15],fortran:['Fortran 2008',10],csharp:['C# / .NET 10',30]};
+    compiled.typescript=['TypeScript（严格类型检查）',15];
+    for(const [key,name] of Object.entries({sql:'SQLite SQL',bash:'Bash',awk:'GNU awk',sed:'GNU sed',php:'PHP 8.3',perl:'Perl 5.42',xslt:'XSLT 1.0 / xsltproc'}))short[key]='服务器 '+name+' · 需要令牌';
     if(compiled[id]){short[id]='服务器 '+compiled[id][0]+' · 需要令牌';descriptions[id]='私有远端编译执行 · 点击运行才上传 · 编译'+compiled[id][1]+'秒 / 运行3秒 · 禁网，不安装外部依赖'+(id==='java'?' · 入口类名 Museum':'')}
     $('lab-environment-summary').textContent=short[id]||'仅编辑 · 未接入在线运行';
     $('lab-environment-detail').textContent=descriptions[id]||'仅编辑示例或草稿 · 尚未接入在线运行环境';

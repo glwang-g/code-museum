@@ -5,7 +5,7 @@ const path = require('node:path');
 const vm = require('node:vm');
 const source = fs.readFileSync(path.join(__dirname, '../src/lab.js'), 'utf8');
 
-function lab() {
+function lab(additionalExamples = []) {
   const elements = new Map(), workers = [], timers = new Map();
   let now = 0, timerId = 0;
   const element = selector => {
@@ -24,8 +24,8 @@ function lab() {
     emit(data) { this.onmessage?.({ data }); }
   }
   const window = {
-    MUSEUM_LAB_EXAMPLES: [{ id: 'javascript', code: 'console.log(1)' }, { id: 'python', code: 'print(1)' }],
-    MUSEUM_DATA: { records: [{ id: 'javascript', name: 'JavaScript' }, { id: 'python', name: 'Python' }] }
+    MUSEUM_LAB_EXAMPLES: [{ id: 'javascript', code: 'console.log(1)' }, { id: 'python', code: 'print(1)' }, ...additionalExamples],
+    MUSEUM_DATA: { records: [{ id: 'javascript', name: 'JavaScript' }, { id: 'python', name: 'Python' }, ...additionalExamples.map(({id})=>({id,name:id}))] }
   };
   const document = { hidden: false, querySelector: element, listeners: new Map(), addEventListener(type, callback) { this.listeners.set(type, callback); } };
   element('#lab-view').onclick = () => {
@@ -56,6 +56,29 @@ function lab() {
 }
 const runs = worker => worker.messages.filter(message => message.kind === 'run');
 const finish = (worker, output) => worker.emit({ kind: 'result', id: runs(worker).at(-1).id, ok: true, output });
+
+test('language switching preserves independent XML and text input, including intentionally empty input', () => {
+  const examples=[{id:'xslt',code:'<stylesheet/>',stdin:'<museum/>'},{id:'perl',code:'print 1;'},{id:'sql',code:'SELECT 1;'}];
+  const page=lab(examples),input=page.element('#lab-stdin');
+  page.api.open('xslt');
+  assert.equal(input.value,'<museum/>');
+  input.value='<museum><custom>用户数据</custom></museum>';
+  page.edit('<custom-stylesheet/>');
+  page.api.open('perl');
+  assert.equal(input.value,'','XML must not become another language’s stdin');
+  input.value='Perl input\n第二行\n';
+  page.api.open('xslt');
+  assert.equal(page.element('#lab-code').value,'<custom-stylesheet/>');
+  assert.equal(input.value,'<museum><custom>用户数据</custom></museum>');
+  input.value='';
+  page.api.open('sql');page.api.open('xslt');
+  assert.equal(input.value,'','An empty input must not restore the default XML');
+  page.api.open('perl');
+  assert.equal(input.value,'Perl input\n第二行\n');
+  const fresh=lab(examples);
+  fresh.api.open('xslt');
+  assert.equal(fresh.element('#lab-stdin').value,'<museum/>','Input must not persist into a new page');
+});
 
 test('direct lab entry identifies available runtimes and focuses the editor without losing the draft', () => {
   const page = lab();

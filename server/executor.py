@@ -29,7 +29,22 @@ COMPILED = {
     'cpp': ('gcc', '/usr/local/bin/g++', 512, 10, 'main.cpp', ['g++', '-std=c++17', '-O0', '-Wall', '-Wextra', '/work/main.cpp', '-o', '/work/program'], ['/work/program']),
     'rust': ('rust', '/usr/local/cargo/bin/rustc', 768, 15, 'main.rs', ['rustc', '--edition=2021', '/work/main.rs', '-o', '/work/program'], ['/work/program']),
     'go': ('golang', '/usr/local/go/bin/go', 768, 30, 'main.go', ['go', 'build', '-o', '/work/program', '/work/main.go'], ['/work/program']),
-    'java': ('eclipse-temurin', '/opt/java/openjdk/bin/javac', 768, 15, 'Museum.java', ['javac', '-J-Xmx256m', '-J-XX:ActiveProcessorCount=1', '--release', '17', '/work/Museum.java'], ['java', '-Xmx256m', '-XX:ActiveProcessorCount=1', '-cp', '/work', 'Museum'])
+    'java': ('eclipse-temurin', '/opt/java/openjdk/bin/javac', 768, 15, 'Museum.java', ['javac', '-J-Xmx256m', '-J-XX:ActiveProcessorCount=1', '--release', '17', '/work/Museum.java'], ['java', '-Xmx256m', '-XX:ActiveProcessorCount=1', '-cp', '/work', 'Museum']),
+    'typescript': ('code-museum-cli', '/usr/local/bin/node', 512, 15, 'main.ts', ['node', '/opt/typescript/lib/tsc.js', '--strict', '--noEmitOnError', '--target', 'ES2022', '--module', 'commonjs', '--lib', 'ES2022,DOM', '--outDir', '/work/output', '/work/main.ts'], ['node', '--max-old-space-size=256', '/work/output/main.js']),
+    'fortran': ('gcc', '/usr/local/bin/gfortran', 512, 10, 'main.f90', ['gfortran', '-std=f2008', '-O0', '-Wall', '-Wextra', '/work/main.f90', '-o', '/work/program'], ['/work/program']),
+    'csharp': ('mcr.microsoft.com/dotnet/sdk', '/usr/bin/dotnet', 1024, 30, 'main.cs', ['/usr/bin/dotnet', '/usr/share/dotnet/sdk/10.0.403/Roslyn/bincore/csc.dll', '-nologo', '-noconfig', '-out:/work/program.dll', '@/work/refs.rsp', '/work/main.cs'], ['/usr/bin/dotnet', 'exec', '--runtimeconfig', '/usr/share/dotnet/sdk/10.0.403/dotnet.runtimeconfig.json', '/work/program.dll'])
+}
+PREPARE = {
+    'csharp': ['/bin/sh', '-c', 'find /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref -path "*/ref/net*/*.dll" -printf "-r:%p\\n" > /work/refs.rsp']
+}
+SCRIPTED = {
+    'sql': ('/usr/bin/sqlite3', 'main.sql', ['/usr/bin/sqlite3', '-safe', '-batch', '-bail', '-noheader', ':memory:']),
+    'bash': ('/bin/bash', 'main.bash', ['/bin/bash', '--noprofile', '--norc', '/work/main.bash']),
+    'awk': ('/usr/bin/gawk', 'main.awk', ['/usr/bin/gawk', '-f', '/work/main.awk', '--']),
+    'sed': ('/bin/sed', 'main.sed', ['/bin/sed', '-f', '/work/main.sed', '--']),
+    'php': ('/usr/bin/php83', 'main.php', ['/usr/bin/php83', '-n', '-d', 'display_errors=stderr', '-d', 'log_errors=0', '-d', 'html_errors=0', '-d', 'date.timezone=UTC', '-d', 'allow_url_fopen=0', '-d', 'allow_url_include=0', '-d', 'open_basedir=/work:/tmp', '-d', 'disable_functions=exec,passthru,shell_exec,system,proc_open,popen,pcntl_exec,fsockopen,pfsockopen,stream_socket_client,curl_exec,curl_multi_exec', '-f', '/work/main.php']),
+    'perl': ('/usr/bin/perl', 'main.pl', ['/usr/bin/perl', '-CS', '/work/main.pl']),
+    'xslt': ('/usr/bin/xsltproc', 'main.xsl', ['/usr/bin/xsltproc', '--nonet', '--nowrite', '--nomkdir', '--maxdepth', '100', '/work/main.xsl', '-'])
 }
 PYTHON_BOOT = "import sys,json,io,runpy; p=json.load(sys.stdin); open('/work/main.py','w').write(p['code']); sys.stdin=io.StringIO(p['stdin']); sys.argv=['/work/main.py']; runpy.run_path('/work/main.py',run_name='__main__')"
 RUBY_BOOT = "require 'json'; require 'stringio'; p=JSON.parse(STDIN.read); File.write('/work/main.rb',p['code']); $stdin=StringIO.new(p['stdin']); Object.send(:remove_const,:STDIN); STDIN=$stdin; ARGV.clear; load '/work/main.rb'"
@@ -41,10 +56,17 @@ def load_runtimes(file):
     if manifest.get('schemaVersion') != 1 or not {'python', 'ruby'} <= {r['id'] for r in rows} or len({r['id'] for r in rows}) != len(rows):
         raise ValueError('Expected unique pinned runtime manifest')
     for r in rows:
-        if r['id'] not in {'python', 'ruby', *COMPILED}: raise ValueError('Unsupported runtime')
-        repository, executable, memory = COMPILED[r['id']][:3] if r['id'] in COMPILED else (r['id'], '/usr/local/bin/' + r['id'], {'python':256, 'ruby':512}[r['id']])
-        if not re.fullmatch(re.escape(repository) + r'@sha256:[a-f0-9]{64}', r['image']):
-            raise ValueError('Runtime must use an official image digest')
+        if r['id'] not in {'python', 'ruby', *COMPILED, *SCRIPTED}: raise ValueError('Unsupported runtime')
+        if r['id'] in SCRIPTED:
+            repository, executable, memory = 'code-museum-cli', SCRIPTED[r['id']][0], 256
+        else:
+            repository, executable, memory = COMPILED[r['id']][:3] if r['id'] in COMPILED else (r['id'], '/usr/local/bin/' + r['id'], {'python':256, 'ruby':512}[r['id']])
+        # Project-built images are addressed by immutable local image ID, never a mutable tag.
+        valid_image = r['image'] == r['imageId'] if repository == 'code-museum-cli' else re.fullmatch(re.escape(repository) + r'@sha256:[a-f0-9]{64}', r['image'])
+        if not valid_image:
+            raise ValueError('Runtime must use a pinned official digest or immutable project image ID')
+        if repository == 'code-museum-cli' and not re.fullmatch('[a-f0-9]{64}', r.get('buildManifestSha256', '')):
+            raise ValueError('Project runtime requires a fixed build manifest hash')
         if not re.fullmatch(r'sha256:[a-f0-9]{64}', r['imageId']) or r['os'] != 'linux':
             raise ValueError('Invalid image identity')
         if r['executable'] != executable or r['memoryMiB'] != memory or r['architecture'] != 'amd64':
@@ -61,6 +83,9 @@ def validate_submission(data, runtimes):
         value = data.get(field, '')
         if not isinstance(value, str) or len(value.encode('utf-8')) > limit:
             raise ValueError(field + ' exceeds its UTF-8 byte limit')
+        if '\0' in value: raise ValueError('NUL is not accepted in text programs or input')
+    if data['language'] == 'sql' and data.get('stdin', ''):
+        raise ValueError('SQLite reads the SQL program from stdin; separate stdin is not supported')
     return {'language': data['language'], 'code': data['code'], 'stdin': data.get('stdin', '')}
 
 
@@ -112,24 +137,28 @@ class DockerRunner:
                 '--runtime', self.runtime, '--network=none', '--read-only', '--init', '--ipc=none',
                 '--user=65534:65534', '--cap-drop=ALL', '--security-opt=no-new-privileges:true',
                 '--memory=' + str(row['memoryMiB']) + 'm', '--memory-swap=' + str(row['memoryMiB']) + 'm',
-                '--cpus=1', '--pids-limit=' + ('128' if compiled else '32'), '--ulimit=nofile=64:64', '--ulimit=fsize=16777216:16777216',
+                '--cpus=1', '--pids-limit=' + ('128' if compiled else '32'), '--ulimit=nofile=' + ('256:256' if language == 'csharp' else '64:64'), '--ulimit=fsize=' + ('67108864:67108864' if language == 'csharp' else '16777216:16777216'),
                 '--log-driver=none', '--stop-timeout=1', '--workdir=/work',
                 '--tmpfs=/work:rw,' + ('exec' if compiled else 'noexec') + ',nosuid,nodev,size=' + ('128m' if compiled else '16m') + ',mode=1777',
                 '--tmpfs=/tmp:rw,noexec,nosuid,nodev,size=' + ('128m' if compiled else '8m') + ',mode=1777', '-i',
                 ]
-        if compiled:
+        if compiled or language in SCRIPTED:
             command += ['--env=HOME=/work', '--env=GOCACHE=/work/cache', '--env=GOPATH=/work/go', '--env=GOPROXY=off', '--env=GOSUMDB=off', '--env=GOTOOLCHAIN=local', '--env=CGO_ENABLED=0', '--env=GOMAXPROCS=1', '--env=RUSTUP_HOME=/usr/local/rustup', '--env=CARGO_HOME=/usr/local/cargo', '--entrypoint=/bin/sleep', row['image'], '60']
         else:
             command += ['--entrypoint', row['executable'], row['image'], *(['-I', '-u', '-c', PYTHON_BOOT] if language == 'python' else ['-e', RUBY_BOOT])]
         return command
 
     def compiled_execute(self, job):
-        """No host mounts or artifact execution: compile and run inside one leased container."""
+        """Stream source into a leased container; optionally compile, then execute with real stdin."""
         name = self.prefix + job['id']; row = self.runtimes[job['language']]
-        _, _, _, compile_seconds, filename, compiler, program = COMPILED[job['language']]
+        if job['language'] in COMPILED:
+            _, _, _, compile_seconds, filename, compiler, program = COMPILED[job['language']]
+        else:
+            _, filename, program = SCRIPTED[job['language']]
+            compile_seconds, compiler = 0, None
         started = time.monotonic(); watchdog = None
         buffers = {field: bytearray() for field in ('compilerStdout', 'compilerStderr', 'stdout', 'stderr')}
-        timings = {}; phase = 'compiling'; exit_code = None
+        timings = {}; phase = 'compiling' if compiler else 'running'; exit_code = None
         def capture(args, seconds, payload=b''):
             process = subprocess.Popen(args, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
             def write():
@@ -173,13 +202,18 @@ class DockerRunner:
             # Docker cp rejects a read-only rootfs even when the target is tmpfs.
             # Stream bounded source to a fixed filename as the container's non-root user.
             subprocess.run(['docker','exec','-i',name,'/bin/dd','of=/work/'+filename,'status=none'],input=job['code'].encode('utf-8'),check=True,capture_output=True,timeout=8)
-            job['state'] = 'compiling'
-            tick = time.monotonic(); reason, exit_code = capture(['docker','exec',name,*compiler],compile_seconds)
-            timings['compileMs'] = round((time.monotonic()-tick)*1000)
-            if not reason and exit_code: reason = 'compile_error'
+            if job['language'] in PREPARE:
+                subprocess.run(['docker','exec',name,*PREPARE[job['language']]],check=True,capture_output=True,timeout=8)
+            reason = None
+            if compiler:
+                job['state'] = 'compiling'
+                tick = time.monotonic(); reason, exit_code = capture(['docker','exec',name,*compiler],compile_seconds)
+                timings['compileMs'] = round((time.monotonic()-tick)*1000)
+                if not reason and exit_code: reason = 'compile_error'
             if not reason:
                 phase = 'running'; job['state'] = phase
-                tick = time.monotonic(); reason, exit_code = capture(['docker','exec','-i',name,*program],3,job['stdin'].encode('utf-8'))
+                payload = job['code'] if job['language'] == 'sql' else job['stdin']
+                tick = time.monotonic(); reason, exit_code = capture(['docker','exec','-i',name,*program],3,payload.encode('utf-8'))
                 timings['runMs'] = round((time.monotonic()-tick)*1000)
                 reason = reason or ('completed' if exit_code == 0 else 'failed')
             decoded = {}; remaining = MAX_OUTPUT
@@ -198,7 +232,7 @@ class DockerRunner:
                 except (OSError,subprocess.SubprocessError): self.healthy=False
 
     def execute(self, job):
-        if job['language'] in COMPILED: return self.compiled_execute(job)
+        if job['language'] in COMPILED or job['language'] in SCRIPTED: return self.compiled_execute(job)
         name = self.prefix + job['id']
         process = watchdog = None
         started = time.monotonic()

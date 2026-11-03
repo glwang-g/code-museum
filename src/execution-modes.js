@@ -1,14 +1,14 @@
 (()=>{
   const config=window.MUSEUM_EXECUTION_CONFIG;if(!config?.enabled)return;
   const $=id=>document.getElementById(id),local=new Map([['python','Python · Pyodide，约13.53 MB未压缩'],['lua','Lua · Wasmoon，约413 KiB未压缩'],['scheme','Scheme · BiwaScheme，约244 KiB，非Wasm']]);
-  const remoteIds=new Set(['python','ruby','c','cpp','rust','go','java']),modes=new Map(),consent=new Set();
+  const remoteIds=new Set(['python','ruby','c','cpp','rust','go','java','typescript','sql','bash','awk','sed','php','perl','xslt','csharp','fortran']),modes=new Map(),consent=new Set();
   const status=window.MUSEUM_RUNTIME_STATUS;
   const terminal=new Set(['completed','failed','compile_error','compile_timed_out','timed_out','cancelled','output_limit','memory_limit','infrastructure_error']);
   const session=crypto.randomUUID().replaceAll('-','');
   let current=null,capabilities=null,callbacks={},generation=0,active=null,connectionGeneration=0;
   const endpoint=config.endpoint;
   if(endpoint!=='/api')throw new Error('Executor must use the same-origin /api endpoint');
-  const shortVersion=value=>String(value).match(/(?:Python|ruby)\s+[\d.]+/i)?.[0].replace(/^ruby/i,'Ruby')||String(value);
+  const shortVersion=value=>{const text=String(value).split(' / ')[0].replace(/\s*\(.*$/,'').trim();return text||String(value)};
   const mode=id=>modes.get(id)||(remoteIds.has(id)?'remote':'local');
   const handles=id=>local.has(id)||remoteIds.has(id);
   const allowed=id=>mode(id)==='local'&&consent.has(id)&&local.has(id);
@@ -30,6 +30,8 @@
     $('lab-execution-mode').querySelector('[value="remote"]').disabled=!remoteIds.has(current);
     $('lab-execution-mode').querySelector('[value="local"]').disabled=!local.has(current);
     $('lab-remote-access').hidden=!isRemote;
+    $('lab-stdin').disabled=current==='sql';
+    $('lab-stdin').placeholder=current==='sql'?'SQLite 直接读取编辑区 SQL，不使用独立标准输入':current==='xslt'?'XSLT 样式表读取编辑区；在此填写 XML 输入文档':'可选；AWK/sed 可读取多行文本';
     $('lab-enable-local').hidden=isRemote||allowed(current)||!local.has(current);
     $('lab-enable-local').textContent=local.get(current)+' · 下载并启用';
     $('lab-cancel-remote').hidden=!active||!isRemote;
@@ -40,7 +42,7 @@
       $('lab-status').textContent='远端执行 · 代码只在点击“运行代码”时上传。';
       $('lab-runtime-note').textContent=(record?.compileSeconds?'编译'+record.compileSeconds+'秒 / ':'')+'运行3秒上限、禁网、独立Docker环境；不自动安装第三方包。';
       $('lab-runtime-credit').hidden=!record;
-      $('lab-runtime-credit').textContent=record?'Docker 官方镜像 · 项目与许可 ↗':'';
+      $('lab-runtime-credit').textContent=record?'运行环境 · 项目与许可 ↗':'';
       $('lab-runtime-credit').onclick=()=>{if(record)window.MUSEUM_CREDITS_UI?.openRemoteFor(current)};
     }else{
       const label=window.MUSEUM_CREDITS_UI?.labelFor(current);
@@ -72,7 +74,7 @@
     active={id:null,token};render();$('lab-result').textContent='正在提交远端任务…';$('lab-result').dataset.state='';
     status?.update(id,'remote',{stage:'submitting',detail:'正在提交本次代码。',retryLabel:'重试运行'});
     try{
-      let job=await request('/executions',{method:'POST',headers:headers(token),body:JSON.stringify({language:id,code,stdin:$('lab-stdin').value})});
+      let job=await request('/executions',{method:'POST',headers:headers(token),body:JSON.stringify({language:id,code,stdin:id==='sql'?'':$('lab-stdin').value})});
       if(gen!==generation){await request('/executions/'+job.id,{method:'DELETE',headers:headers(token)});return}
       active.id=job.id;
       const deadline=Date.now()+90000;

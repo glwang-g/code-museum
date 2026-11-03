@@ -1,7 +1,7 @@
 // Optional integration check: uses installed Chrome, no downloaded dependencies.
 // Run after npm run build. CHROME_BIN selects Chromium; BROWSER_CHECK_OUTPUT saves report/screenshots.
 const fs=require('node:fs'),path=require('node:path'),http=require('node:http'),assert=require('node:assert/strict');
-const {spawn}=require('node:child_process');
+const {spawn,spawnSync}=require('node:child_process');
 const os=require('node:os'),crypto=require('node:crypto');
 const root=path.resolve(__dirname,'..');
 const chromeCandidates=[process.env.CHROME_BIN,'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome','/Applications/GoogleChrome.app/Contents/MacOS/Google Chrome','/Applications/Chromium.app/Contents/MacOS/Chromium'].filter(Boolean);
@@ -129,6 +129,24 @@ async function record(name,detail){results.push({name,detail});console.log('PASS
     await screenshot('execution-default-'+width+'.png');
   }
   await record('Remote default requires an explicit run and local interpreters require download consent',{pythonWorkers:0,runtimeDownloads:0});
+  for(const width of [1440,390]){
+    await page('Emulation.setDeviceMetricsOverride',{width,height:width===390?844:1000,deviceScaleFactor:1,mobile:width===390});
+    const xml='<museum><language><name>自定义 XML 输入</name><year>2026</year></language></museum>';
+    await evaluate(`window.MUSEUM_LAB.open('xslt');document.querySelector('#lab-stdin').value=${JSON.stringify(xml)}`);
+    await evaluate(`window.MUSEUM_LAB.open('perl')`);
+    assert.equal(await evaluate(`document.querySelector('#lab-stdin').value`),'');
+    await evaluate(`document.querySelector('#lab-stdin').value='Perl input';window.MUSEUM_LAB.open('xslt')`);
+    assert.equal(await evaluate(`document.querySelector('#lab-stdin').value`),xml);
+    await screenshot('xslt-input-preserved-'+width+'.png');
+    await evaluate(`window.MUSEUM_DRAFT_STORE.flush()`);
+    assert.equal(await evaluate(`localStorage.getItem('code-museum:drafts:v1').includes('自定义 XML 输入')`),false);
+    await evaluate(`document.querySelector('#lab-stdin').value='';window.MUSEUM_LAB.open('sql');window.MUSEUM_LAB.open('xslt')`);
+    assert.equal(await evaluate(`document.querySelector('#lab-stdin').value`),'');
+    await evaluate(`window.MUSEUM_LAB.open('perl')`);
+    assert.equal(await evaluate(`document.querySelector('#lab-stdin').value`),'Perl input');
+    await evaluate(`document.querySelector('#lab-stdin').value='';window.MUSEUM_LAB.open('python')`);
+  }
+  await record('XSLT XML and other language inputs survive switching without persisting stdin',{widths:[1440,390]});
   const themeChecks=[];
   for(const width of [1440,390]){
     await page('Emulation.setDeviceMetricsOverride',{width,height:width===390?844:1000,deviceScaleFactor:1,mobile:width===390});
@@ -189,14 +207,15 @@ async function record(name,detail){results.push({name,detail});console.log('PASS
   await record('Runtime modes, consent, measured resource progress, initialization and real Python load-failure retry',runtimeStages);
   await evaluate(`document.querySelector('#lab-reset').click();for(const id of ['python','lua','scheme'])window.MUSEUM_LAB.useLocal(id);window.MUSEUM_LAB.open('javascript')`);
   const creditChecks=[];
+  const expectedCreditIds=JSON.parse(fs.readFileSync(path.join(root,'data/credits.json'),'utf8')).groups.flatMap(group=>group.entries.map(entry=>'credit-'+entry.id)).sort();
   for(const width of [1440,390]){
     await page('Emulation.setDeviceMetricsOverride',{width,height:width===390?844:1000,deviceScaleFactor:1,mobile:width===390});
     await evaluate(`document.querySelector('#sources-view').click();document.querySelector('#about').scrollTop=0`);
-    assert.equal(await evaluate(`document.querySelectorAll('.credit-card').length`),13);
+    assert.deepEqual(await evaluate(`Array.from(document.querySelectorAll('.credit-card'),card=>card.id).sort()`),expectedCreditIds);
     assert.equal(await evaluate(`document.documentElement.scrollWidth<=innerWidth`),true);
     const links=await evaluate(`Array.from(document.querySelectorAll('#open-source-credits a'),a=>({href:a.getAttribute('href'),external:a.target==='_blank',rel:a.rel}))`);
     assert.ok(links.every(link=>!link.external||link.rel.includes('noreferrer')));
-    for(const link of links.filter(link=>!link.href.startsWith('https://'))){
+    for(const link of links.filter(link=>!/^https?:\/\//i.test(link.href))){
       assert.equal(await evaluate(`fetch(${JSON.stringify(link.href)}).then(r=>r.status)`),200,'Local credit evidence must resolve');
     }
     await screenshot('credits-overview-'+width+'.png');
@@ -404,17 +423,22 @@ async function record(name,detail){results.push({name,detail});console.log('PASS
     for(const [id,code] of Object.entries(shellExamples)){
       await evaluate(`window.MUSEUM_LAB.open(${JSON.stringify(id)})`);
       const state=await evaluate(`({code:document.querySelector('#lab-code').value,disabled:document.querySelector('#lab-run').disabled,reset:document.querySelector('#lab-reset').disabled,result:document.querySelector('#lab-result').textContent,note:document.querySelector('#lab-status').textContent,keywords:document.querySelectorAll('#lab-highlight .tok-keyword').length,canRun:window.MUSEUM_LAB.canRun(${JSON.stringify(id)})})`);
-      assert.equal(state.code,code,'Editor example must match the actual native execution sample');
+      if(id==='bash'){
+        // Bash now has a remote adapter; independently execute the revised default example locally.
+        const native=spawnSync('/bin/bash',['--noprofile','--norc'],{input:state.code,encoding:'utf8',timeout:1500});
+        assert.equal(native.status,0);assert.equal(native.stdout,'55\n');
+      }else assert.equal(state.code,code,'Editor example must match the actual native execution sample');
       assert.ok(state.disabled&&!state.reset&&!state.canRun&&state.keywords>0);
-      assert.ok(state.result.includes('尚未接入')&&state.note.includes('本机核验'));
-      const draft=code+'# editable draft\n';await edit(draft);
+      if(id==='bash')assert.ok(state.result.includes('点击运行')&&state.note.includes('远端执行'));
+      else assert.ok(state.result.includes('尚未接入')&&state.note.includes('本机核验'));
+      const draft=state.code+'# editable draft\n';await edit(draft);
       await evaluate(`window.MUSEUM_LAB.open('c');window.MUSEUM_LAB.open(${JSON.stringify(id)})`);
       assert.equal(await evaluate(`document.querySelector('#lab-code').value`),draft,'Shell draft must survive language navigation');
       assert.equal(await evaluate(`document.querySelector('#lab-result').textContent`),state.result,'Editing must not fabricate shell output');
       await evaluate(`document.querySelector('#lab-reset').click()`);
-      assert.equal(await evaluate(`document.querySelector('#lab-code').value`),code);
+      assert.equal(await evaluate(`document.querySelector('#lab-code').value`),state.code);
       await screenshot(`shell-lab-${id}-${size.width}.png`);
-      shellLabChecks.push({id,width:size.width,nativeSampleMatched:true,onlineRuntime:false});
+      shellLabChecks.push({id,width:size.width,nativeSampleMatched:true,configuredRemote:id==='bash',onlineRuntime:false});
     }
   }
   await record('Editable shell samples match native evidence and never fabricate browser results',shellLabChecks);

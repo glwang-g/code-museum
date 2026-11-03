@@ -23,6 +23,9 @@
     "executor:preview": "node scripts/executor-preview.cjs",
     "executor:check": "python3 scripts/check-executor.py",
     "executor:browser": "node scripts/check-executor-browser.cjs",
+    "runtime:cli-build": "python3 scripts/build-cli-runtime.py",
+    "runtime:cli-check": "python3 scripts/check-cli-runtimes.py",
+    "runtime:cli-browser": "node scripts/check-executor-browser.cjs --cli",
     "mcp": "python3 server/mcp.py",
     "museum:browser": "node scripts/check-museum-advance.cjs",
     "performance:browser": "node scripts/check-performance.cjs"

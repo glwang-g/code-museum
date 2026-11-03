@@ -89,7 +89,7 @@
     {
       "id": "remote-runtime-credits",
       "title": "实际使用 · 私有远端运行环境",
-      "intro": "以下运行时位于执行服务器，不随网页下载；版本来自固定官方镜像，连接状态仍以执行 API 为准。",
+      "intro": "以下运行时位于执行服务器，不随网页下载；原有语言使用固定官方镜像，新 CLI 工具链从固定发行包离线构建，连接状态仍以执行 API 为准。",
       "entries": [
         {
           "id": "remote-python",
@@ -227,6 +227,214 @@
             {
               "label": "上游许可与版权",
               "href": "https://github.com/openjdk/jdk17u/blob/master/LICENSE"
+            }
+          ],
+          "evidence": "data/execution-capabilities.json"
+        },
+        {
+          "id": "remote-typescript",
+          "name": "TypeScript / Node.js",
+          "languages": [
+            "typescript"
+          ],
+          "runtimeIds": [
+            "typescript"
+          ],
+          "kind": "私有远端",
+          "project": "https://www.typescriptlang.org/",
+          "usage": "本项目固定归档构建的真实原生工具链；实际镜像 ID 与构建输入哈希固定，需私有令牌。",
+          "adaptation": "TypeScript 严格类型检查通过才执行；SQL 使用 SQLite 安全模式和独立内存库；GNU 文本工具读取真实标准输入。",
+          "limits": "单文件、禁网、预装标准库；无在线依赖安装，执行后删除临时环境。SQLite 不是全部 SQL 方言。",
+          "licenseNote": "TypeScript Apache-2.0；Node.js MIT 及第三方许可",
+          "notices": [
+            {
+              "label": "版本、来源与许可说明",
+              "href": "licenses/cli-runtime-NOTICE.md"
+            },
+            {
+              "label": "TypeScript 完整许可",
+              "href": "licenses/typescript-LICENSE.txt"
+            },
+            {
+              "label": "TypeScript 第三方声明",
+              "href": "licenses/typescript-ThirdPartyNoticeText.txt"
+            }
+          ],
+          "evidence": "data/cli-runtime-build.json"
+        },
+        {
+          "id": "remote-sqlite",
+          "name": "SQLite SQL",
+          "languages": [
+            "sql"
+          ],
+          "runtimeIds": [
+            "sql"
+          ],
+          "kind": "私有远端",
+          "project": "https://sqlite.org/",
+          "usage": "本项目固定归档构建的真实原生工具链；实际镜像 ID 与构建输入哈希固定，需私有令牌。",
+          "adaptation": "TypeScript 严格类型检查通过才执行；SQL 使用 SQLite 安全模式和独立内存库；GNU 文本工具读取真实标准输入。",
+          "limits": "单文件、禁网、预装标准库；无在线依赖安装，执行后删除临时环境。SQLite 不是全部 SQL 方言。",
+          "licenseNote": "SQLite public domain / blessing",
+          "notices": [
+            {
+              "label": "版本、来源与许可说明",
+              "href": "licenses/cli-runtime-NOTICE.md"
+            }
+          ],
+          "evidence": "data/cli-runtime-build.json"
+        },
+        {
+          "id": "remote-gnu-cli",
+          "name": "GNU Bash / GNU awk / GNU sed",
+          "languages": [
+            "bash",
+            "awk",
+            "sed"
+          ],
+          "runtimeIds": [
+            "bash",
+            "awk",
+            "sed"
+          ],
+          "kind": "私有远端",
+          "project": "https://www.gnu.org/",
+          "usage": "本项目固定归档构建的真实原生工具链；实际镜像 ID 与构建输入哈希固定，需私有令牌。",
+          "adaptation": "TypeScript 严格类型检查通过才执行；SQL 使用 SQLite 安全模式和独立内存库；GNU 文本工具读取真实标准输入。",
+          "limits": "单文件、禁网、预装标准库；无在线依赖安装，执行后删除临时环境。SQLite 不是全部 SQL 方言。",
+          "licenseNote": "GPL-3.0-or-later；基础系统组件各有许可",
+          "notices": [
+            {
+              "label": "版本、来源与许可说明",
+              "href": "licenses/cli-runtime-NOTICE.md"
+            }
+          ],
+          "evidence": "data/cli-runtime-build.json"
+        },
+        {
+          "id": "remote-php",
+          "name": "PHP CLI",
+          "languages": [
+            "php"
+          ],
+          "runtimeIds": [
+            "php"
+          ],
+          "kind": "私有远端",
+          "project": "https://www.php.net/",
+          "usage": "本项目固定归档构建的真实 PHP 8.3 CLI；实际镜像 ID 与构建输入哈希固定，需私有令牌。",
+          "adaptation": "独立非 root、禁网、只读根容器；以无 php.ini 的最小配置运行，禁用系统命令、网络函数，并用 open_basedir 限制到临时工作区。",
+          "limits": "单文件、短程序、预装核心函数；不提供 Web 服务器、网络访问、外部扩展或在线依赖安装。",
+          "licenseNote": "PHP-3.01、BSD-3-Clause、LGPL-2.0-or-later、MIT 与 Zend-2.0；各组件许可见上游",
+          "notices": [
+            {
+              "label": "版本、来源与许可说明",
+              "href": "licenses/cli-runtime-NOTICE.md"
+            },
+            {
+              "label": "PHP 许可",
+              "href": "https://www.php.net/license/"
+            }
+          ],
+          "evidence": "data/cli-runtime-build.json"
+        },
+        {
+          "id": "remote-perl",
+          "name": "Perl 5",
+          "languages": [
+            "perl"
+          ],
+          "runtimeIds": [
+            "perl"
+          ],
+          "kind": "私有远端",
+          "project": "https://www.perl.org/",
+          "usage": "本项目固定归档构建的真实 Perl 5.42 解释器；实际镜像 ID 与构建输入哈希固定，需私有令牌。",
+          "adaptation": "独立非 root、禁网、只读根容器；解释器以 UTF-8 标准输入输出运行，仅使用预装核心模块。",
+          "limits": "单文件、短程序、预装核心模块；不支持 CPAN 在线安装、网络访问或第三方扩展。",
+          "licenseNote": "Artistic-1.0-Perl OR GPL-1.0-or-later",
+          "notices": [
+            {
+              "label": "版本、来源与许可说明",
+              "href": "licenses/cli-runtime-NOTICE.md"
+            },
+            {
+              "label": "Perl 许可",
+              "href": "https://dev.perl.org/licenses/"
+            }
+          ],
+          "evidence": "data/cli-runtime-build.json"
+        },
+        {
+          "id": "remote-libxslt",
+          "name": "libxslt / xsltproc",
+          "languages": [
+            "xslt"
+          ],
+          "runtimeIds": [
+            "xslt"
+          ],
+          "kind": "私有远端",
+          "project": "http://xmlsoft.org/XSLT/",
+          "usage": "本项目固定归档构建的真实 libxslt 1.1.43 与 libxml2 2.13.9；实际镜像 ID 与构建输入哈希固定，需私有令牌。",
+          "adaptation": "独立非 root、禁网、只读根容器；编辑区是 XSLT 样式表，标准输入是 XML 文档，禁用网络、写出和目录创建。",
+          "limits": "XSLT 1.0，不是 2.0/3.0；单样式表、短转换；禁网、禁止写出和创建目录。容器不挂载宿主文件，但容器内只读运行时文件仍可能被 document() 读取，任务结束即销毁。",
+          "licenseNote": "libxslt X11；libxml2 MIT；依赖组件各有许可",
+          "notices": [
+            {
+              "label": "版本、来源与许可说明",
+              "href": "licenses/cli-runtime-NOTICE.md"
+            },
+            {
+              "label": "W3C XSLT 1.0 规范",
+              "href": "https://www.w3.org/TR/1999/REC-xslt-19991116"
+            }
+          ],
+          "evidence": "data/cli-runtime-build.json"
+        },
+        {
+          "id": "remote-dotnet",
+          "name": "C# / .NET SDK",
+          "languages": [
+            "csharp"
+          ],
+          "runtimeIds": [
+            "csharp"
+          ],
+          "kind": "私有远端",
+          "project": "https://dotnet.microsoft.com/",
+          "usage": "官方 .NET SDK 镜像中的 Roslyn 编译器与预装参考程序集；镜像 digest 固定，需私有令牌。",
+          "adaptation": "独立非 root、禁网、只读根容器；先编译单文件 C#，编译成功后才运行，编译诊断与程序输出分开。",
+          "limits": "单文件、预装参考程序集；任务期间禁止 NuGet 还原或在线下载依赖，不提供 Web、桌面或设备访问。",
+          "licenseNote": "MIT（.NET 运行时与 SDK）；镜像系统组件各有许可",
+          "notices": [
+            {
+              "label": "上游许可",
+              "href": "https://github.com/dotnet/runtime/blob/main/LICENSE.TXT"
+            }
+          ],
+          "evidence": "data/execution-capabilities.json"
+        },
+        {
+          "id": "remote-gfortran",
+          "name": "GNU Fortran",
+          "languages": [
+            "fortran"
+          ],
+          "runtimeIds": [
+            "fortran"
+          ],
+          "kind": "私有远端",
+          "project": "https://gcc.gnu.org/fortran/",
+          "usage": "官方 GCC 镜像中的真实 GNU Fortran 14.3.0；镜像 digest 固定，需私有令牌。",
+          "adaptation": "独立非 root、禁网、只读根容器；以 Fortran 2008 标准选项编译单文件，编译成功后才运行。",
+          "limits": "单文件、预装运行时库；不在线下载依赖，不使用外部数值库或设备访问。",
+          "licenseNote": "GPL-3.0-or-later with GCC Runtime Library Exception；镜像系统组件各有许可",
+          "notices": [
+            {
+              "label": "GCC 运行时库例外",
+              "href": "https://www.gnu.org/licenses/gcc-exception-3.1.html"
             }
           ],
           "evidence": "data/execution-capabilities.json"

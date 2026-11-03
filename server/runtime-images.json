@@ -78,6 +78,124 @@
       "memoryMiB": 768,
       "executable": "/opt/java/openjdk/bin/javac",
       "source": "https://hub.docker.com/_/eclipse-temurin"
+    },
+    {
+      "id": "fortran",
+      "image": "gcc@sha256:5e927c284bf55a7dc796262e311a0703344f62f41f5621eb56843111b1d37e15",
+      "imageId": "sha256:5e927c284bf55a7dc796262e311a0703344f62f41f5621eb56843111b1d37e15",
+      "architecture": "amd64",
+      "os": "linux",
+      "version": "GNU Fortran (GCC) 14.3.0",
+      "memoryMiB": 512,
+      "executable": "/usr/local/bin/gfortran",
+      "source": "https://gcc.gnu.org/fortran/"
+    },
+    {
+      "id": "csharp",
+      "image": "mcr.microsoft.com/dotnet/sdk@sha256:de4fe90a98845d75910b9769662465c84de1a934665c431279d1382b2bddc02b",
+      "imageId": "sha256:de4fe90a98845d75910b9769662465c84de1a934665c431279d1382b2bddc02b",
+      "architecture": "amd64",
+      "os": "linux",
+      "version": ".NET SDK 10.0.403",
+      "memoryMiB": 1024,
+      "executable": "/usr/bin/dotnet",
+      "source": "https://dotnet.microsoft.com/"
+    },
+    {
+      "id": "typescript",
+      "image": "sha256:6492a9b6618fab4849520351d9edf74b9ee0c79c9758f9485f3fbba6c36d9c94",
+      "imageId": "sha256:6492a9b6618fab4849520351d9edf74b9ee0c79c9758f9485f3fbba6c36d9c94",
+      "architecture": "amd64",
+      "os": "linux",
+      "version": "TypeScript 5.9.3 / Node v22.23.2",
+      "memoryMiB": 512,
+      "executable": "/usr/local/bin/node",
+      "source": "https://www.typescriptlang.org/",
+      "buildManifestSha256": "182d22634434a05bd32a12325dedeebc4f60b3d3a09032f63812ee09f031a605"
+    },
+    {
+      "id": "sql",
+      "image": "sha256:6492a9b6618fab4849520351d9edf74b9ee0c79c9758f9485f3fbba6c36d9c94",
+      "imageId": "sha256:6492a9b6618fab4849520351d9edf74b9ee0c79c9758f9485f3fbba6c36d9c94",
+      "architecture": "amd64",
+      "os": "linux",
+      "version": "SQLite 3.53.4",
+      "memoryMiB": 256,
+      "executable": "/usr/bin/sqlite3",
+      "source": "https://sqlite.org/",
+      "buildManifestSha256": "182d22634434a05bd32a12325dedeebc4f60b3d3a09032f63812ee09f031a605"
+    },
+    {
+      "id": "bash",
+      "image": "sha256:6492a9b6618fab4849520351d9edf74b9ee0c79c9758f9485f3fbba6c36d9c94",
+      "imageId": "sha256:6492a9b6618fab4849520351d9edf74b9ee0c79c9758f9485f3fbba6c36d9c94",
+      "architecture": "amd64",
+      "os": "linux",
+      "version": "GNU bash, version 5.3.9(1)-release (x86_64-alpine-linux-musl)",
+      "memoryMiB": 256,
+      "executable": "/bin/bash",
+      "source": "https://www.gnu.org/software/bash/",
+      "buildManifestSha256": "182d22634434a05bd32a12325dedeebc4f60b3d3a09032f63812ee09f031a605"
+    },
+    {
+      "id": "awk",
+      "image": "sha256:6492a9b6618fab4849520351d9edf74b9ee0c79c9758f9485f3fbba6c36d9c94",
+      "imageId": "sha256:6492a9b6618fab4849520351d9edf74b9ee0c79c9758f9485f3fbba6c36d9c94",
+      "architecture": "amd64",
+      "os": "linux",
+      "version": "GNU Awk 5.3.2, API 4.0",
+      "memoryMiB": 256,
+      "executable": "/usr/bin/gawk",
+      "source": "https://www.gnu.org/software/gawk/",
+      "buildManifestSha256": "182d22634434a05bd32a12325dedeebc4f60b3d3a09032f63812ee09f031a605"
+    },
+    {
+      "id": "sed",
+      "image": "sha256:6492a9b6618fab4849520351d9edf74b9ee0c79c9758f9485f3fbba6c36d9c94",
+      "imageId": "sha256:6492a9b6618fab4849520351d9edf74b9ee0c79c9758f9485f3fbba6c36d9c94",
+      "architecture": "amd64",
+      "os": "linux",
+      "version": "/bin/sed (GNU sed) 4.9",
+      "memoryMiB": 256,
+      "executable": "/bin/sed",
+      "source": "https://www.gnu.org/software/sed/",
+      "buildManifestSha256": "182d22634434a05bd32a12325dedeebc4f60b3d3a09032f63812ee09f031a605"
+    },
+    {
+      "id": "php",
+      "image": "sha256:6492a9b6618fab4849520351d9edf74b9ee0c79c9758f9485f3fbba6c36d9c94",
+      "imageId": "sha256:6492a9b6618fab4849520351d9edf74b9ee0c79c9758f9485f3fbba6c36d9c94",
+      "architecture": "amd64",
+      "os": "linux",
+      "version": "PHP 8.3.36",
+      "memoryMiB": 256,
+      "executable": "/usr/bin/php83",
+      "source": "https://www.php.net/",
+      "buildManifestSha256": "182d22634434a05bd32a12325dedeebc4f60b3d3a09032f63812ee09f031a605"
+    },
+    {
+      "id": "perl",
+      "image": "sha256:6492a9b6618fab4849520351d9edf74b9ee0c79c9758f9485f3fbba6c36d9c94",
+      "imageId": "sha256:6492a9b6618fab4849520351d9edf74b9ee0c79c9758f9485f3fbba6c36d9c94",
+      "architecture": "amd64",
+      "os": "linux",
+      "version": "Perl 5.42.2",
+      "memoryMiB": 256,
+      "executable": "/usr/bin/perl",
+      "source": "https://www.perl.org/",
+      "buildManifestSha256": "182d22634434a05bd32a12325dedeebc4f60b3d3a09032f63812ee09f031a605"
+    },
+    {
+      "id": "xslt",
+      "image": "sha256:6492a9b6618fab4849520351d9edf74b9ee0c79c9758f9485f3fbba6c36d9c94",
+      "imageId": "sha256:6492a9b6618fab4849520351d9edf74b9ee0c79c9758f9485f3fbba6c36d9c94",
+      "architecture": "amd64",
+      "os": "linux",
+      "version": "libxslt 1.1.43 / libxml2 2.13.9",
+      "memoryMiB": 256,
+      "executable": "/usr/bin/xsltproc",
+      "source": "http://xmlsoft.org/XSLT/",
+      "buildManifestSha256": "182d22634434a05bd32a12325dedeebc4f60b3d3a09032f63812ee09f031a605"
     }
   ]
 }

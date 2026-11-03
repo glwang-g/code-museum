@@ -7,6 +7,7 @@ const { generateRelationshipAudit } = require('./relationship-audit.cjs');
 const { curatedContent } = require('./curated-content.cjs');
 const { learningPaths } = require('./learning-paths.cjs');
 const { executionCapabilities } = require('./execution-capabilities.cjs');
+const { validateCliRuntime } = require('./cli-runtime.cjs');
 const { fingerprintAssets } = require('./fingerprint-assets.cjs');
 
 const root = path.resolve(__dirname, '..');
@@ -18,6 +19,7 @@ function build(projectRoot = root) {
   const catalogue = generateCatalogue(projectRoot);
   const relationshipAudit = generateRelationshipAudit(projectRoot,catalogue);
   const capabilities = executionCapabilities(projectRoot);
+  const cliRuntime = validateCliRuntime(projectRoot);
   const paths = learningPaths(projectRoot,catalogue,relationshipAudit);
   const {exhibits,triage}=curatedContent(projectRoot,catalogue,relationshipAudit);
   const {credits,linguistLicense} = generateCredits(projectRoot);
@@ -91,12 +93,14 @@ function build(projectRoot = root) {
     fs.writeFileSync(path.join(next, 'data/catalogue.js'), 'window.MUSEUM_DATA=' + JSON.stringify(catalogue) + ';');
     fs.writeFileSync(path.join(next,'data/catalogue.json'),JSON.stringify(catalogue)+'\n');
     fs.writeFileSync(path.join(next,'data/execution-capabilities.json'),JSON.stringify(capabilities,null,2)+'\n');
+    fs.writeFileSync(path.join(next,'data/cli-runtime-build.json'),JSON.stringify(cliRuntime,null,2)+'\n');
     fs.writeFileSync(path.join(next, 'data/relationship-status.js'), 'window.MUSEUM_RELATIONSHIP_AUDIT=' + JSON.stringify(relationshipAudit) + ';');
     fs.writeFileSync(path.join(next, 'data/relationship-status.json'), JSON.stringify(relationshipAudit,null,2)+'\n');
     fs.writeFileSync(path.join(next, 'data/credits.js'), 'window.MUSEUM_CREDITS=' + JSON.stringify(credits) + ';');
     fs.writeFileSync(path.join(next, 'data/credits.json'), JSON.stringify(credits,null,2)+'\n');
     fs.mkdirSync(path.join(next,'licenses'),{recursive:true});
     fs.writeFileSync(path.join(next,'licenses/linguist-LICENSE'),linguistLicense);
+    for(const [source,target] of [['NOTICE.md','cli-runtime-NOTICE.md'],['licenses/LICENSE.txt','typescript-LICENSE.txt'],['licenses/ThirdPartyNoticeText.txt','typescript-ThirdPartyNoticeText.txt']])fs.copyFileSync(path.join(projectRoot,'server/runtimes/cli',source),path.join(next,'licenses',target));
     fs.writeFileSync(path.join(next, 'data/audit-reviews.json'), auditBytes);
     fs.writeFileSync(path.join(next, 'data/provenance.json'), JSON.stringify({ meta: catalogue.meta, unresolved: [] }, null, 2));
     fs.writeFileSync(path.join(next,'data/mcp-manifest.json'),JSON.stringify(Object.fromEntries(['catalogue.json','audit-reviews.json','relationship-status.json','execution-capabilities.json'].map(name=>[name,crypto.createHash('sha256').update(fs.readFileSync(path.join(next,'data',name))).digest('hex')])),null,2)+'\n');

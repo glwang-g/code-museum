@@ -1,6 +1,51 @@
 # Docker 私有执行首版
 
-当前实现 Python、Ruby 原生远端执行，以及 C、C++、Rust、Go、Java 的编译后执行，先完成SSH私有原型核验，随后按用户指令准备正式域名上的令牌访问部署。Linux 执行服务使用 Python 标准库，不需要 pip/npm 依赖。网站仍可完全离线构建，构建不会启动 Docker、拉镜像或连接服务器。
+当前源码支持 Python、Ruby 原生远端执行，C、C++、Rust、Go、Java、C#、Fortran 的编译后执行，以及 TypeScript、SQL（SQLite）、Bash、AWK、sed、PHP、Perl、XSLT（libxslt）。原七门与两批新增语言的生产记录分开：新增语言尚未升级生产服务。Linux 执行服务使用 Python 标准库，不需要 pip/npm 依赖。网站仍可完全离线构建，构建不会启动 Docker、拉镜像或连接服务器。
+
+## 2026-11-02：PHP、Perl、XSLT、C#、Fortran（临时环境核验）
+
+本批延续固定执行协议。PHP、Perl、libxslt 作为新增 APK 纳入 `server/runtimes/cli/` 的同一离线镜像，来源、许可、哈希和 aports 配方入口记录在 `manifest.json`；C# 使用固定 digest 的官方 .NET SDK 镜像，Fortran 复用已有的官方 GCC 镜像（其中已包含 GNU Fortran），二者不新增仓库内大体积资产。新增 APK 合计约 12.7 MB，`server/runtimes/cli/` 约 20 MB。
+
+| 馆藏 ID | 真实实现 | 首版范围 |
+| --- | --- | --- |
+| `php` | PHP 8.3.36 CLI | 单文件；`-n` 最小配置，禁用系统命令与网络函数，`open_basedir` 限制在 `/work`、`/tmp`；不开放 Web 服务、外部扩展或在线安装。 |
+| `perl` | Perl 5.42.2 | 单文件；UTF-8 标准输入输出；源码含中文字符串时须声明 `use utf8;`，默认示例已声明；只使用预装核心模块，不安装 CPAN 包。 |
+| `xslt` | libxslt 1.1.43 / libxml2 2.13.9 | XSLT 1.0，不是 2.0/3.0；编辑区为样式表，标准输入为 XML 文档；`--nonet --nowrite --nomkdir`，禁网并禁止写出。容器不挂载宿主文件，但容器内只读运行时文件仍可能被 `document()` 读取；任务结束销毁容器。 |
+| `csharp` | .NET SDK 10.0.403 / Roslyn | 单文件；直接调用固定 Roslyn `csc.dll` 与预装参考程序集，编译成功后才运行；任务期间不还原 NuGet 包。 |
+| `fortran` | GNU Fortran (GCC) 14.3.0 | 单文件；`-std=f2008 -O0 -Wall -Wextra`；使用官方 GCC 镜像内已有编译器，不另外存储工具链。 |
+
+C# 的编译环境需要比解释器更高的文件描述符和文件大小上限（`nofile=256`、`fsize=64 MiB`），否则 Roslyn 在受限容器中会异常退出；其余限制与其他编译语言一致。C# 的 `/work/refs.rsp` 由固定准备步骤生成，运行使用 SDK 自带的 `dotnet.runtimeconfig.json`，二者随固定镜像 digest 绑定；升级 SDK 镜像时必须同步更新 Roslyn、参考程序集和 runtimeconfig 路径并重新核验。
+
+本批实际容器记录已写入 [cli-runtime-checks.json](../data/audit/cli-runtime-checks.json)：累计 52 项真实容器检查，新增覆盖 PHP 算术、多行输入、语法错误、禁用系统命令和 `open_basedir` 文件读取拦截；Perl 算术、多行输入和语法错误；XSLT 1.0 两种转换和非法 XPath；Fortran 编译执行、修改源码后输出变化、编译错误不执行、超时终止；C# 编译执行、修改源码、多行输入、编译错误不执行、缺少 NuGet 包时拒绝、超时终止。浏览器专项记录见 [cli-runtime-browser-checks.json](../data/audit/cli-runtime-browser-checks.json)，覆盖 1440/390 两种宽度、明暗主题、十门（原五门加新五门）的真实远端执行、编译诊断、地图入口与出处入口；不把临时核验当作生产上线。
+
+## 2026-11-02 首批：TypeScript、SQLite、Bash、AWK、sed（临时环境核验）
+
+新增工具链位于 `server/runtimes/cli/`，包含固定官方 TypeScript 发行包、签名 Alpine APK 及依赖、来源/许可/哈希清单与 Dockerfile；合计约 7.1 MB。源码构建只校验这些固定输入，不运行 Docker；浏览器也不下载它们。显式准备镜像需要事先缓存清单中的 Node 基础镜像，之后 `RUN` 阶段禁网、不读取软件源、不执行 npm install 或在线依赖恢复。新镜像使用实际构建的不可变 image ID，和原七门的官方仓库 digest 分开标注。
+
+| 馆藏 ID | 真实实现 | 首版范围 |
+| --- | --- | --- |
+| `typescript` | TypeScript 5.9.3 / Node.js 22.23.2 | 单文件；`strict`、`noEmitOnError`、ES2022、CommonJS、ES2022/DOM 声明库；完整类型检查失败不运行 JS。DOM 声明只提供类型，Node 不提供浏览器 DOM。未预装 `@types/node` 或第三方包，不支持用户在线安装依赖。编译 15 秒、运行 3 秒、512 MiB。 |
+| `sql` | SQLite 3.53.4 | 地图 SQL 节点的 SQLite 方言；编辑区 SQL 经真实 CLI 标准输入执行，每次独立 `:memory:` 库，禁用 `.shell`、外部文件与扩展加载。不使用另一个标准输入；不等同于所有 SQL 标准或 PL/SQL。 |
+| `bash` | GNU Bash 5.3.9 | 无 profile/rc，脚本在容器内执行；支持多行文本标准输入，不访问宿主命令或文件。 |
+| `awk` | GNU awk 5.3.2 | 编辑区为程序，标准输入为待处理文本；不冒充原始 AWK 或所有实现。 |
+| `sed` | GNU sed 4.9 | 编辑区为脚本，标准输入为待处理文本；无输入时可以正确地没有输出。 |
+
+后四门运行 3 秒、256 MiB、32 进程、`/work` 16 MiB 且 noexec；脚本由解释器读取。TypeScript 沿用编译容器限制。任务均禁网、非 root、只读根、无宿主挂载；源码通过 stdin 流入固定文件，结束销毁临时容器。多行标准输入不写入分享 URL。
+
+明确准备与核验（不部署生产）：
+
+```sh
+npm run runtime:cli-build -- --ssh-host xshow --write-manifest
+npm run runtime:cli-check -- --ssh-host xshow --output data/audit/cli-runtime-checks.json
+npm run build
+npm run runtime:cli-browser
+```
+
+不传 `--ssh-host` 时在当前 Linux Docker 主机准备或核验。新主机先显式准备 `manifest.json` 中的基础镜像，不要对项目本地 image ID 执行 `docker pull`。`--write-manifest` 记录本次实际镜像 ID 和版本；不同构建主机或 Docker 版本得到的 image ID 必须重新核验、同步清单，不能只改字段冒充兼容。旧镜像、旧正式 API 或缺镜像均不触发自动下载或本地回退。
+
+真实容器记录见 [cli-runtime-checks.json](../data/audit/cli-runtime-checks.json)，覆盖类型拒绝、SQLite 安全模式/任务隔离、脚本多行输入、真实错误、五语言超时、输出上限及取消恢复。`runtime:cli-browser` 使用独立临时 API 与本机 Chrome，截图不等于生产上线。部署仍需准备已核镜像并审核升级执行服务和静态站点，不能只推送前端就认为生产获得新运行时。
+
+首批结果：31 项真实容器检查、17 项实际 Chrome 专项通过（两份记录现已分别累计 52 项与 27 项，首批结果为其中子集）；[浏览器记录](../data/audit/cli-runtime-browser-checks.json)绑定最终源码和被服务资源哈希。另有 80 项默认测试、离线构建及完整本地浏览器回归 34/34 通过。旧回归的“13 张来源卡片”改为逐个核对完整 ID 集合；Bash 的旧“仅编辑”断言同步更新为“远端已配置、无 API 时不允许运行且不伪造输出”，新版默认程序另经本机实际执行，不跳过原有核验。
 
 ## 本机试看（xshow）
 
@@ -59,9 +104,9 @@ EXECUTOR_UPSTREAM=http://127.0.0.1:4181 npm run preview
 | 项目 | 首版限制 |
 |---|---|
 | 并发 / 排队 | 1 / 最多10个；排队超30秒取消 |
-| 执行 | 运行3秒；C/C++编译10秒、Rust/Java15秒、Go30秒；create8秒、启动3秒/源码传入8秒；解释器watchdog12秒、编译容器60秒租约 |
-| 内存 | Python256MiB；Ruby/C/C++512MiB；Rust/Go/Java768MiB；不额外提供swap；Java堆256MiB |
-| CPU / 进程 / 文件描述符 | 1核 / 解释器32、编译环境128 / 64 |
+| 执行 | 运行3秒；C/C++/Fortran编译10秒、Rust/Java15秒、Go30秒、C#30秒；create8秒、启动3秒/源码传入8秒；解释器watchdog12秒、编译容器60秒租约 |
+| 内存 | Python256MiB；Ruby/C/C++/Fortran512MiB；Rust/Go/Java768MiB；C#1024MiB；不额外提供swap；Java堆256MiB |
+| CPU / 进程 / 文件描述符 | 1核 / 解释器32、编译环境128 / 64（C#为256）；文件大小上限16MiB（C#为64MiB） |
 | 文件系统 | 只读根；解释器/work16MiB、/tmp8MiB均noexec；编译环境各128MiB，/work允许执行容器内产物、/tmp仍noexec；均nosuid/nodev |
 | 网络 / 用户 / 权限 | 禁网、uid65534、cap-drop ALL、no-new-privileges、Docker默认seccomp |
 | 源码 / stdin / HTTP body | 64 KiB / 16 KiB / 96 KiB，按UTF-8字节 |

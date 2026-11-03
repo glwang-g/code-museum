@@ -5,7 +5,7 @@ const crypto = require('node:crypto');
 
 const root = path.resolve(__dirname, '..');
 const DEFAULT_ORIGIN = 'https://codemuseum.freexlib.com';
-const COMPILE_SECONDS = { c: 10, cpp: 10, rust: 15, go: 30, java: 15 };
+const COMPILE_SECONDS = { c: 10, cpp: 10, rust: 15, go: 30, java: 15, typescript: 15, fortran: 10, csharp: 30 };
 const LIMITS = { seconds: 3, outputBytes: 32768, concurrency: 1, network: false };
 
 function sha256(bytes) { return crypto.createHash('sha256').update(bytes).digest('hex'); }
