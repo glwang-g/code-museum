@@ -1,6 +1,8 @@
 # Code Museum · 产品上下文与交接
 
-## 2026-11-09 B组页面实际部署（Git/CI收尾中）
+## 2026-11-09 B组页面、Git推送与正式部署完成
+
+当前正式release为`f2ff0bf22f8325af5ad4f5c4909567108fcfe66f`，[Actions 42603930037](https://github.com/glwang-g/code-museum/actions/runs/42603930037)的build/deploy均成功。此前手动发布`8bf6c20`完成73项验收；[CI发布核验](../data/audit/b37-ci-release.json)确认新release的626个文件与该版本逐字节一致、两台服务active/enabled、执行容器零残留。[CI后公开数据检查](../data/audit/b37-ci-consistency.json)及[两节点真实执行复核](../data/audit/b37-ci-runtime-checks.json)通过；后者仅重跑Python、BCPL和完整元数据，不重复声称重跑全部73项。
 
 北京时间18:19（审计`10:19:48Z`），从精确公开Git提交`8bf6c20cc40302d066d927bedc1703f7674d39da`导出的626文件/35,364,229字节普通发布包已激活到正式站点，见 [站点部署记录](../data/audit/b37-site-deployment.json)。正式静态数据现为59个可执行节点（4浏览器 / 56远端，Python重叠），由既有xshow 42门、xshow2 14门网关配合；这次静态发布未重启或替换受保护执行器，相关三个PID保持不变。
 
@@ -10,7 +12,7 @@ Nginx主虚拟主机未改，只在既有messages snippet追加`/api/access-requ
 
 首次操作后检查误把既有健康`/healthz`的204响应要求为200，触发自动回退；应用启动当时正常。按实际成功2xx契约纠正后重新激活并通过，不能将此过程记成应用故障。上版`cab8335a640ddc56f54740d06921d2df76b10d39`保留，Nginx及SQLite备份在`/var/backups/code-museum-site/20261109T101333Z-8bf6c20cc403`；回退切回旧release并重启analytics，不把测试前数据库快照直接倒灌活库，也不回退本次未改的执行器。
 
-本机工作区与精确公共Git树均已通过92项默认测试和离线构建。B组36门的完整固定输入已写入发布提交；BCPL六项上游材料仍只在私有档案，公开输入可离线生成同一网站，完整工具链重建仍须合法持有的精确私有包。Groovy8秒档案与无硬编码3秒超时文案已随新页面发布。GitHub大体积输入仍分批上传，master与Actions尚未收尾；本节只确认实际站点上线，不宣称Git或CI已全部完成。
+本机工作区与精确公共Git树均已通过92项默认测试和离线构建。B组36门的完整固定输入已写入发布提交；BCPL六项上游材料仍只在私有档案，公开输入可离线生成同一网站，完整工具链重建仍须合法持有的精确私有包。Groovy8秒档案与无硬编码3秒超时文案已随新页面发布。公开固定输入已分批推送master，正式Actions以`f2ff0bf`完成构建和部署；临时资料分支已清理，完整提交历史保留。
 
 ## 2026-11-09 提交与静态发布准备（历史检查点）
 

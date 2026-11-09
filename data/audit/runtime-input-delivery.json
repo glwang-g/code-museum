@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-09T10:48:50.801695+00:00",
+  "repository": "https://github.com/glwang-g/code-museum",
+  "scope": "Four reviewed fixed-runtime input commits preloaded into a temporary Git branch. This record does not claim final application/master publication or website activation; those are separate root actions. No force push or persistent remote/credential configuration change.",
+  "temporaryRemoteBranch": "refs/heads/runtime-inputs-20261109",
+  "batches": [
+    {
+      "part": 1,
+      "commit": "3fcf9615bf64a18eb9651e4fb664a6af6477d8c8",
+      "fixedInputFileCount": 222,
+      "fixedInputBytes": 621752097,
+      "transport": "ssh",
+      "confirmedReachable": true,
+      "verifiedReachableAt": "2026-11-09T10:25:06.160785+00:00",
+      "verification": "Part 2 remote ref was observed directly; part 1 is its verified ancestor."
+    },
+    {
+      "part": 2,
+      "commit": "bdc33fa74ad0d4e1aeb61ae156ea747c7f0934f9",
+      "fixedInputFileCount": 888,
+      "fixedInputBytes": 597630260,
+      "transport": "https-with-local-gh-credential-helper",
+      "confirmedReachable": true,
+      "verifiedReachableAt": "2026-11-09T10:25:06.160785+00:00",
+      "verification": "Part 2 remote ref was observed directly; part 1 is its verified ancestor."
+    },
+    {
+      "part": 3,
+      "commit": "c5c4e1b22d42d7fe6fe3ff28ecd219b656fd1c03",
+      "fixedInputFileCount": 18,
+      "fixedInputBytes": 603979776,
+      "transport": "https-with-local-gh-credential-helper",
+      "confirmedReachable": true,
+      "verifiedReachableAt": "2026-11-09T10:40:48.965325+00:00",
+      "verification": "Push exited 0; exact temporary remote ref verified with git ls-remote.",
+      "localPushLogSha256": "43e0466b18b44a870f1df0bb846f2f756cca57ec55951a3140eae5b6dc538068"
+    },
+    {
+      "part": 4,
+      "commit": "7cbe6101c26a39919451e711f0dfd108f5e7206e",
+      "fixedInputFileCount": 107,
+      "fixedInputBytes": 343888379,
+      "transport": "https-with-local-gh-credential-helper",
+      "confirmedReachable": true,
+      "verifiedReachableAt": "2026-11-09T10:48:50.801695+00:00",
+      "verification": "Push exited 0; exact temporary remote ref verified with git ls-remote.",
+      "localPushLogSha256": "426e8ac49d91abf3268d8f0acf0b42432c2a672e53d0c61b0732eb2cb5fdc3ac"
+    }
+  ],
+  "totalFixedInputBytes": 2167250512,
+  "totalFixedInputFiles": 1235,
+  "verifiedRemoteHead": "7cbe6101c26a39919451e711f0dfd108f5e7206e",
+  "allBatchCommitsReachableFromVerifiedHead": true,
+  "finalAssetTreeExcludesPrivateBcplFiles": true,
+  "excludedPrivateBcplPaths": [
+    "server/runtimes/bcpl/assets/bcpl-20261109.tar.gz.part00",
+    "server/runtimes/bcpl/assets/bcpl-20261109.tar.gz.part01",
+    "server/runtimes/bcpl/assets/bcpl-20261109.tar.gz.part02",
+    "server/runtimes/bcpl/assets/cintcode-noninteractive.patch",
+    "server/runtimes/bcpl/licenses/upstream-README.txt",
+    "server/runtimes/bcpl/metadata/upstream-sysboot.b"
+  ],
+  "finalAssetTreeExcludesLocalArtifactRoots": [
+    "output/",
+    "tmp/",
+    ".claude/"
+  ],
+  "forcePushUsed": false,
+  "masterPushedByThisTask": false,
+  "remoteConfigurationChanged": false,
+  "credentialsRetainedInReportOrLogs": false,
+  "inputPlanSha256": "81443576ca3fa8c74ddfaf09646f22ec824788eb7dd077799dd6e5bede799fe0",
+  "note": "Byte counts describe source input files, not on-wire transfer sizes. Fast pack-object progress was not treated as completed network delivery. The later application commit also carries the three public source archives explicitly restored from machine-wide archive ignores; they are outside this four-batch preload count."
+}

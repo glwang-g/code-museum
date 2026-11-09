@@ -2,7 +2,7 @@
 
 当前生产后端已于2026-11-09按用户授权升级为双节点56门私有远端执行：xshow 42门、xshow2 14门，统一网关沿用原同域 API 和私有令牌。10项常驻 canary、[63项正式 HTTPS/Chrome 检查](../data/audit/dual-node-production-checks.json)（精确元数据、56门逐一正例及6项既有页面检查）、[8项生命周期与故障恢复检查](../data/audit/dual-node-production-lifecycle.json)通过；[新服务已 active/enabled](../data/audit/dual-node-production-services.json)，旧执行器停用自启但保留回退。Groovy 当前运行预算8秒，含 JVM 启动与脚本编译，其余按各语言 API 预算。拓扑、v3清单和备份见 [双节点部署说明](DUAL_NODE_DEPLOYMENT.md)。
 
-提交`8bf6c20`的静态站点现已实际部署，正式页面提供4门浏览器与56门私有远端，Python重叠，共59个可执行节点。[本轮73项正式HTTPS/Chrome检查](../data/audit/b37-site-runtime-checks.json)包含56门逐一真实正例、BCPL/Oberon/Groovy/Swift/Dart/VHDL/PostScript在1440/390页面的执行，以及Python真实错误与恢复；[公开数据一致性](../data/audit/b37-site-consistency.json)通过。Groovy新页面使用8秒预算文案。版本和边界见各节；[逐门记录](../data/audit/runtime-rollout.json)仍保留临时验收阶段，不改写历史。GitHub固定输入分批推送、master和Actions尚在收尾，不把已部署写成CI全部完成。Linux执行服务使用Python标准库，不需要pip/npm依赖；网站可从公共输入完全离线构建，不启动Docker、拉镜像或连接服务器。
+当前正式发布提交为`f2ff0bf`，已通过Actions部署，正式页面提供4门浏览器与56门私有远端，Python重叠，共59个可执行节点。[本轮73项正式HTTPS/Chrome检查](../data/audit/b37-site-runtime-checks.json)包含56门逐一真实正例、BCPL/Oberon/Groovy/Swift/Dart/VHDL/PostScript在1440/390页面的执行，以及Python真实错误与恢复；[公开数据一致性](../data/audit/b37-site-consistency.json)通过。Groovy新页面使用8秒预算文案。版本和边界见各节；[逐门记录](../data/audit/runtime-rollout.json)仍保留临时验收阶段，不改写历史。公开固定输入已推送master，[正式Actions](https://github.com/glwang-g/code-museum/actions/runs/42603930037)的build/deploy及[CI后核验](../data/audit/b37-ci-release.json)通过；临时资料分支已清理。Linux执行服务使用Python标准库，不需要pip/npm依赖；网站可从公共输入完全离线构建，不启动Docker、拉镜像或连接服务器。
 
 ## 2026-11-09 公开源码与 BCPL 私有输入
 
@@ -401,4 +401,4 @@ npm run executor:prepare-dual -- --output output/dual-executor-review
 
 这是宿主执行协议调整，固定 Groovy 工具链与镜像未变。上方旧验收记录与固定 NOTICE 的3秒说明是初期准备状态；生产 API 已按每门 `runSeconds` 正确公开 Groovy 的8秒预算。`/api/runtimes` 的 `limits.seconds` 表示当前可用语言中最大的运行预算，具体语言必须读取自身 `runSeconds`；编译预算另列。本轮已修正语言档案的8秒预算，并把通用执行超时提示改为“运行超过时间预算，已停止。”；修正已随新静态页面发布，Groovy正式宽窄屏执行通过。
 
-最终双节点临时验收：14项API/Chrome与56/56门正例回归通过，分别见 `dual-node-runtime-checks.json`、`dual-node-all-runtimes.json`；宽窄屏及部分可用状态截图已核读。Groovy新预算11项容器/7项网页通过。全量默认测试90/90、网关HTTP测试12/12与离线构建通过。随后正式生产已完成安装、切换和上述HTTPS验收；[启用后健康复核](../data/audit/dual-node-production-final-health.json)再次确认完整56门、并发2及最大预算8秒。静态前端随后已实际发布；当前GitHub固定输入分批推送、master与Actions收尾仍待完成，详见本轮部署记录。
+最终双节点临时验收：14项API/Chrome与56/56门正例回归通过，分别见 `dual-node-runtime-checks.json`、`dual-node-all-runtimes.json`；宽窄屏及部分可用状态截图已核读。Groovy新预算11项容器/7项网页通过。全量默认测试90/90、网关HTTP测试12/12与离线构建通过。随后正式生产已完成安装、切换和上述HTTPS验收；[启用后健康复核](../data/audit/dual-node-production-final-health.json)再次确认完整56门、并发2及最大预算8秒。静态前端随后已实际发布；当前master已推送，正式Actions以`f2ff0bf`部署了与完整验收版本逐字节一致的独立release，详见本轮部署记录。

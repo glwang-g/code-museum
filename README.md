@@ -54,9 +54,9 @@ Code Museum 把编程语言当作一座可以探索的博物馆：你可以沿�
 
 ## 正在推进的事项
 
-原 B 组37门已按P2、P3顺序完成固定工具链、源码、真实执行与页面接入。2026-11-09，提交`8bf6c20`的静态站点已实际部署，正式页面现提供59个可执行语言节点（4浏览器 / 56远端，Python重叠），由xshow 42门、xshow2 14门的私有网关服务配合。新站 [73项正式HTTPS/Chrome验收](data/audit/b37-site-runtime-checks.json)通过，含全56门逐一正例、7种语言1440/390页面以及Python错误与恢复；[公开数据一致性](data/audit/b37-site-consistency.json)通过。
+原 B 组37门已按P2、P3顺序完成固定工具链、源码、真实执行与页面接入。2026-11-09，正式发布提交`f2ff0bf`已通过Actions并部署，正式页面现提供59个可执行语言节点（4浏览器 / 56远端，Python重叠），由xshow 42门、xshow2 14门的私有网关服务配合。新站 [73项正式HTTPS/Chrome验收](data/audit/b37-site-runtime-checks.json)通过，含全56门逐一正例、7种语言1440/390页面以及Python错误与恢复；[公开数据一致性](data/audit/b37-site-consistency.json)通过。
 
-网站已实际发布；GitHub固定输入分批推送及master/Actions收尾仍在进行，部署成功不替代远端Git或CI成功记录。ALGOL 60 传名调用仍有已知生成代码警告，Oberon 为 OBNC 的最终2016语言实现；Groovy 运行预算为8秒，含 JVM 启动和脚本编译，语言档案与超时提示的旧3秒文案已修正。B组其余36门的固定工具链输入已写入本轮发布提交；BCPL的完整上游归档尚无明确的全包公开再分发授权，六项上游私有材料继续本机固定保存，不上传公共仓库。各语言版本与语义边界见 [临时逐门记录](data/audit/runtime-rollout.json) 与 [构建计划](docs/audit/RUNTIME_BUILD_PLAN.md)；逐门记录保留为临时验收历史，当前生产状态以正式报告为准。
+源码与公开固定输入已推送master，[Actions 42603930037](https://github.com/glwang-g/code-museum/actions/runs/42603930037)的build/deploy均成功；[CI后线上核验](data/audit/b37-ci-release.json)确认发布包与完整验收版本逐字节一致，临时资料分支已清理。ALGOL 60 传名调用仍有已知生成代码警告，Oberon 为 OBNC 的最终2016语言实现；Groovy 运行预算为8秒，含 JVM 启动和脚本编译，语言档案与超时提示的旧3秒文案已修正。B组其余36门的固定工具链输入已写入本轮发布提交；BCPL的完整上游归档尚无明确的全包公开再分发授权，六项上游私有材料继续本机固定保存，不上传公共仓库。各语言版本与语义边界见 [临时逐门记录](data/audit/runtime-rollout.json) 与 [构建计划](docs/audit/RUNTIME_BUILD_PLAN.md)；逐门记录保留为临时验收历史，当前生产状态以正式报告为准。
 
 - 继续为常显标签和高价值关系寻找可回溯的一手资料，减少“只有来源字段”的关系。
 - 研究 XSLT、Zig 和具体汇编方言的历史设计来源；不把参考文献、ABI、编译目标或语法相似性直接当成继承关系。

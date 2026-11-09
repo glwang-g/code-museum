@@ -1,6 +1,8 @@
 # Code Museum 首版部署
 
-## 2026-11-09 B组37门页面与权限申请路由实际发布（Git/CI收尾中）
+## 2026-11-09 B组37门页面与权限申请正式发布完成
+
+当前正式release为`f2ff0bf22f8325af5ad4f5c4909567108fcfe66f`，[Actions 42603930037](https://github.com/glwang-g/code-museum/actions/runs/42603930037)的build/deploy均成功。此前手动发布`8bf6c20`完成73项验收；[CI发布核验](../data/audit/b37-ci-release.json)确认新release的626个文件与该版本逐字节一致、两台服务active/enabled、执行容器零残留。[CI后公开数据检查](../data/audit/b37-ci-consistency.json)及[两节点真实执行复核](../data/audit/b37-ci-runtime-checks.json)通过；后者仅重跑Python、BCPL和完整元数据，不重复声称重跑全部73项。
 
 北京时间18:19，从精确公开Git提交`8bf6c20cc40302d066d927bedc1703f7674d39da`导出的普通发布包已激活，626个文件、35,364,229字节，见 [站点部署记录](../data/audit/b37-site-deployment.json)。正式页面现提供59个可执行节点（4浏览器 / 56私有远端，Python重叠），与既有xshow 42门/xshow2 14门网关协作。此次发布没有升级受保护执行器，网关、隧道与本机worker三个PID保持不变；analytics active，`/healthz`沿用正常204响应。
 
@@ -8,11 +10,11 @@
 
 运行权限申请已接入正式`/api/access-requests`：本次只在既有`/etc/nginx/snippets/code-museum-messages.conf`追加对应location，复用原限流zone，经`nginx -t`后reload；主虚拟主机未改。analytics随普通release重启，沿用既有SQLite和SMTP配置，未读取或更改凭据。本轮没有提交有效申请、用户留言或发送真实测试邮件；本地8组拦截SMTP检查与本轮availability/无效请求验收分别记录，真实收件箱送达仍未人工确认。
 
-Groovy运行预算与新档案均为8秒，通用超时提示移除硬编码3秒。BCPL公开网页只发布固定元数据、来源与自编适配说明；六项上游私有材料不进公共Git或站点包。公共Git树可离线构建网页，完整BCPL工具链重建仍须显式提供原清单匹配的私有材料。工作区与精确公开Git树均已通过92项测试及离线构建；本轮GitHub固定输入仍分批上传，master与Actions尚未收尾，不能把手动激活成功写成Git或CI全部完成。master收尾将使用后续验收/说明提交生成新的独立release目录，先比对其网站产物与已验收`8bf6c20`一致，避免CI重新写入当前正在服务的同SHA目录；最终提交号和Actions结果另按实证补记。
+Groovy运行预算与新档案均为8秒，通用超时提示移除硬编码3秒。BCPL公开网页只发布固定元数据、来源与自编适配说明；六项上游私有材料不进公共Git或站点包。公共Git树可离线构建网页，完整BCPL工具链重建仍须显式提供原清单匹配的私有材料。工作区与精确公开Git树均已通过92项测试及离线构建；公开固定输入已分批推送master；正式Actions使用后续验收提交`f2ff0bf`生成独立release目录并成功部署，未覆盖当时正在服务的`8bf6c20`目录。CI后逐文件核验确认两份发布包字节一致，临时资料分支已清理。
 
 首次操作后检查错误要求`/healthz`为200，而既有健康契约返回204，因而触发自动回退至旧站；应用启动当时成功。校正为实际成功2xx契约后重新激活并通过，不把操作检查错误记为应用故障。
 
-回退材料：保留旧release`cab8335a640ddc56f54740d06921d2df76b10d39`，Nginx及SQLite备份目录为`/var/backups/code-museum-site/20261109T101333Z-8bf6c20cc403`，其中有`visits.sqlite3`和`messages.sqlite3`的切换前副本，以及`nginx-messages.before.conf`原snippet。站点回退时原子恢复`current`到`releases/cab8335a640ddc56f54740d06921d2df76b10d39`并重启`code-museum-analytics`，核对HTTPS与204健康响应；若需撤销申请代理，再从该备份目录的`nginx-messages.before.conf`恢复本轮前messages snippet，先`nginx -t`再reload。正常代码回退继续使用现有活数据库，不直接用旧快照覆盖用户新增访问、留言或申请；恢复数据库必须另行核对数据范围。此次未改执行器，站点回退不停止或降级双节点服务。
+CI发布后的最近已验收回退版本是`8bf6c20cc40302d066d927bedc1703f7674d39da`，与当前产品字节一致，切回它时保留现有申请代理即可。更早的基线回退材料：保留旧release`cab8335a640ddc56f54740d06921d2df76b10d39`，Nginx及SQLite备份目录为`/var/backups/code-museum-site/20261109T101333Z-8bf6c20cc403`，其中有`visits.sqlite3`和`messages.sqlite3`的切换前副本，以及`nginx-messages.before.conf`原snippet。站点回退时原子恢复`current`到`releases/cab8335a640ddc56f54740d06921d2df76b10d39`并重启`code-museum-analytics`，核对HTTPS与204健康响应；若需撤销申请代理，再从该备份目录的`nginx-messages.before.conf`恢复本轮前messages snippet，先`nginx -t`再reload。正常代码回退继续使用现有活数据库，不直接用旧快照覆盖用户新增访问、留言或申请；恢复数据库必须另行核对数据范围。此次未改执行器，站点回退不停止或降级双节点服务。
 
 ## 2026-11-09 双节点执行准备（历史检查点，后续状态见上）
 

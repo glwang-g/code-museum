@@ -1,0 +1,91 @@
+{
+  "checkedAt": "2026-11-09T10:56:29.292001+00:00",
+  "scope": "Actual successful GitHub Actions build/deploy for the official commit, followed by read-only immutable release hash and service verification on both nodes. No credentials or user database contents read; no services restarted by this verification.",
+  "releaseCommit": "f2ff0bf22f8325af5ad4f5c4909567108fcfe66f",
+  "ci": {
+    "conclusion": "success",
+    "createdAt": "2026-11-09T10:48:44Z",
+    "databaseId": 42603930037,
+    "headSha": "f2ff0bf22f8325af5ad4f5c4909567108fcfe66f",
+    "jobs": [
+      {
+        "name": "build",
+        "conclusion": "success",
+        "startedAt": "2026-11-09T10:48:48Z",
+        "completedAt": "2026-11-09T10:53:45Z"
+      },
+      {
+        "name": "deploy",
+        "conclusion": "success",
+        "startedAt": "2026-11-09T10:53:48Z",
+        "completedAt": "2026-11-09T10:54:09Z"
+      }
+    ],
+    "status": "completed",
+    "updatedAt": "2026-11-09T10:54:09Z",
+    "url": "https://github.com/glwang-g/code-museum/actions/runs/42603930037"
+  },
+  "nodes": [
+    {
+      "node": "xshow",
+      "services": {
+        "code-museum-worker@xshow.service": {
+          "ActiveState": "active",
+          "UnitFileState": "enabled",
+          "MainPID": "1774787"
+        },
+        "code-museum-execution-gateway.service": {
+          "ActiveState": "active",
+          "UnitFileState": "enabled",
+          "MainPID": "1777289"
+        },
+        "code-museum-execution-tunnel.service": {
+          "ActiveState": "active",
+          "UnitFileState": "enabled",
+          "MainPID": "1789185"
+        },
+        "code-museum-analytics.service": {
+          "ActiveState": "active",
+          "UnitFileState": "enabled",
+          "MainPID": "1866962"
+        },
+        "nginx.service": {
+          "ActiveState": "active",
+          "UnitFileState": "enabled",
+          "MainPID": "3268333"
+        }
+      },
+      "currentRelease": "f2ff0bf22f8325af5ad4f5c4909567108fcfe66f",
+      "releaseFilesVerified": 626,
+      "releaseBytes": 35364229,
+      "releaseManifestSha256": "1d795dacbf92cd6f8b966f2490a824db2cbe461f72f8fbbc0d7b2a2feb781940",
+      "sameProductBytesAsVerifiedManualRelease": true,
+      "legacyExecutor": {
+        "ActiveState": "inactive",
+        "UnitFileState": "disabled",
+        "MainPID": "0"
+      },
+      "nginxConfigurationPreserved": true,
+      "residualOwnedContainers": 0
+    },
+    {
+      "node": "xshow2",
+      "services": {
+        "code-museum-worker@xshow2.service": {
+          "ActiveState": "active",
+          "UnitFileState": "enabled",
+          "MainPID": "173742"
+        }
+      },
+      "residualOwnedContainers": 0
+    }
+  ],
+  "gitDelivery": {
+    "masterReleaseCommit": "f2ff0bf22f8325af5ad4f5c4909567108fcfe66f",
+    "temporaryInputBranch": "runtime-inputs-20261109",
+    "temporaryInputBranchRemoved": true,
+    "allInputCommitsRetainedInMaster": true,
+    "forcePush": false,
+    "checkedAt": "2026-11-09T10:58:41.366644+00:00"
+  }
+}
