@@ -10,6 +10,10 @@
 /server/runtimes/bcpl/assets/cintcode-noninteractive.patch
 /server/runtimes/bcpl/licenses/upstream-README.txt
 /server/runtimes/bcpl/metadata/upstream-sysboot.b
+# Fixed public source inputs must override machine-wide archive ignores.
+!/server/runtimes/algol60/assets/marst-2.8.tar.gz
+!/server/runtimes/oberon/assets/obnc_0.17.2.tar.gz
+!/server/runtimes/smalltalk/assets/smalltalk-3.2.5.tar.gz
 .DS_Store
 
 *.sqlite3
