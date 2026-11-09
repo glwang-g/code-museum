@@ -1,0 +1,407 @@
+{
+  "schemaVersion": 1,
+  "startedAt": "2026-11-06",
+  "scope": "The original B-group 37 languages, ordered by P2 then P3 priority. Local preparation only; production unchanged.",
+  "languages": [
+    {
+      "id": "algol-60",
+      "name": "ALGOL 60",
+      "priority": "P2-1",
+      "stage": "temporary-browser-verified",
+      "order": 1,
+      "containerEvidence": "data/audit/planned-runtime-checks.json",
+      "limitations": "MARST 2.8 generated C has an unsequenced global_dsa warning for call-by-name; compiler warnings are retained. Not full language conformance.",
+      "browserEvidence": "data/audit/planned-runtime-browser-checks.json"
+    },
+    {
+      "id": "common-lisp",
+      "name": "Common Lisp",
+      "priority": "P2-2",
+      "stage": "temporary-browser-verified",
+      "order": 2,
+      "containerEvidence": "data/audit/planned-runtime-checks.json",
+      "browserEvidence": "data/audit/planned-runtime-browser-checks.json"
+    },
+    {
+      "id": "prolog",
+      "name": "Prolog",
+      "priority": "P2-3",
+      "stage": "temporary-browser-verified",
+      "order": 3,
+      "containerEvidence": "data/audit/planned-runtime-checks.json",
+      "browserEvidence": "data/audit/planned-runtime-browser-checks.json"
+    },
+    {
+      "id": "forth",
+      "name": "Forth",
+      "priority": "P2-4",
+      "stage": "temporary-browser-verified",
+      "order": 4,
+      "containerEvidence": "data/audit/planned-runtime-checks.json",
+      "browserEvidence": "data/audit/planned-runtime-browser-checks.json"
+    },
+    {
+      "id": "racket",
+      "name": "Racket",
+      "priority": "P2-5",
+      "stage": "temporary-browser-verified",
+      "order": 5,
+      "limitations": "Minimal Racket 8.7 CS, single-file racket/base, bundled base libraries and text I/O; no GUI or online package installation.",
+      "editorEvidence": "data/audit/racket-editor-checks.json",
+      "containerEvidence": "data/audit/racket-runtime-checks.json",
+      "browserEvidence": "data/audit/racket-runtime-browser-checks.json"
+    },
+    {
+      "id": "smalltalk",
+      "name": "Smalltalk",
+      "priority": "P2-6",
+      "stage": "temporary-browser-verified",
+      "order": 6,
+      "containerEvidence": "data/audit/smalltalk-runtime-checks.json",
+      "browserEvidence": "data/audit/smalltalk-runtime-browser-checks.json",
+      "limitations": "GNU Smalltalk 3.2.5 bytecode VM, JIT disabled, glibc/Expat portability patches and explicit CLI error-status adapter; no historical Xerox GUI reproduction or online package installation."
+    },
+    {
+      "id": "cobol",
+      "name": "COBOL",
+      "priority": "P2-10",
+      "stage": "temporary-browser-verified",
+      "order": 7,
+      "containerEvidence": "data/audit/cobol-runtime-checks.json",
+      "browserEvidence": "data/audit/cobol-runtime-browser-checks.json",
+      "limitations": "GnuCOBOL 3.1.2, free format with COBOL 2014 option, single file and native executable; no IBM mainframe, external databases, online COPYBOOK installation, or full conformance claim."
+    },
+    {
+      "id": "ada",
+      "name": "Ada",
+      "priority": "P2-11",
+      "stage": "temporary-browser-verified",
+      "order": 8,
+      "containerEvidence": "data/audit/ada-runtime-checks.json",
+      "browserEvidence": "data/audit/ada-runtime-browser-checks.json",
+      "limitations": "GNAT 12.2.0 in Ada 2012 mode, single main.adb / procedure Main, preinstalled runtime libraries; type/runtime checks and exception handling enabled, no Alire or full conformance claim."
+    },
+    {
+      "id": "clojure",
+      "name": "Clojure",
+      "priority": "P2-12",
+      "stage": "temporary-browser-verified",
+      "order": 9,
+      "containerEvidence": "data/audit/clojure-runtime-checks.json",
+      "browserEvidence": "data/audit/clojure-runtime-browser-checks.json",
+      "limitations": "Clojure 1.11.1 on pinned Java 17, fixed Clojure/spec/core-specs/JSR166y JARs only, JVM heap 256 MiB, 3 seconds includes startup; no tools.deps/Leiningen/Maven online dependency restore."
+    },
+    {
+      "id": "ocaml",
+      "name": "OCaml",
+      "priority": "P2-13",
+      "stage": "temporary-browser-verified",
+      "order": 10,
+      "containerEvidence": "data/audit/ocaml-runtime-checks.json",
+      "browserEvidence": "data/audit/ocaml-runtime-browser-checks.json",
+      "limitations": "OCaml 4.13.1 / ocamlc bytecode, single main.ml and standard library, 512 MiB, 10 seconds compile / 3 seconds run; no opam/dune or full conformance claim."
+    },
+    {
+      "id": "haskell",
+      "name": "Haskell",
+      "priority": "P2-14",
+      "stage": "temporary-browser-verified",
+      "order": 11,
+      "containerEvidence": "data/audit/haskell-runtime-checks.json",
+      "browserEvidence": "data/audit/haskell-runtime-browser-checks.json",
+      "limitations": "GHC 9.0.2 / Haskell 2010, single Main.hs, installed standard libraries, 768 MiB, 20 seconds compile / 3 seconds run; no Cabal/Stack dependency restore or full conformance claim."
+    },
+    {
+      "id": "kotlin",
+      "name": "Kotlin",
+      "priority": "P2-15",
+      "stage": "temporary-browser-verified",
+      "order": 12,
+      "containerEvidence": "data/audit/kotlin-runtime-checks.json",
+      "browserEvidence": "data/audit/kotlin-runtime-browser-checks.json",
+      "limitations": "Kotlin 2.1.20 / pinned Java 17, JVM target 17, Main.kt, 768 MiB, compiler heap 384 MiB, compile 30 seconds / run 3 seconds, file descriptors 256. Verified Jansi native temp uses the existing executable /work, /tmp remains noexec. No Gradle/Maven restore or scripting plugins."
+    },
+    {
+      "id": "groovy",
+      "name": "Groovy",
+      "priority": "P2-16",
+      "stage": "temporary-browser-verified",
+      "order": 13,
+      "containerEvidence": "data/audit/groovy-runtime-checks.json",
+      "browserEvidence": "data/audit/groovy-runtime-browser-checks.json",
+      "limitations": "Groovy 4.0.26 on pinned Java 17, core JAR only, 768 MiB / JVM heap 256 MiB / 8 seconds including startup and script compilation. Grape disabled, no Ivy/Maven restore, plugins, GUI or interactive REPL.",
+      "budgetRevision": "2026-11-09: original3-second Groovy positive timed out during full dual-node smoke. Three new diagnosticVMs took5271/5161/5261ms; hostrunbudget8seconds now validated with11container/7Chromechecks. FixedSDK/image unchanged; initialNOTICE3seconds retained as historical preparation record."
+    },
+    {
+      "id": "erlang",
+      "name": "Erlang",
+      "priority": "P2-17",
+      "stage": "temporary-browser-verified",
+      "order": 14,
+      "containerEvidence": "data/audit/erlang-runtime-checks.json",
+      "browserEvidence": "data/audit/erlang-runtime-browser-checks.json",
+      "limitations": "Erlang/OTP 25.2.3, single main.erl / main:main/0, bundled base/compiler libraries, BEAM scheduler 1 and async/dirty threads limited, 512 MiB, compile 10 seconds / run 3 seconds. No rebar3 online installation or distributed node."
+    },
+    {
+      "id": "elixir",
+      "name": "Elixir",
+      "priority": "P2-18",
+      "stage": "temporary-browser-verified",
+      "order": 15,
+      "containerEvidence": "data/audit/elixir-runtime-checks.json",
+      "browserEvidence": "data/audit/elixir-runtime-browser-checks.json",
+      "limitations": "Elixir 1.14.0 / Erlang OTP 25.2.3, single main.exs and installed libraries, BEAM scheduler 1 and bounded async/dirty threads, 512 MiB / 3 seconds including startup and script compilation. No Mix/Hex online dependencies or distributed node."
+    },
+    {
+      "id": "tcl",
+      "name": "Tcl",
+      "priority": "P2-19",
+      "stage": "temporary-browser-verified",
+      "order": 16,
+      "containerEvidence": "data/audit/tcl-runtime-checks.json",
+      "browserEvidence": "data/audit/tcl-runtime-browser-checks.json",
+      "limitations": "Tcl 8.6.13, single main.tcl, fixed base library and TclOO, 256 MiB / 3 seconds, no Tk GUI or online packages; not Tcl 9."
+    },
+    {
+      "id": "standard-ml",
+      "name": "Standard ML",
+      "priority": "P2-20",
+      "stage": "temporary-browser-verified",
+      "order": 17,
+      "containerEvidence": "data/audit/standard-ml-runtime-checks.json",
+      "browserEvidence": "data/audit/standard-ml-runtime-browser-checks.json",
+      "limitations": "Standard ML through PolyML 5.7.1, single main.sml and Standard Basis library, 512 MiB / 3 seconds including script compilation and startup. Declarations are compiled/evaluated in sequence; a later type error preserves prior output. No online packages, interactive REPL, SML/NJ/MLton identity or full conformance claim."
+    },
+    {
+      "id": "scala",
+      "name": "Scala",
+      "priority": "P3-1",
+      "stage": "temporary-browser-verified",
+      "order": 18,
+      "containerEvidence": "data/audit/scala-runtime-checks.json",
+      "browserEvidence": "data/audit/scala-runtime-browser-checks.json",
+      "limitations": "Scala 2.13.16 / pinned Java 17, single Main.scala / object Main with main(args: Array[String]), original six distribution JARs, 768 MiB, compiler heap 384 MiB / compile 30 seconds, runtime heap 256 MiB / run 3 seconds. No sbt/Maven/Coursier restore, interactive REPL or Scala 3 compatibility claim."
+    },
+    {
+      "id": "visual-basic.net",
+      "name": "Visual Basic .NET",
+      "priority": "P3-2",
+      "stage": "temporary-browser-verified",
+      "order": 19,
+      "containerEvidence": "data/audit/visual-basic.net-runtime-checks.json",
+      "browserEvidence": "data/audit/visual-basic.net-runtime-browser-checks.json",
+      "limitations": "VB Roslyn 5.9.0 in pinned .NET SDK 10.0.403, single Main.vb console application, Option Strict On by default, Empty My template, 1024 MiB, compile 30 seconds / run 3 seconds. No desktop My services, Windows UI or NuGet restore."
+    },
+    {
+      "id": "f-sharp",
+      "name": "F#",
+      "priority": "P3-3",
+      "stage": "temporary-browser-verified",
+      "order": 20,
+      "containerEvidence": "data/audit/f-sharp-runtime-checks.json",
+      "browserEvidence": "data/audit/f-sharp-runtime-browser-checks.json",
+      "limitations": "F# 10.0 with compiler 15.2.403.0 in pinned .NET SDK 10.0.403, single Main.fs and installed Standard libraries/FSharp.Core, 1024 MiB, compile 30 seconds / run 3 seconds, no NuGet restore."
+    },
+    {
+      "id": "d",
+      "name": "D",
+      "priority": "P3-4",
+      "stage": "temporary-browser-verified",
+      "order": 21,
+      "containerEvidence": "data/audit/d-runtime-checks.json",
+      "browserEvidence": "data/audit/d-runtime-browser-checks.json",
+      "limitations": "D through GNU D 12.2.0 / gdc-12 with fixed Phobos, single main.d, 768 MiB, compile 10 seconds / run 3 seconds. No dub or online packages; named GNU implementation, not DMD version equivalence or full conformance."
+    },
+    {
+      "id": "nim",
+      "name": "Nim",
+      "priority": "P3-5",
+      "stage": "temporary-browser-verified",
+      "order": 22,
+      "containerEvidence": "data/audit/nim-runtime-checks.json",
+      "browserEvidence": "data/audit/nim-runtime-browser-checks.json",
+      "limitations": "Nim 1.6.10 with fixed standard library and GCC, single main.nim, temporary /work cache only, parallelBuild 1, normal runtime checks retained. 768 MiB, compile 20 seconds / run 3 seconds. No Nimble online packages or Nim 2 compatibility claim."
+    },
+    {
+      "id": "zig",
+      "name": "Zig",
+      "priority": "P3-6",
+      "stage": "temporary-browser-verified",
+      "order": 23,
+      "containerEvidence": "data/audit/zig-runtime-checks.json",
+      "browserEvidence": "data/audit/zig-runtime-browser-checks.json",
+      "limitations": "Zig 0.14.1 original official x86_64 SDK / standard library / full LLVM backend in Debug mode, compiler affinity restricted to one allowed CPU without disabling backend features or runtime checks. Single main.zig, temporary caches only, 1024 MiB, compile 30 seconds / run 3 seconds. No online packages or newer Zig API compatibility claim."
+    },
+    {
+      "id": "swift",
+      "name": "Swift",
+      "priority": "P3-7",
+      "stage": "temporary-browser-verified",
+      "order": 24,
+      "editorEvidence": "data/audit/swift-editor-checks.json",
+      "containerEvidence": "data/audit/swift-runtime-checks.json",
+      "browserEvidence": "data/audit/swift-runtime-browser-checks.json",
+      "preparationHost": "xshow2",
+      "limitations": "Official Swift 6.1.3 Debian 12 x86_64 SDK, signed by the official Swift 6.x key; complete archive retained in 27 ordered parts. Swift 6 mode, single main.swift and fixed standard library/Foundation, module cache only in /work; 1024 MiB, compile 30 seconds / run 3 seconds. No Swift Package Manager online resolution or Apple UI frameworks. Fully offline image built using original pinned GCC digest from a local OCI layout."
+    },
+    {
+      "id": "dart",
+      "name": "Dart",
+      "priority": "P3-8",
+      "stage": "temporary-browser-verified",
+      "order": 25,
+      "preparationHost": "xshow2",
+      "containerEvidence": "data/audit/dart-runtime-checks.json",
+      "browserEvidence": "data/audit/dart-runtime-browser-checks.json",
+      "limitations": "Dart SDK 3.9.4, complete original SDK in seven parts matching independent official Google SHA-256 after mirror acquisition; three original notices retained. Single main.dart compiled to Linux AOT native executable with standard libraries; analytics suppressed, 768 MiB, compile 15 seconds / run 3 seconds. No pub online dependencies, Flutter or browser UI."
+    },
+    {
+      "id": "julia",
+      "name": "Julia",
+      "priority": "P3-9",
+      "stage": "temporary-browser-verified",
+      "order": 26,
+      "preparationHost": "xshow2",
+      "containerEvidence": "data/audit/julia-runtime-checks.json",
+      "browserEvidence": "data/audit/julia-runtime-browser-checks.json",
+      "limitations": "Julia 1.11.7 complete original archive in nine parts matching official release SHA-256 after TUNA acquisition; 19 original notices. main.jl, normal JIT and shipped standard libraries, startup/history disabled, existing compiled modules/pkgimages allowed but new precompile caches disabled. Initial Julia/GC/OpenBLAS threads 1, temporary depot plus immutable SDK depots, stdlib load path and offline Pkg. 768 MiB / 3 seconds including startup/JIT. No online Pkg install, plotting or notebook UI; errors preserve prior stdout."
+    },
+    {
+      "id": "octave",
+      "name": "GNU Octave",
+      "priority": "P3-10",
+      "stage": "temporary-browser-verified",
+      "order": 27,
+      "containerEvidence": "data/audit/octave-runtime-checks.json",
+      "browserEvidence": "data/audit/octave-runtime-browser-checks.json",
+      "preparationHost": "xshow2",
+      "limitations": "GNU Octave 7.3.0 CLI, 179 Debian packages verified against signed APT indices and per-package SHA-256; 178 original copyright notices retained. main.m script and preinstalled core libraries, 512 MiB / 3 seconds, GUI/window system, startup files and history disabled; initial BLAS/OMP variables 1. No online pkg install, plotting or notebook UI; errors preserve prior stdout."
+    },
+    {
+      "id": "powershell",
+      "name": "PowerShell",
+      "priority": "P3-11",
+      "stage": "temporary-browser-verified",
+      "order": 28,
+      "preparationHost": "xshow2",
+      "containerEvidence": "data/audit/powershell-runtime-checks.json",
+      "browserEvidence": "data/audit/powershell-runtime-browser-checks.json",
+      "limitations": "PowerShell 7.5.4 Linux, complete official Microsoft DEB in three parts matching official GitHub release digest; five original notices. main.ps1/core modules, NoProfile/NonInteractive, UTF-8/plain text, ErrorActionPreference=Stop default; explicit catches, stderr and exit code preserved. 768 MiB/3 seconds. W^X retained; .NET9 sparse anonymous doublemapper requires 2 TiB logical fsize, while actual work/tmp tmpfs remain 16/8 MiB, root read-only, non-root/no network/NNP/process-output limits. No online Gallery or Windows/Office host."
+    },
+    {
+      "id": "korn-shell",
+      "name": "Korn shell",
+      "priority": "P3-12",
+      "stage": "temporary-browser-verified",
+      "order": 29,
+      "preparationHost": "xshow2",
+      "containerEvidence": "data/audit/korn-shell-runtime-checks.json",
+      "browserEvidence": "data/audit/korn-shell-runtime-browser-checks.json",
+      "limitations": "ksh93u+m 1.0.4, fixed Debian package and original copyright verified against signed APT indices and SHA-256. main.ksh, -p ignores ENV configuration, 256 MiB/3 seconds. Native exit status preserved, including handled earlier errors; no online dependencies or historical ksh88 reproduction."
+    },
+    {
+      "id": "tcsh",
+      "name": "tcsh",
+      "priority": "P3-13",
+      "stage": "temporary-browser-verified",
+      "order": 30,
+      "preparationHost": "xshow2",
+      "containerEvidence": "data/audit/tcsh-runtime-checks.json",
+      "browserEvidence": "data/audit/tcsh-runtime-browser-checks.json",
+      "limitations": "tcsh 6.24.07, complete Debian package and original copyright verified with signed APT indices and SHA-256. main.tcsh/-f, startup configuration disabled, native status, 256 MiB/3 seconds; no online dependencies or historical csh reproduction."
+    },
+    {
+      "id": "wasm",
+      "name": "WebAssembly",
+      "priority": "P3-14",
+      "stage": "temporary-browser-verified",
+      "order": 31,
+      "preparationHost": "xshow2",
+      "containerEvidence": "data/audit/wasm-runtime-checks.json",
+      "browserEvidence": "data/audit/wasm-runtime-browser-checks.json",
+      "limitations": "Wasmtime 50.0.1；完整官方 11,577,424 字节 SDK 匹配官方 GitHub 资产 SHA-256，原始许可保留，未声称 PGP 验签。main.wat 核心模块 / _start / WASI Preview 1，512 MiB / 3 秒含 WAT 翻译与 JIT，至多一块 256 MiB 线性内存；禁用组件模型和线程，无预开放目录、继承环境、网络或浏览器宿主。17 项容器覆盖计算、中文输入输出、语法/类型验证、除零/越界陷阱、proc_exit 状态、内存/权限限制、取消和恢复。"
+    },
+    {
+      "id": "x86-assembly",
+      "name": "x86 Assembly",
+      "priority": "P3-15",
+      "stage": "temporary-browser-verified",
+      "order": 32,
+      "preparationHost": "xshow2",
+      "containerEvidence": "data/audit/x86-assembly-runtime-checks.json",
+      "browserEvidence": "data/audit/x86-assembly-runtime-browser-checks.json",
+      "limitations": "NASM 2.16.01 → 固定基础 GNU ld → 原生 x86-64 Linux ELF64，main.asm / _start / Linux syscall ABI，256 MiB / 编译 10 秒 / 运行 3 秒。固定 Debian 包、签名索引、SHA-256 和 NASM/binutils 原始许可保留。编译与链接均通过才执行，警告原样保留；无 libc 或外部目标文件，不冒充 8086、DOS、Windows 或模拟器。实际覆盖循环、函数、中文系统调用输入、NASM/链接错误、除零/非法内存访问和退出码。"
+    },
+    {
+      "id": "verilog",
+      "name": "Verilog",
+      "priority": "P3-16",
+      "stage": "temporary-browser-verified",
+      "order": 33,
+      "preparationHost": "xshow2",
+      "containerEvidence": "data/audit/verilog-runtime-checks.json",
+      "browserEvidence": "data/audit/verilog-runtime-browser-checks.json",
+      "limitations": "Icarus Verilog 11.0 / Verilog-2005，main.v / 顶层 module main，512 MiB / 编译 10 秒 / vvp 文本仿真 3 秒实际时间。完整固定 Debian 包、签名索引、SHA-256 与原始许可保留。-N 使 $stop 非交互且返回失败，$fatal 和原生诊断保留，禁用波形输出；无综合、FPGA 部署或波形下载，不是真实电路。页面动作/结果明确为仿真，并验证切换语言恢复运行标签；覆盖计数器、延迟、四态、函数、中文输入、错误、取消与恢复。"
+    },
+    {
+      "id": "vhdl",
+      "name": "VHDL",
+      "priority": "P3-17",
+      "stage": "temporary-browser-verified",
+      "order": 34,
+      "preparationHost": "xshow2",
+      "containerEvidence": "data/audit/vhdl-runtime-checks.json",
+      "browserEvidence": "data/audit/vhdl-runtime-browser-checks.json",
+      "limitations": "GHDL 2.0.0 mcode / VHDL-2008，main.vhd / 顶层 entity main，512 MiB / 分析展开 10 秒 / 文本仿真 3 秒实际时间。3 个固定 Debian 包、签名索引、SHA-256 与原始许可保留，--assert-level=error 保留断言和约束检查，warning 仍可继续。无综合、FPGA 部署或波形下载，不是真实电路。页面明确仿真；覆盖记录、IEEE 多值逻辑、类型错误、仿真时间、中文 TextIO、断言/边界错误、取消恢复和文件操作。"
+    },
+    {
+      "id": "postscript",
+      "name": "PostScript",
+      "priority": "P3-18",
+      "stage": "temporary-browser-verified",
+      "order": 35,
+      "preparationHost": "xshow2",
+      "containerEvidence": "data/audit/postscript-runtime-checks.json",
+      "browserEvidence": "data/audit/postscript-runtime-browser-checks.json",
+      "limitations": "Ghostscript 10.00.0，18 个固定 Debian 包、签名索引、SHA-256 与原始许可保留。main.ps，256 MiB / 3 秒，-q -dSAFER -dNODISPLAY -dBATCH -dNOPAUSE；栈、过程、递归、字典和文本输出来自真实解释器，原生错误与 stopped 捕获保留。无页面渲染、打印设备或文件产物下载；实际核验 SAFER 拒绝未授权读写、中文多行标准输入、错误/恢复及导入下载。"
+    },
+    {
+      "id": "bcpl",
+      "name": "BCPL",
+      "priority": "P3-19",
+      "stage": "temporary-browser-verified",
+      "order": 36,
+      "preparationHost": "xshow2",
+      "containerEvidence": "data/audit/bcpl-runtime-checks.json",
+      "browserEvidence": "data/audit/bcpl-runtime-browser-checks.json",
+      "limitations": "作者 2026-11-09 完整归档 / Cintcode64，固定 GCC 重建 C VM、原始 bootstrap 和标准头文件。main.b / start()，512 MiB / 编译10秒 / 运行3秒。保留非交互 VM 故障退出补丁和 LF/标准输入启动器源码；除零返回真实非零，退出7和剩余输入不进入CLI均已实测。原始条款只明确私人/学术用途；无图形音频、在线依赖、商业再分发许可推断或历史机器重现。"
+    },
+    {
+      "id": "oberon",
+      "name": "Oberon",
+      "priority": "P3-20",
+      "stage": "temporary-browser-verified",
+      "order": 37,
+      "preparationHost": "xshow2",
+      "containerEvidence": "data/audit/oberon-runtime-checks.json",
+      "browserEvidence": "data/audit/oberon-runtime-browser-checks.json",
+      "limitations": "OBNC0.17.2 完整官方源码与4个签名索引/SHA256核验 Debian依赖；默认GC和运行时检查，最终2016 Oberon语言 / Oberon07家族 → C/GCC。Main.obn / MODULE Main，512MiB / 编译10秒 / 运行3秒，INTEGER32和REAL64。文本/扩展库逐项检查，排除SDL Input/XYplane；断言、越界与普通stderr状态保留；ASSERT(FALSE)原生直接失败退出。无在线模块、Oberon2或Ceres操作系统重现。"
+    }
+  ],
+  "trustedPreparationHost": {
+    "host": "xshow",
+    "authorizedAt": "2026-11-07",
+    "scope": "User explicitly authorized uploading project executor modules, runtime manifests, test programs and museum audit data into isolated temporary directories and containers for all 37 languages. No private production token upload or production service upgrades."
+  },
+  "additionalTrustedPreparationHosts": [
+    {
+      "host": "xshow2",
+      "authorizedAt": "2026-11-08",
+      "scope": "User supplied new node for isolated runtime preparation/testing and explicitly authorized installing Docker/Buildx. Dedicated SSH public key installed using password input directly in local Terminal. No credentials in repository; no production service or website deployment.",
+      "runtimeUploadAuthorizedAt": "2026-11-09",
+      "runtimeUploadScope": "User explicitly approved uploading BCPL/Oberon fixed sources, dependencies, executor and test materials to xshow2 for temporary-directory and isolated-container build/execution/browser verification. No production deployment."
+    }
+  ],
+  "completedAt": "2026-11-09",
+  "completionScope": "All 37 original B-group languages have fixed local inputs, source integration and temporary container/browser evidence. Existing first-35 reports retained; this completion adds BCPL and Oberon, not a full 37-language rerun. Worktree inputs remain uncommitted; production unchanged."
+}

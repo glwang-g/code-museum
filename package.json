@@ -14,6 +14,7 @@
     "relations:audit": "node scripts/relationship-audit.cjs",
     "runtime:budget": "node scripts/runtime-budget.cjs",
     "runtime:browser": "node scripts/check-browser-runtime.cjs",
+    "access:browser": "node scripts/check-access-requests.cjs",
     "diagnose:release": "node scripts/diagnose-release.cjs",
     "executor:production-check": "node scripts/check-production-consistency.cjs",
     "research:gaps": "node scripts/research-gap-report.cjs",
@@ -29,6 +30,15 @@
     "mcp": "python3 server/mcp.py",
     "museum:browser": "node scripts/check-museum-advance.cjs",
     "performance:browser": "node scripts/check-performance.cjs",
-    "runtime:pascal-r-build": "python3 scripts/build-pascal-r-runtime.py"
+    "runtime:pascal-r-build": "python3 scripts/build-pascal-r-runtime.py",
+    "runtime:algol60-build": "python3 scripts/build-algol60-runtime.py",
+    "runtime:common-lisp-build": "python3 scripts/build-common-lisp-runtime.py",
+    "runtime:planned-check": "python3 scripts/check-planned-runtimes.py",
+    "runtime:planned-browser": "node scripts/check-executor-browser.cjs --planned",
+    "runtime:fixed-build": "python3 scripts/build-fixed-runtime.py",
+    "executor:dual-preview": "node scripts/dual-executor-preview.cjs",
+    "executor:dual-check": "node scripts/check-dual-executor.cjs",
+    "executor:prepare-dual": "python3 deploy/prepare-dual-executor.py",
+    "release:package": "node scripts/package-release.cjs"
   }
 }

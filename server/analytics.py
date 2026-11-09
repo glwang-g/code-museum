@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Code Museum public API on the loopback interface. Python 3 standard library only.
 
-Same-origin page-load counters plus the guest book in messages.py. Both are
-public, both store only what the feature needs, and neither one keeps IP
-addresses, user agents or accounts. The guest book is optional at runtime: if
+Same-origin page-load counters, the guest book and private access applications
+in messages.py. Applications store a contact e-mail for replies and never appear
+in the public guest book. No feature keeps IP addresses or user agents. The guest book is optional at runtime: if
 its module or its SQLite file is unavailable the counters keep working.
 """
 import argparse
@@ -94,15 +94,21 @@ def handler(database, origin, guest_book=None):
             self.wfile.write(body)
 
         def read_body(self, maximum):
+            if self.headers.get('Transfer-Encoding'):
+                return None
             try:
                 length = int(self.headers.get("Content-Length", "0"))
             except ValueError:
                 return None
             if length < 0 or length > maximum:
                 return None
-            return self.rfile.read(length) if length else b""
+            body = self.rfile.read(length) if length else b""
+            return body if len(body) == length else None
 
         def do_GET(self):
+            if guest_book is not None and self.path.split('?')[0] == '/api/access-requests':
+                status, payload = guest_book.access_status()
+                return self.json_response(status, payload)
             if guest_book is not None and self.path.split("?")[0] == "/api/messages":
                 status, payload = guest_book.read(self.path.partition("?")[2])
                 return self.json_response(status, payload)
@@ -122,11 +128,12 @@ def handler(database, origin, guest_book=None):
         def do_POST(self):
             if guest_book is not None:
                 target = self.path.split("?")[0]
-                if target == "/api/messages":
+                if target in ("/api/messages", "/api/access-requests"):
                     body = self.read_body(messages.MAX_REQUEST)
                     if body is None:
                         return self.respond(413)
-                    status, payload = guest_book.submit(self.headers, body)
+                    action = guest_book.apply if target == '/api/access-requests' else guest_book.submit
+                    status, payload = action(self.headers, body)
                     return self.json_response(status, payload)
                 message_id = guest_book.visibility_path(self.path)
                 if message_id:

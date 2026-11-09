@@ -8,6 +8,9 @@ const { curatedContent } = require('./curated-content.cjs');
 const { learningPaths } = require('./learning-paths.cjs');
 const { executionCapabilities } = require('./execution-capabilities.cjs');
 const { validateCliRuntime } = require('./cli-runtime.cjs');
+const { validateFixedRuntime } = require('./fixed-runtime.cjs');
+const { validateCommonLispRuntime } = require('./common-lisp-runtime.cjs');
+const { validateAlgol60Runtime } = require('./algol60-runtime.cjs');
 const { validatePascalRRuntime } = require('./pascal-r-runtime.cjs');
 const { fingerprintAssets } = require('./fingerprint-assets.cjs');
 
@@ -22,6 +25,9 @@ function build(projectRoot = root) {
   const capabilities = executionCapabilities(projectRoot);
   const cliRuntime = validateCliRuntime(projectRoot);
   const pascalRRuntime = validatePascalRRuntime(projectRoot);
+  const algol60Runtime = validateAlgol60Runtime(projectRoot);
+  const commonLispRuntime = validateCommonLispRuntime(projectRoot);
+  const fixedRuntimes = ['prolog','forth','racket','smalltalk','cobol','ada','clojure','ocaml','haskell','kotlin','groovy','erlang','elixir','tcl','standard-ml','scala','d','nim','zig','swift','dart','julia','octave','powershell','korn-shell','tcsh','wasm','x86-assembly','verilog','vhdl','postscript','bcpl','oberon'].map(id=>validateFixedRuntime(projectRoot,id,id,{mode:'public-metadata'}));
   const paths = learningPaths(projectRoot,catalogue,relationshipAudit);
   const {exhibits,triage}=curatedContent(projectRoot,catalogue,relationshipAudit);
   const {credits,linguistLicense} = generateCredits(projectRoot);
@@ -96,6 +102,26 @@ function build(projectRoot = root) {
     fs.writeFileSync(path.join(next,'data/catalogue.json'),JSON.stringify(catalogue)+'\n');
     fs.writeFileSync(path.join(next,'data/execution-capabilities.json'),JSON.stringify(capabilities,null,2)+'\n');
     fs.writeFileSync(path.join(next,'data/cli-runtime-build.json'),JSON.stringify(cliRuntime,null,2)+'\n');
+    for(const runtime of fixedRuntimes){
+      fs.writeFileSync(path.join(next,'data',runtime.directory+'-runtime-build.json'),JSON.stringify(runtime,null,2)+'\n');
+      fs.mkdirSync(path.join(next,'licenses',runtime.directory),{recursive:true});
+      fs.copyFileSync(path.join(projectRoot,'server/runtimes',runtime.directory,'NOTICE.md'),path.join(next,'licenses',runtime.directory,'NOTICE.md'));
+      const privateFiles=new Set(runtime.publication?.privateFiles||[]);
+      for(const row of runtime.files.filter(row=>row.file.startsWith('licenses/')&&!privateFiles.has(row.file))){
+        const destination=path.join(next,'licenses',runtime.directory,row.file);
+        fs.mkdirSync(path.dirname(destination),{recursive:true});
+        fs.copyFileSync(path.join(projectRoot,'server/runtimes',runtime.directory,row.file),destination);
+      }
+      if(runtime.publication)fs.writeFileSync(path.join(next,'licenses',runtime.directory,'PUBLICATION.txt'),runtime.publication.note+'\nOfficial source: '+runtime.publication.source+'\n');
+    }
+    fs.writeFileSync(path.join(next,'data/common-lisp-runtime-build.json'),JSON.stringify(commonLispRuntime,null,2)+'\n');
+    fs.mkdirSync(path.join(next,'licenses/common-lisp'),{recursive:true});
+    fs.copyFileSync(path.join(projectRoot,'server/runtimes/common-lisp/NOTICE.md'),path.join(next,'licenses/common-lisp/NOTICE.md'));
+    fs.cpSync(path.join(projectRoot,'server/runtimes/common-lisp/licenses'),path.join(next,'licenses/common-lisp/licenses'),{recursive:true});
+    fs.writeFileSync(path.join(next,'data/algol60-runtime-build.json'),JSON.stringify(algol60Runtime,null,2)+'\n');
+    fs.mkdirSync(path.join(next,'licenses/algol60'),{recursive:true});
+    fs.copyFileSync(path.join(projectRoot,'server/runtimes/algol60/NOTICE.md'),path.join(next,'licenses/algol60/NOTICE.md'));
+    fs.cpSync(path.join(projectRoot,'server/runtimes/algol60/licenses'),path.join(next,'licenses/algol60/licenses'),{recursive:true});
     fs.writeFileSync(path.join(next,'data/pascal-r-runtime-build.json'),JSON.stringify(pascalRRuntime,null,2)+'\n');
     fs.writeFileSync(path.join(next, 'data/relationship-status.js'), 'window.MUSEUM_RELATIONSHIP_AUDIT=' + JSON.stringify(relationshipAudit) + ';');
     fs.writeFileSync(path.join(next, 'data/relationship-status.json'), JSON.stringify(relationshipAudit,null,2)+'\n');

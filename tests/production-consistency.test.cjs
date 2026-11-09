@@ -9,6 +9,11 @@ test('production consistency canonicalizes the same phase budgets as the executo
     id: 'rust', version: 'rustc test', memoryMiB: 768, source: 'source', compileSeconds: 15, runSeconds: 3
   });
   assert.equal(canonicalRuntime({ id: 'python', version: 'Python test', memoryMiB: 256, source: 'source' }).compileSeconds, 0);
+  assert.equal(canonicalRuntime({id:'swift'}).compileSeconds,30);
+  assert.equal(canonicalRuntime({id:'bcpl'}).compileSeconds,10);
+  assert.equal(canonicalRuntime({id:'groovy'}).runSeconds,8);
+  assert.equal(canonicalRuntime({id:'swift',compileSeconds:1,runSeconds:2},true).compileSeconds,1,'reported budgets must not be replaced by expected values');
+  assert.equal(canonicalRuntime({id:'swift'},true).compileSeconds,undefined,'missing reported budgets must fail consistency');
 });
 
 test('research gap report preserves explicit unresolved items without inventing relations', () => {

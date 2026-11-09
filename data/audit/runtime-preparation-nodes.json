@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "scope": "Observed preparation-node capabilities, not runtime acceptance or a production routing configuration.",
+  "nodes": [
+    {
+      "checkedAt": "2026-11-08T13:42:19.473207+00:00",
+      "alias": "xshow2",
+      "architecture": "x86_64",
+      "dockerVersion": "29.1.3",
+      "cgroupVersion": "2",
+      "memoryBytes": 1691447296,
+      "cpuCount": 2,
+      "diskBytes": 41882943488,
+      "baseImage": "gcc@sha256:5e927c284bf55a7dc796262e311a0703344f62f41f5621eb56843111b1d37e15",
+      "baseAcquisition": "Digest-verified docker.m.daocloud.io proxy; original official reference restored in local containerd. Offline builds use exported OCI layout at the same original digest.",
+      "systemPackages": "containerd 2.2.1-0ubuntu1~24.04.4\ndocker-buildx 0.30.1-0ubuntu1~24.04.1\ndocker.io 29.1.3-0ubuntu3~24.04.2\nrunc 1.3.4-0ubuntu1~24.04.1\n",
+      "authorization": "User explicitly authorized this node for isolated runtime preparation/testing and Docker/Buildx system installation. SSH setup used local Terminal password input and a dedicated public key; no passwords or private keys in this record.",
+      "deployment": "No production executor or website deployed; test APIs remain ephemeral and loopback-only."
+    }
+  ]
+}

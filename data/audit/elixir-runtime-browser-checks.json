@@ -1,0 +1,102 @@
+{
+  "servedInputs": {
+    "index.html": "9d663dda010986680dc4fe8fd93f4f5a32375236cbdc53d17fc6babfc0ebb6ba",
+    "museum.css": "530356c26c9d4edee65f912989ad834bc6a4280f99720405ca0c6e247132e2de",
+    "service-status.js": "5a313ac642c627e4b942088d4e4238c38b17dbbdfd96ee9a9906ec3a6df67f78",
+    "learning-guide.js": "8614b8ff58594edd639462d8bc8a56c098f8010fe07a648f6eb22bf484f1f4a5",
+    "lab-tools.js": "2a9a764a3f50dd4a35bac39b6b22c794d80a1888189956bd0d4d969fb7ccded9",
+    "lab-examples.js": "355357a3a63292d50fe905306871625fd192794eae1c2ad5a1f1fdf6f6a605e4",
+    "data/cli-runtime-build.json": "182d22634434a05bd32a12325dedeebc4f60b3d3a09032f63812ee09f031a605",
+    "data/pascal-r-runtime-build.json": "b9ecd40a13848934f8e86e2975cac15e0b47082e48a14abe8820233584e22f5d",
+    "data/learning-paths.json": "4c6d815976d9bbf6c3f495b972e5d6e35245361fbec477c39dd6ecc024b7aab7",
+    "museum.js": "e15e76e3ed357499efe592fcf6569c7461295ff77021348534a1286bb8b96132",
+    "lab.js": "f6524e42a051dc4c37d6e716b9f429120151d786f264376327459c598c02aaa4",
+    "execution-config.js": "4ed993efee2456e3cc0b0aa3767081211bb5b5509204eed6bea3c4ab5fa883e0",
+    "execution-modes.js": "01999a2eed2724de878d34746346b40256256bd326fbfcc978e56233b91c869d",
+    "data/relationship-status.json": "a2d98eb0fdfb0b4f52cbe3bd036c0c65a09e4b372784c1aa057d3b5645be7625",
+    "lab-worker.js": "d2f568c2087c77f9cd211a9e4c01478f1e8da07a088b29831f9d116762987371",
+    "lua-worker.js": "19bf8689ad12082ac10e15a4c099d2171afdfffc81397c5910d7879c2895283c",
+    "scheme-worker.js": "edd85647e32de729a794e1fb3c49135fefc7d24ec7a0437247570e6cf3bac360",
+    "assets/lua/manifest.json": "d803bb6f5b36551703c7d00e63cb5be50f2795fc050d2edacbd7f6f872e914f2",
+    "assets/scheme/manifest.json": "2736ddf2f4a037f868630473dfc9fd21d42b276fad5e6fdc252890cc4b48b390",
+    "assets/pyodide/manifest.json": "3dbcea8d0957a60a80c84966832a201d06aeb190d77b6491d7d50577b65ec3a4"
+  },
+  "checkedAt": "2026-11-08T03:59:53.527Z",
+  "browser": "Chrome/156.0.8078.80",
+  "scope": "Actual browser over private SSH tunnel to ephemeral Docker runc API on xshow. Tokens, sessions and job IDs omitted; not a public deployment or escape proof.",
+  "checks": [
+    {
+      "name": "elixir edited source executes in actual browser with correct diagnostics controls",
+      "width": 1440,
+      "output": "49\n"
+    },
+    {
+      "name": "elixir edited source executes in actual browser with correct diagnostics controls",
+      "width": 390,
+      "output": "49\n"
+    },
+    {
+      "name": "Elixir multiline UTF-8 stdin",
+      "passed": true
+    },
+    {
+      "name": "Elixir actual script syntax error",
+      "passed": true
+    },
+    {
+      "name": "Elixir actual runtime exception",
+      "passed": true
+    },
+    {
+      "name": "Elixir recovery executes changed source",
+      "passed": true
+    },
+    {
+      "name": "elixir map and archive expose real remote entry",
+      "passed": true
+    }
+  ],
+  "inputs": {
+    "server/executor.py": "ca1c3ba45b407b5eb208b1c93c8e11f696fdddada5ae76ed3a867300417191bd",
+    "server/observability.py": "72f41c17fdcbeffbe3c07549da20fd1cf4f5d953f92ab30c78c2e4a6442092a6",
+    "server/mcp.py": "e759c15caa7e944daa91b99c3a529a31c4f917150cc609d7e22d458acbabda8c",
+    "server/mcp_http.py": "6766f9088fc4efc2c300bd721a1b0e73e98e271ba3bbac76f5e7b61f49596021",
+    "scripts/platform-browser-checks.cjs": "6b583b2108f9ba246453b6e4658b053ea69051b584458499791c7de79f127786",
+    "scripts/cli-browser-checks.cjs": "a839ea419844fd4acade0a6b907cd6dd8f8a31789b6a0d4ddcf8020ca4e27115",
+    "src/lab-tools.js": "2a9a764a3f50dd4a35bac39b6b22c794d80a1888189956bd0d4d969fb7ccded9",
+    "src/lab-examples.js": "355357a3a63292d50fe905306871625fd192794eae1c2ad5a1f1fdf6f6a605e4",
+    "data/learning-paths.json": "4c6d815976d9bbf6c3f495b972e5d6e35245361fbec477c39dd6ecc024b7aab7",
+    "src/service-status.js": "5a313ac642c627e4b942088d4e4238c38b17dbbdfd96ee9a9906ec3a6df67f78",
+    "src/learning-guide.js": "8614b8ff58594edd639462d8bc8a56c098f8010fe07a648f6eb22bf484f1f4a5",
+    "server/runtime-images.json": "2f157494e2a370d12eb833a081c2441ebc11a19d43734b3423677ec12899e374",
+    "server/runtimes/pascal-r/manifest.json": "b9ecd40a13848934f8e86e2975cac15e0b47082e48a14abe8820233584e22f5d",
+    "scripts/pascal-r-runtime.cjs": "e6c84f2b917f2cec8566e445526c8d24004b79c51d1279182e8bc7874f2232e2",
+    "scripts/serve.cjs": "5e4ce3fcf5de506f65892e7fd0dc509d26f6cb0c0c1cf4a113fe437a8304f9bb",
+    "scripts/executor-preview.cjs": "1c889ad66218b5c5ee2ca5bb6823e1833b03b298de4855aba05bbdd7c1ecbe19",
+    "scripts/check-executor-browser.cjs": "29f93533854731a1b69daad59a51f36a76b89981a0c088911df9e8ff5de1c066",
+    "src/index.html": "42e566c703953adfa6d166c3049d384faec22911de407333d4595657ea42254b",
+    "src/lab.js": "f6524e42a051dc4c37d6e716b9f429120151d786f264376327459c598c02aaa4",
+    "src/museum.css": "530356c26c9d4edee65f912989ad834bc6a4280f99720405ca0c6e247132e2de",
+    "src/execution-config.js": "4ed993efee2456e3cc0b0aa3767081211bb5b5509204eed6bea3c4ab5fa883e0",
+    "src/execution-modes.js": "01999a2eed2724de878d34746346b40256256bd326fbfcc978e56233b91c869d",
+    "scripts/planned-browser-checks.cjs": "f7ad88ef1395d675667160af74b3c0df8856efd8588f38a414d9677bba7cd04a",
+    "server/runtimes/algol60/manifest.json": "ff15f036957ee81febc63234e5ecf721d9aac139fb34503bdc4614b27d41022f",
+    "server/runtimes/common-lisp/manifest.json": "1f9ab644c3daec515fcf5bdda1b29f2077202ed022f4c235884a54c8a9a9c872",
+    "scripts/algol60-runtime.cjs": "7182db8bfa4c7940b1b542b32dd91f999a8b7968609dc3d3bd13bdd1c895e023",
+    "scripts/common-lisp-runtime.cjs": "c2c68d1009bea9b122b5a53c34909455fe0f0abc399aaa7b366df1abfe0974ae",
+    "server/runtimes/prolog/manifest.json": "29038cf1bbcae9c0ef83bc298d5e03770aafb037a9f2c038a9d87a9a2f83ace5",
+    "server/runtimes/forth/manifest.json": "866567af8814a939b49f9d79592b27f915e2f43cd705957ca229ac7d81534537",
+    "server/runtimes/racket/manifest.json": "ac56ef53c5d587598bc09e275d695267286758da5d671e1db7a20de44b02b7b3",
+    "server/runtimes/smalltalk/manifest.json": "05e65aef2af9ccbd2a9d10fe5d58f7ca1b8f641d5b33201c686eb5364a916232",
+    "server/runtimes/cobol/manifest.json": "da200bd4b1a99f752567894fa749684f9c4c2b543d4ea4f43f8c603be0c8c834",
+    "server/runtimes/ada/manifest.json": "11d39fe5939a580493a51e3263a8af77db9b4216be6afe2f536c8e6ff935d4ec",
+    "server/runtimes/clojure/manifest.json": "e33f3a85382da7069df62eca7d3f013222c011e17c74fe3bb958ba13b490ed2d",
+    "server/runtimes/ocaml/manifest.json": "0a32d0893278d82ca2d7ad55470b72b06d58d94cda23ab58d33c417c35aad867",
+    "server/runtimes/haskell/manifest.json": "efd4980543b947cd5748917558a60bbed97f1df44a9be81caa6e6db4164601e0",
+    "server/runtimes/kotlin/manifest.json": "0520c424181b8908af1a8f696032f4dcab559e25af30ee45b99ca645158d401a",
+    "server/runtimes/groovy/manifest.json": "1fde44ef3adc2969302f45372c194979569dec582aa88b57149fd3642c935fd0",
+    "server/runtimes/erlang/manifest.json": "ceea75c506a3e0ac0e27c000d755d613722fcc004efdfe5dd396a1c7a0497c55",
+    "server/runtimes/elixir/manifest.json": "7716ffc8f02ca5cfaaf8d2d983a60001bd6e3166a7808dcbea9349706f3b0728",
+    "scripts/fixed-runtime.cjs": "ba0165e9e495a44843aae03010f004bb8c5742dd16c0e9fb62542750a3b427a0"
+  }
+}

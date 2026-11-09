@@ -1,0 +1,25 @@
+# Install explicitly after reviewing the prepared bundle. Legacy service is separate.
+[Unit]
+Description=Code Museum isolated execution worker (%i)
+After=docker.service
+Requires=docker.service
+
+[Service]
+Type=simple
+User=code-museum-executor
+Group=code-museum-executor
+SupplementaryGroups=docker
+WorkingDirectory=/opt/code-museum-executor-dual
+EnvironmentFile=/etc/code-museum-executor/worker-%i.env
+ExecStart=/usr/bin/python3 /opt/code-museum-executor-dual/executor.py --nodes /opt/code-museum-executor-dual/execution-nodes.json --node %i --namespace dual-%i --port ${EXECUTOR_WORKER_PORT} --origin ${EXECUTOR_ORIGIN} --metrics-db ${EXECUTOR_METRICS_DB} --museum-data /opt/code-museum-executor-dual/museum-data
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=65
+UMask=0077
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/tmp /var/lib/code-museum-executor
+
+[Install]
+WantedBy=multi-user.target

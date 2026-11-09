@@ -1,0 +1,70 @@
+{
+  "checkedAt": "2026-11-09T05:47:30.712866+00:00",
+  "scope": "User-authorized approved production plan installation: root-owned code, node accounts, private node environments and systemd units. Legacy public token preserved only on xshow. No services started, enabled, stopped or switched by installer. No secret values stored in this report.",
+  "approvedPlanSha256": "c0abd08c5b4a7a22681c62828814d927d2f7db64b2147b33f8a7f551eed73634",
+  "installerSha256": "6ff5d557fe3d8460229c8487ad7eb3105f6d9dcd3d3128978e7884642ab5ad10",
+  "nodes": [
+    {
+      "installed": true,
+      "node": "xshow",
+      "languageCount": 42,
+      "backupPath": "/var/backups/code-museum-executor/20261109T054729947461Z-dual-xshow",
+      "accountsCreated": [
+        "code-museum-gateway",
+        "code-museum-tunnel"
+      ],
+      "productionPublicTokenPreserved": true,
+      "servicesStartedOrEnabled": false,
+      "codeSha256": {
+        "execution-nodes.json": "93b88f192bfcfe4e95a936649a24b295a3a788c6dd8aed545dacae97e5348f6b",
+        "execution_gateway.py": "f35db880132f66fba899de716c0cc644e5dc281812cb68e2dd652d0ef214917c",
+        "execution_nodes.py": "981cde9e6f950a1f14745ad3db455a34a32993ccbf95fc9220e0ac24cafa7c68",
+        "executor.py": "84ec23fbb3b9b516fa2f7adae05ae9d8e5751a8c0eb719eee616ed13de412d59",
+        "mcp.py": "e759c15caa7e944daa91b99c3a529a31c4f917150cc609d7e22d458acbabda8c",
+        "mcp_http.py": "6766f9088fc4efc2c300bd721a1b0e73e98e271ba3bbac76f5e7b61f49596021",
+        "museum-data/audit-reviews.json": "4d09e9f6e9610253496769f3b07639b2002d67e3b11c858b6028186464bb9a9d",
+        "museum-data/catalogue.json": "4bc5da865869fe4ceb14e387420c0939de2ba4448ba4a6e9bbf9a1a6b8f99c66",
+        "museum-data/execution-capabilities.json": "d838c4fadce0013f1f674478130bc65638d988c454098d53686dfb9170fe0d6d",
+        "museum-data/mcp-manifest.json": "d7701d24f68513c8da7f300130e1cb689c05b8210f83d5a8c7a35977ec876ae5",
+        "museum-data/relationship-status.json": "a2d98eb0fdfb0b4f52cbe3bd036c0c65a09e4b372784c1aa057d3b5645be7625",
+        "observability.py": "72f41c17fdcbeffbe3c07549da20fd1cf4f5d953f92ab30c78c2e4a6442092a6",
+        "runtime-images.json": "8900182ac91331af26a332f1688c95644ee2e91bb200e530162cd2c6fbea3eb3"
+      },
+      "unitSha256": {
+        "code-museum-execution-gateway.service": "6c4eca269076445f5750e99be8f9658ea1d9bff90ed3901d616cba3d94c0a613",
+        "code-museum-execution-tunnel.service": "80a064a5d78359acd0288dd1b4672d8f564f7f1c79e812a06015739d60a01023",
+        "code-museum-worker@.service": "4b5a7584ecb5fac6b7a93b30aa7e9143909d08b56706f932d331cd47d6e6200f"
+      }
+    },
+    {
+      "installed": true,
+      "node": "xshow2",
+      "languageCount": 14,
+      "backupPath": "/var/backups/code-museum-executor/20261109T054729521128Z-dual-xshow2",
+      "accountsCreated": [
+        "code-museum-executor",
+        "code-museum-forward"
+      ],
+      "productionPublicTokenPreserved": false,
+      "servicesStartedOrEnabled": false,
+      "codeSha256": {
+        "execution-nodes.json": "93b88f192bfcfe4e95a936649a24b295a3a788c6dd8aed545dacae97e5348f6b",
+        "execution_gateway.py": "f35db880132f66fba899de716c0cc644e5dc281812cb68e2dd652d0ef214917c",
+        "execution_nodes.py": "981cde9e6f950a1f14745ad3db455a34a32993ccbf95fc9220e0ac24cafa7c68",
+        "executor.py": "84ec23fbb3b9b516fa2f7adae05ae9d8e5751a8c0eb719eee616ed13de412d59",
+        "mcp.py": "e759c15caa7e944daa91b99c3a529a31c4f917150cc609d7e22d458acbabda8c",
+        "mcp_http.py": "6766f9088fc4efc2c300bd721a1b0e73e98e271ba3bbac76f5e7b61f49596021",
+        "museum-data/audit-reviews.json": "4d09e9f6e9610253496769f3b07639b2002d67e3b11c858b6028186464bb9a9d",
+        "museum-data/catalogue.json": "4bc5da865869fe4ceb14e387420c0939de2ba4448ba4a6e9bbf9a1a6b8f99c66",
+        "museum-data/execution-capabilities.json": "d838c4fadce0013f1f674478130bc65638d988c454098d53686dfb9170fe0d6d",
+        "museum-data/mcp-manifest.json": "d7701d24f68513c8da7f300130e1cb689c05b8210f83d5a8c7a35977ec876ae5",
+        "museum-data/relationship-status.json": "a2d98eb0fdfb0b4f52cbe3bd036c0c65a09e4b372784c1aa057d3b5645be7625",
+        "observability.py": "72f41c17fdcbeffbe3c07549da20fd1cf4f5d953f92ab30c78c2e4a6442092a6",
+        "runtime-images.json": "8900182ac91331af26a332f1688c95644ee2e91bb200e530162cd2c6fbea3eb3"
+      },
+      "unitSha256": {
+        "code-museum-worker@.service": "4b5a7584ecb5fac6b7a93b30aa7e9143909d08b56706f932d331cd47d6e6200f"
+      }
+    }
+  ]
+}

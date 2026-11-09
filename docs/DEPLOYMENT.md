@@ -1,5 +1,10 @@
 # Code Museum 首版部署
 
+## 2026-11-09 双节点执行准备（未切换生产）
+
+已实现统一网关、xshow 42 / xshow2 14 门完整静态分配、节点子集启动及普通发布包拆分。CI 不再携带约 2.2 GB 运行时输入，但仍不会自动升级受保护的执行器。两台固定镜像只读预检均匹配；当前生产仍使用原执行入口。 最终临时联调14项和全56门网关正例回归通过；绑定最终代码的审查包为 `output/dual-executor-review-20261109-v2/plan.json`，未安装常驻服务。安装常驻服务、专用 SSH 授权和切换步骤必须依据具体审查包，见 [双节点部署说明](DUAL_NODE_DEPLOYMENT.md)。
+
+
 ## 2026-11-03 P1 十二门私有运行时上线
 
 实现提交 `a585bc02489caa973cd33ee85c95e1413ad6ff02` 的 [Actions 41575243748](https://github.com/glwang-g/code-museum/actions/runs/41575243748) 构建、部署与 HTTPS 检查均成功。站点静态发布后，管理员从该提交逐文件校验的 root 专属暂存目录运行现有安装器，生产执行器从原 7 门升级至 19 门，P1 十二门已全部接入生产私有运行。没有增加 CI/Docker 权限，仍需原私有执行令牌。
@@ -260,3 +265,15 @@ HTTPS 探针实际 POST 201、GET 可见、管理员命令隐藏后公开列表�
 构建保留原始 JS/CSS 稳定地址供 Worker 与诊断使用，同时为 HTML 直接引用的脚本、样式和生成数据创建 `name.<sha256前12位>.js/css` 副本；`dist/data/asset-manifest.json` 记录对应关系。内容版本基于生成别名前的固定输入计算，别名和清单都是确定性派生物。HTML 不长期缓存，稳定文件地址继续 `no-cache`，只有带内容指纹的文件可用 `public, max-age=31536000, immutable`。河景采用同样带内容哈希的 WebP 文件名，构建强制校验小于 10,000 字节。
 
 本机 `scripts/serve.cjs` 已实现相同缓存规则。生产需在现有 Code Museum HTTPS server 块中、通用扩展名 location 之前，合入 `deploy/nginx.conf` 中新增的内容指纹 location，再执行 `nginx -t` 和 reload；不能整份覆盖现有虚拟主机，以免丢失执行接口、MCP、留言板与 TLS 配置。现有 `deploy/activate.sh` 只切换 release，并不自动更改 Nginx，所以推送本身不会启用这条缓存策略。每次新 HTML 会引用新的指纹地址，避免长缓存混用新旧脚本；旧 release 仍按现有回滚策略保留。
+
+## 运行权限申请入口（2026-11-03，本地实现）
+
+实验台新增「申请运行权限」，由既有 `server/analytics.py` 和 `server/messages.py` 处理。申请与公开留言使用同一 SQLite 文件中的独立 `access_requests` 表，保存昵称、联系邮箱、用途、匿名标识哈希及邮件通知状态；公开留言列表、总数和角标均不包含申请。不得将该表作为公开 API 或静态资源导出。当前执行令牌方式不变，没有微信登录或自动授权。
+
+部署时合入 `deploy/nginx.conf` 中 `location = /api/access-requests`（GET/POST、8k 请求体、现有 messages 限流 zone、关闭访问日志和代理缓冲），通过 `nginx -t` 后 reload。发布后端模块并重启原 `code-museum-analytics` 服务，沿用 `/etc/code-museum/messages.env` 的 SMTP 配置。无需新服务和新凭据；申请邮件收件人固定 `1956341482@qq.com`，不受留言的 `MESSAGES_MAIL_TO` 覆盖。前端读取 availability，不显示私有申请数据；SMTP 未配置则禁用提交。
+
+后台每 120 秒检查待发记录，失败保留重试；`python3 server/messages.py --deliver` 同时重试留言通知与权限申请。SMTP 接受后才标记 `notified_at`，不代表用户已获授权或收件箱人工确认。管理员通过邮件 Reply-To 回复申请者，仍需人工决定如何提供访问权限；本轮没有审批后台或自动发放令牌。数据库和其备份含联系邮箱，沿用服务端私有数据权限，不进入 Git。SMTP 失败与进程退出间可能出现邮件重复，编号可用于人工去重。
+
+本地核验与正式上线应分别记录。真实生产验证需确认代理、服务配置、申请邮件收取和现有留言/执行入口，不将源码完成视为已上线。
+
+本地核验命令：先 `npm run build`，再 `npm run access:browser`（需要本机 Chrome 和回环端口权限）。脚本启动真实 HTTP/SQLite/后台邮件线程，在 SMTP 边界拦截邮件，不发送真实邮件，也不接触生产数据库。报告与宽窄屏深浅主题截图在 `tmp/access-requests-browser/`。已通过 8 组集成检查，并实际查看代表截图；生产部署与真实邮箱收取尚未核验。

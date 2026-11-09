@@ -1,0 +1,447 @@
+{
+  "checkedAt": "2026-11-09T06:04:13.444Z",
+  "origin": "https://codemuseum.freexlib.com",
+  "scope": "User-authorized actual HTTPS lifecycle, authentication, existing MCP and controlled tunnel outage/recovery. No credentials, sessions or job identifiers retained. No source retry or failover.",
+  "checks": [
+    {
+      "name": "Formal HTTPS rejects missing execution credential",
+      "passed": true
+    },
+    {
+      "name": "Formal HTTPS rejects foreign execution origin",
+      "passed": true
+    },
+    {
+      "name": "Formal HTTPS job ownership isolates sessions",
+      "passed": true
+    },
+    {
+      "name": "Formal HTTPS cancels queued and running tasks",
+      "passed": true
+    },
+    {
+      "name": "Existing read-only MCP remains available with a separate credential",
+      "passed": true,
+      "tools": [
+        "search_languages",
+        "get_language",
+        "get_lineage",
+        "get_relationship",
+        "get_execution_capabilities"
+      ]
+    },
+    {
+      "name": "Formal HTTPS outage retains 42 local runtimes, rejects remote submission and marks partial metrics",
+      "passed": true
+    },
+    {
+      "name": "Formal HTTPS tunnel recovery restores 56 runtimes and real remote execution",
+      "passed": true
+    },
+    {
+      "name": "Historical per-language aggregates retained",
+      "passed": true,
+      "baselineTotal": 48,
+      "currentTotal": 127
+    }
+  ],
+  "status": {
+    "checkedAt": "2026-11-09T06:04:13.442867+00:00",
+    "available": true,
+    "complete": true,
+    "processStartedAt": "2026-11-09T06:00:14.183742+00:00",
+    "uptimeSeconds": 239,
+    "queue": 0,
+    "active": 0,
+    "nodes": [
+      {
+        "id": "xshow",
+        "available": true
+      },
+      {
+        "id": "xshow2",
+        "available": true
+      }
+    ],
+    "metrics": {
+      "startedAt": "2026-10-09T12:06:17.912975+00:00",
+      "persistent": true,
+      "missedRecordsSinceRestart": 0,
+      "total": 127,
+      "states": {
+        "cancelled": 7,
+        "compile_error": 6,
+        "compile_timed_out": 0,
+        "completed": 110,
+        "failed": 4,
+        "infrastructure_error": 0,
+        "memory_limit": 0,
+        "output_limit": 0,
+        "timed_out": 0
+      },
+      "languages": {
+        "ada": {
+          "total": 1,
+          "states": {
+            "completed": 1
+          }
+        },
+        "algol-60": {
+          "total": 1,
+          "states": {
+            "completed": 1
+          }
+        },
+        "awk": {
+          "total": 5,
+          "states": {
+            "cancelled": 1,
+            "completed": 4
+          }
+        },
+        "bash": {
+          "total": 3,
+          "states": {
+            "completed": 3
+          }
+        },
+        "c": {
+          "total": 6,
+          "states": {
+            "compile_error": 3,
+            "completed": 3
+          }
+        },
+        "clojure": {
+          "total": 1,
+          "states": {
+            "completed": 1
+          }
+        },
+        "cobol": {
+          "total": 1,
+          "states": {
+            "completed": 1
+          }
+        },
+        "common-lisp": {
+          "total": 1,
+          "states": {
+            "completed": 1
+          }
+        },
+        "cpp": {
+          "total": 4,
+          "states": {
+            "completed": 4
+          }
+        },
+        "csharp": {
+          "total": 3,
+          "states": {
+            "completed": 3
+          }
+        },
+        "d": {
+          "total": 1,
+          "states": {
+            "completed": 1
+          }
+        },
+        "elixir": {
+          "total": 1,
+          "states": {
+            "completed": 1
+          }
+        },
+        "erlang": {
+          "total": 1,
+          "states": {
+            "completed": 1
+          }
+        },
+        "f-sharp": {
+          "total": 1,
+          "states": {
+            "completed": 1
+          }
+        },
+        "forth": {
+          "total": 1,
+          "states": {
+            "completed": 1
+          }
+        },
+        "fortran": {
+          "total": 3,
+          "states": {
+            "completed": 3
+          }
+        },
+        "go": {
+          "total": 2,
+          "states": {
+            "completed": 2
+          }
+        },
+        "groovy": {
+          "total": 1,
+          "states": {
+            "completed": 1
+          }
+        },
+        "haskell": {
+          "total": 1,
+          "states": {
+            "completed": 1
+          }
+        },
+        "java": {
+          "total": 3,
+          "states": {
+            "completed": 3
+          }
+        },
+        "kotlin": {
+          "total": 1,
+          "states": {
+            "completed": 1
+          }
+        },
+        "nim": {
+          "total": 1,
+          "states": {
+            "completed": 1
+          }
+        },
+        "ocaml": {
+          "total": 1,
+          "states": {
+            "completed": 1
+          }
+        },
+        "pascal": {
+          "total": 5,
+          "states": {
+            "compile_error": 1,
+            "completed": 4
+          }
+        },
+        "perl": {
+          "total": 3,
+          "states": {
+            "completed": 3
+          }
+        },
+        "php": {
+          "total": 3,
+          "states": {
+            "completed": 3
+          }
+        },
+        "prolog": {
+          "total": 1,
+          "states": {
+            "completed": 1
+          }
+        },
+        "python": {
+          "total": 18,
+          "states": {
+            "cancelled": 6,
+            "completed": 11,
+            "failed": 1
+          }
+        },
+        "r": {
+          "total": 6,
+          "states": {
+            "completed": 5,
+            "failed": 1
+          }
+        },
+        "racket": {
+          "total": 1,
+          "states": {
+            "completed": 1
+          }
+        },
+        "ruby": {
+          "total": 1,
+          "states": {
+            "completed": 1
+          }
+        },
+        "rust": {
+          "total": 4,
+          "states": {
+            "compile_error": 1,
+            "completed": 3
+          }
+        },
+        "scala": {
+          "total": 1,
+          "states": {
+            "completed": 1
+          }
+        },
+        "sed": {
+          "total": 3,
+          "states": {
+            "completed": 3
+          }
+        },
+        "smalltalk": {
+          "total": 1,
+          "states": {
+            "completed": 1
+          }
+        },
+        "sql": {
+          "total": 7,
+          "states": {
+            "completed": 5,
+            "failed": 2
+          }
+        },
+        "standard-ml": {
+          "total": 1,
+          "states": {
+            "completed": 1
+          }
+        },
+        "tcl": {
+          "total": 1,
+          "states": {
+            "completed": 1
+          }
+        },
+        "typescript": {
+          "total": 5,
+          "states": {
+            "compile_error": 1,
+            "completed": 4
+          }
+        },
+        "visual-basic.net": {
+          "total": 1,
+          "states": {
+            "completed": 1
+          }
+        },
+        "xslt": {
+          "total": 3,
+          "states": {
+            "completed": 3
+          }
+        },
+        "zig": {
+          "total": 1,
+          "states": {
+            "completed": 1
+          }
+        },
+        "bcpl": {
+          "total": 1,
+          "states": {
+            "completed": 1
+          }
+        },
+        "dart": {
+          "total": 1,
+          "states": {
+            "completed": 1
+          }
+        },
+        "julia": {
+          "total": 1,
+          "states": {
+            "completed": 1
+          }
+        },
+        "korn-shell": {
+          "total": 1,
+          "states": {
+            "completed": 1
+          }
+        },
+        "oberon": {
+          "total": 4,
+          "states": {
+            "completed": 4
+          }
+        },
+        "octave": {
+          "total": 1,
+          "states": {
+            "completed": 1
+          }
+        },
+        "postscript": {
+          "total": 1,
+          "states": {
+            "completed": 1
+          }
+        },
+        "powershell": {
+          "total": 1,
+          "states": {
+            "completed": 1
+          }
+        },
+        "swift": {
+          "total": 1,
+          "states": {
+            "completed": 1
+          }
+        },
+        "tcsh": {
+          "total": 1,
+          "states": {
+            "completed": 1
+          }
+        },
+        "verilog": {
+          "total": 1,
+          "states": {
+            "completed": 1
+          }
+        },
+        "vhdl": {
+          "total": 1,
+          "states": {
+            "completed": 1
+          }
+        },
+        "wasm": {
+          "total": 1,
+          "states": {
+            "completed": 1
+          }
+        },
+        "x86-assembly": {
+          "total": 1,
+          "states": {
+            "completed": 1
+          }
+        }
+      },
+      "timings": {
+        "queue": {
+          "samples": 127,
+          "meanMs": 1
+        },
+        "compile": {
+          "samples": 58,
+          "meanMs": 1640.8
+        },
+        "run": {
+          "samples": 116,
+          "meanMs": 190.6
+        }
+      },
+      "partial": false,
+      "scope": "Sum of reachable workers; partial while a node is unavailable. Rounded timing means weighted by sample counts. No source, input, output or credentials stored by gateway."
+    }
+  }
+}

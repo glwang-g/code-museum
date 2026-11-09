@@ -1,6 +1,191 @@
 # Code Museum · 产品上下文与交接
 
+## 2026-11-09 提交与静态发布准备（已授权，待实证收尾）
+
+用户现明确要求“提交推送部署吧”，后续回复“继续”。本轮按已审查范围推进公共Git与静态发布；PDF插播、output/tmp产物和本机助手配置继续排除，不据授权本身宣称已推送或发布。Groovy档案已由3秒修正为8秒，通用超时提示移除硬编码3秒；原固定工具链、镜像及初期NOTICE保留，页面效果待新发布复核。
+
+BCPL官方资料只明确私人/学术免费使用，尚未找到整个95,200,146字节归档公开再分发的明确授权。公共仓库仅保存原manifest/来源/固定哈希、自编构建与运行材料、项目说明及可复制的GNU许可文本；三个原包分片、上游补丁上下文、上游README全文和`upstream-sysboot.b`共六项保持私有并被忽略。本机独立Git档案`output/private-runtime-inputs/bcpl-20261109`固定提交`dac1672e722e6b5d81ccffbb16704b4a4638a6d7`，未配置远端，原文件仍保留。原manifest与生产镜像身份不改写。
+
+网站通过`data/runtime-input-policy.json`明确区分BCPL公开元数据校验与私有工具链重建：公开输入可离线生成相同网页，私有材料有无不改变产物；完整BCPL镜像重建必须经`--private-input-directory`显式提供原清单匹配的私有包，缺失或篡改即失败，不在构建时下载。B组另外36门的完整固定输入拟随本轮公共提交保存。此前“所有固定输入均须完整纳入公共版本管理”的概括对BCPL不再适用，不能声称仅从公共仓库可重建其完整工具链；既有56门真实后端能力保留。
+
+提交前本机验证：`npm test` 92/92、离线构建通过；[BCPL私有输入校验](../data/audit/bcpl-publication-checks.json)22项通过，原manifest、镜像清单和私有输入未改。权限申请真实Chrome/HTTP/SQLite检查8组通过，SMTP完全拦截、未发送真实邮件，1440入口与390浅色表单截图已查看。155份本轮文本输入高信号凭据扫描无命中；待提交路径清单排除全部本机产物和BCPL六项私有文件。固定输入分为四批推送临时分支，最终应用提交才推`master`触发小体积发布流程，避免中间状态采用旧工作流上传整套SDK。
+
+## 2026-11-09 本地产物忽略与索引清理
+
+用户明确要求将根目录 `output/`、`tmp/`、`.claude/` 全部加入 `.gitignore`，并清理这些目录的 Git 索引。已用限定路径的 `git rm --cached` 移除原先跟踪的23个 `output/iteration-2026-10-15/` 文件；本地文件全部保留，内容未变。索引中的删除仅针对这23个产物，没有重新暂存其他项目改动，也没有提交、推送或改写 Git 历史。此前提交范围盘点中“保留已跟踪截图”的建议是本次指令前的状态，现以用户明确要求为准。
+
+## 2026-11-09 双节点执行实现（后端已上线，新增静态入口待发布）
+
+当前检查点为 `2026-11-09T06:05:38Z`：用户已明确回复“授权之前的部署计划”，两台 root 拥有的独立代码、服务账号、私有环境文件、systemd unit 和专用受限 SSH 隧道已安装。首次安装对应 v2；正式预检发现 xshow 的4182被既有 `xshow-guestbook.service` 占用，因此保留该服务，将新 worker 改用经空闲检查的4184，并在两台应用、核对 v3 清单。当前计划是 `output/dual-executor-review-20261109-v3/plan.json`，SHA-256 `0286663a1997af8f688233ea7216bf5a1e3a1312a7458e69e4c8e22db726c1b1`；v2及更早目录仅作历史材料。安装、SSH限制及端口修订实证分别见 `data/audit/dual-node-production-install.json`、`data/audit/dual-node-production-ssh.json`、`data/audit/dual-node-production-port-revision.json`。
+
+实际常驻服务在独立 loopback4190 canary 通过10项检查：真实跨节点执行、编译诊断、归属隔离、网关重启、排队及运行取消、隧道失联时42门保留与恢复56门，见 `data/audit/dual-node-production-canary.json`。旧生产队列与活动任务均为0后，于 `06:00:14Z` 新网关接管原4181入口，实时清单为56门；原公开令牌、聚合指标历史、旧代码及旧unit均保留，canary已停止，见 `data/audit/dual-node-production-cutover.json`。Nginx与既有留言服务没有改动。
+
+[正式 HTTPS/Chrome 验收](../data/audit/dual-node-production-checks.json)63项通过：精确元数据、全部56门逐一真实正例、既有前端1440/390的 Python/SQL、真实错误和恢复；1440 Python、390 SQL截图已查看。[正式生命周期验收](../data/audit/dual-node-production-lifecycle.json)8项通过：鉴权与跨站拒绝、会话隔离、排队/运行取消、独立凭据MCP、受控失联保留42门及恢复56门、历史指标保留。MCP仍读取已发布 `current/dist/data` 的既有快照，不表示新59节点数据已发布。[最终服务报告](../data/audit/dual-node-production-services.json)确认两台worker及网关/隧道active/enabled，旧执行器inactive/disabled并保留；API均为loopback，服务账号无登录且无持久Docker组成员资格，两台执行容器零残留。[06:06:28Z启用后只读健康复核](../data/audit/dual-node-production-final-health.json)再次确认完整56门、并发2、最大预算8秒，未重复跑全量程序。
+
+生产后端56门已上线；已发布静态前端仍提供原22个节点（4浏览器 / 19远端，Python重叠），源码59个节点（4浏览器 / 56远端）的新增入口尚未发布。当前Groovy运行预算8秒，包含JVM启动和脚本编译，其余预算按API每门声明。[runtime-rollout.json](../data/audit/runtime-rollout.json)保留临时逐门验收阶段，作为固定复测输入不改写；当前生产状态以上述正式报告为准。Git未提交或推送。
+
+root 私有安装记录在 xshow 的 `/var/backups/code-museum-executor/20261109T054729947461Z-dual-xshow`、xshow2 的 `/var/backups/code-museum-executor/20261109T054729521128Z-dual-xshow2`；各自 `port-4184-revision/` 保存端口修订前材料。xshow 的前一目录另有 `metrics-before-cutover.sqlite` 原指标备份。回退先停止新网关、启动保留的旧执行器恢复4181，再核对原19门和指标；完整命令与开机状态恢复见 [双节点部署说明](DUAL_NODE_DEPLOYMENT.md)。备份、私钥及真实令牌不进入版本管理。
+
+用户要求实现“xshow 网站入口 + 两台静态语言分工 + 统一网关”。新增 `execution_gateway.py`、`execution_nodes.py` 和完整分区 `execution-nodes.json`：xshow 42 门、xshow2 14 门。只读预检两台所分配的 56 个镜像身份/平台均匹配；当时磁盘余量分别约 1003/6989 MiB，内存约 3723/1613 MiB，记录 `data/audit/dual-node-inventory.json`，不是未来容量承诺。
+
+网关沿用同域 API，在公网入口鉴权后转为独立节点凭据，保留会话归属；只连接固定 loopback 上游（远端由 SSH 隧道提供）。提交前落短期路由预留，不在网络调用期间持有 SQLite 锁；结果未知时不重试、不切换节点。查询/取消及网关重启后继续访问原节点，路由库只保存匿名 owner 哈希、语言、节点、任务 ID、状态与过期时间，不保存源码、输入、输出、令牌或原始 session。两台各串行一任务，网关保留全局及会话限流；节点故障只移除它的实时语言清单，指标明确标注部分覆盖。MCP 继续是已校验的配置快照，不冒充实时健康探测。
+
+站点发布改为 `package-release.cjs` 显式文件白名单，排除约 2.2 GB 的 SDK 构建输入，保留可复现源码输入；普通发布包约 35 MiB。新增 `prepare-dual-executor.py`、三份 systemd 模板及受限 SSH 配置，生成逐节点、逐文件哈希的审查包；准备脚本不安装或连接服务器。新代码独立于旧生产代码；xshow worker 复用原聚合指标库，xshow2 单独建库，不克隆历史计数。生产切换及回退步骤见 [双节点部署说明](DUAL_NODE_DEPLOYMENT.md)。
+
+临时联调阶段曾被自动审批要求补充两个目的地和材料范围，用户当时明确授权“授权两台临时联调”，仅上传执行器模块、固定清单、五份公开数据及测试程序，在临时目录/隔离容器/SSH 隧道验收；该阶段不读取生产令牌、不安装常驻服务、不切换生产入口，随后新增的生产授权与实际操作见本节开头。新增网关 12 项真实回环 HTTP 测试通过，默认测试 90/90 与离线构建通过。 首次 56 门冒烟发现 Groovy 原 3 秒预算超时；三个临时 8 秒诊断 VM 的同一正例分别约 5271/5161/5261 ms，记录 `groovy-cold-start-diagnostics.json`。据此仅将 Groovy 的宿主执行预算改为8秒，更新实时API、网关校验、配置能力、部分页面说明和一致性检查，固定SDK/镜像未变；本轮静态发布准备已修正语言档案与超时提示的两处旧3秒文案，页面上线效果仍待发布后核对；原 NOTICE 的 3 秒说明按初期构建记录保留，并在当前出处页注明历史边界。新的 Groovy 11 项真实容器检查通过，7项真实网页及全56回归已复测通过。最终真实两节点 API/Chrome 14 项通过，截图已核读；全部 56 门（原19 + B组37）经统一网关逐门实跑，输出和版本均与固定正例匹配，报告 `dual-node-runtime-checks.json`、`dual-node-all-runtimes.json`。全56为每门一个正例冒烟，不等于每门完整语义、错误和资源用例重跑，也不能代替正式 HTTPS 验收。测试脚本的健康缓存/同页锚点导航时序失败保留在过程日志，未计作通过。临时验收后的 v2 部署审查包每台约2.95MB，普通发布包约35.4MB；当时尚未部署，当前生产进度以本节开头和正式报告为准。尚未提交或推送。
+
+## 2026-11-09 原 B 组 37 门临时验收收尾（未部署）
+
+最后两门已按 BCPL → Oberon 完成固定输入、真实执行和页面验收；原队列 37/37，源码 59 个可执行节点 / 56 远端，生产仍为原 22 个节点。前 35 门沿用既有报告，本轮新增 27 项容器、20 项 Chrome 检查；不是本轮重跑全部 37 门。
+
+BCPL 使用作者 2026-11-09 完整快照、Cintcode64 编译器和以固定 GCC 重建的 C VM；原始 bootstrap、标准头文件、作者条款和随包 GNU licence 保留。main.b / start()，512 MiB / 编译 10 秒 / 运行 3 秒。非交互 VM 补丁把真实故障码转为失败退出，PC 取原系统的第 6 号寄存器；启动器恢复原始标准输入、使用 LF 文本输出并阻止剩余输入进入 CLI。除零、返回 7、中文多行输入、语法拒绝、超时、输出上限、取消和恢复已实测。无图形、音频、在线依赖或历史机器重现；作者只明确私人/学术用途，不推断商业再分发许可。
+
+Oberon 使用 OBNC 0.17.2 官方完整源码、4 个 Debian 固定依赖及原始许可，签名索引与逐包 SHA-256 已核验；官方源码 MD5 与独立官方清单匹配，另保留本地 SHA-256，不声称上游 SHA-256 或签名。最终 2016 语言 / Oberon-07 家族 → C/GCC 原生程序；Main.obn / MODULE Main，512 MiB / 编译 10 秒 / 运行 3 秒，INTEGER 32 位、REAL 64 位。保留默认 GC、类型与运行时检查，文本和 ext 库逐项检查；不提供 SDL Input/XYplane、在线模块、Oberon-2 或 Ceres 操作系统重现。变量断言和数组越界保留原生 E8/E2 诊断，ASSERT(FALSE) 按原实现直接失败退出，普通 stderr 不误报失败。
+
+报告为 `bcpl-runtime-checks.json`、`bcpl-runtime-browser-checks.json`、`oberon-runtime-checks.json`、`oberon-runtime-browser-checks.json`，1440/390 明暗及环境说明截图已查看。85/85 默认测试、离线构建和 Python 执行器 7 项通过。两门输入目录和改动尚未提交，不能声称已有提交已可复现；后续提交须完整纳入版本管理。未提交、推送或部署。
+
+本次远端上传曾被自动审批拒绝，随后用户明确回复“授权上传并继续隔离验收”，目的地 xshow2 及两门固定输入、执行器/测试材料外发范围已明确，等待已解除。此前检查点和构建失败均为历史过程，见 [构建计划](audit/RUNTIME_BUILD_PLAN.md)。
+
+## 2026-11-08 测试节点拆分准备（未部署）
+
+续接原 B 组，真实复查 xshow 根盘仅余 940 MB，仍不足以解包 Swift。用户提供新节点并要求创建本机 SSH 别名 `xshow2`，随后授权安装专用公钥实现免密登录；首次认证由用户在本机终端直接输入密码，不读取密码或私钥内容，不将凭据写入项目。公钥安装及 BatchMode 免密登录已通过；节点为 Ubuntu 24.04.2 / x86_64、2 CPU、约 1.6 GB 内存、无 swap、根盘余约 35 GB，已有 Python 3 / cgroup v2，无 Docker。自动审批拒绝 Docker/Buildx 系统安装，理由是隔离测试授权未明确覆盖持久系统软件与特权服务；已向用户另行请求这项授权，安装未执行。现有 23/37 完成状态不变，下一门仍为 Swift。
+
+已补齐执行器 `--languages` 节点白名单及专项测试/临时网页预览的语言选择：保持完整固定清单校验，但仅核对、公开和接受指定节点的运行时，不要求新节点复制全部既有镜像；未实现生产跨节点路由。85/85 默认测试、离线构建及 Python 执行器 7 项通过（有既有 SQLite ResourceWarning，测试无失败）。本机 OrbStack 已通过流式导入既有固定 Python 镜像，在禁网、只读根、非 root 的 AMD64 容器真实输出 x86_64 / 42；这只证明替代环境能力，不是 Swift 验收。未提交、推送或部署。
+
+节点授权补记：用户明确答复“授权安装并继续测试”，Docker/Buildx 安装审批等待解除。xshow2 已从 Ubuntu 签名仓库安装 docker.io 29.1.3、docker-buildx 0.30.1、containerd 2.2.1 与 runc 1.3.4，Docker 启动且 cgroup v2 可用。两台测试机的 Docker Hub 访问暂时超时；通过既有 xshow 流式复制固定 GCC 镜像，并从官方 Swift 下载站取得完整 6.1.3 Debian 12 SDK。归档 878,726,025 字节、SHA-256 `4db73efef24931f66045970d9da0d3d3b25980903c957941774932bdd1af1166`；GnuPG VALIDSIG 指纹 `52BB7E3DE28A71BE22EC05FFEF80A866B47A981F` 与 Swift 官方活动发布密钥匹配。完整归档以 27 个有序分片保存在 `server/runtimes/swift/assets/`，公开密钥、签名、验证记录与 SDK 原始许可保留；不得把固定输入准备完成说成镜像或语言验收通过。
+
 整理于 2026-09-24，更新于 2026-11-03，依据项目讨论及当前源码。本文是上下文摘要，不是完整聊天记录，也不是所有讨论项均已实施的承诺。构建方法见 [README](../README.md)。
+
+
+后续传输补记：首轮 GCC 流式复制因 xshow SSH 断开而未完成，没有将部分导入认作可用镜像。改用公开代理按原官方摘要取得完全相同镜像，实际 ID/架构均已核对；未修改系统镜像源。原官方摘要引用已恢复，并导出同摘要的本地 OCI 布局供完全离线 BuildKit 构建；本轮重复中转进程已停止、xshow 上精确路径及哈希匹配的自建 486 MiB 归档已删除。Swift 离线镜像正在导出，尚未计作真实执行通过。节点实测记录 `data/audit/runtime-preparation-nodes.json` 不含凭据。
+
+## 2026-11-08 Swift 临时验收完成（未部署）
+
+xshow2 实测 Swift 6.1.3 / Swift 6 模式通过：固定完整 SDK、官方签名、许可、原始摘要 GCC 本地 OCI 布局离线构建，真实镜像身份已绑定清单。Swift 驱动即使只打印版本也需要临时目录，版本探测现提供独立 noexec /tmp，根仍只读；实际任务沿用既有 tmpfs 与只读/非 root/禁网约束。13 项真实容器、9 项真实 Chrome 通过，已查看 1440/390 明暗截图；含泛型、枚举/可选值、Foundation、中文输入、类型拒绝、异常捕获与未处理失败、超时/输出限制/取消/恢复、下载名和地图入口，容器零残留。补齐 Swift 原生关键字着色后重新跑完网页专项。报告 `swift-runtime-checks.json`、`swift-runtime-browser-checks.json`；早期仅编辑报告保留为历史状态。
+
+默认 85/85、离线构建、Python 执行器 7 项通过。当前 24/37 门、源码 46 节点 / 43 远端；生产仍原 22 节点，无生产跨节点调度。Swift 单文件 main.swift，固定标准库与 Foundation，1024 MiB / 编译 30 秒 / 运行 3 秒，无 SPM 在线依赖或 Apple UI 框架。下一门 Dart 固定元数据核对中；不提交、推送或部署。
+
+## 2026-11-08 Dart 临时验收完成（未部署）
+
+官方 Dart SDK 3.9.4 完整 ZIP 217,645,435 字节，镜像下载匹配独立 Google 官方 SHA-256 `61b4b9488e1b4255b94be17ad48ae2ddb23c6fbe67824cf8103d0b28fa8ab816`，7 个有序分片和 3 份原始许可/通知保留，不声称 PGP 验证。xshow2 使用同摘要 GCC 本地 OCI 布局离线构建，main.dart AOT 原生可执行文件与标准库，抑制分析统计；768 MiB / 编译 15 秒 / 运行 3 秒，无 pub 在线依赖、Flutter 或浏览器 UI。
+
+13 项真实容器、10 项真实 Chrome 通过并查看 1440/390 明暗截图；含泛型/null safety、records/switch、异步 Future、中文输入、类型错误不执行、异常/捕获、输出限制/超时/取消/恢复，原生关键字着色、导入不上传不自动执行、下载名及地图入口。默认 85/85、离线构建、Python 7 项通过，报告 `dart-runtime-checks.json`、`dart-runtime-browser-checks.json`。普通临时预览新增 EXECUTOR_LANGUAGES 白名单以适配只准备部分镜像的节点。当前 25/37 门，源码 47 节点 / 44 远端，生产仍原 22 节点；下一门 Julia 官方校验和核对中。不提交、推送或部署。
+
+## 2026-11-08 Julia 临时验收完成（未部署）
+
+官方 Julia 1.11.7 完整 286,235,430 字节归档的 TUNA 镜像下载匹配独立官方 SHA-256 `aa5924114ecb89fd341e59aa898cd1882b3cb622ca4972582c1518eff5f68c05`，9 个分片、19 份原始许可保留；不声称 PGP 核验。固定原摘要 GCC 本地 OCI 布局离线构建，main.jl 与标准库、正常 JIT，初始 Julia/GC/BLAS 单线程，已有模块/包镜像可用但禁用新预编译缓存；临时 depot + 不可变 SDK depot，标准库加载路径、Pkg 离线，禁用启动脚本/历史。768 MiB / 3 秒含启动与 JIT，无在线 Pkg、绘图或 Notebook；错误前真实输出保留。
+
+13 项真实容器与 10 项真实 Chrome 通过并查看 1440/390 明暗截图，含广播、多重派发、参数化结构/Unicode 标识符、Dates、中文输入、错误与资源/恢复、原生关键字、UTF-8 导入不上传不执行、下载和地图入口。85/85 默认测试、离线构建通过。报告 `julia-runtime-checks.json`、`julia-runtime-browser-checks.json`；当前 26/37 门、源码 48 节点 / 45 远端，生产仍原 22 节点。下一门 GNU Octave；不提交、推送或部署。
+
+## 2026-11-08 GNU Octave 临时验收完成（未部署）
+
+GNU Octave 7.3.0 CLI 固定 179 个 Debian 包，APT 在禁网容器验证索引签名，每包匹配签名索引 SHA-256，178 份原始版权保留；固定 GCC 本地 OCI 离线构建。校验器原本不允许 Debian 合法版本字符 ~，现只补齐这一合法字符，保持原包名、完整哈希和路径边界。main.m 单文件脚本、预装核心库与文本输出，512 MiB / 3 秒，禁用 GUI/窗口系统、初始化和历史，初始 BLAS/OMP 变量 1；无在线 pkg 安装或绘图界面。
+
+13 项真实容器、10 项真实 Chrome 通过并查看 1440/390 明暗截图：矩阵求解、单文件函数、复数、中文输入、真实语法/运行错误和先前输出保留、资源/恢复、原生 % 注释/关键字、UTF-8 导入不上传不执行、下载名和地图入口。85/85 默认测试、离线构建通过，报告 `octave-runtime-checks.json`、`octave-runtime-browser-checks.json`。当前 27/37 门、源码 49 节点 / 46 远端，生产未改；下一门 PowerShell 官方资产预取遇到慢速 GitHub/HTTP2 中断，改为可续传 HTTP1 并核对官方包直连路径，未计作验收。不提交、推送或部署。
+
+## 2026-11-09 PowerShell 临时验收完成（未部署）
+
+PowerShell 7.5.4 Linux 官方 Microsoft DEB 75,453,302 字节，SHA-256 `17036f67f65d81ed2b23d0d247edc2b2ac58abeb721f08927aed8a3dffe41d42` 与独立取得的官方 GitHub 发行摘要匹配；3 分片、5 份原始许可及包控制元数据保留，不声称 APT/PGP 核验。慢速 GitHub tar 与代理预取已停止，最终只采用官方 Microsoft 包。独立 CLI 入口 NoProfile/NonInteractive、UTF-8/plain text、默认 ErrorActionPreference=Stop；原生诊断、显式捕获、普通 stderr 与显式退出码保留。
+
+真实定位 .NET9 W^X doublemapper 的 2 TiB 逻辑稀疏匿名 memfd 初始化，64 MiB 至 2 GiB 的 fsize 均 SIGXFSZ；仅 PowerShell 适配 2 TiB 逻辑 fsize，不关闭 W^X。实际 cgroup 内存 768 MiB，/work 和 /tmp noexec tmpfs 16/8 MiB、只读根、非 root、禁网、NNP、进程/输出/3 秒限制不变。版本探测需独立可写临时 HOME，仍 noexec/只读根。17 项真实容器通过，额外实测 tmpfs ENOSPC、只读根拒写、exit 7 与普通 stderr 成功；11 项真实 Chrome 通过并查看宽窄屏，包括原生高亮、Unicode 输入/导入不上传不执行、默认错误策略与恢复、下载和地图入口。85/85 默认测试、离线构建通过。
+
+报告 `powershell-runtime-checks.json`、`powershell-runtime-browser-checks.json`；当前 28/37 门、源码 50 节点 / 47 远端，生产未改，未实现生产跨节点路由。下一门 Korn shell 的单个 Debian 固定包已完成签名索引/逐包哈希获取，尚未镜像或执行验收。不提交、推送或部署。
+
+## 2026-11-09 Korn shell 接入（本地）
+
+原 B 组进度 29/37。ksh93u+m 1.0.4 固定 Debian 包与版权、签名索引及哈希保留，256 MiB / 3 秒、main.ksh、-p 忽略 ENV；保留原生状态，无在线依赖或 ksh88 重现声明。14 项容器、10 项 Chrome 验收及宽窄屏目视通过；修正重复示例并校验 ID 唯一性，85/85 测试和构建通过。源码 51 节点 / 48 远端，生产仍 22；下一门 tcsh，未提交、推送、部署。
+
+## 2026-11-09 tcsh 接入（本地）
+
+原 B 组 30/37。tcsh 6.24.07 完整固定 Debian 包与版权、签名索引及哈希保留；main.tcsh/-f，256 MiB / 3 秒，原生状态，无在线依赖或历史 csh 重现声明。12 项容器、10 项 Chrome 验收及宽窄屏目视通过，85/85 测试与离线构建通过。源码 52 节点 / 49 远端，生产仍 22；下一门 WebAssembly，未提交、推送或部署。
+
+## 2026-11-09 WebAssembly 接入（本地）
+
+Wasmtime 50.0.1；完整官方 11,577,424 字节 SDK 匹配官方 GitHub 资产 SHA-256，原始许可保留，未声称 PGP 验签。main.wat 核心模块 / _start / WASI Preview 1，512 MiB / 3 秒含 WAT 翻译与 JIT，至多一块 256 MiB 线性内存；禁用组件模型和线程，无预开放目录、继承环境、网络或浏览器宿主。17 项容器覆盖计算、中文输入输出、语法/类型验证、除零/越界陷阱、proc_exit 状态、内存/权限限制、取消和恢复。 17 项真实容器、10 项真实 Chrome 检查通过，1440/390 明暗截图已核读；85/85 默认测试与离线构建通过。 当前 31/37 门、源码 53 节点 / 50 远端，生产仍为原 22 节点；下一门 x86 Assembly。未提交、推送或部署。
+
+## 2026-11-09 x86 Assembly 接入（本地）
+
+NASM 2.16.01 → 固定基础 GNU ld → 原生 x86-64 Linux ELF64，main.asm / _start / Linux syscall ABI，256 MiB / 编译 10 秒 / 运行 3 秒。固定 Debian 包、签名索引、SHA-256 和 NASM/binutils 原始许可保留。编译与链接均通过才执行，警告原样保留；无 libc 或外部目标文件，不冒充 8086、DOS、Windows 或模拟器。实际覆盖循环、函数、中文系统调用输入、NASM/链接错误、除零/非法内存访问和退出码。 13 项真实容器、10 项真实 Chrome 检查通过，1440/390 明暗截图已核读；85/85 默认测试与离线构建通过。 当前 32/37 门、源码 54 节点 / 51 远端，生产仍为原 22 节点；下一门 Verilog。未提交、推送或部署。
+
+## 2026-11-09 Verilog 接入（本地）
+
+Icarus Verilog 11.0 / Verilog-2005，main.v / 顶层 module main，512 MiB / 编译 10 秒 / vvp 文本仿真 3 秒实际时间。完整固定 Debian 包、签名索引、SHA-256 与原始许可保留。-N 使 $stop 非交互且返回失败，$fatal 和原生诊断保留，禁用波形输出；无综合、FPGA 部署或波形下载，不是真实电路。页面动作/结果明确为仿真，并验证切换语言恢复运行标签；覆盖计数器、延迟、四态、函数、中文输入、错误、取消与恢复。 13 项真实容器、11 项真实 Chrome 检查通过，1440/390 明暗截图已核读；85/85 默认测试与离线构建通过。 当前 33/37 门、源码 55 节点 / 52 远端，生产仍为原 22 节点；下一门 VHDL。未提交、推送或部署。
+
+## 2026-11-09 VHDL 接入（本地）
+
+GHDL 2.0.0 mcode / VHDL-2008，main.vhd / 顶层 entity main，512 MiB / 分析展开 10 秒 / 文本仿真 3 秒实际时间。3 个固定 Debian 包、签名索引、SHA-256 与原始许可保留，--assert-level=error 保留断言和约束检查，warning 仍可继续。无综合、FPGA 部署或波形下载，不是真实电路。页面明确仿真；覆盖记录、IEEE 多值逻辑、类型错误、仿真时间、中文 TextIO、断言/边界错误、取消恢复和文件操作。 15 项真实容器、10 项真实 Chrome 检查通过，1440/390 明暗截图已核读；85/85 默认测试与离线构建通过。 当前 34/37 门、源码 56 节点 / 53 远端，生产仍为原 22 节点；下一门 PostScript。未提交、推送或部署。
+
+## 2026-11-09 PostScript 接入（本地）
+
+Ghostscript 10.00.0，18 个固定 Debian 包、签名索引、SHA-256 与原始许可保留。main.ps，256 MiB / 3 秒，-q -dSAFER -dNODISPLAY -dBATCH -dNOPAUSE；栈、过程、递归、字典和文本输出来自真实解释器，原生错误与 stopped 捕获保留。无页面渲染、打印设备或文件产物下载；实际核验 SAFER 拒绝未授权读写、中文多行标准输入、错误/恢复及导入下载。 16 项真实容器、10 项真实 Chrome 检查通过，1440/390 明暗截图已核读；85/85 默认测试与离线构建通过。 当前 35/37 门、源码 57 节点 / 54 远端，生产仍为原 22 节点；下一门 BCPL。未提交、推送或部署。
+
+## 2026-11-06 原 B 组 37 门持续推进（未部署）
+
+用户要求按 Plan 顺序持续推进原 B 组 37 门直到额度限制。本轮不提交、推送或部署，保留开始时已有的权限申请、页头和部署文档等用户修改。逐门队列见 `data/audit/runtime-rollout.json`。已完成 ALGOL 60 / GNU MARST 2.8、Common Lisp / SBCL 2.2.9、Prolog / SWI-Prolog 9.0.4、Forth / Gforth 0.7.3 的固定输入、离线镜像、私有执行协议、编辑器/地图/档案/许可入口和独立临时网页验收；源码支持 26 节点，生产仍为原 22 节点。ALGOL 60 传名调用生成 C 的求值顺序警告仍存在，已在环境说明与档案明确限制并保留真实诊断；样例通过不代表修复或完整符合性。
+
+验证：84/84 默认测试、离线构建、38 项真实 Docker 检查与 22 项真实 Chrome 检查通过，已查看四门宽窄屏及限制展示截图。报告为 `data/audit/planned-runtime-checks.json` 与 `planned-runtime-browser-checks.json`，绑定源码/实际镜像；测试使用既有 xshow 的独立命名空间和临时 API，未改生产服务。下一门 Racket，其余 33 门不算完成；后续报告和队列继续更新。
+
+2026-11-07 续接：Forth 网页验收补齐，前四门完成临时验收，源码支持 26 节点；38 项容器、22 项浏览器检查报告已保存并查看 Forth 宽窄屏截图。Racket 官方 Minimal Racket 8.7 CS 发行包已取得并与官方 SHA-256 核对，固定归档、全部许可与离线 Dockerfile 位于 `server/runtimes/racket/`，已补齐待验收的后端命令，以及明确标注“仅编辑 / 待核验”的 Racket 示例和 .rkt 导入下载；本机 Chrome 4 项编辑器检查通过，已查看 1440/390 截图，未发生代码上传或执行，证据 `data/audit/racket-editor-checks.json`。尚未构建镜像或开放执行。自动审批拒绝继续向 xshow 上传测试源码，理由为缺少用户对可信主机的明确授权；已询问授权，待答复前不继续相关远端操作。本机 Docker Desktop / OrbStack 上下文均无可用 daemon。已完成的前四门不因这个审批阻断而改称未完成。
+
+2026-11-07 授权补记：用户已明确答复“授权，继续隔离测试”，允许 xshow 作为本轮可信测试主机，上传执行模块、语言清单、测试程序和馆藏核验数据，在独立临时目录/容器中完成 37 门测试；不上传私有令牌，不升级生产服务。此前审批等待已解除，继续 Racket 的固定镜像及真实验收。
+
+2026-11-07 Racket 验收完成：官方 Minimal Racket 8.7 CS 归档、原始许可和固定镜像已完成离线构建；10 项真实容器、6 项真实网页检查通过，已查看 1440/390 截图。网页单文件 #lang racket/base 与预装基础库，无 GUI/在线包安装；语法错误、中文输入、错误恢复和地图搜索入口均核验。微光点直接点击会出现合法的邻近语言菜单，网页验收改用真实地图搜索定位，而不是把该菜单当成运行故障。报告为 `data/audit/racket-runtime-checks.json` 与 `racket-runtime-browser-checks.json`。当前 5/37 门完成临时验收，源码 27 节点，生产仍原 22 节点；下一门 Smalltalk 源码固定构建中。
+
+2026-11-07 Smalltalk 验收完成：固定 GNU Smalltalk 3.2.5 源码、Debian 依赖及原始许可离线构建，禁用 JIT。旧源码 glibc Iconv / Expat 回调类型分别做独立小补丁；真实测试证实原入口会把语法错误报为退出 0，因此增加独立 CLI 状态适配，未处理异常保留原始报告并返回 1，显式捕获的运行/编译错误和普通 stderr 不误判为失败。13 项容器、6 项真实网页验收通过，已查看 1440/390 截图，报告 `smalltalk-runtime-checks.json`、`smalltalk-runtime-browser-checks.json`。当前 6/37 门临时验收完成，源码 28 节点，生产仍原 22 节点；下一门 COBOL 固定包准备中。
+
+2026-11-07 COBOL 验收完成：GnuCOBOL 3.1.2 固定 3 个 Debian 包、签名索引/包 SHA-256 及版权，离线镜像；自由格式、COBOL 2014 选项，512 MiB，编译 10 秒 / 运行 3 秒。9 项容器、5 项真实网页检查通过并查看宽窄屏截图，覆盖数值编辑、内置函数、中文多行输入、编译错误不执行、缺失运行模块、超时/取消/恢复与地图入口。报告 `cobol-runtime-checks.json`、`cobol-runtime-browser-checks.json`；不声称 IBM 主机或完整标准符合性。顺带修正 Smalltalk #(...) 数组被通用高亮器误当注释的问题，并通过真实网页检查；Lisp 家族使用其分号/块注释规则。当前 7/37 门临时验收完成，源码 29 节点，生产未变；下一门 Ada。
+
+2026-11-07 Ada 验收完成：GNAT 12.2.0 固定 2 包、Ada 2012 模式，512 MiB / 编译 10 秒 / 运行 3 秒，单文件 main.adb / procedure Main。保留类型检查、异常与预装运行库，不安装 Alire。包中原始 doc 链接指向 gcc-12-base，已复用并校验原始 GCC 12 完整版权（明确覆盖 gnat-12/libgnat-12 及 runtime exception）。10 项容器、7 项真实网页检查通过，已查看宽窄屏截图，包含类型错误不执行、异常/捕获恢复、中文输入及下载名 main.adb；报告 `ada-runtime-checks.json`、`ada-runtime-browser-checks.json`。当前 8/37 门临时验收完成，源码 30 节点，生产未变；下一门 Clojure，复用固定 Java 17 基础而单独固定 JAR 与验收。
+
+2026-11-07 Clojure 验收完成：Clojure 1.11.1 固定 JAR、spec/core-specs/JSR166y，来自 4 个签名校验的 Debian 包，原始包、版权与提取路径/哈希全部保存；只复制纯 JAR 至既有固定 Temurin Java 17 镜像，不安装跨发行版原生包。768 MiB / JVM 堆 256 MiB / 3 秒含启动，实测正常例约 1.2–1.9 秒。11 项容器、7 项真实网页通过，已查看宽窄屏截图，含宏、中文输入、reader/运行异常、恢复、缺依赖不还原、取消和地图入口；报告 `clojure-runtime-checks.json`、`clojure-runtime-browser-checks.json`。当前 9/37 门临时验收完成，源码 31 节点，生产未变；下一门 OCaml。后续 Debian 获取可复用同一份临时签名索引缓存，APT 仍验证签名、哈希与有效期，缓存不是站点构建依赖。
+
+2026-11-07 OCaml 验收完成：固定 5 个签名校验的 Debian 包与原始版权，OCaml 4.13.1 / ocamlc 字节码，单文件 main.ml、标准库，512 MiB / 编译 10 秒 / 运行 3 秒。10 项容器、7 项真实网页检查通过并查看宽窄屏截图，覆盖 ADT/模式匹配、静态类型错误不执行、异常与捕获、中文输入、超时/取消/恢复与地图入口；报告 `ocaml-runtime-checks.json`、`ocaml-runtime-browser-checks.json`。当前 10/37 门临时验收完成，源码 32 节点 / 29 远端，生产未变；下一门 Haskell。默认测试 85/85 与离线构建通过；固定构建另验证 Dockerfile 的 FROM 与声明摘要相同，拒绝可变基础标签和网络 ADD。
+
+2026-11-07 Haskell 验收完成：GHC 9.0.2 / Haskell 2010，固定 3 个签名校验的 Debian 包及版权；768 MiB / 编译 20 秒 / 运行 3 秒，Main.hs 单文件，无 Cabal/Stack 在线还原。10 项真实容器、8 项真实网页检查通过，已查看宽窄屏截图，包含 ADT/模式匹配、中文输入、类型错误不执行、异常与捕获、资源限制和恢复、Main.hs 下载名及地图入口。报告 `haskell-runtime-checks.json`、`haskell-runtime-browser-checks.json`；默认测试 85/85 和离线构建通过。当前 11/37 门完成临时验收，源码 33 节点 / 30 远端，生产仍原 22 节点；继续 Kotlin，官方 2.1.20 固定工具链下载中，Groovy 官方 4.0.26 归档仅预取。
+
+准备补记：Kotlin/Groovy 采用官方固定 ZIP + 官方独立 SHA-256，`scripts/finalize-jvm-runtime.py` 在校验完整归档后才生成固定输入，保留原 ZIP 与所有捆绑许可，不把校验和核对描述为数字签名验证。仍使用固定 Temurin Java 17，任务和网站构建均不联网下载。Erlang 的 25.2.3 Debian 包已预取并经签名索引校验，但未接入/验收，不能计入完成数。
+
+2026-11-08 Kotlin 进度与额度交接：官方 Kotlin 2.1.20 ZIP（86,919,262 字节）与官方独立 SHA-256 相符，保留完整原归档及 51 份捆绑许可，固定 Java 17 禁网镜像已构建，Main.kt / JVM target 17、768 MiB、编译 30 秒 / 运行 3 秒。初测暴露 64 文件句柄不足及 Jansi 从 noexec /tmp 加载本地库失败；Kotlin 单独提高至 256 句柄、设置 passthrough 后，10 项真实容器与 8 项真实网页检查通过，已查看宽窄屏截图，但 passthrough 并未阻止本地库加载，警告仍占据诊断面板。因此 Kotlin 标为 `diagnostic-follow-up`，完成数仍 11/37；源码已配置 34 节点 / 31 远端，生产仍原 22 节点。报告 `kotlin-runtime-checks.json`、`kotlin-runtime-browser-checks.json` 保存真实警告，不隐藏或伪造成功诊断。下一步用独立临时容器验证 `-Djansi.tmpdir=/work`（编译语言已有可执行工作目录，不放宽 /tmp），验证后才改正式命令并重跑真实容器/网页验收。该单独探针未执行：自动审批返回工作区额度耗尽，无法完成审核，并非判定操作不安全；没有绕过审核。当前默认测试 85/85、离线构建通过，执行器 Python 6 项通过。
+
+预取状态：Groovy 4.0.26 官方 ZIP 30,108,372 字节采用服务器确认的 Range 分段合并，完整 SHA-256 与官方值匹配，固定输入和原始许可已保存，尚未构建或验收。Erlang 与 Elixir 的签名索引固定包已保存，仍未接入/验收。未提交、推送、发布或修改生产服务。
+
+2026-11-08 Kotlin 收尾完成：自动审批恢复后，独立隔离探针证实 `-Djansi.tmpdir=/work` 可让正常编译诊断为空；该设置仅使用原本允许执行编译产物的 /work，/tmp 仍 noexec，不放宽容器隔离。应用后重新跑 10 项容器与 8 项真实网页验收，全部通过，已查看无 Jansi 警告的宽窄屏截图，报告覆盖更新。Kotlin 已改为完整临时验收完成，当前 12/37，源码 34 节点 / 31 远端，生产仍原 22 节点。默认测试 85/85、离线构建通过；继续 Groovy。此前额度与诊断问题记录保留为过程证据。
+
+2026-11-08 Groovy 验收完成：官方 4.0.26 ZIP 完整 SHA-256 核对，固定 Java 17 离线镜像，只加载核心 JAR，禁用 Grape；768 MiB / 堆 256 MiB / 3 秒含 JVM 启动与脚本编译执行。11 项容器、7 项真实网页检查通过，已查看宽窄屏截图，涵盖闭包集合、类/属性、中文输入、语法/运行异常、捕获、缺包、资源限制和恢复与地图入口。实测网页类样例运行约 2.5 秒，不声称任意复杂脚本能在 3 秒内完成。报告 `groovy-runtime-checks.json`、`groovy-runtime-browser-checks.json`；85/85 默认测试与离线构建通过。当前 13/37 门、源码 35 节点 / 32 远端，生产未变。下一门 Erlang；Tcl 与 Standard ML / PolyML 的签名索引固定包已预取，尚未验收。
+
+2026-11-08 Erlang 验收完成：固定签名索引 erlang-base 包、原始版权与实际 OTP_VERSION 25.2.3；单文件 main.erl、模块 main / main/0，compile:file 编译后由真实 BEAM VM 执行，512 MiB / 编译 10 秒 / 运行 3 秒，限制调度器及 async/dirty 线程，无 rebar3 在线安装或分布式节点，崩溃转储仅向 /dev/null。10 项容器、8 项真实网页通过并查看宽窄屏，包含消息传递、中文输入、语法错误不执行、异常与捕获、资源限制/恢复、main.erl 下载和地图入口。报告 `erlang-runtime-checks.json`、`erlang-runtime-browser-checks.json`；默认测试 85/85、离线构建、Python 执行器 6 项通过。当前 14/37 门，源码 36 节点 / 33 远端，生产未变；继续 Elixir。
+
+2026-11-08 Elixir 验收完成：固定 13 个签名校验 Debian 包及版权，Elixir 1.14.0 / OTP 25.2.3，main.exs 单文件、预装库，无 Mix/Hex 在线依赖或分布式节点。512 MiB / 3 秒含 BEAM 启动与脚本编译执行，单调度器和限制 async/dirty 线程。12 项容器、7 项真实网页通过并查看宽窄屏，覆盖模块/模式匹配、消息传递、中文输入、语法/运行异常、捕获、缺包、资源限制和恢复与地图入口。报告 `elixir-runtime-checks.json`、`elixir-runtime-browser-checks.json`，85/85 默认测试与离线构建通过。当前 15/37 门、源码 37 节点 / 34 远端，生产未变；继续 Tcl。
+
+2026-11-08 Tcl 验收完成：固定 Tcl 8.6.13 的 2 个签名校验包及原始版权；保存的版本脚本只打印真实 info patchlevel，不硬编码输出。256 MiB / 3 秒，main.tcl 单文件、固定基础库与 TclOO，无 Tk GUI、在线安装包或 Tcl 9 兼容声明。12 项容器、7 项真实网页通过并查看宽窄屏，覆盖过程/替换、TclOO、中文输入、语法/运行错误、捕获、缺包、资源限制/恢复及地图入口。报告 `tcl-runtime-checks.json`、`tcl-runtime-browser-checks.json`；85/85 默认测试与离线构建通过。当前 16/37 门、源码 38 节点 / 35 远端，生产未变；继续 Standard ML / PolyML。
+
+2026-11-08 Standard ML 验收完成：PolyML 5.7.1，固定 3 个签名校验 Debian 包与完整版权，main.sml / Standard Basis 库，512 MiB / 3 秒含脚本编译执行。实测按声明编译求值，后续类型错误会保留先前输出，页面说明和真实网页检查明确这一边界；不声称整文件预编译或完整标准符合性，不冒充 SML/NJ/MLton。12 项容器、8 项真实网页通过并查看宽窄屏，涵盖 fold、ADT/模式匹配、structure、中文输入、静态类型错误、后续声明错误的先前输出、异常/捕获、资源限制/恢复和地图入口。报告 `standard-ml-runtime-checks.json`、`standard-ml-runtime-browser-checks.json`；85/85 默认测试和离线构建通过。当前 17/37 门，原队列 P2 部分完成，源码 39 节点 / 36 远端，生产未变；进入 P3 / Scala。
+
+2026-11-08 Scala 验收完成：官方 2.13.16 归档 22,613,912 字节与保存的发布 API 清单相符，编译器 JAR 与独立 Maven 官方 SHA-1 相符；保存原归档、六个 JAR、提取路径/哈希及 15 份原始许可，所有保留字节再以 SHA-256 固定，不把该过程描述为整个归档官方 SHA-256 或签名验证。复用固定 Java 17，768 MiB / 编译器堆 384 MiB / 30 秒编译、运行堆 256 MiB / 3 秒运行；Main.scala / object Main / main(Array[String])，无在线 sbt/Maven/Coursier 还原，不冒充 Scala 3。10 项容器与 8 项真实网页通过，已查看宽窄屏，含类型错误不执行、case class/模式匹配、中文输入、异常与恢复、资源限制、下载名与地图入口。报告 `scala-runtime-checks.json`、`scala-runtime-browser-checks.json`；85/85 默认测试、离线构建和 Python 6 项通过。当前 18/37 门、源码 40 节点 / 37 远端，生产未变；下一门 Visual Basic .NET。现有固定 SDK 已只读核对实际 vbc 5.9.0-1.26523.112 和 F# 编译器 15.2.403.0 / F# 10.0，尚不算后续语言接入验收。
+
+2026-11-08 Visual Basic .NET 验收完成：复用既有固定官方 .NET SDK 10.0.403 镜像，实际 vbc 5.9.0-1.26523.112，使用预装参考程序集与 VisualBasic.Core，默认 Option Strict On、Empty My 控制台模板，避免默认桌面 My 模板引用不存在的 ApplicationServices/Devices 类型；不把这些服务伪装为支持。Main.vb 单文件，1024 MiB / 编译 30 秒 / 运行 3 秒，无 NuGet 在线还原。11 项容器、8 项真实网页通过并查看宽窄屏，包括函数、LINQ、中文输入、Strict 类型错误不执行、异常/捕获、资源限制/恢复、Main.vb 下载及原生单引号注释/大小写不敏感关键字高亮。报告 `visual-basic.net-runtime-checks.json`、`visual-basic.net-runtime-browser-checks.json`，工具只读版本证据 `dotnet-extra-compiler-versions.json`；85/85 默认测试、离线构建和 Python 6 项通过。当前 19/37 门、源码 41 节点 / 38 远端，生产未变；继续 F#。
+
+2026-11-08 F# 验收完成：复用既有固定官方 .NET SDK 10.0.403，实际编译器 15.2.403.0 / F# 10.0，明确 langversion 10.0。Main.fs 单文件、预装参考程序集与 FSharp.Core；仅复制预装 Core 至任务临时目录，无 NuGet 还原。1024 MiB / 编译 30 秒 / 运行 3 秒、256 文件句柄与 64 MiB 单文件上限，沿用 .NET 隔离协议。12 项容器、8 项真实网页通过并查看宽窄屏，覆盖列表管道、判别联合/匹配、记录更新、中文输入、类型错误不执行、异常/捕获、缺包、资源限制/恢复、Main.fs 下载和地图入口。报告 `f-sharp-runtime-checks.json`、`f-sharp-runtime-browser-checks.json`；85/85 默认测试、离线构建及 Python 6 项通过。当前 20/37 门、源码 42 节点 / 39 远端，生产未变；下一门 D / GNU D 12.2.0。
+
+2026-11-08 D 验收完成：GNU D 12.2.0 / gdc-12，固定 3 个签名校验 Debian 包和 Phobos；原始 gdc-12 完整版权与既有 GCC 12 文本字节相同，明确覆盖 D/Phobos，不遗漏运行库许可。768 MiB / 编译 10 秒 / 运行 3 秒，main.d 单文件、无 dub 在线安装，不冒充 DMD 版本或完整符合性。11 项容器、8 项真实网页通过并查看宽窄屏，覆盖范围累加、模板、编译期表达式/Phobos、中文输入、类型错误不执行、异常与捕获、资源限制/恢复、main.d 下载和地图入口。报告 `d-runtime-checks.json`、`d-runtime-browser-checks.json`，85/85 默认测试与离线构建通过。当前 21/37 门、源码 43 节点 / 40 远端，生产未变；下一门 Nim 1.6.10，Zig 0.14.1 官方归档已确认 Range 支持并在分段预取，必须匹配官方完整 SHA-256 后才能纳入固定输入。
+
+2026-11-08 Nim 验收完成：固定 Nim 1.6.10 与 PCRE 的 2 个签名校验包、完整版权和既有固定 GCC。main.nim 单文件、缓存仅在 /work、parallelBuild 1，保留默认运行时检查，768 MiB / 编译 20 秒 / 运行 3 秒；不在线安装 Nimble 包，不冒充 Nim 2。12 项容器、8 项真实网页通过并查看宽窄屏，包含范围循环、泛型过程、对象/sequtils、中文输入、类型错误不执行、异常/捕获、缺包、资源限制/恢复、下载名及地图入口。报告 `nim-runtime-checks.json`、`nim-runtime-browser-checks.json`；85/85 默认测试、离线构建和 Python 6 项通过。当前 22/37 门、源码 44 节点 / 41 远端，生产未变；继续 Zig 0.14.1，分段合并归档 49,086,504 字节已匹配官方索引 SHA-256。Swift 仅预取官方 6.1.3 Bookworm 镜像，不启动或升级生产服务。
+
+2026-11-08 存储约束：Zig 首次固定构建与 Swift 6.1.3 Bookworm 官方镜像预取遇到 xshow 根盘无空间；实际根盘 40 GB，Swift 解包已终止，未启动/升级生产服务。只读检查确认没有其他磁盘挂载。按本轮 museum 专属构建指令、父缓存关系及紧邻 COPY 的上下文时间对应，保存精确缓存清单后仅回收未使用且未与镜像共享的本轮 BuildKit 条目，合计约 646.8 MB；没有全局 prune、删除镜像/卷或清理用户其他文件。清理前后当前 41 个远端清单项镜像身份/平台均已完整核对保留，可用空间约 2 GB。Zig 继续构建，Swift 后续 SDK 所需空间仍不足，已向用户异步询问扩容/腾空间或另一台可信 Linux 主机；其余 15 门不算完成。诊断与精确清理记录在 tmp/xshow-*-audit、cache-cleanup* 及 filesystem-capacity 等文件，不是站点构建输入。
+
+2026-11-08 Zig 验收完成：官方 0.14.1 x86_64 SDK 完整归档匹配官方索引 SHA-256（49,086,504 字节），原归档、索引与 13 份原始许可保留；固定 GCC 基础镜像离线解包。自写启动器只将编译进程的 CPU 亲和设为一个已允许 CPU，以控制线程数；保持原始 SDK、完整 LLVM/链接后端与 Debug 检查，不通过切换简化后端或禁用检查绕过限制。1024 MiB / 编译 30 秒 / 运行 3 秒，main.zig、所有缓存仅临时 /work，无在线包下载或新版 Zig API 兼容声明。12 项容器、9 项真实网页通过并查看宽窄屏，覆盖 comptime 泛型、tagged union/switch、中文输入、类型错误不执行、错误联合、panic/捕获、超时/输出限制/取消/恢复、下载名及地图入口。报告 `zig-runtime-checks.json`、`zig-runtime-browser-checks.json`，85/85 默认测试、离线构建、Python 6 项通过。当前 23/37 门、源码 45 节点 / 42 远端，生产未变。Swift 后续仍受 xshow 磁盘限制，已异步向用户询问空间/新主机；本机 Docker/OrbStack socket 均确认未启动，尝试后台启动已安装 OrbStack 核对替代能力，不安装软件、不接受协议、不改变生产。
+
+替代环境核对：后台启动既有 OrbStack 成功，本机 Docker worker 为 Linux/aarch64、10 CPU / 约 12 GB 可用内存上限，Mac 磁盘约余 13 GB。只核对或使用本轮专属测试资源，不清理该环境已有的其他项目镜像/容器/卷。先显式准备项目固定 AMD64 Python 镜像以核对执行能力；首次公共 CDN 层传输因 EOF 终止，按同摘要重试。尚未证明 Swift 能在本机执行，不能将该准备状态计作语言验收。xshow 存储问题与待用户答复仍保留。
+
+## 2026-11-03 运行权限申请入口（本地已核验）
+
+用户将此前微信登录与白名单讨论收窄为：只增加类似留言的申请入口，后台自动发送申请邮件至 `1956341482@qq.com`。本轮不接入微信登录、白名单审批或自动授权；远端执行仍使用现有私有令牌。
+
+实验台令牌输入旁提供「申请运行权限」，填写可选昵称、联系邮箱与使用用途。申请在既有留言数据库的独立 `access_requests` 表保存，不进入公开留言列表；`GET /api/access-requests` 仅返回邮件服务是否已配置，POST 要求精确同源、JSON、8 KB 上限及字段校验。按匿名标识哈希和联系邮箱合并限流：60 秒间隔、滚动 24 小时最多 3 条，全局最近 24 小时或待通知总量上限 100 条；匿名标识可以重置，这些限制不构成身份验证。
+
+复用现有 SMTP 配置和后台重试线程，收件人固定为用户指定邮箱，Reply-To 为申请人的联系邮箱。SMTP 未配置时禁用提交；已保存的申请先显示「等待后台邮件通知」，不冒充邮件已送达或权限已开通。网络结果不确定时保留原提交编号和内容供幂等重试。管理员人工审核并回复，申请不会改变执行器权限。联系邮箱只保存在服务端申请记录和通知邮件，不写浏览器持久存储或分享 URL。
+
+新增 Nginx 代理模板需在生产合入 `/api/access-requests` 并重启既有 analytics 服务；不新增 systemd 单元。当前未提交、推送或部署。验证：`npm test` 83/83 与 `npm run build` 通过，Python 留言/申请专项共 13 项通过；`npm run access:browser` 的 8 组检查通过，覆盖 1440/390 深浅主题表单与入口、模态/Escape/焦点恢复、真实 HTTP 与 SQLite、响应丢失后幂等重试、SMTP 边界拦截下的失败重试、公开数据隔离、来源/字段/限流校验及后端不可用。已实际查看宽窄屏表单、手机入口与成功提示截图。邮件传输在本地拦截，没有发送真实申请邮件，不宣称正式邮箱已收到。报告和截图位于 `tmp/access-requests-browser/`，不参与构建。
 
 ## 2026-11-03 P1 十二门生产发布完成
 

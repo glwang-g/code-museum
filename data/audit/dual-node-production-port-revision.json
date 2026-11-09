@@ -1,0 +1,34 @@
+{
+  "checkedAt": "2026-11-09T05:55:46.574645+00:00",
+  "originalPlanSha256": "c0abd08c5b4a7a22681c62828814d927d2f7db64b2147b33f8a7f551eed73634",
+  "revisedPlanSha256": "0286663a1997af8f688233ea7216bf5a1e3a1312a7458e69e4c8e22db726c1b1",
+  "scope": "Port-only adaptation under existing deployment authorization, preserving the unrelated guestbook. No runtime image, executor implementation, token, legacy unit or public entry change.",
+  "nodes": [
+    {
+      "node": "xshow",
+      "reason": "Existing unrelated xshow-guestbook.service occupies 4182; preserve it and move only new xshow worker to 4184.",
+      "revisedPlanSha256": "0286663a1997af8f688233ea7216bf5a1e3a1312a7458e69e4c8e22db726c1b1",
+      "manifestSha256": "36380288e363ab5dec28c609066029f4cc048e88437d1f025d9edcdae6eca072",
+      "codeFilesVerified": 16,
+      "oldNodesSha256": "93b88f192bfcfe4e95a936649a24b295a3a788c6dd8aed545dacae97e5348f6b",
+      "newNodesSha256": "643d7618f4421f169a0d22277da2f67fb2a61dca947f1de01398b534ab080525",
+      "revisionBackup": "/var/backups/code-museum-executor/20261109T054729947461Z-dual-xshow/port-4184-revision",
+      "credentialValuesChanged": false,
+      "legacyUntouched": true,
+      "imagesVerified": true
+    },
+    {
+      "node": "xshow2",
+      "reason": "Existing unrelated xshow-guestbook.service occupies 4182; preserve it and move only new xshow worker to 4184.",
+      "revisedPlanSha256": "0286663a1997af8f688233ea7216bf5a1e3a1312a7458e69e4c8e22db726c1b1",
+      "manifestSha256": "e81a9176f430913bc1d9d18517225a91663e62ac296a6faf77ece807b2f66a5c",
+      "codeFilesVerified": 14,
+      "oldNodesSha256": "93b88f192bfcfe4e95a936649a24b295a3a788c6dd8aed545dacae97e5348f6b",
+      "newNodesSha256": "643d7618f4421f169a0d22277da2f67fb2a61dca947f1de01398b534ab080525",
+      "revisionBackup": "/var/backups/code-museum-executor/20261109T054729521128Z-dual-xshow2/port-4184-revision",
+      "credentialValuesChanged": false,
+      "legacyUntouched": true,
+      "imagesVerified": true
+    }
+  ]
+}

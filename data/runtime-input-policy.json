@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "runtimes": {
+    "bcpl": {
+      "manifestSha256": "dae20967456a7a8753be8c99290776986581d63343d88b7628c1b67b29da9776",
+      "privateFiles": [
+        "assets/bcpl-20261109.tar.gz.part00",
+        "assets/bcpl-20261109.tar.gz.part01",
+        "assets/bcpl-20261109.tar.gz.part02",
+        "assets/cintcode-noninteractive.patch",
+        "licenses/upstream-README.txt",
+        "metadata/upstream-sysboot.b"
+      ],
+      "publicRepoToolchainComplete": false,
+      "source": "https://www.cl.cam.ac.uk/~mr10/BCPL.html",
+      "note": "The public repository contains the original fixed manifest, public build adapters and deployed-image evidence. Upstream archive, README, bootstrap source and patch context remain private because whole-archive redistribution rights have not been established. Website builds are offline and reproducible from public inputs; rebuilding the BCPL image requires the exact independently authorized private inputs in addition to this repository. No inputs are downloaded during either build."
+    }
+  }
+}

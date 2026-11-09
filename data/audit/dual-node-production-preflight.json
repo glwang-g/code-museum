@@ -1,0 +1,40 @@
+{
+  "checkedAt": "2026-11-09T05:41:37.181162+00:00",
+  "scope": "Approved manifest files only, excluding generated pycache. Node-local image preflight passed with Python -B. No persistent service changes yet.",
+  "approvedPlanSha256": "c0abd08c5b4a7a22681c62828814d927d2f7db64b2147b33f8a7f551eed73634",
+  "nodes": [
+    {
+      "node": "xshow",
+      "directory": "/tmp/code-museum-dual-install-ugvgmom7",
+      "bundle": "/tmp/code-museum-dual-install-ugvgmom7/reviewed",
+      "imagesVerified": true,
+      "languageCount": 42
+    },
+    {
+      "node": "xshow2",
+      "directory": "/tmp/code-museum-dual-install-3tg8rkdm",
+      "bundle": "/tmp/code-museum-dual-install-3tg8rkdm/reviewed",
+      "imagesVerified": true,
+      "languageCount": 14
+    }
+  ],
+  "installerSha256": "6ff5d557fe3d8460229c8487ad7eb3105f6d9dcd3d3128978e7884642ab5ad10",
+  "installerPreflight": [
+    {
+      "node": "xshow",
+      "installer": "/tmp/code-museum-dual-install-ugvgmom7/install-dual-executor.py",
+      "verified": true,
+      "languageCount": 42,
+      "localImagesChecked": true,
+      "productionChanged": false
+    },
+    {
+      "node": "xshow2",
+      "installer": "/tmp/code-museum-dual-install-3tg8rkdm/install-dual-executor.py",
+      "verified": true,
+      "languageCount": 14,
+      "localImagesChecked": true,
+      "productionChanged": false
+    }
+  ]
+}

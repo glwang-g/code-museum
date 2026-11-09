@@ -24,7 +24,28 @@ LABEL = 'code-museum.executor=private-v1'
 PREFIX = 'cm-exec-'
 MAX_BODY, MAX_CODE, MAX_STDIN, MAX_OUTPUT = 98304, 65536, 16384, 32768
 FINAL = {'completed', 'failed', 'compile_error', 'compile_timed_out', 'timed_out', 'cancelled', 'output_limit', 'memory_limit', 'infrastructure_error'}
+RUN_SECONDS = {'groovy': 8}  # Includes fresh JVM startup and script compilation on the current node.
 COMPILED = {
+    'oberon': ('code-museum-oberon', '/opt/obnc/bin/obnc', 512, 10, 'Main.obn', ['/opt/obnc/bin/obnc', '-o', '/work/program', '/work/Main.obn'], ['/work/program']),
+    'bcpl': ('code-museum-bcpl', '/opt/bcpl/cintcode/bin/cintsys64', 512, 10, 'main.b', ['/opt/bcpl/cintcode/bin/cintsys64', '-q', '-c', 'bcpl', '/work/main.b', 'to', '/work/program', 't64'], ['/opt/bcpl/cintcode/bin/cintsys64', '-q', '--', '/opt/bcpl/museum-runner']),
+    'vhdl': ('code-museum-vhdl', '/usr/bin/ghdl-mcode', 512, 10, 'main.vhd', ['/usr/local/bin/museum-vhdl-compile'], ['/usr/bin/ghdl-mcode', '-r', '--std=08', '--workdir=/work', 'main', '--assert-level=error', '--unbuffered']),
+    'verilog': ('code-museum-verilog', '/usr/bin/iverilog', 512, 10, 'main.v', ['/usr/bin/iverilog', '-g2005', '-Wall', '-s', 'main', '-o', '/work/program.vvp', '/work/main.v'], ['/usr/bin/vvp', '-N', '/work/program.vvp', '-none']),
+    'x86-assembly': ('code-museum-x86-assembly', '/usr/bin/nasm', 256, 10, 'main.asm', ['/usr/local/bin/museum-nasm-compile'], ['/work/program']),
+    'dart': ('code-museum-dart', '/opt/dart-sdk/bin/dart', 768, 15, 'main.dart', ['/opt/dart-sdk/bin/dart', '--suppress-analytics', 'compile', 'exe', '/work/main.dart', '-o', '/work/program'], ['/work/program']),
+    'swift': ('code-museum-swift', '/opt/swift/usr/bin/swiftc', 1024, 30, 'main.swift', ['/opt/swift/usr/bin/swiftc', '-swift-version', '6', '-j', '1', '-module-cache-path', '/work/module-cache', '-o', '/work/program', '/work/main.swift'], ['/work/program']),
+    'zig': ('code-museum-zig', '/opt/zig/zig', 1024, 30, 'main.zig', ['/usr/local/bin/museum-zig-compile'], ['/work/program']),
+    'nim': ('code-museum-nim', '/usr/bin/nim', 768, 20, 'main.nim', ['/usr/bin/nim', 'c', '--cc:gcc', '--parallelBuild:1', '--hints:off', '--warnings:on', '--nimcache:/work/nimcache', '--out:/work/program', '/work/main.nim'], ['/work/program']),
+    'd': ('code-museum-d', '/usr/bin/gdc-12', 768, 10, 'main.d', ['/usr/bin/gdc-12', '-O0', '-Wall', '-o', '/work/program', '/work/main.d'], ['/work/program']),
+    'f-sharp': ('mcr.microsoft.com/dotnet/sdk', '/usr/bin/dotnet', 1024, 30, 'Main.fs', ['/usr/bin/dotnet', '/usr/share/dotnet/sdk/10.0.403/FSharp/fsc.dll', '--nologo', '--langversion:10.0', '--target:exe', '--targetprofile:netcore', '--noframework', '--simpleresolution', '--out:/work/program.dll', '@/work/refs.rsp', '/work/Main.fs'], ['/usr/bin/dotnet', 'exec', '--runtimeconfig', '/usr/share/dotnet/sdk/10.0.403/dotnet.runtimeconfig.json', '/work/program.dll']),
+    'visual-basic.net': ('mcr.microsoft.com/dotnet/sdk', '/usr/bin/dotnet', 1024, 30, 'Main.vb', ['/usr/bin/dotnet', '/usr/share/dotnet/sdk/10.0.403/Roslyn/bincore/vbc.dll', '-nologo', '-noconfig', '-nostdlib', '-optionstrict+', '-define:_MYTYPE="Empty"', '-target:exe', '-out:/work/program.dll', '@/work/refs.rsp', '/work/Main.vb'], ['/usr/bin/dotnet', 'exec', '--runtimeconfig', '/usr/share/dotnet/sdk/10.0.403/dotnet.runtimeconfig.json', '/work/program.dll']),
+    'scala': ('code-museum-scala', '/opt/java/openjdk/bin/java', 768, 30, 'Main.scala', ['/opt/java/openjdk/bin/java', '-Xmx384m', '-XX:ActiveProcessorCount=1', '-XX:+UseSerialGC', '-Dfile.encoding=UTF-8', '-Duser.home=/work', '-cp', '/opt/scala/*', 'scala.tools.nsc.Main', '-usejavacp', '-release:17', '-d', '/work', '/work/Main.scala'], ['/opt/java/openjdk/bin/java', '-Xmx256m', '-XX:ActiveProcessorCount=1', '-XX:+UseSerialGC', '-Dfile.encoding=UTF-8', '-Duser.home=/work', '-cp', '/work:/opt/scala/*', 'Main']),
+    'erlang': ('code-museum-erlang', '/usr/bin/erl', 512, 10, 'main.erl', ['/usr/bin/erl', '+S', '1:1', '+A', '1', '+SDcpu', '1', '+SDio', '1', '-noshell', '-eval', 'case compile:file("/work/main.erl",[report_errors,report_warnings,{outdir,"/work"}]) of {ok,main} -> halt(0); _ -> halt(1) end.'], ['/usr/bin/erl', '+S', '1:1', '+A', '1', '+SDcpu', '1', '+SDio', '1', '-noshell', '-pa', '/work', '-eval', 'main:main(),halt().']),
+    'kotlin': ('code-museum-kotlin', '/opt/java/openjdk/bin/java', 768, 30, 'Main.kt', ['/opt/java/openjdk/bin/java', '-Xmx384m', '-Djansi.tmpdir=/work', '-Djansi.passthrough=true', '-XX:ActiveProcessorCount=1', '-XX:+UseSerialGC', '-Dfile.encoding=UTF-8', '-Duser.home=/work', '-cp', '/opt/kotlinc/lib/*', 'org.jetbrains.kotlin.cli.jvm.K2JVMCompiler', '-kotlin-home', '/opt/kotlinc', '-jvm-target', '17', '-no-reflect', '-include-runtime', '-d', '/work/program.jar', '/work/Main.kt'], ['/opt/java/openjdk/bin/java', '-Xmx256m', '-XX:ActiveProcessorCount=1', '-XX:+UseSerialGC', '-Dfile.encoding=UTF-8', '-Duser.home=/work', '-jar', '/work/program.jar']),
+    'haskell': ('code-museum-haskell', '/usr/bin/ghc', 768, 20, 'Main.hs', ['/usr/bin/ghc', '-v0', '-O0', '-Wall', '-XHaskell2010', '-outputdir', '/work', '-o', '/work/program', '/work/Main.hs'], ['/work/program']),
+    'ocaml': ('code-museum-ocaml', '/usr/bin/ocamlc', 512, 10, 'main.ml', ['/usr/bin/ocamlc', '-w', '+a-70', '-o', '/work/program', '/work/main.ml'], ['/work/program']),
+    'ada': ('code-museum-ada', '/usr/bin/gnatmake-12', 512, 10, 'main.adb', ['/usr/bin/gnatmake-12', '-q', '-gnat2012', '-gnatwa', '-o', '/work/program', '/work/main.adb'], ['/work/program']),
+    'cobol': ('code-museum-cobol', '/usr/bin/cobc', 512, 10, 'main.cob', ['/usr/bin/cobc', '-x', '-free', '-std=cobol2014', '-Wall', '-o', '/work/program', '/work/main.cob'], ['/work/program']),
+    'algol-60': ('code-museum-algol60', '/usr/local/bin/museum-algol60-compile', 512, 10, 'main.alg', ['/usr/local/bin/museum-algol60-compile'], ['/work/program']),
     'pascal': ('code-museum-pascal-r', '/usr/bin/fpc', 512, 10, 'main.pas', ['/usr/bin/fpc', '-n', '-Mobjfpc', '-Sh', '-O-', '-Fu/usr/lib/x86_64-linux-gnu/fpc/3.2.2/units/x86_64-linux/rtl', '-o/work/program', '/work/main.pas'], ['/work/program']),
     'c': ('gcc', '/usr/local/bin/gcc', 512, 10, 'main.c', ['gcc', '-std=c11', '-O0', '-Wall', '-Wextra', '/work/main.c', '-o', '/work/program'], ['/work/program']),
     'cpp': ('gcc', '/usr/local/bin/g++', 512, 10, 'main.cpp', ['g++', '-std=c++17', '-O0', '-Wall', '-Wextra', '/work/main.cpp', '-o', '/work/program'], ['/work/program']),
@@ -36,9 +57,28 @@ COMPILED = {
     'csharp': ('mcr.microsoft.com/dotnet/sdk', '/usr/bin/dotnet', 1024, 30, 'main.cs', ['/usr/bin/dotnet', '/usr/share/dotnet/sdk/10.0.403/Roslyn/bincore/csc.dll', '-nologo', '-noconfig', '-out:/work/program.dll', '@/work/refs.rsp', '/work/main.cs'], ['/usr/bin/dotnet', 'exec', '--runtimeconfig', '/usr/share/dotnet/sdk/10.0.403/dotnet.runtimeconfig.json', '/work/program.dll'])
 }
 PREPARE = {
+    'f-sharp': ['/bin/sh', '-c', 'find /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref -path "*/ref/net*/*.dll" -printf "-r:%p\\n" > /work/refs.rsp\nprintf "%s\\n" "-r:/usr/share/dotnet/sdk/10.0.403/FSharp/FSharp.Core.dll" >> /work/refs.rsp\ncp /usr/share/dotnet/sdk/10.0.403/FSharp/FSharp.Core.dll /work/FSharp.Core.dll'],
+    'visual-basic.net': ['/bin/sh', '-c', 'find /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref -path "*/ref/net*/*.dll" -printf "-r:%p\\n" > /work/refs.rsp\nfind /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref -path "*/ref/net*/Microsoft.VisualBasic.Core.dll" -printf "-vbruntime:%p\\n" >> /work/refs.rsp'],
     'csharp': ['/bin/sh', '-c', 'find /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref -path "*/ref/net*/*.dll" -printf "-r:%p\\n" > /work/refs.rsp']
 }
 SCRIPTED = {
+    'postscript': ('/usr/bin/gs', 'main.ps', ['/usr/bin/gs', '-q', '-dSAFER', '-dNODISPLAY', '-dBATCH', '-dNOPAUSE', '/work/main.ps']),
+    'wasm': ('/opt/wasmtime/wasmtime', 'main.wat', ['/opt/wasmtime/wasmtime', 'run', '-W', 'component-model=n,threads=n,max-memories=1,max-memory-size=268435456', '-S', 'inherit-env=n,preview0=n,tcp=n,udp=n,inherit-network=n,allow-ip-name-lookup=n,http=n', '/work/main.wat']),
+    'tcsh': ('/usr/bin/tcsh', 'main.tcsh', ['/usr/bin/tcsh', '-f', '/work/main.tcsh']),
+    'korn-shell': ('/usr/bin/ksh93', 'main.ksh', ['/usr/bin/ksh93', '-p', '/work/main.ksh']),
+    'powershell': ('/usr/bin/pwsh', 'main.ps1', ['/usr/bin/pwsh', '-NoLogo', '-NoProfile', '-NonInteractive', '-File', '/opt/museum/powershell-entry.ps1']),
+    'octave': ('/usr/bin/octave-cli', 'main.m', ['/usr/bin/octave-cli', '--no-gui', '--no-window-system', '--norc', '--no-history', '--quiet', '/work/main.m']),
+    'julia': ('/opt/julia/bin/julia', 'main.jl', ['/opt/julia/bin/julia', '--startup-file=no', '--history-file=no', '--threads=1', '--compiled-modules=existing', '--pkgimages=existing', '--color=no', '/work/main.jl']),
+    'standard-ml': ('/usr/bin/poly', 'main.sml', ['/usr/bin/poly', '--script', '/work/main.sml']),
+    'tcl': ('/usr/bin/tclsh8.6', 'main.tcl', ['/usr/bin/tclsh8.6', '/work/main.tcl']),
+    'elixir': ('/usr/bin/elixir', 'main.exs', ['/usr/bin/elixir', '--erl', '+S 1:1 +A 1 +SDcpu 1 +SDio 1', '/work/main.exs']),
+    'groovy': ('/opt/java/openjdk/bin/java', 'main.groovy', ['/opt/java/openjdk/bin/java', '-Xmx256m', '-XX:ActiveProcessorCount=1', '-XX:+UseSerialGC', '-Dfile.encoding=UTF-8', '-Duser.home=/work', '-Dgroovy.grape.enable=false', '-cp', '/opt/groovy/lib/groovy-4.0.26.jar', 'groovy.ui.GroovyMain', '/work/main.groovy']),
+    'clojure': ('/opt/java/openjdk/bin/java', 'main.clj', ['/opt/java/openjdk/bin/java', '-Xmx256m', '-XX:ActiveProcessorCount=1', '-XX:+UseSerialGC', '-Dfile.encoding=UTF-8', '-Duser.home=/work', '-Dclojure.main.report=stderr', '-cp', '/opt/clojure/*', 'clojure.main', '/work/main.clj']),
+    'smalltalk': ('/opt/smalltalk/bin/gst', 'main.st', ['/opt/smalltalk/bin/gst', '--no-user-files', '-q', '-f', '/work/main.st']),
+    'racket': ('/opt/racket/bin/racket', 'main.rkt', ['/opt/racket/bin/racket', '-q', '-U', '-t', '/work/main.rkt']),
+    'forth': ('/usr/bin/gforth', 'main.fs', ['/usr/bin/gforth', '--no-dynamic', '-m', '16M', '-d', '1M', '-r', '1M', '/work/main.fs', '-e', 'bye']),
+    'prolog': ('/usr/bin/swipl', 'main.pl', ['/usr/bin/swipl', '-q', '-f', 'none', '-F', 'none', '--no-packs', '--no-threads', '--on-error=halt', '--stack-limit=128m', '-s', '/work/main.pl', '-g', 'main', '-t', 'halt']),
+    'common-lisp': ('/usr/bin/sbcl', 'main.lisp', ['/usr/bin/sbcl', '--noinform', '--dynamic-space-size', '128', '--control-stack-size', '8', '--no-sysinit', '--no-userinit', '--disable-debugger', '--script', '/work/main.lisp']),
     'r': ('/usr/bin/Rscript', 'main.R', ['/usr/bin/Rscript', '--vanilla', '--default-packages=stats,utils', '/work/main.R']),
     'sql': ('/usr/bin/sqlite3', 'main.sql', ['/usr/bin/sqlite3', '-safe', '-batch', '-bail', '-noheader', ':memory:']),
     'bash': ('/bin/bash', 'main.bash', ['/bin/bash', '--noprofile', '--norc', '/work/main.bash']),
@@ -60,11 +100,12 @@ def load_runtimes(file):
     for r in rows:
         if r['id'] not in {'python', 'ruby', *COMPILED, *SCRIPTED}: raise ValueError('Unsupported runtime')
         if r['id'] in SCRIPTED:
-            repository, executable, memory = ('code-museum-pascal-r' if r['id'] == 'r' else 'code-museum-cli'), SCRIPTED[r['id']][0], (512 if r['id'] == 'r' else 256)
+            repository, memory = {'postscript': ('code-museum-postscript', 256), 'wasm': ('code-museum-wasm', 512), 'tcsh': ('code-museum-tcsh', 256), 'korn-shell': ('code-museum-korn-shell', 256), 'powershell': ('code-museum-powershell', 768), 'octave': ('code-museum-octave', 512), 'julia': ('code-museum-julia', 768), 'r': ('code-museum-pascal-r', 512), 'common-lisp': ('code-museum-common-lisp', 512), 'prolog': ('code-museum-prolog', 512), 'forth': ('code-museum-forth', 256), 'racket': ('code-museum-racket', 512), 'smalltalk': ('code-museum-smalltalk', 512), 'clojure': ('code-museum-clojure', 768), 'groovy': ('code-museum-groovy', 768), 'elixir': ('code-museum-elixir', 512), 'tcl': ('code-museum-tcl', 256), 'standard-ml': ('code-museum-standard-ml', 512)}.get(r['id'], ('code-museum-cli', 256))
+            executable = SCRIPTED[r['id']][0]
         else:
             repository, executable, memory = COMPILED[r['id']][:3] if r['id'] in COMPILED else (r['id'], '/usr/local/bin/' + r['id'], {'python':256, 'ruby':512}[r['id']])
         # Project-built images are addressed by immutable local image ID, never a mutable tag.
-        project_image = repository in {'code-museum-cli', 'code-museum-pascal-r'}
+        project_image = repository in {'code-museum-cli', 'code-museum-pascal-r', 'code-museum-algol60', 'code-museum-common-lisp', 'code-museum-prolog', 'code-museum-forth', 'code-museum-racket', 'code-museum-smalltalk', 'code-museum-cobol', 'code-museum-ada', 'code-museum-clojure', 'code-museum-ocaml', 'code-museum-haskell', 'code-museum-kotlin', 'code-museum-groovy', 'code-museum-erlang', 'code-museum-elixir', 'code-museum-tcl', 'code-museum-standard-ml', 'code-museum-scala', 'code-museum-d', 'code-museum-nim', 'code-museum-zig', 'code-museum-swift', 'code-museum-dart', 'code-museum-julia', 'code-museum-octave', 'code-museum-powershell', 'code-museum-korn-shell', 'code-museum-tcsh', 'code-museum-wasm', 'code-museum-x86-assembly', 'code-museum-verilog', 'code-museum-vhdl', 'code-museum-postscript', 'code-museum-bcpl', 'code-museum-oberon'}
         valid_image = r['image'] == r['imageId'] if project_image else re.fullmatch(re.escape(repository) + r'@sha256:[a-f0-9]{64}', r['image'])
         if not valid_image:
             raise ValueError('Runtime must use a pinned official digest or immutable project image ID')
@@ -75,6 +116,15 @@ def load_runtimes(file):
         if r['executable'] != executable or r['memoryMiB'] != memory or r['architecture'] != 'amd64':
             raise ValueError('Unexpected runtime command or memory limit')
     return {r['id']: r for r in rows}
+
+
+def select_runtimes(runtimes, languages=None):
+    """Select an explicit node inventory after validating the full pinned manifest."""
+    if languages is None:
+        return runtimes
+    if not languages or len(set(languages)) != len(languages) or any(language not in runtimes for language in languages):
+        raise ValueError('Expected unique configured runtime IDs for this node')
+    return {language: runtimes[language] for language in languages}
 
 
 def validate_submission(data, runtimes):
@@ -140,11 +190,12 @@ class DockerRunner:
                 '--runtime', self.runtime, '--network=none', '--read-only', '--init', '--ipc=none',
                 '--user=65534:65534', '--cap-drop=ALL', '--security-opt=no-new-privileges:true',
                 '--memory=' + str(row['memoryMiB']) + 'm', '--memory-swap=' + str(row['memoryMiB']) + 'm',
-                '--cpus=1', '--pids-limit=' + ('128' if compiled else '32'), '--ulimit=nofile=' + ('256:256' if language in {'csharp', 'r'} else '64:64'), '--ulimit=fsize=' + ('67108864:67108864' if language == 'csharp' else '16777216:16777216'),
+                '--cpus=1', '--pids-limit=' + ('128' if compiled else '32'), '--ulimit=nofile=' + ('256:256' if language in {'csharp', 'r', 'kotlin', 'visual-basic.net', 'f-sharp', 'powershell'} else '64:64'), '--ulimit=fsize=' + ('2199023255552:2199023255552' if language == 'powershell' else '67108864:67108864' if language in {'csharp','visual-basic.net','f-sharp'} else '16777216:16777216'),
                 '--log-driver=none', '--stop-timeout=1', '--workdir=/work',
                 '--tmpfs=/work:rw,' + ('exec' if compiled else 'noexec') + ',nosuid,nodev,size=' + ('128m' if compiled else '16m') + ',mode=1777',
                 '--tmpfs=/tmp:rw,noexec,nosuid,nodev,size=' + ('128m' if compiled else '8m') + ',mode=1777', '-i',
                 ]
+        if language in {'erlang', 'elixir'}: command += ['--env=ERL_CRASH_DUMP=/dev/null']
         if compiled or language in SCRIPTED:
             command += ['--env=HOME=/work', '--env=GOCACHE=/work/cache', '--env=GOPATH=/work/go', '--env=GOPROXY=off', '--env=GOSUMDB=off', '--env=GOTOOLCHAIN=local', '--env=CGO_ENABLED=0', '--env=GOMAXPROCS=1', '--env=RUSTUP_HOME=/usr/local/rustup', '--env=CARGO_HOME=/usr/local/cargo', '--entrypoint=/bin/sleep', row['image'], '60']
         else:
@@ -216,7 +267,7 @@ class DockerRunner:
             if not reason:
                 phase = 'running'; job['state'] = phase
                 payload = job['code'] if job['language'] == 'sql' else job['stdin']
-                tick = time.monotonic(); reason, exit_code = capture(['docker','exec','-i',name,*program],3,payload.encode('utf-8'))
+                tick = time.monotonic(); reason, exit_code = capture(['docker','exec','-i',name,*program],RUN_SECONDS.get(job['language'],3),payload.encode('utf-8'))
                 timings['runMs'] = round((time.monotonic()-tick)*1000)
                 reason = reason or ('completed' if exit_code == 0 else 'failed')
             decoded = {}; remaining = MAX_OUTPUT
@@ -420,8 +471,8 @@ def handler(manager, token, origin, museum_provider=None):
                 return self.respond(200, manager.status())
             if self.path == '/api/runtimes':
                 return self.respond(200, {'private': True, 'available': manager.runner.healthy,
-                    'runtimes': [{**{k: r[k] for k in ('id', 'version', 'memoryMiB', 'source')}, 'compileSeconds': COMPILED[r['id']][3] if r['id'] in COMPILED else 0, 'runSeconds':3} for r in manager.runner.runtimes.values()],
-                    'limits': {'seconds': 3, 'outputBytes': MAX_OUTPUT, 'concurrency': 1, 'network': False}})
+                    'runtimes': [{**{k: r[k] for k in ('id', 'version', 'memoryMiB', 'source')}, 'compileSeconds': COMPILED[r['id']][3] if r['id'] in COMPILED else 0, 'runSeconds':RUN_SECONDS.get(r['id'],3)} for r in manager.runner.runtimes.values()],
+                    'limits': {'seconds': max((RUN_SECONDS.get(k,3) for k in manager.runner.runtimes),default=3), 'outputBytes': MAX_OUTPUT, 'concurrency': 1, 'network': False}})
             return self.job(False)
         def do_DELETE(self):
             if self.path == '/mcp': return handle_mcp(self,museum_provider,mcp_token,origin)
@@ -468,6 +519,9 @@ class BoundedServer(ThreadingHTTPServer):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--images', default=str(Path(__file__).with_name('runtime-images.json')))
+    parser.add_argument('--languages', nargs='+', help='Only verify and serve these configured runtime IDs on this node')
+    parser.add_argument('--nodes', help='Complete static execution-node configuration')
+    parser.add_argument('--node', help='Serve the languages assigned to this node ID')
     parser.add_argument('--metrics-db')
     parser.add_argument('--museum-data')
     parser.add_argument('--port', type=int, default=4181)
@@ -498,7 +552,16 @@ def main():
     lock_path = '/tmp/code-museum-executor.lock' if args.namespace == 'private-v1' else '/tmp/code-museum-executor-' + args.namespace + '.lock'
     lock = os.fdopen(os.open(os.environ.get('EXECUTOR_LOCK', lock_path), os.O_CREAT | os.O_RDWR | os.O_NOFOLLOW, 0o600), 'a')
     fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
-    runner = DockerRunner(load_runtimes(args.images), args.runtime,args.namespace);runner.verify()
+    runtimes = load_runtimes(args.images)
+    if bool(args.nodes) != bool(args.node) or args.node and args.languages:
+        parser.error('Use --nodes and --node together, without --languages')
+    languages = args.languages
+    if args.node:
+        from execution_nodes import load_nodes
+        nodes = load_nodes(args.nodes, runtimes)
+        if args.node not in nodes: parser.error('Unknown execution node')
+        languages = nodes[args.node]['languages']
+    runner = DockerRunner(select_runtimes(runtimes, languages), args.runtime,args.namespace);runner.verify()
     manager = Manager(runner,Metrics(args.metrics_db))
     server = BoundedServer(('127.0.0.1', args.port), handler(manager, token, args.origin,MuseumProvider(args.museum_data)))
     def shutdown(*_): threading.Thread(target=server.shutdown, daemon=True).start()

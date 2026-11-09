@@ -1,0 +1,167 @@
+{
+  "scope": "Authorized workers, restricted tunnel and separate loopback canary started; legacy production remains active. Baseline contains only aggregate metrics.",
+  "xshow": {
+    "workerRuntimeCount": 42,
+    "canaryRuntimeCount": 56,
+    "canaryComplete": true,
+    "baseline": {
+      "checkedAt": "2026-11-09T05:56:52.248753+00:00",
+      "available": true,
+      "processStartedAt": "2026-11-03T04:27:32.936881+00:00",
+      "uptimeSeconds": 523759,
+      "queue": 0,
+      "active": 0,
+      "metrics": {
+        "startedAt": "2026-10-09T12:06:17.912975+00:00",
+        "persistent": true,
+        "missedRecordsSinceRestart": 0,
+        "total": 48,
+        "states": {
+          "cancelled": 1,
+          "compile_error": 4,
+          "compile_timed_out": 0,
+          "completed": 40,
+          "failed": 3,
+          "infrastructure_error": 0,
+          "memory_limit": 0,
+          "output_limit": 0,
+          "timed_out": 0
+        },
+        "languages": {
+          "awk": {
+            "total": 4,
+            "states": {
+              "cancelled": 1,
+              "completed": 3
+            }
+          },
+          "bash": {
+            "total": 2,
+            "states": {
+              "completed": 2
+            }
+          },
+          "c": {
+            "total": 3,
+            "states": {
+              "compile_error": 1,
+              "completed": 2
+            }
+          },
+          "cpp": {
+            "total": 3,
+            "states": {
+              "completed": 3
+            }
+          },
+          "csharp": {
+            "total": 2,
+            "states": {
+              "completed": 2
+            }
+          },
+          "fortran": {
+            "total": 2,
+            "states": {
+              "completed": 2
+            }
+          },
+          "go": {
+            "total": 1,
+            "states": {
+              "completed": 1
+            }
+          },
+          "java": {
+            "total": 2,
+            "states": {
+              "completed": 2
+            }
+          },
+          "pascal": {
+            "total": 4,
+            "states": {
+              "compile_error": 1,
+              "completed": 3
+            }
+          },
+          "perl": {
+            "total": 2,
+            "states": {
+              "completed": 2
+            }
+          },
+          "php": {
+            "total": 2,
+            "states": {
+              "completed": 2
+            }
+          },
+          "python": {
+            "total": 1,
+            "states": {
+              "completed": 1
+            }
+          },
+          "r": {
+            "total": 5,
+            "states": {
+              "completed": 4,
+              "failed": 1
+            }
+          },
+          "rust": {
+            "total": 3,
+            "states": {
+              "compile_error": 1,
+              "completed": 2
+            }
+          },
+          "sed": {
+            "total": 2,
+            "states": {
+              "completed": 2
+            }
+          },
+          "sql": {
+            "total": 4,
+            "states": {
+              "completed": 2,
+              "failed": 2
+            }
+          },
+          "typescript": {
+            "total": 4,
+            "states": {
+              "compile_error": 1,
+              "completed": 3
+            }
+          },
+          "xslt": {
+            "total": 2,
+            "states": {
+              "completed": 2
+            }
+          }
+        },
+        "timings": {
+          "queue": {
+            "samples": 48,
+            "meanMs": 0.0
+          },
+          "compile": {
+            "samples": 24,
+            "meanMs": 1468.6
+          },
+          "run": {
+            "samples": 44,
+            "meanMs": 79.1
+          }
+        },
+        "scope": "Terminal tasks only; program errors and resource limits are distinct from infrastructure failure. No source, input, output, owner or job IDs stored."
+      }
+    },
+    "legacyActive": "active",
+    "tunnelActive": "active"
+  }
+}

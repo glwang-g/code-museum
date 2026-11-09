@@ -1,0 +1,303 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-09T00:05:07.622596+00:00",
+  "scope": "Read-only checks of configured project image identities and node capacity; no production tokens, uploads of code, installations or service changes.",
+  "nodes": [
+    {
+      "node": "xshow",
+      "checks": [
+        {
+          "id": "ada",
+          "present": true,
+          "matches": true
+        },
+        {
+          "id": "algol-60",
+          "present": true,
+          "matches": true
+        },
+        {
+          "id": "awk",
+          "present": true,
+          "matches": true
+        },
+        {
+          "id": "bash",
+          "present": true,
+          "matches": true
+        },
+        {
+          "id": "c",
+          "present": true,
+          "matches": true
+        },
+        {
+          "id": "clojure",
+          "present": true,
+          "matches": true
+        },
+        {
+          "id": "cobol",
+          "present": true,
+          "matches": true
+        },
+        {
+          "id": "common-lisp",
+          "present": true,
+          "matches": true
+        },
+        {
+          "id": "cpp",
+          "present": true,
+          "matches": true
+        },
+        {
+          "id": "csharp",
+          "present": true,
+          "matches": true
+        },
+        {
+          "id": "d",
+          "present": true,
+          "matches": true
+        },
+        {
+          "id": "elixir",
+          "present": true,
+          "matches": true
+        },
+        {
+          "id": "erlang",
+          "present": true,
+          "matches": true
+        },
+        {
+          "id": "f-sharp",
+          "present": true,
+          "matches": true
+        },
+        {
+          "id": "forth",
+          "present": true,
+          "matches": true
+        },
+        {
+          "id": "fortran",
+          "present": true,
+          "matches": true
+        },
+        {
+          "id": "go",
+          "present": true,
+          "matches": true
+        },
+        {
+          "id": "groovy",
+          "present": true,
+          "matches": true
+        },
+        {
+          "id": "haskell",
+          "present": true,
+          "matches": true
+        },
+        {
+          "id": "java",
+          "present": true,
+          "matches": true
+        },
+        {
+          "id": "kotlin",
+          "present": true,
+          "matches": true
+        },
+        {
+          "id": "nim",
+          "present": true,
+          "matches": true
+        },
+        {
+          "id": "ocaml",
+          "present": true,
+          "matches": true
+        },
+        {
+          "id": "pascal",
+          "present": true,
+          "matches": true
+        },
+        {
+          "id": "perl",
+          "present": true,
+          "matches": true
+        },
+        {
+          "id": "php",
+          "present": true,
+          "matches": true
+        },
+        {
+          "id": "prolog",
+          "present": true,
+          "matches": true
+        },
+        {
+          "id": "python",
+          "present": true,
+          "matches": true
+        },
+        {
+          "id": "r",
+          "present": true,
+          "matches": true
+        },
+        {
+          "id": "racket",
+          "present": true,
+          "matches": true
+        },
+        {
+          "id": "ruby",
+          "present": true,
+          "matches": true
+        },
+        {
+          "id": "rust",
+          "present": true,
+          "matches": true
+        },
+        {
+          "id": "scala",
+          "present": true,
+          "matches": true
+        },
+        {
+          "id": "sed",
+          "present": true,
+          "matches": true
+        },
+        {
+          "id": "smalltalk",
+          "present": true,
+          "matches": true
+        },
+        {
+          "id": "sql",
+          "present": true,
+          "matches": true
+        },
+        {
+          "id": "standard-ml",
+          "present": true,
+          "matches": true
+        },
+        {
+          "id": "tcl",
+          "present": true,
+          "matches": true
+        },
+        {
+          "id": "typescript",
+          "present": true,
+          "matches": true
+        },
+        {
+          "id": "visual-basic.net",
+          "present": true,
+          "matches": true
+        },
+        {
+          "id": "xslt",
+          "present": true,
+          "matches": true
+        },
+        {
+          "id": "zig",
+          "present": true,
+          "matches": true
+        }
+      ],
+      "cpuCount": 4,
+      "memoryBytes": 3904077824,
+      "diskAvailableBytes": 1052282880
+    },
+    {
+      "node": "xshow2",
+      "checks": [
+        {
+          "id": "bcpl",
+          "present": true,
+          "matches": true
+        },
+        {
+          "id": "dart",
+          "present": true,
+          "matches": true
+        },
+        {
+          "id": "julia",
+          "present": true,
+          "matches": true
+        },
+        {
+          "id": "korn-shell",
+          "present": true,
+          "matches": true
+        },
+        {
+          "id": "oberon",
+          "present": true,
+          "matches": true
+        },
+        {
+          "id": "octave",
+          "present": true,
+          "matches": true
+        },
+        {
+          "id": "postscript",
+          "present": true,
+          "matches": true
+        },
+        {
+          "id": "powershell",
+          "present": true,
+          "matches": true
+        },
+        {
+          "id": "swift",
+          "present": true,
+          "matches": true
+        },
+        {
+          "id": "tcsh",
+          "present": true,
+          "matches": true
+        },
+        {
+          "id": "verilog",
+          "present": true,
+          "matches": true
+        },
+        {
+          "id": "vhdl",
+          "present": true,
+          "matches": true
+        },
+        {
+          "id": "wasm",
+          "present": true,
+          "matches": true
+        },
+        {
+          "id": "x86-assembly",
+          "present": true,
+          "matches": true
+        }
+      ],
+      "cpuCount": 2,
+      "memoryBytes": 1691447296,
+      "diskAvailableBytes": 7329112064
+    }
+  ]
+}

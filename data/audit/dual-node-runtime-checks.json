@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-09T04:53:49.237Z",
+  "scope": "Actual temporary xshow/Python and xshow2/BCPL Docker executors behind a local unified gateway and private SSH tunnels. Fresh isolated test credentials; no production token, permanent installation, or production API changes. A two-language routing acceptance, not a full language conformance or all-56-runtime rerun.",
+  "nodes": [
+    {
+      "id": "xshow",
+      "languages": [
+        "python"
+      ]
+    },
+    {
+      "id": "xshow2",
+      "languages": [
+        "bcpl"
+      ]
+    }
+  ],
+  "browser": "Chrome/156.0.8078.80",
+  "checks": [
+    {
+      "name": "Unified runtime list contains only both verified temporary node inventories",
+      "languages": [
+        "bcpl",
+        "python"
+      ],
+      "concurrency": 2
+    },
+    {
+      "name": "Python and BCPL execute on their assigned real hosts through one API",
+      "outputs": [
+        "博物馆\n42\n",
+        "49\n"
+      ]
+    },
+    {
+      "name": "Gateway task ownership rejects a different session",
+      "passed": true
+    },
+    {
+      "name": "Actual BCPL compile rejection remains separate from execution",
+      "state": "compile_error"
+    },
+    {
+      "name": "Cancellation returns to the original node and stops its actual task",
+      "passed": true
+    },
+    {
+      "name": "Gateway restart retains task-to-node route without storing source",
+      "passed": true
+    },
+    {
+      "name": "A stopped node fails its own language and leaves the other node usable",
+      "unavailableStatus": 503,
+      "healthyOutput": "84\n"
+    },
+    {
+      "name": "Node reconnect restores its verified runtime inventory and real execution",
+      "passed": true
+    },
+    {
+      "name": "Actual Chrome python routes through unified gateway",
+      "width": 1440,
+      "output": "博物馆\n42\n"
+    },
+    {
+      "name": "Actual Chrome bcpl routes through unified gateway",
+      "width": 1440,
+      "output": "49\n"
+    },
+    {
+      "name": "Actual Chrome python routes through unified gateway",
+      "width": 390,
+      "output": "博物馆\n42\n"
+    },
+    {
+      "name": "Actual Chrome bcpl routes through unified gateway",
+      "width": 390,
+      "output": "49\n"
+    },
+    {
+      "name": "Actual Chrome isolates unavailable xshow2 while xshow Python still executes",
+      "passed": true
+    },
+    {
+      "name": "Actual Chrome recovers xshow2 without page-side host selection",
+      "passed": true
+    }
+  ],
+  "inputs": {
+    "scripts/check-dual-executor.cjs": "018c2cbc323f35b5dbee346194b4c3423b6200b429f86e0ae67e65fe83082baf",
+    "scripts/dual-executor-preview.cjs": "64f3890a1e77d657fc0caa2b37d5c8b96e4fe239103782a965ddbf213f61026e",
+    "scripts/executor-preview.cjs": "38625d7e67a469577d6077e972e2a66c941537301c33ccfa1cd0da52a861ea26",
+    "scripts/serve.cjs": "5e4ce3fcf5de506f65892e7fd0dc509d26f6cb0c0c1cf4a113fe437a8304f9bb",
+    "server/execution_gateway.py": "f35db880132f66fba899de716c0cc644e5dc281812cb68e2dd652d0ef214917c",
+    "server/execution_nodes.py": "981cde9e6f950a1f14745ad3db455a34a32993ccbf95fc9220e0ac24cafa7c68",
+    "server/executor.py": "84ec23fbb3b9b516fa2f7adae05ae9d8e5751a8c0eb719eee616ed13de412d59",
+    "server/runtime-images.json": "8900182ac91331af26a332f1688c95644ee2e91bb200e530162cd2c6fbea3eb3",
+    "src/execution-modes.js": "41a81814ac23703676be00ddb8e352e3a5432c77f579a15c07d429c7a28716ca",
+    "src/lab.js": "9ab985901546cc36b863e09c2bfe5bc35f756d40a4066ffd5b94027d7e15faf8",
+    "src/service-status.js": "6ffb06f9bb8f75251b64fad4d779620e706b6906d41d3303577b24152ef7a517"
+  }
+}

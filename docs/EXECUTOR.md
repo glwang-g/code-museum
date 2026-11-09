@@ -1,6 +1,24 @@
 # Docker 私有执行首版
 
-当前源码支持 Python、Ruby、R 原生远端执行，C、C++、Rust、Go、Java、C#、Fortran、Pascal 的编译后执行，以及 TypeScript、SQL（SQLite）、Bash、AWK、sed、PHP、Perl、XSLT（libxslt），共 19 门。当前 19 门已于 2026-11-03 升级生产执行服务；P1 新增十二门的正式 HTTPS 记录见下文。Linux 执行服务使用 Python 标准库，不需要 pip/npm 依赖。网站仍可完全离线构建，构建不会启动 Docker、拉镜像或连接服务器。
+当前生产后端已于2026-11-09按用户授权升级为双节点56门私有远端执行：xshow 42门、xshow2 14门，统一网关沿用原同域 API 和私有令牌。10项常驻 canary、[63项正式 HTTPS/Chrome 检查](../data/audit/dual-node-production-checks.json)（精确元数据、56门逐一正例及6项既有页面检查）、[8项生命周期与故障恢复检查](../data/audit/dual-node-production-lifecycle.json)通过；[新服务已 active/enabled](../data/audit/dual-node-production-services.json)，旧执行器停用自启但保留回退。Groovy 当前运行预算8秒，含 JVM 启动与脚本编译，其余按各语言 API 预算。拓扑、v3清单和备份见 [双节点部署说明](DUAL_NODE_DEPLOYMENT.md)。
+
+已发布静态前端仍提供原19门远端与4门浏览器运行（Python重叠，共22个语言节点）；源码已接入原 B 组37门，合计56门远端 / 59个可执行节点，其新增页面入口尚未发布。版本和边界见各节及 [逐门记录](../data/audit/runtime-rollout.json)；该记录保留临时验收阶段，不是当前生产状态表，正式生产证据以上述报告为准。原19门的2026-11-03生产记录保留在下文。用户现已授权提交、推送和部署；本轮静态发布完成状态须由后续实证记录确认。Linux执行服务使用Python标准库，不需要pip/npm依赖；网站仍可完全离线构建，构建不会启动Docker、拉镜像或连接服务器。
+
+## 2026-11-09 公开源码与 BCPL 私有输入（发布前）
+
+B组37门均已完成真实执行；其中36门的完整固定工具链输入拟随本轮源码公开纳入版本管理。BCPL的95,200,146字节原始归档及相关上游材料未找到全包公开再分发的明确授权，不能把随包GNU Library GPL文本理解成整个归档采用同一许可。官方条款见 [BCPL页面](https://www.cl.cam.ac.uk/~mr10/BCPL.html) 与 [作者README](https://www.cl.cam.ac.uk/~mr10/BCPL/README)。
+
+`data/runtime-input-policy.json` 仅为BCPL固定六项私有输入：三个原始归档分片、`cintcode-noninteractive.patch`、上游README全文与`upstream-sysboot.b`。这些材料不进入公共Git或网页发布包；公共部分保留原始`manifest.json`、来源和逐文件哈希、自编Dockerfile/启动器、项目说明及可复制的GNU许可文本。原manifest与已部署镜像身份不改写。
+
+网站离线构建核对这份明确的公开元数据策略及所有公开输入，不要求私有包存在；本机有无私有包不能改变网页产物。BCPL完整工具链重建仍须逐项核对全部私有字节，缺失、额外文件或哈希不符应停止，不在构建时下载。事先合法持有的固定材料通过显式参数提供，例如：
+
+```sh
+python3 scripts/build-fixed-runtime.py --directory bcpl \
+  --private-input-directory /path/to/authorized-private-bcpl \
+  --ssh-host xshow2 --base-oci-layout /path/to/pinned-gcc-oci
+```
+
+本机私有档案在已忽略的`output/private-runtime-inputs/bcpl-20261109`，以独立本地Git提交`dac1672e722e6b5d81ccffbb16704b4a4638a6d7`固定，没有配置远端；这不是公共源码的一部分。既有BCPL生产执行仍使用已核验镜像，不因公共仓库排除原包而伪造运行或重新下载。当前Groovy档案已改为8秒，通用超时文案改为“运行超过时间预算，已停止。”；其最终页面效果由本轮发布验收记录确认。
 
 ## 2026-11-03：Pascal、R（本机与生产已核验）
 
@@ -76,6 +94,12 @@ npm run runtime:cli-browser
 首批结果：31 项真实容器检查、17 项实际 Chrome 专项通过（两份记录现已分别累计 52 项与 27 项，首批结果为其中子集）；[浏览器记录](../data/audit/cli-runtime-browser-checks.json)绑定最终源码和被服务资源哈希。另有 80 项默认测试、离线构建及完整本地浏览器回归 34/34 通过。旧回归的“13 张来源卡片”改为逐个核对完整 ID 集合；Bash 的旧“仅编辑”断言同步更新为“远端已配置、无 API 时不允许运行且不伪造输出”，新版默认程序另经本机实际执行，不跳过原有核验。
 
 ## 本机试看（xshow）
+
+隔离测试可按节点只启用一部分已固定运行时：执行器 `--languages zig` 在完整校验镜像清单后只核对并公开指定语言，未启用语言的提交会被拒绝。`runtime:planned-check -- --language zig --ssh-host <节点别名>` 与设置 `PLANNED_LANGUAGE=zig` 的 planned 浏览器检查也只要求该节点拥有选定语言镜像；省略语言选择仍核对全量清单。这是测试/执行进程的显式白名单，不提供前端跨节点调度，也不表示新节点已部署。
+
+普通临时预览可设置 `EXECUTOR_SSH_HOST=xshow2 EXECUTOR_LANGUAGES=swift,dart npm run executor:preview`（仍需按下文提供本机临时令牌），只验证和公开该节点已准备的指定语言。不要在只有部分镜像的节点上省略语言白名单。
+
+固定运行时准备脚本支持 `--base-oci-layout /绝对路径`：将已经取得的固定基础镜像导出为 OCI 布局，使用 BuildKit 本地上下文覆盖同一官方镜像引用，并在 OCI 路径中继续锁定清单声明的原摘要。新节点上即使 `--pull=false`，BuildKit 仍可能访问仓库解析基础镜像元数据；此选项用于完全离线构建，不改变 Dockerfile 或基础摘要。OCI 布局应预先按基础镜像的 `linux/amd64` 平台导出；布局路径位于实际构建节点上。
 
 前提：本机 Node.js ≥22、SSH alias `xshow` 可连接；远端有 Python 3、Docker、cgroup v2 和清单中固定 linux/amd64 镜像。原型核验已在xshow准备镜像；预览和集成核验采用独立随机命名空间/锁，不清理生产容器。
 
@@ -205,3 +229,176 @@ EXECUTOR_BROWSER_ORIGIN=https://codemuseum.freexlib.com npm run executor:browser
 统计从新版启用开始，不补算此前历史。API拒绝不计任务，未结束/进程强杀的任务可能漏记；SQLite写失败只增加本次进程的漏记警告。它是执行汇总而非完整可用率/SLO；暂未接入告警、时序窗口、趋势或外部监控。源码/stdin/stdout/stderr仍只在任务原有内存/容器生命周期内，不进入统计数据库。
 
 HTTPS只读MCP复用该进程，见MCP.md；不会扩大CI或网站账号的Docker权限。管理员升级需要部署五份后端模块、unit和Nginx片段；安装器备份/回滚原文件，并在reload前验证私有指标与五个只读工具。聚合数据库保留，不随代码回滚删除。
+
+## 2026-11-06 持续推进：ALGOL 60 / Common Lisp（未部署）
+
+新增 `runtime:algol60-build`、`runtime:common-lisp-build`，显式准备时通过 `--ssh-host xshow --write-manifest` 使用固定输入离线构建，并记录实际镜像身份。GNU MARST 官方完整源码与原始许可保存在 `server/runtimes/algol60/`；SBCL Debian 固定包和原始版权保存在 `server/runtimes/common-lisp/`。网站构建只校验这些输入，不下载工具链；服务器资产不发给浏览器。
+
+ALGOL 60 为 MARST 2.8 → C89 / GCC 14.3.0，10 秒编译、3 秒运行、512 MiB，编译失败不运行；上游生成 C 在传名调用上仍有求值顺序警告，诊断保留，不保证完整语义。Common Lisp 为 SBCL 2.2.9，3 秒运行、512 MiB、128 MiB dynamic space、8 MiB control stack，单文件、无启动文件/交互调试器/Quicklisp。各任务继续沿用非 root、禁网、只读根目录、输出上限与清理协议。
+
+真实核验：`npm run runtime:planned-check -- --ssh-host xshow --output data/audit/planned-runtime-checks.json`；构建后 `BROWSER_CHECK_OUTPUT=tmp/planned-browser npm run runtime:planned-browser` 创建独立临时 API，不改生产。报告只记录实际范围，原生产核验记录不覆盖。
+
+Prolog 已接入源码与独立临时网页：SWI-Prolog 9.0.4，512 MiB / 3 秒 / 128 MiB 栈，main/0 入口，`--on-error=halt`，禁用启动文件、线程与扩展包；语法错误停止加载、失败目标返回失败。固定 6 个 Debian 包、来源与签名校验记录在 `server/runtimes/prolog/`。准备命令为 `npm run runtime:fixed-build -- --directory prolog --ssh-host xshow --write-manifest`；仍未部署。
+
+Forth 已完成源码与临时网页验收：Gforth 0.7.3，256 MiB / 3 秒，16 MiB 字典、数据栈/返回栈各 1 MiB，禁用动态 superinstructions，文件执行后 `bye`，保留未知词/栈下溢错误。固定 4 个 Debian 包和版权在 `server/runtimes/forth/`；`runtime:fixed-build -- --directory forth --ssh-host xshow --write-manifest` 显式离线准备。未部署。
+
+Racket 已于 2026-11-07 完成独立临时验收：Minimal Racket 8.7 CS，官方归档 SHA-256 与发布页一致，512 MiB / 3 秒，`-q -U -t /work/main.rkt`，单文件 #lang racket/base 及预装基础库，无图形界面或在线包安装。固定输入 `server/runtimes/racket/`，构建命令 `runtime:fixed-build -- --directory racket --ssh-host xshow --write-manifest`；10 项容器与 6 项网页报告分别保存。未部署。
+
+Smalltalk 已完成隔离验收：GNU Smalltalk 3.2.5 字节码 VM（JIT 禁用）、512 MiB / 3 秒，`--no-user-files -q -f /work/main.st`。固定完整 GNU 源码及 Iconv/Expat 接口兼容补丁、CLI 状态适配补丁在 `server/runtimes/smalltalk/`，原始归档不改写。报告的语法错误和未处理异常返回失败；显式捕获的错误与普通 stderr 保持成功，13 项容器与 6 项网页记录验证这些区别。无 Xerox 图形环境或在线包安装；未部署。
+
+COBOL 已完成隔离验收：GnuCOBOL 3.1.2，自由格式 `-free -std=cobol2014 -x`，512 MiB / 编译 10 秒 / 运行 3 秒，单文件原生程序，编译失败不运行。固定 3 个 Debian 包/原始版权与离线构建输入在 `server/runtimes/cobol/`，9 项容器 / 5 项网页报告已保存；无 IBM 主机、外部数据库或在线 COPYBOOK 安装，不宣称完整符合性。未部署。
+
+Ada 已完成隔离验收：GNAT 12.2.0，`-gnat2012 -gnatwa`，512 MiB / 编译 10 秒 / 运行 3 秒，入口 main.adb / procedure Main；下载保持 main.adb。固定 GNAT 包与完整共享 GCC 12 版权在 `server/runtimes/ada/`。10 项容器 / 7 项网页记录验证类型错误不执行、真实异常及捕获、中文输入、取消与恢复；不安装 Alire、不宣称完整符合性，未部署。
+
+Clojure 已完成隔离验收：Clojure 1.11.1 / 固定 Java 17，固定基础 JAR，768 MiB / JVM 堆 256 MiB / 3 秒含启动；UTF-8 文本输入输出，不在线还原 tools.deps/Leiningen/Maven。固定包、JAR、版权和提取证明在 `server/runtimes/clojure/`，11 项容器 / 7 项网页记录已保存。自制镜像只复制纯 JAR，复用既有 JDK 基础，不安装跨发行版原生包；未部署。
+
+### OCaml 固定准备（未部署）
+
+OCaml 4.13.1：`ocamlc -w +a-70 -o /work/program /work/main.ml`，再执行字节码；512 MiB、编译 10 秒 / 运行 3 秒，仅标准库。固定包、签名索引及版权在 `server/runtimes/ocaml/`，不使用 opam/dune 在线安装。10 项真实容器和 7 项临时网页检查通过，报告 `data/audit/ocaml-runtime-{checks,browser-checks}.json`。生产未升级。
+
+### Haskell 固定准备（未部署）
+
+GHC 9.0.2 / Haskell 2010：`ghc -v0 -O0 -Wall -XHaskell2010 -outputdir /work -o /work/program /work/Main.hs`，执行原生程序；768 MiB，编译 20 秒 / 运行 3 秒，保留警告与类型检查，只有预装库，不在线还原 Cabal/Stack 依赖。固定输入 `server/runtimes/haskell/`；10 项容器、8 项临时网页检查通过，报告 `data/audit/haskell-runtime-{checks,browser-checks}.json`。
+
+### Kotlin 固定准备（已临时验收，未部署）
+
+Kotlin 2.1.20 / Java 17，单文件 Main.kt 编译 JVM target 17 JAR；768 MiB，编译器堆 384 MiB / 编译 30 秒，运行堆 256 MiB / 运行 3 秒，文件句柄 256。固定官方 ZIP 与全部捆绑许可离线构建，无 Gradle/Maven 还原。独立探针验证后设置 `-Djansi.tmpdir=/work`，正常编译诊断为空，/tmp 保持 noexec；10 项容器和 8 项真实网页复测通过并查看宽窄屏截图。报告 `data/audit/kotlin-runtime-{checks,browser-checks}.json`。
+
+### Groovy 初期固定准备（历史：3秒预算，未部署）
+
+Groovy 4.0.26 / Java 17：固定官方 ZIP，使用 `groovy.ui.GroovyMain /work/main.groovy`，只加载核心 JAR，`groovy.grape.enable=false`；768 MiB / 堆 256 MiB / 3 秒包含 JVM 启动与脚本编译执行，无 Ivy/Maven 在线还原。11 项容器、7 项临时网页检查通过并查看宽窄屏截图；实测类样例约 2.5 秒，复杂脚本仍可能超时。固定输入 `server/runtimes/groovy/`，报告 `data/audit/groovy-runtime-{checks,browser-checks}.json`。
+
+本段保留初期准备记录；当前生产 API 运行预算为8秒，依据与正式证据见文末预算修正。本轮发布准备已把语言档案改为8秒，通用超时提示移除硬编码3秒；新版静态页面仍待发布后确认。
+
+### Erlang 固定准备（未部署）
+
+Erlang/OTP 25.2.3：单文件 main.erl / 模块 main / main/0，预装 compile:file 编译到 /work，由 BEAM VM 执行；512 MiB、编译 10 秒 / 运行 3 秒，调度器 1、async 1、dirty CPU/IO 各 1，禁网、不启动分布式节点、不在线安装 rebar3 依赖；崩溃转储定向 /dev/null。固定签名校验包 `server/runtimes/erlang/`；10 项容器、8 项真实网页通过并查看宽窄屏，报告 `data/audit/erlang-runtime-{checks,browser-checks}.json`。
+
+### Elixir 固定准备（未部署）
+
+Elixir 1.14.0 / OTP 25.2.3：main.exs 单文件与固定预装库，512 MiB / 3 秒含 BEAM 启动与脚本编译执行，调度器/async/dirty 线程数量受限，无 Mix/Hex 在线依赖或分布式节点。固定输入 `server/runtimes/elixir/`；12 项容器、7 项临时网页通过并查看宽窄屏，报告 `data/audit/elixir-runtime-{checks,browser-checks}.json`。
+
+### Tcl 固定准备（未部署）
+
+Tcl 8.6.13：`tclsh8.6 /work/main.tcl`，256 MiB / 3 秒，固定基础库与 TclOO，无 Tk GUI、在线安装包或 Tcl 9 兼容声明。版本脚本打印真实 info patchlevel。固定输入 `server/runtimes/tcl/`；12 项容器、7 项临时网页通过并查看宽窄屏，报告 `data/audit/tcl-runtime-{checks,browser-checks}.json`。
+
+### Standard ML 固定准备（未部署）
+
+PolyML 5.7.1：`poly --script /work/main.sml`，512 MiB / 3 秒包含编译求值，固定 Standard Basis 库，无在线包安装。脚本按声明编译求值，后续类型错误不撤销先前输出；错误真实返回失败，不把它描述为整文件预编译。不冒充 SML/NJ/MLton 或完整标准符合性。固定输入 `server/runtimes/standard-ml/`；12 项容器、8 项真实网页通过并查看宽窄屏，报告 `data/audit/standard-ml-runtime-{checks,browser-checks}.json`。
+
+### Scala 固定准备（未部署）
+
+Scala 2.13.16 / Java 17：官方发行包六个 JAR，Main.scala / object Main / main(args: Array[String])，768 MiB / 编译器堆 384 MiB / 编译 30 秒、运行堆 256 MiB / 运行 3 秒。无 sbt/Maven/Coursier 在线还原或 Scala 3 兼容声明。固定原归档、发布清单、编译器 Maven SHA-1 与全部输入 SHA-256 在 `server/runtimes/scala/`，不声称整个归档官方 SHA-256 或签名核验。10 项容器、8 项临时网页通过并查看宽窄屏，报告 `data/audit/scala-runtime-{checks,browser-checks}.json`。
+
+### Visual Basic .NET 固定准备（未部署）
+
+既有固定官方 .NET SDK 10.0.403 / vbc Roslyn 5.9.0，使用预装参考程序集与 VisualBasic.Core 编译 Main.vb 控制台；默认 `-optionstrict+`、`-define:_MYTYPE="Empty"`，不提供桌面 My 服务、Windows UI 或 NuGet 在线还原。1024 MiB / 编译 30 秒 / 运行 3 秒，256 文件句柄，64 MiB 单文件上限，与既有 .NET 隔离协议一致。11 项容器、8 项临时网页通过并查看宽窄屏，报告 `data/audit/visual-basic.net-runtime-{checks,browser-checks}.json`。
+
+### F# 固定准备（未部署）
+
+F# 10.0 / 编译器 15.2.403.0 / 固定官方 .NET SDK 10.0.403，Main.fs 单文件、预装参考程序集与 FSharp.Core；仅复制预装 Core 至任务临时目录，不还原 NuGet 包。1024 MiB / 编译 30 秒 / 运行 3 秒，256 文件句柄与 64 MiB 单文件上限。12 项容器、8 项真实网页通过并查看宽窄屏，报告 `data/audit/f-sharp-runtime-{checks,browser-checks}.json`。F# 编译器和 Core 的 MIT 许可见 [上游原文](https://github.com/dotnet/fsharp/blob/main/License.txt)，SDK 与运行时沿用既有条目。
+
+### D 固定准备（未部署）
+
+GNU D 12.2.0 / gdc-12、固定 Phobos，`gdc-12 -O0 -Wall -o /work/program /work/main.d`；768 MiB / 编译 10 秒 / 运行 3 秒，无 dub 在线安装，不冒充 DMD 版本或完整标准符合性。原始 GCC 12 版权覆盖 D/Phobos。固定输入 `server/runtimes/d/`；11 项容器、8 项真实网页通过并查看宽窄屏，报告 `data/audit/d-runtime-{checks,browser-checks}.json`。
+
+### Nim 固定准备（未部署）
+
+Nim 1.6.10 与固定标准库/GCC：main.nim 单文件、parallelBuild 1，缓存仅在临时 /work，保留默认运行时检查；768 MiB / 编译 20 秒 / 运行 3 秒，无 Nimble 在线安装或 Nim 2 兼容声明。固定输入 `server/runtimes/nim/`；12 项容器、8 项真实网页通过并查看宽窄屏，报告 `data/audit/nim-runtime-{checks,browser-checks}.json`。
+
+### Zig 固定准备（未部署）
+
+Zig 0.14.1 官方 SDK，main.zig 单文件，原始完整 LLVM 后端与 Debug 检查；启动器只限制编译 CPU 亲和至一个已允许 CPU，所有缓存放在 /work。1024 MiB / 编译 30 秒 / 运行 3 秒，无在线包下载或新版 Zig API 兼容声明。原始 49,086,504 字节归档匹配官方索引 SHA-256，13 份原始许可保留于 `server/runtimes/zig/`。12 项容器、9 项真实网页通过并查看宽窄屏，报告 `data/audit/zig-runtime-{checks,browser-checks}.json`。
+
+
+Swift 已完成独立临时网页验收：官方 6.1.3 / Swift 6 模式，main.swift 与固定标准库/Foundation，1024 MiB / 编译 30 秒 / 运行 3 秒，无 SPM 在线依赖或 Apple UI 框架。固定完整 SDK 分片、发布签名及原始许可在 `server/runtimes/swift/`；用 `runtime:fixed-build -- --directory swift --ssh-host xshow2 --base-oci-layout /path/to/gcc-oci --write-manifest` 显式离线准备（替换为节点上实际的 ASCII 绝对路径）。专项检查选择 `--language swift` / `PLANNED_LANGUAGE=swift`，节点设为 xshow2；13 项容器、9 项网页证据分别保存。未部署，生产不能自动路由到新节点。
+
+
+Dart 已完成 xshow2 独立临时验收：官方 SDK 3.9.4，main.dart AOT 原生编译与标准库，768 MiB / 编译 15 秒 / 运行 3 秒；命令抑制分析统计，无 pub 在线依赖、Flutter 或浏览器 UI。固定完整 SDK 7 分片、官方校验和与原始通知在 `server/runtimes/dart/`。准备使用 `runtime:fixed-build -- --directory dart --ssh-host xshow2 --base-oci-layout /path/to/gcc-oci --write-manifest`；专项选择 `--language dart` / `PLANNED_LANGUAGE=dart`，13 项容器和 10 项网页证据已保存。未部署。
+
+
+Julia 已完成 xshow2 独立临时验收：1.11.7 / main.jl、预装标准库与正常 JIT，768 MiB / 3 秒含启动/JIT，初始 Julia/GC/BLAS 单线程；使用已有编译缓存但不生成新预编译缓存，错误前输出保留，无在线 Pkg、绘图或 Notebook。完整 SDK 9 分片、官方校验和、19 份许可在 `server/runtimes/julia/`；准备 `runtime:fixed-build -- --directory julia --ssh-host xshow2 --base-oci-layout /path/to/gcc-oci --write-manifest`，专项 `--language julia` / `PLANNED_LANGUAGE=julia`。13 项容器、10 项网页报告已保存；未部署。
+
+
+GNU Octave 已完成 xshow2 临时验收：7.3.0 CLI，main.m 脚本与核心库，512 MiB / 3 秒；无 GUI/窗口系统、初始化/历史、在线 pkg 或绘图界面。固定 179 包、178 版权在 `server/runtimes/octave/`，含 Debian 合法 ~ 版本文件名。准备 `runtime:fixed-build -- --directory octave --ssh-host xshow2 --base-oci-layout /path/to/gcc-oci --write-manifest`；13 项容器 / 10 项网页记录已保存，未部署。Debian 预取脚本可显式设置 `--mirror-root https://mirrors.tuna.tsinghua.edu.cn`，保留官方规范 URL、索引签名与逐包 SHA-256；缓存或镜像字节使用相同校验。
+
+
+## PowerShell 隔离配置（临时验收完成，未部署）
+
+PowerShell 7.5.4 官方 Microsoft DEB 的完整 SHA-256 匹配官方 GitHub 发行资产，三分片与原始许可保留在 `server/runtimes/powershell/`。独立 CLI 入口默认 `ErrorActionPreference=Stop`，保留显式捕获、原生诊断、普通 stderr 与显式退出码；Linux 核心模块，不提供在线 Gallery 或 Windows/Office 宿主。
+
+该包的 .NET 9 JIT 使用逻辑大小 2 TiB 的稀疏匿名 `memfd:doublemapper`，初始化会受 POSIX fsize 限额影响；见 [.NET 上游实现](https://github.com/dotnet/runtime/blob/v9.0.10/src/coreclr/minipal/Unix/doublemapping.cpp) 与 [维护者说明](https://github.com/dotnet/runtime/discussions/81752)。只对 PowerShell 将逻辑 fsize 设为 2 TiB，保持 W^X 默认保护；这不是 2 TiB 内存配额，实际 cgroup 内存仍 768 MiB，/work 和 /tmp tmpfs 分别 16/8 MiB、均 noexec，根只读，非 root、禁网、NNP、进程/输出/3 秒限制保留，文件句柄 256。17 项真实容器检查包含写满 tmpfs 的 ENOSPC 与只读根拒写，实际成功/失败状态来自原引擎。版本探测同样使用独立 noexec 临时 HOME。11 项真实网页检查通过，已查看宽窄屏；未部署。
+
+### 2026-11-09 Korn shell 临时验收
+
+`server/runtimes/korn-shell/` 保存 ksh93u+m 1.0.4 完整 Debian 包、原始许可和签名索引核验记录；使用前述固定构建器与 xshow2 同摘要 OCI 基础镜像离线构建。`main.ksh` 通过 `/usr/bin/ksh93 -p /work/main.ksh` 执行，256 MiB / 3 秒；原生退出状态，不启用隐含 errexit。`--language korn-shell` / `PLANNED_LANGUAGE=korn-shell` 已有 14 项容器、10 项 Chrome 证据，生产和多节点路由均未改。
+
+### 2026-11-09 tcsh 临时验收
+
+`server/runtimes/tcsh/` 保留 tcsh 6.24.07 固定 Debian 包和原始版权、签名索引记录；使用固定构建器与同摘要 OCI 基础离线构建。main.tcsh 由 `/usr/bin/tcsh -f /work/main.tcsh` 执行，256 MiB / 3 秒，保留原生状态。`--language tcsh` / `PLANNED_LANGUAGE=tcsh`：12 项容器、10 项 Chrome 证据，生产未改。
+
+### 2026-11-09 WebAssembly 临时验收
+
+`server/runtimes/wasm/` 保存固定离线输入与原始许可，用固定构建器和同摘要 OCI 基础构建。Wasmtime 50.0.1；完整官方 11,577,424 字节 SDK 匹配官方 GitHub 资产 SHA-256，原始许可保留，未声称 PGP 验签。main.wat 核心模块 / _start / WASI Preview 1，512 MiB / 3 秒含 WAT 翻译与 JIT，至多一块 256 MiB 线性内存；禁用组件模型和线程，无预开放目录、继承环境、网络或浏览器宿主。17 项容器覆盖计算、中文输入输出、语法/类型验证、除零/越界陷阱、proc_exit 状态、内存/权限限制、取消和恢复。 `--language wasm` / `PLANNED_LANGUAGE=wasm`：17 项真实容器、10 项真实 Chrome 检查通过，1440/390 明暗截图已核读；85/85 默认测试与离线构建通过。 生产未改。
+
+### 2026-11-09 x86 Assembly 临时验收
+
+`server/runtimes/x86-assembly/` 保存固定离线输入与原始许可，用固定构建器和同摘要 OCI 基础构建。NASM 2.16.01 → 固定基础 GNU ld → 原生 x86-64 Linux ELF64，main.asm / _start / Linux syscall ABI，256 MiB / 编译 10 秒 / 运行 3 秒。固定 Debian 包、签名索引、SHA-256 和 NASM/binutils 原始许可保留。编译与链接均通过才执行，警告原样保留；无 libc 或外部目标文件，不冒充 8086、DOS、Windows 或模拟器。实际覆盖循环、函数、中文系统调用输入、NASM/链接错误、除零/非法内存访问和退出码。 `--language x86-assembly` / `PLANNED_LANGUAGE=x86-assembly`：13 项真实容器、10 项真实 Chrome 检查通过，1440/390 明暗截图已核读；85/85 默认测试与离线构建通过。 生产未改。
+
+### 2026-11-09 Verilog 临时验收
+
+`server/runtimes/verilog/` 保存固定离线输入与原始许可，用固定构建器和同摘要 OCI 基础构建。Icarus Verilog 11.0 / Verilog-2005，main.v / 顶层 module main，512 MiB / 编译 10 秒 / vvp 文本仿真 3 秒实际时间。完整固定 Debian 包、签名索引、SHA-256 与原始许可保留。-N 使 $stop 非交互且返回失败，$fatal 和原生诊断保留，禁用波形输出；无综合、FPGA 部署或波形下载，不是真实电路。页面动作/结果明确为仿真，并验证切换语言恢复运行标签；覆盖计数器、延迟、四态、函数、中文输入、错误、取消与恢复。 `--language verilog` / `PLANNED_LANGUAGE=verilog`：13 项真实容器、11 项真实 Chrome 检查通过，1440/390 明暗截图已核读；85/85 默认测试与离线构建通过。 生产未改。
+
+### 2026-11-09 VHDL 临时验收
+
+`server/runtimes/vhdl/` 保存固定离线输入与原始许可，用固定构建器和同摘要 OCI 基础构建。GHDL 2.0.0 mcode / VHDL-2008，main.vhd / 顶层 entity main，512 MiB / 分析展开 10 秒 / 文本仿真 3 秒实际时间。3 个固定 Debian 包、签名索引、SHA-256 与原始许可保留，--assert-level=error 保留断言和约束检查，warning 仍可继续。无综合、FPGA 部署或波形下载，不是真实电路。页面明确仿真；覆盖记录、IEEE 多值逻辑、类型错误、仿真时间、中文 TextIO、断言/边界错误、取消恢复和文件操作。 `--language vhdl` / `PLANNED_LANGUAGE=vhdl`：15 项真实容器、10 项真实 Chrome 检查通过，1440/390 明暗截图已核读；85/85 默认测试与离线构建通过。 生产未改。
+
+### 2026-11-09 PostScript 临时验收
+
+`server/runtimes/postscript/` 保存固定离线输入与原始许可，用固定构建器和同摘要 OCI 基础构建。Ghostscript 10.00.0，18 个固定 Debian 包、签名索引、SHA-256 与原始许可保留。main.ps，256 MiB / 3 秒，-q -dSAFER -dNODISPLAY -dBATCH -dNOPAUSE；栈、过程、递归、字典和文本输出来自真实解释器，原生错误与 stopped 捕获保留。无页面渲染、打印设备或文件产物下载；实际核验 SAFER 拒绝未授权读写、中文多行标准输入、错误/恢复及导入下载。 `--language postscript` / `PLANNED_LANGUAGE=postscript`：16 项真实容器、10 项真实 Chrome 检查通过，1440/390 明暗截图已核读；85/85 默认测试与离线构建通过。 生产未改。
+
+
+## 2026-11-09 BCPL、Oberon 临时验收（B 组收尾，未部署）
+
+BCPL 使用作者 2026-11-09 完整快照、Cintcode64 编译器和以固定 GCC 重建的 C VM；原始 bootstrap、标准头文件、作者条款和随包 GNU licence 保留。main.b / start()，512 MiB / 编译 10 秒 / 运行 3 秒。非交互 VM 补丁把真实故障码转为失败退出，PC 取原系统的第 6 号寄存器；启动器恢复原始标准输入、使用 LF 文本输出并阻止剩余输入进入 CLI。除零、返回 7、中文多行输入、语法拒绝、超时、输出上限、取消和恢复已实测。无图形、音频、在线依赖或历史机器重现；作者只明确私人/学术用途，不推断商业再分发许可。
+
+Oberon 使用 OBNC 0.17.2 官方完整源码、4 个 Debian 固定依赖及原始许可，签名索引与逐包 SHA-256 已核验；官方源码 MD5 与独立官方清单匹配，另保留本地 SHA-256，不声称上游 SHA-256 或签名。最终 2016 语言 / Oberon-07 家族 → C/GCC 原生程序；Main.obn / MODULE Main，512 MiB / 编译 10 秒 / 运行 3 秒，INTEGER 32 位、REAL 64 位。保留默认 GC、类型与运行时检查，文本和 ext 库逐项检查；不提供 SDL Input/XYplane、在线模块、Oberon-2 或 Ceres 操作系统重现。变量断言和数组越界保留原生 E8/E2 诊断，ASSERT(FALSE) 按原实现直接失败退出，普通 stderr 不误报失败。
+
+BCPL [13 项真实容器检查](../data/audit/bcpl-runtime-checks.json)、[10 项真实 Chrome 检查](../data/audit/bcpl-runtime-browser-checks.json)，Oberon [14 项真实容器检查](../data/audit/oberon-runtime-checks.json)、[10 项真实 Chrome 检查](../data/audit/oberon-runtime-browser-checks.json)通过，任务容器零残留。1440/390 明暗页面及环境说明截图已查看；覆盖编辑后真实执行、原生关键词/注释着色、编译与运行错误分离、UTF-8 导入不上传不自动执行、main.b / Main.obn 下载名、地图和档案入口。原 B 组为 37/37 门临时验收完成；生产仍为原 22 个节点。
+
+显式准备与复测（本地 OCI 布局须事先具备相同固定 GCC 摘要；其路径只是准备参数，网站构建与用户任务不读取它）：
+
+```sh
+python3 scripts/build-fixed-runtime.py --directory bcpl --ssh-host xshow2 --base-oci-layout /tmp/code-museum-swift-6.1.3/gcc-oci --write-manifest
+python3 scripts/check-planned-runtimes.py --language bcpl --ssh-host xshow2 --output data/audit/bcpl-runtime-checks.json
+npm run build
+EXECUTOR_SSH_HOST=xshow2 PLANNED_LANGUAGE=bcpl BROWSER_CHECK_OUTPUT=tmp/bcpl-runtime-browser npm run runtime:planned-browser
+```
+
+Oberon 把上述 directory/language 及输出名改为 oberon。镜像构建只使用固定源码/依赖和基础镜像；所有站点资产来自项目目录输入，源码归档不进入网页下载。固定输入和改动尚未提交，尚不能把工作区复现称为已有提交的复现；提交时须完整纳入版本管理。BCPL 的许可边界在任何未来发布前仍需保持可见。未提交、推送或部署。
+
+
+## 双节点网关实现（生产后端已切换）
+
+`server/execution-nodes.json` 将 56 个远端运行时完整且唯一地分配到 xshow 42 门、xshow2 14 门。构建会离线拒绝缺失、重复或未知语言，以及非 loopback 节点地址；公开能力数据只给出配置容量（两节点合计 2、每节点 1），不包含上游地址或凭据名称。
+
+worker 使用 `--nodes <file> --node <id>` 启动并仅核对本机镜像。统一入口 `execution_gateway.py` 以独立节点令牌转发同域请求；用户的会话标识保留，查询和取消绑定到原节点。任务路由持久化且短期过期，重启网关不重发任务。提交结果未知时响应 `submissionState=unknown`、`retrySafe=false`；请求只向选定节点发送一次，用户应等待后再操作。失联语言从实时清单移除，仍可使用另一台；指标按样本数加权并标注部分可达覆盖。只读 MCP 保持已发布 `current/dist/data` 的既有配置快照语义，没有随后端切换发布新的59节点数据。
+
+临时两机预览与检查不使用生产令牌：
+
+```sh
+npm run executor:dual-preview
+npm run executor:dual-check -- --output data/audit/dual-node-runtime-checks.json --screenshots tmp/dual-node-browser
+npm run executor:prepare-dual -- --output output/dual-executor-review
+```
+
+安装准备、常驻隧道、权限和回退见 [双节点部署说明](DUAL_NODE_DEPLOYMENT.md)。生产后端已通过10项常驻canary、[63项正式 HTTPS/Chrome 检查](../data/audit/dual-node-production-checks.json)及[8项生命周期检查](../data/audit/dual-node-production-lifecycle.json)并切换到56门；[新服务已启用](../data/audit/dual-node-production-services.json)。已发布静态前端仍提供原22个节点，源码59节点入口尚未发布。
+
+
+### 双节点回归中的 Groovy 预算修正
+
+首次全量网关回归中，Groovy 原正例触发 3 秒超时；三个独立 JVM 在显式 8 秒诊断限时内分别用约 5271/5161/5261 ms 输出正确结果，见 `data/audit/groovy-cold-start-diagnostics.json`。当前只把 Groovy 的运行预算改为 **8 秒（包含 JVM 启动与脚本编译执行）**，768 MiB 容器和 256 MiB JVM 堆等约束保持不变。其他语言仍使用各自已有预算。
+
+这是宿主执行协议调整，固定 Groovy 工具链与镜像未变。上方旧验收记录与固定 NOTICE 的3秒说明是初期准备状态；生产 API 已按每门 `runSeconds` 正确公开 Groovy 的8秒预算。`/api/runtimes` 的 `limits.seconds` 表示当前可用语言中最大的运行预算，具体语言必须读取自身 `runSeconds`；编译预算另列。本轮发布准备已修正语言档案的8秒预算，并把通用执行超时提示改为“运行超过时间预算，已停止。”；当前已发布页面仍待本轮静态发布后复核。
+
+最终双节点临时验收：14项API/Chrome与56/56门正例回归通过，分别见 `dual-node-runtime-checks.json`、`dual-node-all-runtimes.json`；宽窄屏及部分可用状态截图已核读。Groovy新预算11项容器/7项网页通过。全量默认测试90/90、网关HTTP测试12/12与离线构建通过。随后正式生产已完成安装、切换和上述HTTPS验收；[启用后健康复核](../data/audit/dual-node-production-final-health.json)再次确认完整56门、并发2及最大预算8秒。静态前端与Git尚未发布、提交或推送。

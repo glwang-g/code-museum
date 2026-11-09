@@ -5,23 +5,25 @@ const crypto = require('node:crypto');
 
 const root = path.resolve(__dirname, '..');
 const DEFAULT_ORIGIN = 'https://codemuseum.freexlib.com';
-const COMPILE_SECONDS = { c: 10, cpp: 10, rust: 15, go: 30, java: 15, typescript: 15, fortran: 10, csharp: 30, pascal: 10 };
-const LIMITS = { seconds: 3, outputBytes: 32768, concurrency: 1, network: false };
+const {executionCapabilities}=require('./execution-capabilities.cjs');
+const COMPILE_SECONDS=Object.fromEntries(executionCapabilities(root).languages.filter(row=>row.remote).map(row=>[row.id,row.remote.compileSeconds]));
+const RUN_SECONDS=Object.fromEntries(executionCapabilities(root).languages.filter(row=>row.remote).map(row=>[row.id,row.remote.runSeconds]));
+const LIMITS = { seconds: Math.max(...Object.values(RUN_SECONDS)), outputBytes: 32768, concurrency: executionCapabilities(root).remoteLimits.concurrency, network: false };
 
 function sha256(bytes) { return crypto.createHash('sha256').update(bytes).digest('hex'); }
 function readJson(file) { return JSON.parse(fs.readFileSync(path.join(root, file), 'utf8')); }
-function canonicalRuntime(runtime) {
+function canonicalRuntime(runtime, reported=false) {
   return {
     id: runtime.id,
     version: runtime.version,
     memoryMiB: runtime.memoryMiB,
     source: runtime.source,
-    compileSeconds: COMPILE_SECONDS[runtime.id] || 0,
-    runSeconds: 3
+    compileSeconds: reported ? runtime.compileSeconds : COMPILE_SECONDS[runtime.id] || 0,
+    runSeconds: reported ? runtime.runSeconds : RUN_SECONDS[runtime.id] || 3
   };
 }
 function expectedRuntimes() {
-  return readJson('server/runtime-images.json').runtimes.map(canonicalRuntime)
+  return readJson('server/runtime-images.json').runtimes.map(row=>canonicalRuntime(row))
     .sort((a, b) => a.id.localeCompare(b.id));
 }
 function equalJson(a, b) { return JSON.stringify(a) === JSON.stringify(b); }
@@ -62,7 +64,8 @@ async function productionReport(origin = DEFAULT_ORIGIN) {
   const errors = [];
   if (!runtime.ok || !runtime.body) errors.push(`/api/runtimes returned HTTP ${runtime.status}`);
   if (!runtime.body?.available) errors.push('production executor reports available=false');
-  const remoteRuntimes = (runtime.body?.runtimes || []).map(canonicalRuntime).sort((a, b) => a.id.localeCompare(b.id));
+  const remoteRuntimes = (runtime.body?.runtimes || []).map(row=>canonicalRuntime(row,true)).sort((a, b) => a.id.localeCompare(b.id));
+  if(runtime.body?.complete===false)errors.push('one or more execution nodes are unavailable');
   if (!equalJson(remoteRuntimes, local.runtimeManifest)) errors.push('runtime versions, memory, source, or phase budgets differ');
   if (!equalJson(runtime.body?.limits, local.limits)) errors.push('executor limits differ');
   for (const endpoint of [provenance, relationships, capabilities]) {

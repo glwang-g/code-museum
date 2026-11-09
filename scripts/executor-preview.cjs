@@ -17,7 +17,7 @@ try:
  env=dict(os.environ,EXECUTOR_TOKEN=payload['token'],EXECUTOR_LOCK=str(directory/'executor.lock'))
  def launch():
   global process
-  process=subprocess.Popen(['python3',str(directory/'executor.py'),'--namespace',namespace,'--port',str(payload['port']),'--origin',payload['origin'],'--metrics-db',str(directory/'metrics.sqlite'),'--museum-data',str(directory/'data')],env=env,stdout=subprocess.DEVNULL)
+  process=subprocess.Popen(['python3',str(directory/'executor.py'),'--namespace',namespace,'--port',str(payload['port']),'--origin',payload['origin'],'--metrics-db',str(directory/'metrics.sqlite'),'--museum-data',str(directory/'data'),*(['--languages',*payload['languages']] if payload.get('languages') else [])],env=env,stdout=subprocess.DEVNULL)
   for i in range(100):
    if process.poll() is not None: raise RuntimeError('Executor startup failed')
    try:
@@ -34,8 +34,12 @@ try:
   while time.monotonic()<deadline and selector.select(max(0,deadline-time.monotonic())):
    action=sys.stdin.readline().strip()
    if not action: break
-   if action=='RESTART':
-    process.terminate();process.wait(timeout=60);process=launch();print('RESTARTED',flush=True)
+   if action in ('STOP','RESTART') and process is not None:
+    process.terminate();process.wait(timeout=60);process=None
+   if action=='STOP': print('STOPPED',flush=True)
+   if action in ('START','RESTART'):
+    if process is None: process=launch()
+    print('STARTED' if action=='START' else 'RESTARTED',flush=True)
 finally:
  if process and process.poll() is None:
   process.terminate()
@@ -43,12 +47,15 @@ finally:
   except subprocess.TimeoutExpired: process.kill();process.wait()
  shutil.rmtree(directory)
 `;
-async function startPreview({host='xshow',port=4174,token=process.env.EXECUTOR_TOKEN,remotePort=4187}={}){
+async function startPreview({host='xshow',port=4174,token=process.env.EXECUTOR_TOKEN,remotePort=4187,languages=process.env.EXECUTOR_LANGUAGES?.split(','),workerOrigin}={}){
  if(typeof token!=='string'||token.length<32||!/^[\x21-\x7e]+$/.test(token))throw new Error('Set EXECUTOR_TOKEN to at least 32 printable ASCII characters');
+ if(languages!==undefined&&(!Array.isArray(languages)||!languages.length||new Set(languages).size!==languages.length||languages.some(id=>typeof id!=='string'||!/^[a-z][a-z0-9.-]*$/.test(id))))throw new Error('Expected unique runtime IDs for this preview node');
  const tunnelPort=await freePort();
  const server=http.createServer(createRequestHandler(path.join(root,'dist'),{executor:'http://127.0.0.1:'+tunnelPort}));
  await new Promise((ok,no)=>{server.once('error',no);server.listen(port,'127.0.0.1',ok)});
  const origin='http://127.0.0.1:'+server.address().port;
+ const executionOrigin=workerOrigin||origin;
+ if(!/^http:\/\/127\.0\.0\.1:\d+$/.test(executionOrigin)){server.close();throw new Error('Expected a loopback preview worker origin')}
  const ssh=spawn('ssh',['-T','-o','BatchMode=yes','-o','ConnectTimeout=10','-o','ExitOnForwardFailure=yes','-L',`127.0.0.1:${tunnelPort}:127.0.0.1:${remotePort}`,host,'python3 -u -c '+"'"+bootstrap.replaceAll("'","'\\''")+"'"],{stdio:['pipe','pipe','pipe']});
  let errors='',ready=false,closed=false;
  ssh.stdin.on('error',()=>{}); // Startup/exit promise reports SSH errors; avoid unhandled EPIPE.
@@ -60,15 +67,18 @@ async function startPreview({host='xshow',port=4174,token=process.env.EXECUTOR_T
    ssh.once('error',e=>{clearTimeout(timer);no(e)});
    ssh.once('exit',()=>{clearTimeout(timer);if(!ready)no(new Error('SSH executor failed: '+errors))});
    let output='';ssh.stdout.on('data',c=>{output+=c;if(output.includes('READY')){ready=true;clearTimeout(timer);ok()}});
-   ssh.stdin.write(JSON.stringify({token,port:remotePort,origin,files:Object.fromEntries([...['executor.py','runtime-images.json','observability.py','mcp.py','mcp_http.py'].map(f=>[f,fs.readFileSync(path.join(root,'server',f),'utf8')]),...['catalogue.json','audit-reviews.json','relationship-status.json','execution-capabilities.json','mcp-manifest.json'].map(f=>['data/'+f,fs.readFileSync(path.join(root,'dist/data',f),'utf8')])])})+'\n');
+   ssh.stdin.write(JSON.stringify({token,port:remotePort,origin:executionOrigin,languages,files:Object.fromEntries([...['executor.py','runtime-images.json','observability.py','mcp.py','mcp_http.py'].map(f=>[f,fs.readFileSync(path.join(root,'server',f),'utf8')]),...['catalogue.json','audit-reviews.json','relationship-status.json','execution-capabilities.json','mcp-manifest.json'].map(f=>['data/'+f,fs.readFileSync(path.join(root,'dist/data',f),'utf8')])])})+'\n');
   });
   ssh.once('exit',()=>{server.closeAllConnections();server.close()});
-  const restart=()=>new Promise((ok,no)=>{
-   let received='';const timer=setTimeout(()=>{ssh.stdout.off('data',listen);no(new Error('Preview restart timeout'))},75000);
-   function listen(chunk){received+=chunk;if(received.includes('RESTARTED')){clearTimeout(timer);ssh.stdout.off('data',listen);ok()}}
-   ssh.stdout.on('data',listen);ssh.stdin.write('RESTART\n');
+  const control=(action,marker)=>new Promise((ok,no)=>{
+   if(closed||ssh.exitCode!==null||ssh.signalCode!==null){no(new Error('Preview worker is closed'));return}
+   let received='';const cleanup=()=>{clearTimeout(timer);ssh.stdout.off('data',listen);ssh.off('exit',exited)};
+   const timer=setTimeout(()=>{cleanup();no(new Error('Preview worker control timeout'))},75000);
+   function exited(){cleanup();no(new Error('Preview worker connection closed'))}
+   function listen(chunk){received+=chunk;if(received.includes(marker)){cleanup();ok()}}
+   ssh.once('exit',exited);ssh.stdout.on('data',listen);ssh.stdin.write(action+'\n');
   });
-  return {origin,stop,restart};
+  return {origin,stop,restart:()=>control('RESTART','RESTARTED'),pause:()=>control('STOP','STOPPED'),resume:()=>control('START','STARTED')};
  }catch(e){await stop();throw e}
 }
 module.exports={startPreview};

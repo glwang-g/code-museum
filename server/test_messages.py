@@ -120,6 +120,79 @@ class GuestBookTests(unittest.TestCase):
         self.assertEqual(messages.Messages(self.database, 'https://codemuseum.freexlib.com', messages.load_mail_config('/nonexistent', {})).hide({}, b'{}', record['id'])[0], 403)
 
 
+class AccessRequestTests(unittest.TestCase):
+    def setUp(self):
+        self.directory = tempfile.TemporaryDirectory()
+        self.database = str(Path(self.directory.name) / 'messages.sqlite3')
+        self.config = messages.load_mail_config('/nonexistent', {'MESSAGES_SMTP_USER': 'sender@example.com', 'MESSAGES_SMTP_PASSWORD': 'test'})
+        self.book = messages.Messages(self.database, 'https://museum.test', self.config)
+        self.headers = {'Origin': 'https://museum.test', 'Content-Type': 'application/json'}
+        self.data = {key: value for key, value in payload(email='learner@example.com').items() if key != 'page'}
+
+    def tearDown(self):
+        self.directory.cleanup()
+
+    def apply(self, **overrides):
+        return self.book.apply(self.headers, json.dumps(dict(self.data, **overrides)).encode())
+
+    def test_private_idempotent_rate_limited_applications_and_existing_messages(self):
+        messages.create(self.database, payload())
+        status, response = self.apply()
+        self.assertEqual(status, 201)
+        self.assertTrue(response['created'])
+        self.assertFalse(self.apply()[1]['created'])
+        self.assertEqual(self.apply(eventId='1a2b3c4d-5e6f-4a7b-8c9d-0e1f2a3b4c5d')[0], 429)
+        self.assertEqual(self.apply(visitorId='0b1c2d3e-4f5a-4b6c-8d7e-9f0a1b2c3d4e')[0], 409)
+        public = self.book.read('')[1]
+        self.assertEqual(public['total'], 1)
+        self.assertNotIn('learner@example.com', json.dumps(public))
+        self.assertEqual(self.book.access_status(), (200, {'available': True}))
+        self.assertNotIn('learner@example.com', json.dumps(response))
+
+    def test_validation_and_disabled_mail_service_do_not_store_applications(self):
+        self.assertEqual(self.book.apply({}, b'{}')[0], 403)
+        self.assertEqual(self.apply(email='a@example.com\r\nBcc: victim@example.com')[0], 400)
+        self.assertEqual(self.apply(email='bad')[0], 400)
+        self.assertEqual(self.apply(body='a')[0], 400)
+        self.assertEqual(self.apply(body='a' * 601)[0], 413)
+        self.assertEqual(self.apply(extra=True)[0], 400)
+        self.book.config = messages.load_mail_config('/nonexistent', {})
+        self.assertEqual(self.apply()[0], 503)
+        self.assertEqual(self.book.access_status(), (200, {'available': False}))
+        with sqlite3.connect(self.database) as db:
+            self.assertEqual(db.execute('SELECT COUNT(*) FROM access_requests').fetchone()[0], 0)
+
+    def test_mail_failure_stays_pending_then_retries_with_private_reply_address(self):
+        self.apply()
+        with mock.patch.object(messages, 'send_mail', side_effect=OSError('failed')):
+            self.assertEqual(messages.deliver_access_requests(self.database, self.config), 0)
+        with sqlite3.connect(self.database) as db:
+            self.assertEqual(db.execute('SELECT notified_at, notify_attempts, notify_error FROM access_requests').fetchone(), (None, 1, 'OSError'))
+        with mock.patch.object(messages, 'send_mail') as send:
+            self.assertEqual(messages.deliver_access_requests(self.database, self.config), 1)
+            built, config = send.call_args.args
+            self.assertEqual(built['To'], '1956341482@qq.com')
+            self.assertEqual(built['Reply-To'], 'learner@example.com')
+            self.assertIn('这是一条测试留言', built.get_content())
+            self.assertIn('不公开展示', built.get_content())
+            self.assertEqual(messages.deliver_access_requests(self.database, self.config), 0)
+
+    def test_limits_follow_email_across_browser_ids_and_bound_the_queue(self):
+        self.apply()
+        other = dict(visitorId='0b1c2d3e-4f5a-4b6c-8d7e-9f0a1b2c3d4e', eventId='1a2b3c4d-5e6f-4a7b-8c9d-0e1f2a3b4c5d')
+        self.assertEqual(self.apply(**other)[0], 429)
+        with sqlite3.connect(self.database) as db:
+            db.execute('UPDATE access_requests SET created_at=?', ((datetime.now(timezone.utc) - timedelta(minutes=2)).isoformat(),))
+        self.assertEqual(self.apply(**other)[0], 201)
+        with sqlite3.connect(self.database) as db:
+            row = db.execute('SELECT created_at, author, email, body, visitor FROM access_requests LIMIT 1').fetchone()
+            for i in range(100):
+                db.execute('INSERT INTO access_requests (id,created_at,author,email,body,visitor) VALUES (?,?,?,?,?,?)', (format(i, '032x'), *row))
+        self.assertEqual(self.apply(**other, email='other@example.com')[1]['created'], False)
+        self.assertEqual(self.apply(eventId='a' * 8 + '-aaaa-4aaa-8aaa-' + 'a' * 12, email='new@example.com', visitorId=other['visitorId'])[0], 429)
+
+
+
 class MailTests(unittest.TestCase):
     def test_config_defaults_to_the_maintainer_mailbox_and_reads_the_env_file(self):
         default = messages.load_mail_config('/nonexistent', {})

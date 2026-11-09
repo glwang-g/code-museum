@@ -1,0 +1,28 @@
+{
+  "checkedAt": "2026-11-07T06:44:53.487Z",
+  "scope": "Local Chrome editor-only verification; no Racket runtime execution, no SSH, no production changes.",
+  "checks": [
+    {
+      "name": "Racket is clearly editor-only with no runnable controls or fake result",
+      "width": 1440
+    },
+    {
+      "name": "Racket is clearly editor-only with no runnable controls or fake result",
+      "width": 390
+    },
+    {
+      "name": "Racket edited source downloads with the .rkt extension and no execution",
+      "passed": true
+    },
+    {
+      "name": "Racket import replaces the editor without uploading or executing",
+      "passed": true
+    }
+  ],
+  "inputs": {
+    "src/lab-examples.js": "0c17e51c8186dd1b71fd95fc088f210ae781b4677ec8eb4a19912ea96da93fa7",
+    "src/lab-tools.js": "5fb2f2fcb5d555318b8598929e1943db84aa763cf1b5e6bf9e6c3eaba9e1f8d4",
+    "src/index.html": "de7dd39c483cc2b74e7289ae6139610980648ab9736c1cfc159d45bdbff0bf44",
+    "server/runtime-images.json": "8221c78d4f91bee6424bb4386ee325b4b402065830eb1326f7c79089da3272f1"
+  }
+}

@@ -19,7 +19,9 @@ async function output(expected,timeout=15000){await wait(`document.querySelector
 async function screenshot(name){if(!outputDirectory)return;await evaluate('new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)))');const r=await page('Page.captureScreenshot',{format:'png'});fs.writeFileSync(path.join(outputDirectory,name),Buffer.from(r.data,'base64'));}
 
 const inputHashes=()=>Object.fromEntries(['server/executor.py','server/observability.py','server/mcp.py','server/mcp_http.py','scripts/platform-browser-checks.cjs','scripts/cli-browser-checks.cjs','src/lab-tools.js','src/lab-examples.js','data/learning-paths.json','src/service-status.js','src/learning-guide.js','server/runtime-images.json','server/runtimes/pascal-r/manifest.json','scripts/pascal-r-runtime.cjs','scripts/serve.cjs','scripts/executor-preview.cjs','scripts/check-executor-browser.cjs','src/index.html','src/lab.js','src/museum.css','src/execution-config.js','src/execution-modes.js'].map(f=>[f,crypto.createHash('sha256').update(fs.readFileSync(path.join(root,f))).digest('hex')]));
-const startedInputs=inputHashes();
+const originalInputHashes=inputHashes;
+const checkedInputs=()=>({...originalInputHashes(),...Object.fromEntries(['scripts/planned-browser-checks.cjs','server/runtimes/algol60/manifest.json','server/runtimes/common-lisp/manifest.json','scripts/algol60-runtime.cjs','scripts/common-lisp-runtime.cjs','server/runtimes/prolog/manifest.json','server/runtimes/forth/manifest.json','server/runtimes/racket/manifest.json','server/runtimes/smalltalk/manifest.json','server/runtimes/cobol/manifest.json','server/runtimes/ada/manifest.json','server/runtimes/clojure/manifest.json','server/runtimes/ocaml/manifest.json','server/runtimes/haskell/manifest.json','server/runtimes/kotlin/manifest.json','server/runtimes/groovy/manifest.json','server/runtimes/erlang/manifest.json','server/runtimes/elixir/manifest.json','server/runtimes/tcl/manifest.json','server/runtimes/standard-ml/manifest.json','server/runtimes/scala/manifest.json','server/runtimes/d/manifest.json','server/runtimes/nim/manifest.json','server/runtimes/zig/manifest.json','server/runtimes/swift/manifest.json','server/runtimes/dart/manifest.json','server/runtimes/julia/manifest.json','server/runtimes/octave/manifest.json','server/runtimes/powershell/manifest.json','server/runtimes/korn-shell/manifest.json','server/runtimes/tcsh/manifest.json','server/runtimes/wasm/manifest.json','server/runtimes/x86-assembly/manifest.json','server/runtimes/verilog/manifest.json','server/runtimes/vhdl/manifest.json','server/runtimes/postscript/manifest.json','server/runtimes/bcpl/manifest.json','server/runtimes/oberon/manifest.json','scripts/fixed-runtime.cjs'].map(f=>[f,crypto.createHash('sha256').update(fs.readFileSync(path.join(root,f))).digest('hex')]))});
+const startedInputs=checkedInputs();
 
 (async()=>{
  let preview;
@@ -27,7 +29,7 @@ const startedInputs=inputHashes();
   const production=process.env.EXECUTOR_BROWSER_ORIGIN;
   if(production&&production!=='https://codemuseum.freexlib.com')throw new Error('Unsupported production origin');
   const token=production?execFileSync('ssh',['-o','BatchMode=yes',process.env.EXECUTOR_SSH_HOST||'xshow','sudo -n python3 -c '+JSON.stringify("from pathlib import Path; print(Path('/etc/code-museum-executor/private.env').read_text().strip().removeprefix('EXECUTOR_TOKEN='))")],{encoding:'utf8',timeout:15000}).trim():crypto.randomBytes(32).toString('hex');
-  preview=production?{origin:production,stop:async()=>{}}:await startPreview({host:process.env.EXECUTOR_SSH_HOST||'xshow',port:0,token});
+  preview=production?{origin:production,stop:async()=>{}}:await startPreview({host:process.env.EXECUTOR_SSH_HOST||'xshow',port:0,token,languages:process.argv.includes('--planned')&&process.env.PLANNED_LANGUAGE?[process.env.PLANNED_LANGUAGE]:undefined});
   browser=spawn(chrome,['--headless=new','--disable-gpu','--disable-background-networking','--no-first-run','--no-default-browser-check','--remote-debugging-pipe',...(production?[]:['--host-resolver-rules=MAP * ~NOTFOUND, EXCLUDE 127.0.0.1']),'--user-data-dir='+profileDirectory],{stdio:['ignore','ignore','pipe','pipe','pipe']});
   browser.stderr.on('data',chunk=>{diagnostics=(diagnostics+chunk).slice(-3000)});
   browser.stdio[4].on('data',chunk=>{buffer+=chunk.toString();let end;while((end=buffer.indexOf('\0'))!==-1){const message=JSON.parse(buffer.slice(0,end));buffer=buffer.slice(end+1);const request=pending.get(message.id);if(request){pending.delete(message.id);clearTimeout(request.timer);message.error?request.reject(new Error(JSON.stringify(message.error))):request.resolve(message.result);}}});
@@ -36,13 +38,14 @@ const startedInputs=inputHashes();
   await page('Page.enable');await page('Runtime.enable');
   await page('Page.addScriptToEvaluateOnNewDocument',{source:`window.__posts=0;window.__downloads=[];const f=window.fetch;window.fetch=(url,opts)=>{if(opts?.method==='POST')window.__posts++;return f(url,opts)};`});
   await page('Page.navigate',{url:preview.origin+'/#lab'});await wait('!!window.MUSEUM_LAB');
-  await evaluate(`window.MUSEUM_LAB.open('python')`);
+  await evaluate(`window.MUSEUM_LAB.open(${JSON.stringify(process.argv.includes('--planned')&&process.env.PLANNED_LANGUAGE||'python')})`);
   await wait(`!document.querySelector('#lab-run').disabled`);
   await edit('print(42)');await new Promise(ok=>setTimeout(ok,800));
   assert.equal(await evaluate(`window.__posts`),0);
   assert.equal(await evaluate(`performance.getEntriesByType('resource').some(r=>r.name.includes('/assets/pyodide/'))`),false);
   await evaluate(`document.querySelector('#lab-remote-token').value=${JSON.stringify(token)}`);
-  if(process.argv.includes('--cli')){await require('./cli-browser-checks.cjs')({evaluate,wait,page,screenshot,results,token,root,restart:preview.restart});}
+  if(process.argv.includes('--planned')){await require('./planned-browser-checks.cjs')({evaluate,wait,page,screenshot,results,token,root});}
+  else if(process.argv.includes('--cli')){await require('./cli-browser-checks.cjs')({evaluate,wait,page,screenshot,results,token,root,restart:preview.restart});}
   else if(process.env.PLATFORM_ONLY==='1'){await require('./platform-browser-checks.cjs')({evaluate,wait,page,screenshot,results,token,root,restart:preview.restart});}
   else {
   let lastRun=0;
@@ -111,8 +114,8 @@ const startedInputs=inputHashes();
   await screenshot('go-learning-collections-390.png');
   }
   const servedInputs={};for(const f of ['index.html','museum.css','service-status.js','learning-guide.js','lab-tools.js','lab-examples.js','data/cli-runtime-build.json','data/pascal-r-runtime-build.json','data/learning-paths.json','museum.js','lab.js','execution-config.js','execution-modes.js','data/relationship-status.json','lab-worker.js','lua-worker.js','scheme-worker.js','assets/lua/manifest.json','assets/scheme/manifest.json','assets/pyodide/manifest.json']){const bytes=Buffer.from(await evaluate(`fetch(${JSON.stringify(f)}).then(r=>{if(!r.ok)throw new Error('Failed served input');return r.arrayBuffer()}).then(b=>Array.from(new Uint8Array(b)))`));assert.deepEqual(bytes,fs.readFileSync(path.join(root,'dist',f)),'Served build must match local: '+f);servedInputs[f]=crypto.createHash('sha256').update(bytes).digest('hex')}
-  assert.deepEqual(inputHashes(),startedInputs,'Checked source inputs changed during browser verification');
-  const report={servedInputs,checkedAt:new Date().toISOString(),browser:version.product,scope:production?'Actual Chrome over production HTTPS with private token to persistent Docker runc service. Tokens, sessions and job IDs omitted; no anonymous execution or escape proof.':'Actual browser over private SSH tunnel to ephemeral Docker runc API on xshow. Tokens, sessions and job IDs omitted; not a public deployment or escape proof.',checks:results,inputs:startedInputs};
+  assert.deepEqual(checkedInputs(),startedInputs,'Checked source inputs changed during browser verification');
+  const report={servedInputs,checkedAt:new Date().toISOString(),browser:version.product,preparationHost:process.env.EXECUTOR_SSH_HOST||'xshow',scope:production?'Actual Chrome over production HTTPS with private token to persistent Docker runc service. Tokens, sessions and job IDs omitted; no anonymous execution or escape proof.':'Actual browser over private SSH tunnel to ephemeral Docker runc API on the selected preparation host. Tokens, sessions and job IDs omitted; not a public deployment or escape proof.',checks:results,inputs:startedInputs};
   fs.writeFileSync(path.join(outputDirectory,'checks.json'),JSON.stringify(report,null,2)+'\n');console.log('PASS '+results.length+' actual Docker/browser checks; report '+path.join(outputDirectory,'checks.json'));
  }catch(e){await screenshot('failure.png').catch(()=>{});console.error(e.stack+'\n'+diagnostics);process.exitCode=1}
  finally{

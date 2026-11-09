@@ -1,0 +1,89 @@
+{
+  "servedInputs": {
+    "index.html": "99fddfa2a3d717513375a5557d718faefd61ef21ea0b6fae15ee06996665123c",
+    "museum.css": "530356c26c9d4edee65f912989ad834bc6a4280f99720405ca0c6e247132e2de",
+    "service-status.js": "5a313ac642c627e4b942088d4e4238c38b17dbbdfd96ee9a9906ec3a6df67f78",
+    "learning-guide.js": "8614b8ff58594edd639462d8bc8a56c098f8010fe07a648f6eb22bf484f1f4a5",
+    "lab-tools.js": "e13d717b82a0ed5e974148a47bdca15353909901fe92aa9edf9292760eec740b",
+    "lab-examples.js": "a758803b6f24b6df9344e7d92a6bace537067db92fdd76a24b9ac7a7a3fe93d1",
+    "data/cli-runtime-build.json": "182d22634434a05bd32a12325dedeebc4f60b3d3a09032f63812ee09f031a605",
+    "data/pascal-r-runtime-build.json": "b9ecd40a13848934f8e86e2975cac15e0b47082e48a14abe8820233584e22f5d",
+    "data/learning-paths.json": "4c6d815976d9bbf6c3f495b972e5d6e35245361fbec477c39dd6ecc024b7aab7",
+    "museum.js": "0658adbc2f35c49b3628969bb6d527156f36462bb105eba6484281546d360405",
+    "lab.js": "6f9ededf6305f42fc96b301daec51cb3b8d471f30293b8a88ecdea43185bd99e",
+    "execution-config.js": "4ed993efee2456e3cc0b0aa3767081211bb5b5509204eed6bea3c4ab5fa883e0",
+    "execution-modes.js": "ffe211d76ec5099b6e73eff84a8db15b83e5255c5619daf0ab9efcd4ab285b25",
+    "data/relationship-status.json": "a2d98eb0fdfb0b4f52cbe3bd036c0c65a09e4b372784c1aa057d3b5645be7625",
+    "lab-worker.js": "d2f568c2087c77f9cd211a9e4c01478f1e8da07a088b29831f9d116762987371",
+    "lua-worker.js": "19bf8689ad12082ac10e15a4c099d2171afdfffc81397c5910d7879c2895283c",
+    "scheme-worker.js": "edd85647e32de729a794e1fb3c49135fefc7d24ec7a0437247570e6cf3bac360",
+    "assets/lua/manifest.json": "d803bb6f5b36551703c7d00e63cb5be50f2795fc050d2edacbd7f6f872e914f2",
+    "assets/scheme/manifest.json": "2736ddf2f4a037f868630473dfc9fd21d42b276fad5e6fdc252890cc4b48b390",
+    "assets/pyodide/manifest.json": "3dbcea8d0957a60a80c84966832a201d06aeb190d77b6491d7d50577b65ec3a4"
+  },
+  "checkedAt": "2026-11-07T08:31:25.239Z",
+  "browser": "Chrome/156.0.8078.80",
+  "scope": "Actual browser over private SSH tunnel to ephemeral Docker runc API on xshow. Tokens, sessions and job IDs omitted; not a public deployment or escape proof.",
+  "checks": [
+    {
+      "name": "smalltalk edited source executes in actual browser with correct diagnostics controls",
+      "width": 1440,
+      "output": "12\n"
+    },
+    {
+      "name": "smalltalk edited source executes in actual browser with correct diagnostics controls",
+      "width": 390,
+      "output": "12\n"
+    },
+    {
+      "name": "Smalltalk parser errors return real failed status",
+      "passed": true
+    },
+    {
+      "name": "Smalltalk unhandled runtime exception returns failed status",
+      "passed": true
+    },
+    {
+      "name": "Smalltalk recovery executes changed source",
+      "passed": true
+    },
+    {
+      "name": "smalltalk map and archive expose real remote entry",
+      "passed": true
+    }
+  ],
+  "inputs": {
+    "server/executor.py": "bcd47bae8a9d243db72876447f500ce3b4b4e3e5a0297d379ccbe35adbd79e34",
+    "server/observability.py": "72f41c17fdcbeffbe3c07549da20fd1cf4f5d953f92ab30c78c2e4a6442092a6",
+    "server/mcp.py": "e759c15caa7e944daa91b99c3a529a31c4f917150cc609d7e22d458acbabda8c",
+    "server/mcp_http.py": "6766f9088fc4efc2c300bd721a1b0e73e98e271ba3bbac76f5e7b61f49596021",
+    "scripts/platform-browser-checks.cjs": "6b583b2108f9ba246453b6e4658b053ea69051b584458499791c7de79f127786",
+    "scripts/cli-browser-checks.cjs": "a839ea419844fd4acade0a6b907cd6dd8f8a31789b6a0d4ddcf8020ca4e27115",
+    "src/lab-tools.js": "e13d717b82a0ed5e974148a47bdca15353909901fe92aa9edf9292760eec740b",
+    "src/lab-examples.js": "a758803b6f24b6df9344e7d92a6bace537067db92fdd76a24b9ac7a7a3fe93d1",
+    "data/learning-paths.json": "4c6d815976d9bbf6c3f495b972e5d6e35245361fbec477c39dd6ecc024b7aab7",
+    "src/service-status.js": "5a313ac642c627e4b942088d4e4238c38b17dbbdfd96ee9a9906ec3a6df67f78",
+    "src/learning-guide.js": "8614b8ff58594edd639462d8bc8a56c098f8010fe07a648f6eb22bf484f1f4a5",
+    "server/runtime-images.json": "e704b7e1a0cb4c35d90dcad7759e0ad0abff1e7a4d002d608687de2132c7af26",
+    "server/runtimes/pascal-r/manifest.json": "b9ecd40a13848934f8e86e2975cac15e0b47082e48a14abe8820233584e22f5d",
+    "scripts/pascal-r-runtime.cjs": "e6c84f2b917f2cec8566e445526c8d24004b79c51d1279182e8bc7874f2232e2",
+    "scripts/serve.cjs": "5e4ce3fcf5de506f65892e7fd0dc509d26f6cb0c0c1cf4a113fe437a8304f9bb",
+    "scripts/executor-preview.cjs": "1c889ad66218b5c5ee2ca5bb6823e1833b03b298de4855aba05bbdd7c1ecbe19",
+    "scripts/check-executor-browser.cjs": "ccb8c16f09fb147077be200d18292b627077ab485f397dc1ada5a650e0c0c494",
+    "src/index.html": "49ab0b17a099da3f7bea4d72aad1de718972c5a58e8df0cfd1294eacce3810a3",
+    "src/lab.js": "6f9ededf6305f42fc96b301daec51cb3b8d471f30293b8a88ecdea43185bd99e",
+    "src/museum.css": "530356c26c9d4edee65f912989ad834bc6a4280f99720405ca0c6e247132e2de",
+    "src/execution-config.js": "4ed993efee2456e3cc0b0aa3767081211bb5b5509204eed6bea3c4ab5fa883e0",
+    "src/execution-modes.js": "ffe211d76ec5099b6e73eff84a8db15b83e5255c5619daf0ab9efcd4ab285b25",
+    "scripts/planned-browser-checks.cjs": "e9f8423a93ad7f2770b07faeead155cd4faf771af28013f29ea342d534f19857",
+    "server/runtimes/algol60/manifest.json": "ff15f036957ee81febc63234e5ecf721d9aac139fb34503bdc4614b27d41022f",
+    "server/runtimes/common-lisp/manifest.json": "1f9ab644c3daec515fcf5bdda1b29f2077202ed022f4c235884a54c8a9a9c872",
+    "scripts/algol60-runtime.cjs": "7182db8bfa4c7940b1b542b32dd91f999a8b7968609dc3d3bd13bdd1c895e023",
+    "scripts/common-lisp-runtime.cjs": "c2c68d1009bea9b122b5a53c34909455fe0f0abc399aaa7b366df1abfe0974ae",
+    "server/runtimes/prolog/manifest.json": "29038cf1bbcae9c0ef83bc298d5e03770aafb037a9f2c038a9d87a9a2f83ace5",
+    "server/runtimes/forth/manifest.json": "866567af8814a939b49f9d79592b27f915e2f43cd705957ca229ac7d81534537",
+    "server/runtimes/racket/manifest.json": "ac56ef53c5d587598bc09e275d695267286758da5d671e1db7a20de44b02b7b3",
+    "server/runtimes/smalltalk/manifest.json": "05e65aef2af9ccbd2a9d10fe5d58f7ca1b8f641d5b33201c686eb5364a916232",
+    "scripts/fixed-runtime.cjs": "cc916b2bc1465a3c2ce66edf07f122fbabddcec34a9cf79c3b9d8fdb12a12110"
+  }
+}

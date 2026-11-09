@@ -1,0 +1,344 @@
+{
+  "schemaVersion": 1,
+  "reportType": "pending-commit-scope-review",
+  "reviewedAt": "2026-11-09T06:09:52.835761+00:00",
+  "scope": "提交范围盘点；不执行暂存、提交、推送、删除或忽略规则变更。",
+  "authorizationBoundary": {
+    "productionDeploymentAuthorized": true,
+    "gitStageCommitPushAuthorized": false,
+    "ignoreChangesOrDeletionPerformed": false
+  },
+  "deploymentStateAtReview": {
+    "backendRemoteLanguageCount": 56,
+    "backend": "双节点后端已安装并切换，依据本轮部署工作记录；本报告不重新访问生产。",
+    "frontend": "本轮新增语言的前端尚未发布；后端可用不代表正式页面已接入。"
+  },
+  "gitSnapshot": {
+    "stagedPaths": [],
+    "indexEmpty": true,
+    "modifiedTrackedFileCount": 31,
+    "untrackedNotIgnoredExcludedFileCount": 3587,
+    "untrackedNotIgnoredExcludedBytes": 436096401,
+    "snapshotTakenBeforeCreatingThisReport": true
+  },
+  "recommendedInclude": {
+    "policy": "纳入源码、测试、配置、文档和正式审计 JSON；各文件仍需按实际改动和引用依赖审查，禁止 git add .。",
+    "groups": [
+      {
+        "category": "source",
+        "changedFileCount": 14,
+        "pathPatterns": [
+          "src/",
+          "server/*.py（不含 test_）"
+        ]
+      },
+      {
+        "category": "tests",
+        "changedFileCount": 8,
+        "pathPatterns": [
+          "tests/",
+          "server/test_*.py"
+        ]
+      },
+      {
+        "category": "buildAndValidationScripts",
+        "changedFileCount": 23,
+        "pathPatterns": [
+          "scripts/"
+        ]
+      },
+      {
+        "category": "configurationAndDeployment",
+        "changedFileCount": 12,
+        "pathPatterns": [
+          ".gitattributes",
+          "package.json",
+          ".github/workflows/deploy.yml",
+          "deploy/",
+          "server/deploy/",
+          "server/runtime-images.json",
+          "server/execution-nodes.json"
+        ]
+      },
+      {
+        "category": "documentation",
+        "changedFileCount": 6,
+        "pathPatterns": [
+          "README.md",
+          "docs/"
+        ]
+      },
+      {
+        "category": "formalAuditJson",
+        "changedFileCount": 89,
+        "pathPatterns": [
+          "data/audit/*.json（正式核验记录）"
+        ]
+      },
+      {
+        "category": "attributionData",
+        "changedFileCount": 1,
+        "pathPatterns": [
+          "data/credits.json"
+        ]
+      }
+    ],
+    "thisReviewReport": "data/audit/pending-commit-scope.json"
+  },
+  "runtimeInputs": {
+    "recommendation": "conditional_include_as_required_offline_inputs",
+    "newDirectoryCount": 35,
+    "untrackedNotIgnoredFileCount": 1241,
+    "bytes": 2262527730,
+    "languageCount": 37,
+    "sharedSdkNote": "Visual Basic .NET 与 F# 复用固定 .NET SDK，因此新增 37 门对应 35 个运行时目录。",
+    "contents": [
+      "固定源码或完整 SDK 归档与分片",
+      "依赖包",
+      "构建配方和启动器",
+      "逐文件校验清单",
+      "上游许可和 NOTICE"
+    ],
+    "offlineRequirement": "完整构建依赖这些已落盘输入，不能将其作为 output 临时产物排除后仍声称完整离线复现。",
+    "publicRedistributionReview": [
+      {
+        "path": "server/runtimes/bcpl/",
+        "status": "unresolved",
+        "reason": "作者材料仅明确私人及学术用途；公开仓库归档和再分发的许可范围尚未确认。",
+        "requirement": "公开提交或推送该固定输入前核实授权范围；不得把本轮隔离执行或部署授权解释为上游公开再分发许可。"
+      }
+    ],
+    "repositorySizeReview": {
+      "totalOverTwoGiB": true,
+      "largestInputFileBytesFromSourceAudit": 86919262,
+      "largestInputFileDescription": "Kotlin ZIP",
+      "singleFileOver100MiBFromSourceAudit": false,
+      "requirement": "后续提交和推送前安排仓库体积与对象传输方案；不以构建时在线下载替代离线输入。"
+    }
+  },
+  "recommendedExclude": {
+    "policy": "新增 output、tmp 和本机助手配置保留本机，本轮不提交。计数仅包含当前未跟踪且未被忽略的普通文件。",
+    "roots": [
+      {
+        "path": "output/",
+        "recommendation": "exclude_new_untracked",
+        "untrackedNotIgnoredFileCount": 1483,
+        "untrackedNotIgnoredBytes": 124737271
+      },
+      {
+        "path": "tmp/",
+        "recommendation": "exclude_new_untracked",
+        "untrackedNotIgnoredFileCount": 2103,
+        "untrackedNotIgnoredBytes": 311358277
+      },
+      {
+        "path": ".claude/",
+        "recommendation": "exclude_new_untracked",
+        "untrackedNotIgnoredFileCount": 1,
+        "untrackedNotIgnoredBytes": 853
+      }
+    ],
+    "classifications": [
+      {
+        "paths": [
+          "output/pdf/",
+          "output/web/",
+          "tmp/pdfs/"
+        ],
+        "origin": "章节下载、PDF 导出、渲染预览和编译缓存，与 Code Museum 无关。"
+      },
+      {
+        "paths": [
+          "output/codex-deepseek-switcher/",
+          "output/codex-deepseek-switcher.zip"
+        ],
+        "origin": "独立 Codex/DeepSeek 切换工具，不属于网站源码。"
+      },
+      {
+        "paths": [
+          "output/local-backups/",
+          "tmp/brand-before-temple/"
+        ],
+        "origin": "本机备份；保留原文件，不删除。"
+      },
+      {
+        "paths": [
+          "output/brand/",
+          "tmp/*-browser/",
+          "tmp/performance-2026-10-16/",
+          "tmp/runtime-review-2026-11-03/"
+        ],
+        "origin": "项目相关的 QA 截图与临时报告，正式结论由 data/audit 和文档保存。"
+      },
+      {
+        "paths": [
+          "output/dual-executor-review-20261109*/",
+          "output/dual-node-site-release-20261109*/",
+          "tmp/dual-executor-review*/",
+          "tmp/site-release-review/"
+        ],
+        "origin": "由版本化脚本与输入生成的部署审查包和站点发布包；部署需使用的最终包可继续本机保留。"
+      },
+      {
+        "paths": [
+          "tmp/brand-chrome/"
+        ],
+        "origin": "Chrome 用户目录和缓存，包含 Cookies、History、Login Data、Web Data 等数据库；仅检查文件名和大小，未读取内容。"
+      },
+      {
+        "paths": [
+          ".claude/settings.json",
+          ".claude/settings.local.json"
+        ],
+        "origin": "本机助手权限配置；只检查键结构，未输出权限值。"
+      },
+      {
+        "paths": [
+          "tmp/*.log",
+          "tmp/*probe*",
+          "tmp/*-limits.txt"
+        ],
+        "origin": "临时构建日志与探针；需要长期保留的工具先整理为正式 scripts，再另行审查。"
+      }
+    ]
+  },
+  "preserveTrackedArtifacts": {
+    "policy": "已有跟踪历史截图不因本轮盘点自动移除。",
+    "directory": "output/iteration-2026-10-15/",
+    "trackedFileCount": 23,
+    "bytes": 6111052
+  },
+  "ignoreRuleFindings": {
+    "changesMade": false,
+    "uncoveredRoots": [
+      "/output/",
+      "/tmp/",
+      "/.claude/"
+    ],
+    "globalOnlyExample": ".claude/settings.local.json 当前依赖本机全局忽略规则，不能视为仓库已统一排除。",
+    "sqliteGap": "仓库只忽略 *.sqlite3 及其 sidecar，未覆盖 *.sqlite；本次 output/tmp 目录未发现 .sqlite 文件。",
+    "note": "忽略根目录不会移除已经跟踪的历史 output 文件；是否调整规则留待单独实施授权。"
+  },
+  "preCommitReviewItems": [
+    {
+      "path": "src/museum.js",
+      "lineAtReview": 457,
+      "issue": "Groovy 环境说明仍写 3 秒，实际执行预算已为 8 秒。",
+      "status": "pending_source_fix_and_recheck"
+    },
+    {
+      "path": "src/execution-modes.js",
+      "lineAtReview": 94,
+      "issue": "通用 timed_out 文案硬编码 3 秒，需核对 Groovy 8 秒超时场景的显示。",
+      "status": "pending_source_review"
+    },
+    {
+      "paths": [
+        "data/audit/dual-node-production-*.json"
+      ],
+      "issue": "正式部署审计可纳入版本管理；提交前确认报告只含必要状态、哈希及审计信息，无令牌、私钥或用户程序。",
+      "status": "content_review_required_no_secret_values_read_by_this_audit"
+    }
+  ],
+  "suggestedFeatureBatches": [
+    {
+      "order": 1,
+      "id": "access-request-form",
+      "scope": "运行权限申请表单、后端处理及通知、Nginx 路由、测试与文档。",
+      "primaryPaths": [
+        "src/access-requests.js",
+        "src/index.html",
+        "src/museum.css",
+        "server/analytics.py",
+        "server/messages.py",
+        "server/test_messages.py",
+        "deploy/nginx.conf",
+        "scripts/check-access-requests.cjs"
+      ]
+    },
+    {
+      "order": 2,
+      "id": "runtime-b37",
+      "scope": "B 组 37 门固定输入、真实执行、页面示例/高亮/下载、测试、出处与审计。",
+      "primaryPaths": [
+        "server/runtimes/",
+        "server/runtime-images.json",
+        "server/executor.py",
+        "scripts/build.cjs",
+        "scripts/acquire-debian-runtime.py",
+        "scripts/build-fixed-runtime.py",
+        "scripts/finalize-debian-runtime.py",
+        "scripts/finalize-jvm-runtime.py",
+        "scripts/fixed-runtime.cjs",
+        "scripts/planned-browser-checks.cjs",
+        "tests/planned-runtime.test.cjs",
+        "data/credits.json",
+        "docs/audit/RUNTIME_BUILD_PLAN.md"
+      ]
+    },
+    {
+      "order": 3,
+      "id": "dual-gateway-and-packaging",
+      "scope": "双节点网关、静态语言分配、节点安装与隧道、检查脚本、普通发布包和 CI、指标页面及部署审计。",
+      "primaryPaths": [
+        "server/execution_gateway.py",
+        "server/execution_nodes.py",
+        "server/execution-nodes.json",
+        "server/deploy/",
+        "deploy/prepare-dual-executor.py",
+        "deploy/install-dual-executor.py",
+        "scripts/execution-nodes.cjs",
+        "scripts/dual-executor-preview.cjs",
+        "scripts/check-dual-executor.cjs",
+        "scripts/check-dual-runtime-inventory.cjs",
+        "scripts/check-dual-production.cjs",
+        "scripts/package-release.cjs",
+        ".github/workflows/deploy.yml",
+        "server/test_execution_gateway.py",
+        "tests/gateway.test.cjs",
+        "tests/dual-deploy.test.cjs",
+        "tests/package-release.test.cjs",
+        "src/service-status.js",
+        "docs/DUAL_NODE_DEPLOYMENT.md"
+      ]
+    }
+  ],
+  "batchCoupling": {
+    "sharedPaths": [
+      "README.md",
+      "package.json",
+      "src/index.html",
+      "src/museum.css",
+      "server/executor.py",
+      "scripts/execution-capabilities.cjs",
+      "docs/DEPLOYMENT.md",
+      "docs/EXECUTOR.md",
+      "docs/PROJECT_CONTEXT.md"
+    ],
+    "requirement": "共享文件按功能 hunk 拆分；每个拟提交状态必须能独立测试和构建。",
+    "atomicDependency": "scripts/execution-capabilities.cjs 已依赖新增 scripts/execution-nodes.cjs 和 server/execution-nodes.json；B 组运行时接入与 C 组基础模块可能需要原子纳入，不能机械按目录分成不可构建的提交。"
+  },
+  "verification": {
+    "performed": [
+      "只读 Git 状态和索引检查",
+      "文件名、扩展名、大小和来源引用检查",
+      "未读取 PDF 正文、浏览器数据库内容或凭据值",
+      "主代理使用未过滤的 git ls-files -z 复核历史已跟踪截图数量和字节数"
+    ],
+    "notPerformedByThisReport": [
+      "不重新执行远端部署或生产检查",
+      "不暂存、提交、推送、删除文件",
+      "不修改 .gitignore"
+    ],
+    "finalProjectChecks": {
+      "checkedAt": "2026-11-09T06:12:21.394545+00:00",
+      "npmTest": {
+        "passed": 90,
+        "failed": 0
+      },
+      "npmRunBuild": "passed offline",
+      "gitDiffCheck": "passed",
+      "note": "主代理在本轮安装器、配置及审计内容整理后执行；审计报告元数据不作为运行时固定输入。"
+    }
+  }
+}

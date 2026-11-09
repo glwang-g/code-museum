@@ -1,0 +1,224 @@
+{
+  "checkedAt": "2026-11-09T05:59:22.996683+00:00",
+  "scope": "Installed-service canary on private loopback4190, independent route DB. Legacy public executor and guestbook stayed active. No token, session or job identifiers retained.",
+  "checks": [
+    {
+      "name": "Installed workers expose all 56 runtimes via canary",
+      "passed": true
+    },
+    {
+      "name": "Missing credential rejected",
+      "passed": true
+    },
+    {
+      "name": "Actual xshow Python execution",
+      "passed": true,
+      "stdout": "42\n"
+    },
+    {
+      "name": "Sessions isolate job ownership",
+      "passed": true
+    },
+    {
+      "name": "Gateway restart preserves original job route",
+      "passed": true
+    },
+    {
+      "name": "Actual xshow2 Oberon compiled execution",
+      "passed": true,
+      "stdout": "49\n"
+    },
+    {
+      "name": "Actual compiler error returned",
+      "passed": true
+    },
+    {
+      "name": "Queued and active cancellation reach original worker",
+      "passed": true
+    },
+    {
+      "name": "Tunnel outage preserves 42 local runtimes, rejects remote code, marks partial metrics",
+      "passed": true
+    },
+    {
+      "name": "Tunnel recovery restores all 56 runtimes",
+      "passed": true
+    }
+  ],
+  "status": {
+    "checkedAt": "2026-11-09T05:59:22.988011+00:00",
+    "available": true,
+    "complete": true,
+    "processStartedAt": "2026-11-09T05:59:20.045356+00:00",
+    "uptimeSeconds": 3,
+    "queue": 0,
+    "active": 0,
+    "nodes": [
+      {
+        "id": "xshow",
+        "available": true
+      },
+      {
+        "id": "xshow2",
+        "available": true
+      }
+    ],
+    "metrics": {
+      "startedAt": "2026-10-09T12:06:17.912975+00:00",
+      "persistent": true,
+      "missedRecordsSinceRestart": 0,
+      "total": 60,
+      "states": {
+        "cancelled": 5,
+        "compile_error": 6,
+        "compile_timed_out": 0,
+        "completed": 46,
+        "failed": 3,
+        "infrastructure_error": 0,
+        "memory_limit": 0,
+        "output_limit": 0,
+        "timed_out": 0
+      },
+      "languages": {
+        "awk": {
+          "total": 4,
+          "states": {
+            "cancelled": 1,
+            "completed": 3
+          }
+        },
+        "bash": {
+          "total": 2,
+          "states": {
+            "completed": 2
+          }
+        },
+        "c": {
+          "total": 5,
+          "states": {
+            "compile_error": 3,
+            "completed": 2
+          }
+        },
+        "cpp": {
+          "total": 3,
+          "states": {
+            "completed": 3
+          }
+        },
+        "csharp": {
+          "total": 2,
+          "states": {
+            "completed": 2
+          }
+        },
+        "fortran": {
+          "total": 2,
+          "states": {
+            "completed": 2
+          }
+        },
+        "go": {
+          "total": 1,
+          "states": {
+            "completed": 1
+          }
+        },
+        "java": {
+          "total": 2,
+          "states": {
+            "completed": 2
+          }
+        },
+        "pascal": {
+          "total": 4,
+          "states": {
+            "compile_error": 1,
+            "completed": 3
+          }
+        },
+        "perl": {
+          "total": 2,
+          "states": {
+            "completed": 2
+          }
+        },
+        "php": {
+          "total": 2,
+          "states": {
+            "completed": 2
+          }
+        },
+        "python": {
+          "total": 9,
+          "states": {
+            "cancelled": 4,
+            "completed": 5
+          }
+        },
+        "r": {
+          "total": 5,
+          "states": {
+            "completed": 4,
+            "failed": 1
+          }
+        },
+        "rust": {
+          "total": 3,
+          "states": {
+            "compile_error": 1,
+            "completed": 2
+          }
+        },
+        "sed": {
+          "total": 2,
+          "states": {
+            "completed": 2
+          }
+        },
+        "sql": {
+          "total": 4,
+          "states": {
+            "completed": 2,
+            "failed": 2
+          }
+        },
+        "typescript": {
+          "total": 4,
+          "states": {
+            "compile_error": 1,
+            "completed": 3
+          }
+        },
+        "xslt": {
+          "total": 2,
+          "states": {
+            "completed": 2
+          }
+        },
+        "oberon": {
+          "total": 2,
+          "states": {
+            "completed": 2
+          }
+        }
+      },
+      "timings": {
+        "queue": {
+          "samples": 60,
+          "meanMs": 0.2
+        },
+        "compile": {
+          "samples": 28,
+          "meanMs": 1284.3
+        },
+        "run": {
+          "samples": 50,
+          "meanMs": 96.1
+        }
+      },
+      "partial": false,
+      "scope": "Sum of reachable workers; partial while a node is unavailable. Rounded timing means weighted by sample counts. No source, input, output or credentials stored by gateway."
+    }
+  }
+}

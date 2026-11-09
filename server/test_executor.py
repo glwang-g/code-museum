@@ -3,7 +3,7 @@ import threading
 import time
 import unittest
 from pathlib import Path
-from executor import DockerRunner, Manager, load_runtimes, validate_submission, MAX_CODE, MAX_OUTPUT
+from executor import DockerRunner, Manager, load_runtimes, select_runtimes, validate_submission, MAX_CODE, MAX_OUTPUT
 
 RUNTIMES = load_runtimes(Path(__file__).with_name('runtime-images.json'))
 
@@ -21,6 +21,16 @@ class FakeRunner:
 
 
 class ExecutorTests(unittest.TestCase):
+    def test_node_inventory_does_not_advertise_or_accept_other_nodes_languages(self):
+        subset = select_runtimes(RUNTIMES, ['zig'])
+        self.assertEqual(list(subset), ['zig'])
+        self.assertIs(subset['zig'], RUNTIMES['zig'])
+        self.assertIs(select_runtimes(RUNTIMES), RUNTIMES)
+        with self.assertRaises(ValueError):
+            validate_submission({'language': 'python', 'code': 'print(42)'}, subset)
+        for ids in [[], ['zig', 'zig'], ['unconfigured']]:
+            with self.assertRaises(ValueError): select_runtimes(RUNTIMES, ids)
+
     def test_whitelist_and_utf8_limits(self):
         for data in [{'language':'unknown-shell','code':'x'}, {'language':'python','stdin':'x'}, {'language':'python','code':'x','image':'attacker'}, {'language':[],'code':'x'}, {'language':'python','code':'界'*(MAX_CODE//3+1)}, {'language':'sql','code':'SELECT 1;','stdin':'ambiguous input'}]:
             with self.assertRaises(ValueError): validate_submission(data,RUNTIMES)
@@ -56,12 +66,12 @@ class ExecutorTests(unittest.TestCase):
 
     def test_compilation_contract_and_isolated_namespace(self):
         runner=DockerRunner(RUNTIMES,namespace='unit-check')
-        for language in ['c','cpp','rust','go','java','fortran','csharp','pascal']:
+        for language in ['c','cpp','rust','go','java','fortran','csharp','pascal','algol-60','cobol','ada','ocaml','haskell','kotlin','erlang','scala','visual-basic.net','f-sharp','d','nim','zig','bcpl','oberon']:
             if language not in RUNTIMES: continue
             command=runner.command(runner.prefix+'a'*32,language)
             for flag in ['--read-only','--network=none','--user=65534:65534','--pids-limit=128','--entrypoint=/bin/sleep']:
                 self.assertIn(flag,command)
-            self.assertIn('--ulimit=nofile='+('256:256' if language=='csharp' else '64:64'),command)
+            self.assertIn('--ulimit=nofile='+('256:256' if language in {'csharp','kotlin','visual-basic.net','f-sharp'} else '64:64'),command)
             self.assertIn('code-museum.executor=unit-check',command)
             self.assertIn('--tmpfs=/work:rw,exec,nosuid,nodev,size=128m,mode=1777',command)
             self.assertFalse(any(x.startswith(('--volume','--mount','--privileged','--device')) for x in command))

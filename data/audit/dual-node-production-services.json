@@ -1,0 +1,108 @@
+{
+  "checkedAt": "2026-11-09T06:05:38.293970+00:00",
+  "scope": "Final production acceptance complete before enabling. New dual-node services enabled; preserved legacy executor disabled to avoid reboot port collision. All new API ports loopback-only; only this installation staging and stopped canary routing state removed. Static frontend unchanged, no Git staging/commit/push.",
+  "nodes": [
+    {
+      "node": "xshow",
+      "checkedAt": "2026-11-09T06:05:38.268695+00:00",
+      "services": {
+        "code-museum-worker@xshow.service": {
+          "active": "active",
+          "enabled": "enabled"
+        },
+        "code-museum-execution-tunnel.service": {
+          "active": "active",
+          "enabled": "enabled"
+        },
+        "code-museum-execution-gateway.service": {
+          "active": "active",
+          "enabled": "enabled"
+        }
+      },
+      "accounts": {
+        "code-museum-executor": {
+          "nologin": true,
+          "persistentDockerGroup": false
+        },
+        "code-museum-gateway": {
+          "nologin": true,
+          "persistentDockerGroup": false
+        },
+        "code-museum-tunnel": {
+          "nologin": true,
+          "persistentDockerGroup": false
+        }
+      },
+      "loopbackOnlyPorts": [
+        4181,
+        4183,
+        4184
+      ],
+      "installedFileSha256": {
+        "code/execution-nodes.json": "643d7618f4421f169a0d22277da2f67fb2a61dca947f1de01398b534ab080525",
+        "code/execution_gateway.py": "f35db880132f66fba899de716c0cc644e5dc281812cb68e2dd652d0ef214917c",
+        "code/execution_nodes.py": "981cde9e6f950a1f14745ad3db455a34a32993ccbf95fc9220e0ac24cafa7c68",
+        "code/executor.py": "84ec23fbb3b9b516fa2f7adae05ae9d8e5751a8c0eb719eee616ed13de412d59",
+        "code/mcp.py": "e759c15caa7e944daa91b99c3a529a31c4f917150cc609d7e22d458acbabda8c",
+        "code/mcp_http.py": "6766f9088fc4efc2c300bd721a1b0e73e98e271ba3bbac76f5e7b61f49596021",
+        "code/museum-data/audit-reviews.json": "4d09e9f6e9610253496769f3b07639b2002d67e3b11c858b6028186464bb9a9d",
+        "code/museum-data/catalogue.json": "4bc5da865869fe4ceb14e387420c0939de2ba4448ba4a6e9bbf9a1a6b8f99c66",
+        "code/museum-data/execution-capabilities.json": "d838c4fadce0013f1f674478130bc65638d988c454098d53686dfb9170fe0d6d",
+        "code/museum-data/mcp-manifest.json": "d7701d24f68513c8da7f300130e1cb689c05b8210f83d5a8c7a35977ec876ae5",
+        "code/museum-data/relationship-status.json": "a2d98eb0fdfb0b4f52cbe3bd036c0c65a09e4b372784c1aa057d3b5645be7625",
+        "code/observability.py": "72f41c17fdcbeffbe3c07549da20fd1cf4f5d953f92ab30c78c2e4a6442092a6",
+        "code/runtime-images.json": "8900182ac91331af26a332f1688c95644ee2e91bb200e530162cd2c6fbea3eb3",
+        "units/code-museum-execution-gateway.service": "6c4eca269076445f5750e99be8f9658ea1d9bff90ed3901d616cba3d94c0a613",
+        "units/code-museum-execution-tunnel.service": "80a064a5d78359acd0288dd1b4672d8f564f7f1c79e812a06015739d60a01023",
+        "units/code-museum-worker@.service": "4b5a7584ecb5fac6b7a93b30aa7e9143909d08b56706f932d331cd47d6e6200f"
+      },
+      "residualOwnedExecutionContainers": 0,
+      "legacyPreserved": true,
+      "frontendPublished": false,
+      "stagingRemoved": "/tmp/code-museum-dual-install-ugvgmom7"
+    },
+    {
+      "node": "xshow2",
+      "checkedAt": "2026-11-09T06:05:38.071062+00:00",
+      "services": {
+        "code-museum-worker@xshow2.service": {
+          "active": "active",
+          "enabled": "enabled"
+        }
+      },
+      "accounts": {
+        "code-museum-executor": {
+          "nologin": true,
+          "persistentDockerGroup": false
+        },
+        "code-museum-forward": {
+          "nologin": true,
+          "persistentDockerGroup": false
+        }
+      },
+      "loopbackOnlyPorts": [
+        4181
+      ],
+      "installedFileSha256": {
+        "code/execution-nodes.json": "643d7618f4421f169a0d22277da2f67fb2a61dca947f1de01398b534ab080525",
+        "code/execution_gateway.py": "f35db880132f66fba899de716c0cc644e5dc281812cb68e2dd652d0ef214917c",
+        "code/execution_nodes.py": "981cde9e6f950a1f14745ad3db455a34a32993ccbf95fc9220e0ac24cafa7c68",
+        "code/executor.py": "84ec23fbb3b9b516fa2f7adae05ae9d8e5751a8c0eb719eee616ed13de412d59",
+        "code/mcp.py": "e759c15caa7e944daa91b99c3a529a31c4f917150cc609d7e22d458acbabda8c",
+        "code/mcp_http.py": "6766f9088fc4efc2c300bd721a1b0e73e98e271ba3bbac76f5e7b61f49596021",
+        "code/museum-data/audit-reviews.json": "4d09e9f6e9610253496769f3b07639b2002d67e3b11c858b6028186464bb9a9d",
+        "code/museum-data/catalogue.json": "4bc5da865869fe4ceb14e387420c0939de2ba4448ba4a6e9bbf9a1a6b8f99c66",
+        "code/museum-data/execution-capabilities.json": "d838c4fadce0013f1f674478130bc65638d988c454098d53686dfb9170fe0d6d",
+        "code/museum-data/mcp-manifest.json": "d7701d24f68513c8da7f300130e1cb689c05b8210f83d5a8c7a35977ec876ae5",
+        "code/museum-data/relationship-status.json": "a2d98eb0fdfb0b4f52cbe3bd036c0c65a09e4b372784c1aa057d3b5645be7625",
+        "code/observability.py": "72f41c17fdcbeffbe3c07549da20fd1cf4f5d953f92ab30c78c2e4a6442092a6",
+        "code/runtime-images.json": "8900182ac91331af26a332f1688c95644ee2e91bb200e530162cd2c6fbea3eb3",
+        "units/code-museum-worker@.service": "4b5a7584ecb5fac6b7a93b30aa7e9143909d08b56706f932d331cd47d6e6200f"
+      },
+      "residualOwnedExecutionContainers": 0,
+      "legacyPreserved": true,
+      "frontendPublished": false,
+      "stagingRemoved": "/tmp/code-museum-dual-install-3tg8rkdm"
+    }
+  ]
+}

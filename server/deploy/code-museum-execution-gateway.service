@@ -1,0 +1,27 @@
+# Gateway has no Docker group membership or permission to execute user programs.
+[Unit]
+Description=Code Museum execution gateway
+After=network-online.target code-museum-worker@xshow.service code-museum-execution-tunnel.service
+Wants=network-online.target code-museum-worker@xshow.service code-museum-execution-tunnel.service
+
+[Service]
+Type=simple
+User=code-museum-gateway
+Group=code-museum-gateway
+WorkingDirectory=/opt/code-museum-executor-dual
+EnvironmentFile=/etc/code-museum-executor/gateway.env
+ExecStart=/usr/bin/python3 /opt/code-museum-executor-dual/execution_gateway.py --nodes /opt/code-museum-executor-dual/execution-nodes.json --images /opt/code-museum-executor-dual/runtime-images.json --routes-db /var/lib/code-museum-executor-gateway/routes.sqlite --port 4181 --origin https://codemuseum.freexlib.com --museum-data /var/www/code-museum/current/dist/data
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=20
+UMask=0077
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+StateDirectory=code-museum-executor-gateway
+StateDirectoryMode=0700
+ReadWritePaths=/var/lib/code-museum-executor-gateway
+
+[Install]
+WantedBy=multi-user.target

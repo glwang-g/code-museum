@@ -1,7 +1,7 @@
 (()=>{
   const config=window.MUSEUM_EXECUTION_CONFIG;if(!config?.enabled)return;
   const $=id=>document.getElementById(id),local=new Map([['python','Python · Pyodide，约13.53 MB未压缩'],['lua','Lua · Wasmoon，约413 KiB未压缩'],['scheme','Scheme · BiwaScheme，约244 KiB，非Wasm']]);
-  const remoteIds=new Set(['python','ruby','c','cpp','rust','go','java','typescript','sql','bash','awk','sed','php','perl','xslt','csharp','fortran','pascal','r']),modes=new Map(),consent=new Set();
+  const remoteIds=new Set(['python','ruby','c','cpp','rust','go','java','typescript','sql','bash','awk','sed','php','perl','xslt','csharp','fortran','pascal','r','algol-60','common-lisp','prolog','forth','racket','smalltalk','cobol','ada','clojure','ocaml','haskell','kotlin','groovy','erlang','elixir','tcl','standard-ml','scala','visual-basic.net','f-sharp','d','nim','zig','swift','dart','julia','octave','powershell','korn-shell','tcsh','wasm','x86-assembly','verilog','vhdl','postscript','bcpl','oberon']),modes=new Map(),consent=new Set();
   const status=window.MUSEUM_RUNTIME_STATUS;
   const terminal=new Set(['completed','failed','compile_error','compile_timed_out','timed_out','cancelled','output_limit','memory_limit','infrastructure_error']);
   const session=crypto.randomUUID().replaceAll('-','');
@@ -20,7 +20,10 @@
     if(!response.ok)throw new Error(response.status===401?'私有执行令牌无效。':response.status===429?'执行配额或队列已满，请稍后重试。':data.error||'远端执行请求失败。');
     return data;
   }
+  const simulation=id=>['verilog','vhdl'].includes(id);
   function render(){
+    $('lab-run').textContent=simulation(current)?'仿真代码':'运行代码';
+    if($('lab-output-label'))$('lab-output-label').textContent=simulation(current)?'仿真结果':'运行结果';
     const on=handles(current);$('lab-execution-controls').hidden=!on;
     if(!on){if(typeof Event!=='undefined')document.dispatchEvent?.(new Event('museum-execution-change'));return;}
     const isRemote=mode(current)==='remote';
@@ -39,8 +42,8 @@
     const record=capabilities?.runtimes.find(r=>r.id===current);
     $('lab-execution-info').textContent=isRemote?(record?'远端 '+shortVersion(record.version)+' · 私有试用 · 点击运行才上传代码':'远端执行服务尚未连接；不会下载本地运行时。'):(allowed(current)?'浏览器本地执行；代码不会发送到执行服务器。':'本地环境尚未启用，点击下载后才加载。');
     if(isRemote){
-      $('lab-status').textContent='远端执行 · 代码只在点击“运行代码”时上传。';
-      $('lab-runtime-note').textContent=(record?.compileSeconds?'编译'+record.compileSeconds+'秒 / ':'')+'运行3秒上限、禁网、独立Docker环境；不自动安装第三方包。';
+      $('lab-status').textContent=simulation(current)?'远端文本仿真 · 点击“仿真代码”才上传；不是真实电路。':'远端执行 · 代码只在点击“运行代码”时上传。';
+      $('lab-runtime-note').textContent=(record?.compileSeconds?'编译'+record.compileSeconds+'秒 / ':'')+(simulation(current)?'仿真3秒实际时间上限，无综合、FPGA 部署或波形下载；':'运行'+(record?.runSeconds||3)+'秒上限、')+'禁网、独立Docker环境；不自动安装第三方包。';
       $('lab-runtime-credit').hidden=!record;
       $('lab-runtime-credit').textContent=record?'运行环境 · 项目与许可 ↗':'';
       $('lab-runtime-credit').onclick=()=>{if(record)window.MUSEUM_CREDITS_UI?.openRemoteFor(current)};
@@ -88,7 +91,7 @@
         job=await request('/executions/'+job.id,{headers:headers(token)});
       }
       if(gen!==generation)return;
-      const reasons={compile_error:'编译失败，未执行程序。',compile_timed_out:'编译超过时间预算，未执行程序。',timed_out:'运行超过3秒，已停止。',output_limit:'编译与运行输出超过32 KiB，已停止。',memory_limit:'达到内存上限，已停止。',cancelled:'任务已取消。',infrastructure_error:'远端执行环境不可用。'};
+      const reasons={compile_error:'编译失败，未执行程序。',compile_timed_out:'编译超过时间预算，未执行程序。',timed_out:'运行超过时间预算，已停止。',output_limit:'编译与运行输出超过32 KiB，已停止。',memory_limit:'达到内存上限，已停止。',cancelled:'任务已取消。',infrastructure_error:'远端执行环境不可用。'};
       $('lab-result').textContent=(job.stdout||'')+(job.stderr?'\n'+job.stderr:'')+(reasons[job.state]?'\n'+reasons[job.state]:'')||'（程序没有输出）';
       const diagnostic=(job.compilerStdout||'')+(job.compilerStderr?'\n'+job.compilerStderr:'');
       if($('lab-compiler')){
@@ -97,15 +100,15 @@
         $('lab-compiler-result').textContent=diagnostic||'编译成功，无诊断输出。';
       }
       if($('lab-timings')){
-        const timing=[['排队',job.queueMs],['编译',job.compileMs],['运行',job.runMs],['环境与执行',job.elapsedMs]];
+        const timing=[['排队',job.queueMs],['编译',job.compileMs],[simulation(id)?'仿真':'运行',job.runMs],['环境与执行',job.elapsedMs]];
         $('lab-timings').textContent=timing.filter(([,v])=>Number.isFinite(v)).map(([label,v])=>label+' '+v+' ms').join(' · ');
         $('lab-timings').hidden=!$('lab-timings').textContent;
         $('lab-timings').title='排队不计入环境与执行；环境与执行还包含容器准备、代码传入等开销。';
       }
       $('lab-result').dataset.state=job.state==='completed'?'ok':'error';
       active=null;render();
-      status?.update(id,'remote',{stage:job.state==='completed'?'completed':job.state==='cancelled'?'cancelled':'failed',detail:job.state==='completed'?'执行完成 · '+(job.elapsedMs??'?')+' ms':reasons[job.state]||'代码执行失败，请查看运行结果。',version:shortVersion(job.runtimeVersion||id),retryLabel:'重试运行'});
-      $('lab-runtime-note').textContent='远端实际结果 · '+shortVersion(job.runtimeVersion||id)+(job.compileMs!==undefined?' · 编译 '+job.compileMs+' ms':'')+(job.runMs!==undefined?' · 运行 '+job.runMs+' ms':'')+' · 总计 '+(job.elapsedMs??'?')+' ms · '+job.state;
+      status?.update(id,'remote',{stage:job.state==='completed'?'completed':job.state==='cancelled'?'cancelled':'failed',detail:job.state==='completed'?(simulation(id)?'仿真完成 · ':'执行完成 · ')+(job.elapsedMs??'?')+' ms':reasons[job.state]||'代码执行失败，请查看运行结果。',version:shortVersion(job.runtimeVersion||id),retryLabel:'重试运行'});
+      $('lab-runtime-note').textContent='远端实际结果 · '+shortVersion(job.runtimeVersion||id)+(job.compileMs!==undefined?' · 编译 '+job.compileMs+' ms':'')+(job.runMs!==undefined?(simulation(id)?' · 仿真 ':' · 运行 ')+job.runMs+' ms':'')+' · 总计 '+(job.elapsedMs??'?')+' ms · '+job.state;
     }catch(error){
       if(gen!==generation)return;
       cancel();$('lab-result').textContent=error.message+' 不会自动切换执行位置。';$('lab-result').dataset.state='error';

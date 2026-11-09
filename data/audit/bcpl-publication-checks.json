@@ -1,0 +1,165 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-09T09:56:50.054941+00:00",
+  "scope": "Offline strict BCPL build-input verification through runpy without invoking __main__, Docker, SSH, network, public upload or email. Public website validation and full private toolchain validation are separate; the original deployed image manifest is preserved. Temporary copies only; no original runtime inputs changed.",
+  "checksPassed": 22,
+  "checks": [
+    {
+      "name": "Complete local inputs pass strict validation",
+      "kind": "strict-input-validation",
+      "passed": true
+    },
+    {
+      "name": "Explicit absolute authorized directory passes",
+      "kind": "strict-input-validation",
+      "passed": true
+    },
+    {
+      "name": "Public context without private directory fails clearly",
+      "kind": "strict-input-validation",
+      "passed": true
+    },
+    {
+      "name": "Public context with exact private directory passes",
+      "kind": "strict-input-validation",
+      "passed": true
+    },
+    {
+      "name": "Only the six declared private payloads are read; extra files ignored",
+      "kind": "strict-input-validation",
+      "passed": true
+    },
+    {
+      "name": "Tampered private payload rejected",
+      "kind": "strict-input-validation",
+      "passed": true
+    },
+    {
+      "name": "Missing private payload rejected",
+      "kind": "strict-input-validation",
+      "passed": true
+    },
+    {
+      "name": "Tampered public payload rejected",
+      "kind": "strict-input-validation",
+      "passed": true
+    },
+    {
+      "name": "Missing non-policy public payload rejected",
+      "kind": "strict-input-validation",
+      "passed": true
+    },
+    {
+      "name": "Changed original manifest rejected by exact build pin",
+      "kind": "strict-input-validation",
+      "passed": true
+    },
+    {
+      "name": "Policy cannot widen private omissions",
+      "kind": "strict-input-validation",
+      "passed": true
+    },
+    {
+      "name": "Relative private directory rejected",
+      "kind": "strict-input-validation",
+      "passed": true
+    },
+    {
+      "name": "Symlink private directory rejected",
+      "kind": "strict-input-validation",
+      "passed": true
+    },
+    {
+      "name": "Non-BCPL private directory rejected",
+      "kind": "strict-input-validation",
+      "passed": true
+    },
+    {
+      "name": "Policy rejects additional runtime exceptions",
+      "kind": "publication-policy-guard",
+      "passed": true
+    },
+    {
+      "name": "Policy rejects duplicate private paths",
+      "kind": "publication-policy-guard",
+      "passed": true
+    },
+    {
+      "name": "Policy rejects non-array private file inventory",
+      "kind": "publication-policy-guard",
+      "passed": true
+    },
+    {
+      "name": "Policy rejects public complete-toolchain claim",
+      "kind": "publication-policy-guard",
+      "passed": true
+    },
+    {
+      "name": "Policy rejects a different source attribution",
+      "kind": "publication-policy-guard",
+      "passed": true
+    },
+    {
+      "name": "Policy rejects empty publication boundary note",
+      "kind": "publication-policy-guard",
+      "passed": true
+    },
+    {
+      "name": "Policy rejects non-string publication note",
+      "kind": "publication-policy-guard",
+      "passed": true
+    },
+    {
+      "name": "Policy file symlink rejected",
+      "kind": "publication-policy-guard",
+      "passed": true
+    }
+  ],
+  "inputs": {
+    "scripts/build-fixed-runtime.py": "3bc8004f0435b5ece1d97c52efba31e78b0577e7907e31e542ec1fed6cbd868c",
+    "data/runtime-input-policy.json": "54be7bd03d3ae131a910c093d249caa7df0690ec1518338e760545f182db387f",
+    "scripts/fixed-runtime.cjs": "46630955e98bef2a9c1f868e7615bc3010517909c8613b8c2aea50b056ae23a9",
+    "scripts/build.cjs": "08309637e8ccd5ec654cdaf03266145f3b3679eda7045fe1b65411440ad3f39b",
+    "server/runtimes/bcpl/manifest.json": "dae20967456a7a8753be8c99290776986581d63343d88b7628c1b67b29da9776",
+    "server/runtime-images.json": "8900182ac91331af26a332f1688c95644ee2e91bb200e530162cd2c6fbea3eb3"
+  },
+  "originalManifestAndRuntimeImagesUnchanged": true,
+  "runtimeImagesMatchDeployedInstallRecord": true,
+  "privateInputInventory": [
+    {
+      "file": "assets/bcpl-20261109.tar.gz.part00",
+      "bytes": 33554432,
+      "sha256": "4cce2cd6a0c103b9c5e6e79b0dea49ae383d253936724822ea53bf8af908797e"
+    },
+    {
+      "file": "assets/bcpl-20261109.tar.gz.part01",
+      "bytes": 33554432,
+      "sha256": "693b15e676802f533556e7a031c1dc69b42edf09d842477f55331628c06a725e"
+    },
+    {
+      "file": "assets/bcpl-20261109.tar.gz.part02",
+      "bytes": 28091282,
+      "sha256": "0625f3ecff048034d51407e6a1e6d5cab3fad1312361a31a74278ac995723f31"
+    },
+    {
+      "file": "assets/cintcode-noninteractive.patch",
+      "bytes": 467,
+      "sha256": "d15ab2bdaa2d2b924078b30d7bfbfe927f5e58d609ee5386ef051a28c5022a3c"
+    },
+    {
+      "file": "licenses/upstream-README.txt",
+      "bytes": 31210,
+      "sha256": "6b742d83e70a745097d24ff2634fa229e42124cf8cc7bb7f1bd21c8c2b539bc5"
+    },
+    {
+      "file": "metadata/upstream-sysboot.b",
+      "bytes": 45395,
+      "sha256": "0928b7abe7ad32a75ef1c8840cb36946ec7e14b38958687744c6f7d3f7f19245"
+    }
+  ],
+  "privateInputContentsIncluded": false,
+  "notes": [
+    "Private input paths and digests are references to the already pinned original manifest, not copies of upstream content.",
+    "Private input and temporary paths were canonical absolute paths; macOS /var and /tmp aliases are symlinks and intentionally rejected by strict parent-symlink checks."
+  ]
+}

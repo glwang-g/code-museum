@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-08",
+  "scope": "Read-only version probes of compiler DLLs in the existing pinned official SDK; not language acceptance evidence.",
+  "image": "mcr.microsoft.com/dotnet/sdk@sha256:de4fe90a98845d75910b9769662465c84de1a934665c431279d1382b2bddc02b",
+  "imageId": "sha256:de4fe90a98845d75910b9769662465c84de1a934665c431279d1382b2bddc02b",
+  "sdk": ".NET SDK 10.0.403",
+  "stdout": "5.9.0-1.26523.112 (5a2162bea6845eabc1fc721624a43568c65db3b1)\nMicrosoft (R) F# Compiler version 15.2.403.0 for F# 10.0\n"
+}

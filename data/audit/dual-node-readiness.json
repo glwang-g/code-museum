@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-09T04:57:17.442107+00:00",
+  "scope": "Implementation and temporary two-host acceptance only. Final bundles reviewed against current source. No production credential access, service installation/activation, SSH trust changes, Git commit/push, or production deployment.",
+  "implementation": {
+    "nodes": {
+      "xshow": 42,
+      "xshow2": 14
+    },
+    "runtimeSmokeChecks": 56,
+    "apiBrowserChecks": 14,
+    "gatewayHttpTests": 12,
+    "defaultTests": {
+      "command": "npm test",
+      "passed": 90,
+      "failed": 0
+    },
+    "offlineBuild": {
+      "command": "npm run build",
+      "passed": true
+    },
+    "groovyRunSeconds": 8,
+    "groovyContainerChecks": 11,
+    "groovyBrowserChecks": 7
+  },
+  "cleanup": {
+    "xshowExecutorContainers": 0,
+    "xshow2ExecutorContainers": 0,
+    "method": "Read-only docker ps -a filter label=code-museum.executor after all temporary services stopped"
+  },
+  "evidence": {
+    "data/audit/dual-node-inventory.json": "08212a1e41702e25c778fa51d3459e6881820b1b55e96875d3a38b49eff67488",
+    "data/audit/dual-node-runtime-checks.json": "2a508d2a3ec1f126963b98e8ce52985153aa841371ecc94050d6d2fdca27c5fd",
+    "data/audit/dual-node-all-runtimes.json": "ae048656cc64e9ef2060d85557d7a12ec4ffb7c420e212783671368b05a19e4f",
+    "data/audit/groovy-cold-start-diagnostics.json": "24cd237a107e7caf74f5caccd011434d5a1a095f3faf2f22c352b361ac954233",
+    "data/audit/groovy-runtime-checks.json": "cebca18569cf1763b92dddf86887863a9d9706f3760e819e63cd32c64a1c2677",
+    "data/audit/groovy-runtime-browser-checks.json": "ab54194c71ce31fb6ae34c98aae316276cecb23f86cefe924d51a2204e881a9e"
+  },
+  "preparedPlan": {
+    "file": "output/dual-executor-review-20261109-v2/plan.json",
+    "sha256": "c0abd08c5b4a7a22681c62828814d927d2f7db64b2147b33f8a7f551eed73634",
+    "nodes": [
+      {
+        "id": "xshow",
+        "bundleBytes": 2950314,
+        "bundleManifestSha256": "436af21d35d105e837bc940c7e1fe0b4617c47d04df3fdae55a486e63d4d1c4d"
+      },
+      {
+        "id": "xshow2",
+        "bundleBytes": 2948556,
+        "bundleManifestSha256": "c5dfa3edb93871d0e7fd33914b98d6ed85985eb13ebe384ee755e29e0fe0d4a9"
+      }
+    ]
+  },
+  "siteRelease": {
+    "directory": "output/dual-node-site-release-20261109-v2",
+    "bytes": 35393229,
+    "manifestSha256": "591481fbe6e2b357ebd402e84fd99b5f16d71d903525e6b66fab977f8d5863e3",
+    "runtimeSdksIncluded": false
+  },
+  "productionStatus": "Not installed or switched. Explicit authorization required because user approval was limited to temporary integration."
+}

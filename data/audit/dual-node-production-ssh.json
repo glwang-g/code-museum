@@ -1,0 +1,48 @@
+{
+  "checkedAt": "2026-11-09T05:51:13.371423+00:00",
+  "scope": "Authorized dedicated production SSH forwarding setup; public keys only moved; private key remains on xshow. Dedicated account restrictions verified and sshd reloaded without restarting administrator connections.",
+  "nodes": [
+    {
+      "node": "xshow2",
+      "dedicatedRestrictions": {
+        "allowtcpforwarding": "local",
+        "allowstreamlocalforwarding": "no",
+        "permitopen": "127.0.0.1:4181",
+        "permitlisten": "none",
+        "maxsessions": "0",
+        "permittty": "no",
+        "permituserrc": "no",
+        "allowagentforwarding": "no",
+        "x11forwarding": "no",
+        "authenticationmethods": "publickey",
+        "passwordauthentication": "no",
+        "kbdinteractiveauthentication": "no"
+      },
+      "adminRestrictionScopeUnchanged": true,
+      "sshdReloaded": true,
+      "files": [
+        {
+          "path": "/var/lib/code-museum-forward/.ssh/authorized_keys",
+          "sha256": "728e855754cb2e11e3102f25ead114df2572ead36d0e3f22fb50ed05e59784f1",
+          "mode": "0o600"
+        },
+        {
+          "path": "/etc/ssh/sshd_config.d/60-code-museum-forward.conf",
+          "sha256": "ac677ba4b0ddfb6f34a57c9860d94a97b9c172c43e44973d4cb2bc6fb0f9baeb",
+          "mode": "0o644"
+        }
+      ]
+    },
+    {
+      "node": "xshow",
+      "pinnedHostPublicKey": true,
+      "files": [
+        {
+          "path": "/etc/code-museum-executor/tunnel_known_hosts",
+          "sha256": "7e12af280407615a5416ed6e13e891a381fe23b076c4815cff25db1868909752",
+          "mode": "0o600"
+        }
+      ]
+    }
+  ]
+}

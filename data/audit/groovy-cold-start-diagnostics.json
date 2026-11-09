@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-09T04:43:38.793465+00:00",
+  "scope": "Timing diagnosis only: three fresh isolated Groovy VMs with an explicit temporary 8-second run allowance. Not acceptance of a changed production budget; no production tokens or persistent services.",
+  "preparationHost": "xshow",
+  "code": "println((1..10).inject(0) { sum, n -> sum + n })",
+  "stdin": "",
+  "inputs": {
+    "server/executor.py": "fb6f86c03394227dda1f8baf302fa5781ee6baa561c014ec77223972b9c0349f",
+    "server/runtime-images.json": "8900182ac91331af26a332f1688c95644ee2e91bb200e530162cd2c6fbea3eb3",
+    "server/observability.py": "72f41c17fdcbeffbe3c07549da20fd1cf4f5d953f92ab30c78c2e4a6442092a6",
+    "server/mcp.py": "e759c15caa7e944daa91b99c3a529a31c4f917150cc609d7e22d458acbabda8c",
+    "server/mcp_http.py": "6766f9088fc4efc2c300bd721a1b0e73e98e271ba3bbac76f5e7b61f49596021"
+  },
+  "loadAverage": [
+    2.00048828125,
+    1.73193359375,
+    1.44189453125
+  ],
+  "checks": [
+    {
+      "state": "completed",
+      "phase": "running",
+      "exitCode": 0,
+      "compilerStdout": "",
+      "compilerStderr": "",
+      "stdout": "55\n",
+      "stderr": "",
+      "runMs": 5271,
+      "elapsedMs": 6037,
+      "runtimeVersion": "4.0.26"
+    },
+    {
+      "state": "completed",
+      "phase": "running",
+      "exitCode": 0,
+      "compilerStdout": "",
+      "compilerStderr": "",
+      "stdout": "55\n",
+      "stderr": "",
+      "runMs": 5161,
+      "elapsedMs": 5906,
+      "runtimeVersion": "4.0.26"
+    },
+    {
+      "state": "completed",
+      "phase": "running",
+      "exitCode": 0,
+      "compilerStdout": "",
+      "compilerStderr": "",
+      "stdout": "55\n",
+      "stderr": "",
+      "runMs": 5261,
+      "elapsedMs": 6019,
+      "runtimeVersion": "4.0.26"
+    }
+  ]
+}

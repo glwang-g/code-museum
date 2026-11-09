@@ -449,17 +449,21 @@
         },
         {
           "id": "remote-dotnet",
-          "name": "C# / .NET SDK",
+          "name": "C# / Visual Basic .NET / F# / .NET SDK",
           "languages": [
-            "csharp"
+            "csharp",
+            "visual-basic.net",
+            "f-sharp"
           ],
           "runtimeIds": [
-            "csharp"
+            "csharp",
+            "visual-basic.net",
+            "f-sharp"
           ],
           "kind": "私有远端",
           "project": "https://dotnet.microsoft.com/",
-          "usage": "官方 .NET SDK 镜像中的 Roslyn 编译器与预装参考程序集；镜像 digest 固定，需私有令牌。",
-          "adaptation": "独立非 root、禁网、只读根容器；先编译单文件 C#，编译成功后才运行，编译诊断与程序输出分开。",
+          "usage": "固定官方 .NET SDK 10.0.403 中的 Roslyn C#/Visual Basic 与 F# 10.0 编译器，使用预装参考程序集和 FSharp.Core。",
+          "adaptation": "独立非 root、禁网、只读根容器，分别编译 C#/VB.NET/F# 单文件，成功后才运行；VB 默认 Option Strict On、Empty My 控制台模板；F# 仅复制预装 FSharp.Core 至临时工作目录，不还原 NuGet 包。",
           "limits": "单文件、预装参考程序集；任务期间禁止 NuGet 还原或在线下载依赖，不提供 Web、桌面或设备访问。",
           "licenseNote": "MIT（.NET 运行时与 SDK）；镜像系统组件各有许可",
           "notices": [
@@ -492,6 +496,1478 @@
             }
           ],
           "evidence": "data/execution-capabilities.json"
+        },
+        {
+          "id": "remote-marst",
+          "name": "GNU MARST",
+          "languages": [
+            "algol-60"
+          ],
+          "runtimeIds": [
+            "algol-60"
+          ],
+          "project": "https://www.gnu.org/software/marst/",
+          "license": "GPL-3.0-or-later",
+          "evidence": "data/algol60-runtime-build.json",
+          "notices": [
+            {
+              "label": "固定构建与限制",
+              "href": "licenses/algol60/NOTICE.md"
+            },
+            {
+              "label": "原始许可",
+              "href": "licenses/algol60/licenses/MARST-COPYING"
+            }
+          ],
+          "limits": "ALGOL 60 → C89 现代翻译器；保留编译警告，不保证完整传名调用语义或历史机器复现。固定源码在仓库 server/runtimes/algol60/assets。",
+          "licenseNote": "GNU MARST 为 GPL-3.0-or-later；固定完整源码与原始许可随仓库保存。",
+          "usage": "现代 ALGOL 60 → C89 翻译、编译与执行；不重现历史机器。"
+        },
+        {
+          "id": "remote-sbcl",
+          "name": "Steel Bank Common Lisp",
+          "languages": [
+            "common-lisp"
+          ],
+          "runtimeIds": [
+            "common-lisp"
+          ],
+          "project": "https://www.sbcl.org/",
+          "usage": "SBCL 2.2.9，私有远端单文件 Common Lisp 环境。",
+          "limits": "128 MiB dynamic space；不加载启动文件，不安装 Quicklisp 或第三方库。不是早期 LISP 的历史环境。",
+          "licenseNote": "公有领域与 BSD 等组件；具体范围见原始版权声明。",
+          "notices": [
+            {
+              "label": "固定构建与限制",
+              "href": "licenses/common-lisp/NOTICE.md"
+            },
+            {
+              "label": "原始版权与许可",
+              "href": "licenses/common-lisp/licenses/sbcl.copyright"
+            }
+          ],
+          "evidence": "data/common-lisp-runtime-build.json"
+        },
+        {
+          "id": "remote-prolog",
+          "name": "SWI-Prolog",
+          "languages": [
+            "prolog"
+          ],
+          "runtimeIds": [
+            "prolog"
+          ],
+          "project": "https://www.swi-prolog.org/",
+          "usage": "SWI-Prolog 9.0.4，单文件 main/0 入口，私有远端执行。",
+          "limits": "128 MiB 栈限制；不启动交互式查询，无图形界面与在线扩展包。具体方言为 SWI-Prolog。",
+          "licenseNote": "BSD-2-Clause 与所含组件许可；原始声明逐包保留。",
+          "notices": [
+            {
+              "label": "固定构建与限制",
+              "href": "licenses/prolog/NOTICE.md"
+            },
+            {
+              "label": "SWI-Prolog 原始版权与许可",
+              "href": "licenses/prolog/licenses/swi-prolog-core.copyright"
+            }
+          ],
+          "evidence": "data/prolog-runtime-build.json"
+        },
+        {
+          "id": "remote-gforth",
+          "name": "Gforth",
+          "languages": [
+            "forth"
+          ],
+          "runtimeIds": [
+            "forth"
+          ],
+          "project": "https://gforth.org/",
+          "usage": "Gforth 0.7.3，私有远端单文件栈语言环境。",
+          "limits": "16 MiB 字典，数据栈与返回栈各 1 MiB；执行完退出，无交互 REPL 或在线包安装。不重现历史硬件。",
+          "licenseNote": "GPL-3.0-or-later 与组件许可，原始 Debian 版权逐包保留。",
+          "notices": [
+            {
+              "label": "固定构建与限制",
+              "href": "licenses/forth/NOTICE.md"
+            },
+            {
+              "label": "Gforth 原始版权与许可",
+              "href": "licenses/forth/licenses/gforth.copyright"
+            }
+          ],
+          "evidence": "data/forth-runtime-build.json"
+        },
+        {
+          "id": "remote-racket",
+          "name": "Racket",
+          "languages": [
+            "racket"
+          ],
+          "runtimeIds": [
+            "racket"
+          ],
+          "project": "https://racket-lang.org/",
+          "usage": "官方 Minimal Racket 8.7 CS，私有远端单文件 #lang racket/base 环境。",
+          "limits": "512 MiB 容器与 3 秒运行预算；仅预装基础库，无 DrRacket/图形界面，不在线安装包。与 Scheme 浏览器运行时分开。",
+          "licenseNote": "MIT、Apache-2.0 及组件许可；全部原始 LICENSE 文件随固定发行包保留。",
+          "notices": [
+            {
+              "label": "固定发行与运行限制",
+              "href": "licenses/racket/NOTICE.md"
+            },
+            {
+              "label": "原始版权与许可总览",
+              "href": "licenses/racket/licenses/LICENSE.txt"
+            }
+          ],
+          "evidence": "data/racket-runtime-build.json"
+        },
+        {
+          "id": "remote-smalltalk",
+          "name": "GNU Smalltalk",
+          "languages": [
+            "smalltalk"
+          ],
+          "runtimeIds": [
+            "smalltalk"
+          ],
+          "project": "https://www.gnu.org/software/smalltalk/",
+          "usage": "GNU Smalltalk 3.2.5 控制台字节码 VM，私有远端单文件执行；禁用 JIT。",
+          "adaptation": "固定源码含 glibc iconv/Expat 接口兼容补丁，以及明确记录的 CLI 状态适配：报告的语法错误和未处理异常返回失败，显式捕获的错误保留原有控制流程。",
+          "limits": "512 MiB / 3 秒；无图形环境或在线包安装，不重现 Xerox Smalltalk。",
+          "licenseNote": "GNU Smalltalk GPL-2.0-or-later 与附带库/文档许可；完整原始源码、三份原始 COPYING 和独立补丁均保存。",
+          "notices": [
+            {
+              "label": "固定构建、修改与限制",
+              "href": "licenses/smalltalk/NOTICE.md"
+            },
+            {
+              "label": "GNU 原始许可",
+              "href": "licenses/smalltalk/licenses/COPYING"
+            },
+            {
+              "label": "原始库许可",
+              "href": "licenses/smalltalk/licenses/COPYING.LIB"
+            }
+          ],
+          "evidence": "data/smalltalk-runtime-build.json"
+        },
+        {
+          "id": "remote-gnucobol",
+          "name": "GnuCOBOL",
+          "languages": [
+            "cobol"
+          ],
+          "runtimeIds": [
+            "cobol"
+          ],
+          "project": "https://gnucobol.sourceforge.io/",
+          "usage": "GnuCOBOL 3.1.2，单文件自由格式，COBOL 2014 标准选项，生成原生程序后运行。",
+          "limits": "512 MiB，编译 10 秒 / 运行 3 秒；不提供 IBM 主机、外部数据库或在线 COPYBOOK/包安装，不声称完整标准符合性。",
+          "licenseNote": "编译器 GPL-3.0-or-later、运行库 LGPL-3.0-or-later 及对应例外；精确范围见原始版权。",
+          "notices": [
+            {
+              "label": "固定构建与限制",
+              "href": "licenses/cobol/NOTICE.md"
+            },
+            {
+              "label": "编译器原始版权",
+              "href": "licenses/cobol/licenses/gnucobol3.copyright"
+            },
+            {
+              "label": "运行库原始版权",
+              "href": "licenses/cobol/licenses/libcob4.copyright"
+            }
+          ],
+          "evidence": "data/cobol-runtime-build.json"
+        },
+        {
+          "id": "remote-gnat",
+          "name": "GNAT / GCC Ada",
+          "languages": [
+            "ada"
+          ],
+          "runtimeIds": [
+            "ada"
+          ],
+          "project": "https://gcc.gnu.org/",
+          "usage": "GNAT 12.2.0，Ada 2012 选项，单文件 main.adb 与 procedure Main 入口，原生编译执行。",
+          "limits": "512 MiB，编译 10 秒 / 运行 3 秒；标准文本输入输出与预装运行库，不在线安装 Alire 包，不声称完整标准符合性。",
+          "licenseNote": "GCC GPL-3.0-or-later 与 GCC Runtime Library Exception；Debian 两包均链接 gcc-12-base 的共享版权，完整原文已保留。",
+          "notices": [
+            {
+              "label": "固定构建与限制",
+              "href": "licenses/ada/NOTICE.md"
+            },
+            {
+              "label": "GCC 12 原始版权与运行库例外",
+              "href": "licenses/ada/licenses/gcc-12.copyright"
+            }
+          ],
+          "evidence": "data/ada-runtime-build.json"
+        },
+        {
+          "id": "remote-clojure",
+          "name": "Clojure",
+          "languages": [
+            "clojure"
+          ],
+          "runtimeIds": [
+            "clojure"
+          ],
+          "project": "https://clojure.org/",
+          "usage": "Clojure 1.11.1 的固定 JAR 与 spec/core-specs/JSR166y，复用既有固定 Temurin Java 17 基础镜像。",
+          "adaptation": "从签名校验后的原始 Debian 包提取纯 Java JAR；不向 Temurin 镜像安装跨发行版原生包，提取路径和 JAR 哈希单独记录。",
+          "limits": "768 MiB 容器 / 256 MiB JVM 堆 / 3 秒（包含 JVM 启动）；单文件、无 tools.deps/Leiningen/Maven 在线还原或 GUI。",
+          "licenseNote": "Clojure/spec 及附带组件原始版权逐包保留；JVM 沿用既有 Java / Temurin 条目说明。",
+          "notices": [
+            {
+              "label": "固定构建与限制",
+              "href": "licenses/clojure/NOTICE.md"
+            },
+            {
+              "label": "Clojure 原始版权",
+              "href": "licenses/clojure/licenses/libclojure-java.copyright"
+            },
+            {
+              "label": "spec 原始版权",
+              "href": "licenses/clojure/licenses/libspec-alpha-clojure.copyright"
+            }
+          ],
+          "evidence": "data/clojure-runtime-build.json"
+        },
+        {
+          "id": "remote-ocaml",
+          "name": "OCaml",
+          "languages": [
+            "ocaml"
+          ],
+          "runtimeIds": [
+            "ocaml"
+          ],
+          "project": "https://ocaml.org/",
+          "usage": "OCaml 4.13.1 / ocamlc 单文件字节码编译和标准运行库。",
+          "adaptation": "签名核验的固定 Debian 包，以固定 GCC 基础镜像离线安装；不改变语言实现。",
+          "limits": "512 MiB，编译 10 秒 / 运行 3 秒；单文件 main.ml、标准库，不安装 opam/dune 包。",
+          "licenseNote": "OCaml 及 Debian 包的原始版权、链接例外与许可证保存在固定输入中。",
+          "notices": [
+            {
+              "label": "固定构建与限制",
+              "href": "licenses/ocaml/NOTICE.md"
+            },
+            {
+              "label": "ocaml-interp.copyright",
+              "href": "licenses/ocaml/licenses/ocaml-interp.copyright"
+            },
+            {
+              "label": "ocaml-base.copyright",
+              "href": "licenses/ocaml/licenses/ocaml-base.copyright"
+            },
+            {
+              "label": "ocaml-nox.copyright",
+              "href": "licenses/ocaml/licenses/ocaml-nox.copyright"
+            },
+            {
+              "label": "ocaml.copyright",
+              "href": "licenses/ocaml/licenses/ocaml.copyright"
+            },
+            {
+              "label": "ocaml-compiler-libs.copyright",
+              "href": "licenses/ocaml/licenses/ocaml-compiler-libs.copyright"
+            }
+          ],
+          "evidence": "data/ocaml-runtime-build.json"
+        },
+        {
+          "id": "remote-haskell",
+          "name": "Haskell / GHC",
+          "languages": [
+            "haskell"
+          ],
+          "runtimeIds": [
+            "haskell"
+          ],
+          "project": "https://www.haskell.org/ghc/",
+          "usage": "GHC 9.0.2，Haskell 2010 编译为原生程序，使用固定预装库。",
+          "adaptation": "签名核验的固定 Debian 包与固定 GCC 基础镜像离线构建，保留编译警告和真实运行异常。",
+          "limits": "768 MiB，编译 20 秒 / 运行 3 秒；单文件 Main.hs，不在线还原 Cabal/Stack 依赖。",
+          "licenseNote": "GHC BSD 许可及 libbsd/libmd 原始版权逐包保留。",
+          "notices": [
+            {
+              "label": "固定构建与限制",
+              "href": "licenses/haskell/NOTICE.md"
+            },
+            {
+              "label": "ghc.copyright",
+              "href": "licenses/haskell/licenses/ghc.copyright"
+            },
+            {
+              "label": "libbsd-dev.copyright",
+              "href": "licenses/haskell/licenses/libbsd-dev.copyright"
+            },
+            {
+              "label": "libmd-dev.copyright",
+              "href": "licenses/haskell/licenses/libmd-dev.copyright"
+            }
+          ],
+          "evidence": "data/haskell-runtime-build.json"
+        },
+        {
+          "id": "remote-kotlin",
+          "name": "Kotlin",
+          "languages": [
+            "kotlin"
+          ],
+          "runtimeIds": [
+            "kotlin"
+          ],
+          "project": "https://kotlinlang.org/",
+          "usage": "Kotlin 2.1.20 官方编译器 / Java 17，JVM target 17 单文件编译与固定标准库。",
+          "adaptation": "官方 ZIP 完整 SHA-256 核对，使用固定 Temurin 基础中的 jar 工具离线解包；原 ZIP 和全部捆绑许可保留。",
+          "limits": "768 MiB，编译器堆 384 MiB / 30 秒编译，执行堆 256 MiB / 3 秒运行；无 Gradle/Maven 在线还原或脚本插件。",
+          "licenseNote": "Kotlin Apache 2.0 与附带组件各自许可原文保留；JVM 许可沿用 Java / Temurin 条目。",
+          "notices": [
+            {
+              "label": "固定构建与限制",
+              "href": "licenses/kotlin/NOTICE.md"
+            },
+            {
+              "label": "license__COPYRIGHT.txt",
+              "href": "licenses/kotlin/licenses/license__COPYRIGHT.txt"
+            },
+            {
+              "label": "license__COPYRIGHT_HEADER.txt",
+              "href": "licenses/kotlin/licenses/license__COPYRIGHT_HEADER.txt"
+            },
+            {
+              "label": "license__LICENSE.txt",
+              "href": "licenses/kotlin/licenses/license__LICENSE.txt"
+            },
+            {
+              "label": "license__NOTICE.txt",
+              "href": "licenses/kotlin/licenses/license__NOTICE.txt"
+            },
+            {
+              "label": "license__README.md",
+              "href": "licenses/kotlin/licenses/license__README.md"
+            },
+            {
+              "label": "license__third_party__aalto_xml_licence.txt",
+              "href": "licenses/kotlin/licenses/license__third_party__aalto_xml_licence.txt"
+            },
+            {
+              "label": "license__third_party__aether_license.txt",
+              "href": "licenses/kotlin/licenses/license__third_party__aether_license.txt"
+            },
+            {
+              "label": "license__third_party__aosp_license.txt",
+              "href": "licenses/kotlin/licenses/license__third_party__aosp_license.txt"
+            },
+            {
+              "label": "license__third_party__args4j_LICENSE.txt",
+              "href": "licenses/kotlin/licenses/license__third_party__args4j_LICENSE.txt"
+            },
+            {
+              "label": "license__third_party__asm_license.txt",
+              "href": "licenses/kotlin/licenses/license__third_party__asm_license.txt"
+            },
+            {
+              "label": "license__third_party__asmble_license.txt",
+              "href": "licenses/kotlin/licenses/license__third_party__asmble_license.txt"
+            },
+            {
+              "label": "license__third_party__assemblyscript_license.txt",
+              "href": "licenses/kotlin/licenses/license__third_party__assemblyscript_license.txt"
+            },
+            {
+              "label": "license__third_party__boost_LICENSE.txt",
+              "href": "licenses/kotlin/licenses/license__third_party__boost_LICENSE.txt"
+            },
+            {
+              "label": "license__third_party__caffeine_LICENSE.txt",
+              "href": "licenses/kotlin/licenses/license__third_party__caffeine_LICENSE.txt"
+            },
+            {
+              "label": "license__third_party__closure-compiler_LICENSE.txt",
+              "href": "licenses/kotlin/licenses/license__third_party__closure-compiler_LICENSE.txt"
+            },
+            {
+              "label": "license__third_party__compose_license.txt",
+              "href": "licenses/kotlin/licenses/license__third_party__compose_license.txt"
+            },
+            {
+              "label": "license__third_party__dart_LICENSE.txt",
+              "href": "licenses/kotlin/licenses/license__third_party__dart_LICENSE.txt"
+            },
+            {
+              "label": "license__third_party__fastutil_licence",
+              "href": "licenses/kotlin/licenses/license__third_party__fastutil_licence"
+            },
+            {
+              "label": "license__third_party__gradle-node-plugin_LICENSE.txt",
+              "href": "licenses/kotlin/licenses/license__third_party__gradle-node-plugin_LICENSE.txt"
+            },
+            {
+              "label": "license__third_party__gradle_license.txt",
+              "href": "licenses/kotlin/licenses/license__third_party__gradle_license.txt"
+            },
+            {
+              "label": "license__third_party__guava_license.txt",
+              "href": "licenses/kotlin/licenses/license__third_party__guava_license.txt"
+            },
+            {
+              "label": "license__third_party__gwt_license.txt",
+              "href": "licenses/kotlin/licenses/license__third_party__gwt_license.txt"
+            },
+            {
+              "label": "license__third_party__jgit_license.txt",
+              "href": "licenses/kotlin/licenses/license__third_party__jgit_license.txt"
+            },
+            {
+              "label": "license__third_party__jquery_license.txt",
+              "href": "licenses/kotlin/licenses/license__third_party__jquery_license.txt"
+            },
+            {
+              "label": "license__third_party__jshashtable_license.txt",
+              "href": "licenses/kotlin/licenses/license__third_party__jshashtable_license.txt"
+            },
+            {
+              "label": "license__third_party__karma-teamcity-reporter_LICENSE.txt",
+              "href": "licenses/kotlin/licenses/license__third_party__karma-teamcity-reporter_LICENSE.txt"
+            },
+            {
+              "label": "license__third_party__karma_LICENSE.txt",
+              "href": "licenses/kotlin/licenses/license__third_party__karma_LICENSE.txt"
+            },
+            {
+              "label": "license__third_party__lodash_LICENSE.txt",
+              "href": "licenses/kotlin/licenses/license__third_party__lodash_LICENSE.txt"
+            },
+            {
+              "label": "license__third_party__lombok_LICENSE.txt",
+              "href": "licenses/kotlin/licenses/license__third_party__lombok_LICENSE.txt"
+            },
+            {
+              "label": "license__third_party__maven_LICENSE.txt",
+              "href": "licenses/kotlin/licenses/license__third_party__maven_LICENSE.txt"
+            },
+            {
+              "label": "license__third_party__mocha-teamcity-reporter_LICENSE.txt",
+              "href": "licenses/kotlin/licenses/license__third_party__mocha-teamcity-reporter_LICENSE.txt"
+            },
+            {
+              "label": "license__third_party__okhttp_license.txt",
+              "href": "licenses/kotlin/licenses/license__third_party__okhttp_license.txt"
+            },
+            {
+              "label": "license__third_party__power_assert_license.txt",
+              "href": "licenses/kotlin/licenses/license__third_party__power_assert_license.txt"
+            },
+            {
+              "label": "license__third_party__prototype_license.txt",
+              "href": "licenses/kotlin/licenses/license__third_party__prototype_license.txt"
+            },
+            {
+              "label": "license__third_party__rhino_LICENSE.txt",
+              "href": "licenses/kotlin/licenses/license__third_party__rhino_LICENSE.txt"
+            },
+            {
+              "label": "license__third_party__scala_license.txt",
+              "href": "licenses/kotlin/licenses/license__third_party__scala_license.txt"
+            },
+            {
+              "label": "license__third_party__sl4f_license.txt",
+              "href": "licenses/kotlin/licenses/license__third_party__sl4f_license.txt"
+            },
+            {
+              "label": "license__third_party__stax2-api.txt",
+              "href": "licenses/kotlin/licenses/license__third_party__stax2-api.txt"
+            },
+            {
+              "label": "license__third_party__sun_license.txt",
+              "href": "licenses/kotlin/licenses/license__third_party__sun_license.txt"
+            },
+            {
+              "label": "license__third_party__teamcity-service-messages_LICENSE.txt",
+              "href": "licenses/kotlin/licenses/license__third_party__teamcity-service-messages_LICENSE.txt"
+            },
+            {
+              "label": "license__third_party__testdata__dagger_license.txt",
+              "href": "licenses/kotlin/licenses/license__third_party__testdata__dagger_license.txt"
+            },
+            {
+              "label": "license__third_party__testdata__eclipse_distribution_license.txt",
+              "href": "licenses/kotlin/licenses/license__third_party__testdata__eclipse_distribution_license.txt"
+            },
+            {
+              "label": "license__third_party__testdata__eclipse_license.txt",
+              "href": "licenses/kotlin/licenses/license__third_party__testdata__eclipse_license.txt"
+            },
+            {
+              "label": "license__third_party__testdata__findbugs_license.txt",
+              "href": "licenses/kotlin/licenses/license__third_party__testdata__findbugs_license.txt"
+            },
+            {
+              "label": "license__third_party__testdata__jspecify_license.txt",
+              "href": "licenses/kotlin/licenses/license__third_party__testdata__jspecify_license.txt"
+            },
+            {
+              "label": "license__third_party__testdata__lombok_license.txt",
+              "href": "licenses/kotlin/licenses/license__third_party__testdata__lombok_license.txt"
+            },
+            {
+              "label": "license__third_party__testdata__rxjava_license.txt",
+              "href": "licenses/kotlin/licenses/license__third_party__testdata__rxjava_license.txt"
+            },
+            {
+              "label": "license__third_party__testdata__spring_license.txt",
+              "href": "licenses/kotlin/licenses/license__third_party__testdata__spring_license.txt"
+            },
+            {
+              "label": "license__third_party__threetenbp_license.txt",
+              "href": "licenses/kotlin/licenses/license__third_party__threetenbp_license.txt"
+            },
+            {
+              "label": "license__third_party__trove_license.txt",
+              "href": "licenses/kotlin/licenses/license__third_party__trove_license.txt"
+            },
+            {
+              "label": "license__third_party__trove_readme_license.txt",
+              "href": "licenses/kotlin/licenses/license__third_party__trove_readme_license.txt"
+            }
+          ],
+          "evidence": "data/kotlin-runtime-build.json"
+        },
+        {
+          "id": "remote-groovy",
+          "name": "Apache Groovy",
+          "languages": [
+            "groovy"
+          ],
+          "runtimeIds": [
+            "groovy"
+          ],
+          "project": "https://groovy-lang.org/",
+          "usage": "Groovy 4.0.26 官方固定归档，Java 17 上执行单文件核心语言脚本。",
+          "adaptation": "官方完整 ZIP 与独立 SHA-256 匹配，原始归档和全部许可保留；任务只加载固定核心 JAR，禁用 Grape。 当前执行协议预算为 8 秒；固定工具链原 NOTICE 的 3 秒为初期准备记录，保留为历史，不代表当前服务预算。",
+          "limits": "768 MiB / JVM 堆 256 MiB / 8 秒，包含 JVM 启动与脚本编译执行；无在线依赖、GUI 或交互 REPL。",
+          "licenseNote": "Apache 2.0、NOTICE 与归档中第三方许可原文保留；JVM 许可见 Java / Temurin 条目。",
+          "notices": [
+            {
+              "label": "初期固定构建说明（历史预算）",
+              "href": "licenses/groovy/NOTICE.md"
+            },
+            {
+              "label": "LICENSE",
+              "href": "licenses/groovy/licenses/LICENSE"
+            },
+            {
+              "label": "NOTICE",
+              "href": "licenses/groovy/licenses/NOTICE"
+            },
+            {
+              "label": "licenses__antlr4-license.txt",
+              "href": "licenses/groovy/licenses/licenses__antlr4-license.txt"
+            },
+            {
+              "label": "licenses__asm-license.txt",
+              "href": "licenses/groovy/licenses/licenses__asm-license.txt"
+            },
+            {
+              "label": "licenses__hamcrest-license.txt",
+              "href": "licenses/groovy/licenses/licenses__hamcrest-license.txt"
+            },
+            {
+              "label": "licenses__jline2-license.txt",
+              "href": "licenses/groovy/licenses/licenses__jline2-license.txt"
+            },
+            {
+              "label": "licenses__jsr166y-license.txt",
+              "href": "licenses/groovy/licenses/licenses__jsr166y-license.txt"
+            },
+            {
+              "label": "licenses__jsr223-license.txt",
+              "href": "licenses/groovy/licenses/licenses__jsr223-license.txt"
+            },
+            {
+              "label": "licenses__junit4-license.txt",
+              "href": "licenses/groovy/licenses/licenses__junit4-license.txt"
+            },
+            {
+              "label": "licenses__junit5-license.txt",
+              "href": "licenses/groovy/licenses/licenses__junit5-license.txt"
+            },
+            {
+              "label": "licenses__xstream-license.txt",
+              "href": "licenses/groovy/licenses/licenses__xstream-license.txt"
+            }
+          ],
+          "evidence": "data/groovy-runtime-build.json"
+        },
+        {
+          "id": "remote-erlang",
+          "name": "Erlang/OTP",
+          "languages": [
+            "erlang"
+          ],
+          "runtimeIds": [
+            "erlang"
+          ],
+          "project": "https://www.erlang.org/",
+          "usage": "Erlang/OTP 25.2.3，真实模块编译与 BEAM VM，支持单文件消息传递与基础库。",
+          "adaptation": "Debian 签名索引与固定包 SHA-256 核验；编译使用 bundled compile:file，版本读取固定包的 OTP_VERSION，限制 BEAM 调度器数量。",
+          "limits": "512 MiB，编译 10 秒 / 运行 3 秒；main.erl、模块 main / main/0，无 rebar3 在线安装或分布式节点。",
+          "licenseNote": "Erlang/OTP 的原始 Debian 版权及 Apache 2.0 文本保留。",
+          "notices": [
+            {
+              "label": "固定构建与限制",
+              "href": "licenses/erlang/NOTICE.md"
+            },
+            {
+              "label": "erlang-base.copyright",
+              "href": "licenses/erlang/licenses/erlang-base.copyright"
+            }
+          ],
+          "evidence": "data/erlang-runtime-build.json"
+        },
+        {
+          "id": "remote-elixir",
+          "name": "Elixir",
+          "languages": [
+            "elixir"
+          ],
+          "runtimeIds": [
+            "elixir"
+          ],
+          "project": "https://elixir-lang.org/",
+          "usage": "Elixir 1.14.0 / Erlang OTP 25.2.3，真实单文件模块与脚本，固定预装库。",
+          "adaptation": "固定 13 个签名索引核验的 Debian 包及版权，禁网离线构建，限制 BEAM 调度器与 async/dirty 线程。",
+          "limits": "512 MiB / 3 秒包含 BEAM 启动与脚本编译执行；main.exs，无 Mix/Hex 在线依赖或分布式节点。",
+          "licenseNote": "Elixir、Erlang/OTP 与附带包的原始版权及 Apache 2.0 文本逐包保留。",
+          "notices": [
+            {
+              "label": "固定构建与限制",
+              "href": "licenses/elixir/NOTICE.md"
+            },
+            {
+              "label": "elixir.copyright",
+              "href": "licenses/elixir/licenses/elixir.copyright"
+            },
+            {
+              "label": "erlang-asn1.copyright",
+              "href": "licenses/elixir/licenses/erlang-asn1.copyright"
+            },
+            {
+              "label": "erlang-base.copyright",
+              "href": "licenses/elixir/licenses/erlang-base.copyright"
+            },
+            {
+              "label": "erlang-crypto.copyright",
+              "href": "licenses/elixir/licenses/erlang-crypto.copyright"
+            },
+            {
+              "label": "erlang-ftp.copyright",
+              "href": "licenses/elixir/licenses/erlang-ftp.copyright"
+            },
+            {
+              "label": "erlang-inets.copyright",
+              "href": "licenses/elixir/licenses/erlang-inets.copyright"
+            },
+            {
+              "label": "erlang-mnesia.copyright",
+              "href": "licenses/elixir/licenses/erlang-mnesia.copyright"
+            },
+            {
+              "label": "erlang-parsetools.copyright",
+              "href": "licenses/elixir/licenses/erlang-parsetools.copyright"
+            },
+            {
+              "label": "erlang-public-key.copyright",
+              "href": "licenses/elixir/licenses/erlang-public-key.copyright"
+            },
+            {
+              "label": "erlang-runtime-tools.copyright",
+              "href": "licenses/elixir/licenses/erlang-runtime-tools.copyright"
+            },
+            {
+              "label": "erlang-ssl.copyright",
+              "href": "licenses/elixir/licenses/erlang-ssl.copyright"
+            },
+            {
+              "label": "erlang-tftp.copyright",
+              "href": "licenses/elixir/licenses/erlang-tftp.copyright"
+            },
+            {
+              "label": "erlang-tools.copyright",
+              "href": "licenses/elixir/licenses/erlang-tools.copyright"
+            }
+          ],
+          "evidence": "data/elixir-runtime-build.json"
+        },
+        {
+          "id": "remote-tcl",
+          "name": "Tcl",
+          "languages": [
+            "tcl"
+          ],
+          "runtimeIds": [
+            "tcl"
+          ],
+          "project": "https://www.tcl-lang.org/",
+          "usage": "Tcl 8.6.13 单文件真实解释执行，固定基础库与 TclOO。",
+          "adaptation": "签名索引核验的 2 个固定 Debian 包，版本脚本只打印真实 info patchlevel，不硬编码输出。",
+          "limits": "256 MiB / 3 秒，main.tcl，无 Tk 图形界面、在线安装包或 Tcl 9 兼容声明。",
+          "licenseNote": "Tcl 及 Debian 包的原始版权逐包保留。",
+          "notices": [
+            {
+              "label": "固定构建与限制",
+              "href": "licenses/tcl/NOTICE.md"
+            },
+            {
+              "label": "libtcl8.6.copyright",
+              "href": "licenses/tcl/licenses/libtcl8.6.copyright"
+            },
+            {
+              "label": "tcl8.6.copyright",
+              "href": "licenses/tcl/licenses/tcl8.6.copyright"
+            }
+          ],
+          "evidence": "data/tcl-runtime-build.json"
+        },
+        {
+          "id": "remote-standard-ml",
+          "name": "Standard ML / PolyML",
+          "languages": [
+            "standard-ml"
+          ],
+          "runtimeIds": [
+            "standard-ml"
+          ],
+          "project": "https://www.polyml.org/",
+          "usage": "PolyML 5.7.1 实现 Standard ML，单文件脚本与固定 Standard Basis 库。",
+          "adaptation": "固定 3 个 Debian 包，签名索引与包 SHA-256 核验，按 --script 模式编译求值。",
+          "limits": "512 MiB / 3 秒包含脚本编译与运行，无在线安装包或交互 REPL，不冒充 SML/NJ、MLton 或完整标准符合性。 按声明编译求值，后续类型错误不撤销先前输出。",
+          "licenseNote": "PolyML LGPL 2.1、Debian 与附带组件原始版权完整保留。",
+          "notices": [
+            {
+              "label": "固定构建与限制",
+              "href": "licenses/standard-ml/NOTICE.md"
+            },
+            {
+              "label": "libpolyml9.copyright",
+              "href": "licenses/standard-ml/licenses/libpolyml9.copyright"
+            },
+            {
+              "label": "polyml-modules.copyright",
+              "href": "licenses/standard-ml/licenses/polyml-modules.copyright"
+            },
+            {
+              "label": "polyml.copyright",
+              "href": "licenses/standard-ml/licenses/polyml.copyright"
+            }
+          ],
+          "evidence": "data/standard-ml-runtime-build.json"
+        },
+        {
+          "id": "remote-scala",
+          "name": "Scala 2.13",
+          "languages": [
+            "scala"
+          ],
+          "runtimeIds": [
+            "scala"
+          ],
+          "project": "https://www.scala-lang.org/",
+          "usage": "Scala 2.13.16 官方发行包中的六个原始 JAR，使用固定 Java 17 编译与执行。",
+          "adaptation": "保留原官方归档、发布清单、编译器官方 Maven SHA-1 与 POM；归档内编译器哈希匹配，全部保留字节再以 SHA-256 固定，记录提取路径，不声称整个归档官方 SHA-256 或签名验证。",
+          "limits": "768 MiB，编译器堆 384 MiB / 编译 30 秒，执行堆 256 MiB / 运行 3 秒；Main.scala / object Main，无 sbt/Maven/Coursier 在线还原、REPL 或 Scala 3 兼容声明。",
+          "licenseNote": "Scala Apache 2.0、NOTICE 和发行包/捆绑 JAR 的全部许可文本保留，JVM 许可见 Java / Temurin 条目。",
+          "notices": [
+            {
+              "label": "固定构建与限制",
+              "href": "licenses/scala/NOTICE.md"
+            },
+            {
+              "label": "LICENSE",
+              "href": "licenses/scala/licenses/LICENSE"
+            },
+            {
+              "label": "NOTICE",
+              "href": "licenses/scala/licenses/NOTICE"
+            },
+            {
+              "label": "doc__LICENSE.md",
+              "href": "licenses/scala/licenses/doc__LICENSE.md"
+            },
+            {
+              "label": "doc__License.rtf",
+              "href": "licenses/scala/licenses/doc__License.rtf"
+            },
+            {
+              "label": "doc__licenses__bsd_asm.txt",
+              "href": "licenses/scala/licenses/doc__licenses__bsd_asm.txt"
+            },
+            {
+              "label": "doc__licenses__bsd_jline.txt",
+              "href": "licenses/scala/licenses/doc__licenses__bsd_jline.txt"
+            },
+            {
+              "label": "doc__licenses__mit_jquery.txt",
+              "href": "licenses/scala/licenses/doc__licenses__mit_jquery.txt"
+            },
+            {
+              "label": "scala-compiler.jar__LICENSE",
+              "href": "licenses/scala/licenses/scala-compiler.jar__LICENSE"
+            },
+            {
+              "label": "scala-compiler.jar__NOTICE",
+              "href": "licenses/scala/licenses/scala-compiler.jar__NOTICE"
+            },
+            {
+              "label": "scala-library.jar__LICENSE",
+              "href": "licenses/scala/licenses/scala-library.jar__LICENSE"
+            },
+            {
+              "label": "scala-library.jar__NOTICE",
+              "href": "licenses/scala/licenses/scala-library.jar__NOTICE"
+            },
+            {
+              "label": "scala-reflect.jar__LICENSE",
+              "href": "licenses/scala/licenses/scala-reflect.jar__LICENSE"
+            },
+            {
+              "label": "scala-reflect.jar__NOTICE",
+              "href": "licenses/scala/licenses/scala-reflect.jar__NOTICE"
+            },
+            {
+              "label": "scalap-2.13.16.jar__LICENSE",
+              "href": "licenses/scala/licenses/scalap-2.13.16.jar__LICENSE"
+            },
+            {
+              "label": "scalap-2.13.16.jar__NOTICE",
+              "href": "licenses/scala/licenses/scalap-2.13.16.jar__NOTICE"
+            }
+          ],
+          "evidence": "data/scala-runtime-build.json"
+        },
+        {
+          "id": "remote-d",
+          "name": "D / GNU D",
+          "languages": [
+            "d"
+          ],
+          "runtimeIds": [
+            "d"
+          ],
+          "project": "https://gcc.gnu.org/onlinedocs/gdc/",
+          "usage": "GNU D 12.2.0 / gdc-12 与固定 Phobos 标准库，真实编译为本机程序。",
+          "adaptation": "固定 3 个 Debian 包与签名索引 SHA-256 核验，固定 GCC 基础镜像禁网构建；保留 GCC 12 完整版权，明确覆盖 D/Phobos。",
+          "limits": "768 MiB，编译 10 秒 / 运行 3 秒，main.d 单文件、预装库，无 dub 在线安装，不冒充 DMD 版本或完整符合性。",
+          "licenseNote": "GCC GPL 及运行库例外、D/Phobos 附带许可详见完整原始 GCC 12 版权；不把所有组件统称单一许可。",
+          "notices": [
+            {
+              "label": "固定构建与限制",
+              "href": "licenses/d/NOTICE.md"
+            },
+            {
+              "label": "gdc-12.copyright",
+              "href": "licenses/d/licenses/gdc-12.copyright"
+            }
+          ],
+          "evidence": "data/d-runtime-build.json"
+        },
+        {
+          "id": "remote-nim",
+          "name": "Nim",
+          "languages": [
+            "nim"
+          ],
+          "runtimeIds": [
+            "nim"
+          ],
+          "project": "https://nim-lang.org/",
+          "usage": "Nim 1.6.10 与固定标准库，通过固定 GCC 编译生成的 C，运行真实本机程序。",
+          "adaptation": "固定 2 个 Debian 包、签名索引与 SHA-256 核验，缓存仅在任务 /work；编译单任务，保留默认运行时检查。",
+          "limits": "768 MiB，编译 20 秒 / 运行 3 秒，main.nim 单文件，不在线安装 Nimble 包，不冒充 Nim 2。",
+          "licenseNote": "Nim MIT 与 PCRE 等附带组件的原始版权逐包保留。",
+          "notices": [
+            {
+              "label": "固定构建与限制",
+              "href": "licenses/nim/NOTICE.md"
+            },
+            {
+              "label": "libpcre3.copyright",
+              "href": "licenses/nim/licenses/libpcre3.copyright"
+            },
+            {
+              "label": "nim.copyright",
+              "href": "licenses/nim/licenses/nim.copyright"
+            }
+          ],
+          "evidence": "data/nim-runtime-build.json"
+        },
+        {
+          "id": "remote-zig",
+          "name": "Zig",
+          "languages": [
+            "zig"
+          ],
+          "runtimeIds": [
+            "zig"
+          ],
+          "project": "https://ziglang.org/",
+          "usage": "Zig 0.14.1 官方 x86_64 Linux SDK，单文件真实编译，固定标准库、原始 LLVM/链接后端与 Debug 检查。",
+          "adaptation": "完整 49,086,504 字节归档匹配官方索引 SHA-256；原归档及 13 份原始许可保留，启动器只限制编译 CPU 亲和性以控制线程数，不修改 SDK、禁用后端或运行时检查。",
+          "limits": "1024 MiB，编译 30 秒 / 运行 3 秒；main.zig、缓存仅在临时目录，无在线包下载或新版 Zig API 兼容声明。",
+          "licenseNote": "Zig MIT 与 libc/LLVM/其他捆绑组件的原始许可及版权完整保留。",
+          "notices": [
+            {
+              "label": "固定构建与限制",
+              "href": "licenses/zig/NOTICE.md"
+            },
+            {
+              "label": "LICENSE",
+              "href": "licenses/zig/licenses/LICENSE"
+            },
+            {
+              "label": "lib__libc__glibc__LICENSES",
+              "href": "licenses/zig/licenses/lib__libc__glibc__LICENSES"
+            },
+            {
+              "label": "lib__libc__mingw__COPYING",
+              "href": "licenses/zig/licenses/lib__libc__mingw__COPYING"
+            },
+            {
+              "label": "lib__libc__musl__COPYRIGHT",
+              "href": "licenses/zig/licenses/lib__libc__musl__COPYRIGHT"
+            },
+            {
+              "label": "lib__libc__wasi__LICENSE",
+              "href": "licenses/zig/licenses/lib__libc__wasi__LICENSE"
+            },
+            {
+              "label": "lib__libc__wasi__LICENSE-APACHE",
+              "href": "licenses/zig/licenses/lib__libc__wasi__LICENSE-APACHE"
+            },
+            {
+              "label": "lib__libc__wasi__LICENSE-APACHE-LLVM",
+              "href": "licenses/zig/licenses/lib__libc__wasi__LICENSE-APACHE-LLVM"
+            },
+            {
+              "label": "lib__libc__wasi__LICENSE-MIT",
+              "href": "licenses/zig/licenses/lib__libc__wasi__LICENSE-MIT"
+            },
+            {
+              "label": "lib__libc__wasi__libc-bottom-half__cloudlibc__LICENSE",
+              "href": "licenses/zig/licenses/lib__libc__wasi__libc-bottom-half__cloudlibc__LICENSE"
+            },
+            {
+              "label": "lib__libc__wasi__libc-top-half__musl__COPYRIGHT",
+              "href": "licenses/zig/licenses/lib__libc__wasi__libc-top-half__musl__COPYRIGHT"
+            },
+            {
+              "label": "lib__libcxx__LICENSE.TXT",
+              "href": "licenses/zig/licenses/lib__libcxx__LICENSE.TXT"
+            },
+            {
+              "label": "lib__libcxxabi__LICENSE.TXT",
+              "href": "licenses/zig/licenses/lib__libcxxabi__LICENSE.TXT"
+            },
+            {
+              "label": "lib__libunwind__LICENSE.TXT",
+              "href": "licenses/zig/licenses/lib__libunwind__LICENSE.TXT"
+            }
+          ],
+          "evidence": "data/zig-runtime-build.json"
+        },
+        {
+          "id": "remote-swift",
+          "name": "Swift",
+          "languages": [
+            "swift"
+          ],
+          "runtimeIds": [
+            "swift"
+          ],
+          "project": "https://www.swift.org/",
+          "usage": "官方 Swift 6.1.3 Debian 12 SDK，以 Swift 6 模式编译单文件，运行 Linux 本机程序。",
+          "adaptation": "完整 SDK 与官方 Swift 6.x PGP 签名核对；27 个固定分片保留原始归档全部字节，以原官方 GCC 摘要的本地 OCI 布局离线构建。",
+          "limits": "1024 MiB，编译 30 秒 / 运行 3 秒；main.swift、固定标准库与 Foundation，无 SPM 在线依赖或 Apple UI 框架。",
+          "licenseNote": "保留 SDK 原始 Apache-2.0 与 Swift Runtime Library Exception 许可；各组件仍以其上游条款为准。",
+          "notices": [
+            {
+              "label": "固定构建与限制",
+              "href": "licenses/swift/NOTICE.md"
+            },
+            {
+              "label": "SDK 原始许可与运行库例外",
+              "href": "licenses/swift/licenses/usr__share__swift__LICENSE.txt"
+            }
+          ],
+          "evidence": "data/swift-runtime-build.json"
+        },
+        {
+          "id": "remote-dart",
+          "name": "Dart",
+          "languages": [
+            "dart"
+          ],
+          "runtimeIds": [
+            "dart"
+          ],
+          "project": "https://dart.dev/",
+          "usage": "官方 Dart SDK 3.9.4，单文件 AOT 编译为 Linux 本机可执行文件，使用固定标准库。",
+          "adaptation": "完整 SDK 镜像下载匹配独立取得的 Google 官方 SHA-256；7 个分片保留所有字节和原始许可，编译命令抑制分析统计。",
+          "limits": "768 MiB，编译 15 秒 / 运行 3 秒；main.dart，无 pub 在线依赖、Flutter 或浏览器 UI。",
+          "licenseNote": "SDK 原始 BSD-3-Clause 许可与附带组件通知完整保留；不声称上游 PGP 签名核验。",
+          "notices": [
+            {
+              "label": "固定构建与限制",
+              "href": "licenses/dart/NOTICE.md"
+            },
+            {
+              "label": "LICENSE",
+              "href": "licenses/dart/licenses/LICENSE"
+            },
+            {
+              "label": "bin__resources__devtools__assets__NOTICES",
+              "href": "licenses/dart/licenses/bin__resources__devtools__assets__NOTICES"
+            },
+            {
+              "label": "bin__resources__devtools__assets__icons__material_symbols__LICENSE",
+              "href": "licenses/dart/licenses/bin__resources__devtools__assets__icons__material_symbols__LICENSE"
+            }
+          ],
+          "evidence": "data/dart-runtime-build.json"
+        },
+        {
+          "id": "remote-julia",
+          "name": "Julia",
+          "languages": [
+            "julia"
+          ],
+          "runtimeIds": [
+            "julia"
+          ],
+          "project": "https://julialang.org/",
+          "usage": "官方 Julia 1.11.7 Linux x86_64，单文件与预装标准库、正常 JIT。",
+          "adaptation": "完整归档镜像下载匹配独立取得的 Julia 官方 SHA-256；9 个分片和原始许可保留，已有编译缓存可用，新预编译缓存禁用，初始 Julia/GC/BLAS 单线程。",
+          "limits": "768 MiB，3 秒含启动与 JIT；main.jl、错误前输出保留，无 Pkg 在线安装、绘图或 Notebook。",
+          "licenseNote": "Julia MIT 与 SDK 附带组件的 19 份原始许可/通知保留；不声称 PGP 签名核验。",
+          "notices": [
+            {
+              "label": "固定构建与限制",
+              "href": "licenses/julia/NOTICE.md"
+            },
+            {
+              "label": "LICENSE.md",
+              "href": "licenses/julia/licenses/LICENSE.md"
+            },
+            {
+              "label": "share__julia__base__JuliaSyntax__LICENSE.md",
+              "href": "licenses/julia/licenses/share__julia__base__JuliaSyntax__LICENSE.md"
+            },
+            {
+              "label": "share__julia__base__ryu__LICENSE.md",
+              "href": "licenses/julia/licenses/share__julia__base__ryu__LICENSE.md"
+            },
+            {
+              "label": "share__julia__stdlib__v1.11__ArgTools__LICENSE",
+              "href": "licenses/julia/licenses/share__julia__stdlib__v1.11__ArgTools__LICENSE"
+            },
+            {
+              "label": "share__julia__stdlib__v1.11__DelimitedFiles__LICENSE",
+              "href": "licenses/julia/licenses/share__julia__stdlib__v1.11__DelimitedFiles__LICENSE"
+            },
+            {
+              "label": "share__julia__stdlib__v1.11__Distributed__LICENSE.md",
+              "href": "licenses/julia/licenses/share__julia__stdlib__v1.11__Distributed__LICENSE.md"
+            },
+            {
+              "label": "share__julia__stdlib__v1.11__Downloads__LICENSE",
+              "href": "licenses/julia/licenses/share__julia__stdlib__v1.11__Downloads__LICENSE"
+            },
+            {
+              "label": "share__julia__stdlib__v1.11__LazyArtifacts__LICENSE.md",
+              "href": "licenses/julia/licenses/share__julia__stdlib__v1.11__LazyArtifacts__LICENSE.md"
+            },
+            {
+              "label": "share__julia__stdlib__v1.11__LibCURL__LICENSE.md",
+              "href": "licenses/julia/licenses/share__julia__stdlib__v1.11__LibCURL__LICENSE.md"
+            },
+            {
+              "label": "share__julia__stdlib__v1.11__NetworkOptions__LICENSE",
+              "href": "licenses/julia/licenses/share__julia__stdlib__v1.11__NetworkOptions__LICENSE"
+            },
+            {
+              "label": "share__julia__stdlib__v1.11__Pkg__LICENSE.md",
+              "href": "licenses/julia/licenses/share__julia__stdlib__v1.11__Pkg__LICENSE.md"
+            },
+            {
+              "label": "share__julia__stdlib__v1.11__REPL__src__TerminalMenus__LICENSE.md",
+              "href": "licenses/julia/licenses/share__julia__stdlib__v1.11__REPL__src__TerminalMenus__LICENSE.md"
+            },
+            {
+              "label": "share__julia__stdlib__v1.11__SHA__LICENSE.md",
+              "href": "licenses/julia/licenses/share__julia__stdlib__v1.11__SHA__LICENSE.md"
+            },
+            {
+              "label": "share__julia__stdlib__v1.11__SparseArrays__LICENSE.md",
+              "href": "licenses/julia/licenses/share__julia__stdlib__v1.11__SparseArrays__LICENSE.md"
+            },
+            {
+              "label": "share__julia__stdlib__v1.11__Statistics__LICENSE.md",
+              "href": "licenses/julia/licenses/share__julia__stdlib__v1.11__Statistics__LICENSE.md"
+            },
+            {
+              "label": "share__julia__stdlib__v1.11__StyledStrings__LICENSE",
+              "href": "licenses/julia/licenses/share__julia__stdlib__v1.11__StyledStrings__LICENSE"
+            },
+            {
+              "label": "share__julia__stdlib__v1.11__SuiteSparse__LICENSE.md",
+              "href": "licenses/julia/licenses/share__julia__stdlib__v1.11__SuiteSparse__LICENSE.md"
+            },
+            {
+              "label": "share__julia__stdlib__v1.11__TOML__LICENSE",
+              "href": "licenses/julia/licenses/share__julia__stdlib__v1.11__TOML__LICENSE"
+            },
+            {
+              "label": "share__julia__stdlib__v1.11__Tar__LICENSE",
+              "href": "licenses/julia/licenses/share__julia__stdlib__v1.11__Tar__LICENSE"
+            }
+          ],
+          "evidence": "data/julia-runtime-build.json"
+        },
+        {
+          "id": "remote-octave",
+          "name": "GNU Octave",
+          "languages": [
+            "octave"
+          ],
+          "runtimeIds": [
+            "octave"
+          ],
+          "project": "https://octave.org/",
+          "usage": "GNU Octave 7.3.0 CLI，单文件和预装核心库，矩阵/数值计算与文本输出。",
+          "adaptation": "固定 179 个 Debian 包，APT 在禁网准备容器验证签名索引，逐包匹配签名 SHA-256；全部 178 份原始版权在固定构建清单中保留并随许可目录提供。",
+          "limits": "512 MiB，3 秒；main.m，禁用 GUI/窗口系统、启动文件和历史，无在线 pkg 安装或绘图界面；GNU Octave 的具体兼容范围。",
+          "licenseNote": "GNU Octave GPL-3.0-or-later；全部依赖原始版权逐项保留，以下提供核心许可入口，完整目录见构建证据。",
+          "notices": [
+            {
+              "label": "固定构建与限制",
+              "href": "licenses/octave/NOTICE.md"
+            },
+            {
+              "label": "octave.copyright",
+              "href": "licenses/octave/licenses/octave.copyright"
+            },
+            {
+              "label": "octave-common.copyright",
+              "href": "licenses/octave/licenses/octave-common.copyright"
+            },
+            {
+              "label": "libblas3.copyright",
+              "href": "licenses/octave/licenses/libblas3.copyright"
+            },
+            {
+              "label": "liblapack3.copyright",
+              "href": "licenses/octave/licenses/liblapack3.copyright"
+            }
+          ],
+          "evidence": "data/octave-runtime-build.json"
+        },
+        {
+          "id": "remote-powershell",
+          "name": "PowerShell",
+          "languages": [
+            "powershell"
+          ],
+          "runtimeIds": [
+            "powershell"
+          ],
+          "project": "https://github.com/PowerShell/PowerShell",
+          "usage": "微软官方 PowerShell 7.5.4 Linux 包，单文件、对象管道与预装核心模块。",
+          "adaptation": "完整 Microsoft DEB 匹配官方 GitHub 发行摘要；三分片、原始许可保留。独立 CLI 入口默认 ErrorActionPreference=Stop，保留原生诊断、显式捕获与退出码，不按 stderr 文本猜测失败。",
+          "limits": "768 MiB / 3 秒；main.ps1，无在线 Gallery、Windows 或 Office 宿主。JIT 保留 W^X，稀疏匿名映射由独立逻辑文件限额适配，实际内存和 tmpfs 仍受限。",
+          "licenseNote": "PowerShell MIT 与微软/.NET 原始组件许可保留，未声称 APT/PGP 校验。",
+          "notices": [
+            {
+              "label": "固定构建与限制",
+              "href": "licenses/powershell/NOTICE.md"
+            },
+            {
+              "label": "opt__microsoft__powershell__7__LICENSE.txt",
+              "href": "licenses/powershell/licenses/opt__microsoft__powershell__7__LICENSE.txt"
+            },
+            {
+              "label": "opt__microsoft__powershell__7__Modules__Microsoft.PowerShell.PSResourceGet__LICENSE",
+              "href": "licenses/powershell/licenses/opt__microsoft__powershell__7__Modules__Microsoft.PowerShell.PSResourceGet__LICENSE"
+            },
+            {
+              "label": "opt__microsoft__powershell__7__Modules__Microsoft.PowerShell.PSResourceGet__Notice.txt",
+              "href": "licenses/powershell/licenses/opt__microsoft__powershell__7__Modules__Microsoft.PowerShell.PSResourceGet__Notice.txt"
+            },
+            {
+              "label": "opt__microsoft__powershell__7__Modules__PSReadLine__License.txt",
+              "href": "licenses/powershell/licenses/opt__microsoft__powershell__7__Modules__PSReadLine__License.txt"
+            },
+            {
+              "label": "opt__microsoft__powershell__7__ThirdPartyNotices.txt",
+              "href": "licenses/powershell/licenses/opt__microsoft__powershell__7__ThirdPartyNotices.txt"
+            }
+          ],
+          "evidence": "data/powershell-runtime-build.json"
+        },
+        {
+          "id": "remote-korn-shell",
+          "name": "Korn shell / ksh93u+m",
+          "languages": [
+            "korn-shell"
+          ],
+          "runtimeIds": [
+            "korn-shell"
+          ],
+          "project": "https://github.com/ksh93/ksh",
+          "usage": "ksh93u+m 1.0.4，单文件 main.ksh 与原生 shell 状态。",
+          "adaptation": "Debian 签名索引、固定包 SHA-256 校验，完整包与原始版权文件保留，-p 忽略 ENV 启动配置。",
+          "limits": "256 MiB / 3 秒；无在线依赖，不冒充 ksh88 或历史硬件。",
+          "licenseNote": "保留完整 Debian/upstream copyright。",
+          "notices": [
+            {
+              "label": "固定构建与限制",
+              "href": "licenses/korn-shell/NOTICE.md"
+            },
+            {
+              "label": "原始许可",
+              "href": "licenses/korn-shell/licenses/ksh93u+m.copyright"
+            }
+          ],
+          "evidence": "data/korn-shell-runtime-build.json"
+        },
+        {
+          "id": "remote-tcsh",
+          "name": "tcsh",
+          "languages": [
+            "tcsh"
+          ],
+          "runtimeIds": [
+            "tcsh"
+          ],
+          "project": "https://www.tcsh.org/",
+          "usage": "tcsh 6.24.07 单文件脚本。",
+          "adaptation": "完整 Debian 包、签名索引和 SHA-256 核验，-f 禁用启动配置，原始许可保留。",
+          "limits": "256 MiB / 3 秒；保留原生状态，无在线依赖，不冒充早期 csh。",
+          "licenseNote": "保留完整上游和 Debian copyright。",
+          "notices": [
+            {
+              "label": "固定构建与限制",
+              "href": "licenses/tcsh/NOTICE.md"
+            },
+            {
+              "label": "原始许可",
+              "href": "licenses/tcsh/licenses/tcsh.copyright"
+            }
+          ],
+          "evidence": "data/tcsh-runtime-build.json"
+        },
+        {
+          "id": "remote-wasm",
+          "name": "WebAssembly / Wasmtime",
+          "languages": [
+            "wasm"
+          ],
+          "runtimeIds": [
+            "wasm"
+          ],
+          "project": "https://github.com/bytecodealliance/wasmtime",
+          "usage": "Wasmtime 50.0.1，WAT 核心模块与 WASI Preview 1 文本 CLI。",
+          "adaptation": "完整官方 SDK 与 GitHub 资产摘要 SHA-256 匹配，原始 Apache-2.0 WITH LLVM-exception 许可保留。禁用组件模型/线程，无预开放目录或继承环境。",
+          "limits": "512 MiB / 3 秒含 WAT/JIT；线性内存至多 256 MiB，无网络或浏览器宿主。",
+          "licenseNote": "保留原始许可，未声称 PGP 验签。",
+          "notices": [
+            {
+              "label": "固定构建与限制",
+              "href": "licenses/wasm/NOTICE.md"
+            },
+            {
+              "label": "原始许可",
+              "href": "licenses/wasm/licenses/LICENSE"
+            }
+          ],
+          "evidence": "data/wasm-runtime-build.json"
+        },
+        {
+          "id": "remote-assembly",
+          "name": "NASM / x86-64 Linux",
+          "languages": [
+            "x86-assembly"
+          ],
+          "runtimeIds": [
+            "x86-assembly"
+          ],
+          "project": "https://www.nasm.us/",
+          "usage": "NASM 2.16.01 + 固定基础 GNU ld，原生 ELF64 编译执行。",
+          "adaptation": "完整 Debian 包、签名索引及 SHA-256 核验，原始 NASM 和基础 binutils 版权保留；编译和链接均成功才运行。",
+          "limits": "256 MiB / 编译 10 秒 / 运行 3 秒；main.asm/_start/Linux syscall ABI，无 libc 或外部目标文件，无 8086/DOS/Windows 宿主。",
+          "licenseNote": "原始 NASM 与 GNU binutils 许可保留。",
+          "notices": [
+            {
+              "label": "固定构建与限制",
+              "href": "licenses/x86-assembly/NOTICE.md"
+            },
+            {
+              "label": "NASM 原始许可",
+              "href": "licenses/x86-assembly/licenses/nasm.copyright"
+            },
+            {
+              "label": "GNU binutils 原始许可",
+              "href": "licenses/x86-assembly/licenses/base-binutils.copyright"
+            }
+          ],
+          "evidence": "data/x86-assembly-runtime-build.json"
+        },
+        {
+          "id": "remote-verilog",
+          "name": "Icarus Verilog",
+          "languages": [
+            "verilog"
+          ],
+          "runtimeIds": [
+            "verilog"
+          ],
+          "project": "https://steveicarus.github.io/iverilog/",
+          "usage": "Icarus Verilog 11.0 / Verilog-2005 编译与 vvp 文本仿真。",
+          "adaptation": "完整固定 Debian 包、签名索引与 SHA-256 校验，原始许可保留；-N 非交互 $stop 返回失败，禁用波形输出。",
+          "limits": "512 MiB / 编译 10 秒 / 仿真 3 秒实际时间；main.v / module main；无综合、FPGA 部署或波形下载，不是真实电路。",
+          "licenseNote": "保留上游与 Debian 原始 copyright。",
+          "notices": [
+            {
+              "label": "固定构建与限制",
+              "href": "licenses/verilog/NOTICE.md"
+            },
+            {
+              "label": "原始许可",
+              "href": "licenses/verilog/licenses/iverilog.copyright"
+            }
+          ],
+          "evidence": "data/verilog-runtime-build.json"
+        },
+        {
+          "id": "remote-vhdl",
+          "name": "GHDL / VHDL",
+          "languages": [
+            "vhdl"
+          ],
+          "runtimeIds": [
+            "vhdl"
+          ],
+          "project": "https://ghdl.github.io/ghdl/",
+          "usage": "GHDL 2.0.0 mcode / VHDL-2008 分析、展开与文本仿真。",
+          "adaptation": "固定 3 个 Debian 包、签名索引及 SHA-256，原始许可保留；默认 --assert-level=error，原生断言和约束检查保留。",
+          "limits": "512 MiB / 分析展开 10 秒 / 仿真 3 秒实际时间；main.vhd / entity main，无综合、FPGA 部署或波形下载，不是真实电路。",
+          "licenseNote": "原始 GHDL/GNAT 与 Debian 版权保留。",
+          "notices": [
+            {
+              "label": "固定构建与限制",
+              "href": "licenses/vhdl/NOTICE.md"
+            },
+            {
+              "label": "ghdl-common.copyright",
+              "href": "licenses/vhdl/licenses/ghdl-common.copyright"
+            }
+          ],
+          "evidence": "data/vhdl-runtime-build.json"
+        },
+        {
+          "id": "remote-postscript",
+          "name": "Ghostscript / PostScript",
+          "languages": [
+            "postscript"
+          ],
+          "runtimeIds": [
+            "postscript"
+          ],
+          "project": "https://www.ghostscript.com/",
+          "usage": "Ghostscript 10.00.0，PostScript 栈/过程与真实文本解释。",
+          "adaptation": "18 个固定 Debian 包，签名索引与 SHA-256 核验；SAFER/NODISPLAY/BATCH 保留原生错误与 stopped 捕获，原始许可保留。",
+          "limits": "256 MiB / 3 秒；main.ps，无页面渲染、打印设备或文件产物下载。",
+          "licenseNote": "Ghostscript AGPL 与全部原始依赖版权保留。",
+          "notices": [
+            {
+              "label": "固定构建与限制",
+              "href": "licenses/postscript/NOTICE.md"
+            },
+            {
+              "label": "ghostscript.copyright",
+              "href": "licenses/postscript/licenses/ghostscript.copyright"
+            },
+            {
+              "label": "libgs10.copyright",
+              "href": "licenses/postscript/licenses/libgs10.copyright"
+            }
+          ],
+          "evidence": "data/postscript-runtime-build.json"
+        },
+        {
+          "id": "remote-bcpl",
+          "name": "BCPL Cintcode64",
+          "languages": [
+            "bcpl"
+          ],
+          "runtimeIds": [
+            "bcpl"
+          ],
+          "project": "https://www.cl.cam.ac.uk/~mr10/BCPL.html",
+          "usage": "作者 2026-11-09 固定快照，64 位 Cintcode 编译器与 VM 真实执行。",
+          "adaptation": "原作者归档、bootstrap与非交互补丁按原清单私有固定保存；公共源码保留自编Dockerfile/标准输入与LF启动器、来源、哈希和镜像证据，不按诊断文字猜测成功。",
+          "limits": "512 MiB / 编译 10 秒 / 运行 3 秒；main.b / start()，无图形音频、在线依赖或历史机器重现。",
+          "licenseNote": "作者资料只明确私人和学术用途，未找到整个归档公开再分发的明确授权。六项上游材料不进入公共仓库或网页包；网站可从公开输入离线构建，完整BCPL镜像重建另须具备原清单匹配的私有包。既有远端执行使用已核验镜像。",
+          "notices": [
+            {
+              "label": "原始固定构建说明（历史）",
+              "href": "licenses/bcpl/NOTICE.md"
+            },
+            {
+              "label": "作者使用条款（官方网站）",
+              "href": "https://www.cl.cam.ac.uk/~mr10/BCPL/README"
+            },
+            {
+              "label": "随包 GNU licence",
+              "href": "licenses/bcpl/licenses/GNU-licence"
+            }
+          ],
+          "evidence": "data/bcpl-runtime-build.json"
+        },
+        {
+          "id": "remote-oberon",
+          "name": "OBNC / Oberon 2016",
+          "languages": [
+            "oberon"
+          ],
+          "runtimeIds": [
+            "oberon"
+          ],
+          "project": "https://miasap.se/obnc/",
+          "usage": "OBNC 0.17.2，最终 2016 Oberon 语言 → C/GCC → 原生程序。",
+          "adaptation": "完整官方源码、固定 Debian 依赖及原始许可；默认 GC 和运行时检查，文本与 ext 库逐项核对，不提供 SDL Input/XYplane。",
+          "limits": "512 MiB / 编译 10 秒 / 运行 3 秒；Main.obn / MODULE Main，INTEGER 32 位、REAL 64 位；无在线模块，不冒充 Oberon-2/Ceres 系统。",
+          "licenseNote": "编译器 GPL-3.0-or-later、库 MPL-2.0 及依赖原始版权保留。",
+          "notices": [
+            {
+              "label": "固定构建与限制",
+              "href": "licenses/oberon/NOTICE.md"
+            },
+            {
+              "label": "OBNC 编译器 GPL",
+              "href": "licenses/oberon/licenses/OBNC-GPL.txt"
+            },
+            {
+              "label": "OBNC 库 MPL",
+              "href": "licenses/oberon/licenses/OBNC-library-MPL.txt"
+            }
+          ],
+          "evidence": "data/oberon-runtime-build.json"
         }
       ]
     },

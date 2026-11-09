@@ -20,13 +20,12 @@ jobs:
       - run: npm run build
       - name: Check Python backend syntax
         run: python3 -c "import ast, pathlib; [ast.parse(p.read_text()) for p in [*pathlib.Path('server').glob('*.py'), *pathlib.Path('deploy').glob('*.py')]]"
+      - name: Prepare ordinary-site release without runtime SDK inputs
+        run: node scripts/package-release.cjs --output output/site-release
       - uses: actions/upload-artifact@v4
         with:
           name: code-museum-release
-          path: |
-            dist/
-            server/
-            deploy/activate.sh
+          path: output/site-release/
           retention-days: 14
   deploy:
     if: vars.DEPLOY_ENABLED == 'true'

@@ -1,0 +1,28 @@
+{
+  "checkedAt": "2026-11-08T13:23:20.521Z",
+  "scope": "Local Chrome editor-only verification; no Swift runtime execution, no SSH, no production changes.",
+  "checks": [
+    {
+      "name": "Swift is clearly editor-only with no runnable controls or fake result",
+      "width": 1440
+    },
+    {
+      "name": "Swift is clearly editor-only with no runnable controls or fake result",
+      "width": 390
+    },
+    {
+      "name": "Swift edited source downloads with the .swift extension and no execution",
+      "passed": true
+    },
+    {
+      "name": "Swift import replaces the editor without uploading or executing",
+      "passed": true
+    }
+  ],
+  "inputs": {
+    "src/lab-examples.js": "583ed7cc20cce04c5fde9bb206d30974c30c40b200400da4cb73b10c61d2f481",
+    "src/lab-tools.js": "ab573dd764ac6fb227de5a62e6ecbbd379783da0140cfa0ee48d7084565f4d14",
+    "src/index.html": "e8608cca63822e264fa857385422264206965569b8629c2a7c63eb14e3f18733",
+    "server/runtime-images.json": "f9233b0d533a8fe859fbb878797cdad77178da7c58e9a734f9bfdbdaf1aa46bb"
+  }
+}
