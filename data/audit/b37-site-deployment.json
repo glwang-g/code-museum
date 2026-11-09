@@ -1,0 +1,26 @@
+{
+  "checkedAt": "2026-11-09T10:19:48.119138+00:00",
+  "releaseCommit": "8bf6c20cc40302d066d927bedc1703f7674d39da",
+  "previousRelease": "cab8335a640ddc56f54740d06921d2df76b10d39",
+  "source": "Locally built from exact committed public Git export; fixed-input GitHub uploads continue. Ordinary CI will validate the same fixed release.",
+  "releaseBytes": 35364229,
+  "releaseFiles": 626,
+  "activated": true,
+  "healthHttpStatus": 204,
+  "nginxMainUnchanged": true,
+  "nginxSnippetSha256": "f4373f758645d4b51fbbf8212b0ab7eaa8bf8202328bc4e8d9ee09d8eebacf32",
+  "accessAvailability": true,
+  "analyticsActive": "active",
+  "executionServicePidsUnchanged": true,
+  "backupDirectory": "/var/backups/code-museum-site/20261109T101333Z-8bf6c20cc403",
+  "databaseBackups": [
+    "/var/backups/code-museum-site/20261109T101333Z-8bf6c20cc403/visits.sqlite3",
+    "/var/backups/code-museum-site/20261109T101333Z-8bf6c20cc403/messages.sqlite3"
+  ],
+  "credentialsReadOrChanged": false,
+  "testMailSent": false,
+  "priorAttempt": {
+    "rolledBack": true,
+    "reason": "Operator postcheck incorrectly required 200 for the established healthy 204 /healthz response; application startup was successful. Corrected to the actual successful 2xx contract."
+  }
+}

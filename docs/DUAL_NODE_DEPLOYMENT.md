@@ -1,6 +1,6 @@
 # 双节点执行部署方案与操作顺序
 
-用户现已授权本轮提交、推送和静态部署；完成状态须以实际Git/Actions与正式页面验收记录为准。本方案把运行时准备、站点发布和私有执行服务升级分开。`deploy/prepare-dual-executor.py` 只生成本机可审查材料，不连接服务器、不安装账号、不生成凭据、不启动或切换服务。准备成功与临时双节点联调成功都不等于生产已部署。
+用户已授权本轮提交、推送和静态部署；`8bf6c20`站点现已实际发布，正式数据为59节点/56远端，GitHub分批上传及master/Actions仍在收尾，不能把站点激活等同Git或CI全部完成。本方案把运行时准备、站点发布和私有执行服务升级分开。`deploy/prepare-dual-executor.py` 只生成本机可审查材料，不连接服务器、不安装账号、不生成凭据、不启动或切换服务。准备成功与临时双节点联调成功都不等于生产已部署。
 
 ## 拓扑和分工
 
@@ -142,6 +142,6 @@ sudo systemctl start code-museum-executor.service
 
 两台 root 私有安装记录分别在 `/var/backups/code-museum-executor/20261109T054729947461Z-dual-xshow` 和 `/var/backups/code-museum-executor/20261109T054729521128Z-dual-xshow2`，各自的 `port-4184-revision/` 保存端口修订前材料。切换前 SQLite 备份在 xshow 的 `/var/backups/code-museum-executor/20261109T054729947461Z-dual-xshow/metrics-before-cutover.sqlite`；这些主机备份不进入源码或普通发布包。新服务启用和旧服务 disable 已在正式验收通过后完成，避免重启争用4181；回退仍须按上文恢复旧服务的开机状态。
 
-当前生产后端56门已上线；已发布静态前端仍是22个可执行节点（4浏览器 / 19远端，Python重叠），源码中59个节点（4浏览器 / 56远端）的新增页面入口尚未发布。Git尚未提交或推送。`data/audit/runtime-rollout.json`保留原逐门临时验收记录，当前生产进度以上述正式报告为准。
+上述执行器切换检查点之后，`8bf6c20`静态站点已发布，正式前端现为59个可执行节点（4浏览器 / 56远端，Python重叠）。[本轮73项HTTPS/Chrome检查](../data/audit/b37-site-runtime-checks.json)及[公开数据一致性](../data/audit/b37-site-consistency.json)通过；[6项服务检查](../data/audit/b37-site-service-checks.json)确认申请路由及只读MCP新配置快照。GitHub输入分批上传及master/Actions仍在收尾。`data/audit/runtime-rollout.json`保留原逐门临时验收记录，不改写历史。
 
-本轮静态发布准备补记：Groovy档案已修正为8秒，超时提示不再硬编码3秒；用户授权现已覆盖Git提交、推送和部署。上述“尚未发布/提交”的状态是本轮发布前检查点，后续以实际工作流、HTTPS资源与浏览器验收记录覆盖，不能把授权本身写成发布成功。
+本轮静态发布补记：Groovy档案8秒与无硬编码3秒超时文案已随新页面发布。新增权限申请路由只追加到现有Nginx messages snippet，主虚拟主机不变；只验证availability和无效请求，没有发送有效申请或真实测试邮件。本次保留活数据库与旧站，执行器PID不变，详见 [站点部署与回退记录](DEPLOYMENT.md)。上述执行器章节内的“尚未发布/提交”是当时检查点；本轮站点已上线，Git/CI状态仍须分别收尾确认。

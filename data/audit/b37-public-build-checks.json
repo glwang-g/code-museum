@@ -1,0 +1,21 @@
+{
+  "checkedAt": "2026-11-09T10:35:33.185192+00:00",
+  "sourceCommit": "8bf6c20cc40302d066d927bedc1703f7674d39da",
+  "scope": "Actual git archive export, no private BCPL files or local output/tmp/.claude. Initial export found three globally ignored .gz inputs; the source commit includes the verified fix. Later documentation/acceptance-tool changes produce byte-identical dist.",
+  "publicTreeTests": {
+    "pass": 92,
+    "fail": 0
+  },
+  "publicTreeBuild": "passed offline",
+  "finalWorkingTreeTests": {
+    "pass": 92,
+    "fail": 0
+  },
+  "finalWorkingTreeBuild": "passed offline",
+  "distFileCount": 615,
+  "finalDistMatchesPublicTree": true,
+  "buildInfoSha256": "df911394dab5d9d33683affb76bd20df2813157641e97551e206ad95de17ff7b",
+  "runtimeInputPolicySha256": "54be7bd03d3ae131a910c093d249caa7df0690ec1518338e760545f182db387f",
+  "privatePayloadsAbsentFromExport": true,
+  "publicRuntimeManifestInputsAllTracked": true
+}

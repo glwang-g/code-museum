@@ -1,6 +1,18 @@
 # Code Museum · 产品上下文与交接
 
-## 2026-11-09 提交与静态发布准备（已授权，待实证收尾）
+## 2026-11-09 B组页面实际部署（Git/CI收尾中）
+
+北京时间18:19（审计`10:19:48Z`），从精确公开Git提交`8bf6c20cc40302d066d927bedc1703f7674d39da`导出的626文件/35,364,229字节普通发布包已激活到正式站点，见 [站点部署记录](../data/audit/b37-site-deployment.json)。正式静态数据现为59个可执行节点（4浏览器 / 56远端，Python重叠），由既有xshow 42门、xshow2 14门网关配合；这次静态发布未重启或替换受保护执行器，相关三个PID保持不变。
+
+[本轮正式HTTPS/Chrome报告](../data/audit/b37-site-runtime-checks.json)的`fullInventory=true`，73项通过：精确56门元数据、全部56门逐一真实正例、BCPL/Oberon/Groovy/Swift/Dart/VHDL/PostScript各1440/390页面执行、Python真实错误及恢复。[公开数据一致性](../data/audit/b37-site-consistency.json)通过；[6项服务检查](../data/audit/b37-site-service-checks.json)确认申请availability、无效申请400、原留言读取、59节点/56远端数据、BCPL上游README未进入站点（404），及只读MCP刷新为新的59节点配置快照。已实际核读正式BCPL 1440、Groovy 390、Swift 390和VHDL 1440截图，布局、真实输出、编译诊断及仿真标签正常；不能把上述范围扩大为全语言完整语义或所有设备认证。
+
+Nginx主虚拟主机未改，只在既有messages snippet追加`/api/access-requests`并校验reload；analytics随发布重启，既有活数据库及凭据保留，未读取或更改凭据。申请路由已接通，本轮没有提交有效申请或发送真实测试邮件；本地8组SMTP拦截检查与正式只读/无效请求检查分别记录，真实邮箱收取仍未人工确认。
+
+首次操作后检查误把既有健康`/healthz`的204响应要求为200，触发自动回退；应用启动当时正常。按实际成功2xx契约纠正后重新激活并通过，不能将此过程记成应用故障。上版`cab8335a640ddc56f54740d06921d2df76b10d39`保留，Nginx及SQLite备份在`/var/backups/code-museum-site/20261109T101333Z-8bf6c20cc403`；回退切回旧release并重启analytics，不把测试前数据库快照直接倒灌活库，也不回退本次未改的执行器。
+
+本机工作区与精确公共Git树均已通过92项默认测试和离线构建。B组36门的完整固定输入已写入发布提交；BCPL六项上游材料仍只在私有档案，公开输入可离线生成同一网站，完整工具链重建仍须合法持有的精确私有包。Groovy8秒档案与无硬编码3秒超时文案已随新页面发布。GitHub大体积输入仍分批上传，master与Actions尚未收尾；本节只确认实际站点上线，不宣称Git或CI已全部完成。
+
+## 2026-11-09 提交与静态发布准备（历史检查点）
 
 用户现明确要求“提交推送部署吧”，后续回复“继续”。本轮按已审查范围推进公共Git与静态发布；PDF插播、output/tmp产物和本机助手配置继续排除，不据授权本身宣称已推送或发布。Groovy档案已由3秒修正为8秒，通用超时提示移除硬编码3秒；原固定工具链、镜像及初期NOTICE保留，页面效果待新发布复核。
 
@@ -16,7 +28,7 @@ BCPL官方资料只明确私人/学术免费使用，尚未找到整个95,200,14
 
 用户明确要求将根目录 `output/`、`tmp/`、`.claude/` 全部加入 `.gitignore`，并清理这些目录的 Git 索引。已用限定路径的 `git rm --cached` 移除原先跟踪的23个 `output/iteration-2026-10-15/` 文件；本地文件全部保留，内容未变。索引中的删除仅针对这23个产物，没有重新暂存其他项目改动，也没有提交、推送或改写 Git 历史。此前提交范围盘点中“保留已跟踪截图”的建议是本次指令前的状态，现以用户明确要求为准。
 
-## 2026-11-09 双节点执行实现（后端已上线，新增静态入口待发布）
+## 2026-11-09 双节点执行实现（后端先行上线的历史检查点）
 
 当前检查点为 `2026-11-09T06:05:38Z`：用户已明确回复“授权之前的部署计划”，两台 root 拥有的独立代码、服务账号、私有环境文件、systemd unit 和专用受限 SSH 隧道已安装。首次安装对应 v2；正式预检发现 xshow 的4182被既有 `xshow-guestbook.service` 占用，因此保留该服务，将新 worker 改用经空闲检查的4184，并在两台应用、核对 v3 清单。当前计划是 `output/dual-executor-review-20261109-v3/plan.json`，SHA-256 `0286663a1997af8f688233ea7216bf5a1e3a1312a7458e69e4c8e22db726c1b1`；v2及更早目录仅作历史材料。安装、SSH限制及端口修订实证分别见 `data/audit/dual-node-production-install.json`、`data/audit/dual-node-production-ssh.json`、`data/audit/dual-node-production-port-revision.json`。
 

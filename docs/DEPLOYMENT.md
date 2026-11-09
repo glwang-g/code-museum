@@ -1,6 +1,20 @@
 # Code Museum 首版部署
 
-## 2026-11-09 双节点执行准备（未切换生产）
+## 2026-11-09 B组37门页面与权限申请路由实际发布（Git/CI收尾中）
+
+北京时间18:19，从精确公开Git提交`8bf6c20cc40302d066d927bedc1703f7674d39da`导出的普通发布包已激活，626个文件、35,364,229字节，见 [站点部署记录](../data/audit/b37-site-deployment.json)。正式页面现提供59个可执行节点（4浏览器 / 56私有远端，Python重叠），与既有xshow 42门/xshow2 14门网关协作。此次发布没有升级受保护执行器，网关、隧道与本机worker三个PID保持不变；analytics active，`/healthz`沿用正常204响应。
+
+[73项正式HTTPS/Chrome验收](../data/audit/b37-site-runtime-checks.json)全部通过，`fullInventory=true`：1项精确元数据、56门逐一真实正例、BCPL/Oberon/Groovy/Swift/Dart/VHDL/PostScript各1440/390执行及Python真实错误/恢复。[公开数据一致性](../data/audit/b37-site-consistency.json)通过，正式provenance、关系状态和执行能力文件与提交构建逐字节一致。[6项服务检查](../data/audit/b37-site-service-checks.json)通过：权限申请availability、无效申请400、旧留言读取、59节点/56远端、BCPL上游README未发布（404）、只读MCP刷新为新59节点配置快照。已实际核读BCPL 1440、Groovy 390、Swift 390、VHDL 1440截图，布局、真实输出、编译诊断和仿真标签正常。该MCP仍是已验证配置快照，不表示额外实时执行能力。
+
+运行权限申请已接入正式`/api/access-requests`：本次只在既有`/etc/nginx/snippets/code-museum-messages.conf`追加对应location，复用原限流zone，经`nginx -t`后reload；主虚拟主机未改。analytics随普通release重启，沿用既有SQLite和SMTP配置，未读取或更改凭据。本轮没有提交有效申请、用户留言或发送真实测试邮件；本地8组拦截SMTP检查与本轮availability/无效请求验收分别记录，真实收件箱送达仍未人工确认。
+
+Groovy运行预算与新档案均为8秒，通用超时提示移除硬编码3秒。BCPL公开网页只发布固定元数据、来源与自编适配说明；六项上游私有材料不进公共Git或站点包。公共Git树可离线构建网页，完整BCPL工具链重建仍须显式提供原清单匹配的私有材料。工作区与精确公开Git树均已通过92项测试及离线构建；本轮GitHub固定输入仍分批上传，master与Actions尚未收尾，不能把手动激活成功写成Git或CI全部完成。master收尾将使用后续验收/说明提交生成新的独立release目录，先比对其网站产物与已验收`8bf6c20`一致，避免CI重新写入当前正在服务的同SHA目录；最终提交号和Actions结果另按实证补记。
+
+首次操作后检查错误要求`/healthz`为200，而既有健康契约返回204，因而触发自动回退至旧站；应用启动当时成功。校正为实际成功2xx契约后重新激活并通过，不把操作检查错误记为应用故障。
+
+回退材料：保留旧release`cab8335a640ddc56f54740d06921d2df76b10d39`，Nginx及SQLite备份目录为`/var/backups/code-museum-site/20261109T101333Z-8bf6c20cc403`，其中有`visits.sqlite3`和`messages.sqlite3`的切换前副本，以及`nginx-messages.before.conf`原snippet。站点回退时原子恢复`current`到`releases/cab8335a640ddc56f54740d06921d2df76b10d39`并重启`code-museum-analytics`，核对HTTPS与204健康响应；若需撤销申请代理，再从该备份目录的`nginx-messages.before.conf`恢复本轮前messages snippet，先`nginx -t`再reload。正常代码回退继续使用现有活数据库，不直接用旧快照覆盖用户新增访问、留言或申请；恢复数据库必须另行核对数据范围。此次未改执行器，站点回退不停止或降级双节点服务。
+
+## 2026-11-09 双节点执行准备（历史检查点，后续状态见上）
 
 已实现统一网关、xshow 42 / xshow2 14 门完整静态分配、节点子集启动及普通发布包拆分。CI 不再携带约 2.2 GB 运行时输入，但仍不会自动升级受保护的执行器。两台固定镜像只读预检均匹配；当前生产仍使用原执行入口。 最终临时联调14项和全56门网关正例回归通过；绑定最终代码的审查包为 `output/dual-executor-review-20261109-v2/plan.json`，未安装常驻服务。安装常驻服务、专用 SSH 授权和切换步骤必须依据具体审查包，见 [双节点部署说明](DUAL_NODE_DEPLOYMENT.md)。
 
@@ -276,4 +290,4 @@ HTTPS 探针实际 POST 201、GET 可见、管理员命令隐藏后公开列表�
 
 本地核验与正式上线应分别记录。真实生产验证需确认代理、服务配置、申请邮件收取和现有留言/执行入口，不将源码完成视为已上线。
 
-本地核验命令：先 `npm run build`，再 `npm run access:browser`（需要本机 Chrome 和回环端口权限）。脚本启动真实 HTTP/SQLite/后台邮件线程，在 SMTP 边界拦截邮件，不发送真实邮件，也不接触生产数据库。报告与宽窄屏深浅主题截图在 `tmp/access-requests-browser/`。已通过 8 组集成检查，并实际查看代表截图；生产部署与真实邮箱收取尚未核验。
+本地核验命令：先 `npm run build`，再 `npm run access:browser`（需要本机 Chrome 和回环端口权限）。脚本启动真实 HTTP/SQLite/后台邮件线程，在 SMTP 边界拦截邮件，不发送真实邮件，也不接触生产数据库。报告与宽窄屏深浅主题截图在 `tmp/access-requests-browser/`。已通过 8 组集成检查，并实际查看代表截图；该入口现已按本轮发布记录接入生产；本轮未发送有效申请或真实测试邮件，真实邮箱收取仍未人工确认。

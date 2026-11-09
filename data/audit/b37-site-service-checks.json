@@ -1,0 +1,31 @@
+{
+  "checkedAt": "2026-11-09T10:23:27.744Z",
+  "origin": "https://codemuseum.freexlib.com",
+  "scope": "Actual HTTPS read/invalid-request checks only; no valid access request, user message, source submission or test email. Credentials and public message contents not retained.",
+  "checks": [
+    {
+      "name": "Private access availability exposes only configured availability",
+      "passed": true
+    },
+    {
+      "name": "Invalid application rejected; no valid application or mail sent",
+      "passed": true
+    },
+    {
+      "name": "Existing public guest book read remains available; message contents not retained in report",
+      "passed": true
+    },
+    {
+      "name": "Published capability data covers 59 nodes and 56 remote runtimes",
+      "passed": true
+    },
+    {
+      "name": "BCPL publication boundary visible and upstream README omitted from served release",
+      "passed": true
+    },
+    {
+      "name": "Existing read-only MCP refreshes to the new verified 59-node configuration snapshot",
+      "passed": true
+    }
+  ]
+}

@@ -6,15 +6,15 @@
 
 用户授权按 P2、P3 顺序逐门推进原 B 组 37 门，不提交、推送或部署。精确队列和逐门阶段见 [runtime-rollout.json](../../data/audit/runtime-rollout.json)。
 
-### 2026-11-09 当前状态：37/37 门后端生产上线，新增静态入口待发布
+### 2026-11-09 当前状态：37/37 门后端与页面已上线，Git/CI收尾中
 
-用户现已授权本轮Git提交、推送及静态部署，尚待实际工作流和正式页面验收收尾。公共发布范围为B组36门的完整固定输入，加BCPL的公开固定元数据及自编适配；BCPL六项上游私有材料不上传。`data/runtime-input-policy.json`使网站可仅由公开输入离线构建，完整BCPL镜像重建另需合法持有并经`--private-input-directory`提供精确固定私有包，不能宣称仅从公共仓库完整复现BCPL工具链。原manifest/镜像身份、历史逐门报告保持不变；本机私有档案以独立Git提交固定，详见 [执行说明](../EXECUTOR.md)。Groovy两处旧3秒文案已在本轮源码修正，静态页面效果待发布确认。
+用户已授权本轮Git提交、推送及静态部署；`8bf6c20`站点现已实际激活，[73项正式HTTPS/Chrome检查](../../data/audit/b37-site-runtime-checks.json)及[公开数据一致性](../../data/audit/b37-site-consistency.json)通过。正式前端为59节点/56远端；GitHub大体积输入分批推送与master/Actions仍在收尾，尚不宣称CI全部完成。公共发布范围为B组36门已写入发布提交的完整固定输入，加BCPL的公开固定元数据及自编适配；BCPL六项上游私有材料不上传。`data/runtime-input-policy.json`使网站可仅由公开输入离线构建，完整BCPL镜像重建另需合法持有并经`--private-input-directory`提供精确固定私有包，不能宣称仅从公共仓库完整复现BCPL工具链。原manifest/镜像身份、历史逐门报告保持不变；本机私有档案以独立Git提交固定，详见 [执行说明](../EXECUTOR.md)。Groovy两处旧3秒文案已修正并随新页面发布，宽窄屏真实执行通过本轮验收。
 
 用户随后明确授权之前的部署计划，双节点生产后端现已切换：xshow 42门、xshow2 14门，经10项常驻 canary、[63项正式 HTTPS/Chrome 检查](../../data/audit/dual-node-production-checks.json)（含全部56门逐一正例）和[8项生命周期/故障恢复检查](../../data/audit/dual-node-production-lifecycle.json)通过；[新服务 active/enabled](../../data/audit/dual-node-production-services.json)，旧执行器停用自启并保留回退。xshow worker使用4184，避开保留的既有留言服务4182；部署清单、备份与回退见 [双节点部署说明](../DUAL_NODE_DEPLOYMENT.md)。
 
 当前 Groovy 的宿主运行预算已依据三次实测由初期3秒调整为8秒（含 JVM 启动与脚本编译），11项容器与7项网页复验通过；固定工具链/镜像不变。下方初期3秒记录保留为历史，当前以 EXECUTOR.md 和 API 每门 runSeconds 为准。[runtime-rollout.json](../../data/audit/runtime-rollout.json)保留原逐门临时验收阶段，仍是固定复测输入，不作为当前生产状态表。
 
-原 B 组最后两门已按 BCPL → Oberon 顺序完成临时验收；前35门沿用各自专项证据，正式生产全56门已逐一跑正例，不等于全部专项语义/资源用例重跑。源码现配置59个可执行节点（4浏览器 / 56远端，Python重叠），已发布静态前端仍为原22个节点（4浏览器 / 19远端），新版59节点入口尚未发布。固定输入正在按上述公共/私有边界整理提交；本段编写时尚未记录本轮Git推送及静态部署完成。
+原 B 组最后两门已按 BCPL → Oberon 顺序完成临时验收；前35门沿用各自专项证据，正式生产全56门已逐一跑正例，不等于全部专项语义/资源用例重跑。源码与已发布静态前端现均为59个可执行节点（4浏览器 / 56远端，Python重叠）。本轮73项检查是56门各一个正例、7语言两档页面和Python错误恢复，不代替逐门完整语义/资源专项。固定输入遵循上述公共/私有边界；GitHub推送与Actions仍在收尾。
 
 BCPL 使用作者 2026-11-09 完整快照、Cintcode64 编译器和以固定 GCC 重建的 C VM；原始 bootstrap、标准头文件、作者条款和随包 GNU licence 保留。main.b / start()，512 MiB / 编译 10 秒 / 运行 3 秒。非交互 VM 补丁把真实故障码转为失败退出，PC 取原系统的第 6 号寄存器；启动器恢复原始标准输入、使用 LF 文本输出并阻止剩余输入进入 CLI。除零、返回 7、中文多行输入、语法拒绝、超时、输出上限、取消和恢复已实测。无图形、音频、在线依赖或历史机器重现；作者只明确私人/学术用途，不推断商业再分发许可。
 
