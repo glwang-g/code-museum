@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "platform": "linux/amd64",
+  "baseImage": "gcc@sha256:5e927c284bf55a7dc796262e311a0703344f62f41f5621eb56843111b1d37e15",
+  "sourceDateEpoch": 1793923200,
+  "version": "50.0.1",
+  "source": "https://github.com/bytecodealliance/wasmtime/releases/tag/v50.0.1",
+  "license": "Apache-2.0 WITH LLVM-exception",
+  "runtime": {
+    "id": "wasm",
+    "executable": "/opt/wasmtime/wasmtime",
+    "memoryMiB": 512,
+    "versionArgs": [
+      "--version"
+    ],
+    "versionPattern": "wasmtime 50.0.1"
+  },
+  "files": [
+    {
+      "file": "Dockerfile",
+      "bytes": 411,
+      "sha256": "8158d7a46d11c552c205b1915256a95ddbc9197e9ecb20230eeb4bce7b00589e"
+    },
+    {
+      "file": "NOTICE.md",
+      "bytes": 850,
+      "sha256": "ee8a207411105e22014bac94eb839244374d4953b1867df5af8f73ed255546ef"
+    },
+    {
+      "file": "assets/wasmtime-v50.0.1-x86_64-linux.tar.xz",
+      "bytes": 11577424,
+      "sha256": "685466455dd42a14774a86c36c8f2e45cbb9bd6d92a850139315df60a75498a5"
+    },
+    {
+      "file": "licenses/LICENSE",
+      "bytes": 12243,
+      "sha256": "268872b9816f90fd8e85db5a28d33f8150ebb8dd016653fb39ef1f94f2686bc5"
+    },
+    {
+      "file": "metadata/official-release.json",
+      "bytes": 81938,
+      "sha256": "88ab2a815c7d062d3798de3b0240684eb995fd63e6ca52624034033498264761"
+    },
+    {
+      "file": "metadata/upstream-README.md",
+      "bytes": 7674,
+      "sha256": "61b003ff4ddfbe6123ae3a1123e39e379f1559edc44634e6c14ba3f2671f9fd8"
+    }
+  ]
+}

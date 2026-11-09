@@ -1,0 +1,18 @@
+Package: nasm
+Version: 2.16.01-1
+Installed-Size: 3343
+Maintainer: Anibal Monsalve Salazar <anibal@debian.org>
+Architecture: amd64
+Depends: dpkg (>= 1.15.4) | install-info, libc6 (>= 2.34)
+Description: General-purpose x86 assembler
+Description-md5: bc3dcab1162eb9b0f97c24bb0f3a90d0
+Homepage: http://www.nasm.us/
+Tag: devel::compiler, devel::machinecode, implemented-in::c,
+ interface::commandline, role::program, scope::utility,
+ works-with::software:source
+Section: devel
+Priority: optional
+Filename: pool/main/n/nasm/nasm_2.16.01-1_amd64.deb
+Size: 405156
+MD5sum: b9cc00546ffae4917eff751ec407d67b
+SHA256: 0180693ad5d2da8b36e7d73b9b596dc3e9f900238e3de699976c0576875b878f

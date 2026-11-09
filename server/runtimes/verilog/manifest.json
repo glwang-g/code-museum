@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "platform": "linux/amd64",
+  "baseImage": "gcc@sha256:5e927c284bf55a7dc796262e311a0703344f62f41f5621eb56843111b1d37e15",
+  "sourceDateEpoch": 1793923200,
+  "version": "11.0",
+  "source": "https://steveicarus.github.io/iverilog/",
+  "license": "Icarus Verilog upstream and Debian copyright",
+  "runtime": {
+    "id": "verilog",
+    "executable": "/usr/bin/iverilog",
+    "memoryMiB": 512,
+    "versionArgs": [
+      "-V"
+    ],
+    "versionPattern": "11.0"
+  },
+  "files": [
+    {
+      "file": "Dockerfile",
+      "bytes": 275,
+      "sha256": "7330fd142998e218b0ee2034ed0cc2b946fc84e09a67779db9ff2d9cb1fc4726"
+    },
+    {
+      "file": "NOTICE.md",
+      "bytes": 1076,
+      "sha256": "8213c877d903a1e029c8ccfc4f16e0a7f68fa79067993787fc8007e94b4a2c88"
+    },
+    {
+      "file": "acquisition.json",
+      "bytes": 1967,
+      "sha256": "ef10a8fd2d2ad14095ec6abe93041bb6643f13da0df99b32ab02b8b69b19344f"
+    },
+    {
+      "file": "assets/iverilog_11.0-1.1+b1_amd64.deb",
+      "bytes": 2023324,
+      "sha256": "14d9d14dc8256fd89667fb68c3bd93f1c57310b9c95b33fb0d4b7719c887ae2f"
+    },
+    {
+      "file": "licenses/iverilog.copyright",
+      "bytes": 2930,
+      "sha256": "56954498134ec0f9f0c9d17c24fa219d80cbaf0bad35705d5e02006b2b72784f"
+    },
+    {
+      "file": "metadata/apt-verification.txt",
+      "bytes": 1169,
+      "sha256": "966652e257fd492d3cb75d146adc643c0debd59a4664d623e49815b2b164c3a7"
+    },
+    {
+      "file": "metadata/bookworm-InRelease",
+      "bytes": 151075,
+      "sha256": "77737fa4b34f2693e982cc9ee35736816c35a7778fc2d326cc1bbf5b301fe1aa"
+    },
+    {
+      "file": "metadata/bookworm-security-InRelease",
+      "bytes": 34770,
+      "sha256": "836749276aafc119e05df93304153ee1b4d436807f481ac3c81162b3a6b7faae"
+    },
+    {
+      "file": "metadata/bookworm-updates-InRelease",
+      "bytes": 55403,
+      "sha256": "835e7f5704fbf7b6ef326075dccc00bab71918530b76ce1d7deea0470d023171"
+    },
+    {
+      "file": "metadata/iverilog_11.0-1.1+b1_amd64.deb.metadata",
+      "bytes": 852,
+      "sha256": "0bacd92f612c4f2adc27d87caa6cfba0e23ad47ad908df9141c380df3f17798a"
+    }
+  ]
+}

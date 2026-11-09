@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "platform": "linux/amd64",
+  "baseImage": "gcc@sha256:5e927c284bf55a7dc796262e311a0703344f62f41f5621eb56843111b1d37e15",
+  "sourceDateEpoch": 1793923200,
+  "version": "2.0.0",
+  "source": "https://ghdl.github.io/ghdl/",
+  "license": "GHDL and Debian original copyright notices",
+  "runtime": {
+    "id": "vhdl",
+    "executable": "/usr/bin/ghdl-mcode",
+    "memoryMiB": 512,
+    "versionArgs": [
+      "--version"
+    ],
+    "versionPattern": "2.0.0"
+  },
+  "files": [
+    {
+      "file": "Dockerfile",
+      "bytes": 373,
+      "sha256": "ee38895e03f3773f2d81fff29a9f4c0b5897e002a3fbb24b112578c8cff83ee1"
+    },
+    {
+      "file": "NOTICE.md",
+      "bytes": 1086,
+      "sha256": "f88a89e6f77c9a11ec3dd226a38baa8d83060c9eaf2d8b43f603800ccb2146ac"
+    },
+    {
+      "file": "acquisition.json",
+      "bytes": 2725,
+      "sha256": "c13cf7c62521f15596b993c2dffd466a3483cdd4f72745707dd6353c1bdbddd3"
+    },
+    {
+      "file": "assets/ghdl-common_2.0.0+dfsg-6.2+b2_amd64.deb",
+      "bytes": 162324,
+      "sha256": "73e65d33f091599177d15b8e39442ce4c6fd648e62224384000f671eaf59cce8"
+    },
+    {
+      "file": "assets/ghdl-mcode_2.0.0+dfsg-6.2+b2_amd64.deb",
+      "bytes": 1355812,
+      "sha256": "03ae598a0ac9d0cfd2e10e1861d546f25e1e10e6bdfeaca9103ce2aaa168e3e8"
+    },
+    {
+      "file": "assets/libgnat-12_12.2.0-14+deb12u1_amd64.deb",
+      "bytes": 1265660,
+      "sha256": "64a529089a83765bf90bafd555278ec755d2b2541d77fdf093d2937a6a4673cd"
+    },
+    {
+      "file": "assets/museum-vhdl-compile.sh",
+      "bytes": 139,
+      "sha256": "a68aec3222531b9231a6289452c40fb2409f8d6fb324d4b9e7e9ed22a0db832e"
+    },
+    {
+      "file": "licenses/ghdl-common.copyright",
+      "bytes": 31723,
+      "sha256": "bbad606c03a8592c0464fbac9694b730f5d792facbd787b4b198cbd2f72b6812"
+    },
+    {
+      "file": "metadata/apt-verification.txt",
+      "bytes": 1169,
+      "sha256": "966652e257fd492d3cb75d146adc643c0debd59a4664d623e49815b2b164c3a7"
+    },
+    {
+      "file": "metadata/bookworm-InRelease",
+      "bytes": 151075,
+      "sha256": "77737fa4b34f2693e982cc9ee35736816c35a7778fc2d326cc1bbf5b301fe1aa"
+    },
+    {
+      "file": "metadata/bookworm-security-InRelease",
+      "bytes": 34770,
+      "sha256": "836749276aafc119e05df93304153ee1b4d436807f481ac3c81162b3a6b7faae"
+    },
+    {
+      "file": "metadata/bookworm-updates-InRelease",
+      "bytes": 55403,
+      "sha256": "835e7f5704fbf7b6ef326075dccc00bab71918530b76ce1d7deea0470d023171"
+    },
+    {
+      "file": "metadata/ghdl-common_2.0.0+dfsg-6.2+b2_amd64.deb.metadata",
+      "bytes": 638,
+      "sha256": "1efa7a5c684bfb8736d73a9491990b0965a3a33429ebb04c28e50c2106b91877"
+    },
+    {
+      "file": "metadata/ghdl-mcode_2.0.0+dfsg-6.2+b2_amd64.deb.metadata",
+      "bytes": 703,
+      "sha256": "8346bdf3ae9f0dd3db5b0cad416b4bb117bed11a97b1929ac3b54b87ad8f9fec"
+    },
+    {
+      "file": "metadata/libgnat-12_12.2.0-14+deb12u1_amd64.deb.metadata",
+      "bytes": 670,
+      "sha256": "14a936bb1f42109fb80214bbe825d8b69da360049762264d99fb27dcee5856db"
+    }
+  ]
+}

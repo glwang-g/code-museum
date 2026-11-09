@@ -1,0 +1,19 @@
+Package: tcsh
+Version: 6.24.07-1
+Installed-Size: 1346
+Maintainer: Josef Schneider <josef81sch@gmail.com>
+Architecture: amd64
+Provides: c-shell
+Depends: libc6 (>= 2.34), libcrypt1 (>= 1:4.1.0), libtinfo6 (>= 6)
+Description: TENEX C Shell, an enhanced version of Berkeley csh
+Description-md5: ab05cfdb9c9a5998d7051911e78a7881
+Multi-Arch: foreign
+Homepage: https://www.tcsh.org/
+Tag: implemented-in::c, interface::shell, role::program, scope::utility,
+ uitoolkit::ncurses
+Section: shells
+Priority: optional
+Filename: pool/main/t/tcsh/tcsh_6.24.07-1_amd64.deb
+Size: 448572
+MD5sum: ad505da514ccdfd9b6ba7bbc0eb36df6
+SHA256: 9fd93ff2618f088ab35f6f17c826bb11b336c70cdef78ee0be03e4adae877bc2

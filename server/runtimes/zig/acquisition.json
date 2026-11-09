@@ -1,0 +1,76 @@
+{
+  "source": "https://ziglang.org/download/0.14.1/zig-x86_64-linux-0.14.1.tar.xz",
+  "verification": "official-download-index-sha256",
+  "archive": {
+    "file": "assets/zig-x86_64-linux-0.14.1.tar.xz",
+    "bytes": 49086504,
+    "sha256": "24aeeec8af16c381934a6cd7d95c807a8cb2cf7df9fa40d359aa884195c4716c"
+  },
+  "licenseMembers": [
+    {
+      "member": "zig-x86_64-linux-0.14.1/LICENSE",
+      "file": "licenses/LICENSE",
+      "sha256": "5c537d6853e005298a285d508cff9ac7192cea23576c840d485b2b586a7ff177"
+    },
+    {
+      "member": "zig-x86_64-linux-0.14.1/lib/libc/glibc/LICENSES",
+      "file": "licenses/lib__libc__glibc__LICENSES",
+      "sha256": "b22a69aa3f80a5201818c66cb0df0f25f9fa13cf5861b0093a058dbd12d50dce"
+    },
+    {
+      "member": "zig-x86_64-linux-0.14.1/lib/libc/mingw/COPYING",
+      "file": "licenses/lib__libc__mingw__COPYING",
+      "sha256": "99a69660981156c21336fdb5661f89341b013c94e4bf9e1c7467b4745718397f"
+    },
+    {
+      "member": "zig-x86_64-linux-0.14.1/lib/libc/musl/COPYRIGHT",
+      "file": "licenses/lib__libc__musl__COPYRIGHT",
+      "sha256": "f9bc4423732350eb0b3f7ed7e91d530298476f8fec0c6c427a1c04ade22655af"
+    },
+    {
+      "member": "zig-x86_64-linux-0.14.1/lib/libc/wasi/LICENSE",
+      "file": "licenses/lib__libc__wasi__LICENSE",
+      "sha256": "673f577e363e80e0058bd78214683f045d1d0c63930969a87f01a1d87d7cf1d6"
+    },
+    {
+      "member": "zig-x86_64-linux-0.14.1/lib/libc/wasi/LICENSE-APACHE",
+      "file": "licenses/lib__libc__wasi__LICENSE-APACHE",
+      "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+    },
+    {
+      "member": "zig-x86_64-linux-0.14.1/lib/libc/wasi/LICENSE-APACHE-LLVM",
+      "file": "licenses/lib__libc__wasi__LICENSE-APACHE-LLVM",
+      "sha256": "268872b9816f90fd8e85db5a28d33f8150ebb8dd016653fb39ef1f94f2686bc5"
+    },
+    {
+      "member": "zig-x86_64-linux-0.14.1/lib/libc/wasi/LICENSE-MIT",
+      "file": "licenses/lib__libc__wasi__LICENSE-MIT",
+      "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3"
+    },
+    {
+      "member": "zig-x86_64-linux-0.14.1/lib/libc/wasi/libc-bottom-half/cloudlibc/LICENSE",
+      "file": "licenses/lib__libc__wasi__libc-bottom-half__cloudlibc__LICENSE",
+      "sha256": "c8b789cf5a746611e6300a0cc7750dbf92b61912a709d04e639245f7290656d0"
+    },
+    {
+      "member": "zig-x86_64-linux-0.14.1/lib/libc/wasi/libc-top-half/musl/COPYRIGHT",
+      "file": "licenses/lib__libc__wasi__libc-top-half__musl__COPYRIGHT",
+      "sha256": "f9bc4423732350eb0b3f7ed7e91d530298476f8fec0c6c427a1c04ade22655af"
+    },
+    {
+      "member": "zig-x86_64-linux-0.14.1/lib/libcxx/LICENSE.TXT",
+      "file": "licenses/lib__libcxx__LICENSE.TXT",
+      "sha256": "539dd7aed86e8a4f12cbdd0e6c50c189c7d74847e4fecc64ce2c6ee3a01da38b"
+    },
+    {
+      "member": "zig-x86_64-linux-0.14.1/lib/libcxxabi/LICENSE.TXT",
+      "file": "licenses/lib__libcxxabi__LICENSE.TXT",
+      "sha256": "e2b35be49f7284a45b7baca8fc7b3ab7440e7902392b2528a457816b5bb2a15c"
+    },
+    {
+      "member": "zig-x86_64-linux-0.14.1/lib/libunwind/LICENSE.TXT",
+      "file": "licenses/lib__libunwind__LICENSE.TXT",
+      "sha256": "b5efebcaca80879234098e52d1725e6d9eb8fb96a19fce625d39184b705f7b6d"
+    }
+  ]
+}

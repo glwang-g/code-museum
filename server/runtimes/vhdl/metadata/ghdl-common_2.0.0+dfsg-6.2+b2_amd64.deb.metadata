@@ -1,0 +1,17 @@
+Package: ghdl-common
+Source: ghdl (2.0.0+dfsg-6.2)
+Version: 2.0.0+dfsg-6.2+b2
+Installed-Size: 2427
+Maintainer: Debian Electronics Team <pkg-electronics-devel@lists.alioth.debian.org>
+Architecture: amd64
+Replaces: ghdl (<< 0.37+dfsg2)
+Breaks: ghdl (<< 0.37+dfsg2)
+Description: VHDL compiler/simulator (common files)
+Description-md5: b290124fad2a6e7a33b72c9925247d56
+Homepage: https://github.com/ghdl/ghdl
+Section: electronics
+Priority: optional
+Filename: pool/main/g/ghdl/ghdl-common_2.0.0+dfsg-6.2+b2_amd64.deb
+Size: 162324
+MD5sum: b54fd902e4084858a1c05ab3f7cf2bfa
+SHA256: 73e65d33f091599177d15b8e39442ce4c6fd648e62224384000f671eaf59cce8

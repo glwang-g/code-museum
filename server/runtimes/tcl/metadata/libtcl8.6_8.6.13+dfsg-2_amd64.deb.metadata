@@ -1,0 +1,23 @@
+Package: libtcl8.6
+Source: tcl8.6
+Version: 8.6.13+dfsg-2
+Installed-Size: 4282
+Maintainer: Debian Tcl/Tk Packagers <pkg-tcltk-devel@lists.alioth.debian.org>
+Architecture: amd64
+Replaces: tcl8.6 (<< 8.6.0-2)
+Provides: libtcl
+Depends: tzdata, libc6 (>= 2.35), zlib1g (>= 1:1.2.2)
+Suggests: tcl8.6
+Conflicts: tcl74 (<= 7.4p3-2), tcl8.6 (<< 8.6.0-2)
+Breaks: nsf (<< 2.2.0)
+Description: Tcl (the Tool Command Language) v8.6 - run-time library files
+Description-md5: 0900ad020fbf5b0aca4aa49a8044d863
+Multi-Arch: same
+Homepage: http://www.tcl.tk/
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/t/tcl8.6/libtcl8.6_8.6.13+dfsg-2_amd64.deb
+Size: 1034548
+MD5sum: 017076f7f43bc9eee3355b21ec42cd16
+SHA256: 976c4235b816635e1756016f3adbabb634e8b97a9f6b97cf901be099e4fd2487

@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "platform": "linux/amd64",
+  "baseImage": "gcc@sha256:5e927c284bf55a7dc796262e311a0703344f62f41f5621eb56843111b1d37e15",
+  "sourceDateEpoch": 1793923200,
+  "version": "2.16.01",
+  "source": "https://www.nasm.us/",
+  "license": "NASM upstream and Debian copyright; pinned base GNU binutils",
+  "runtime": {
+    "id": "x86-assembly",
+    "executable": "/usr/bin/nasm",
+    "memoryMiB": 256,
+    "versionArgs": [
+      "--version"
+    ],
+    "versionPattern": "2.16.01"
+  },
+  "files": [
+    {
+      "file": "Dockerfile",
+      "bytes": 373,
+      "sha256": "7f4fbc0a3148e67757c3f5fdce88181a9de165ed8af9427ece182e4a4fbe37a4"
+    },
+    {
+      "file": "NOTICE.md",
+      "bytes": 1041,
+      "sha256": "ebff087ba03e492730e2592dd47583f6560680ad4729320e17456f526f1a7fa2"
+    },
+    {
+      "file": "acquisition.json",
+      "bytes": 1940,
+      "sha256": "65c63f162434e9c6824b1225dc0f633cbc86ea1ef3e49e04a6ea6ef172364ac8"
+    },
+    {
+      "file": "assets/museum-nasm-compile.sh",
+      "bytes": 164,
+      "sha256": "58e938397aabedaa0dd588e1b0bb02a6a067722b02640cf011724b5731b8d8b6"
+    },
+    {
+      "file": "assets/nasm_2.16.01-1_amd64.deb",
+      "bytes": 405156,
+      "sha256": "0180693ad5d2da8b36e7d73b9b596dc3e9f900238e3de699976c0576875b878f"
+    },
+    {
+      "file": "licenses/base-binutils.copyright",
+      "bytes": 1795,
+      "sha256": "a81bdd422c2c015deca84bf6ad249bf0d7d19885fc01d1894463291b0b7313e1"
+    },
+    {
+      "file": "licenses/nasm.copyright",
+      "bytes": 3046,
+      "sha256": "cc42d1d93aedec675ce979cd2a7ae6ad280219be43f63683dfc96388b8c5cc81"
+    },
+    {
+      "file": "metadata/apt-verification.txt",
+      "bytes": 1169,
+      "sha256": "966652e257fd492d3cb75d146adc643c0debd59a4664d623e49815b2b164c3a7"
+    },
+    {
+      "file": "metadata/bookworm-InRelease",
+      "bytes": 151075,
+      "sha256": "77737fa4b34f2693e982cc9ee35736816c35a7778fc2d326cc1bbf5b301fe1aa"
+    },
+    {
+      "file": "metadata/bookworm-security-InRelease",
+      "bytes": 34770,
+      "sha256": "836749276aafc119e05df93304153ee1b4d436807f481ac3c81162b3a6b7faae"
+    },
+    {
+      "file": "metadata/bookworm-updates-InRelease",
+      "bytes": 55403,
+      "sha256": "835e7f5704fbf7b6ef326075dccc00bab71918530b76ce1d7deea0470d023171"
+    },
+    {
+      "file": "metadata/nasm_2.16.01-1_amd64.deb.metadata",
+      "bytes": 670,
+      "sha256": "0bbe1ac724a1f4270c77846693fbf9f153a67c82124392ac505754f5169204fc"
+    }
+  ]
+}

@@ -1,0 +1,190 @@
+{
+  "schemaVersion": 1,
+  "platform": "linux/amd64",
+  "baseImage": "gcc@sha256:5e927c284bf55a7dc796262e311a0703344f62f41f5621eb56843111b1d37e15",
+  "sourceDateEpoch": 1793923200,
+  "version": "6.1.3",
+  "source": "https://www.swift.org/install/linux/debian/12/",
+  "license": "Apache-2.0 with Swift Runtime Library Exception and SDK component terms",
+  "runtime": {
+    "id": "swift",
+    "executable": "/opt/swift/usr/bin/swiftc",
+    "memoryMiB": 1024,
+    "versionArgs": [
+      "--version"
+    ],
+    "versionPattern": "Swift version 6.1.3"
+  },
+  "files": [
+    {
+      "file": "Dockerfile",
+      "bytes": 506,
+      "sha256": "3d6a6e4376abea85351e03828b2bdabbf99ba5b215fb393632f016d5f1580cb2"
+    },
+    {
+      "file": "NOTICE.md",
+      "bytes": 1005,
+      "sha256": "2a23b024fe0a2f0fd0de8f6f03eaf288f329c4a88d1eb35361e18fb1b08688af"
+    },
+    {
+      "file": "acquisition.json",
+      "bytes": 5068,
+      "sha256": "166e9058b0b3dd1fcddb422b12f28f271deafc0037428a95d25645b998fb0517"
+    },
+    {
+      "file": "assets/swift-6.1.3.tar.gz.part000",
+      "bytes": 33554432,
+      "sha256": "0d46b882fd985977db080119ba4a5db9468f37fc8813ac96ba079cd3d54fab9e"
+    },
+    {
+      "file": "assets/swift-6.1.3.tar.gz.part001",
+      "bytes": 33554432,
+      "sha256": "72b73d2d08faad262db730314a369ba97824e7546c731c5dacc0c96f0da6e5d5"
+    },
+    {
+      "file": "assets/swift-6.1.3.tar.gz.part002",
+      "bytes": 33554432,
+      "sha256": "da2ec7f26e221242646a2ed0a5e1b7d3d658fa53c6dd82ec48cfdcc993710473"
+    },
+    {
+      "file": "assets/swift-6.1.3.tar.gz.part003",
+      "bytes": 33554432,
+      "sha256": "501802526b216e3935c5409160b8bc2c740b8837b1a48ed43356b864125e28ce"
+    },
+    {
+      "file": "assets/swift-6.1.3.tar.gz.part004",
+      "bytes": 33554432,
+      "sha256": "dfe9b2421aa8da1d69e4573c0aef0147581c977368dc70a4049da743b10c2211"
+    },
+    {
+      "file": "assets/swift-6.1.3.tar.gz.part005",
+      "bytes": 33554432,
+      "sha256": "ff7b5eb81850963c1d9fd82c782f1c0e8c2b5dcebd0c1f78e5d9f88005c88b39"
+    },
+    {
+      "file": "assets/swift-6.1.3.tar.gz.part006",
+      "bytes": 33554432,
+      "sha256": "ea5089a9a8d5bb90b305914f78ed9fa1658c917a2d5e44a739c6ba37e4b44fa8"
+    },
+    {
+      "file": "assets/swift-6.1.3.tar.gz.part007",
+      "bytes": 33554432,
+      "sha256": "6eb93046a0e3b03e9c2ac4f62085b396f875045f480d84397af25cffd159178b"
+    },
+    {
+      "file": "assets/swift-6.1.3.tar.gz.part008",
+      "bytes": 33554432,
+      "sha256": "ee372908388593eb266faa966bf4e68b2389eea810d570a7a10f243fe770b29e"
+    },
+    {
+      "file": "assets/swift-6.1.3.tar.gz.part009",
+      "bytes": 33554432,
+      "sha256": "e4a0cb0b001f3acc0f7586b2152550f1e8179ed1bc55f5d5c67ca167fc1e6ef4"
+    },
+    {
+      "file": "assets/swift-6.1.3.tar.gz.part010",
+      "bytes": 33554432,
+      "sha256": "99587c5e1a46b797244765d30f35c984abd7039ab8be87b339ff06312a9da5eb"
+    },
+    {
+      "file": "assets/swift-6.1.3.tar.gz.part011",
+      "bytes": 33554432,
+      "sha256": "8773ab207cfc42f5ecdbd8f1ac31a97b07ee3f4ec60d6c29463a6b7880deced7"
+    },
+    {
+      "file": "assets/swift-6.1.3.tar.gz.part012",
+      "bytes": 33554432,
+      "sha256": "07c8f9ca0cc99af2cff094428a67a8849d1f7e6839972aeb812572a75a298979"
+    },
+    {
+      "file": "assets/swift-6.1.3.tar.gz.part013",
+      "bytes": 33554432,
+      "sha256": "823fe1c7a63fd622015aa907f1da4d1b47af0cbed0c3f99a0debabc6453ec745"
+    },
+    {
+      "file": "assets/swift-6.1.3.tar.gz.part014",
+      "bytes": 33554432,
+      "sha256": "db9f8e47fdc87ed8fa56b4cebc4a347dfcc80a61fa126546d2ae5398a746f0ed"
+    },
+    {
+      "file": "assets/swift-6.1.3.tar.gz.part015",
+      "bytes": 33554432,
+      "sha256": "011d7c1616db453129134e947380d087d2fa4fe6467bc4ffff58470bcff0d3c6"
+    },
+    {
+      "file": "assets/swift-6.1.3.tar.gz.part016",
+      "bytes": 33554432,
+      "sha256": "0c14408cd6cab3298adb7b5377c6f4aeaa42af053745b64aaf0e948680d1c5cf"
+    },
+    {
+      "file": "assets/swift-6.1.3.tar.gz.part017",
+      "bytes": 33554432,
+      "sha256": "923e942eab39ca360185009cc0b1faa0876b6d826604ff366217e5983fcc6b99"
+    },
+    {
+      "file": "assets/swift-6.1.3.tar.gz.part018",
+      "bytes": 33554432,
+      "sha256": "2fa1bf5e24f470fe1f3652c1acde215893191a93ef4473f8afa5a4f549d1cdeb"
+    },
+    {
+      "file": "assets/swift-6.1.3.tar.gz.part019",
+      "bytes": 33554432,
+      "sha256": "266211815792f4e19c3104ea05bb1ab81ffeef2b1babcef0447ee51cec29dab3"
+    },
+    {
+      "file": "assets/swift-6.1.3.tar.gz.part020",
+      "bytes": 33554432,
+      "sha256": "c5d334a61f8ed9d3be23049d0649605a8b4d477a70dd31e72350c8649f544229"
+    },
+    {
+      "file": "assets/swift-6.1.3.tar.gz.part021",
+      "bytes": 33554432,
+      "sha256": "bf95cc05e44c45dcb7daa02c2a7e102ba5f072c1b7733632f0bda31e4b756263"
+    },
+    {
+      "file": "assets/swift-6.1.3.tar.gz.part022",
+      "bytes": 33554432,
+      "sha256": "42f3750668df863dc4644dfaa266958822dbc9a468a10fdbfaf8fe544fcd94b3"
+    },
+    {
+      "file": "assets/swift-6.1.3.tar.gz.part023",
+      "bytes": 33554432,
+      "sha256": "b3bef53b9a15a0663e13a91fe773f121e54dc7b476c52f949f3613856bc659f8"
+    },
+    {
+      "file": "assets/swift-6.1.3.tar.gz.part024",
+      "bytes": 33554432,
+      "sha256": "940dd28469a7278229860338ce40eb062e6f00bc6bd15cb6d08b0b0190fee556"
+    },
+    {
+      "file": "assets/swift-6.1.3.tar.gz.part025",
+      "bytes": 33554432,
+      "sha256": "93060c402bf8df83eb7749e1099c6e03fe6bc04e14648b87e5b4bc8658a407e4"
+    },
+    {
+      "file": "assets/swift-6.1.3.tar.gz.part026",
+      "bytes": 6310793,
+      "sha256": "628a51ef62fb19530c1d2440ffb729f49624383d38e575d07c33df2485ef8fe7"
+    },
+    {
+      "file": "licenses/usr__share__swift__LICENSE.txt",
+      "bytes": 11751,
+      "sha256": "770af8291f708538d8ff885a0bbc4e045cd700531741c4f99528d435c14d7f55"
+    },
+    {
+      "file": "metadata/signature-verification.txt",
+      "bytes": 847,
+      "sha256": "c9b7ecbd1ee914bdfd3d3ba7f3a7e63955fa36a847ef64da4f5c75383909f3bd"
+    },
+    {
+      "file": "metadata/swift-6.1.3.tar.gz.sig",
+      "bytes": 819,
+      "sha256": "97632639a9b3f4276de3f15cc5a934f85f26870ab54b2968709ef6427c1a3442"
+    },
+    {
+      "file": "metadata/swift-all-keys.asc",
+      "bytes": 23666,
+      "sha256": "67abcc2cff49a9dd4536b12bc4a7c2b82c434ddaa42b90516c9734f4dd5481af"
+    }
+  ]
+}

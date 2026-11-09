@@ -1,0 +1,16 @@
+Package: ghdl-mcode
+Source: ghdl (2.0.0+dfsg-6.2)
+Version: 2.0.0+dfsg-6.2+b2
+Installed-Size: 3740
+Maintainer: Debian Electronics Team <pkg-electronics-devel@lists.alioth.debian.org>
+Architecture: amd64
+Depends: ghdl-common (= 2.0.0+dfsg-6.2+b2), libc6 (>= 2.34), libgcc-s1 (>= 3.0), libgnat-12 (>= 12.2.0), zlib1g (>= 1:1.2.0)
+Description: VHDL compiler/simulator (mcode backend)
+Description-md5: a43d648f2765b04ca5f3eada73656aac
+Homepage: https://github.com/ghdl/ghdl
+Section: electronics
+Priority: optional
+Filename: pool/main/g/ghdl/ghdl-mcode_2.0.0+dfsg-6.2+b2_amd64.deb
+Size: 1355812
+MD5sum: f8f7563fa77634e8bdba22d1d74e5749
+SHA256: 03ae598a0ac9d0cfd2e10e1861d546f25e1e10e6bdfeaca9103ce2aaa168e3e8

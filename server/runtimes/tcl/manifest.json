@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "platform": "linux/amd64",
+  "baseImage": "gcc@sha256:5e927c284bf55a7dc796262e311a0703344f62f41f5621eb56843111b1d37e15",
+  "sourceDateEpoch": 1793923200,
+  "version": "8.6.13",
+  "source": "https://www.tcl-lang.org/software/tcltk/8.6.html",
+  "license": "Tcl",
+  "runtime": {
+    "id": "tcl",
+    "executable": "/usr/bin/tclsh8.6",
+    "memoryMiB": 256,
+    "versionArgs": [
+      "/opt/museum-version.tcl"
+    ],
+    "versionPattern": "8.6.13"
+  },
+  "files": [
+    {
+      "file": "Dockerfile",
+      "bytes": 328,
+      "sha256": "730eb9ec8e0ee922d235dc679226e7a1b8dabd54df2ef2b61e5d5787c74fa2c7"
+    },
+    {
+      "file": "NOTICE.md",
+      "bytes": 1044,
+      "sha256": "6769a43c2d40202930d3ffd0dd8fbad97983af32a5fe1f489e3e5e56691608a4"
+    },
+    {
+      "file": "acquisition.json",
+      "bytes": 2158,
+      "sha256": "5e9a7ea30b7e4c25b5e18379e66fa27b88ec0b8219bd8f4398271ce18be88762"
+    },
+    {
+      "file": "assets/libtcl8.6_8.6.13+dfsg-2_amd64.deb",
+      "bytes": 1034548,
+      "sha256": "976c4235b816635e1756016f3adbabb634e8b97a9f6b97cf901be099e4fd2487"
+    },
+    {
+      "file": "assets/tcl8.6_8.6.13+dfsg-2_amd64.deb",
+      "bytes": 120328,
+      "sha256": "4d539bdd459ea9fd5be25bf46c3c928ae5eb9cfdb5a1bf7ca25cacc596327d9d"
+    },
+    {
+      "file": "assets/version.tcl",
+      "bytes": 23,
+      "sha256": "3bb5160b1867309469814c25b12f3d81bcfd0917fc44b7ab6c7563986fea0b8b"
+    },
+    {
+      "file": "licenses/libtcl8.6.copyright",
+      "bytes": 7062,
+      "sha256": "e925aa8863f0c9eda3625ce2cb16c0d5017fca248c5bd6af97006df5d9c6199c"
+    },
+    {
+      "file": "licenses/tcl8.6.copyright",
+      "bytes": 7062,
+      "sha256": "e925aa8863f0c9eda3625ce2cb16c0d5017fca248c5bd6af97006df5d9c6199c"
+    },
+    {
+      "file": "metadata/apt-verification.txt",
+      "bytes": 1169,
+      "sha256": "966652e257fd492d3cb75d146adc643c0debd59a4664d623e49815b2b164c3a7"
+    },
+    {
+      "file": "metadata/bookworm-InRelease",
+      "bytes": 151075,
+      "sha256": "77737fa4b34f2693e982cc9ee35736816c35a7778fc2d326cc1bbf5b301fe1aa"
+    },
+    {
+      "file": "metadata/bookworm-security-InRelease",
+      "bytes": 34770,
+      "sha256": "1d368817d451179b6611e157dccd876f93feff7d603c575668fbb662d5b01677"
+    },
+    {
+      "file": "metadata/bookworm-updates-InRelease",
+      "bytes": 55403,
+      "sha256": "da3bb85c8864a931aa8d4ad4bcca054c0bb430aef7f8c3dfaff4b173d26f595c"
+    },
+    {
+      "file": "metadata/libtcl8.6_8.6.13+dfsg-2_amd64.deb.metadata",
+      "bytes": 785,
+      "sha256": "d460ecb53006765f67ad6e52a9c047a0eb9e2b1bbb64042d02764e041c4766d0"
+    },
+    {
+      "file": "metadata/tcl8.6_8.6.13+dfsg-2_amd64.deb.metadata",
+      "bytes": 645,
+      "sha256": "870eb80698f6285287a3ad4adf3ac310caec874e0e0b85144a16787cd5cb9c1e"
+    }
+  ]
+}

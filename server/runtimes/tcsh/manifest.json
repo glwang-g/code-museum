@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "platform": "linux/amd64",
+  "baseImage": "gcc@sha256:5e927c284bf55a7dc796262e311a0703344f62f41f5621eb56843111b1d37e15",
+  "sourceDateEpoch": 1793923200,
+  "version": "6.24.07",
+  "source": "https://www.tcsh.org/",
+  "license": "Upstream and Debian package copyright notices",
+  "runtime": {
+    "id": "tcsh",
+    "executable": "/usr/bin/tcsh",
+    "memoryMiB": 256,
+    "versionArgs": [
+      "--version"
+    ],
+    "versionPattern": "6.24.07"
+  },
+  "files": [
+    {
+      "file": "Dockerfile",
+      "bytes": 254,
+      "sha256": "5fd0732716442ade3390ad1332600e75bf4527e51b9133fdcdbcc69d303ecb94"
+    },
+    {
+      "file": "NOTICE.md",
+      "bytes": 971,
+      "sha256": "85c470ccc198f36c3053429d1915322f30aee70364d65589c70efd88e891d9eb"
+    },
+    {
+      "file": "acquisition.json",
+      "bytes": 1940,
+      "sha256": "6423d8e978b105a94848e1ce55b6fb8b5dd98805219c52d83ebd04f01a255d6e"
+    },
+    {
+      "file": "assets/tcsh_6.24.07-1_amd64.deb",
+      "bytes": 448572,
+      "sha256": "9fd93ff2618f088ab35f6f17c826bb11b336c70cdef78ee0be03e4adae877bc2"
+    },
+    {
+      "file": "licenses/tcsh.copyright",
+      "bytes": 1831,
+      "sha256": "72da7caafe0ae6201f4f58e02f334884e49dcb40980884849d2fed2c381a8413"
+    },
+    {
+      "file": "metadata/apt-verification.txt",
+      "bytes": 1169,
+      "sha256": "aa70bd502e6c23c157f8f0f25064749b298ec1e91f6dedbc182cf6f80ece8573"
+    },
+    {
+      "file": "metadata/bookworm-InRelease",
+      "bytes": 151075,
+      "sha256": "77737fa4b34f2693e982cc9ee35736816c35a7778fc2d326cc1bbf5b301fe1aa"
+    },
+    {
+      "file": "metadata/bookworm-security-InRelease",
+      "bytes": 34770,
+      "sha256": "836749276aafc119e05df93304153ee1b4d436807f481ac3c81162b3a6b7faae"
+    },
+    {
+      "file": "metadata/bookworm-updates-InRelease",
+      "bytes": 55403,
+      "sha256": "835e7f5704fbf7b6ef326075dccc00bab71918530b76ce1d7deea0470d023171"
+    },
+    {
+      "file": "metadata/tcsh_6.24.07-1_amd64.deb.metadata",
+      "bytes": 683,
+      "sha256": "d097d22bdcdc4018962dd10ddc8100f5ba1213cb9eea21d65c16724553c6b71b"
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "platform": "linux/amd64",
+  "baseImage": "gcc@sha256:5e927c284bf55a7dc796262e311a0703344f62f41f5621eb56843111b1d37e15",
+  "sourceDateEpoch": 1793923200,
+  "version": "0.14.1",
+  "source": "https://ziglang.org/download/",
+  "license": "MIT and bundled component licenses",
+  "runtime": {
+    "id": "zig",
+    "executable": "/opt/zig/zig",
+    "memoryMiB": 1024,
+    "versionArgs": [
+      "version"
+    ],
+    "versionPattern": "0.14.1"
+  },
+  "files": [
+    {
+      "file": "Dockerfile",
+      "bytes": 454,
+      "sha256": "8ffcf40f06067ecbfda90f607144ce02ce7f0dad7327846d577f7b2aa0ad3c93"
+    },
+    {
+      "file": "NOTICE.md",
+      "bytes": 1003,
+      "sha256": "ac6bcc5f460bca408f076e03cbab6e3826173a4a605a1458f58487bbdf06a9d1"
+    },
+    {
+      "file": "acquisition.json",
+      "bytes": 3236,
+      "sha256": "2a140b73cee412f1b721f70d9789a447e84276dfa990773bfd030c591bebb419"
+    },
+    {
+      "file": "assets/museum-zig-compile.py",
+      "bytes": 381,
+      "sha256": "910524e4155775fb39ee58c5451caa2389876994ea8da8b11d206077fb86f654"
+    },
+    {
+      "file": "assets/zig-x86_64-linux-0.14.1.tar.xz",
+      "bytes": 49086504,
+      "sha256": "24aeeec8af16c381934a6cd7d95c807a8cb2cf7df9fa40d359aa884195c4716c"
+    },
+    {
+      "file": "licenses/LICENSE",
+      "bytes": 1080,
+      "sha256": "5c537d6853e005298a285d508cff9ac7192cea23576c840d485b2b586a7ff177"
+    },
+    {
+      "file": "licenses/lib__libc__glibc__LICENSES",
+      "bytes": 19665,
+      "sha256": "b22a69aa3f80a5201818c66cb0df0f25f9fa13cf5861b0093a058dbd12d50dce"
+    },
+    {
+      "file": "licenses/lib__libc__mingw__COPYING",
+      "bytes": 2326,
+      "sha256": "99a69660981156c21336fdb5661f89341b013c94e4bf9e1c7467b4745718397f"
+    },
+    {
+      "file": "licenses/lib__libc__musl__COPYRIGHT",
+      "bytes": 6204,
+      "sha256": "f9bc4423732350eb0b3f7ed7e91d530298476f8fec0c6c427a1c04ade22655af"
+    },
+    {
+      "file": "licenses/lib__libc__wasi__LICENSE",
+      "bytes": 831,
+      "sha256": "673f577e363e80e0058bd78214683f045d1d0c63930969a87f01a1d87d7cf1d6"
+    },
+    {
+      "file": "licenses/lib__libc__wasi__LICENSE-APACHE",
+      "bytes": 10847,
+      "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+    },
+    {
+      "file": "licenses/lib__libc__wasi__LICENSE-APACHE-LLVM",
+      "bytes": 12243,
+      "sha256": "268872b9816f90fd8e85db5a28d33f8150ebb8dd016653fb39ef1f94f2686bc5"
+    },
+    {
+      "file": "licenses/lib__libc__wasi__LICENSE-MIT",
+      "bytes": 1023,
+      "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3"
+    },
+    {
+      "file": "licenses/lib__libc__wasi__libc-bottom-half__cloudlibc__LICENSE",
+      "bytes": 1292,
+      "sha256": "c8b789cf5a746611e6300a0cc7750dbf92b61912a709d04e639245f7290656d0"
+    },
+    {
+      "file": "licenses/lib__libc__wasi__libc-top-half__musl__COPYRIGHT",
+      "bytes": 6204,
+      "sha256": "f9bc4423732350eb0b3f7ed7e91d530298476f8fec0c6c427a1c04ade22655af"
+    },
+    {
+      "file": "licenses/lib__libcxx__LICENSE.TXT",
+      "bytes": 16703,
+      "sha256": "539dd7aed86e8a4f12cbdd0e6c50c189c7d74847e4fecc64ce2c6ee3a01da38b"
+    },
+    {
+      "file": "licenses/lib__libcxxabi__LICENSE.TXT",
+      "bytes": 16706,
+      "sha256": "e2b35be49f7284a45b7baca8fc7b3ab7440e7902392b2528a457816b5bb2a15c"
+    },
+    {
+      "file": "licenses/lib__libunwind__LICENSE.TXT",
+      "bytes": 16706,
+      "sha256": "b5efebcaca80879234098e52d1725e6d9eb8fb96a19fce625d39184b705f7b6d"
+    },
+    {
+      "file": "metadata/official-download-index.json",
+      "bytes": 90260,
+      "sha256": "6f32677f4c5d0e0515f8259cd8cb102312489d479972bb9ac9ebce205de3bab5"
+    }
+  ]
+}

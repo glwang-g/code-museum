@@ -1,0 +1,22 @@
+Package: iverilog
+Source: iverilog (11.0-1.1)
+Version: 11.0-1.1+b1
+Installed-Size: 6857
+Maintainer: Debian Electronics Team <pkg-electronics-devel@alioth-lists.debian.net>
+Architecture: amd64
+Replaces: verilog (<< 10.2-1.1~)
+Provides: verilog
+Depends: libbz2-1.0, libc6 (>= 2.34), libgcc-s1 (>= 3.0), libreadline8 (>= 6.0), libstdc++6 (>= 11), zlib1g (>= 1:1.2.0)
+Suggests: gtkwave
+Breaks: verilog (<< 10.2-1.1~)
+Description: Icarus verilog compiler
+Description-md5: 8d6c25d1601b4e55eb201717e035adb9
+Homepage: http://iverilog.icarus.com
+Tag: field::electronics, implemented-in::c++, interface::commandline,
+ role::program
+Section: electronics
+Priority: optional
+Filename: pool/main/i/iverilog/iverilog_11.0-1.1+b1_amd64.deb
+Size: 2023324
+MD5sum: e7c3af22bd281914b4ee77cc265e73bc
+SHA256: 14d9d14dc8256fd89667fb68c3bd93f1c57310b9c95b33fb0d4b7719c887ae2f
