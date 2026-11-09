@@ -1,6 +1,15 @@
 /dist/
 /node_modules/
 /.build-*/
+# Local generated artifacts and assistant configuration
+/output/
+/tmp/
+/.claude/
+# BCPL upstream materials remain private until redistribution rights are clear.
+/server/runtimes/bcpl/assets/bcpl-20261109.tar.gz.part*
+/server/runtimes/bcpl/assets/cintcode-noninteractive.patch
+/server/runtimes/bcpl/licenses/upstream-README.txt
+/server/runtimes/bcpl/metadata/upstream-sysboot.b
 .DS_Store
 
 *.sqlite3
