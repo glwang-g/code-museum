@@ -21,7 +21,8 @@ function validatePreviewNodes(nodes){
  }
  return nodes;
 }
-async function startDualPreview({port=0,token=crypto.randomBytes(32).toString('hex'),python='python3',nodes=[{id:'xshow',host:'xshow',languages:['python'],remotePort:4197},{id:'xshow2',host:'xshow2',languages:['bcpl'],remotePort:4197}]}={}){
+async function startDualPreview({port=0,token=crypto.randomBytes(32).toString('hex'),python='python3',guestSessions=0,runtime='runc',nodes=[{id:'xshow',host:'xshow',languages:['python'],remotePort:4197},{id:'xshow2',host:'xshow2',languages:['bcpl'],remotePort:4197}]}={}){
+ if(![0,5].includes(guestSessions)||!['runc','runsc'].includes(runtime))throw new Error('Invalid preview admission or sandbox configuration');
  validatePreviewNodes(nodes);
  if(typeof token!=='string'||token.length<32||!/^[\x21-\x7e]+$/.test(token))throw new Error('Expected a private printable preview token');
  if(!Number.isInteger(port)||port<0||port>65535)throw new Error('Invalid local preview port');
@@ -45,13 +46,13 @@ async function startDualPreview({port=0,token=crypto.randomBytes(32).toString('h
   // Start sequentially so every created resource is registered for failure cleanup.
   for(const node of nodes){
    const workerToken=crypto.randomBytes(32).toString('hex'),tokenEnv='EXECUTOR_NODE_'+node.id.replaceAll('-','_').toUpperCase()+'_TOKEN';
-   workers[node.id]=await startPreview({host:node.host,port:0,token:workerToken,remotePort:node.remotePort||4197,languages:node.languages,workerOrigin:origin});
+   workers[node.id]=await startPreview({host:node.host,port:0,token:workerToken,remotePort:node.remotePort||4197,languages:node.languages,workerOrigin:origin,runtime});
    config.nodes.push({id:node.id,url:workers[node.id].origin,tokenEnv,languages:node.languages});env[tokenEnv]=workerToken;
   }
   const configPath=path.join(directory,'nodes.json'),routesPath=path.join(directory,'routes.sqlite');
   fs.writeFileSync(configPath,JSON.stringify(config),{mode:0o600});
   async function launchGateway(){
-   errors='';gateway=spawn(python,[path.join(root,'server/execution_gateway.py'),'--nodes',configPath,'--images',path.join(root,'server/runtime-images.json'),'--routes-db',routesPath,'--port',String(gatewayPort),'--origin',origin,'--museum-data',path.join(root,'dist/data'),'--allow-partial'],{env,stdio:['ignore','ignore','pipe']});
+   errors='';gateway=spawn(python,[path.join(root,'server/execution_gateway.py'),'--guest-sessions',String(guestSessions),'--nodes',configPath,'--images',path.join(root,'server/runtime-images.json'),'--routes-db',routesPath,'--port',String(gatewayPort),'--origin',origin,'--museum-data',path.join(root,'dist/data'),'--allow-partial'],{env,stdio:['ignore','ignore','pipe']});
    let spawnError;gateway.once('error',error=>{spawnError=error});gateway.stderr.on('data',chunk=>{errors=(errors+chunk).slice(-3000)});
    const deadline=Date.now()+20000;
    while(Date.now()<deadline){

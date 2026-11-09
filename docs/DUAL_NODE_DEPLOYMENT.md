@@ -1,5 +1,7 @@
 # 双节点执行部署方案与操作顺序
 
+当前免令牌接入、runsc前置条件、5个活跃会话及申请退役见 [免令牌说明](GUEST_EXECUTION.md)，实际发布结果见 [部署记录](DEPLOYMENT.md)。以下保留双节点私有服务建立过程；旧版面向用户的令牌输入流程已退役，内部节点及管理鉴权保留。
+
 用户已授权本轮提交、推送和静态部署；当前正式release为`f2ff0bf`，59节点/56远端，[Actions 42603930037](https://github.com/glwang-g/code-museum/actions/runs/42603930037)的build/deploy及[线上核验](../data/audit/b37-ci-release.json)已通过；公开固定输入已推master，临时资料分支已清理。本方案把运行时准备、站点发布和私有执行服务升级分开。`deploy/prepare-dual-executor.py` 只生成本机可审查材料，不连接服务器、不安装账号、不生成凭据、不启动或切换服务。准备成功与临时双节点联调成功都不等于生产已部署。
 
 ## 拓扑和分工

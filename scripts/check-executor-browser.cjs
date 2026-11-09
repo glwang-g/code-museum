@@ -1,7 +1,8 @@
-// Opt-in actual browser -> SSH -> Docker check; installed Chrome and provisioned SSH host required.
+// Opt-in guest browser -> temporary dual-node runsc workers. Preserves the original language/diagnostic scenarios.
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict'),os=require('node:os'),crypto=require('node:crypto');
-const {spawn,execFileSync}=require('node:child_process');
-const {startPreview}=require('./executor-preview.cjs');
+const {spawn}=require('node:child_process');
+const {startDualPreview}=require('./dual-executor-preview.cjs');
+const {loadSmokeInventory}=require('./check-dual-runtime-inventory.cjs');
 const root=path.resolve(__dirname,'..'),chrome=process.env.CHROME_BIN||'/Applications/GoogleChrome.app/Contents/MacOS/Google Chrome';
 const outputDirectory=process.env.BROWSER_CHECK_OUTPUT||'/tmp/code-museum-executor-browser';fs.mkdirSync(outputDirectory,{recursive:true});
 const profileDirectory=fs.mkdtempSync(path.join(os.tmpdir(),'museum-executor-browser-'));
@@ -28,8 +29,10 @@ const startedInputs=checkedInputs();
  try{
   const production=process.env.EXECUTOR_BROWSER_ORIGIN;
   if(production&&production!=='https://codemuseum.freexlib.com')throw new Error('Unsupported production origin');
-  const token=production?execFileSync('ssh',['-o','BatchMode=yes',process.env.EXECUTOR_SSH_HOST||'xshow','sudo -n python3 -c '+JSON.stringify("from pathlib import Path; print(Path('/etc/code-museum-executor/private.env').read_text().strip().removeprefix('EXECUTOR_TOKEN='))")],{encoding:'utf8',timeout:15000}).trim():crypto.randomBytes(32).toString('hex');
-  preview=production?{origin:production,stop:async()=>{}}:await startPreview({host:process.env.EXECUTOR_SSH_HOST||'xshow',port:0,token,languages:process.argv.includes('--planned')&&process.env.PLANNED_LANGUAGE?[process.env.PLANNED_LANGUAGE]:undefined});
+  if(production&&process.env.PLATFORM_ONLY==='1')throw new Error('Private MCP/metrics acceptance uses temporary fixture credentials only; unset EXECUTOR_BROWSER_ORIGIN for PLATFORM_ONLY.');
+  const token=production?undefined:crypto.randomBytes(32).toString('hex');
+  const inventory=loadSmokeInventory();
+  preview=production?{origin:production,stop:async()=>{}}:await startDualPreview({token,guestSessions:5,runtime:'runsc',nodes:inventory.placement.nodes.map(node=>({id:node.id,host:node.id,languages:node.languages,remotePort:4197}))});
   browser=spawn(chrome,['--headless=new','--disable-gpu','--disable-background-networking','--no-first-run','--no-default-browser-check','--remote-debugging-pipe',...(production?[]:['--host-resolver-rules=MAP * ~NOTFOUND, EXCLUDE 127.0.0.1']),'--user-data-dir='+profileDirectory],{stdio:['ignore','ignore','pipe','pipe','pipe']});
   browser.stderr.on('data',chunk=>{diagnostics=(diagnostics+chunk).slice(-3000)});
   browser.stdio[4].on('data',chunk=>{buffer+=chunk.toString();let end;while((end=buffer.indexOf('\0'))!==-1){const message=JSON.parse(buffer.slice(0,end));buffer=buffer.slice(end+1);const request=pending.get(message.id);if(request){pending.delete(message.id);clearTimeout(request.timer);message.error?request.reject(new Error(JSON.stringify(message.error))):request.resolve(message.result);}}});
@@ -43,10 +46,9 @@ const startedInputs=checkedInputs();
   await edit('print(42)');await new Promise(ok=>setTimeout(ok,800));
   assert.equal(await evaluate(`window.__posts`),0);
   assert.equal(await evaluate(`performance.getEntriesByType('resource').some(r=>r.name.includes('/assets/pyodide/'))`),false);
-  await evaluate(`document.querySelector('#lab-remote-token').value=${JSON.stringify(token)}`);
   if(process.argv.includes('--planned')){await require('./planned-browser-checks.cjs')({evaluate,wait,page,screenshot,results,token,root});}
-  else if(process.argv.includes('--cli')){await require('./cli-browser-checks.cjs')({evaluate,wait,page,screenshot,results,token,root,restart:preview.restart});}
-  else if(process.env.PLATFORM_ONLY==='1'){await require('./platform-browser-checks.cjs')({evaluate,wait,page,screenshot,results,token,root,restart:preview.restart});}
+  else if(process.argv.includes('--cli')){await require('./cli-browser-checks.cjs')({evaluate,wait,page,screenshot,results,token,root,restart:preview.restartGateway});}
+  else if(process.env.PLATFORM_ONLY==='1'){await require('./platform-browser-checks.cjs')({evaluate,wait,page,screenshot,results,token,root,restart:preview.restartGateway});}
   else {
   let lastRun=0;
   async function clickRun(){const delay=Math.max(0,6500-(Date.now()-lastRun));if(delay)await new Promise(ok=>setTimeout(ok,delay));lastRun=Date.now();await evaluate(`document.querySelector('#lab-run').click()`)}
@@ -115,7 +117,7 @@ const startedInputs=checkedInputs();
   }
   const servedInputs={};for(const f of ['index.html','museum.css','service-status.js','learning-guide.js','lab-tools.js','lab-examples.js','data/cli-runtime-build.json','data/pascal-r-runtime-build.json','data/learning-paths.json','museum.js','lab.js','execution-config.js','execution-modes.js','data/relationship-status.json','lab-worker.js','lua-worker.js','scheme-worker.js','assets/lua/manifest.json','assets/scheme/manifest.json','assets/pyodide/manifest.json']){const bytes=Buffer.from(await evaluate(`fetch(${JSON.stringify(f)}).then(r=>{if(!r.ok)throw new Error('Failed served input');return r.arrayBuffer()}).then(b=>Array.from(new Uint8Array(b)))`));assert.deepEqual(bytes,fs.readFileSync(path.join(root,'dist',f)),'Served build must match local: '+f);servedInputs[f]=crypto.createHash('sha256').update(bytes).digest('hex')}
   assert.deepEqual(checkedInputs(),startedInputs,'Checked source inputs changed during browser verification');
-  const report={servedInputs,checkedAt:new Date().toISOString(),browser:version.product,preparationHost:process.env.EXECUTOR_SSH_HOST||'xshow',scope:production?'Actual Chrome over production HTTPS with private token to persistent Docker runc service. Tokens, sessions and job IDs omitted; no anonymous execution or escape proof.':'Actual browser over private SSH tunnel to ephemeral Docker runc API on the selected preparation host. Tokens, sessions and job IDs omitted; not a public deployment or escape proof.',checks:results,inputs:startedInputs};
+  const report={servedInputs,checkedAt:new Date().toISOString(),browser:version.product,preparationHost:process.env.EXECUTOR_SSH_HOST||'xshow',scope:production?'Actual anonymous Chrome over production HTTPS using the five-session guest gateway. Cookie and job IDs omitted; no isolation escape proof.':'Actual guest browser through a temporary dual-node gateway and SSH-connected runsc workers. Internal authentication checks use only fresh temporary fixture credentials. No production credential, permanent installation or escape proof.',checks:results,inputs:startedInputs};
   fs.writeFileSync(path.join(outputDirectory,'checks.json'),JSON.stringify(report,null,2)+'\n');console.log('PASS '+results.length+' actual Docker/browser checks; report '+path.join(outputDirectory,'checks.json'));
  }catch(e){await screenshot('failure.png').catch(()=>{});console.error(e.stack+'\n'+diagnostics);process.exitCode=1}
  finally{

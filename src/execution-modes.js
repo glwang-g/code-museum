@@ -4,7 +4,6 @@
   const remoteIds=new Set(['python','ruby','c','cpp','rust','go','java','typescript','sql','bash','awk','sed','php','perl','xslt','csharp','fortran','pascal','r','algol-60','common-lisp','prolog','forth','racket','smalltalk','cobol','ada','clojure','ocaml','haskell','kotlin','groovy','erlang','elixir','tcl','standard-ml','scala','visual-basic.net','f-sharp','d','nim','zig','swift','dart','julia','octave','powershell','korn-shell','tcsh','wasm','x86-assembly','verilog','vhdl','postscript','bcpl','oberon']),modes=new Map(),consent=new Set();
   const status=window.MUSEUM_RUNTIME_STATUS;
   const terminal=new Set(['completed','failed','compile_error','compile_timed_out','timed_out','cancelled','output_limit','memory_limit','infrastructure_error']);
-  const session=crypto.randomUUID().replaceAll('-','');
   let current=null,capabilities=null,callbacks={},generation=0,active=null,connectionGeneration=0;
   const endpoint=config.endpoint;
   if(endpoint!=='/api')throw new Error('Executor must use the same-origin /api endpoint');
@@ -12,13 +11,26 @@
   const mode=id=>modes.get(id)||(remoteIds.has(id)?'remote':'local');
   const handles=id=>local.has(id)||remoteIds.has(id);
   const allowed=id=>mode(id)==='local'&&consent.has(id)&&local.has(id);
-  const remoteAvailable=id=>!!capabilities?.available&&capabilities.runtimes.some(r=>r.id===id);
-  function headers(token){return {'Content-Type':'application/json','Authorization':'Bearer '+token,'X-Execution-Session':session};}
+  const guestEnabled=()=>capabilities?.private===false&&capabilities?.access?.mode==='guest';
+  const remoteAvailable=id=>guestEnabled()&&!!capabilities?.available&&capabilities.runtimes.some(r=>r.id===id);
+  function headers(){return {'Content-Type':'application/json'};}
   async function request(path,options={}){
-    const response=await fetch(endpoint+path,{...options,cache:'no-store',signal:AbortSignal.timeout(6000)});
-    let data;try{data=await response.json()}catch{throw new Error('远端服务尚未连接或响应无效。')}
-    if(!response.ok)throw new Error(response.status===401?'私有执行令牌无效。':response.status===429?'执行配额或队列已满，请稍后重试。':data.error||'远端执行请求失败。');
+    let response;
+    try{response=await fetch(endpoint+path,{...options,credentials:'same-origin',cache:'no-store',signal:AbortSignal.timeout(6000)})}
+    catch(cause){const error=new Error((cause.name==='TimeoutError'?'连接远端执行服务超时。':cause.message||'远端连接中断。')+(options.method==='POST'?' 提交结果暂不确定，请勿立即重复提交。':''));error.network=true;throw error}
+    let data;
+    try{data=await response.json();if(!data||typeof data!=='object')throw new Error('Invalid response')}
+    catch{const error=new Error('远端服务尚未连接或响应无效。');error.status=response.status;throw error}
+    if(!response.ok){const error=new Error(response.status===401?'远端执行暂未开放，请稍后重试。':response.status===429?'当前访问比较多，请稍后重试。':(data.error||'远端执行请求失败。')+(data.retrySafe===false?' 提交结果暂不确定，请勿立即重复提交。':''));error.status=response.status;throw error}
     return data;
+  }
+  async function readJob(ident,gen){
+    // Re-read only the original accepted job. A submission or cancellation is never retried.
+    for(let attempt=0;attempt<3;attempt++){
+      if(gen!==generation)return null;
+      try{return await request('/executions/'+ident,{headers:headers()})}
+      catch(error){if(attempt===2||(!error.network&&error.status!==503))throw error;await new Promise(resolve=>setTimeout(resolve,250))}
+    }
   }
   const simulation=id=>['verilog','vhdl'].includes(id);
   function render(){
@@ -40,7 +52,7 @@
     $('lab-cancel-remote').hidden=!active||!isRemote;
     $('lab-run').disabled=isRemote?!remoteAvailable(current)||!!active:!allowed(current);
     const record=capabilities?.runtimes.find(r=>r.id===current);
-    $('lab-execution-info').textContent=isRemote?(record?'远端 '+shortVersion(record.version)+' · 私有试用 · 点击运行才上传代码':'远端执行服务尚未连接；不会下载本地运行时。'):(allowed(current)?'浏览器本地执行；代码不会发送到执行服务器。':'本地环境尚未启用，点击下载后才加载。');
+    $('lab-execution-info').textContent=isRemote?(record&&guestEnabled()?'远端 '+shortVersion(record.version)+' · 免令牌试用 · 最多'+capabilities.access.maxSessions+'个活跃会话 · 点击运行才上传代码':(capabilities&&!guestEnabled()?'远端执行暂未开放。':'远端执行服务尚未连接；不会下载本地运行时。')):(allowed(current)?'浏览器本地执行；代码不会发送到执行服务器。':'本地环境尚未启用，点击下载后才加载。');
     if(isRemote){
       $('lab-status').textContent=simulation(current)?'远端文本仿真 · 点击“仿真代码”才上传；不是真实电路。':'远端执行 · 代码只在点击“运行代码”时上传。';
       $('lab-runtime-note').textContent=(record?.compileSeconds?'编译'+record.compileSeconds+'秒 / ':'')+(simulation(current)?'仿真3秒实际时间上限，无综合、FPGA 部署或波形下载；':'运行'+(record?.runSeconds||3)+'秒上限、')+'禁网、独立Docker环境；不自动安装第三方包。';
@@ -66,19 +78,19 @@
     generation++;
     const job=active;active=null;
     if(job)status?.update(current,'remote',{stage:'cancelled',detail:job.id?'已请求服务器停止任务。':'已停止等待提交结果。'});
-    if(job?.id)request('/executions/'+job.id,{method:'DELETE',headers:headers(job.token)}).catch(()=>{});
+    if(job?.id)request('/executions/'+job.id,{method:'DELETE',headers:headers()}).catch(()=>{});
     if(message){$('lab-result').textContent='任务已取消；正在请求服务器停止。';$('lab-result').dataset.state='';}
     if(redraw)render();
   }
   async function run(id,code){
     if(!remoteIds.has(id)||mode(id)!=='remote')return;
-    cancel();const gen=generation,token=$('lab-remote-token').value;
-    if(token.length<32){$('lab-result').textContent='请输入私有执行令牌；令牌只保存在当前页面内存中。';$('lab-result').dataset.state='error';status?.update(id,'remote',{stage:'failed',detail:'请填写私有执行令牌后重试。',retryLabel:'重试运行'});return}
-    active={id:null,token};render();$('lab-result').textContent='正在提交远端任务…';$('lab-result').dataset.state='';
+    cancel();const gen=generation;
+    if(!remoteAvailable(id)){$('lab-result').textContent='远端执行暂不可用，请重新连接后重试。';$('lab-result').dataset.state='error';return}
+    active={id:null};render();$('lab-result').textContent='正在提交远端任务…';$('lab-result').dataset.state='';
     status?.update(id,'remote',{stage:'submitting',detail:'正在提交本次代码。',retryLabel:'重试运行'});
     try{
-      let job=await request('/executions',{method:'POST',headers:headers(token),body:JSON.stringify({language:id,code,stdin:id==='sql'?'':$('lab-stdin').value})});
-      if(gen!==generation){await request('/executions/'+job.id,{method:'DELETE',headers:headers(token)});return}
+      let job=await request('/executions',{method:'POST',headers:headers(),body:JSON.stringify({language:id,code,stdin:id==='sql'?'':$('lab-stdin').value})});
+      if(gen!==generation){await request('/executions/'+job.id,{method:'DELETE',headers:headers()});return}
       active.id=job.id;
       const deadline=Date.now()+90000;
       while(!terminal.has(job.state)){
@@ -88,7 +100,8 @@
         status?.update(id,'remote',{stage:job.state==='queued'?'queued':job.state==='compiling'?'compiling':'running',detail:job.state==='queued'?'等待服务器执行名额。':job.state==='compiling'?'正在受限环境中编译；成功后才执行。':'代码正在远端独立环境中执行。'});
         await new Promise(resolve=>setTimeout(resolve,250));
         if(gen!==generation)return;
-        job=await request('/executions/'+job.id,{headers:headers(token)});
+        job=await readJob(job.id,gen);
+        if(!job)return;
       }
       if(gen!==generation)return;
       const reasons={compile_error:'编译失败，未执行程序。',compile_timed_out:'编译超过时间预算，未执行程序。',timed_out:'运行超过时间预算，已停止。',output_limit:'编译与运行输出超过32 KiB，已停止。',memory_limit:'达到内存上限，已停止。',cancelled:'任务已取消。',infrastructure_error:'远端执行环境不可用。'};
@@ -142,7 +155,7 @@
       capabilities=data;
       for(const id of remoteIds){
         const record=data.runtimes.find(r=>r.id===id);
-        status?.update(id,'remote',{stage:remoteAvailable(id)?($('lab-remote-token').value.length>=32?'ready':'waiting-token'):'failed',detail:remoteAvailable(id)?'服务可用；令牌会在点击运行时验证。':'执行服务当前不可用，可重新连接。',version:record?shortVersion(record.version):'运行时待连接',retryLabel:'重新连接'});
+        status?.update(id,'remote',{stage:remoteAvailable(id)?'ready':'failed',detail:remoteAvailable(id)?'服务可用；点击运行才上传代码，繁忙时请稍后重试。':guestEnabled()?'执行服务当前不可用，可重新连接。':'远端执行暂未开放。',version:record?shortVersion(record.version):'运行时待连接',retryLabel:'重新连接'});
       }
     }catch(error){
       if(gen!==connectionGeneration)return;
@@ -151,11 +164,7 @@
     }
     render();
   }
-  $('lab-remote-token').addEventListener('input',()=>{
-    if(active||!remoteAvailable(current)||mode(current)!=='remote')return;
-    status?.update(current,'remote',{stage:$('lab-remote-token').value.length>=32?'ready':'waiting-token',detail:'服务可用；令牌会在点击运行时验证。'});
-  });
   window.MUSEUM_EXECUTION={handles,allowed,mode,localSupported:id=>local.has(id),
-    chooseLocal(){if(!local.has(current))return;cancel();callbacks.stop?.();modes.set(current,'local');render();$('lab-result').textContent=allowed(current)?'点击运行代码，在浏览器本地执行。':'点击下载并启用本地环境；不会上传代码。';$('lab-result').dataset.state='';},serviceStatus:()=>{const token=$('lab-remote-token').value;if(token.length<32)throw new Error('请输入私有执行令牌。');return request('/executor-status',{headers:headers(token)})},run,show,render,cancel,useLocal,configure:value=>{callbacks=value},canRun:id=>remoteAvailable(id),retry:(id,code)=>remoteAvailable(id)?run(id,code):connect(),edited(){cancel();if(remoteAvailable(current))status?.update(current,'remote',{stage:'idle',detail:'代码已修改，点击运行后执行。'});$('lab-result').textContent='代码已修改；点击运行后执行。';$('lab-result').dataset.state='';}};
+    chooseLocal(){if(!local.has(current))return;cancel();callbacks.stop?.();modes.set(current,'local');render();$('lab-result').textContent=allowed(current)?'点击运行代码，在浏览器本地执行。':'点击下载并启用本地环境；不会上传代码。';$('lab-result').dataset.state='';},serviceStatus:()=>request('/runtimes'),run,show,render,cancel,useLocal,configure:value=>{callbacks=value},canRun:id=>remoteAvailable(id),retry:(id,code)=>remoteAvailable(id)?run(id,code):connect(),edited(){cancel();if(remoteAvailable(current))status?.update(current,'remote',{stage:'idle',detail:'代码已修改，点击运行后执行。'});$('lab-result').textContent='代码已修改；点击运行后执行。';$('lab-result').dataset.state='';}};
   connect();
 })();

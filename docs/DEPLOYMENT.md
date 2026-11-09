@@ -1,5 +1,16 @@
 # Code Museum 首版部署
 
+## 2026-11-09 免令牌与五会话发布准备
+
+用户明确授权验证通过后提交、推送、部署。当前本机106项默认测试和离线构建通过；[临时双节点72项检查](../data/audit/guest-executor-checks.json)包含全56门固定正例、禁网/只读/资源上限、取消、重启及断线恢复；[Chrome7项检查](../data/audit/guest-browser-checks.json)覆盖1440/390真实执行、HttpOnly Cookie、公开状态和第6会话指定繁忙文案。最终全量检查未发生GET重试；额外模拟覆盖短暂GET故障恢复，POST永不重投。
+
+[平台安装记录](../data/audit/guest-platform-install.json)确认两台已注册固定gVisor，Docker守护进程和默认运行时保持原样；原生产worker尚待本轮切换。runsc辅助线程需要独立宿主PID余量，不能直接沿用32上限：[74次沙箱检查](../data/audit/guest-sandbox-checks.json)确认guest nproc32/128与宿主pids128/512的区别，原内存预算保持。不得把资源检查扩称不存在逃逸漏洞的证明。
+
+准备安装顺序：先以维护规则阻断新提交并排空已有任务，再用 `deploy/prepare-dual-executor.py` 的精确节点bundle及审核后的manifest SHA运行新 `deploy/upgrade-guest-executor.py`（先xshow2后xshow）。升级器保留原凭据、服务身份、SSH隧道、自启状态、镜像和活数据库，备份所有覆盖字节并在健康检查失败时自动回退；默认模式只读，`--install`才写入。独立Nginx提交限流与410申请退役规则经 `nginx -t` 后reload，普通留言代理不变。CI仍只发布普通站点，不获得Docker/root升级权限。实际切换、提交与Actions结果待发布后补充。
+
+新访问方式与回退边界见 [免令牌说明](GUEST_EXECUTION.md)。以下保留前次私有入口建立过程及历史报告。
+
+
 ## 2026-11-09 B组37门页面与权限申请正式发布完成
 
 当前正式release为`f2ff0bf22f8325af5ad4f5c4909567108fcfe66f`，[Actions 42603930037](https://github.com/glwang-g/code-museum/actions/runs/42603930037)的build/deploy均成功。此前手动发布`8bf6c20`完成73项验收；[CI发布核验](../data/audit/b37-ci-release.json)确认新release的626个文件与该版本逐字节一致、两台服务active/enabled、执行容器零残留。[CI后公开数据检查](../data/audit/b37-ci-consistency.json)及[两节点真实执行复核](../data/audit/b37-ci-runtime-checks.json)通过；后者仅重跑Python、BCPL和完整元数据，不重复声称重跑全部73项。

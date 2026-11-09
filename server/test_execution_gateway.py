@@ -1,5 +1,6 @@
 """Real loopback HTTP peers exercise the gateway's distributed protocol boundaries."""
 import copy
+from concurrent.futures import ThreadPoolExecutor
 from contextlib import closing
 import http.client
 import json
@@ -15,7 +16,7 @@ from unittest.mock import patch
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 
 from executor import BoundedServer, load_runtimes
-from execution_gateway import Gateway, handler, metadata
+from execution_gateway import AdmissionError, Gateway, Routes, handler, metadata
 from execution_nodes import load_nodes
 from mcp_http import readonly_token
 from observability import STATES
@@ -41,6 +42,8 @@ class FakeWorker:
         self.language, self.token = language, token
         self.healthy = True
         self.runtime_override = None
+        self.sandbox = 'runsc'
+        self.post_status = 202
         self.drop_after_accept = False
         self.delay_post = 0
         self.post_entered = threading.Event()
@@ -78,6 +81,7 @@ class FakeWorker:
                     if worker.runtime_override is not None:
                         row = worker.runtime_override
                     return self.send(200, {'private': True, 'available': worker.healthy,
+                                          'sandbox': {'runtime': worker.sandbox},
                                           'runtimes': [row],
                                           'limits': {'seconds': 3, 'outputBytes': 32768,
                                                      'concurrency': 1, 'network': False}})
@@ -117,6 +121,8 @@ class FakeWorker:
                 if not session:
                     return self.send(401, {'error': 'unauthorized'})
                 value = json.loads(self.rfile.read(int(self.headers['Content-Length'])))
+                if worker.post_status != 202:
+                    return self.send(worker.post_status, {'error': 'busy'})
                 ident = uuid.uuid4().hex
                 result = dict(id=ident, language=value['language'], state='queued')
                 worker.rows[ident] = dict(public=result, session=session, submitted=value)
@@ -145,7 +151,7 @@ class FakeWorker:
         self.thread.join(timeout=2)
 
 
-class GatewayTests(unittest.TestCase):
+class GatewayCase(unittest.TestCase):
     def setUp(self):
         self.directory = tempfile.TemporaryDirectory(prefix='museum-gateway-')
         self.route_path = Path(self.directory.name) / 'routes.sqlite'
@@ -159,9 +165,9 @@ class GatewayTests(unittest.TestCase):
         self.gateway = self.httpd = self.http_thread = None
         self.start_gateway()
 
-    def start_gateway(self, nodes=None, provider=None):
-        self.gateway = Gateway(nodes or self.nodes, RUNTIMES, PUBLIC_TOKEN, self.tokens, ORIGIN,
-                               str(self.route_path), timeout=.5, health_ttl=0)
+    def start_gateway(self, nodes=None, provider=None, guest_sessions=0, origin=ORIGIN):
+        self.gateway = Gateway(nodes or self.nodes, RUNTIMES, PUBLIC_TOKEN, self.tokens, origin,
+                               str(self.route_path), timeout=.5, health_ttl=0, guest_sessions=guest_sessions)
         self.httpd = BoundedServer(('127.0.0.1', 0), handler(self.gateway, provider))
         self.http_thread = threading.Thread(target=self.httpd.serve_forever, kwargs={'poll_interval': .01}, daemon=True)
         self.http_thread.start()
@@ -182,7 +188,7 @@ class GatewayTests(unittest.TestCase):
         self.b.close()
         self.directory.cleanup()
 
-    def request(self, method, path, value=None, token=PUBLIC_TOKEN, session=SESSION, origin=ORIGIN):
+    def request(self, method, path, value=None, token=PUBLIC_TOKEN, session=SESSION, origin=ORIGIN, cookie=None, with_headers=False, fetch_site=None):
         connection = http.client.HTTPConnection('127.0.0.1', self.httpd.server_port, timeout=3)
         headers = {'Accept': 'application/json'}
         if token is not None:
@@ -191,6 +197,10 @@ class GatewayTests(unittest.TestCase):
             headers['X-Execution-Session'] = session
         if origin is not None:
             headers['Origin'] = origin
+        if cookie is not None:
+            headers['Cookie'] = cookie
+        if fetch_site is not None:
+            headers['Sec-Fetch-Site'] = fetch_site
         raw = json.dumps(value).encode() if value is not None else None
         if raw is not None:
             headers['Content-Type'] = 'application/json'
@@ -198,7 +208,8 @@ class GatewayTests(unittest.TestCase):
             connection.request(method, path, raw, headers)
             response = connection.getresponse()
             data = response.read()
-            return response.status, json.loads(data) if data else None
+            result = response.status, json.loads(data) if data else None
+            return (*result, dict(response.getheaders())) if with_headers else result
         finally:
             connection.close()
 
@@ -206,6 +217,9 @@ class GatewayTests(unittest.TestCase):
         return self.request('POST', '/api/executions',
                             {'language': language, 'code': 'secret-source-marker', 'stdin': 'secret-input-marker'},
                             session=session)
+
+
+class GatewayTests(GatewayCase):
 
     def test_node_inventory_is_exact_and_only_literal_loopback_endpoints_are_allowed(self):
         config = Path(self.directory.name) / 'nodes.json'
@@ -403,6 +417,230 @@ class GatewayTests(unittest.TestCase):
         self.assertTrue(data['metrics']['partial'])
         self.assertTrue(data['available'])
         self.assertFalse(data['complete'])
+
+
+class GuestGatewayTests(GatewayCase):
+    def start_gateway(self, nodes=None, provider=None, guest_sessions=5, origin=ORIGIN):
+        super().start_gateway(nodes, provider, guest_sessions, origin)
+
+    def guest_request(self, method, path, value=None, cookie=None, **kwargs):
+        return self.request(method, path, value, token=None, session=None, cookie=cookie, with_headers=True, **kwargs)
+
+    def guest_submit(self, cookie=None, language='python', **kwargs):
+        return self.guest_request('POST', '/api/executions', {'language': language, 'code': 'guest-source-marker', 'stdin': 'guest-input-marker'}, cookie, **kwargs)
+
+    def cookie(self, headers):
+        return headers['Set-Cookie'].split(';', 1)[0]
+
+    def test_guest_capability_is_explicit_and_only_runsc_workers_are_eligible(self):
+        status, value, headers = self.guest_request('GET', '/api/runtimes')
+        self.assertEqual(status, 200)
+        self.assertFalse(value['private'])
+        self.assertEqual(value['access'], {'mode': 'guest', 'maxSessions': 5, 'idleSeconds': 300})
+        self.assertEqual(value['limits']['concurrency'], 2)
+        self.assertNotIn('Set-Cookie', headers)
+        self.a.sandbox = 'runc'
+        self.b.sandbox = None
+        status, value, _ = self.guest_request('GET', '/api/runtimes')
+        self.assertFalse(value['available'])
+        self.assertEqual(value['runtimes'], [])
+        self.assertEqual(self.guest_submit()[0], 503)
+        self.assertEqual(self.a.count('POST') + self.b.count('POST'), 0)
+        self.assertEqual(self.gateway.routes.db.execute('SELECT count(*) FROM guest_leases').fetchone()[0], 0)
+
+    def test_default_private_mode_and_local_cookie_transport_remain_explicit(self):
+        self.stop_gateway()
+        self.start_gateway(guest_sessions=0)
+        status, value, _ = self.guest_request('GET', '/api/runtimes')
+        self.assertTrue(value['private'])
+        self.assertNotIn('access', value)
+        self.assertEqual(self.guest_submit()[0], 401)
+        self.assertEqual(self.submit()[0], 202)
+        self.stop_gateway()
+        self.start_gateway(origin='http://127.0.0.1:4173')
+        identity = self.gateway.guest_identity('', create=True)
+        header = self.gateway.guest_headers(identity)['Set-Cookie']
+        self.assertNotIn('; Secure', header)
+        self.assertTrue(header.startswith('museum-execution='))
+        with self.assertRaises(ValueError):
+            Gateway(self.nodes, RUNTIMES, PUBLIC_TOKEN, self.tokens, 'http://museum.example.test', guest_sessions=5)
+
+    def test_parallel_admission_is_five_sessions_and_full_capacity_keeps_existing_jobs_accessible(self):
+        with ThreadPoolExecutor(max_workers=6) as pool:
+            responses = list(pool.map(lambda _: self.guest_submit(), range(6)))
+        self.assertEqual(sorted(status for status, _, _ in responses), [202] * 5 + [429])
+        accepted = [(job, self.cookie(headers)) for status, job, headers in responses if status == 202]
+        self.assertEqual(len({cookie for _, cookie in accepted}), 5)
+        status, value, headers = next(row for row in responses if row[0] == 429)
+        self.assertEqual(value['error'], '当前访问比较多，请稍后重试。')
+        self.assertEqual(value['code'], 'guest_capacity')
+        self.assertEqual(int(headers['Retry-After']), value['retryAfterSeconds'])
+        job, cookie = accepted[0]
+        for action in ('GET', 'DELETE'):
+            self.assertEqual(self.guest_request(action, '/api/executions/' + job['id'], cookie=cookie)[0], 200)
+        self.assertEqual(self.a.count('POST'), 5)
+        self.assertEqual(self.gateway.routes.db.execute('SELECT count(*) FROM guest_leases').fetchone()[0], 5)
+
+    def test_capacity_is_atomic_across_independent_sqlite_connections(self):
+        other = Routes(self.route_path)
+        def reserve(index):
+            try:
+                (self.gateway.routes if index % 2 else other).reserve('owner-' + str(index), 'xshow', 'python', 100, guest_limit=5)
+                return True
+            except AdmissionError as error:
+                self.assertEqual(error.code, 'guest_capacity')
+                return False
+        try:
+            with ThreadPoolExecutor(max_workers=8) as pool:
+                admitted = list(pool.map(reserve, range(20)))
+            self.assertEqual(sum(admitted), 5)
+        finally:
+            other.close()
+
+    def test_signed_cookie_controls_ownership_and_worker_session_not_browser_headers(self):
+        status, job, headers = self.guest_submit()
+        self.assertEqual(status, 202)
+        cookie = self.cookie(headers)
+        self.assertTrue(cookie.startswith('__Host-museum-execution='))
+        for flag in ('HttpOnly', 'Secure', 'SameSite=Strict', 'Path=/', 'Max-Age=300'):
+            self.assertIn(flag, headers['Set-Cookie'])
+        path = '/api/executions/' + job['id']
+        status, value, _ = self.request('POST', '/api/executions', {'language': 'bcpl', 'code': 'x'}, token=None,
+                                        session=OTHER_SESSION, cookie=cookie, with_headers=True)
+        self.assertEqual((status, value['code']), (429, 'guest_task_active'))
+        self.assertEqual(self.request('GET', path, token=None, session=OTHER_SESSION, cookie=cookie)[0], 200)
+        _, other_job, other_headers = self.guest_submit(language='bcpl')
+        other_cookie = self.cookie(other_headers)
+        before = self.a.count('GET') + self.a.count('DELETE')
+        for action in ('GET', 'DELETE'):
+            self.assertEqual(self.guest_request(action, path, cookie=other_cookie)[0], 404)
+        self.assertEqual(self.a.count('GET') + self.a.count('DELETE'), before)
+        self.assertNotEqual(job['id'], other_job['id'])
+        forwarded = [headers for method, _, headers in self.a.calls if method in ('POST', 'GET') and 'Authorization' in headers]
+        self.assertEqual(len({h['X-Execution-Session'] for h in forwarded}), 1)
+        self.assertNotIn(forwarded[0]['X-Execution-Session'], (SESSION, OTHER_SESSION))
+        self.assertTrue(all(h['Authorization'] == 'Bearer ' + self.a.token and 'Cookie' not in h for h in forwarded))
+
+    def test_tampered_cookie_wrong_authorization_and_cross_origin_never_downgrade(self):
+        _, job, headers = self.guest_submit()
+        cookie = self.cookie(headers)
+        tampered = cookie[:-1] + ('0' if cookie[-1] != '0' else '1')
+        self.assertEqual(self.guest_submit(cookie=tampered)[0], 401)
+        self.assertEqual(self.guest_submit(cookie=self.gateway.guest_cookie_name + '="unterminated')[0], 401)
+        self.assertEqual(self.guest_submit(cookie=cookie + '; ' + cookie)[0], 401)
+        self.assertEqual(self.guest_submit(cookie=cookie, origin=None)[0], 401)
+        self.assertEqual(self.guest_submit(cookie=cookie, origin='https://attacker.example')[0], 401)
+        self.assertEqual(self.guest_submit(cookie=cookie, fetch_site='cross-site')[0], 401)
+        self.assertEqual(self.request('POST', '/api/executions', {'language': 'python', 'code': 'x'}, token='wrong', cookie=cookie)[0], 401)
+        self.assertEqual(self.guest_request('GET', '/api/executions/' + job['id'], cookie=tampered)[0], 401)
+        for path in ('/api/executor-status', '/mcp'):
+            self.assertEqual(self.guest_request('GET', path, cookie=cookie)[0], 401)
+        self.assertEqual(self.a.count('POST'), 1)
+        self.assertEqual(self.request('GET', '/api/executor-status')[0], 200)
+
+    def test_same_guest_cannot_race_two_nodes_to_create_multiple_in_flight_jobs(self):
+        _, job, headers = self.guest_submit()
+        cookie = self.cookie(headers)
+        self.assertEqual(self.guest_request('DELETE', '/api/executions/' + job['id'], cookie=cookie)[0], 200)
+        with ThreadPoolExecutor(max_workers=2) as pool:
+            responses = list(pool.map(lambda language: self.guest_submit(cookie, language), ('python', 'bcpl')))
+        self.assertEqual(sorted(row[0] for row in responses), [202, 429])
+        self.assertEqual(next(row[1]['code'] for row in responses if row[0] == 429), 'guest_task_active')
+        self.assertEqual(self.a.count('POST') + self.b.count('POST'), 2)
+
+    def test_guest_quota_is_shared_across_languages_and_header_changes(self):
+        cookie = None
+        for index in range(10):
+            language = 'python' if index % 2 else 'bcpl'
+            status, job, headers = self.guest_submit(cookie, language)
+            self.assertEqual(status, 202)
+            cookie = self.cookie(headers)
+            self.assertEqual(self.request('DELETE', '/api/executions/' + job['id'], token=None,
+                                          session=f'{index:032x}', cookie=cookie)[0], 200)
+        status, value, headers = self.guest_submit(cookie, 'bcpl')
+        self.assertEqual((status, value['code']), (429, 'execution_busy'))
+        self.assertEqual(headers['Retry-After'], str(value['retryAfterSeconds']))
+        self.assertEqual(self.a.count('POST') + self.b.count('POST'), 10)
+
+    def test_restart_keeps_capacity_and_owned_polling_renews_idle_lease(self):
+        responses = [self.guest_submit() for _ in range(5)]
+        _, job, headers = responses[0]
+        cookie = self.cookie(headers)
+        self.stop_gateway()
+        self.start_gateway()
+        self.assertEqual(self.guest_submit()[0], 429)
+        with patch('execution_gateway.time.time', return_value=time.time() + 290):
+            self.assertEqual(self.guest_request('GET', '/api/executions/' + job['id'], cookie=cookie)[0], 200)
+        with patch('execution_gateway.time.time', return_value=time.time() + 301):
+            self.assertEqual(self.guest_submit()[0], 202)
+            self.assertEqual(self.gateway.routes.db.execute('SELECT count(*) FROM guest_leases').fetchone()[0], 2)
+
+    def test_invalid_requests_and_cross_owner_reads_do_not_claim_or_renew_leases(self):
+        status, _, headers = self.guest_request('POST', '/api/executions', {'language': 'missing', 'code': 'x'})
+        self.assertEqual(status, 400)
+        self.assertNotIn('Set-Cookie', headers)
+        self.assertEqual(self.gateway.routes.db.execute('SELECT count(*) FROM guest_leases').fetchone()[0], 0)
+        _, job, headers = self.guest_submit()
+        cookie = self.cookie(headers)
+        expires = self.gateway.routes.db.execute('SELECT expires FROM guest_leases').fetchone()[0]
+        with patch('execution_gateway.time.time', return_value=time.time() + 100):
+            self.assertEqual(self.guest_request('GET', '/api/executions/' + 'f' * 32, cookie=cookie)[0], 404)
+            self.assertEqual(self.guest_request('GET', '/api/runtimes', cookie=cookie)[0], 200)
+        self.assertEqual(self.gateway.routes.db.execute('SELECT expires FROM guest_leases').fetchone()[0], expires)
+        with patch('execution_gateway.time.time', return_value=time.time() + 301):
+            self.assertEqual(self.guest_request('GET', '/api/executions/' + job['id'], cookie=cookie)[0], 401)
+
+    def test_unknown_submission_retains_cookie_lease_and_one_in_flight_limit_without_replay(self):
+        self.b.drop_after_accept = True
+        status, error, headers = self.guest_submit(language='bcpl')
+        self.assertEqual(status, 503)
+        self.assertFalse(error['retrySafe'])
+        cookie = self.cookie(headers)
+        self.assertEqual(self.guest_submit(cookie, 'python')[1]['code'], 'guest_task_active')
+        self.assertEqual(self.b.count('POST'), 1)
+        self.assertEqual(self.a.count('POST'), 0)
+        self.stop_gateway()
+        raw = b''.join(path.read_bytes() for path in Path(self.directory.name).glob('routes.sqlite*'))
+        for secret in (cookie.split('=', 1)[1], PUBLIC_TOKEN, self.a.token, self.b.token, 'guest-source-marker', 'guest-input-marker'):
+            self.assertNotIn(secret.encode(), raw)
+
+    def test_routing_write_failure_after_acceptance_still_returns_guest_cookie_and_no_retry(self):
+        with patch.object(self.gateway.routes, 'bind', side_effect=sqlite3.OperationalError('unavailable')), \
+                patch.object(self.gateway.routes, 'abandon', side_effect=sqlite3.OperationalError('unavailable')):
+            status, error, headers = self.guest_submit()
+        self.assertEqual(status, 503)
+        self.assertEqual(error['submissionState'], 'unknown')
+        self.assertFalse(error['retrySafe'])
+        cookie = self.cookie(headers)
+        self.assertEqual(self.guest_submit(cookie)[1]['code'], 'guest_task_active')
+        self.assertEqual(self.a.count('POST'), 1)
+
+    def test_worker_busy_response_is_actionable_and_never_retried(self):
+        self.a.post_status = 429
+        status, error, headers = self.guest_submit()
+        self.assertEqual(status, 429)
+        self.assertEqual(error['error'], '当前访问比较多，请稍后重试。')
+        self.assertEqual(headers['Retry-After'], str(error['retryAfterSeconds']))
+        cookie = self.cookie(headers)
+        self.a.post_status = 202
+        self.assertEqual(self.guest_submit(cookie)[0], 202)
+        self.assertEqual(self.a.count('POST'), 2)
+
+    def test_definite_worker_rejections_release_new_leases_and_preserve_existing_ones(self):
+        for rejection in (400, 401, 413, 415, 429, 503):
+            self.a.post_status = rejection
+            status, _, _ = self.guest_submit()
+            self.assertEqual(status, 429 if rejection == 429 else 503)
+            self.assertEqual(self.gateway.routes.db.execute('SELECT count(*) FROM guest_leases').fetchone()[0], 0)
+            self.assertEqual(self.gateway.routes.db.execute('SELECT count(*) FROM routes').fetchone()[0], 0)
+        self.a.post_status = 202
+        _, job, headers = self.guest_submit()
+        cookie = self.cookie(headers)
+        self.assertEqual(self.guest_request('DELETE', '/api/executions/' + job['id'], cookie=cookie)[0], 200)
+        self.a.post_status = 429
+        self.assertEqual(self.guest_submit(cookie)[0], 429)
+        self.assertEqual(self.gateway.routes.db.execute('SELECT count(*) FROM guest_leases').fetchone()[0], 1)
+        self.assertEqual(self.guest_request('GET', '/api/executions/' + job['id'], cookie=cookie)[0], 200)
 
 
 if __name__ == '__main__':

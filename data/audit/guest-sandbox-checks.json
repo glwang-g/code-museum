@@ -1,0 +1,886 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-09T15:29:49.505981+00:00",
+  "scope": "Temporary isolated Docker containers on xshow and xshow2; diagnosis of gVisor systrap host PID exhaustion and validation of separate guest RLIMIT_NPROC. This is not a production deployment or a sandbox escape assessment.",
+  "runtime": {
+    "name": "runsc",
+    "release": "20261102.0",
+    "platform": "systrap",
+    "manifest": "server/deploy/gvisor-runtime.json",
+    "manifestSha256": "da33ba37a394392f6cd43e7837e297b733ed9f53760cfa38545463ce03ecbc1b",
+    "archiveSha256": "6f6b1a8f0f4665a403238135167d0d990bfaeaff5544abf68f5e0d822b35484a"
+  },
+  "executor": {
+    "path": "server/executor.py",
+    "sha256AtReportTime": "722c666a212cc860d08005517a0f7e1d4c425ddc80b0ff942558ab20d342a449",
+    "role": "Current executor contains the adopted host/guest PID split. Diagnostic probes constructed the documented Docker commands independently; they did not invoke this executor or use production tokens."
+  },
+  "commonRestrictions": {
+    "network": "none",
+    "readOnlyRoot": true,
+    "ipc": "none",
+    "user": "65534:65534",
+    "capabilities": "ALL dropped",
+    "noNewPrivileges": true,
+    "cpus": 1,
+    "memorySwapEqualsMemory": true,
+    "logDriver": "none",
+    "workdir": "/work",
+    "pull": "never",
+    "scriptTmpfs": {
+      "work": "rw,noexec,nosuid,nodev,size=16m,mode=1777",
+      "tmp": "rw,noexec,nosuid,nodev,size=8m,mode=1777"
+    },
+    "compiledTmpfs": {
+      "work": "rw,exec,nosuid,nodev,size=128m,mode=1777",
+      "tmp": "rw,noexec,nosuid,nodev,size=128m,mode=1777"
+    },
+    "additionalHostVolumesProvided": false
+  },
+  "images": {
+    "python": "python@sha256:a1165e272e578941b84abc79e4ab38a0305cd12803a5c4247979ac7655f4d641",
+    "gccBase": "gcc@sha256:5e927c284bf55a7dc796262e311a0703344f62f41f5621eb56843111b1d37e15",
+    "bcpl": "sha256:835e6c0094507350b1761d549ddd2fe2ffef2e51b682366f2ea36916786bab04",
+    "swift": "sha256:2568de31c9a2e57d87605a8dba91fe5a75f3fe7605a54479ce56a7e17b8b4bc1"
+  },
+  "programs": {
+    "pythonPrint": {
+      "image": "python",
+      "argv": [
+        "/usr/local/bin/python",
+        "-I",
+        "-u",
+        "-c",
+        "print(6*7)"
+      ]
+    },
+    "bcplImageShellPrint": {
+      "image": "bcpl",
+      "argv": [
+        "/bin/sh",
+        "-c",
+        "exec /bin/echo 42"
+      ],
+      "note": "Tests process startup, not BCPL language semantics."
+    },
+    "pythonForkAndThreads": {
+      "image": "python",
+      "executable": "/usr/local/bin/python",
+      "options": [
+        "-I",
+        "-u",
+        "-c"
+      ],
+      "forkCode": "import errno,json,os,resource\nr,w=os.pipe(); children=[]; failure=None\ntry:\n for index in range(64):\n  try: child=os.fork()\n  except OSError as error:\n   failure={'errno':error.errno,'message':str(error)}; break\n  if child==0:\n   os.close(w); os.read(r,1); os._exit(0)\n  children.append(child)\nfinally:\n os.close(w)\n for child in children: os.waitpid(child,0)\nprint(json.dumps({'nproc':resource.getrlimit(resource.RLIMIT_NPROC),'forked':len(children),'failure':failure}))\n",
+      "threadCode": "import json,resource,threading\nevent=threading.Event(); threads=[]; failure=None\ntry:\n for index in range(64):\n  thread=threading.Thread(target=event.wait)\n  try: thread.start()\n  except RuntimeError as error:\n   failure=str(error); break\n  threads.append(thread)\nfinally:\n event.set()\n for thread in threads: thread.join()\nprint(json.dumps({'nproc':resource.getrlimit(resource.RLIMIT_NPROC),'threads':len(threads),'failure':failure}))\n"
+    },
+    "swiftImagePythonForkAndThreads": {
+      "image": "swift",
+      "executable": "/usr/bin/python3",
+      "options": [
+        "-I",
+        "-u",
+        "-c"
+      ],
+      "codeReference": "pythonForkAndThreads",
+      "note": "Uses Python already installed in the fixed Swift image. Tests guest process limits, not Swift language semantics."
+    },
+    "cFork": {
+      "entrypoint": "/bin/sh",
+      "command": "gcc -x c -o /work/fork-limit - && exec /work/fork-limit",
+      "stdinSource": "#include <sys/resource.h>\n#include <sys/types.h>\n#include <sys/wait.h>\n#include <unistd.h>\n#include <errno.h>\n#include <stdio.h>\nint main(void) {\n struct rlimit limit; getrlimit(RLIMIT_NPROC, &limit);\n int pipes[2], count=0, failure=0; pid_t children[160]; pipe(pipes);\n for(int i=0;i<160;i++) {\n  pid_t child=fork();\n  if(child<0) { failure=errno; break; }\n  if(child==0) { char byte; close(pipes[1]); read(pipes[0],&byte,1); _exit(0); }\n  children[count++]=child;\n }\n close(pipes[1]); for(int i=0;i<count;i++) waitpid(children[i],0,0);\n printf(\"{\\\"guestNproc\\\":%lu,\\\"forked\\\":%d,\\\"errno\\\":%d}\\n\",limit.rlim_cur,count,failure);\n return 0;\n}\n",
+      "note": "Uses the already installed compiler, bounded to 160 fork attempts; every successful child is reaped."
+    }
+  },
+  "initialParameterProbe": {
+    "host": "xshow",
+    "program": "pythonPrint",
+    "attemptsPerConfiguration": 1,
+    "cgroupPidSampling": false,
+    "results": [
+      {
+        "name": "runc-control",
+        "runtime": "runc",
+        "nofile": 64,
+        "memoryMiB": 256,
+        "hostPids": 32,
+        "init": true,
+        "fileSizeBytes": 16777216,
+        "successfulExit": true,
+        "oomKilled": false,
+        "stderr": ""
+      },
+      {
+        "name": "baseline",
+        "runtime": "runsc",
+        "nofile": 64,
+        "memoryMiB": 256,
+        "hostPids": 32,
+        "init": true,
+        "fileSizeBytes": 16777216,
+        "successfulExit": true,
+        "oomKilled": false,
+        "stderr": ""
+      },
+      {
+        "name": "nofile256",
+        "runtime": "runsc",
+        "nofile": 256,
+        "memoryMiB": 256,
+        "hostPids": 32,
+        "init": true,
+        "fileSizeBytes": 16777216,
+        "successfulExit": false,
+        "oomKilled": false,
+        "stderr": "[FATAL tini (2)] exec /usr/local/bin/python failed: Cannot allocate memory"
+      },
+      {
+        "name": "nofile1024",
+        "runtime": "runsc",
+        "nofile": 1024,
+        "memoryMiB": 256,
+        "hostPids": 32,
+        "init": true,
+        "fileSizeBytes": 16777216,
+        "successfulExit": false,
+        "oomKilled": false,
+        "stderr": "[FATAL tini (2)] exec /usr/local/bin/python failed: Cannot allocate memory"
+      },
+      {
+        "name": "without-init",
+        "runtime": "runsc",
+        "nofile": 64,
+        "memoryMiB": 256,
+        "hostPids": 32,
+        "init": false,
+        "fileSizeBytes": 16777216,
+        "successfulExit": true,
+        "oomKilled": false,
+        "stderr": ""
+      },
+      {
+        "name": "unlimited-fsize",
+        "runtime": "runsc",
+        "nofile": 64,
+        "memoryMiB": 256,
+        "hostPids": 32,
+        "init": true,
+        "fileSizeBytes": -1,
+        "successfulExit": false,
+        "oomKilled": false,
+        "stderr": "[FATAL tini (2)] exec /usr/local/bin/python failed: Cannot allocate memory"
+      },
+      {
+        "name": "memory512",
+        "runtime": "runsc",
+        "nofile": 64,
+        "memoryMiB": 512,
+        "hostPids": 32,
+        "init": true,
+        "fileSizeBytes": 16777216,
+        "successfulExit": false,
+        "oomKilled": false,
+        "stderr": "[FATAL tini (2)] exec /usr/local/bin/python failed: Cannot allocate memory"
+      },
+      {
+        "name": "pids128",
+        "runtime": "runsc",
+        "nofile": 64,
+        "memoryMiB": 256,
+        "hostPids": 128,
+        "init": true,
+        "fileSizeBytes": 16777216,
+        "successfulExit": true,
+        "oomKilled": false,
+        "stderr": ""
+      }
+    ],
+    "interpretation": "One-off success at the original limits is intermittent. Increasing nofile, removing the file size limit or doubling memory did not resolve the error. Later repeated cgroup measurements identify host PID exhaustion.",
+    "xshow2Preflight": "The Python image was not present on xshow2; no image was pulled. Failed image-availability checks are excluded from executed-container counts; subsequent tests use existing BCPL and Swift images."
+  },
+  "hosts": {
+    "xshow": {
+      "kernel": "6.8.0-101-generic",
+      "baseline": {
+        "program": "pythonPrint",
+        "memoryMiB": 256,
+        "guestNproc": "not explicitly set",
+        "nofile": 64,
+        "fileSizeBytes": 16777216,
+        "results": [
+          {
+            "pidsLimit": 32,
+            "init": true,
+            "attempts": 5,
+            "successfulExit": 2,
+            "nonzeroExit": 3,
+            "exitCodes": [
+              1,
+              0,
+              1,
+              0,
+              1
+            ],
+            "peakHostTasks": 32,
+            "pidsMaxEvents": 3,
+            "memoryMaxEvents": null,
+            "oomKilled": null,
+            "guestResults": [],
+            "cleanupSucceeded": true
+          },
+          {
+            "pidsLimit": 64,
+            "init": true,
+            "attempts": 5,
+            "successfulExit": 5,
+            "nonzeroExit": 0,
+            "exitCodes": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "peakHostTasks": 33,
+            "pidsMaxEvents": 0,
+            "memoryMaxEvents": null,
+            "oomKilled": null,
+            "guestResults": [],
+            "cleanupSucceeded": true
+          },
+          {
+            "pidsLimit": 128,
+            "init": true,
+            "attempts": 5,
+            "successfulExit": 5,
+            "nonzeroExit": 0,
+            "exitCodes": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "peakHostTasks": 34,
+            "pidsMaxEvents": 0,
+            "memoryMaxEvents": null,
+            "oomKilled": null,
+            "guestResults": [],
+            "cleanupSucceeded": true
+          },
+          {
+            "pidsLimit": 32,
+            "init": false,
+            "attempts": 5,
+            "successfulExit": 5,
+            "nonzeroExit": 0,
+            "exitCodes": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "peakHostTasks": 27,
+            "pidsMaxEvents": 0,
+            "memoryMaxEvents": null,
+            "oomKilled": null,
+            "guestResults": [],
+            "cleanupSucceeded": true
+          }
+        ],
+        "memoryEventSampling": false,
+        "oomStateSampling": false
+      },
+      "guestNproc": {
+        "program": "pythonForkAndThreads",
+        "memoryMiB": 256,
+        "init": true,
+        "nofile": 64,
+        "fileSizeBytes": 16777216,
+        "results": [
+          {
+            "hostPids": 64,
+            "guestNproc": 32,
+            "mode": "fork",
+            "attempts": 2,
+            "successfulExit": 0,
+            "nonzeroExit": 2,
+            "exitCodes": [
+              2,
+              2
+            ],
+            "peakHostTasks": 64,
+            "pidsMaxEvents": 2,
+            "memoryMaxEvents": 0,
+            "oomKilled": 0,
+            "guestResults": [],
+            "cleanupSucceeded": true
+          },
+          {
+            "hostPids": 128,
+            "guestNproc": 32,
+            "mode": "fork",
+            "attempts": 2,
+            "successfulExit": 1,
+            "nonzeroExit": 1,
+            "exitCodes": [
+              137,
+              0
+            ],
+            "peakHostTasks": 103,
+            "pidsMaxEvents": 0,
+            "memoryMaxEvents": 36,
+            "oomKilled": 1,
+            "guestResults": [
+              {
+                "nproc": [
+                  32,
+                  32
+                ],
+                "forked": 30,
+                "failure": {
+                  "errno": 11,
+                  "message": "[Errno 11] Resource temporarily unavailable"
+                }
+              }
+            ],
+            "cleanupSucceeded": true
+          },
+          {
+            "hostPids": 256,
+            "guestNproc": 32,
+            "mode": "fork",
+            "attempts": 2,
+            "successfulExit": 2,
+            "nonzeroExit": 0,
+            "exitCodes": [
+              0,
+              0
+            ],
+            "peakHostTasks": 93,
+            "pidsMaxEvents": 0,
+            "memoryMaxEvents": 0,
+            "oomKilled": 0,
+            "guestResults": [
+              {
+                "nproc": [
+                  32,
+                  32
+                ],
+                "forked": 30,
+                "failure": {
+                  "errno": 11,
+                  "message": "[Errno 11] Resource temporarily unavailable"
+                }
+              },
+              {
+                "nproc": [
+                  32,
+                  32
+                ],
+                "forked": 30,
+                "failure": {
+                  "errno": 11,
+                  "message": "[Errno 11] Resource temporarily unavailable"
+                }
+              }
+            ],
+            "cleanupSucceeded": true
+          },
+          {
+            "hostPids": 256,
+            "guestNproc": 128,
+            "mode": "fork",
+            "attempts": 2,
+            "successfulExit": 0,
+            "nonzeroExit": 2,
+            "exitCodes": [
+              137,
+              137
+            ],
+            "peakHostTasks": 106,
+            "pidsMaxEvents": 0,
+            "memoryMaxEvents": 82,
+            "oomKilled": 2,
+            "guestResults": [],
+            "cleanupSucceeded": true
+          },
+          {
+            "hostPids": 256,
+            "guestNproc": 32,
+            "mode": "threads",
+            "attempts": 2,
+            "successfulExit": 2,
+            "nonzeroExit": 0,
+            "exitCodes": [
+              0,
+              0
+            ],
+            "peakHostTasks": 33,
+            "pidsMaxEvents": 0,
+            "memoryMaxEvents": 0,
+            "oomKilled": 0,
+            "guestResults": [
+              {
+                "nproc": [
+                  32,
+                  32
+                ],
+                "threads": 30,
+                "failure": "can't start new thread"
+              },
+              {
+                "nproc": [
+                  32,
+                  32
+                ],
+                "threads": 30,
+                "failure": "can't start new thread"
+              }
+            ],
+            "cleanupSucceeded": true
+          }
+        ]
+      },
+      "compiledNproc": {
+        "program": "cFork",
+        "image": "gccBase",
+        "memoryMiB": 512,
+        "init": true,
+        "nofile": 64,
+        "fileSizeBytes": 16777216,
+        "results": [
+          {
+            "hostPids": 128,
+            "guestNproc": 128,
+            "attempts": 1,
+            "successfulExit": 0,
+            "nonzeroExit": 1,
+            "exitCodes": [
+              2
+            ],
+            "peakHostTasks": 128,
+            "pidsMaxEvents": 1,
+            "memoryMaxEvents": 0,
+            "oomKilled": 0,
+            "guestResults": [],
+            "cleanupSucceeded": true
+          },
+          {
+            "hostPids": 256,
+            "guestNproc": 128,
+            "attempts": 1,
+            "successfulExit": 0,
+            "nonzeroExit": 1,
+            "exitCodes": [
+              2
+            ],
+            "peakHostTasks": 256,
+            "pidsMaxEvents": 1,
+            "memoryMaxEvents": 0,
+            "oomKilled": 0,
+            "guestResults": [],
+            "cleanupSucceeded": true
+          },
+          {
+            "hostPids": 512,
+            "guestNproc": 128,
+            "attempts": 1,
+            "successfulExit": 1,
+            "nonzeroExit": 0,
+            "exitCodes": [
+              0
+            ],
+            "peakHostTasks": 286,
+            "pidsMaxEvents": 0,
+            "memoryMaxEvents": 0,
+            "oomKilled": 0,
+            "guestResults": [
+              {
+                "guestNproc": 128,
+                "forked": 126,
+                "errno": 11
+              }
+            ],
+            "cleanupSucceeded": true
+          }
+        ]
+      }
+    },
+    "xshow2": {
+      "kernel": "6.8.0-63-generic",
+      "baseline": {
+        "program": "bcplImageShellPrint",
+        "memoryMiB": 256,
+        "guestNproc": "not explicitly set",
+        "nofile": 64,
+        "fileSizeBytes": 16777216,
+        "results": [
+          {
+            "pidsLimit": 32,
+            "init": true,
+            "attempts": 5,
+            "successfulExit": 0,
+            "nonzeroExit": 5,
+            "exitCodes": [
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "peakHostTasks": 32,
+            "pidsMaxEvents": 5,
+            "memoryMaxEvents": null,
+            "oomKilled": null,
+            "guestResults": [],
+            "cleanupSucceeded": true
+          },
+          {
+            "pidsLimit": 64,
+            "init": true,
+            "attempts": 5,
+            "successfulExit": 5,
+            "nonzeroExit": 0,
+            "exitCodes": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "peakHostTasks": 34,
+            "pidsMaxEvents": 0,
+            "memoryMaxEvents": null,
+            "oomKilled": null,
+            "guestResults": [],
+            "cleanupSucceeded": true
+          },
+          {
+            "pidsLimit": 128,
+            "init": true,
+            "attempts": 5,
+            "successfulExit": 5,
+            "nonzeroExit": 0,
+            "exitCodes": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "peakHostTasks": 33,
+            "pidsMaxEvents": 0,
+            "memoryMaxEvents": null,
+            "oomKilled": null,
+            "guestResults": [],
+            "cleanupSucceeded": true
+          },
+          {
+            "pidsLimit": 32,
+            "init": false,
+            "attempts": 5,
+            "successfulExit": 5,
+            "nonzeroExit": 0,
+            "exitCodes": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "peakHostTasks": 30,
+            "pidsMaxEvents": 0,
+            "memoryMaxEvents": null,
+            "oomKilled": null,
+            "guestResults": [],
+            "cleanupSucceeded": true
+          }
+        ],
+        "memoryEventSampling": false,
+        "oomStateSampling": false
+      },
+      "guestNproc": {
+        "program": "swiftImagePythonForkAndThreads",
+        "memoryMiB": 256,
+        "init": true,
+        "nofile": 64,
+        "fileSizeBytes": 16777216,
+        "results": [
+          {
+            "hostPids": 64,
+            "guestNproc": 32,
+            "mode": "fork",
+            "attempts": 2,
+            "successfulExit": 0,
+            "nonzeroExit": 2,
+            "exitCodes": [
+              2,
+              2
+            ],
+            "peakHostTasks": 64,
+            "pidsMaxEvents": 2,
+            "memoryMaxEvents": 0,
+            "oomKilled": 0,
+            "guestResults": [],
+            "cleanupSucceeded": true
+          },
+          {
+            "hostPids": 128,
+            "guestNproc": 32,
+            "mode": "fork",
+            "attempts": 2,
+            "successfulExit": 2,
+            "nonzeroExit": 0,
+            "exitCodes": [
+              0,
+              0
+            ],
+            "peakHostTasks": 93,
+            "pidsMaxEvents": 0,
+            "memoryMaxEvents": 0,
+            "oomKilled": 0,
+            "guestResults": [
+              {
+                "nproc": [
+                  32,
+                  32
+                ],
+                "forked": 30,
+                "failure": {
+                  "errno": 11,
+                  "message": "[Errno 11] Resource temporarily unavailable"
+                }
+              },
+              {
+                "nproc": [
+                  32,
+                  32
+                ],
+                "forked": 30,
+                "failure": {
+                  "errno": 11,
+                  "message": "[Errno 11] Resource temporarily unavailable"
+                }
+              }
+            ],
+            "cleanupSucceeded": true
+          },
+          {
+            "hostPids": 256,
+            "guestNproc": 32,
+            "mode": "fork",
+            "attempts": 2,
+            "successfulExit": 2,
+            "nonzeroExit": 0,
+            "exitCodes": [
+              0,
+              0
+            ],
+            "peakHostTasks": 94,
+            "pidsMaxEvents": 0,
+            "memoryMaxEvents": 0,
+            "oomKilled": 0,
+            "guestResults": [
+              {
+                "nproc": [
+                  32,
+                  32
+                ],
+                "forked": 30,
+                "failure": {
+                  "errno": 11,
+                  "message": "[Errno 11] Resource temporarily unavailable"
+                }
+              },
+              {
+                "nproc": [
+                  32,
+                  32
+                ],
+                "forked": 30,
+                "failure": {
+                  "errno": 11,
+                  "message": "[Errno 11] Resource temporarily unavailable"
+                }
+              }
+            ],
+            "cleanupSucceeded": true
+          },
+          {
+            "hostPids": 256,
+            "guestNproc": 128,
+            "mode": "fork",
+            "attempts": 2,
+            "successfulExit": 0,
+            "nonzeroExit": 2,
+            "exitCodes": [
+              137,
+              137
+            ],
+            "peakHostTasks": 123,
+            "pidsMaxEvents": 0,
+            "memoryMaxEvents": 79,
+            "oomKilled": 2,
+            "guestResults": [],
+            "cleanupSucceeded": true
+          },
+          {
+            "hostPids": 256,
+            "guestNproc": 32,
+            "mode": "threads",
+            "attempts": 2,
+            "successfulExit": 2,
+            "nonzeroExit": 0,
+            "exitCodes": [
+              0,
+              0
+            ],
+            "peakHostTasks": 35,
+            "pidsMaxEvents": 0,
+            "memoryMaxEvents": 0,
+            "oomKilled": 0,
+            "guestResults": [
+              {
+                "nproc": [
+                  32,
+                  32
+                ],
+                "threads": 30,
+                "failure": "can't start new thread"
+              },
+              {
+                "nproc": [
+                  32,
+                  32
+                ],
+                "threads": 30,
+                "failure": "can't start new thread"
+              }
+            ],
+            "cleanupSucceeded": true
+          }
+        ]
+      },
+      "compiledNproc": {
+        "program": "cFork",
+        "image": "bcpl",
+        "memoryMiB": 512,
+        "init": true,
+        "nofile": 64,
+        "fileSizeBytes": 16777216,
+        "results": [
+          {
+            "hostPids": 128,
+            "guestNproc": 128,
+            "attempts": 1,
+            "successfulExit": 0,
+            "nonzeroExit": 1,
+            "exitCodes": [
+              2
+            ],
+            "peakHostTasks": 128,
+            "pidsMaxEvents": 1,
+            "memoryMaxEvents": 0,
+            "oomKilled": 0,
+            "guestResults": [],
+            "cleanupSucceeded": true
+          },
+          {
+            "hostPids": 256,
+            "guestNproc": 128,
+            "attempts": 1,
+            "successfulExit": 0,
+            "nonzeroExit": 1,
+            "exitCodes": [
+              2
+            ],
+            "peakHostTasks": 256,
+            "pidsMaxEvents": 1,
+            "memoryMaxEvents": 0,
+            "oomKilled": 0,
+            "guestResults": [],
+            "cleanupSucceeded": true
+          },
+          {
+            "hostPids": 512,
+            "guestNproc": 128,
+            "attempts": 1,
+            "successfulExit": 1,
+            "nonzeroExit": 0,
+            "exitCodes": [
+              0
+            ],
+            "peakHostTasks": 286,
+            "pidsMaxEvents": 0,
+            "memoryMaxEvents": 0,
+            "oomKilled": 0,
+            "guestResults": [
+              {
+                "guestNproc": 128,
+                "forked": 126,
+                "errno": 11
+              }
+            ],
+            "cleanupSucceeded": true
+          }
+        ]
+      }
+    }
+  },
+  "conclusions": {
+    "rootCause": "Under host pids=32 with init, failed starts coincide with pids.events max events and a measured peak of 32 host tasks. The same guest program succeeds with host pids=64/128. Sentry, gofer and systrap host processes/threads require a separate cgroup budget.",
+    "errnoBoundary": "The exact source conversion that surfaces host PID exhaustion as exec ENOMEM was not traced. PID exhaustion is established by the repeated host cgroup measurements, not inferred from the ENOMEM text alone.",
+    "interpreted": {
+      "hostPids": 128,
+      "guestNproc": 32,
+      "keepInit": true,
+      "evidence": "At guest nproc=32 the successful fork probes stop at 30 children with errno EAGAIN; init and the parent consume two guest tasks. Thread probes also stop at 30 guest threads. Host pids=64 fails before reaching the guest quota.",
+      "memoryBoundary": "One of the two xshow host128/nproc32 saturated Python fork probes hit the unchanged 256 MiB memory cap and was OOM-killed. Other nproc32 probes reached EAGAIN. Memory limits remain active and are not raised to make a saturation probe pass."
+    },
+    "compiled": {
+      "hostPids": 512,
+      "guestNproc": 128,
+      "evidence": "Both hosts with 512 MiB and host pids512 reach 126 C children then EAGAIN at guest nproc128; measured host task peak is 286. Host pids128 and 256 each hit their cgroup PID cap and terminate before reaching the guest quota. 512 is the smallest passing value among the three tested host budgets."
+    },
+    "preserved": "Existing per-language memory, CPU, time, network, filesystem, capability and descriptor/file size restrictions remain. runc retains its original host PID settings. The larger runsc host PID allowance does not grant guests the same number of tasks.",
+    "acceptanceBoundary": "These probes verify bounded process/thread admission and cleanup for the specified images and kernels. Full 56-language runtime validation, gateway admission, Chrome checks and production deployment are separate checks. This report does not prove resistance to sandbox escape or identify five real people from browser sessions."
+  },
+  "officialSources": [
+    {
+      "url": "https://github.com/google/gvisor/blob/release-20261102.0/pkg/sentry/platform/systrap/systrap.go#L16-L30",
+      "supports": "systrap uses a host subprocess for each guest address space, with additional host syscall/sysmsg threads."
+    },
+    {
+      "url": "https://github.com/google/gvisor/blob/release-20261102.0/pkg/sentry/platform/systrap/systrap.go#L272-L278",
+      "supports": "Host helper thread bounds derive from base GOMAXPROCS, with an additional syscall thread."
+    },
+    {
+      "url": "https://github.com/google/gvisor/blob/release-20261102.0/pkg/sentry/kernel/kernel.go#L90-L114",
+      "supports": "UserCounters.incRLimitNProc counts tasks by guest KUID and returns EAGAIN when ProcessCount soft limit is exceeded without administrative capability."
+    },
+    {
+      "url": "https://github.com/google/gvisor/blob/release-20261102.0/pkg/sentry/kernel/task_start.go#L139-L164",
+      "supports": "NewTask applies guest NPROC accounting to each guest task, including threads; host runtime helpers are outside this task accounting."
+    },
+    {
+      "url": "https://github.com/google/gvisor/blob/release-20261102.0/pkg/sentry/kernel/task_clone.go#L200-L347",
+      "supports": "Clone allocates the forked address space before NewTask checks guest NPROC, so host headroom is also needed for an over-limit attempt."
+    },
+    {
+      "url": "https://github.com/google/gvisor/blob/release-20261102.0/pkg/sentry/kernel/task_exit.go#L820-L825",
+      "supports": "Guest NPROC accounting is decremented when a zombie is reaped as dead; probes waitpid all successful forked children."
+    }
+  ],
+  "cleanup": {
+    "allExecutedProbeContainersRemoved": true,
+    "initialProbeContainersRemoved": true,
+    "executedContainers": 74,
+    "globalPruneUsed": false,
+    "permanentServiceChangesByTheseProbes": false,
+    "productionTokensRead": false,
+    "publicReportContainsContainerOrJobIds": false,
+    "note": "Each probe creates one uniquely named and labelled temporary container, inspects only that container/cgroup, then removes exactly that container in a finally block. Raw local logs are intentionally excluded from version control."
+  }
+}

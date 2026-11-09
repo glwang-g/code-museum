@@ -6,9 +6,9 @@ process (see analytics.py) so a release needs no second systemd unit. Guest-book
 messages store no IP, user agent, e-mail address or account; only a salted-free
 hash of the anonymous browser identifier is kept for rate limiting. Messages
 are public by default, and an administrator token can hide one. The maintainer
-is notified over SMTP when a credential file exists. Private access applications
-use a separate table storing a contact e-mail and are never publicly listed; failed deliveries stay
-pending and are retried, and are never reported as sent.
+is notified over SMTP when a credential file exists. Retired access applications
+remain in their private historical table, but are no longer accepted or mailed.
+Failed guest-book notifications stay pending and are never reported as sent.
 """
 import argparse
 import hashlib
@@ -67,6 +67,8 @@ def connect(database):
         notify_error TEXT)''')
     db.execute('CREATE INDEX IF NOT EXISTS messages_created ON messages(created_at DESC)')
     db.execute('CREATE INDEX IF NOT EXISTS messages_visitor ON messages(visitor, created_at DESC)')
+    # Retain the former private application schema and records across upgrades.
+    # Nothing writes new applications or sends their historical notifications.
     db.execute('''CREATE TABLE IF NOT EXISTS access_requests (
         id TEXT PRIMARY KEY, created_at TEXT NOT NULL, author TEXT NOT NULL,
         email TEXT NOT NULL, body TEXT NOT NULL, visitor TEXT NOT NULL,
@@ -253,65 +255,6 @@ def send(database, record, config):
     mark_notified(database, record[0])
 
 
-def create_access_request(database, payload):
-    if not isinstance(payload, dict) or set(payload) != {'author', 'email', 'body', 'visitorId', 'eventId'}:
-        raise Rejected(400, 'Invalid payload')
-    email = payload['email']
-    # Keep Reply-To a single mailbox, without display names or header syntax.
-    if not isinstance(email, str) or len(email) > 254 or not re.fullmatch(r"[A-Za-z0-9.!#$%&'*+/=?^_`{|}~-]+@[A-Za-z0-9](?:[A-Za-z0-9.-]*[A-Za-z0-9])?\.[A-Za-z]{2,63}", email):
-        raise Rejected(400, 'Invalid email')
-    record = normalize({key: value for key, value in payload.items() if key != 'email'})
-    now = datetime.now(timezone.utc)
-    with closing(connect(database)) as db:
-        db.execute('BEGIN IMMEDIATE')
-        existing = db.execute('SELECT visitor FROM access_requests WHERE id=?', (record['id'],)).fetchone()
-        if existing:
-            if existing[0] != record['visitor']:
-                raise Rejected(409, 'Submission conflict')
-            return record['id'], False
-        recent = db.execute('SELECT created_at FROM access_requests WHERE visitor=? OR lower(email)=lower(?) ORDER BY created_at DESC LIMIT 1', (record['visitor'], email)).fetchone()
-        if recent and now - datetime.fromisoformat(recent[0]) < timedelta(seconds=60):
-            raise Rejected(429, 'Too many requests')
-        day = (now - timedelta(days=1)).isoformat()
-        personal = db.execute('SELECT COUNT(*) FROM access_requests WHERE created_at>=? AND (visitor=? OR lower(email)=lower(?))', (day, record['visitor'], email)).fetchone()[0]
-        total = db.execute('SELECT COUNT(*) FROM access_requests WHERE created_at>=? OR notified_at IS NULL', (day,)).fetchone()[0]
-        if personal >= 3 or total >= 100:
-            raise Rejected(429, 'Request limit reached')
-        db.execute('INSERT INTO access_requests (id, created_at, author, email, body, visitor) VALUES (?,?,?,?,?,?)',
-                   (record['id'], now.isoformat(), record['author'], email, record['body'], record['visitor']))
-        db.commit()
-    return record['id'], True
-
-
-def deliver_access_requests(database, config, limit=10):
-    if not config['enabled']:
-        return 0
-    with closing(connect(database)) as db:
-        rows = db.execute('SELECT id, created_at, author, email, body FROM access_requests WHERE notified_at IS NULL ORDER BY created_at LIMIT ?', (limit,)).fetchall()
-    delivered = 0
-    for ident, created, author, email, body in rows:
-        message = EmailMessage()
-        message['Subject'] = 'Code Museum 运行权限申请'
-        message['From'] = config['user']
-        message['To'] = DEFAULT_MAIL_TO
-        message['Reply-To'] = email
-        message.set_content('\n'.join(['收到一条运行权限申请（不公开展示）。', '编号：' + ident,
-            '时间：' + created, '昵称：' + author, '联系邮箱：' + email, '', body,
-            '', '请人工审核并回复申请人；提交申请不会自动授予权限。']))
-        error, notified = None, None
-        try:
-            send_mail(message, config)
-            notified = datetime.now(timezone.utc).isoformat()
-            delivered += 1
-        except (OSError, smtplib.SMTPException) as failure:
-            # Do not persist SMTP replies that might echo private addresses.
-            error = type(failure).__name__
-        with closing(connect(database)) as db:
-            db.execute('UPDATE access_requests SET notified_at=?, notify_attempts=notify_attempts+1, notify_error=? WHERE id=?', (notified, error, ident))
-            db.commit()
-    return delivered
-
-
 def deliver_pending(database, config, limit=10):
     if not config['enabled']:
         return 0
@@ -337,7 +280,6 @@ class MailWorker(threading.Thread):
         while not self.stopping.is_set():
             try:
                 deliver_pending(self.database, self.config)
-                deliver_access_requests(self.database, self.config)
             except sqlite3.Error:
                 pass
             self.stopping.wait(self.interval)
@@ -373,34 +315,6 @@ class Messages:
             return 200, listing(self.database, limit, offset)
         except sqlite3.Error:
             return 503, {'error': 'Guest book unavailable'}
-
-    def access_status(self):
-        try:
-            with closing(connect(self.database)) as db:
-                db.execute('SELECT 1 FROM access_requests LIMIT 1')
-        except sqlite3.Error:
-            return 503, {'available': False}
-        return 200, {'available': bool(self.config['enabled'])}
-
-    def apply(self, headers, raw):
-        if headers.get('Origin') != self.origin:
-            return 403, {'error': 'Origin not allowed'}
-        if headers.get('Content-Type', '').split(';')[0].strip() != 'application/json':
-            return 415, {'error': 'Expected application/json'}
-        if not 2 <= len(raw) <= MAX_REQUEST:
-            return 413, {'error': 'Invalid size'}
-        if not self.config['enabled']:
-            return 503, {'error': 'Mail service unavailable'}
-        try:
-            ident, created = create_access_request(self.database, json.loads(raw))
-        except Rejected as rejection:
-            return rejection.status, {'error': str(rejection)}
-        except (ValueError, UnicodeError):
-            return 400, {'error': 'Invalid payload'}
-        except sqlite3.Error:
-            return 503, {'error': 'Application service unavailable'}
-        return 201, {'id': ident, 'created': created,
-                     'note': '申请已保存，等待后台邮件通知。请留意联系邮箱，提交申请不会自动开通权限。'}
 
     def submit(self, headers, raw):
         if headers.get('Origin') != self.origin:
@@ -452,7 +366,7 @@ def main():
     parser.add_argument('--list', type=int, metavar='N', help='Print the newest N messages, including hidden ones')
     parser.add_argument('--hide', metavar='ID')
     parser.add_argument('--show', metavar='ID')
-    parser.add_argument('--deliver', action='store_true', help='Retry pending notifications once')
+    parser.add_argument('--deliver', action='store_true', help='Retry pending guest-book notifications once')
     args = parser.parse_args()
     if args.hide or args.show:
         identifier_to_set = args.hide or args.show
@@ -463,7 +377,7 @@ def main():
         return
     if args.deliver:
         config = load_mail_config(args.env_file)
-        print('Delivered ' + str(deliver_pending(args.database, config) + deliver_access_requests(args.database, config)))
+        print('Delivered ' + str(deliver_pending(args.database, config)))
         return
     if args.list:
         for row in listing(args.database, min(MAX_LIMIT, args.list), 0, include_hidden=True)['messages']:

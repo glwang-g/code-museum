@@ -21,7 +21,7 @@ test('CLI preparation assets are fixed, checked offline, and never copied as bro
     const language=capabilities.languages.find(r=>r.id===id);
     assert.equal(language.local,null);assert.equal(language.defaultMode,'remote');
     assert.equal(language.remote.compileSeconds,id==='typescript'?15:0);
-    assert.equal(language.remote.requiresToken,true);
+    assert.equal(language.remote.requiresToken,false);
   }
   const dir=fs.mkdtempSync(path.join(os.tmpdir(),'museum-cli-hash-'));
   try{

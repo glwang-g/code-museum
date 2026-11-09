@@ -26,18 +26,19 @@ module.exports=async({evaluate,wait,page,screenshot,results,token,root,restart})
  results.push({name:'Actual HTTP MCP initialize, five read-only tools, notifications, protocol/Accept/method rejection and separated credentials',passed:true});
  await evaluate(`document.querySelector('#lab-service-health').open=true;document.querySelector('#lab-service-refresh').click()`);
  await wait(`document.querySelector('#lab-service-summary').textContent.includes('服务可用')`);
- const before=await evaluate(`window.MUSEUM_EXECUTION.serviceStatus()`);
+ const privateStatus=async()=>JSON.parse((await request('/api/executor-status',undefined,token,{'X-Execution-Session':session})).body);
+ const before=await privateStatus();
  await evaluate(`window.MUSEUM_LAB.open('python');document.querySelector('#lab-code').value='print(42)';document.querySelector('#lab-code').dispatchEvent(new Event('input',{bubbles:true}));document.querySelector('#lab-run').click()`);
  await wait(`document.querySelector('#lab-result').textContent==='42\\n'&&document.querySelector('#lab-result').dataset.state==='ok'`,20000);
- const after=await evaluate(`window.MUSEUM_EXECUTION.serviceStatus()`);
+ const after=await privateStatus();
  assert.equal(after.metrics.total,before.metrics.total+1);assert.equal(after.metrics.states.completed,before.metrics.states.completed+1);
  assert.equal(after.metrics.persistent,true);assert.ok(after.metrics.timings.run.samples>before.metrics.timings.run.samples);
- await evaluate(`document.querySelector('#lab-service-refresh').click()`);await wait(`document.querySelector('#lab-service-metrics').textContent.includes('不保存代码')`);
- if(restart){await restart();const restored=await evaluate('window.MUSEUM_EXECUTION.serviceStatus()');assert.equal(restored.metrics.total,after.metrics.total);assert.equal(restored.metrics.startedAt,after.metrics.startedAt);assert.notEqual(restored.processStartedAt,after.processStartedAt);results.push({name:'Actual API process restart retains SQLite aggregates and start date',passed:true});}
+ await evaluate(`document.querySelector('#lab-service-refresh').click()`);await wait(`document.querySelector('#lab-service-metrics').textContent.includes('只检查运行环境是否可用')`);
+ if(restart){await restart();const restored=await privateStatus();assert.equal(restored.metrics.total,after.metrics.total);assert.equal(restored.metrics.startedAt,after.metrics.startedAt);assert.notEqual(restored.processStartedAt,after.processStartedAt);results.push({name:'Actual API process restart retains SQLite aggregates and start date',passed:true});}
  await page('Emulation.setDeviceMetricsOverride',{width:1440,height:1000,mobile:false,deviceScaleFactor:1});
- await evaluate(`document.querySelector('#lab-service-refresh').click()`);await wait(`document.querySelector('#lab-service-metrics').textContent.includes('不保存代码')`);
+ await evaluate(`document.querySelector('#lab-service-refresh').click()`);await wait(`document.querySelector('#lab-service-metrics').textContent.includes('只检查运行环境是否可用')`);
  await screenshot('service-metrics-1440.png');
- results.push({name:'Actual Docker terminal task updates authenticated persistent aggregates and explicit status UI',passed:true});
+ results.push({name:'Actual runsc terminal task updates private persistent aggregates; guest UI displays only public availability',passed:true});
  const routes=JSON.parse(fs.readFileSync(path.join(root,'data/learning-paths.json'))).routes;
  for(const size of [{width:1440,height:1000,mobile:false},{width:390,height:844,mobile:true}]){
   await page('Emulation.setDeviceMetricsOverride',{...size,deviceScaleFactor:1});
@@ -74,7 +75,8 @@ module.exports=async({evaluate,wait,page,screenshot,results,token,root,restart})
  assert.deepEqual(await evaluate('window.MUSEUM_GUIDE.state'),{route:'c-lineage',index:1});
  assert.equal(await evaluate('window.__posts'),0);
  await evaluate(`document.querySelector('#guide-open').click();document.querySelector('#guide-end').click();window.MUSEUM_LAB.open('python');document.querySelector('#lab-service-health').open=true;document.querySelector('#lab-service-refresh').click()`);
- await wait(`document.querySelector('#lab-service-summary').textContent.includes('令牌')`);
- await screenshot('service-no-token-390.png');
- results.push({name:'Guide resume saves navigation only, no execution on refresh; missing-token status fails honestly',passed:true});
+ await wait(`document.querySelector('#lab-service-summary').textContent.includes('服务可用')`);
+ assert.equal(await evaluate(`!!document.querySelector('#lab-remote-token')`),false);
+ await screenshot('service-guest-availability-390.png');
+ results.push({name:'Guide resume saves navigation only, no execution on refresh; public availability needs no token',passed:true});
 };

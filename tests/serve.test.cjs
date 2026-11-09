@@ -135,3 +135,23 @@ test('preview refuses a non-loopback API upstream and reports an offline guest b
   assert.equal(JSON.parse(offline.body).error, 'Guest book unavailable');
   assert.equal((await request(handler, '/api/messages', 'DELETE')).status, 405);
 });
+
+test('execution preview preserves admission cookies, fetch origin checks and busy retry headers', async t => {
+  const http = require('node:http');
+  const { root } = fixture(t);
+  const upstream = http.createServer((req, res) => {
+    assert.equal(req.headers.cookie, 'museum-execution=signed-test-identity');
+    assert.equal(req.headers['sec-fetch-site'], 'same-origin');
+    assert.equal(req.headers.origin, 'http://127.0.0.1:4174');
+    res.writeHead(429, { 'Content-Type': 'application/json', 'Set-Cookie': 'museum-execution=renewed; Path=/; HttpOnly; SameSite=Strict', 'Retry-After': '5' });
+    res.end(JSON.stringify({ error: '当前访问比较多，请稍后重试。' }));
+  });
+  await new Promise((resolve, reject) => { upstream.once('error', reject); upstream.listen(0, '127.0.0.1', resolve); });
+  t.after(() => new Promise(resolve => upstream.close(resolve)));
+  const handler = createRequestHandler(root, { executor: 'http://127.0.0.1:' + upstream.address().port });
+  const response = await request(handler, '/api/executions', 'POST', { cookie: 'museum-execution=signed-test-identity', 'sec-fetch-site': 'same-origin', origin: 'http://127.0.0.1:4174', 'content-type': 'application/json', 'content-length': '2' }, '{}');
+  assert.equal(response.status, 429);
+  assert.deepEqual(response.headers['set-cookie'], ['museum-execution=renewed; Path=/; HttpOnly; SameSite=Strict']);
+  assert.equal(response.headers['retry-after'], '5');
+  assert.equal(JSON.parse(response.body).error, '当前访问比较多，请稍后重试。');
+});

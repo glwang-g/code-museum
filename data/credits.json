@@ -93,9 +93,9 @@
           "runtimeIds": [
             "pascal"
           ],
-          "kind": "私有远端",
+          "kind": "远端",
           "project": "https://www.freepascal.org/",
-          "usage": "固定 Debian 12 发行包中的 Free Pascal 3.2.2；构建输入、来源与镜像 ID 固定，需私有令牌。",
+          "usage": "固定 Debian 12 发行包中的 Free Pascal 3.2.2；构建输入、来源与镜像 ID 固定，免令牌限额试用。",
           "adaptation": "独立非 root、禁网、只读根容器；默认 ObjFPC 模式和 AnsiString，单文件编译成功后才执行，编译诊断与程序输出分开。",
           "limits": "仅预装 RTL；不读取编译器配置文件，不在线安装库；不是 ISO Pascal 或历史 Turbo Pascal 的兼容承诺。",
           "licenseNote": "编译器 GPL-2.0-or-later；RTL 使用 LGPL 及静态链接例外，详见随附版权。",
@@ -120,9 +120,9 @@
           "runtimeIds": [
             "r"
           ],
-          "kind": "私有远端",
+          "kind": "远端",
           "project": "https://www.r-project.org/",
-          "usage": "固定 Debian 12 发行包中的 R 4.2.2；构建输入、来源与镜像 ID 固定，需私有令牌。",
+          "usage": "固定 Debian 12 发行包中的 R 4.2.2；构建输入、来源与镜像 ID 固定，免令牌限额试用。",
           "adaptation": "独立非 root、禁网、只读根容器；Rscript --vanilla，不读取用户启动文件或工作区；提供预装基础包和文本输出。",
           "limits": "不在线安装 CRAN 包；绘图与文件不导出。标准输入通过 file(\"stdin\") 或 scan(\"stdin\", ...) 读取；不是交互式 R 控制台。",
           "licenseNote": "GPL-2.0-or-later，R 各组件及依赖按随附 Debian 版权声明。",
@@ -142,7 +142,7 @@
     },
     {
       "id": "remote-runtime-credits",
-      "title": "实际使用 · 私有远端运行环境",
+      "title": "实际使用 · 远端运行环境",
       "intro": "以下运行时位于执行服务器，不随网页下载；原有语言使用固定官方镜像，新 CLI 工具链从固定发行包离线构建，连接状态仍以执行 API 为准。",
       "entries": [
         {
@@ -154,11 +154,11 @@
           "runtimeIds": [
             "python"
           ],
-          "kind": "私有远端",
+          "kind": "远端",
           "project": "https://www.python.org/",
-          "usage": "官方 Docker 镜像中的真实原生运行时；镜像 digest 固定，需私有令牌。",
+          "usage": "官方 Docker 镜像中的真实原生运行时；镜像 digest 固定，免令牌限额试用。",
           "adaptation": "本项目编排独立非 root、禁网、只读根容器；编译语言分开限制编译与运行，任务结束销毁源码和产物。",
-          "limits": "短程序、单文件和预装标准库；不在线下载第三方依赖。普通容器共享宿主内核，仅供私有可信试用。",
+          "limits": "短程序、单文件和预装标准库；不在线下载第三方依赖。guest网关要求gVisor/runsc，保留时间、内存、进程和输出限制；这些限制不等于完整安全证明。",
           "licenseNote": "Python Software Foundation License",
           "notices": [
             {
@@ -177,11 +177,11 @@
           "runtimeIds": [
             "ruby"
           ],
-          "kind": "私有远端",
+          "kind": "远端",
           "project": "https://www.ruby-lang.org/",
-          "usage": "官方 Docker 镜像中的真实原生运行时；镜像 digest 固定，需私有令牌。",
+          "usage": "官方 Docker 镜像中的真实原生运行时；镜像 digest 固定，免令牌限额试用。",
           "adaptation": "本项目编排独立非 root、禁网、只读根容器；编译语言分开限制编译与运行，任务结束销毁源码和产物。",
-          "limits": "短程序、单文件和预装标准库；不在线下载第三方依赖。普通容器共享宿主内核，仅供私有可信试用。",
+          "limits": "短程序、单文件和预装标准库；不在线下载第三方依赖。guest网关要求gVisor/runsc，保留时间、内存、进程和输出限制；这些限制不等于完整安全证明。",
           "licenseNote": "Ruby License 或 BSD-2-Clause",
           "notices": [
             {
@@ -202,11 +202,11 @@
             "c",
             "cpp"
           ],
-          "kind": "私有远端",
+          "kind": "远端",
           "project": "https://gcc.gnu.org/",
-          "usage": "官方 Docker 镜像中的真实原生运行时；镜像 digest 固定，需私有令牌。",
+          "usage": "官方 Docker 镜像中的真实原生运行时；镜像 digest 固定，免令牌限额试用。",
           "adaptation": "本项目编排独立非 root、禁网、只读根容器；编译语言分开限制编译与运行，任务结束销毁源码和产物。",
-          "limits": "短程序、单文件和预装标准库；不在线下载第三方依赖。普通容器共享宿主内核，仅供私有可信试用。",
+          "limits": "短程序、单文件和预装标准库；不在线下载第三方依赖。guest网关要求gVisor/runsc，保留时间、内存、进程和输出限制；这些限制不等于完整安全证明。",
           "licenseNote": "GPL-3.0-or-later；运行库另有 GCC Runtime Library Exception",
           "notices": [
             {
@@ -225,11 +225,11 @@
           "runtimeIds": [
             "rust"
           ],
-          "kind": "私有远端",
+          "kind": "远端",
           "project": "https://www.rust-lang.org/",
-          "usage": "官方 Docker 镜像中的真实原生运行时；镜像 digest 固定，需私有令牌。",
+          "usage": "官方 Docker 镜像中的真实原生运行时；镜像 digest 固定，免令牌限额试用。",
           "adaptation": "本项目编排独立非 root、禁网、只读根容器；编译语言分开限制编译与运行，任务结束销毁源码和产物。",
-          "limits": "短程序、单文件和预装标准库；不在线下载第三方依赖。普通容器共享宿主内核，仅供私有可信试用。",
+          "limits": "短程序、单文件和预装标准库；不在线下载第三方依赖。guest网关要求gVisor/runsc，保留时间、内存、进程和输出限制；这些限制不等于完整安全证明。",
           "licenseNote": "MIT 或 Apache-2.0；镜像系统组件各有许可",
           "notices": [
             {
@@ -248,11 +248,11 @@
           "runtimeIds": [
             "go"
           ],
-          "kind": "私有远端",
+          "kind": "远端",
           "project": "https://go.dev/",
-          "usage": "官方 Docker 镜像中的真实原生运行时；镜像 digest 固定，需私有令牌。",
+          "usage": "官方 Docker 镜像中的真实原生运行时；镜像 digest 固定，免令牌限额试用。",
           "adaptation": "本项目编排独立非 root、禁网、只读根容器；编译语言分开限制编译与运行，任务结束销毁源码和产物。",
-          "limits": "短程序、单文件和预装标准库；不在线下载第三方依赖。普通容器共享宿主内核，仅供私有可信试用。",
+          "limits": "短程序、单文件和预装标准库；不在线下载第三方依赖。guest网关要求gVisor/runsc，保留时间、内存、进程和输出限制；这些限制不等于完整安全证明。",
           "licenseNote": "BSD-3-Clause；镜像系统组件各有许可",
           "notices": [
             {
@@ -271,11 +271,11 @@
           "runtimeIds": [
             "java"
           ],
-          "kind": "私有远端",
+          "kind": "远端",
           "project": "https://adoptium.net/",
-          "usage": "官方 Docker 镜像中的真实原生运行时；镜像 digest 固定，需私有令牌。",
+          "usage": "官方 Docker 镜像中的真实原生运行时；镜像 digest 固定，免令牌限额试用。",
           "adaptation": "本项目编排独立非 root、禁网、只读根容器；编译语言分开限制编译与运行，任务结束销毁源码和产物。",
-          "limits": "短程序、单文件和预装标准库；不在线下载第三方依赖。普通容器共享宿主内核，仅供私有可信试用。",
+          "limits": "短程序、单文件和预装标准库；不在线下载第三方依赖。guest网关要求gVisor/runsc，保留时间、内存、进程和输出限制；这些限制不等于完整安全证明。",
           "licenseNote": "GPL-2.0 with Classpath Exception 等；各组件许可见上游",
           "notices": [
             {
@@ -294,9 +294,9 @@
           "runtimeIds": [
             "typescript"
           ],
-          "kind": "私有远端",
+          "kind": "远端",
           "project": "https://www.typescriptlang.org/",
-          "usage": "本项目固定归档构建的真实原生工具链；实际镜像 ID 与构建输入哈希固定，需私有令牌。",
+          "usage": "本项目固定归档构建的真实原生工具链；实际镜像 ID 与构建输入哈希固定，免令牌限额试用。",
           "adaptation": "TypeScript 严格类型检查通过才执行；SQL 使用 SQLite 安全模式和独立内存库；GNU 文本工具读取真实标准输入。",
           "limits": "单文件、禁网、预装标准库；无在线依赖安装，执行后删除临时环境。SQLite 不是全部 SQL 方言。",
           "licenseNote": "TypeScript Apache-2.0；Node.js MIT 及第三方许可",
@@ -325,9 +325,9 @@
           "runtimeIds": [
             "sql"
           ],
-          "kind": "私有远端",
+          "kind": "远端",
           "project": "https://sqlite.org/",
-          "usage": "本项目固定归档构建的真实原生工具链；实际镜像 ID 与构建输入哈希固定，需私有令牌。",
+          "usage": "本项目固定归档构建的真实原生工具链；实际镜像 ID 与构建输入哈希固定，免令牌限额试用。",
           "adaptation": "TypeScript 严格类型检查通过才执行；SQL 使用 SQLite 安全模式和独立内存库；GNU 文本工具读取真实标准输入。",
           "limits": "单文件、禁网、预装标准库；无在线依赖安装，执行后删除临时环境。SQLite 不是全部 SQL 方言。",
           "licenseNote": "SQLite public domain / blessing",
@@ -352,9 +352,9 @@
             "awk",
             "sed"
           ],
-          "kind": "私有远端",
+          "kind": "远端",
           "project": "https://www.gnu.org/",
-          "usage": "本项目固定归档构建的真实原生工具链；实际镜像 ID 与构建输入哈希固定，需私有令牌。",
+          "usage": "本项目固定归档构建的真实原生工具链；实际镜像 ID 与构建输入哈希固定，免令牌限额试用。",
           "adaptation": "TypeScript 严格类型检查通过才执行；SQL 使用 SQLite 安全模式和独立内存库；GNU 文本工具读取真实标准输入。",
           "limits": "单文件、禁网、预装标准库；无在线依赖安装，执行后删除临时环境。SQLite 不是全部 SQL 方言。",
           "licenseNote": "GPL-3.0-or-later；基础系统组件各有许可",
@@ -375,9 +375,9 @@
           "runtimeIds": [
             "php"
           ],
-          "kind": "私有远端",
+          "kind": "远端",
           "project": "https://www.php.net/",
-          "usage": "本项目固定归档构建的真实 PHP 8.3 CLI；实际镜像 ID 与构建输入哈希固定，需私有令牌。",
+          "usage": "本项目固定归档构建的真实 PHP 8.3 CLI；实际镜像 ID 与构建输入哈希固定，免令牌限额试用。",
           "adaptation": "独立非 root、禁网、只读根容器；以无 php.ini 的最小配置运行，禁用系统命令、网络函数，并用 open_basedir 限制到临时工作区。",
           "limits": "单文件、短程序、预装核心函数；不提供 Web 服务器、网络访问、外部扩展或在线依赖安装。",
           "licenseNote": "PHP-3.01、BSD-3-Clause、LGPL-2.0-or-later、MIT 与 Zend-2.0；各组件许可见上游",
@@ -402,9 +402,9 @@
           "runtimeIds": [
             "perl"
           ],
-          "kind": "私有远端",
+          "kind": "远端",
           "project": "https://www.perl.org/",
-          "usage": "本项目固定归档构建的真实 Perl 5.42 解释器；实际镜像 ID 与构建输入哈希固定，需私有令牌。",
+          "usage": "本项目固定归档构建的真实 Perl 5.42 解释器；实际镜像 ID 与构建输入哈希固定，免令牌限额试用。",
           "adaptation": "独立非 root、禁网、只读根容器；解释器以 UTF-8 标准输入输出运行，仅使用预装核心模块。",
           "limits": "单文件、短程序、预装核心模块；不支持 CPAN 在线安装、网络访问或第三方扩展。",
           "licenseNote": "Artistic-1.0-Perl OR GPL-1.0-or-later",
@@ -429,9 +429,9 @@
           "runtimeIds": [
             "xslt"
           ],
-          "kind": "私有远端",
+          "kind": "远端",
           "project": "http://xmlsoft.org/XSLT/",
-          "usage": "本项目固定归档构建的真实 libxslt 1.1.43 与 libxml2 2.13.9；实际镜像 ID 与构建输入哈希固定，需私有令牌。",
+          "usage": "本项目固定归档构建的真实 libxslt 1.1.43 与 libxml2 2.13.9；实际镜像 ID 与构建输入哈希固定，免令牌限额试用。",
           "adaptation": "独立非 root、禁网、只读根容器；编辑区是 XSLT 样式表，标准输入是 XML 文档，禁用网络、写出和目录创建。",
           "limits": "XSLT 1.0，不是 2.0/3.0；单样式表、短转换；禁网、禁止写出和创建目录。容器不挂载宿主文件，但容器内只读运行时文件仍可能被 document() 读取，任务结束即销毁。",
           "licenseNote": "libxslt X11；libxml2 MIT；依赖组件各有许可",
@@ -460,7 +460,7 @@
             "visual-basic.net",
             "f-sharp"
           ],
-          "kind": "私有远端",
+          "kind": "远端",
           "project": "https://dotnet.microsoft.com/",
           "usage": "固定官方 .NET SDK 10.0.403 中的 Roslyn C#/Visual Basic 与 F# 10.0 编译器，使用预装参考程序集和 FSharp.Core。",
           "adaptation": "独立非 root、禁网、只读根容器，分别编译 C#/VB.NET/F# 单文件，成功后才运行；VB 默认 Option Strict On、Empty My 控制台模板；F# 仅复制预装 FSharp.Core 至临时工作目录，不还原 NuGet 包。",
@@ -483,9 +483,9 @@
           "runtimeIds": [
             "fortran"
           ],
-          "kind": "私有远端",
+          "kind": "远端",
           "project": "https://gcc.gnu.org/fortran/",
-          "usage": "官方 GCC 镜像中的真实 GNU Fortran 14.3.0；镜像 digest 固定，需私有令牌。",
+          "usage": "官方 GCC 镜像中的真实 GNU Fortran 14.3.0；镜像 digest 固定，免令牌限额试用。",
           "adaptation": "独立非 root、禁网、只读根容器；以 Fortran 2008 标准选项编译单文件，编译成功后才运行。",
           "limits": "单文件、预装运行时库；不在线下载依赖，不使用外部数值库或设备访问。",
           "licenseNote": "GPL-3.0-or-later with GCC Runtime Library Exception；镜像系统组件各有许可",
@@ -533,7 +533,7 @@
             "common-lisp"
           ],
           "project": "https://www.sbcl.org/",
-          "usage": "SBCL 2.2.9，私有远端单文件 Common Lisp 环境。",
+          "usage": "SBCL 2.2.9，远端单文件 Common Lisp 环境。",
           "limits": "128 MiB dynamic space；不加载启动文件，不安装 Quicklisp 或第三方库。不是早期 LISP 的历史环境。",
           "licenseNote": "公有领域与 BSD 等组件；具体范围见原始版权声明。",
           "notices": [
@@ -558,7 +558,7 @@
             "prolog"
           ],
           "project": "https://www.swi-prolog.org/",
-          "usage": "SWI-Prolog 9.0.4，单文件 main/0 入口，私有远端执行。",
+          "usage": "SWI-Prolog 9.0.4，单文件 main/0 入口，远端执行。",
           "limits": "128 MiB 栈限制；不启动交互式查询，无图形界面与在线扩展包。具体方言为 SWI-Prolog。",
           "licenseNote": "BSD-2-Clause 与所含组件许可；原始声明逐包保留。",
           "notices": [
@@ -583,7 +583,7 @@
             "forth"
           ],
           "project": "https://gforth.org/",
-          "usage": "Gforth 0.7.3，私有远端单文件栈语言环境。",
+          "usage": "Gforth 0.7.3，远端单文件栈语言环境。",
           "limits": "16 MiB 字典，数据栈与返回栈各 1 MiB；执行完退出，无交互 REPL 或在线包安装。不重现历史硬件。",
           "licenseNote": "GPL-3.0-or-later 与组件许可，原始 Debian 版权逐包保留。",
           "notices": [
@@ -608,7 +608,7 @@
             "racket"
           ],
           "project": "https://racket-lang.org/",
-          "usage": "官方 Minimal Racket 8.7 CS，私有远端单文件 #lang racket/base 环境。",
+          "usage": "官方 Minimal Racket 8.7 CS，远端单文件 #lang racket/base 环境。",
           "limits": "512 MiB 容器与 3 秒运行预算；仅预装基础库，无 DrRacket/图形界面，不在线安装包。与 Scheme 浏览器运行时分开。",
           "licenseNote": "MIT、Apache-2.0 及组件许可；全部原始 LICENSE 文件随固定发行包保留。",
           "notices": [
@@ -633,7 +633,7 @@
             "smalltalk"
           ],
           "project": "https://www.gnu.org/software/smalltalk/",
-          "usage": "GNU Smalltalk 3.2.5 控制台字节码 VM，私有远端单文件执行；禁用 JIT。",
+          "usage": "GNU Smalltalk 3.2.5 控制台字节码 VM，远端单文件执行；禁用 JIT。",
           "adaptation": "固定源码含 glibc iconv/Expat 接口兼容补丁，以及明确记录的 CLI 状态适配：报告的语法错误和未处理异常返回失败，显式捕获的错误保留原有控制流程。",
           "limits": "512 MiB / 3 秒；无图形环境或在线包安装，不重现 Xerox Smalltalk。",
           "licenseNote": "GNU Smalltalk GPL-2.0-or-later 与附带库/文档许可；完整原始源码、三份原始 COPYING 和独立补丁均保存。",

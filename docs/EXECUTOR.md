@@ -1,5 +1,11 @@
 # Docker 私有执行首版
 
+## 当前访问方式变更（2026-11-09）
+
+用户选择免令牌、最多5个活跃执行会话，第6个提示“当前访问比较多，请稍后重试。”。页面移除令牌输入和权限申请，内部worker、管理接口与MCP保留鉴权；详见 [免令牌说明](GUEST_EXECUTION.md)。guest开启须所有可用worker通过runsc健康检查，当前实际部署与验收结果见 [部署记录](DEPLOYMENT.md)。以下按既有历史阶段保留实现记录，其中旧版网页粘贴令牌的步骤已停用。
+
+## 双节点私有发布历史
+
 当前生产后端已于2026-11-09按用户授权升级为双节点56门私有远端执行：xshow 42门、xshow2 14门，统一网关沿用原同域 API 和私有令牌。10项常驻 canary、[63项正式 HTTPS/Chrome 检查](../data/audit/dual-node-production-checks.json)（精确元数据、56门逐一正例及6项既有页面检查）、[8项生命周期与故障恢复检查](../data/audit/dual-node-production-lifecycle.json)通过；[新服务已 active/enabled](../data/audit/dual-node-production-services.json)，旧执行器停用自启但保留回退。Groovy 当前运行预算8秒，含 JVM 启动与脚本编译，其余按各语言 API 预算。拓扑、v3清单和备份见 [双节点部署说明](DUAL_NODE_DEPLOYMENT.md)。
 
 当前正式发布提交为`f2ff0bf`，已通过Actions部署，正式页面提供4门浏览器与56门私有远端，Python重叠，共59个可执行节点。[本轮73项正式HTTPS/Chrome检查](../data/audit/b37-site-runtime-checks.json)包含56门逐一真实正例、BCPL/Oberon/Groovy/Swift/Dart/VHDL/PostScript在1440/390页面的执行，以及Python真实错误与恢复；[公开数据一致性](../data/audit/b37-site-consistency.json)通过。Groovy新页面使用8秒预算文案。版本和边界见各节；[逐门记录](../data/audit/runtime-rollout.json)仍保留临时验收阶段，不改写历史。公开固定输入已推送master，[正式Actions](https://github.com/glwang-g/code-museum/actions/runs/42603930037)的build/deploy及[CI后核验](../data/audit/b37-ci-release.json)通过；临时资料分支已清理。Linux执行服务使用Python标准库，不需要pip/npm依赖；网站可从公共输入完全离线构建，不启动Docker、拉镜像或连接服务器。
@@ -109,7 +115,7 @@ export EXECUTOR_TOKEN="$(openssl rand -hex 32)"
 npm run executor:preview
 ```
 
-打开 **http://127.0.0.1:4174/#lab**，选择已经准备好的远端语言。在启动预览的终端用 `printf '%s\n' "$EXECUTOR_TOKEN"` 查看令牌，复制到网页「私有执行令牌」，点击「运行代码」。令牌只留在当前页面内存中，不写浏览器存储、URL、项目文件或执行日志。
+旧版粘贴私有令牌的网页流程已停用。当前页面只连接显式开启guest的统一网关；私有预览仍可供管理API检查，真实网页核验使用 [免令牌检查](GUEST_EXECUTION.md#复查)。
 
 预览程序将本地后端源码和镜像清单通过 SSH stdin 传入远端独立临时目录，启动仅 loopback 可访问的服务，并通过同一 SSH 连接转发。端口冲突会报错，不终止已有服务。Ctrl+C 关闭自己的预览和临时服务、删除临时源码目录；SSH stdin 断开也触发清理，单次试用最长30分钟。网络故障时清理可能延迟到连接断开或到期。Docker 镜像作为显式准备的缓存保留。
 
@@ -188,21 +194,7 @@ npm run executor:browser         # 本机Chrome -> SSH xshow -> Docker
 
 执行服务与静态release独立升级：GitHub Actions上传后端源码供核对，但不会自动运行部署账户可写的Python代码或重启Docker执行服务。后端更新由管理员审核后重新运行安装入口。令牌保存在 `/etc/code-museum-executor/private.env`（root:root 0600），不写GitHub Secret、静态文件或浏览器存储。API只在127.0.0.1:4181监听，同源HTTPS经Nginx转发；执行仍必须Bearer令牌及session，未开放匿名执行。Nginx不记录该API访问日志，关闭请求/响应缓冲，避免源码写入代理临时文件。
 
-管理员在自己的终端取令牌（不要把输出提交Git或贴入公开渠道）：
-
-```sh
-ssh xshow "sudo -n cat /etc/code-museum-executor/private.env"
-```
-
-取等号后的值粘贴到正式站点实验台的私有令牌输入框。生产保持自己的singleton锁；本版临时预览和集成检查使用独立namespace、锁、容器前缀/标签，可与生产服务共存。旧版脚本仍共用生产标记，不得混用。正式HTTPS检查可执行：
-
-```sh
-EXECUTOR_BROWSER_ORIGIN=https://codemuseum.freexlib.com npm run executor:browser
-```
-
-脚本从现有管理员SSH连接读取令牌到内存，不打印或写文件，不停止常驻服务。以上是本轮部署准备与管理约定；最终上线状态另见DEPLOYMENT.md的实际记录。
-
-普通 Docker runc 共享宿主内核，本轮限制实测不等于容器逃逸防护证明。当前只适合自己信任的私有试用。公开匿名执行前应使用独立执行机器/VM与更强沙箱（例如额外安装并核验 gVisor/runsc），加入真正用户认证、IP/用户配额、监控及故障恢复；现有 `--runtime runsc` 参数只是接口，尚未安装或验证 runsc。不能将模板或私有试用称为已经公开上线。
+旧版管理员取令牌并粘贴网页的步骤已退役，内部凭据只留在服务端。原runc受信任私有试用记录不能替代当前guest/runsc验收，参见 [免令牌说明](GUEST_EXECUTION.md)。
 
 ## 编译阶段与新增核验
 
@@ -222,7 +214,7 @@ EXECUTOR_BROWSER_ORIGIN=https://codemuseum.freexlib.com npm run executor:browser
 
 ## 聚合服务状态
 
-`GET /api/executor-status`需要原私有执行Bearer及32位十六进制X-Execution-Session，同源校验沿用执行接口；不会返回任务内容、ID或所有者。网页实验台远端访问区展开「服务状态」并显式刷新，不自动探测令牌。
+`GET /api/executor-status`需要原私有执行Bearer及32位十六进制X-Execution-Session，同源校验沿用执行接口；不会返回任务内容、ID或所有者。当前网页「服务状态」仅读取公开 `/api/runtimes`；旧版私有聚合指标界面已移除，内部管理API仍需鉴权。
 
 返回队列数、活动数、进程启动/运行时间与累计终态任务。SQLite `/var/lib/code-museum-executor/metrics.sqlite`属于执行专用账号，目录0700，systemd UMask0077；独立于release，安装器用SQLite backup保存已有数据，不清零。每个语言/终态只有一行聚合，没有单任务表；保存数量及排队/编译/运行的总耗时与样本数。不存在的阶段不记零，均值表示已有阶段的样本。程序错误、编译错误、两种超时、取消、输出/内存上限与环境故障独立统计。
 

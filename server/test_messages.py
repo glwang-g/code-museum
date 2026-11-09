@@ -1,11 +1,16 @@
 import hashlib
+import http.client
+import io
 import json
 import sqlite3
 import tempfile
+import threading
 import unittest
+from contextlib import closing, redirect_stdout
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from unittest import mock
+import analytics
 import messages
 
 
@@ -120,77 +125,86 @@ class GuestBookTests(unittest.TestCase):
         self.assertEqual(messages.Messages(self.database, 'https://codemuseum.freexlib.com', messages.load_mail_config('/nonexistent', {})).hide({}, b'{}', record['id'])[0], 403)
 
 
-class AccessRequestTests(unittest.TestCase):
+class RetiredAccessRequestTests(unittest.TestCase):
     def setUp(self):
         self.directory = tempfile.TemporaryDirectory()
         self.database = str(Path(self.directory.name) / 'messages.sqlite3')
         self.config = messages.load_mail_config('/nonexistent', {'MESSAGES_SMTP_USER': 'sender@example.com', 'MESSAGES_SMTP_PASSWORD': 'test'})
         self.book = messages.Messages(self.database, 'https://museum.test', self.config)
-        self.headers = {'Origin': 'https://museum.test', 'Content-Type': 'application/json'}
-        self.data = {key: value for key, value in payload(email='learner@example.com').items() if key != 'page'}
+        self.historical = ('a' * 32, datetime.now(timezone.utc).isoformat(), '历史申请人',
+                           'learner@example.com', '历史申请内容', hashlib.sha256(VISITOR.encode()).hexdigest(),
+                           None, 2, 'OSError')
+        messages.connect(self.database).close()
+        with closing(sqlite3.connect(self.database)) as db, db:
+            db.execute('INSERT INTO access_requests VALUES (?,?,?,?,?,?,?,?,?)', self.historical)
 
     def tearDown(self):
         self.directory.cleanup()
 
-    def apply(self, **overrides):
-        return self.book.apply(self.headers, json.dumps(dict(self.data, **overrides)).encode())
+    def assert_history_unchanged(self):
+        with closing(sqlite3.connect(self.database)) as db:
+            self.assertEqual(db.execute('SELECT * FROM access_requests').fetchall(), [self.historical])
 
-    def test_private_idempotent_rate_limited_applications_and_existing_messages(self):
-        messages.create(self.database, payload())
-        status, response = self.apply()
-        self.assertEqual(status, 201)
-        self.assertTrue(response['created'])
-        self.assertFalse(self.apply()[1]['created'])
-        self.assertEqual(self.apply(eventId='1a2b3c4d-5e6f-4a7b-8c9d-0e1f2a3b4c5d')[0], 429)
-        self.assertEqual(self.apply(visitorId='0b1c2d3e-4f5a-4b6c-8d7e-9f0a1b2c3d4e')[0], 409)
+    def test_retired_http_endpoints_never_accept_or_list_applications(self):
+        data = {key: value for key, value in payload(email='new@example.com').items() if key != 'page'}
+        # Retirement is independent of SMTP, the guest book, and database availability.
+        for book in (self.book, None):
+            with self.subTest(guest_book_enabled=book is not None):
+                visits = str(Path(self.directory.name) / 'visits.sqlite3')
+                server = analytics.ThreadingHTTPServer(('127.0.0.1', 0), analytics.handler(visits, 'https://museum.test', book))
+                thread = threading.Thread(target=server.serve_forever, daemon=True)
+                thread.start()
+                try:
+                    with mock.patch.object(messages, 'send_mail') as send:
+                        cases = [('GET', None, {}), ('POST', json.dumps(data).encode(), {'Content-Type': 'application/json', 'Origin': 'https://museum.test'}),
+                                 ('POST', b'invalid', {'Content-Length': '99999999'})]
+                        for method, body, headers in cases:
+                            connection = http.client.HTTPConnection(*server.server_address, timeout=2)
+                            try:
+                                connection.request(method, '/api/access-requests?legacy=1', body=body, headers=headers)
+                                response = connection.getresponse()
+                                self.assertEqual(response.status, 410)
+                                self.assertEqual(json.loads(response.read()), {'available': False, 'error': 'Access requests retired'})
+                            finally:
+                                connection.close()
+                        send.assert_not_called()
+                finally:
+                    server.shutdown()
+                    server.server_close()
+                    thread.join(timeout=2)
+        self.assert_history_unchanged()
+        self.assertFalse(Path(visits).exists())
+
+    def test_mail_worker_preserves_history_and_only_delivers_public_messages(self):
+        record, _ = messages.create(self.database, payload())
+        worker = messages.MailWorker(self.database, self.config, interval=0.01)
+        with mock.patch.object(messages, 'send_mail') as send, mock.patch.object(worker.stopping, 'wait', side_effect=lambda interval: worker.stop()):
+            worker.run()
+        send.assert_called_once()
+        built, config = send.call_args.args
+        self.assertTrue(str(built['Subject']).startswith('Code Museum 留言'))
+        self.assertIsNone(built['Reply-To'])
+        self.assertNotIn('learner@example.com', built.get_content())
+        self.assertEqual(messages.report(self.database)['pendingNotification'], 0)
         public = self.book.read('')[1]
-        self.assertEqual(public['total'], 1)
+        self.assertEqual(public['messages'][0]['id'], record['id'])
         self.assertNotIn('learner@example.com', json.dumps(public))
-        self.assertEqual(self.book.access_status(), (200, {'available': True}))
-        self.assertNotIn('learner@example.com', json.dumps(response))
+        self.assert_history_unchanged()
 
-    def test_validation_and_disabled_mail_service_do_not_store_applications(self):
-        self.assertEqual(self.book.apply({}, b'{}')[0], 403)
-        self.assertEqual(self.apply(email='a@example.com\r\nBcc: victim@example.com')[0], 400)
-        self.assertEqual(self.apply(email='bad')[0], 400)
-        self.assertEqual(self.apply(body='a')[0], 400)
-        self.assertEqual(self.apply(body='a' * 601)[0], 413)
-        self.assertEqual(self.apply(extra=True)[0], 400)
-        self.book.config = messages.load_mail_config('/nonexistent', {})
-        self.assertEqual(self.apply()[0], 503)
-        self.assertEqual(self.book.access_status(), (200, {'available': False}))
-        with sqlite3.connect(self.database) as db:
-            self.assertEqual(db.execute('SELECT COUNT(*) FROM access_requests').fetchone()[0], 0)
-
-    def test_mail_failure_stays_pending_then_retries_with_private_reply_address(self):
-        self.apply()
-        with mock.patch.object(messages, 'send_mail', side_effect=OSError('failed')):
-            self.assertEqual(messages.deliver_access_requests(self.database, self.config), 0)
-        with sqlite3.connect(self.database) as db:
-            self.assertEqual(db.execute('SELECT notified_at, notify_attempts, notify_error FROM access_requests').fetchone(), (None, 1, 'OSError'))
+    def test_deliver_cli_leaves_historical_applications_pending(self):
+        messages.create(self.database, payload())
+        output = io.StringIO()
+        with mock.patch('sys.argv', ['messages.py', '--database', self.database, '--deliver']), \
+                mock.patch.object(messages, 'load_mail_config', return_value=self.config), \
+                mock.patch.object(messages, 'send_mail') as send, redirect_stdout(output):
+            messages.main()
+        self.assertEqual(output.getvalue(), 'Delivered 1\n')
+        send.assert_called_once()
+        self.assertTrue(str(send.call_args.args[0]['Subject']).startswith('Code Museum 留言'))
+        self.assert_history_unchanged()
         with mock.patch.object(messages, 'send_mail') as send:
-            self.assertEqual(messages.deliver_access_requests(self.database, self.config), 1)
-            built, config = send.call_args.args
-            self.assertEqual(built['To'], '1956341482@qq.com')
-            self.assertEqual(built['Reply-To'], 'learner@example.com')
-            self.assertIn('这是一条测试留言', built.get_content())
-            self.assertIn('不公开展示', built.get_content())
-            self.assertEqual(messages.deliver_access_requests(self.database, self.config), 0)
-
-    def test_limits_follow_email_across_browser_ids_and_bound_the_queue(self):
-        self.apply()
-        other = dict(visitorId='0b1c2d3e-4f5a-4b6c-8d7e-9f0a1b2c3d4e', eventId='1a2b3c4d-5e6f-4a7b-8c9d-0e1f2a3b4c5d')
-        self.assertEqual(self.apply(**other)[0], 429)
-        with sqlite3.connect(self.database) as db:
-            db.execute('UPDATE access_requests SET created_at=?', ((datetime.now(timezone.utc) - timedelta(minutes=2)).isoformat(),))
-        self.assertEqual(self.apply(**other)[0], 201)
-        with sqlite3.connect(self.database) as db:
-            row = db.execute('SELECT created_at, author, email, body, visitor FROM access_requests LIMIT 1').fetchone()
-            for i in range(100):
-                db.execute('INSERT INTO access_requests (id,created_at,author,email,body,visitor) VALUES (?,?,?,?,?,?)', (format(i, '032x'), *row))
-        self.assertEqual(self.apply(**other, email='other@example.com')[1]['created'], False)
-        self.assertEqual(self.apply(eventId='a' * 8 + '-aaaa-4aaa-8aaa-' + 'a' * 12, email='new@example.com', visitorId=other['visitorId'])[0], 429)
-
+            self.assertEqual(messages.deliver_pending(self.database, self.config), 0)
+            send.assert_not_called()
 
 
 class MailTests(unittest.TestCase):

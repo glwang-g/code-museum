@@ -20,7 +20,7 @@ test('planned runtime source assets and pinned image identities reject tampering
  const exampleIds=sandbox.window.MUSEUM_LAB_EXAMPLES.map(row=>row.id);assert.equal(new Set(exampleIds).size,exampleIds.length,'language examples must not silently overwrite one another');
  const caps=executionCapabilities(root);
  for(const id of ['algol-60','common-lisp','prolog','forth','racket','smalltalk','cobol','ada','clojure','ocaml','haskell','kotlin','groovy','erlang','elixir','tcl','standard-ml','scala','visual-basic.net','f-sharp','d','nim','zig','swift','dart','julia','octave','powershell','korn-shell','tcsh','wasm','x86-assembly','verilog','vhdl','postscript','bcpl','oberon']){
-  const row=caps.languages.find(r=>r.id===id);assert.equal(row.local,null);assert.equal(row.remote.requiresToken,true);
+  const row=caps.languages.find(r=>r.id===id);assert.equal(row.local,null);assert.equal(row.remote.requiresToken,false);
   assert.equal(row.remote.compileSeconds,['kotlin','scala','visual-basic.net','f-sharp','zig','swift'].includes(id)?30:['haskell','nim'].includes(id)?20:['algol-60','cobol','ada','ocaml','erlang','d','x86-assembly','verilog','vhdl','bcpl','oberon'].includes(id)?10:id==='dart'?15:0);
  }
 });

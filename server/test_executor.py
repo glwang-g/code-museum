@@ -82,6 +82,16 @@ class ExecutorTests(unittest.TestCase):
             f=Path(d)/'images.json';f.write_text(json.dumps({'schemaVersion':1,'runtimes':[RUNTIMES['python'],RUNTIMES['ruby'],changed]}))
             with self.assertRaises(ValueError): load_runtimes(f)
 
+    def test_runsc_keeps_guest_process_limits_separate_from_host_helpers(self):
+        runner = DockerRunner(RUNTIMES, runtime='runsc')
+        for language, guest, host in [('python', 32, 128), ('bcpl', 128, 512)]:
+            command = runner.command('cm-exec-' + 'a' * 32, language)
+            self.assertIn('--pids-limit=' + str(host), command)
+            self.assertIn('--ulimit=nproc=' + str(guest) + ':' + str(guest), command)
+            for flag in ['--init', '--read-only', '--network=none', '--user=65534:65534', '--security-opt=no-new-privileges:true']:
+                self.assertIn(flag, command)
+        self.assertNotIn('--ulimit=nproc=32:32', DockerRunner(RUNTIMES).command('cm-exec-' + 'a' * 32, 'python'))
+
     def test_owner_isolation_cancel_and_source_disposal(self):
         runner=FakeRunner();manager=Manager(runner)
         try:

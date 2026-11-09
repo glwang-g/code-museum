@@ -47,7 +47,7 @@
         },
         {
           "title": "自己改写一个 C 循环",
-          "note": "把终点10改成5，预期累加值15。点击运行才上传；远端需要私有令牌。",
+          "note": "把终点10改成5，预期累加值15。点击运行才上传；远端免令牌试用，繁忙时请稍后重试。",
           "action": "lesson",
           "language": "c",
           "topic": "loops",
@@ -144,7 +144,7 @@
         },
         {
           "title": "Python 变量与输出",
-          "note": "远端需要令牌；也可主动切本地并下载Pyodide。导览不会替你启用环境。",
+          "note": "远端免令牌试用；也可主动切本地并下载Pyodide。导览不会替你启用环境。",
           "action": "lesson",
           "language": "python",
           "topic": "variables",

@@ -69,7 +69,7 @@ async function screenshot(name){if(!outputDirectory)return;await evaluate('new P
     await evaluate(`setRelationScope('all')`);assert.ok(await evaluate(`document.querySelectorAll('.related-edge').length`)>direct.count);
     assert.ok((await evaluate('location.hash')).includes('depth=all'));
     const before=await evaluate('location.hash');
-    assert.ok((await evaluate("document.querySelector('.map-run').title")).includes('需私有令牌'));
+    assert.ok((await evaluate("document.querySelector('.map-run').title")).includes('限额试用'));
     await click('.map-run');assert.equal(await evaluate("document.querySelector('#lab-language').value"),'java');assert.ok((await evaluate("document.querySelector('#lab-next-action').textContent")).includes('先输入令牌'));
     assert.ok((await evaluate('location.hash')).includes('language=java'));
     await screenshot(`java-entry-${theme}-${mode}-${width}.png`);

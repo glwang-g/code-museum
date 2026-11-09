@@ -40,14 +40,14 @@ function createProductionClient(token){
  };
 }
 function verifyProductionMetadata(value,expectedMetadata){
- assert.equal(value.available,true,'Production gateway must be available');assert.equal(value.complete,true,'Both production workers must be healthy');assert.equal(value.private,true);
+ assert.equal(value.available,true,'Production gateway must be available');assert.equal(value.complete,true,'Both production workers must be healthy');if(value.private===false)assert.deepEqual(value.access,{mode:'guest',maxSessions:5,idleSeconds:300});else assert.equal(value.private,true);
  assert.equal(value.limits.concurrency,2);assert.equal(value.limits.seconds,8,'Configured maximum run budget must include Groovy startup');assert.equal(value.limits.outputBytes,32768);assert.equal(value.limits.network,false);
  assert.deepEqual([...value.runtimes].sort((a,b)=>a.id.localeCompare(b.id)),expectedMetadata,'Production runtime metadata must match the complete fixed inventory');
  assert.equal(Math.max(...value.runtimes.map(row=>row.runSeconds)),8);assert.equal(value.runtimes.length,56);return {runtimeCount:56,concurrency:2,maxRunSeconds:8,complete:true};
 }
 async function until(predicate,message,seconds=40){const end=Date.now()+seconds*1000;while(Date.now()<end){if(await predicate())return;await delay(150)}throw new Error(message)}
 async function productionBrowserChecks({token,screenshots,checks,pace,browserCases}){
- // A browser reuses one private session; keep its submissions below 10/min.
+ // The anonymous browser reuses one admission cookie; keep its submissions below 10/min.
  let lastBrowserSubmission=0;
  const browserPace=async()=>{await delay(Math.max(0,6500-(Date.now()-lastBrowserSubmission)));await pace();lastBrowserSubmission=Date.now()};
  const chrome=process.env.CHROME_BIN||'/Applications/GoogleChrome.app/Contents/MacOS/Google Chrome',profile=fs.mkdtempSync(path.join(os.tmpdir(),'museum-dual-production-browser-'));
@@ -67,7 +67,7 @@ async function productionBrowserChecks({token,screenshots,checks,pace,browserCas
   await page('Page.enable');await page('Runtime.enable');
   await page('Page.addScriptToEvaluateOnNewDocument',{source:'window.__productionCheckPosts=0;const originalFetch=window.fetch;window.fetch=(url,options)=>{if(options?.method===\'POST\')window.__productionCheckPosts++;return originalFetch(url,options)};'});
   await page('Page.navigate',{url:PRODUCTION_ORIGIN+'/#lab'});await wait(`document.readyState!=='loading'&&!!window.MUSEUM_LAB&&!!window.MUSEUM_EXECUTION`);
-  await evaluate(`document.querySelector('#lab-remote-token').value=${JSON.stringify(token)}`);await wait(`${JSON.stringify([...new Set(['python',...browserCases.map(row=>row[0])])])}.every(language=>window.MUSEUM_EXECUTION.canRun(language))`);
+  await wait(`${JSON.stringify([...new Set(['python',...browserCases.map(row=>row[0])])])}.every(language=>window.MUSEUM_EXECUTION.canRun(language))`);
   for(const width of [1440,390]){
    await page('Emulation.setDeviceMetricsOverride',{width,height:width===1440?1000:844,mobile:width===390,deviceScaleFactor:1});await evaluate(`document.documentElement.dataset.theme=${JSON.stringify(width===1440?'dark':'light')}`);
    for(const [language,code,stdin,expected] of browserCases){

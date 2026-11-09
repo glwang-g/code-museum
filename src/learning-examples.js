@@ -60,7 +60,7 @@ window.MUSEUM_LESSONS={
       "version": "Python 3",
       "goal": "强调可读性与通用脚本编程",
       "source": "https://docs.python.org/3/tutorial/",
-      "runtime": "浏览器 Pyodide / 私有远端",
+      "runtime": "浏览器 Pyodide / 远端",
       "examples": {
         "variables": {
           "code": "name = \"Museum\"\nyear = 2026\nprint(name, year)\n",
@@ -144,7 +144,7 @@ window.MUSEUM_LESSONS={
       "version": "Ruby 3",
       "goal": "面向对象的动态编程",
       "source": "https://docs.ruby-lang.org/en/master/",
-      "runtime": "私有远端 · 需令牌",
+      "runtime": "远端 · 限额试用",
       "examples": {
         "variables": {
           "code": "name = \"Museum\"\nyear = 2026\nputs \"#{name} #{year}\"\n",
@@ -172,7 +172,7 @@ window.MUSEUM_LESSONS={
       "version": "C11",
       "goal": "面向系统编程，提供低层数据与操作能力",
       "source": "https://www.open-std.org/jtc1/sc22/wg14/",
-      "runtime": "私有远端编译执行 · 需令牌",
+      "runtime": "远端编译执行 · 限额试用",
       "examples": {
         "variables": {
           "code": "#include <stdio.h>\nint main(void) {\n    const char *name = \"Museum\";\n    int year = 2026;\n    printf(\"%s %d\\n\", name, year);\n    return 0;\n}\n",
@@ -200,7 +200,7 @@ window.MUSEUM_LESSONS={
       "version": "C++17",
       "goal": "系统编程并支持抽象、泛型与面向对象",
       "source": "https://isocpp.org/std/the-standard",
-      "runtime": "私有远端编译执行 · 需令牌",
+      "runtime": "远端编译执行 · 限额试用",
       "examples": {
         "variables": {
           "code": "#include <iostream>\n#include <string>\nint main() {\n    std::string name = \"Museum\";\n    int year = 2026;\n    std::cout << name << \" \" << year << \"\\n\";\n}\n",
@@ -228,7 +228,7 @@ window.MUSEUM_LESSONS={
       "version": "Java 17",
       "goal": "静态类型、面向对象及跨平台运行",
       "source": "https://docs.oracle.com/javase/specs/jls/se17/html/index.html",
-      "runtime": "私有远端编译执行 · 需令牌",
+      "runtime": "远端编译执行 · 限额试用",
       "examples": {
         "variables": {
           "code": "class Museum {\n    public static void main(String[] args) {\n        String name = \"Museum\";\n        int year = 2026;\n        System.out.println(name + \" \" + year);\n    }\n}\n",
@@ -284,7 +284,7 @@ window.MUSEUM_LESSONS={
       "version": "Rust 2021",
       "goal": "强调内存安全的系统编程",
       "source": "https://doc.rust-lang.org/book/",
-      "runtime": "私有远端编译执行 · 需令牌",
+      "runtime": "远端编译执行 · 限额试用",
       "examples": {
         "variables": {
           "code": "fn main() {\n    let name = \"Museum\";\n    let year: i32 = 2026;\n    println!(\"{} {}\", name, year);\n}\n",
@@ -312,7 +312,7 @@ window.MUSEUM_LESSONS={
       "version": "Go",
       "goal": "强调简洁与并发的通用编程",
       "source": "https://go.dev/ref/spec",
-      "runtime": "私有远端编译执行 · 需令牌",
+      "runtime": "远端编译执行 · 限额试用",
       "examples": {
         "variables": {
           "code": "package main\nimport \"fmt\"\nfunc main() {\n    name := \"Museum\"\n    year := 2026\n    fmt.Println(name, year)\n}\n",

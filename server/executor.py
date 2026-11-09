@@ -190,11 +190,15 @@ class DockerRunner:
                 '--runtime', self.runtime, '--network=none', '--read-only', '--init', '--ipc=none',
                 '--user=65534:65534', '--cap-drop=ALL', '--security-opt=no-new-privileges:true',
                 '--memory=' + str(row['memoryMiB']) + 'm', '--memory-swap=' + str(row['memoryMiB']) + 'm',
-                '--cpus=1', '--pids-limit=' + ('128' if compiled else '32'), '--ulimit=nofile=' + ('256:256' if language in {'csharp', 'r', 'kotlin', 'visual-basic.net', 'f-sharp', 'powershell'} else '64:64'), '--ulimit=fsize=' + ('2199023255552:2199023255552' if language == 'powershell' else '67108864:67108864' if language in {'csharp','visual-basic.net','f-sharp'} else '16777216:16777216'),
+                # runsc systrap helper threads also count against the host cgroup.
+                # Keep the guest process/thread budget with RLIMIT_NPROC while
+                # separately bounding host helpers; runc retains its old limit.
+                '--cpus=1', '--pids-limit=' + (('512' if compiled else '128') if self.runtime == 'runsc' else ('128' if compiled else '32')), '--ulimit=nofile=' + ('256:256' if language in {'csharp', 'r', 'kotlin', 'visual-basic.net', 'f-sharp', 'powershell'} else '64:64'), '--ulimit=fsize=' + ('2199023255552:2199023255552' if language == 'powershell' else '67108864:67108864' if language in {'csharp','visual-basic.net','f-sharp'} else '16777216:16777216'),
                 '--log-driver=none', '--stop-timeout=1', '--workdir=/work',
                 '--tmpfs=/work:rw,' + ('exec' if compiled else 'noexec') + ',nosuid,nodev,size=' + ('128m' if compiled else '16m') + ',mode=1777',
                 '--tmpfs=/tmp:rw,noexec,nosuid,nodev,size=' + ('128m' if compiled else '8m') + ',mode=1777', '-i',
                 ]
+        if self.runtime == 'runsc': command += ['--ulimit=nproc=' + ('128:128' if compiled else '32:32')]
         if language in {'erlang', 'elixir'}: command += ['--env=ERL_CRASH_DUMP=/dev/null']
         if compiled or language in SCRIPTED:
             command += ['--env=HOME=/work', '--env=GOCACHE=/work/cache', '--env=GOPATH=/work/go', '--env=GOPROXY=off', '--env=GOSUMDB=off', '--env=GOTOOLCHAIN=local', '--env=CGO_ENABLED=0', '--env=GOMAXPROCS=1', '--env=RUSTUP_HOME=/usr/local/rustup', '--env=CARGO_HOME=/usr/local/cargo', '--entrypoint=/bin/sleep', row['image'], '60']
@@ -471,6 +475,7 @@ def handler(manager, token, origin, museum_provider=None):
                 return self.respond(200, manager.status())
             if self.path == '/api/runtimes':
                 return self.respond(200, {'private': True, 'available': manager.runner.healthy,
+                    'sandbox': {'runtime': manager.runner.runtime},
                     'runtimes': [{**{k: r[k] for k in ('id', 'version', 'memoryMiB', 'source')}, 'compileSeconds': COMPILED[r['id']][3] if r['id'] in COMPILED else 0, 'runSeconds':RUN_SECONDS.get(r['id'],3)} for r in manager.runner.runtimes.values()],
                     'limits': {'seconds': max((RUN_SECONDS.get(k,3) for k in manager.runner.runtimes),default=3), 'outputBytes': MAX_OUTPUT, 'concurrency': 1, 'network': False}})
             return self.job(False)
