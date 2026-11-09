@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-09T16:09:19.766Z",
+  "origin": "https://codemuseum.freexlib.com",
+  "scope": "Production HTTPS home, public guest-book read, retired access requests and private administration/MCP rejection. Internal analytics health uses loopback /healthz; that path is not a public HTTPS endpoint. No valid message/application or email was sent, and no private records or credentials retained.",
+  "checks": [
+    {
+      "method": "GET",
+      "path": "/",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/messages?limit=1",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/access-requests",
+      "status": 410,
+      "passed": true
+    },
+    {
+      "method": "POST",
+      "path": "/api/access-requests",
+      "status": 410,
+      "passed": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/executor-status",
+      "status": 401,
+      "passed": true
+    },
+    {
+      "method": "POST",
+      "path": "/mcp",
+      "status": 401,
+      "passed": true
+    }
+  ]
+}

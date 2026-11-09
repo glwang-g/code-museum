@@ -1,15 +1,16 @@
 # Code Museum 首版部署
 
-## 2026-11-09 免令牌与五会话发布准备
+## 2026-11-10 免令牌与五会话正式发布完成
 
-用户明确授权验证通过后提交、推送、部署。当前本机106项默认测试和离线构建通过；[临时双节点72项检查](../data/audit/guest-executor-checks.json)包含全56门固定正例、禁网/只读/资源上限、取消、重启及断线恢复；[Chrome7项检查](../data/audit/guest-browser-checks.json)覆盖1440/390真实执行、HttpOnly Cookie、公开状态和第6会话指定繁忙文案。最终全量检查未发生GET重试；额外模拟覆盖短暂GET故障恢复，POST永不重投。
+功能提交 `f163b277ecd320069b9af3c99342e9e4777ffbd4` 已推送master，[Actions 42649436958](https://github.com/glwang-g/code-museum/actions/runs/42649436958) build/deploy均成功，北京时间00:00:15完成CI发布。正式release现为该提交，624个文件、35,351,457字节；[部署记录](../data/audit/guest-deployment.json)确认发布清单与精确公共Git树离线构建完全一致，所有文件已逐一校验。执行维护规则已解除。
 
-[平台安装记录](../data/audit/guest-platform-install.json)确认两台已注册固定gVisor，Docker守护进程和默认运行时保持原样；原生产worker尚待本轮切换。runsc辅助线程需要独立宿主PID余量，不能直接沿用32上限：[74次沙箱检查](../data/audit/guest-sandbox-checks.json)确认guest nproc32/128与宿主pids128/512的区别，原内存预算保持。不得把资源检查扩称不存在逃逸漏洞的证明。
+[正式匿名执行检查](../data/audit/guest-production-executor.json)57项通过：精确56门元数据与全56门逐一固定正例，所有执行请求使用Cookie、不发送Authorization。四个验收会话的任务完成后，仅释放其自身席位，其他会话与全部历史数据保留。[正式Chrome](../data/audit/guest-production-browser.json)6项与[第6会话检查](../data/audit/guest-production-busy.json)1项通过：Python/BCPL各1440/390真实输出、无令牌和申请控件、Secure/HttpOnly/Strict Cookie、公开服务状态，以及第6个独立浏览器只POST一次后显示“当前访问比较多，请稍后重试。”。已实际核读代表截图。[公开数据一致性](../data/audit/guest-production-consistency.json)及[6项接口检查](../data/audit/guest-production-services.json)通过；普通留言可读，权限申请GET/POST均410，匿名管理/MCP均401。未发送有效申请、留言或测试邮件。
 
-准备安装顺序：先以维护规则阻断新提交并排空已有任务，再用 `deploy/prepare-dual-executor.py` 的精确节点bundle及审核后的manifest SHA运行新 `deploy/upgrade-guest-executor.py`（先xshow2后xshow）。升级器保留原凭据、服务身份、SSH隧道、自启状态、镜像和活数据库，备份所有覆盖字节并在健康检查失败时自动回退；默认模式只读，`--install`才写入。独立Nginx提交限流与410申请退役规则经 `nginx -t` 后reload，普通留言代理不变。CI仍只发布普通站点，不获得Docker/root升级权限。实际切换、提交与Actions结果待发布后补充。
+两台worker已采用固定gVisor/runsc，xshow42门、xshow2 14门；网关、worker、隧道及analytics均active/enabled，项目容器零残留。平台安装仅reload Docker，默认runtime和daemon进程保持；[74次沙箱对照](../data/audit/guest-sandbox-checks.json)确认guest nproc32/128与宿主pids128/512分开限制，原内存预算保留。独立Nginx提交限流已生效，主虚拟主机未改。页面令牌输入、权限申请及申请邮件路径已移除，原申请私有记录和普通留言通知保留；节点、管理接口及MCP仍私有。用户限制是5个活跃执行会话，闲置300秒释放，不等同5个真实在线用户；实际执行并发仍为两节点各1。
 
-新访问方式与回退边界见 [免令牌说明](GUEST_EXECUTION.md)。以下保留前次私有入口建立过程及历史报告。
+升级前阻断新提交并排空任务，从已提交且纯Git验证的精确bundle先更新xshow2，再更新xshow。xshow的旧备份父目录为root所有的0755，升级器在写入前拒绝；收紧为0700后成功，未放宽保护规则。后端备份分别为 `/var/backups/code-museum-executor/20261109T155140091071Z-guest-xshow2`、`/var/backups/code-museum-executor/20261109T155357517192Z-guest-xshow`；Nginx备份为 `/var/backups/code-museum-site/20261109T155053721117Z-guest`。回退先阻断新任务并排空，先回退xshow网关/worker，再回退xshow2，使用 `deploy/upgrade-guest-executor.py --rollback <本节点备份>` 恢复原字节及unit；此顺序避免guest网关因远端回退runc而拒绝排空检查。随后按原备份恢复Nginx并切回保留的 `f2ff0bf` 静态release。保持活数据库、凭据与镜像；不把旧SQLite快照倒灌到活库，不运行全局prune。内部analytics健康检查在loopback4180的 `/healthz` 返回204；对外首页为200，公开 `/healthz` 不作为健康契约。
 
+本机及精确公共Git树106项默认测试、离线构建、[临时双节点72项检查](../data/audit/guest-executor-checks.json)和[临时Chrome7项](../data/audit/guest-browser-checks.json)均通过。上述验收不构成全语言语义或不存在逃逸漏洞的证明。CI仍只发布普通站点，没有Docker/root升级权限。访问规则见 [免令牌说明](GUEST_EXECUTION.md)。以下保留历史私有入口记录。
 
 ## 2026-11-09 B组37门页面与权限申请正式发布完成
 

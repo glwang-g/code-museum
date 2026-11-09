@@ -1,0 +1,197 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-09T16:12:40.718239+00:00",
+  "sourceCommit": "f163b277ecd320069b9af3c99342e9e4777ffbd4",
+  "origin": "https://codemuseum.freexlib.com",
+  "pass": true,
+  "ci": {
+    "runId": 42649436958,
+    "url": "https://github.com/glwang-g/code-museum/actions/runs/42649436958",
+    "build": "success",
+    "deploy": "success",
+    "completedAt": "2026-11-09T16:00:15Z"
+  },
+  "preReleaseValidation": {
+    "defaultTestsPassed": 106,
+    "offlineBuild": true,
+    "exactPublicGitTree": "4ad0916050445deca5fcd849c9fb26526225439d",
+    "exportBuildMatchesWorkspace": true,
+    "temporaryExecutionChecks": 72,
+    "temporaryBrowserChecks": 7,
+    "sandboxParameterExecutions": 74
+  },
+  "nodeUpgrades": [
+    {
+      "backupPath": "/var/backups/code-museum-executor/20261109T155357517192Z-guest-xshow",
+      "credentialsAndStatePreserved": true,
+      "fileSha256": {
+        "/etc/systemd/system/code-museum-execution-gateway.service": "d97f0a614292d942503f5ca86d7afdc95af73e513d2b97010f895f6e734a0ab4",
+        "/etc/systemd/system/code-museum-worker@.service": "b5e9848cdc75d4e08be70ce1226c13b93ae069062f3777d73bb8ea35dd78c861",
+        "/opt/code-museum-executor-dual/execution-nodes.json": "643d7618f4421f169a0d22277da2f67fb2a61dca947f1de01398b534ab080525",
+        "/opt/code-museum-executor-dual/execution_gateway.py": "73bff1793ff768687b230eb4fe9593970e57dbe09eb5f6d074ce3da9fc9d4c39",
+        "/opt/code-museum-executor-dual/execution_nodes.py": "981cde9e6f950a1f14745ad3db455a34a32993ccbf95fc9220e0ac24cafa7c68",
+        "/opt/code-museum-executor-dual/executor.py": "722c666a212cc860d08005517a0f7e1d4c425ddc80b0ff942558ab20d342a449",
+        "/opt/code-museum-executor-dual/mcp.py": "e759c15caa7e944daa91b99c3a529a31c4f917150cc609d7e22d458acbabda8c",
+        "/opt/code-museum-executor-dual/mcp_http.py": "6766f9088fc4efc2c300bd721a1b0e73e98e271ba3bbac76f5e7b61f49596021",
+        "/opt/code-museum-executor-dual/museum-data/audit-reviews.json": "4d09e9f6e9610253496769f3b07639b2002d67e3b11c858b6028186464bb9a9d",
+        "/opt/code-museum-executor-dual/museum-data/catalogue.json": "4bc5da865869fe4ceb14e387420c0939de2ba4448ba4a6e9bbf9a1a6b8f99c66",
+        "/opt/code-museum-executor-dual/museum-data/execution-capabilities.json": "9d7767ffcfdb6f254399c72143e3c56a70d4b14e9d910707189749300ac986ba",
+        "/opt/code-museum-executor-dual/museum-data/mcp-manifest.json": "9dcc65f9d263a894f9a8810fc6d1326b60860312552451a4b542414853e7c92d",
+        "/opt/code-museum-executor-dual/museum-data/relationship-status.json": "a2d98eb0fdfb0b4f52cbe3bd036c0c65a09e4b372784c1aa057d3b5645be7625",
+        "/opt/code-museum-executor-dual/observability.py": "72f41c17fdcbeffbe3c07549da20fd1cf4f5d953f92ab30c78c2e4a6442092a6",
+        "/opt/code-museum-executor-dual/runtime-images.json": "8900182ac91331af26a332f1688c95644ee2e91bb200e530162cd2c6fbea3eb3"
+      },
+      "installed": true,
+      "languageCount": 42,
+      "manifestSha256": "850b2069f5f702c85dce3e7ff958764da938460e7378dbd5e337635ba4bee0b8",
+      "node": "xshow",
+      "services": {
+        "code-museum-execution-gateway.service": {
+          "active": "active",
+          "enabled": "enabled"
+        },
+        "code-museum-worker@xshow.service": {
+          "active": "active",
+          "enabled": "enabled"
+        }
+      }
+    },
+    {
+      "backupPath": "/var/backups/code-museum-executor/20261109T155140091071Z-guest-xshow2",
+      "credentialsAndStatePreserved": true,
+      "fileSha256": {
+        "/etc/systemd/system/code-museum-worker@.service": "b5e9848cdc75d4e08be70ce1226c13b93ae069062f3777d73bb8ea35dd78c861",
+        "/opt/code-museum-executor-dual/execution-nodes.json": "643d7618f4421f169a0d22277da2f67fb2a61dca947f1de01398b534ab080525",
+        "/opt/code-museum-executor-dual/execution_gateway.py": "73bff1793ff768687b230eb4fe9593970e57dbe09eb5f6d074ce3da9fc9d4c39",
+        "/opt/code-museum-executor-dual/execution_nodes.py": "981cde9e6f950a1f14745ad3db455a34a32993ccbf95fc9220e0ac24cafa7c68",
+        "/opt/code-museum-executor-dual/executor.py": "722c666a212cc860d08005517a0f7e1d4c425ddc80b0ff942558ab20d342a449",
+        "/opt/code-museum-executor-dual/mcp.py": "e759c15caa7e944daa91b99c3a529a31c4f917150cc609d7e22d458acbabda8c",
+        "/opt/code-museum-executor-dual/mcp_http.py": "6766f9088fc4efc2c300bd721a1b0e73e98e271ba3bbac76f5e7b61f49596021",
+        "/opt/code-museum-executor-dual/museum-data/audit-reviews.json": "4d09e9f6e9610253496769f3b07639b2002d67e3b11c858b6028186464bb9a9d",
+        "/opt/code-museum-executor-dual/museum-data/catalogue.json": "4bc5da865869fe4ceb14e387420c0939de2ba4448ba4a6e9bbf9a1a6b8f99c66",
+        "/opt/code-museum-executor-dual/museum-data/execution-capabilities.json": "9d7767ffcfdb6f254399c72143e3c56a70d4b14e9d910707189749300ac986ba",
+        "/opt/code-museum-executor-dual/museum-data/mcp-manifest.json": "9dcc65f9d263a894f9a8810fc6d1326b60860312552451a4b542414853e7c92d",
+        "/opt/code-museum-executor-dual/museum-data/relationship-status.json": "a2d98eb0fdfb0b4f52cbe3bd036c0c65a09e4b372784c1aa057d3b5645be7625",
+        "/opt/code-museum-executor-dual/observability.py": "72f41c17fdcbeffbe3c07549da20fd1cf4f5d953f92ab30c78c2e4a6442092a6",
+        "/opt/code-museum-executor-dual/runtime-images.json": "8900182ac91331af26a332f1688c95644ee2e91bb200e530162cd2c6fbea3eb3"
+      },
+      "installed": true,
+      "languageCount": 14,
+      "manifestSha256": "7ce1134a659b176fa0ae110c567aa592208ef0128f44ba97e87f2dac226186ec",
+      "node": "xshow2",
+      "services": {
+        "code-museum-worker@xshow2.service": {
+          "active": "active",
+          "enabled": "enabled"
+        }
+      }
+    }
+  ],
+  "finalState": [
+    {
+      "node": "xshow",
+      "services": {
+        "code-museum-worker@xshow.service": {
+          "is-active": "active",
+          "is-enabled": "enabled"
+        },
+        "code-museum-execution-gateway.service": {
+          "is-active": "active",
+          "is-enabled": "enabled"
+        },
+        "code-museum-execution-tunnel.service": {
+          "is-active": "active",
+          "is-enabled": "enabled"
+        },
+        "code-museum-analytics.service": {
+          "is-active": "active",
+          "is-enabled": "enabled"
+        },
+        "xshow-guestbook.service": {
+          "is-active": "active",
+          "is-enabled": "enabled"
+        }
+      },
+      "workerRuntimeCount": 42,
+      "sandbox": {
+        "runtime": "runsc"
+      },
+      "remainingProjectContainers": 0,
+      "executorSha256": "722c666a212cc860d08005517a0f7e1d4c425ddc80b0ff942558ab20d342a449",
+      "gatewaySha256": "73bff1793ff768687b230eb4fe9593970e57dbe09eb5f6d074ce3da9fc9d4c39",
+      "release": "f163b277ecd320069b9af3c99342e9e4777ffbd4",
+      "releaseFilesVerified": 624,
+      "releaseBytes": 35351457,
+      "releaseManifestSha256": "02cd0bd6c8d85abe7b2031123d4dd4f4c8c97e44d5ca69b899f0b9fcd7d1b74f",
+      "messagesModuleSha256": "a82d00bac1d05ca3ed8b656e0b48ed941f1f56d6cbf62cb7c769f9fe181b8dc1",
+      "legacyExecutor": {
+        "is-active": "inactive",
+        "is-enabled": "disabled"
+      }
+    },
+    {
+      "node": "xshow2",
+      "services": {
+        "code-museum-worker@xshow2.service": {
+          "is-active": "active",
+          "is-enabled": "enabled"
+        }
+      },
+      "workerRuntimeCount": 14,
+      "sandbox": {
+        "runtime": "runsc"
+      },
+      "remainingProjectContainers": 0,
+      "executorSha256": "722c666a212cc860d08005517a0f7e1d4c425ddc80b0ff942558ab20d342a449",
+      "gatewaySha256": "73bff1793ff768687b230eb4fe9593970e57dbe09eb5f6d074ce3da9fc9d4c39"
+    }
+  ],
+  "nginx": {
+    "stage": {
+      "backup": "/var/backups/code-museum-site/20261109T155053721117Z-guest",
+      "maintenance": true,
+      "mainUnchanged": true,
+      "newRequestsRetired": true
+    },
+    "finish": {
+      "backup": "/var/backups/code-museum-site/20261109T155053721117Z-guest",
+      "maintenance": false,
+      "executorSha256": "ff2d87052802f683f2d3f56c2816f50c2913ec9067072964e78e1b95afc66ff1",
+      "mainUnchanged": true
+    },
+    "mainVirtualHostUnchanged": true,
+    "effectiveCookieProxyOverrides": []
+  },
+  "productionEvidence": {
+    "data/audit/guest-production-executor.json": {
+      "sha256": "185676c1c83f8e3e311a27bec4ce2992f728872486b0c9a8b665cb141a2293b8",
+      "checks": 57
+    },
+    "data/audit/guest-production-browser.json": {
+      "sha256": "26258971cfa5dc4c1a762f9d6a29be4f195cfe078087fe48e1f247639a3ea8bb",
+      "checks": 6
+    },
+    "data/audit/guest-production-busy.json": {
+      "sha256": "16e49c8233a144da14ab7d0d3644029d90f406fe7d3f3f4765b6948f87d9da79",
+      "checks": 1
+    },
+    "data/audit/guest-production-services.json": {
+      "sha256": "afb1614cb78de9031cc3ba463decea2db63d030c86fb850f3c8b8b115069e78f",
+      "checks": 6
+    },
+    "data/audit/guest-production-consistency.json": {
+      "sha256": "512c7f6591a3778f336837bbabdebd1d66f414bb7cf1ac9660ccefd8a324ee55",
+      "checks": 0
+    }
+  },
+  "releaseMatchesExactGitBuild": true,
+  "notes": [
+    "Execution requests in production acceptance used anonymous signed-cookie sessions with no Authorization header.",
+    "Only the four completed runtime-test leases were released after acceptance; other sessions were preserved.",
+    "Existing xshow root-owned backup parent was 0755; the upgrader refused before changing service files, then the directory was restricted to 0700 and upgrade succeeded.",
+    "The internal analytics /healthz endpoint returns 204 on loopback; it is not a public HTTPS route. Public site checks use GET / with 200.",
+    "Runtime images, node credentials, SSH tunnel, private application history and live databases were preserved. Application GET/POST is retired with 410 and application mail delivery code is removed; ordinary guest-book notifications remain.",
+    "No production Docker daemon restart, global prune, production-token exposure, source retention, new valid access application or test email.",
+    "Observed real executions and resource tests are not full-language conformance or an escape-vulnerability assessment."
+  ]
+}

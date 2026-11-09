@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-09T16:04:49.636Z",
+  "origin": "https://codemuseum.freexlib.com",
+  "browser": "Chrome/156.0.8078.80",
+  "pass": true,
+  "checks": [
+    {
+      "name": "Sixth independent production browser receives guest_capacity 429 and requested Chinese busy text, exactly one POST and no horizontal overflow",
+      "width": 390,
+      "passed": true
+    }
+  ],
+  "scope": "Actual production HTTPS Chrome. Four runtime acceptance clients and one normal Chrome session already occupied the five leases. This sixth browser was rejected without a new lease. No cookies, owners, job IDs or credentials retained."
+}

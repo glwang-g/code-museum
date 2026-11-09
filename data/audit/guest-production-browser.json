@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-09T16:03:07.564Z",
+  "origin": "https://codemuseum.freexlib.com",
+  "browser": "Chrome/156.0.8078.80",
+  "scope": "Actual installed Chrome guest UI checks. Every execution uses same-origin browser cookies with no execution token. Capacity checks, when requested, create five short-lived real leases and let them expire normally. No credentials, cookies, sessions or job identifiers retained.",
+  "fillCapacity": false,
+  "checks": [
+    {
+      "name": "Public guest metadata and retired token/application controls",
+      "passed": true
+    },
+    {
+      "name": "Real anonymous browser execution without editing submission or horizontal overflow",
+      "language": "python",
+      "width": 1440,
+      "stdout": "55\nhello\n",
+      "passed": true
+    },
+    {
+      "name": "Real anonymous browser execution without editing submission or horizontal overflow",
+      "language": "bcpl",
+      "width": 1440,
+      "stdout": "49\n",
+      "passed": true
+    },
+    {
+      "name": "Real anonymous browser execution without editing submission or horizontal overflow",
+      "language": "python",
+      "width": 390,
+      "stdout": "55\nhello\n",
+      "passed": true
+    },
+    {
+      "name": "Real anonymous browser execution without editing submission or horizontal overflow",
+      "language": "bcpl",
+      "width": 390,
+      "stdout": "49\n",
+      "passed": true
+    },
+    {
+      "name": "Same-origin HttpOnly admission cookie; public availability never requests private metrics, MCP or access application",
+      "secure": true,
+      "sameSite": "Strict",
+      "passed": true
+    }
+  ],
+  "inputs": {
+    "src/index.html": "cd1edd285b1923fbe49073d623cc019fd265593686585d687a5011223294b87f",
+    "src/execution-modes.js": "543c0d59f1ed480aa5a20288417dd521f0bbdfe6fe4f07e84f1b0997ca705fdd",
+    "src/service-status.js": "97e6dd597090e950a5d22d9c60e647b431585842c3afa53e2465c6c637b9005c",
+    "src/lab-tools.js": "8e6a36cb3cc5e4a816e872429c3204257b6d1e7250b823bcb1ae7177bade1597",
+    "scripts/check-guest-browser.cjs": "68cf58c6ae1a94e231bd30524f6d9ec1ad65c46a1256120cc82f410a132a6b2b"
+  }
+}
