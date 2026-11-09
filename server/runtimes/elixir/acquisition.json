@@ -1,0 +1,126 @@
+{
+  "baseImage": "gcc@sha256:5e927c284bf55a7dc796262e311a0703344f62f41f5621eb56843111b1d37e15",
+  "requestedPackages": [
+    "elixir"
+  ],
+  "verification": "Debian APT verified InRelease and index hashes without network; each acquired package matches the solved signed-index SHA-256",
+  "indexInputs": [
+    {
+      "source": "https://deb.debian.org/debian/dists/bookworm/InRelease",
+      "sha256": "77737fa4b34f2693e982cc9ee35736816c35a7778fc2d326cc1bbf5b301fe1aa"
+    },
+    {
+      "source": "https://deb.debian.org/debian/dists/bookworm/main/binary-amd64/Packages.xz",
+      "sha256": "9e0b5aabb2465b3d2e7a7fe27f9913846277833f7a2826e7767acccff5b588c5"
+    },
+    {
+      "source": "https://deb.debian.org/debian/dists/bookworm-updates/InRelease",
+      "sha256": "da3bb85c8864a931aa8d4ad4bcca054c0bb430aef7f8c3dfaff4b173d26f595c"
+    },
+    {
+      "source": "https://deb.debian.org/debian/dists/bookworm-updates/main/binary-amd64/Packages.xz",
+      "sha256": "87e7e94047fb7fb6f4ceecc7022d4bee55b66031cc2a7666d3196f3e0aabb846"
+    },
+    {
+      "source": "https://deb.debian.org/debian-security/dists/bookworm-security/InRelease",
+      "sha256": "1d368817d451179b6611e157dccd876f93feff7d603c575668fbb662d5b01677"
+    },
+    {
+      "source": "https://deb.debian.org/debian-security/dists/bookworm-security/main/binary-amd64/Packages.xz",
+      "sha256": "9291f4f3c470a046b9751215169d689e539f3d5cade197a367738e58079205ba"
+    }
+  ],
+  "packages": [
+    {
+      "file": "assets/erlang-base_25.2.3+dfsg-1+deb12u4_amd64.deb",
+      "sha256": "71731cddaf081836028de905052c69135a4d288fa804fdae5982ea83bf5b8b61",
+      "bytes": 9697280,
+      "source": "https://deb.debian.org/debian/pool/main/e/erlang/erlang-base_25.2.3+dfsg-1+deb12u4_amd64.deb",
+      "metadata": "metadata/erlang-base_25.2.3+dfsg-1+deb12u4_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/erlang-crypto_25.2.3+dfsg-1+deb12u4_amd64.deb",
+      "sha256": "130d7dd83071a2ec545ba1c4f2e9e77be847554b7c04316a870b2e11b5e30e39",
+      "bytes": 165548,
+      "source": "https://deb.debian.org/debian/pool/main/e/erlang/erlang-crypto_25.2.3+dfsg-1+deb12u4_amd64.deb",
+      "metadata": "metadata/erlang-crypto_25.2.3+dfsg-1+deb12u4_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/erlang-mnesia_25.2.3+dfsg-1+deb12u4_amd64.deb",
+      "sha256": "94b059c51c41db8b3592e6a070b9341112da4c084d5642c1abffb5069cc642ac",
+      "bytes": 873324,
+      "source": "https://deb.debian.org/debian/pool/main/e/erlang/erlang-mnesia_25.2.3+dfsg-1+deb12u4_amd64.deb",
+      "metadata": "metadata/erlang-mnesia_25.2.3+dfsg-1+deb12u4_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/erlang-runtime-tools_25.2.3+dfsg-1+deb12u4_amd64.deb",
+      "sha256": "0bbb1db788ecb8b004470c39ae76a07ceec4c28aa519e548ade1d22781833f6b",
+      "bytes": 230264,
+      "source": "https://deb.debian.org/debian/pool/main/e/erlang/erlang-runtime-tools_25.2.3+dfsg-1+deb12u4_amd64.deb",
+      "metadata": "metadata/erlang-runtime-tools_25.2.3+dfsg-1+deb12u4_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/erlang-asn1_25.2.3+dfsg-1+deb12u4_amd64.deb",
+      "sha256": "a35e1f628f9ee52616be4a00560f9a9a8a0ba484b1b1e1b02696325d0c32ec41",
+      "bytes": 896944,
+      "source": "https://deb.debian.org/debian/pool/main/e/erlang/erlang-asn1_25.2.3+dfsg-1+deb12u4_amd64.deb",
+      "metadata": "metadata/erlang-asn1_25.2.3+dfsg-1+deb12u4_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/erlang-public-key_25.2.3+dfsg-1+deb12u4_amd64.deb",
+      "sha256": "37cb5fcaafa3745918d65c6bafc66a161069944d996074996762697b93128031",
+      "bytes": 731304,
+      "source": "https://deb.debian.org/debian/pool/main/e/erlang/erlang-public-key_25.2.3+dfsg-1+deb12u4_amd64.deb",
+      "metadata": "metadata/erlang-public-key_25.2.3+dfsg-1+deb12u4_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/erlang-ssl_25.2.3+dfsg-1+deb12u4_amd64.deb",
+      "sha256": "98c91964be7a4c7f8be1f05ce12318e9dc7aa268ea2814e495c3d0dd54f8a2fe",
+      "bytes": 1606224,
+      "source": "https://deb.debian.org/debian/pool/main/e/erlang/erlang-ssl_25.2.3+dfsg-1+deb12u4_amd64.deb",
+      "metadata": "metadata/erlang-ssl_25.2.3+dfsg-1+deb12u4_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/erlang-ftp_25.2.3+dfsg-1+deb12u4_amd64.deb",
+      "sha256": "c89fce672fede2d01f6a2bbce7d38f167cd689d6f109ff28ba098ffb6e2d6040",
+      "bytes": 93856,
+      "source": "https://deb.debian.org/debian/pool/main/e/erlang/erlang-ftp_25.2.3+dfsg-1+deb12u4_amd64.deb",
+      "metadata": "metadata/erlang-ftp_25.2.3+dfsg-1+deb12u4_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/erlang-tftp_25.2.3+dfsg-1+deb12u4_amd64.deb",
+      "sha256": "4e507c0fbbd2dab3fc063efc4c15d398431d0f58033bbb1267c226abee095c13",
+      "bytes": 110884,
+      "source": "https://deb.debian.org/debian/pool/main/e/erlang/erlang-tftp_25.2.3+dfsg-1+deb12u4_amd64.deb",
+      "metadata": "metadata/erlang-tftp_25.2.3+dfsg-1+deb12u4_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/erlang-inets_25.2.3+dfsg-1+deb12u4_amd64.deb",
+      "sha256": "068079f01742b9ebe457ba7285910a2d5c6d8c61895c076fcaaf7ff752548815",
+      "bytes": 636268,
+      "source": "https://deb.debian.org/debian/pool/main/e/erlang/erlang-inets_25.2.3+dfsg-1+deb12u4_amd64.deb",
+      "metadata": "metadata/erlang-inets_25.2.3+dfsg-1+deb12u4_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/erlang-parsetools_25.2.3+dfsg-1+deb12u4_amd64.deb",
+      "sha256": "1a5660cec4ee2a480391d5d7e55e8b4cc49ee05284d34fe6a38327089b6f947f",
+      "bytes": 197724,
+      "source": "https://deb.debian.org/debian/pool/main/e/erlang/erlang-parsetools_25.2.3+dfsg-1+deb12u4_amd64.deb",
+      "metadata": "metadata/erlang-parsetools_25.2.3+dfsg-1+deb12u4_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/erlang-tools_25.2.3+dfsg-1+deb12u4_amd64.deb",
+      "sha256": "d36612337928437f2ce5bbeebb4bc1013449db8e8efb65affec265039ee4d267",
+      "bytes": 577848,
+      "source": "https://deb.debian.org/debian/pool/main/e/erlang/erlang-tools_25.2.3+dfsg-1+deb12u4_amd64.deb",
+      "metadata": "metadata/erlang-tools_25.2.3+dfsg-1+deb12u4_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/elixir_1.14.0.dfsg-2_amd64.deb",
+      "sha256": "0725a208427097fbecb57027af7af34b9562c4ee029ff8a55741fb6c55964778",
+      "bytes": 4503868,
+      "source": "https://deb.debian.org/debian/pool/main/e/elixir-lang/elixir_1.14.0.dfsg-2_amd64.deb",
+      "metadata": "metadata/elixir_1.14.0.dfsg-2_amd64.deb.metadata"
+    }
+  ]
+}

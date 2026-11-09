@@ -1,0 +1,49 @@
+{
+  "source": "https://storage.googleapis.com/dart-archive/channels/stable/release/3.9.4/sdk/dartsdk-linux-x64-release.zip",
+  "mirror": "https://storage.flutter-io.cn/dart-archive/channels/stable/release/3.9.4/sdk/dartsdk-linux-x64-release.zip",
+  "sha256": "61b4b9488e1b4255b94be17ad48ae2ddb23c6fbe67824cf8103d0b28fa8ab816",
+  "bytes": 217645435,
+  "verification": "Complete archive matches SHA-256 fetched independently from the official Google Dart archive over HTTPS. No upstream PGP signature claim.",
+  "parts": [
+    {
+      "file": "assets/dart-3.9.4.zip.part000",
+      "bytes": 33554432,
+      "sha256": "ae4d69cfe86c56fb115aa8d9735b8bf6ef665bd0808c110aedf564306747e998"
+    },
+    {
+      "file": "assets/dart-3.9.4.zip.part001",
+      "bytes": 33554432,
+      "sha256": "f2c84d1e418f666e57383425ecca17f92d45775f5554f4f49a480bd42c3a10a7"
+    },
+    {
+      "file": "assets/dart-3.9.4.zip.part002",
+      "bytes": 33554432,
+      "sha256": "c2c7a2913f72188f9f2489ce4d879e37b73a2ce070a3c545efa4942734a7cb57"
+    },
+    {
+      "file": "assets/dart-3.9.4.zip.part003",
+      "bytes": 33554432,
+      "sha256": "c6317f9e2b8e9e2b90516346b7d02ae5b6e19f96b4a47a040001df8efb834967"
+    },
+    {
+      "file": "assets/dart-3.9.4.zip.part004",
+      "bytes": 33554432,
+      "sha256": "977ad3f9dadfed634958688b26974c920c3fd88ac37726f407077a053ee6333a"
+    },
+    {
+      "file": "assets/dart-3.9.4.zip.part005",
+      "bytes": 33554432,
+      "sha256": "b4fd51cdd1f92dfb99e10b19450e0bd365824781cd9f25abb4a30394cc7067d5"
+    },
+    {
+      "file": "assets/dart-3.9.4.zip.part006",
+      "bytes": 16318843,
+      "sha256": "0d899e1f31820ab84832999db4ee8e1c430dfe7df96b3b493569b1034e8ce4d5"
+    }
+  ],
+  "originalLicensePaths": [
+    "dart-sdk/LICENSE",
+    "dart-sdk/bin/resources/devtools/assets/NOTICES",
+    "dart-sdk/bin/resources/devtools/assets/icons/material_symbols/LICENSE"
+  ]
+}

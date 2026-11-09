@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "platform": "linux/amd64",
+  "baseImage": "gcc@sha256:5e927c284bf55a7dc796262e311a0703344f62f41f5621eb56843111b1d37e15",
+  "sourceDateEpoch": 1793923200,
+  "version": "Gforth 0.7.3",
+  "source": "https://gforth.org/",
+  "license": "GPL-3.0-or-later",
+  "runtime": {
+    "id": "forth",
+    "executable": "/usr/bin/gforth",
+    "memoryMiB": 256,
+    "versionArgs": [
+      "--version"
+    ],
+    "versionPattern": "gforth 0.7.3"
+  },
+  "files": [
+    {
+      "file": "Dockerfile",
+      "bytes": 254,
+      "sha256": "5fd0732716442ade3390ad1332600e75bf4527e51b9133fdcdbcc69d303ecb94"
+    },
+    {
+      "file": "NOTICE.md",
+      "bytes": 1291,
+      "sha256": "f33acf542b7d126550fbdca4529adc6636a93272aef7420a97cc75a133241e4e"
+    },
+    {
+      "file": "acquisition.json",
+      "bytes": 2871,
+      "sha256": "0b004b1d2a3a7ae47348b8cc34388f913fa9eadba65c79f5272a6e1c12384554"
+    },
+    {
+      "file": "assets/emacsen-common_3.0.5_all.deb",
+      "bytes": 12296,
+      "sha256": "74d972556adf85fbbfb0b3b10dcf16687547a9ef521c7c86f5cda454e11a60df"
+    },
+    {
+      "file": "assets/gforth-common_0.7.3+dfsg-9_all.deb",
+      "bytes": 321544,
+      "sha256": "58f342275e2767127ae643ec1c87a83b046d949b2f28db52e01f07ffb8538cb7"
+    },
+    {
+      "file": "assets/gforth-lib_0.7.3+dfsg-9+b3_amd64.deb",
+      "bytes": 109968,
+      "sha256": "7bd7fe04325272f81f3e819697faf9f333a1fbcc0fc7546268c615e275e8e528"
+    },
+    {
+      "file": "assets/gforth_0.7.3+dfsg-9+b3_amd64.deb",
+      "bytes": 127624,
+      "sha256": "667cdba99f0f9eed2538ffb902989a1d628eff38c31308a301e0f7e43121292d"
+    },
+    {
+      "file": "licenses/emacsen-common.copyright",
+      "bytes": 473,
+      "sha256": "58e1d473fcaab17e5be9f86bafd7bb1af0529b55fe0b0b204a799e2a83492fa5"
+    },
+    {
+      "file": "licenses/gforth-common.copyright",
+      "bytes": 4731,
+      "sha256": "237c40f980e5da2f8cacafb9b43c2be76427c0ab1c9adb06491db8b141905c60"
+    },
+    {
+      "file": "licenses/gforth-lib.copyright",
+      "bytes": 4731,
+      "sha256": "237c40f980e5da2f8cacafb9b43c2be76427c0ab1c9adb06491db8b141905c60"
+    },
+    {
+      "file": "licenses/gforth.copyright",
+      "bytes": 4731,
+      "sha256": "237c40f980e5da2f8cacafb9b43c2be76427c0ab1c9adb06491db8b141905c60"
+    },
+    {
+      "file": "metadata/apt-verification.txt",
+      "bytes": 1169,
+      "sha256": "966652e257fd492d3cb75d146adc643c0debd59a4664d623e49815b2b164c3a7"
+    },
+    {
+      "file": "metadata/bookworm-InRelease",
+      "bytes": 151075,
+      "sha256": "77737fa4b34f2693e982cc9ee35736816c35a7778fc2d326cc1bbf5b301fe1aa"
+    },
+    {
+      "file": "metadata/bookworm-security-InRelease",
+      "bytes": 34770,
+      "sha256": "5d916d253a3ed4b2413b355ac864adc2188295df58d3f569879e5322f50378bf"
+    },
+    {
+      "file": "metadata/bookworm-updates-InRelease",
+      "bytes": 55403,
+      "sha256": "849931d2b8a2b1d8f630169254b37f53cf9ab8859cc33778b61fb1d52ecb3a19"
+    },
+    {
+      "file": "metadata/emacsen-common_3.0.5_all.deb.metadata",
+      "bytes": 763,
+      "sha256": "aa9dcb8349358ec474ce12c896adb6667f20468b5872c35b2abb65de2bce02ab"
+    },
+    {
+      "file": "metadata/gforth-common_0.7.3+dfsg-9_all.deb.metadata",
+      "bytes": 608,
+      "sha256": "3a06e1bbd037fde6d54fbb4a15dc0c11b13a6e5cea9e040465ed5afcb0a491ec"
+    },
+    {
+      "file": "metadata/gforth-lib_0.7.3+dfsg-9+b3_amd64.deb.metadata",
+      "bytes": 662,
+      "sha256": "1b4d79f8e278e09a9cac02a341a15ffc6f8e37e7b2f5edbc5a1bd1fc3895791f"
+    },
+    {
+      "file": "metadata/gforth_0.7.3+dfsg-9+b3_amd64.deb.metadata",
+      "bytes": 822,
+      "sha256": "e6006bc71829d1e5e5bba3a92cac3a9a0d0fcaa779b7e24c8308d890d78f192e"
+    }
+  ]
+}

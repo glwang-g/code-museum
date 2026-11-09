@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "platform": "linux/amd64",
+  "baseImage": "gcc@sha256:5e927c284bf55a7dc796262e311a0703344f62f41f5621eb56843111b1d37e15",
+  "sourceDateEpoch": 1793923200,
+  "version": "9.0.2",
+  "source": "https://www.haskell.org/ghc/download_ghc_9_0_2.html",
+  "license": "BSD-3-Clause",
+  "runtime": {
+    "id": "haskell",
+    "executable": "/usr/bin/ghc",
+    "memoryMiB": 768,
+    "versionArgs": [
+      "--version"
+    ],
+    "versionPattern": "9.0.2"
+  },
+  "files": [
+    {
+      "file": "Dockerfile",
+      "bytes": 254,
+      "sha256": "5fd0732716442ade3390ad1332600e75bf4527e51b9133fdcdbcc69d303ecb94"
+    },
+    {
+      "file": "NOTICE.md",
+      "bytes": 989,
+      "sha256": "5a6688cebac69ed9a27bcdee9b2a9d0ce5b43300f5b5dced368a22316cbffe48"
+    },
+    {
+      "file": "acquisition.json",
+      "bytes": 2452,
+      "sha256": "0cf4a73d68f9e6a909d414e10c57d7716b3860e3d84252545458154c377a5d74"
+    },
+    {
+      "file": "assets/ghc_9.0.2-4_amd64.deb",
+      "bytes": 72736048,
+      "sha256": "4de152f68646d51af93424e4a658f717965343f84e9dea79cdb47a72aa0ab57f"
+    },
+    {
+      "file": "assets/libbsd-dev_0.11.7-2_amd64.deb",
+      "bytes": 243072,
+      "sha256": "788ec28ca78eab1ba14d2e1a50727efb7276c6b034163dca40931d8ab3d94aab"
+    },
+    {
+      "file": "assets/libmd-dev_1.0.4-2_amd64.deb",
+      "bytes": 47036,
+      "sha256": "fc755a2552c03653cb51575bf70d1aa0874f78d86fbc8ff7fb246b1c9e7e31c5"
+    },
+    {
+      "file": "licenses/ghc.copyright",
+      "bytes": 3105,
+      "sha256": "ac00f7b272327d6f489991b9a18b95eeeb8a8669b00627f89d56e77c4e4fb37b"
+    },
+    {
+      "file": "licenses/libbsd-dev.copyright",
+      "bytes": 23960,
+      "sha256": "00fd7be5d907a6bcc409a80f2d565f508673db4761d54623691f89ae3aa20fc7"
+    },
+    {
+      "file": "licenses/libmd-dev.copyright",
+      "bytes": 8018,
+      "sha256": "4365ef6255ad553fce69dd4bc0e093472c5d0e41b8ea493a545cc926ce171aa6"
+    },
+    {
+      "file": "metadata/apt-verification.txt",
+      "bytes": 1169,
+      "sha256": "966652e257fd492d3cb75d146adc643c0debd59a4664d623e49815b2b164c3a7"
+    },
+    {
+      "file": "metadata/bookworm-InRelease",
+      "bytes": 151075,
+      "sha256": "77737fa4b34f2693e982cc9ee35736816c35a7778fc2d326cc1bbf5b301fe1aa"
+    },
+    {
+      "file": "metadata/bookworm-security-InRelease",
+      "bytes": 34770,
+      "sha256": "1d368817d451179b6611e157dccd876f93feff7d603c575668fbb662d5b01677"
+    },
+    {
+      "file": "metadata/bookworm-updates-InRelease",
+      "bytes": 55403,
+      "sha256": "da3bb85c8864a931aa8d4ad4bcca054c0bb430aef7f8c3dfaff4b173d26f595c"
+    },
+    {
+      "file": "metadata/ghc_9.0.2-4_amd64.deb.metadata",
+      "bytes": 5591,
+      "sha256": "46c67596361d675784bff2da6a6f9a23fdde23aca677c868fbe6f6fd7f0a9b72"
+    },
+    {
+      "file": "metadata/libbsd-dev_0.11.7-2_amd64.deb.metadata",
+      "bytes": 704,
+      "sha256": "1cc740b6812088a33ae8fb2c7d331f74490a9836f08d409a2555614fe9021fd1"
+    },
+    {
+      "file": "metadata/libmd-dev_1.0.4-2_amd64.deb.metadata",
+      "bytes": 650,
+      "sha256": "7a3adcd6c63c16aeda5c47072cb5a34824ced04b1cdf5e8752d85e477273dd13"
+    }
+  ]
+}

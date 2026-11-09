@@ -1,0 +1,24 @@
+Package: erlang-base
+Source: erlang
+Version: 1:25.2.3+dfsg-1+deb12u4
+Installed-Size: 16420
+Maintainer: Debian Erlang Packagers <pkg-erlang-devel@lists.alioth.debian.org>
+Architecture: amd64
+Replaces: erlang (<< 1:25.2.3+dfsg-1+deb12u4), erlang-base-hipe, erlang-dev (<< 1:25.2.3+dfsg-1+deb12u4), erlang-doc (>> 1:25.2.3+dfsg-999), erlang-doc (<< 1:25.2.3+dfsg), erlang-doc-html (<< 1:13.b.4), erlang-examples (<< 1:25.2.3+dfsg-1+deb12u4), erlang-manpages (<= 1:11.b.1-2), erlang-mode (<< 1:12.b.1-dfsg-2), erlang-nox (<< 1:25.2.3+dfsg-1+deb12u4), erlang-src (<< 1:25.2.3+dfsg-1+deb12u4), erlang-typer (<< 1:20.0+dfsg), erlang-x11 (<< 1:25.2.3+dfsg-1+deb12u4)
+Provides: erlang-abi (= 17.0), erlang-abi-17.0, erlang-pcre (= 8.44)
+Depends: procps, adduser, libc6 (>= 2.34), libgcc-s1 (>= 12), libstdc++6 (>= 11), libsystemd0, libtinfo6 (>= 6), zlib1g (>= 1:1.2.8)
+Recommends: libsctp1 (>= 1.0.19+dfsg), erlang-crypto (= 1:25.2.3+dfsg-1+deb12u4), erlang-syntax-tools (= 1:25.2.3+dfsg-1+deb12u4)
+Suggests: erlang-tools (= 1:25.2.3+dfsg-1+deb12u4), erlang, erlang-manpages, erlang-doc
+Conflicts: erlang (<< 1:25.2.3+dfsg-1+deb12u4), erlang-base-hipe, erlang-doc (>> 1:25.2.3+dfsg-999), erlang-doc (<< 1:25.2.3+dfsg), erlang-doc-html (<< 1:13.b.4), erlang-manpages (<= 1:11.b.1-2)
+Breaks: rabbitmq-server (<< 3.7.7)
+Description: Erlang/OTP virtual machine and base applications
+Description-md5: 05592e757f082a6d0a61fb86c3fb8cac
+Multi-Arch: allowed
+Homepage: http://www.erlang.org/
+Tag: devel::interpreter, role::program, uitoolkit::ncurses
+Section: interpreters
+Priority: optional
+Filename: pool/main/e/erlang/erlang-base_25.2.3+dfsg-1+deb12u4_amd64.deb
+Size: 9697280
+MD5sum: 367c540adf057c02432c35b3631d29cb
+SHA256: 71731cddaf081836028de905052c69135a4d288fa804fdae5982ea83bf5b8b61

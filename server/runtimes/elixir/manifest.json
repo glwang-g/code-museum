@@ -1,0 +1,252 @@
+{
+  "schemaVersion": 1,
+  "platform": "linux/amd64",
+  "baseImage": "gcc@sha256:5e927c284bf55a7dc796262e311a0703344f62f41f5621eb56843111b1d37e15",
+  "sourceDateEpoch": 1793923200,
+  "version": "1.14.0",
+  "source": "https://github.com/elixir-lang/elixir/releases/tag/v1.14.0",
+  "license": "Apache-2.0",
+  "runtime": {
+    "id": "elixir",
+    "executable": "/usr/bin/elixir",
+    "memoryMiB": 512,
+    "versionArgs": [
+      "--erl",
+      "+S 1:1 +A 1 +SDcpu 1 +SDio 1",
+      "--version"
+    ],
+    "versionPattern": "Elixir 1.14.0"
+  },
+  "files": [
+    {
+      "file": "Dockerfile",
+      "bytes": 254,
+      "sha256": "5fd0732716442ade3390ad1332600e75bf4527e51b9133fdcdbcc69d303ecb94"
+    },
+    {
+      "file": "NOTICE.md",
+      "bytes": 951,
+      "sha256": "5b657eddfec280e120b8eb5b17a57dcb45d78bc5837a2266b79a8545eebeb0f8"
+    },
+    {
+      "file": "acquisition.json",
+      "bytes": 6471,
+      "sha256": "55860423df3a66d48b0267bcf13900bf792ade2b38bb3bcf7756548cdc3482ac"
+    },
+    {
+      "file": "assets/elixir_1.14.0.dfsg-2_amd64.deb",
+      "bytes": 4503868,
+      "sha256": "0725a208427097fbecb57027af7af34b9562c4ee029ff8a55741fb6c55964778"
+    },
+    {
+      "file": "assets/erlang-asn1_25.2.3+dfsg-1+deb12u4_amd64.deb",
+      "bytes": 896944,
+      "sha256": "a35e1f628f9ee52616be4a00560f9a9a8a0ba484b1b1e1b02696325d0c32ec41"
+    },
+    {
+      "file": "assets/erlang-base_25.2.3+dfsg-1+deb12u4_amd64.deb",
+      "bytes": 9697280,
+      "sha256": "71731cddaf081836028de905052c69135a4d288fa804fdae5982ea83bf5b8b61"
+    },
+    {
+      "file": "assets/erlang-crypto_25.2.3+dfsg-1+deb12u4_amd64.deb",
+      "bytes": 165548,
+      "sha256": "130d7dd83071a2ec545ba1c4f2e9e77be847554b7c04316a870b2e11b5e30e39"
+    },
+    {
+      "file": "assets/erlang-ftp_25.2.3+dfsg-1+deb12u4_amd64.deb",
+      "bytes": 93856,
+      "sha256": "c89fce672fede2d01f6a2bbce7d38f167cd689d6f109ff28ba098ffb6e2d6040"
+    },
+    {
+      "file": "assets/erlang-inets_25.2.3+dfsg-1+deb12u4_amd64.deb",
+      "bytes": 636268,
+      "sha256": "068079f01742b9ebe457ba7285910a2d5c6d8c61895c076fcaaf7ff752548815"
+    },
+    {
+      "file": "assets/erlang-mnesia_25.2.3+dfsg-1+deb12u4_amd64.deb",
+      "bytes": 873324,
+      "sha256": "94b059c51c41db8b3592e6a070b9341112da4c084d5642c1abffb5069cc642ac"
+    },
+    {
+      "file": "assets/erlang-parsetools_25.2.3+dfsg-1+deb12u4_amd64.deb",
+      "bytes": 197724,
+      "sha256": "1a5660cec4ee2a480391d5d7e55e8b4cc49ee05284d34fe6a38327089b6f947f"
+    },
+    {
+      "file": "assets/erlang-public-key_25.2.3+dfsg-1+deb12u4_amd64.deb",
+      "bytes": 731304,
+      "sha256": "37cb5fcaafa3745918d65c6bafc66a161069944d996074996762697b93128031"
+    },
+    {
+      "file": "assets/erlang-runtime-tools_25.2.3+dfsg-1+deb12u4_amd64.deb",
+      "bytes": 230264,
+      "sha256": "0bbb1db788ecb8b004470c39ae76a07ceec4c28aa519e548ade1d22781833f6b"
+    },
+    {
+      "file": "assets/erlang-ssl_25.2.3+dfsg-1+deb12u4_amd64.deb",
+      "bytes": 1606224,
+      "sha256": "98c91964be7a4c7f8be1f05ce12318e9dc7aa268ea2814e495c3d0dd54f8a2fe"
+    },
+    {
+      "file": "assets/erlang-tftp_25.2.3+dfsg-1+deb12u4_amd64.deb",
+      "bytes": 110884,
+      "sha256": "4e507c0fbbd2dab3fc063efc4c15d398431d0f58033bbb1267c226abee095c13"
+    },
+    {
+      "file": "assets/erlang-tools_25.2.3+dfsg-1+deb12u4_amd64.deb",
+      "bytes": 577848,
+      "sha256": "d36612337928437f2ce5bbeebb4bc1013449db8e8efb65affec265039ee4d267"
+    },
+    {
+      "file": "licenses/elixir.copyright",
+      "bytes": 3220,
+      "sha256": "5706b2005985104048cb470151d2195f1575e4332727004388b3df24a0ec93d1"
+    },
+    {
+      "file": "licenses/erlang-asn1.copyright",
+      "bytes": 12953,
+      "sha256": "8a26e9b4d5adfa99b4fce7376bdd8f7065b50e0a87b761e3baf69781e75be7ec"
+    },
+    {
+      "file": "licenses/erlang-base.copyright",
+      "bytes": 12953,
+      "sha256": "8a26e9b4d5adfa99b4fce7376bdd8f7065b50e0a87b761e3baf69781e75be7ec"
+    },
+    {
+      "file": "licenses/erlang-crypto.copyright",
+      "bytes": 12953,
+      "sha256": "8a26e9b4d5adfa99b4fce7376bdd8f7065b50e0a87b761e3baf69781e75be7ec"
+    },
+    {
+      "file": "licenses/erlang-ftp.copyright",
+      "bytes": 12953,
+      "sha256": "8a26e9b4d5adfa99b4fce7376bdd8f7065b50e0a87b761e3baf69781e75be7ec"
+    },
+    {
+      "file": "licenses/erlang-inets.copyright",
+      "bytes": 12953,
+      "sha256": "8a26e9b4d5adfa99b4fce7376bdd8f7065b50e0a87b761e3baf69781e75be7ec"
+    },
+    {
+      "file": "licenses/erlang-mnesia.copyright",
+      "bytes": 12953,
+      "sha256": "8a26e9b4d5adfa99b4fce7376bdd8f7065b50e0a87b761e3baf69781e75be7ec"
+    },
+    {
+      "file": "licenses/erlang-parsetools.copyright",
+      "bytes": 12953,
+      "sha256": "8a26e9b4d5adfa99b4fce7376bdd8f7065b50e0a87b761e3baf69781e75be7ec"
+    },
+    {
+      "file": "licenses/erlang-public-key.copyright",
+      "bytes": 12953,
+      "sha256": "8a26e9b4d5adfa99b4fce7376bdd8f7065b50e0a87b761e3baf69781e75be7ec"
+    },
+    {
+      "file": "licenses/erlang-runtime-tools.copyright",
+      "bytes": 12953,
+      "sha256": "8a26e9b4d5adfa99b4fce7376bdd8f7065b50e0a87b761e3baf69781e75be7ec"
+    },
+    {
+      "file": "licenses/erlang-ssl.copyright",
+      "bytes": 12953,
+      "sha256": "8a26e9b4d5adfa99b4fce7376bdd8f7065b50e0a87b761e3baf69781e75be7ec"
+    },
+    {
+      "file": "licenses/erlang-tftp.copyright",
+      "bytes": 12953,
+      "sha256": "8a26e9b4d5adfa99b4fce7376bdd8f7065b50e0a87b761e3baf69781e75be7ec"
+    },
+    {
+      "file": "licenses/erlang-tools.copyright",
+      "bytes": 12953,
+      "sha256": "8a26e9b4d5adfa99b4fce7376bdd8f7065b50e0a87b761e3baf69781e75be7ec"
+    },
+    {
+      "file": "metadata/apt-verification.txt",
+      "bytes": 1169,
+      "sha256": "966652e257fd492d3cb75d146adc643c0debd59a4664d623e49815b2b164c3a7"
+    },
+    {
+      "file": "metadata/bookworm-InRelease",
+      "bytes": 151075,
+      "sha256": "77737fa4b34f2693e982cc9ee35736816c35a7778fc2d326cc1bbf5b301fe1aa"
+    },
+    {
+      "file": "metadata/bookworm-security-InRelease",
+      "bytes": 34770,
+      "sha256": "1d368817d451179b6611e157dccd876f93feff7d603c575668fbb662d5b01677"
+    },
+    {
+      "file": "metadata/bookworm-updates-InRelease",
+      "bytes": 55403,
+      "sha256": "da3bb85c8864a931aa8d4ad4bcca054c0bb430aef7f8c3dfaff4b173d26f595c"
+    },
+    {
+      "file": "metadata/elixir_1.14.0.dfsg-2_amd64.deb.metadata",
+      "bytes": 752,
+      "sha256": "be8f834f0730b41f8284f3acf14fc84bbdea4ffaa9c95e40fb46f616fd3f9055"
+    },
+    {
+      "file": "metadata/erlang-asn1_25.2.3+dfsg-1+deb12u4_amd64.deb.metadata",
+      "bytes": 1144,
+      "sha256": "87d5668ef811387e78c51e6730211aad34da6b47dc2290fc329981f6a92b9c49"
+    },
+    {
+      "file": "metadata/erlang-base_25.2.3+dfsg-1+deb12u4_amd64.deb.metadata",
+      "bytes": 1775,
+      "sha256": "efd4a1673e5fd0c01f013735a39a8ab4583c734b9476d97fbb3d5d8da1d762a5"
+    },
+    {
+      "file": "metadata/erlang-crypto_25.2.3+dfsg-1+deb12u4_amd64.deb.metadata",
+      "bytes": 1213,
+      "sha256": "7b4b692d4bdb6e820164b271f56d26963443792def1c49471720d576f6e1e99e"
+    },
+    {
+      "file": "metadata/erlang-ftp_25.2.3+dfsg-1+deb12u4_amd64.deb.metadata",
+      "bytes": 1228,
+      "sha256": "f7aa36e3281d32356f5b68379aa0d54ce9827b555040d248e10d25e01ab2f9cd"
+    },
+    {
+      "file": "metadata/erlang-inets_25.2.3+dfsg-1+deb12u4_amd64.deb.metadata",
+      "bytes": 1371,
+      "sha256": "15004fe475d1ada6f01d86c7ca19806208e2ed095a2d63cfe7129d4f81e0fe8e"
+    },
+    {
+      "file": "metadata/erlang-mnesia_25.2.3+dfsg-1+deb12u4_amd64.deb.metadata",
+      "bytes": 1177,
+      "sha256": "790d2ced0025ce730a40e6ed74d0277cb98878b36c2127474e2a41dc0a20a3d5"
+    },
+    {
+      "file": "metadata/erlang-parsetools_25.2.3+dfsg-1+deb12u4_amd64.deb.metadata",
+      "bytes": 1152,
+      "sha256": "70ef7512c26ea8597b36c81260b9b489365327dc97926296e87c6c638b3c0912"
+    },
+    {
+      "file": "metadata/erlang-public-key_25.2.3+dfsg-1+deb12u4_amd64.deb.metadata",
+      "bytes": 1223,
+      "sha256": "66536f22341329f833c19f4c3114bf5f8100ec4c6f6882f9acccd43f8ae141ab"
+    },
+    {
+      "file": "metadata/erlang-runtime-tools_25.2.3+dfsg-1+deb12u4_amd64.deb.metadata",
+      "bytes": 1263,
+      "sha256": "1afa48dfbae5d7564ef2b6be3be0bf25a9041b2077d68181f4fb6d90ee0d6307"
+    },
+    {
+      "file": "metadata/erlang-ssl_25.2.3+dfsg-1+deb12u4_amd64.deb.metadata",
+      "bytes": 1345,
+      "sha256": "14b47d875497d9a5a6f59d15fced2a8667b00fc0d758ce3e1fee19648ef60df2"
+    },
+    {
+      "file": "metadata/erlang-tftp_25.2.3+dfsg-1+deb12u4_amd64.deb.metadata",
+      "bytes": 1153,
+      "sha256": "fc6ef254e507634e7f2e66f455a3089ed1cc65e8cad115aca763547ae418b5c0"
+    },
+    {
+      "file": "metadata/erlang-tools_25.2.3+dfsg-1+deb12u4_amd64.deb.metadata",
+      "bytes": 1322,
+      "sha256": "0aaea2a69d8094530299d86b2fe3c5eeff6aa9d79e4a1f073b1e95dccd23c59e"
+    }
+  ]
+}

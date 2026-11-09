@@ -1,0 +1,18 @@
+Package: libclojure-java
+Source: clojure
+Version: 1.11.1-2
+Installed-Size: 4107
+Maintainer: Debian Clojure Maintainers <team+clojure@tracker.debian.org>
+Architecture: all
+Replaces: clojure (<< 1.9.0-3), clojure1.8 (<< 1.8.0-6), libclojure1.8-java (<< 1.8.0-6)
+Depends: libjsr166y-java, libcore-specs-alpha-clojure, libspec-alpha-clojure
+Breaks: clojure (<< 1.9.0-3), clojure1.8 (<< 1.8.0-6), libclojure1.8-java (<< 1.8.0-6)
+Description: Lisp dialect for the JVM (library)
+Description-md5: 93c1db04e8e2532bb929bfe3e88ed517
+Homepage: http://clojure.org
+Section: java
+Priority: optional
+Filename: pool/main/c/clojure/libclojure-java_1.11.1-2_all.deb
+Size: 3646900
+MD5sum: 34380efa32bcd5f7669bd513b24ec1a7
+SHA256: 25850de99a8d3fbcc057678322196ad4a16b24c0e27151a43fb1fcc468e7f475

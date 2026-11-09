@@ -1,0 +1,147 @@
+{
+  "schemaVersion": 1,
+  "platform": "linux/amd64",
+  "baseImage": "eclipse-temurin@sha256:43f4431cc895d37ceb115e2e1f160545ec45caee9c1cb4246fc6bb879d58aeda",
+  "sourceDateEpoch": 1793923200,
+  "version": "Clojure 1.11.1 / Java 17",
+  "source": "https://clojure.org/",
+  "license": "EPL-1.0 / component licenses",
+  "runtime": {
+    "id": "clojure",
+    "executable": "/opt/java/openjdk/bin/java",
+    "memoryMiB": 768,
+    "versionArgs": [
+      "-Xmx256m",
+      "-XX:ActiveProcessorCount=1",
+      "-XX:+UseSerialGC",
+      "-cp",
+      "/opt/clojure/*",
+      "clojure.main",
+      "-e",
+      "(print (clojure-version))"
+    ],
+    "versionPattern": "1.11.1"
+  },
+  "files": [
+    {
+      "file": "Dockerfile",
+      "bytes": 199,
+      "sha256": "f9fe57aa9ae558e7d5a4ae81e30b7877193b220ecc11c07d86764a4192ca466e"
+    },
+    {
+      "file": "NOTICE.md",
+      "bytes": 1289,
+      "sha256": "b7a706d0fbb38d5098c31c9e6254d2c9029fcaf2c154aa7e6081fe3f34375346"
+    },
+    {
+      "file": "acquisition.json",
+      "bytes": 4282,
+      "sha256": "b537252e2c4d7b5d8b763aa709a1290804cdb9a99a1bf38d48658e4dd5a28979"
+    },
+    {
+      "file": "assets/clojure-1.11.1.jar",
+      "bytes": 4109981,
+      "sha256": "df0d350d156f95b4976c82aa4387d750bffc5e1471e828b4fb9f00bba008cc16"
+    },
+    {
+      "file": "assets/core.specs.alpha.jar",
+      "bytes": 4420,
+      "sha256": "f09df67aee163f9019a7c8830a8d37e42f0bd33c68184b18a5b53c4003493a38"
+    },
+    {
+      "file": "assets/extra166y-1.7.0.jar",
+      "bytes": 663657,
+      "sha256": "fa19c36708cc0e9de8e4a3b0483d0f2e0397d1ef553412e55aa17fd8b77a78a8"
+    },
+    {
+      "file": "assets/jsr166y-1.7.0.jar",
+      "bytes": 59829,
+      "sha256": "35ee7f838bb47fed61bc6feba24ba424455ea2cb6ecd68e449894d79e58b8196"
+    },
+    {
+      "file": "assets/libclojure-java_1.11.1-2_all.deb",
+      "bytes": 3646900,
+      "sha256": "25850de99a8d3fbcc057678322196ad4a16b24c0e27151a43fb1fcc468e7f475"
+    },
+    {
+      "file": "assets/libcore-specs-alpha-clojure_0.2.62-1_all.deb",
+      "bytes": 11772,
+      "sha256": "433ed76832a925089c9a61d648f3f6358c0d820c344c518f28859704d075c419"
+    },
+    {
+      "file": "assets/libjsr166y-java_1.7.0-2.1_all.deb",
+      "bytes": 610820,
+      "sha256": "71d64a96a972918752cca025a8d6aac87b34facda494ae42a702feed1cdae2f4"
+    },
+    {
+      "file": "assets/libspec-alpha-clojure_0.3.218-1_all.deb",
+      "bytes": 562072,
+      "sha256": "444403e0500b5bc6ace6d9d469bb95fb67e369e961254f865aecb864d89d22f5"
+    },
+    {
+      "file": "assets/spec.alpha.jar",
+      "bytes": 639693,
+      "sha256": "8ea8f04d170f17a973ba6f7ecbf754dd0af0a1cfc8ab68622f255d41cb92ec7c"
+    },
+    {
+      "file": "licenses/libclojure-java.copyright",
+      "bytes": 26707,
+      "sha256": "d4d71a2c30b96bc51e79a703f7d9973cb5be17e6f84ba264249d3328e9847f57"
+    },
+    {
+      "file": "licenses/libcore-specs-alpha-clojure.copyright",
+      "bytes": 12568,
+      "sha256": "39bc6cd4c790e37fc90cddca2ca4b15b97190f07e9588403efd86ec61637835d"
+    },
+    {
+      "file": "licenses/libjsr166y-java.copyright",
+      "bytes": 3232,
+      "sha256": "067672edfec909f420c18ef014846398b71be8f85112b5bb1a7dcb148fcd46af"
+    },
+    {
+      "file": "licenses/libspec-alpha-clojure.copyright",
+      "bytes": 12556,
+      "sha256": "85ec9f3c0e96f4673e8b492b17f7d1cc4a619b99424a67daf3be7f5e0a14d12e"
+    },
+    {
+      "file": "metadata/apt-verification.txt",
+      "bytes": 1169,
+      "sha256": "966652e257fd492d3cb75d146adc643c0debd59a4664d623e49815b2b164c3a7"
+    },
+    {
+      "file": "metadata/bookworm-InRelease",
+      "bytes": 151075,
+      "sha256": "77737fa4b34f2693e982cc9ee35736816c35a7778fc2d326cc1bbf5b301fe1aa"
+    },
+    {
+      "file": "metadata/bookworm-security-InRelease",
+      "bytes": 34770,
+      "sha256": "1d368817d451179b6611e157dccd876f93feff7d603c575668fbb662d5b01677"
+    },
+    {
+      "file": "metadata/bookworm-updates-InRelease",
+      "bytes": 55403,
+      "sha256": "da3bb85c8864a931aa8d4ad4bcca054c0bb430aef7f8c3dfaff4b173d26f595c"
+    },
+    {
+      "file": "metadata/libclojure-java_1.11.1-2_all.deb.metadata",
+      "bytes": 775,
+      "sha256": "dc3738a6aa3cd8761fca693e438698212164d64edc9902096db7096af99358d9"
+    },
+    {
+      "file": "metadata/libcore-specs-alpha-clojure_0.2.62-1_all.deb.metadata",
+      "bytes": 618,
+      "sha256": "4014b495994b32ec015f886d5c1e6594cec8966a328a87881bd23c4e7b2ee027"
+    },
+    {
+      "file": "metadata/libjsr166y-java_1.7.0-2.1_all.deb.metadata",
+      "bytes": 558,
+      "sha256": "c2dc2587c384fdd8282be3df2ea110d6dec21ae4ed8a4362c53644cdd254bd5b"
+    },
+    {
+      "file": "metadata/libspec-alpha-clojure_0.3.218-1_all.deb.metadata",
+      "bytes": 596,
+      "sha256": "8e232d25f6373456b34904b335253580b79c1b5efeea5b563ca13735b8dc98e0"
+    }
+  ]
+}

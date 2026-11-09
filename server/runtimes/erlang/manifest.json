@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "platform": "linux/amd64",
+  "baseImage": "gcc@sha256:5e927c284bf55a7dc796262e311a0703344f62f41f5621eb56843111b1d37e15",
+  "sourceDateEpoch": 1793923200,
+  "version": "25.2.3",
+  "source": "https://www.erlang.org/patches/otp-25.2.3",
+  "license": "Apache-2.0",
+  "runtime": {
+    "id": "erlang",
+    "executable": "/usr/bin/erl",
+    "memoryMiB": 512,
+    "versionArgs": [
+      "+S",
+      "1:1",
+      "+A",
+      "1",
+      "+SDcpu",
+      "1",
+      "+SDio",
+      "1",
+      "-noshell",
+      "-eval",
+      "{ok,V}=file:read_file(\"/usr/lib/erlang/releases/25/OTP_VERSION\"),io:put_chars(V),halt()."
+    ],
+    "versionPattern": "25.2.3"
+  },
+  "files": [
+    {
+      "file": "Dockerfile",
+      "bytes": 254,
+      "sha256": "5fd0732716442ade3390ad1332600e75bf4527e51b9133fdcdbcc69d303ecb94"
+    },
+    {
+      "file": "NOTICE.md",
+      "bytes": 1062,
+      "sha256": "202ba5dfc32cb6b726b07994e78b382998a5a4d58119653850388aa0c7eefcb9"
+    },
+    {
+      "file": "acquisition.json",
+      "bytes": 1850,
+      "sha256": "37696b9aa2c2bb6f2cfe3826748395a590f5b2e6e1e75be50ddaa95149ac6980"
+    },
+    {
+      "file": "assets/erlang-base_25.2.3+dfsg-1+deb12u4_amd64.deb",
+      "bytes": 9697280,
+      "sha256": "71731cddaf081836028de905052c69135a4d288fa804fdae5982ea83bf5b8b61"
+    },
+    {
+      "file": "licenses/erlang-base.copyright",
+      "bytes": 12953,
+      "sha256": "8a26e9b4d5adfa99b4fce7376bdd8f7065b50e0a87b761e3baf69781e75be7ec"
+    },
+    {
+      "file": "metadata/apt-verification.txt",
+      "bytes": 1169,
+      "sha256": "aa70bd502e6c23c157f8f0f25064749b298ec1e91f6dedbc182cf6f80ece8573"
+    },
+    {
+      "file": "metadata/bookworm-InRelease",
+      "bytes": 151075,
+      "sha256": "77737fa4b34f2693e982cc9ee35736816c35a7778fc2d326cc1bbf5b301fe1aa"
+    },
+    {
+      "file": "metadata/bookworm-security-InRelease",
+      "bytes": 34770,
+      "sha256": "1d368817d451179b6611e157dccd876f93feff7d603c575668fbb662d5b01677"
+    },
+    {
+      "file": "metadata/bookworm-updates-InRelease",
+      "bytes": 55403,
+      "sha256": "da3bb85c8864a931aa8d4ad4bcca054c0bb430aef7f8c3dfaff4b173d26f595c"
+    },
+    {
+      "file": "metadata/erlang-base_25.2.3+dfsg-1+deb12u4_amd64.deb.metadata",
+      "bytes": 1775,
+      "sha256": "efd4a1673e5fd0c01f013735a39a8ab4583c734b9476d97fbb3d5d8da1d762a5"
+    }
+  ]
+}

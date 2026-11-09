@@ -1,0 +1,20 @@
+Package: erlang-ssl
+Source: erlang
+Version: 1:25.2.3+dfsg-1+deb12u4
+Installed-Size: 1985
+Maintainer: Debian Erlang Packagers <pkg-erlang-devel@lists.alioth.debian.org>
+Architecture: amd64
+Replaces: erlang (<< 1:25.2.3+dfsg-1+deb12u4), erlang-base (<< 1:25.2.3+dfsg-1+deb12u4), erlang-base-hipe, erlang-dev (<< 1:25.2.3+dfsg-1+deb12u4), erlang-doc (>> 1:25.2.3+dfsg-999), erlang-doc (<< 1:25.2.3+dfsg), erlang-examples (<< 1:25.2.3+dfsg-1+deb12u4), erlang-manpages (<= 1:11.b.1-2), erlang-mode (<< 1:12.b.1-dfsg-2), erlang-nox (<< 1:25.2.3+dfsg-1+deb12u4), erlang-src (<< 1:25.2.3+dfsg-1+deb12u4), erlang-x11 (<< 1:25.2.3+dfsg-1+deb12u4)
+Depends: erlang-base (= 1:25.2.3+dfsg-1+deb12u4), erlang-crypto (= 1:25.2.3+dfsg-1+deb12u4), erlang-public-key (= 1:25.2.3+dfsg-1+deb12u4), erlang-runtime-tools (= 1:25.2.3+dfsg-1+deb12u4)
+Suggests: erlang-inets (= 1:25.2.3+dfsg-1+deb12u4), erlang, erlang-manpages, erlang-doc
+Description: Erlang/OTP implementation of SSL
+Description-md5: 15c091acf332c7d47a15da19885fdc6b
+Multi-Arch: allowed
+Homepage: http://www.erlang.org/
+Tag: implemented-in::TODO, protocol::ssl
+Section: interpreters
+Priority: optional
+Filename: pool/main/e/erlang/erlang-ssl_25.2.3+dfsg-1+deb12u4_amd64.deb
+Size: 1606224
+MD5sum: f76fe94830d702fe1b2e9b8efc3492fa
+SHA256: 98c91964be7a4c7f8be1f05ce12318e9dc7aa268ea2814e495c3d0dd54f8a2fe

@@ -1,0 +1,15 @@
+Package: libspec-alpha-clojure
+Source: spec-alpha-clojure
+Version: 0.3.218-1
+Installed-Size: 664
+Maintainer: Debian Clojure Maintainers <team+clojure@tracker.debian.org>
+Architecture: all
+Description: library to describe the structure of data and functions
+Description-md5: 7534a6fe04f32e172fb373d63186ffa1
+Homepage: https://github.com/clojure/spec.alpha
+Section: java
+Priority: optional
+Filename: pool/main/s/spec-alpha-clojure/libspec-alpha-clojure_0.3.218-1_all.deb
+Size: 562072
+MD5sum: dd5229e28db2c082b93efea3d58076c9
+SHA256: 444403e0500b5bc6ace6d9d469bb95fb67e369e961254f865aecb864d89d22f5

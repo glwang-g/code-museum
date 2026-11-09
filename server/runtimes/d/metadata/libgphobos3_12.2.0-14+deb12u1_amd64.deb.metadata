@@ -1,0 +1,20 @@
+Package: libgphobos3
+Source: gcc-12
+Version: 12.2.0-14+deb12u1
+Installed-Size: 11553
+Maintainer: Debian GCC Maintainers <debian-gcc@lists.debian.org>
+Architecture: amd64
+Replaces: libgphobos68
+Depends: gcc-12-base (= 12.2.0-14+deb12u1), libc6 (>= 2.34), libgcc-s1 (>= 4.2), zlib1g (>= 1:1.2.0)
+Breaks: dub (<< 1.16.0-1~)
+Description: Phobos D standard library (runtime library)
+Description-md5: 2086a0c7f5831c82fec492e812bdd6c1
+Multi-Arch: same
+Homepage: http://gcc.gnu.org/
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/g/gcc-12/libgphobos3_12.2.0-14+deb12u1_amd64.deb
+Size: 1684696
+MD5sum: 190629e8bf66c930f359f5b1ea618716
+SHA256: df56bd1993e0c815b1d9c2b78210a0c1ec1e295ad02cc409e1e6015f3992d4ca

@@ -1,0 +1,18 @@
+Package: libgnat-12
+Source: gcc-12
+Version: 12.2.0-14+deb12u1
+Installed-Size: 4764
+Maintainer: Debian GCC Maintainers <debian-gcc@lists.debian.org>
+Architecture: amd64
+Depends: gcc-12-base (= 12.2.0-14+deb12u1), libc6 (>= 2.34), libgcc-s1 (>= 4.2)
+Description: runtime for applications compiled with GNAT (shared library)
+Description-md5: 27cdab3b846cfe71a546e1fbdc98570c
+Multi-Arch: same
+Homepage: http://gcc.gnu.org/
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/g/gcc-12/libgnat-12_12.2.0-14+deb12u1_amd64.deb
+Size: 1265660
+MD5sum: 36cbab4bf3f7abaa741dc356267a1e17
+SHA256: 64a529089a83765bf90bafd555278ec755d2b2541d77fdf093d2937a6a4673cd

@@ -1,0 +1,18 @@
+Package: libgphobos-12-dev
+Source: gcc-12
+Version: 12.2.0-14+deb12u1
+Installed-Size: 82061
+Maintainer: Debian GCC Maintainers <debian-gcc@lists.debian.org>
+Architecture: amd64
+Depends: gcc-12-base (= 12.2.0-14+deb12u1), libgphobos3 (>= 12.2.0-14+deb12u1), zlib1g-dev
+Description: Phobos D standard library
+Description-md5: 319ab24aa69f1d17bbae7ba6a543ecfd
+Multi-Arch: same
+Homepage: http://gcc.gnu.org/
+Tag: devel::library, role::devel-lib
+Section: libdevel
+Priority: optional
+Filename: pool/main/g/gcc-12/libgphobos-12-dev_12.2.0-14+deb12u1_amd64.deb
+Size: 9876236
+MD5sum: 2d1327f5721cbecbcccbb88a6c96c580
+SHA256: 5e7e3f0609bfddb7f5b650f4e05c6addce6eec91b950fffc966837ff5f5300d4

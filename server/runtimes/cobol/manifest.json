@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "platform": "linux/amd64",
+  "baseImage": "gcc@sha256:5e927c284bf55a7dc796262e311a0703344f62f41f5621eb56843111b1d37e15",
+  "sourceDateEpoch": 1793923200,
+  "version": "GnuCOBOL 3.1.2",
+  "source": "https://gnucobol.sourceforge.io/",
+  "license": "GPL-3.0-or-later / LGPL-3.0-or-later runtime",
+  "runtime": {
+    "id": "cobol",
+    "executable": "/usr/bin/cobc",
+    "memoryMiB": 512,
+    "versionArgs": [
+      "--version"
+    ],
+    "versionPattern": "3.1.2"
+  },
+  "files": [
+    {
+      "file": "Dockerfile",
+      "bytes": 254,
+      "sha256": "5fd0732716442ade3390ad1332600e75bf4527e51b9133fdcdbcc69d303ecb94"
+    },
+    {
+      "file": "NOTICE.md",
+      "bytes": 1295,
+      "sha256": "7642ddb884af9342c5d128158b2e38e25a9403340c6e97a75ad812a6cf02af39"
+    },
+    {
+      "file": "acquisition.json",
+      "bytes": 2503,
+      "sha256": "473053a1bca6c78093ad23186d59c6861d99a49ff90efd6876d45d5a3c2adb85"
+    },
+    {
+      "file": "assets/gnucobol3_3.1.2-5+b1_amd64.deb",
+      "bytes": 955744,
+      "sha256": "e1a586e238ff26efd79dc037325531da897cee56439642bcde46842d0bd13529"
+    },
+    {
+      "file": "assets/libcob4-dev_3.1.2-5+b1_amd64.deb",
+      "bytes": 212460,
+      "sha256": "773bc5b53c1cdcfbd50ddd8f5d1ccf0335c60d6e4e94c1e68b939e0c217a7114"
+    },
+    {
+      "file": "assets/libcob4_3.1.2-5+b1_amd64.deb",
+      "bytes": 173800,
+      "sha256": "22ff611db215f06facb7eeff60e0744179e5bd71260d3eb5a25b2748b85303ed"
+    },
+    {
+      "file": "licenses/gnucobol3.copyright",
+      "bytes": 8032,
+      "sha256": "fb1a86bfff6bee850c318951c0360d3338cf9743bfaafe60d2cd422570513545"
+    },
+    {
+      "file": "licenses/libcob4-dev.copyright",
+      "bytes": 8032,
+      "sha256": "fb1a86bfff6bee850c318951c0360d3338cf9743bfaafe60d2cd422570513545"
+    },
+    {
+      "file": "licenses/libcob4.copyright",
+      "bytes": 8032,
+      "sha256": "fb1a86bfff6bee850c318951c0360d3338cf9743bfaafe60d2cd422570513545"
+    },
+    {
+      "file": "metadata/apt-verification.txt",
+      "bytes": 1169,
+      "sha256": "966652e257fd492d3cb75d146adc643c0debd59a4664d623e49815b2b164c3a7"
+    },
+    {
+      "file": "metadata/bookworm-InRelease",
+      "bytes": 151075,
+      "sha256": "77737fa4b34f2693e982cc9ee35736816c35a7778fc2d326cc1bbf5b301fe1aa"
+    },
+    {
+      "file": "metadata/bookworm-security-InRelease",
+      "bytes": 34770,
+      "sha256": "1d368817d451179b6611e157dccd876f93feff7d603c575668fbb662d5b01677"
+    },
+    {
+      "file": "metadata/bookworm-updates-InRelease",
+      "bytes": 55403,
+      "sha256": "4d6f879f86e299b57f8200446ed233f78a65c8af62e3a48f005439e238d68039"
+    },
+    {
+      "file": "metadata/gnucobol3_3.1.2-5+b1_amd64.deb.metadata",
+      "bytes": 721,
+      "sha256": "586b6708db90a241cbed98675adb889632aa95500c095f4b055642bba3354f95"
+    },
+    {
+      "file": "metadata/libcob4-dev_3.1.2-5+b1_amd64.deb.metadata",
+      "bytes": 664,
+      "sha256": "246bf3732e560277f7e5c4979dd892bf970c861446460831604c5183f75c3a53"
+    },
+    {
+      "file": "metadata/libcob4_3.1.2-5+b1_amd64.deb.metadata",
+      "bytes": 702,
+      "sha256": "07dbea3e20d37f96235e53f44c2d6413be1c709b79fe8dd1eb27212503440fa5"
+    }
+  ]
+}

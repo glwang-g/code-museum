@@ -1,0 +1,4 @@
+#!/bin/sh
+set -eu
+/opt/marst/bin/marst /work/main.alg -o /work/main.c
+exec /usr/local/bin/gcc -std=c89 -O0 -Wall -Wextra -I/opt/marst/include /work/main.c /opt/marst/lib/libalgol.a -lm -o /work/program

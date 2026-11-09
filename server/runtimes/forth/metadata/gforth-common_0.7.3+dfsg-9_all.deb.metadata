@@ -1,0 +1,17 @@
+Package: gforth-common
+Source: gforth
+Version: 0.7.3+dfsg-9
+Installed-Size: 1590
+Maintainer: Peter Pentchev <roam@debian.org>
+Architecture: all
+Recommends: gforth (>= 0.7.3+dfsg-9)
+Description: GNU Forth architecture-independent dictionaries
+Description-md5: 641a991859b25d863ee9f7719f729955
+Multi-Arch: foreign
+Homepage: https://www.complang.tuwien.ac.at/projects/forth.html
+Section: interpreters
+Priority: optional
+Filename: pool/main/g/gforth/gforth-common_0.7.3+dfsg-9_all.deb
+Size: 321544
+MD5sum: dc97d286bcf60a782f3c0c006ab2b716
+SHA256: 58f342275e2767127ae643ec1c87a83b046d949b2f28db52e01f07ffb8538cb7

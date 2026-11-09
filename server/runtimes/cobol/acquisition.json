@@ -1,0 +1,56 @@
+{
+  "baseImage": "gcc@sha256:5e927c284bf55a7dc796262e311a0703344f62f41f5621eb56843111b1d37e15",
+  "requestedPackages": [
+    "gnucobol3"
+  ],
+  "verification": "Debian APT verified InRelease and index hashes without network; each acquired package matches the solved signed-index SHA-256",
+  "indexInputs": [
+    {
+      "source": "https://deb.debian.org/debian/dists/bookworm/InRelease",
+      "sha256": "77737fa4b34f2693e982cc9ee35736816c35a7778fc2d326cc1bbf5b301fe1aa"
+    },
+    {
+      "source": "https://deb.debian.org/debian/dists/bookworm/main/binary-amd64/Packages.xz",
+      "sha256": "9e0b5aabb2465b3d2e7a7fe27f9913846277833f7a2826e7767acccff5b588c5"
+    },
+    {
+      "source": "https://deb.debian.org/debian/dists/bookworm-updates/InRelease",
+      "sha256": "4d6f879f86e299b57f8200446ed233f78a65c8af62e3a48f005439e238d68039"
+    },
+    {
+      "source": "https://deb.debian.org/debian/dists/bookworm-updates/main/binary-amd64/Packages.xz",
+      "sha256": "87e7e94047fb7fb6f4ceecc7022d4bee55b66031cc2a7666d3196f3e0aabb846"
+    },
+    {
+      "source": "https://deb.debian.org/debian-security/dists/bookworm-security/InRelease",
+      "sha256": "1d368817d451179b6611e157dccd876f93feff7d603c575668fbb662d5b01677"
+    },
+    {
+      "source": "https://deb.debian.org/debian-security/dists/bookworm-security/main/binary-amd64/Packages.xz",
+      "sha256": "9291f4f3c470a046b9751215169d689e539f3d5cade197a367738e58079205ba"
+    }
+  ],
+  "packages": [
+    {
+      "file": "assets/libcob4_3.1.2-5+b1_amd64.deb",
+      "sha256": "22ff611db215f06facb7eeff60e0744179e5bd71260d3eb5a25b2748b85303ed",
+      "bytes": 173800,
+      "source": "https://deb.debian.org/debian/pool/main/g/gnucobol3/libcob4_3.1.2-5+b1_amd64.deb",
+      "metadata": "metadata/libcob4_3.1.2-5+b1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libcob4-dev_3.1.2-5+b1_amd64.deb",
+      "sha256": "773bc5b53c1cdcfbd50ddd8f5d1ccf0335c60d6e4e94c1e68b939e0c217a7114",
+      "bytes": 212460,
+      "source": "https://deb.debian.org/debian/pool/main/g/gnucobol3/libcob4-dev_3.1.2-5+b1_amd64.deb",
+      "metadata": "metadata/libcob4-dev_3.1.2-5+b1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/gnucobol3_3.1.2-5+b1_amd64.deb",
+      "sha256": "e1a586e238ff26efd79dc037325531da897cee56439642bcde46842d0bd13529",
+      "bytes": 955744,
+      "source": "https://deb.debian.org/debian/pool/main/g/gnucobol3/gnucobol3_3.1.2-5+b1_amd64.deb",
+      "metadata": "metadata/gnucobol3_3.1.2-5+b1_amd64.deb.metadata"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "source": "https://archive.apache.org/dist/groovy/4.0.26/distribution/",
+  "verification": "official-release-sha256",
+  "archive": {
+    "file": "assets/groovy-4.0.26.zip",
+    "bytes": 30108372,
+    "sha256": "3be6880c6de70eada2f3f5c69e1e94953e0b0c4e33c4604c1040d05dddeaed92"
+  },
+  "baseImage": "eclipse-temurin@sha256:43f4431cc895d37ceb115e2e1f160545ec45caee9c1cb4246fc6bb879d58aeda"
+}

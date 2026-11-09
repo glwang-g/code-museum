@@ -1,0 +1,63 @@
+{
+  "baseImage": "gcc@sha256:5e927c284bf55a7dc796262e311a0703344f62f41f5621eb56843111b1d37e15",
+  "requestedPackages": [
+    "gforth"
+  ],
+  "verification": "Debian APT verified InRelease and index hashes without network; each acquired package matches the solved signed-index SHA-256",
+  "indexInputs": [
+    {
+      "source": "https://deb.debian.org/debian/dists/bookworm/InRelease",
+      "sha256": "77737fa4b34f2693e982cc9ee35736816c35a7778fc2d326cc1bbf5b301fe1aa"
+    },
+    {
+      "source": "https://deb.debian.org/debian/dists/bookworm/main/binary-amd64/Packages.xz",
+      "sha256": "9e0b5aabb2465b3d2e7a7fe27f9913846277833f7a2826e7767acccff5b588c5"
+    },
+    {
+      "source": "https://deb.debian.org/debian/dists/bookworm-updates/InRelease",
+      "sha256": "849931d2b8a2b1d8f630169254b37f53cf9ab8859cc33778b61fb1d52ecb3a19"
+    },
+    {
+      "source": "https://deb.debian.org/debian/dists/bookworm-updates/main/binary-amd64/Packages.xz",
+      "sha256": "87e7e94047fb7fb6f4ceecc7022d4bee55b66031cc2a7666d3196f3e0aabb846"
+    },
+    {
+      "source": "https://deb.debian.org/debian-security/dists/bookworm-security/InRelease",
+      "sha256": "5d916d253a3ed4b2413b355ac864adc2188295df58d3f569879e5322f50378bf"
+    },
+    {
+      "source": "https://deb.debian.org/debian-security/dists/bookworm-security/main/binary-amd64/Packages.xz",
+      "sha256": "9291f4f3c470a046b9751215169d689e539f3d5cade197a367738e58079205ba"
+    }
+  ],
+  "packages": [
+    {
+      "file": "assets/emacsen-common_3.0.5_all.deb",
+      "sha256": "74d972556adf85fbbfb0b3b10dcf16687547a9ef521c7c86f5cda454e11a60df",
+      "bytes": 12296,
+      "source": "https://deb.debian.org/debian/pool/main/e/emacsen-common/emacsen-common_3.0.5_all.deb",
+      "metadata": "metadata/emacsen-common_3.0.5_all.deb.metadata"
+    },
+    {
+      "file": "assets/gforth-common_0.7.3+dfsg-9_all.deb",
+      "sha256": "58f342275e2767127ae643ec1c87a83b046d949b2f28db52e01f07ffb8538cb7",
+      "bytes": 321544,
+      "source": "https://deb.debian.org/debian/pool/main/g/gforth/gforth-common_0.7.3+dfsg-9_all.deb",
+      "metadata": "metadata/gforth-common_0.7.3+dfsg-9_all.deb.metadata"
+    },
+    {
+      "file": "assets/gforth-lib_0.7.3+dfsg-9+b3_amd64.deb",
+      "sha256": "7bd7fe04325272f81f3e819697faf9f333a1fbcc0fc7546268c615e275e8e528",
+      "bytes": 109968,
+      "source": "https://deb.debian.org/debian/pool/main/g/gforth/gforth-lib_0.7.3+dfsg-9+b3_amd64.deb",
+      "metadata": "metadata/gforth-lib_0.7.3+dfsg-9+b3_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/gforth_0.7.3+dfsg-9+b3_amd64.deb",
+      "sha256": "667cdba99f0f9eed2538ffb902989a1d628eff38c31308a301e0f7e43121292d",
+      "bytes": 127624,
+      "source": "https://deb.debian.org/debian/pool/main/g/gforth/gforth_0.7.3+dfsg-9+b3_amd64.deb",
+      "metadata": "metadata/gforth_0.7.3+dfsg-9+b3_amd64.deb.metadata"
+    }
+  ]
+}

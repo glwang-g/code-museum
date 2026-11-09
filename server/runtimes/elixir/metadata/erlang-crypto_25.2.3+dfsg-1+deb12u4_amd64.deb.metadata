@@ -1,0 +1,20 @@
+Package: erlang-crypto
+Source: erlang
+Version: 1:25.2.3+dfsg-1+deb12u4
+Installed-Size: 333
+Maintainer: Debian Erlang Packagers <pkg-erlang-devel@lists.alioth.debian.org>
+Architecture: amd64
+Replaces: erlang (<< 1:25.2.3+dfsg-1+deb12u4), erlang-base (<< 1:25.2.3+dfsg-1+deb12u4), erlang-base-hipe, erlang-dev (<< 1:25.2.3+dfsg-1+deb12u4), erlang-doc (>> 1:25.2.3+dfsg-999), erlang-doc (<< 1:25.2.3+dfsg), erlang-examples (<< 1:25.2.3+dfsg-1+deb12u4), erlang-manpages (<= 1:11.b.1-2), erlang-mode (<< 1:12.b.1-dfsg-2), erlang-nox (<< 1:25.2.3+dfsg-1+deb12u4), erlang-src (<< 1:25.2.3+dfsg-1+deb12u4), erlang-x11 (<< 1:25.2.3+dfsg-1+deb12u4)
+Depends: erlang-base (= 1:25.2.3+dfsg-1+deb12u4), libc6 (>= 2.14), libssl3 (>= 3.0.0)
+Suggests: erlang, erlang-manpages, erlang-doc
+Description: Erlang/OTP cryptographic modules
+Description-md5: 6d6a5e48deb89695b61d6380e84e7e95
+Multi-Arch: allowed
+Homepage: http://www.erlang.org/
+Tag: implemented-in::TODO, security::cryptography
+Section: interpreters
+Priority: optional
+Filename: pool/main/e/erlang/erlang-crypto_25.2.3+dfsg-1+deb12u4_amd64.deb
+Size: 165548
+MD5sum: 2b344dd8dd64dd9593ad7523d45ee445
+SHA256: 130d7dd83071a2ec545ba1c4f2e9e77be847554b7c04316a870b2e11b5e30e39

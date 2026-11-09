@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "platform": "linux/amd64",
+  "baseImage": "eclipse-temurin@sha256:43f4431cc895d37ceb115e2e1f160545ec45caee9c1cb4246fc6bb879d58aeda",
+  "sourceDateEpoch": 1793923200,
+  "version": "4.0.26",
+  "source": "https://archive.apache.org/dist/groovy/4.0.26/distribution/",
+  "license": "Apache-2.0 and bundled component licenses",
+  "runtime": {
+    "id": "groovy",
+    "executable": "/opt/java/openjdk/bin/java",
+    "memoryMiB": 768,
+    "versionArgs": [
+      "-Xmx256m",
+      "-XX:ActiveProcessorCount=1",
+      "-cp",
+      "/opt/groovy/lib/*",
+      "groovy.ui.GroovyMain",
+      "--version"
+    ],
+    "versionPattern": "Groovy Version: 4.0.26"
+  },
+  "files": [
+    {
+      "file": "Dockerfile",
+      "bytes": 339,
+      "sha256": "c5886c038820ee0671a35226c27d907ee501ae757ca80261b8aef806fea60561"
+    },
+    {
+      "file": "NOTICE.md",
+      "bytes": 655,
+      "sha256": "63cac9383ef61d3c8bbd6f2eddd12490887bc83df2afbdb35be7105398651b25"
+    },
+    {
+      "file": "acquisition.json",
+      "bytes": 393,
+      "sha256": "2374f808b69bf7efe0baae4a9ac105d8c196cd99d4696960fe059117816df898"
+    },
+    {
+      "file": "assets/groovy-4.0.26.zip",
+      "bytes": 30108372,
+      "sha256": "3be6880c6de70eada2f3f5c69e1e94953e0b0c4e33c4604c1040d05dddeaed92"
+    },
+    {
+      "file": "assets/groovy-4.0.26.zip.sha256",
+      "bytes": 66,
+      "sha256": "d3ccca2370f6184c6dd13fb2dcc34befb78cb7b8f77942220407b469380f8151"
+    },
+    {
+      "file": "licenses/LICENSE",
+      "bytes": 14120,
+      "sha256": "d1657c6d965652fc76edaad2035a88d48e3241cef2e17005e05bde8890556971"
+    },
+    {
+      "file": "licenses/NOTICE",
+      "bytes": 1346,
+      "sha256": "606e034e0c97c837a13cd65c6a90eacf3a54fae7c0d5381e0af466ce422b59cd"
+    },
+    {
+      "file": "licenses/licenses__antlr4-license.txt",
+      "bytes": 1508,
+      "sha256": "84c213fbceee99041bb1632c4518be2aa7bafc7fb4202b1134acb3d00f575050"
+    },
+    {
+      "file": "licenses/licenses__asm-license.txt",
+      "bytes": 1588,
+      "sha256": "5d2b9e63c9cba7276c7c4d5dd99417dd6e778f5c6873d40916c4d97516ad859f"
+    },
+    {
+      "file": "licenses/licenses__hamcrest-license.txt",
+      "bytes": 1481,
+      "sha256": "96e5bbd81970983d666e702fa56f67dfd2fdaa363b8a4266e8d98847374cd7c8"
+    },
+    {
+      "file": "licenses/licenses__jline2-license.txt",
+      "bytes": 1534,
+      "sha256": "14a089e0f4bf543b33de0e19e1842f1ad6779241762bbbce3ba32c68b2be6677"
+    },
+    {
+      "file": "licenses/licenses__jsr166y-license.txt",
+      "bytes": 1592,
+      "sha256": "17869cb6184447de9663a752a7663c118a9ed0d4ce0a2208986afc75206e1bbb"
+    },
+    {
+      "file": "licenses/licenses__jsr223-license.txt",
+      "bytes": 1509,
+      "sha256": "b41ed33d01a39df7a8a5a20a00c1ff4a9ac3d323fc2026f8184737556bdf4855"
+    },
+    {
+      "file": "licenses/licenses__junit4-license.txt",
+      "bytes": 11798,
+      "sha256": "77d36f258d2abcc3b2fd03db32ca0abfeb71226e9160873bed066f05906b82dd"
+    },
+    {
+      "file": "licenses/licenses__junit5-license.txt",
+      "bytes": 14026,
+      "sha256": "2e5c3dd6291a2502188f9b3e57045b9815ea22290c3910ba484d2b1058f47a89"
+    },
+    {
+      "file": "licenses/licenses__xstream-license.txt",
+      "bytes": 1520,
+      "sha256": "eb0b64ed6181940483e94aead4ba55aaadd75cb1ec5561ba313e58c9ad162f0f"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+Package: libmd-dev
+Source: libmd
+Version: 1.0.4-2
+Installed-Size: 205
+Maintainer: Guillem Jover <guillem@debian.org>
+Architecture: amd64
+Depends: libmd0 (= 1.0.4-2)
+Description: message digest functions from BSD systems - development files
+Description-md5: d0bc2c571f3eaf281dd1d2eaea135720
+Multi-Arch: same
+Homepage: https://www.hadrons.org/software/libmd/
+Tag: devel::lang:c, devel::library, implemented-in::c, role::devel-lib
+Section: libdevel
+Priority: optional
+Filename: pool/main/libm/libmd/libmd-dev_1.0.4-2_amd64.deb
+Size: 47036
+MD5sum: 5f8c92e19824d96cfe55cd34b5b41fb3
+SHA256: fc755a2552c03653cb51575bf70d1aa0874f78d86fbc8ff7fb246b1c9e7e31c5

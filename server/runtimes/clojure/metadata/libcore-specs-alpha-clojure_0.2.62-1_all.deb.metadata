@@ -1,0 +1,15 @@
+Package: libcore-specs-alpha-clojure
+Source: core-specs-alpha-clojure
+Version: 0.2.62-1
+Installed-Size: 43
+Maintainer: Debian Clojure Maintainers <team+clojure@tracker.debian.org>
+Architecture: all
+Description: specs to describe Clojure core macros and functions
+Description-md5: 0b876eaadbb0718c207e1e0dc189d7b1
+Homepage: https://github.com/clojure/core.specs.alpha
+Section: java
+Priority: optional
+Filename: pool/main/c/core-specs-alpha-clojure/libcore-specs-alpha-clojure_0.2.62-1_all.deb
+Size: 11772
+MD5sum: 65f3fd7dcf0de363361b25da0878bb26
+SHA256: 433ed76832a925089c9a61d648f3f6358c0d820c344c518f28859704d075c419

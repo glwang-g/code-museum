@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "platform": "linux/amd64",
+  "baseImage": "gcc@sha256:5e927c284bf55a7dc796262e311a0703344f62f41f5621eb56843111b1d37e15",
+  "sourceDateEpoch": 1793923200,
+  "version": "SBCL 2.2.9.debian",
+  "source": "https://www.sbcl.org/",
+  "license": "Public domain / BSD-style (see original copyright)",
+  "files": [
+    {
+      "file": "Dockerfile",
+      "bytes": 254,
+      "sha256": "5fd0732716442ade3390ad1332600e75bf4527e51b9133fdcdbcc69d303ecb94"
+    },
+    {
+      "file": "NOTICE.md",
+      "bytes": 959,
+      "sha256": "65b426ec51c1fd1dc569bff7615ea652b828d17a937361d1fe3239173007f74a"
+    },
+    {
+      "file": "assets/sbcl_2.2.9-1_amd64.deb",
+      "bytes": 10218888,
+      "sha256": "60a5f82ccad1cdb08bc93a104132b99397bb6672b5a0ce0d50b01d47bd0b4765"
+    },
+    {
+      "file": "licenses/sbcl.copyright",
+      "bytes": 11751,
+      "sha256": "3107a0b340a0d718c5e5525ce4d4060b20b0fe125a2ea10548133eddda6c26f1"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+Package: libcob4-dev
+Source: gnucobol3 (3.1.2-5)
+Version: 3.1.2-5+b1
+Installed-Size: 841
+Maintainer: Thorsten Alteholz <debian@alteholz.de>
+Architecture: amd64
+Replaces: libcob1-dev
+Depends: libcob4 (= 3.1.2-5+b1)
+Breaks: libcob1-dev
+Description: COBOL compiler - development files
+Description-md5: 44100c9f72bc45c3083963bbd41745de
+Multi-Arch: same
+Homepage: https://www.gnu.org/software/gnucobol/
+Tag: devel::library, role::devel-lib
+Section: libdevel
+Priority: optional
+Filename: pool/main/g/gnucobol3/libcob4-dev_3.1.2-5+b1_amd64.deb
+Size: 212460
+MD5sum: d5c0eae8b128abd6470578a1e7f625fd
+SHA256: 773bc5b53c1cdcfbd50ddd8f5d1ccf0335c60d6e4e94c1e68b939e0c217a7114

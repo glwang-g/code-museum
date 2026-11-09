@@ -1,0 +1,19 @@
+Package: erlang-asn1
+Source: erlang
+Version: 1:25.2.3+dfsg-1+deb12u4
+Installed-Size: 1178
+Maintainer: Debian Erlang Packagers <pkg-erlang-devel@lists.alioth.debian.org>
+Architecture: amd64
+Replaces: erlang (<< 1:25.2.3+dfsg-1+deb12u4), erlang-base (<< 1:25.2.3+dfsg-1+deb12u4), erlang-base-hipe, erlang-dev (<< 1:25.2.3+dfsg-1+deb12u4), erlang-doc (>> 1:25.2.3+dfsg-999), erlang-doc (<< 1:25.2.3+dfsg), erlang-examples (<< 1:25.2.3+dfsg-1+deb12u4), erlang-manpages (<= 1:11.b.1-2), erlang-mode (<< 1:12.b.1-dfsg-2), erlang-nox (<< 1:25.2.3+dfsg-1+deb12u4), erlang-src (<< 1:25.2.3+dfsg-1+deb12u4), erlang-x11 (<< 1:25.2.3+dfsg-1+deb12u4)
+Depends: erlang-base (= 1:25.2.3+dfsg-1+deb12u4), libc6 (>= 2.14)
+Suggests: erlang, erlang-manpages, erlang-doc
+Description: Erlang/OTP modules for ASN.1 support
+Description-md5: ee4d0b49672ea14e8a224f00c393a8c6
+Multi-Arch: allowed
+Homepage: http://www.erlang.org/
+Section: interpreters
+Priority: optional
+Filename: pool/main/e/erlang/erlang-asn1_25.2.3+dfsg-1+deb12u4_amd64.deb
+Size: 896944
+MD5sum: ab8e6f6ab712cf1a94e7d3a99e9d8cfe
+SHA256: a35e1f628f9ee52616be4a00560f9a9a8a0ba484b1b1e1b02696325d0c32ec41

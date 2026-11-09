@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "platform": "linux/amd64",
+  "baseImage": "gcc@sha256:5e927c284bf55a7dc796262e311a0703344f62f41f5621eb56843111b1d37e15",
+  "sourceDateEpoch": 1793923200,
+  "version": "Cintcode64 / 2026-11-09 snapshot",
+  "source": "https://www.cl.cam.ac.uk/~mr10/BCPL.html",
+  "license": "Author distribution terms for private/academic use; bundled GNU licence retained",
+  "runtime": {
+    "id": "bcpl",
+    "executable": "/opt/bcpl/cintcode/bin/cintsys64",
+    "memoryMiB": 512,
+    "versionArgs": [
+      "-c",
+      "echo"
+    ],
+    "versionPattern": "BCPL 64-bit Cintcode System"
+  },
+  "files": [
+    {
+      "file": "Dockerfile",
+      "bytes": 1157,
+      "sha256": "59484b20ab1dbeebec8c9f642a484f1e155951e829c8eb9c53d6a7067840b9bb"
+    },
+    {
+      "file": "NOTICE.md",
+      "bytes": 2220,
+      "sha256": "894c8ae4e34a9dc48b87829c3b3b6cfa059974cf1f040a8f0aca8752694ed260"
+    },
+    {
+      "file": "assets/bcpl-20261109.tar.gz.part00",
+      "bytes": 33554432,
+      "sha256": "4cce2cd6a0c103b9c5e6e79b0dea49ae383d253936724822ea53bf8af908797e"
+    },
+    {
+      "file": "assets/bcpl-20261109.tar.gz.part01",
+      "bytes": 33554432,
+      "sha256": "693b15e676802f533556e7a031c1dc69b42edf09d842477f55331628c06a725e"
+    },
+    {
+      "file": "assets/bcpl-20261109.tar.gz.part02",
+      "bytes": 28091282,
+      "sha256": "0625f3ecff048034d51407e6a1e6d5cab3fad1312361a31a74278ac995723f31"
+    },
+    {
+      "file": "assets/cintcode-noninteractive.patch",
+      "bytes": 467,
+      "sha256": "d15ab2bdaa2d2b924078b30d7bfbfe927f5e58d609ee5386ef051a28c5022a3c"
+    },
+    {
+      "file": "assets/museum-bcpl-runner.b",
+      "bytes": 636,
+      "sha256": "ed1370a0a6605c6c064d153ca6a402aa28ede5d3a89d2de34646ffb75220a8c0"
+    },
+    {
+      "file": "licenses/GNU-licence",
+      "bytes": 23244,
+      "sha256": "a3317e252193a3d65734dd1af68da9956e50e04cd4827824b90765893886d0c4"
+    },
+    {
+      "file": "licenses/upstream-README.txt",
+      "bytes": 31210,
+      "sha256": "6b742d83e70a745097d24ff2634fa229e42124cf8cc7bb7f1bd21c8c2b539bc5"
+    },
+    {
+      "file": "metadata/upstream-sysboot.b",
+      "bytes": 45395,
+      "sha256": "0928b7abe7ad32a75ef1c8840cb36946ec7e14b38958687744c6f7d3f7f19245"
+    }
+  ]
+}

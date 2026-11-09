@@ -1,0 +1,19 @@
+Package: gforth
+Source: gforth (0.7.3+dfsg-9)
+Version: 0.7.3+dfsg-9+b3
+Installed-Size: 694
+Maintainer: Peter Pentchev <roam@debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.34), libltdl7 (>= 2.4.7), emacsen-common (>= 2.0.7), gforth-common (= 0.7.3+dfsg-9), gforth-lib (= 0.7.3+dfsg-9+b3)
+Description: GNU Forth Language Environment
+Description-md5: 879c20778a3c6fac5211956f6320afb4
+Multi-Arch: foreign
+Homepage: https://www.complang.tuwien.ac.at/projects/forth.html
+Tag: devel::interpreter, interface::commandline, role::program,
+ scope::utility, suite::gnu, works-with::software:source
+Section: interpreters
+Priority: optional
+Filename: pool/main/g/gforth/gforth_0.7.3+dfsg-9+b3_amd64.deb
+Size: 127624
+MD5sum: 56b584d4f6bb2361fdadd98d9ec98e14
+SHA256: 667cdba99f0f9eed2538ffb902989a1d628eff38c31308a301e0f7e43121292d

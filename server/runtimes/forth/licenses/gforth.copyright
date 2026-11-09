@@ -1,0 +1,124 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: gforth
+Upstream-Contact: Anton Ertl <anton@mips.complang.tuwien.ac.at>,
+            Bernd Paysan <bernd.paysan@gmx.de>
+Source: https://www.complang.tuwien.ac.at/forth/gforth/
+License: GPL-3+
+Files-Excluded: doc/gforth.ds
+ doc/gforth.info*
+ doc/gforth.ps
+ doc/vmgen.*
+
+Files: *
+Copyright: (C) 1991-2013  Free Software Foundation, Inc.
+License: GPL-3+
+
+Files: arch/arm/cacheflush-linux.c autogen.sh prims2x0.6.2.fs
+Copyright: (C) 1995-2008  Free Software Foundation, Inc.
+License: GPL-2+
+
+Files: arch/misc/optcmove.fs compat/* fsl-util.4th objects.fs objexamp.fs
+       test/checkans.fs test/tester.fs
+Copyright: none
+License: PD
+ Various Forth utility scripts released into the public domain.
+
+Files: arch/misc/tt.fs tt.fs
+Copyright: none
+License: other-copy-share-modify
+
+Files: Benchres
+Copyright: (C) 2003,2004,2005,2006,2007,2008 Free Software Foundation, Inc.
+License: other-free-doc
+ This file is free documentation; the Free Software Foundation gives
+ unlimited permission to copy, distribute and modify it.
+
+Files: engine/dblsub.c
+Copyright: (C) 1996,2000,2003,2006,2007 Free Software Foundation, Inc.
+           (C) 1995  Dirk Uwe Zoller
+License: LGPL-3+
+
+Files: engine/getopt1.c engine/strtol.c engine/strtoul.c
+Copyright: (C) 1987-2007  Free Software Foundation, Inc.
+License: LGPL-3+
+
+Files: gforth.el
+Copyright: (C) 1995-1998, 2000, 2001, 2003, 2004, 2007, 2008 Free Software Foundation, Inc.
+License: other-emacs
+ This file is part of Gforth.
+ .
+ GForth is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY.  No author or distributor
+ accepts responsibility to anyone for the consequences of using it
+ or for whether it serves any particular purpose or works at all,
+ unless he says so in writing.  Refer to the GNU Emacs General Public
+ License for full details.
+ .
+ Everyone is granted permission to copy, modify and redistribute
+ GNU Emacs, but only under the conditions described in the
+ GNU Emacs General Public License.   A copy of this license is
+ supposed to have been given to you along with Gforth so you
+ can know your rights and responsibilities.  It should be in a
+ file named COPYING.  Among other things, the copyright notice
+ and this notice must be preserved on all copies.
+
+Files: oof.fs oofsampl.fs
+Copyright: (C) 1996, 2000 Bernd Paysan
+License: other-copy-share-modify
+
+Files: test/coretest.fs test/ttester.fs
+Copyright: (C) 1995 JOHNS HOPKINS UNIVERSITY / APPLIED PHYSICS LABORATORY
+License: other-distribute-freely
+ MAY BE DISTRIBUTED FREELY AS LONG AS THIS COPYRIGHT NOTICE REMAINS.
+
+Files: test/postpone.fs
+Copyright: (C) 1995 JOHNS HOPKINS UNIVERSITY / APPLIED PHYSICS LABORATORY
+License: other-distribute-freely-jhopkins
+ by M. Anton Ertl 1996
+ .
+ This file is based on John Hayes' core.fr (coretest.fs), which has
+ the following copyright notice:
+ .
+ (C) 1995 JOHNS HOPKINS UNIVERSITY / APPLIED PHYSICS LABORATORY
+ MAY BE DISTRIBUTED FREELY AS LONG AS THIS COPYRIGHT NOTICE REMAINS.
+
+Files: debian/*
+Copyright: (C) 1996-1999  Bdale Garbee <bdale@gag.com>
+	   (C) 2000,2002-2006  Eric M. Schwartz <emschwar@debian.org>
+	   (C) 2006  Neil Williams <codehelp@debian.org>
+	   (C) 2006  Andreas Barth <aba@not.so.argh.org>
+	   (C) 2008-2009  Michael Meskes <meskes@debian.org>
+	   (C) 2009-2014,2016-2019  Peter Pentchev <roam@debian.org>
+License: GPL-2+
+
+License: GPL-2+
+ This program is free software; you can redistribute it and/or modify it under
+ the terms of the GNU General Public License; either version 2 of the License,
+ or (at your option) any later version.
+ .
+ On Debian systems, the full text of the GNU General Public License version 2
+ can be found in `/usr/share/common-licenses/GPL-2'.
+
+License: GPL-3+
+ This program is free software: you can redistribute it and/or modify it under
+ the terms of the GNU General Public License as published by the Free Software
+ Foundation, either version 3 of the License, or (at your option) any later
+ version.
+ .
+ On Debian systems, the full text of the GNU General Public License version 3
+ can be found in `/usr/share/common-licenses/GPL-3'.
+
+License: LGPL-3+
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free Software Foundation; either
+ version 3 of the License, or (at your option) any later version.
+ .
+ On Debian systems, the full text of the GNU Lesser General Public License
+ version 3 can be found in `/usr/share/common-licenses/LGPL-3'.
+
+License: other-copy-share-modify
+ Please copy and share this program, modify it for your system
+ and improve it as you like. But don't remove this notice.
+ .
+ Thank you.

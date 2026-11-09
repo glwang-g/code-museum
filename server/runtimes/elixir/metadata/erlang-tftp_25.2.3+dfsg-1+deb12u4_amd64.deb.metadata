@@ -1,0 +1,19 @@
+Package: erlang-tftp
+Source: erlang
+Version: 1:25.2.3+dfsg-1+deb12u4
+Installed-Size: 160
+Maintainer: Debian Erlang Packagers <pkg-erlang-devel@lists.alioth.debian.org>
+Architecture: amd64
+Replaces: erlang (<< 1:25.2.3+dfsg-1+deb12u4), erlang-base (<< 1:25.2.3+dfsg-1+deb12u4), erlang-base-hipe, erlang-dev (<< 1:25.2.3+dfsg-1+deb12u4), erlang-doc (>> 1:25.2.3+dfsg-999), erlang-doc (<< 1:25.2.3+dfsg), erlang-examples (<< 1:25.2.3+dfsg-1+deb12u4), erlang-inets (<< 1:21.0~rc1), erlang-manpages (<= 1:11.b.1-2), erlang-mode (<< 1:12.b.1-dfsg-2), erlang-nox (<< 1:25.2.3+dfsg-1+deb12u4), erlang-src (<< 1:25.2.3+dfsg-1+deb12u4), erlang-x11 (<< 1:25.2.3+dfsg-1+deb12u4)
+Depends: erlang-base (= 1:25.2.3+dfsg-1+deb12u4)
+Suggests: erlang, erlang-manpages, erlang-doc
+Description: Erlang/OTP TFTP client and server
+Description-md5: 8aac13f7fcaec29fd897b963f927502e
+Multi-Arch: allowed
+Homepage: http://www.erlang.org/
+Section: interpreters
+Priority: optional
+Filename: pool/main/e/erlang/erlang-tftp_25.2.3+dfsg-1+deb12u4_amd64.deb
+Size: 110884
+MD5sum: 812d00bd8c43899f9999ac1ea87f8a16
+SHA256: 4e507c0fbbd2dab3fc063efc4c15d398431d0f58033bbb1267c226abee095c13

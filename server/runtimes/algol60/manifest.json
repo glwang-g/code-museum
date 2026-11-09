@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "platform": "linux/amd64",
+  "baseImage": "gcc@sha256:5e927c284bf55a7dc796262e311a0703344f62f41f5621eb56843111b1d37e15",
+  "sourceDateEpoch": 1793923200,
+  "version": "GNU MARST 2.8 / GCC 14.3.0",
+  "source": "https://ftp.gnu.org/gnu/marst/marst-2.8.tar.gz",
+  "license": "GPL-3.0-or-later",
+  "files": [
+    {
+      "file": "Dockerfile",
+      "bytes": 596,
+      "sha256": "7d28379c636699963e3915247bf2060c8b658493047ba0b1421610a76a0e992b"
+    },
+    {
+      "file": "NOTICE.md",
+      "bytes": 849,
+      "sha256": "99a02b777e0c5d187d6ddec4218d0a0b23cf4ab596fc903ae2d7d411be354001"
+    },
+    {
+      "file": "assets/marst-2.8.tar.gz",
+      "bytes": 1400370,
+      "sha256": "d77f4703b0b44b50be57908f9d556ee6c3bedd97d638c42949d6aec84f8070ba"
+    },
+    {
+      "file": "compile",
+      "bytes": 202,
+      "sha256": "0b0d2ae457350200e0173c2aaa5093e769edad3664c042d509d8f57cca537d7e"
+    },
+    {
+      "file": "licenses/MARST-COPYING",
+      "bytes": 35147,
+      "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903"
+    }
+  ]
+}

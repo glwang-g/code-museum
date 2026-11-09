@@ -1,0 +1,16 @@
+Package: elixir
+Source: elixir-lang
+Version: 1.14.0.dfsg-2
+Installed-Size: 6964
+Maintainer: Evgeny Golyshev <eugulixes@gmail.com>
+Architecture: amd64
+Depends: erlang-base (>= 1:24.3.4.5+dfsg), erlang-crypto (>= 1:24.3.4.5+dfsg), erlang-inets (>= 1:24.3.4.5+dfsg), erlang-parsetools (>= 1:24.3.4.5+dfsg), erlang-public-key (>= 1:24.3.4.5+dfsg), erlang-tools (>= 1:24.3.4.5+dfsg)
+Description: functional meta-programming aware language
+Description-md5: 572fe6b3095250d25aa22e376bc0e13e
+Homepage: http://elixir-lang.org/
+Section: interpreters
+Priority: optional
+Filename: pool/main/e/elixir-lang/elixir_1.14.0.dfsg-2_amd64.deb
+Size: 4503868
+MD5sum: 9aa08a828f44eebff5faa8baa4036658
+SHA256: 0725a208427097fbecb57027af7af34b9562c4ee029ff8a55741fb6c55964778

@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "platform": "linux/amd64",
+  "baseImage": "gcc@sha256:5e927c284bf55a7dc796262e311a0703344f62f41f5621eb56843111b1d37e15",
+  "sourceDateEpoch": 1793923200,
+  "version": "GNAT 12.2.0 / Ada 2012",
+  "source": "https://gcc.gnu.org/",
+  "license": "GPL-3.0-or-later / GCC Runtime Library Exception",
+  "runtime": {
+    "id": "ada",
+    "executable": "/usr/bin/gnatmake-12",
+    "memoryMiB": 512,
+    "versionArgs": [
+      "--version"
+    ],
+    "versionPattern": "GNATMAKE 12.2.0"
+  },
+  "files": [
+    {
+      "file": "Dockerfile",
+      "bytes": 254,
+      "sha256": "5fd0732716442ade3390ad1332600e75bf4527e51b9133fdcdbcc69d303ecb94"
+    },
+    {
+      "file": "NOTICE.md",
+      "bytes": 1663,
+      "sha256": "a457533648d373be89243faa0a9780a64b43d0739513efb0764859f88be32206"
+    },
+    {
+      "file": "acquisition.json",
+      "bytes": 2642,
+      "sha256": "9e3e3a48630ee9b230bbcafc8c9c90a1faa1b03df208485ee20ba8cb0711d489"
+    },
+    {
+      "file": "assets/gnat-12_12.2.0-14+deb12u1_amd64.deb",
+      "bytes": 18150700,
+      "sha256": "a39315ef32c1b9a17a2be5e3540ba6f91c441e808211d609e63e3d44f9114e53"
+    },
+    {
+      "file": "assets/libgnat-12_12.2.0-14+deb12u1_amd64.deb",
+      "bytes": 1265660,
+      "sha256": "64a529089a83765bf90bafd555278ec755d2b2541d77fdf093d2937a6a4673cd"
+    },
+    {
+      "file": "licenses/gcc-12.copyright",
+      "bytes": 68194,
+      "sha256": "da8191658b3452ce9caf31638ba61dab31a38c619fa39df119812e050f592fd3"
+    },
+    {
+      "file": "metadata/apt-verification.txt",
+      "bytes": 1169,
+      "sha256": "966652e257fd492d3cb75d146adc643c0debd59a4664d623e49815b2b164c3a7"
+    },
+    {
+      "file": "metadata/bookworm-InRelease",
+      "bytes": 151075,
+      "sha256": "77737fa4b34f2693e982cc9ee35736816c35a7778fc2d326cc1bbf5b301fe1aa"
+    },
+    {
+      "file": "metadata/bookworm-security-InRelease",
+      "bytes": 34770,
+      "sha256": "1d368817d451179b6611e157dccd876f93feff7d603c575668fbb662d5b01677"
+    },
+    {
+      "file": "metadata/bookworm-updates-InRelease",
+      "bytes": 55403,
+      "sha256": "4d6f879f86e299b57f8200446ed233f78a65c8af62e3a48f005439e238d68039"
+    },
+    {
+      "file": "metadata/gnat-12_12.2.0-14+deb12u1_amd64.deb.metadata",
+      "bytes": 912,
+      "sha256": "098deb9267f31d291d8264b9a5576f17f403e75db6a289c768f01288f2c03610"
+    },
+    {
+      "file": "metadata/libgnat-12_12.2.0-14+deb12u1_amd64.deb.metadata",
+      "bytes": 670,
+      "sha256": "14a936bb1f42109fb80214bbe825d8b69da360049762264d99fb27dcee5856db"
+    }
+  ]
+}

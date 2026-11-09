@@ -1,0 +1,20 @@
+Package: erlang-runtime-tools
+Source: erlang
+Version: 1:25.2.3+dfsg-1+deb12u4
+Installed-Size: 414
+Maintainer: Debian Erlang Packagers <pkg-erlang-devel@lists.alioth.debian.org>
+Architecture: amd64
+Replaces: erlang (<< 1:25.2.3+dfsg-1+deb12u4), erlang-base (<< 1:25.2.3+dfsg-1+deb12u4), erlang-base-hipe, erlang-dev (<< 1:25.2.3+dfsg-1+deb12u4), erlang-doc (>> 1:25.2.3+dfsg-999), erlang-doc (<< 1:25.2.3+dfsg), erlang-examples (<< 1:25.2.3+dfsg-1+deb12u4), erlang-manpages (<= 1:11.b.1-2), erlang-mode (<< 1:12.b.1-dfsg-2), erlang-nox (<< 1:25.2.3+dfsg-1+deb12u4), erlang-src (<< 1:25.2.3+dfsg-1+deb12u4), erlang-x11 (<< 1:25.2.3+dfsg-1+deb12u4)
+Depends: erlang-base (= 1:25.2.3+dfsg-1+deb12u4), erlang-mnesia (= 1:25.2.3+dfsg-1+deb12u4), libc6 (>= 2.14)
+Suggests: erlang, erlang-manpages, erlang-doc
+Description: Erlang/OTP runtime tracing/debugging tools
+Description-md5: a0448be753203ae3013367e215bb963c
+Multi-Arch: allowed
+Homepage: http://www.erlang.org/
+Tag: devel::TODO, devel::debugger, devel::testing-qa
+Section: interpreters
+Priority: optional
+Filename: pool/main/e/erlang/erlang-runtime-tools_25.2.3+dfsg-1+deb12u4_amd64.deb
+Size: 230264
+MD5sum: d8080a67f3463f60cdc1c8d7ea2a820b
+SHA256: 0bbb1db788ecb8b004470c39ae76a07ceec4c28aa519e548ade1d22781833f6b

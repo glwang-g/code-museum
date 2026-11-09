@@ -1,0 +1,17 @@
+Package: gforth-lib
+Source: gforth (0.7.3+dfsg-9)
+Version: 0.7.3+dfsg-9+b3
+Installed-Size: 591
+Maintainer: Peter Pentchev <roam@debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.34), libffi8 (>= 3.4), libltdl7 (>= 2.4.7)
+Description: GNU Forth Language Environment architecture-dependent files
+Description-md5: 8127efe6e9aa2b501b1742f2c6af0d12
+Multi-Arch: same
+Homepage: https://www.complang.tuwien.ac.at/projects/forth.html
+Section: interpreters
+Priority: optional
+Filename: pool/main/g/gforth/gforth-lib_0.7.3+dfsg-9+b3_amd64.deb
+Size: 109968
+MD5sum: 4fa5503bfc672ed9425870f90636e33f
+SHA256: 7bd7fe04325272f81f3e819697faf9f333a1fbcc0fc7546268c615e275e8e528

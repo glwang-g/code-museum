@@ -1,0 +1,19 @@
+Package: gnucobol3
+Source: gnucobol3 (3.1.2-5)
+Version: 3.1.2-5+b1
+Installed-Size: 2846
+Maintainer: Thorsten Alteholz <debian@alteholz.de>
+Architecture: amd64
+Replaces: gnucobol4, open-cobol (<< 2.2)
+Depends: libc6 (>= 2.34), libcob4 (>= 3.1.2), libcob4-dev (= 3.1.2-5+b1), libgmp-dev, libncurses5-dev, gcc
+Breaks: gnucobol4, open-cobol (<< 2.2)
+Description: COBOL compiler
+Description-md5: 016552c489a10f013a7e5e8f61311014
+Homepage: https://www.gnu.org/software/gnucobol/
+Tag: uitoolkit::ncurses
+Section: devel
+Priority: optional
+Filename: pool/main/g/gnucobol3/gnucobol3_3.1.2-5+b1_amd64.deb
+Size: 955744
+MD5sum: 5afac27f0f19f2d6ee75b526de55cf7e
+SHA256: e1a586e238ff26efd79dc037325531da897cee56439642bcde46842d0bd13529

@@ -1,0 +1,20 @@
+Package: libbsd-dev
+Source: libbsd
+Version: 0.11.7-2
+Installed-Size: 735
+Maintainer: Guillem Jover <guillem@debian.org>
+Architecture: amd64
+Replaces: libfreebsd-dev (<< 0.0-8)
+Depends: libbsd0 (= 0.11.7-2), libmd-dev
+Description: utility functions from BSD systems - development files
+Description-md5: fba2c17dcedcfa54676373df68526c89
+Multi-Arch: same
+Homepage: https://libbsd.freedesktop.org/
+Tag: devel::lang:c, devel::library, implemented-in::c, role::devel-lib,
+ suite::bsd
+Section: libdevel
+Priority: optional
+Filename: pool/main/libb/libbsd/libbsd-dev_0.11.7-2_amd64.deb
+Size: 243072
+MD5sum: c0234955544496a69da82359fee01b02
+SHA256: 788ec28ca78eab1ba14d2e1a50727efb7276c6b034163dca40931d8ab3d94aab

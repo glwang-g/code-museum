@@ -1,0 +1,75 @@
+{
+  "source": "https://julialang-s3.julialang.org/bin/linux/x64/1.11/julia-1.11.7-linux-x86_64.tar.gz",
+  "mirror": "https://mirrors.tuna.tsinghua.edu.cn/julia-releases/bin/linux/x64/1.11/julia-1.11.7-linux-x86_64.tar.gz",
+  "sha256": "aa5924114ecb89fd341e59aa898cd1882b3cb622ca4972582c1518eff5f68c05",
+  "bytes": 286235430,
+  "verification": "Complete archive matches SHA-256 independently retrieved from the official Julia release checksum file. No PGP signature verification claim.",
+  "parts": [
+    {
+      "file": "assets/julia-1.11.7.tar.gz.part000",
+      "bytes": 33554432,
+      "sha256": "fc374faec8e39d125b6367a3f139fd051d995f4aa1d1cc27b4cd6fe39dbe1a32"
+    },
+    {
+      "file": "assets/julia-1.11.7.tar.gz.part001",
+      "bytes": 33554432,
+      "sha256": "02cb55296c452790a4ff318b50f62a4358124d04c25615baa14d93ea96d82649"
+    },
+    {
+      "file": "assets/julia-1.11.7.tar.gz.part002",
+      "bytes": 33554432,
+      "sha256": "37089f3b44c8d5717c975a374c5addd1a4657c19586ab91bbb5992e9848bbd05"
+    },
+    {
+      "file": "assets/julia-1.11.7.tar.gz.part003",
+      "bytes": 33554432,
+      "sha256": "fd38323b37ae0d5bc5cb633f227ec55ceee01b76d4a7058a93f4c5a4db3c2245"
+    },
+    {
+      "file": "assets/julia-1.11.7.tar.gz.part004",
+      "bytes": 33554432,
+      "sha256": "b49e2c06e0b2784635cac70921314cc0e6868798e635b0c4e98ba441ff914be6"
+    },
+    {
+      "file": "assets/julia-1.11.7.tar.gz.part005",
+      "bytes": 33554432,
+      "sha256": "2e86f0778e2b3bcd615d47fc75b4664111b53e39a84b60b4579ef00320bb8bd9"
+    },
+    {
+      "file": "assets/julia-1.11.7.tar.gz.part006",
+      "bytes": 33554432,
+      "sha256": "8f669519be7af1abe0a7108dc749f776aa0f040497388ad4d5d4a732cacbceb9"
+    },
+    {
+      "file": "assets/julia-1.11.7.tar.gz.part007",
+      "bytes": 33554432,
+      "sha256": "3d969b107d54a5284ee82167cdc998ebe5bc5dd88f01cb828c380400cfc79674"
+    },
+    {
+      "file": "assets/julia-1.11.7.tar.gz.part008",
+      "bytes": 17799974,
+      "sha256": "a40a99814a36d871024301efb92b4524ba15b2f8abb0e8fdeb6661a3d4521ede"
+    }
+  ],
+  "originalLicensePaths": [
+    "julia-1.11.7/LICENSE.md",
+    "julia-1.11.7/share/julia/base/ryu/LICENSE.md",
+    "julia-1.11.7/share/julia/base/JuliaSyntax/LICENSE.md",
+    "julia-1.11.7/share/julia/stdlib/v1.11/Statistics/LICENSE.md",
+    "julia-1.11.7/share/julia/stdlib/v1.11/ArgTools/LICENSE",
+    "julia-1.11.7/share/julia/stdlib/v1.11/REPL/src/TerminalMenus/LICENSE.md",
+    "julia-1.11.7/share/julia/stdlib/v1.11/StyledStrings/LICENSE",
+    "julia-1.11.7/share/julia/stdlib/v1.11/LazyArtifacts/LICENSE.md",
+    "julia-1.11.7/share/julia/stdlib/v1.11/Tar/LICENSE",
+    "julia-1.11.7/share/julia/stdlib/v1.11/NetworkOptions/LICENSE",
+    "julia-1.11.7/share/julia/stdlib/v1.11/SHA/LICENSE.md",
+    "julia-1.11.7/share/julia/stdlib/v1.11/TOML/LICENSE",
+    "julia-1.11.7/share/julia/stdlib/v1.11/SuiteSparse/LICENSE.md",
+    "julia-1.11.7/share/julia/stdlib/v1.11/DelimitedFiles/LICENSE",
+    "julia-1.11.7/share/julia/stdlib/v1.11/LibCURL/LICENSE.md",
+    "julia-1.11.7/share/julia/stdlib/v1.11/Pkg/LICENSE.md",
+    "julia-1.11.7/share/julia/stdlib/v1.11/Downloads/LICENSE",
+    "julia-1.11.7/share/julia/stdlib/v1.11/SparseArrays/LICENSE.md",
+    "julia-1.11.7/share/julia/stdlib/v1.11/Distributed/LICENSE.md"
+  ]
+}

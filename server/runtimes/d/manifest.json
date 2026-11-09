@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "platform": "linux/amd64",
+  "baseImage": "gcc@sha256:5e927c284bf55a7dc796262e311a0703344f62f41f5621eb56843111b1d37e15",
+  "sourceDateEpoch": 1793923200,
+  "version": "GNU D 12.2.0",
+  "source": "https://gcc.gnu.org/gcc-12/",
+  "license": "GPL-3.0-with-runtime-exception-and-component-licenses",
+  "runtime": {
+    "id": "d",
+    "executable": "/usr/bin/gdc-12",
+    "memoryMiB": 768,
+    "versionArgs": [
+      "--version"
+    ],
+    "versionPattern": "12.2.0"
+  },
+  "files": [
+    {
+      "file": "Dockerfile",
+      "bytes": 254,
+      "sha256": "5fd0732716442ade3390ad1332600e75bf4527e51b9133fdcdbcc69d303ecb94"
+    },
+    {
+      "file": "NOTICE.md",
+      "bytes": 1001,
+      "sha256": "6304eb064da25082350e525443a384b5982bcb9bc6e7aeae4fee73ce10c165db"
+    },
+    {
+      "file": "acquisition.json",
+      "bytes": 2579,
+      "sha256": "ae192bb715fd340eef4c55f30b04d53b6346ec088f9ea545100adf982d1eb724"
+    },
+    {
+      "file": "assets/gdc-12_12.2.0-14+deb12u1_amd64.deb",
+      "bytes": 10693916,
+      "sha256": "30de3eb2bf3ea86d7097e01a9bbee63a47c061f6527364ebbac8d7a5b6648dd4"
+    },
+    {
+      "file": "assets/libgphobos-12-dev_12.2.0-14+deb12u1_amd64.deb",
+      "bytes": 9876236,
+      "sha256": "5e7e3f0609bfddb7f5b650f4e05c6addce6eec91b950fffc966837ff5f5300d4"
+    },
+    {
+      "file": "assets/libgphobos3_12.2.0-14+deb12u1_amd64.deb",
+      "bytes": 1684696,
+      "sha256": "df56bd1993e0c815b1d9c2b78210a0c1ec1e295ad02cc409e1e6015f3992d4ca"
+    },
+    {
+      "file": "licenses/gdc-12.copyright",
+      "bytes": 68194,
+      "sha256": "da8191658b3452ce9caf31638ba61dab31a38c619fa39df119812e050f592fd3"
+    },
+    {
+      "file": "metadata/apt-verification.txt",
+      "bytes": 1169,
+      "sha256": "966652e257fd492d3cb75d146adc643c0debd59a4664d623e49815b2b164c3a7"
+    },
+    {
+      "file": "metadata/bookworm-InRelease",
+      "bytes": 151075,
+      "sha256": "77737fa4b34f2693e982cc9ee35736816c35a7778fc2d326cc1bbf5b301fe1aa"
+    },
+    {
+      "file": "metadata/bookworm-security-InRelease",
+      "bytes": 34770,
+      "sha256": "1d368817d451179b6611e157dccd876f93feff7d603c575668fbb662d5b01677"
+    },
+    {
+      "file": "metadata/bookworm-updates-InRelease",
+      "bytes": 55403,
+      "sha256": "da3bb85c8864a931aa8d4ad4bcca054c0bb430aef7f8c3dfaff4b173d26f595c"
+    },
+    {
+      "file": "metadata/gdc-12_12.2.0-14+deb12u1_amd64.deb.metadata",
+      "bytes": 801,
+      "sha256": "64ac93c25b36e7be26f353621aa2447eb5fe88934a5c078ef01047c0e1317356"
+    },
+    {
+      "file": "metadata/libgphobos-12-dev_12.2.0-14+deb12u1_amd64.deb.metadata",
+      "bytes": 680,
+      "sha256": "d904e148899081505c78e1c3bc195985300722a996a138ed41e8b2aa6ec5dae5"
+    },
+    {
+      "file": "metadata/libgphobos3_12.2.0-14+deb12u1_amd64.deb.metadata",
+      "bytes": 727,
+      "sha256": "0edf85ed8e7d8fec2505d69126885817a2bd2de0cd7de04a466b9815fe41c9d4"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+Package: erlang-inets
+Source: erlang
+Version: 1:25.2.3+dfsg-1+deb12u4
+Installed-Size: 890
+Maintainer: Debian Erlang Packagers <pkg-erlang-devel@lists.alioth.debian.org>
+Architecture: amd64
+Replaces: erlang (<< 1:25.2.3+dfsg-1+deb12u4), erlang-base (<< 1:25.2.3+dfsg-1+deb12u4), erlang-base-hipe, erlang-dev (<< 1:25.2.3+dfsg-1+deb12u4), erlang-doc (>> 1:25.2.3+dfsg-999), erlang-doc (<< 1:25.2.3+dfsg), erlang-examples (<< 1:25.2.3+dfsg-1+deb12u4), erlang-manpages (<= 1:11.b.1-2), erlang-mode (<< 1:12.b.1-dfsg-2), erlang-nox (<< 1:25.2.3+dfsg-1+deb12u4), erlang-src (<< 1:25.2.3+dfsg-1+deb12u4), erlang-x11 (<< 1:25.2.3+dfsg-1+deb12u4)
+Depends: erlang-base (= 1:25.2.3+dfsg-1+deb12u4), erlang-ftp (= 1:25.2.3+dfsg-1+deb12u4), erlang-mnesia (= 1:25.2.3+dfsg-1+deb12u4), erlang-runtime-tools (= 1:25.2.3+dfsg-1+deb12u4), erlang-ssl (= 1:25.2.3+dfsg-1+deb12u4), erlang-tftp (= 1:25.2.3+dfsg-1+deb12u4)
+Suggests: erlang, erlang-manpages, erlang-doc
+Description: Erlang/OTP Internet clients and servers
+Description-md5: 8d70a0f49c4439fde59135fbc5bed418
+Multi-Arch: allowed
+Homepage: http://www.erlang.org/
+Tag: implemented-in::TODO
+Section: interpreters
+Priority: optional
+Filename: pool/main/e/erlang/erlang-inets_25.2.3+dfsg-1+deb12u4_amd64.deb
+Size: 636268
+MD5sum: 9dffd44fdbce9539f5c5cfc689c38515
+SHA256: 068079f01742b9ebe457ba7285910a2d5c6d8c61895c076fcaaf7ff752548815

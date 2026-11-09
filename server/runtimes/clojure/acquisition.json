@@ -1,0 +1,95 @@
+{
+  "baseImage": "gcc@sha256:5e927c284bf55a7dc796262e311a0703344f62f41f5621eb56843111b1d37e15",
+  "requestedPackages": [
+    "libclojure-java"
+  ],
+  "verification": "Debian APT verified InRelease and index hashes without network; each acquired package matches the solved signed-index SHA-256",
+  "indexInputs": [
+    {
+      "source": "https://deb.debian.org/debian/dists/bookworm/InRelease",
+      "sha256": "77737fa4b34f2693e982cc9ee35736816c35a7778fc2d326cc1bbf5b301fe1aa"
+    },
+    {
+      "source": "https://deb.debian.org/debian/dists/bookworm/main/binary-amd64/Packages.xz",
+      "sha256": "9e0b5aabb2465b3d2e7a7fe27f9913846277833f7a2826e7767acccff5b588c5"
+    },
+    {
+      "source": "https://deb.debian.org/debian/dists/bookworm-updates/InRelease",
+      "sha256": "da3bb85c8864a931aa8d4ad4bcca054c0bb430aef7f8c3dfaff4b173d26f595c"
+    },
+    {
+      "source": "https://deb.debian.org/debian/dists/bookworm-updates/main/binary-amd64/Packages.xz",
+      "sha256": "87e7e94047fb7fb6f4ceecc7022d4bee55b66031cc2a7666d3196f3e0aabb846"
+    },
+    {
+      "source": "https://deb.debian.org/debian-security/dists/bookworm-security/InRelease",
+      "sha256": "1d368817d451179b6611e157dccd876f93feff7d603c575668fbb662d5b01677"
+    },
+    {
+      "source": "https://deb.debian.org/debian-security/dists/bookworm-security/main/binary-amd64/Packages.xz",
+      "sha256": "9291f4f3c470a046b9751215169d689e539f3d5cade197a367738e58079205ba"
+    }
+  ],
+  "packages": [
+    {
+      "file": "assets/libjsr166y-java_1.7.0-2.1_all.deb",
+      "sha256": "71d64a96a972918752cca025a8d6aac87b34facda494ae42a702feed1cdae2f4",
+      "bytes": 610820,
+      "source": "https://deb.debian.org/debian/pool/main/libj/libjsr166y-java/libjsr166y-java_1.7.0-2.1_all.deb",
+      "metadata": "metadata/libjsr166y-java_1.7.0-2.1_all.deb.metadata"
+    },
+    {
+      "file": "assets/libcore-specs-alpha-clojure_0.2.62-1_all.deb",
+      "sha256": "433ed76832a925089c9a61d648f3f6358c0d820c344c518f28859704d075c419",
+      "bytes": 11772,
+      "source": "https://deb.debian.org/debian/pool/main/c/core-specs-alpha-clojure/libcore-specs-alpha-clojure_0.2.62-1_all.deb",
+      "metadata": "metadata/libcore-specs-alpha-clojure_0.2.62-1_all.deb.metadata"
+    },
+    {
+      "file": "assets/libspec-alpha-clojure_0.3.218-1_all.deb",
+      "sha256": "444403e0500b5bc6ace6d9d469bb95fb67e369e961254f865aecb864d89d22f5",
+      "bytes": 562072,
+      "source": "https://deb.debian.org/debian/pool/main/s/spec-alpha-clojure/libspec-alpha-clojure_0.3.218-1_all.deb",
+      "metadata": "metadata/libspec-alpha-clojure_0.3.218-1_all.deb.metadata"
+    },
+    {
+      "file": "assets/libclojure-java_1.11.1-2_all.deb",
+      "sha256": "25850de99a8d3fbcc057678322196ad4a16b24c0e27151a43fb1fcc468e7f475",
+      "bytes": 3646900,
+      "source": "https://deb.debian.org/debian/pool/main/c/clojure/libclojure-java_1.11.1-2_all.deb",
+      "metadata": "metadata/libclojure-java_1.11.1-2_all.deb.metadata"
+    }
+  ],
+  "extractedJars": [
+    {
+      "file": "assets/extra166y-1.7.0.jar",
+      "package": "assets/libjsr166y-java_1.7.0-2.1_all.deb",
+      "member": "./usr/share/java/extra166y-1.7.0.jar",
+      "sha256": "fa19c36708cc0e9de8e4a3b0483d0f2e0397d1ef553412e55aa17fd8b77a78a8"
+    },
+    {
+      "file": "assets/jsr166y-1.7.0.jar",
+      "package": "assets/libjsr166y-java_1.7.0-2.1_all.deb",
+      "member": "./usr/share/java/jsr166y-1.7.0.jar",
+      "sha256": "35ee7f838bb47fed61bc6feba24ba424455ea2cb6ecd68e449894d79e58b8196"
+    },
+    {
+      "file": "assets/core.specs.alpha.jar",
+      "package": "assets/libcore-specs-alpha-clojure_0.2.62-1_all.deb",
+      "member": "./usr/share/java/core.specs.alpha.jar",
+      "sha256": "f09df67aee163f9019a7c8830a8d37e42f0bd33c68184b18a5b53c4003493a38"
+    },
+    {
+      "file": "assets/spec.alpha.jar",
+      "package": "assets/libspec-alpha-clojure_0.3.218-1_all.deb",
+      "member": "./usr/share/java/spec.alpha.jar",
+      "sha256": "8ea8f04d170f17a973ba6f7ecbf754dd0af0a1cfc8ab68622f255d41cb92ec7c"
+    },
+    {
+      "file": "assets/clojure-1.11.1.jar",
+      "package": "assets/libclojure-java_1.11.1-2_all.deb",
+      "member": "./usr/share/java/clojure-1.11.1.jar",
+      "sha256": "df0d350d156f95b4976c82aa4387d750bffc5e1471e828b4fb9f00bba008cc16"
+    }
+  ]
+}

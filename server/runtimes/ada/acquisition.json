@@ -1,0 +1,58 @@
+{
+  "baseImage": "gcc@sha256:5e927c284bf55a7dc796262e311a0703344f62f41f5621eb56843111b1d37e15",
+  "requestedPackages": [
+    "gnat-12"
+  ],
+  "verification": "Debian APT verified InRelease and index hashes without network; each acquired package matches the solved signed-index SHA-256",
+  "indexInputs": [
+    {
+      "source": "https://deb.debian.org/debian/dists/bookworm/InRelease",
+      "sha256": "77737fa4b34f2693e982cc9ee35736816c35a7778fc2d326cc1bbf5b301fe1aa"
+    },
+    {
+      "source": "https://deb.debian.org/debian/dists/bookworm/main/binary-amd64/Packages.xz",
+      "sha256": "9e0b5aabb2465b3d2e7a7fe27f9913846277833f7a2826e7767acccff5b588c5"
+    },
+    {
+      "source": "https://deb.debian.org/debian/dists/bookworm-updates/InRelease",
+      "sha256": "4d6f879f86e299b57f8200446ed233f78a65c8af62e3a48f005439e238d68039"
+    },
+    {
+      "source": "https://deb.debian.org/debian/dists/bookworm-updates/main/binary-amd64/Packages.xz",
+      "sha256": "87e7e94047fb7fb6f4ceecc7022d4bee55b66031cc2a7666d3196f3e0aabb846"
+    },
+    {
+      "source": "https://deb.debian.org/debian-security/dists/bookworm-security/InRelease",
+      "sha256": "1d368817d451179b6611e157dccd876f93feff7d603c575668fbb662d5b01677"
+    },
+    {
+      "source": "https://deb.debian.org/debian-security/dists/bookworm-security/main/binary-amd64/Packages.xz",
+      "sha256": "9291f4f3c470a046b9751215169d689e539f3d5cade197a367738e58079205ba"
+    }
+  ],
+  "packages": [
+    {
+      "file": "assets/libgnat-12_12.2.0-14+deb12u1_amd64.deb",
+      "sha256": "64a529089a83765bf90bafd555278ec755d2b2541d77fdf093d2937a6a4673cd",
+      "bytes": 1265660,
+      "source": "https://deb.debian.org/debian/pool/main/g/gcc-12/libgnat-12_12.2.0-14+deb12u1_amd64.deb",
+      "metadata": "metadata/libgnat-12_12.2.0-14+deb12u1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/gnat-12_12.2.0-14+deb12u1_amd64.deb",
+      "sha256": "a39315ef32c1b9a17a2be5e3540ba6f91c441e808211d609e63e3d44f9114e53",
+      "bytes": 18150700,
+      "source": "https://deb.debian.org/debian/pool/main/g/gcc-12/gnat-12_12.2.0-14+deb12u1_amd64.deb",
+      "metadata": "metadata/gnat-12_12.2.0-14+deb12u1_amd64.deb.metadata"
+    }
+  ],
+  "copyrightProvenance": {
+    "packageDocLinks": {
+      "gnat-12": "gcc-12-base",
+      "libgnat-12": "gcc-12-base"
+    },
+    "repositorySource": "server/runtimes/pascal-r/licenses/libgfortran5.copyright",
+    "sha256": "da8191658b3452ce9caf31638ba61dab31a38c619fa39df119812e050f592fd3",
+    "scope": "Original Debian GCC 12 copyright covers gnat-12 and libgnat-12 explicitly; the acquired packages link their doc directories to gcc-12-base."
+  }
+}
