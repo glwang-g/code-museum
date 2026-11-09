@@ -1,0 +1,19 @@
+Package: libsensors5
+Source: lm-sensors
+Version: 1:3.6.0-7.1
+Installed-Size: 87
+Maintainer: Aurelien Jarno <aurel32@debian.org>
+Architecture: amd64
+Depends: libsensors-config, libc6 (>= 2.33)
+Suggests: lm-sensors
+Description: library to read temperature/voltage/fan sensors
+Description-md5: 369bc8769ec74bda1a1726b61f1c8e49
+Multi-Arch: same
+Homepage: https://hwmon.wiki.kernel.org/lm_sensors
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/l/lm-sensors/libsensors5_3.6.0-7.1_amd64.deb
+Size: 34160
+MD5sum: 140ef89e3e218c8e0b47f3149061446d
+SHA256: b7eb91dce728fbb9203aec8b22637303b29821c3384e5f78a8ff348b4e44efe3

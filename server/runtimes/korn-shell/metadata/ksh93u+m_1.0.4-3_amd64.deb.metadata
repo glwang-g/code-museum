@@ -1,0 +1,19 @@
+Package: ksh93u+m
+Version: 1.0.4-3
+Installed-Size: 3193
+Maintainer: Anuradha Weeraman <anuradha@debian.org>
+Architecture: amd64
+Replaces: ksh (<= 2020.0.0+really93u+20120801-10)
+Provides: ksh
+Depends: libc6 (>= 2.35)
+Suggests: binfmt-support
+Breaks: ksh (<= 2020.0.0+really93u+20120801-10)
+Description: AT&T KornShell
+Description-md5: 9c68aabfd48ac9876b72f9e322f7ed5c
+Homepage: http://www.kornshell.com/
+Section: shells
+Priority: optional
+Filename: pool/main/k/ksh93u+m/ksh93u+m_1.0.4-3_amd64.deb
+Size: 890236
+MD5sum: 8ec34245844f4650692ce15eea67832f
+SHA256: 788b33e7d7a3a5dac8fedf59d0cec4063a0320ab824d32ce102b2ea753691d07

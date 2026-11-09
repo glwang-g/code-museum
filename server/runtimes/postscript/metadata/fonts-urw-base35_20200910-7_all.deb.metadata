@@ -1,0 +1,19 @@
+Package: fonts-urw-base35
+Version: 20200910-7
+Installed-Size: 15558
+Maintainer: Debian Fonts Task Force <debian-fonts@lists.debian.org>
+Architecture: all
+Replaces: gsfonts (<< 2:20200910-2~), gsfonts-x11 (<< 2:20200910-2~)
+Depends: xfonts-utils
+Suggests: fonts-freefont-otf | fonts-freefont-ttf, fonts-texgyre
+Breaks: gsfonts (<< 2:20200910-2~), gsfonts-x11 (<< 2:20200910-2~)
+Description: font set metric-compatible with the 35 PostScript Level 2 Base Fonts
+Description-md5: 5853d9ef99aebe697b7e53a335174550
+Multi-Arch: foreign
+Homepage: https://github.com/ArtifexSoftware/urw-base35-fonts
+Section: fonts
+Priority: optional
+Filename: pool/main/f/fonts-urw-base35/fonts-urw-base35_20200910-7_all.deb
+Size: 10803036
+MD5sum: 75e01695e3dfc760a8dad1beeddfd003
+SHA256: 93e4997c99c4c31ea88c5d37e2259af0a0c826b9358931d5a69f794f7f0c73ac

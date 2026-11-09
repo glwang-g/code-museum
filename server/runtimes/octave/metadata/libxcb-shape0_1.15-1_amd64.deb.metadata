@@ -1,0 +1,18 @@
+Package: libxcb-shape0
+Source: libxcb
+Version: 1.15-1
+Installed-Size: 127
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.4), libxcb1
+Description: X C Binding, shape extension
+Description-md5: 4f8fcf227f71242b2923bb3614ad97a2
+Multi-Arch: same
+Homepage: https://xcb.freedesktop.org
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/libx/libxcb/libxcb-shape0_1.15-1_amd64.deb
+Size: 105768
+MD5sum: b202191e5a23b5cf874f9ca1baeb752e
+SHA256: e0d0e31db4d72e2f7246d40edc6bd75e0249ae3138839e60a268db7da40a6ae2

@@ -1,0 +1,19 @@
+Package: libxml-libxml-perl
+Version: 2.0207+dfsg+really+2.0134-1+deb12u1
+Installed-Size: 993
+Maintainer: Debian Perl Group <pkg-perl-maintainers@lists.alioth.debian.org>
+Architecture: amd64
+Depends: perl (>= 5.36.0-7+deb12u3), perlapi-5.36.0, libc6 (>= 2.14), libxml2 (>= 2.7.4), libxml-namespacesupport-perl, libxml-sax-perl
+Description: Perl interface to the libxml2 library
+Description-md5: d585b9f49fd3c911baab5d83bfe8dae5
+Homepage: https://metacpan.org/release/XML-LibXML
+Tag: devel::lang:perl, devel::library, implemented-in::c,
+ implemented-in::perl, interface::graphical, interface::x11,
+ role::devel-lib, role::program, suite::gnome, uitoolkit::gtk,
+ works-with-format::xml, x11::application
+Section: perl
+Priority: optional
+Filename: pool/main/libx/libxml-libxml-perl/libxml-libxml-perl_2.0207+dfsg+really+2.0134-1+deb12u1_amd64.deb
+Size: 321760
+MD5sum: ee39d9e3f63a3541e44c1b76e9c3c3bf
+SHA256: f53218587a7691b3e01a84e2b7cd65f90789f50af508e5a7a3b3f65c640f25d2

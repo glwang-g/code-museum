@@ -1,0 +1,18 @@
+Package: libsamplerate0
+Source: libsamplerate
+Version: 0.2.2-3
+Installed-Size: 1493
+Maintainer: Debian Multimedia Maintainers <debian-multimedia@lists.debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.14)
+Description: Audio sample rate conversion library
+Description-md5: 1cbecccffb58dab56ae610f3dcd51386
+Multi-Arch: same
+Homepage: http://www.mega-nerd.com/SRC/
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/libs/libsamplerate/libsamplerate0_0.2.2-3_amd64.deb
+Size: 952104
+MD5sum: 67592638ae0dd95e36d72e134af0888a
+SHA256: 72fe6d068ea3107115576d678a8b4f064ff736f1659777666ff056609c310fa2

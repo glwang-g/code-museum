@@ -1,0 +1,18 @@
+Package: libavahi-common3
+Source: avahi
+Version: 0.8-10+deb12u1
+Installed-Size: 94
+Maintainer: Utopia Maintenance Team <pkg-utopia-maintainers@lists.alioth.debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.34), libavahi-common-data (= 0.8-10+deb12u1)
+Description: Avahi common library
+Description-md5: bbc06dc3aaf84439dd323000d2524550
+Multi-Arch: same
+Homepage: https://avahi.org/
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/a/avahi/libavahi-common3_0.8-10+deb12u1_amd64.deb
+Size: 42112
+MD5sum: 377b5178f167089245e94f6ba5fd9c2f
+SHA256: 0c12791afe1be09d8362161244d7a51e82a67a55f3909f4c29ee3dd424c3a5f1

@@ -1,0 +1,18 @@
+Package: libamd2
+Source: suitesparse
+Version: 1:5.12.0+dfsg-2
+Installed-Size: 81
+Maintainer: Debian Science Team <debian-science-maintainers@lists.alioth.debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.2.5), libsuitesparseconfig5 (>= 1:5.0.0)
+Description: approximate minimum degree ordering library for sparse matrices
+Description-md5: 2d9505165b7b29c0b5677c11d21645cd
+Multi-Arch: same
+Homepage: http://suitesparse.com
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/s/suitesparse/libamd2_5.12.0+dfsg-2_amd64.deb
+Size: 36248
+MD5sum: e166e0bf0ac93d2df91b52e1b4f9eec6
+SHA256: d36ec629f9aa2b90ca076cd5d78b01d4bef4dc3969f22a85b20fa7f448d97cd5

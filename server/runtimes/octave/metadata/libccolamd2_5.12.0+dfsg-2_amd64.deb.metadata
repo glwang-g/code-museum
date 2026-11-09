@@ -1,0 +1,18 @@
+Package: libccolamd2
+Source: suitesparse
+Version: 1:5.12.0+dfsg-2
+Installed-Size: 89
+Maintainer: Debian Science Team <debian-science-maintainers@lists.alioth.debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.4), libsuitesparseconfig5 (>= 1:5.0.0)
+Description: constrained column approximate library for sparse matrices
+Description-md5: 7837a1290ee0cf3371ba8acb52f1427a
+Multi-Arch: same
+Homepage: http://suitesparse.com
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/s/suitesparse/libccolamd2_5.12.0+dfsg-2_amd64.deb
+Size: 39736
+MD5sum: 6db1e53cde489b5c28bb804c78d4cce7
+SHA256: 56726527d9b144019654d79f9ca2fada0cd388752df3ff6aad0c926f4a6bff11

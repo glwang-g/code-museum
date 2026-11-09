@@ -1,0 +1,11 @@
+--- a/packages/iconv/iconv.c
++++ b/packages/iconv/iconv.c
+@@ -66,7 +66,7 @@
+ 	      int readCount, OOP writeBufferOOP, int writeCount,
+ 	      OOP bytesLeftOOP)
+ {
+-  const char *inbuf;
++  char *inbuf;
+   size_t inbytesleft;
+   char *outbuf;
+   size_t outbytesleft;

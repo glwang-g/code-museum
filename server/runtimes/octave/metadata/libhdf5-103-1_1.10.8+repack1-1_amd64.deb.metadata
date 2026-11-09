@@ -1,0 +1,20 @@
+Package: libhdf5-103-1
+Source: hdf5
+Version: 1.10.8+repack1-1
+Installed-Size: 3951
+Maintainer: Gilles Filippini <pini@debian.org>
+Architecture: amd64
+Replaces: libhdf5-103 (<< 1.10.5)
+Depends: libc6 (>= 2.34), libcurl4 (>= 7.16.2), libssl3 (>= 3.0.0), libsz2 (>= 1.0.6), zlib1g (>= 1:1.1.4)
+Breaks: libhdf5-103 (<< 1.10.5)
+Description: HDF5 C runtime files - serial version
+Description-md5: 0058d2fd2a000aa6e520a6728baf452a
+Multi-Arch: same
+Homepage: http://hdfgroup.org/HDF5/
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/h/hdf5/libhdf5-103-1_1.10.8+repack1-1_amd64.deb
+Size: 1236980
+MD5sum: 99fa047a59160d481d5c8623e66d5b5b
+SHA256: 25d7c1c734f054b8f3f94f2d4e12484462b058ebc81ced239d2abe97a301ab23

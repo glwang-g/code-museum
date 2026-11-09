@@ -1,0 +1,18 @@
+Package: libpciaccess0
+Source: libpciaccess
+Version: 0.17-2
+Installed-Size: 92
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.33), zlib1g (>= 1:1.1.4)
+Suggests: pciutils
+Description: Generic PCI access library for X
+Description-md5: d0ad9b669375fc349fbc3c6888e88566
+Multi-Arch: same
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/libp/libpciaccess/libpciaccess0_0.17-2_amd64.deb
+Size: 51384
+MD5sum: 2acb508197bd0ab698352ceedc624980
+SHA256: 4025f3608cf431c163efb94fdc553e7b93e16b8f0d741ea87762e19025ffc80e

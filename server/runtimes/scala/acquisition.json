@@ -1,0 +1,45 @@
+{
+  "source": "https://github.com/scala/scala/releases/download/v2.13.16/scala-2.13.16.tgz",
+  "bytes": 22613912,
+  "archiveSha256": "937f743be315302caad15be99ab1ca425ff7e63f15ef5790db6c81bb49543256",
+  "verification": "Official GitHub archive size matches saved release API; extracted compiler JAR matches separately fetched official Maven SHA-1. All saved bytes pinned locally with SHA-256; not a PGP signature check or whole-archive official SHA-256 claim.",
+  "compilerSha1Source": "https://repo.maven.apache.org/maven2/org/scala-lang/scala-compiler/2.13.16/scala-compiler-2.13.16.jar.sha1",
+  "extractedMembers": [
+    {
+      "member": "scala-2.13.16/lib/scala-library.jar",
+      "file": "assets/scala-library.jar",
+      "bytes": 5926340,
+      "sha256": "1ebb2b6f9e4eb4022497c19b1e1e825019c08514f962aaac197145f88ed730f1"
+    },
+    {
+      "member": "scala-2.13.16/lib/scalap-2.13.16.jar",
+      "file": "assets/scalap-2.13.16.jar",
+      "bytes": 527679,
+      "sha256": "7963c72c4c74d52278e42b0108ae8ae866d4d1c4579e20209a2f9617e6aacfca"
+    },
+    {
+      "member": "scala-2.13.16/lib/scala-reflect.jar",
+      "file": "assets/scala-reflect.jar",
+      "bytes": 3801119,
+      "sha256": "fb49ccd9cac7464486ab993cda20a3c1569d8ef26f052e897577ad2a4970fb1d"
+    },
+    {
+      "member": "scala-2.13.16/lib/jline-3.27.1.jar",
+      "file": "assets/jline-3.27.1.jar",
+      "bytes": 1369150,
+      "sha256": "9d165aff3d714a455de2e711dc90df09fdb0a0969a1cd4d52aa72a44cb545db0"
+    },
+    {
+      "member": "scala-2.13.16/lib/scala-compiler.jar",
+      "file": "assets/scala-compiler.jar",
+      "bytes": 12308669,
+      "sha256": "f59982714591e321ba9c087af2c8666e2f5fb92b11a0cef72c2c5e9b342152d3"
+    },
+    {
+      "member": "scala-2.13.16/lib/java-diff-utils-4.15.jar",
+      "file": "assets/java-diff-utils-4.15.jar",
+      "bytes": 75692,
+      "sha256": "964c69e3a23a892db2778ae6806aa1d42f81230032bd8e4982dc8620582ee6b7"
+    }
+  ]
+}

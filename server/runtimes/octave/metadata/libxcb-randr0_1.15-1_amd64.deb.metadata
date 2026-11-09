@@ -1,0 +1,18 @@
+Package: libxcb-randr0
+Source: libxcb
+Version: 1.15-1
+Installed-Size: 192
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.4), libxcb1 (>= 1.9.2)
+Description: X C Binding, randr extension
+Description-md5: adb389382ef0d8f0e2a3de70afef6284
+Multi-Arch: same
+Homepage: https://xcb.freedesktop.org
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/libx/libxcb/libxcb-randr0_1.15-1_amd64.deb
+Size: 116680
+MD5sum: 363284221fe7ba18a0bcb7e9efc642a1
+SHA256: f86e3d8ff8622871008833e9d064919b7a6237399c903c59fc330ff00f199ff5

@@ -1,0 +1,19 @@
+Package: openmpi-common
+Source: openmpi
+Version: 4.1.4-3
+Installed-Size: 440
+Maintainer: Alastair McKinstry <mckinstry@debian.org>
+Architecture: all
+Conflicts: openmpi-common
+Description: high performance message passing library -- common files
+Description-md5: b52283604f1697ba67223f6535351fda
+Multi-Arch: foreign
+Homepage: https://www.open-mpi.org/
+Tag: admin::cluster, field::biology, field::mathematics, made-of::dictionary,
+ made-of::font, role::app-data, role::data, use::checking
+Section: net
+Priority: optional
+Filename: pool/main/o/openmpi/openmpi-common_4.1.4-3_all.deb
+Size: 166928
+MD5sum: 4f1ccba21886fa3553888641766919e7
+SHA256: 42c66fbf7746b44abfe1f4ff74c00bc272ad947ad65214b8610361695f8f7262

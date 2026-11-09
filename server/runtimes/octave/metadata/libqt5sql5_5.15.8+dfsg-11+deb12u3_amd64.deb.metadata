@@ -1,0 +1,19 @@
+Package: libqt5sql5
+Source: qtbase-opensource-src
+Version: 5.15.8+dfsg-11+deb12u3
+Installed-Size: 437
+Maintainer: Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.14), libqt5core5a (>= 5.15.1), libstdc++6 (>= 5), qtbase-abi-5-15-8
+Recommends: libqt5sql5-sqlite | libqt5sql5-mysql | libqt5sql5-odbc | libqt5sql5-psql | libqt5sql5-tds | libqt5sql5-ibase
+Description: Qt 5 SQL module
+Description-md5: 0713fa3e9592ca24526ad333118f8889
+Multi-Arch: same
+Homepage: https://www.qt.io/developers/
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/q/qtbase-opensource-src/libqt5sql5_5.15.8+dfsg-11+deb12u3_amd64.deb
+Size: 122164
+MD5sum: 39dbd8d1ea044b012c49189d8c7f1a9f
+SHA256: ba3011af5b6bf58786af82e37cad9a513098f40aa96eb7c0bac5fa490935c7aa

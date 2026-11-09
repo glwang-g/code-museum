@@ -1,0 +1,18 @@
+Package: libxcb-glx0
+Source: libxcb
+Version: 1.15-1
+Installed-Size: 244
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.4), libxcb1
+Description: X C Binding, glx extension
+Description-md5: 3169b2c3295bfe9c0729ea9f922b2d4a
+Multi-Arch: same
+Homepage: https://xcb.freedesktop.org
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/libx/libxcb/libxcb-glx0_1.15-1_amd64.deb
+Size: 122392
+MD5sum: 2d607cfd62dffab7faa960f866cd7079
+SHA256: 1bce55fc292d93fa5f7fa50f84cef99ec29be70d0ffe98e86b8008e59f4a34fa

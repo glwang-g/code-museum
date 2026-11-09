@@ -1,0 +1,24 @@
+Package: openmpi-bin
+Source: openmpi (4.1.4-3)
+Version: 4.1.4-3+b1
+Installed-Size: 542
+Maintainer: Alastair McKinstry <mckinstry@debian.org>
+Architecture: amd64
+Replaces: libopenmpi-dev (<< 4.0.5-3)
+Depends: libc6 (>= 2.34), libevent-core-2.1-7 (>= 2.1.8-stable), libopenmpi3 (>= 4.1.4), openmpi-common (>= 4.1.4-3), openssh-client | ssh-client
+Suggests: gfortran | fortran-compiler
+Conflicts: openmpi-bin
+Breaks: lam4-dev (<< 7.1.4-4), libmpich-dev (<< 3.3~b1-5), libopenmpi-dev (<< 4.0.5-3), mpich (<< 3.3~b1-5)
+Description: high performance message passing library -- binaries
+Description-md5: 1a00d4dd7be41a0a9fd2a922b4135736
+Multi-Arch: foreign
+Homepage: https://www.open-mpi.org/
+Tag: admin::cluster, field::biology, field::chemistry, field::mathematics,
+ field::physics, implemented-in::c, interface::commandline,
+ protocol::ssh, role::program, scope::utility
+Section: net
+Priority: optional
+Filename: pool/main/o/openmpi/openmpi-bin_4.1.4-3+b1_amd64.deb
+Size: 226072
+MD5sum: 7dbc11e356be71e0d83736fc0a4f45db
+SHA256: 555300f03e3c3b02d13dc1c44ece592728b790b71a0d138ebe695d4e267bf8bb

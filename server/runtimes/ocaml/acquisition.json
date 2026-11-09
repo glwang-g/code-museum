@@ -1,0 +1,70 @@
+{
+  "baseImage": "gcc@sha256:5e927c284bf55a7dc796262e311a0703344f62f41f5621eb56843111b1d37e15",
+  "requestedPackages": [
+    "ocaml-nox"
+  ],
+  "verification": "Debian APT verified InRelease and index hashes without network; each acquired package matches the solved signed-index SHA-256",
+  "indexInputs": [
+    {
+      "source": "https://deb.debian.org/debian/dists/bookworm/InRelease",
+      "sha256": "77737fa4b34f2693e982cc9ee35736816c35a7778fc2d326cc1bbf5b301fe1aa"
+    },
+    {
+      "source": "https://deb.debian.org/debian/dists/bookworm/main/binary-amd64/Packages.xz",
+      "sha256": "9e0b5aabb2465b3d2e7a7fe27f9913846277833f7a2826e7767acccff5b588c5"
+    },
+    {
+      "source": "https://deb.debian.org/debian/dists/bookworm-updates/InRelease",
+      "sha256": "da3bb85c8864a931aa8d4ad4bcca054c0bb430aef7f8c3dfaff4b173d26f595c"
+    },
+    {
+      "source": "https://deb.debian.org/debian/dists/bookworm-updates/main/binary-amd64/Packages.xz",
+      "sha256": "87e7e94047fb7fb6f4ceecc7022d4bee55b66031cc2a7666d3196f3e0aabb846"
+    },
+    {
+      "source": "https://deb.debian.org/debian-security/dists/bookworm-security/InRelease",
+      "sha256": "1d368817d451179b6611e157dccd876f93feff7d603c575668fbb662d5b01677"
+    },
+    {
+      "source": "https://deb.debian.org/debian-security/dists/bookworm-security/main/binary-amd64/Packages.xz",
+      "sha256": "9291f4f3c470a046b9751215169d689e539f3d5cade197a367738e58079205ba"
+    }
+  ],
+  "packages": [
+    {
+      "file": "assets/ocaml-compiler-libs_4.13.1-4_amd64.deb",
+      "sha256": "ae3883883dfd5c53d842082093bd3276c5e20628d086e5bd5d1e4f9aabf8c444",
+      "bytes": 31024000,
+      "source": "https://deb.debian.org/debian/pool/main/o/ocaml/ocaml-compiler-libs_4.13.1-4_amd64.deb",
+      "metadata": "metadata/ocaml-compiler-libs_4.13.1-4_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/ocaml-base_4.13.1-4_amd64.deb",
+      "sha256": "c0b44b8aa8045dba80d8328241b439aa8ef47429a87867f1ef2de65f27cb59f5",
+      "bytes": 667508,
+      "source": "https://deb.debian.org/debian/pool/main/o/ocaml/ocaml-base_4.13.1-4_amd64.deb",
+      "metadata": "metadata/ocaml-base_4.13.1-4_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/ocaml-interp_4.13.1-4_amd64.deb",
+      "sha256": "4805d62f3dd15a4ebe0202ef7d2727f4d100ebc5514bfa07585066a804568aa0",
+      "bytes": 6158032,
+      "source": "https://deb.debian.org/debian/pool/main/o/ocaml/ocaml-interp_4.13.1-4_amd64.deb",
+      "metadata": "metadata/ocaml-interp_4.13.1-4_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/ocaml_4.13.1-4_amd64.deb",
+      "sha256": "98ca43adc3edb8994bb89830e51b3bdb7d25449db41a5702cf8ff39696c404ea",
+      "bytes": 72145688,
+      "source": "https://deb.debian.org/debian/pool/main/o/ocaml/ocaml_4.13.1-4_amd64.deb",
+      "metadata": "metadata/ocaml_4.13.1-4_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/ocaml-nox_4.13.1-4_all.deb",
+      "sha256": "f54caa519c341e6d946f993b48759fa9dfcb9b52499d0845185f1990fc9956fc",
+      "bytes": 161120,
+      "source": "https://deb.debian.org/debian/pool/main/o/ocaml/ocaml-nox_4.13.1-4_all.deb",
+      "metadata": "metadata/ocaml-nox_4.13.1-4_all.deb.metadata"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+Package: libwacom-common
+Source: libwacom
+Version: 2.6.0-1
+Installed-Size: 862
+Maintainer: Timo Aaltonen <tjaalton@debian.org>
+Architecture: all
+Description: Wacom model feature query library (common files)
+Description-md5: 8d2491c268d1d8dd27f6b2869929bbc1
+Multi-Arch: foreign
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/libw/libwacom/libwacom-common_2.6.0-1_all.deb
+Size: 58372
+MD5sum: a87e7fa757e386910d19026b2682513c
+SHA256: f8f59c10cdcf775bbe9a3fb96eb373822139f8e91660d8ee2deb432c5ae2337c

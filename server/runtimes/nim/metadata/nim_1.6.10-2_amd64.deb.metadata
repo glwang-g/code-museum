@@ -1,0 +1,17 @@
+Package: nim
+Version: 1.6.10-2
+Installed-Size: 15546
+Maintainer: Federico Ceratto <federico@debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.35), libpcre3, libssl3
+Recommends: build-essential, gcc, git
+Suggests: nim-doc
+Description: Nim programming language - compiler
+Description-md5: 1077ec624ad7f485ec20529f4e9db6d8
+Homepage: https://nim-lang.org/
+Section: devel
+Priority: optional
+Filename: pool/main/n/nim/nim_1.6.10-2_amd64.deb
+Size: 4076564
+MD5sum: fab6407a60625b56d23acfc20783c0fb
+SHA256: 1861cfaaa3e085fb091a1e0b768a2c0d2ace17796b56964b88326fe3468ac399

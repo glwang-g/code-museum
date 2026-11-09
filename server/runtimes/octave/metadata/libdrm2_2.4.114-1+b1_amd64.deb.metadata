@@ -1,0 +1,18 @@
+Package: libdrm2
+Source: libdrm (2.4.114-1)
+Version: 2.4.114-1+b1
+Installed-Size: 121
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Architecture: amd64
+Depends: libdrm-common (>= 2.4.114-1), libc6 (>= 2.33)
+Description: Userspace interface to kernel DRM services -- runtime
+Description-md5: aefc4200d84a6f2aee6f342bdd88dc24
+Multi-Arch: same
+Homepage: https://cgit.freedesktop.org/mesa/drm/
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/libd/libdrm/libdrm2_2.4.114-1+b1_amd64.deb
+Size: 37472
+MD5sum: 857e294972740eceb6411ec1cc4d11c0
+SHA256: be18fb670797ba32da9628cf3e8acd83160d8db8c8dd842501dd8e401c3b5371

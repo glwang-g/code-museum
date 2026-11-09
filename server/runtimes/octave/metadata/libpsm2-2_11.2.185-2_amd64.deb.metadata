@@ -1,0 +1,17 @@
+Package: libpsm2-2
+Source: libpsm2
+Version: 11.2.185-2
+Installed-Size: 441
+Maintainer: Debian HPC team <debian-hpc@lists.debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.34), libnuma1 (>= 2.0.11)
+Description: Intel PSM2 library
+Description-md5: b0d67b9b1cdc64f83fc1128eded819c0
+Homepage: https://github.com/01org/opa-psm2
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/libp/libpsm2/libpsm2-2_11.2.185-2_amd64.deb
+Size: 179708
+MD5sum: 59ff077316f5e6e8d98745f37d5dd062
+SHA256: 38ad6400906ae84345362aa366c7a1900e9cbcce06fb6ed35bf5dab414ec2939

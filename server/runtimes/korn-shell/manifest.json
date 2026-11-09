@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "platform": "linux/amd64",
+  "baseImage": "gcc@sha256:5e927c284bf55a7dc796262e311a0703344f62f41f5621eb56843111b1d37e15",
+  "sourceDateEpoch": 1793923200,
+  "version": "93u+m/1.0.4",
+  "source": "https://github.com/ksh93/ksh",
+  "license": "Upstream and Debian package copyright notices",
+  "runtime": {
+    "id": "korn-shell",
+    "executable": "/usr/bin/ksh93",
+    "memoryMiB": 256,
+    "versionArgs": [
+      "-p",
+      "-c",
+      "print -r -- \"$KSH_VERSION\""
+    ],
+    "versionPattern": "93u+m/1.0.4"
+  },
+  "files": [
+    {
+      "file": "Dockerfile",
+      "bytes": 254,
+      "sha256": "5fd0732716442ade3390ad1332600e75bf4527e51b9133fdcdbcc69d303ecb94"
+    },
+    {
+      "file": "NOTICE.md",
+      "bytes": 1128,
+      "sha256": "3de6d4c0afb415fe33218811edbbae02e7d3067742c80bc91ee308967d3457bf"
+    },
+    {
+      "file": "acquisition.json",
+      "bytes": 1954,
+      "sha256": "cf1e22975d38c88116f7104de1fbc0a4affa4ae738e27c26627ddafbd91cf910"
+    },
+    {
+      "file": "assets/ksh93u+m_1.0.4-3_amd64.deb",
+      "bytes": 890236,
+      "sha256": "788b33e7d7a3a5dac8fedf59d0cec4063a0320ab824d32ce102b2ea753691d07"
+    },
+    {
+      "file": "licenses/ksh93u+m.copyright",
+      "bytes": 15256,
+      "sha256": "b9931cf81544e0af7f025dca6d501239114587381270e53ccc64ac3017a77ddf"
+    },
+    {
+      "file": "metadata/apt-verification.txt",
+      "bytes": 1169,
+      "sha256": "966652e257fd492d3cb75d146adc643c0debd59a4664d623e49815b2b164c3a7"
+    },
+    {
+      "file": "metadata/bookworm-InRelease",
+      "bytes": 151075,
+      "sha256": "77737fa4b34f2693e982cc9ee35736816c35a7778fc2d326cc1bbf5b301fe1aa"
+    },
+    {
+      "file": "metadata/bookworm-security-InRelease",
+      "bytes": 34770,
+      "sha256": "836749276aafc119e05df93304153ee1b4d436807f481ac3c81162b3a6b7faae"
+    },
+    {
+      "file": "metadata/bookworm-updates-InRelease",
+      "bytes": 55403,
+      "sha256": "835e7f5704fbf7b6ef326075dccc00bab71918530b76ce1d7deea0470d023171"
+    },
+    {
+      "file": "metadata/ksh93u+m_1.0.4-3_amd64.deb.metadata",
+      "bytes": 624,
+      "sha256": "43e6a598ced20ac16f1fb84b2fc726dffa6ed5f6bc7d389b0763fd299ac563e6"
+    }
+  ]
+}

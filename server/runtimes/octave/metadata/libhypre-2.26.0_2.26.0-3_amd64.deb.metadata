@@ -1,0 +1,18 @@
+Package: libhypre-2.26.0
+Source: hypre
+Version: 2.26.0-3
+Installed-Size: 4439
+Maintainer: Debian Science Maintainers <debian-science-maintainers@lists.alioth.debian.org>
+Architecture: amd64
+Depends: libblas3 | libblas.so.3, libc6 (>= 2.29), liblapack3 | liblapack.so.3, libopenmpi3 (>= 4.1.4), libsuperlu-dist8 (>= 8.1.2+dfsg1)
+Description: High Performance Matrix Preconditioners - Shared Library
+Description-md5: 478cf6be96dbcdf76f616926e4ebdedb
+Multi-Arch: same
+Homepage: https://www.llnl.gov/casc/hypre/
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/h/hypre/libhypre-2.26.0_2.26.0-3_amd64.deb
+Size: 1603036
+MD5sum: fb8ba0953ead6b137df241701bdad9cb
+SHA256: d78454e1a396f87de84670a225e34c6e3082ec196af627409447de1924343a3b

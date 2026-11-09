@@ -1,0 +1,19 @@
+Package: libegl-mesa0
+Source: mesa
+Version: 22.3.6-1+deb12u2
+Installed-Size: 324
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Architecture: amd64
+Provides: libegl-vendor
+Depends: libc6 (>= 2.34), libdrm2 (>= 2.4.109), libexpat1 (>= 2.0.1), libgbm1 (= 22.3.6-1+deb12u2), libgcc-s1 (>= 3.4), libglapi-mesa (= 22.3.6-1+deb12u2), libwayland-client0 (>= 1.20.0), libwayland-server0 (>= 1.15.0), libx11-xcb1 (>= 2:1.8.4), libxcb-dri2-0 (>= 1.8), libxcb-dri3-0 (>= 1.13), libxcb-present0, libxcb-randr0 (>= 1.3), libxcb-sync1, libxcb-xfixes0, libxcb1 (>= 1.9.2), libxshmfence1
+Description: free implementation of the EGL API -- Mesa vendor library
+Description-md5: b66a0a444abc380f2430455fec07e449
+Multi-Arch: same
+Homepage: https://mesa3d.org/
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/m/mesa/libegl-mesa0_22.3.6-1+deb12u2_amd64.deb
+Size: 114116
+MD5sum: 12dded2af042d1b8729e8575bdc4c606
+SHA256: 731a406af777d0606dc932da21c2214f189069caa437b8bb4063c328bab840ca

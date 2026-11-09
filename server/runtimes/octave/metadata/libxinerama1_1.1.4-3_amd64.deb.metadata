@@ -1,0 +1,17 @@
+Package: libxinerama1
+Source: libxinerama
+Version: 2:1.1.4-3
+Installed-Size: 47
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.4), libx11-6 (>= 2:1.6.0), libxext6
+Description: X11 Xinerama extension library
+Description-md5: 8af4527c5c1d4c9cfadc619f456cc56d
+Multi-Arch: same
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/libx/libxinerama/libxinerama1_1.1.4-3_amd64.deb
+Size: 17820
+MD5sum: 4bda2a30dd5228fa9d1218a398b3e4cc
+SHA256: 8dde8f74d2fc001f306fb1295a86850145e93191d35c983c7f52eb21b0a7f8cb

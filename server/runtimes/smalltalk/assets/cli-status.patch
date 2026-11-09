@@ -1,0 +1,71 @@
+--- a/libgst/input.c
++++ b/libgst/input.c
+@@ -624,6 +624,16 @@
+   va_end (ap);
+ }
+ 
++/* Code Museum CLI adapter: preserve reported parse errors in the exit status.
++   Explicit compiler error blocks retain control over handled errors. */
++static int museum_reported_error_status = 0;
++
++int
++gst_museum_error_status (void)
++{
++  return museum_reported_error_status;
++}
++
+ void
+ _gst_errorf_at (int line,
+ 		const char *str,
+@@ -631,6 +641,9 @@
+ {
+   va_list ap;
+ 
++  if (_gst_report_errors)
++    museum_reported_error_status = 1;
++
+   va_start (ap, str);
+ 
+   if (_gst_report_errors)
+@@ -657,6 +670,9 @@
+ 	     ...)
+ {
+   va_list ap;
++
++  if (_gst_report_errors)
++    museum_reported_error_status = 1;
+ 
+   va_start (ap, str);
+ 
+--- a/main.c
++++ b/main.c
+@@ -56,6 +56,9 @@
+ #endif
+ 
+ #include "gstpub.h"
++
++/* Code Museum CLI adapter; exported by the fixed libgst build. */
++extern int gst_museum_error_status (void);
+ #include "getopt.h"
+ 
+ #include <stdio.h>
+@@ -422,7 +425,7 @@
+ 				     "image", NULL));
+ 
+   gst_invoke_hook (GST_ABOUT_TO_QUIT);
+-  exit (0);
++  exit (gst_museum_error_status () ? 1 : 0);
+ }
+ 
+ #ifdef ENABLE_DISASSEMBLER
+--- a/kernel/SysExcept.st
++++ b/kernel/SysExcept.st
+@@ -1367,7 +1367,7 @@
+ 		    whileTrue: [context := context parentContext].
+ 		context backtraceOn: Transcript].
+ 
+-	thisContext environment continue: nil
++	ObjectMemory quit: 1
+     ]
+ 
+     instantiateDefaultHandler [

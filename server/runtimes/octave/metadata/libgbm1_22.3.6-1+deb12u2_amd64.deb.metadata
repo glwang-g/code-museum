@@ -1,0 +1,18 @@
+Package: libgbm1
+Source: mesa
+Version: 22.3.6-1+deb12u2
+Installed-Size: 107
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.34), libdrm2 (>= 2.4.75), libexpat1 (>= 2.0.1), libwayland-server0 (>= 1.15.0)
+Description: generic buffer management API -- runtime
+Description-md5: 9c1f8de2c17715ff7ed9524db86be4dd
+Multi-Arch: same
+Homepage: https://mesa3d.org/
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/m/mesa/libgbm1_22.3.6-1+deb12u2_amd64.deb
+Size: 38132
+MD5sum: b346f99cdc30de3f752cd65c5a63b08d
+SHA256: 4323840f2b7b3e108990848529125d99c0956ae5a854c1e0568ed08c8faeaa2e

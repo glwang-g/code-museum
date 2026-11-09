@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "platform": "linux/amd64",
+  "baseImage": "gcc@sha256:5e927c284bf55a7dc796262e311a0703344f62f41f5621eb56843111b1d37e15",
+  "sourceDateEpoch": 1793923200,
+  "version": "1.6.10",
+  "source": "https://nim-lang.org/blog/2022/11/23/version-1610-released.html",
+  "license": "MIT-and-component-licenses",
+  "runtime": {
+    "id": "nim",
+    "executable": "/usr/bin/nim",
+    "memoryMiB": 768,
+    "versionArgs": [
+      "--version"
+    ],
+    "versionPattern": "1.6.10"
+  },
+  "files": [
+    {
+      "file": "Dockerfile",
+      "bytes": 254,
+      "sha256": "5fd0732716442ade3390ad1332600e75bf4527e51b9133fdcdbcc69d303ecb94"
+    },
+    {
+      "file": "NOTICE.md",
+      "bytes": 962,
+      "sha256": "9192dd39a732e5cc2cd1f970066d433f190a70ae03dea8e06c323c7ec1e660ee"
+    },
+    {
+      "file": "acquisition.json",
+      "bytes": 2106,
+      "sha256": "eae8825bd9e52f9ee73c4a2e9847e7662b5787a2f9ed0fcc3ecdefc596cb02d0"
+    },
+    {
+      "file": "assets/libpcre3_8.39-15_amd64.deb",
+      "bytes": 340864,
+      "sha256": "993ea623ce5b42d67f653f2faaa7ef15e7c9d72bfcb93e22a1eaff7aa3532303"
+    },
+    {
+      "file": "assets/nim_1.6.10-2_amd64.deb",
+      "bytes": 4076564,
+      "sha256": "1861cfaaa3e085fb091a1e0b768a2c0d2ace17796b56964b88326fe3468ac399"
+    },
+    {
+      "file": "licenses/libpcre3.copyright",
+      "bytes": 2765,
+      "sha256": "ac9276490d2fa167442ae1aae33926514ad10c8886baa40046c5e367fccc5938"
+    },
+    {
+      "file": "licenses/nim.copyright",
+      "bytes": 3709,
+      "sha256": "3138f9a4574e8e07a58f6399f7faac67fd0f7938f0f06a65cff62bae0448d7aa"
+    },
+    {
+      "file": "metadata/apt-verification.txt",
+      "bytes": 1169,
+      "sha256": "966652e257fd492d3cb75d146adc643c0debd59a4664d623e49815b2b164c3a7"
+    },
+    {
+      "file": "metadata/bookworm-InRelease",
+      "bytes": 151075,
+      "sha256": "77737fa4b34f2693e982cc9ee35736816c35a7778fc2d326cc1bbf5b301fe1aa"
+    },
+    {
+      "file": "metadata/bookworm-security-InRelease",
+      "bytes": 34770,
+      "sha256": "1d368817d451179b6611e157dccd876f93feff7d603c575668fbb662d5b01677"
+    },
+    {
+      "file": "metadata/bookworm-updates-InRelease",
+      "bytes": 55403,
+      "sha256": "da3bb85c8864a931aa8d4ad4bcca054c0bb430aef7f8c3dfaff4b173d26f595c"
+    },
+    {
+      "file": "metadata/libpcre3_8.39-15_amd64.deb.metadata",
+      "bytes": 745,
+      "sha256": "ec3d7475407e5347604519164b2c6478190400d6973c26a1340ac29835776b3a"
+    },
+    {
+      "file": "metadata/nim_1.6.10-2_amd64.deb.metadata",
+      "bytes": 566,
+      "sha256": "9ca57d5a4548aed1799357a650614c96efa641cb21d5e0dbef50aab73d0be1ab"
+    }
+  ]
+}

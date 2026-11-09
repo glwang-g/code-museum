@@ -1,0 +1,17 @@
+Package: libavahi-common-data
+Source: avahi
+Version: 0.8-10+deb12u1
+Installed-Size: 738
+Maintainer: Utopia Maintenance Team <pkg-utopia-maintainers@lists.alioth.debian.org>
+Architecture: amd64
+Description: Avahi common data files
+Description-md5: 7262221e9aafb47f2911e3153296fab1
+Multi-Arch: same
+Homepage: https://avahi.org/
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/a/avahi/libavahi-common-data_0.8-10+deb12u1_amd64.deb
+Size: 107164
+MD5sum: b06e992ca8cb10f4793c2cdc2e795f8b
+SHA256: b21e33c3797c834e9a9ce0f1085e6d3f721db496d550505ab2f364d52097fe6f

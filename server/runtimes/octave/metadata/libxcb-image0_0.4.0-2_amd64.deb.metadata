@@ -1,0 +1,18 @@
+Package: libxcb-image0
+Source: xcb-util-image
+Version: 0.4.0-2
+Installed-Size: 47
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.14), libxcb-shm0, libxcb-util1 (>= 0.4.0), libxcb1
+Description: utility libraries for X C Binding -- image
+Description-md5: a044f5d11519e42d4dc9c647e530afeb
+Multi-Arch: same
+Homepage: https://xcb.freedesktop.org
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/x/xcb-util-image/libxcb-image0_0.4.0-2_amd64.deb
+Size: 22944
+MD5sum: 6740241ec7b24baaf9ffd3c62de89749
+SHA256: a475522faef7672ca065fdcd2594bc755bfcc4d819909f9d944e8c002b4460d1

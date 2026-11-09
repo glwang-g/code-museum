@@ -1,0 +1,20 @@
+Package: libglvnd0
+Source: libglvnd
+Version: 1.6.0-1
+Installed-Size: 728
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Architecture: amd64
+Replaces: libgldispatch0-nvidia
+Depends: libc6 (>= 2.34)
+Breaks: libgldispatch0-nvidia
+Description: Vendor neutral GL dispatch library
+Description-md5: 38a2c26ce3ab527aa045be2d045340da
+Multi-Arch: same
+Homepage: https://gitlab.freedesktop.org/glvnd/libglvnd
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/libg/libglvnd/libglvnd0_1.6.0-1_amd64.deb
+Size: 51820
+MD5sum: 7468c949b597459420e0d2d0b950a3bb
+SHA256: b6da5b153dd62d8b5e5fbe25242db1fc05c068707c365db49abda8c2427c75f8

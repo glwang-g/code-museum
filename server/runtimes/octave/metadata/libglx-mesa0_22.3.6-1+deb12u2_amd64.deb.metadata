@@ -1,0 +1,20 @@
+Package: libglx-mesa0
+Source: mesa
+Version: 22.3.6-1+deb12u2
+Installed-Size: 518
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Architecture: amd64
+Provides: libglx-vendor
+Depends: libc6 (>= 2.34), libdrm2 (>= 2.4.75), libexpat1 (>= 2.0.1), libglapi-mesa (= 22.3.6-1+deb12u2), libx11-6 (>= 2:1.4.99.1), libx11-xcb1 (>= 2:1.8.4), libxcb-dri2-0 (>= 1.8), libxcb-dri3-0 (>= 1.13), libxcb-glx0 (>= 1.8), libxcb-present0, libxcb-randr0, libxcb-shm0, libxcb-sync1, libxcb-xfixes0, libxcb1 (>= 1.9.2), libxext6, libxfixes3, libxshmfence1, libxxf86vm1, libgl1-mesa-dri
+Breaks: glx-diversions (<< 0.8.4~), libopengl-perl (<< 0.6704+dfsg-2)
+Description: free implementation of the OpenGL API -- GLX vendor library
+Description-md5: 553ff9489ccb9f6bdae31dc8c33ac85b
+Multi-Arch: same
+Homepage: https://mesa3d.org/
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/m/mesa/libglx-mesa0_22.3.6-1+deb12u2_amd64.deb
+Size: 147676
+MD5sum: 1d75782c14ce0da677535753f8729162
+SHA256: 88e7ffa61f1a0a86c30736ad7657ab4774c9b711bbaff76cef0bd32ffb85ec90

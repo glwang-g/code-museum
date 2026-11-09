@@ -1,0 +1,18 @@
+Package: libxkbcommon0
+Source: libxkbcommon
+Version: 1.5.0-1
+Installed-Size: 296
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Architecture: amd64
+Depends: xkb-data, libc6 (>= 2.33)
+Description: library interface to the XKB compiler - shared library
+Description-md5: 3856681f1fd5bf4962445465a50b2086
+Multi-Arch: same
+Homepage: http://www.xkbcommon.org/
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/libx/libxkbcommon/libxkbcommon0_1.5.0-1_amd64.deb
+Size: 106108
+MD5sum: d0aca9975743edb14d39a3389956364b
+SHA256: e3fe045b9a33a101de1c5a912a4a10928db055c3f68930f47eccbb44d7c7d54e

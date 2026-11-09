@@ -1,0 +1,18 @@
+Package: libflac12
+Source: flac
+Version: 1.4.2+ds-2
+Installed-Size: 458
+Maintainer: Debian Multimedia Maintainers <debian-multimedia@lists.debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.33), libogg0 (>= 1.0rc3)
+Description: Free Lossless Audio Codec - runtime C library
+Description-md5: f4e8094378ea7f3b5f74adc1e78593b6
+Multi-Arch: same
+Homepage: https://xiph.org/flac/
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/f/flac/libflac12_1.4.2+ds-2_amd64.deb
+Size: 198124
+MD5sum: 111c0ba4a0c439986c676e6695478cea
+SHA256: 4d8431c274eef13ec9ee2c0bf988c34b4342367dec053b7f69a432525be5b1fe

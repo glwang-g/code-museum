@@ -1,0 +1,18 @@
+Package: libxcb-render-util0
+Source: xcb-util-renderutil (0.3.9-1)
+Version: 0.3.9-1+b1
+Installed-Size: 44
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.4), libxcb-render0, libxcb1
+Description: utility libraries for X C Binding -- render-util
+Description-md5: 63d61510faea6f0a8654420ce1402aca
+Multi-Arch: same
+Homepage: http://xcb.freedesktop.org
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/x/xcb-util-renderutil/libxcb-render-util0_0.3.9-1+b1_amd64.deb
+Size: 18252
+MD5sum: fb9edbe18f0e4a27a6da5f1a82e48059
+SHA256: be4b38a63e65c84e2f1322f044d05a9baa677e0f3dc68b742a0a109a3ff40ae9

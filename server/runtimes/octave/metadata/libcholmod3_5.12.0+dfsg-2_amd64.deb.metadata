@@ -1,0 +1,18 @@
+Package: libcholmod3
+Source: suitesparse
+Version: 1:5.12.0+dfsg-2
+Installed-Size: 947
+Maintainer: Debian Science Team <debian-science-maintainers@lists.alioth.debian.org>
+Architecture: amd64
+Depends: libamd2 (>= 1:4.5.2), libblas3 | libblas.so.3, libc6 (>= 2.7), libcamd2 (>= 1:4.5.2), libccolamd2 (>= 1:4.5.2), libcolamd2 (>= 1:4.5.2), libgomp1 (>= 4.9), liblapack3 | liblapack.so.3, libmetis5 (>= 5.1.0.dfsg), libsuitesparseconfig5 (>= 1:5.0.0)
+Description: sparse Cholesky factorization library for sparse matrices
+Description-md5: 6bc514d42de735d8cd9783bc9eebb69f
+Multi-Arch: same
+Homepage: http://suitesparse.com
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/s/suitesparse/libcholmod3_5.12.0+dfsg-2_amd64.deb
+Size: 334664
+MD5sum: f02c367dc6bbe8a628a7de584677beee
+SHA256: 1059cc10eba66ec6437e0be640686bf9fd0c28e6b124ddddca6fabcb302991af

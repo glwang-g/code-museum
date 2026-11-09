@@ -1,0 +1,18 @@
+Package: libxcursor1
+Source: libxcursor
+Version: 1:1.2.1-1
+Installed-Size: 83
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.4), libx11-6 (>= 2:1.4.99.1), libxfixes3, libxrender1
+Description: X cursor management library
+Description-md5: bcab34b890612afb82be0cf91528d573
+Multi-Arch: same
+Homepage: https://www.x.org
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/libx/libxcursor/libxcursor1_1.2.1-1_amd64.deb
+Size: 40904
+MD5sum: 1a456c7bb14f1ef12bb89511d3361ef9
+SHA256: 49e167048661be4c614fff81429e9eaef38e54ef1d2150a5d2a8c53919217529

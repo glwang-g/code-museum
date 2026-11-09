@@ -1,0 +1,18 @@
+Package: libxcb-util1
+Source: xcb-util (0.4.0-1)
+Version: 0.4.0-1+b1
+Installed-Size: 57
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.8), libxcb1
+Description: utility libraries for X C Binding -- atom, aux and event
+Description-md5: c4e9b5a7227fc66a9d8bef500363e8a0
+Multi-Arch: same
+Homepage: http://xcb.freedesktop.org
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/x/xcb-util/libxcb-util1_0.4.0-1+b1_amd64.deb
+Size: 23248
+MD5sum: 64267acd3cf240089df1fe579b45985c
+SHA256: 4c48af51fb2ac1be0490067e7450aeda27bf6c6c395165de02199eee4835336f

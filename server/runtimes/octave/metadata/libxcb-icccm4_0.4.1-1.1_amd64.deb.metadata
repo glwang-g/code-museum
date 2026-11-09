@@ -1,0 +1,18 @@
+Package: libxcb-icccm4
+Source: xcb-util-wm
+Version: 0.4.1-1.1
+Installed-Size: 58
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.2.5), libxcb1
+Description: utility libraries for X C Binding -- icccm
+Description-md5: 250dc4e8740787d8010e1a0d78c55114
+Multi-Arch: same
+Homepage: https://xcb.freedesktop.org
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/x/xcb-util-wm/libxcb-icccm4_0.4.1-1.1_amd64.deb
+Size: 27436
+MD5sum: fdf00da2c7ee776f8f9d3f5d7e62d32a
+SHA256: f323194cb04cd4e5ae064fafec39db6dcf8a431cbd65a0bc53fa6c359862d8ff

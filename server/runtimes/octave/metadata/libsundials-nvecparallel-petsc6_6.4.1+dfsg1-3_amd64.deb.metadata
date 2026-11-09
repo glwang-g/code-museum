@@ -1,0 +1,18 @@
+Package: libsundials-nvecparallel-petsc6
+Source: sundials
+Version: 6.4.1+dfsg1-3
+Installed-Size: 175
+Maintainer: Debian Science Team <debian-science-maintainers@lists.alioth.debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.29), libopenmpi3 (>= 4.1.4), libpetsc-real3.18 (>= 3.18.2+dfsg1)
+Description: PETSc vector operations library (SUNDIALS library)
+Description-md5: f66e08e2eab2e39bae8b39de4d4a145e
+Multi-Arch: same
+Homepage: https://www.llnl.gov/CASC/sundials/
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/s/sundials/libsundials-nvecparallel-petsc6_6.4.1+dfsg1-3_amd64.deb
+Size: 58296
+MD5sum: 101403b8587cc47f07bc5a6ff8fbf978
+SHA256: f3c4dfcbd586a2b4e1f5fa39efe79d1e6e018599a9e299393567ada7336ca977

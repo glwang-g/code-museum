@@ -1,0 +1,18 @@
+Package: libnl-3-200
+Source: libnl3 (3.7.0-0.2)
+Version: 3.7.0-0.2+b1
+Installed-Size: 182
+Maintainer: Heiko Stuebner <mmind@debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.34)
+Description: library for dealing with netlink sockets
+Description-md5: de8043b32007ad94dc3b94b81389b53d
+Multi-Arch: same
+Homepage: http://www.infradead.org/~tgr/libnl/
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/libn/libnl3/libnl-3-200_3.7.0-0.2+b1_amd64.deb
+Size: 63124
+MD5sum: 928fc10e5466e01b0fd4cd34b38b4957
+SHA256: d1fc3e9eb8e79b4c96b0a64c3d8c9e068ae2f665cab71bd19f417ffd0453a890

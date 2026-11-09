@@ -1,0 +1,18 @@
+Package: libdouble-conversion3
+Source: double-conversion
+Version: 3.2.1-1
+Installed-Size: 104
+Maintainer: Debian Science Team <debian-science-maintainers@lists.alioth.debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.4), libgcc-s1 (>= 3.0), libstdc++6 (>= 4.1.1)
+Description: routines to convert IEEE floats to and from strings
+Description-md5: d76bc610d27922197310df91f331561e
+Multi-Arch: same
+Homepage: https://github.com/google/double-conversion
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/d/double-conversion/libdouble-conversion3_3.2.1-1_amd64.deb
+Size: 41460
+MD5sum: c0f1ef932d24e75460f2408b4fe37c62
+SHA256: 802b880ed900e4a8d54bab77b7551a7f3408b04891c3e5650fdc2368cc1fbc0a

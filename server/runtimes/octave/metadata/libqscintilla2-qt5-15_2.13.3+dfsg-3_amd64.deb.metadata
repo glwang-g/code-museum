@@ -1,0 +1,19 @@
+Package: libqscintilla2-qt5-15
+Source: qscintilla2
+Version: 2.13.3+dfsg-3
+Installed-Size: 3690
+Maintainer: Debian Python Team <team+python@tracker.debian.org>
+Architecture: amd64
+Depends: libqscintilla2-qt5-l10n (>= 2.13.3+dfsg), libc6 (>= 2.32), libgcc-s1 (>= 3.0), libqt5core5a (>= 5.15.1), libqt5gui5 (>= 5.14.1) | libqt5gui5-gles (>= 5.14.1), libqt5printsupport5 (>= 5.0.2), libqt5widgets5 (>= 5.11.0~rc1), libstdc++6 (>= 11)
+Suggests: libqscintilla2-doc
+Description: Qt5 port of the Scintilla source code editing widget
+Description-md5: 199ccf9871a65668bcb592ca2fb35573
+Multi-Arch: same
+Homepage: http://www.riverbankcomputing.co.uk/software/qscintilla
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/q/qscintilla2/libqscintilla2-qt5-15_2.13.3+dfsg-3_amd64.deb
+Size: 1094120
+MD5sum: abcc5c52803993f82456173ea12c3729
+SHA256: 9ffca712d391436f683164388d5cde21e75d4f704653cd4a20b76e6276c99787

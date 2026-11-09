@@ -1,0 +1,22 @@
+Package: libscalapack-openmpi2.2
+Source: scalapack (2.2.1-2)
+Version: 2.2.1-2+b1
+Installed-Size: 5722
+Maintainer: Debian Science Maintainers <debian-science-maintainers@lists.alioth.debian.org>
+Architecture: amd64
+Replaces: libscalapack-mpi1 (<< 1.8.0-9.1), scalapack1-mpich
+Depends: mpi-default-bin, libblas3 | libblas.so.3, libc6 (>= 2.29), libgcc-s1 (>= 4.0), libgfortran5 (>= 8), liblapack3 | liblapack.so.3, libopenmpi3 (>= 4.1.4)
+Suggests: scalapack-doc
+Conflicts: scalapack2-mpich
+Breaks: libscalapack-mpi1 (<< 1.8.0-9.1)
+Description: Scalable Linear Algebra Package - Shared libs for OpenMPI
+Description-md5: 7c18c337c3e81530905d6854815666c8
+Multi-Arch: same
+Homepage: http://www.netlib.org/scalapack/
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/s/scalapack/libscalapack-openmpi2.2_2.2.1-2+b1_amd64.deb
+Size: 1554300
+MD5sum: e07383a093cd18d0ecc8a103e5ee2bba
+SHA256: 659dbac6aa63a828893ac318b06f9cd846260fb2b1d60f66639939c3bc568c19

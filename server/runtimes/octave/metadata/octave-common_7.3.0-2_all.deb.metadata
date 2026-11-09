@@ -1,0 +1,18 @@
+Package: octave-common
+Source: octave
+Version: 7.3.0-2
+Installed-Size: 21496
+Maintainer: Debian Octave Group <team+pkg-octave-team@tracker.debian.org>
+Architecture: all
+Recommends: fonts-freefont-otf
+Description: architecture-independent files for octave
+Description-md5: 73c23a395ed68665aa8e921b9d55eb81
+Multi-Arch: foreign
+Homepage: https://www.octave.org/
+Tag: role::app-data
+Section: math
+Priority: optional
+Filename: pool/main/o/octave/octave-common_7.3.0-2_all.deb
+Size: 6256908
+MD5sum: 54905f17bcab4c456bc2ed6b5ac4be4a
+SHA256: 4c46f7314b0bc471db63d4733ae4a798e9c2185d790d19862454d976ed071cbb

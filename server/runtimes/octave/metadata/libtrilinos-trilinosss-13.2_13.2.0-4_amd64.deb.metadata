@@ -1,0 +1,18 @@
+Package: libtrilinos-trilinosss-13.2
+Source: trilinos
+Version: 13.2.0-4
+Installed-Size: 213
+Maintainer: Debian Science Maintainers <debian-science-maintainers@lists.alioth.debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.4)
+Description: suitesparse with adaptations for Amesos - runtime files
+Description-md5: 41f57ad99dc5722a8557c5c10a1c08cd
+Multi-Arch: same
+Homepage: https://trilinos.github.io/
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/t/trilinos/libtrilinos-trilinosss-13.2_13.2.0-4_amd64.deb
+Size: 88132
+MD5sum: 49adbed939446c9f77c7c0ed8129e7f4
+SHA256: 64d9d5b99e8ea2b1ddba058be2118dae2567f4f0e71f7f68dcd389219e8d8188

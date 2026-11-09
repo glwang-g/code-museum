@@ -1,0 +1,145 @@
+{
+  "schemaVersion": 1,
+  "platform": "linux/amd64",
+  "baseImage": "gcc@sha256:5e927c284bf55a7dc796262e311a0703344f62f41f5621eb56843111b1d37e15",
+  "sourceDateEpoch": 1793923200,
+  "version": "GNU Smalltalk 3.2.5 / museum CLI status adapter",
+  "source": "https://www.gnu.org/software/smalltalk/",
+  "license": "GPL-2.0-or-later",
+  "runtime": {
+    "id": "smalltalk",
+    "executable": "/opt/smalltalk/bin/gst",
+    "memoryMiB": 512,
+    "versionArgs": [
+      "--version"
+    ],
+    "versionPattern": "GNU Smalltalk version 3.2.5"
+  },
+  "files": [
+    {
+      "file": "Dockerfile",
+      "bytes": 825,
+      "sha256": "182d94f32179d79afefe71197a65dae6032244c13839e959269d3ec277806bde"
+    },
+    {
+      "file": "NOTICE.md",
+      "bytes": 2473,
+      "sha256": "d30c890bf89e9f08d92ec17532af553691d0d66ed84359776986d48dc2cd9d2c"
+    },
+    {
+      "file": "acquisition.json",
+      "bytes": 5687,
+      "sha256": "bafc7c865826682ea9143da8ffe8dc0e7d044ede623a0f888c62fdd31b3fdb66"
+    },
+    {
+      "file": "assets/cli-status.patch",
+      "bytes": 1414,
+      "sha256": "72a0f5b04c4510e2892c323cbcdcc2c69d902f130a837fb37ab71ec556c5019c"
+    },
+    {
+      "file": "assets/expat-callback.patch",
+      "bytes": 310,
+      "sha256": "561df9788cb47493d4b5694a1c03efc4cfafe2c6ce202a8b951197d1e8e5d41d"
+    },
+    {
+      "file": "assets/gawk_5.2.1-2_amd64.deb",
+      "bytes": 672772,
+      "sha256": "9cd63c1b35ff082092c221a23dcb167f72c4d1c3de3a42e11f16181f42ab3b55"
+    },
+    {
+      "file": "assets/iconv-glibc.patch",
+      "bytes": 266,
+      "sha256": "272816c87c265733e3396b96ddf01694875d2431b16dd9fb584c7f317aa188a5"
+    },
+    {
+      "file": "assets/libsigsegv-dev_2.14-1_amd64.deb",
+      "bytes": 30884,
+      "sha256": "b69925aaefb356d6644e38fdffc2697026013b83542d94983b73a16dc3833d6e"
+    },
+    {
+      "file": "assets/libsigsegv2_2.14-1_amd64.deb",
+      "bytes": 37152,
+      "sha256": "92336a5c47989b82ba4c778adc0ea22fc84450773f2d8428fca4448b0789cfe6"
+    },
+    {
+      "file": "assets/smalltalk-3.2.5.tar.gz",
+      "bytes": 5779293,
+      "sha256": "06e574e818ec49f0555d948ae53b1453d8c1df59ef597dad911a4fd1ffba1cce"
+    },
+    {
+      "file": "assets/zip_3.0-13_amd64.deb",
+      "bytes": 229532,
+      "sha256": "8877a360e455c7b9b6d448503eeaacc6b9a1325b548f3fb7eef69a87ab558b96"
+    },
+    {
+      "file": "licenses/COPYING",
+      "bytes": 18002,
+      "sha256": "231f7edcc7352d7734a96eef0b8030f77982678c516876fcb81e25b32d68564c"
+    },
+    {
+      "file": "licenses/COPYING.DOC",
+      "bytes": 22962,
+      "sha256": "4748f03ed2dbcc14cde6ebc30799899c403e356a7465dc30fcf2b80c45fc0059"
+    },
+    {
+      "file": "licenses/COPYING.LIB",
+      "bytes": 26546,
+      "sha256": "c49d6420e36143cc49e1a030fcfd6605fa1bfc60db8dfce4386c23d4038713f3"
+    },
+    {
+      "file": "licenses/gawk.copyright",
+      "bytes": 1347,
+      "sha256": "4d8bd683c14ce5e3f68094a56892ecd336524e9977b6cfd3eb22ef835d67f367"
+    },
+    {
+      "file": "licenses/libsigsegv-dev.copyright",
+      "bytes": 6138,
+      "sha256": "7b99c9331ab4f430f78516833f9f04ca3408ab0f3d325534c6ee34a5ada0ce24"
+    },
+    {
+      "file": "licenses/libsigsegv2.copyright",
+      "bytes": 6138,
+      "sha256": "7b99c9331ab4f430f78516833f9f04ca3408ab0f3d325534c6ee34a5ada0ce24"
+    },
+    {
+      "file": "licenses/zip.copyright",
+      "bytes": 3811,
+      "sha256": "03733b4bcdbe83fc4a2d087d3eed34f70c4de08f833eb24a7075b76e80ee8c8d"
+    },
+    {
+      "file": "metadata/apt-verification.txt",
+      "bytes": 1169,
+      "sha256": "966652e257fd492d3cb75d146adc643c0debd59a4664d623e49815b2b164c3a7"
+    },
+    {
+      "file": "metadata/bookworm-InRelease",
+      "bytes": 151075,
+      "sha256": "77737fa4b34f2693e982cc9ee35736816c35a7778fc2d326cc1bbf5b301fe1aa"
+    },
+    {
+      "file": "metadata/bookworm-security-InRelease",
+      "bytes": 34770,
+      "sha256": "1d368817d451179b6611e157dccd876f93feff7d603c575668fbb662d5b01677"
+    },
+    {
+      "file": "metadata/bookworm-updates-InRelease",
+      "bytes": 55403,
+      "sha256": "4d6f879f86e299b57f8200446ed233f78a65c8af62e3a48f005439e238d68039"
+    },
+    {
+      "file": "metadata/gawk_5.2.1-2_amd64.deb.metadata",
+      "bytes": 848,
+      "sha256": "4f547660038559212a9c03a81674af1d884c238ece3aa8c83d7a9c3fbde9760a"
+    },
+    {
+      "file": "metadata/libsigsegv-dev_2.14-1_amd64.deb.metadata",
+      "bytes": 686,
+      "sha256": "2dd0bf81bd95f446fc07e25f7b1ee634e52cf938ef87faf83c4e756f513465c3"
+    },
+    {
+      "file": "metadata/libsigsegv2_2.14-1_amd64.deb.metadata",
+      "bytes": 621,
+      "sha256": "76dcb1b467206ed6bd9e52e7c65dfc76b4e0a669f75e7573b74ce34866fc3fe5"
+    }
+  ]
+}

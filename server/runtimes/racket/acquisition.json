@@ -1,0 +1,8 @@
+{
+  "source": "https://download.racket-lang.org/releases/8.7/installers/racket-minimal-8.7-x86_64-linux-cs.tgz",
+  "resolvedMirror": "https://mirror.racket-lang.org/installers/8.7/racket-minimal-8.7-x86_64-linux-cs.tgz",
+  "sha256": "56c7ab5331352fa78a20458b291997a140eeb95b106561c243590fd5dfa12204",
+  "bytes": 33148725,
+  "checksumSource": "https://download.racket-lang.org/releases/8.7/",
+  "verification": "Actual archive SHA-256 matched the official Racket 8.7 release page."
+}

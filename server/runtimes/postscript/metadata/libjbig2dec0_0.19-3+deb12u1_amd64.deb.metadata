@@ -1,0 +1,16 @@
+Package: libjbig2dec0
+Source: jbig2dec
+Version: 0.19-3+deb12u1
+Installed-Size: 179
+Maintainer: Debian Printing Team <debian-printing@lists.debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.14)
+Description: JBIG2 decoder library - shared libraries
+Description-md5: 4fc692e269014b2801abb9d178e5f774
+Homepage: https://jbig2dec.com/
+Multi-Arch: same
+Section: libs
+Priority: optional
+Filename: pool/updates/main/j/jbig2dec/libjbig2dec0_0.19-3+deb12u1_amd64.deb
+Size: 64572
+SHA256: 526bd9c14d4bc9511671d5d771c283477da33cae2095b4a8133c8a326ed79cbb

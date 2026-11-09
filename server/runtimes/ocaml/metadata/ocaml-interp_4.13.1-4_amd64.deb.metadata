@@ -1,0 +1,20 @@
+Package: ocaml-interp
+Source: ocaml
+Version: 4.13.1-4
+Installed-Size: 20380
+Maintainer: Debian OCaml Maintainers <debian-ocaml-maint@lists.debian.org>
+Architecture: amd64
+Provides: ocaml-interp-4.13.1
+Depends: ocaml-compiler-libs (= 4.13.1-4), ocaml-base-4.13.1
+Recommends: ledit | readline-editor
+Description: OCaml interactive interpreter and standard libraries
+Description-md5: 8eec5a948780aa1b1aac7a63aefff1cb
+Homepage: https://ocaml.org/
+Tag: devel::interpreter, devel::lang:ocaml, implemented-in::ocaml,
+ interface::commandline, role::program, scope::utility
+Section: ocaml
+Priority: optional
+Filename: pool/main/o/ocaml/ocaml-interp_4.13.1-4_amd64.deb
+Size: 6158032
+MD5sum: 281081a4fb3f6bd87a03f2ff45c24de0
+SHA256: 4805d62f3dd15a4ebe0202ef7d2727f4d100ebc5514bfa07585066a804568aa0

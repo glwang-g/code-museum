@@ -1,0 +1,18 @@
+Package: librdmacm1
+Source: rdma-core
+Version: 44.0-2
+Installed-Size: 208
+Maintainer: Benjamin Drung <bdrung@ubuntu.com>
+Architecture: amd64
+Depends: libc6 (>= 2.34), libibverbs1 (>= 31), libnl-3-200 (>= 3.2.7)
+Description: Library for managing RDMA connections
+Description-md5: dc9d0886ecf59fc604b978f8125cf804
+Multi-Arch: same
+Homepage: https://github.com/linux-rdma/rdma-core
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/r/rdma-core/librdmacm1_44.0-2_amd64.deb
+Size: 68632
+MD5sum: 861ee94f3b1309863d56d67098f49da3
+SHA256: 16b18625834371d023b81477823074ea0d34c478d58dbef3f01107984f47d034

@@ -1,0 +1,18 @@
+Package: libxcb-keysyms1
+Source: xcb-util-keysyms (0.4.0-1)
+Version: 0.4.0-1+b2
+Installed-Size: 39
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.2.5), libxcb1
+Description: utility libraries for X C Binding -- keysyms
+Description-md5: b13c6d7cacf99604cfb3199b3b3098d2
+Multi-Arch: same
+Homepage: http://xcb.freedesktop.org
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/x/xcb-util-keysyms/libxcb-keysyms1_0.4.0-1+b2_amd64.deb
+Size: 16416
+MD5sum: 51db9dd938d7d0287bb094e679b708d1
+SHA256: aed1436db9a3e63b10d00c4ed16248b5c82b5dd2963a83a761f406af65eb4b49

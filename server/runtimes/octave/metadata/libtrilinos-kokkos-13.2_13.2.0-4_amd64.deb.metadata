@@ -1,0 +1,18 @@
+Package: libtrilinos-kokkos-13.2
+Source: trilinos
+Version: 13.2.0-4
+Installed-Size: 370
+Maintainer: Debian Science Maintainers <debian-science-maintainers@lists.alioth.debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.34), libgcc-s1 (>= 3.0), libstdc++6 (>= 11)
+Description: Trilinos Kokkos programming model - runtime files
+Description-md5: b16d4305e8001b6f3f9e125266bea0a8
+Multi-Arch: same
+Homepage: https://trilinos.github.io/
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/t/trilinos/libtrilinos-kokkos-13.2_13.2.0-4_amd64.deb
+Size: 104728
+MD5sum: 53d7331d9a0d16086c846112b6a42e80
+SHA256: 6e0d65e32930188e2b878b8bc42221f3b736e6d44827d9dd8fc7c24674f4b8b5

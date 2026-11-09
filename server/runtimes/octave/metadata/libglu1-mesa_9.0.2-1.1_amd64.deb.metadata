@@ -1,0 +1,20 @@
+Package: libglu1-mesa
+Source: libglu
+Version: 9.0.2-1.1
+Installed-Size: 478
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Architecture: amd64
+Replaces: libglu1
+Provides: libglu1
+Depends: libc6 (>= 2.14), libgcc-s1 (>= 3.0), libopengl0, libstdc++6 (>= 5)
+Conflicts: libglu1, mesag3 (<< 5.0.0-1), xlibmesa3
+Description: Mesa OpenGL utility library (GLU)
+Description-md5: 2479dddf6e2110db8dadaf1c564ba1d9
+Multi-Arch: same
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/libg/libglu/libglu1-mesa_9.0.2-1.1_amd64.deb
+Size: 178084
+MD5sum: 8aff62f034afad241ffa70e44a852d32
+SHA256: 8f81a5fd51c1c35719757f05968b205b0c93ecc80c091781d8bfb5326eb95142

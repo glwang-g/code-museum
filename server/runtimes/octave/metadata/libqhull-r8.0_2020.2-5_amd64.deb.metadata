@@ -1,0 +1,18 @@
+Package: libqhull-r8.0
+Source: qhull
+Version: 2020.2-5
+Installed-Size: 560
+Maintainer: Debian Science Maintainers <debian-science-maintainers@alioth-lists.debian.net>
+Architecture: amd64
+Depends: libc6 (>= 2.29)
+Description: calculate convex hulls and related structures (reentrant shared library)
+Description-md5: 67d673d0eeff25d8a8327ec3e103fffa
+Multi-Arch: same
+Homepage: https://www.qhull.org
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/q/qhull/libqhull-r8.0_2020.2-5_amd64.deb
+Size: 248100
+MD5sum: 781260a36cd4d65a86fc349f26b68338
+SHA256: 230f779769a141bb9d94b7a8e3f971dabbb11e71e6e47c73bb5f9b559d11a1d8

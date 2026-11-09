@@ -1,0 +1,18 @@
+Package: libscotch-7.0
+Source: scotch
+Version: 7.0.3-2
+Installed-Size: 2906
+Maintainer: Debian Science Maintainers <debian-science-maintainers@lists.alioth.debian.org>
+Architecture: amd64
+Depends: libbz2-1.0, libc6 (>= 2.34), liblzma5 (>= 5.1.1alpha+20120614), zlib1g (>= 1:1.1.4)
+Description: programs and libraries for graph, mesh and hypergraph partitioning
+Description-md5: 7010765d2b2832f99f331f08e36585e8
+Multi-Arch: same
+Homepage: http://www.labri.fr/perso/pelegrin/scotch/
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/s/scotch/libscotch-7.0_7.0.3-2_amd64.deb
+Size: 407016
+MD5sum: 74edd9b6ad679f619184e4b3839d7a7f
+SHA256: f5c79cce66420b60859f170df61f58d59ae0355112d948b2443048247b65eb11

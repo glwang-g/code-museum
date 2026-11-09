@@ -1,0 +1,18 @@
+Package: libogg0
+Source: libogg
+Version: 1.3.5-3
+Installed-Size: 61
+Maintainer: Debian Multimedia Maintainers <debian-multimedia@lists.debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.14)
+Description: Ogg bitstream library
+Description-md5: a71d36f8dd4fb5e3d1b8a32e6c18cf05
+Multi-Arch: same
+Homepage: https://xiph.org/ogg/
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/libo/libogg/libogg0_1.3.5-3_amd64.deb
+Size: 23412
+MD5sum: 622d11b074b630a697ad0c84ac25237f
+SHA256: f67acb0477aed0354f411172e37af338f3ac6bd4f3766134a2cf5539884b5a28

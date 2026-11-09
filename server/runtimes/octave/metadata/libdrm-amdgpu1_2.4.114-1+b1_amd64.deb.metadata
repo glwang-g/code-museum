@@ -1,0 +1,18 @@
+Package: libdrm-amdgpu1
+Source: libdrm (2.4.114-1)
+Version: 2.4.114-1+b1
+Installed-Size: 76
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.34), libdrm2 (>= 2.4.108)
+Description: Userspace interface to amdgpu-specific kernel DRM services -- runtime
+Description-md5: 61a9b44d2a8366ec01d27d9e105f5ecb
+Multi-Arch: same
+Homepage: https://cgit.freedesktop.org/mesa/drm/
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/libd/libdrm/libdrm-amdgpu1_2.4.114-1+b1_amd64.deb
+Size: 20864
+MD5sum: 9f5667aa3470be6ff449a14a8235c313
+SHA256: b75a71e96f1faac0f131ac657e09efcbe8968eef62cc34b8abfcff2ff9f0cccd

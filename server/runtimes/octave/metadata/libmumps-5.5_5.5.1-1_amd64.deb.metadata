@@ -1,0 +1,19 @@
+Package: libmumps-5.5
+Source: mumps
+Version: 5.5.1-1
+Installed-Size: 9699
+Maintainer: Debian Science Maintainers <debian-science-maintainers@lists.alioth.debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.34), libgfortran5 (>= 10), liblapack3 | liblapack.so.3, libopenmpi3 (>= 4.1.4), libscalapack-openmpi2.2 (>= 2.2.1)
+Suggests: mpi-default-bin
+Description: Direct linear systems solver - parallel shared libraries
+Description-md5: 3f5077d4617d80daf0ac8274bb6a5446
+Multi-Arch: same
+Homepage: http://mumps-solver.org/
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/m/mumps/libmumps-5.5_5.5.1-1_amd64.deb
+Size: 1828352
+MD5sum: 4730dc838f8c0e5d63004c92e8bcc2fb
+SHA256: d62a83f22ff55bb5e7648f2ea01fbd7c37ae19510bbadc854fed7347e8cf4a0b

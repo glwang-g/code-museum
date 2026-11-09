@@ -1,0 +1,21 @@
+Package: bison
+Source: bison (2:3.8.2+dfsg-1)
+Version: 2:3.8.2+dfsg-1+b1
+Installed-Size: 3116
+Maintainer: Chuan-kai Lin <cklin@debian.org>
+Architecture: amd64
+Depends: m4, libc6 (>= 2.34)
+Suggests: bison-doc
+Description: YACC-compatible parser generator
+Description-md5: 3b8154d16aa228f689bcd81364e7088c
+Multi-Arch: foreign
+Homepage: https://www.gnu.org/software/bison/
+Tag: devel::code-generator, devel::lang:c, devel::lang:c++, devel::library,
+ implemented-in::c, interface::commandline, role::devel-lib,
+ role::program, scope::utility, suite::gnu, works-with::software:source
+Section: devel
+Priority: optional
+Filename: pool/main/b/bison/bison_3.8.2+dfsg-1+b1_amd64.deb
+Size: 1174528
+MD5sum: 57bfea4695de6b42bf56fde7526fd5c2
+SHA256: a414afd7519c53bfa33415ba5b951bc8b4906877004c49723ffda50a6033c3e8

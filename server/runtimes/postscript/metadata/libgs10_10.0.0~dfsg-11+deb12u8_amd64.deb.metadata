@@ -1,0 +1,18 @@
+Package: libgs10
+Source: ghostscript
+Version: 10.0.0~dfsg-11+deb12u8
+Installed-Size: 21779
+Maintainer: Debian QA Group <packages@qa.debian.org>
+Architecture: amd64
+Depends: libgs10-common (= 10.0.0~dfsg-11+deb12u8), poppler-data, libc6 (>= 2.34), libcups2 (>= 2.3~b6), libfontconfig1 (>= 2.12.6), libfreetype6 (>= 2.10.1), libidn12 (>= 1.13), libijs-0.35 (>= 0.35), libjbig2dec0 (>= 0.16+20190905), libjpeg62-turbo (>= 1.3.1), liblcms2-2 (>= 2.6), libopenjp2-7 (>= 2.0.0), libpaper1, libpng16-16 (>= 1.6.2-1), libtiff6 (>= 4.0.3), libx11-6, libxt6, zlib1g (>= 1:1.2.0)
+Description: interpreter for the PostScript language and for PDF - Library
+Description-md5: de523415e19130a0934b2c696cdedb84
+Multi-Arch: same
+Homepage: https://www.ghostscript.com/
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/g/ghostscript/libgs10_10.0.0~dfsg-11+deb12u8_amd64.deb
+Size: 2466676
+MD5sum: 64b8e2a0e41e59eaf44b7150b06fecf7
+SHA256: 13e8badaeb678cffd7c6a203e4a4ab6d275cb78b2c2a582021b722386d09069b

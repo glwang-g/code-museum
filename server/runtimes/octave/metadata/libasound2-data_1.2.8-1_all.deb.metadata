@@ -1,0 +1,21 @@
+Package: libasound2-data
+Source: alsa-lib
+Version: 1.2.8-1
+Installed-Size: 200
+Maintainer: Debian ALSA Maintainers <pkg-alsa-devel@lists.alioth.debian.org>
+Architecture: all
+Replaces: libasound2 (<< 1.2.8-1)
+Recommends: alsa-ucm-conf, alsa-topology-conf
+Suggests: alsa-utils
+Breaks: libasound2 (<< 1.2.8-1)
+Description: Configuration files and profiles for ALSA drivers
+Description-md5: 41f916f1c1cbcf480b3b7fe38fbcef23
+Multi-Arch: foreign
+Homepage: https://www.alsa-project.org/
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/a/alsa-lib/libasound2-data_1.2.8-1_all.deb
+Size: 20488
+MD5sum: 8cdd32445982638bf5d024453da19673
+SHA256: fe0780d2d3674b2977e0acb0d48b448ad72ba1642564b7dc537f55e839984c2d

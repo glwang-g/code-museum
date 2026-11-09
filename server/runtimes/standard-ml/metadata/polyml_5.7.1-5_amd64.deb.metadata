@@ -1,0 +1,17 @@
+Package: polyml
+Version: 5.7.1-5
+Installed-Size: 18001
+Maintainer: Debian Science Maintainers <debian-science-maintainers@lists.alioth.debian.org>
+Architecture: amd64
+Depends: file, g++, libffi-dev, polyml-modules (= 5.7.1-5), libc6 (>= 2.34), libpolyml9 (>= 5.7.1~20171120.git44b7b88)
+Description: interpreter and interactive compiler for Standard ML
+Description-md5: 07719a08cb059d017845466f51206251
+Multi-Arch: foreign
+Homepage: http://www.polyml.org
+Tag: devel::compiler, devel::interpreter, devel::lang:ml, role::program
+Section: interpreters
+Priority: optional
+Filename: pool/main/p/polyml/polyml_5.7.1-5_amd64.deb
+Size: 1995400
+MD5sum: 83f2b50f7ddabb0e598b7dff64d0daa2
+SHA256: 2d957530114cb7361ec3fda2115cdf4911e72ddc754e273bc125b06d9a031254

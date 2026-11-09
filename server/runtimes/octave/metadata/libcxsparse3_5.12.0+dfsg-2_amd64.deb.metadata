@@ -1,0 +1,18 @@
+Package: libcxsparse3
+Source: suitesparse
+Version: 1:5.12.0+dfsg-2
+Installed-Size: 232
+Maintainer: Debian Science Team <debian-science-maintainers@lists.alioth.debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.7)
+Description: concise sparse matrix library
+Description-md5: c7ec3e255980b79debe7e029568c19da
+Multi-Arch: same
+Homepage: http://suitesparse.com
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/s/suitesparse/libcxsparse3_5.12.0+dfsg-2_amd64.deb
+Size: 80684
+MD5sum: aaa074a6bfaba96b0ca8256e818f4673
+SHA256: cef5c1512462763e9fcab3612270d866a24d232dd93543a5b5d41535aeeb23c1

@@ -1,0 +1,5 @@
+# Racket / Minimal Racket 8.7 CS
+
+Official Linux x86_64 tarball, SHA-256 verified against the official 8.7 release page. Exact URL, mirror, size and checksum are in acquisition.json. All original LICENSE files from the distribution are retained in licenses/ and remain inside the fixed archive. Read LICENSE.txt for component-specific MIT, Apache, LGPL and other terms; do not infer that every included component uses the same license. Corresponding source and fixed release commit are linked from https://download.racket-lang.org/releases/8.7/ .
+
+The offline image unpacks the saved official archive onto the existing pinned Debian 12/GCC base. No downloads occur during builds or execution. Single-file #lang racket/base programs, text stdin/stdout, 512 MiB container and 3 second execution budget. Runs with -q -U -t, no interactive REPL or user startup paths. Only the libraries included in Minimal Racket are available; no online raco package installation, DrRacket, GUI or graphics export. Racket CS 8.7 is a named modern implementation, not the separate Scheme browser runtime or an emulation of historical PLT Scheme.

@@ -1,0 +1,19 @@
+Package: libgs-common
+Source: ghostscript
+Version: 10.0.0~dfsg-11+deb12u8
+Installed-Size: 317
+Maintainer: Debian QA Group <packages@qa.debian.org>
+Architecture: all
+Replaces: libgs9-common (<< 10)
+Breaks: libgs9-common (<< 10)
+Description: interpreter for the PostScript language and for PDF - ICC profiles
+Description-md5: f92b51d32c9fe5a00b067a4217fb52d4
+Multi-Arch: foreign
+Homepage: https://www.ghostscript.com/
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/g/ghostscript/libgs-common_10.0.0~dfsg-11+deb12u8_all.deb
+Size: 149328
+MD5sum: 40ca6b2834260668c07e52ed0635505f
+SHA256: 83153b66f36858644a9583342967e83e6c35555cafd4e38b94e8e13551392271

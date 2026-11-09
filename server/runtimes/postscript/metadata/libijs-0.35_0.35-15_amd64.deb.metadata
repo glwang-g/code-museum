@@ -1,0 +1,18 @@
+Package: libijs-0.35
+Source: ijs
+Version: 0.35-15
+Installed-Size: 50
+Maintainer: Debian Printing Team <debian-printing@lists.debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.14)
+Description: IJS raster image transport protocol: shared library
+Description-md5: b0a5e986b592d24551818af001ef8260
+Multi-Arch: same
+Homepage: http://www.linuxprinting.org/ijs/
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/i/ijs/libijs-0.35_0.35-15_amd64.deb
+Size: 16372
+MD5sum: 11c13be5fb393fe4e12fd4af7b61fabf
+SHA256: 00730820dbaee9945772231898f53a555204f7c34855b65dac7e6e6b5f37bb1f

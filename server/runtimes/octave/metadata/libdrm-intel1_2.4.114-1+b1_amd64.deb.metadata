@@ -1,0 +1,18 @@
+Package: libdrm-intel1
+Source: libdrm (2.4.114-1)
+Version: 2.4.114-1+b1
+Installed-Size: 178
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.34), libdrm2 (>= 2.4.108), libpciaccess0
+Description: Userspace interface to intel-specific kernel DRM services -- runtime
+Description-md5: 7d5cde7098438ef4f6e5a2c7a8f37a2f
+Multi-Arch: same
+Homepage: https://cgit.freedesktop.org/mesa/drm/
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/libd/libdrm/libdrm-intel1_2.4.114-1+b1_amd64.deb
+Size: 64032
+MD5sum: 231f94014cb51d26be156e9f15b6d102
+SHA256: b0e39318d14c07f4d85668b6da7f66a1341addf87a47d785c34d5a8b393f544c

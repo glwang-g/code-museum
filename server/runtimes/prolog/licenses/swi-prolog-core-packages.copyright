@@ -1,0 +1,583 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: SWI-Prolog
+Upstream-Contact: Jan Wielemaker <J.Wielemaker@vu.nl>
+Source: http://www.swi-prolog.org/
+Files-Excluded: bench/boyer.pl
+                bench/browse.pl
+                bench/crypt.pl
+                bench/fast_mu.pl
+                bench/flatten.pl
+                bench/fib.pl
+                bench/meta_qsort.pl
+                bench/mu.pl
+                bench/nand.pl
+                bench/perfect.pl
+                bench/pingpong.pl
+                bench/poly_10.pl
+                bench/prover.pl
+                bench/queens_8.pl
+                bench/queens_clpfd.pl
+                bench/reducer.pl
+                bench/sendmore.pl
+                bench/simple_analyzer.pl
+                bench/tak.pl
+                bench/unify.pl
+                bench/zebra.pl
+                packages/http/web/js/*
+
+Files: *
+License: BSD-2-clause
+Copyright: (C) 1985-2020 University of Amsterdam
+           (C) 1985-2023 Vu University Amsterdam
+           (C) 1989 Michael Mauldin
+           (C) 1993-1995 Christian Schlichtherle
+           (C) 1993-2011 Jon Jagger
+           (C) 2003-2018 Fred Dushin
+           (C) 2003-2018 JPL contributors
+           (C) 2003-2018 Paul Singleton
+           (C) 2004-2012 CS Dept. III, University of Bonn
+           (C) 2004-2017 K.U. Leuven
+           (C) 2004-2017 SWI-Prolog Foundation
+           (C) 2005-2018 Markus Triska
+           (C) 2006-2023 SWI-Prolog Solutions b.v.
+           (C) 2006-2015 Lars Buitinck
+           (C) 2007-2012 Paulo Moura
+           (C) 2007-2017 Vitor Santos Costa
+           (C) 2009-2017 Scientific Software and Systems Limited
+           (C) 2009-2018 Jerrfey Rosenwald
+           (C) 2011-2015 Markus Uneson
+           (C) 2011-2016 Kuniaki Mukai
+           (C) 2011-2016 Universidade do Porto
+           (C) 2012 Kitware Inc.
+           (C) 2012-2013 Jeffrey Rosenwald
+           (C) 2013-2014 Michael Hendricks
+           (C) 2013-2015 Carlo Capelli
+           (C) 2014-2015 Mike Elston
+           (C) 2014-2015 Matt Lilley
+           (C) 2014-2016 Torbjörn Lager
+           (C) 2015 Keri Harris
+           (C) 2015 Paulo Moura, Kyndi Inc.
+           (C) 2016-2018 Benoit Desouter
+           (C) 2016-2018 Fabrizio Riguzzi
+           (C) 2016-2018 Jan Wielemaker
+           (C) 2018-2022 CWI, Amsterdam
+           (C) 2022 Eshel Yaron
+           (C) Leonid Mokrushin
+
+Files: cmake/TestSignalType.cmake
+License: GPL-2
+Copyright: (C) 2006 Andrew Ross
+
+Files: bench/chat_parser.pl
+License: BSD-1-Clause
+Copyright: (C) 1986-2020 David H. D. Warren and Fernando C. N. Pereira
+
+Files: bench/derive.pl
+       bench/divide10.pl
+       bench/log10.pl
+       bench/nreverse.pl
+       bench/ops8.pl
+       bench/qsort.pl
+       bench/query.pl
+       bench/serialise.pl
+       bench/sieve.pl
+       bench/times10.pl
+       library/dialect/eclipse/test_util_iso.pl
+       library/dialect/bim.pl
+       packages/clib/demo/*
+       packages/cpp/likes.cpp
+       packages/cpp/test.cpp
+       packages/cpp/test.pl
+       packages/http/examples/calc.pl
+       packages/http/examples/demo_daemon.pl
+       packages/pldoc/pldoc.css
+       packages/pldoc/pldoc.js
+       packages/semweb/murmur.c
+       packages/semweb/murmur.h
+       packages/ssl/https.pl
+       packages/xpce/src/gnu/getdate-source.y
+       packages/xpce/src/gnu/getdate.c
+       packages/xpce/src/gnu/y.tab
+       scripts/swipl-bt
+       src/libtai/*
+License: public-domain
+Copyright: n/a
+
+Files: man/bk9.clo
+       man/swipl.cls
+License: LPPL-1.2+
+Copyright: 1993-2001 LaTeX3 Project
+           James Kilfiger
+
+Files: packages/clib/sha1/brg_endian.h
+       packages/clib/sha1/brg_types.h
+       packages/clib/sha1/hmac.c
+       packages/clib/sha1/hmac.h
+       packages/clib/sha1/pwd2key.c
+       packages/clib/sha1/pwd2key.h
+       packages/clib/sha1/sha1.c
+       packages/clib/sha1/sha1.h
+       packages/clib/sha1/sha1b.c
+       packages/clib/sha1/sha2.c
+       packages/clib/sha1/sha2.h
+       packages/clib/sha1/sha2b.c
+License: GLADMAN or GPL-1+
+Copyright: (C) 1998-2006 Brian Gladman
+
+Files: packages/clib/bsd-crypt.c
+License: BSD-3-clause
+Copyright: (C) 1989, 1993 The Regents of the University of California
+
+Files: packages/clib/md5.c
+       packages/clib/md5.h
+       packages/semweb/md5.c
+       packages/semweb/md5.h
+       src/minizip/*
+License: Zlib
+Copyright: (C) 1999, 2000, 2002 Aladdin Enterprises
+           (C) 1998-2005 Gilles Vollant
+           (C) 2009-2010 Mathias Svensson
+           (C) 2007-2008 Even Rouault
+
+Files: packages/clib/md5passwd.c
+License: Beerware
+Copyright: (C) Poul-Hennig Kamp
+
+Files: packages/clpqr/*
+License: GPL-2+
+Copyright: (C) 1992-1995 Austrian Research Institute for Artificial Intelligence (OFAI)
+           (C) 2004-2006 K.U. Leuven
+
+Files: packages/tipc/tipcutils/tipc-config.c
+License: BSD-3-clause
+Copyright: (C) 2004-2006 Ericsson AB
+           (C) 2005-2006 Wind River Systems
+
+Files: packages/nlp/isub.c
+License: GPL-2+
+Copyright: 2004-2011 National and Technical University of Athens
+
+Files: packages/pcre/cmake/FindPCRE.cmake
+       packages/utf8proc/pgsql/utf8proc_pgsql.c
+       packages/utf8proc/ruby/*
+       packages/utf8proc/data_generator.rb
+       packages/utf8proc/utf8proc.c
+       packages/utf8proc/utf8proc.h
+       packages/xpce/src/msw/simx.h
+       packages/xpce/src/msw/xpm.h
+License: Expat
+Copyright: (C) 2007-2009 LuaDist
+           (C) 1994 X Consortium
+           (C) 2009-2013 Public Software Group e. V., Berlin, Germany
+           (C) 1989-1994 GROUPE BULL
+
+Files: packages/utf8proc/utf8proc_data.c
+License: Unicode-DFS-2007
+Copyright: (C) 1991-2007 Unicode, Inc.
+
+Files: packages/xpce/src/rgx/regc_color.c
+       packages/xpce/src/rgx/regc_cvec.c
+       packages/xpce/src/rgx/regc_lex.c
+       packages/xpce/src/rgx/regc_nfa.c
+       packages/xpce/src/rgx/regcomp.c
+       packages/xpce/src/rgx/regcustom.h
+       packages/xpce/src/rgx/rege_dfa.c
+       packages/xpce/src/rgx/regerror.c
+       packages/xpce/src/rgx/regex.h
+       packages/xpce/src/rgx/regexec.c
+       packages/xpce/src/rgx/regfree.c
+       packages/xpce/src/rgx/regfronts.c
+       packages/xpce/src/rgx/regguts.h
+License: SPENCER
+Copyright: (C) 1998, 1999 Henry Spencer
+
+Files: packages/xpce/src/rgx/regc_locale.c
+License: TCL
+Copyright: (C) 1998 Scriptics Corporation
+
+Files: packages/xpce/src/x11/xdnd.h
+License: GPL-2+
+Copyright: (C) 1998 Paul Sheer
+
+Files: src/Tests/core/test_bips.pl
+       src/Tests/core/test_dcg.pl
+License: LGPL-2.1+
+Copyright: (C) Ulrich Neumerkel
+
+Files: src/os/dtoa.c
+License: LUCENT
+Copyright: (C) 1991, 2000, 2001 Lucent Technologies
+
+Files: packages/sgml/DTD/*.ent
+License: ISO
+Copyright: (C) 1986 International Organization for Standardization
+Comment: These are standard entities
+
+Files: man/name.bst
+       packages/xpce/TeX/name.bst
+License: BIBTEX-STYLE
+Copyright: (C) 1985 Jan Wielemaker
+           (C) 1985 Guus Schreiber
+
+Files: debian/*
+Copyright: (C) 1996-2001 Milan Zamazal <pdm@fi.muni.cz>
+           (C) 2001 Sebastian Schaffert <wastl@wastl.net>
+           (C) 2001-2004  Michael Piefel <piefel@debian.org>
+           (C) 2006 Gerardo Curiel <gcuriel@debianvenezuela.org>
+           (C) 2007-2011 Chris Lamb <lamby@debian.org>
+           (C) 2011-2015 Eugeniy Meshcheryakov <eugen@debian.org>
+           (C) 2016-2023 Lev Lamberov <dogsleg@debian.org>
+License: GPL-2+
+
+License: Beerware
+ "THE BEER-WARE LICENSE" (Revision 42):
+ .
+ <phk@login.dknet.dk> wrote this file. As long as you retain this
+ notice you can do whatever you want with this stuff. If we meet some
+ day, and you think this stuff is worth it, you can buy me a beer in
+ return. Poul-Henning Kamp
+
+License: BIBTEX-STYLE
+ Copying of this file is authorized only if either
+ .
+ (1) you make absolutely no changes to your copy, including name, or
+ .
+ (2) if you do make changes, you name it something other than
+ btxbst.doc, plain.bst, unsrt.bst, alpha.bst, and abbrv.bst.
+ .
+ This restriction helps ensure that all standard styles are identical.
+
+License: BSD-1-Clause
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+  .
+  1. Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+  .
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+  FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+  COPYRIGHT HOLDERS AND CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
+  INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+  SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+  HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+  STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+  ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
+  OF THE POSSIBILITY OF SUCH DAMAGE.
+
+License: BSD-2-clause
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions
+ are met:
+ .
+ 1. Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ .
+ 2. Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the
+    distribution.
+ .
+ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+ FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+ COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ POSSIBILITY OF SUCH DAMAGE.
+
+License: BSD-3-clause
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions
+ are met:
+ .
+ 1. Redistributions of source code must retain the above copyright
+ notice, this list of conditions and the following disclaimer.
+ .
+ 2. Redistributions in binary form must reproduce the above copyright
+ notice, this list of conditions and the following disclaimer in the
+ documentation and/or other materials provided with the distribution.
+ .
+ 3. Neither the name of the copyright holder nor the names of its
+ contributors may be used to endorse or promote products derived from
+ this software without specific prior written permission.
+ .
+ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+ A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+ HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS
+ OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED
+ AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY
+ WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ POSSIBILITY OF SUCH DAMAGE.
+
+License: Expat
+ Permission is hereby granted, free of charge, to any person obtaining
+ a copy of this software and associated documentation files (the
+ "Software"), to deal in the Software without restriction, including
+ without limitation the rights to use, copy, modify, merge, publish,
+ distribute, sublicense, and/or sell copies of the Software, and to
+ permit persons to whom the Software is furnished to do so, subject to
+ the following conditions:
+ .
+ The above copyright notice and this permission notice shall be included
+ in all copies or substantial portions of the Software.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+ IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+ CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+ TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+License: GLADMAN
+ The free distribution and use of this software in both source and
+ binary form is allowed (with or without changes) provided that:
+ .
+ 1. distributions of this source code include the above copyright
+ notice, this list of conditions and the following disclaimer;
+ .
+ 2. distributions in binary form include the above copyright notice,
+ this list of conditions and the following disclaimer in the
+ documentation and/or other associated materials;
+ .
+ 3. the copyright holder's name is not used to endorse products built
+ using this software without specific written permission.
+ .
+ This software is provided 'as is' with no explicit or implied
+ warranties in respect of its properties, including, but not limited
+ to, correctness and/or fitness for purpose.
+
+License: GPL-1+
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 1, or (at your option)
+ any later version.
+ .
+ This program is distributed in the hope that it will be useful, but
+ WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program; if not, write to the Free Software
+ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301,
+ USA.
+ .
+ On Debian systems, the complete text of the GNU General
+ Public License version 2 can be found in `/usr/share/common-licenses/GPL-1'
+
+License: GPL-2
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 2 of the License.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ .
+ On Debian systems, the complete text of the GNU General
+ Public License version 2 can be found in `/usr/share/common-licenses/GPL-2'
+
+License: GPL-2+
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 2 of the License, or
+ (at your option) any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ .
+ On Debian systems, the complete text of the GNU General
+ Public License version 2 can be found in `/usr/share/common-licenses/GPL-2'
+
+License: LGPL-2.1+
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free Software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+ .
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+ .
+ You should have received a copy of the GNU Lesser General Public
+ License along with this library; if not, write to the Free Software
+ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301,
+ USA.
+ .
+ On Debian systems, the complete text of the GNU General
+ Public License version 2 can be found in `/usr/share/common-licenses/LGPL-2.1'
+
+License: ISO
+ Permission to copy in any form is granted for use with
+ conforming SGML systems and applications as defined in
+ ISO 8879, provided this notice is included in all copies.
+
+License: LPPL-1.2+
+ This program may be distributed and/or modified under the conditions
+ of the LaTeX Project Public License, either version 1.2 of this
+ license or (at your option) any later version. The latest version of
+ this license is in http://www.latex-project.org/lppl.txt and version
+ 1.2 or later is part of all distributions of LaTeX version 1999/12/01
+ or later.
+
+License: LUCENT
+ Permission to use, copy, modify, and distribute this software for any
+ purpose without fee is hereby granted, provided that this entire notice
+ is included in all copies of any software which is or includes a copy
+ or modification of this software and in all copies of the supporting
+ documentation for such software.
+ .
+ THIS SOFTWARE IS BEING PROVIDED "AS IS", WITHOUT ANY EXPRESS OR IMPLIED
+ WARRANTY.  IN PARTICULAR, NEITHER THE AUTHOR NOR LUCENT MAKES ANY
+ REPRESENTATION OR WARRANTY OF ANY KIND CONCERNING THE MERCHANTABILITY
+ OF THIS SOFTWARE OR ITS FITNESS FOR ANY PARTICULAR PURPOSE.
+
+License: public-domain
+ Most of the mentioned above files contain example code from a
+ documentation. All of the above files contain explicit notice
+ that these files are placed to public-domain by their
+ respective authors. Unfortunately, it does not mean that
+ these files are not subject to copyright in any jurisdiction.
+ These files contain one of the following notices:
+ .
+ This code is in the public domain and has no copyright.
+ .
+ This example is in the public domain.
+ .
+ The libtai code is in the public domain, so you can use it in
+ your own programs.
+
+License: SPENCER
+ Redistribution and use in source and binary forms -- with or without
+ modification -- are permitted for any purpose, provided that
+ redistributions in source form retain this entire copyright notice and
+ indicate the origin and nature of any modifications.
+ .
+ THIS SOFTWARE IS PROVIDED ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES,
+ INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY
+ AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL
+ HENRY SPENCER BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+ OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+ OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+ ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+License: TCL
+ This software is copyrighted by the Regents of the University of
+ California, Sun Microsystems, Inc., Scriptics Corporation,
+ ActiveState Corporation and other parties. The following terms apply
+ to all files associated with the software unless explicitly
+ disclaimed in individual files.
+ The authors hereby grant permission to use, copy, modify, distribute,
+ and license this software and its documentation for any purpose,
+ provided that existing copyright notices are retained in all copies
+ and that this notice is included verbatim in any distributions. No
+ written agreement, license, or royalty fee is required for any of the
+ authorized uses. Modifications to this software may be copyrighted by
+ their authors and need not follow the licensing terms described here,
+ provided that the new terms are clearly indicated on the first page
+ of each file where they apply.
+ .
+ IN NO EVENT SHALL THE AUTHORS OR DISTRIBUTORS BE LIABLE TO ANY PARTY
+ FOR DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES
+ ARISING OUT OF THE USE OF THIS SOFTWARE, ITS DOCUMENTATION, OR ANY
+ DERIVATIVES THEREOF, EVEN IF THE AUTHORS HAVE BEEN ADVISED OF THE
+ POSSIBILITY OF SUCH DAMAGE.
+ .
+ THE AUTHORS AND DISTRIBUTORS SPECIFICALLY DISCLAIM ANY WARRANTIES,
+ INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+ MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND
+ NON-INFRINGEMENT. THIS SOFTWARE IS PROVIDED ON AN "AS IS" BASIS, AND
+ THE AUTHORS AND DISTRIBUTORS HAVE NO OBLIGATION TO PROVIDE
+ MAINTENANCE, SUPPORT, UPDATES, ENHANCEMENTS, OR MODIFICATIONS.
+ .
+ GOVERNMENT USE: If you are acquiring this software on behalf of the
+ U.S. government, the Government shall have only "Restricted Rights"
+ in the software and related documentation as defined in the Federal
+ Acquisition Regulations (FARs) in Clause 52.227.19 (c) (2). If you
+ are acquiring the software on behalf of the Department of Defense,
+ the software shall be classified as "Commercial Computer Software"
+ and the Government shall have only "Restricted Rights" as defined in
+ Clause 252.227-7013 (c) (1) of DFARs. Notwithstanding the foregoing,
+ the authors grant the U.S. Government and others acting in its behalf
+ permission to use and distribute the software in accordance with the
+ terms specified in this license.
+
+License: Unicode-DFS-2007
+ Permission is hereby granted, free of charge, to any person obtaining
+ a copy of the Unicode data files and any associated documentation
+ (the "Data Files") or Unicode software and any associated
+ documentation (the "Software") to deal in the Data Files or Software
+ without restriction, including without limitation the rights to use,
+ copy, modify, merge, publish, distribute, and/or sell copies of the
+ Data Files or Software, and to permit persons to whom the Data Files
+ or Software are furnished to do so, provided that (a) the above
+ copyrigh notice(s) and this permission notice appear with all copies
+ of th Data Files or Software, (b) both the above copyright notice(s)
+ an this permission notice appear in associated documentation, and (c
+ there is clear notice in each modified Data File or in the Software a
+ well as in the documentation associated with the Data File(s) or
+ Software that the data or software has been modified.
+ .
+ THE DATA FILES AND SOFTWARE ARE PROVIDED "AS IS", WITHOUT WARRANTY OF
+ ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+ WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ NONINFRINGEMENT OF THIRD PARTY RIGHTS. IN NO EVENT SHALL THE
+ COPYRIGHT HOLDER OR HOLDERS INCLUDED IN THIS NOTICE BE LIABLE FOR ANY
+ CLAIM, OR ANY SPECIAL INDIRECT OR CONSEQUENTIAL DAMAGES, OR ANY
+ DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS,
+ WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS
+ ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE
+ OF THE DATA FILES OR SOFTWARE.
+ .
+ Except as contained in this notice, the name of a copyright holder
+ shall not be used in advertising or otherwise to promote the sale,
+ use or other dealings in these Data Files or Software without prior
+ written authorization of the copyright holder.
+
+License: Zlib
+ This software is provided 'as-is', without any express or implied
+ warranty. In no event will the authors be held liable for any damages
+ arising from the use of this software.
+ .
+ Permission is granted to anyone to use this software for any purpose,
+ including commercial applications, and to alter it and redistribute
+ it freely, subject to the following restrictions:
+ .
+ 1. The origin of this software must not be misrepresented; you must
+ not claim that you wrote the original software. If you use this
+ software in a product, an acknowledgment in the product documentation
+ would be appreciated but is not required.
+ .
+ 2. Altered source versions must be plainly marked as such, and must
+ not be misrepresented as being the original software.
+ .
+ 3. This notice may not be removed or altered from any source
+ distribution.

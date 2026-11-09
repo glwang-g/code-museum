@@ -1,0 +1,17 @@
+Package: libxml-sax-base-perl
+Version: 1.09-3
+Installed-Size: 147
+Maintainer: Debian Perl Group <pkg-perl-maintainers@lists.alioth.debian.org>
+Architecture: all
+Depends: perl:any
+Description: base class for SAX drivers and filters
+Description-md5: d2b9fd04fe2bfb32b35febb80f2cfc34
+Multi-Arch: foreign
+Homepage: https://metacpan.org/release/XML-SAX-Base
+Tag: implemented-in::perl
+Section: perl
+Priority: optional
+Filename: pool/main/libx/libxml-sax-base-perl/libxml-sax-base-perl_1.09-3_all.deb
+Size: 20616
+MD5sum: d720cbc3a2d923b07911f42f667625da
+SHA256: 70315098e411309edff6682aa02a215441080cccf8d6f023ae17cd83945f3705

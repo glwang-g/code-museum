@@ -1,0 +1,13 @@
+Package: powershell
+Version: 7.5.4-1.deb
+License: MIT License
+Vendor: Microsoft Corporation
+Architecture: amd64
+Maintainer: PowerShell Team <PowerShellTeam@hotmail.com>
+Installed-Size: 187962
+Depends: libc6, libgcc1, libgssapi-krb5-2, libstdc++6, zlib1g, libicu74|libicu72|libicu71|libicu70|libicu69|libicu68|libicu67|libicu66|libicu65|libicu63|libicu60|libicu57|libicu55|libicu52, libssl3|libssl1.1|libssl1.0.2|libssl1.0.0
+Section: shells
+Priority: optional
+Homepage: https://microsoft.com/powershell
+Description: PowerShell is an automation and configuration management platform.
+ It consists of a cross-platform command-line shell and associated scripting language.

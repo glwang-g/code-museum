@@ -1,0 +1,18 @@
+Package: libsundials-sunmatrix4
+Source: sundials
+Version: 6.4.1+dfsg1-3
+Installed-Size: 621
+Maintainer: Debian Science Team <debian-science-maintainers@lists.alioth.debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.29), libgfortran5 (>= 10)
+Description: differential equation solver (SUNDIALS library)
+Description-md5: c2d9713eb79bcc429f16fb6375356abc
+Multi-Arch: same
+Homepage: https://www.llnl.gov/CASC/sundials/
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/s/sundials/libsundials-sunmatrix4_6.4.1+dfsg1-3_amd64.deb
+Size: 103128
+MD5sum: 247c0488dcef10291622e5ef6baa569a
+SHA256: 6e3b0842d2b2642ae6d697f80436f17697713d7a564c2e3b82d6ee3c571dad67

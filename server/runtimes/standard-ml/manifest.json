@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "platform": "linux/amd64",
+  "baseImage": "gcc@sha256:5e927c284bf55a7dc796262e311a0703344f62f41f5621eb56843111b1d37e15",
+  "sourceDateEpoch": 1793923200,
+  "version": "5.7.1",
+  "source": "https://www.polyml.org/",
+  "license": "LGPL-2.1 and bundled component licenses",
+  "runtime": {
+    "id": "standard-ml",
+    "executable": "/usr/bin/poly",
+    "memoryMiB": 512,
+    "versionArgs": [
+      "--version"
+    ],
+    "versionPattern": "Poly/ML 5.7.1"
+  },
+  "files": [
+    {
+      "file": "Dockerfile",
+      "bytes": 254,
+      "sha256": "5fd0732716442ade3390ad1332600e75bf4527e51b9133fdcdbcc69d303ecb94"
+    },
+    {
+      "file": "NOTICE.md",
+      "bytes": 975,
+      "sha256": "fe00a17dfa927292c8183257365659e0cad6b39759df137b538d21595bc312ba"
+    },
+    {
+      "file": "acquisition.json",
+      "bytes": 2474,
+      "sha256": "0d93d857de8006028b580c491be1f54825888f78dc4578df0df6961b138f65e5"
+    },
+    {
+      "file": "assets/libpolyml9_5.7.1-5_amd64.deb",
+      "bytes": 187368,
+      "sha256": "ce528e4099d913c434e8bf12931a6c36dc50c9294479293a14f9c4429e173e10"
+    },
+    {
+      "file": "assets/polyml-modules_5.7.1-5_amd64.deb",
+      "bytes": 503456,
+      "sha256": "ae4773c1bbcabf74f9073036afb6652af6dbdbfe661c3ebf296af576f31eefc9"
+    },
+    {
+      "file": "assets/polyml_5.7.1-5_amd64.deb",
+      "bytes": 1995400,
+      "sha256": "2d957530114cb7361ec3fda2115cdf4911e72ddc754e273bc125b06d9a031254"
+    },
+    {
+      "file": "licenses/libpolyml9.copyright",
+      "bytes": 31751,
+      "sha256": "87885213fb34a98e6ba9f5765143738676ca74e5a168517542d631e98da352bf"
+    },
+    {
+      "file": "licenses/polyml-modules.copyright",
+      "bytes": 31751,
+      "sha256": "87885213fb34a98e6ba9f5765143738676ca74e5a168517542d631e98da352bf"
+    },
+    {
+      "file": "licenses/polyml.copyright",
+      "bytes": 31751,
+      "sha256": "87885213fb34a98e6ba9f5765143738676ca74e5a168517542d631e98da352bf"
+    },
+    {
+      "file": "metadata/apt-verification.txt",
+      "bytes": 1169,
+      "sha256": "966652e257fd492d3cb75d146adc643c0debd59a4664d623e49815b2b164c3a7"
+    },
+    {
+      "file": "metadata/bookworm-InRelease",
+      "bytes": 151075,
+      "sha256": "77737fa4b34f2693e982cc9ee35736816c35a7778fc2d326cc1bbf5b301fe1aa"
+    },
+    {
+      "file": "metadata/bookworm-security-InRelease",
+      "bytes": 34770,
+      "sha256": "1d368817d451179b6611e157dccd876f93feff7d603c575668fbb662d5b01677"
+    },
+    {
+      "file": "metadata/bookworm-updates-InRelease",
+      "bytes": 55403,
+      "sha256": "da3bb85c8864a931aa8d4ad4bcca054c0bb430aef7f8c3dfaff4b173d26f595c"
+    },
+    {
+      "file": "metadata/libpolyml9_5.7.1-5_amd64.deb.metadata",
+      "bytes": 672,
+      "sha256": "1abb79b458dca937c5d186493ce913285199e037847868b7505130170c30d7d3"
+    },
+    {
+      "file": "metadata/polyml-modules_5.7.1-5_amd64.deb.metadata",
+      "bytes": 719,
+      "sha256": "493667e26f301fda157d035a0563a99f70635db02464f8bfe787205a0be55077"
+    },
+    {
+      "file": "metadata/polyml_5.7.1-5_amd64.deb.metadata",
+      "bytes": 749,
+      "sha256": "99dd254427dee48e8ea9400b17b62df65082d162e1eaddf70e9b701cdc1f41eb"
+    }
+  ]
+}

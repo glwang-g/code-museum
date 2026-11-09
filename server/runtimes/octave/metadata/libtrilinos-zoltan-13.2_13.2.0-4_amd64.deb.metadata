@@ -1,0 +1,18 @@
+Package: libtrilinos-zoltan-13.2
+Source: trilinos
+Version: 13.2.0-4
+Installed-Size: 930
+Maintainer: Debian Science Maintainers <debian-science-maintainers@lists.alioth.debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.34), libopenmpi3 (>= 4.1.4), libptscotch-7.0 (>= 7.0.3), libscotch-7.0 (>= 7.0.3)
+Description: parallel dynamic load balancing - runtime files
+Description-md5: 185fbc84a1ace421cb4bdc14dc861ae4
+Multi-Arch: same
+Homepage: https://trilinos.github.io/
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/t/trilinos/libtrilinos-zoltan-13.2_13.2.0-4_amd64.deb
+Size: 383688
+MD5sum: 0fa1259b52d2a1a59a0d77c907821a62
+SHA256: b3fc9b08853e7d02b6838df5b81b767deaf635bd21a4f8ff87abcb8d71415662

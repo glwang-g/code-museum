@@ -1,0 +1,18 @@
+Package: libsuperlu-dist8
+Source: superlu-dist (8.1.2+dfsg1-1)
+Version: 8.1.2+dfsg1-1+b1
+Installed-Size: 1893
+Maintainer: Debian Science Maintainers <debian-science-maintainers@lists.alioth.debian.org>
+Architecture: amd64
+Depends: libblas3 | libblas.so.3, libc6 (>= 2.32), libcombblas1.16.0 (>= 1.6.2), libgcc-s1 (>= 3.0), libgomp1 (>= 6), liblapack3 | liblapack.so.3, libmetis5 (>= 5.1.0.dfsg), libopenmpi3 (>= 4.1.4), libptscotch-7.0 (>= 7.0.3), libstdc++6 (>= 11)
+Description: Highly distributed solution of sparse linear equations
+Description-md5: a030a487e8e91b47850002f33c867c9c
+Multi-Arch: same
+Homepage: https://github.com/xiaoyeli/superlu_dist
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/s/superlu-dist/libsuperlu-dist8_8.1.2+dfsg1-1+b1_amd64.deb
+Size: 594912
+MD5sum: 92e5b4951172cb4712435165f4052cc1
+SHA256: 272b144a0a57037e0f763c7f8df0b58f3dbee3d750bbc260282c0261ccaa1746

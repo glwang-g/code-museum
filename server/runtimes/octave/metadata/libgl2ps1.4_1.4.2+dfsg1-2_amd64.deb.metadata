@@ -1,0 +1,17 @@
+Package: libgl2ps1.4
+Source: gl2ps
+Version: 1.4.2+dfsg1-2
+Installed-Size: 108
+Maintainer: Debian Science Maintainers <debian-science-maintainers@lists.alioth.debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.29), libgl1
+Description: Lib providing high quality vector output for OpenGL application
+Description-md5: 7a2d727b40b4538ad53d6f8764c28c6f
+Homepage: https://geuz.org/gl2ps/
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/g/gl2ps/libgl2ps1.4_1.4.2+dfsg1-2_amd64.deb
+Size: 41288
+MD5sum: b965c04102ea76b436f77f03f517cbb7
+SHA256: e92c67bdf9373b3315ef101119cf7ef96ac5ae4ffa9b9c2445686f1af1425260

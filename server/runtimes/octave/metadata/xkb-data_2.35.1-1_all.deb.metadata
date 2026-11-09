@@ -1,0 +1,19 @@
+Package: xkb-data
+Source: xkeyboard-config
+Version: 2.35.1-1
+Installed-Size: 6925
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Architecture: all
+Breaks: libx11-6 (<< 2:1.4.3), x11-xkb-utils (<< 7.7+5)
+Description: X Keyboard Extension (XKB) configuration data
+Description-md5: 3253e95e707af859f77590b31f05da3b
+Multi-Arch: foreign
+Homepage: https://www.freedesktop.org/Software/XKeyboardConfig
+Tag: accessibility::input, hardware::input:keyboard, role::app-data,
+ use::configuring, x11::TODO
+Section: x11
+Priority: optional
+Filename: pool/main/x/xkeyboard-config/xkb-data_2.35.1-1_all.deb
+Size: 763516
+MD5sum: b5a8882c83ed9fd9aa4561ffdb6ff816
+SHA256: 28a79c61b785f403da93af58c39aed13c022032935e3e54362c6707169cfe982

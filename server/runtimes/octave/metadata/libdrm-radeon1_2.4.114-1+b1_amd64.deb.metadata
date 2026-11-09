@@ -1,0 +1,18 @@
+Package: libdrm-radeon1
+Source: libdrm (2.4.114-1)
+Version: 2.4.114-1+b1
+Installed-Size: 83
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.4), libdrm2 (>= 2.4.108)
+Description: Userspace interface to radeon-specific kernel DRM services -- runtime
+Description-md5: 48a20567596b5b215c7a5479d3f5af5b
+Multi-Arch: same
+Homepage: https://cgit.freedesktop.org/mesa/drm/
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/libd/libdrm/libdrm-radeon1_2.4.114-1+b1_amd64.deb
+Size: 21848
+MD5sum: 2b70c22d63c0949767f8ca8fc106a110
+SHA256: 2da3a9233187f995ad5a3e6db3d37252ea7209f0ca9605484d03478ebcc15feb

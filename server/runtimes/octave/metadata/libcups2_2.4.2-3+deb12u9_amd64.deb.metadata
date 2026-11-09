@@ -1,0 +1,19 @@
+Package: libcups2
+Source: cups
+Version: 2.4.2-3+deb12u9
+Installed-Size: 675
+Maintainer: Debian Printing Team <debian-printing@lists.debian.org>
+Architecture: amd64
+Depends: libavahi-client3 (>= 0.6.16), libavahi-common3 (>= 0.6.16), libc6 (>= 2.36), libgnutls30 (>= 3.7.5), libgssapi-krb5-2 (>= 1.17), zlib1g (>= 1:1.2.0)
+Suggests: cups-common
+Description: Common UNIX Printing System(tm) - Core library
+Description-md5: cce9961cb86712146cb19e1b4636f79d
+Multi-Arch: same
+Homepage: https://github.com/OpenPrinting/cups/
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/c/cups/libcups2_2.4.2-3+deb12u9_amd64.deb
+Size: 245180
+MD5sum: 724fd23127800efab677b8d138c0cdfc
+SHA256: 8dbfd3b7cd81166a2d79bb7e3898b0203fec05c7e927f60e207122a1e36b95c8

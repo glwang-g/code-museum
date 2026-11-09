@@ -1,0 +1,17 @@
+Package: libxft2
+Source: xft
+Version: 2.3.6-1
+Installed-Size: 134
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.14), libfontconfig1 (>= 2.12.6), libfreetype6 (>= 2.3.5), libx11-6, libxrender1
+Description: FreeType-based font drawing library for X
+Description-md5: 9f19660eee6522753a05ff6cf228ec1d
+Multi-Arch: same
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/x/xft/libxft2_2.3.6-1_amd64.deb
+Size: 61784
+MD5sum: e2bdb962c419d795e72ca0c494da9d96
+SHA256: cedaedf108a8c18e9d9ae8d773801db7c7f9a70b50ecd7723c607d549dacccee

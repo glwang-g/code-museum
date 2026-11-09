@@ -1,0 +1,20 @@
+Package: ibverbs-providers
+Source: rdma-core
+Version: 44.0-2
+Installed-Size: 1200
+Maintainer: Benjamin Drung <bdrung@ubuntu.com>
+Architecture: amd64
+Replaces: libipathverbs1 (<< 15), libmlx4-1 (<< 15), libmlx5-1 (<< 15), libmthca1 (<< 15)
+Provides: libefa1, libipathverbs1, libmana1, libmlx4-1, libmlx5-1, libmthca1
+Depends: libc6 (>= 2.34), libibverbs1 (>= 38)
+Breaks: libipathverbs1 (<< 15), libmlx4-1 (<< 15), libmlx5-1 (<< 15), libmthca1 (<< 15)
+Description: User space provider drivers for libibverbs
+Description-md5: ab8975454e46957d34b4769914dfe93e
+Multi-Arch: same
+Homepage: https://github.com/linux-rdma/rdma-core
+Section: net
+Priority: optional
+Filename: pool/main/r/rdma-core/ibverbs-providers_44.0-2_amd64.deb
+Size: 334756
+MD5sum: 996db37d023c0374f6f3f1220cb99033
+SHA256: 3c9907fd96a4ae7effb5faa178bd3648344a521f6bcca2c23c9f2dd214cf1192

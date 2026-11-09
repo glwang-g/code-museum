@@ -1,0 +1,18 @@
+Package: libmd4c0
+Source: md4c
+Version: 0.4.8-1
+Installed-Size: 107
+Maintainer: Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.14)
+Description: Markdown for C
+Description-md5: b1a7a354ebf1c0e39e45738f2bc87adf
+Multi-Arch: same
+Homepage: https://github.com/mity/md4c
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/m/md4c/libmd4c0_0.4.8-1_amd64.deb
+Size: 44248
+MD5sum: 911861fddf318f436b6008d473f1daad
+SHA256: ac234f1f12bec2ce96df7cc9bbd25f84426cb0c6b76cdf04afe165e9f820b4f4

@@ -1,0 +1,19 @@
+Package: libossp-uuid16
+Source: ossp-uuid (1.6.2-1.5)
+Version: 1.6.2-1.5+b11
+Installed-Size: 132
+Maintainer: Marco Nenciarini <mnencia@debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.14), libgcc-s1 (>= 3.0), libstdc++6 (>= 5)
+Suggests: uuid
+Description: OSSP uuid ISO-C and C++ - shared library
+Description-md5: 4e2b73242022da7d4b05222407c9042f
+Multi-Arch: same
+Homepage: http://www.ossp.org/pkg/lib/uuid/
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/o/ossp-uuid/libossp-uuid16_1.6.2-1.5+b11_amd64.deb
+Size: 37104
+MD5sum: 5e9874ec00b8c806d019a035992c5a03
+SHA256: c722e5f08b13bdaca61df5787039c40f3c02d78d97d0c582dc313f242a2e5c49

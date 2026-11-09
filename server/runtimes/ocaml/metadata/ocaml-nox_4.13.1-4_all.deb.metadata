@@ -1,0 +1,21 @@
+Package: ocaml-nox
+Source: ocaml
+Version: 4.13.1-4
+Installed-Size: 163
+Maintainer: Debian OCaml Maintainers <debian-ocaml-maint@lists.debian.org>
+Architecture: all
+Replaces: ocaml-base-nox (<< 4.08), ocaml-compiler-libs (<< 4.08)
+Depends: ocaml
+Breaks: ocaml-base-nox (<< 4.08), ocaml-compiler-libs (<< 4.08)
+Description: transitional package for ocaml
+Description-md5: 01d101180fbc8011bb3d8b6576987a12
+Homepage: https://ocaml.org/
+Tag: devel::lang:ocaml, implemented-in::ocaml, interface::text-mode,
+ role::metapackage, role::program, uitoolkit::ncurses,
+ works-with::software:source
+Section: ocaml
+Priority: optional
+Filename: pool/main/o/ocaml/ocaml-nox_4.13.1-4_all.deb
+Size: 161120
+MD5sum: a58633f3655d5737ff840a2266f146f3
+SHA256: f54caa519c341e6d946f993b48759fa9dfcb9b52499d0845185f1990fc9956fc

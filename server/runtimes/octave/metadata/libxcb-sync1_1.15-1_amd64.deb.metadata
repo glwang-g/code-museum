@@ -1,0 +1,18 @@
+Package: libxcb-sync1
+Source: libxcb
+Version: 1.15-1
+Installed-Size: 145
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.14), libxcb1
+Description: X C Binding, sync extension
+Description-md5: d5360e0f01127bfda17c79337e504a3f
+Multi-Arch: same
+Homepage: https://xcb.freedesktop.org
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/libx/libxcb/libxcb-sync1_1.15-1_amd64.deb
+Size: 108692
+MD5sum: 45281b9c1baf063fdb3123554011b77f
+SHA256: 3366ce715220d38dd0148b78a8e738137bade25ef7eec0698850c6f66800844f

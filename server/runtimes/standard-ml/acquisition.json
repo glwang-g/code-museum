@@ -1,0 +1,56 @@
+{
+  "baseImage": "gcc@sha256:5e927c284bf55a7dc796262e311a0703344f62f41f5621eb56843111b1d37e15",
+  "requestedPackages": [
+    "polyml"
+  ],
+  "verification": "Debian APT verified InRelease and index hashes without network; each acquired package matches the solved signed-index SHA-256",
+  "indexInputs": [
+    {
+      "source": "https://deb.debian.org/debian/dists/bookworm/InRelease",
+      "sha256": "77737fa4b34f2693e982cc9ee35736816c35a7778fc2d326cc1bbf5b301fe1aa"
+    },
+    {
+      "source": "https://deb.debian.org/debian/dists/bookworm/main/binary-amd64/Packages.xz",
+      "sha256": "9e0b5aabb2465b3d2e7a7fe27f9913846277833f7a2826e7767acccff5b588c5"
+    },
+    {
+      "source": "https://deb.debian.org/debian/dists/bookworm-updates/InRelease",
+      "sha256": "da3bb85c8864a931aa8d4ad4bcca054c0bb430aef7f8c3dfaff4b173d26f595c"
+    },
+    {
+      "source": "https://deb.debian.org/debian/dists/bookworm-updates/main/binary-amd64/Packages.xz",
+      "sha256": "87e7e94047fb7fb6f4ceecc7022d4bee55b66031cc2a7666d3196f3e0aabb846"
+    },
+    {
+      "source": "https://deb.debian.org/debian-security/dists/bookworm-security/InRelease",
+      "sha256": "1d368817d451179b6611e157dccd876f93feff7d603c575668fbb662d5b01677"
+    },
+    {
+      "source": "https://deb.debian.org/debian-security/dists/bookworm-security/main/binary-amd64/Packages.xz",
+      "sha256": "9291f4f3c470a046b9751215169d689e539f3d5cade197a367738e58079205ba"
+    }
+  ],
+  "packages": [
+    {
+      "file": "assets/libpolyml9_5.7.1-5_amd64.deb",
+      "sha256": "ce528e4099d913c434e8bf12931a6c36dc50c9294479293a14f9c4429e173e10",
+      "bytes": 187368,
+      "source": "https://deb.debian.org/debian/pool/main/p/polyml/libpolyml9_5.7.1-5_amd64.deb",
+      "metadata": "metadata/libpolyml9_5.7.1-5_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/polyml-modules_5.7.1-5_amd64.deb",
+      "sha256": "ae4773c1bbcabf74f9073036afb6652af6dbdbfe661c3ebf296af576f31eefc9",
+      "bytes": 503456,
+      "source": "https://deb.debian.org/debian/pool/main/p/polyml/polyml-modules_5.7.1-5_amd64.deb",
+      "metadata": "metadata/polyml-modules_5.7.1-5_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/polyml_5.7.1-5_amd64.deb",
+      "sha256": "2d957530114cb7361ec3fda2115cdf4911e72ddc754e273bc125b06d9a031254",
+      "bytes": 1995400,
+      "source": "https://deb.debian.org/debian/pool/main/p/polyml/polyml_5.7.1-5_amd64.deb",
+      "metadata": "metadata/polyml_5.7.1-5_amd64.deb.metadata"
+    }
+  ]
+}

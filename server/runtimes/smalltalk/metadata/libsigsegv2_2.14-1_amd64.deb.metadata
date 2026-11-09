@@ -1,0 +1,18 @@
+Package: libsigsegv2
+Source: libsigsegv
+Version: 2.14-1
+Installed-Size: 70
+Maintainer: Debian Common Lisp Team <debian-common-lisp@lists.debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.4)
+Description: Library for handling page faults in a portable way
+Description-md5: a81513d919fc703846690a764e3b9b21
+Multi-Arch: same
+Homepage: https://www.gnu.org/software/libsigsegv/
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/libs/libsigsegv/libsigsegv2_2.14-1_amd64.deb
+Size: 37152
+MD5sum: db511105e5faeb86d921d1de57ea1b26
+SHA256: 92336a5c47989b82ba4c778adc0ea22fc84450773f2d8428fca4448b0789cfe6

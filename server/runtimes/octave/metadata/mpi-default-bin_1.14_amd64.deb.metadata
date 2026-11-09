@@ -1,0 +1,16 @@
+Package: mpi-default-bin
+Source: mpi-defaults
+Version: 1.14
+Installed-Size: 10
+Maintainer: Debian Science Team <debian-science-maintainers@lists.alioth.debian.org>
+Architecture: amd64
+Depends: openmpi-bin
+Description: Standard MPI runtime programs (metapackage)
+Description-md5: dbecc64c6bab3aaf409ce47e802c5801
+Tag: devel::library, role::devel-lib
+Section: libdevel
+Priority: optional
+Filename: pool/main/m/mpi-defaults/mpi-default-bin_1.14_amd64.deb
+Size: 4752
+MD5sum: 1935ddb0288998b948e0b96955f6126b
+SHA256: 20782b98400cafbb24d7ca848cc8a0f7fce561cda86d9538a2371310489bb99d

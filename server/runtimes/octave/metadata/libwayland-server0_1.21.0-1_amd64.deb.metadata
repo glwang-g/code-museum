@@ -1,0 +1,21 @@
+Package: libwayland-server0
+Source: wayland
+Version: 1.21.0-1
+Installed-Size: 111
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Architecture: amd64
+Replaces: libwayland0 (<< 1.1.0-1)
+Depends: libc6 (>= 2.33), libffi8 (>= 3.4)
+Conflicts: libwayland0 (<< 1.1.0-1)
+Breaks: weston (<< 1.2.0)
+Description: wayland compositor infrastructure - server library
+Description-md5: d12a42711d448b23b1fb5d101345af87
+Multi-Arch: same
+Homepage: https://wayland.freedesktop.org/
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/w/wayland/libwayland-server0_1.21.0-1_amd64.deb
+Size: 35876
+MD5sum: 42f94a440aedab24dc1ae5fb7d91651e
+SHA256: df0396221d7b794496a687ec61fae82b6465648bc0ab6501ba0a5ed7f56eb8d6

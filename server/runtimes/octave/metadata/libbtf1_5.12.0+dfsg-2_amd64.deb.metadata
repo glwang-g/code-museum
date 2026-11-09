@@ -1,0 +1,18 @@
+Package: libbtf1
+Source: suitesparse
+Version: 1:5.12.0+dfsg-2
+Installed-Size: 60
+Maintainer: Debian Science Team <debian-science-maintainers@lists.alioth.debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.2.5)
+Description: permutation to block triangular form library for sparse matrices
+Description-md5: 051b2cdc9ff424226df9ac31bfffed85
+Multi-Arch: same
+Homepage: http://suitesparse.com
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/s/suitesparse/libbtf1_5.12.0+dfsg-2_amd64.deb
+Size: 25636
+MD5sum: e56a8a370a9d648a28837ea31e05aa61
+SHA256: 4c854577ea0585d93a73322f8aa7d91c28f731c335d0bb3e82ecacdf2a7ad282

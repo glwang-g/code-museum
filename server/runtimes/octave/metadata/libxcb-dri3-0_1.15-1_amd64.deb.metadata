@@ -1,0 +1,18 @@
+Package: libxcb-dri3-0
+Source: libxcb
+Version: 1.15-1
+Installed-Size: 136
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.4), libxcb1 (>= 1.12)
+Description: X C Binding, dri3 extension
+Description-md5: 4b1f92c077a799ce104181ba731ec6fc
+Multi-Arch: same
+Homepage: https://xcb.freedesktop.org
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/libx/libxcb/libxcb-dri3-0_1.15-1_amd64.deb
+Size: 106676
+MD5sum: 3008f6b77784f198f7304fa0e3dbe0a3
+SHA256: 02699b144b9467de8636d27a76984b8f4e7b66e2d25d96df2b9677be86ee9a29

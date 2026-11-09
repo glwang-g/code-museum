@@ -1,0 +1,10 @@
+{
+  "source": "https://github.com/JetBrains/kotlin/releases/tag/v2.1.20",
+  "verification": "official-release-sha256",
+  "archive": {
+    "file": "assets/kotlin-2.1.20.zip",
+    "bytes": 86919262,
+    "sha256": "a118197b0de55ffab2bc8d5cd03a5e39033cfb53383d6931bc761dec0784891a"
+  },
+  "baseImage": "eclipse-temurin@sha256:43f4431cc895d37ceb115e2e1f160545ec45caee9c1cb4246fc6bb879d58aeda"
+}

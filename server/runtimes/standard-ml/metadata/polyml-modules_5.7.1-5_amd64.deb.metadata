@@ -1,0 +1,19 @@
+Package: polyml-modules
+Source: polyml
+Version: 5.7.1-5
+Installed-Size: 4843
+Maintainer: Debian Science Maintainers <debian-science-maintainers@lists.alioth.debian.org>
+Architecture: amd64
+Replaces: libpolyml7 (>= 5.7~20170315.git1343f60-1), libpolyml8
+Breaks: libpolyml7 (>= 5.7~20170315.git1343f60-1), libpolyml8
+Description: modules for Poly/ML, a compiler for Standard ML
+Description-md5: cd6a355a439af810bcbb3dc847f556de
+Multi-Arch: same
+Homepage: http://www.polyml.org
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/p/polyml/polyml-modules_5.7.1-5_amd64.deb
+Size: 503456
+MD5sum: 136415480d2e24db6bd31ec38ff5ff10
+SHA256: ae4773c1bbcabf74f9073036afb6652af6dbdbfe661c3ebf296af576f31eefc9

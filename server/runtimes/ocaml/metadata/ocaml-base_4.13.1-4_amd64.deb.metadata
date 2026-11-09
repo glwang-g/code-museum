@@ -1,0 +1,22 @@
+Package: ocaml-base
+Source: ocaml
+Version: 4.13.1-4
+Installed-Size: 2488
+Maintainer: Debian OCaml Maintainers <debian-ocaml-maint@lists.debian.org>
+Architecture: amd64
+Replaces: ocaml-base-nox (<< 4.13)
+Provides: libseq-ocaml, libstdlib-shims-ocaml, libuchar-ocaml, ocaml-base-4.13.1
+Depends: libc6 (>= 2.35)
+Breaks: ocaml-base-nox (<< 4.13)
+Description: Runtime system for OCaml bytecode executables
+Description-md5: 1dce932413008d62caaead07f3e76f38
+Homepage: https://ocaml.org/
+Tag: devel::lang:ocaml, devel::runtime, implemented-in::ocaml,
+ interface::graphical, interface::x11, role::program, role::shared-lib,
+ uitoolkit::tk, x11::application
+Section: ocaml
+Priority: optional
+Filename: pool/main/o/ocaml/ocaml-base_4.13.1-4_amd64.deb
+Size: 667508
+MD5sum: d94b57e3736e802aea323e396e4f598a
+SHA256: c0b44b8aa8045dba80d8328241b439aa8ef47429a87867f1ef2de65f27cb59f5

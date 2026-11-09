@@ -1,0 +1,18 @@
+Package: libqt5widgets5
+Source: qtbase-opensource-src
+Version: 5.15.8+dfsg-11+deb12u3
+Installed-Size: 7432
+Maintainer: Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.29), libgcc-s1 (>= 3.4), libqt5core5a (>= 5.15.1), libqt5gui5 (>= 5.15.1) | libqt5gui5-gles (>= 5.15.1), libstdc++6 (>= 11), qtbase-abi-5-15-8
+Description: Qt 5 widgets module
+Description-md5: d3e73eff3b63455d65d61db3b685f693
+Multi-Arch: same
+Homepage: https://www.qt.io/developers/
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/q/qtbase-opensource-src/libqt5widgets5_5.15.8+dfsg-11+deb12u3_amd64.deb
+Size: 2379376
+MD5sum: 176675f2edccd94a30b3eaaa6401a49b
+SHA256: ea5d73c2935d0bd27d4da43572dabc95af9ffa0538bababd5eeb8f679e9eb335

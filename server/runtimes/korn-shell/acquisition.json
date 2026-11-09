@@ -1,0 +1,43 @@
+{
+  "baseImage": "gcc@sha256:5e927c284bf55a7dc796262e311a0703344f62f41f5621eb56843111b1d37e15",
+  "requestedPackages": [
+    "ksh93u+m"
+  ],
+  "preferredMirrorRoot": "https://mirrors.tuna.tsinghua.edu.cn",
+  "verification": "Debian APT verified InRelease and index hashes without network; each acquired package matches the solved signed-index SHA-256. Canonical source URLs retained; cached or mirror bytes require the same full verification.",
+  "indexInputs": [
+    {
+      "source": "https://deb.debian.org/debian/dists/bookworm/InRelease",
+      "sha256": "77737fa4b34f2693e982cc9ee35736816c35a7778fc2d326cc1bbf5b301fe1aa"
+    },
+    {
+      "source": "https://deb.debian.org/debian/dists/bookworm/main/binary-amd64/Packages.xz",
+      "sha256": "9e0b5aabb2465b3d2e7a7fe27f9913846277833f7a2826e7767acccff5b588c5"
+    },
+    {
+      "source": "https://deb.debian.org/debian/dists/bookworm-updates/InRelease",
+      "sha256": "835e7f5704fbf7b6ef326075dccc00bab71918530b76ce1d7deea0470d023171"
+    },
+    {
+      "source": "https://deb.debian.org/debian/dists/bookworm-updates/main/binary-amd64/Packages.xz",
+      "sha256": "87e7e94047fb7fb6f4ceecc7022d4bee55b66031cc2a7666d3196f3e0aabb846"
+    },
+    {
+      "source": "https://deb.debian.org/debian-security/dists/bookworm-security/InRelease",
+      "sha256": "836749276aafc119e05df93304153ee1b4d436807f481ac3c81162b3a6b7faae"
+    },
+    {
+      "source": "https://deb.debian.org/debian-security/dists/bookworm-security/main/binary-amd64/Packages.xz",
+      "sha256": "0ef367e0e14c08f190df6c1738c896cf6700181c2ebebd4e93a4b2aee072bf2e"
+    }
+  ],
+  "packages": [
+    {
+      "file": "assets/ksh93u+m_1.0.4-3_amd64.deb",
+      "sha256": "788b33e7d7a3a5dac8fedf59d0cec4063a0320ab824d32ce102b2ea753691d07",
+      "bytes": 890236,
+      "source": "https://deb.debian.org/debian/pool/main/k/ksh93u+m/ksh93u+m_1.0.4-3_amd64.deb",
+      "metadata": "metadata/ksh93u+m_1.0.4-3_amd64.deb.metadata"
+    }
+  ]
+}

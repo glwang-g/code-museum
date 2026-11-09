@@ -1,0 +1,18 @@
+Package: libopengl0
+Source: libglvnd
+Version: 1.6.0-1
+Installed-Size: 219
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.34), libglvnd0 (= 1.6.0-1)
+Description: Vendor neutral GL dispatch library -- OpenGL support
+Description-md5: 963744edeb2d16ec68e2c61afd7593b7
+Multi-Arch: same
+Homepage: https://gitlab.freedesktop.org/glvnd/libglvnd
+Tag: role::shared-lib
+Section: libs
+Priority: extra
+Filename: pool/main/libg/libglvnd/libopengl0_1.6.0-1_amd64.deb
+Size: 30644
+MD5sum: 460f2dd3dd0b77df3f24289609e55e5c
+SHA256: dc71cb5aaddeb8b09b3d63b8426fd651d8c79ad55b23dbe640c1abbc94c85013

@@ -1,0 +1,19 @@
+Package: libfftw3-mpi3
+Source: fftw3
+Version: 3.3.10-1
+Installed-Size: 303
+Maintainer: Debian Science Maintainers <debian-science-maintainers@lists.alioth.debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.14), libfftw3-double3 (>= 3.3.10), libfftw3-long3 (>= 3.3.10), libfftw3-single3 (>= 3.3.10), libopenmpi3 (>= 4.1.4)
+Suggests: libfftw3-mpi-dev
+Description: MPI Library for computing Fast Fourier Transforms
+Description-md5: c5bacbd678deaa87a976b8848ae7546a
+Multi-Arch: same
+Homepage: https://fftw.org
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/f/fftw3/libfftw3-mpi3_3.3.10-1_amd64.deb
+Size: 62048
+MD5sum: 5c1b01c328c396f81773df5b16044f80
+SHA256: e982eef60d5d5f7d805f03b1b16c4e8cc624f48714c2d42913ad633a5dc3eea3

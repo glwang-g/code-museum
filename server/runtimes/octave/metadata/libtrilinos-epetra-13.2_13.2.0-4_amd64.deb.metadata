@@ -1,0 +1,18 @@
+Package: libtrilinos-epetra-13.2
+Source: trilinos
+Version: 13.2.0-4
+Installed-Size: 1542
+Maintainer: Debian Science Maintainers <debian-science-maintainers@lists.alioth.debian.org>
+Architecture: amd64
+Depends: libblas3 | libblas.so.3, libc6 (>= 2.14), libgcc-s1 (>= 3.0), liblapack3 | liblapack.so.3, libopenmpi3 (>= 4.1.4), libstdc++6 (>= 11), libtrilinos-teuchos-13.2 (>= 13.2.0)
+Description: basis package for linear algebra - runtime files
+Description-md5: b1fb505913c86233acd15a07de1fe65e
+Multi-Arch: same
+Homepage: https://trilinos.github.io/
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/t/trilinos/libtrilinos-epetra-13.2_13.2.0-4_amd64.deb
+Size: 440940
+MD5sum: b9dbe77bc23c8a11c9280060ce6d43ee
+SHA256: 90cb539586b1371e5d91b3ae2f294d215bdde6ec0da32fbb7d64bc5728e89a5e

@@ -1,0 +1,18 @@
+Package: libcolamd2
+Source: suitesparse
+Version: 1:5.12.0+dfsg-2
+Installed-Size: 73
+Maintainer: Debian Science Team <debian-science-maintainers@lists.alioth.debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.4), libsuitesparseconfig5 (>= 1:5.0.0)
+Description: column approximate minimum degree ordering library for sparse matrices
+Description-md5: 6d693e970300aa191a71ea529934c483
+Multi-Arch: same
+Homepage: http://suitesparse.com
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/s/suitesparse/libcolamd2_5.12.0+dfsg-2_amd64.deb
+Size: 32940
+MD5sum: c47644da82d59cedd229c5dbcd34d79f
+SHA256: d7f6517f4e19438f7725b6efe405f5850e3e71534f45c260372919feda2c234e

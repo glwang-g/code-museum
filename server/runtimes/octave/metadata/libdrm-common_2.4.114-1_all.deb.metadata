@@ -1,0 +1,17 @@
+Package: libdrm-common
+Source: libdrm
+Version: 2.4.114-1
+Installed-Size: 42
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Architecture: all
+Description: Userspace interface to kernel DRM services -- common files
+Description-md5: bb391482bb8583a32695bb00597b7f36
+Multi-Arch: foreign
+Homepage: https://cgit.freedesktop.org/mesa/drm/
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/libd/libdrm/libdrm-common_2.4.114-1_all.deb
+Size: 7112
+MD5sum: 4f0ec02ca688b2a57f7fc0557011c9ad
+SHA256: 32f9664138b38b224383c6986457d5ad2ec8efd559b1a0ce7749405f7a451aad

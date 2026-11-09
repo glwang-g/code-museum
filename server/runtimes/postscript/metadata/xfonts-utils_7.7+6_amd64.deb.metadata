@@ -1,0 +1,17 @@
+Package: xfonts-utils
+Version: 1:7.7+6
+Installed-Size: 415
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.14), libfontenc1, libfreetype6 (>= 2.2.1), zlib1g (>= 1:1.1.4), x11-common, xfonts-encodings
+Description: X Window System font utility programs
+Description-md5: cfb627fb99a0d0ef5d7b0b2f94423328
+Multi-Arch: foreign
+Tag: interface::commandline, role::program, use::converting, use::organizing,
+ works-with::font
+Section: x11
+Priority: optional
+Filename: pool/main/x/xfonts-utils/xfonts-utils_7.7+6_amd64.deb
+Size: 92960
+MD5sum: 9965595e82496dd62dfbe477d3793318
+SHA256: 20b290277caff5bae41298c4e171fb81c29560294f60f5eeb47ef50863efc0d7

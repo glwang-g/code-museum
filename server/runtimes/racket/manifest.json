@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "platform": "linux/amd64",
+  "baseImage": "gcc@sha256:5e927c284bf55a7dc796262e311a0703344f62f41f5621eb56843111b1d37e15",
+  "sourceDateEpoch": 1793923200,
+  "version": "Minimal Racket 8.7 CS",
+  "source": "https://racket-lang.org/",
+  "license": "MIT / Apache-2.0 / component licenses (see original LICENSE.txt)",
+  "runtime": {
+    "id": "racket",
+    "executable": "/opt/racket/bin/racket",
+    "memoryMiB": 512,
+    "versionArgs": [
+      "--version"
+    ],
+    "versionPattern": "v8.7 [cs]"
+  },
+  "files": [
+    {
+      "file": "Dockerfile",
+      "bytes": 351,
+      "sha256": "d6bad69022fae05fd12318b2b5081adc7b05e3c5f8341cb1bd2dfa7b50f6332e"
+    },
+    {
+      "file": "NOTICE.md",
+      "bytes": 1126,
+      "sha256": "0c6bc6eae728134ac550b3ebae48f1eab6cef3645cfb837d5ca02228714cba42"
+    },
+    {
+      "file": "acquisition.json",
+      "bytes": 483,
+      "sha256": "a118b7a7fd1dd0cd33399670e667ba3341d7a55dfa56a56a3b9ea9399deff008"
+    },
+    {
+      "file": "assets/racket-minimal-8.7-x86_64-linux-cs.tgz",
+      "bytes": 33148725,
+      "sha256": "56c7ab5331352fa78a20458b291997a140eeb95b106561c243590fd5dfa12204"
+    },
+    {
+      "file": "licenses/LICENSE-APACHE.txt",
+      "bytes": 10847,
+      "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+    },
+    {
+      "file": "licenses/LICENSE-GPL.txt",
+      "bytes": 35068,
+      "sha256": "fc82ca8b6fdb18d4e3e85cfd8ab58d1bcd3f1b29abe782895abd91d64763f8e7"
+    },
+    {
+      "file": "licenses/LICENSE-LGPL.txt",
+      "bytes": 7639,
+      "sha256": "a853c2ffec17057872340eee242ae4d96cbf2b520ae27d903e1b2fef1a5f9d1c"
+    },
+    {
+      "file": "licenses/LICENSE-MIT.txt",
+      "bytes": 1024,
+      "sha256": "6ae314acf8e015716cdfbed46fdc6ded0a599411b8b98cd61c87f9940f85ffc7"
+    },
+    {
+      "file": "licenses/LICENSE-libscheme.txt",
+      "bytes": 986,
+      "sha256": "4a27eda03f14997f0df1a80d5ed0ca449d2eeb15a5485df0b9389738cb83f395"
+    },
+    {
+      "file": "licenses/LICENSE.txt",
+      "bytes": 7339,
+      "sha256": "625577abb21e1223b5cafc7beeee1eb5fe53caae0dc91abbf6f5c51626495ed0"
+    },
+    {
+      "file": "licenses/pkgs-base-LICENSE",
+      "bytes": 461,
+      "sha256": "82b9c2896115a90d58ff9f23bafc05d55158d1403d5d6a30147befd48964721a"
+    },
+    {
+      "file": "licenses/pkgs-racket-lib-LICENSE",
+      "bytes": 461,
+      "sha256": "82b9c2896115a90d58ff9f23bafc05d55158d1403d5d6a30147befd48964721a"
+    }
+  ]
+}

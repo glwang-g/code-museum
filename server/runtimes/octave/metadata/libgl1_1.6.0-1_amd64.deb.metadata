@@ -1,0 +1,18 @@
+Package: libgl1
+Source: libglvnd
+Version: 1.6.0-1
+Installed-Size: 652
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.34), libglvnd0 (= 1.6.0-1), libglx0 (= 1.6.0-1)
+Description: Vendor neutral GL dispatch library -- legacy GL support
+Description-md5: 97b28f3e3fdd6bc3717e4afbe41d1260
+Multi-Arch: same
+Homepage: https://gitlab.freedesktop.org/glvnd/libglvnd
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/libg/libglvnd/libgl1_1.6.0-1_amd64.deb
+Size: 88448
+MD5sum: c6c066d34007e517f71ccd90e2c54267
+SHA256: 6f89b1702c48e9a2437bb3c1ffac8e1ab2d828fc28b3d14b2eecd4cc19b2c790

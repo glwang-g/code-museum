@@ -1,0 +1,18 @@
+Package: libklu1
+Source: suitesparse
+Version: 1:5.12.0+dfsg-2
+Installed-Size: 227
+Maintainer: Debian Science Team <debian-science-maintainers@lists.alioth.debian.org>
+Architecture: amd64
+Depends: libamd2 (>= 1:4.5.2), libbtf1 (>= 1:4.5.2), libc6 (>= 2.4), libcolamd2 (>= 1:4.5.2), libsuitesparseconfig5 (>= 1:5.0.0)
+Description: circuit simulation sparse LU factorization library
+Description-md5: cb9e9673de39ce87ec542c57d2ec569e
+Multi-Arch: same
+Homepage: http://suitesparse.com
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/s/suitesparse/libklu1_5.12.0+dfsg-2_amd64.deb
+Size: 87860
+MD5sum: ce5bdb3c371b702558f4d3ee70babaa5
+SHA256: a47c0f72f534800de61a088a8ddaa87b77de4a11ba8e1aa71d1c2732450b189d

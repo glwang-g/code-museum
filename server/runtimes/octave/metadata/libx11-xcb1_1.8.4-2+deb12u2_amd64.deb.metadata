@@ -1,0 +1,17 @@
+Package: libx11-xcb1
+Source: libx11
+Version: 2:1.8.4-2+deb12u2
+Installed-Size: 252
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Architecture: amd64
+Depends: libx11-6 (= 2:1.8.4-2+deb12u2)
+Description: Xlib/XCB interface library
+Description-md5: e8cc42192edc67630d6e0fef23baa03d
+Multi-Arch: same
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/libx/libx11/libx11-xcb1_1.8.4-2+deb12u2_amd64.deb
+Size: 192356
+MD5sum: b004aaaca3961579b200cc185f741185
+SHA256: f5da45e1d881a793250a96613f28c471a248877f1a0f18a5c90e2a620a76c898

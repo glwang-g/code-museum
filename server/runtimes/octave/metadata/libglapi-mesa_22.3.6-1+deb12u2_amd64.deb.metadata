@@ -1,0 +1,18 @@
+Package: libglapi-mesa
+Source: mesa
+Version: 22.3.6-1+deb12u2
+Installed-Size: 268
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.34)
+Description: free implementation of the GL API -- shared library
+Description-md5: 6da05dae0e50a214ae9b1d095f83c561
+Multi-Arch: same
+Homepage: https://mesa3d.org/
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/m/mesa/libglapi-mesa_22.3.6-1+deb12u2_amd64.deb
+Size: 35900
+MD5sum: c28d87932ff7a5ad003c0011c43116c4
+SHA256: 2db5b13a6b7f4042f9a417ad7fa4338b6c47528dc64d7f89cfd5e53d07d76bc4

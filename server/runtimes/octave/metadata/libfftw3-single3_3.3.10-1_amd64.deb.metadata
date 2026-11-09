@@ -1,0 +1,19 @@
+Package: libfftw3-single3
+Source: fftw3
+Version: 3.3.10-1
+Installed-Size: 2355
+Maintainer: Debian Science Maintainers <debian-science-maintainers@lists.alioth.debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.34), libgomp1 (>= 4.9)
+Suggests: libfftw3-bin, libfftw3-dev
+Description: Library for computing Fast Fourier Transforms - Single precision
+Description-md5: 92b4a1a5847803599048be98e9eb70b9
+Multi-Arch: same
+Homepage: https://fftw.org
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/f/fftw3/libfftw3-single3_3.3.10-1_amd64.deb
+Size: 805768
+MD5sum: 2ea825cf59482aba61b850ad3b4b66af
+SHA256: 42a4c9c3371f4cc0604e57ea99c7362da3a87de75240b13840b0607149c24a54

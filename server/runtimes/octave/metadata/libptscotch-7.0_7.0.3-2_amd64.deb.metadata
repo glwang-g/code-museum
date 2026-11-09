@@ -1,0 +1,18 @@
+Package: libptscotch-7.0
+Source: scotch
+Version: 7.0.3-2
+Installed-Size: 3831
+Maintainer: Debian Science Maintainers <debian-science-maintainers@lists.alioth.debian.org>
+Architecture: amd64
+Depends: libbz2-1.0, libc6 (>= 2.34), liblzma5 (>= 5.1.1alpha+20120614), libopenmpi3 (>= 4.1.4), zlib1g (>= 1:1.1.4)
+Description: MPI programs and libraries for graph, mesh and hypergraph partitioning
+Description-md5: 4f6f275a40d71d2a070c51326b849b38
+Multi-Arch: same
+Homepage: http://www.labri.fr/perso/pelegrin/scotch/
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/s/scotch/libptscotch-7.0_7.0.3-2_amd64.deb
+Size: 668496
+MD5sum: 9bb43058f6d153008708e78ef8a0519e
+SHA256: 40928a90d9a731da23800c6ca1b5f4835fd495d7e314772e1de3e10d4671f3d1

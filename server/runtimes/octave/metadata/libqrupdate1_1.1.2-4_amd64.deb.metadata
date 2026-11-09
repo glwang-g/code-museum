@@ -1,0 +1,18 @@
+Package: libqrupdate1
+Source: qrupdate
+Version: 1.1.2-4
+Installed-Size: 121
+Maintainer: Debian Science Team <debian-science-maintainers@lists.alioth.debian.org>
+Architecture: amd64
+Depends: libblas3 | libblas.so.3, libc6 (>= 2.4), libgfortran5 (>= 8), liblapack3 | liblapack.so.3
+Description: Fast updates of QR and Cholesky decompositions
+Description-md5: 362cd8c45e0cb27993e05f8be51c697c
+Multi-Arch: same
+Homepage: https://qrupdate.sourceforge.io/
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/q/qrupdate/libqrupdate1_1.1.2-4_amd64.deb
+Size: 37756
+MD5sum: f514bf6bc984e54017168cf249896e06
+SHA256: 9387d2b2ef209fe84e4258fea3063b489c99ca6f24e2f3b6dbec7d2a622fe55e

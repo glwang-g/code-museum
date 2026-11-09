@@ -1,0 +1,22 @@
+Package: ocaml
+Version: 4.13.1-4
+Installed-Size: 285421
+Maintainer: Debian OCaml Maintainers <debian-ocaml-maint@lists.debian.org>
+Architecture: amd64
+Replaces: ocaml-nox (<< 4.13)
+Provides: libseq-ocaml-dev, libstdlib-shims-ocaml-dev, libuchar-ocaml-dev, ocaml-4.13.1, ocaml-best-compilers (= 4.13.1-4), ocaml-native-compilers (= 4.13.1-4)
+Depends: ocaml-interp (= 4.13.1-4), libncurses-dev, gcc, binutils, libc6 (>= 2.35), ocaml-base-4.13.1
+Recommends: ocaml-man, file
+Suggests: ocaml-doc, elpa-tuareg
+Breaks: ocaml-nox (<< 4.13)
+Description: ML language implementation with a class-based object system
+Description-md5: cd93523c79e01d09a2d592898dd5d034
+Homepage: https://ocaml.org/
+Tag: devel::compiler, devel::interpreter, devel::lang:ocaml,
+ implemented-in::ocaml, role::program, uitoolkit::ncurses
+Section: ocaml
+Priority: optional
+Filename: pool/main/o/ocaml/ocaml_4.13.1-4_amd64.deb
+Size: 72145688
+MD5sum: 9d534010cb0da34a626fd3fdd47a8a04
+SHA256: 98ca43adc3edb8994bb89830e51b3bdb7d25449db41a5702cf8ff39696c404ea

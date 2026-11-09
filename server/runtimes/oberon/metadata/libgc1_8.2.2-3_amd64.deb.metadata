@@ -1,0 +1,20 @@
+Package: libgc1
+Source: libgc
+Version: 1:8.2.2-3
+Installed-Size: 400
+Maintainer: Christoph Egger <christoph@debian.org>
+Architecture: amd64
+Replaces: libgc1c2
+Depends: libc6 (>= 2.34), libstdc++6 (>= 4.1.1)
+Conflicts: libgc1c2
+Description: conservative garbage collector for C and C++
+Description-md5: fb0bc4e8a25a8d1d4508437085e3f5c8
+Multi-Arch: same
+Homepage: https://www.hboehm.info/gc/
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/libg/libgc/libgc1_8.2.2-3_amd64.deb
+Size: 245116
+MD5sum: 2e265730e4d3f45cd0bdf7355cfda729
+SHA256: c7fecfc533d31980e93faeb9bc529dc2d393fc066100550c0e28a760a2eab72e

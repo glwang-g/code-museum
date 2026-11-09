@@ -1,0 +1,31 @@
+{
+  "source": "https://packages.microsoft.com/repos/microsoft-debian-bookworm-prod/pool/main/p/powershell/powershell_7.5.4-1.deb_amd64.deb",
+  "officialRelease": "https://github.com/PowerShell/PowerShell/releases/tag/v7.5.4",
+  "sha256": "17036f67f65d81ed2b23d0d247edc2b2ac58abeb721f08927aed8a3dffe41d42",
+  "bytes": 75453302,
+  "verification": "Complete Microsoft DEB matches the official GitHub release asset digest. No APT or PGP signature verification claim.",
+  "parts": [
+    {
+      "file": "assets/powershell-7.5.4.deb.part000",
+      "bytes": 33554432,
+      "sha256": "df894c600f2eb89d863c788516f8102ad2705097101031ea84c754717953b39f"
+    },
+    {
+      "file": "assets/powershell-7.5.4.deb.part001",
+      "bytes": 33554432,
+      "sha256": "2533f5f3643fb21b1b6a1920eca728a50ef07f7e3c99a7a4e3a66bf0014ebe39"
+    },
+    {
+      "file": "assets/powershell-7.5.4.deb.part002",
+      "bytes": 8344438,
+      "sha256": "bd40e3f69f6e24851b74eade88c31bf3ce1e5d6cbda51dfd6c8a578734ce7084"
+    }
+  ],
+  "originalLicensePaths": [
+    "./opt/microsoft/powershell/7/ThirdPartyNotices.txt",
+    "./opt/microsoft/powershell/7/LICENSE.txt",
+    "./opt/microsoft/powershell/7/Modules/Microsoft.PowerShell.PSResourceGet/Notice.txt",
+    "./opt/microsoft/powershell/7/Modules/Microsoft.PowerShell.PSResourceGet/LICENSE",
+    "./opt/microsoft/powershell/7/Modules/PSReadLine/License.txt"
+  ]
+}

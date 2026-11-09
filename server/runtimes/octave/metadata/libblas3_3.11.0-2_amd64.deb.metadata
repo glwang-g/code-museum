@@ -1,0 +1,19 @@
+Package: libblas3
+Source: lapack
+Version: 3.11.0-2
+Installed-Size: 464
+Maintainer: Debian Science Team <debian-science-maintainers@lists.alioth.debian.org>
+Architecture: amd64
+Provides: libblas.so.3
+Depends: libc6 (>= 2.14)
+Description: Basic Linear Algebra Reference implementations, shared library
+Description-md5: a36805beaf33b431991a1e3ce32f8143
+Multi-Arch: same
+Homepage: https://www.netlib.org/lapack/
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/l/lapack/libblas3_3.11.0-2_amd64.deb
+Size: 148592
+MD5sum: b39744800600a80ae852251a16c03d09
+SHA256: 9aae8058b8d02b800bdafc5b340614df1442a2d2abbc2d351947c0fdd67aa08a

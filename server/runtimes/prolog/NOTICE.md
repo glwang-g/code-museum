@@ -1,0 +1,5 @@
+# Prolog / SWI-Prolog 9.0.4 (Debian 9.0.4+dfsg-2)
+
+Explicit acquisition uses official Debian indices and InRelease signatures verified by Debian APT in a disposable network-disabled container. Each package SHA-256 is matched to the signed-index metadata. Exact package versions, official URLs and hashes are in acquisition.json; original package metadata, InRelease and APT verification log are in metadata/. Original copyright notices from the fixed packages are in licenses/. Corresponding Debian source packages are available under the official pool paths recorded in metadata, with upstream references in the original copyright files.
+
+The offline build installs only saved packages on the fixed existing Debian 12 / GCC image. This is SWI-Prolog, not every Prolog dialect. Single-file programs define main/0; the runner loads the file, invokes main, and exits. No startup files, GUI, extension packs or online package installation. Stack limit 128 MiB; private 512 MiB container, 3 second execution, no network, non-root, temporary task files. Syntax errors halt loading rather than allowing a later main/0 to masquerade as success. Text stdin/stdout only.

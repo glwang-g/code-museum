@@ -1,0 +1,305 @@
+{
+  "schemaVersion": 1,
+  "platform": "linux/amd64",
+  "baseImage": "eclipse-temurin@sha256:43f4431cc895d37ceb115e2e1f160545ec45caee9c1cb4246fc6bb879d58aeda",
+  "sourceDateEpoch": 1793923200,
+  "version": "2.1.20",
+  "source": "https://github.com/JetBrains/kotlin/releases/tag/v2.1.20",
+  "license": "Apache-2.0 and bundled component licenses",
+  "runtime": {
+    "id": "kotlin",
+    "executable": "/opt/java/openjdk/bin/java",
+    "memoryMiB": 768,
+    "versionArgs": [
+      "-Xmx256m",
+      "-XX:ActiveProcessorCount=1",
+      "-cp",
+      "/opt/kotlinc/lib/*",
+      "org.jetbrains.kotlin.cli.jvm.K2JVMCompiler",
+      "-version"
+    ],
+    "versionPattern": "kotlinc-jvm 2.1.20"
+  },
+  "files": [
+    {
+      "file": "Dockerfile",
+      "bytes": 312,
+      "sha256": "137066f700bb358b980dc618017be8ec6a3d63f8f98943cf41dcd75905ca7db5"
+    },
+    {
+      "file": "NOTICE.md",
+      "bytes": 685,
+      "sha256": "1632f044c11a932fce3f13c3c98ec2403457e43490fecd1b4be0271f8a796d1d"
+    },
+    {
+      "file": "acquisition.json",
+      "bytes": 390,
+      "sha256": "2497e7691486b18fbb242aea24ba9c630077201c8dbd9e622a71866c087390c6"
+    },
+    {
+      "file": "assets/kotlin-2.1.20.zip",
+      "bytes": 86919262,
+      "sha256": "a118197b0de55ffab2bc8d5cd03a5e39033cfb53383d6931bc761dec0784891a"
+    },
+    {
+      "file": "assets/kotlin-2.1.20.zip.sha256",
+      "bytes": 64,
+      "sha256": "9f8e8ec5e31dc02100012270269efd4bffd86291f76ab584b33e4d15349443f0"
+    },
+    {
+      "file": "licenses/license__COPYRIGHT.txt",
+      "bytes": 647,
+      "sha256": "8f1a1700adb5490604c6094fb137bf73f6c28d3ee554b58f3ff8ef975a79672d"
+    },
+    {
+      "file": "licenses/license__COPYRIGHT_HEADER.txt",
+      "bytes": 208,
+      "sha256": "e2047ed7177b71a0e09d4bfbd8f812a2d1567a36d8c5778d8d31ddda9a440dda"
+    },
+    {
+      "file": "licenses/license__LICENSE.txt",
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "file": "licenses/license__NOTICE.txt",
+      "bytes": 482,
+      "sha256": "0b09a83d3ef7795c7dec65e815866597c066c53898f2852a76599b8f5552941a"
+    },
+    {
+      "file": "licenses/license__README.md",
+      "bytes": 17091,
+      "sha256": "7b9ed2fce6cb756174326571ef57e641e7b22c439c87ee7e2ab85e9be9751d95"
+    },
+    {
+      "file": "licenses/license__third_party__aalto_xml_licence.txt",
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "file": "licenses/license__third_party__aether_license.txt",
+      "bytes": 11248,
+      "sha256": "ed8d7a24769ac9d57d08769b5f8be27519dd8811d06b0995dbe8ca6714e96d08"
+    },
+    {
+      "file": "licenses/license__third_party__aosp_license.txt",
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "file": "licenses/license__third_party__args4j_LICENSE.txt",
+      "bytes": 1079,
+      "sha256": "729b7cef12701553c0272bbfd2e70a47ab93065f3be6f846d81e93a091cef340"
+    },
+    {
+      "file": "licenses/license__third_party__asm_license.txt",
+      "bytes": 1598,
+      "sha256": "bf7e5d772c8adf38d16306cba31de6151e1886560d08888bf25defbe8adf725a"
+    },
+    {
+      "file": "licenses/license__third_party__asmble_license.txt",
+      "bytes": 1065,
+      "sha256": "9808ceffe450ef163ae04ba0d42149c3742a55ddd8da580c2471f23a7f79a405"
+    },
+    {
+      "file": "licenses/license__third_party__assemblyscript_license.txt",
+      "bytes": 11356,
+      "sha256": "c5accbbd8546e94c34aed24afe689a617627d18eed5a6c48277e48db57c23851"
+    },
+    {
+      "file": "licenses/license__third_party__boost_LICENSE.txt",
+      "bytes": 1337,
+      "sha256": "8d8291caf1cee26d23acf3eb67c9f9a2d58f1c681b16a4fbe8cbfb9e3c0b5a9b"
+    },
+    {
+      "file": "licenses/license__third_party__caffeine_LICENSE.txt",
+      "bytes": 11357,
+      "sha256": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd"
+    },
+    {
+      "file": "licenses/license__third_party__closure-compiler_LICENSE.txt",
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "file": "licenses/license__third_party__compose_license.txt",
+      "bytes": 10175,
+      "sha256": "809fa1ed21450f59827d1e9aec720bbc4b687434fa22283c6cb5dd82a47ab9c0"
+    },
+    {
+      "file": "licenses/license__third_party__dart_LICENSE.txt",
+      "bytes": 2323,
+      "sha256": "a572879551b8011db14feb212906d7d690abbe58a7803fb2d6f26abe2197ab0b"
+    },
+    {
+      "file": "licenses/license__third_party__fastutil_licence",
+      "bytes": 11386,
+      "sha256": "fb411e13059fe3649b2630d6b94f7a031d089a8a78e49256033c4e3f3da3f1f4"
+    },
+    {
+      "file": "licenses/license__third_party__gradle-node-plugin_LICENSE.txt",
+      "bytes": 11323,
+      "sha256": "6dc0e068dcf3a5bc8e054205b85b7720e1d49265bbc64bf515d2cf79197df69a"
+    },
+    {
+      "file": "licenses/license__third_party__gradle_license.txt",
+      "bytes": 23605,
+      "sha256": "f5e661dc635c82a2dad5a6bd92c71bb89500020865e0b86ffad4bdf764f78e44"
+    },
+    {
+      "file": "licenses/license__third_party__guava_license.txt",
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "file": "licenses/license__third_party__gwt_license.txt",
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "file": "licenses/license__third_party__jgit_license.txt",
+      "bytes": 1592,
+      "sha256": "5c20fb5295c262aec6a8c33ed6fcd61646624a578f36dfad6b737eb96d5c51e8"
+    },
+    {
+      "file": "licenses/license__third_party__jquery_license.txt",
+      "bytes": 1376,
+      "sha256": "df57d69fba71d2ebca048a5ce37e16f8ebbde334b79bcb2a15d2b58a09d64241"
+    },
+    {
+      "file": "licenses/license__third_party__jshashtable_license.txt",
+      "bytes": 594,
+      "sha256": "80b825b0d6de67a923091dd9b0ee67b12b3e17c01356c753aed4941c026e51f8"
+    },
+    {
+      "file": "licenses/license__third_party__karma-teamcity-reporter_LICENSE.txt",
+      "bytes": 1094,
+      "sha256": "aeec55919caa5b3bc95cd4c8a55f2f94c000db2cb43f16a2ab62d925cb64695b"
+    },
+    {
+      "file": "licenses/license__third_party__karma_LICENSE.txt",
+      "bytes": 1077,
+      "sha256": "0ff98105e1a36e8be352d03d38df7ec7d76e2f21118d99308d58f884a19855fb"
+    },
+    {
+      "file": "licenses/license__third_party__lodash_LICENSE.txt",
+      "bytes": 1966,
+      "sha256": "da079993091381e4b5821647580325329bf3ccdc4fde8cde1797f14483c13bcc"
+    },
+    {
+      "file": "licenses/license__third_party__lombok_LICENSE.txt",
+      "bytes": 1076,
+      "sha256": "610f8c0be13ede2ed104952923ba63506ef70543d72941a25fad5e17f90814a2"
+    },
+    {
+      "file": "licenses/license__third_party__maven_LICENSE.txt",
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "file": "licenses/license__third_party__mocha-teamcity-reporter_LICENSE.txt",
+      "bytes": 1080,
+      "sha256": "ad8f27e36016bd5d48dfb13983d1f7425e8f8dfd567fa63fd18c44d4a9235d90"
+    },
+    {
+      "file": "licenses/license__third_party__okhttp_license.txt",
+      "bytes": 587,
+      "sha256": "e666ea4cda8e7122321bec8ea1f18705f469aa859baf921aeb773f549709fcc9"
+    },
+    {
+      "file": "licenses/license__third_party__power_assert_license.txt",
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "file": "licenses/license__third_party__prototype_license.txt",
+      "bytes": 934,
+      "sha256": "1bbc0362bf27809b0d5acfd030b955056feb03c781f3c5b8769aaf06e838a9ac"
+    },
+    {
+      "file": "licenses/license__third_party__rhino_LICENSE.txt",
+      "bytes": 49052,
+      "sha256": "8ff4d01abe4b0cd144b7896195924e421bc41a01ffc79080c7b5f2c7d75c1632"
+    },
+    {
+      "file": "licenses/license__third_party__scala_license.txt",
+      "bytes": 1733,
+      "sha256": "8b29107856dc584cf90e8ea7cc5b4847339ec6907d61eafbc5b1a843a832f935"
+    },
+    {
+      "file": "licenses/license__third_party__sl4f_license.txt",
+      "bytes": 1186,
+      "sha256": "b03aefa7c785d4ceeb5a7eba9edf0069978a5f720af538b2286d48c68d029490"
+    },
+    {
+      "file": "licenses/license__third_party__stax2-api.txt",
+      "bytes": 388,
+      "sha256": "7f33221dc6c76f3e8ea4111088ec905ca4ba59cdfabd67e27e1953a94d07ae34"
+    },
+    {
+      "file": "licenses/license__third_party__sun_license.txt",
+      "bytes": 245,
+      "sha256": "1100abb8c9d41eb4a17ff56233e68b49faf1edc6314f9b5a32dde9acd6622f64"
+    },
+    {
+      "file": "licenses/license__third_party__teamcity-service-messages_LICENSE.txt",
+      "bytes": 1058,
+      "sha256": "3fa05181e029dfe866e33f825d6879f2bdbd7489368db367e3b1a986a810e72c"
+    },
+    {
+      "file": "licenses/license__third_party__testdata__dagger_license.txt",
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "file": "licenses/license__third_party__testdata__eclipse_distribution_license.txt",
+      "bytes": 1562,
+      "sha256": "d7056f7d7b0754aba44734b48b2c6e9b734c350851765c07d724bb5fb34ec9b3"
+    },
+    {
+      "file": "licenses/license__third_party__testdata__eclipse_license.txt",
+      "bytes": 11624,
+      "sha256": "0dba9cd5bc833d6a40f5f5a34db70e37b6ce1cd337dbc2f06ccf1dbc521d2079"
+    },
+    {
+      "file": "licenses/license__third_party__testdata__findbugs_license.txt",
+      "bytes": 26530,
+      "sha256": "dc626520dcd53a22f727af3ee42c770e56c97a64fe3adb063799d8ab032fe551"
+    },
+    {
+      "file": "licenses/license__third_party__testdata__jspecify_license.txt",
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "file": "licenses/license__third_party__testdata__lombok_license.txt",
+      "bytes": 1075,
+      "sha256": "5d0155eb221fcd5a25bcb0cc4761057a9751b2375615e0435b7630ffc2f0b810"
+    },
+    {
+      "file": "licenses/license__third_party__testdata__rxjava_license.txt",
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "file": "licenses/license__third_party__testdata__spring_license.txt",
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "file": "licenses/license__third_party__threetenbp_license.txt",
+      "bytes": 1520,
+      "sha256": "d1bc53b493a3ab387b42717ed5c4b1976a5048996f81154278100bff86d39331"
+    },
+    {
+      "file": "licenses/license__third_party__trove_license.txt",
+      "bytes": 26470,
+      "sha256": "dfc7c3ce50ee8217506becd88eb534ad11fa292564fc5b3ef3f4ccad40f95d5c"
+    },
+    {
+      "file": "licenses/license__third_party__trove_readme_license.txt",
+      "bytes": 766,
+      "sha256": "7088d9c07317e94f1f9b794e7ec713f99f65d03614dd105b70754a09e7c46df1"
+    }
+  ]
+}

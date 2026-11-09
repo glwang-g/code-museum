@@ -1,0 +1,18 @@
+Package: libaec0
+Source: libaec (1.0.6-1)
+Version: 1.0.6-1+b1
+Installed-Size: 56
+Maintainer: Alastair McKinstry <mckinstry@debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.14)
+Description: Adaptive Entropy Coding library
+Description-md5: 6f869029a4e6830b22265120c82b6704
+Multi-Arch: same
+Homepage: https://gitlab.dkrz.de/k202009/libaec
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/liba/libaec/libaec0_1.0.6-1+b1_amd64.deb
+Size: 21144
+MD5sum: 42611bf8032dad2d74c26d8dc084d322
+SHA256: 8a403015309664cff739053569062eb99fa92646029191d056a587a3fabd1845

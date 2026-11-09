@@ -1,0 +1,18 @@
+Package: libevdev2
+Source: libevdev
+Version: 1.13.0+dfsg-1
+Installed-Size: 140
+Maintainer: Stephen Kitt <skitt@debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.33)
+Description: wrapper library for evdev devices
+Description-md5: 67bec2e511a50d7ac6f7e4b05c2a96b6
+Multi-Arch: same
+Homepage: https://www.freedesktop.org/wiki/Software/libevdev/
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/libe/libevdev/libevdev2_1.13.0+dfsg-1_amd64.deb
+Size: 33968
+MD5sum: dd115a45947d085736059bd834980584
+SHA256: 418b3a0eccd3efbab2be4f3e8e97e3a2523af420241ac5ce0ba8519c8c2424c2

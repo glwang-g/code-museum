@@ -1,0 +1,679 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: Octave
+Upstream-Contact: John W. Eaton <jwe@octave.org>
+Source: https://www.octave.org/
+
+Files: *
+Copyright: 1989-2022 The Octave Project Developers
+License: GPL-3+
+Comment: See https://www.gnu.org/software/octave/copyright/
+
+Files: build-aux/compile
+       build-aux/depcomp
+       build-aux/ltmain.sh
+       build-aux/mdate-sh
+       build-aux/missing
+       build-aux/ylwrap
+Copyright: 1995-2022 Free Software Foundation, Inc.
+License: GPL-2+
+
+Files: build-aux/config.guess
+       build-aux/config.sub
+       build-aux/move-if-change
+       build-aux/stl_algo.h-fixed
+       build-aux/texinfo.tex
+Copyright: 1985-2021 Free Software Foundation, Inc.
+License: GPL-3+
+
+Files: build-aux/config.rpath
+Copyright: 1996-2021 Free Software Foundation, Inc.
+License: FSFULLR
+
+Files: build-aux/install-sh
+Copyright: 1994 X Consortium
+License: Expat
+
+Files: debian/*
+Copyright: Andrew D. Fernandes <adfernan@cnd.mcgill.ca>
+           Dale Scheetz <dwarf@polaris.net>
+           Dirk Eddelbuettel <edd@debian.org>
+           2005-2009, 2012-2018 Rafael Laboissiere <rafael@debian.org>
+           2006-2013 Thomas Weber <tweber@debian.org>
+           2011-2022 Sébastien Villemot <sebastien@debian.org>
+           2013-2014 Mike Miller <mtmiller@debian.org>
+License: GPL-3+
+
+Files: etc/fonts/*
+Copyright: 2002-2012, GNU Freefont contributors
+License: GPL-3+ with Font exception
+
+Files: etc/icons/org.octave.Octave.appdata.xml
+Copyright: 2013-2021 The Octave Project Developers
+License: FSFAP
+
+Files: libgnu/*
+Copyright: 1988-2021, Free Software Foundation, Inc.
+License: LGPL-2.1+
+
+Files: libgnu/unicase.in.h
+ libgnu/unicase/cased.c
+ libgnu/unicase/cased.h
+ libgnu/unicase/caseprop.h
+ libgnu/unicase/context.h
+ libgnu/unicase/empty-prefix-context.c
+ libgnu/unicase/empty-suffix-context.c
+ libgnu/unicase/ignorable.c
+ libgnu/unicase/ignorable.h
+ libgnu/unicase/simple-mapping.h
+ libgnu/unicase/special-casing-table.gperf
+ libgnu/unicase/special-casing.c
+ libgnu/unicase/special-casing.in.h
+ libgnu/unicase/tolower.c
+ libgnu/unicase/tolower.h
+ libgnu/unicase/toupper.c
+ libgnu/unicase/toupper.h
+ libgnu/unicase/u-casemap.h
+ libgnu/unicase/u8-casemap.c
+ libgnu/unicase/u8-tolower.c
+ libgnu/unicase/u8-toupper.c
+ libgnu/unicase/unicasemap.h
+ libgnu/uniconv/u-conv-to-enc.h
+ libgnu/uniconv/u32-conv-to-enc.c
+ libgnu/uniconv/u8-conv-to-enc.c
+ libgnu/unictype/ctype_alnum.c
+ libgnu/unictype/ctype_alnum.h
+ libgnu/unictype/ctype_alpha.c
+ libgnu/unictype/ctype_alpha.h
+ libgnu/unictype/ctype_blank.c
+ libgnu/unictype/ctype_blank.h
+ libgnu/unictype/ctype_cntrl.c
+ libgnu/unictype/ctype_cntrl.h
+ libgnu/unictype/ctype_digit.c
+ libgnu/unictype/ctype_digit.h
+ libgnu/unictype/ctype_graph.c
+ libgnu/unictype/ctype_graph.h
+ libgnu/unictype/ctype_lower.c
+ libgnu/unictype/ctype_lower.h
+ libgnu/unictype/ctype_print.c
+ libgnu/unictype/ctype_print.h
+ libgnu/unictype/ctype_punct.c
+ libgnu/unictype/ctype_punct.h
+ libgnu/unictype/ctype_space.c
+ libgnu/unictype/ctype_space.h
+ libgnu/unictype/ctype_upper.c
+ libgnu/unictype/ctype_upper.h
+ libgnu/unictype/ctype_xdigit.c
+ libgnu/unictype/ctype_xdigit.h
+ libgnu/unictype/pr_soft_dotted.c
+ libgnu/unictype/pr_soft_dotted.h
+ libgnu/uninorm/u8-normalize.c
+ libgnu/unistr/u16-mbtoucr.c
+ libgnu/unistr/u16-to-u8.c
+ libgnu/unistr/u16-uctomb-aux.c
+ libgnu/unistr/u16-uctomb.c
+ libgnu/unistr/u32-mblen.c
+ libgnu/unistr/u8-cpy.c
+ libgnu/unistr/u8-mbsnlen.c
+ libgnu/unistr/u8-strmblen.c
+ libgnu/unistr/u8-strmbtouc.c
+ libgnu/unistr/u8-to-u16.c
+Copyright: 1999-2021, Free Software Foundation, Inc.
+License: LGPL-3+ or GPL-2+
+
+Files: libgnu/Makefile.am
+ libgnu/Makefile.in
+ libgnu/at-func.c
+ libgnu/canonicalize.c
+ libgnu/canonicalize.h
+ libgnu/chdir-long.c
+ libgnu/chdir-long.h
+ libgnu/dup-safer-flag.c
+ libgnu/dup-safer.c
+ libgnu/fd-safer-flag.c
+ libgnu/fd-safer.c
+ libgnu/fdopendir.c
+ libgnu/file-set.c
+ libgnu/file-set.h
+ libgnu/filemode.c
+ libgnu/filemode.h
+ libgnu/fstatat.c
+ libgnu/ftruncate.c
+ libgnu/getcwd.c
+ libgnu/hash-triple-simple.c
+ libgnu/hash-triple.h
+ libgnu/openat-die.c
+ libgnu/openat-priv.h
+ libgnu/openat-proc.c
+ libgnu/openat.c
+ libgnu/openat.h
+ libgnu/pipe-safer.c
+ libgnu/progname.c
+ libgnu/progname.h
+ libgnu/save-cwd.c
+ libgnu/save-cwd.h
+ libgnu/unistd--.h
+ libgnu/unistd-safer.h
+ libgnu/xalloc.h
+ libgnu/xalloc-die.c
+ libgnu/xmalloc.c
+Copyright: 1985-2021, Free Software Foundation, Inc.
+License: GPL-3+
+
+Files: libgnu/fchdir.c
+ libgnu/frexpf.c
+ libgnu/getrusage.c
+ libgnu/memrchr.c
+ libgnu/mkfifo.c
+ libgnu/nstrftime.c
+ libgnu/putenv.c
+ libgnu/rewinddir.c
+ libgnu/setlocale.c
+ libgnu/strftime.h
+ libgnu/symlink.c
+ libgnu/time-internal.h
+ libgnu/time_rz.c
+ libgnu/tmpdir.c
+ libgnu/tmpdir.h
+ libgnu/tmpfile.c
+ libgnu/tzset.c
+Copyright: 1991-2021, Free Software Foundation, Inc.
+License: LGPL-3+
+
+Files: libgnu/_Noreturn.h
+ libgnu/arg-nonnull.h
+ libgnu/c++defs.h
+ libgnu/warn-on-use.h
+Copyright: 2009-2021, Free Software Foundation, Inc.
+License: LGPL-2+
+
+Files: libgnu/alloca.c
+Copyright: none
+License: public-domain
+ This file is in the public domain.
+ .
+ (Mostly) portable implementation -- D A Gwyn
+
+Files: libgui/qterminal/libqterminal/QTerminal.*
+Copyright: 2012-2019, Michael Goffioul.
+           2012-2019, Jacob Dawid.
+License: GPL-3+
+
+Files: libgui/qterminal/libqterminal/unix/*
+Copyright: 2008 e_k <e_k at users.sourceforge.net>
+           2000, 2013, Stephan Kulow <coolo@kde.org>
+           2006, 2007, 2013, Robert Knight <robertknight@gmail.com>
+           1997, 1998, 2013 Lars Doelle <lars.doelle@on-line.de>
+           1996, 2013, Matthias Ettrich <ettrich@kde.org>
+           2017 Torsten <mttl@mailbox.org>
+           2012-2019, Jacob Dawid <jacob.dawid@cybercatalyst.com>
+License: GPL-2+
+
+Files: libgui/qterminal/libqterminal/unix/QUnixTerminalImpl.cpp
+       libgui/qterminal/libqterminal/unix/QUnixTerminalImpl.h
+       libgui/qterminal/libqterminal/unix/TerminalCharacterDecoder.cpp
+       libgui/qterminal/libqterminal/unix/TerminalCharacterDecoder.h
+       libgui/qterminal/libqterminal/unix/kpty.cpp
+       libgui/qterminal/libqterminal/unix/kpty.h
+       libgui/qterminal/libqterminal/unix/kpty_p.h
+Copyright: 2012-2019, Jacob Dawid <jacob.dawid@cybercatalyst.com>
+           2008, e_k (e_k@users.sourceforge.net)
+           2006, 2007, 2013, Robert Knight <robertknight@gmail.com>
+           2002, 2013, Waldo Bastian <bastian@kde.org>
+           2002, 2003, 2007, 2013, Oswald Buddenhagen <ossi@kde.org>
+License: LGPL-2+
+
+Files: libgui/qterminal/libqterminal/unix/SelfListener.cpp
+       libgui/qterminal/libqterminal/unix/SelfListener.h
+Copyright: 2011, 2013, Jacob Dawid (jacob.dawid@cybercatalyst.com)
+License: GPL-3+
+
+Files: libgui/qterminal/libqterminal/win32/*
+Copyright: 2007-2019, Michael Goffioul
+License: GPL-3+
+
+Files: libgui/src/icons/*
+Copyright: none
+License: public-domain
+ The Tango base icon theme is released to the Public Domain.
+
+Files: libinterp/corefcn/__contourc__.cc
+Copyright: 2001-2021 The Octave Project Developers
+           2004, Andrew Ross
+           2000-2002, 2004, Alan W. Irwin
+           2000, 2002, Joao Cardoso
+           1995, 2000, 2001, Maurice LeBrun
+License: GPL-3+
+
+Files: liboctave/external/slatec-err/*
+       liboctave/external/slatec-fn/*
+       liboctave/external/dassl/*
+Copyright: none
+License: public-domain
+ This code is part of SLATEC.
+ It was developed at US Government research laboratories and is therefore public
+ domain software.
+
+Files: liboctave/external/Faddeeva/*
+Copyright: 2012, Massachusetts Institute of Technology
+License: Expat
+
+Files: liboctave/external/daspk/*
+Copyright: none
+License: public-domain
+ Work performed under the auspices of the U.S. Department of Energy
+ by Lawrence Livermore National Laboratory under contract number 
+ W-7405-Eng-48.
+
+Files: liboctave/external/dasrt/*
+Copyright: none
+License: public-domain
+ Work performed under the auspices of the U.S. Department of Energy
+ by Lawrence Livermore National Laboratory.
+
+Files: liboctave/external/lapack-xtra/*
+Copyright: 1992-2006 The University of Tennessee
+License: BSD-3-clause
+
+Files: liboctave/external/lapack-xtra/crsf2csf.f
+       liboctave/external/lapack-xtra/zrsf2csf.f
+Copyright: 2010-2021 The Octave Project Developers
+License: GPL-3+
+
+Files: liboctave/external/odepack/*
+Copyright: none
+License: public-domain
+ Written by Alan C. Hindmarsh
+ Center for Applied Scientific Computing
+ Lawrence Livermore National Laboratory
+ Livermore, CA 94551, U.S.A.
+ .
+ The following Fortran solvers for ordinary differential equation (ODE) systems
+ were written at LLNL. All are in the Public Domain and are freely available
+ from the CASC Software Download Site.
+
+Files: liboctave/external/quadpack/*
+Copyright: none
+License: public-domain
+ QUADPACK originated from a joint project of R. Piessens and E. de
+ Doncker-Kapenga (Appl. Math. and Progr. Div.- K.U.Leuven, Belgium),
+ C. Überhuber (Inst. Fuer Math.- Techn.U.Wien, Austria), and D. Kahaner
+ (Nation. Bur. of Standards- Washington D.C., U.S.A.). 
+
+Files: liboctave/external/ranlib/*
+Copyright: none
+License: public-domain
+ We place the Randlib code that we have written in the public domain.  
+ .
+                                 NO WARRANTY
+ .    
+     WE PROVIDE ABSOLUTELY  NO WARRANTY  OF ANY  KIND  EITHER  EXPRESSED OR
+     IMPLIED,  INCLUDING BUT   NOT LIMITED TO,  THE  IMPLIED  WARRANTIES OF
+     MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.  THE ENTIRE RISK
+     AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS  WITH YOU.  SHOULD
+     THIS PROGRAM PROVE  DEFECTIVE, YOU ASSUME  THE COST  OF  ALL NECESSARY
+     SERVICING, REPAIR OR CORRECTION.
+ .    
+     IN NO  EVENT  SHALL THE UNIVERSITY  OF TEXAS OR  ANY  OF ITS COMPONENT
+     INSTITUTIONS INCLUDING M. D.   ANDERSON HOSPITAL BE LIABLE  TO YOU FOR
+     DAMAGES, INCLUDING ANY  LOST PROFITS, LOST MONIES,   OR OTHER SPECIAL,
+     INCIDENTAL   OR  CONSEQUENTIAL DAMAGES   ARISING   OUT  OF  THE USE OR
+     INABILITY TO USE (INCLUDING BUT NOT LIMITED TO LOSS OF DATA OR DATA OR
+     ITS ANALYSIS BEING  RENDERED INACCURATE OR  LOSSES SUSTAINED  BY THIRD
+     PARTIES) THE PROGRAM.
+
+Files: liboctave/numeric/randmtzig.*
+Copyright: 2006-2022 The Octave Project Developers
+           1997 - 2002, Makoto Matsumoto and Takuji Nishimura
+           2004, David Bateman
+License: GPL-3+ and BSD-3-clause
+
+Files: m4/*
+Copyright: 1992-2022, Free Software Foundation, Inc.
+License: FSFULLR
+
+Files: m4/acinclude.m4
+Copyright: 1995-2022 The Octave Project Developers
+License: GPL-3+
+
+Files: m4/ax_blas.m4
+       m4/ax_lapack.m4
+Copyright: 2008, 2009, Steven G. Johnson <stevenj@alum.mit.edu>
+           2019 Geoffrey M. Oxberry <goxberry@gmail.com>
+License: GPL-3+
+
+Files: m4/ax_compare_version.m4
+Copyright: 2008, Tim Toolan <toolan@ele.uri.edu>
+License: FSFAP
+
+Files: m4/ax_cxx_compile_stdcxx.m4
+Copyright: 2008 Benjamin Kosnik <bkoz@redhat.com>
+           2012 Zack Weinberg <zackw@panix.com>
+           2013 Roy Stogner <roystgnr@ices.utexas.edu>
+           2014, 2015 Google Inc.; contributed by Alexey Sokolov <sokolov@google.com>
+           2015 Paul Norman <penorman@mac.com>
+           2015 Moritz Klammler <moritz@klammler.eu>
+           2016, 2018 Krzesimir Nowak <qdlacz@gmail.com>
+           2019 Enji Cooper <yaneurabeya@gmail.com>
+           2020 Jason Merrill <jason@redhat.com>
+License: FSFAP
+
+Files: m4/ax_openmp.m4
+Copyright: 2008, Steven G. Johnson <stevenj@alum.mit.edu>
+           2015, John W. Peterson <jwpeterson@gmail.com>
+           2016 Nick R. Papior <nickpapior@gmail.com>
+License: GPL-3+
+
+Files: m4/ax_pthread.m4
+Copyright: 2008, Steven G. Johnson <stevenj@alum.mit.edu>
+           2011, Daniel Richard G. <skunk@iSKUNK.ORG>
+           2019 Marc Stevens <marc.stevens@cwi.nl>
+License: GPL-3+
+
+Files: m4/gnulib-cache.m4
+       m4/gnulib-comp.m4
+Copyright: 1984-2021, Free Software Foundation, Inc.
+License: GPL-3+
+
+Files: m4/octave_blas_f77_func.m4
+Copyright: 2008, Jaroslav Hajek <highegg@gmail.com>
+License: GPL-3+
+
+Files: m4/pkg.m4
+Copyright: 2012-2015, Dan Nicholson <dbn.lists@gmail.com>
+           2004, Scott James Remnant <scott@netsplit.com>.
+License: GPL-2+
+
+Files: scripts/legacy/strread.m
+Copyright: 2009-2022 The Octave Project Developers
+           2012-2019 Philip Nienhuis
+License: GPL-3+
+
+Files: scripts/linear-algebra/condest.m
+Copyright: 2007-2022 The Octave Project Developers
+           2007 Regents of the University of California
+License: GPL-3+ and BSD-3-clause
+
+Files: scripts/optimization/fminsearch.m
+Copyright: 2003-2022 The Octave Project Developers
+           2002, 2013 N.J.Higham
+License: GPL-3+
+
+Files: scripts/polynomial/private/__splinefit__.m
+Copyright: 2010, Jonas Lundgren
+License: BSD-2-clause
+ Redistribution and use in source and binary forms, with or without 
+ modification, are permitted provided that the following conditions are 
+ met:
+ .
+     * Redistributions of source code must retain the above copyright 
+       notice, this list of conditions and the following disclaimer.
+     * Redistributions in binary form must reproduce the above copyright 
+       notice, this list of conditions and the following disclaimer in 
+       the documentation and/or other materials provided with the distribution
+ .
+ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" 
+ AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE 
+ IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE 
+ ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE 
+ LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR 
+ CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF 
+ SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS 
+ INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN 
+ CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
+ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
+ POSSIBILITY OF SUCH DAMAGE.
+
+Files: src/octave-qsvghandler.h
+Copyright: 2016 The Qt Company Ltd.
+License: LGPL-3 or GPL-2 or GPL-3
+
+License: BSD-3-clause
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions are
+ met:
+ .
+ - Redistributions of source code must retain the above copyright
+   notice, this list of conditions and the following disclaimer. 
+ .
+ - Redistributions in binary form must reproduce the above copyright
+   notice, this list of conditions and the following disclaimer listed
+   in this license in the documentation and/or other materials
+   provided with the distribution.
+ .
+ - Neither the name of the copyright holders nor the names of its
+   contributors may be used to endorse or promote products derived from
+   this software without specific prior written permission.
+ . 
+ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT  
+ LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+ A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT 
+ OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+ LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+ THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT  
+ (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 
+
+License: Expat
+ Permission is hereby granted, free of charge, to any person obtaining
+ a copy of this software and associated documentation files (the
+ "Software"), to deal in the Software without restriction, including
+ without limitation the rights to use, copy, modify, merge, publish,
+ distribute, sublicense, and/or sell copies of the Software, and to
+ permit persons to whom the Software is furnished to do so, subject to
+ the following conditions:
+ .
+ The above copyright notice and this permission notice shall be
+ included in all copies or substantial portions of the Software.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+ LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+ OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+License: FSFAP
+ Copying and distribution of this file, with or without modification, are
+ permitted in any medium without royalty provided the copyright notice
+ and this notice are preserved. This file is offered as-is, without any
+ warranty.
+
+License: FSFULLR
+ This file is free software; the Free Software Foundation
+ gives unlimited permission to copy and/or distribute it,
+ with or without modifications, as long as this notice is preserved.
+
+License: GPL-2
+ This program is free software; you can redistribute it and/or
+ modify it under the terms of the GNU General Public License as
+ published by the Free Software Foundation, version 2 of the
+ License.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License along
+ with this program. If not, see <http://www.gnu.org/licenses/>.
+ .
+ On Debian systems, the complete text of the GNU General Public
+ License, version 2, can be found in the file
+ `/usr/share/common-licenses/GPL-2'.
+
+License: GPL-2+
+ This program is free software; you can redistribute it and/or
+ modify it under the terms of the GNU General Public License as
+ published by the Free Software Foundation; either version 2,
+ or (at your option) any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License along
+ with this program. If not, see <http://www.gnu.org/licenses/>.
+ .
+ On Debian systems, the complete text of the GNU General Public
+ License, version 2, can be found in the file
+ `/usr/share/common-licenses/GPL-2'.
+
+License: GPL-3
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, version 3 of the License.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ .
+ On Debian systems, the full text of the GNU General Public License
+ version 3 can be found in the file `/usr/share/common-licenses/GPL-3'.
+
+License: GPL-3+
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ .
+ On Debian systems, the full text of the GNU General Public License
+ version 3 can be found in the file `/usr/share/common-licenses/GPL-3'.
+
+License: GPL-3+ with Font exception
+ GNU FreeFont is free software; you can redistribute it and/or modify it
+ under the terms of the GNU General Public License as published by the
+ Free Software Foundation; either version 3 of the License, or (at your option)
+ any later version.
+ .
+ The fonts are distributed in the hope that they will be useful, but
+ WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+ or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+ for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ .
+ * Regarding the use of built font files.
+ .
+ As a special exception, if you create a document which uses this font, and
+ embed this font or unaltered portions of this font into the document, this
+ font does not by itself cause the resulting document to be covered by the
+ GNU General Public License. This exception does not however invalidate any
+ other reasons why the document might be covered by the GNU General Public
+ License. If you modify this font, you may extend this exception to your
+ version of the font, but you are not obligated to do so.  If you do not
+ wish to do so, delete this exception statement from your version.
+ .
+ * Clarification of exception, regarding intended use of embedded fonts
+ .
+ The exception to the GNU General Public License for the GNU FreeFont
+ software exempts a user that embeds part or all of the GNU FreeFont software
+ in a document, as well as subsequent users and distributors of the document,
+ from complying with the GNU GPL under some circumstances.
+ .
+ Specifically, this exemption applies when the embedder has not modified
+ the GNU FreeFont software before embedding it. This is true even though
+ portions of the software become part of the document.
+ .
+ Therefore users of fonts released with this exception need not concern
+ themselves with the license terms to:
+ .
+    Create a printable file using the fonts.
+    - Publish such a file.
+    - Redistribute such a file.
+    - Publicly display such a file.
+    - Print such a file or display it on the screen.
+ .
+ However anyone distributing the font software as software separately from
+ the document, even if the way the font software was obtained was to extract
+ it from a document, would have to comply with the GNU GPL.
+ .
+ A modified version of the GNU FreeFont software must comply with the GNU GPL.
+ It may optionally carry the same exception as the GNU FreeFont software
+ itself, and we recommend releasing modified versions that way. If it does,
+ then users will likewise be permitted to embed the modified version in
+ documents and be exempt from the GNU GPL requirements on those documents.
+
+License: LGPL-2+
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU Lesser General Public License as published by
+ the Free Software Foundation, either version 2 of the License, or
+ (at your option) any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU Lesser General Public License for more details.
+ .
+ You should have received a copy of the GNU Lesser General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ .
+ On Debian systems, the full text of the GNU Lesser General Public License
+ version 2 can be found in the file `/usr/share/common-licenses/LGPL-2'.
+
+License: LGPL-2.1+
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU Lesser General Public License as published by
+ the Free Software Foundation, either version 2.1 of the License, or
+ (at your option) any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU Lesser General Public License for more details.
+ .
+ You should have received a copy of the GNU Lesser General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ .
+ On Debian systems, the full text of the GNU Lesser General Public License
+ version 2.1 can be found in the file `/usr/share/common-licenses/LGPL-2.1'.
+
+License: LGPL-3
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU Lesser General Public License as published by
+ the Free Software Foundation, version 3 of the License.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU Lesser General Public License for more details.
+ .
+ You should have received a copy of the GNU Lesser General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ .
+ On Debian systems, the full text of the GNU Lesser General Public License
+ version 3 can be found in the file `/usr/share/common-licenses/LGPL-3'.
+
+License: LGPL-3+
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU Lesser General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU Lesser General Public License for more details.
+ .
+ You should have received a copy of the GNU Lesser General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ .
+ On Debian systems, the full text of the GNU Lesser General Public License
+ version 3 can be found in the file `/usr/share/common-licenses/LGPL-3'.

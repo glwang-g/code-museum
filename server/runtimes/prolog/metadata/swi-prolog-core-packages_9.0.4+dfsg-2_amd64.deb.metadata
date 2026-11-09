@@ -1,0 +1,20 @@
+Package: swi-prolog-core-packages
+Source: swi-prolog
+Version: 9.0.4+dfsg-2
+Installed-Size: 8368
+Maintainer: Lev Lamberov <dogsleg@debian.org>
+Architecture: amd64
+Replaces: swi-prolog-nox (<< 8.1.30+dfsg-1)
+Depends: libc6 (>= 2.34), libcrypt1 (>= 1:4.1.0), libgcc-s1 (>= 3.0), libossp-uuid16, libstdc++6 (>= 5.2), zlib1g (>= 1:1.2.2), swi-prolog-core (= 9.0.4+dfsg-2)
+Recommends: libjs-jquery
+Suggests: elpa-ediprolog, swi-prolog-doc, swi-prolog-java (= 9.0.4+dfsg-2), swi-prolog-odbc (= 9.0.4+dfsg-2), swi-prolog-bdb (= 9.0.4+dfsg-2)
+Breaks: swi-prolog-nox (<< 8.1.30+dfsg-1)
+Description: ISO/Edinburgh-style Prolog interpreter - core packages
+Description-md5: 3e552c304e4894c203d6dfc0d7d74261
+Homepage: https://www.swi-prolog.org
+Section: interpreters
+Priority: optional
+Filename: pool/main/s/swi-prolog/swi-prolog-core-packages_9.0.4+dfsg-2_amd64.deb
+Size: 1336360
+MD5sum: e80a4319528c19901d3de2af92857951
+SHA256: 1e0aa2fc58d9b348df2dcbf1ba77e8e7f7a77d976abc21106d60c7a07fa82c98

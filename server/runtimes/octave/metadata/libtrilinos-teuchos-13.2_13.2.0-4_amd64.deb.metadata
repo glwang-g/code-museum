@@ -1,0 +1,18 @@
+Package: libtrilinos-teuchos-13.2
+Source: trilinos
+Version: 13.2.0-4
+Installed-Size: 6627
+Maintainer: Debian Science Maintainers <debian-science-maintainers@lists.alioth.debian.org>
+Architecture: amd64
+Depends: libblas3 | libblas.so.3, libc6 (>= 2.29), libgcc-s1 (>= 3.0), liblapack3 | liblapack.so.3, libopenmpi3 (>= 4.1.4), libstdc++6 (>= 11), libtrilinos-kokkos-13.2 (>= 13.2.0)
+Description: common tools for Trilinos - runtime files
+Description-md5: 02f6f14f418b4563934bfa0a5f63b3a1
+Multi-Arch: same
+Homepage: https://trilinos.github.io/
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/t/trilinos/libtrilinos-teuchos-13.2_13.2.0-4_amd64.deb
+Size: 1256900
+MD5sum: 8b2f3f30be2545634c84f1ccee9cccbd
+SHA256: e758d6e02ff281f253c45323ddaba77c965c3fbcd8c88288224fb659f64cd720

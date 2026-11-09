@@ -1,0 +1,18 @@
+Package: libxml-sax-perl
+Version: 1.02+dfsg-3
+Installed-Size: 182
+Maintainer: Debian Perl Group <pkg-perl-maintainers@lists.alioth.debian.org>
+Architecture: all
+Depends: perl:any, libxml-namespacesupport-perl, libxml-sax-base-perl, ucf
+Recommends: libwww-perl, libxml-sax-expat-perl
+Description: Perl module for using and building Perl SAX2 XML processors
+Description-md5: 85b6ca7554a3537b49500d73d818d9b6
+Homepage: https://metacpan.org/release/XML-SAX/
+Tag: devel::lang:perl, devel::library, implemented-in::perl,
+ works-with-format::xml
+Section: perl
+Priority: optional
+Filename: pool/main/libx/libxml-sax-perl/libxml-sax-perl_1.02+dfsg-3_all.deb
+Size: 59404
+MD5sum: 0b315135a131c6df28afb9d7b43e1fa5
+SHA256: 3528281efe37b89f4408216d20386b1d09bd05f0249070fd1187d9b171592a6c

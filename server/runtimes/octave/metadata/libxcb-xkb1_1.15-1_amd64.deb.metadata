@@ -1,0 +1,18 @@
+Package: libxcb-xkb1
+Source: libxcb
+Version: 1.15-1
+Installed-Size: 243
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.14), libxcb1
+Description: X C Binding, XKEYBOARD extension
+Description-md5: 265aa28a89cf5ce7330ef13f8d25ed2c
+Multi-Arch: same
+Homepage: https://xcb.freedesktop.org
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/libx/libxcb/libxcb-xkb1_1.15-1_amd64.deb
+Size: 128928
+MD5sum: 58e52c34e591734cd0320672175a1c99
+SHA256: 1dc2f0de8576b1855b451a7e2a7163ecb5be08f8384f49655414714b48f6fa1b

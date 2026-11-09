@@ -1,0 +1,18 @@
+Package: libxnvctrl0
+Source: libxnvctrl
+Version: 525.85.05-3~deb12u1
+Installed-Size: 52
+Maintainer: Debian NVIDIA Maintainers <pkg-nvidia-devel@lists.alioth.debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.14), libx11-6 (>= 2:1.4.99.1), libxext6
+Description: NV-CONTROL X extension (runtime library)
+Description-md5: 6d4f8aebac836277193a58e922a49603
+Multi-Arch: same
+Homepage: https://download.nvidia.com/XFree86/nvidia-settings/
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/libx/libxnvctrl/libxnvctrl0_525.85.05-3~deb12u1_amd64.deb
+Size: 13460
+MD5sum: df7308888bd844d46d1e9b999ae46ca4
+SHA256: 6fc26e4b6069f4648692e0c225f580161e3b0c04e4bac1c616c8a418a9a9817d

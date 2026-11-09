@@ -1,0 +1,162 @@
+{
+  "baseImage": "gcc@sha256:5e927c284bf55a7dc796262e311a0703344f62f41f5621eb56843111b1d37e15",
+  "requestedPackages": [
+    "ghostscript"
+  ],
+  "preferredMirrorRoot": "https://mirrors.tuna.tsinghua.edu.cn",
+  "verification": "Debian APT verified InRelease and index hashes without network; each acquired package matches the solved signed-index SHA-256. Canonical source URLs retained; cached or mirror bytes require the same full verification.",
+  "indexInputs": [
+    {
+      "source": "https://deb.debian.org/debian/dists/bookworm/InRelease",
+      "sha256": "77737fa4b34f2693e982cc9ee35736816c35a7778fc2d326cc1bbf5b301fe1aa"
+    },
+    {
+      "source": "https://deb.debian.org/debian/dists/bookworm/main/binary-amd64/Packages.xz",
+      "sha256": "9e0b5aabb2465b3d2e7a7fe27f9913846277833f7a2826e7767acccff5b588c5"
+    },
+    {
+      "source": "https://deb.debian.org/debian/dists/bookworm-updates/InRelease",
+      "sha256": "835e7f5704fbf7b6ef326075dccc00bab71918530b76ce1d7deea0470d023171"
+    },
+    {
+      "source": "https://deb.debian.org/debian/dists/bookworm-updates/main/binary-amd64/Packages.xz",
+      "sha256": "87e7e94047fb7fb6f4ceecc7022d4bee55b66031cc2a7666d3196f3e0aabb846"
+    },
+    {
+      "source": "https://deb.debian.org/debian-security/dists/bookworm-security/InRelease",
+      "sha256": "836749276aafc119e05df93304153ee1b4d436807f481ac3c81162b3a6b7faae"
+    },
+    {
+      "source": "https://deb.debian.org/debian-security/dists/bookworm-security/main/binary-amd64/Packages.xz",
+      "sha256": "0ef367e0e14c08f190df6c1738c896cf6700181c2ebebd4e93a4b2aee072bf2e"
+    }
+  ],
+  "packages": [
+    {
+      "file": "assets/poppler-data_0.4.12-1_all.deb",
+      "sha256": "7951512a24fc4ea05c246a0f9891dd1ec9844a886de6550ebd8c50e57db5441d",
+      "bytes": 1601364,
+      "source": "https://deb.debian.org/debian/pool/main/p/poppler-data/poppler-data_0.4.12-1_all.deb",
+      "metadata": "metadata/poppler-data_0.4.12-1_all.deb.metadata"
+    },
+    {
+      "file": "assets/libfontenc1_1.1.4-1_amd64.deb",
+      "sha256": "1d0aa6ea16a34a8de1ea170360c4cb699f3239aeddb292df2d2c4eb6e835de4b",
+      "bytes": 24328,
+      "source": "https://deb.debian.org/debian/pool/main/libf/libfontenc/libfontenc1_1.1.4-1_amd64.deb",
+      "metadata": "metadata/libfontenc1_1.1.4-1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/xfonts-encodings_1.0.4-2.2_all.deb",
+      "sha256": "56143f317d241b6dee0275aa1066df936a776810d3bb83fe58563965d9bbe3d3",
+      "bytes": 577104,
+      "source": "https://deb.debian.org/debian/pool/main/x/xfonts-encodings/xfonts-encodings_1.0.4-2.2_all.deb",
+      "metadata": "metadata/xfonts-encodings_1.0.4-2.2_all.deb.metadata"
+    },
+    {
+      "file": "assets/xfonts-utils_7.7+6_amd64.deb",
+      "sha256": "20b290277caff5bae41298c4e171fb81c29560294f60f5eeb47ef50863efc0d7",
+      "bytes": 92960,
+      "source": "https://deb.debian.org/debian/pool/main/x/xfonts-utils/xfonts-utils_7.7+6_amd64.deb",
+      "metadata": "metadata/xfonts-utils_7.7+6_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/fonts-urw-base35_20200910-7_all.deb",
+      "sha256": "93e4997c99c4c31ea88c5d37e2259af0a0c826b9358931d5a69f794f7f0c73ac",
+      "bytes": 10803036,
+      "source": "https://deb.debian.org/debian/pool/main/f/fonts-urw-base35/fonts-urw-base35_20200910-7_all.deb",
+      "metadata": "metadata/fonts-urw-base35_20200910-7_all.deb.metadata"
+    },
+    {
+      "file": "assets/libgs-common_10.0.0~dfsg-11+deb12u8_all.deb",
+      "sha256": "83153b66f36858644a9583342967e83e6c35555cafd4e38b94e8e13551392271",
+      "bytes": 149328,
+      "source": "https://deb.debian.org/debian/pool/main/g/ghostscript/libgs-common_10.0.0~dfsg-11+deb12u8_all.deb",
+      "metadata": "metadata/libgs-common_10.0.0~dfsg-11+deb12u8_all.deb.metadata"
+    },
+    {
+      "file": "assets/libgs10-common_10.0.0~dfsg-11+deb12u8_all.deb",
+      "sha256": "9117502e04a1e028f7cedc238e8cb2a7e1787a3436faa9a77054ee9e30b9b100",
+      "bytes": 586708,
+      "source": "https://deb.debian.org/debian/pool/main/g/ghostscript/libgs10-common_10.0.0~dfsg-11+deb12u8_all.deb",
+      "metadata": "metadata/libgs10-common_10.0.0~dfsg-11+deb12u8_all.deb.metadata"
+    },
+    {
+      "file": "assets/libavahi-common-data_0.8-10+deb12u1_amd64.deb",
+      "sha256": "b21e33c3797c834e9a9ce0f1085e6d3f721db496d550505ab2f364d52097fe6f",
+      "bytes": 107164,
+      "source": "https://deb.debian.org/debian/pool/main/a/avahi/libavahi-common-data_0.8-10+deb12u1_amd64.deb",
+      "metadata": "metadata/libavahi-common-data_0.8-10+deb12u1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libavahi-common3_0.8-10+deb12u1_amd64.deb",
+      "sha256": "0c12791afe1be09d8362161244d7a51e82a67a55f3909f4c29ee3dd424c3a5f1",
+      "bytes": 42112,
+      "source": "https://deb.debian.org/debian/pool/main/a/avahi/libavahi-common3_0.8-10+deb12u1_amd64.deb",
+      "metadata": "metadata/libavahi-common3_0.8-10+deb12u1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libdbus-1-3_1.14.10-1~deb12u1_amd64.deb",
+      "sha256": "18ee0ce5fab9f7b671e87da1e9fa18660e36e04a3402f24bdb8635e0ba1d35f6",
+      "bytes": 201240,
+      "source": "https://deb.debian.org/debian/pool/main/d/dbus/libdbus-1-3_1.14.10-1~deb12u1_amd64.deb",
+      "metadata": "metadata/libdbus-1-3_1.14.10-1~deb12u1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libavahi-client3_0.8-10+deb12u1_amd64.deb",
+      "sha256": "a99d635f07a49cfbd24de151155c4f815a5adf867855e7ba13ecc3b25ffa52b9",
+      "bytes": 45756,
+      "source": "https://deb.debian.org/debian/pool/main/a/avahi/libavahi-client3_0.8-10+deb12u1_amd64.deb",
+      "metadata": "metadata/libavahi-client3_0.8-10+deb12u1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libcups2_2.4.2-3+deb12u9_amd64.deb",
+      "sha256": "8dbfd3b7cd81166a2d79bb7e3898b0203fec05c7e927f60e207122a1e36b95c8",
+      "bytes": 245180,
+      "source": "https://deb.debian.org/debian/pool/main/c/cups/libcups2_2.4.2-3+deb12u9_amd64.deb",
+      "metadata": "metadata/libcups2_2.4.2-3+deb12u9_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libidn12_1.41-1_amd64.deb",
+      "sha256": "42b89a25fadc6ba31cbb70d6e60fbda0adf1494025f8a434209fe9929e2d7df8",
+      "bytes": 83832,
+      "source": "https://deb.debian.org/debian/pool/main/libi/libidn/libidn12_1.41-1_amd64.deb",
+      "metadata": "metadata/libidn12_1.41-1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libijs-0.35_0.35-15_amd64.deb",
+      "sha256": "00730820dbaee9945772231898f53a555204f7c34855b65dac7e6e6b5f37bb1f",
+      "bytes": 16372,
+      "source": "https://deb.debian.org/debian/pool/main/i/ijs/libijs-0.35_0.35-15_amd64.deb",
+      "metadata": "metadata/libijs-0.35_0.35-15_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libjbig2dec0_0.19-3+deb12u1_amd64.deb",
+      "sha256": "526bd9c14d4bc9511671d5d771c283477da33cae2095b4a8133c8a326ed79cbb",
+      "bytes": 64572,
+      "source": "https://deb.debian.org/debian-security/pool/updates/main/j/jbig2dec/libjbig2dec0_0.19-3+deb12u1_amd64.deb",
+      "metadata": "metadata/libjbig2dec0_0.19-3+deb12u1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libpaper1_1.1.29_amd64.deb",
+      "sha256": "4735ccb9e891f6ac7d91254e929213786ed0835536a930a8ff36a50c6a291a1d",
+      "bytes": 12536,
+      "source": "https://deb.debian.org/debian/pool/main/libp/libpaper/libpaper1_1.1.29_amd64.deb",
+      "metadata": "metadata/libpaper1_1.1.29_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libgs10_10.0.0~dfsg-11+deb12u8_amd64.deb",
+      "sha256": "13e8badaeb678cffd7c6a203e4a4ab6d275cb78b2c2a582021b722386d09069b",
+      "bytes": 2466676,
+      "source": "https://deb.debian.org/debian/pool/main/g/ghostscript/libgs10_10.0.0~dfsg-11+deb12u8_amd64.deb",
+      "metadata": "metadata/libgs10_10.0.0~dfsg-11+deb12u8_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/ghostscript_10.0.0~dfsg-11+deb12u8_amd64.deb",
+      "sha256": "3e4bef3fb7d5e816f831b7ed6122da5533c3eb00eeb2d54fe49317cd1afd91f2",
+      "bytes": 57772,
+      "source": "https://deb.debian.org/debian/pool/main/g/ghostscript/ghostscript_10.0.0~dfsg-11+deb12u8_amd64.deb",
+      "metadata": "metadata/ghostscript_10.0.0~dfsg-11+deb12u8_amd64.deb.metadata"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+Package: libqt5core5a
+Source: qtbase-opensource-src
+Version: 5.15.8+dfsg-11+deb12u3
+Installed-Size: 5928
+Maintainer: Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>
+Architecture: amd64
+Replaces: libqtcore4 (<< 4:4.8.7+dfsg-20~)
+Provides: qtbase-abi-5-15-8
+Depends: shared-mime-info, libc6 (>= 2.35), libdouble-conversion3 (>= 2.0.0), libgcc-s1 (>= 3.4), libglib2.0-0 (>= 2.22.0), libicu72 (>= 72.1~rc-1~), libpcre2-16-0 (>= 10.22), libstdc++6 (>= 11), libzstd1 (>= 1.5.2), zlib1g (>= 1:1.1.4)
+Recommends: qttranslations5-l10n
+Suggests: libthai0
+Breaks: libqtcore4 (<< 4:4.8.7+dfsg-20~)
+Description: Qt 5 core module
+Description-md5: 75c9109eafc0c1da6d6b6ca7b292f133
+Multi-Arch: same
+Homepage: https://www.qt.io/developers/
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/q/qtbase-opensource-src/libqt5core5a_5.15.8+dfsg-11+deb12u3_amd64.deb
+Size: 1809748
+MD5sum: d56d4b668c8732c33d1c61ed831bbe5d
+SHA256: 47e82f69aa0724f33d0873294d66664ef13fe09c0bffb0a1d84f2ad3e2dab58e

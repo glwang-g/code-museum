@@ -1,0 +1,18 @@
+Package: libxcb-xinput0
+Source: libxcb
+Version: 1.15-1
+Installed-Size: 249
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.14), libxcb1 (>= 1.8)
+Description: X C Binding, xinput extension
+Description-md5: a21d071cb9edd396b7e5e3746305cc41
+Multi-Arch: same
+Homepage: https://xcb.freedesktop.org
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/libx/libxcb/libxcb-xinput0_1.15-1_amd64.deb
+Size: 130228
+MD5sum: a05efa3e661a893d9b5e38ad5886be24
+SHA256: d11dc7b5f9d2addadea1e76d60551d95cc4c73a7eac7cbc0d62360e4e188c0ea

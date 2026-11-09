@@ -1,0 +1,17 @@
+Package: xfonts-encodings
+Version: 1:1.0.4-2.2
+Installed-Size: 667
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Architecture: all
+Replaces: xfonts-base (<< 1:1.0.0)
+Depends: x11-common
+Description: Encodings for X.Org fonts
+Description-md5: 756f2a9079a3a81226ce262c1c944fd7
+Multi-Arch: foreign
+Tag: made-of::font, role::app-data, role::data, x11::font
+Section: fonts
+Priority: optional
+Filename: pool/main/x/xfonts-encodings/xfonts-encodings_1.0.4-2.2_all.deb
+Size: 577104
+MD5sum: a6b7f3c5d55ef0155e8308e50e67fd4d
+SHA256: 56143f317d241b6dee0275aa1066df936a776810d3bb83fe58563965d9bbe3d3

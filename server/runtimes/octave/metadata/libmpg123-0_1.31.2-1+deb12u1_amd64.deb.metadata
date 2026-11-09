@@ -1,0 +1,18 @@
+Package: libmpg123-0
+Source: mpg123
+Version: 1.31.2-1+deb12u1
+Installed-Size: 389
+Maintainer: Debian Multimedia Maintainers <debian-multimedia@lists.debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.33)
+Description: MPEG layer 1/2/3 audio decoder (shared library)
+Description-md5: 1276b7844767994704f7fabf86811e9b
+Multi-Arch: same
+Homepage: http://mpg123.org/
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/m/mpg123/libmpg123-0_1.31.2-1+deb12u1_amd64.deb
+Size: 146980
+MD5sum: 2d44cb8a5caf4b39c083c859dd492852
+SHA256: a10ad0d59995b859797a5f20d2833672051d0b2c7dab4c71f2e79258b2e3f631

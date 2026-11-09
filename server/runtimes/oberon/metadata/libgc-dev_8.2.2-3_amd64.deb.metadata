@@ -1,0 +1,19 @@
+Package: libgc-dev
+Source: libgc
+Version: 1:8.2.2-3
+Installed-Size: 960
+Maintainer: Christoph Egger <christoph@debian.org>
+Architecture: amd64
+Depends: libgc1 (= 1:8.2.2-3), libc-dev
+Description: conservative garbage collector for C (development)
+Description-md5: 6024ab577069982922a45069ab44dff3
+Multi-Arch: same
+Homepage: https://www.hboehm.info/gc/
+Tag: devel::lang:c, devel::lang:c++, devel::library, implemented-in::c,
+ role::devel-lib
+Section: libdevel
+Priority: optional
+Filename: pool/main/libg/libgc/libgc-dev_8.2.2-3_amd64.deb
+Size: 410128
+MD5sum: c45db9e432453ad0a596592c3e9347af
+SHA256: a7b8a113d5a0152959af593d681282ef4a3177fae826096f530a1d3cf00cdaa9

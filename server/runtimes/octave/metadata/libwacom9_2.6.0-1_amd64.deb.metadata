@@ -1,0 +1,18 @@
+Package: libwacom9
+Source: libwacom
+Version: 2.6.0-1
+Installed-Size: 70
+Maintainer: Timo Aaltonen <tjaalton@debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.8), libglib2.0-0 (>= 2.67.3), libgudev-1.0-0 (>= 146), libwacom-common (= 2.6.0-1)
+Suggests: libwacom-bin (= 2.6.0-1)
+Description: Wacom model feature query library
+Description-md5: 0c6f32ac5eff730b48890972fd898ae5
+Multi-Arch: same
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/libw/libwacom/libwacom9_2.6.0-1_amd64.deb
+Size: 21492
+MD5sum: d059f7059faf7e747098f26eae47b6fb
+SHA256: 397cd75859da00f367db1fbb2f3d62746d852a1f8dd626ede49dea5e2ee4d916

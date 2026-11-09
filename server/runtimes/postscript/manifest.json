@@ -1,0 +1,325 @@
+{
+  "schemaVersion": 1,
+  "platform": "linux/amd64",
+  "baseImage": "gcc@sha256:5e927c284bf55a7dc796262e311a0703344f62f41f5621eb56843111b1d37e15",
+  "sourceDateEpoch": 1793923200,
+  "version": "10.00.0",
+  "source": "https://www.ghostscript.com/",
+  "license": "Ghostscript AGPL and original component/Debian copyright notices",
+  "runtime": {
+    "id": "postscript",
+    "executable": "/usr/bin/gs",
+    "memoryMiB": 256,
+    "versionArgs": [
+      "--version"
+    ],
+    "versionPattern": "10.00.0"
+  },
+  "files": [
+    {
+      "file": "Dockerfile",
+      "bytes": 254,
+      "sha256": "5fd0732716442ade3390ad1332600e75bf4527e51b9133fdcdbcc69d303ecb94"
+    },
+    {
+      "file": "NOTICE.md",
+      "bytes": 1049,
+      "sha256": "c1f746b5cf5028f3702433cd14e73ef843bd14949bbabeabc0c0e146693565cb"
+    },
+    {
+      "file": "acquisition.json",
+      "bytes": 8181,
+      "sha256": "6354e7ca204ff67af0fcbbc5cfbe075ad1b03d932a8d924029266b246aa6fee3"
+    },
+    {
+      "file": "assets/fonts-urw-base35_20200910-7_all.deb",
+      "bytes": 10803036,
+      "sha256": "93e4997c99c4c31ea88c5d37e2259af0a0c826b9358931d5a69f794f7f0c73ac"
+    },
+    {
+      "file": "assets/ghostscript_10.0.0~dfsg-11+deb12u8_amd64.deb",
+      "bytes": 57772,
+      "sha256": "3e4bef3fb7d5e816f831b7ed6122da5533c3eb00eeb2d54fe49317cd1afd91f2"
+    },
+    {
+      "file": "assets/libavahi-client3_0.8-10+deb12u1_amd64.deb",
+      "bytes": 45756,
+      "sha256": "a99d635f07a49cfbd24de151155c4f815a5adf867855e7ba13ecc3b25ffa52b9"
+    },
+    {
+      "file": "assets/libavahi-common-data_0.8-10+deb12u1_amd64.deb",
+      "bytes": 107164,
+      "sha256": "b21e33c3797c834e9a9ce0f1085e6d3f721db496d550505ab2f364d52097fe6f"
+    },
+    {
+      "file": "assets/libavahi-common3_0.8-10+deb12u1_amd64.deb",
+      "bytes": 42112,
+      "sha256": "0c12791afe1be09d8362161244d7a51e82a67a55f3909f4c29ee3dd424c3a5f1"
+    },
+    {
+      "file": "assets/libcups2_2.4.2-3+deb12u9_amd64.deb",
+      "bytes": 245180,
+      "sha256": "8dbfd3b7cd81166a2d79bb7e3898b0203fec05c7e927f60e207122a1e36b95c8"
+    },
+    {
+      "file": "assets/libdbus-1-3_1.14.10-1~deb12u1_amd64.deb",
+      "bytes": 201240,
+      "sha256": "18ee0ce5fab9f7b671e87da1e9fa18660e36e04a3402f24bdb8635e0ba1d35f6"
+    },
+    {
+      "file": "assets/libfontenc1_1.1.4-1_amd64.deb",
+      "bytes": 24328,
+      "sha256": "1d0aa6ea16a34a8de1ea170360c4cb699f3239aeddb292df2d2c4eb6e835de4b"
+    },
+    {
+      "file": "assets/libgs-common_10.0.0~dfsg-11+deb12u8_all.deb",
+      "bytes": 149328,
+      "sha256": "83153b66f36858644a9583342967e83e6c35555cafd4e38b94e8e13551392271"
+    },
+    {
+      "file": "assets/libgs10-common_10.0.0~dfsg-11+deb12u8_all.deb",
+      "bytes": 586708,
+      "sha256": "9117502e04a1e028f7cedc238e8cb2a7e1787a3436faa9a77054ee9e30b9b100"
+    },
+    {
+      "file": "assets/libgs10_10.0.0~dfsg-11+deb12u8_amd64.deb",
+      "bytes": 2466676,
+      "sha256": "13e8badaeb678cffd7c6a203e4a4ab6d275cb78b2c2a582021b722386d09069b"
+    },
+    {
+      "file": "assets/libidn12_1.41-1_amd64.deb",
+      "bytes": 83832,
+      "sha256": "42b89a25fadc6ba31cbb70d6e60fbda0adf1494025f8a434209fe9929e2d7df8"
+    },
+    {
+      "file": "assets/libijs-0.35_0.35-15_amd64.deb",
+      "bytes": 16372,
+      "sha256": "00730820dbaee9945772231898f53a555204f7c34855b65dac7e6e6b5f37bb1f"
+    },
+    {
+      "file": "assets/libjbig2dec0_0.19-3+deb12u1_amd64.deb",
+      "bytes": 64572,
+      "sha256": "526bd9c14d4bc9511671d5d771c283477da33cae2095b4a8133c8a326ed79cbb"
+    },
+    {
+      "file": "assets/libpaper1_1.1.29_amd64.deb",
+      "bytes": 12536,
+      "sha256": "4735ccb9e891f6ac7d91254e929213786ed0835536a930a8ff36a50c6a291a1d"
+    },
+    {
+      "file": "assets/poppler-data_0.4.12-1_all.deb",
+      "bytes": 1601364,
+      "sha256": "7951512a24fc4ea05c246a0f9891dd1ec9844a886de6550ebd8c50e57db5441d"
+    },
+    {
+      "file": "assets/xfonts-encodings_1.0.4-2.2_all.deb",
+      "bytes": 577104,
+      "sha256": "56143f317d241b6dee0275aa1066df936a776810d3bb83fe58563965d9bbe3d3"
+    },
+    {
+      "file": "assets/xfonts-utils_7.7+6_amd64.deb",
+      "bytes": 92960,
+      "sha256": "20b290277caff5bae41298c4e171fb81c29560294f60f5eeb47ef50863efc0d7"
+    },
+    {
+      "file": "licenses/fonts-urw-base35.copyright",
+      "bytes": 52517,
+      "sha256": "1315a62758a603a3e6e87a79b8389563789c59c1740b9db8bc2b20e2e2145458"
+    },
+    {
+      "file": "licenses/ghostscript.copyright",
+      "bytes": 73288,
+      "sha256": "bd75217ebcc07811edeca797e6977aad7679461afbce91ab3a3bf04b07bb4721"
+    },
+    {
+      "file": "licenses/libavahi-client3.copyright",
+      "bytes": 5487,
+      "sha256": "66849d0ab7cbf0d770e40e00276ed8d264ed8974c0e064fb12814c0f80430c5d"
+    },
+    {
+      "file": "licenses/libavahi-common-data.copyright",
+      "bytes": 5487,
+      "sha256": "66849d0ab7cbf0d770e40e00276ed8d264ed8974c0e064fb12814c0f80430c5d"
+    },
+    {
+      "file": "licenses/libavahi-common3.copyright",
+      "bytes": 5487,
+      "sha256": "66849d0ab7cbf0d770e40e00276ed8d264ed8974c0e064fb12814c0f80430c5d"
+    },
+    {
+      "file": "licenses/libcups2.copyright",
+      "bytes": 6513,
+      "sha256": "adf89b2f8c8abb8cd0770184a4536266e5b816e59cf78a3d2bdaf8916067de6e"
+    },
+    {
+      "file": "licenses/libdbus-1-3.copyright",
+      "bytes": 22102,
+      "sha256": "4cfc9f33368f3b95429992704c96fa598818ec796046426a9979ce4d9b8b1900"
+    },
+    {
+      "file": "licenses/libfontenc1.copyright",
+      "bytes": 1158,
+      "sha256": "a7cb43c56c51407bc6539032a47c5351cd03962ed6a30b4f52dec6ed7db54383"
+    },
+    {
+      "file": "licenses/libgs-common.copyright",
+      "bytes": 73288,
+      "sha256": "bd75217ebcc07811edeca797e6977aad7679461afbce91ab3a3bf04b07bb4721"
+    },
+    {
+      "file": "licenses/libgs10-common.copyright",
+      "bytes": 73288,
+      "sha256": "bd75217ebcc07811edeca797e6977aad7679461afbce91ab3a3bf04b07bb4721"
+    },
+    {
+      "file": "licenses/libgs10.copyright",
+      "bytes": 73288,
+      "sha256": "bd75217ebcc07811edeca797e6977aad7679461afbce91ab3a3bf04b07bb4721"
+    },
+    {
+      "file": "licenses/libidn12.copyright",
+      "bytes": 3919,
+      "sha256": "5433d171b2fc7169cbd54f4c29f8989512e5cd5acec64337d1499dea1c02c104"
+    },
+    {
+      "file": "licenses/libijs-0.35.copyright",
+      "bytes": 5333,
+      "sha256": "b1b69dbec5522a5ae71bb6831a9658168232915e851db8a13753457ca5a3ff33"
+    },
+    {
+      "file": "licenses/libjbig2dec0.copyright",
+      "bytes": 37711,
+      "sha256": "8a3688678a34792adcf4316eb39d74b092b41f9cb078c4327ceac9218e29f974"
+    },
+    {
+      "file": "licenses/libpaper1.copyright",
+      "bytes": 501,
+      "sha256": "cad3983751aa8b828cc68d8d4080f1ad164cbf78ed896c73fe94abd50e697d8a"
+    },
+    {
+      "file": "licenses/poppler-data.copyright",
+      "bytes": 39160,
+      "sha256": "b6641f2e367897bef0bcc438146cad733bc0dfe0166e2f105d44c5eff72a731e"
+    },
+    {
+      "file": "licenses/xfonts-encodings.copyright",
+      "bytes": 641,
+      "sha256": "7eb990b2914b0e2c2c9493c2511bff3d0b20ced9fb7416d6e74bf79876484811"
+    },
+    {
+      "file": "licenses/xfonts-utils.copyright",
+      "bytes": 13386,
+      "sha256": "4d404116525a133581918c1ad7d32456b49b599f501f1f4ff12d8202e6694a59"
+    },
+    {
+      "file": "metadata/apt-verification.txt",
+      "bytes": 1169,
+      "sha256": "16c8799062cf6233bfee1ad637cf8931e2227f9a5ad797fdfe1eb2d97a27a9b0"
+    },
+    {
+      "file": "metadata/bookworm-InRelease",
+      "bytes": 151075,
+      "sha256": "77737fa4b34f2693e982cc9ee35736816c35a7778fc2d326cc1bbf5b301fe1aa"
+    },
+    {
+      "file": "metadata/bookworm-security-InRelease",
+      "bytes": 34770,
+      "sha256": "836749276aafc119e05df93304153ee1b4d436807f481ac3c81162b3a6b7faae"
+    },
+    {
+      "file": "metadata/bookworm-updates-InRelease",
+      "bytes": 55403,
+      "sha256": "835e7f5704fbf7b6ef326075dccc00bab71918530b76ce1d7deea0470d023171"
+    },
+    {
+      "file": "metadata/fonts-urw-base35_20200910-7_all.deb.metadata",
+      "bytes": 829,
+      "sha256": "2a66e1d9119c994055ed109c42864b530844763558904acd117b4097b71042a2"
+    },
+    {
+      "file": "metadata/ghostscript_10.0.0~dfsg-11+deb12u8_amd64.deb.metadata",
+      "bytes": 972,
+      "sha256": "3713befcbe612ce40c1d52f042dd7ea361dff84868cc4bee65ed8498babe24b4"
+    },
+    {
+      "file": "metadata/libavahi-client3_0.8-10+deb12u1_amd64.deb.metadata",
+      "bytes": 657,
+      "sha256": "1cf6bfed8453058be152916a678c9d7dd124c2b8401586080e871b20ce39ef52"
+    },
+    {
+      "file": "metadata/libavahi-common-data_0.8-10+deb12u1_amd64.deb.metadata",
+      "bytes": 582,
+      "sha256": "f0c62a2e06eb55fa51afde70e5c026edd018ac9ded308fd827a152d97b471204"
+    },
+    {
+      "file": "metadata/libavahi-common3_0.8-10+deb12u1_amd64.deb.metadata",
+      "bytes": 635,
+      "sha256": "4de12ee61ffd1855b2804d0fb28f51e1e9f69660b0209187c360f92a98bc402b"
+    },
+    {
+      "file": "metadata/libcups2_2.4.2-3+deb12u9_amd64.deb.metadata",
+      "bytes": 763,
+      "sha256": "d3d8e5494dfda5a3b61ca459666804f5b3eac8ffc1dc7fe89a0fe5594f4b560d"
+    },
+    {
+      "file": "metadata/libdbus-1-3_1.14.10-1~deb12u1_amd64.deb.metadata",
+      "bytes": 657,
+      "sha256": "c00f6b26a4af62f364cb580d03e4a1656f493a9b8f53877d66a81ffd374c7a8d"
+    },
+    {
+      "file": "metadata/libfontenc1_1.1.4-1_amd64.deb.metadata",
+      "bytes": 559,
+      "sha256": "cb231d8e79a1aa239dc267e843633f1a9ff06740049f1eb4cc2b7edf0697294e"
+    },
+    {
+      "file": "metadata/libgs-common_10.0.0~dfsg-11+deb12u8_all.deb.metadata",
+      "bytes": 676,
+      "sha256": "79013b6352c68446b8cffa836fc0db0e7ab108d5b3f9a55bf31ee9f052b3d44b"
+    },
+    {
+      "file": "metadata/libgs10-common_10.0.0~dfsg-11+deb12u8_all.deb.metadata",
+      "bytes": 788,
+      "sha256": "f63cb35313c38a3d74ace07302d7d105857dd40dc0b7c0abb357c19b854f9e5f"
+    },
+    {
+      "file": "metadata/libgs10_10.0.0~dfsg-11+deb12u8_amd64.deb.metadata",
+      "bytes": 1008,
+      "sha256": "788c4073493a7d48dc625dbbb5ba852640eb4d82b5ceda10d52b84ec5d375892"
+    },
+    {
+      "file": "metadata/libidn12_1.41-1_amd64.deb.metadata",
+      "bytes": 595,
+      "sha256": "9676027354fa25c3f4525c6c3507952cc6c01ead4c78febbb7cf46d184be4e3a"
+    },
+    {
+      "file": "metadata/libijs-0.35_0.35-15_amd64.deb.metadata",
+      "bytes": 595,
+      "sha256": "af845b99c68beaefccac103f70e32e11e2f360422ce728cd2907309501684f42"
+    },
+    {
+      "file": "metadata/libjbig2dec0_0.19-3+deb12u1_amd64.deb.metadata",
+      "bytes": 544,
+      "sha256": "e42e30fa4f950ebca3deee10b515be7215f4175d9fcd66a3df3be290439c1070"
+    },
+    {
+      "file": "metadata/libpaper1_1.1.29_amd64.deb.metadata",
+      "bytes": 673,
+      "sha256": "ffb0e553d0cb80f29100ec9459e2ff6cd149e7fc0fa1c6052de68e574c13dc2b"
+    },
+    {
+      "file": "metadata/poppler-data_0.4.12-1_all.deb.metadata",
+      "bytes": 909,
+      "sha256": "f0e037a8d9e2a58ab44b5e6b48a2fe52870030d20f7046dc6b3c0b66b7b3cf1b"
+    },
+    {
+      "file": "metadata/xfonts-encodings_1.0.4-2.2_all.deb.metadata",
+      "bytes": 604,
+      "sha256": "b9da67c23c30d76beb42fc54b3f2483f819e6322676b683e3361308d45156cac"
+    },
+    {
+      "file": "metadata/xfonts-utils_7.7+6_amd64.deb.metadata",
+      "bytes": 694,
+      "sha256": "23e58696b3adb9535e23b0619f45f8e32e029bd0124143cf766b4c85df7e46ab"
+    }
+  ]
+}

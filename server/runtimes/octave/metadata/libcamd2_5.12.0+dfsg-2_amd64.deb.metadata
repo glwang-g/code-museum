@@ -1,0 +1,18 @@
+Package: libcamd2
+Source: suitesparse
+Version: 1:5.12.0+dfsg-2
+Installed-Size: 85
+Maintainer: Debian Science Team <debian-science-maintainers@lists.alioth.debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.2.5), libsuitesparseconfig5 (>= 1:5.0.0)
+Description: symmetric approximate minimum degree library for sparse matrices
+Description-md5: 92a1aaeac0ca277e1f73622181a3c900
+Multi-Arch: same
+Homepage: http://suitesparse.com
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/s/suitesparse/libcamd2_5.12.0+dfsg-2_amd64.deb
+Size: 37808
+MD5sum: 771e18721948feb4175a3566d469582e
+SHA256: dbf820f0f32ab43ec727c385e3c4b6a84c5a1a6ae5de8a33611e39bdb23b4229

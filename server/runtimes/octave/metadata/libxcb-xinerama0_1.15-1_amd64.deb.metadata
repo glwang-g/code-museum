@@ -1,0 +1,18 @@
+Package: libxcb-xinerama0
+Source: libxcb
+Version: 1.15-1
+Installed-Size: 127
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.4), libxcb1
+Description: X C Binding, xinerama extension
+Description-md5: f2a52133eab163b52a83f8199011810e
+Multi-Arch: same
+Homepage: https://xcb.freedesktop.org
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/libx/libxcb/libxcb-xinerama0_1.15-1_amd64.deb
+Size: 105100
+MD5sum: 12aa3175f7814f21bf8b4664a57acf15
+SHA256: 2932300acae42ebc22e026e1abf0c8926621dae5a6b7a3eb400aace88b4ec22c

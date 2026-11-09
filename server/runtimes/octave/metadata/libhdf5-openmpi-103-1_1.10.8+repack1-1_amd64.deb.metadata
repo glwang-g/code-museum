@@ -1,0 +1,20 @@
+Package: libhdf5-openmpi-103-1
+Source: hdf5
+Version: 1.10.8+repack1-1
+Installed-Size: 4068
+Maintainer: Gilles Filippini <pini@debian.org>
+Architecture: amd64
+Replaces: libhdf5-openmpi-103 (<< 1.10.5)
+Depends: libc6 (>= 2.34), libcurl4 (>= 7.16.2), libopenmpi3 (>= 4.1.4), libssl3 (>= 3.0.0), libsz2 (>= 1.0.6), zlib1g (>= 1:1.1.4)
+Breaks: libhdf5-openmpi-103 (<< 1.10.5)
+Description: HDF5 - C runtime files - OpenMPI version
+Description-md5: 9075165887209e7211568015540d7e11
+Multi-Arch: same
+Homepage: http://hdfgroup.org/HDF5/
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/h/hdf5/libhdf5-openmpi-103-1_1.10.8+repack1-1_amd64.deb
+Size: 1278896
+MD5sum: 1ad09d408c1fcda0a4f9d6eac61d012c
+SHA256: eeb081c92be264afc96416b991b0a9d1c8d50b2d97d0367d3c1c185c74cabd97

@@ -1,0 +1,18 @@
+Package: libmetis5
+Source: metis
+Version: 5.1.0.dfsg-7
+Installed-Size: 463
+Maintainer: Debian Science Maintainers <debian-science-maintainers@lists.alioth.debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.29)
+Description: Serial Graph Partitioning and Fill-reducing Matrix Ordering
+Description-md5: 5ecba79562a1f64953b11cec5c00f5d1
+Multi-Arch: same
+Homepage: http://glaros.dtc.umn.edu/gkhome/metis/metis/overview
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/m/metis/libmetis5_5.1.0.dfsg-7_amd64.deb
+Size: 171052
+MD5sum: 999d290051640a3f01f9c894630bbe59
+SHA256: 6b6fa5da967d00d366df6853a8969ed1597d73ffbd18276f7afad0a4b13fead6

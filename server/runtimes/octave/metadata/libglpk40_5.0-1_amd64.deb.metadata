@@ -1,0 +1,19 @@
+Package: libglpk40
+Source: glpk
+Version: 5.0-1
+Installed-Size: 924
+Maintainer: Debian Science Team <debian-science-maintainers@lists.alioth.debian.org>
+Architecture: amd64
+Depends: libamd2 (>= 1:4.5.2), libc6 (>= 2.29), libcolamd2 (>= 1:4.5.2), libgmp10, libltdl7 (>= 2.4.6), zlib1g (>= 1:1.1.4)
+Suggests: libiodbc2-dev, default-libmysqlclient-dev
+Description: linear programming kit with integer (MIP) support
+Description-md5: a59dfd97ae7c98fa4132822ad0935832
+Multi-Arch: same
+Homepage: https://www.gnu.org/software/glpk/glpk.html
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/g/glpk/libglpk40_5.0-1_amd64.deb
+Size: 400284
+MD5sum: 7ed63b6e02cc477bdcda88e8018b7f21
+SHA256: d7f1442229f58a2634f1d993b533778e09230827c7fdc8ab1f3006171cfb9631

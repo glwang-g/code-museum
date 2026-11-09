@@ -1,0 +1,18 @@
+Package: libqt5printsupport5
+Source: qtbase-opensource-src
+Version: 5.15.8+dfsg-11+deb12u3
+Installed-Size: 728
+Maintainer: Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.14), libcups2 (>= 1.4.0), libqt5core5a (>= 5.15.1), libqt5gui5 (>= 5.14.1) | libqt5gui5-gles (>= 5.14.1), libqt5widgets5 (>= 5.2.0), libstdc++6 (>= 5), qtbase-abi-5-15-8
+Description: Qt 5 print support module
+Description-md5: ad2a0dcae2a6addab1c4c4b7c64b6a4e
+Multi-Arch: same
+Homepage: https://www.qt.io/developers/
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/q/qtbase-opensource-src/libqt5printsupport5_5.15.8+dfsg-11+deb12u3_amd64.deb
+Size: 202100
+MD5sum: 2d397877ec241712c16b374a1b9cc736
+SHA256: 65e1fcdc0586775f13c0117f6b20a9090c2078eef0497d54b5f0f181fea7706b

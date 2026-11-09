@@ -1,0 +1,18 @@
+Package: libsundials-ida6
+Source: sundials
+Version: 6.4.1+dfsg1-3
+Installed-Size: 667
+Maintainer: Debian Science Team <debian-science-maintainers@lists.alioth.debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.29), libgfortran5 (>= 10)
+Description: differential-algebraic system solver (SUNDIALS library)
+Description-md5: c359589cc273deb6f6dddc3d3f3a202d
+Multi-Arch: same
+Homepage: https://www.llnl.gov/CASC/sundials/
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/s/sundials/libsundials-ida6_6.4.1+dfsg1-3_amd64.deb
+Size: 144776
+MD5sum: bcfc7bcfbdd5a425468b3295e3eabba3
+SHA256: 70f9afdc8f174dc8bb2bcd20123db124b75f33f91fbdf1a5de023191e7f474cd

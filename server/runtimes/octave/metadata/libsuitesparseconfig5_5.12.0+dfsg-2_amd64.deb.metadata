@@ -1,0 +1,18 @@
+Package: libsuitesparseconfig5
+Source: suitesparse
+Version: 1:5.12.0+dfsg-2
+Installed-Size: 60
+Maintainer: Debian Science Team <debian-science-maintainers@lists.alioth.debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.17)
+Description: configuration routines for all SuiteSparse modules
+Description-md5: be384a2041b6480d81cce68d7d5847dd
+Multi-Arch: same
+Homepage: http://suitesparse.com
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/s/suitesparse/libsuitesparseconfig5_5.12.0+dfsg-2_amd64.deb
+Size: 23892
+MD5sum: 311ce8e3bcb8674503a71640da33a92f
+SHA256: b371af0bf1c3aaa3b5e80abca522ecc3ae34a376255813ef15523b0d39b9e710

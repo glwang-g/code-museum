@@ -1,0 +1,129 @@
+{
+  "baseImage": "gcc@sha256:5e927c284bf55a7dc796262e311a0703344f62f41f5621eb56843111b1d37e15",
+  "requestedPackages": [
+    "libsigsegv-dev",
+    "libffi-dev",
+    "libltdl-dev",
+    "libreadline-dev"
+  ],
+  "verification": "Debian APT verified InRelease and index hashes without network; each acquired package matches the solved signed-index SHA-256",
+  "indexInputs": [
+    {
+      "source": "https://deb.debian.org/debian/dists/bookworm/InRelease",
+      "sha256": "77737fa4b34f2693e982cc9ee35736816c35a7778fc2d326cc1bbf5b301fe1aa"
+    },
+    {
+      "source": "https://deb.debian.org/debian/dists/bookworm/main/binary-amd64/Packages.xz",
+      "sha256": "9e0b5aabb2465b3d2e7a7fe27f9913846277833f7a2826e7767acccff5b588c5"
+    },
+    {
+      "source": "https://deb.debian.org/debian/dists/bookworm-updates/InRelease",
+      "sha256": "4d6f879f86e299b57f8200446ed233f78a65c8af62e3a48f005439e238d68039"
+    },
+    {
+      "source": "https://deb.debian.org/debian/dists/bookworm-updates/main/binary-amd64/Packages.xz",
+      "sha256": "87e7e94047fb7fb6f4ceecc7022d4bee55b66031cc2a7666d3196f3e0aabb846"
+    },
+    {
+      "source": "https://deb.debian.org/debian-security/dists/bookworm-security/InRelease",
+      "sha256": "1d368817d451179b6611e157dccd876f93feff7d603c575668fbb662d5b01677"
+    },
+    {
+      "source": "https://deb.debian.org/debian-security/dists/bookworm-security/main/binary-amd64/Packages.xz",
+      "sha256": "9291f4f3c470a046b9751215169d689e539f3d5cade197a367738e58079205ba"
+    }
+  ],
+  "packages": [
+    {
+      "file": "assets/libsigsegv2_2.14-1_amd64.deb",
+      "sha256": "92336a5c47989b82ba4c778adc0ea22fc84450773f2d8428fca4448b0789cfe6",
+      "bytes": 37152,
+      "source": "https://deb.debian.org/debian/pool/main/libs/libsigsegv/libsigsegv2_2.14-1_amd64.deb",
+      "metadata": "metadata/libsigsegv2_2.14-1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libsigsegv-dev_2.14-1_amd64.deb",
+      "sha256": "b69925aaefb356d6644e38fdffc2697026013b83542d94983b73a16dc3833d6e",
+      "bytes": 30884,
+      "source": "https://deb.debian.org/debian/pool/main/libs/libsigsegv/libsigsegv-dev_2.14-1_amd64.deb",
+      "metadata": "metadata/libsigsegv-dev_2.14-1_amd64.deb.metadata"
+    }
+  ],
+  "gnuSource": {
+    "url": "https://ftp.gnu.org/gnu/smalltalk/smalltalk-3.2.5.tar.gz",
+    "sha256": "06e574e818ec49f0555d948ae53b1453d8c1df59ef597dad911a4fd1ffba1cce",
+    "verification": "Retrieved from GNU HTTPS, actual source hash pinned; detached signature not verified."
+  },
+  "additionalAcquisitions": [
+    {
+      "baseImage": "gcc@sha256:5e927c284bf55a7dc796262e311a0703344f62f41f5621eb56843111b1d37e15",
+      "requestedPackages": [
+        "gawk"
+      ],
+      "verification": "Debian APT verified InRelease and index hashes without network; each acquired package matches the solved signed-index SHA-256",
+      "indexInputs": [
+        {
+          "source": "https://deb.debian.org/debian/dists/bookworm/InRelease",
+          "sha256": "77737fa4b34f2693e982cc9ee35736816c35a7778fc2d326cc1bbf5b301fe1aa"
+        },
+        {
+          "source": "https://deb.debian.org/debian/dists/bookworm/main/binary-amd64/Packages.xz",
+          "sha256": "9e0b5aabb2465b3d2e7a7fe27f9913846277833f7a2826e7767acccff5b588c5"
+        },
+        {
+          "source": "https://deb.debian.org/debian/dists/bookworm-updates/InRelease",
+          "sha256": "4d6f879f86e299b57f8200446ed233f78a65c8af62e3a48f005439e238d68039"
+        },
+        {
+          "source": "https://deb.debian.org/debian/dists/bookworm-updates/main/binary-amd64/Packages.xz",
+          "sha256": "87e7e94047fb7fb6f4ceecc7022d4bee55b66031cc2a7666d3196f3e0aabb846"
+        },
+        {
+          "source": "https://deb.debian.org/debian-security/dists/bookworm-security/InRelease",
+          "sha256": "1d368817d451179b6611e157dccd876f93feff7d603c575668fbb662d5b01677"
+        },
+        {
+          "source": "https://deb.debian.org/debian-security/dists/bookworm-security/main/binary-amd64/Packages.xz",
+          "sha256": "9291f4f3c470a046b9751215169d689e539f3d5cade197a367738e58079205ba"
+        }
+      ],
+      "packages": [
+        {
+          "file": "assets/libsigsegv2_2.14-1_amd64.deb",
+          "sha256": "92336a5c47989b82ba4c778adc0ea22fc84450773f2d8428fca4448b0789cfe6",
+          "bytes": 37152,
+          "source": "https://deb.debian.org/debian/pool/main/libs/libsigsegv/libsigsegv2_2.14-1_amd64.deb",
+          "metadata": "metadata/libsigsegv2_2.14-1_amd64.deb.metadata"
+        },
+        {
+          "file": "assets/gawk_5.2.1-2_amd64.deb",
+          "sha256": "9cd63c1b35ff082092c221a23dcb167f72c4d1c3de3a42e11f16181f42ab3b55",
+          "bytes": 672772,
+          "source": "https://deb.debian.org/debian/pool/main/g/gawk/gawk_5.2.1-2_amd64.deb",
+          "metadata": "metadata/gawk_5.2.1-2_amd64.deb.metadata"
+        }
+      ]
+    }
+  ],
+  "reusedFixedInputs": [
+    {
+      "repositoryPath": "server/runtimes/pascal-r/assets/zip_3.0-13_amd64.deb",
+      "file": "assets/zip_3.0-13_amd64.deb",
+      "package": "zip",
+      "version": "3.0-13",
+      "source": "https://deb.debian.org/debian/pool/main/z/zip/zip_3.0-13_amd64.deb",
+      "sourcePackage": "zip",
+      "sourceVersion": "3.0-13",
+      "sourceRecipe": "https://sources.debian.org/src/zip/3.0-13/",
+      "license": "See bundled licenses/zip.copyright",
+      "sha256": "8877a360e455c7b9b6d448503eeaacc6b9a1325b548f3fb7eef69a87ab558b96",
+      "bytes": 229532
+    },
+    {
+      "repositoryPath": "server/runtimes/pascal-r/licenses/zip.copyright",
+      "file": "licenses/zip.copyright",
+      "sha256": "03733b4bcdbe83fc4a2d087d3eed34f70c4de08f833eb24a7075b76e80ee8c8d",
+      "bytes": 3811
+    }
+  ]
+}

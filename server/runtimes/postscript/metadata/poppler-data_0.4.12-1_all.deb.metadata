@@ -1,0 +1,20 @@
+Package: poppler-data
+Version: 0.4.12-1
+Installed-Size: 13086
+Maintainer: Hideki Yamane <henrich@debian.org>
+Architecture: all
+Pre-Depends: dpkg (>= 1.15.6~)
+Suggests: poppler-utils, ghostscript, fonts-japanese-mincho | fonts-ipafont-mincho, fonts-japanese-gothic | fonts-ipafont-gothic, fonts-arphic-ukai, fonts-arphic-uming, fonts-nanum (>= 20131007~)
+Enhances: ghostscript
+Description: encoding data for the poppler PDF rendering library
+Description-md5: c0468b9f159bd70603616f54d37b1bf4
+Multi-Arch: foreign
+Homepage: https://poppler.freedesktop.org/
+Tag: culture::chinese, culture::japanese, culture::korean, made-of::TODO,
+ role::app-data, role::program, works-with-format::pdf
+Section: misc
+Priority: optional
+Filename: pool/main/p/poppler-data/poppler-data_0.4.12-1_all.deb
+Size: 1601364
+MD5sum: a5fd10cd52cda71e96f0c08034e87e1d
+SHA256: 7951512a24fc4ea05c246a0f9891dd1ec9844a886de6550ebd8c50e57db5441d

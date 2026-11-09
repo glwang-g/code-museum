@@ -1,0 +1,18 @@
+Package: libhwy1
+Source: highway
+Version: 1.0.3-3+deb12u1
+Installed-Size: 1628
+Maintainer: Debian PhotoTools Maintainers <pkg-phototools-devel@lists.alioth.debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.25), libgcc-s1 (>= 3.4), libstdc++6 (>= 5.2)
+Description: Efficient and performance-portable SIMD wrapper (runtime files)
+Description-md5: 403cb606b0a2c77fed54ebe631105334
+Multi-Arch: same
+Homepage: https://github.com/google/highway
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/h/highway/libhwy1_1.0.3-3+deb12u1_amd64.deb
+Size: 347628
+MD5sum: c60a8b73f729100d6002c39bddf003fe
+SHA256: 58db3098074f192d32784cf2d070f82d4e26b10d54bc723830a6b9a43be5013b

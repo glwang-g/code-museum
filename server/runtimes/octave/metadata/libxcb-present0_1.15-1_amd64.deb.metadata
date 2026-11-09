@@ -1,0 +1,18 @@
+Package: libxcb-present0
+Source: libxcb
+Version: 1.15-1
+Installed-Size: 126
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.4), libxcb1
+Description: X C Binding, present extension
+Description-md5: 334193719fba9c74610c458784b19b1b
+Multi-Arch: same
+Homepage: https://xcb.freedesktop.org
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/libx/libxcb/libxcb-present0_1.15-1_amd64.deb
+Size: 105420
+MD5sum: 9771ddc32db51d670a434319a83c530f
+SHA256: 89383e627a4d17b9390d609b2459481bfd2029566367b43068586769e418b6e5

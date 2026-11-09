@@ -1,0 +1,18 @@
+Package: libmtdev1
+Source: mtdev
+Version: 1.1.6-1
+Installed-Size: 56
+Maintainer: Nobuhiro Iwamatsu <iwamatsu@debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.4)
+Description: Multitouch Protocol Translation Library - shared library
+Description-md5: 07dd033e550dbc27f2e8fe7816e9f337
+Multi-Arch: same
+Homepage: http://bitmath.org/code/mtdev/
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/m/mtdev/libmtdev1_1.1.6-1_amd64.deb
+Size: 22976
+MD5sum: e171ff69d24a96a961ca6816f184f8aa
+SHA256: 176590c0ce393dd492ecb5e21ed338f629e5f38074341860086dbf3315af514d

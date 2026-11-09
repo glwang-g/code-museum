@@ -1,0 +1,22 @@
+Package: ghostscript
+Version: 10.0.0~dfsg-11+deb12u8
+Installed-Size: 196
+Maintainer: Debian QA Group <packages@qa.debian.org>
+Architecture: amd64
+Provides: postscript-viewer
+Depends: libgs10 (= 10.0.0~dfsg-11+deb12u8), libc6 (>= 2.34)
+Description: interpreter for the PostScript language and for PDF
+Description-md5: edd5fd86eebe72742e607f32760610a4
+Multi-Arch: foreign
+Homepage: https://www.ghostscript.com/
+Tag: admin::hardware, hardware::printer, implemented-in::c,
+ interface::commandline, role::program, scope::utility, use::driver,
+ use::printing, works-with-format::pdf, works-with-format::postscript,
+ works-with::dtp, works-with::font, works-with::image,
+ works-with::image:raster, works-with::image:vector, works-with::text
+Section: text
+Priority: optional
+Filename: pool/main/g/ghostscript/ghostscript_10.0.0~dfsg-11+deb12u8_amd64.deb
+Size: 57772
+MD5sum: 790416f40927ef1699e287b86810c796
+SHA256: 3e4bef3fb7d5e816f831b7ed6122da5533c3eb00eeb2d54fe49317cd1afd91f2

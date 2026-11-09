@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 1,
+  "platform": "linux/amd64",
+  "baseImage": "gcc@sha256:5e927c284bf55a7dc796262e311a0703344f62f41f5621eb56843111b1d37e15",
+  "sourceDateEpoch": 1793923200,
+  "version": "4.13.1",
+  "source": "https://ocaml.org/releases/4.13.1",
+  "license": "LGPL-2.1-with-linking-exception",
+  "runtime": {
+    "id": "ocaml",
+    "executable": "/usr/bin/ocamlc",
+    "memoryMiB": 512,
+    "versionArgs": [
+      "--version"
+    ],
+    "versionPattern": "4.13.1"
+  },
+  "files": [
+    {
+      "file": "Dockerfile",
+      "bytes": 254,
+      "sha256": "5fd0732716442ade3390ad1332600e75bf4527e51b9133fdcdbcc69d303ecb94"
+    },
+    {
+      "file": "NOTICE.md",
+      "bytes": 979,
+      "sha256": "85793d23ee42106fa919f77dc9165551515baceb6d8edfbe883d68a2caefba25"
+    },
+    {
+      "file": "acquisition.json",
+      "bytes": 3174,
+      "sha256": "e77d3c6820b51ab893ef0500594d633de237ad79fdd7e334254436138d7d3ca8"
+    },
+    {
+      "file": "assets/ocaml-base_4.13.1-4_amd64.deb",
+      "bytes": 667508,
+      "sha256": "c0b44b8aa8045dba80d8328241b439aa8ef47429a87867f1ef2de65f27cb59f5"
+    },
+    {
+      "file": "assets/ocaml-compiler-libs_4.13.1-4_amd64.deb",
+      "bytes": 31024000,
+      "sha256": "ae3883883dfd5c53d842082093bd3276c5e20628d086e5bd5d1e4f9aabf8c444"
+    },
+    {
+      "file": "assets/ocaml-interp_4.13.1-4_amd64.deb",
+      "bytes": 6158032,
+      "sha256": "4805d62f3dd15a4ebe0202ef7d2727f4d100ebc5514bfa07585066a804568aa0"
+    },
+    {
+      "file": "assets/ocaml-nox_4.13.1-4_all.deb",
+      "bytes": 161120,
+      "sha256": "f54caa519c341e6d946f993b48759fa9dfcb9b52499d0845185f1990fc9956fc"
+    },
+    {
+      "file": "assets/ocaml_4.13.1-4_amd64.deb",
+      "bytes": 72145688,
+      "sha256": "98ca43adc3edb8994bb89830e51b3bdb7d25449db41a5702cf8ff39696c404ea"
+    },
+    {
+      "file": "licenses/ocaml-base.copyright",
+      "bytes": 1854,
+      "sha256": "e34a4f2c01a1e0fc8d995d14419236e5f6de9cb948eb553595ee64551695e716"
+    },
+    {
+      "file": "licenses/ocaml-compiler-libs.copyright",
+      "bytes": 1854,
+      "sha256": "e34a4f2c01a1e0fc8d995d14419236e5f6de9cb948eb553595ee64551695e716"
+    },
+    {
+      "file": "licenses/ocaml-interp.copyright",
+      "bytes": 1854,
+      "sha256": "e34a4f2c01a1e0fc8d995d14419236e5f6de9cb948eb553595ee64551695e716"
+    },
+    {
+      "file": "licenses/ocaml-nox.copyright",
+      "bytes": 1854,
+      "sha256": "e34a4f2c01a1e0fc8d995d14419236e5f6de9cb948eb553595ee64551695e716"
+    },
+    {
+      "file": "licenses/ocaml.copyright",
+      "bytes": 1854,
+      "sha256": "e34a4f2c01a1e0fc8d995d14419236e5f6de9cb948eb553595ee64551695e716"
+    },
+    {
+      "file": "metadata/apt-verification.txt",
+      "bytes": 1169,
+      "sha256": "aa70bd502e6c23c157f8f0f25064749b298ec1e91f6dedbc182cf6f80ece8573"
+    },
+    {
+      "file": "metadata/bookworm-InRelease",
+      "bytes": 151075,
+      "sha256": "77737fa4b34f2693e982cc9ee35736816c35a7778fc2d326cc1bbf5b301fe1aa"
+    },
+    {
+      "file": "metadata/bookworm-security-InRelease",
+      "bytes": 34770,
+      "sha256": "1d368817d451179b6611e157dccd876f93feff7d603c575668fbb662d5b01677"
+    },
+    {
+      "file": "metadata/bookworm-updates-InRelease",
+      "bytes": 55403,
+      "sha256": "da3bb85c8864a931aa8d4ad4bcca054c0bb430aef7f8c3dfaff4b173d26f595c"
+    },
+    {
+      "file": "metadata/ocaml-base_4.13.1-4_amd64.deb.metadata",
+      "bytes": 867,
+      "sha256": "865b5d7b7ef6ca841af49ac90c6bfc0aeca0807ed48e620d5a581422445d624a"
+    },
+    {
+      "file": "metadata/ocaml-compiler-libs_4.13.1-4_amd64.deb.metadata",
+      "bytes": 797,
+      "sha256": "bb3d0f9660d95bda235ac8bcb183e369fbab3263b793bb9cb86e5451cfdeef6d"
+    },
+    {
+      "file": "metadata/ocaml-interp_4.13.1-4_amd64.deb.metadata",
+      "bytes": 787,
+      "sha256": "5ab689590d310cedf1197a78ca6b1d129b7d920d081a4b6620db02ed6a0cced6"
+    },
+    {
+      "file": "metadata/ocaml-nox_4.13.1-4_all.deb.metadata",
+      "bytes": 801,
+      "sha256": "6c38127dc0282517ca5e6751a0a7f790dd243154a35adf24542ab1d67012ac80"
+    },
+    {
+      "file": "metadata/ocaml_4.13.1-4_amd64.deb.metadata",
+      "bytes": 1019,
+      "sha256": "b28edb9beceb5a6ee399c36320d1d6d0546192995d3cbc69c9fcf154010d58f0"
+    }
+  ]
+}

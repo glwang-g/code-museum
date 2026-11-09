@@ -1,0 +1,22 @@
+Package: ocaml-compiler-libs
+Source: ocaml
+Version: 4.13.1-4
+Installed-Size: 128859
+Maintainer: Debian OCaml Maintainers <debian-ocaml-maint@lists.debian.org>
+Architecture: amd64
+Replaces: ocaml-base-nox (<< 4)
+Provides: ocaml-compiler-libs-4.13.1
+Depends: ocaml-4.13.1
+Recommends: ocaml-man
+Breaks: ocaml-base-nox (<< 4)
+Description: OCaml interpreter and standard libraries
+Description-md5: a765ce776aca74df74b073777915c3f1
+Homepage: https://ocaml.org/
+Tag: devel::compiler, devel::lang:ocaml, devel::library,
+ implemented-in::ocaml, role::devel-lib, role::program
+Section: ocaml
+Priority: optional
+Filename: pool/main/o/ocaml/ocaml-compiler-libs_4.13.1-4_amd64.deb
+Size: 31024000
+MD5sum: 9ba0e45f5780d366f2363b798e3b6697
+SHA256: ae3883883dfd5c53d842082093bd3276c5e20628d086e5bd5d1e4f9aabf8c444

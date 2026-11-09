@@ -1,0 +1,18 @@
+Package: libumfpack5
+Source: suitesparse
+Version: 1:5.12.0+dfsg-2
+Installed-Size: 751
+Maintainer: Debian Science Team <debian-science-maintainers@lists.alioth.debian.org>
+Architecture: amd64
+Depends: libamd2 (>= 1:4.5.2), libblas3 | libblas.so.3, libc6 (>= 2.29), libcholmod3 (>= 1:4.5.2), libsuitesparseconfig5 (>= 1:5.0.0)
+Description: sparse LU factorization library
+Description-md5: 07c504a80ed5d6310d58f98bb638446f
+Multi-Arch: same
+Homepage: http://suitesparse.com
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/s/suitesparse/libumfpack5_5.12.0+dfsg-2_amd64.deb
+Size: 244748
+MD5sum: b46ed6f1875e73bdc480fdf82e3cfe25
+SHA256: a90c00c1c6271e67027614d799214176157863d0992b4409af703135e15c04b3

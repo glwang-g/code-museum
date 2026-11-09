@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "platform": "linux/amd64",
+  "baseImage": "gcc@sha256:5e927c284bf55a7dc796262e311a0703344f62f41f5621eb56843111b1d37e15",
+  "sourceDateEpoch": 1793923200,
+  "version": "7.5.4",
+  "source": "https://github.com/PowerShell/PowerShell/releases/tag/v7.5.4",
+  "license": "MIT and bundled Microsoft/.NET component notices",
+  "runtime": {
+    "id": "powershell",
+    "executable": "/usr/bin/pwsh",
+    "memoryMiB": 768,
+    "versionArgs": [
+      "--version"
+    ],
+    "versionPattern": "PowerShell 7.5.4"
+  },
+  "files": [
+    {
+      "file": "Dockerfile",
+      "bytes": 635,
+      "sha256": "8a23b315885334f9919c5785fa9d67fa996557b7c2ef68ec01cfbc704f86dfd1"
+    },
+    {
+      "file": "NOTICE.md",
+      "bytes": 1142,
+      "sha256": "9a1937304de0f42387968fb760f4518ec2c1a71c0c93bda677afb9628658cc3e"
+    },
+    {
+      "file": "acquisition.json",
+      "bytes": 1386,
+      "sha256": "cff5ab703dbfdbd3394aa387c78768584cada9fad04e9128c70640b74ae455e7"
+    },
+    {
+      "file": "assets/museum-powershell-entry.ps1",
+      "bytes": 357,
+      "sha256": "f5c3e52a14acebfa618b4511e38746b3bd35d0652f8e69af5b409f3a59538366"
+    },
+    {
+      "file": "assets/powershell-7.5.4.deb.part000",
+      "bytes": 33554432,
+      "sha256": "df894c600f2eb89d863c788516f8102ad2705097101031ea84c754717953b39f"
+    },
+    {
+      "file": "assets/powershell-7.5.4.deb.part001",
+      "bytes": 33554432,
+      "sha256": "2533f5f3643fb21b1b6a1920eca728a50ef07f7e3c99a7a4e3a66bf0014ebe39"
+    },
+    {
+      "file": "assets/powershell-7.5.4.deb.part002",
+      "bytes": 8344438,
+      "sha256": "bd40e3f69f6e24851b74eade88c31bf3ce1e5d6cbda51dfd6c8a578734ce7084"
+    },
+    {
+      "file": "licenses/opt__microsoft__powershell__7__LICENSE.txt",
+      "bytes": 1074,
+      "sha256": "7c77a44a8acd9b41fdc209864a8016b3d430b5d0e09309818d5b7444336df744"
+    },
+    {
+      "file": "licenses/opt__microsoft__powershell__7__Modules__Microsoft.PowerShell.PSResourceGet__LICENSE",
+      "bytes": 1095,
+      "sha256": "be5723395260d4f07283d596f4b375810eb695653d48d52a5062c0f7070573a3"
+    },
+    {
+      "file": "licenses/opt__microsoft__powershell__7__Modules__Microsoft.PowerShell.PSResourceGet__Notice.txt",
+      "bytes": 158819,
+      "sha256": "cb3714c1f7fc609fee9264c5f7e87df89121d09242a4dccefe4815e9d784aa65"
+    },
+    {
+      "file": "licenses/opt__microsoft__powershell__7__Modules__PSReadLine__License.txt",
+      "bytes": 1324,
+      "sha256": "25c2fdfcdc653f65629233f5ef217a83287733d3c0299c207b0bca865508c463"
+    },
+    {
+      "file": "licenses/opt__microsoft__powershell__7__ThirdPartyNotices.txt",
+      "bytes": 245649,
+      "sha256": "b75185a509e7bbc2939f7d68329e2b05fd2f9f25756edf51b1f508d2a81c9c84"
+    },
+    {
+      "file": "metadata/original-license-paths.json",
+      "bytes": 343,
+      "sha256": "ad9279b14b7890b71a9697352ce8a6bf9ed321b46857f2355275ad17331a7db1"
+    },
+    {
+      "file": "metadata/package-control.txt",
+      "bytes": 669,
+      "sha256": "af3c8471738417538677c4c7b3cdb6e557c2f38ec06d3448a8061007a5d27272"
+    },
+    {
+      "file": "metadata/release-v7.5.4.json",
+      "bytes": 42849,
+      "sha256": "08db4468fd15f6f21689351938605db44946b8276c18fa293e1a69e2a5f0385f"
+    }
+  ]
+}

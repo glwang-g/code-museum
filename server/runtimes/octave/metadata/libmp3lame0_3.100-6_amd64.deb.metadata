@@ -1,0 +1,18 @@
+Package: libmp3lame0
+Source: lame
+Version: 3.100-6
+Installed-Size: 544
+Maintainer: Debian Multimedia Maintainers <debian-multimedia@lists.debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.29)
+Description: MP3 encoding library
+Description-md5: 62ea810162efb51dfd01578746ef5d68
+Multi-Arch: same
+Homepage: https://lame.sourceforge.io/
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/l/lame/libmp3lame0_3.100-6_amd64.deb
+Size: 364932
+MD5sum: ab2ccd68809db0713589f90b8ab91e5e
+SHA256: b1292c749172e7623547ecf684da57d3ec6ca22109f08b11bbb9e6be6e6beb95

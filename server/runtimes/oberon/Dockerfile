@@ -1,0 +1,6 @@
+FROM gcc@sha256:5e927c284bf55a7dc796262e311a0703344f62f41f5621eb56843111b1d37e15
+COPY assets/ /opt/museum-assets/
+RUN dpkg -i /opt/museum-assets/*.deb && echo "f672663e295df6daba53ac59a0280011732b0e7f95078d7944aa8c328b5f47ec  /opt/museum-assets/obnc_0.17.2.tar.gz" | sha256sum -c - && mkdir /tmp/obnc-src && tar -xzf /opt/museum-assets/obnc_0.17.2.tar.gz -C /tmp/obnc-src --strip-components=1 && cd /tmp/obnc-src && ./build --prefix=/opt/obnc && ./install && for module in Files In Input0 Math Out Strings; do for suffix in o sym; do test -s /opt/obnc/lib/obnc/$module.$suffix || exit 1; done; test -f /opt/obnc/lib/obnc/$module.imp && test -s /opt/obnc/include/obnc/$module.h || exit 1; done && for module in extArgs extConvert extEnv extErr extPipes extTrap; do for suffix in o sym; do test -s /opt/obnc/lib/obnc/ext/$module.$suffix || exit 1; done; test -f /opt/obnc/lib/obnc/ext/$module.imp && test -s /opt/obnc/include/obnc/ext/$module.h || exit 1; done && test -s /opt/obnc/lib/obnc/OBNC.o && test -s /opt/obnc/lib/obnc/OBNC.env && test ! -e /opt/obnc/lib/obnc/Input.o && test ! -e /opt/obnc/lib/obnc/XYplane.o && rm -rf /tmp/obnc-src /opt/museum-assets
+ENV LANG=C.UTF-8 TZ=UTC OBNC_PREFIX=/opt/obnc
+WORKDIR /work
+USER 65534:65534

@@ -1,0 +1,18 @@
+Package: libvorbisenc2
+Source: libvorbis
+Version: 1.3.7-1
+Installed-Size: 703
+Maintainer: Debian Multimedia Maintainers <debian-multimedia@lists.debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.4), libvorbis0a (= 1.3.7-1)
+Description: encoder library for Vorbis General Audio Compression Codec
+Description-md5: 413e350b3d31d3687b84b75abf898c40
+Multi-Arch: same
+Homepage: https://www.xiph.org/vorbis/
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/libv/libvorbis/libvorbisenc2_1.3.7-1_amd64.deb
+Size: 80568
+MD5sum: c4db86f26e1c5cf2c997240b3f09fdc0
+SHA256: 75dd4d6f904c7db82f5112e60d8efea9e81dfedf94e970c5da7af2b3d81643c0

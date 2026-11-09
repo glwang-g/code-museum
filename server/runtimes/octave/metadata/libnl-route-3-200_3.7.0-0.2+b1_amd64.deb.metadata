@@ -1,0 +1,18 @@
+Package: libnl-route-3-200
+Source: libnl3 (3.7.0-0.2)
+Version: 3.7.0-0.2+b1
+Installed-Size: 644
+Maintainer: Heiko Stuebner <mmind@debian.org>
+Architecture: amd64
+Depends: libnl-3-200 (= 3.7.0-0.2+b1), libc6 (>= 2.34)
+Description: library for dealing with netlink sockets - route interface
+Description-md5: 00e1d8b59623c24502ade39580e576f8
+Multi-Arch: same
+Homepage: http://www.infradead.org/~tgr/libnl/
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/libn/libnl3/libnl-route-3-200_3.7.0-0.2+b1_amd64.deb
+Size: 184596
+MD5sum: d2a7e5a1625d6ed3f05d21f29aa24135
+SHA256: 0fdcc425ae2982788c085c76a7cb0eda3e3db99d41bd1ce56082ee18e9f1e21f

@@ -1,0 +1,20 @@
+Package: libwayland-client0
+Source: wayland
+Version: 1.21.0-1
+Installed-Size: 89
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Architecture: amd64
+Replaces: libwayland0 (<< 1.1.0-1)
+Depends: libc6 (>= 2.28), libffi8 (>= 3.4)
+Conflicts: libwayland0 (<< 1.1.0-1)
+Description: wayland compositor infrastructure - client library
+Description-md5: 3ba4c2bc4efd026f8d9a8404817c3664
+Multi-Arch: same
+Homepage: https://wayland.freedesktop.org/
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/w/wayland/libwayland-client0_1.21.0-1_amd64.deb
+Size: 28320
+MD5sum: 8eca08a6899fb386383502099a225d3d
+SHA256: 1f002d028b8b79eec9847c636d8886d10dfe8c884cc2bebe18086b1391c5a28d

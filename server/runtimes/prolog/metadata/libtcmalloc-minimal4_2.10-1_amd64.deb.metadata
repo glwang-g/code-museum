@@ -1,0 +1,18 @@
+Package: libtcmalloc-minimal4
+Source: google-perftools
+Version: 2.10-1
+Installed-Size: 382
+Maintainer: Laszlo Boszormenyi (GCS) <gcs@debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.29), libgcc-s1 (>= 3.0), libstdc++6 (>= 5.2)
+Description: efficient thread-caching malloc
+Description-md5: 08055bb6b0955f242fbf2149e901979d
+Multi-Arch: same
+Homepage: https://github.com/gperftools/gperftools
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/g/google-perftools/libtcmalloc-minimal4_2.10-1_amd64.deb
+Size: 93440
+MD5sum: 0ef2a435bd27200af4b22e61a1e09170
+SHA256: 464aa2e804b0d48300ad71edfe525599deed8765db4af7a8d9de60326dc8e4c7

@@ -1,0 +1,5 @@
+# Swift 6.1.3 / Linux x86_64
+
+Complete original Debian 12 SDK from the official Swift release server, verified by the Swift 6.x release signature (fingerprint 52BB7E3DE28A71BE22EC05FFEF80A866B47A981F). The official public signing keys, detached signature and verification transcript are preserved in metadata/. Every byte of the original 878,726,025-byte archive is retained in ordered 32 MiB parts; acquisition.json records the archive and per-part SHA-256. Reassembly is checked before extraction. The SDK-shipped LICENSE.txt is retained without modification.
+
+Offline image build uses only these local parts and the pinned GCC base image. Site builds never download the SDK or include it in browser assets. A single main.swift is compiled in Swift 6 mode against the shipped standard library; no Swift Package Manager online resolution, Apple UI frameworks or historical machine emulation. Planned budget: 1024 MiB, compile 30 seconds / run 3 seconds. Preparation is not runtime or webpage acceptance.

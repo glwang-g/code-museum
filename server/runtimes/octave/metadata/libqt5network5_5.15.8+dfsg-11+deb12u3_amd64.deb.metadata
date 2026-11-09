@@ -1,0 +1,18 @@
+Package: libqt5network5
+Source: qtbase-opensource-src
+Version: 5.15.8+dfsg-11+deb12u3
+Installed-Size: 2485
+Maintainer: Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>
+Architecture: amd64
+Depends: libssl3, libc6 (>= 2.34), libgssapi-krb5-2 (>= 1.17), libqt5core5a (>= 5.15.1), libqt5dbus5 (>= 5.14.1), libstdc++6 (>= 11), qtbase-abi-5-15-8, zlib1g (>= 1:1.1.4)
+Description: Qt 5 network module
+Description-md5: 267676193dcb13e33a5c3f9c219b1838
+Multi-Arch: same
+Homepage: https://www.qt.io/developers/
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/q/qtbase-opensource-src/libqt5network5_5.15.8+dfsg-11+deb12u3_amd64.deb
+Size: 675044
+MD5sum: ac86bcaa7db9e7e9527830e24fe9b043
+SHA256: 6a27a617c0aca0bd9f49237594a7939910e78aaa223611ffd8e25fdc56a319a8

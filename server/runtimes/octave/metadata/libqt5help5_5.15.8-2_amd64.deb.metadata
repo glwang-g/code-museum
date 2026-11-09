@@ -1,0 +1,18 @@
+Package: libqt5help5
+Source: qttools-opensource-src
+Version: 5.15.8-2
+Installed-Size: 538
+Maintainer: Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.14), libqt5core5a (>= 5.15.1), libqt5gui5 (>= 5.0.2) | libqt5gui5-gles (>= 5.0.2), libqt5sql5 (>= 5.3.0), libqt5widgets5 (>= 5.11.0~rc1), libstdc++6 (>= 5)
+Description: Qt 5 help module
+Description-md5: dc0f2e17602f253ba78a2ab8bbb8d543
+Multi-Arch: same
+Homepage: https://www.qt.io/developers/
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/q/qttools-opensource-src/libqt5help5_5.15.8-2_amd64.deb
+Size: 148524
+MD5sum: 25596fb84bde80d8353d213a493ed632
+SHA256: 1fe31a6b85b300e644fdaae02e77c5c8d880c7f6803becc6093ac5a40e6291cb

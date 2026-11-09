@@ -1,0 +1,18 @@
+Package: libgudev-1.0-0
+Source: libgudev
+Version: 237-2
+Installed-Size: 64
+Maintainer: Debian GNOME Maintainers <pkg-gnome-maintainers@lists.alioth.debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.4), libglib2.0-0 (>= 2.38.0), libudev1 (>= 199)
+Description: GObject-based wrapper library for libudev
+Description-md5: 69c67b853f66d1327190cab12680738c
+Multi-Arch: same
+Homepage: https://wiki.gnome.org/Projects/libgudev
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/libg/libgudev/libgudev-1.0-0_237-2_amd64.deb
+Size: 15064
+MD5sum: edc3d9363d6f8be6af015eb62ddf1a9f
+SHA256: 9fc37e3420d2704119bd1989d2f93d84321f1f678a3634e86bc857becd55983a

@@ -1,0 +1,23 @@
+Package: texinfo
+Source: texinfo (6.8-6)
+Version: 6.8-6+b1
+Installed-Size: 12462
+Maintainer: Debian TeX Task Force <debian-tex-maint@lists.debian.org>
+Architecture: amd64
+Replaces: tetex-base (<< 1.0.2+20000804-9), tetex-bin (<< 3.0), texinfo-doc-nonfree
+Depends: libc6 (>= 2.33), perl (>= 5.36.0-4), perlapi-5.36.0, libtext-unidecode-perl, libxml-libxml-perl, tex-common
+Suggests: texlive-base, texlive-latex-base, texlive-plain-generic, texlive-fonts-recommended
+Breaks: ja-trans (<= 0.7-3.1), tetex-base (<< 3.0), tetex-bin (<< 3.0), texinfo-doc-nonfree
+Description: Documentation system for on-line information and printed output
+Description-md5: 1c7c77fec8377bb6e9c62acc5e9736a6
+Multi-Arch: foreign
+Homepage: https://www.gnu.org/software/texinfo/
+Tag: interface::commandline, role::program, scope::utility, suite::gnu,
+ use::converting, works-with-format::info, works-with-format::tex,
+ works-with::text
+Section: text
+Priority: optional
+Filename: pool/main/t/texinfo/texinfo_6.8-6+b1_amd64.deb
+Size: 1815916
+MD5sum: 6f68ca5c7d038bb262ee785235394a9e
+SHA256: e397ec5b52f54db5ad82b1f95e62f2ae85fe2c728f3cf94a8af77bdf57340389

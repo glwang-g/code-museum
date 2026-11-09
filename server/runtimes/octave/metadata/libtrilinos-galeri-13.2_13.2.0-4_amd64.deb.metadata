@@ -1,0 +1,18 @@
+Package: libtrilinos-galeri-13.2
+Source: trilinos
+Version: 13.2.0-4
+Installed-Size: 346
+Maintainer: Debian Science Maintainers <debian-science-maintainers@lists.alioth.debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.29), libgcc-s1 (>= 3.0), libopenmpi3 (>= 4.1.4), libstdc++6 (>= 11), libtrilinos-epetra-13.2 (>= 13.2.0), libtrilinos-teuchos-13.2 (>= 13.2.0), libtrilinos-triutils-13.2 (>= 13.2.0)
+Description: generation of distributed linear systems - runtime files
+Description-md5: 30e8a69aca2e319dbcfc0dc5dd684a31
+Multi-Arch: same
+Homepage: https://trilinos.github.io/
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/t/trilinos/libtrilinos-galeri-13.2_13.2.0-4_amd64.deb
+Size: 93496
+MD5sum: bd070fe287d6bd690010243ea2464884
+SHA256: 09c666910a0b9f4bc4cefd35f66bef071b13a1f7d90e2f0a12c89f8378599ec1

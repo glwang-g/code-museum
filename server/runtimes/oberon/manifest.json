@@ -1,0 +1,140 @@
+{
+  "schemaVersion": 1,
+  "platform": "linux/amd64",
+  "baseImage": "gcc@sha256:5e927c284bf55a7dc796262e311a0703344f62f41f5621eb56843111b1d37e15",
+  "sourceDateEpoch": 1793923200,
+  "version": "0.17.2",
+  "source": "https://miasap.se/obnc/",
+  "license": "OBNC GPL-3.0-or-later compiler and MPL-2.0 libraries; original dependency notices",
+  "runtime": {
+    "id": "oberon",
+    "executable": "/opt/obnc/bin/obnc",
+    "memoryMiB": 512,
+    "versionArgs": [
+      "-v"
+    ],
+    "versionPattern": "0.17.2"
+  },
+  "files": [
+    {
+      "file": "Dockerfile",
+      "bytes": 1237,
+      "sha256": "e64c64789807de2241cb08e9bb4d4af6794f920a3c20dd3f55997e9607c058de"
+    },
+    {
+      "file": "NOTICE.md",
+      "bytes": 1580,
+      "sha256": "54815f35bce94e0d1ae7559639c6fe9e092ad6e9ebcfa8c3979e29eb926f7fcd"
+    },
+    {
+      "file": "acquisition.json",
+      "bytes": 2979,
+      "sha256": "11b70ce976ea82a5a832a101b2cb4243a584f0c6429b96569c1cf8c35c548d51"
+    },
+    {
+      "file": "assets/bison_3.8.2+dfsg-1+b1_amd64.deb",
+      "bytes": 1174528,
+      "sha256": "a414afd7519c53bfa33415ba5b951bc8b4906877004c49723ffda50a6033c3e8"
+    },
+    {
+      "file": "assets/flex_2.6.4-8.2_amd64.deb",
+      "bytes": 421580,
+      "sha256": "da3fd55dbb6aff4f7b3187580813e0ef707d0c596402e37c8fd144df60003636"
+    },
+    {
+      "file": "assets/libgc-dev_8.2.2-3_amd64.deb",
+      "bytes": 410128,
+      "sha256": "a7b8a113d5a0152959af593d681282ef4a3177fae826096f530a1d3cf00cdaa9"
+    },
+    {
+      "file": "assets/libgc1_8.2.2-3_amd64.deb",
+      "bytes": 245116,
+      "sha256": "c7fecfc533d31980e93faeb9bc529dc2d393fc066100550c0e28a760a2eab72e"
+    },
+    {
+      "file": "assets/obnc_0.17.2.tar.gz",
+      "bytes": 233220,
+      "sha256": "f672663e295df6daba53ac59a0280011732b0e7f95078d7944aa8c328b5f47ec"
+    },
+    {
+      "file": "licenses/OBNC-GPL.txt",
+      "bytes": 35147,
+      "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903"
+    },
+    {
+      "file": "licenses/OBNC-library-MPL.txt",
+      "bytes": 16725,
+      "sha256": "1f256ecad192880510e84ad60474eab7589218784b9a50bc7ceee34c2b91f1d5"
+    },
+    {
+      "file": "licenses/bison.copyright",
+      "bytes": 776,
+      "sha256": "0870e455b94b9043e84948624d3368d9a45d10674ae4398762b99bb2c328dffd"
+    },
+    {
+      "file": "licenses/flex.copyright",
+      "bytes": 25695,
+      "sha256": "908e7be25f1d5848fc378b76bdbaed59f3d1e19ae61fdeb9d1ad12640bf0e078"
+    },
+    {
+      "file": "licenses/libgc-dev.copyright",
+      "bytes": 1301,
+      "sha256": "b076c9d513a8fe345d003464684d1b502c348ff94ee8d109078a23aaaf25374d"
+    },
+    {
+      "file": "licenses/libgc1.copyright",
+      "bytes": 1301,
+      "sha256": "b076c9d513a8fe345d003464684d1b502c348ff94ee8d109078a23aaaf25374d"
+    },
+    {
+      "file": "metadata/apt-verification.txt",
+      "bytes": 1169,
+      "sha256": "966652e257fd492d3cb75d146adc643c0debd59a4664d623e49815b2b164c3a7"
+    },
+    {
+      "file": "metadata/bison_3.8.2+dfsg-1+b1_amd64.deb.metadata",
+      "bytes": 801,
+      "sha256": "221b9d02e21a02d31e051033d85959ef3dc2b23a20f6c1f9de5bd2476a999f1c"
+    },
+    {
+      "file": "metadata/bookworm-InRelease",
+      "bytes": 151075,
+      "sha256": "77737fa4b34f2693e982cc9ee35736816c35a7778fc2d326cc1bbf5b301fe1aa"
+    },
+    {
+      "file": "metadata/bookworm-security-InRelease",
+      "bytes": 34770,
+      "sha256": "836749276aafc119e05df93304153ee1b4d436807f481ac3c81162b3a6b7faae"
+    },
+    {
+      "file": "metadata/bookworm-updates-InRelease",
+      "bytes": 55403,
+      "sha256": "835e7f5704fbf7b6ef326075dccc00bab71918530b76ce1d7deea0470d023171"
+    },
+    {
+      "file": "metadata/flex_2.6.4-8.2_amd64.deb.metadata",
+      "bytes": 811,
+      "sha256": "8845e090b83ce6e4106a459b6239c23c8125f5040add3f5cd38542690133cb45"
+    },
+    {
+      "file": "metadata/libgc-dev_8.2.2-3_amd64.deb.metadata",
+      "bytes": 664,
+      "sha256": "87b7f3ee11add417460ddac92fc41d32df6d9a316501d36631f4d087fa9c4749"
+    },
+    {
+      "file": "metadata/libgc1_8.2.2-3_amd64.deb.metadata",
+      "bytes": 628,
+      "sha256": "bc794e5188278e01727ab7e76fb32365d5ad962363c166f74532b283ae88fa5a"
+    },
+    {
+      "file": "metadata/official-MD5SUMS.txt",
+      "bytes": 3978,
+      "sha256": "d651656c88c046a8c6def1c8223e88cb278875526a76be4d8f4af9b261d85cb0"
+    },
+    {
+      "file": "metadata/upstream-README.txt",
+      "bytes": 1789,
+      "sha256": "fb34012de686e3087658aed7e2097307b2cb5effc4f73e78bf4e8705e885b4cf"
+    }
+  ]
+}

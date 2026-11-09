@@ -1,0 +1,20 @@
+Package: libibverbs1
+Source: rdma-core
+Version: 44.0-2
+Installed-Size: 189
+Maintainer: Benjamin Drung <bdrung@ubuntu.com>
+Architecture: amd64
+Depends: adduser, libc6 (>= 2.34), libnl-3-200 (>= 3.2.7), libnl-route-3-200 (>= 3.2.7)
+Recommends: ibverbs-providers
+Breaks: ibverbs-providers (<< 34~)
+Description: Library for direct userspace use of RDMA (InfiniBand/iWARP)
+Description-md5: 8cdb9c883867c94335417ed5085d7667
+Multi-Arch: same
+Homepage: https://github.com/linux-rdma/rdma-core
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/r/rdma-core/libibverbs1_44.0-2_amd64.deb
+Size: 60720
+MD5sum: e4cde2dc88513ea880331e9f800e4f88
+SHA256: 35054815259fee46173240254246d03b673a5cd5c528aaac96fd15ac428a8d59

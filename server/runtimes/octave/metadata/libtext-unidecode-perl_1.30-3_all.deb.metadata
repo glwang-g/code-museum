@@ -1,0 +1,17 @@
+Package: libtext-unidecode-perl
+Version: 1.30-3
+Installed-Size: 642
+Maintainer: Debian Perl Group <pkg-perl-maintainers@lists.alioth.debian.org>
+Architecture: all
+Depends: perl:any
+Description: US-ASCII transliterations of Unicode text
+Description-md5: a36161f675c1beadc204e5afd5b54b7a
+Multi-Arch: foreign
+Homepage: https://metacpan.org/release/Text-Unidecode
+Tag: devel::lang:perl, devel::library, implemented-in::perl
+Section: perl
+Priority: optional
+Filename: pool/main/libt/libtext-unidecode-perl/libtext-unidecode-perl_1.30-3_all.deb
+Size: 101496
+MD5sum: 05f9ff3bb67d87913a939d70bf6b14e4
+SHA256: 33512c229f1af0e7b45f9e206dda36b579ca8c8d2b53c82970e536da82c53de1

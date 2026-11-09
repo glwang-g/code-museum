@@ -1,0 +1,18 @@
+Package: libtrilinos-aztecoo-13.2
+Source: trilinos
+Version: 13.2.0-4
+Installed-Size: 586
+Maintainer: Debian Science Maintainers <debian-science-maintainers@lists.alioth.debian.org>
+Architecture: amd64
+Depends: libblas3 | libblas.so.3, libc6 (>= 2.29), libgcc-s1 (>= 3.0), liblapack3 | liblapack.so.3, libopenmpi3 (>= 4.1.4), libstdc++6 (>= 5.2), libtrilinos-epetra-13.2 (>= 13.2.0), libtrilinos-teuchos-13.2 (>= 13.2.0)
+Description: object-oriented interface to the Aztec solver - runtime files
+Description-md5: 62bd827b6fb3f1df93d48d5b802a60fd
+Multi-Arch: same
+Homepage: https://trilinos.github.io/
+Tag: role::shared-lib
+Section: libs
+Priority: optional
+Filename: pool/main/t/trilinos/libtrilinos-aztecoo-13.2_13.2.0-4_amd64.deb
+Size: 209692
+MD5sum: 579447be24de980f991dc893ec9f5616
+SHA256: 664c7bbff0392cc8db6333f31cb29bbac97dc76c458252a6e24c3a0061c03d4f

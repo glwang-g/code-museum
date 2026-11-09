@@ -1,0 +1,1288 @@
+{
+  "baseImage": "gcc@sha256:5e927c284bf55a7dc796262e311a0703344f62f41f5621eb56843111b1d37e15",
+  "requestedPackages": [
+    "octave"
+  ],
+  "verification": "Debian APT verified InRelease and index hashes without network; each acquired package matches the solved signed-index SHA-256",
+  "indexInputs": [
+    {
+      "source": "https://deb.debian.org/debian/dists/bookworm/InRelease",
+      "sha256": "77737fa4b34f2693e982cc9ee35736816c35a7778fc2d326cc1bbf5b301fe1aa"
+    },
+    {
+      "source": "https://deb.debian.org/debian/dists/bookworm/main/binary-amd64/Packages.xz",
+      "sha256": "9e0b5aabb2465b3d2e7a7fe27f9913846277833f7a2826e7767acccff5b588c5"
+    },
+    {
+      "source": "https://deb.debian.org/debian/dists/bookworm-updates/InRelease",
+      "sha256": "835e7f5704fbf7b6ef326075dccc00bab71918530b76ce1d7deea0470d023171"
+    },
+    {
+      "source": "https://deb.debian.org/debian/dists/bookworm-updates/main/binary-amd64/Packages.xz",
+      "sha256": "87e7e94047fb7fb6f4ceecc7022d4bee55b66031cc2a7666d3196f3e0aabb846"
+    },
+    {
+      "source": "https://deb.debian.org/debian-security/dists/bookworm-security/InRelease",
+      "sha256": "836749276aafc119e05df93304153ee1b4d436807f481ac3c81162b3a6b7faae"
+    },
+    {
+      "source": "https://deb.debian.org/debian-security/dists/bookworm-security/main/binary-amd64/Packages.xz",
+      "sha256": "0ef367e0e14c08f190df6c1738c896cf6700181c2ebebd4e93a4b2aee072bf2e"
+    }
+  ],
+  "packages": [
+    {
+      "file": "assets/libperl5.36_5.36.0-7+deb12u4_amd64.deb",
+      "sha256": "ed8480b621ad574c25aea30d36194d0133ea74093756ecbe3dff157d0510ef7f",
+      "bytes": 4207640,
+      "source": "https://deb.debian.org/debian-security/pool/updates/main/p/perl/libperl5.36_5.36.0-7+deb12u4_amd64.deb",
+      "metadata": "metadata/libperl5.36_5.36.0-7+deb12u4_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/perl_5.36.0-7+deb12u4_amd64.deb",
+      "sha256": "67e7a883c5d835939638f89a750799282df243ac1446281aa92ef9e19300940b",
+      "bytes": 239392,
+      "source": "https://deb.debian.org/debian-security/pool/updates/main/p/perl/perl_5.36.0-7+deb12u4_amd64.deb",
+      "metadata": "metadata/perl_5.36.0-7+deb12u4_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/perl-base_5.36.0-7+deb12u4_amd64.deb",
+      "sha256": "d7d1943aec9597629bf73075efcc5ef6dc9bda96d78e80d843156ecd448478b8",
+      "bytes": 1609596,
+      "source": "https://deb.debian.org/debian-security/pool/updates/main/p/perl/perl-base_5.36.0-7+deb12u4_amd64.deb",
+      "metadata": "metadata/perl-base_5.36.0-7+deb12u4_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/perl-modules-5.36_5.36.0-7+deb12u4_all.deb",
+      "sha256": "3ed38ffa8320e9bf7597cefa01b6a6ace4a08ccc77cdfd15ef7d8b711dea7166",
+      "bytes": 2817356,
+      "source": "https://deb.debian.org/debian-security/pool/updates/main/p/perl/perl-modules-5.36_5.36.0-7+deb12u4_all.deb",
+      "metadata": "metadata/perl-modules-5.36_5.36.0-7+deb12u4_all.deb.metadata"
+    },
+    {
+      "file": "assets/libnl-3-200_3.7.0-0.2+b1_amd64.deb",
+      "sha256": "d1fc3e9eb8e79b4c96b0a64c3d8c9e068ae2f665cab71bd19f417ffd0453a890",
+      "bytes": 63124,
+      "source": "https://deb.debian.org/debian/pool/main/libn/libnl3/libnl-3-200_3.7.0-0.2+b1_amd64.deb",
+      "metadata": "metadata/libnl-3-200_3.7.0-0.2+b1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libnl-route-3-200_3.7.0-0.2+b1_amd64.deb",
+      "sha256": "0fdcc425ae2982788c085c76a7cb0eda3e3db99d41bd1ce56082ee18e9f1e21f",
+      "bytes": 184596,
+      "source": "https://deb.debian.org/debian/pool/main/libn/libnl3/libnl-route-3-200_3.7.0-0.2+b1_amd64.deb",
+      "metadata": "metadata/libnl-route-3-200_3.7.0-0.2+b1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libibverbs1_44.0-2_amd64.deb",
+      "sha256": "35054815259fee46173240254246d03b673a5cd5c528aaac96fd15ac428a8d59",
+      "bytes": 60720,
+      "source": "https://deb.debian.org/debian/pool/main/r/rdma-core/libibverbs1_44.0-2_amd64.deb",
+      "metadata": "metadata/libibverbs1_44.0-2_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/ibverbs-providers_44.0-2_amd64.deb",
+      "sha256": "3c9907fd96a4ae7effb5faa178bd3648344a521f6bcca2c23c9f2dd214cf1192",
+      "bytes": 334756,
+      "source": "https://deb.debian.org/debian/pool/main/r/rdma-core/ibverbs-providers_44.0-2_amd64.deb",
+      "metadata": "metadata/ibverbs-providers_44.0-2_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libaec0_1.0.6-1+b1_amd64.deb",
+      "sha256": "8a403015309664cff739053569062eb99fa92646029191d056a587a3fabd1845",
+      "bytes": 21144,
+      "source": "https://deb.debian.org/debian/pool/main/liba/libaec/libaec0_1.0.6-1+b1_amd64.deb",
+      "metadata": "metadata/libaec0_1.0.6-1+b1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libsuitesparseconfig5_5.12.0+dfsg-2_amd64.deb",
+      "sha256": "b371af0bf1c3aaa3b5e80abca522ecc3ae34a376255813ef15523b0d39b9e710",
+      "bytes": 23892,
+      "source": "https://deb.debian.org/debian/pool/main/s/suitesparse/libsuitesparseconfig5_5.12.0+dfsg-2_amd64.deb",
+      "metadata": "metadata/libsuitesparseconfig5_5.12.0+dfsg-2_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libamd2_5.12.0+dfsg-2_amd64.deb",
+      "sha256": "d36ec629f9aa2b90ca076cd5d78b01d4bef4dc3969f22a85b20fa7f448d97cd5",
+      "bytes": 36248,
+      "source": "https://deb.debian.org/debian/pool/main/s/suitesparse/libamd2_5.12.0+dfsg-2_amd64.deb",
+      "metadata": "metadata/libamd2_5.12.0+dfsg-2_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libblas3_3.11.0-2_amd64.deb",
+      "sha256": "9aae8058b8d02b800bdafc5b340614df1442a2d2abbc2d351947c0fdd67aa08a",
+      "bytes": 148592,
+      "source": "https://deb.debian.org/debian/pool/main/l/lapack/libblas3_3.11.0-2_amd64.deb",
+      "metadata": "metadata/libblas3_3.11.0-2_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libgfortran5_12.2.0-14+deb12u1_amd64.deb",
+      "sha256": "63d38775d20c425c1f00914b52167ae0e3b4639facdb0aa734877279fb716fbb",
+      "bytes": 792696,
+      "source": "https://deb.debian.org/debian/pool/main/g/gcc-12/libgfortran5_12.2.0-14+deb12u1_amd64.deb",
+      "metadata": "metadata/libgfortran5_12.2.0-14+deb12u1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/liblapack3_3.11.0-2_amd64.deb",
+      "sha256": "4cb4ba9c36ee0242d91c8bcd69286db59a6a0c86f8c522b72f5eb0053e127d7d",
+      "bytes": 2322744,
+      "source": "https://deb.debian.org/debian/pool/main/l/lapack/liblapack3_3.11.0-2_amd64.deb",
+      "metadata": "metadata/liblapack3_3.11.0-2_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libarpack2_3.8.0-3_amd64.deb",
+      "sha256": "949773b357e8f4c74fbc585f2fbee452adb2931c3d36a5baf8eae49f7d45bede",
+      "bytes": 102036,
+      "source": "https://deb.debian.org/debian/pool/main/a/arpack/libarpack2_3.8.0-3_amd64.deb",
+      "metadata": "metadata/libarpack2_3.8.0-3_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libasound2-data_1.2.8-1_all.deb",
+      "sha256": "fe0780d2d3674b2977e0acb0d48b448ad72ba1642564b7dc537f55e839984c2d",
+      "bytes": 20488,
+      "source": "https://deb.debian.org/debian/pool/main/a/alsa-lib/libasound2-data_1.2.8-1_all.deb",
+      "metadata": "metadata/libasound2-data_1.2.8-1_all.deb.metadata"
+    },
+    {
+      "file": "assets/libasound2_1.2.8-1+b1_amd64.deb",
+      "sha256": "44c77b076a7b11ae99712439022d822245b1994c435da564ebd320bb676faf4c",
+      "bytes": 361788,
+      "source": "https://deb.debian.org/debian/pool/main/a/alsa-lib/libasound2_1.2.8-1+b1_amd64.deb",
+      "metadata": "metadata/libasound2_1.2.8-1+b1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libavahi-common-data_0.8-10+deb12u1_amd64.deb",
+      "sha256": "b21e33c3797c834e9a9ce0f1085e6d3f721db496d550505ab2f364d52097fe6f",
+      "bytes": 107164,
+      "source": "https://deb.debian.org/debian/pool/main/a/avahi/libavahi-common-data_0.8-10+deb12u1_amd64.deb",
+      "metadata": "metadata/libavahi-common-data_0.8-10+deb12u1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libavahi-common3_0.8-10+deb12u1_amd64.deb",
+      "sha256": "0c12791afe1be09d8362161244d7a51e82a67a55f3909f4c29ee3dd424c3a5f1",
+      "bytes": 42112,
+      "source": "https://deb.debian.org/debian/pool/main/a/avahi/libavahi-common3_0.8-10+deb12u1_amd64.deb",
+      "metadata": "metadata/libavahi-common3_0.8-10+deb12u1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libdbus-1-3_1.14.10-1~deb12u1_amd64.deb",
+      "sha256": "18ee0ce5fab9f7b671e87da1e9fa18660e36e04a3402f24bdb8635e0ba1d35f6",
+      "bytes": 201240,
+      "source": "https://deb.debian.org/debian/pool/main/d/dbus/libdbus-1-3_1.14.10-1~deb12u1_amd64.deb",
+      "metadata": "metadata/libdbus-1-3_1.14.10-1~deb12u1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libavahi-client3_0.8-10+deb12u1_amd64.deb",
+      "sha256": "a99d635f07a49cfbd24de151155c4f815a5adf867855e7ba13ecc3b25ffa52b9",
+      "bytes": 45756,
+      "source": "https://deb.debian.org/debian/pool/main/a/avahi/libavahi-client3_0.8-10+deb12u1_amd64.deb",
+      "metadata": "metadata/libavahi-client3_0.8-10+deb12u1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libbtf1_5.12.0+dfsg-2_amd64.deb",
+      "sha256": "4c854577ea0585d93a73322f8aa7d91c28f731c335d0bb3e82ecacdf2a7ad282",
+      "bytes": 25636,
+      "source": "https://deb.debian.org/debian/pool/main/s/suitesparse/libbtf1_5.12.0+dfsg-2_amd64.deb",
+      "metadata": "metadata/libbtf1_5.12.0+dfsg-2_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libcamd2_5.12.0+dfsg-2_amd64.deb",
+      "sha256": "dbf820f0f32ab43ec727c385e3c4b6a84c5a1a6ae5de8a33611e39bdb23b4229",
+      "bytes": 37808,
+      "source": "https://deb.debian.org/debian/pool/main/s/suitesparse/libcamd2_5.12.0+dfsg-2_amd64.deb",
+      "metadata": "metadata/libcamd2_5.12.0+dfsg-2_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libccolamd2_5.12.0+dfsg-2_amd64.deb",
+      "sha256": "56726527d9b144019654d79f9ca2fada0cd388752df3ff6aad0c926f4a6bff11",
+      "bytes": 39736,
+      "source": "https://deb.debian.org/debian/pool/main/s/suitesparse/libccolamd2_5.12.0+dfsg-2_amd64.deb",
+      "metadata": "metadata/libccolamd2_5.12.0+dfsg-2_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libcolamd2_5.12.0+dfsg-2_amd64.deb",
+      "sha256": "d7f6517f4e19438f7725b6efe405f5850e3e71534f45c260372919feda2c234e",
+      "bytes": 32940,
+      "source": "https://deb.debian.org/debian/pool/main/s/suitesparse/libcolamd2_5.12.0+dfsg-2_amd64.deb",
+      "metadata": "metadata/libcolamd2_5.12.0+dfsg-2_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libmetis5_5.1.0.dfsg-7_amd64.deb",
+      "sha256": "6b6fa5da967d00d366df6853a8969ed1597d73ffbd18276f7afad0a4b13fead6",
+      "bytes": 171052,
+      "source": "https://deb.debian.org/debian/pool/main/m/metis/libmetis5_5.1.0.dfsg-7_amd64.deb",
+      "metadata": "metadata/libmetis5_5.1.0.dfsg-7_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libcholmod3_5.12.0+dfsg-2_amd64.deb",
+      "sha256": "1059cc10eba66ec6437e0be640686bf9fd0c28e6b124ddddca6fabcb302991af",
+      "bytes": 334664,
+      "source": "https://deb.debian.org/debian/pool/main/s/suitesparse/libcholmod3_5.12.0+dfsg-2_amd64.deb",
+      "metadata": "metadata/libcholmod3_5.12.0+dfsg-2_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libpsm-infinipath1_3.3+20.604758e7-6.2_amd64.deb",
+      "sha256": "872325ca09249b99e7cfe9e41da438b31084f32f969f80f85813482a4ae2ff37",
+      "bytes": 168340,
+      "source": "https://deb.debian.org/debian/pool/main/i/infinipath-psm/libpsm-infinipath1_3.3+20.604758e7-6.2_amd64.deb",
+      "metadata": "metadata/libpsm-infinipath1_3.3+20.604758e7-6.2_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libpsm2-2_11.2.185-2_amd64.deb",
+      "sha256": "38ad6400906ae84345362aa366c7a1900e9cbcce06fb6ed35bf5dab414ec2939",
+      "bytes": 179708,
+      "source": "https://deb.debian.org/debian/pool/main/libp/libpsm2/libpsm2-2_11.2.185-2_amd64.deb",
+      "metadata": "metadata/libpsm2-2_11.2.185-2_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/librdmacm1_44.0-2_amd64.deb",
+      "sha256": "16b18625834371d023b81477823074ea0d34c478d58dbef3f01107984f47d034",
+      "bytes": 68632,
+      "source": "https://deb.debian.org/debian/pool/main/r/rdma-core/librdmacm1_44.0-2_amd64.deb",
+      "metadata": "metadata/librdmacm1_44.0-2_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libfabric1_1.17.0-3_amd64.deb",
+      "sha256": "1df0b3acb9a55e43152621015f941457fe63cb9866868f2c2df2c20d34604a22",
+      "bytes": 626652,
+      "source": "https://deb.debian.org/debian/pool/main/libf/libfabric/libfabric1_1.17.0-3_amd64.deb",
+      "metadata": "metadata/libfabric1_1.17.0-3_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libhwloc15_2.9.0-1_amd64.deb",
+      "sha256": "4e7194b5d9adbb1a7d11a9501a4be4a4fa22876b69c73b7998056f552962c0e4",
+      "bytes": 153644,
+      "source": "https://deb.debian.org/debian/pool/main/h/hwloc/libhwloc15_2.9.0-1_amd64.deb",
+      "metadata": "metadata/libhwloc15_2.9.0-1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libmunge2_0.5.15-2+deb12u1_amd64.deb",
+      "sha256": "533a38220c7f2a38a1130f5f80033d1a07723880fa352299b22a10ba99ce826e",
+      "bytes": 19740,
+      "source": "https://deb.debian.org/debian/pool/main/m/munge/libmunge2_0.5.15-2+deb12u1_amd64.deb",
+      "metadata": "metadata/libmunge2_0.5.15-2+deb12u1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libpciaccess0_0.17-2_amd64.deb",
+      "sha256": "4025f3608cf431c163efb94fdc553e7b93e16b8f0d741ea87762e19025ffc80e",
+      "bytes": 51384,
+      "source": "https://deb.debian.org/debian/pool/main/libp/libpciaccess/libpciaccess0_0.17-2_amd64.deb",
+      "metadata": "metadata/libpciaccess0_0.17-2_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libxnvctrl0_525.85.05-3~deb12u1_amd64.deb",
+      "sha256": "6fc26e4b6069f4648692e0c225f580161e3b0c04e4bac1c616c8a418a9a9817d",
+      "bytes": 13460,
+      "source": "https://deb.debian.org/debian/pool/main/libx/libxnvctrl/libxnvctrl0_525.85.05-3~deb12u1_amd64.deb",
+      "metadata": "metadata/libxnvctrl0_525.85.05-3~deb12u1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/ocl-icd-libopencl1_2.3.1-1_amd64.deb",
+      "sha256": "ddd8509c0430545173752bed272c7f44f8b5f7d125265b20456207aaefbb52c8",
+      "bytes": 43016,
+      "source": "https://deb.debian.org/debian/pool/main/o/ocl-icd/ocl-icd-libopencl1_2.3.1-1_amd64.deb",
+      "metadata": "metadata/ocl-icd-libopencl1_2.3.1-1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libhwloc-plugins_2.9.0-1_amd64.deb",
+      "sha256": "d8245d4c857b40850305e69991cba309ca699de27cfb131c7a139c3ada2bb0f5",
+      "bytes": 17488,
+      "source": "https://deb.debian.org/debian/pool/main/h/hwloc/libhwloc-plugins_2.9.0-1_amd64.deb",
+      "metadata": "metadata/libhwloc-plugins_2.9.0-1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libpmix2_4.2.2-1+deb12u1_amd64.deb",
+      "sha256": "fe19bbea5a23897618ef4c54b097366a834bd6c7157276ef4375d053ac2ecd1e",
+      "bytes": 621892,
+      "source": "https://deb.debian.org/debian/pool/main/p/pmix/libpmix2_4.2.2-1+deb12u1_amd64.deb",
+      "metadata": "metadata/libpmix2_4.2.2-1+deb12u1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libucx0_1.13.1-1_amd64.deb",
+      "sha256": "f636d9893abece6a62ff943102b0caebeea8ba05c110550f5c8e6f01b015d3b5",
+      "bytes": 860060,
+      "source": "https://deb.debian.org/debian/pool/main/u/ucx/libucx0_1.13.1-1_amd64.deb",
+      "metadata": "metadata/libucx0_1.13.1-1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libopenmpi3_4.1.4-3+b1_amd64.deb",
+      "sha256": "acbb84293aa092a49a457a724d293ff0bcceabf297f2828ef9e8cad08b28fc99",
+      "bytes": 2421516,
+      "source": "https://deb.debian.org/debian/pool/main/o/openmpi/libopenmpi3_4.1.4-3+b1_amd64.deb",
+      "metadata": "metadata/libopenmpi3_4.1.4-3+b1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libcombblas1.16.0_1.6.2-8_amd64.deb",
+      "sha256": "db2b38996634087844b16e93f5ad7f53c8a3ef04d5cd2b0d43978d2459a42d31",
+      "bytes": 283620,
+      "source": "https://deb.debian.org/debian/pool/main/c/combblas/libcombblas1.16.0_1.6.2-8_amd64.deb",
+      "metadata": "metadata/libcombblas1.16.0_1.6.2-8_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libcups2_2.4.2-3+deb12u9_amd64.deb",
+      "sha256": "8dbfd3b7cd81166a2d79bb7e3898b0203fec05c7e927f60e207122a1e36b95c8",
+      "bytes": 245180,
+      "source": "https://deb.debian.org/debian/pool/main/c/cups/libcups2_2.4.2-3+deb12u9_amd64.deb",
+      "metadata": "metadata/libcups2_2.4.2-3+deb12u9_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libcxsparse3_5.12.0+dfsg-2_amd64.deb",
+      "sha256": "cef5c1512462763e9fcab3612270d866a24d232dd93543a5b5d41535aeeb23c1",
+      "bytes": 80684,
+      "source": "https://deb.debian.org/debian/pool/main/s/suitesparse/libcxsparse3_5.12.0+dfsg-2_amd64.deb",
+      "metadata": "metadata/libcxsparse3_5.12.0+dfsg-2_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libdouble-conversion3_3.2.1-1_amd64.deb",
+      "sha256": "802b880ed900e4a8d54bab77b7551a7f3408b04891c3e5650fdc2368cc1fbc0a",
+      "bytes": 41460,
+      "source": "https://deb.debian.org/debian/pool/main/d/double-conversion/libdouble-conversion3_3.2.1-1_amd64.deb",
+      "metadata": "metadata/libdouble-conversion3_3.2.1-1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libdrm-common_2.4.114-1_all.deb",
+      "sha256": "32f9664138b38b224383c6986457d5ad2ec8efd559b1a0ce7749405f7a451aad",
+      "bytes": 7112,
+      "source": "https://deb.debian.org/debian/pool/main/libd/libdrm/libdrm-common_2.4.114-1_all.deb",
+      "metadata": "metadata/libdrm-common_2.4.114-1_all.deb.metadata"
+    },
+    {
+      "file": "assets/libdrm2_2.4.114-1+b1_amd64.deb",
+      "sha256": "be18fb670797ba32da9628cf3e8acd83160d8db8c8dd842501dd8e401c3b5371",
+      "bytes": 37472,
+      "source": "https://deb.debian.org/debian/pool/main/libd/libdrm/libdrm2_2.4.114-1+b1_amd64.deb",
+      "metadata": "metadata/libdrm2_2.4.114-1+b1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libdrm-amdgpu1_2.4.114-1+b1_amd64.deb",
+      "sha256": "b75a71e96f1faac0f131ac657e09efcbe8968eef62cc34b8abfcff2ff9f0cccd",
+      "bytes": 20864,
+      "source": "https://deb.debian.org/debian/pool/main/libd/libdrm/libdrm-amdgpu1_2.4.114-1+b1_amd64.deb",
+      "metadata": "metadata/libdrm-amdgpu1_2.4.114-1+b1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libdrm-intel1_2.4.114-1+b1_amd64.deb",
+      "sha256": "b0e39318d14c07f4d85668b6da7f66a1341addf87a47d785c34d5a8b393f544c",
+      "bytes": 64032,
+      "source": "https://deb.debian.org/debian/pool/main/libd/libdrm/libdrm-intel1_2.4.114-1+b1_amd64.deb",
+      "metadata": "metadata/libdrm-intel1_2.4.114-1+b1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libdrm-nouveau2_2.4.114-1+b1_amd64.deb",
+      "sha256": "ba59bb9ec6e1baf59fc4d4eb095a524e40d045af2413dad9d28df517005388b6",
+      "bytes": 19064,
+      "source": "https://deb.debian.org/debian/pool/main/libd/libdrm/libdrm-nouveau2_2.4.114-1+b1_amd64.deb",
+      "metadata": "metadata/libdrm-nouveau2_2.4.114-1+b1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libdrm-radeon1_2.4.114-1+b1_amd64.deb",
+      "sha256": "2da3a9233187f995ad5a3e6db3d37252ea7209f0ca9605484d03478ebcc15feb",
+      "bytes": 21848,
+      "source": "https://deb.debian.org/debian/pool/main/libd/libdrm/libdrm-radeon1_2.4.114-1+b1_amd64.deb",
+      "metadata": "metadata/libdrm-radeon1_2.4.114-1+b1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libwayland-server0_1.21.0-1_amd64.deb",
+      "sha256": "df0396221d7b794496a687ec61fae82b6465648bc0ab6501ba0a5ed7f56eb8d6",
+      "bytes": 35876,
+      "source": "https://deb.debian.org/debian/pool/main/w/wayland/libwayland-server0_1.21.0-1_amd64.deb",
+      "metadata": "metadata/libwayland-server0_1.21.0-1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libgbm1_22.3.6-1+deb12u2_amd64.deb",
+      "sha256": "4323840f2b7b3e108990848529125d99c0956ae5a854c1e0568ed08c8faeaa2e",
+      "bytes": 38132,
+      "source": "https://deb.debian.org/debian/pool/main/m/mesa/libgbm1_22.3.6-1+deb12u2_amd64.deb",
+      "metadata": "metadata/libgbm1_22.3.6-1+deb12u2_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libglapi-mesa_22.3.6-1+deb12u2_amd64.deb",
+      "sha256": "2db5b13a6b7f4042f9a417ad7fa4338b6c47528dc64d7f89cfd5e53d07d76bc4",
+      "bytes": 35900,
+      "source": "https://deb.debian.org/debian/pool/main/m/mesa/libglapi-mesa_22.3.6-1+deb12u2_amd64.deb",
+      "metadata": "metadata/libglapi-mesa_22.3.6-1+deb12u2_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libwayland-client0_1.21.0-1_amd64.deb",
+      "sha256": "1f002d028b8b79eec9847c636d8886d10dfe8c884cc2bebe18086b1391c5a28d",
+      "bytes": 28320,
+      "source": "https://deb.debian.org/debian/pool/main/w/wayland/libwayland-client0_1.21.0-1_amd64.deb",
+      "metadata": "metadata/libwayland-client0_1.21.0-1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libx11-xcb1_1.8.4-2+deb12u2_amd64.deb",
+      "sha256": "f5da45e1d881a793250a96613f28c471a248877f1a0f18a5c90e2a620a76c898",
+      "bytes": 192356,
+      "source": "https://deb.debian.org/debian/pool/main/libx/libx11/libx11-xcb1_1.8.4-2+deb12u2_amd64.deb",
+      "metadata": "metadata/libx11-xcb1_1.8.4-2+deb12u2_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libxcb-dri2-0_1.15-1_amd64.deb",
+      "sha256": "ef4959aa9e09a0d38d1de432e747585129d5d2dc1d84c8b6b3d2ffc3708b5805",
+      "bytes": 106792,
+      "source": "https://deb.debian.org/debian/pool/main/libx/libxcb/libxcb-dri2-0_1.15-1_amd64.deb",
+      "metadata": "metadata/libxcb-dri2-0_1.15-1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libxcb-dri3-0_1.15-1_amd64.deb",
+      "sha256": "02699b144b9467de8636d27a76984b8f4e7b66e2d25d96df2b9677be86ee9a29",
+      "bytes": 106676,
+      "source": "https://deb.debian.org/debian/pool/main/libx/libxcb/libxcb-dri3-0_1.15-1_amd64.deb",
+      "metadata": "metadata/libxcb-dri3-0_1.15-1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libxcb-present0_1.15-1_amd64.deb",
+      "sha256": "89383e627a4d17b9390d609b2459481bfd2029566367b43068586769e418b6e5",
+      "bytes": 105420,
+      "source": "https://deb.debian.org/debian/pool/main/libx/libxcb/libxcb-present0_1.15-1_amd64.deb",
+      "metadata": "metadata/libxcb-present0_1.15-1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libxcb-randr0_1.15-1_amd64.deb",
+      "sha256": "f86e3d8ff8622871008833e9d064919b7a6237399c903c59fc330ff00f199ff5",
+      "bytes": 116680,
+      "source": "https://deb.debian.org/debian/pool/main/libx/libxcb/libxcb-randr0_1.15-1_amd64.deb",
+      "metadata": "metadata/libxcb-randr0_1.15-1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libxcb-sync1_1.15-1_amd64.deb",
+      "sha256": "3366ce715220d38dd0148b78a8e738137bade25ef7eec0698850c6f66800844f",
+      "bytes": 108692,
+      "source": "https://deb.debian.org/debian/pool/main/libx/libxcb/libxcb-sync1_1.15-1_amd64.deb",
+      "metadata": "metadata/libxcb-sync1_1.15-1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libxcb-xfixes0_1.15-1_amd64.deb",
+      "sha256": "d744a7ebad2cbcf301c96cd6a1ab3ee856e436fc7be5cff5b7c28ac2ac181a64",
+      "bytes": 109368,
+      "source": "https://deb.debian.org/debian/pool/main/libx/libxcb/libxcb-xfixes0_1.15-1_amd64.deb",
+      "metadata": "metadata/libxcb-xfixes0_1.15-1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libxshmfence1_1.3-1_amd64.deb",
+      "sha256": "1a38142e40e3d32dc4f9a326bf5617363b7d9b4bb762fdcdd262f2192092024d",
+      "bytes": 8820,
+      "source": "https://deb.debian.org/debian/pool/main/libx/libxshmfence/libxshmfence1_1.3-1_amd64.deb",
+      "metadata": "metadata/libxshmfence1_1.3-1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libegl-mesa0_22.3.6-1+deb12u2_amd64.deb",
+      "sha256": "731a406af777d0606dc932da21c2214f189069caa437b8bb4063c328bab840ca",
+      "bytes": 114116,
+      "source": "https://deb.debian.org/debian/pool/main/m/mesa/libegl-mesa0_22.3.6-1+deb12u2_amd64.deb",
+      "metadata": "metadata/libegl-mesa0_22.3.6-1+deb12u2_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libevdev2_1.13.0+dfsg-1_amd64.deb",
+      "sha256": "418b3a0eccd3efbab2be4f3e8e97e3a2523af420241ac5ce0ba8519c8c2424c2",
+      "bytes": 33968,
+      "source": "https://deb.debian.org/debian/pool/main/libe/libevdev/libevdev2_1.13.0+dfsg-1_amd64.deb",
+      "metadata": "metadata/libevdev2_1.13.0+dfsg-1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libfftw3-long3_3.3.10-1_amd64.deb",
+      "sha256": "3122e1cac9007b1518c6af60f4a4159e9cc040f920a18bcb4a829522e56bcc4f",
+      "bytes": 336504,
+      "source": "https://deb.debian.org/debian/pool/main/f/fftw3/libfftw3-long3_3.3.10-1_amd64.deb",
+      "metadata": "metadata/libfftw3-long3_3.3.10-1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libfftw3-single3_3.3.10-1_amd64.deb",
+      "sha256": "42a4c9c3371f4cc0604e57ea99c7362da3a87de75240b13840b0607149c24a54",
+      "bytes": 805768,
+      "source": "https://deb.debian.org/debian/pool/main/f/fftw3/libfftw3-single3_3.3.10-1_amd64.deb",
+      "metadata": "metadata/libfftw3-single3_3.3.10-1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libfftw3-mpi3_3.3.10-1_amd64.deb",
+      "sha256": "e982eef60d5d5f7d805f03b1b16c4e8cc624f48714c2d42913ad633a5dc3eea3",
+      "bytes": 62048,
+      "source": "https://deb.debian.org/debian/pool/main/f/fftw3/libfftw3-mpi3_3.3.10-1_amd64.deb",
+      "metadata": "metadata/libfftw3-mpi3_3.3.10-1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libogg0_1.3.5-3_amd64.deb",
+      "sha256": "f67acb0477aed0354f411172e37af338f3ac6bd4f3766134a2cf5539884b5a28",
+      "bytes": 23412,
+      "source": "https://deb.debian.org/debian/pool/main/libo/libogg/libogg0_1.3.5-3_amd64.deb",
+      "metadata": "metadata/libogg0_1.3.5-3_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libflac12_1.4.2+ds-2_amd64.deb",
+      "sha256": "4d8431c274eef13ec9ee2c0bf988c34b4342367dec053b7f69a432525be5b1fe",
+      "bytes": 198124,
+      "source": "https://deb.debian.org/debian/pool/main/f/flac/libflac12_1.4.2+ds-2_amd64.deb",
+      "metadata": "metadata/libflac12_1.4.2+ds-2_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libxfixes3_6.0.0-2_amd64.deb",
+      "sha256": "1cd616396ff2ecae77e6e8b5b7695d414f0146de2d147837a2a02165f99e1a2c",
+      "bytes": 22684,
+      "source": "https://deb.debian.org/debian/pool/main/libx/libxfixes/libxfixes3_6.0.0-2_amd64.deb",
+      "metadata": "metadata/libxfixes3_6.0.0-2_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libxcursor1_1.2.1-1_amd64.deb",
+      "sha256": "49e167048661be4c614fff81429e9eaef38e54ef1d2150a5d2a8c53919217529",
+      "bytes": 40904,
+      "source": "https://deb.debian.org/debian/pool/main/libx/libxcursor/libxcursor1_1.2.1-1_amd64.deb",
+      "metadata": "metadata/libxcursor1_1.2.1-1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libxft2_2.3.6-1_amd64.deb",
+      "sha256": "cedaedf108a8c18e9d9ae8d773801db7c7f9a70b50ecd7723c607d549dacccee",
+      "bytes": 61784,
+      "source": "https://deb.debian.org/debian/pool/main/x/xft/libxft2_2.3.6-1_amd64.deb",
+      "metadata": "metadata/libxft2_2.3.6-1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libxinerama1_1.1.4-3_amd64.deb",
+      "sha256": "8dde8f74d2fc001f306fb1295a86850145e93191d35c983c7f52eb21b0a7f8cb",
+      "bytes": 17820,
+      "source": "https://deb.debian.org/debian/pool/main/libx/libxinerama/libxinerama1_1.1.4-3_amd64.deb",
+      "metadata": "metadata/libxinerama1_1.1.4-3_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libfltk1.3_1.3.8-5_amd64.deb",
+      "sha256": "703f71611b4a81e87453e1d82135c2428005734f1a4f9d4735176dff67d2a652",
+      "bytes": 569340,
+      "source": "https://deb.debian.org/debian/pool/main/f/fltk1.3/libfltk1.3_1.3.8-5_amd64.deb",
+      "metadata": "metadata/libfltk1.3_1.3.8-5_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libglvnd0_1.6.0-1_amd64.deb",
+      "sha256": "b6da5b153dd62d8b5e5fbe25242db1fc05c068707c365db49abda8c2427c75f8",
+      "bytes": 51820,
+      "source": "https://deb.debian.org/debian/pool/main/libg/libglvnd/libglvnd0_1.6.0-1_amd64.deb",
+      "metadata": "metadata/libglvnd0_1.6.0-1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libxcb-glx0_1.15-1_amd64.deb",
+      "sha256": "1bce55fc292d93fa5f7fa50f84cef99ec29be70d0ffe98e86b8008e59f4a34fa",
+      "bytes": 122392,
+      "source": "https://deb.debian.org/debian/pool/main/libx/libxcb/libxcb-glx0_1.15-1_amd64.deb",
+      "metadata": "metadata/libxcb-glx0_1.15-1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libxxf86vm1_1.1.4-1+b2_amd64.deb",
+      "sha256": "6f4ca916aaec26d7000fa7f58de3f71119309ab7590ce1f517abfe1825a676c7",
+      "bytes": 20820,
+      "source": "https://deb.debian.org/debian/pool/main/libx/libxxf86vm/libxxf86vm1_1.1.4-1+b2_amd64.deb",
+      "metadata": "metadata/libxxf86vm1_1.1.4-1+b2_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libz3-4_4.8.12-3.1_amd64.deb",
+      "sha256": "6221ca25ad5abcfbe1965801029d85a88b4775320384b4b716de8fab7a4d2f7a",
+      "bytes": 7216172,
+      "source": "https://deb.debian.org/debian/pool/main/z/z3/libz3-4_4.8.12-3.1_amd64.deb",
+      "metadata": "metadata/libz3-4_4.8.12-3.1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libllvm15_15.0.6-4+b1_amd64.deb",
+      "sha256": "9f0751109ba89e65b1313a4f3e34a29977a0db6fa30ed475e2c6bd555fa9e866",
+      "bytes": 23115156,
+      "source": "https://deb.debian.org/debian/pool/main/l/llvm-toolchain-15/libllvm15_15.0.6-4+b1_amd64.deb",
+      "metadata": "metadata/libllvm15_15.0.6-4+b1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libsensors-config_3.6.0-7.1_all.deb",
+      "sha256": "7f3c9fbd822858a9e30335e4a7f66c9468962eb26cd375b93bc8b789660bf02f",
+      "bytes": 14252,
+      "source": "https://deb.debian.org/debian/pool/main/l/lm-sensors/libsensors-config_3.6.0-7.1_all.deb",
+      "metadata": "metadata/libsensors-config_3.6.0-7.1_all.deb.metadata"
+    },
+    {
+      "file": "assets/libsensors5_3.6.0-7.1_amd64.deb",
+      "sha256": "b7eb91dce728fbb9203aec8b22637303b29821c3384e5f78a8ff348b4e44efe3",
+      "bytes": 34160,
+      "source": "https://deb.debian.org/debian/pool/main/l/lm-sensors/libsensors5_3.6.0-7.1_amd64.deb",
+      "metadata": "metadata/libsensors5_3.6.0-7.1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libgl1-mesa-dri_22.3.6-1+deb12u2_amd64.deb",
+      "sha256": "350e4263aaacd521f6f757951262b57c003930edaf0419508f2c5675317577fe",
+      "bytes": 7239704,
+      "source": "https://deb.debian.org/debian/pool/main/m/mesa/libgl1-mesa-dri_22.3.6-1+deb12u2_amd64.deb",
+      "metadata": "metadata/libgl1-mesa-dri_22.3.6-1+deb12u2_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libglx-mesa0_22.3.6-1+deb12u2_amd64.deb",
+      "sha256": "88e7ffa61f1a0a86c30736ad7657ab4774c9b711bbaff76cef0bd32ffb85ec90",
+      "bytes": 147676,
+      "source": "https://deb.debian.org/debian/pool/main/m/mesa/libglx-mesa0_22.3.6-1+deb12u2_amd64.deb",
+      "metadata": "metadata/libglx-mesa0_22.3.6-1+deb12u2_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libglx0_1.6.0-1_amd64.deb",
+      "sha256": "95f568df73dedf43ae66834a75502112e0d4f3ad7124f3dbfa790b739383b896",
+      "bytes": 34384,
+      "source": "https://deb.debian.org/debian/pool/main/libg/libglvnd/libglx0_1.6.0-1_amd64.deb",
+      "metadata": "metadata/libglx0_1.6.0-1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libgl1_1.6.0-1_amd64.deb",
+      "sha256": "6f89b1702c48e9a2437bb3c1ffac8e1ab2d828fc28b3d14b2eecd4cc19b2c790",
+      "bytes": 88448,
+      "source": "https://deb.debian.org/debian/pool/main/libg/libglvnd/libgl1_1.6.0-1_amd64.deb",
+      "metadata": "metadata/libgl1_1.6.0-1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libfltk-gl1.3_1.3.8-5_amd64.deb",
+      "sha256": "842762c82511d19e1cbd8010626afd3b3396c56a27ad583909145aecde69f4ea",
+      "bytes": 79112,
+      "source": "https://deb.debian.org/debian/pool/main/f/fltk1.3/libfltk-gl1.3_1.3.8-5_amd64.deb",
+      "metadata": "metadata/libfltk-gl1.3_1.3.8-5_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libgl2ps1.4_1.4.2+dfsg1-2_amd64.deb",
+      "sha256": "e92c67bdf9373b3315ef101119cf7ef96ac5ae4ffa9b9c2445686f1af1425260",
+      "bytes": 41288,
+      "source": "https://deb.debian.org/debian/pool/main/g/gl2ps/libgl2ps1.4_1.4.2+dfsg1-2_amd64.deb",
+      "metadata": "metadata/libgl2ps1.4_1.4.2+dfsg1-2_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libglpk40_5.0-1_amd64.deb",
+      "sha256": "d7f1442229f58a2634f1d993b533778e09230827c7fdc8ab1f3006171cfb9631",
+      "bytes": 400284,
+      "source": "https://deb.debian.org/debian/pool/main/g/glpk/libglpk40_5.0-1_amd64.deb",
+      "metadata": "metadata/libglpk40_5.0-1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libopengl0_1.6.0-1_amd64.deb",
+      "sha256": "dc71cb5aaddeb8b09b3d63b8426fd651d8c79ad55b23dbe640c1abbc94c85013",
+      "bytes": 30644,
+      "source": "https://deb.debian.org/debian/pool/main/libg/libglvnd/libopengl0_1.6.0-1_amd64.deb",
+      "metadata": "metadata/libopengl0_1.6.0-1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libglu1-mesa_9.0.2-1.1_amd64.deb",
+      "sha256": "8f81a5fd51c1c35719757f05968b205b0c93ecc80c091781d8bfb5326eb95142",
+      "bytes": 178084,
+      "source": "https://deb.debian.org/debian/pool/main/libg/libglu/libglu1-mesa_9.0.2-1.1_amd64.deb",
+      "metadata": "metadata/libglu1-mesa_9.0.2-1.1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libhwy1_1.0.3-3+deb12u1_amd64.deb",
+      "sha256": "58db3098074f192d32784cf2d070f82d4e26b10d54bc723830a6b9a43be5013b",
+      "bytes": 347628,
+      "source": "https://deb.debian.org/debian/pool/main/h/highway/libhwy1_1.0.3-3+deb12u1_amd64.deb",
+      "metadata": "metadata/libhwy1_1.0.3-3+deb12u1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libjxl0.7_0.7.0-10+deb12u1_amd64.deb",
+      "sha256": "19e747c8b509af924d5d2b1602e9eb68ff60a93576e07e0dfd55ca1f857fdf65",
+      "bytes": 1045736,
+      "source": "https://deb.debian.org/debian/pool/main/j/jpeg-xl/libjxl0.7_0.7.0-10+deb12u1_amd64.deb",
+      "metadata": "metadata/libjxl0.7_0.7.0-10+deb12u1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libgraphicsmagick-q16-3_1.4+really1.3.40-4+deb12u1_amd64.deb",
+      "sha256": "e032e865a709ba06aa2343c584f2df246357696ff24233f8e6e50c6603d515b1",
+      "bytes": 1180096,
+      "source": "https://deb.debian.org/debian/pool/main/g/graphicsmagick/libgraphicsmagick-q16-3_1.4+really1.3.40-4+deb12u1_amd64.deb",
+      "metadata": "metadata/libgraphicsmagick-q16-3_1.4+really1.3.40-4+deb12u1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libgraphicsmagick++-q16-12_1.4+really1.3.40-4+deb12u1_amd64.deb",
+      "sha256": "80fa067607c95ac293792d0fafdc9129db2561abf77af0847c0fa5cf4824ba46",
+      "bytes": 115160,
+      "source": "https://deb.debian.org/debian/pool/main/g/graphicsmagick/libgraphicsmagick++-q16-12_1.4+really1.3.40-4+deb12u1_amd64.deb",
+      "metadata": "metadata/libgraphicsmagick++-q16-12_1.4+really1.3.40-4+deb12u1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libgudev-1.0-0_237-2_amd64.deb",
+      "sha256": "9fc37e3420d2704119bd1989d2f93d84321f1f678a3634e86bc857becd55983a",
+      "bytes": 15064,
+      "source": "https://deb.debian.org/debian/pool/main/libg/libgudev/libgudev-1.0-0_237-2_amd64.deb",
+      "metadata": "metadata/libgudev-1.0-0_237-2_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libsz2_1.0.6-1+b1_amd64.deb",
+      "sha256": "a8513083422773f2862cff32e43feb4b2133b4aaad6f9633ba31eb34530580a9",
+      "bytes": 7804,
+      "source": "https://deb.debian.org/debian/pool/main/liba/libaec/libsz2_1.0.6-1+b1_amd64.deb",
+      "metadata": "metadata/libsz2_1.0.6-1+b1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libhdf5-103-1_1.10.8+repack1-1_amd64.deb",
+      "sha256": "25d7c1c734f054b8f3f94f2d4e12484462b058ebc81ced239d2abe97a301ab23",
+      "bytes": 1236980,
+      "source": "https://deb.debian.org/debian/pool/main/h/hdf5/libhdf5-103-1_1.10.8+repack1-1_amd64.deb",
+      "metadata": "metadata/libhdf5-103-1_1.10.8+repack1-1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libhdf5-openmpi-103-1_1.10.8+repack1-1_amd64.deb",
+      "sha256": "eeb081c92be264afc96416b991b0a9d1c8d50b2d97d0367d3c1c185c74cabd97",
+      "bytes": 1278896,
+      "source": "https://deb.debian.org/debian/pool/main/h/hdf5/libhdf5-openmpi-103-1_1.10.8+repack1-1_amd64.deb",
+      "metadata": "metadata/libhdf5-openmpi-103-1_1.10.8+repack1-1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libptscotch-7.0_7.0.3-2_amd64.deb",
+      "sha256": "40928a90d9a731da23800c6ca1b5f4835fd495d7e314772e1de3e10d4671f3d1",
+      "bytes": 668496,
+      "source": "https://deb.debian.org/debian/pool/main/s/scotch/libptscotch-7.0_7.0.3-2_amd64.deb",
+      "metadata": "metadata/libptscotch-7.0_7.0.3-2_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libsuperlu-dist8_8.1.2+dfsg1-1+b1_amd64.deb",
+      "sha256": "272b144a0a57037e0f763c7f8df0b58f3dbee3d750bbc260282c0261ccaa1746",
+      "bytes": 594912,
+      "source": "https://deb.debian.org/debian/pool/main/s/superlu-dist/libsuperlu-dist8_8.1.2+dfsg1-1+b1_amd64.deb",
+      "metadata": "metadata/libsuperlu-dist8_8.1.2+dfsg1-1+b1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libhypre-2.26.0_2.26.0-3_amd64.deb",
+      "sha256": "d78454e1a396f87de84670a225e34c6e3082ec196af627409447de1924343a3b",
+      "bytes": 1603036,
+      "source": "https://deb.debian.org/debian/pool/main/h/hypre/libhypre-2.26.0_2.26.0-3_amd64.deb",
+      "metadata": "metadata/libhypre-2.26.0_2.26.0-3_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libwacom-common_2.6.0-1_all.deb",
+      "sha256": "f8f59c10cdcf775bbe9a3fb96eb373822139f8e91660d8ee2deb432c5ae2337c",
+      "bytes": 58372,
+      "source": "https://deb.debian.org/debian/pool/main/libw/libwacom/libwacom-common_2.6.0-1_all.deb",
+      "metadata": "metadata/libwacom-common_2.6.0-1_all.deb.metadata"
+    },
+    {
+      "file": "assets/libwacom9_2.6.0-1_amd64.deb",
+      "sha256": "397cd75859da00f367db1fbb2f3d62746d852a1f8dd626ede49dea5e2ee4d916",
+      "bytes": 21492,
+      "source": "https://deb.debian.org/debian/pool/main/libw/libwacom/libwacom9_2.6.0-1_amd64.deb",
+      "metadata": "metadata/libwacom9_2.6.0-1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libinput-bin_1.22.1-1+deb12u1_amd64.deb",
+      "sha256": "b45d9aff353f2043757115aab8285a88608954946f0c91a185bd4c391b2999aa",
+      "bytes": 23564,
+      "source": "https://deb.debian.org/debian/pool/main/libi/libinput/libinput-bin_1.22.1-1+deb12u1_amd64.deb",
+      "metadata": "metadata/libinput-bin_1.22.1-1+deb12u1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libmtdev1_1.1.6-1_amd64.deb",
+      "sha256": "176590c0ce393dd492ecb5e21ed338f629e5f38074341860086dbf3315af514d",
+      "bytes": 22976,
+      "source": "https://deb.debian.org/debian/pool/main/m/mtdev/libmtdev1_1.1.6-1_amd64.deb",
+      "metadata": "metadata/libmtdev1_1.1.6-1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libinput10_1.22.1-1+deb12u1_amd64.deb",
+      "sha256": "7fa8af55ae83adfc115d080594dcc8b6de14c19c5d69b8d54f983047a201c698",
+      "bytes": 125120,
+      "source": "https://deb.debian.org/debian/pool/main/libi/libinput/libinput10_1.22.1-1+deb12u1_amd64.deb",
+      "metadata": "metadata/libinput10_1.22.1-1+deb12u1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libopus0_1.3.1-3_amd64.deb",
+      "sha256": "c172e212f9039e741916aa8e12f3670d1e049dc0c16685325641288c2d83faa7",
+      "bytes": 195192,
+      "source": "https://deb.debian.org/debian/pool/main/o/opus/libopus0_1.3.1-3_amd64.deb",
+      "metadata": "metadata/libopus0_1.3.1-3_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libsamplerate0_0.2.2-3_amd64.deb",
+      "sha256": "72fe6d068ea3107115576d678a8b4f064ff736f1659777666ff056609c310fa2",
+      "bytes": 952104,
+      "source": "https://deb.debian.org/debian/pool/main/libs/libsamplerate/libsamplerate0_0.2.2-3_amd64.deb",
+      "metadata": "metadata/libsamplerate0_0.2.2-3_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libjack-jackd2-0_1.9.21~dfsg-3_amd64.deb",
+      "sha256": "1502e202d207aeb52a36ca8bc098d4bae3b8724c78db7de52d3d905f5959b997",
+      "bytes": 281492,
+      "source": "https://deb.debian.org/debian/pool/main/j/jackd2/libjack-jackd2-0_1.9.21~dfsg-3_amd64.deb",
+      "metadata": "metadata/libjack-jackd2-0_1.9.21~dfsg-3_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libklu1_5.12.0+dfsg-2_amd64.deb",
+      "sha256": "a47c0f72f534800de61a088a8ddaa87b77de4a11ba8e1aa71d1c2732450b189d",
+      "bytes": 87860,
+      "source": "https://deb.debian.org/debian/pool/main/s/suitesparse/libklu1_5.12.0+dfsg-2_amd64.deb",
+      "metadata": "metadata/libklu1_5.12.0+dfsg-2_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libmd4c0_0.4.8-1_amd64.deb",
+      "sha256": "ac234f1f12bec2ce96df7cc9bbd25f84426cb0c6b76cdf04afe165e9f820b4f4",
+      "bytes": 44248,
+      "source": "https://deb.debian.org/debian/pool/main/m/md4c/libmd4c0_0.4.8-1_amd64.deb",
+      "metadata": "metadata/libmd4c0_0.4.8-1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libmp3lame0_3.100-6_amd64.deb",
+      "sha256": "b1292c749172e7623547ecf684da57d3ec6ca22109f08b11bbb9e6be6e6beb95",
+      "bytes": 364932,
+      "source": "https://deb.debian.org/debian/pool/main/l/lame/libmp3lame0_3.100-6_amd64.deb",
+      "metadata": "metadata/libmp3lame0_3.100-6_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libmpg123-0_1.31.2-1+deb12u1_amd64.deb",
+      "sha256": "a10ad0d59995b859797a5f20d2833672051d0b2c7dab4c71f2e79258b2e3f631",
+      "bytes": 146980,
+      "source": "https://deb.debian.org/debian/pool/main/m/mpg123/libmpg123-0_1.31.2-1+deb12u1_amd64.deb",
+      "metadata": "metadata/libmpg123-0_1.31.2-1+deb12u1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/openmpi-common_4.1.4-3_all.deb",
+      "sha256": "42c66fbf7746b44abfe1f4ff74c00bc272ad947ad65214b8610361695f8f7262",
+      "bytes": 166928,
+      "source": "https://deb.debian.org/debian/pool/main/o/openmpi/openmpi-common_4.1.4-3_all.deb",
+      "metadata": "metadata/openmpi-common_4.1.4-3_all.deb.metadata"
+    },
+    {
+      "file": "assets/openmpi-bin_4.1.4-3+b1_amd64.deb",
+      "sha256": "555300f03e3c3b02d13dc1c44ece592728b790b71a0d138ebe695d4e267bf8bb",
+      "bytes": 226072,
+      "source": "https://deb.debian.org/debian/pool/main/o/openmpi/openmpi-bin_4.1.4-3+b1_amd64.deb",
+      "metadata": "metadata/openmpi-bin_4.1.4-3+b1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/mpi-default-bin_1.14_amd64.deb",
+      "sha256": "20782b98400cafbb24d7ca848cc8a0f7fce561cda86d9538a2371310489bb99d",
+      "bytes": 4752,
+      "source": "https://deb.debian.org/debian/pool/main/m/mpi-defaults/mpi-default-bin_1.14_amd64.deb",
+      "metadata": "metadata/mpi-default-bin_1.14_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libscalapack-openmpi2.2_2.2.1-2+b1_amd64.deb",
+      "sha256": "659dbac6aa63a828893ac318b06f9cd846260fb2b1d60f66639939c3bc568c19",
+      "bytes": 1554300,
+      "source": "https://deb.debian.org/debian/pool/main/s/scalapack/libscalapack-openmpi2.2_2.2.1-2+b1_amd64.deb",
+      "metadata": "metadata/libscalapack-openmpi2.2_2.2.1-2+b1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libmumps-5.5_5.5.1-1_amd64.deb",
+      "sha256": "d62a83f22ff55bb5e7648f2ea01fbd7c37ae19510bbadc854fed7347e8cf4a0b",
+      "bytes": 1828352,
+      "source": "https://deb.debian.org/debian/pool/main/m/mumps/libmumps-5.5_5.5.1-1_amd64.deb",
+      "metadata": "metadata/libmumps-5.5_5.5.1-1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libpcre3_8.39-15_amd64.deb",
+      "sha256": "993ea623ce5b42d67f653f2faaa7ef15e7c9d72bfcb93e22a1eaff7aa3532303",
+      "bytes": 340864,
+      "source": "https://deb.debian.org/debian/pool/main/p/pcre3/libpcre3_8.39-15_amd64.deb",
+      "metadata": "metadata/libpcre3_8.39-15_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libspqr2_5.12.0+dfsg-2_amd64.deb",
+      "sha256": "1de1de751a5f760073aab29bbd2c8a6f1c626d9d1f6b6b48071b6aa03833e508",
+      "bytes": 82240,
+      "source": "https://deb.debian.org/debian/pool/main/s/suitesparse/libspqr2_5.12.0+dfsg-2_amd64.deb",
+      "metadata": "metadata/libspqr2_5.12.0+dfsg-2_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libsuperlu5_5.3.0+dfsg1-2+b1_amd64.deb",
+      "sha256": "01d98cfa0cee738b4d0fd36d3c2af08005b14a2768db56f3b007aca2e2657b13",
+      "bytes": 169604,
+      "source": "https://deb.debian.org/debian/pool/main/s/superlu/libsuperlu5_5.3.0+dfsg1-2+b1_amd64.deb",
+      "metadata": "metadata/libsuperlu5_5.3.0+dfsg1-2+b1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libscotch-7.0_7.0.3-2_amd64.deb",
+      "sha256": "f5c79cce66420b60859f170df61f58d59ae0355112d948b2443048247b65eb11",
+      "bytes": 407016,
+      "source": "https://deb.debian.org/debian/pool/main/s/scotch/libscotch-7.0_7.0.3-2_amd64.deb",
+      "metadata": "metadata/libscotch-7.0_7.0.3-2_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libtrilinos-kokkos-13.2_13.2.0-4_amd64.deb",
+      "sha256": "6e0d65e32930188e2b878b8bc42221f3b736e6d44827d9dd8fc7c24674f4b8b5",
+      "bytes": 104728,
+      "source": "https://deb.debian.org/debian/pool/main/t/trilinos/libtrilinos-kokkos-13.2_13.2.0-4_amd64.deb",
+      "metadata": "metadata/libtrilinos-kokkos-13.2_13.2.0-4_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libtrilinos-teuchos-13.2_13.2.0-4_amd64.deb",
+      "sha256": "e758d6e02ff281f253c45323ddaba77c965c3fbcd8c88288224fb659f64cd720",
+      "bytes": 1256900,
+      "source": "https://deb.debian.org/debian/pool/main/t/trilinos/libtrilinos-teuchos-13.2_13.2.0-4_amd64.deb",
+      "metadata": "metadata/libtrilinos-teuchos-13.2_13.2.0-4_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libtrilinos-epetra-13.2_13.2.0-4_amd64.deb",
+      "sha256": "90cb539586b1371e5d91b3ae2f294d215bdde6ec0da32fbb7d64bc5728e89a5e",
+      "bytes": 440940,
+      "source": "https://deb.debian.org/debian/pool/main/t/trilinos/libtrilinos-epetra-13.2_13.2.0-4_amd64.deb",
+      "metadata": "metadata/libtrilinos-epetra-13.2_13.2.0-4_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libtrilinos-triutils-13.2_13.2.0-4_amd64.deb",
+      "sha256": "d2a10165ce114c44d27d90ab25d2bef78d427caad31bd452e99b1200b4e9f01c",
+      "bytes": 123724,
+      "source": "https://deb.debian.org/debian/pool/main/t/trilinos/libtrilinos-triutils-13.2_13.2.0-4_amd64.deb",
+      "metadata": "metadata/libtrilinos-triutils-13.2_13.2.0-4_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libtrilinos-epetraext-13.2_13.2.0-4_amd64.deb",
+      "sha256": "3585a4d46135c8c4d40c987eb690ec37de1400f8f07c58bc2eaad2c1dc6ab211",
+      "bytes": 442872,
+      "source": "https://deb.debian.org/debian/pool/main/t/trilinos/libtrilinos-epetraext-13.2_13.2.0-4_amd64.deb",
+      "metadata": "metadata/libtrilinos-epetraext-13.2_13.2.0-4_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libtrilinos-trilinosss-13.2_13.2.0-4_amd64.deb",
+      "sha256": "64d9d5b99e8ea2b1ddba058be2118dae2567f4f0e71f7f68dcd389219e8d8188",
+      "bytes": 88132,
+      "source": "https://deb.debian.org/debian/pool/main/t/trilinos/libtrilinos-trilinosss-13.2_13.2.0-4_amd64.deb",
+      "metadata": "metadata/libtrilinos-trilinosss-13.2_13.2.0-4_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libtrilinos-amesos-13.2_13.2.0-4_amd64.deb",
+      "sha256": "e277e313cea9798bf60503570d431938c6873d703a6078c33abdad25fec4ccbe",
+      "bytes": 117420,
+      "source": "https://deb.debian.org/debian/pool/main/t/trilinos/libtrilinos-amesos-13.2_13.2.0-4_amd64.deb",
+      "metadata": "metadata/libtrilinos-amesos-13.2_13.2.0-4_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libtrilinos-aztecoo-13.2_13.2.0-4_amd64.deb",
+      "sha256": "664c7bbff0392cc8db6333f31cb29bbac97dc76c458252a6e24c3a0061c03d4f",
+      "bytes": 209692,
+      "source": "https://deb.debian.org/debian/pool/main/t/trilinos/libtrilinos-aztecoo-13.2_13.2.0-4_amd64.deb",
+      "metadata": "metadata/libtrilinos-aztecoo-13.2_13.2.0-4_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libtrilinos-galeri-13.2_13.2.0-4_amd64.deb",
+      "sha256": "09c666910a0b9f4bc4cefd35f66bef071b13a1f7d90e2f0a12c89f8378599ec1",
+      "bytes": 93496,
+      "source": "https://deb.debian.org/debian/pool/main/t/trilinos/libtrilinos-galeri-13.2_13.2.0-4_amd64.deb",
+      "metadata": "metadata/libtrilinos-galeri-13.2_13.2.0-4_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libtrilinos-ifpack-13.2_13.2.0-4_amd64.deb",
+      "sha256": "95016b457c6494ca77c0f84c49b2812d1471d4c64e8be2c8a48ef219f01a161b",
+      "bytes": 486480,
+      "source": "https://deb.debian.org/debian/pool/main/t/trilinos/libtrilinos-ifpack-13.2_13.2.0-4_amd64.deb",
+      "metadata": "metadata/libtrilinos-ifpack-13.2_13.2.0-4_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libtrilinos-zoltan-13.2_13.2.0-4_amd64.deb",
+      "sha256": "b3fc9b08853e7d02b6838df5b81b767deaf635bd21a4f8ff87abcb8d71415662",
+      "bytes": 383688,
+      "source": "https://deb.debian.org/debian/pool/main/t/trilinos/libtrilinos-zoltan-13.2_13.2.0-4_amd64.deb",
+      "metadata": "metadata/libtrilinos-zoltan-13.2_13.2.0-4_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libtrilinos-ml-13.2_13.2.0-4_amd64.deb",
+      "sha256": "f47a4e3684a58a028b6175226fbb22594296afcdcf69acd7d8ad73de63136796",
+      "bytes": 987920,
+      "source": "https://deb.debian.org/debian/pool/main/t/trilinos/libtrilinos-ml-13.2_13.2.0-4_amd64.deb",
+      "metadata": "metadata/libtrilinos-ml-13.2_13.2.0-4_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libumfpack5_5.12.0+dfsg-2_amd64.deb",
+      "sha256": "a90c00c1c6271e67027614d799214176157863d0992b4409af703135e15c04b3",
+      "bytes": 244748,
+      "source": "https://deb.debian.org/debian/pool/main/s/suitesparse/libumfpack5_5.12.0+dfsg-2_amd64.deb",
+      "metadata": "metadata/libumfpack5_5.12.0+dfsg-2_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libpetsc-real3.18_3.18.5+dfsg1-1_amd64.deb",
+      "sha256": "7a04c23cf3709a9df7bfc07f7b644c9395949e22f937a683fdb7d8484b802caa",
+      "bytes": 6699032,
+      "source": "https://deb.debian.org/debian/pool/main/p/petsc/libpetsc-real3.18_3.18.5+dfsg1-1_amd64.deb",
+      "metadata": "metadata/libpetsc-real3.18_3.18.5+dfsg1-1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libportaudio2_19.6.0-1.2_amd64.deb",
+      "sha256": "310c0bbecf75fc7a12f3b4d22d8d51df128ed55412824d0c5c5d6145b35487ec",
+      "bytes": 66728,
+      "source": "https://deb.debian.org/debian/pool/main/p/portaudio19/libportaudio2_19.6.0-1.2_amd64.deb",
+      "metadata": "metadata/libportaudio2_19.6.0-1.2_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libqhull-r8.0_2020.2-5_amd64.deb",
+      "sha256": "230f779769a141bb9d94b7a8e3f971dabbb11e71e6e47c73bb5f9b559d11a1d8",
+      "bytes": 248100,
+      "source": "https://deb.debian.org/debian/pool/main/q/qhull/libqhull-r8.0_2020.2-5_amd64.deb",
+      "metadata": "metadata/libqhull-r8.0_2020.2-5_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libqrupdate1_1.1.2-4_amd64.deb",
+      "sha256": "9387d2b2ef209fe84e4258fea3063b489c99ca6f24e2f3b6dbec7d2a622fe55e",
+      "bytes": 37756,
+      "source": "https://deb.debian.org/debian/pool/main/q/qrupdate/libqrupdate1_1.1.2-4_amd64.deb",
+      "metadata": "metadata/libqrupdate1_1.1.2-4_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libqscintilla2-qt5-l10n_2.13.3+dfsg-3_all.deb",
+      "sha256": "d65d29698d9cab2acc4b422c17187b5362243420ff3a2998008ba824a820706d",
+      "bytes": 102764,
+      "source": "https://deb.debian.org/debian/pool/main/q/qscintilla2/libqscintilla2-qt5-l10n_2.13.3+dfsg-3_all.deb",
+      "metadata": "metadata/libqscintilla2-qt5-l10n_2.13.3+dfsg-3_all.deb.metadata"
+    },
+    {
+      "file": "assets/libqt5core5a_5.15.8+dfsg-11+deb12u3_amd64.deb",
+      "sha256": "47e82f69aa0724f33d0873294d66664ef13fe09c0bffb0a1d84f2ad3e2dab58e",
+      "bytes": 1809748,
+      "source": "https://deb.debian.org/debian/pool/main/q/qtbase-opensource-src/libqt5core5a_5.15.8+dfsg-11+deb12u3_amd64.deb",
+      "metadata": "metadata/libqt5core5a_5.15.8+dfsg-11+deb12u3_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libegl1_1.6.0-1_amd64.deb",
+      "sha256": "fe4d8b39f6e6fe1a32ab1efd85893553eaa9cf3866aa668ccf355f585b37d523",
+      "bytes": 33652,
+      "source": "https://deb.debian.org/debian/pool/main/libg/libglvnd/libegl1_1.6.0-1_amd64.deb",
+      "metadata": "metadata/libegl1_1.6.0-1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libqt5dbus5_5.15.8+dfsg-11+deb12u3_amd64.deb",
+      "sha256": "1e3499746c85ed916c3374e273a2bc71274d42406360f865cbf92cfd714314f6",
+      "bytes": 211844,
+      "source": "https://deb.debian.org/debian/pool/main/q/qtbase-opensource-src/libqt5dbus5_5.15.8+dfsg-11+deb12u3_amd64.deb",
+      "metadata": "metadata/libqt5dbus5_5.15.8+dfsg-11+deb12u3_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libqt5network5_5.15.8+dfsg-11+deb12u3_amd64.deb",
+      "sha256": "6a27a617c0aca0bd9f49237594a7939910e78aaa223611ffd8e25fdc56a319a8",
+      "bytes": 675044,
+      "source": "https://deb.debian.org/debian/pool/main/q/qtbase-opensource-src/libqt5network5_5.15.8+dfsg-11+deb12u3_amd64.deb",
+      "metadata": "metadata/libqt5network5_5.15.8+dfsg-11+deb12u3_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libxcb-icccm4_0.4.1-1.1_amd64.deb",
+      "sha256": "f323194cb04cd4e5ae064fafec39db6dcf8a431cbd65a0bc53fa6c359862d8ff",
+      "bytes": 27436,
+      "source": "https://deb.debian.org/debian/pool/main/x/xcb-util-wm/libxcb-icccm4_0.4.1-1.1_amd64.deb",
+      "metadata": "metadata/libxcb-icccm4_0.4.1-1.1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libxcb-util1_0.4.0-1+b1_amd64.deb",
+      "sha256": "4c48af51fb2ac1be0490067e7450aeda27bf6c6c395165de02199eee4835336f",
+      "bytes": 23248,
+      "source": "https://deb.debian.org/debian/pool/main/x/xcb-util/libxcb-util1_0.4.0-1+b1_amd64.deb",
+      "metadata": "metadata/libxcb-util1_0.4.0-1+b1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libxcb-image0_0.4.0-2_amd64.deb",
+      "sha256": "a475522faef7672ca065fdcd2594bc755bfcc4d819909f9d944e8c002b4460d1",
+      "bytes": 22944,
+      "source": "https://deb.debian.org/debian/pool/main/x/xcb-util-image/libxcb-image0_0.4.0-2_amd64.deb",
+      "metadata": "metadata/libxcb-image0_0.4.0-2_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libxcb-keysyms1_0.4.0-1+b2_amd64.deb",
+      "sha256": "aed1436db9a3e63b10d00c4ed16248b5c82b5dd2963a83a761f406af65eb4b49",
+      "bytes": 16416,
+      "source": "https://deb.debian.org/debian/pool/main/x/xcb-util-keysyms/libxcb-keysyms1_0.4.0-1+b2_amd64.deb",
+      "metadata": "metadata/libxcb-keysyms1_0.4.0-1+b2_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libxcb-render-util0_0.3.9-1+b1_amd64.deb",
+      "sha256": "be4b38a63e65c84e2f1322f044d05a9baa677e0f3dc68b742a0a109a3ff40ae9",
+      "bytes": 18252,
+      "source": "https://deb.debian.org/debian/pool/main/x/xcb-util-renderutil/libxcb-render-util0_0.3.9-1+b1_amd64.deb",
+      "metadata": "metadata/libxcb-render-util0_0.3.9-1+b1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libxcb-shape0_1.15-1_amd64.deb",
+      "sha256": "e0d0e31db4d72e2f7246d40edc6bd75e0249ae3138839e60a268db7da40a6ae2",
+      "bytes": 105768,
+      "source": "https://deb.debian.org/debian/pool/main/libx/libxcb/libxcb-shape0_1.15-1_amd64.deb",
+      "metadata": "metadata/libxcb-shape0_1.15-1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libxcb-xinerama0_1.15-1_amd64.deb",
+      "sha256": "2932300acae42ebc22e026e1abf0c8926621dae5a6b7a3eb400aace88b4ec22c",
+      "bytes": 105100,
+      "source": "https://deb.debian.org/debian/pool/main/libx/libxcb/libxcb-xinerama0_1.15-1_amd64.deb",
+      "metadata": "metadata/libxcb-xinerama0_1.15-1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libxcb-xinput0_1.15-1_amd64.deb",
+      "sha256": "d11dc7b5f9d2addadea1e76d60551d95cc4c73a7eac7cbc0d62360e4e188c0ea",
+      "bytes": 130228,
+      "source": "https://deb.debian.org/debian/pool/main/libx/libxcb/libxcb-xinput0_1.15-1_amd64.deb",
+      "metadata": "metadata/libxcb-xinput0_1.15-1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libxcb-xkb1_1.15-1_amd64.deb",
+      "sha256": "1dc2f0de8576b1855b451a7e2a7163ecb5be08f8384f49655414714b48f6fa1b",
+      "bytes": 128928,
+      "source": "https://deb.debian.org/debian/pool/main/libx/libxcb/libxcb-xkb1_1.15-1_amd64.deb",
+      "metadata": "metadata/libxcb-xkb1_1.15-1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/xkb-data_2.35.1-1_all.deb",
+      "sha256": "28a79c61b785f403da93af58c39aed13c022032935e3e54362c6707169cfe982",
+      "bytes": 763516,
+      "source": "https://deb.debian.org/debian/pool/main/x/xkeyboard-config/xkb-data_2.35.1-1_all.deb",
+      "metadata": "metadata/xkb-data_2.35.1-1_all.deb.metadata"
+    },
+    {
+      "file": "assets/libxkbcommon0_1.5.0-1_amd64.deb",
+      "sha256": "e3fe045b9a33a101de1c5a912a4a10928db055c3f68930f47eccbb44d7c7d54e",
+      "bytes": 106108,
+      "source": "https://deb.debian.org/debian/pool/main/libx/libxkbcommon/libxkbcommon0_1.5.0-1_amd64.deb",
+      "metadata": "metadata/libxkbcommon0_1.5.0-1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libxkbcommon-x11-0_1.5.0-1_amd64.deb",
+      "sha256": "9b34d760f0ca0f125419a6becc6492c489f0371953ef42caad3401199a497ff5",
+      "bytes": 15576,
+      "source": "https://deb.debian.org/debian/pool/main/libx/libxkbcommon/libxkbcommon-x11-0_1.5.0-1_amd64.deb",
+      "metadata": "metadata/libxkbcommon-x11-0_1.5.0-1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libqt5gui5_5.15.8+dfsg-11+deb12u3_amd64.deb",
+      "sha256": "b67011ee1822232564543d94f221584895fc03f536c4394d830ce7c8e0345f0c",
+      "bytes": 3407892,
+      "source": "https://deb.debian.org/debian/pool/main/q/qtbase-opensource-src/libqt5gui5_5.15.8+dfsg-11+deb12u3_amd64.deb",
+      "metadata": "metadata/libqt5gui5_5.15.8+dfsg-11+deb12u3_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libqt5widgets5_5.15.8+dfsg-11+deb12u3_amd64.deb",
+      "sha256": "ea5d73c2935d0bd27d4da43572dabc95af9ffa0538bababd5eeb8f679e9eb335",
+      "bytes": 2379376,
+      "source": "https://deb.debian.org/debian/pool/main/q/qtbase-opensource-src/libqt5widgets5_5.15.8+dfsg-11+deb12u3_amd64.deb",
+      "metadata": "metadata/libqt5widgets5_5.15.8+dfsg-11+deb12u3_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libqt5printsupport5_5.15.8+dfsg-11+deb12u3_amd64.deb",
+      "sha256": "65e1fcdc0586775f13c0117f6b20a9090c2078eef0497d54b5f0f181fea7706b",
+      "bytes": 202100,
+      "source": "https://deb.debian.org/debian/pool/main/q/qtbase-opensource-src/libqt5printsupport5_5.15.8+dfsg-11+deb12u3_amd64.deb",
+      "metadata": "metadata/libqt5printsupport5_5.15.8+dfsg-11+deb12u3_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libqscintilla2-qt5-15_2.13.3+dfsg-3_amd64.deb",
+      "sha256": "9ffca712d391436f683164388d5cde21e75d4f704653cd4a20b76e6276c99787",
+      "bytes": 1094120,
+      "source": "https://deb.debian.org/debian/pool/main/q/qscintilla2/libqscintilla2-qt5-15_2.13.3+dfsg-3_amd64.deb",
+      "metadata": "metadata/libqscintilla2-qt5-15_2.13.3+dfsg-3_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libqt5sql5_5.15.8+dfsg-11+deb12u3_amd64.deb",
+      "sha256": "ba3011af5b6bf58786af82e37cad9a513098f40aa96eb7c0bac5fa490935c7aa",
+      "bytes": 122164,
+      "source": "https://deb.debian.org/debian/pool/main/q/qtbase-opensource-src/libqt5sql5_5.15.8+dfsg-11+deb12u3_amd64.deb",
+      "metadata": "metadata/libqt5sql5_5.15.8+dfsg-11+deb12u3_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libqt5help5_5.15.8-2_amd64.deb",
+      "sha256": "1fe31a6b85b300e644fdaae02e77c5c8d880c7f6803becc6093ac5a40e6291cb",
+      "bytes": 148524,
+      "source": "https://deb.debian.org/debian/pool/main/q/qttools-opensource-src/libqt5help5_5.15.8-2_amd64.deb",
+      "metadata": "metadata/libqt5help5_5.15.8-2_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libqt5xml5_5.15.8+dfsg-11+deb12u3_amd64.deb",
+      "sha256": "b6860f228ba3f5144cfe7d252a92a7d0c3d52e8f265475e8873858f77c3cf014",
+      "bytes": 121992,
+      "source": "https://deb.debian.org/debian/pool/main/q/qtbase-opensource-src/libqt5xml5_5.15.8+dfsg-11+deb12u3_amd64.deb",
+      "metadata": "metadata/libqt5xml5_5.15.8+dfsg-11+deb12u3_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libvorbis0a_1.3.7-1_amd64.deb",
+      "sha256": "01c14f9d1109650077a4c5c337c285476a6932d4d448f5a190c2b845724dbf21",
+      "bytes": 93028,
+      "source": "https://deb.debian.org/debian/pool/main/libv/libvorbis/libvorbis0a_1.3.7-1_amd64.deb",
+      "metadata": "metadata/libvorbis0a_1.3.7-1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libvorbisenc2_1.3.7-1_amd64.deb",
+      "sha256": "75dd4d6f904c7db82f5112e60d8efea9e81dfedf94e970c5da7af2b3d81643c0",
+      "bytes": 80568,
+      "source": "https://deb.debian.org/debian/pool/main/libv/libvorbis/libvorbisenc2_1.3.7-1_amd64.deb",
+      "metadata": "metadata/libvorbisenc2_1.3.7-1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libsndfile1_1.2.0-1+deb12u1_amd64.deb",
+      "sha256": "02dc3f08fe8476e82e005f412e3b7289ff641180f33a9be8073f4bde61c85e8e",
+      "bytes": 196540,
+      "source": "https://deb.debian.org/debian/pool/main/libs/libsndfile/libsndfile1_1.2.0-1+deb12u1_amd64.deb",
+      "metadata": "metadata/libsndfile1_1.2.0-1+deb12u1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libsundials-ida6_6.4.1+dfsg1-3_amd64.deb",
+      "sha256": "70f9afdc8f174dc8bb2bcd20123db124b75f33f91fbdf1a5de023191e7f474cd",
+      "bytes": 144776,
+      "source": "https://deb.debian.org/debian/pool/main/s/sundials/libsundials-ida6_6.4.1+dfsg1-3_amd64.deb",
+      "metadata": "metadata/libsundials-ida6_6.4.1+dfsg1-3_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libsundials-nvecparallel-petsc6_6.4.1+dfsg1-3_amd64.deb",
+      "sha256": "f3c4dfcbd586a2b4e1f5fa39efe79d1e6e018599a9e299393567ada7336ca977",
+      "bytes": 58296,
+      "source": "https://deb.debian.org/debian/pool/main/s/sundials/libsundials-nvecparallel-petsc6_6.4.1+dfsg1-3_amd64.deb",
+      "metadata": "metadata/libsundials-nvecparallel-petsc6_6.4.1+dfsg1-3_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libsundials-sunmatrix4_6.4.1+dfsg1-3_amd64.deb",
+      "sha256": "6e3b0842d2b2642ae6d697f80436f17697713d7a564c2e3b82d6ee3c571dad67",
+      "bytes": 103128,
+      "source": "https://deb.debian.org/debian/pool/main/s/sundials/libsundials-sunmatrix4_6.4.1+dfsg1-3_amd64.deb",
+      "metadata": "metadata/libsundials-sunmatrix4_6.4.1+dfsg1-3_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libsundials-sunlinsol3_6.4.1+dfsg1-3_amd64.deb",
+      "sha256": "62fe40d04840cef7ba332d61ed1d38bd07f664ed5afc2b57050dcd06319f4f34",
+      "bytes": 201188,
+      "source": "https://deb.debian.org/debian/pool/main/s/sundials/libsundials-sunlinsol3_6.4.1+dfsg1-3_amd64.deb",
+      "metadata": "metadata/libsundials-sunlinsol3_6.4.1+dfsg1-3_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/libtext-unidecode-perl_1.30-3_all.deb",
+      "sha256": "33512c229f1af0e7b45f9e206dda36b579ca8c8d2b53c82970e536da82c53de1",
+      "bytes": 101496,
+      "source": "https://deb.debian.org/debian/pool/main/libt/libtext-unidecode-perl/libtext-unidecode-perl_1.30-3_all.deb",
+      "metadata": "metadata/libtext-unidecode-perl_1.30-3_all.deb.metadata"
+    },
+    {
+      "file": "assets/libxml-namespacesupport-perl_1.12-2_all.deb",
+      "sha256": "64cf8ddd61df9a36f7475dfca4c826ff342dd614a051c0f2cae175cc22cb2e15",
+      "bytes": 15148,
+      "source": "https://deb.debian.org/debian/pool/main/libx/libxml-namespacesupport-perl/libxml-namespacesupport-perl_1.12-2_all.deb",
+      "metadata": "metadata/libxml-namespacesupport-perl_1.12-2_all.deb.metadata"
+    },
+    {
+      "file": "assets/libxml-sax-base-perl_1.09-3_all.deb",
+      "sha256": "70315098e411309edff6682aa02a215441080cccf8d6f023ae17cd83945f3705",
+      "bytes": 20616,
+      "source": "https://deb.debian.org/debian/pool/main/libx/libxml-sax-base-perl/libxml-sax-base-perl_1.09-3_all.deb",
+      "metadata": "metadata/libxml-sax-base-perl_1.09-3_all.deb.metadata"
+    },
+    {
+      "file": "assets/libxml-sax-perl_1.02+dfsg-3_all.deb",
+      "sha256": "3528281efe37b89f4408216d20386b1d09bd05f0249070fd1187d9b171592a6c",
+      "bytes": 59404,
+      "source": "https://deb.debian.org/debian/pool/main/libx/libxml-sax-perl/libxml-sax-perl_1.02+dfsg-3_all.deb",
+      "metadata": "metadata/libxml-sax-perl_1.02+dfsg-3_all.deb.metadata"
+    },
+    {
+      "file": "assets/libxml-libxml-perl_2.0207+dfsg+really+2.0134-1+deb12u1_amd64.deb",
+      "sha256": "f53218587a7691b3e01a84e2b7cd65f90789f50af508e5a7a3b3f65c640f25d2",
+      "bytes": 321760,
+      "source": "https://deb.debian.org/debian/pool/main/libx/libxml-libxml-perl/libxml-libxml-perl_2.0207+dfsg+really+2.0134-1+deb12u1_amd64.deb",
+      "metadata": "metadata/libxml-libxml-perl_2.0207+dfsg+really+2.0134-1+deb12u1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/tex-common_6.18_all.deb",
+      "sha256": "030eb9e841914787ae91d33b24289e5c95029db4ba89d8cb67bb43d29f1513d0",
+      "bytes": 32480,
+      "source": "https://deb.debian.org/debian/pool/main/t/tex-common/tex-common_6.18_all.deb",
+      "metadata": "metadata/tex-common_6.18_all.deb.metadata"
+    },
+    {
+      "file": "assets/texinfo_6.8-6+b1_amd64.deb",
+      "sha256": "e397ec5b52f54db5ad82b1f95e62f2ae85fe2c728f3cf94a8af77bdf57340389",
+      "bytes": 1815916,
+      "source": "https://deb.debian.org/debian/pool/main/t/texinfo/texinfo_6.8-6+b1_amd64.deb",
+      "metadata": "metadata/texinfo_6.8-6+b1_amd64.deb.metadata"
+    },
+    {
+      "file": "assets/octave-common_7.3.0-2_all.deb",
+      "sha256": "4c46f7314b0bc471db63d4733ae4a798e9c2185d790d19862454d976ed071cbb",
+      "bytes": 6256908,
+      "source": "https://deb.debian.org/debian/pool/main/o/octave/octave-common_7.3.0-2_all.deb",
+      "metadata": "metadata/octave-common_7.3.0-2_all.deb.metadata"
+    },
+    {
+      "file": "assets/octave_7.3.0-2_amd64.deb",
+      "sha256": "04a1536a0751ff0edf24850f2cdb0c1a921233cb8421d8479c31c308a369db6c",
+      "bytes": 10249536,
+      "source": "https://deb.debian.org/debian/pool/main/o/octave/octave_7.3.0-2_amd64.deb",
+      "metadata": "metadata/octave_7.3.0-2_amd64.deb.metadata"
+    }
+  ]
+}
