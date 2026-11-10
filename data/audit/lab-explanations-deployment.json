@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-10T03:53:35.910692+00:00",
+  "pass": true,
+  "sourceCommit": "8b32391952235a6a4435e6642cec87102de73a51",
+  "origin": "https://codemuseum.freexlib.com",
+  "ci": {
+    "runId": 42751358841,
+    "url": "https://github.com/glwang-g/code-museum/actions/runs/42751358841",
+    "build": "success",
+    "deploy": "success"
+  },
+  "release": {
+    "files": 631,
+    "bytes": 35648089,
+    "manifestSha256": "6c4453f400a69e801309e710b552aee6aa2a99fc2fc84bed8764f2df18e46e84",
+    "allFilesVerified": true,
+    "matchesExactGitBuild": true
+  },
+  "verification": {
+    "defaultTests": 109,
+    "exactPublicGitTree": "87ea3cb14e59213a66512e1389e406a6da34bed2",
+    "offlineBuildMatchesWorkspace": true,
+    "localChromeChecks": 17,
+    "productionChromeChecks": 17,
+    "museumExplanations": 59,
+    "topicExplanations": 55,
+    "totalExplanations": 114,
+    "widths": [
+      1440,
+      900,
+      680,
+      390
+    ],
+    "themes": [
+      "dark",
+      "light"
+    ],
+    "productionScreenshotsViewed": [
+      "javascript-lines-1440-dark.png",
+      "python-loops-390-light.png",
+      "modified-draft-1440.png"
+    ],
+    "productionBrowserReportSha256": "7cdf47e5887676e764369386c20f22976759bfcaf8a8ec876d3316e64c4932e0"
+  },
+  "executionMetadata": {
+    "complete": true,
+    "remoteRuntimeCount": 56,
+    "maxGuestSessions": 5
+  },
+  "scope": "Ordinary static-site release of authored explanations. Only JavaScript was actually run in browser checks; all 114 examples were matched to displayed pinned code without remote submission. No worker, gateway, image, Nginx or credential upgrade. This is not automatic analysis of edited code or an instruction-by-instruction debugger trace.",
+  "rollback": "Restore current to the preserved f163b277ecd320069b9af3c99342e9e4777ffbd4 static release and restart analytics using the existing activation mechanism; retain live databases, execution workers and Nginx."
+}

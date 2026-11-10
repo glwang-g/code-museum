@@ -1,5 +1,16 @@
 # Code Museum 首版部署
 
+## 2026-11-10 实验台代码讲解发布
+
+功能提交 `8b32391952235a6a4435e6642cec87102de73a51` 已通过 [Actions 42751358841](https://github.com/glwang-g/code-museum/actions/runs/42751358841)构建部署。109项默认测试、精确公共Git树离线复现通过；当前release631文件、35,648,089字节，已逐文件核对，清单SHA-256为 `6c4453f400a69e801309e710b552aee6aa2a99fc2fc84bed8764f2df18e46e84`，与核验构建完全一致。
+
+新增代码讲解覆盖59份馆内默认程序和55份主题程序，固定源码哈希及行范围。桌面代码/讲解/结果三栏，窄屏依次排列；可点行号选择源代码、隐藏讲解。改写后暂停原讲解，恢复相同示例后重新匹配。标准输入默认提示改为“程序要读取的数据，可留空”，讲解中分别说明AWK BEGIN、sed、SQL与XSLT的真实输入用途。说明为固定教材，不自动解释任意新代码，也不冒充调试轨迹或运行结果。
+
+[本地Chrome17项](../data/audit/lab-explanations-browser.json)与[正式Chrome17项](../data/audit/lab-explanations-production.json)均通过，覆盖114份显示匹配、真实JavaScript输出、点击定位不执行、改写暂停及草稿保留、输入说明和1440/900/680/390明暗布局。正式宽窄屏和暂停状态截图已实际核读；手机步骤可滚动到达，定位会带回编辑器。[发布证据](../data/audit/lab-explanations-deployment.json)记录精确范围。该检查没有重复执行全56门远端程序；仅读取确认56门完整可用与五会话规则，未上传远端代码。
+
+这是普通站点发布，没有修改受保护worker/gateway、镜像、凭据或Nginx，也没有直接改写或替换活数据库；正常访问计数照常累积。需要回退时使用既有静态激活机制切回保留的 `f163b277ecd320069b9af3c99342e9e4777ffbd4` 并重启analytics，保留当前执行后端及活数据库。以下为前次发布历史。
+
+
 ## 2026-11-10 免令牌与五会话正式发布完成
 
 功能提交 `f163b277ecd320069b9af3c99342e9e4777ffbd4` 已推送master，[Actions 42649436958](https://github.com/glwang-g/code-museum/actions/runs/42649436958) build/deploy均成功，北京时间00:00:15完成CI发布。正式release现为该提交，624个文件、35,351,457字节；[部署记录](../data/audit/guest-deployment.json)确认发布清单与精确公共Git树离线构建完全一致，所有文件已逐一校验。执行维护规则已解除。
