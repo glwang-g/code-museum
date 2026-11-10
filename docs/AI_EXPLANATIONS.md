@@ -1,8 +1,8 @@
 # 按需代码检查、讲解与纠错
 
-已随 `61c2a11` 正式部署，[Actions 42756298917](https://github.com/glwang-g/code-museum/actions/runs/42756298917)成功。113项默认回归、公开Git离线构建、正式模型讲解Chrome12项和原有讲解Chrome17项通过；部署与回退证据见 [发布记录](../data/audit/ai-explanations-deployment.json)。
+检查与纠错已随 `b6fe3f6` 正式部署，[Actions 42830035894](https://github.com/glwang-g/code-museum/actions/runs/42830035894)成功。115项默认回归、离线构建、本机及正式模型Chrome各15项和原有讲解Chrome17项通过；部署与回退见 [发布记录](../data/audit/ai-code-review-deployment.json)。原按需讲解首次发布证据保存在 [历史记录](../data/audit/ai-explanations-deployment.json)。
 
-本轮升级为“先检查，再讲解或纠错”，本机真实模型/Chrome15项已通过，正式发布待完成。实验台保留馆内固定讲解；点击“检查并讲解当前代码”才向同源 `POST /api/explanations` 提交语言标识、编辑器里的完整代码及可选的“预期行为”。打开页面、编辑代码或预期、导入、恢复草稿、切换语言及显示/隐藏讲解均不调用模型。标准输入、运行结果和其他草稿不随请求发送。模型服务不执行代码，真实运行仍使用原有运行环境。
+实验台保留馆内固定讲解；点击“检查并讲解当前代码”才向同源 `POST /api/explanations` 提交语言标识、编辑器里的完整代码及可选的“预期行为”。打开页面、编辑代码或预期、导入、恢复草稿、切换语言及显示/隐藏讲解均不调用模型。标准输入、运行结果和其他草稿不随请求发送。模型服务不执行代码，真实运行仍使用原有运行环境。
 
 模型固定为 `deepseek-flash`，显式设置 `thinking.type=disabled`、`stream=false`、`max_tokens=3200` 和 JSON 输出；不用工具、不自动重试请求。一次调用返回三类判断之一：`ok`仅表示未发现明显问题，展示1至8段原代码讲解；`issues`展示错误位置、原因及改进建议；`uncertain`说明还需确认的预期或上下文，不擅自补全业务规则。馆内固定讲解明确标为尚未进行模型检查。
 

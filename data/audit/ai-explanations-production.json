@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-11-10T04:35:44.179Z",
+  "checkedAt": "2026-11-10T14:17:30.506Z",
   "origin": "https://codemuseum.freexlib.com",
   "browser": "Chrome/157.0.8103.39",
   "scope": "Actual Chrome and configured deepseek-flash. A public fixed JavaScript fixture only; no user draft, standard input, API key or provider raw response recorded. No remote execution tasks submitted.",
@@ -11,11 +11,13 @@
       "passed": true
     },
     {
-      "name": "Explicit click reaches real model; repeated click merges and late result cannot overwrite edited code",
+      "name": "Explicit click checks valid code; repeated click merges and late result cannot overwrite edited code",
       "status": 200,
-      "cached": true,
+      "cached": false,
       "model": "deepseek-flash",
-      "steps": 3,
+      "steps": 5,
+      "verdict": "ok",
+      "correction": null,
       "passed": true
     },
     {
@@ -71,16 +73,29 @@
       "passed": true
     },
     {
-      "name": "New page requires a click and reuses server cache without another generation",
+      "name": "Faulty code shows causes, line references and minimal correction; mobile copy is reachable and preserves the editor (clipboard intercepted)",
+      "verdict": "issues",
+      "passed": true
+    },
+    {
+      "name": "Suggested fixture equals the known safe one-line fix; real browser execution then produces the intended sum 10",
+      "passed": true
+    },
+    {
+      "name": "Ambiguous business rule asks for clarification and proposes no changed code",
+      "passed": true
+    },
+    {
+      "name": "New page requires a click and reuses server review cache without another generation",
       "passed": true
     }
   ],
   "inputs": {
-    "server/explanations.py": "cc085f20873988409866412c2562e9c99ff7f7403258947d7bc2f1b19eb12071",
-    "src/lab-explanations.js": "c618d661b02d199c3ad82ef05f8f4b59ba6b4ea48ac0fbf871f6a037d321b8ba",
-    "src/lab-explanations.css": "3a79668af4fb17f16c23cd4303d5c762b02bf6121a544b126f38d0002b636856",
-    "src/index.html": "e6395ef29a6726129e84aeefe3843cfbd9fbaa8f2b700026c233ce9c7691273b",
+    "server/explanations.py": "16e605ffbb30356cbd02c6066997646eaa3fd97f274b6fd34944c53c434ac705",
+    "src/lab-explanations.js": "02651bdf2f47616e967631b2ace64b3ac4d629b03606ca5d8070f59ce5fea5b6",
+    "src/lab-explanations.css": "6f94acd897e541089508fa114089c6d03e87ed020e407f60101fdb9f56e2c8a9",
+    "src/index.html": "4513668f62b979a3ae14d2023041316546e200934873da9ef9018a877d522d03",
     "scripts/serve.cjs": "8a9756f91d4df18c741db192b2f1ce321e9e377018ea4ebe28f38d8d18015933",
-    "scripts/check-ai-explanations.cjs": "38e369d2b9471a3fcd49ede6faf1eac5fca2528f3dfdc2baec700e4745c6fca9"
+    "scripts/check-ai-explanations.cjs": "9e1e6505dfbf9c9dab407b82683e24945a485aa3aaea480b169cccc04f5f1e7c"
   }
 }

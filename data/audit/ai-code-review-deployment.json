@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-10T14:30:27.373948Z",
+  "commit": "b6fe3f649955d2ed3fe0ebe849bf287d430022bb",
+  "actions": {
+    "runId": 42830035894,
+    "url": "https://github.com/glwang-g/code-museum/actions/runs/42830035894",
+    "build": "success",
+    "deploy": "success"
+  },
+  "defaultTests": 115,
+  "scope": "Code review and minimal correction only. Uses fixed public valid/invalid/ambiguous JavaScript fixtures. Never runs arbitrary model code: candidate must exactly equal the known safe one-line fix before worker execution. No private key, user draft or raw model response retained. Remote language execution was not repeated.",
+  "backendUpgrade": {
+    "backup": "/var/backups/code-museum-explanation/20261110T135837Z-review-upgrade",
+    "oldSourceSha256": "cc085f20873988409866412c2562e9c99ff7f7403258947d7bc2f1b19eb12071",
+    "sourceSha256": "16e605ffbb30356cbd02c6066997646eaa3fd97f274b6fd34944c53c434ac705",
+    "snippetSha256": "f0b3c3cf6d6cac680781c6b0403e5e91f9ca165e717a4d3a60bb365d4c47782f",
+    "schemaVersion": 2,
+    "scope": "Only the independent model service source restarted after draining HTTP handlers. Private environment, unit, usage database and all execution services preserved.",
+    "commit": "b6fe3f649955d2ed3fe0ebe849bf287d430022bb",
+    "upgradeScriptSha256": "f7ddd0da5f94ed067bb54dc3efff3e55edc67717d77fcc0d3ad1bc45c832ee74"
+  },
+  "backendCanary": {
+    "schemaVersion": 2,
+    "verdict": "issues",
+    "cached": false,
+    "minimalFixMatchesKnownFixture": true,
+    "fixtureSha256": "4d48d302d9bfab052a9e9737f00b22c5b0c475d5bcebafe4bae60e296b9bb07e",
+    "elapsedMs": 1769,
+    "passed": true
+  },
+  "releaseChecks": {
+    "release": "releases/b6fe3f649955d2ed3fe0ebe849bf287d430022bb",
+    "filesVerified": 632,
+    "totalBytes": 35687335,
+    "manifestSha256": "db06a20470d8d19a04a5dcb4824bf504e939f75d4be9d9ab09663c242802c61f",
+    "modelCodeSha256": "16e605ffbb30356cbd02c6066997646eaa3fd97f274b6fd34944c53c434ac705",
+    "health": {
+      "available": true,
+      "model": "deepseek-flash",
+      "schemaVersion": 2,
+      "promptVersion": "museum-review-v2"
+    },
+    "units": {
+      "code-museum-explanation.service": {
+        "MainPID": "2286506",
+        "User": "code-museum-explanation",
+        "SupplementaryGroups": "",
+        "ActiveState": "active"
+      },
+      "code-museum-execution-gateway.service": {
+        "MainPID": "1969690",
+        "User": "code-museum-gateway",
+        "SupplementaryGroups": "",
+        "ActiveState": "active"
+      },
+      "code-museum-worker@xshow.service": {
+        "MainPID": "1969684",
+        "User": "code-museum-executor",
+        "SupplementaryGroups": "docker",
+        "ActiveState": "active"
+      },
+      "code-museum-execution-tunnel.service": {
+        "MainPID": "1789185",
+        "User": "code-museum-tunnel",
+        "SupplementaryGroups": "",
+        "ActiveState": "active"
+      }
+    },
+    "privateEnvironmentMode": "0600",
+    "remoteLanguages": 56,
+    "guestMaxSessions": 5,
+    "passed": true
+  },
+  "browserReports": {
+    "local": "data/audit/ai-explanations-browser.json",
+    "production": "data/audit/ai-explanations-production.json"
+  },
+  "visualInspection": {
+    "observed": true,
+    "screens": [
+      "issues-1440.png",
+      "correction-copy-390.png"
+    ],
+    "directory": "tmp/ai-explanations/production (ignored)"
+  },
+  "rollback": {
+    "previousSiteRelease": "a492d29e139c13a16ce999971b7983910a7f83f3",
+    "backendBackup": "/var/backups/code-museum-explanation/20261110T135837Z-review-upgrade",
+    "preserve": "Keep the live private environment, quota database and all executor/tunnel services."
+  }
+}

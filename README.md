@@ -53,7 +53,7 @@ Code Museum 把编程语言当作一座可以探索的博物馆：你可以沿�
 
 ## 正在推进的事项
 
-已上线：实验台“代码讲解”覆盖59份馆内示例与55份主题示例，并支持用 `deepseek-flash` 讲解编辑后的当前代码：点击才请求、相同代码复用，可点行号定位。功能提交 `61c2a11` 已通过 [Actions](https://github.com/glwang-g/code-museum/actions/runs/42756298917)部署；113项默认测试、正式模型讲解Chrome12项与原有讲解Chrome17项通过，见 [按需讲解说明](docs/AI_EXPLANATIONS.md)。
+已上线：实验台保留59份馆内示例与55份主题讲解，并支持点击后由大模型先检查当前代码，再给出讲解或纠错建议。可补充预期行为，修正建议只替换问题行；有歧义时先提示确认，原稿不会自动被覆盖。功能提交 `b6fe3f6` 已通过 [Actions](https://github.com/glwang-g/code-museum/actions/runs/42830035894)部署；115项测试、正式检查纠错Chrome15项与原有讲解Chrome17项通过，见 [检查与纠错说明](docs/AI_EXPLANATIONS.md)。
 
 2026-11-10更新：免令牌功能提交 `f163b27` 已通过 [Actions](https://github.com/glwang-g/code-museum/actions/runs/42649436958)正式部署。56门远端已逐一通过生产匿名真实执行，Chrome宽窄屏和第6会话繁忙提示通过；页面令牌与权限申请已移除，内部鉴权保留。详见 [部署记录](docs/DEPLOYMENT.md)。以下B组发布记录保留为历史阶段。
 
