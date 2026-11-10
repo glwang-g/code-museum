@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-10T16:45:58.796Z",
+  "browser": "Chrome/157.0.8103.39",
+  "origin": "https://codemuseum.freexlib.com",
+  "contentSha256": "e744cc73f10769d6c4b236f666d709f49597e9803e4e37ea3cae99be54aa8607",
+  "scope": "Actual Chrome directory, fuzzy search, complete source entries, links, keyboard, focus-loss taps, responsive layout and independent scrolling. No external model call or remote execution submitted.",
+  "checks": [
+    {
+      "name": "Every fixed source entry retains its content, notices and exactly one visible detail",
+      "entries": 58,
+      "totalDirectoryItems": 62,
+      "passed": true
+    },
+    {
+      "name": "Local fuzzy matching handles case/full width, English typo, language/version and license",
+      "passed": true
+    },
+    {
+      "name": "One missing-press tap from the search input selects a row and focuses its list",
+      "passed": true
+    },
+    {
+      "name": "Clear and empty-state reset restore the full directory without stale detail",
+      "passed": true
+    },
+    {
+      "name": "Arrow/Home/End select rows and Enter moves focus into detail",
+      "passed": true
+    },
+    {
+      "name": "Lab runtime and relationship-language links still open the correct detail",
+      "passed": true
+    },
+    {
+      "name": "Single-view directory/detail panes fit without outer or horizontal overflow",
+      "width": 1440,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Single-view directory/detail panes fit without outer or horizontal overflow",
+      "width": 1440,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Single-view directory/detail panes fit without outer or horizontal overflow",
+      "width": 900,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Single-view directory/detail panes fit without outer or horizontal overflow",
+      "width": 900,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Single-view directory/detail panes fit without outer or horizontal overflow",
+      "width": 680,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Single-view directory/detail panes fit without outer or horizontal overflow",
+      "width": 680,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Single-view directory/detail panes fit without outer or horizontal overflow",
+      "width": 390,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Single-view directory/detail panes fit without outer or horizontal overflow",
+      "width": 390,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "List and long detail scroll independently while the outer panel stays fixed",
+      "passed": true
+    },
+    {
+      "name": "Project support remains available and all credit browsing makes zero model calls",
+      "passed": true
+    }
+  ],
+  "inputs": {
+    "src/credits.js": "6e2b3106d474bf6dbaaca279b9dca2798e9ab2ad6a22f4fcb001037f81414ab4",
+    "src/credits-search.js": "308cf7c209d7ea97342479b81e870b45d91fcb96510b30a83cf54239594f1eca",
+    "src/credits.css": "03001582d9f9969f1e2cc537e3225b89c530713978f70c33537fca616cafdecb",
+    "src/navigation.js": "aae87bc9304333b24cc787efdd5ab01c5a52f88ec0deb2e6737c21e51a6f1707",
+    "src/index.html": "7d3238548d247b3765d7dad46542e4f873446dfa8857676d10da2c7e9e9d27ec",
+    "scripts/check-credits-browser.cjs": "72853f0aca302ed508d8cd9350cc4ed6d096c18744cf4bd6c7e554f8acff668d",
+    "scripts/browser-harness.cjs": "7806f630bc7ae458f982fb0bb186913f051f399af905386c32b234549a35b31d"
+  }
+}

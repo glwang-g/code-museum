@@ -1,5 +1,13 @@
 # Code Museum 首版部署
 
+## 2026-11-11 出处目录与Safari按钮兼容发布
+
+正式release为 `4b69121be6eef0d10b7efc1835d1bbb1eac2db50`，[Actions 42853406444](https://github.com/glwang-g/code-museum/actions/runs/42853406444)的build/deploy均成功。出处页提供62项目录、本地模糊搜索/分类及独立滚动详情；通用控件在输入框失焦后缺少原生click时补发一次，原生点击优先，并保留拖动、禁用、修饰键、触屏和键盘语义。124项默认测试、离线构建通过；本机与正式Chrome均通过22项控件和16项出处检查，正式固定讲解17项通过，代表宽窄明暗截图已核读。Chrome事件重放不等于用户Safari触控板实机验收。
+
+638文件/35,716,057字节逐一核对，清单SHA-256 `7fc3c2671f8a2a73f261e39d0217ccd9a3829c6ff74de61c3afc439a16a87d51`。验收曾在页面初始化前调用实验台API，随后初始路由恢复停止测试Worker；调用栈已定位，相关脚本现在等待文档与MUSEUM_NAV就绪。修正仅影响验收脚本，复跑后网页发布字节与清单保持一致。模型响应、系统剪贴板、文件选择、下载与测试链接导航均在控件专项中拦截，没有新增真实模型调用。
+
+普通静态发布未升级独立模型或双节点执行服务，既有相关PID未变，56门及五会话元数据正常。证据见 [发布记录](../data/audit/ui-navigation-deployment.json)、[正式控件检查](../data/audit/control-activation-production.json)和 [正式出处检查](../data/audit/credits-directory-production.json)。回退静态界面可按原激活方式切回保留的 `b6fe3f649955d2ed3fe0ebe849bf287d430022bb`，重启analytics并检查首页及loopback4180的healthz；模型、执行器、私有配置和活数据库保持原状。
+
 ## 2026-11-10 先检查、再讲解或纠错发布
 
 正式release为 `b6fe3f649955d2ed3fe0ebe849bf287d430022bb`，[Actions 42830035894](https://github.com/glwang-g/code-museum/actions/runs/42830035894)成功。115项默认测试、离线构建、本机与正式模型Chrome各15项通过；原有讲解Chrome单独复跑17项通过。正式632文件/35,687,335字节逐一核对，清单SHA-256为 `db06a20470d8d19a04a5dcb4824bf504e939f75d4be9d9ab09663c242802c61f`。

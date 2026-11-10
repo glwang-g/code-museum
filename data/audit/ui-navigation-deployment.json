@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-10T16:48:44Z",
+  "commit": "4b69121be6eef0d10b7efc1835d1bbb1eac2db50",
+  "contentSha256": "e744cc73f10769d6c4b236f666d709f49597e9803e4e37ea3cae99be54aa8607",
+  "actions": {
+    "runId": 42853406444,
+    "url": "https://github.com/glwang-g/code-museum/actions/runs/42853406444",
+    "build": "success",
+    "deploy": "success"
+  },
+  "defaultTests": 124,
+  "offlineBuild": "passed; all 638 packaged files match the deployed release manifest after browser harness readiness corrections",
+  "scope": "Searchable complete credits directory and missing-native-click control recovery. Actual installed Chrome pointer-order replay and native input checks; does not certify Safari trackpad hardware. All model, clipboard, file-picker, download and test-link navigation side effects intercepted. No production model calls or remote language executions added by these checks.",
+  "credits": {
+    "fixedEntries": 58,
+    "totalDirectoryItems": 62,
+    "localChecks": 16,
+    "productionChecks": 16,
+    "localReport": "data/audit/credits-directory-browser.json",
+    "productionReport": "data/audit/credits-directory-production.json"
+  },
+  "controls": {
+    "baselineMissingPressRunClicks": 0,
+    "recoveredRunClicks": 1,
+    "localChecks": 22,
+    "productionChecks": 22,
+    "localReport": "data/audit/control-activation-browser.json",
+    "productionReport": "data/audit/control-activation-production.json"
+  },
+  "existingExplanationRegression": {
+    "productionChecks": 17,
+    "displayedExamples": 114,
+    "report": "data/audit/lab-explanations-production.json"
+  },
+  "priorLocalPerformanceRegression": {
+    "mapAndViewObservations": 34,
+    "tabPointerOrderCases": 180,
+    "directory": "tmp/performance-2026-10-16/after (ignored)",
+    "scope": "Existing tab and map performance checks; not a production performance benchmark."
+  },
+  "initializationProbe": {
+    "observed": "The test started at document.readyState=loading with MUSEUM_NAV absent; initial navigation restoration then terminated its worker.",
+    "terminationStack": ["navigation.js initial restore", "MUSEUM_LAB.restore", "stop", "stopFreshWorker", "Worker.terminate"],
+    "correction": "Browser harness and explanation checks wait for complete document and MUSEUM_NAV before interacting. No product worker changes made for this test initialization race.",
+    "rerun": "22 production control checks and 17 fixed-explanation checks passed"
+  },
+  "releaseChecks": {
+    "release": "releases/4b69121be6eef0d10b7efc1835d1bbb1eac2db50",
+    "filesVerified": 638,
+    "totalBytes": 35716057,
+    "manifestSha256": "7fc3c2671f8a2a73f261e39d0217ccd9a3829c6ff74de61c3afc439a16a87d51",
+    "modelCodeSha256": "16e605ffbb30356cbd02c6066997646eaa3fd97f274b6fd34944c53c434ac705",
+    "modelHealth": {"available": true, "model": "deepseek-flash", "schemaVersion": 2, "promptVersion": "museum-review-v2"},
+    "units": {
+      "code-museum-explanation.service": {"MainPID": "2286506", "ActiveState": "active"},
+      "code-museum-execution-gateway.service": {"MainPID": "1969690", "ActiveState": "active"},
+      "code-museum-worker@xshow.service": {"MainPID": "1969684", "ActiveState": "active"},
+      "code-museum-execution-tunnel.service": {"MainPID": "1789185", "ActiveState": "active"}
+    },
+    "remoteLanguages": 56,
+    "guestMaxSessions": 5,
+    "passed": true
+  },
+  "visualInspection": {
+    "observed": true,
+    "screens": ["tmp/credits-browser/production/directory-1440-dark.png", "tmp/credits-browser/production/directory-390-light.png", "tmp/control-activation/production/editor-controls-1440.png"],
+    "scope": "Ignored local screenshots of the deployed page; not shipped website inputs."
+  },
+  "rollback": {
+    "previousSiteRelease": "b6fe3f649955d2ed3fe0ebe849bf287d430022bb",
+    "preserve": "Keep the independent model service, all execution services, private environment and live databases."
+  }
+}

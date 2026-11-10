@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-10T16:45:33.010Z",
+  "browser": "Chrome/157.0.8103.39",
+  "origin": "https://codemuseum.freexlib.com",
+  "contentSha256": "e744cc73f10769d6c4b236f666d709f49597e9803e4e37ea3cae99be54aa8607",
+  "scope": "Actual installed Chrome native press/release and missing-press replay from focused inputs. Model, clipboard, file-picker and download side effects intercepted. Does not certify the user Safari trackpad hardware.",
+  "checks": [
+    {
+      "name": "Missing-press tap executes the current code exactly once",
+      "passed": true
+    },
+    {
+      "name": "Ordinary press waits until release and invokes once",
+      "passed": true
+    },
+    {
+      "name": "Dragging off a button cancels execution",
+      "passed": true
+    },
+    {
+      "name": "Dragging onto a button does not execute",
+      "passed": true
+    },
+    {
+      "name": "Reset works on the first tap from the editor",
+      "passed": true
+    },
+    {
+      "name": "Undo replacement restores the prior draft with one tap",
+      "passed": true
+    },
+    {
+      "name": "Stop cancels a real bounded browser worker on the first tap",
+      "passed": true
+    },
+    {
+      "name": "Check/explain dispatches once (model response explicitly intercepted)",
+      "passed": true
+    },
+    {
+      "name": "Copy fix works once and preserves the original; system clipboard is intercepted",
+      "passed": true
+    },
+    {
+      "name": "lab-import activates once (file chooser/download intercepted)",
+      "passed": true
+    },
+    {
+      "name": "lab-download activates once (file chooser/download intercepted)",
+      "passed": true
+    },
+    {
+      "name": "Details/summary opens with one tap from the editor",
+      "passed": true
+    },
+    {
+      "name": "Hide/show control activates once",
+      "passed": true
+    },
+    {
+      "name": "Disabled controls never activate",
+      "passed": true
+    },
+    {
+      "name": "Control-click/context-menu gestures are not converted into an execution",
+      "passed": true
+    },
+    {
+      "name": "Keyboard Enter invokes exactly once",
+      "passed": true
+    },
+    {
+      "name": "Keyboard Space invokes exactly once",
+      "passed": true
+    },
+    {
+      "name": "Native touch tap keeps one activation without a mouse fallback",
+      "passed": true
+    },
+    {
+      "name": "Existing tab compatibility remains one tap",
+      "passed": true
+    },
+    {
+      "name": "Header share button works once; clipboard remains intercepted",
+      "passed": true
+    },
+    {
+      "name": "Theme control changes state once from a focused editor",
+      "passed": true
+    },
+    {
+      "name": "Source-style links activate once from the editor (navigation intercepted)",
+      "passed": true
+    }
+  ],
+  "inputs": {
+    "src/control-activation.js": "148df5e4acdccc15b33bdc89a50740306724439d425ca1cfc0aeb35e15bfd5e5",
+    "src/museum.js": "82c75abe112c159db70f1d9d201ca42c9df5f0585505a7caca5a4814ddc684cd",
+    "src/index.html": "7d3238548d247b3765d7dad46542e4f873446dfa8857676d10da2c7e9e9d27ec",
+    "scripts/check-control-activation.cjs": "b52c382116a0cd5ecca174a527d9c2f4271430111ee3101e579170b4ffc90e40",
+    "scripts/browser-harness.cjs": "7806f630bc7ae458f982fb0bb186913f051f399af905386c32b234549a35b31d"
+  }
+}

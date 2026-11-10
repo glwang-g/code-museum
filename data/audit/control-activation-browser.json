@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-11-10T16:14:07.197Z",
+  "checkedAt": "2026-11-10T16:47:15.875Z",
   "browser": "Chrome/157.0.8103.39",
   "origin": "local preview",
   "contentSha256": "e744cc73f10769d6c4b236f666d709f49597e9803e4e37ea3cae99be54aa8607",
@@ -100,6 +100,6 @@
     "src/museum.js": "82c75abe112c159db70f1d9d201ca42c9df5f0585505a7caca5a4814ddc684cd",
     "src/index.html": "7d3238548d247b3765d7dad46542e4f873446dfa8857676d10da2c7e9e9d27ec",
     "scripts/check-control-activation.cjs": "b52c382116a0cd5ecca174a527d9c2f4271430111ee3101e579170b4ffc90e40",
-    "scripts/browser-harness.cjs": "661f86014adf897e2e8d682523aefd8df46a6a3051afab0050fc1cafcf35ac00"
+    "scripts/browser-harness.cjs": "7806f630bc7ae458f982fb0bb186913f051f399af905386c32b234549a35b31d"
   }
 }
