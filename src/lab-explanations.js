@@ -27,7 +27,7 @@
     const invalid=!lab.code.trim()||new TextEncoder().encode(lab.code).length>24576||lab.code.split('\n').length>400;
     action.disabled=!!pending||!!ai||invalid;action.textContent=busy?'正在讲解…':pending?'等待上次讲解…':ai?'当前讲解已就绪':'讲解当前代码';
     panel.setAttribute('aria-busy',String(!!busy));
-    const status=busy?'正在分析当前代码，完成后显示讲解。':errors.get(snapshot)|| (ai?'DeepSeek · '+(ai.cached?'已复用讲解':'当前代码讲解')+' · 点击行号定位':matched?'馆内示例 · 点击行号定位代码':invalid?'一次最多讲解24KB、400行非空代码。':'点击按钮，为当前代码生成讲解。');
+    const status=busy?'正在分析当前代码，完成后显示讲解。':errors.get(snapshot)|| (ai?'大模型讲解 · '+(ai.cached?'已复用':'已生成')+' · 点击行号定位':matched?'馆内示例 · 点击行号定位代码':invalid?'一次最多讲解24KB、400行非空代码。':'点击按钮，为当前代码生成讲解。');
     $('lab-explanation-status').textContent=status;
     const signature=snapshot+'\0'+state+'\0'+String(!!busy);
     if(!force&&lastKey===signature)return;
