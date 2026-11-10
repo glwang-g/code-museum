@@ -1,0 +1,138 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-10T04:37:06.811055Z",
+  "commit": "61c2a1109e6a79a00eed9954d319c58773c27490",
+  "actions": {
+    "runId": 42756298917,
+    "url": "https://github.com/glwang-g/code-museum/actions/runs/42756298917",
+    "build": "success",
+    "deploy": "success"
+  },
+  "scope": "On-demand AI explanation feature. Public fixed test code only; no private key, user draft, stdin or raw model response. Does not rerun or certify all remote languages. Protected execution services were not upgraded.",
+  "defaultTests": 113,
+  "pureGit": {
+    "tree": "45a946ab0816ac58d3ce54aa5fbaa568f9665e5e",
+    "testsPassed": true,
+    "buildPassed": true,
+    "distFiles": 620,
+    "distMatchesWorkspace": true,
+    "privateEnvAbsent": true
+  },
+  "backendInstallation": {
+    "backup": "/var/backups/code-museum-explanation/20261110T042909Z",
+    "manifestSha256": "cb5af04e9e20df9f55e066caef7abf467a13bdcc4d6c0818caf29e5bdf6b3b4f",
+    "previousSiteSha256": "5868d88a4088895da11c4978ccb46621ec1748134779fed722879f019cb8ae19",
+    "siteSha256": "2579f1fa7ea528d311fa5b0a222daacbc31304fc18f5c3ab92281adda4b47559",
+    "service": "code-museum-explanation.service",
+    "files": {
+      "deploy/code-museum-explanation.service": "ff184c6e30eb9a0aabe798e8f92101f7274833d22d7016e8dcace2ef52e5ce5e",
+      "deploy/nginx-explanation-rate.conf": "3386f7134bd2d4455f30d6ab22b2e673c212448bceee296f9fe64e80b1cf683e",
+      "deploy/nginx-explanation.conf": "f0b3c3cf6d6cac680781c6b0403e5e91f9ca165e717a4d3a60bb365d4c47782f",
+      "server/explanations.py": "cc085f20873988409866412c2562e9c99ff7f7403258947d7bc2f1b19eb12071"
+    },
+    "scope": "Independent no-Docker explanation service only; no executor, tunnel or worker change. No model request made by installer.",
+    "commit": "61c2a1109e6a79a00eed9954d319c58773c27490",
+    "installerSha256": "6e30998b4913b80632fa771a4542ed306c60d0107f93a6f05bb30b92b7f252df"
+  },
+  "backendCanary": {
+    "origin": "https://codemuseum.freexlib.com",
+    "fixtureSha256": "5e64d9ce8ebdd73c1f333456494681ed584b334b8e127db51aa83be00e8d8474",
+    "checks": [
+      {
+        "name": "Real production model generation",
+        "status": 200,
+        "cached": false,
+        "steps": 3,
+        "elapsedMs": 2083,
+        "passed": true
+      },
+      {
+        "name": "Exact code server-cache reuse",
+        "status": 200,
+        "cached": true,
+        "steps": 3,
+        "elapsedMs": 139,
+        "passed": true
+      }
+    ],
+    "scope": "New independent backend before static-site activation. Public fixed fixture only; no key or raw model output retained."
+  },
+  "releaseChecks": {
+    "xshow": {
+      "release": "releases/61c2a1109e6a79a00eed9954d319c58773c27490",
+      "filesVerified": 632,
+      "totalBytes": 35671189,
+      "manifestSha256": "e275cac2efd48a0a7a42c412dbe615f56065dc8c636e9309e954c970e18df46b",
+      "units": {
+        "code-museum-explanation.service": {
+          "MainPID": "2153748",
+          "User": "code-museum-explanation",
+          "SupplementaryGroups": "",
+          "ActiveState": "active",
+          "SubState": "running",
+          "enabled": "enabled"
+        },
+        "code-museum-execution-gateway.service": {
+          "MainPID": "1969690",
+          "User": "code-museum-gateway",
+          "SupplementaryGroups": "",
+          "ActiveState": "active",
+          "SubState": "running",
+          "enabled": "enabled"
+        },
+        "code-museum-worker@xshow.service": {
+          "MainPID": "1969684",
+          "User": "code-museum-executor",
+          "SupplementaryGroups": "docker",
+          "ActiveState": "active",
+          "SubState": "running",
+          "enabled": "enabled"
+        },
+        "code-museum-execution-tunnel.service": {
+          "MainPID": "1789185",
+          "User": "code-museum-tunnel",
+          "SupplementaryGroups": "",
+          "ActiveState": "active",
+          "SubState": "running",
+          "enabled": "enabled"
+        }
+      },
+      "privateEnvironmentMode": "0600",
+      "serviceCodeSha256": "cc085f20873988409866412c2562e9c99ff7f7403258947d7bc2f1b19eb12071",
+      "nginxSiteSha256": "2579f1fa7ea528d311fa5b0a222daacbc31304fc18f5c3ab92281adda4b47559",
+      "remoteLanguages": 56,
+      "guestMaxSessions": 5,
+      "analyticsHealth": 204,
+      "passed": true
+    },
+    "xshow2": {
+      "unit": "code-museum-worker@xshow2.service",
+      "state": {
+        "MainPID": "198180",
+        "User": "code-museum-executor",
+        "SupplementaryGroups": "docker",
+        "ActiveState": "active",
+        "SubState": "running",
+        "enabled": "enabled"
+      },
+      "passed": true
+    }
+  },
+  "browserReports": {
+    "local": "data/audit/ai-explanations-browser.json",
+    "production": "data/audit/ai-explanations-production.json",
+    "authoredProduction": "data/audit/lab-explanations-production.json"
+  },
+  "visualInspection": {
+    "observed": true,
+    "views": [
+      "production/current-code-1440-dark.png",
+      "production/current-code-390-light.png"
+    ],
+    "screenshotDirectory": "tmp/ai-explanations/production (ignored)"
+  },
+  "rollback": {
+    "previousRelease": "8b32391952235a6a4435e6642cec87102de73a51",
+    "explanationService": "Disable the independent explanation service, restore the backed-up Nginx site, remove the two new Nginx snippets, nginx -t and reload. Preserve private environment and usage database. No executor, worker or tunnel change."
+  }
+}

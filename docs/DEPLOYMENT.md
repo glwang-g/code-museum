@@ -1,5 +1,15 @@
 # Code Museum 首版部署
 
+## 2026-11-10 按需DeepSeek讲解发布
+
+当前正式release为 `61c2a1109e6a79a00eed9954d319c58773c27490`，[Actions 42756298917](https://github.com/glwang-g/code-museum/actions/runs/42756298917) build/deploy均成功。113项默认测试和精确公共Git树离线复现通过；正式发布包632文件、35,671,189字节已逐文件核对，清单SHA-256为 `e275cac2efd48a0a7a42c412dbe615f56065dc8c636e9309e954c970e18df46b`。[正式模型讲解Chrome12项](../data/audit/ai-explanations-production.json)、[原有示例讲解Chrome17项](../data/audit/lab-explanations-production.json)通过，已实际核读1440暗色和390亮色截图。
+
+模型固定 `deepseek-flash`，只有点击“讲解当前代码”才发送当前代码与语言，关闭思考、限制输出，不自动重试。新服务位于xshow回环4185，使用独立无Docker账户和root保护源码；密钥经SSH标准输入写入 `/etc/code-museum-explanation/private.env`（root0600），不经过普通发布包或Git。SQLite仅记当日哈希来源/总计数，默认100次新尝试/日、每来源20次/日；缓存1小时、64份，并发2，和执行会话规则独立。首个固定代码生产真实生成2083ms、复用139ms；正式Chrome复用同一缓存，没有为页面验收重复生成。
+
+首次安装器在变更前验证审查包与原主站哈希，备份 `/var/backups/code-museum-explanation/20261110T042909Z/nginx-site` 后只新增模型服务、两个Nginx片段和一个主站include，通过 `nginx -t` 与独立健康检查后reload。原主站SHA-256为 `5868d88a4088895da11c4978ccb46621ec1748134779fed722879f019cb8ae19`，现为 `2579f1fa7ea528d311fa5b0a222daacbc31304fc18f5c3ab92281adda4b47559`。受保护网关、worker、隧道没有更新或重启，xshow相关PID保持不变，xshow2 worker仍active/enabled，公开元数据56门和五会话正常；没有重复声称全语言执行验收。详见 [发布证据](../data/audit/ai-explanations-deployment.json)与 [配置及限额说明](AI_EXPLANATIONS.md)。
+
+回退先按原激活机制切回保留的 `8b32391952235a6a4435e6642cec87102de73a51`，再停用 `code-museum-explanation.service`，恢复上述备份的Nginx主站，移除新增模型snippet/rate片段，执行 `nginx -t`、reload。保留模型私有环境、计数库、原有执行凭据与全部活数据库，不回退双节点运行环境。以下为此前固定讲解及执行器发布历史。
+
 ## 2026-11-10 实验台代码讲解发布
 
 功能提交 `8b32391952235a6a4435e6642cec87102de73a51` 已通过 [Actions 42751358841](https://github.com/glwang-g/code-museum/actions/runs/42751358841)构建部署。109项默认测试、精确公共Git树离线复现通过；当前release631文件、35,648,089字节，已逐文件核对，清单SHA-256为 `6c4453f400a69e801309e710b552aee6aa2a99fc2fc84bed8764f2df18e46e84`，与核验构建完全一致。

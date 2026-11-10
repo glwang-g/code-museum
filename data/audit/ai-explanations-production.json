@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-10T04:35:44.179Z",
+  "origin": "https://codemuseum.freexlib.com",
+  "browser": "Chrome/157.0.8103.39",
+  "scope": "Actual Chrome and configured deepseek-flash. A public fixed JavaScript fixture only; no user draft, standard input, API key or provider raw response recorded. No remote execution tasks submitted.",
+  "fixtureSha256": "5e64d9ce8ebdd73c1f333456494681ed584b334b8e127db51aa83be00e8d8474",
+  "checks": [
+    {
+      "name": "Opening, language changes, typing and hide/show make zero model API requests",
+      "passed": true
+    },
+    {
+      "name": "Explicit click reaches real model; repeated click merges and late result cannot overwrite edited code",
+      "status": 200,
+      "cached": true,
+      "model": "deepseek-flash",
+      "steps": 3,
+      "passed": true
+    },
+    {
+      "name": "Restoring identical code reuses browser cache; line navigation and real JavaScript result remain correct",
+      "passed": true
+    },
+    {
+      "name": "AI action, line steps and result fit without horizontal overflow",
+      "width": 1440,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "AI action, line steps and result fit without horizontal overflow",
+      "width": 1440,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "AI action, line steps and result fit without horizontal overflow",
+      "width": 900,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "AI action, line steps and result fit without horizontal overflow",
+      "width": 900,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "AI action, line steps and result fit without horizontal overflow",
+      "width": 680,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "AI action, line steps and result fit without horizontal overflow",
+      "width": 680,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "AI action, line steps and result fit without horizontal overflow",
+      "width": 390,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "AI action, line steps and result fit without horizontal overflow",
+      "width": 390,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "New page requires a click and reuses server cache without another generation",
+      "passed": true
+    }
+  ],
+  "inputs": {
+    "server/explanations.py": "cc085f20873988409866412c2562e9c99ff7f7403258947d7bc2f1b19eb12071",
+    "src/lab-explanations.js": "c618d661b02d199c3ad82ef05f8f4b59ba6b4ea48ac0fbf871f6a037d321b8ba",
+    "src/lab-explanations.css": "3a79668af4fb17f16c23cd4303d5c762b02bf6121a544b126f38d0002b636856",
+    "src/index.html": "e6395ef29a6726129e84aeefe3843cfbd9fbaa8f2b700026c233ce9c7691273b",
+    "scripts/serve.cjs": "8a9756f91d4df18c741db192b2f1ce321e9e377018ea4ebe28f38d8d18015933",
+    "scripts/check-ai-explanations.cjs": "38e369d2b9471a3fcd49ede6faf1eac5fca2528f3dfdc2baec700e4745c6fca9"
+  }
+}

@@ -1,5 +1,7 @@
 # 按需代码讲解
 
+已随 `61c2a11` 正式部署，[Actions 42756298917](https://github.com/glwang-g/code-museum/actions/runs/42756298917)成功。113项默认回归、公开Git离线构建、正式模型讲解Chrome12项和原有讲解Chrome17项通过；部署与回退证据见 [发布记录](../data/audit/ai-explanations-deployment.json)。
+
 实验台支持馆内固定讲解和当前代码的模型讲解。点击“讲解当前代码”才向同源 `POST /api/explanations` 提交语言标识和编辑器里的完整代码；打开页面、输入、导入、恢复草稿、切换语言或显示/隐藏讲解均不调用模型。标准输入、运行结果和其他草稿不随讲解请求发送。讲解不执行代码，真实运行仍使用原有运行环境。
 
 模型固定为 `deepseek-flash`，显式设置 `thinking.type=disabled`、`stream=false`、`max_tokens=2400` 和 JSON 输出；不用工具、不自动重试模型请求。返回的目的、标准输入用途及1至8段行号讲解经后端和前端校验，使用纯文本显示。行号必须落在本次完整源码范围内。模型可能解释错误，不能冒充真实调试轨迹。
