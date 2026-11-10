@@ -16,7 +16,8 @@ from unittest.mock import patch
 from explanations import DeepSeek, Explanations, Failure, MAX_CODE, handler, load_env, source, validate
 
 RESULT = {'overview': '累加并输出', 'stdin': '不读取标准输入。', 'steps': [
-    {'from': 1, 'to': 1, 'title': '输出', 'detail': '<script>文本不能作为HTML执行</script>'}]}
+    {'from': 1, 'to': 1, 'title': '输出', 'detail': '<script>文本不能作为HTML执行</script>'}],
+    'review': {'verdict': 'ok', 'summary': '未发现明显问题。', 'intent': '输出计算结果。', 'issues': []}, 'correction': None}
 
 
 class ModelTests(unittest.TestCase):
@@ -44,6 +45,44 @@ class ModelTests(unittest.TestCase):
             value = copy.deepcopy(RESULT); edit(value)
             with self.assertRaises(ValueError):
                 validate(value, 1)
+
+    def test_review_patches_preserve_every_untouched_line_and_uncertainty_cannot_rewrite(self):
+        code = '# keep this requirement\nvalues = [2, 3, 5]\ntotal = 0\nfor value in values:\n    total += vale\nprint(total)\n'
+        issue = {'from': 5, 'to': 5, 'title': '变量名错误', 'detail': 'vale没有定义',
+                 'suggestion': '使用循环变量value，保持求和需求', 'replacement': '    total += value'}
+        result = copy.deepcopy(RESULT); result['steps'] = []; result['review'].update(verdict='issues', issues=[issue])
+        normalized = validate(result, 7, code)
+        self.assertEqual(normalized['correction'], code.replace('total += vale', 'total += value'))
+        for edit in (lambda r: r['review'].update(verdict='ok'), lambda r: r['review'].update(verdict='uncertain'),
+                     lambda r: r['review']['issues'].append(copy.deepcopy(issue)),
+                     lambda r: r['review']['issues'][0].update(to=100),
+                     lambda r: r['review']['issues'][0].update(replacement='x'*4097),
+                     lambda r: r['review']['issues'][0].update(replacement='    total += vale')):
+            changed = copy.deepcopy(result); edit(changed)
+            with self.assertRaises(ValueError): validate(changed, 7, code)
+        uncertain = copy.deepcopy(result); uncertain['review'].update(verdict='uncertain'); uncertain['review']['issues'][0]['replacement'] = None
+        self.assertIsNone(validate(uncertain, 7, code)['correction'])
+        ambiguous = copy.deepcopy(RESULT); ambiguous['steps'] = []; ambiguous['review'].update(verdict='uncertain', issues=[])
+        self.assertIsNone(validate(ambiguous, 7, code)['correction'])
+
+    def test_intent_changes_cache_identity_and_legacy_pages_receive_diagnosis_without_false_clean_status(self):
+        calls = []
+        def provider(*args): calls.append(args); return RESULT
+        service = self.service(provider)
+        data = {'language': 'python', 'code': 'print(1)', 'intent': '输出数字1'}
+        self.assertFalse(service.explain(data, 'a')['cached'])
+        self.assertTrue(service.explain({**data, 'intent': ' 输出数字1 '}, 'a')['cached'])
+        self.assertFalse(service.explain({**data, 'intent': '输出数字2'}, 'a')['cached'])
+        self.assertEqual(calls[0][3], '输出数字1'); self.assertEqual(len(calls), 2)
+        for intent in (None, 1, 'x'*601, '\ud800'):
+            with self.assertRaises(Failure): source({**data, 'intent': intent})
+        uncertain = copy.deepcopy(RESULT); uncertain['steps'] = []; uncertain['review'].update(verdict='uncertain', issues=[])
+        service = self.service(lambda *args: uncertain)
+        legacy = service.explain({'language': 'python', 'code': 'print(rate)'}, 'a')
+        self.assertEqual(legacy['explanation']['review']['verdict'], 'uncertain')
+        self.assertEqual(len(legacy['explanation']['steps']), 1)
+        modern = service.explain({'language': 'python', 'code': 'print(rate)', 'intent': ''}, 'a')
+        self.assertEqual(modern['explanation']['steps'], [])
 
     def test_concurrent_identical_code_has_one_provider_attempt(self):
         started, finish = threading.Event(), threading.Event(); calls = []
@@ -126,7 +165,7 @@ class ModelTests(unittest.TestCase):
         req = call.call_args.args[0]; payload = json.loads(req.data)
         self.assertEqual(req.full_url, 'https://api.deepseek.com/chat/completions')
         self.assertEqual(payload['thinking'], {'type': 'disabled'})
-        self.assertEqual(payload['max_tokens'], 2400); self.assertFalse(payload['stream'])
+        self.assertEqual(payload['max_tokens'], 3200); self.assertFalse(payload['stream'])
         self.assertNotIn('tools', payload); self.assertEqual(payload['response_format']['type'], 'json_object')
         self.assertEqual(json.loads(payload['messages'][1]['content'])['code'], 'print(1)')
         with patch.object(provider.opener, 'open', side_effect=TimeoutError('fixture-key')) as call:
@@ -184,6 +223,19 @@ class ModelTests(unittest.TestCase):
             (root/'server/explanations.py').write_text('altered')
             with self.assertRaises(ValueError): installer.checked_bundle(root, digest)
             with self.assertRaises(ValueError): installer.checked_bundle(root, '0'*64)
+
+    def test_upgrade_checks_source_bytes_syntax_and_atomic_modes_without_reading_credentials(self):
+        spec = importlib.util.spec_from_file_location('upgrade_explanation', Path(__file__).resolve().parents[1]/'deploy/upgrade-explanation.py')
+        upgrade = importlib.util.module_from_spec(spec); spec.loader.exec_module(upgrade)
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp); source = root/'source.py'; raw = b'print("public fixture")\n'; source.write_bytes(raw)
+            digest = hashlib.sha256(raw).hexdigest(); self.assertEqual(upgrade.checked_source(source, digest), raw)
+            with self.assertRaises(ValueError): upgrade.checked_source(source, '0'*64)
+            target = root/'target.py'; target.write_text('old')
+            upgrade.replace(target, raw, 0o600); self.assertEqual(target.read_bytes(), raw); self.assertEqual(target.stat().st_mode & 0o777, 0o600)
+            self.assertFalse(list(root.glob('.review-*')))
+            source.write_text('invalid ( syntax')
+            with self.assertRaises(SyntaxError): upgrade.checked_source(source, hashlib.sha256(source.read_bytes()).hexdigest())
 
 
 if __name__ == '__main__':

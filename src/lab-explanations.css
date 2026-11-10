@@ -8,6 +8,14 @@
 #lab-explain-current:disabled{opacity:.6;cursor:default}
 #lab-explain-current:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
 .lab-explanation-disclosure{margin:6px 0 0;color:var(--muted);font-size:10px;line-height:1.5}
+.lab-review-intent{margin-top:7px;color:var(--muted);font-size:11px;line-height:1.6}
+.lab-review-intent summary,.lab-review-correction summary{cursor:pointer;color:var(--gold)}
+#lab-code-intent{display:block;box-sizing:border-box;width:100%;margin-top:5px;padding:6px;border:1px solid var(--line);border-radius:3px;resize:vertical;max-height:100px;background:var(--panel);color:var(--ink);font:12px/1.5 system-ui}
+.lab-review-heading{margin:0 0 7px;color:var(--gold);font-size:13px}
+.lab-review-correction{padding:10px 0;border-top:1px solid var(--line)}
+.lab-review-correction p{color:var(--muted)}
+.lab-review-correction button{padding:5px 8px;border:1px solid var(--line);border-radius:3px;background:transparent;color:var(--ink);font:12px system-ui;cursor:pointer}
+.lab-review-correction pre{padding:8px;border:1px solid var(--line);white-space:pre-wrap;overflow-wrap:anywhere;font:11px/1.7 ui-monospace,monospace}
 #lab-explanation-status{margin:5px 0 0;color:var(--muted);font-size:11px;line-height:1.5}
 .lab-explanation-content{min-height:0;overflow:auto;padding:12px 14px;font-size:12px;line-height:1.8;overflow-wrap:anywhere}
 .lab-explanation-content>p{margin:0 0 12px}
