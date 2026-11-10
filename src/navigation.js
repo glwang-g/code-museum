@@ -86,7 +86,8 @@
   const supportCard=document.createElement('section');
   supportCard.className='project-support';supportCard.setAttribute('aria-labelledby','project-support-title');
   supportCard.innerHTML='<div><h3 id="project-support-title">支持这座博物馆</h3><p>如果它对你有一点帮助，欢迎请作者喝杯咖啡。完全自愿，所有内容仍免费开放。</p></div><button type="button" aria-haspopup="dialog">查看微信赞赏码</button>';
-  document.querySelector('.provenance-intro').after(supportCard);
+  if(window.MUSEUM_CREDITS_UI?.registerSection)window.MUSEUM_CREDITS_UI.registerSection('project-support','支持这座博物馆',supportCard,'coffee support 赞赏 微信 咖啡');
+  else document.querySelector('.provenance-intro').after(supportCard);
   supportCard.querySelector('button').onclick=()=>{if(!supportDialog.open)supportDialog.showModal()};
   const info=window.MUSEUM_BUILD_INFO;
   $('build-version').textContent='内容版本 '+info.contentSha256.slice(0,12)+' · '+(location.hostname==='codemuseum.freexlib.com'?'正式站':'本地 / 预览')+' · 版本由源码与固定数据生成。';

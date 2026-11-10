@@ -42,6 +42,8 @@
     "release:package": "node scripts/package-release.cjs",
     "lab:explanations-browser": "node scripts/check-lab-explanations.cjs",
     "lab:ai-preview": "node scripts/explanation-preview.cjs",
-    "lab:ai-browser": "node scripts/check-ai-explanations.cjs"
+    "lab:ai-browser": "node scripts/check-ai-explanations.cjs",
+    "controls:browser": "node scripts/check-control-activation.cjs",
+    "credits:browser": "node scripts/check-credits-browser.cjs"
   }
 }

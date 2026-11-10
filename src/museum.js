@@ -232,24 +232,7 @@ $('#sources-view').onclick=showSources;
 // search focused through mousedown; move focus once click is actually delivered.
 // Do not activate on pointerdown: dragging away must still cancel navigation.
 const searchHasFocus=()=>document.activeElement?.matches('#map-search,#search');
-// macOS "tap to click" can deliver the release before its press while a text
-// field owns the input context (WebKit bug 219670). WebKit pairs clicks from
-// press order, so that tap arrives as pointerup with no click and the tab never
-// switches. Run the click ourselves when no click reaches the page for it.
-let pendingTabClick=null,pendingTabTimer=0;
-const dropPendingTabClick=()=>{clearTimeout(pendingTabTimer);pendingTabTimer=0;pendingTabClick=null};
-window.addEventListener('click',dropPendingTabClick,true);
-$('.museum-tabs').addEventListener('pointerup',event=>{
-  if(event.button!==0||event.pointerType!=='mouse')return;
-  const tab=event.target.closest('[role=tab]');
-  if(!tab)return;
-  dropPendingTabClick();
-  pendingTabClick=tab;
-  pendingTabTimer=setTimeout(()=>{
-    const target=pendingTabClick;dropPendingTabClick();
-    if(target){target.focus({preventScroll:true});target.click()}
-  },0);
-});
+// Missing native clicks are recovered centrally in control-activation.js.
 $('.museum-tabs').addEventListener('mousedown',event=>{
   if(event.button===0&&event.target.closest('[role=tab]')&&searchHasFocus())event.preventDefault();
 });
