@@ -13,15 +13,15 @@ test('authored explanations cover all exact museum and topic programs and reject
   const entry=id=>data.entries.find(r=>r.language===id&&r.topic==='default');
   assert.match(entry('sed').stdin,/待替换/);assert.match(entry('awk').stdin,/不读取输入行/);assert.match(entry('sql').stdin,/不使用独立标准输入/);assert.match(entry('xslt').stdin,/XML/);
 });
-function page(){
+function page(fetch=()=>{throw new Error('Unexpected model call')}){
   class Element{
     constructor(){this.children=[];this.dataset={};this.attrs={};this.listeners={};this.hidden=false;this.value='';this.textContent='';this.classList={toggle:(key,value)=>{this.attrs[key]=value}}}
-    append(...nodes){this.children.push(...nodes)}replaceChildren(...nodes){this.children=nodes}setAttribute(key,value){this.attrs[key]=value}addEventListener(key,fn){this.listeners[key]=fn}click(){this.listeners.click?.()}focus(){this.focused=true}scrollIntoView(){this.scrolledIntoView=true}setSelectionRange(start,end){this.selectionStart=start;this.selectionEnd=end}dispatchEvent(e){this.listeners[e.type]?.(e)}
+    append(...nodes){this.children.push(...nodes)}replaceChildren(...nodes){this.children=nodes}setAttribute(key,value){this.attrs[key]=value}addEventListener(key,fn){this.listeners[key]=fn}click(){if(!this.disabled)return this.listeners.click?.()}focus(){this.focused=true}scrollIntoView(){this.scrolledIntoView=true}setSelectionRange(start,end){this.selectionStart=start;this.selectionEnd=end}dispatchEvent(e){this.listeners[e.type]?.(e)}
   }
   const elements=new Map(),events={};const get=id=>{if(!elements.has(id))elements.set(id,new Element());return elements.get(id)};
   const data=labExplanations(root),example=data.entries.find(row=>row.language==='python'&&row.topic==='default');
   const lab={current:'python',topic:'default',code:example.code};get('lab-code').value=example.code;
-  const context={window:{MUSEUM_LAB:lab,MUSEUM_LAB_EXPLANATIONS:data},document:{getElementById:get,createElement:()=>new Element(),addEventListener:(type,fn)=>events[type]=fn},getComputedStyle:()=>({lineHeight:'20.8px'}),Event:class{constructor(type){this.type=type}}};
+  const context={fetch,AbortController,TextEncoder,setTimeout,clearTimeout,window:{MUSEUM_LAB:lab,MUSEUM_LAB_EXPLANATIONS:data},document:{getElementById:get,createElement:()=>new Element(),addEventListener:(type,fn)=>events[type]=fn},getComputedStyle:()=>({lineHeight:'20.8px'}),Event:class{constructor(type){this.type=type}}};
   vm.runInNewContext(fs.readFileSync(path.join(root,'src/lab-explanations.js'),'utf8'),context);
   return {lab,get,data,change:()=>events['museum-lab-change'](),text(node){return [node.textContent,...node.children.map(n=>this.text(n))].join(' ')}};
 }
@@ -36,4 +36,21 @@ test('explanation line navigation never edits or executes code and edited drafts
 });
 test('visitors can hide and restore the explanation without losing their draft',()=>{
   const p=page(),toggle=p.get('lab-explanation-toggle'),before=p.lab.code;toggle.click();assert.equal(p.get('lab-explanation').hidden,true);assert.equal(toggle.attrs['aria-expanded'],'false');toggle.click();assert.equal(p.get('lab-explanation').hidden,false);assert.equal(p.lab.code,before);
+});
+const result={overview:'计算总数',stdin:'不读取标准输入。',steps:[{from:1,to:1,title:'<script>不是HTML</script>',detail:'这一行输出计算结果。'}]};
+const response=(explanation=result,status=200)=>({ok:status===200,text:async()=>JSON.stringify(status===200?{explanation,model:'deepseek-flash',cached:false}:{error:'当前讲解请求比较多，请稍后重试。'})});
+test('AI explanation calls only on click, merges clicks, binds exact snapshots and reuses prior code',async()=>{
+ let calls=0,finish,request;const p=page((url,options)=>{calls++;assert.equal(url,'/api/explanations');request=JSON.parse(options.body);return new Promise(r=>finish=r)}),button=p.get('lab-explain-current');
+ p.lab.code='print(1 + 2)';p.change();p.get('lab-explanation-toggle').click();p.get('lab-explanation-toggle').click();assert.equal(calls,0);
+ const waiting=button.click();button.click();assert.equal(calls,1);assert.deepEqual(request,{language:'python',code:'print(1 + 2)'});assert.equal(button.disabled,true);
+ p.lab.code='print(7)';p.change();finish(response());await waiting;assert.equal(p.get('lab-explanation').dataset.state,'modified');assert.doesNotMatch(p.text(p.get('lab-explanation-content')),/计算总数/);
+ p.lab.code='print(1 + 2)';p.get('lab-code').value=p.lab.code;p.change();assert.equal(p.get('lab-explanation').dataset.state,'ai');assert.equal(button.disabled,true);button.click();assert.equal(calls,1);
+ assert.match(p.text(p.get('lab-explanation-content')),/<script>不是HTML<\/script>/);const line=p.get('lab-explanation-content').children.find(n=>n.className==='lab-explanation-steps').children[0].children[0];line.click();assert.equal(p.get('lab-code').selectionStart,0);
+ p.lab.current='javascript';p.change();assert.notEqual(p.get('lab-explanation').dataset.state,'ai');assert.equal(calls,1);
+});
+test('model failures do not retry automatically; malformed line ranges and oversized sources are rejected',async()=>{
+ let calls=0;const p=page(async()=>{calls++;return calls===1?response(null,429):calls===2?response({...result,steps:[{...result.steps[0],to:10000}]}):response()}),button=p.get('lab-explain-current');
+ p.lab.code='print(1)';p.change();await button.click();assert.equal(calls,1);assert.match(p.get('lab-explanation-status').textContent,/当前讲解请求比较多/);p.change();assert.equal(calls,1);
+ await button.click();assert.equal(calls,2);assert.match(p.get('lab-explanation-status').textContent,/格式不完整/);assert.notEqual(p.get('lab-explanation').dataset.state,'ai');await button.click();assert.equal(calls,3);assert.equal(p.get('lab-explanation').dataset.state,'ai');
+ p.lab.code='x'.repeat(24577);p.change();assert.equal(button.disabled,true);button.click();assert.equal(calls,3);
 });

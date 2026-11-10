@@ -4,6 +4,10 @@
 .lab-explanation[hidden]{display:none}
 .lab-explanation-head{padding:9px 12px;border-bottom:1px solid var(--line)}
 .lab-explanation-head h3{margin:0;color:var(--gold);font-size:13px;font-weight:500}
+#lab-explain-current{margin-top:8px;padding:6px 10px;max-width:100%;border:1px solid var(--gold);border-radius:3px;background:transparent;color:var(--gold);font:12px system-ui;cursor:pointer}
+#lab-explain-current:disabled{opacity:.6;cursor:default}
+#lab-explain-current:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.lab-explanation-disclosure{margin:6px 0 0;color:var(--muted);font-size:10px;line-height:1.5}
 #lab-explanation-status{margin:5px 0 0;color:var(--muted);font-size:11px;line-height:1.5}
 .lab-explanation-content{min-height:0;overflow:auto;padding:12px 14px;font-size:12px;line-height:1.8;overflow-wrap:anywhere}
 .lab-explanation-content>p{margin:0 0 12px}
@@ -31,7 +35,7 @@
   .lab.museum-panel{overflow-y:auto}
   .lab-body,.lab-without-explanation .lab-body{display:flex;flex-direction:column;flex:none;min-height:0}
   .lab-editor{flex:none;min-height:240px;height:240px}
-  .lab-explanation{flex:none;max-height:390px}
+  .lab-explanation{flex:none;max-height:470px}
   .lab-explanation-content{max-height:300px}
   .lab-output{flex:none;min-height:220px;height:300px}
 }

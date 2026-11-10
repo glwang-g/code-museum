@@ -155,3 +155,20 @@ test('execution preview preserves admission cookies, fetch origin checks and bus
   assert.equal(response.headers['retry-after'], '5');
   assert.equal(JSON.parse(response.body).error, '当前访问比较多，请稍后重试。');
 });
+
+test('explanation preview reports offline honestly and forwards only bounded same-origin source requests',async t=>{
+ const http=require('node:http'),{root}=fixture(t);
+ const offline=await request(createRequestHandler(root),'/api/explanations','POST',{'content-type':'application/json','content-length':'2'},'{}');
+ assert.equal(offline.status,503);assert.match(JSON.parse(offline.body).error,/尚未接入/);
+ assert.throws(()=>createRequestHandler(root,{explanations:'https://api.deepseek.com'}),/proxy must target local HTTP/);
+ const backend=http.createServer((req,res)=>{
+  assert.equal(req.headers.origin,'http://127.0.0.1:4173');assert.equal(req.headers.authorization,undefined);assert.equal(req.headers.cookie,undefined);
+  res.writeHead(429,{'Content-Type':'application/json','Retry-After':'60'});res.end('{"error":"稍后重试"}');
+ });
+ await new Promise(r=>backend.listen(0,'127.0.0.1',r));t.after(()=>new Promise(r=>backend.close(r)));
+ const handler=createRequestHandler(root,{explanations:'http://127.0.0.1:'+backend.address().port});
+ const r=await request(handler,'/api/explanations','POST',{origin:'http://127.0.0.1:4173','content-type':'application/json','content-length':'2',authorization:'private-test-only',cookie:'do-not-forward'},'{}');
+ assert.equal(r.status,429);assert.equal(r.headers['retry-after'],'60');assert.equal(r.headers['Cache-Control'],'no-store');
+ assert.equal((await request(handler,'/api/explanations','GET')).status,405);
+ assert.equal((await request(handler,'/api/explanations','POST',{'content-length':'32769'})).status,413);
+});

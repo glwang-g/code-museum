@@ -1,6 +1,6 @@
 // Build a small ordinary-site release; runtime SDKs are provisioned independently.
 const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto');
-const RELEASE_SERVER_FILES=['analytics.py','messages.py','mcp.py','mcp_http.py','observability.py','executor.py','execution_nodes.py','execution_gateway.py','runtime-images.json','execution-nodes.json'];
+const RELEASE_SERVER_FILES=['analytics.py','messages.py','explanations.py','mcp.py','mcp_http.py','observability.py','executor.py','execution_nodes.py','execution_gateway.py','runtime-images.json','execution-nodes.json'];
 const MAX_RELEASE_BYTES=128*1024*1024;
 const hash=bytes=>crypto.createHash('sha256').update(bytes).digest('hex');
 function packageRelease(root,output){

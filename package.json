@@ -40,6 +40,8 @@
     "executor:dual-check": "node scripts/check-dual-executor.cjs",
     "executor:prepare-dual": "python3 deploy/prepare-dual-executor.py",
     "release:package": "node scripts/package-release.cjs",
-    "lab:explanations-browser": "node scripts/check-lab-explanations.cjs"
+    "lab:explanations-browser": "node scripts/check-lab-explanations.cjs",
+    "lab:ai-preview": "node scripts/explanation-preview.cjs",
+    "lab:ai-browser": "node scripts/check-ai-explanations.cjs"
   }
 }

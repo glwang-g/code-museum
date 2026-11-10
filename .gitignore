@@ -5,6 +5,9 @@
 /output/
 /tmp/
 /.claude/
+# Local model credentials; never include these files in Git.
+/.env.local
+/.env.*.local
 # BCPL upstream materials remain private until redistribution rights are clear.
 /server/runtimes/bcpl/assets/bcpl-20261109.tar.gz.part*
 /server/runtimes/bcpl/assets/cintcode-noninteractive.patch

@@ -40,7 +40,7 @@ async function check({production=false}={}){
  finally{
   for(const p of pending.values()){clearTimeout(p.timer);p.reject(new Error('Browser closed'))}pending.clear();
   if(browser?.pid&&browser.exitCode===null)await new Promise(resolve=>{const timer=setTimeout(()=>browser.kill('SIGKILL'),5000);browser.once('exit',()=>{clearTimeout(timer);resolve()});browser.kill('SIGTERM')});
-  if(server){server.closeAllConnections();await new Promise(resolve=>server.close(resolve))}fs.rmSync(profile,{recursive:true,force:true});
+  if(server){server.closeAllConnections();await new Promise(resolve=>server.close(resolve))}fs.rmSync(profile,{recursive:true,force:true,maxRetries:10,retryDelay:100});
  }
 }
 if(require.main===module){const args=process.argv.slice(2);if(args.some(arg=>arg!=='--production'))throw new Error('Expected optional --production');check({production:args.includes('--production')}).catch(error=>{console.error(error.stack);process.exitCode=1})}

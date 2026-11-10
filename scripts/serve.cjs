@@ -27,12 +27,12 @@ function localUpstream(value,label){
   if(upstream&&(upstream.protocol!=='http:'||!['127.0.0.1','localhost'].includes(upstream.hostname)||upstream.username||upstream.password||upstream.pathname!=='/'||upstream.search||upstream.hash))throw new Error(label+' proxy must target local HTTP');
   return upstream;
 }
-function forward(upstream,req,res,{methods,maximum,keys,unavailable,body='application/json',responseKeys=[]}){
+function forward(upstream,req,res,{methods,maximum,keys,unavailable,body='application/json',responseKeys=[],timeout=10000}){
   if(!methods.includes(req.method)){res.writeHead(405).end();return;}
   const length=Number(req.headers['content-length']||0);
   if(req.headers['transfer-encoding']||!Number.isInteger(length)||length>maximum||length<0){res.writeHead(413).end();return;}
   const headers={};for(const key of keys)if(req.headers[key])headers[key]=req.headers[key];
-  const proxy=http.request(new URL(req.url,upstream),{method:req.method,headers,timeout:10000},response=>{const outgoing={'Content-Type':body,'Cache-Control':'no-store'};for(const key of responseKeys)if(response.headers[key])outgoing[key]=response.headers[key];res.writeHead(response.statusCode,outgoing);response.pipe(res)});
+  const proxy=http.request(new URL(req.url,upstream),{method:req.method,headers,timeout},response=>{const outgoing={'Content-Type':body,'Cache-Control':'no-store'};for(const key of responseKeys)if(response.headers[key])outgoing[key]=response.headers[key];res.writeHead(response.statusCode,outgoing);response.pipe(res)});
   proxy.on('timeout',()=>proxy.destroy());proxy.on('error',()=>{if(!res.headersSent)res.writeHead(503,{'Content-Type':body,'Cache-Control':'no-store'}).end(unavailable);else res.destroy()});
   req.on('aborted',()=>proxy.destroy());req.pipe(proxy);
 }
@@ -41,7 +41,12 @@ function createRequestHandler(directory, options={}) {
   const upstream=localUpstream(options.executor,'Executor');
   // Optional loopback guest-book/visits backend for local preview; production uses Nginx.
   const api=localUpstream(options.api,'API');
+  const explanations=localUpstream(options.explanations,'Explanation');
   return (req, res) => {
+  if(req.url==='/api/explanations'){
+    if(!explanations){res.writeHead(503,{'Content-Type':'application/json','Cache-Control':'no-store'}).end('{"error":"讲解服务尚未接入，请稍后重试。"}');return;}
+    forward(explanations,req,res,{methods:['POST'],maximum:32768,keys:['origin','content-type','content-length','sec-fetch-site'],responseKeys:['retry-after'],timeout:38000,unavailable:'{"error":"讲解服务暂不可用，请稍后重试。"}'});return;
+  }
   if(upstream&&(req.url==='/mcp'||/^\/api\/(?:runtimes|executor-status|executions(?:\/[a-f0-9]{32})?)$/.test(req.url))){
     forward(upstream,req,res,{methods:['GET','POST','DELETE'],maximum:98304,keys:['authorization','origin','content-type','content-length','x-execution-session','accept','mcp-protocol-version','cookie','sec-fetch-site'],responseKeys:['set-cookie','retry-after'],unavailable:'{"error":"Execution service unavailable"}'});
     return;
@@ -87,7 +92,7 @@ if (require.main === module) {
     console.error('Run npm run build before preview.');
     process.exit(1);
   }
-  const server = http.createServer(createRequestHandler(root,{executor:process.env.EXECUTOR_UPSTREAM,api:process.env.MUSEUM_API_UPSTREAM}));
+  const server = http.createServer(createRequestHandler(root,{executor:process.env.EXECUTOR_UPSTREAM,api:process.env.MUSEUM_API_UPSTREAM,explanations:process.env.MUSEUM_EXPLANATION_UPSTREAM}));
   server.on('error', error => { console.error(error.message); process.exitCode = 1; });
   server.listen(Number(process.env.PORT || 4173), '127.0.0.1', () => console.log(`Code Museum: http://127.0.0.1:${server.address().port}`));
 }

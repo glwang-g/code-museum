@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-11-10T03:40:04.430Z",
+  "checkedAt": "2026-11-10T04:25:14.422Z",
   "browser": "Chrome/157.0.8103.39",
   "origin": "local offline preview",
   "scope": "Actual installed Chrome. Includes real browser JavaScript output, all 114 displayed explanation matches, edited draft behavior, line navigation, input guidance and responsive layouts. Does not execute remote languages or publish.",
@@ -96,9 +96,9 @@
     }
   ],
   "inputs": {
-    "src/lab-explanations.js": "1213ca9ec24a58b401c2d7fd73b173ff1554547697a0d8c70567048524d499d1",
-    "src/lab-explanations.css": "c4ac511d23ff43d04912e884f5e787099c91b61d5baa07ad8718181c69aa834c",
-    "src/index.html": "543b13d82a58658869753a516f4fd3afd449e0bbe1d2426201e6c779a8e93a6f",
+    "src/lab-explanations.js": "c618d661b02d199c3ad82ef05f8f4b59ba6b4ea48ac0fbf871f6a037d321b8ba",
+    "src/lab-explanations.css": "3a79668af4fb17f16c23cd4303d5c762b02bf6121a544b126f38d0002b636856",
+    "src/index.html": "e6395ef29a6726129e84aeefe3843cfbd9fbaa8f2b700026c233ce9c7691273b",
     "src/lab.js": "3f901043b0bc65f7d81cf3f31d87a12e003a2ffe6e038eaa2337d08f3a183a93",
     "src/lab-examples.js": "3118d01d3eeb6cc212617c1c1a4ef8d475834605fe299d9c47e871589c5cb5e1",
     "src/learning-examples.js": "fbfb378565fad8f55eade20a9cd2c7d00a711845f8a060456f39b27016d8f07c",
@@ -106,6 +106,6 @@
     "data/lab-explanations.json": "ab9e4bb202873065ece4c8f71031e74bce4adc70b9e830f7f15b40b2fb8cc676",
     "scripts/build.cjs": "3910475708063670422a14ad8a39dfa4fbd65a5c540ca324920e6cf731d3a3df",
     "scripts/lab-explanations.cjs": "4db6074fdb8b8b249e530585164e60d4a185f00c87e20d5e7b0d77619dbc535f",
-    "scripts/check-lab-explanations.cjs": "c535853d42cea88a4ec2db5b102f1ac19fd76091e333e12a4fab087d7c913594"
+    "scripts/check-lab-explanations.cjs": "61ed27e6bcd27114a16451a87996d6424f618d7cfb6f03cd423951389686109e"
   }
 }
