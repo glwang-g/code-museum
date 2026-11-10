@@ -6,6 +6,7 @@ const { generateCredits } = require('./credits.cjs');
 const { generateRelationshipAudit } = require('./relationship-audit.cjs');
 const { curatedContent } = require('./curated-content.cjs');
 const { learningPaths } = require('./learning-paths.cjs');
+const { labExplanations } = require('./lab-explanations.cjs');
 const { executionCapabilities } = require('./execution-capabilities.cjs');
 const { validateCliRuntime } = require('./cli-runtime.cjs');
 const { validateFixedRuntime } = require('./fixed-runtime.cjs');
@@ -29,6 +30,7 @@ function build(projectRoot = root) {
   const commonLispRuntime = validateCommonLispRuntime(projectRoot);
   const fixedRuntimes = ['prolog','forth','racket','smalltalk','cobol','ada','clojure','ocaml','haskell','kotlin','groovy','erlang','elixir','tcl','standard-ml','scala','d','nim','zig','swift','dart','julia','octave','powershell','korn-shell','tcsh','wasm','x86-assembly','verilog','vhdl','postscript','bcpl','oberon'].map(id=>validateFixedRuntime(projectRoot,id,id,{mode:'public-metadata'}));
   const paths = learningPaths(projectRoot,catalogue,relationshipAudit);
+  const explanations = labExplanations(projectRoot);
   const {exhibits,triage}=curatedContent(projectRoot,catalogue,relationshipAudit);
   const {credits,linguistLicense} = generateCredits(projectRoot);
   const auditBytes = fs.readFileSync(path.join(projectRoot, 'data/audit/reviews.json'));
@@ -97,6 +99,8 @@ function build(projectRoot = root) {
     }
     fs.writeFileSync(path.join(next,'data/learning-paths.js'),'window.MUSEUM_LEARNING_PATHS='+JSON.stringify(paths)+';');
     fs.writeFileSync(path.join(next,'data/learning-paths.json'),JSON.stringify(paths,null,2)+'\n');
+    fs.writeFileSync(path.join(next,'data/lab-explanations.js'),'window.MUSEUM_LAB_EXPLANATIONS='+JSON.stringify(explanations)+';');
+    fs.writeFileSync(path.join(next,'data/lab-explanations.json'),JSON.stringify(explanations,null,2)+'\n');
     fs.writeFileSync(path.join(next,'data/runtime-assets.js'),'window.MUSEUM_RUNTIME_ASSETS='+JSON.stringify(runtimeAssets)+';');
     fs.writeFileSync(path.join(next, 'data/catalogue.js'), 'window.MUSEUM_DATA=' + JSON.stringify(catalogue) + ';');
     fs.writeFileSync(path.join(next,'data/catalogue.json'),JSON.stringify(catalogue)+'\n');

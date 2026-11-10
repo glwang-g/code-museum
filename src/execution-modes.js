@@ -46,7 +46,7 @@
     $('lab-execution-mode').querySelector('[value="local"]').disabled=!local.has(current);
     $('lab-remote-access').hidden=!isRemote;
     $('lab-stdin').disabled=current==='sql';
-    $('lab-stdin').placeholder=current==='sql'?'SQLite 直接读取编辑区 SQL，不使用独立标准输入':current==='xslt'?'XSLT 样式表读取编辑区；在此填写 XML 输入文档':current==='r'?'Rscript 用 file("stdin") 或 scan("stdin", ...) 读取':'可选；AWK/sed 可读取多行文本';
+    $('lab-stdin').placeholder=current==='sql'?'SQLite 直接读取编辑区 SQL，不使用独立标准输入':current==='xslt'?'XSLT 样式表读取编辑区；在此填写 XML 输入文档':current==='r'?'Rscript 用 file("stdin") 或 scan("stdin", ...) 读取':'程序要读取的数据，可留空';
     $('lab-enable-local').hidden=isRemote||allowed(current)||!local.has(current);
     $('lab-enable-local').textContent=local.get(current)+' · 下载并启用';
     $('lab-cancel-remote').hidden=!active||!isRemote;

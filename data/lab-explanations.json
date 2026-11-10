@@ -1,0 +1,2898 @@
+{
+  "schemaVersion": 1,
+  "scope": "Authored explanations of exact museum examples; not a debugger trace or automatic analysis of edited programs.",
+  "entries": [
+    {
+      "language": "bcpl",
+      "topic": "default",
+      "codeSha256": "0f6ec0c3ca407244a3b2edadb6e92cac7d6d9116bcb119315e7547053ec0333a",
+      "overview": "定义平方函数，再从 start 入口调用。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 2,
+          "to": 2,
+          "title": "引入标准声明",
+          "detail": "GET \"libhdr\" 提供 writef 等标准函数的声明。"
+        },
+        {
+          "from": 3,
+          "to": 3,
+          "title": "定义 square",
+          "detail": "n 是参数，n*n 的值作为函数结果；定义时尚未计算 square(7)。"
+        },
+        {
+          "from": 4,
+          "to": 7,
+          "title": "进入 start 并输出",
+          "detail": "调用 square(7) 计算 7×7，用 writef 输出整数和换行；RESULTIS 0 作为入口结果。"
+        }
+      ]
+    },
+    {
+      "language": "oberon",
+      "topic": "default",
+      "codeSha256": "4b99a1dbe14211b29ae69b4bbc34dd31b84ed76b9c8d0e7f91d3927c8e9b8a5d",
+      "overview": "模块初始化时调用带类型的平方过程。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 2,
+          "to": 3,
+          "title": "建立模块与输出库",
+          "detail": "MODULE Main 定义模块，IMPORT Out 引入文本输出操作。"
+        },
+        {
+          "from": 4,
+          "to": 5,
+          "title": "定义 Square",
+          "detail": "参数与返回值都是 INTEGER，RETURN n*n 返回平方。"
+        },
+        {
+          "from": 6,
+          "to": 8,
+          "title": "执行模块主体",
+          "detail": "模块主体调用 Square(7)，Out.Int 写出整数，Out.Ln 换行。"
+        }
+      ]
+    },
+    {
+      "language": "postscript",
+      "topic": "default",
+      "codeSha256": "e9b9ffc96c8f8adcbb1a873fa5003aef04f4622bbff11094dcf43db524816f22",
+      "overview": "在操作数栈上计算平方。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 2,
+          "to": 2,
+          "title": "定义 square 过程",
+          "detail": "dup 复制栈顶数字，mul 弹出两个数字并压入它们的乘积；def 将过程绑定到 square。"
+        },
+        {
+          "from": 3,
+          "to": 3,
+          "title": "压栈、调用、输出",
+          "detail": "7 先压栈；square 把它变为 49；= 弹出结果并打印换行。"
+        }
+      ]
+    },
+    {
+      "language": "vhdl",
+      "topic": "default",
+      "codeSha256": "eab1c92f0fa39a5b38d0dc43fb718fa16560f0859d57b441c3c88a3639d96c4e",
+      "overview": "运行一次文本仿真，每隔一段仿真时间输出计数。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 2,
+          "to": 8,
+          "title": "准备仿真与文本缓冲",
+          "detail": "引入 textio，声明实体与体系结构；process 中的 line_out 用于组织一行文本。"
+        },
+        {
+          "from": 9,
+          "to": 14,
+          "title": "重复等待并输出",
+          "detail": "n 从 1 到 3。每次先等待 5 ns 仿真时间，再把 count= 与 n 写入缓冲，writeline 输出一行。"
+        },
+        {
+          "from": 15,
+          "to": 17,
+          "title": "停止推进这个进程",
+          "detail": "末尾 wait 使此进程继续等待；这里的 ns 是仿真时间，不是网页耗时，也没有驱动真实电路。"
+        }
+      ]
+    },
+    {
+      "language": "verilog",
+      "topic": "default",
+      "codeSha256": "26d28f3ea8e5f6129310a2332c46ad609e3b7715e9bced2433b67a8fa5568f9c",
+      "overview": "用仿真时钟的上升沿触发三次计数。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 2,
+          "to": 4,
+          "title": "初始化状态",
+          "detail": "模块中 clk 初始为 0，count 初始为 0。"
+        },
+        {
+          "from": 5,
+          "to": 5,
+          "title": "产生仿真时钟",
+          "detail": "每过 5 个仿真时间单位翻转 clk，形成交替的高低电平。"
+        },
+        {
+          "from": 6,
+          "to": 10,
+          "title": "上升沿计数并结束",
+          "detail": "每个上升沿把 count 加 1，再用 $display 输出。count 为 3 时，$finish 结束仿真。"
+        }
+      ]
+    },
+    {
+      "language": "x86-assembly",
+      "topic": "default",
+      "codeSha256": "adcc9f6425eb7d29ac8f111b470a5cc3b85be4cb0226837069302c76dd20bb8c",
+      "overview": "通过 Linux x86-64 系统调用写出一条消息。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 2,
+          "to": 4,
+          "title": "准备消息字节",
+          "detail": "message 保存文本与换行字节，length 计算它们的总字节数。"
+        },
+        {
+          "from": 5,
+          "to": 12,
+          "title": "执行 write 系统调用",
+          "detail": "从 _start 进入；eax=1 选择 write，edi=1 指向标准输出，rsi/edx 提供消息地址与长度，syscall 执行写入。"
+        },
+        {
+          "from": 13,
+          "to": 15,
+          "title": "退出进程",
+          "detail": "eax=60 选择 exit，edi 清零作为退出状态，再次 syscall 结束程序。"
+        }
+      ]
+    },
+    {
+      "language": "wasm",
+      "topic": "default",
+      "codeSha256": "173c841af091ab62eaad26941ec4479a0809fe5d0dfbd62bacac37f09f50544a",
+      "overview": "先计算整数平方，再把字符字节交给 WASI 输出。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 2,
+          "to": 5,
+          "title": "声明输出接口与内存",
+          "detail": "导入 fd_write，并导出一页线性内存；输出接口读取内存中的缓冲信息。"
+        },
+        {
+          "from": 6,
+          "to": 9,
+          "title": "计算数值与缓冲描述",
+          "detail": "_start 将 7×7 存入局部变量 n；内存位置 0、4 写入文本缓冲地址 16 与长度 3。"
+        },
+        {
+          "from": 10,
+          "to": 13,
+          "title": "把数值变成文本并写出",
+          "detail": "整除与取余分别取得十位、个位，加 48 变成数字字符，末尾追加换行，再调用 fd_write 写到标准输出。"
+        }
+      ]
+    },
+    {
+      "language": "tcsh",
+      "topic": "default",
+      "codeSha256": "11ec6223b3fe7f59755f8285423fd3d768d42c91492f5372231a062beb4b4d06",
+      "overview": "用 foreach 逐项累加 1 到 10。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 1,
+          "to": 1,
+          "title": "初始化 total",
+          "detail": "@ 进行整数赋值，这里把累加器设为 0。"
+        },
+        {
+          "from": 2,
+          "to": 4,
+          "title": "依次相加",
+          "detail": "foreach 将列表中的数字依次绑定到 number，每轮用 @ 更新 total。"
+        },
+        {
+          "from": 5,
+          "to": 5,
+          "title": "输出总和",
+          "detail": "echo 写出累加后的 total。"
+        }
+      ]
+    },
+    {
+      "language": "korn-shell",
+      "topic": "default",
+      "codeSha256": "b0086fb840b1f96af4670a68267af760740848c2724cd5fcaef838c2c2600587",
+      "overview": "用算术循环累加 1 到 10。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 1,
+          "to": 1,
+          "title": "声明整数累加器",
+          "detail": "integer 将 total 声明为整数并设为 0。"
+        },
+        {
+          "from": 2,
+          "to": 4,
+          "title": "循环更新",
+          "detail": "i 从 1 开始，i<=10 时将 i 加到 total，随后 i 增加 1。"
+        },
+        {
+          "from": 5,
+          "to": 5,
+          "title": "打印结果",
+          "detail": "print -r -- 写出 total 的文本与换行。"
+        }
+      ]
+    },
+    {
+      "language": "powershell",
+      "topic": "default",
+      "codeSha256": "8d4b9c683b7cbbd52a6c3089c9841c88c426fed875cad014262a932b88038a3f",
+      "overview": "把一段整数序列交给管道求和。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 1,
+          "to": 1,
+          "title": "生成序列并求和",
+          "detail": "1..10 包含两个端点。Measure-Object -Sum 汇总这些数字，取其 Sum 属性并存入 total。"
+        },
+        {
+          "from": 2,
+          "to": 2,
+          "title": "写入输出流",
+          "detail": "Write-Output 把 total 送到输出流，由实验台显示为文本。"
+        }
+      ]
+    },
+    {
+      "language": "octave",
+      "topic": "default",
+      "codeSha256": "38e176706f8ed294eb12164d386c8508667473146c33869d25abf5f4f4b83094",
+      "overview": "对整数范围求和并格式化输出。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 1,
+          "to": 1,
+          "title": "计算总和",
+          "detail": "1:10 生成从 1 到 10 的序列，sum 求和；行尾分号抑制这一行的自动显示。"
+        },
+        {
+          "from": 2,
+          "to": 2,
+          "title": "显式打印",
+          "detail": "printf 的 %d 写出整数，\\n 换行。"
+        }
+      ]
+    },
+    {
+      "language": "julia",
+      "topic": "default",
+      "codeSha256": "871457a0f935061022b086d236e1638d2975f7a8f16a077435bcc75aa6d4ce39",
+      "overview": "对闭区间求和，然后打印。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 1,
+          "to": 1,
+          "title": "构造范围并求和",
+          "detail": "1:10 表示包含 1 和 10 的整数范围，sum 计算总和并绑定给 total。"
+        },
+        {
+          "from": 2,
+          "to": 2,
+          "title": "输出 total",
+          "detail": "println 写出总和并换行。"
+        }
+      ]
+    },
+    {
+      "language": "dart",
+      "topic": "default",
+      "codeSha256": "64b6ed0033ca0f2d03a9495e14b9a07b435784d6cf69a74cd3f3039a875ccb0d",
+      "overview": "从 main 进入，用循环累加。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 1,
+          "to": 2,
+          "title": "进入 main 并初始化",
+          "detail": "main 是入口；total 先设为 0。"
+        },
+        {
+          "from": 3,
+          "to": 5,
+          "title": "执行十轮循环",
+          "detail": "n 从 1 到 10，每轮把 n 加入 total。"
+        },
+        {
+          "from": 6,
+          "to": 7,
+          "title": "输出结果",
+          "detail": "print 写出最后的 total。"
+        }
+      ]
+    },
+    {
+      "language": "swift",
+      "topic": "default",
+      "codeSha256": "56f12fc78885c7a65f6d3fcccf45a9941d211710b393e8388d0f2bbd4acceb57",
+      "overview": "用闭区间循环计算总和。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 1,
+          "to": 1,
+          "title": "准备可变累加器",
+          "detail": "var 允许后续修改 total，初值为 0。"
+        },
+        {
+          "from": 2,
+          "to": 4,
+          "title": "遍历闭区间",
+          "detail": "1...10 包含端点 10，每次把 n 加到 total。"
+        },
+        {
+          "from": 5,
+          "to": 5,
+          "title": "打印总和",
+          "detail": "循环结束后 print 写出 total。"
+        }
+      ]
+    },
+    {
+      "language": "zig",
+      "topic": "default",
+      "codeSha256": "589cabfc4fda89d953b506c8dd634e7f830ee5298c021e6e5241363853f525cc",
+      "overview": "在入口中累加整数，再显式写标准输出。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 1,
+          "to": 4,
+          "title": "引入标准库并初始化",
+          "detail": "导入 std；main 可返回错误，total 明确使用 u32 并初始化为 0。"
+        },
+        {
+          "from": 5,
+          "to": 5,
+          "title": "遍历半开区间",
+          "detail": "1..11 不包含 11；@intCast 将 n 转为累加器所需的整数类型，再执行相加。"
+        },
+        {
+          "from": 6,
+          "to": 7,
+          "title": "处理输出错误并写出",
+          "detail": "writer().print 使用 {d} 格式化整数；try 将可能发生的输出错误向上传递。"
+        }
+      ]
+    },
+    {
+      "language": "nim",
+      "topic": "default",
+      "codeSha256": "e4e05dbeeb7782775a52c0877daa18b497dd044cbc41cb8fd50da9c01c9b33f3",
+      "overview": "通过缩进组织累加循环。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 1,
+          "to": 1,
+          "title": "定义 total",
+          "detail": "var 表示可变变量，初值为 0。"
+        },
+        {
+          "from": 2,
+          "to": 3,
+          "title": "遍历范围",
+          "detail": "1..10 包含端点，每轮把 n 加入 total。"
+        },
+        {
+          "from": 4,
+          "to": 4,
+          "title": "输出 total",
+          "detail": "echo 写出结果并换行。"
+        }
+      ]
+    },
+    {
+      "language": "d",
+      "topic": "default",
+      "codeSha256": "28dc19279d095fb2430f1fd2454328fe59a5390fac14786ed49e28adc725e8fb",
+      "overview": "在 main 中遍历半开区间。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 1,
+          "to": 4,
+          "title": "准备入口与输出",
+          "detail": "导入 std.stdio，进入 main 并把 total 设为 0。"
+        },
+        {
+          "from": 5,
+          "to": 7,
+          "title": "逐项累加",
+          "detail": "1 .. 11 不包含 11，所以 n 依次为 1 到 10。"
+        },
+        {
+          "from": 8,
+          "to": 9,
+          "title": "写出总和",
+          "detail": "writeln 输出 total 并换行。"
+        }
+      ]
+    },
+    {
+      "language": "f-sharp",
+      "topic": "default",
+      "codeSha256": "d97dec7cfb2c3f12578833ff9574d32b6d357507cc7a2df538a2295cde57b6be",
+      "overview": "把列表沿管道交给求和与打印函数。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 1,
+          "to": 4,
+          "title": "声明入口",
+          "detail": "定义 Museum 模块，EntryPoint 标记 main 为程序入口。"
+        },
+        {
+          "from": 5,
+          "to": 7,
+          "title": "生成、求和、打印",
+          "detail": "[1..10] 生成列表；|> 把前一步的结果传给 List.sum，再传给 printfn \"%d\"。"
+        },
+        {
+          "from": 8,
+          "to": 8,
+          "title": "返回退出状态",
+          "detail": "最后的 0 是入口返回的退出状态，不是额外打印的一行。"
+        }
+      ]
+    },
+    {
+      "language": "visual-basic.net",
+      "topic": "default",
+      "codeSha256": "fdf57109a2fa6eea3acb03caa2e41851686ecc6f33121228f62740ebf14aa52f",
+      "overview": "从模块 Main 入口计算整数总和。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 1,
+          "to": 6,
+          "title": "准备类型与累加器",
+          "detail": "Option Strict On 启用严格类型规则；进入 Main，将 Integer 类型的 total 设为 0。"
+        },
+        {
+          "from": 7,
+          "to": 9,
+          "title": "执行 For 循环",
+          "detail": "n 从 1 到 10，每轮累加到 total，Next 进入下一轮。"
+        },
+        {
+          "from": 10,
+          "to": 12,
+          "title": "输出并退出入口",
+          "detail": "Console.WriteLine 输出 total，随后结束 Main 和模块。"
+        }
+      ]
+    },
+    {
+      "language": "scala",
+      "topic": "default",
+      "codeSha256": "23bd16a01f0a10569b8c3973e3b1b18728487c0c08ad992039879a7d4979257c",
+      "overview": "在 main 入口直接对范围求和。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 1,
+          "to": 2,
+          "title": "进入程序入口",
+          "detail": "Main 对象中的 main 接收命令行参数；本例不使用它们。"
+        },
+        {
+          "from": 3,
+          "to": 5,
+          "title": "求和并打印",
+          "detail": "1 to 10 包含两个端点，sum 计算总和，println 输出。"
+        }
+      ]
+    },
+    {
+      "language": "standard-ml",
+      "topic": "default",
+      "codeSha256": "f0b9754e5e5cbae05dfd1f4e84bd6d50ddf77fa22e2890dd3e26ee2b7e5f0a4b",
+      "overview": "先构造列表，再使用左折叠相加。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 1,
+          "to": 1,
+          "title": "生成 values",
+          "detail": "List.tabulate 调用函数处理索引 0 到 9；i+1 将它们变成 1 到 10。"
+        },
+        {
+          "from": 2,
+          "to": 2,
+          "title": "折叠求和",
+          "detail": "List.foldl 从初值 0 开始，用加法依次合并列表元素。"
+        },
+        {
+          "from": 3,
+          "to": 3,
+          "title": "转换成输出文本",
+          "detail": "Int.toString 将 total 变成字符串，^ 连接换行，再交给 print。"
+        }
+      ]
+    },
+    {
+      "language": "tcl",
+      "topic": "default",
+      "codeSha256": "91c8f03cc95731193e5fdf29d6f39ded15f56de5ec7cc7e9d186fd1dacba85b0",
+      "overview": "用 foreach 和 incr 更新累加器。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 1,
+          "to": 1,
+          "title": "设置初值",
+          "detail": "set 将 total 设为 0。"
+        },
+        {
+          "from": 2,
+          "to": 4,
+          "title": "逐项增加",
+          "detail": "foreach 遍历花括号内的数字列表，incr total $n 把当前数字加到 total。"
+        },
+        {
+          "from": 5,
+          "to": 5,
+          "title": "打印结果",
+          "detail": "puts 取出 total 的值并输出换行。"
+        }
+      ]
+    },
+    {
+      "language": "elixir",
+      "topic": "default",
+      "codeSha256": "297ad08044f5188280d0ee7e792818bb9ae9add797da46ba14fdd5816d9ebdf6",
+      "overview": "沿管道传递整数范围、总和与输出操作。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 1,
+          "to": 1,
+          "title": "生成范围",
+          "detail": "1..10 表示从 1 到 10 的范围。"
+        },
+        {
+          "from": 2,
+          "to": 2,
+          "title": "汇总范围",
+          "detail": "|> 将范围作为 Enum.sum 的参数，计算总和。"
+        },
+        {
+          "from": 3,
+          "to": 3,
+          "title": "输出求和值",
+          "detail": "继续把求和值传给 IO.puts，写出文本与换行。"
+        }
+      ]
+    },
+    {
+      "language": "erlang",
+      "topic": "default",
+      "codeSha256": "cc178dac2990303fb4379ca42e2c922776f61515c490b6bd07fb0d2f68ab0530",
+      "overview": "从导出的 main/0 入口调用列表函数。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 1,
+          "to": 2,
+          "title": "定义模块与导出入口",
+          "detail": "模块名是 main，main/0 表示一个没有参数的导出函数。"
+        },
+        {
+          "from": 4,
+          "to": 5,
+          "title": "生成列表并输出总和",
+          "detail": "lists:seq(1,10) 生成整数列表，lists:sum 求和；io:format 中的 ~p 输出值，~n 换行。"
+        }
+      ]
+    },
+    {
+      "language": "groovy",
+      "topic": "default",
+      "codeSha256": "08d720a6ed55f22983b247e46c6070012ae65e77db88c95f4ca7192de4b76fea",
+      "overview": "对范围做带初值的折叠求和。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 1,
+          "to": 1,
+          "title": "创建范围",
+          "detail": "1..10 包含两个端点，绑定给 values。"
+        },
+        {
+          "from": 2,
+          "to": 2,
+          "title": "折叠并输出",
+          "detail": "inject 从 0 开始，把当前累加值 total 与元素 n 交给闭包相加；println 输出最终值。"
+        }
+      ]
+    },
+    {
+      "language": "kotlin",
+      "topic": "default",
+      "codeSha256": "fb9f1439f6142d2926e57f3eb0e68215e344df758b82cf18d8e4de0f2e823fb3",
+      "overview": "在入口中直接对闭区间求和。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 1,
+          "to": 1,
+          "title": "进入 main",
+          "detail": "程序从 main 开始。"
+        },
+        {
+          "from": 2,
+          "to": 3,
+          "title": "求和并输出",
+          "detail": "1..10 包含端点，sum() 汇总这些数，println 打印结果。"
+        }
+      ]
+    },
+    {
+      "language": "haskell",
+      "topic": "default",
+      "codeSha256": "56af3b6d7df8292b3bc0937e52bc416f696d8d7e8e81a765e1cf5bbef3d25f45",
+      "overview": "main 描述一个打印总和的 IO 动作。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 1,
+          "to": 1,
+          "title": "声明 main 的类型",
+          "detail": "IO () 表示 main 是执行后不返回有用值的输入输出动作；这行是类型声明。"
+        },
+        {
+          "from": 2,
+          "to": 2,
+          "title": "定义打印动作",
+          "detail": "[1..10] 生成整数列表，sum 求和；:: Int 指定数值类型，print 在执行 main 时输出。"
+        }
+      ]
+    },
+    {
+      "language": "ocaml",
+      "topic": "default",
+      "codeSha256": "ce090d2df655ae1393346d2d3296a101465ea26b2348c0bc3dcf426a0b8658a6",
+      "overview": "构造列表，再把求和值交给格式化输出。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 1,
+          "to": 1,
+          "title": "构造 values",
+          "detail": "List.init 的索引从 0 开始；i+1 将十个索引转换成 1 到 10。"
+        },
+        {
+          "from": 2,
+          "to": 2,
+          "title": "左折叠并输出",
+          "detail": "List.fold_left (+) 0 从 0 开始相加，Printf.printf 使用 %d 和换行输出。"
+        }
+      ]
+    },
+    {
+      "language": "clojure",
+      "topic": "default",
+      "codeSha256": "a45052a9af0d8316f6db51eea8ab081bd3b7b5c59d605be51980bb9d5729fd27",
+      "overview": "定义求和函数，再调用一次。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 1,
+          "to": 2,
+          "title": "定义 sum-to",
+          "detail": "range 从 1 开始、不包含右端点；inc n 将右端点设为 n+1，所以包含 n。reduce + 将序列相加。"
+        },
+        {
+          "from": 4,
+          "to": 4,
+          "title": "调用并打印",
+          "detail": "sum-to 接收 10，println 打印函数返回的总和。"
+        }
+      ]
+    },
+    {
+      "language": "ada",
+      "topic": "default",
+      "codeSha256": "cae173463873edbae70a254daef40993f863dc56684c3a1b11f51421ac19ccd9",
+      "overview": "在过程主体中初始化、累加并输出。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 1,
+          "to": 6,
+          "title": "引入输出包并声明变量",
+          "detail": "with 引入文本及整数输出包；Total 是初值为 0 的 Integer。"
+        },
+        {
+          "from": 7,
+          "to": 9,
+          "title": "遍历闭区间",
+          "detail": "I 从 1 到 10，每轮更新 Total。"
+        },
+        {
+          "from": 10,
+          "to": 12,
+          "title": "输出整数和换行",
+          "detail": "Put 的 Width=>0 避免额外字段宽度填充；New_Line 单独换行。"
+        }
+      ]
+    },
+    {
+      "language": "cobol",
+      "topic": "default",
+      "codeSha256": "68caff9066f8762d68ebb090ba48ae90022a3b505747db9975fd4eb3f8719afe",
+      "overview": "用工作存储中的数字字段累加，再格式化显示。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 1,
+          "to": 7,
+          "title": "声明程序与存储",
+          "detail": "n 是循环数，total 初始为 0，shown 是用于显示的编辑字段。"
+        },
+        {
+          "from": 8,
+          "to": 11,
+          "title": "重复相加",
+          "detail": "PERFORM 每次把 n 增加 1，直到 n>10 为止；ADD 更新 total。"
+        },
+        {
+          "from": 12,
+          "to": 14,
+          "title": "格式化并返回",
+          "detail": "MOVE 将总和送入 shown，TRIM 去掉前导空白再 DISPLAY，GOBACK 返回。"
+        }
+      ]
+    },
+    {
+      "language": "smalltalk",
+      "topic": "default",
+      "codeSha256": "c5304f339834315dae79a1b3bbf56449d46e7c9aee03be355cc9ec9edd34094c",
+      "overview": "向整数发送迭代消息，闭包中更新总和。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 1,
+          "to": 2,
+          "title": "声明并赋值",
+          "detail": "竖线声明临时变量 total，:= 将其设为 0。"
+        },
+        {
+          "from": 3,
+          "to": 3,
+          "title": "迭代消息与块",
+          "detail": "1 接收 to:do: 消息；块参数 i 依次为 1 到 10，块中累加 total。"
+        },
+        {
+          "from": 4,
+          "to": 4,
+          "title": "发送打印消息",
+          "detail": "total 接收 printNl 消息，打印并换行。"
+        }
+      ]
+    },
+    {
+      "language": "racket",
+      "topic": "default",
+      "codeSha256": "cf55c73ade547ddee63322673cfa5764abf2ebb94e52164487e8af81e4a7a87d",
+      "overview": "定义求和过程，再调用它。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 1,
+          "to": 4,
+          "title": "声明语言并定义过程",
+          "detail": "#lang 选择 racket/base；in-range 的右端点不包含在范围内，用 add1 n 让求和包含 n。for/sum 汇总各次的 i。"
+        },
+        {
+          "from": 6,
+          "to": 6,
+          "title": "调用并输出",
+          "detail": "sum-to 接收 10，displayln 输出返回值。"
+        }
+      ]
+    },
+    {
+      "language": "forth",
+      "topic": "default",
+      "codeSha256": "4485c9f5180e7d75f7aa1c94ec3fcd2e597cc8f8f2cdc9ce595529679f0c928f",
+      "overview": "利用数据栈和循环累加。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 1,
+          "to": 1,
+          "title": "说明词的栈效果",
+          "detail": "冒号开始定义 sum-to；括号内 n -- total 是注释，表示消耗 n 并留下总和。"
+        },
+        {
+          "from": 2,
+          "to": 2,
+          "title": "安排栈与循环",
+          "detail": "0 是累加初值；swap 调整栈顺序，1+ 设定不包含的循环上界，?do 从 1 开始循环，用 i + 相加。"
+        },
+        {
+          "from": 3,
+          "to": 3,
+          "title": "调用这个词",
+          "detail": "10 先入栈，sum-to 留下总和，. 打印数值，cr 换行。"
+        }
+      ]
+    },
+    {
+      "language": "prolog",
+      "topic": "default",
+      "codeSha256": "69a40f510599edb7962806a500267f3ba6030bdf9c314e8a65a5acf16e12ce95",
+      "overview": "在 main 目标中依次满足三个子目标。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 1,
+          "to": 2,
+          "title": "产生数字列表",
+          "detail": "numlist(1,10,Numbers) 把 1 到 10 的列表与 Numbers 统一。"
+        },
+        {
+          "from": 3,
+          "to": 3,
+          "title": "求和并绑定结果",
+          "detail": "sum_list 将列表总和与 Total 统一，供后续目标使用。"
+        },
+        {
+          "from": 4,
+          "to": 4,
+          "title": "输出 Total",
+          "detail": "writeln 写出 Total；句点结束这个规则。"
+        }
+      ]
+    },
+    {
+      "language": "common-lisp",
+      "topic": "default",
+      "codeSha256": "76304401bab6adb27995202ccda5046632ccdd3cba89e21640b28910f8a9e9fa",
+      "overview": "先定义过程，再调用并格式化打印。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 1,
+          "to": 2,
+          "title": "定义 sum-to",
+          "detail": "defun 定义接收 n 的函数；loop 从 1 到 n，sum 汇总每次的 i。"
+        },
+        {
+          "from": 3,
+          "to": 3,
+          "title": "调用并输出",
+          "detail": "sum-to 接收 10；format 以 t 选择标准输出，~d 写整数，~% 换行。"
+        }
+      ]
+    },
+    {
+      "language": "algol-60",
+      "topic": "default",
+      "codeSha256": "93a2e319dea621ba2c0465a827c6adfc910c2ae081b972d0d3e64fb5990a7dae",
+      "overview": "在块中声明整数、循环累加并输出。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 1,
+          "to": 3,
+          "title": "准备块内变量",
+          "detail": "begin/end 包住一个块；声明 i、total，再把 total 赋为 0。"
+        },
+        {
+          "from": 4,
+          "to": 4,
+          "title": "执行 for 循环",
+          "detail": "i 从 1 开始，每次加 1，包含终点 10；每轮把 i 加到 total。"
+        },
+        {
+          "from": 5,
+          "to": 6,
+          "title": "写出总和",
+          "detail": "outinteger 输出整数，outstring 追加换行，随后离开块。"
+        }
+      ]
+    },
+    {
+      "language": "pascal",
+      "topic": "default",
+      "codeSha256": "c4dc0a4b48eedb16b51bc3eacb6ca15daf8afb1bf9731d2f8b399cd79477ae30",
+      "overview": "在程序主体中累加整数。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 1,
+          "to": 5,
+          "title": "声明并初始化",
+          "detail": "program 命名程序，var 声明 total、i；begin 后将 total 设为 0。"
+        },
+        {
+          "from": 6,
+          "to": 7,
+          "title": "执行 for 循环",
+          "detail": "i 从 1 到 10，每轮执行下一条累加语句。"
+        },
+        {
+          "from": 8,
+          "to": 9,
+          "title": "输出并结束",
+          "detail": "writeln 写出 total 并换行，end. 结束程序。"
+        }
+      ]
+    },
+    {
+      "language": "r",
+      "topic": "default",
+      "codeSha256": "b89f82c0dc04b8b941245b9092f0dd3010a074f0deca20e35b823e4c16b9d1c3",
+      "overview": "对向量求和后写出文本。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 1,
+          "to": 1,
+          "title": "构造整数向量",
+          "detail": "1:10 生成包含两个端点的整数向量，<- 将它绑定到 values。"
+        },
+        {
+          "from": 2,
+          "to": 2,
+          "title": "求和并连接输出",
+          "detail": "sum(values) 求和，cat 写出它与换行；sep=\"\" 避免插入额外分隔空格。"
+        }
+      ]
+    },
+    {
+      "language": "javascript",
+      "topic": "default",
+      "codeSha256": "9e86a8cb12313ec0215c4f6cf347982327c9971f88d24863cf2e6f8a8a50963e",
+      "overview": "遍历三个语言名字，逐个输出问候。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 1,
+          "to": 1,
+          "title": "准备数组",
+          "detail": "const 将 languages 绑定到按顺序保存三个名字的数组。"
+        },
+        {
+          "from": 2,
+          "to": 2,
+          "title": "逐个取得名字",
+          "detail": "for...of 依次把数组元素绑定到 name。"
+        },
+        {
+          "from": 3,
+          "to": 4,
+          "title": "拼接问候并输出",
+          "detail": "模板字符串中的 ${name} 替换为当前名字，console.log 每轮输出一句。"
+        }
+      ]
+    },
+    {
+      "language": "typescript",
+      "topic": "default",
+      "codeSha256": "6e8a78c048b483e22b72cac8e1ac18eabba53b74239b3302727918b5789c3d51",
+      "overview": "定义带类型的求和函数，再调用它。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 1,
+          "to": 2,
+          "title": "声明参数与局部变量",
+          "detail": "n 和返回值使用 number 类型；total 从 0 开始。"
+        },
+        {
+          "from": 3,
+          "to": 5,
+          "title": "累加并返回",
+          "detail": "i 从 1 到 n，每轮累加，循环结束后 return total。"
+        },
+        {
+          "from": 6,
+          "to": 6,
+          "title": "调用与输出",
+          "detail": "sumTo(10) 计算总和，console.log 写出返回值；类型检查通过后才执行。"
+        }
+      ]
+    },
+    {
+      "language": "sql",
+      "topic": "default",
+      "codeSha256": "5d496f10c689709e8a25c5062cd92abff5072647ef9a11ff1a8e1871d927ea69",
+      "overview": "先在本次内存数据库建表、插入，再查询。",
+      "stdin": "表数据直接写在 INSERT 语句中，本例不使用独立标准输入。",
+      "steps": [
+        {
+          "from": 2,
+          "to": 2,
+          "title": "建立表结构",
+          "detail": "CREATE TABLE 声明 name 文本列与 year 整数列。"
+        },
+        {
+          "from": 3,
+          "to": 3,
+          "title": "写入三条记录",
+          "detail": "INSERT 把语言名字和年份放入表中。"
+        },
+        {
+          "from": 4,
+          "to": 4,
+          "title": "筛选并排序",
+          "detail": "WHERE 保留 year>=1990 的记录，ORDER BY 按年份升序排列，SELECT 返回 name 和 year。"
+        }
+      ]
+    },
+    {
+      "language": "python",
+      "topic": "default",
+      "codeSha256": "5aea1af36c93e122bcfbff18b93049d99413c74281b29d9df73ab0ce4117a477",
+      "overview": "遍历语言名字列表，逐个输出问候。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 1,
+          "to": 1,
+          "title": "准备列表",
+          "detail": "languages 保存三个字符串，列表保留它们的先后顺序。"
+        },
+        {
+          "from": 2,
+          "to": 2,
+          "title": "逐个绑定 name",
+          "detail": "for 每轮取出一个列表元素并绑定到 name，缩进部分是循环体。"
+        },
+        {
+          "from": 3,
+          "to": 3,
+          "title": "格式化并打印",
+          "detail": "f 字符串将 {name} 换成当前名字，print 每轮输出一句并换行。"
+        }
+      ]
+    },
+    {
+      "language": "lua",
+      "topic": "default",
+      "codeSha256": "42f744a140725995e91ad4443c2628a54dd440731a6da98abd707488db7af8b9",
+      "overview": "把 table 当作顺序列表遍历。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 1,
+          "to": 1,
+          "title": "准备局部 table",
+          "detail": "local 声明 languages，花括号内按顺序保存三个名字。"
+        },
+        {
+          "from": 2,
+          "to": 2,
+          "title": "按索引遍历",
+          "detail": "ipairs 从索引 1 开始依次给出索引和值；_ 接收本例不用的索引，name 接收名字。"
+        },
+        {
+          "from": 3,
+          "to": 4,
+          "title": "连接字符串",
+          "detail": ".. 连接文本与当前名字，print 输出问候，end 结束循环体。"
+        }
+      ]
+    },
+    {
+      "language": "scheme",
+      "topic": "default",
+      "codeSha256": "dfbcd75e133bdc8dc638f08a5da8e3cb75ee85a1767795b6e587c7fee2a36ea4",
+      "overview": "通过命名 let 表达循环累加。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 2,
+          "to": 3,
+          "title": "定义过程与循环状态",
+          "detail": "sum-to 接收 n；命名 let 把 i 初始设为 n、total 设为 0。"
+        },
+        {
+          "from": 4,
+          "to": 5,
+          "title": "检查结束或递归",
+          "detail": "i=0 时返回 total；否则将 i 减 1、把当前 i 加入 total，再调用 loop。"
+        },
+        {
+          "from": 6,
+          "to": 7,
+          "title": "调用并显示",
+          "detail": "sum-to 接收 10，display 显示返回值，newline 单独换行。"
+        }
+      ]
+    },
+    {
+      "language": "c",
+      "topic": "default",
+      "codeSha256": "9b5ddc197b5ae42c4046348cb3c371e673d17e2e0da0017e668dace73be040ac",
+      "overview": "从 main 入口写出固定文本。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 1,
+          "to": 3,
+          "title": "声明输出函数与入口",
+          "detail": "stdio.h 提供 puts 的声明，main 是程序入口。"
+        },
+        {
+          "from": 4,
+          "to": 4,
+          "title": "输出一行",
+          "detail": "puts 写出字符串，并自动追加换行。"
+        },
+        {
+          "from": 5,
+          "to": 6,
+          "title": "返回状态",
+          "detail": "return 0 表示正常结束，不会再打印一个 0。"
+        }
+      ]
+    },
+    {
+      "language": "cpp",
+      "topic": "default",
+      "codeSha256": "8de951e1a7aae87a5c12c2ee01b96143223564494e652847b25b3db37cda3423",
+      "overview": "在 main 中使用标准输出流。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 1,
+          "to": 3,
+          "title": "引入输出流并进入入口",
+          "detail": "iostream 提供 std::cout，执行从 main 开始。"
+        },
+        {
+          "from": 4,
+          "to": 5,
+          "title": "向输出流写入文本",
+          "detail": "<< 将字符串送入 std::cout；字符串末尾的 \\n 负责换行。"
+        }
+      ]
+    },
+    {
+      "language": "java",
+      "topic": "default",
+      "codeSha256": "bb3b1d2f7e06cea4ca771527be718458167c7474963c8d9b7676bbb4168a37f9",
+      "overview": "从静态 main 方法进入并打印。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 1,
+          "to": 2,
+          "title": "声明类与入口",
+          "detail": "Museum 包含 public static void main，这是此程序的入口方法。"
+        },
+        {
+          "from": 3,
+          "to": 5,
+          "title": "执行打印语句",
+          "detail": "System.out.println 将固定字符串写到标准输出，并换行。"
+        }
+      ]
+    },
+    {
+      "language": "ruby",
+      "topic": "default",
+      "codeSha256": "0a06263554ea0117b17282f7aace5959a48de41367c769e9849e3969576cab96",
+      "overview": "对数组中的每个名字执行一个块。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 1,
+          "to": 1,
+          "title": "准备数组并调用 each",
+          "detail": "三个字符串形成数组；each 依次把元素传给块参数 name。"
+        },
+        {
+          "from": 2,
+          "to": 3,
+          "title": "插值并输出",
+          "detail": "字符串中的 #{name} 使用当前名字，puts 写出问候；end 结束块。"
+        }
+      ]
+    },
+    {
+      "language": "go",
+      "topic": "default",
+      "codeSha256": "a69e01cac16f99472a10d55d8eb7103dfc950421dee45617f9370696b5e34305",
+      "overview": "从 main 包的 main 函数进入。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 1,
+          "to": 5,
+          "title": "声明程序与输出包",
+          "detail": "package main 声明可执行程序包，import fmt 引入格式化输出。"
+        },
+        {
+          "from": 6,
+          "to": 7,
+          "title": "输出固定消息",
+          "detail": "fmt.Println 写出消息并换行。"
+        }
+      ]
+    },
+    {
+      "language": "rust",
+      "topic": "default",
+      "codeSha256": "2fabf77437346610177b415e493b6adc26602d858c5fbc61776589431474560e",
+      "overview": "从 main 函数进入并调用打印宏。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 1,
+          "to": 1,
+          "title": "定义入口",
+          "detail": "fn main() 定义程序入口函数。"
+        },
+        {
+          "from": 2,
+          "to": 3,
+          "title": "执行打印宏",
+          "detail": "println! 写出固定字符串并追加换行。"
+        }
+      ]
+    },
+    {
+      "language": "bash",
+      "topic": "default",
+      "codeSha256": "e8dcc7eebbd321ca92eb70ba0fc2f57e1ed63049d28b1a65b9c5dee4d445ad05",
+      "overview": "用算术循环累加 1 到 10。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 1,
+          "to": 1,
+          "title": "设置初值",
+          "detail": "total=0 设置 shell 变量；赋值两侧不加空格。"
+        },
+        {
+          "from": 2,
+          "to": 4,
+          "title": "重复算术相加",
+          "detail": "i 从 1 到 10；$((total+i)) 计算新值，再赋回 total。"
+        },
+        {
+          "from": 5,
+          "to": 5,
+          "title": "格式化打印",
+          "detail": "printf 用 %s 写出 total，格式中的 \\n 换行。"
+        }
+      ]
+    },
+    {
+      "language": "awk",
+      "topic": "default",
+      "codeSha256": "6b692f3c240634aa7e646de7409b129c0239789f329100003cfe109e766bd5a5",
+      "overview": "本例只在 BEGIN 中求和，不处理输入记录。",
+      "stdin": "这个 BEGIN 示例不读取输入行，标准输入可留空；AWK 的记录规则才用于逐行处理文本。",
+      "steps": [
+        {
+          "from": 1,
+          "to": 2,
+          "title": "先执行 BEGIN",
+          "detail": "BEGIN 在处理任何输入行之前执行，将 total 设为 0。"
+        },
+        {
+          "from": 3,
+          "to": 3,
+          "title": "执行内部循环",
+          "detail": "这里的 for 是程序内部的整数循环，i 从 1 到 10，每次累加。"
+        },
+        {
+          "from": 4,
+          "to": 5,
+          "title": "打印总和",
+          "detail": "print 输出 total；本例没有记录处理规则，完成 BEGIN 后即可结束。"
+        }
+      ]
+    },
+    {
+      "language": "sed",
+      "topic": "default",
+      "codeSha256": "66b296f86c08eccb5bbec6afbe74e1ff60eedf3c0075ad11a4878c599265c2bd",
+      "overview": "逐行替换标准输入文本中的单词。",
+      "stdin": "把待替换的文本填在“标准输入”中，可输入多行。未填文本时，本示例没有可处理的行。",
+      "steps": [
+        {
+          "from": 1,
+          "to": 1,
+          "title": "准备要处理的文本",
+          "detail": "注释建议在标准输入填写 Hello, world!；编辑区保留替换规则。"
+        },
+        {
+          "from": 2,
+          "to": 2,
+          "title": "对每行执行替换",
+          "detail": "s/world/Code Museum/g 将每行所有匹配的 world 换成 Code Museum；处理后的行默认写到输出。"
+        }
+      ]
+    },
+    {
+      "language": "php",
+      "topic": "default",
+      "codeSha256": "49056e39f876711318264e8b43b6080e56a1171e6ed04b8216ef91dc1c5cd89e",
+      "overview": "在 PHP 脚本中循环更新一个变量。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 1,
+          "to": 2,
+          "title": "进入 PHP 并初始化",
+          "detail": "<?php 开始 PHP 代码，$total 设为 0。"
+        },
+        {
+          "from": 3,
+          "to": 5,
+          "title": "执行循环",
+          "detail": "i 从 1 到 10，每轮执行 $total += $i。"
+        },
+        {
+          "from": 6,
+          "to": 6,
+          "title": "输出总和",
+          "detail": "echo 写出 total，PHP_EOL 追加换行。"
+        }
+      ]
+    },
+    {
+      "language": "perl",
+      "topic": "default",
+      "codeSha256": "a5bd7f04258161debcd36467ca30f23863fbed46d32d1821d0afaf6d09fb2d69",
+      "overview": "使用语句修饰形式逐项累加。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 1,
+          "to": 2,
+          "title": "设置源码与变量",
+          "detail": "use utf8 声明源码按 UTF-8 解读，my 定义局部的 total 并设为 0。"
+        },
+        {
+          "from": 3,
+          "to": 3,
+          "title": "逐项相加",
+          "detail": "for 1 .. 10 依次把数字放入默认变量 $_，前面的累加语句对每个数字执行一次。"
+        },
+        {
+          "from": 4,
+          "to": 4,
+          "title": "打印变量",
+          "detail": "双引号字符串中的 $total 展开为数值文本，\\n 换行。"
+        }
+      ]
+    },
+    {
+      "language": "xslt",
+      "topic": "default",
+      "codeSha256": "4387e8766ab244dc6590dcbed17ee4c3a01da755450e6d056a987f6c8aebc14b",
+      "overview": "把标准输入中的 XML 文档转换成纯文本。",
+      "stdin": "“标准输入”是 XML 原文；这里的预填文档是示例数据，可以修改。",
+      "steps": [
+        {
+          "from": 1,
+          "to": 4,
+          "title": "声明样式表与入口模板",
+          "detail": "xsl:output 选择文本输出；match=\"/\" 的模板从文档根开始处理。"
+        },
+        {
+          "from": 5,
+          "to": 8,
+          "title": "遍历 language 元素",
+          "detail": "select 选择 museum 下的 language 元素；每次输出 name、冒号、year 和一个换行。"
+        },
+        {
+          "from": 9,
+          "to": 10,
+          "title": "结束模板",
+          "detail": "循环和模板结束后得到文本。处理的数据来自输入 XML，修改 XML 会改变结果。"
+        }
+      ]
+    },
+    {
+      "language": "csharp",
+      "topic": "default",
+      "codeSha256": "0f16428f8ef4902e9cc17da2e2cfe70f0a8774b3764604b33a060d09890dc8bc",
+      "overview": "在 Main 入口对年份数组求和。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 1,
+          "to": 3,
+          "title": "引入命名空间",
+          "detail": "System 提供 Console，System.Linq 提供本例使用的 Sum 扩展方法。"
+        },
+        {
+          "from": 4,
+          "to": 8,
+          "title": "进入 Main 并创建数组",
+          "detail": "创建包含 1972、1958、1991 的整数数组 years。"
+        },
+        {
+          "from": 9,
+          "to": 11,
+          "title": "汇总并输出",
+          "detail": "years.Sum() 累加数组中的年份，Console.WriteLine 写出总和并换行。"
+        }
+      ]
+    },
+    {
+      "language": "fortran",
+      "topic": "default",
+      "codeSha256": "9350c311d2457c155d0eff091113b17869a3b11ef957b1aab28cd7e258c0b82f",
+      "overview": "显式声明整数，并用 do 循环求和。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 1,
+          "to": 4,
+          "title": "声明与初始化",
+          "detail": "implicit none 要求显式声明变量；total 和 i 为整数，total 先设为 0。"
+        },
+        {
+          "from": 5,
+          "to": 7,
+          "title": "执行 do 循环",
+          "detail": "i 从 1 到 10，每次把 i 加到 total。"
+        },
+        {
+          "from": 8,
+          "to": 9,
+          "title": "按整数格式输出",
+          "detail": "I0 使用足够显示整数的字段宽度；print 写出总和并换行。"
+        }
+      ]
+    },
+    {
+      "language": "javascript",
+      "topic": "variables",
+      "codeSha256": "53343f1f25430b7bbae12c8187f629a85f6e4ea3c43b8635c7a75801c4f9e3b8",
+      "overview": "绑定两个值，再把它们组合成一行文本。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 1,
+          "to": 2,
+          "title": "准备名字和年份",
+          "detail": "将 name 绑定为 Museum、year 绑定为 2026。"
+        },
+        {
+          "from": 3,
+          "to": 3,
+          "title": "输出两个值",
+          "detail": "输出语句读取这两个变量，将它们与分隔空格组合后写出。"
+        }
+      ]
+    },
+    {
+      "language": "javascript",
+      "topic": "loops",
+      "codeSha256": "7135df4eda58180c7af5ea6605217dce6605acc0107ef16a8ee1a24a20b5ff80",
+      "overview": "从 0 开始累加 1 到 10，再打印总和。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 1,
+          "to": 1,
+          "title": "准备循环状态",
+          "detail": "累加器 total 初始为 0。"
+        },
+        {
+          "from": 2,
+          "to": 2,
+          "title": "逐项累加",
+          "detail": "依次把 1、2，直到 10 加入 total。循环条件或范围包含终点 10。"
+        },
+        {
+          "from": 3,
+          "to": 3,
+          "title": "输出总和",
+          "detail": "完成这些相加后，输出累加器的最终值。"
+        }
+      ]
+    },
+    {
+      "language": "javascript",
+      "topic": "functions",
+      "codeSha256": "6916356ad44698c73d0d9d4d2a1230d39c06d582fde2434a27ca788c8b78c74e",
+      "overview": "定义一个平方函数，用 7 调用它，再输出返回值。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 1,
+          "to": 1,
+          "title": "定义函数和参数",
+          "detail": "square（或 Square）接收参数 n；定义函数时还没有执行后面的调用。"
+        },
+        {
+          "from": 1,
+          "to": 1,
+          "title": "计算返回值",
+          "detail": "将传入的 n 与自身相乘，乘积作为函数结果。"
+        },
+        {
+          "from": 2,
+          "to": 2,
+          "title": "调用并输出",
+          "detail": "调用时把 7 传给 n，取得平方值，再由输出操作显示。"
+        }
+      ]
+    },
+    {
+      "language": "javascript",
+      "topic": "collections",
+      "codeSha256": "038c3a7204bea8ce10573a6a4caf36e7f588f652be0253a67b4578e83d4668fa",
+      "overview": "按顺序处理 3、1、2，把每个数乘以 2 并输出。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 1,
+          "to": 1,
+          "title": "准备集合",
+          "detail": "values 按顺序保存 3、1、2。"
+        },
+        {
+          "from": 2,
+          "to": 2,
+          "title": "处理每个元素",
+          "detail": "依次取得元素并乘以 2，形成 6、2、4 的输出值；有些语言先保存新集合，有些直接在遍历时打印。"
+        },
+        {
+          "from": 3,
+          "to": 3,
+          "title": "组织输出",
+          "detail": "按示例中的分隔符输出这些值，最后换行。"
+        }
+      ]
+    },
+    {
+      "language": "javascript",
+      "topic": "branches",
+      "codeSha256": "0e40da6cdb5b82bebbeadf4a6e594a38b30851cfe7e9905abd435ec804f4424a",
+      "overview": "判断一个数是否至少为 10，再选择要输出的文本。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 1,
+          "to": 1,
+          "title": "准备待判断的值",
+          "detail": "value 初始为 12。"
+        },
+        {
+          "from": 2,
+          "to": 5,
+          "title": "比较并选择分支",
+          "detail": ">=10 包含边界 10；原例中的 12 满足条件，因此选择 large。条件不满足时选择 small。"
+        },
+        {
+          "from": 2,
+          "to": 6,
+          "title": "输出所选文本",
+          "detail": "输出来自所选分支的文本；没有被选中的分支不执行。"
+        }
+      ]
+    },
+    {
+      "language": "python",
+      "topic": "variables",
+      "codeSha256": "158536b84a525d520ee73e8e796ffdd6365371e1d56b13bed46de21754f22d09",
+      "overview": "绑定两个值，再把它们组合成一行文本。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 1,
+          "to": 2,
+          "title": "准备名字和年份",
+          "detail": "将 name 绑定为 Museum、year 绑定为 2026。"
+        },
+        {
+          "from": 3,
+          "to": 3,
+          "title": "输出两个值",
+          "detail": "输出语句读取这两个变量，将它们与分隔空格组合后写出。"
+        }
+      ]
+    },
+    {
+      "language": "python",
+      "topic": "loops",
+      "codeSha256": "513f3dfa561d095150e50f3d1e5f2eeb9bb1a0541c0238223c20b43be085c0af",
+      "overview": "从 0 开始累加 1 到 10，再打印总和。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 1,
+          "to": 1,
+          "title": "准备循环状态",
+          "detail": "累加器 total 初始为 0。"
+        },
+        {
+          "from": 2,
+          "to": 3,
+          "title": "逐项累加",
+          "detail": "依次把 1、2，直到 10 加入 total。range(1, 11) 不包含 11。"
+        },
+        {
+          "from": 4,
+          "to": 4,
+          "title": "输出总和",
+          "detail": "完成这些相加后，输出累加器的最终值。"
+        }
+      ]
+    },
+    {
+      "language": "python",
+      "topic": "functions",
+      "codeSha256": "01070c628411934d7a0b37778d9657beacb895e4a14a106ef23a7bc399310244",
+      "overview": "定义一个平方函数，用 7 调用它，再输出返回值。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 1,
+          "to": 1,
+          "title": "定义函数和参数",
+          "detail": "square（或 Square）接收参数 n；定义函数时还没有执行后面的调用。"
+        },
+        {
+          "from": 2,
+          "to": 2,
+          "title": "计算返回值",
+          "detail": "将传入的 n 与自身相乘，乘积作为函数结果。"
+        },
+        {
+          "from": 4,
+          "to": 4,
+          "title": "调用并输出",
+          "detail": "调用时把 7 传给 n，取得平方值，再由输出操作显示。"
+        }
+      ]
+    },
+    {
+      "language": "python",
+      "topic": "collections",
+      "codeSha256": "7de49309317b4728ff81dffb932948638a01b4f52ffe107df57898af9b861bdb",
+      "overview": "按顺序处理 3、1、2，把每个数乘以 2 并输出。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 1,
+          "to": 1,
+          "title": "准备集合",
+          "detail": "values 按顺序保存 3、1、2。"
+        },
+        {
+          "from": 2,
+          "to": 2,
+          "title": "处理每个元素",
+          "detail": "依次取得元素并乘以 2，形成 6、2、4 的输出值；有些语言先保存新集合，有些直接在遍历时打印。"
+        },
+        {
+          "from": 3,
+          "to": 3,
+          "title": "组织输出",
+          "detail": "按示例中的分隔符输出这些值，最后换行。"
+        }
+      ]
+    },
+    {
+      "language": "python",
+      "topic": "branches",
+      "codeSha256": "80c4ba5e06a665b78c67223875b7c010293975e0f10fe5469cf9f64d59216ea5",
+      "overview": "判断一个数是否至少为 10，再选择要输出的文本。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 1,
+          "to": 1,
+          "title": "准备待判断的值",
+          "detail": "value 初始为 12。"
+        },
+        {
+          "from": 2,
+          "to": 5,
+          "title": "比较并选择分支",
+          "detail": ">=10 包含边界 10；原例中的 12 满足条件，因此选择 large。条件不满足时选择 small。"
+        },
+        {
+          "from": 2,
+          "to": 5,
+          "title": "输出所选文本",
+          "detail": "输出来自所选分支的文本；没有被选中的分支不执行。"
+        }
+      ]
+    },
+    {
+      "language": "lua",
+      "topic": "variables",
+      "codeSha256": "25ca58c1a4b0cc2e2f6b96a91480e31eb65ea05657a59f9a59c3b70ab2abd0a3",
+      "overview": "绑定两个值，再把它们组合成一行文本。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 1,
+          "to": 2,
+          "title": "准备名字和年份",
+          "detail": "将 name 绑定为 Museum、year 绑定为 2026。"
+        },
+        {
+          "from": 3,
+          "to": 3,
+          "title": "输出两个值",
+          "detail": "输出语句读取这两个变量，将它们与分隔空格组合后写出。"
+        }
+      ]
+    },
+    {
+      "language": "lua",
+      "topic": "loops",
+      "codeSha256": "43750b21dc1e28347594feeed9d31557c833564fb43d78a285e740432ac648a3",
+      "overview": "从 0 开始累加 1 到 10，再打印总和。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 1,
+          "to": 1,
+          "title": "准备循环状态",
+          "detail": "累加器 total 初始为 0。"
+        },
+        {
+          "from": 2,
+          "to": 4,
+          "title": "逐项累加",
+          "detail": "依次把 1、2，直到 10 加入 total。数值 for 包含终点 10。"
+        },
+        {
+          "from": 5,
+          "to": 5,
+          "title": "输出总和",
+          "detail": "完成这些相加后，输出累加器的最终值。"
+        }
+      ]
+    },
+    {
+      "language": "lua",
+      "topic": "functions",
+      "codeSha256": "e501b19c4cc20c75d9fce8bf994a96e31228a006d3ad445f52bd5fcbf79bd39a",
+      "overview": "定义一个平方函数，用 7 调用它，再输出返回值。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 1,
+          "to": 1,
+          "title": "定义函数和参数",
+          "detail": "square（或 Square）接收参数 n；定义函数时还没有执行后面的调用。"
+        },
+        {
+          "from": 2,
+          "to": 2,
+          "title": "计算返回值",
+          "detail": "将传入的 n 与自身相乘，乘积作为函数结果。"
+        },
+        {
+          "from": 4,
+          "to": 4,
+          "title": "调用并输出",
+          "detail": "调用时把 7 传给 n，取得平方值，再由输出操作显示。"
+        }
+      ]
+    },
+    {
+      "language": "lua",
+      "topic": "collections",
+      "codeSha256": "432700ba486e26964c4e5073ec7a6c70e66234deaff0119dbbfd36d37b762264",
+      "overview": "按顺序处理 3、1、2，把每个数乘以 2 并输出。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 1,
+          "to": 1,
+          "title": "准备集合",
+          "detail": "values 按顺序保存 3、1、2。table 作为连续序列，ipairs 遍历，索引从 1 开始。"
+        },
+        {
+          "from": 3,
+          "to": 5,
+          "title": "处理每个元素",
+          "detail": "依次取得元素并乘以 2，形成 6、2、4 的输出值；有些语言先保存新集合，有些直接在遍历时打印。"
+        },
+        {
+          "from": 6,
+          "to": 6,
+          "title": "组织输出",
+          "detail": "按示例中的分隔符输出这些值，最后换行。"
+        }
+      ]
+    },
+    {
+      "language": "lua",
+      "topic": "branches",
+      "codeSha256": "4706f782fdcc7de0d681bfa95ea737296663adcdc368d56fb937d7590687bc84",
+      "overview": "判断一个数是否至少为 10，再选择要输出的文本。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 1,
+          "to": 1,
+          "title": "准备待判断的值",
+          "detail": "value 初始为 12。"
+        },
+        {
+          "from": 2,
+          "to": 5,
+          "title": "比较并选择分支",
+          "detail": ">=10 包含边界 10；原例中的 12 满足条件，因此选择 large。条件不满足时选择 small。"
+        },
+        {
+          "from": 2,
+          "to": 6,
+          "title": "输出所选文本",
+          "detail": "输出来自所选分支的文本；没有被选中的分支不执行。"
+        }
+      ]
+    },
+    {
+      "language": "scheme",
+      "topic": "variables",
+      "codeSha256": "5798242d29b6bbf0896a16a92728398ec86aaf97bef34a48c0b1e4a54e2b7512",
+      "overview": "绑定两个值，再把它们组合成一行文本。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 1,
+          "to": 2,
+          "title": "准备名字和年份",
+          "detail": "将 name 绑定为 Museum、year 绑定为 2026。define 将名字绑定到值。"
+        },
+        {
+          "from": 3,
+          "to": 4,
+          "title": "输出两个值",
+          "detail": "输出语句读取这两个变量，将它们与分隔空格组合后写出。"
+        }
+      ]
+    },
+    {
+      "language": "scheme",
+      "topic": "loops",
+      "codeSha256": "7a4785dc1bda5ab6dfafcfa500f5a0c3c641102ff3f364c6049991f2bf581ed7",
+      "overview": "从 0 开始累加 1 到 10，再打印总和。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 2,
+          "to": 2,
+          "title": "准备循环状态",
+          "detail": "累加器 total 初始为 0。这里同时定义了递归过程的循环状态。"
+        },
+        {
+          "from": 2,
+          "to": 4,
+          "title": "逐项累加",
+          "detail": "依次把 1、2，直到 10 加入 total。命名 let 保存 i 和 total，通过尾递归进入下一轮。"
+        },
+        {
+          "from": 5,
+          "to": 5,
+          "title": "输出总和",
+          "detail": "完成这些相加后，输出累加器的最终值。"
+        }
+      ]
+    },
+    {
+      "language": "scheme",
+      "topic": "functions",
+      "codeSha256": "3244a843607993cc8f6f6eb43516f46c7711bd21604633394fadeea32a99072a",
+      "overview": "定义一个平方函数，用 7 调用它，再输出返回值。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 1,
+          "to": 1,
+          "title": "定义函数和参数",
+          "detail": "square（或 Square）接收参数 n；定义函数时还没有执行后面的调用。"
+        },
+        {
+          "from": 1,
+          "to": 1,
+          "title": "计算返回值",
+          "detail": "将传入的 n 与自身相乘，乘积作为函数结果。过程也是值，使用前缀形式调用。"
+        },
+        {
+          "from": 2,
+          "to": 2,
+          "title": "调用并输出",
+          "detail": "调用时把 7 传给 n，取得平方值，再由输出操作显示。"
+        }
+      ]
+    },
+    {
+      "language": "scheme",
+      "topic": "collections",
+      "codeSha256": "048e4faef4bf117f5d945f8c5f032f8e45b1085eb7d8ba1a7aac86b3de92dea2",
+      "overview": "按顺序处理 3、1、2，把每个数乘以 2 并输出。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 1,
+          "to": 1,
+          "title": "准备集合",
+          "detail": "values 按顺序保存 3、1、2。这里使用链表；for-each 的输出是空格分隔。"
+        },
+        {
+          "from": 2,
+          "to": 2,
+          "title": "处理每个元素",
+          "detail": "依次取得元素并乘以 2，形成 6、2、4 的输出值；有些语言先保存新集合，有些直接在遍历时打印。"
+        },
+        {
+          "from": 3,
+          "to": 4,
+          "title": "组织输出",
+          "detail": "按示例中的分隔符输出这些值，最后换行。"
+        }
+      ]
+    },
+    {
+      "language": "scheme",
+      "topic": "branches",
+      "codeSha256": "6d293412bc14b4bd777c5d906095723f725224f5a08c06f0917128ed19f7d548",
+      "overview": "判断一个数是否至少为 10，再选择要输出的文本。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 1,
+          "to": 1,
+          "title": "准备待判断的值",
+          "detail": "value 初始为 12。"
+        },
+        {
+          "from": 2,
+          "to": 2,
+          "title": "比较并选择分支",
+          "detail": ">=10 包含边界 10；原例中的 12 满足条件，因此选择 large。条件不满足时选择 small。"
+        },
+        {
+          "from": 2,
+          "to": 3,
+          "title": "输出所选文本",
+          "detail": "输出来自所选分支的文本；没有被选中的分支不执行。"
+        }
+      ]
+    },
+    {
+      "language": "ruby",
+      "topic": "variables",
+      "codeSha256": "8cf97963cd08b874154e79fbf108c211476c30dc353ca7d2d251e57c0b6692ba",
+      "overview": "绑定两个值，再把它们组合成一行文本。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 1,
+          "to": 2,
+          "title": "准备名字和年份",
+          "detail": "将 name 绑定为 Museum、year 绑定为 2026。"
+        },
+        {
+          "from": 3,
+          "to": 3,
+          "title": "输出两个值",
+          "detail": "输出语句读取这两个变量，将它们与分隔空格组合后写出。"
+        }
+      ]
+    },
+    {
+      "language": "ruby",
+      "topic": "loops",
+      "codeSha256": "122d950355866fb869496c09cf8aa97e0d6a32a0e97a2b6a6401093daa91498e",
+      "overview": "从 0 开始累加 1 到 10，再打印总和。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 1,
+          "to": 1,
+          "title": "准备循环状态",
+          "detail": "累加器 total 初始为 0。"
+        },
+        {
+          "from": 2,
+          "to": 2,
+          "title": "逐项累加",
+          "detail": "依次把 1、2，直到 10 加入 total。1..10 包含两个端点。"
+        },
+        {
+          "from": 3,
+          "to": 3,
+          "title": "输出总和",
+          "detail": "完成这些相加后，输出累加器的最终值。"
+        }
+      ]
+    },
+    {
+      "language": "ruby",
+      "topic": "functions",
+      "codeSha256": "e9fc756633037e4249e722faaa31bcb63e5958aa40d490f141961be1d4db1003",
+      "overview": "定义一个平方函数，用 7 调用它，再输出返回值。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 1,
+          "to": 1,
+          "title": "定义函数和参数",
+          "detail": "square（或 Square）接收参数 n；定义函数时还没有执行后面的调用。"
+        },
+        {
+          "from": 2,
+          "to": 2,
+          "title": "计算返回值",
+          "detail": "将传入的 n 与自身相乘，乘积作为函数结果。最后一个表达式的值作为返回值。"
+        },
+        {
+          "from": 4,
+          "to": 4,
+          "title": "调用并输出",
+          "detail": "调用时把 7 传给 n，取得平方值，再由输出操作显示。"
+        }
+      ]
+    },
+    {
+      "language": "ruby",
+      "topic": "collections",
+      "codeSha256": "237b54a4d2cd7f864acf6215fa73d820ae2cd8c65d767dd5862e90bd1d1fd5eb",
+      "overview": "按顺序处理 3、1、2，把每个数乘以 2 并输出。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 1,
+          "to": 1,
+          "title": "准备集合",
+          "detail": "values 按顺序保存 3、1、2。"
+        },
+        {
+          "from": 2,
+          "to": 2,
+          "title": "处理每个元素",
+          "detail": "依次取得元素并乘以 2，形成 6、2、4 的输出值；有些语言先保存新集合，有些直接在遍历时打印。"
+        },
+        {
+          "from": 3,
+          "to": 3,
+          "title": "组织输出",
+          "detail": "按示例中的分隔符输出这些值，最后换行。"
+        }
+      ]
+    },
+    {
+      "language": "ruby",
+      "topic": "branches",
+      "codeSha256": "0f4c8e9db01bef4db5f6845c8fbefa281b101f75a79b4dce041e35092caeb952",
+      "overview": "判断一个数是否至少为 10，再选择要输出的文本。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 1,
+          "to": 1,
+          "title": "准备待判断的值",
+          "detail": "value 初始为 12。"
+        },
+        {
+          "from": 2,
+          "to": 5,
+          "title": "比较并选择分支",
+          "detail": ">=10 包含边界 10；原例中的 12 满足条件，因此选择 large。条件不满足时选择 small。"
+        },
+        {
+          "from": 2,
+          "to": 6,
+          "title": "输出所选文本",
+          "detail": "输出来自所选分支的文本；没有被选中的分支不执行。"
+        }
+      ]
+    },
+    {
+      "language": "c",
+      "topic": "variables",
+      "codeSha256": "621cbe85c800474d4046daaa95ed2ba0acb944d0cd7dc9d39b9e60c4878bba7c",
+      "overview": "绑定两个值，再把它们组合成一行文本。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 3,
+          "to": 4,
+          "title": "准备名字和年份",
+          "detail": "将 name 绑定为 Museum、year 绑定为 2026。const char * 是字符串指针，int 明确整数类型。"
+        },
+        {
+          "from": 5,
+          "to": 7,
+          "title": "输出两个值",
+          "detail": "输出语句读取这两个变量，将它们与分隔空格组合后写出。"
+        }
+      ]
+    },
+    {
+      "language": "c",
+      "topic": "loops",
+      "codeSha256": "2de23dd74dfcf827b478dc7045da25720eb73041d753e78f692e1b510be3510d",
+      "overview": "从 0 开始累加 1 到 10，再打印总和。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 3,
+          "to": 3,
+          "title": "准备循环状态",
+          "detail": "累加器 total 初始为 0。"
+        },
+        {
+          "from": 4,
+          "to": 4,
+          "title": "逐项累加",
+          "detail": "依次把 1、2，直到 10 加入 total。循环条件或范围包含终点 10。"
+        },
+        {
+          "from": 5,
+          "to": 5,
+          "title": "输出总和",
+          "detail": "完成这些相加后，输出累加器的最终值。"
+        }
+      ]
+    },
+    {
+      "language": "c",
+      "topic": "functions",
+      "codeSha256": "44fe162ceb4193767ea653ba8199bd96260951cd2e9caf1b08d10e99eaedee89",
+      "overview": "定义一个平方函数，用 7 调用它，再输出返回值。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 2,
+          "to": 2,
+          "title": "定义函数和参数",
+          "detail": "square（或 Square）接收参数 n；定义函数时还没有执行后面的调用。"
+        },
+        {
+          "from": 2,
+          "to": 2,
+          "title": "计算返回值",
+          "detail": "将传入的 n 与自身相乘，乘积作为函数结果。"
+        },
+        {
+          "from": 4,
+          "to": 4,
+          "title": "调用并输出",
+          "detail": "调用时把 7 传给 n，取得平方值，再由输出操作显示。"
+        }
+      ]
+    },
+    {
+      "language": "c",
+      "topic": "collections",
+      "codeSha256": "656c79ec9c1099ff4204dd2d9f93ac17f709611b22ae9a36b7a93d5d20105389",
+      "overview": "按顺序处理 3、1、2，把每个数乘以 2 并输出。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 3,
+          "to": 3,
+          "title": "准备集合",
+          "detail": "values 按顺序保存 3、1、2。固定长度数组，逐项处理；此例不使用动态集合。"
+        },
+        {
+          "from": 4,
+          "to": 6,
+          "title": "处理每个元素",
+          "detail": "依次取得元素并乘以 2，形成 6、2、4 的输出值；有些语言先保存新集合，有些直接在遍历时打印。"
+        },
+        {
+          "from": 5,
+          "to": 9,
+          "title": "组织输出",
+          "detail": "按示例中的分隔符输出这些值，最后换行。"
+        }
+      ]
+    },
+    {
+      "language": "c",
+      "topic": "branches",
+      "codeSha256": "93c9afcb7c39b82328eda9cf177539761ff9a1e4c3c57726770c2a3b809df7fa",
+      "overview": "判断一个数是否至少为 10，再选择要输出的文本。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 3,
+          "to": 3,
+          "title": "准备待判断的值",
+          "detail": "value 初始为 12。"
+        },
+        {
+          "from": 4,
+          "to": 5,
+          "title": "比较并选择分支",
+          "detail": ">=10 包含边界 10；原例中的 12 满足条件，因此选择 large。条件不满足时选择 small。"
+        },
+        {
+          "from": 4,
+          "to": 7,
+          "title": "输出所选文本",
+          "detail": "输出来自所选分支的文本；没有被选中的分支不执行。"
+        }
+      ]
+    },
+    {
+      "language": "cpp",
+      "topic": "variables",
+      "codeSha256": "4025836a1fd380cc294d26511b7956dadb9fa209f4852635693096b9ca93428b",
+      "overview": "绑定两个值，再把它们组合成一行文本。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 4,
+          "to": 5,
+          "title": "准备名字和年份",
+          "detail": "将 name 绑定为 Museum、year 绑定为 2026。"
+        },
+        {
+          "from": 6,
+          "to": 7,
+          "title": "输出两个值",
+          "detail": "输出语句读取这两个变量，将它们与分隔空格组合后写出。"
+        }
+      ]
+    },
+    {
+      "language": "cpp",
+      "topic": "loops",
+      "codeSha256": "1af0847f115086d9c6bf949253b9c9f0296496dbaf6aa6131c3e088a83aa3768",
+      "overview": "从 0 开始累加 1 到 10，再打印总和。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 3,
+          "to": 3,
+          "title": "准备循环状态",
+          "detail": "累加器 total 初始为 0。"
+        },
+        {
+          "from": 4,
+          "to": 4,
+          "title": "逐项累加",
+          "detail": "依次把 1、2，直到 10 加入 total。循环条件或范围包含终点 10。"
+        },
+        {
+          "from": 5,
+          "to": 5,
+          "title": "输出总和",
+          "detail": "完成这些相加后，输出累加器的最终值。"
+        }
+      ]
+    },
+    {
+      "language": "cpp",
+      "topic": "functions",
+      "codeSha256": "2d7b9c6dfcd2a619932756587a1af081f5344e80456b0fb5221fd5d89e817b64",
+      "overview": "定义一个平方函数，用 7 调用它，再输出返回值。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 2,
+          "to": 2,
+          "title": "定义函数和参数",
+          "detail": "square（或 Square）接收参数 n；定义函数时还没有执行后面的调用。"
+        },
+        {
+          "from": 2,
+          "to": 2,
+          "title": "计算返回值",
+          "detail": "将传入的 n 与自身相乘，乘积作为函数结果。"
+        },
+        {
+          "from": 3,
+          "to": 3,
+          "title": "调用并输出",
+          "detail": "调用时把 7 传给 n，取得平方值，再由输出操作显示。"
+        }
+      ]
+    },
+    {
+      "language": "cpp",
+      "topic": "collections",
+      "codeSha256": "61d136962a7f6cf57ab22773afbb4ebe67e57edca86b7cdcfec38e305969abfb",
+      "overview": "按顺序处理 3、1、2，把每个数乘以 2 并输出。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 4,
+          "to": 4,
+          "title": "准备集合",
+          "detail": "values 按顺序保存 3、1、2。"
+        },
+        {
+          "from": 5,
+          "to": 6,
+          "title": "处理每个元素",
+          "detail": "依次取得元素并乘以 2，形成 6、2、4 的输出值；有些语言先保存新集合，有些直接在遍历时打印。"
+        },
+        {
+          "from": 6,
+          "to": 8,
+          "title": "组织输出",
+          "detail": "按示例中的分隔符输出这些值，最后换行。"
+        }
+      ]
+    },
+    {
+      "language": "cpp",
+      "topic": "branches",
+      "codeSha256": "bb305ab2bfdd777a9188cc3be87139031772e3028b05d04cf09a5051d61530c4",
+      "overview": "判断一个数是否至少为 10，再选择要输出的文本。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 3,
+          "to": 3,
+          "title": "准备待判断的值",
+          "detail": "value 初始为 12。"
+        },
+        {
+          "from": 4,
+          "to": 5,
+          "title": "比较并选择分支",
+          "detail": ">=10 包含边界 10；原例中的 12 满足条件，因此选择 large。条件不满足时选择 small。"
+        },
+        {
+          "from": 4,
+          "to": 6,
+          "title": "输出所选文本",
+          "detail": "输出来自所选分支的文本；没有被选中的分支不执行。"
+        }
+      ]
+    },
+    {
+      "language": "java",
+      "topic": "variables",
+      "codeSha256": "ad2206019edaec00ff376a5edccc44940bb7c76c2579e8178adfeda625e797a1",
+      "overview": "绑定两个值，再把它们组合成一行文本。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 3,
+          "to": 4,
+          "title": "准备名字和年份",
+          "detail": "将 name 绑定为 Museum、year 绑定为 2026。"
+        },
+        {
+          "from": 5,
+          "to": 7,
+          "title": "输出两个值",
+          "detail": "输出语句读取这两个变量，将它们与分隔空格组合后写出。"
+        }
+      ]
+    },
+    {
+      "language": "java",
+      "topic": "loops",
+      "codeSha256": "f4e4e21698b92e9b05ddf7676aa1eaf40721d036ea9616439f63fbdf1bff4290",
+      "overview": "从 0 开始累加 1 到 10，再打印总和。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 3,
+          "to": 3,
+          "title": "准备循环状态",
+          "detail": "累加器 total 初始为 0。"
+        },
+        {
+          "from": 4,
+          "to": 4,
+          "title": "逐项累加",
+          "detail": "依次把 1、2，直到 10 加入 total。循环条件或范围包含终点 10。"
+        },
+        {
+          "from": 5,
+          "to": 5,
+          "title": "输出总和",
+          "detail": "完成这些相加后，输出累加器的最终值。"
+        }
+      ]
+    },
+    {
+      "language": "java",
+      "topic": "functions",
+      "codeSha256": "ae23440b7091d2b583e000d70272bf236c035e3b3c663cecabec14d3c8abba80",
+      "overview": "定义一个平方函数，用 7 调用它，再输出返回值。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 2,
+          "to": 2,
+          "title": "定义函数和参数",
+          "detail": "square（或 Square）接收参数 n；定义函数时还没有执行后面的调用。"
+        },
+        {
+          "from": 2,
+          "to": 2,
+          "title": "计算返回值",
+          "detail": "将传入的 n 与自身相乘，乘积作为函数结果。"
+        },
+        {
+          "from": 4,
+          "to": 4,
+          "title": "调用并输出",
+          "detail": "调用时把 7 传给 n，取得平方值，再由输出操作显示。"
+        }
+      ]
+    },
+    {
+      "language": "java",
+      "topic": "collections",
+      "codeSha256": "474fb849324c4b7a81f26cabd8902244c84512415e4362fcbba89d7d4af59e2f",
+      "overview": "按顺序处理 3、1、2，把每个数乘以 2 并输出。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 3,
+          "to": 3,
+          "title": "准备集合",
+          "detail": "values 按顺序保存 3、1、2。"
+        },
+        {
+          "from": 4,
+          "to": 5,
+          "title": "处理每个元素",
+          "detail": "依次取得元素并乘以 2，形成 6、2、4 的输出值；有些语言先保存新集合，有些直接在遍历时打印。"
+        },
+        {
+          "from": 5,
+          "to": 8,
+          "title": "组织输出",
+          "detail": "按示例中的分隔符输出这些值，最后换行。"
+        }
+      ]
+    },
+    {
+      "language": "java",
+      "topic": "branches",
+      "codeSha256": "d3b151b1738f24987af5d46d12222883ac997a299ff217041e6e40179adbb6a5",
+      "overview": "判断一个数是否至少为 10，再选择要输出的文本。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 3,
+          "to": 3,
+          "title": "准备待判断的值",
+          "detail": "value 初始为 12。"
+        },
+        {
+          "from": 4,
+          "to": 5,
+          "title": "比较并选择分支",
+          "detail": ">=10 包含边界 10；原例中的 12 满足条件，因此选择 large。条件不满足时选择 small。"
+        },
+        {
+          "from": 4,
+          "to": 7,
+          "title": "输出所选文本",
+          "detail": "输出来自所选分支的文本；没有被选中的分支不执行。"
+        }
+      ]
+    },
+    {
+      "language": "csharp",
+      "topic": "variables",
+      "codeSha256": "17d3998d4ebe6ff55c17f2c907a76033b383c8482e0ee32261dc49a862650d12",
+      "overview": "绑定两个值，再把它们组合成一行文本。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 2,
+          "to": 3,
+          "title": "准备名字和年份",
+          "detail": "将 name 绑定为 Museum、year 绑定为 2026。"
+        },
+        {
+          "from": 4,
+          "to": 4,
+          "title": "输出两个值",
+          "detail": "输出语句读取这两个变量，将它们与分隔空格组合后写出。"
+        }
+      ]
+    },
+    {
+      "language": "csharp",
+      "topic": "loops",
+      "codeSha256": "4c403a08bac0233c006660364817375fe74ce88cece68969bb59c1d3c1fa7645",
+      "overview": "从 0 开始累加 1 到 10，再打印总和。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 2,
+          "to": 2,
+          "title": "准备循环状态",
+          "detail": "累加器 total 初始为 0。"
+        },
+        {
+          "from": 3,
+          "to": 3,
+          "title": "逐项累加",
+          "detail": "依次把 1、2，直到 10 加入 total。循环条件或范围包含终点 10。"
+        },
+        {
+          "from": 4,
+          "to": 4,
+          "title": "输出总和",
+          "detail": "完成这些相加后，输出累加器的最终值。"
+        }
+      ]
+    },
+    {
+      "language": "csharp",
+      "topic": "functions",
+      "codeSha256": "049fcc34445a941b5fde479bf5a7f3801fe9ec81276de5d0475b9a2e65e2d847",
+      "overview": "定义一个平方函数，用 7 调用它，再输出返回值。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 2,
+          "to": 2,
+          "title": "定义函数和参数",
+          "detail": "square（或 Square）接收参数 n；定义函数时还没有执行后面的调用。"
+        },
+        {
+          "from": 2,
+          "to": 2,
+          "title": "计算返回值",
+          "detail": "将传入的 n 与自身相乘，乘积作为函数结果。"
+        },
+        {
+          "from": 3,
+          "to": 3,
+          "title": "调用并输出",
+          "detail": "调用时把 7 传给 n，取得平方值，再由输出操作显示。"
+        }
+      ]
+    },
+    {
+      "language": "csharp",
+      "topic": "collections",
+      "codeSha256": "d4dac408846613608e4f4c537e91a577cba752e1364635228edfaec69bc26520",
+      "overview": "按顺序处理 3、1、2，把每个数乘以 2 并输出。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 2,
+          "to": 2,
+          "title": "准备集合",
+          "detail": "values 按顺序保存 3、1、2。"
+        },
+        {
+          "from": 3,
+          "to": 3,
+          "title": "处理每个元素",
+          "detail": "依次取得元素并乘以 2，形成 6、2、4 的输出值；有些语言先保存新集合，有些直接在遍历时打印。"
+        },
+        {
+          "from": 4,
+          "to": 4,
+          "title": "组织输出",
+          "detail": "按示例中的分隔符输出这些值，最后换行。"
+        }
+      ]
+    },
+    {
+      "language": "csharp",
+      "topic": "branches",
+      "codeSha256": "f2e7046a10f1b6f02b535a7f9d3bf24b57337d02c1ece3bbc4329d3a0814e642",
+      "overview": "判断一个数是否至少为 10，再选择要输出的文本。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 2,
+          "to": 2,
+          "title": "准备待判断的值",
+          "detail": "value 初始为 12。"
+        },
+        {
+          "from": 3,
+          "to": 4,
+          "title": "比较并选择分支",
+          "detail": ">=10 包含边界 10；原例中的 12 满足条件，因此选择 large。条件不满足时选择 small。"
+        },
+        {
+          "from": 3,
+          "to": 4,
+          "title": "输出所选文本",
+          "detail": "输出来自所选分支的文本；没有被选中的分支不执行。"
+        }
+      ]
+    },
+    {
+      "language": "rust",
+      "topic": "variables",
+      "codeSha256": "0d153771f14ad3261d4b7b545d92ce13c84502b8ba7ee3c8875729aee966e1bf",
+      "overview": "绑定两个值，再把它们组合成一行文本。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 2,
+          "to": 3,
+          "title": "准备名字和年份",
+          "detail": "将 name 绑定为 Museum、year 绑定为 2026。let 默认不可变，i32 明确整数类型。"
+        },
+        {
+          "from": 4,
+          "to": 5,
+          "title": "输出两个值",
+          "detail": "输出语句读取这两个变量，将它们与分隔空格组合后写出。"
+        }
+      ]
+    },
+    {
+      "language": "rust",
+      "topic": "loops",
+      "codeSha256": "1a930211964c756c72bd0145aab8a3c2c878fcf5f8552b695b07c7d70e87f9ce",
+      "overview": "从 0 开始累加 1 到 10，再打印总和。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 2,
+          "to": 2,
+          "title": "准备循环状态",
+          "detail": "累加器 total 初始为 0。"
+        },
+        {
+          "from": 3,
+          "to": 3,
+          "title": "逐项累加",
+          "detail": "依次把 1、2，直到 10 加入 total。1..=10 包含终点 10。"
+        },
+        {
+          "from": 4,
+          "to": 4,
+          "title": "输出总和",
+          "detail": "完成这些相加后，输出累加器的最终值。"
+        }
+      ]
+    },
+    {
+      "language": "rust",
+      "topic": "functions",
+      "codeSha256": "6786e1b3cec5cd27bf00beb42cf9375b137a1748e79aed7f87faafe7b333239e",
+      "overview": "定义一个平方函数，用 7 调用它，再输出返回值。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 1,
+          "to": 1,
+          "title": "定义函数和参数",
+          "detail": "square（或 Square）接收参数 n；定义函数时还没有执行后面的调用。"
+        },
+        {
+          "from": 1,
+          "to": 1,
+          "title": "计算返回值",
+          "detail": "将传入的 n 与自身相乘，乘积作为函数结果。末尾表达式不加分号，作为返回值。"
+        },
+        {
+          "from": 2,
+          "to": 2,
+          "title": "调用并输出",
+          "detail": "调用时把 7 传给 n，取得平方值，再由输出操作显示。"
+        }
+      ]
+    },
+    {
+      "language": "rust",
+      "topic": "collections",
+      "codeSha256": "2211198efa96b9b84a763a4a58a0c5a11c15b2551e6920ba12eef424f1a18e06",
+      "overview": "按顺序处理 3、1、2，把每个数乘以 2 并输出。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 2,
+          "to": 2,
+          "title": "准备集合",
+          "detail": "values 按顺序保存 3、1、2。Vec 是动态数组，迭代器把逐项结果收集成新集合。"
+        },
+        {
+          "from": 3,
+          "to": 3,
+          "title": "处理每个元素",
+          "detail": "依次取得元素并乘以 2，形成 6、2、4 的输出值；有些语言先保存新集合，有些直接在遍历时打印。"
+        },
+        {
+          "from": 4,
+          "to": 5,
+          "title": "组织输出",
+          "detail": "按示例中的分隔符输出这些值，最后换行。"
+        }
+      ]
+    },
+    {
+      "language": "rust",
+      "topic": "branches",
+      "codeSha256": "802b7fa1ec9d4fbf369f84dc7756d96fe7d79565772e2f189f990fda2eda13a8",
+      "overview": "判断一个数是否至少为 10，再选择要输出的文本。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 2,
+          "to": 2,
+          "title": "准备待判断的值",
+          "detail": "value 初始为 12。"
+        },
+        {
+          "from": 3,
+          "to": 4,
+          "title": "比较并选择分支",
+          "detail": ">=10 包含边界 10；原例中的 12 满足条件，因此选择 large。条件不满足时选择 small。"
+        },
+        {
+          "from": 3,
+          "to": 5,
+          "title": "输出所选文本",
+          "detail": "输出来自所选分支的文本；没有被选中的分支不执行。"
+        }
+      ]
+    },
+    {
+      "language": "go",
+      "topic": "variables",
+      "codeSha256": "587c2fb466a51afeddae3ca68d799c3ca1be50cad2e0d2fb8c269c408c867404",
+      "overview": "绑定两个值，再把它们组合成一行文本。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 4,
+          "to": 5,
+          "title": "准备名字和年份",
+          "detail": "将 name 绑定为 Museum、year 绑定为 2026。:= 声明变量并推断类型。"
+        },
+        {
+          "from": 6,
+          "to": 7,
+          "title": "输出两个值",
+          "detail": "输出语句读取这两个变量，将它们与分隔空格组合后写出。"
+        }
+      ]
+    },
+    {
+      "language": "go",
+      "topic": "loops",
+      "codeSha256": "ca9204c11712232eb4c7f8d2f61b432037362fe2b684741d9273dcfc20d601e7",
+      "overview": "从 0 开始累加 1 到 10，再打印总和。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 4,
+          "to": 4,
+          "title": "准备循环状态",
+          "detail": "累加器 total 初始为 0。"
+        },
+        {
+          "from": 5,
+          "to": 5,
+          "title": "逐项累加",
+          "detail": "依次把 1、2，直到 10 加入 total。i<=10 包含 10。"
+        },
+        {
+          "from": 6,
+          "to": 6,
+          "title": "输出总和",
+          "detail": "完成这些相加后，输出累加器的最终值。"
+        }
+      ]
+    },
+    {
+      "language": "go",
+      "topic": "functions",
+      "codeSha256": "5f5c9ca56ec2117aba4bdcf26d3d89c9487fd013ef52fa1666ff4a81223595e2",
+      "overview": "定义一个平方函数，用 7 调用它，再输出返回值。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 3,
+          "to": 3,
+          "title": "定义函数和参数",
+          "detail": "square（或 Square）接收参数 n；定义函数时还没有执行后面的调用。"
+        },
+        {
+          "from": 3,
+          "to": 3,
+          "title": "计算返回值",
+          "detail": "将传入的 n 与自身相乘，乘积作为函数结果。参数和返回类型写在名字后面。"
+        },
+        {
+          "from": 4,
+          "to": 4,
+          "title": "调用并输出",
+          "detail": "调用时把 7 传给 n，取得平方值，再由输出操作显示。"
+        }
+      ]
+    },
+    {
+      "language": "go",
+      "topic": "collections",
+      "codeSha256": "10788f582c8c13f4b7327dfa538338f356db9f8a6c5fe13695ad84339a41b7fb",
+      "overview": "按顺序处理 3、1、2，把每个数乘以 2 并输出。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 4,
+          "to": 4,
+          "title": "准备集合",
+          "detail": "values 按顺序保存 3、1、2。slice 表示序列，range 遍历；这里只使用标准库。"
+        },
+        {
+          "from": 6,
+          "to": 6,
+          "title": "处理每个元素",
+          "detail": "依次取得元素并乘以 2，形成 6、2、4 的输出值；有些语言先保存新集合，有些直接在遍历时打印。"
+        },
+        {
+          "from": 7,
+          "to": 8,
+          "title": "组织输出",
+          "detail": "按示例中的分隔符输出这些值，最后换行。"
+        }
+      ]
+    },
+    {
+      "language": "go",
+      "topic": "branches",
+      "codeSha256": "36b85efae3d7ddd45f10387e84ffdcda8f191fbef1bdb8f263cf8634bff91a7f",
+      "overview": "判断一个数是否至少为 10，再选择要输出的文本。",
+      "stdin": "本示例不读取标准输入，可留空。",
+      "steps": [
+        {
+          "from": 4,
+          "to": 4,
+          "title": "准备待判断的值",
+          "detail": "value 初始为 12。"
+        },
+        {
+          "from": 5,
+          "to": 8,
+          "title": "比较并选择分支",
+          "detail": ">=10 包含边界 10；原例中的 12 满足条件，因此选择 large。条件不满足时选择 small。"
+        },
+        {
+          "from": 5,
+          "to": 10,
+          "title": "输出所选文本",
+          "detail": "输出来自所选分支的文本；没有被选中的分支不执行。"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-10T03:40:04.430Z",
+  "browser": "Chrome/157.0.8103.39",
+  "origin": "local offline preview",
+  "scope": "Actual installed Chrome. Includes real browser JavaScript output, all 114 displayed explanation matches, edited draft behavior, line navigation, input guidance and responsive layouts. Does not execute remote languages or publish.",
+  "checks": [
+    {
+      "name": "Line selection leaves code and real JavaScript result intact, without executing or submitting",
+      "passed": true
+    },
+    {
+      "name": "Edited draft pauses explanations, hide/show preserves it, explicit reset restores matching",
+      "passed": true
+    },
+    {
+      "name": "Every museum/default and topic explanation matches its exact displayed code without submitting",
+      "matched": 114,
+      "passed": true
+    },
+    {
+      "name": "Input guidance matches the actual default program",
+      "language": "awk",
+      "passed": true
+    },
+    {
+      "name": "Input guidance matches the actual default program",
+      "language": "sed",
+      "passed": true
+    },
+    {
+      "name": "Input guidance matches the actual default program",
+      "language": "sql",
+      "passed": true
+    },
+    {
+      "name": "Input guidance matches the actual default program",
+      "language": "xslt",
+      "passed": true
+    },
+    {
+      "name": "Responsive code, explanation and result layout without horizontal overflow; all steps reachable",
+      "width": 1440,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Responsive code, explanation and result layout without horizontal overflow; all steps reachable",
+      "width": 1440,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Responsive code, explanation and result layout without horizontal overflow; all steps reachable",
+      "width": 900,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Responsive code, explanation and result layout without horizontal overflow; all steps reachable",
+      "width": 900,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Responsive code, explanation and result layout without horizontal overflow; all steps reachable",
+      "width": 680,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Responsive code, explanation and result layout without horizontal overflow; all steps reachable",
+      "width": 680,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Responsive code, explanation and result layout without horizontal overflow; all steps reachable",
+      "width": 390,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Responsive code, explanation and result layout without horizontal overflow; all steps reachable",
+      "width": 390,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Mobile line navigation brings the code editor back into view",
+      "passed": true
+    },
+    {
+      "name": "Uncovered catalogue language is explicit instead of fabricating an explanation",
+      "passed": true
+    }
+  ],
+  "inputs": {
+    "src/lab-explanations.js": "1213ca9ec24a58b401c2d7fd73b173ff1554547697a0d8c70567048524d499d1",
+    "src/lab-explanations.css": "c4ac511d23ff43d04912e884f5e787099c91b61d5baa07ad8718181c69aa834c",
+    "src/index.html": "543b13d82a58658869753a516f4fd3afd449e0bbe1d2426201e6c779a8e93a6f",
+    "src/lab.js": "3f901043b0bc65f7d81cf3f31d87a12e003a2ffe6e038eaa2337d08f3a183a93",
+    "src/lab-examples.js": "3118d01d3eeb6cc212617c1c1a4ef8d475834605fe299d9c47e871589c5cb5e1",
+    "src/learning-examples.js": "fbfb378565fad8f55eade20a9cd2c7d00a711845f8a060456f39b27016d8f07c",
+    "src/execution-modes.js": "28c84f769119505b884c19914502fe169b6ec913583e4e11bed1f12eb3a28537",
+    "data/lab-explanations.json": "ab9e4bb202873065ece4c8f71031e74bce4adc70b9e830f7f15b40b2fb8cc676",
+    "scripts/build.cjs": "3910475708063670422a14ad8a39dfa4fbd65a5c540ca324920e6cf731d3a3df",
+    "scripts/lab-explanations.cjs": "4db6074fdb8b8b249e530585164e60d4a185f00c87e20d5e7b0d77619dbc535f",
+    "scripts/check-lab-explanations.cjs": "c535853d42cea88a4ec2db5b102f1ac19fd76091e333e12a4fab087d7c913594"
+  }
+}
