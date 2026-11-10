@@ -1,5 +1,11 @@
 # Code Museum 首版部署
 
+## 2026-11-10 讲解界面采用“大模型”表述
+
+文案提交 `a492d29e139c13a16ce999971b7983910a7f83f3` 已由 [Actions 42791503790](https://github.com/glwang-g/code-museum/actions/runs/42791503790)成功构建部署。界面提示改为“点击时调用大模型解释当前代码；相同代码复用讲解。”，生成/复用状态统一为“大模型讲解”。113项默认测试、离线构建通过；本机与正式Chrome检查1440/390明暗页面及两种状态，正式截图已实际核读。该文案检查使用明确的显示夹具，没有新增模型调用，记录和截图位于忽略的 `tmp/model-copy/`。
+
+当前正式发布632文件、35,671,176字节已逐一核对，清单SHA-256为 `54fc2caa58ea7d7bc034bf2a28492d7598b62c1f656e2165402f82610a346ca3`。模型后端代码保持前次已验收哈希，独立健康检查通过。回退文案只需按原静态激活方式切回保留的 `61c2a1109e6a79a00eed9954d319c58773c27490`。以下为前次功能部署历史。
+
 ## 2026-11-10 按需DeepSeek讲解发布
 
 当前正式release为 `61c2a1109e6a79a00eed9954d319c58773c27490`，[Actions 42756298917](https://github.com/glwang-g/code-museum/actions/runs/42756298917) build/deploy均成功。113项默认测试和精确公共Git树离线复现通过；正式发布包632文件、35,671,189字节已逐文件核对，清单SHA-256为 `e275cac2efd48a0a7a42c412dbe615f56065dc8c636e9309e954c970e18df46b`。[正式模型讲解Chrome12项](../data/audit/ai-explanations-production.json)、[原有示例讲解Chrome17项](../data/audit/lab-explanations-production.json)通过，已实际核读1440暗色和390亮色截图。
