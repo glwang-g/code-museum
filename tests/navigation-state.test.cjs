@@ -14,3 +14,11 @@ test('old bookmarks and malformed views have safe defaults and unknown parameter
   assert.equal(serialize(invalid),'#river');
   assert.equal(parse('#lab?language=python&topic=collections').topic,'collections');
 });
+test('exhibition and reading links round-trip language IDs without including draft or model input',()=>{
+  assert.equal(serialize({view:'gallery'}),'#gallery');
+  for(const language of ['cpp','visual-basic.net','f-sharp']){
+    const hash=serialize({view:'read',language,code:'private draft',stdin:'private input',intent:'private intent'});
+    assert.equal(parse(hash).view,'read');assert.equal(parse(hash).language,language);
+    assert.ok(!/private|stdin|intent|code/.test(hash));
+  }
+});

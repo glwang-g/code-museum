@@ -14,6 +14,7 @@ function copySources() {
   for (const item of ['src', 'public', 'data', 'scripts', 'server', 'package.json']) {
     fs.cpSync(path.join(root, item), path.join(dir, item), { recursive: true });
   }
+  fs.cpSync(path.join(root,'archive/classic-ui'),path.join(dir,'archive/classic-ui'),{recursive:true});
   return dir;
 }
 function hashes(dir, base = dir, result = {}) {
@@ -49,6 +50,11 @@ test('source-only rebuild is offline, complete, and byte-for-byte repeatable', (
       canonicalHTML=canonicalHTML.replaceAll('"'+versioned+'"','"'+name+'"');
     }
     assert.equal(canonicalHTML,fs.readFileSync(path.join(root,'src/index.html'),'utf8'));
+    const classicManifest=JSON.parse(fs.readFileSync(path.join(dir,'dist/classic/data/asset-manifest.json')));
+    let classicHTML=fs.readFileSync(path.join(dir,'dist/classic/index.html'),'utf8');
+    for(const [name,versioned] of Object.entries(classicManifest))classicHTML=classicHTML.replaceAll('"'+versioned+'"','"'+name+'"');
+    assert.equal(classicHTML,fs.readFileSync(path.join(root,'archive/classic-ui/index.html'),'utf8'));
+    for(const file of ['museum.css','museum.js','lab.js','execution-modes.js','lab-explanations.js'])assert.deepEqual(fs.readFileSync(path.join(dir,'dist/classic',file)),fs.readFileSync(path.join(root,'archive/classic-ui',file)));
     new vm.Script(fs.readFileSync(path.join(dir, 'dist/museum.js'), 'utf8'));
     const context = { window: {} };
     vm.runInNewContext(fs.readFileSync(path.join(dir, 'dist/data/catalogue.js'), 'utf8'), context);

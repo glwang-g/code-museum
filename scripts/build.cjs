@@ -14,6 +14,7 @@ const { validateCommonLispRuntime } = require('./common-lisp-runtime.cjs');
 const { validateAlgol60Runtime } = require('./algol60-runtime.cjs');
 const { validatePascalRRuntime } = require('./pascal-r-runtime.cjs');
 const { fingerprintAssets } = require('./fingerprint-assets.cjs');
+const { preserveClassic } = require('./preserve-classic.cjs');
 
 const root = path.resolve(__dirname, '..');
 
@@ -150,6 +151,7 @@ function build(projectRoot = root) {
     const buildInfo={schemaVersion:1,contentSha256:versionHash.digest('hex')};
     fs.writeFileSync(path.join(next,'data/build-info.json'),JSON.stringify(buildInfo,null,2)+'\n');
     fs.writeFileSync(path.join(next,'data/build-info.js'),'window.MUSEUM_BUILD_INFO='+JSON.stringify(buildInfo)+';');
+    preserveClassic(projectRoot,next,[pyodideManifest,luaManifest,schemeManifest]);
     fingerprintAssets(next);
     if (fs.existsSync(output)) fs.renameSync(output, previous);
     try { fs.renameSync(next, output); }

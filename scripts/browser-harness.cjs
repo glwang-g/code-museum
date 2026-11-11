@@ -4,9 +4,9 @@ const {createRequestHandler}=require('./serve.cjs');
 const delay=ms=>new Promise(resolve=>setTimeout(resolve,ms));
 async function withBrowser(options,run){
  const root=path.resolve(__dirname,'..'),directory=path.resolve(root,options.output);fs.mkdirSync(directory,{recursive:true});
- const server=options.production?null:http.createServer(createRequestHandler(path.join(root,'dist')));
+ const server=options.production||options.origin?null:http.createServer(createRequestHandler(path.join(root,'dist')));
  if(server)await new Promise((resolve,reject)=>{server.once('error',reject);server.listen(0,'127.0.0.1',resolve)});
- const origin=options.production?'https://codemuseum.freexlib.com':'http://127.0.0.1:'+server.address().port;
+ const origin=options.origin||(options.production?'https://codemuseum.freexlib.com':'http://127.0.0.1:'+server.address().port);
  const profile=fs.mkdtempSync(path.join(os.tmpdir(),'museum-interaction-')),pending=new Map();let browser,session,sequence=0,buffer='';
  const send=(method,params={},sid)=>new Promise((resolve,reject)=>{const id=++sequence,timer=setTimeout(()=>{pending.delete(id);reject(new Error('Chrome timeout: '+method))},30000);pending.set(id,{resolve,reject,timer});browser.stdio[3].write(JSON.stringify({id,method,params,...(sid?{sessionId:sid}:{})})+'\0')});
  const page=(method,params)=>send(method,params,session);
@@ -25,7 +25,7 @@ async function withBrowser(options,run){
   const navigation=await page('Page.navigate',{url:origin+(options.hash||'/')});if(navigation.errorText)throw new Error(navigation.errorText);await page('Page.bringToFront');
   // The lab API is exposed before initial route restoration. Interacting while
   // later classic scripts still load can let that restoration cancel a test run.
-  await wait("document.readyState==='complete'&&!!window.MUSEUM_NAV&&!!window.MUSEUM_LAB");
+  await wait(options.ready||"document.readyState==='complete'&&!!window.MUSEUM_NAV&&!!window.MUSEUM_LAB");
   return await run({root,directory,origin,browserVersion:version.product,page,evaluate,wait,screenshot,point,mouse,click,delay});
  }catch(error){await screenshot('failure.png').catch(()=>{});throw error}
  finally{

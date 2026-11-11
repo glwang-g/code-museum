@@ -159,6 +159,9 @@ function activateTab(id){
   $('#lab').hidden=id!=='lab-view';
   $('#about').hidden=id!=='sources-view';
   $('#compare').hidden=id!=='compare-view';
+  if($('#gallery'))$('#gallery').hidden=id!=='gallery-view';
+  if($('#reading-room'))$('#reading-room').hidden=id!=='reading-view';
+  document.body.dataset.view=id;
   $('#river').setAttribute('aria-labelledby',id==='lineage-view'?'lineage-view':'timeline-view');
   for(const tab of document.querySelectorAll('.museum-tabs [role=tab]')){
     const active=tab.id===id;
@@ -173,6 +176,7 @@ function activateTab(id){
     $('#detail').inert=true;
   }
   if(previous!==id&&(previous==='lab-view'||id==='lab-view'))window.MUSEUM_LAB?.onTabChange(id==='lab-view');
+  document.dispatchEvent(new CustomEvent('museum-view-change',{detail:{id}}));
 }
 function showCatalogue(){activateTab('catalogue-view')}
 function showSources(){activateTab('sources-view')}
@@ -241,7 +245,7 @@ $('.museum-tabs').addEventListener('click',event=>{
   if(tab&&searchHasFocus())tab.focus({preventScroll:true});
 },true);
 $('.museum-tabs').addEventListener('keydown',event=>{
-  const tabs=[...document.querySelectorAll('.museum-tabs [role=tab]')];
+  const tabs=[...document.querySelectorAll('.museum-tabs [role=tab]')].filter(tab=>!tab.hidden);
   const index=tabs.indexOf(document.activeElement);
   if(index<0)return;
   const next=event.key==='ArrowRight'?(index+1)%tabs.length:event.key==='ArrowLeft'?(index+tabs.length-1)%tabs.length:event.key==='Home'?0:event.key==='End'?tabs.length-1:-1;

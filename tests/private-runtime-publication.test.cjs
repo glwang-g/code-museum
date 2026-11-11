@@ -48,6 +48,7 @@ test('public website builds offline without BCPL private inputs and never publis
  const dir=fs.mkdtempSync(path.join(os.tmpdir(),'museum-public-build-'));
  try{
   for(const name of ['src','public','data','server'])fs.cpSync(path.join(root,name),path.join(dir,name),{recursive:true,mode:fs.constants.COPYFILE_FICLONE});
+  fs.cpSync(path.join(root,'archive/classic-ui'),path.join(dir,'archive/classic-ui'),{recursive:true});
   build(dir);const initial=treeHashes(path.join(dir,'dist'));
   for(const name of privateFiles)fs.rmSync(path.join(dir,'server/runtimes/bcpl',name),{force:true});
   build(dir);assert.deepEqual(treeHashes(path.join(dir,'dist')),initial,'retained private inputs must not influence any published byte');

@@ -1,0 +1,300 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-11T01:24:54.277Z",
+  "browser": "Chrome/157.0.8103.39",
+  "origin": "http://127.0.0.1:4188",
+  "scope": "Independent local layout preview only. Complete fixed catalogue; actual JavaScript/Python/Lua/Scheme Workers. Model states use explicitly intercepted fixtures except one honest local disconnected response. No live provider, remote execution or deployment.",
+  "preservation": {
+    "baselineCommit": "942904f36a6cbd1ff04e413db3b26ce6a7829722",
+    "files": 638,
+    "totalBytes": 35718151,
+    "manifestSha256": "cda32214be9f962f6523708f953a7c3b3fb680082dc2a6d835ade89995a24dbf",
+    "unchanged": true
+  },
+  "checks": [
+    {
+      "name": "Loads actual complete fixed data and makes no model call",
+      "passed": true
+    },
+    {
+      "name": "Global creator search opens an actual language archive with real source links",
+      "passed": true
+    },
+    {
+      "name": "Full catalogue pagination, full-width search, empty state and 59-environment filter work",
+      "passed": true
+    },
+    {
+      "name": "Timeline and design relationships open fixed recorded evidence",
+      "passed": true
+    },
+    {
+      "name": "All five existing guided routes and authored code comparison remain accessible",
+      "passed": true
+    },
+    {
+      "name": "Reuses the existing real browser Worker runtime",
+      "language": "javascript",
+      "output": "42",
+      "passed": true
+    },
+    {
+      "name": "Reuses the existing real browser Worker runtime",
+      "language": "lua",
+      "output": "7",
+      "passed": true
+    },
+    {
+      "name": "Reuses the existing real browser Worker runtime",
+      "language": "scheme",
+      "output": "7",
+      "passed": true
+    },
+    {
+      "name": "Reuses the existing real browser Worker runtime",
+      "language": "python",
+      "output": "10",
+      "passed": true
+    },
+    {
+      "name": "Changing topic and real runtime errors preserve truthful output",
+      "passed": true
+    },
+    {
+      "name": "Missing-press tap from the code editor invokes the new Run button exactly once",
+      "passed": true
+    },
+    {
+      "name": "The primary Run label remains visible while the pointer hovers over it",
+      "passed": true
+    },
+    {
+      "name": "Unbounded JavaScript is limited and explicit Stop terminates the worker",
+      "passed": true
+    },
+    {
+      "name": "Remote runtime is clearly unavailable locally and never fabricates execution",
+      "passed": true
+    },
+    {
+      "name": "Preview drafts restore across reload without calling a model",
+      "passed": true
+    },
+    {
+      "name": "Disconnected model service reports honestly and retains a neutral verdict",
+      "passed": true
+    },
+    {
+      "name": "Existing validated review client renders exact-snapshot feedback with fixture-only response",
+      "verdict": "ok",
+      "passed": true
+    },
+    {
+      "name": "Existing validated review client renders exact-snapshot feedback with fixture-only response",
+      "verdict": "issues",
+      "passed": true
+    },
+    {
+      "name": "Existing validated review client renders exact-snapshot feedback with fixture-only response",
+      "verdict": "uncertain",
+      "passed": true
+    },
+    {
+      "name": "Editing clears prior review color and never replaces the original code",
+      "passed": true
+    },
+    {
+      "name": "Navigation and content fit the viewport",
+      "view": "explore",
+      "width": 1440,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Navigation and content fit the viewport",
+      "view": "collection",
+      "width": 1440,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Navigation and content fit the viewport",
+      "view": "lab",
+      "width": 1440,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Navigation and content fit the viewport",
+      "view": "explore",
+      "width": 1440,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Navigation and content fit the viewport",
+      "view": "collection",
+      "width": 1440,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Navigation and content fit the viewport",
+      "view": "lab",
+      "width": 1440,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Navigation and content fit the viewport",
+      "view": "explore",
+      "width": 900,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Navigation and content fit the viewport",
+      "view": "collection",
+      "width": 900,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Navigation and content fit the viewport",
+      "view": "lab",
+      "width": 900,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Navigation and content fit the viewport",
+      "view": "explore",
+      "width": 900,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Navigation and content fit the viewport",
+      "view": "collection",
+      "width": 900,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Navigation and content fit the viewport",
+      "view": "lab",
+      "width": 900,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Navigation and content fit the viewport",
+      "view": "explore",
+      "width": 390,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Navigation and content fit the viewport",
+      "view": "collection",
+      "width": 390,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Navigation and content fit the viewport",
+      "view": "lab",
+      "width": 390,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Navigation and content fit the viewport",
+      "view": "explore",
+      "width": 390,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Navigation and content fit the viewport",
+      "view": "collection",
+      "width": 390,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Navigation and content fit the viewport",
+      "view": "lab",
+      "width": 390,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Navigation and content fit the viewport",
+      "view": "explore",
+      "width": 320,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Navigation and content fit the viewport",
+      "view": "collection",
+      "width": 320,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Navigation and content fit the viewport",
+      "view": "lab",
+      "width": 320,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Navigation and content fit the viewport",
+      "view": "explore",
+      "width": 320,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Navigation and content fit the viewport",
+      "view": "collection",
+      "width": 320,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Navigation and content fit the viewport",
+      "view": "lab",
+      "width": 320,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "No uncaught page errors or remote execution submissions",
+      "passed": true
+    },
+    {
+      "name": "The complete current application remains available at the separate original URL",
+      "passed": true
+    },
+    {
+      "name": "All 638 original release files remain byte-for-byte identical to the preserved release",
+      "baselineCommit": "942904f36a6cbd1ff04e413db3b26ce6a7829722",
+      "files": 638,
+      "totalBytes": 35718151,
+      "manifestSha256": "cda32214be9f962f6523708f953a7c3b3fb680082dc2a6d835ade89995a24dbf",
+      "unchanged": true,
+      "passed": true
+    }
+  ],
+  "inputs": {
+    "experiments/modern-preview/index.html": "ce01ebe8d37112173198f6294a86005b642980bc4da9060b46466678a750c37e",
+    "experiments/modern-preview/modern.css": "143fb40d5ac5bf010ac1466eb746b2aee99af08bc38e84912cb2bc04de57513e",
+    "experiments/modern-preview/modern.js": "3037741468179c84ac7451d6b0fdfe105eec62a43b7f15641d7740794d539b38",
+    "experiments/modern-preview/check-browser.cjs": "a4b0ccd7f4e2a0d036ac30ac1f7a3b4459d97e228f7c6ca03a84d4b096d9909b",
+    "scripts/preview-modern.cjs": "d0a1c10985d911ac15fed21ac46524043f2cf7334d2d43131edb533be88bfa53",
+    "scripts/browser-harness.cjs": "983602a7dc033e9bfbe3d5921511db69cdb592bba857f4cd2a0fec2669f9731f"
+  }
+}

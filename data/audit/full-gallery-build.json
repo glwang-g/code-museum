@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "scope": "Complete gallery application, retained original UI, and existing ordinary-site service files. No SDKs or private inputs.",
+  "defaultTests": 125,
+  "classic": {
+    "files": 638,
+    "totalBytes": 35718151,
+    "manifestSha256": "cda32214be9f962f6523708f953a7c3b3fb680082dc2a6d835ade89995a24dbf"
+  },
+  "release": {
+    "files": 1268,
+    "totalBytes": 71383381,
+    "manifestSha256": "6ae5c318054e843c0a1b9135229c7af47d10b6e0feacd7d919743dc9506b8d0a"
+  },
+  "buildInfo": {
+    "schemaVersion": 1,
+    "contentSha256": "b5cbf0b79f5d3c5cc7fa572399849239fd422369ea6be853ca413f6cbdc0e45e"
+  },
+  "browserReports": [
+    "data/audit/full-gallery-browser.json",
+    "data/audit/control-activation-browser.json",
+    "data/audit/credits-directory-browser.json"
+  ]
+}

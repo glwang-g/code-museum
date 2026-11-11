@@ -1,5 +1,5 @@
 (function(root){
-  const views=new Set(['river','lineage','catalogue','lab','compare','about']);
+  const views=new Set(['gallery','read','river','lineage','catalogue','lab','compare','about']);
   function parse(hash){
     const [view,query='']=String(hash).replace(/^#/,'').split('?');
     const p=new URLSearchParams(query);

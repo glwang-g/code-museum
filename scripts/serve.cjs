@@ -58,7 +58,8 @@ function createRequestHandler(directory, options={}) {
   if (!['GET', 'HEAD'].includes(req.method)) { res.writeHead(405).end(); return; }
   try {
     const pathname = decodeURIComponent(new URL(req.url, 'http://localhost').pathname);
-    const file = path.resolve(root, '.' + (pathname === '/' ? '/index.html' : pathname));
+    if(pathname==='/classic'){res.writeHead(302,{Location:'/classic/'}).end();return;}
+    const file = path.resolve(root, '.' + (pathname.endsWith('/') ? pathname+'index.html' : pathname));
     if (!file.startsWith(root + path.sep)) { res.writeHead(403).end(); return; }
     if (!fs.existsSync(file) || !fs.statSync(file).isFile()) { res.writeHead(404).end('Not found'); return; }
     if (!fs.realpathSync(file).startsWith(root + path.sep)) { res.writeHead(403).end(); return; }

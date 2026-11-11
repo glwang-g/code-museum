@@ -1,0 +1,646 @@
+const {records,edges,ecosystemEdges=[],meta}=window.MUSEUM_DATA;
+const $=s=>document.querySelector(s),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function statusLabel(r){
+  const status=r.review?.status;
+  if(status==='verified-language')return '已核语法与实现';
+  if(status==='historical-primary-source')return '史料确认的历史语言';
+  if(status==='verified-related-technology')return '已核相关技术';
+  if(status==='verified-formal-language')return '形式语言／数据语法';
+  if(status==='bibliographic-only')return '仅有论文书目，语法与实现待核';
+  if(status==='review-blocked')return '来源访问受阻，待继续核实';
+  if(r.mapEligible)return '有语法与执行环境线索，待逐项核实';
+  if(r.category==='related'&&r.language)return '来源主类或人工分类为相关技术／记法';
+  return r.language?'来源标为语言，性质待核':'来源标为相关技术';
+}
+function categoryLabel(r){return r.category==='language'?'语言':r.category==='pending'?'性质待核':'相关技术／形式语法'}
+const byId=new Map(records.map(r=>[r.id,r])),positions=new Map(),timelinePositions=new Map();
+const mapLanguageIds=new Set(records.filter(r=>r.mapEligible).map(r=>r.id));
+const designEdges=edges.filter(e=>!['implementationOf','compatibleWith'].includes(e.type));
+const ecologyEdges=[...edges.filter(e=>['implementationOf','compatibleWith'].includes(e.type)),...ecosystemEdges];
+const mapDesignEdges=designEdges.filter(e=>mapLanguageIds.has(e.from)&&mapLanguageIds.has(e.to));
+const mapEcologyEdges=ecologyEdges.filter(e=>mapLanguageIds.has(e.from)&&mapLanguageIds.has(e.to));
+const activeMapEdges=()=>relationLayer==='design'?mapDesignEdges:mapEcologyEdges;
+const relationClass=e=>({supersetOf:'super',successorOf:'successor',implementationOf:'implementation',compatibleWith:'compatible'})[e.type]||'';
+const relationLabel=e=>e.label||({supersetOf:'超集扩展',successorOf:'后继',implementationOf:'语言实现',compatibleWith:'语法兼容',extensionInterface:'扩展接口',hostRuntime:'宿主运行时',interop:'互操作'})[e.type]||'影响';
+const relationEvidenceState=e=>typeof e.evidence==='string'&&e.evidence.trim()?'claim-with-citation':'record-field-only';
+const relationEvidenceLabel=e=>relationEvidenceState(e)==='claim-with-citation'?'附有论证与出处':'来源字段，关系待核';
+const relationEvidenceClass=e=>relationEvidenceState(e)==='claim-with-citation'?'cited-edge':'field-edge';
+const relationKey=e=>e.auditKey||[e.from,e.to,e.type].join('|');
+const relationAudit=new Map(window.MUSEUM_RELATIONSHIP_AUDIT.relations.map(e=>[e.key,e]));
+let inspectedRelation=null;
+const selectedIds=new Set(meta.mapLabelIds);
+const epochs=[[1800,65,'1800 · 序厅'],[1940,430,'1940'],[1950,610,'1950'],[1960,850,'1960'],[1970,1090,'1970'],[1980,1360,'1980'],[1990,1640,'1990'],[2000,1940,'2000'],[2010,2220,'2010'],[2026,2510,'2026']];
+function xpos(y){if(!y)return 2540;if(y<1800)return 30;for(let i=1;i<epochs.length;i++){let[a,x]=epochs[i-1],[b,z]=epochs[i];if(y<=b)return x+(y-a)/(b-a)*(z-x)}return 2550}
+const hash=s=>[...s].reduce((h,c)=>(h*31+c.charCodeAt(0))>>>0,0);
+let viewMode='timeline',relationLayer='design',relationScope='direct',relationDirection='both',relationLevels=1,activeId=null,zoomScale=1,zoomMode='fit',focusParts=null;
+function setAtlasFeedback(note,context='浏览全景'){$('#atlas-note').textContent=note;$('#atlas-context').textContent=context}
+function setResearchGapButton(id){const button=$('#atlas-research-gap'),gap=!!id&&selectedIds.has(id)&&!mapDesignEdges.some(e=>e.from===id||e.to===id);if(!button)return;button.hidden=!gap;button.setAttribute('aria-label',gap?`查看 ${byId.get(id)?.name||''} 的关系研究待办`:'');button.onclick=()=>gap&&window.MUSEUM_RELATIONSHIP_COVERAGE?.focusLanguage(id)}
+function updateRelationSettingsSummary(){const direction={both:'上下游',up:'上游',down:'下游'}[relationDirection]||'上下游';const detail=relationScope==='direct'?'直接关联':relationScope==='all'?'全部前序与后续':`${direction} · ${relationLevels} 层`;$('#relation-settings-summary').textContent=`探索设置 · ${detail}`}
+$('#epochs').innerHTML=epochs.map(([,x,n])=>`<span class="epoch" style="left:${x}px">${n}</span>`).join('');
+const verifiedCount=records.filter(r=>['verified-language','historical-primary-source'].includes(r.review?.status)).length;
+$('#counts').innerHTML=`<b>${meta.count.toLocaleString()}</b> 馆藏条目<br><b>${verifiedCount}</b> 条人工核实 · <b>${meta.mapLanguageCount.toLocaleString()}</b> 个有线索地图节点`;
+$('#provenance').textContent=`数据：PLDB / Public domain。获取于 ${meta.retrieved.slice(0,10)}。保留 ${meta.count} 条来源记录；其中 ${meta.languages} 条被来源标记为语言，该标记不等于已核实。无足够语法与实现线索的条目列入「性质待核」，已确认的工具、协议、编码等列入相关技术。`;
+const lanes=Array.from({length:9},()=>[]);
+const dated=records.filter(r=>r.year&&r.mapEligible).sort((a,b)=>a.year-b.year||a.name.localeCompare(b.name));
+for(const r of dated.filter(r=>selectedIds.has(r.id))){const x=xpos(r.year);let lane=lanes.findIndex(l=>l.every(p=>Math.abs(p-x)>125));if(lane<0)lane=hash(r.id)%9;lanes[lane].push(x);positions.set(r.id,{x,y:88+lane*53,label:true});}
+for(const r of records)if(!positions.has(r.id))positions.set(r.id,{x:xpos(r.year),y:65+hash(r.id)%490,label:false});
+for(const [id,p] of positions)timelinePositions.set(id,p);
+$('#docks').innerHTML=dated.map(r=>{let p=positions.get(r.id);return `<button type="button" class="dock ${p.label?'':'dot'}" data-id="${esc(r.id)}" data-name="${esc(r.name)}" style="left:${p.x}px;top:${p.y}px" aria-label="${esc(r.name)}，${r.year}">${p.label?esc(r.name)+`<small>${r.year}</small>`:''}</button>`}).join('');
+const events=[{name:'Jacquard · 提花织机',year:1804,url:'https://www.computerhistory.org/babbage/engines/'},{name:'Babbage · 分析机',year:1837,url:'https://www.computerhistory.org/babbage/engines/'},{name:'Ada · 分析机笔记',year:1843,url:'https://www.fourmilab.ch/babbage/sketch.html'},{name:'Church / Turing · 可计算性',year:1936,url:'https://plato.stanford.edu/entries/computability/'}];
+events.forEach((e,i)=>{const b=document.createElement('button');b.className='dock';b.style.cssText=`left:${90+i*100}px;top:${120+i*95}px`;b.textContent=e.name;b.onclick=()=>openPanel(`<div class="eyebrow">序厅 · ${e.year}</div><h2>${esc(e.name)}</h2><p>计算史背景事件，不是现代语言的直接派生节点。序厅事件为叙事排布。</p><h3>史料入口</h3><a href="${e.url}" target="_blank" rel="noreferrer">阅读来源 ↗</a>`);$('#docks').append(b)});
+// Water coordinates retain the original 1536 × 1024 composition; the WebP is a smaller encoding.
+const riverCurrents=[
+  'M 145 258 C 205 294 278 300 367 300',
+  'M 58 390 C 146 365 186 350 245 366 S 348 405 420 397',
+  'M 282 380 C 355 397 438 412 533 435 S 683 455 770 477',
+  'M 672 474 C 794 486 906 510 1016 550 S 1178 625 1296 660',
+  'M 1118 586 C 1232 644 1370 687 1536 731',
+  'M 48 551 C 136 545 216 565 299 594',
+  'M 312 606 C 410 639 480 667 561 682 S 696 706 786 738',
+  'M 690 704 C 823 743 931 792 1051 820 S 1230 858 1356 904',
+  'M 1155 840 C 1282 870 1402 919 1536 953',
+  'M 1028 253 C 1133 271 1227 279 1318 261 S 1447 258 1524 289'
+];
+const riverFoam=[[220,267],[339,300],[256,383],[491,430],[667,468],[886,510],[1097,582],[1370,693],[172,555],[433,647],[667,698],[934,784],[1279,883]];
+$('#water').innerHTML=riverCurrents.map((d,i)=>`<path class="flow" style="animation-delay:-${i*1.6}s" d="${d}"/>`).join('')+riverFoam.map(([x,y],i)=>`<ellipse class="foam" style="animation-delay:-${i%6}s" cx="${x}" cy="${y}" rx="${2+i%3}" ry="1.3"/>`).join('');
+const graphIds=new Set([...mapDesignEdges,...mapEcologyEdges].flatMap(e=>[e.from,e.to]));
+const indegree=new Map([...graphIds].map(id=>[id,0])),children=new Map([...graphIds].map(id=>[id,[]]));
+for(const e of mapDesignEdges){if(children.has(e.from)&&indegree.has(e.to)){children.get(e.from).push(e.to);indegree.set(e.to,indegree.get(e.to)+1)}}
+const parents=new Map([...graphIds].map(id=>[id,[]]));
+for(const e of mapDesignEdges)if(parents.has(e.to))parents.get(e.to).push(e.from);
+const depth=new Map([...graphIds].map(id=>[id,0])),queue=[...graphIds].filter(id=>indegree.get(id)===0);let cursor=0;
+while(cursor<queue.length){const id=queue[cursor++];for(const child of children.get(id)){depth.set(child,Math.max(depth.get(child),depth.get(id)+1));indegree.set(child,indegree.get(child)-1);if(indegree.get(child)===0)queue.push(child)}}
+const unresolved=[...graphIds].filter(id=>indegree.get(id)>0),maxDepth=Math.max(0,...depth.values());
+for(const id of unresolved)depth.set(id,maxDepth+1);
+const maxLayer=Math.max(0,...depth.values()),layers=Array.from({length:maxLayer+1},()=>[]);
+for(const id of graphIds)layers[depth.get(id)].push(byId.get(id));
+const lineagePositions=new Map();
+layers.forEach((layer,x)=>layer.sort((a,b)=>(a.year||9999)-(b.year||9999)||a.name.localeCompare(b.name)).forEach((r,i)=>lineagePositions.set(r.id,{x:70+x*2400/Math.max(1,maxLayer),y:35+(i+1)*540/(layer.length+1)})));
+function curvePoints(a,b){return [[a.x,a.y],[(a.x+b.x)/2,a.y],[(a.x+b.x)/2,b.y],[b.x,b.y]]}
+function cubicPoint(points,t){const u=1-t;return [u*u*u*points[0][0]+3*u*u*t*points[1][0]+3*u*t*t*points[2][0]+t*t*t*points[3][0],u*u*u*points[0][1]+3*u*u*t*points[1][1]+3*u*t*t*points[2][1]+t*t*t*points[3][1]]}
+function cubicDerivative(points,t){const u=1-t;return [3*u*u*(points[1][0]-points[0][0])+6*u*t*(points[2][0]-points[1][0])+3*t*t*(points[3][0]-points[2][0]),3*u*u*(points[1][1]-points[0][1])+6*u*t*(points[2][1]-points[1][1])+3*t*t*(points[3][1]-points[2][1])]}
+function relationHitCurve(a,b){
+  const points=curvePoints(a,b),distance=Math.hypot(b.x-a.x,b.y-a.y),trim=Math.min(.4,Math.max(.18,72/distance));
+  if(trim===0)return `M${a.x} ${a.y} C${points[1][0]} ${points[1][1]} ${points[2][0]} ${points[2][1]} ${b.x} ${b.y}`;
+  const start=cubicPoint(points,trim),end=cubicPoint(points,1-trim),startT=cubicDerivative(points,trim),endT=cubicDerivative(points,1-trim);
+  const span=1-2*trim;
+  return `M${start[0]} ${start[1]} C${start[0]+startT[0]*span/3} ${start[1]+startT[1]*span/3} ${end[0]-endT[0]*span/3} ${end[1]-endT[1]*span/3} ${end[0]} ${end[1]}`;
+}
+function relationMarkup(edge,curve,focused=false,hitCurve=curve){
+  const label=byId.get(edge.from).name+' → '+byId.get(edge.to).name+' · '+relationLabel(edge)+'，查看关系依据';
+  const audit=relationAudit.get(relationKey(edge));
+  return `<g class="relation-control ${inspectedRelation===relationKey(edge)?'inspected':''}" data-edge-key="${esc(relationKey(edge))}" role="button" tabindex="0" aria-label="${esc(label)}"><title>${esc(label)}</title><path class="relation-hit" d="${hitCurve}"/><path class="${focused?'related-edge ':''}${relationLayer==='ecosystem'?'ecology-edge ':''}${relationClass(edge)} ${relationEvidenceClass(edge)} ${audit?.state==='needs-direct-evidence'?'needs-evidence':''}" data-evidence-state="${relationEvidenceState(edge)}" data-relation-type="${edge.type}" data-from="${esc(edge.from)}" data-to="${esc(edge.to)}" ${relationLayer==='design'?'marker-end="url(#arrow)"':''} d="${curve}"/></g>`;
+}
+function overviewRelationMarkup(){
+  return arrowDefinitions()+activeMapEdges().filter(e=>positions.has(e.from)&&positions.has(e.to)).map(edge=>{
+    const from=positions.get(edge.from),to=positions.get(edge.to),points=curvePoints(from,to),curve=`M${from.x} ${from.y} C${points[1][0]} ${points[1][1]} ${points[2][0]} ${points[2][1]} ${to.x} ${to.y}`;
+    return relationMarkup(edge,curve,false,relationHitCurve(from,to));
+  }).join('');
+}
+function arrowDefinitions(){return '<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><polygon points="0,0 10,5 0,10" fill="#ffd99b"/></marker></defs>'}
+const worldSize={width:2600,height:610};
+function minimumZoom(){
+  const viewport=$('#viewport');
+  return Math.min(1,viewport.clientWidth/worldSize.width,viewport.clientHeight/worldSize.height);
+}
+function applyZoom(scale){
+  const viewport=$('#viewport');
+  const viewWidth=viewport.clientWidth,viewHeight=viewport.clientHeight;
+  if(!viewWidth||!viewHeight)return;
+  const minimumScale=Math.min(1,viewWidth/worldSize.width,viewHeight/worldSize.height);
+  zoomScale=Math.max(.04,Math.min(2.5,scale));
+  const stage=$('#world-stage');
+  const bounds=focusParts?window.MUSEUM_MAP_FRAME.boundsAt(focusParts,zoomScale):null;
+  const insetX=bounds?Math.max(0,18-bounds.left):0,insetY=bounds?Math.max(0,18-bounds.top):0;
+  const width=Math.max(worldSize.width*zoomScale,bounds?.right||0)+insetX+(bounds?18:0);
+  const height=Math.max(worldSize.height*zoomScale,bounds?.bottom||0)+insetY+(bounds?18:0);
+  stage.style.width=`${width}px`;
+  stage.style.height=`${height}px`;
+  stage.style.marginTop=`${Math.max(0,(viewHeight-height)/2)}px`;
+  $('#world').style.left=`${insetX}px`;$('#world').style.top=`${insetY}px`;
+  $('#world').style.transform=`scale(${zoomScale})`;
+  $('#world').style.setProperty('--tooltip-scale',String(1/zoomScale));
+  $('#zoom-out').disabled=zoomScale<=minimumScale+.001;
+  $('#zoom-in').disabled=zoomScale>=2.5;
+}
+function fitMap(){focusParts=null;zoomMode='fit';applyZoom(minimumZoom())}
+function zoomBy(factor){
+  mapFocus.cancel();
+  const viewport=$('#viewport');
+  const focus=activeId&&positions.has(activeId)?positions.get(activeId):null;
+  const view=viewport.getBoundingClientRect(),before=$('#world').getBoundingClientRect();
+  const x=focus?.x??(view.left+viewport.clientWidth/2-before.left)/zoomScale;
+  const y=focus?.y??(view.top+viewport.clientHeight/2-before.top)/zoomScale;
+  zoomMode='custom';
+  applyZoom(Math.max(minimumZoom(),zoomScale*factor));
+  const after=$('#world').getBoundingClientRect();
+  viewport.scrollTo({left:after.left-view.left+viewport.scrollLeft+x*zoomScale-viewport.clientWidth/2,top:after.top-view.top+viewport.scrollTop+y*zoomScale-viewport.clientHeight/2,behavior:'instant'});
+  repackFocusLabels();
+}
+$('#zoom-fit').onclick=()=>{fitMap();$('#viewport').scrollTo({left:0,top:0,behavior:'instant'});repackFocusLabels()};
+$('#zoom-in').onclick=()=>zoomBy(1.45);
+$('#zoom-out').onclick=()=>zoomBy(1/1.45);
+new ResizeObserver(()=>{if(zoomMode==='fit'){fitMap();repackFocusLabels()}else if(zoomMode==='focus'&&activeId&&!$('#river').hidden)scheduleFocusGeometry(activeId);else {applyZoom(zoomScale);repackFocusLabels()}}).observe($('#viewport'));
+let previewScroll=null;
+const tabIntro={
+  'timeline-view':{title:'千流有来处，沿岸皆可停。',note:'从可编程机器的构想到今天。沿河漫游，点亮一门语言，看看它从哪里来，又流向哪里。'},
+  'lineage-view':{title:'语言不是孤岛，关系要能回到出处。',note:'查看已记录的设计影响、后继与扩展；实现和生态关系单独呈现。'},
+  'catalogue-view':{title:'从流行名单之外，继续往里找。',note:'检索完整馆藏，按语言、别名、创造者或馆藏 ID 定位。'},
+  'lab-view':{title:'写一行，跑一次，看到真实结果。',note:'浏览器运行已接入的实验；远端执行只在明确提交后进入临时环境。'},
+  'compare-view':{title:'同一个问题，看看不同语言怎么回答。',note:'并排阅读语法与示例，再沿已记录关系继续探索。'},
+  'sources-view':{title:'看见的不只结果，还有来处。',note:'集中查看运行环境、数据快照、许可、关系证据与馆藏边界。'}
+};
+function activateTab(id){
+  closeMapSearch();
+  const copy=tabIntro[id]||tabIntro['timeline-view'];$('.intro h1').textContent=copy.title;$('.intro-copy p').textContent=copy.note;
+  const previous=document.querySelector('.museum-tabs .active')?.id;
+  $('#river').hidden=!['timeline-view','lineage-view'].includes(id);
+  $('#catalogue').hidden=id!=='catalogue-view';
+  $('#lab').hidden=id!=='lab-view';
+  $('#about').hidden=id!=='sources-view';
+  $('#compare').hidden=id!=='compare-view';
+  $('#river').setAttribute('aria-labelledby',id==='lineage-view'?'lineage-view':'timeline-view');
+  for(const tab of document.querySelectorAll('.museum-tabs [role=tab]')){
+    const active=tab.id===id;
+    tab.classList.toggle('active',active);
+    tab.setAttribute('aria-selected',String(active));
+    tab.tabIndex=active?0:-1;
+  }
+  if(previous&&previous!==id){
+    clearRelationPreview();
+    $('#detail').classList.remove('open');
+    $('#detail').setAttribute('aria-hidden','true');
+    $('#detail').inert=true;
+  }
+  if(previous!==id&&(previous==='lab-view'||id==='lab-view'))window.MUSEUM_LAB?.onTabChange(id==='lab-view');
+}
+function showCatalogue(){activateTab('catalogue-view')}
+function showSources(){activateTab('sources-view')}
+// Each view owns reusable buttons; switching views detaches rather than recreates them.
+const dockLayouts=new Map();let mountedDockLayout=null;
+function mountDockLayout(mode){
+  if(mountedDockLayout===mode)return;
+  resetFocusLabels();
+  let layout=dockLayouts.get(mode);
+  if(!layout){
+    const lineage=mode==='lineage',shown=lineage?records.filter(r=>graphIds.has(r.id)):dated;
+    layout=shown.map(r=>{
+      const p=(lineage?lineagePositions:timelinePositions).get(r.id),label=lineage?selectedIds.has(r.id):p.label;
+      const node=document.createElement('button');node.type='button';node.className='dock '+(label?'':'dot');
+      node.dataset.id=r.id;node.dataset.name=r.name;node.style.left=p.x+'px';node.style.top=p.y+'px';node.setAttribute('aria-label',r.name);
+      if(label)node.innerHTML=esc(r.name)+(r.year?'<small>'+r.year+'</small>':'');
+      return {node,baseClass:node.className};
+    });
+    dockLayouts.set(mode,layout);
+  }
+  for(const {node,baseClass} of layout){node.className=baseClass;node.removeAttribute('data-runnable');delete node.dataset.labelPlacement;node.style.removeProperty('--label-shift-x');node.style.removeProperty('--label-shift-y')}
+  $('#docks').replaceChildren(...layout.map(({node})=>node));mountedDockLayout=mode;
+}
+function setView(mode){
+  if(viewMode===mode&&mountedDockLayout===mode&&!$('#river').hidden)return;
+  mapFocus.cancel();viewMode=mode;const lineage=mode==='lineage';
+  activateTab(lineage?'lineage-view':'timeline-view');document.body.classList.toggle('lineage-mode',lineage);
+  $('#atlas-title').innerHTML=lineage?'关系谱系 <small>／ 按已记录关系分层，连线有来源</small>':'时间长河 <small>／ 按来源年代定位，非等距时间轴</small>';
+  setAtlasFeedback(lineage?'仅显示已收录地图节点之间有明确来源的关系；全量馆藏仍可检索。':'淡线显示已记录关系；点选语言放大查看上下游，点空白恢复全貌。其余馆藏仍可检索。',lineage?'关系谱系 · 浏览全景':'时间长河 · 浏览全景');
+  positions.clear();for(const [id,p] of (lineage?lineagePositions:timelinePositions))positions.set(id,p);
+  mountDockLayout(mode);$('#relations').innerHTML=overviewRelationMarkup();
+  fitMap();$('#viewport').scrollTo({left:0,top:0,behavior:'instant'});
+}
+$('#timeline-view').onclick=()=>{if(viewMode==='timeline'&&!$('#river').hidden)return;setView('timeline');if(activeId)renderLineageFocus(activeId)};
+$('#lineage-view').onclick=()=>{if(viewMode==='lineage'&&!$('#river').hidden)return;setView('lineage');if(activeId&&graphIds.has(activeId))renderLineageFocus(activeId);else restoreMapOverview()};
+function setRelationLayer(layer){
+  relationLayer=layer;
+  $('#design-layer').setAttribute('aria-pressed',String(layer==='design'));
+  $('#ecosystem-layer').setAttribute('aria-pressed',String(layer==='ecosystem'));
+  $('#relation-legend').textContent=layer==='design'?'虚线：影响　实线：超集／后继　较淡：依据待核':'青色连线：实现、平台与互操作；无血缘箭头';
+  if(activeId){select(activeId);renderLineageFocus(activeId)}else $('#relations').innerHTML=overviewRelationMarkup();
+  if(!activeId)setAtlasFeedback(layer==='design'?'淡线显示有来源的设计关系；点击语言查看前序与后续。':'青色线显示有来源的实现、平台与互操作关系；不表示语言继承。',`${viewMode==='lineage'?'关系谱系':'时间长河'} · 浏览全景`);
+}
+$('#design-layer').onclick=()=>setRelationLayer('design');
+$('#ecosystem-layer').onclick=()=>setRelationLayer('ecosystem');
+function setRelationScope(scope){
+  relationScope=['all','levels'].includes(scope)?scope:'direct';
+  $('#relation-scope').value=relationScope;updateRelationSettingsSummary();
+  if(activeId)renderLineageFocus(activeId);
+}
+$('#relation-scope').onchange=()=>setRelationScope($('#relation-scope').value);
+$('#catalogue-view').onclick=showCatalogue;
+$('#lab-view').onclick=()=>activateTab('lab-view');
+$('#compare-view').onclick=()=>activateTab('compare-view');
+$('#sources-view').onclick=showSources;
+// Safari can blur search inputs without focusing the pressed button. Keep the
+// search focused through mousedown; move focus once click is actually delivered.
+// Do not activate on pointerdown: dragging away must still cancel navigation.
+const searchHasFocus=()=>document.activeElement?.matches('#map-search,#search');
+// Missing native clicks are recovered centrally in control-activation.js.
+$('.museum-tabs').addEventListener('mousedown',event=>{
+  if(event.button===0&&event.target.closest('[role=tab]')&&searchHasFocus())event.preventDefault();
+});
+$('.museum-tabs').addEventListener('click',event=>{
+  const tab=event.target.closest('[role=tab]');
+  if(tab&&searchHasFocus())tab.focus({preventScroll:true});
+},true);
+$('.museum-tabs').addEventListener('keydown',event=>{
+  const tabs=[...document.querySelectorAll('.museum-tabs [role=tab]')];
+  const index=tabs.indexOf(document.activeElement);
+  if(index<0)return;
+  const next=event.key==='ArrowRight'?(index+1)%tabs.length:event.key==='ArrowLeft'?(index+tabs.length-1)%tabs.length:event.key==='Home'?0:event.key==='End'?tabs.length-1:-1;
+  if(next<0)return;
+  event.preventDefault();
+  tabs[next].focus();
+  tabs[next].click();
+});
+function clearRelationPreview(){
+  document.body.classList.remove('relation-preview');
+  document.querySelectorAll('.preview-target,.preview-edge,.relation-link.preview').forEach(node=>node.classList.remove('preview-target','preview-edge','preview'));
+  if(previewScroll){$('#viewport').scrollTo({left:previewScroll.left,top:previewScroll.top,behavior:'instant'});previewScroll=null;repackFocusLabels()}
+}
+function previewRelation(button){
+  clearRelationPreview();
+  if(!activeId||$('#river').hidden||!$('#detail').classList.contains('open'))return;
+  const targetId=button.dataset.related;
+  const target=[...document.querySelectorAll('#docks [data-id]')].find(node=>node.dataset.id===targetId);
+  const lines=[...document.querySelectorAll('#relations path.related-edge')].filter(path=>(path.dataset.from===activeId&&path.dataset.to===targetId)||(path.dataset.to===activeId&&path.dataset.from===targetId));
+  if(!target||!lines.length)return;
+  document.body.classList.add('relation-preview');
+  button.classList.add('preview');
+  target.classList.add('preview-target');
+  lines.forEach(path=>path.classList.add('preview-edge'));
+  const viewport=$('#viewport'),bounds=viewport.getBoundingClientRect(),targetBounds=target.getBoundingClientRect();
+  const targetX=(targetBounds.left+targetBounds.right)/2,targetY=(targetBounds.top+targetBounds.bottom)/2;
+  const margin=Math.min(48,viewport.clientWidth*.08);
+  if(targetX<bounds.left+margin||targetX>bounds.right-margin||targetY<bounds.top+margin||targetY>bounds.bottom-margin){
+    previewScroll={left:viewport.scrollLeft,top:viewport.scrollTop};
+    const selected=positions.get(activeId),other=positions.get(targetId);
+    const distance=Math.abs(selected.x-other.x)*zoomScale;
+    const world=$('#world').getBoundingClientRect();
+    const originX=world.left-bounds.left+viewport.scrollLeft,originY=world.top-bounds.top+viewport.scrollTop;
+    const centerX=originX+(distance<viewport.clientWidth-2*margin?(selected.x+other.x)*zoomScale/2:other.x*zoomScale);
+    viewport.scrollTo({left:centerX-viewport.clientWidth/2,top:originY+other.y*zoomScale-viewport.clientHeight/2,behavior:'instant'});
+    repackFocusLabels();
+  }
+}
+function resetFocusLabels(){
+  document.querySelectorAll('#docks .dock').forEach(node=>{node.style.removeProperty('--label-shift-x');node.style.removeProperty('--label-shift-y');node.classList.remove('label-deferred');delete node.dataset.labelPlacement;});
+  document.querySelectorAll('#relations .label-guide,#relations .label-anchor').forEach(node=>node.remove());
+}
+function syncMapRunButton(){
+  const node=$('#docks .dock.selected');
+  let button=$('#docks .map-run');
+  if(!node||!window.MUSEUM_LAB?.canRun(node.dataset.id)){button?.remove();return}
+  if(!button){
+    button=document.createElement('button');button.type='button';button.className='map-run';button.textContent='▶';
+    button.onclick=event=>{event.stopPropagation();window.MUSEUM_LAB.open(button.dataset.runLanguage)};
+    $('#docks').append(button);
+  }
+  button.dataset.runLanguage=node.dataset.id;
+  button.title=`${node.dataset.name} · ${window.MUSEUM_LAB.entry?.(node.dataset.id).label||'打开实验台'} · 打开实验台`;
+  button.setAttribute('aria-label',button.title);
+  const style=getComputedStyle(node,'::after'),base=getComputedStyle(node),n=value=>parseFloat(value)||0;
+  const width=n(style.width)+(style.boxSizing==='border-box'?0:n(style.paddingLeft)+n(style.paddingRight)+n(style.borderLeftWidth)+n(style.borderRightWidth));
+  const height=n(style.height)+(style.boxSizing==='border-box'?0:n(style.paddingTop)+n(style.paddingBottom)+n(style.borderTopWidth)+n(style.borderBottomWidth));
+  const dx=n(node.style.getPropertyValue('--label-shift-x')),dy=n(node.style.getPropertyValue('--label-shift-y'));
+  button.style.left=`${node.offsetLeft-node.offsetWidth/2+n(base.borderLeftWidth)+n(style.left)+(dx+width-29)/zoomScale}px`;
+  button.style.top=`${node.offsetTop-node.offsetHeight/2+n(base.borderTopWidth)+n(style.top)+(dy+(height-24)/2)/zoomScale}px`;
+}
+document.addEventListener('museum-execution-change',()=>{if(activeId&&!$('#river').hidden){const node=$('#docks .dock.selected');node?.toggleAttribute('data-runnable',!!window.MUSEUM_LAB?.canRun(node.dataset.id));repackFocusLabels()}});
+function repackFocusLabels(){
+  if(!activeId||!document.body.classList.contains('lineage-focus')||$('#river').hidden)return;
+  resetFocusLabels();
+  const direct=new Set([activeId]);
+  for(const edge of activeMapEdges()){
+    const other=edge.from===activeId?edge.to:edge.to===activeId?edge.from:null;
+    if(other&&document.querySelector(`#docks .dock[data-id="${CSS.escape(other)}"]`))direct.add(other);
+  }
+  const viewport=$('#viewport'),view=viewport.getBoundingClientRect(),world=$('#world').getBoundingClientRect();
+  placeFocusLabels(direct,world.left-view.left+viewport.scrollLeft,world.top-view.top+viewport.scrollTop,viewport.scrollLeft,viewport.scrollTop);
+}
+function placeFocusLabels(direct,originX,originY,targetLeft,targetTop){
+  const viewport=$('#viewport'),view=viewport.getBoundingClientRect(),number=value=>parseFloat(value)||0;
+  const labels=[];
+  for(const node of document.querySelectorAll('#docks .dock.related')){
+    const id=node.dataset.id,rect=node.getBoundingClientRect();
+    let left=rect.left-view.left+viewport.scrollLeft-targetLeft,top=rect.top-view.top+viewport.scrollTop-targetTop,width=rect.width,height=rect.height;
+    if(node.classList.contains('selected')||node.classList.contains('dot')){
+      const style=getComputedStyle(node,node.classList.contains('selected')?'::after':'::before'),base=getComputedStyle(node);
+      left+=(number(base.borderLeftWidth)+number(style.left))*zoomScale;top+=(number(base.borderTopWidth)+number(style.top))*zoomScale;
+      width=number(style.width)+(style.boxSizing==='border-box'?0:number(style.paddingLeft)+number(style.paddingRight)+number(style.borderLeftWidth)+number(style.borderRightWidth));
+      height=number(style.height)+(style.boxSizing==='border-box'?0:number(style.paddingTop)+number(style.paddingBottom)+number(style.borderTopWidth)+number(style.borderBottomWidth));
+    }
+    const priority=node.classList.contains('selected')?0:direct.has(id)?1:2;
+    if(priority===2&&(left+width<0||left>viewport.clientWidth||top+height<0||top>viewport.clientHeight)){node.dataset.labelPlacement='outside';continue}
+    labels.push({id,priority,left,right:left+width,top,bottom:top+height});
+  }
+  let guides='';
+  for(const label of window.MUSEUM_MAP_FRAME.placeLabels(labels,viewport.clientWidth,viewport.clientHeight)){
+    const node=document.querySelector(`#docks .dock[data-id="${CSS.escape(label.id)}"]`);
+    node.dataset.labelPlacement=label.placed?'placed':'deferred';node.classList.toggle('label-deferred',!label.placed);
+    if(!label.placed)continue;
+    node.style.setProperty('--label-shift-x',`${label.dx}px`);node.style.setProperty('--label-shift-y',`${label.dy}px`);
+    if(Math.hypot(label.dx,label.dy)<2)continue;
+    const point=positions.get(label.id),anchorX=originX+point.x*zoomScale-targetLeft,anchorY=originY+point.y*zoomScale-targetTop;
+    const endX=Math.max(label.left,Math.min(anchorX,label.right)),endY=Math.max(label.top,Math.min(anchorY,label.bottom));
+    const x=(endX+targetLeft-originX)/zoomScale,y=(endY+targetTop-originY)/zoomScale;
+    guides+=`<path class="label-guide" data-label-guide="${esc(label.id)}" d="M${point.x} ${point.y} L${x} ${y}"/><circle class="label-anchor" cx="${point.x}" cy="${point.y}" r="${2/zoomScale}"/>`;
+  }
+  $('#relations').insertAdjacentHTML('beforeend',guides);
+  syncMapRunButton();
+}
+function renderLineageFocus(id){
+  setResearchGapButton(id);
+  resetFocusLabels();
+  const currentEdges=activeMapEdges();
+  const related=new Set([id]),ancestors=new Set([id]);
+  if(relationScope==='direct'){
+    for(const edge of currentEdges){if(edge.from===id)related.add(edge.to);if(edge.to===id)related.add(edge.from)}
+  }else if(relationScope==='levels'){
+    for(const node of window.MUSEUM_EXPLORATION.neighborhood(currentEdges,id,relationDirection,relationLevels).nodes)related.add(node);
+  }else if(relationLayer==='design'){
+    const walk=(start,next,target)=>{const stack=[start];while(stack.length){for(const node of next.get(stack.pop())||[])if(!target.has(node)){target.add(node);stack.push(node)}}};
+    walk(id,parents,ancestors);
+    const descendants=new Set([id]);walk(id,children,descendants);
+    for(const node of [...ancestors,...descendants])related.add(node);
+  }else{
+    const stack=[id];
+    while(stack.length){const current=stack.pop();for(const edge of currentEdges){
+      const other=edge.from===current?edge.to:edge.to===current?edge.from:null;
+      if(other&&!related.has(other)){related.add(other);stack.push(other)}
+    }}
+  }
+  document.body.classList.add('lineage-focus');
+  const visible=new Set([...document.querySelectorAll('#docks .dock')].map(n=>n.dataset.id));
+  document.querySelectorAll('#docks .dock').forEach(n=>{n.classList.toggle('related',related.has(n.dataset.id));n.classList.toggle('selected',n.dataset.id===id)});
+  const paths=currentEdges.filter(e=>(relationScope!=='direct'||e.from===id||e.to===id)&&related.has(e.from)&&related.has(e.to)&&visible.has(e.from)&&visible.has(e.to)).map(e=>{
+    const a=positions.get(e.from),b=positions.get(e.to);
+    const curve='M'+a.x+' '+a.y+' C'+((a.x+b.x)/2)+' '+a.y+' '+((a.x+b.x)/2)+' '+b.y+' '+b.x+' '+b.y;
+    return relationMarkup(e,curve,true,relationHitCurve(a,b));
+  }).join('');
+  $('#relations').innerHTML=arrowDefinitions()+paths;
+  $('#relation-count').textContent=`${related.size} 个节点 · ${$('#relations').querySelectorAll('[data-edge-key]').length} 条关系`;
+  $('#relation-direction').value=relationDirection;$('#relation-levels').value=String(relationLevels);updateRelationSettingsSummary();
+  const edgeCount=$('#relations').querySelectorAll('[data-edge-key]').length;
+  setAtlasFeedback(paths?((relationScope==='direct'?'仅显示直接关联；可切换为全部前序与后续。':'展开已记录的更远关联。')+(relationLayer==='design'?'较淡连线依据待核。':'青色线不表示语言继承。')+'点击空白恢复全景。'):'当前层没有地图内关联；可切换关系层或查看档案。点击空白恢复全景。',`正在查看 ${byId.get(id).name} · ${related.size} 个节点 · ${edgeCount} 条关系`);
+  focusGeometry(id);
+  const previewButton=$('#detail-content .relation-link.preview');
+  if(previewButton)previewRelation(previewButton);
+}
+// Geometry and its deferred work are isolated from content/relationship rendering.
+const mapFocus=window.MUSEUM_MAP_FOCUS.createFocusController({
+ document,getState:()=>({activeId,relationScope,mode:zoomMode,visibleMap:document.body.classList.contains('lineage-focus')&&!$('#river').hidden}),
+ activeMapEdges,positions,frame:window.MUSEUM_MAP_FRAME,resetFocusLabels,
+ setFrame:(parts,scale)=>{focusParts=parts;zoomMode='focus';applyZoom(scale)},getScale:()=>zoomScale,
+ minimumZoom,placeFocusLabels
+});
+function focusGeometry(id){mapFocus.focus(id)}
+function scheduleFocusGeometry(id){mapFocus.schedule(id)}
+let opener=null;
+function restoreMapOverview(){
+  mapFocus.cancel();
+  setResearchGapButton(null);
+  inspectedRelation=null;
+  clearRelationPreview();
+  activeId=null;
+  $('#docks .map-run')?.remove();
+  document.body.classList.remove('lineage-focus');
+  document.querySelectorAll('#docks .dock').forEach(node=>{node.classList.remove('related','selected','label-deferred');node.style.removeProperty('--label-shift-x');node.style.removeProperty('--label-shift-y');delete node.dataset.labelPlacement;});
+  document.querySelectorAll('#docks [data-transient]').forEach(node=>node.remove());
+  $('#relations').innerHTML=overviewRelationMarkup();
+  fitMap();
+  $('#viewport').scrollTo({left:0,top:0,behavior:'instant'});
+  setAtlasFeedback(relationLayer==='ecosystem'?'青色线显示实现、平台与互操作关系；不表示语言继承。':'淡线显示地图节点之间已有来源记录的设计关系；点选语言可看上游与下游。',`${viewMode==='lineage'?'关系谱系':'时间长河'} · 浏览全景`);
+  const panelHadFocus=$('#detail').contains(document.activeElement);
+  $('#detail').classList.remove('open');
+  $('#detail').setAttribute('aria-hidden','true');
+  $('#detail').inert=true;
+  if(panelHadFocus){$('#viewport').tabIndex=0;$('#viewport').focus({preventScroll:true});}
+}
+$('#viewport').addEventListener('click',event=>{
+  if(event.target.closest('.dock, #relations path'))return;
+  if(activeId||document.body.classList.contains('lineage-focus'))restoreMapOverview();
+});
+function openPanel(html){
+  opener=document.activeElement;
+  $('#detail-content').innerHTML=html;
+  window.MUSEUM_EXHIBIT_UI.bind($('#detail-content'));
+  const panel=$('#detail');
+  panel.classList.add('open');panel.setAttribute('aria-hidden','false');panel.inert=false;
+  // A new archive starts at its title, including when the close button already has focus.
+  panel.scrollTop=0;panel.scrollLeft=0;
+  $('#close').focus({preventScroll:true});
+}
+$('#detail').addEventListener('transitionend',event=>{if(event.propertyName==='flex-basis'&&activeId&&!$('#river').hidden)scheduleFocusGeometry(activeId)});
+function select(id){inspectedRelation=null;clearRelationPreview();if(viewMode==='lineage'&&mapLanguageIds.has(id)&&!graphIds.has(id))setView('timeline');const r=byId.get(id);if(!r)return;document.querySelectorAll('.dock.selected').forEach(n=>n.classList.remove('selected'));let b=document.querySelector(`[data-id="${CSS.escape(id)}"]`);if(!b&&r.year&&mapLanguageIds.has(id)){b=document.createElement('button');b.className='dock';b.dataset.transient='true';b.dataset.id=id;b.dataset.name=r.name;let p=positions.get(id);b.style.cssText=`left:${p.x}px;top:${p.y}px`;b.textContent=r.name;$('#docks').append(b)}if(b){b.classList.add('selected');b.toggleAttribute('data-runnable',!!window.MUSEUM_LAB?.canRun(id));b.setAttribute('aria-label',r.name);}
+const incoming=designEdges.filter(e=>e.to===id),outgoing=designEdges.filter(e=>e.from===id),ecology=ecologyEdges.filter(e=>e.from===id||e.to===id);const mapVisible=new Set([...document.querySelectorAll('#docks [data-id]')].map(node=>node.dataset.id));const rel=(es,up,layer='design')=>es.length?es.map(e=>`<button class="relation-link" data-evidence-state="${relationEvidenceState(e)}" data-related="${esc(up?e.from:e.to)}">${esc(byId.get(up?e.from:e.to).name)} · ${esc(relationLabel(e))}<span class="relation-evidence-state">${relationEvidenceLabel(e)}</span><span class="relation-presence">${mapVisible.has(id)&&mapVisible.has(up?e.from:e.to)&&relationLayer===layer?'当前地图有连线':'档案记录／切换关系层'}</span></button><button type="button" class="relation-proof" data-proof-key="${esc(relationKey(e))}">查看关系依据 ↗</button>${e.evidence?`<details class="relation-explanation"><summary>设计说明</summary><p class="relation-evidence">${esc(e.evidence)}</p></details>`:''}<a href="${esc(e.source)}" target="_blank" rel="noreferrer">关系出处 ↗</a>`).join(''):'<p>本快照未记录；不表示没有历史关联。</p>';
+const relationSection=(title,count,contents)=>`<details class="archive-section relation-section"><summary>${title} <span>${count}</span></summary>${contents}</details>`;
+const evidence=(r.review?`${r.review.notes?`<p>${esc(r.review.notes)}</p>`:''}${r.review.sources.map(source=>`<p><a href="${esc(source.url)}" target="_blank" rel="noreferrer">${esc(source.role)} ↗</a></p>`).join('')}`:'')+(r.curationReason?`<h4>地图分类依据</h4><p>${esc(r.curationReason)}</p>`:'');
+const correction=r.review?.catalogueCorrection;
+const correctionHTML=correction?`<h3>馆藏校订</h3>${correction.changes.map(change=>`<p>${esc({name:'名称',year:'年代',creators:'创造者'}[change.field])}：${esc(change.from===null?'未记载':String(change.from))} → ${esc(String(change.to))}${change.event?` · ${esc(change.event)}`:''}</p>`).join('')}<p>${esc(correction.reason)}</p>${correction.sources.map(url=>`<p><a href="${esc(url)}" target="_blank" rel="noreferrer">校订出处 ↗</a></p>`).join('')}`:'';
+const designGap=selectedIds.has(id)&&!mapDesignEdges.some(e=>e.from===id||e.to===id);
+const gap=designGap?'<button type="button" id="detail-review-gaps" class="archive-gap">常显标签暂无设计层关系 · 查看研究待办 ↗</button>':'';
+openPanel(`<div class="archive-hero"><div class="eyebrow">馆藏 / ${esc(r.id)}</div><h2>${esc(r.name)}</h2><p>${r.year||'年代待考'} · ${esc(categoryLabel(r))} · ${esc(statusLabel(r))}</p></div><section class="archive-overview"><h3>馆藏概览</h3><p>创造者：${esc(r.creators||'来源未记载')}</p><p>原始分类：${esc(r.tags||'未分类')}</p><p>别名：${esc(r.aliases||'未记载')}</p></section>${window.MUSEUM_EXHIBIT_UI.render(id)}${gap}${window.MUSEUM_RESEARCH_NOTES.render('language:'+id)}${evidence?`<details class="archive-section"><summary>证据与地图分类</summary>${evidence}${correctionHTML}</details>`:correctionHTML?`<details class="archive-section"><summary>馆藏校订</summary>${correctionHTML}</details>`:''}${relationSection('设计脉络 · 上游',incoming.length,rel(incoming,true))}${relationSection('设计脉络 · 下游',outgoing.length,rel(outgoing,false))}${relationSection('实现与生态',ecology.length,rel(ecology.map(e=>({...e,auditKey:relationKey(e),from:e.from===id?e.to:e.from,to:id})),true,'ecosystem'))}<details class="archive-section"><summary>来源与延伸阅读</summary><p><a target="_blank" rel="noreferrer" href="${esc(r.source)}">PLDB 原始记录 ↗</a></p>${r.website&&/^https?:/.test(r.website)?`<p><a target="_blank" rel="noreferrer" href="${esc(r.website)}">官方网站 ↗</a></p>`:''}${r.wiki?`<p><a target="_blank" rel="noreferrer" href="${esc(r.wiki)}">百科条目 ↗</a></p>`:''}</details><details class="archive-section"><summary>实验台</summary><p>${r.id==='javascript'?'JavaScript 可在浏览器中实际运行。':r.id==='python'?'Python 可用本地 Pyodide 在浏览器 Worker 中实际运行。':r.id==='lua'?'Lua 5.4 可用本地 WebAssembly 在浏览器 Worker 中实际运行。':r.id==='scheme'?'Scheme 可用 BiwaScheme 0.8.3 浏览器解释器运行；非 Guile，不代表完整 R7RS 兼容。':(window.MUSEUM_LAB?.entry(r.id).kind==='remote'?'已配置远端运行；连接可用服务后可限额试用，点击运行才上传代码。'+({postscript:' Ghostscript 10.00.0；main.ps、SAFER 与 NODISPLAY，仅显示真实文本输出；无页面渲染、打印设备或文件产物下载。',vhdl:' GHDL 2.0.0 mcode / VHDL-2008；main.vhd / 顶层 entity main，分析/展开后文本仿真，错误级别断言终止；无综合、FPGA 部署或波形下载，不是真实电路。',verilog:' Icarus Verilog 11.0 / Verilog-2005；main.v / 顶层 module main，编译后由 vvp 文本仿真；无综合、FPGA 部署或波形下载，不是真实电路。','x86-assembly':' NASM 2.16.01 → GNU ld → 原生 x86-64 Linux ELF64；main.asm / _start / syscall ABI，无 libc 或外部目标文件，不冒充 8086、DOS 或 Windows。',wasm:' Wasmtime 50.0.1；main.wat 核心模块 / _start，WASI Preview 1 文本输入输出，3 秒含 WAT 翻译/JIT；无目录、网络、组件模型或浏览器宿主。',tcsh:' tcsh 6.24.07；main.tcsh 单文件，-f 禁用启动配置，保留原生退出状态；无在线依赖，不冒充早期 csh。','korn-shell':' Korn shell / ksh93u+m 1.0.4；main.ksh 单文件，-p 忽略 ENV 启动配置，保留原生退出状态；无在线依赖，不冒充 ksh88 或历史机器。',powershell:' PowerShell 7.5.4 / Linux；main.ps1 与核心模块，默认 ErrorActionPreference=Stop，保留显式错误捕获；无在线 Gallery 或 Windows/Office 宿主。',octave:' GNU Octave 7.3.0；main.m 脚本与预装核心库，文本输出，无在线 pkg、GUI 或绘图界面；GNU Octave 的具体实现范围。',julia:' Julia 1.11.7；main.jl 与预装标准库，3 秒包含启动和正常 JIT，按顺序求值；不在线安装 Pkg 包或提供绘图/Notebook。',dart:' Dart 3.9.4 / AOT；main.dart 单文件与固定标准库，编译为 Linux 本机可执行文件，无 pub 在线依赖或 Flutter。',swift:' Swift 6.1.3 / Linux；main.swift 单文件，Swift 6 模式、固定标准库与 Foundation，无 SPM 在线依赖或 Apple UI 框架。',zig:' Zig 0.14.1；main.zig 单文件与固定标准库，Debug 检查与完整 LLVM 后端，无在线包下载，不冒充新版 API。',nim:' Nim 1.6.10；main.nim 单文件与固定标准库、GCC，无 Nimble 在线安装，不冒充 Nim 2。',d:' D / GNU D 12.2.0；main.d 单文件与固定 Phobos，无 dub 在线安装，不冒充 DMD 版本或完整符合性。','f-sharp':' F# 10.0 / SDK 10.0.403；Main.fs 单文件与预装标准库、FSharp.Core，不在线还原 NuGet 包。','visual-basic.net':' Visual Basic .NET / SDK 10.0.403；Main.vb 控制台，默认 Option Strict On，无桌面 My 服务或 NuGet 在线还原。',scala:' Scala 2.13.16 / Java 17；Main.scala / object Main 入口，固定标准库，无 sbt/Maven/Coursier 在线还原，不冒充 Scala 3。','standard-ml':' Standard ML / PolyML 5.7.1；单文件与 Standard Basis 库，3 秒含脚本编译执行，无在线安装包，不冒充 SML/NJ 或 MLton。',tcl:' Tcl 8.6.13；单文件 main.tcl、固定基础库与 TclOO，无 Tk 图形界面或在线安装包，不冒充 Tcl 9。',elixir:' Elixir 1.14.0 / OTP 25.2.3；单文件 main.exs，3 秒含 BEAM 启动与脚本编译执行，无 Mix/Hex 在线依赖或分布式节点。',erlang:' Erlang/OTP 25.2.3；main.erl / main:main/0，BEAM 单调度器、预装基础库，无 rebar3 在线安装或分布式节点。',groovy:' Groovy 4.0.26 / Java 17；固定核心 JAR，8 秒含启动与脚本编译执行，禁用 Grape，不在线还原依赖。',kotlin:' Kotlin 2.1.20 / Java 17；单文件 Main.kt 编译为 JVM JAR，30 秒编译预算，无 Gradle/Maven 在线还原。',haskell:' GHC 9.0.2 / Haskell 2010；单文件 Main.hs 与预装标准库，编译 20 秒，不在线还原 Cabal/Stack 依赖。',ocaml:' OCaml 4.13.1；ocamlc 编译单文件 main.ml 为字节码，标准库，无 opam/dune 在线安装。',clojure:' Clojure 1.11.1 / Java 17；单文件与固定基础 JAR，3 秒包含 JVM 启动，不在线还原依赖。',ada:' GNAT 12.2.0 / Ada 2012；单文件 main.adb，入口 procedure Main，预装运行库，不在线安装 Alire 包。',cobol:' GnuCOBOL 3.1.2；自由格式、COBOL 2014 标准选项，不冒充 IBM 主机或完整标准符合性。',smalltalk:' GNU Smalltalk 3.2.5 字节码 VM；CLI 错误状态适配，禁用 JIT，不提供 Xerox 图形环境。',racket:' Minimal Racket 8.7 CS；单文件 #lang racket/base 与预装基础库，无图形界面或在线包安装。',forth:' Gforth 0.7.3；单文件栈语言程序，不提供交互 REPL，不重现历史硬件。',prolog:' SWI-Prolog 9.0.4；定义 main/0 入口，文本输入输出，不安装扩展包。','algol-60':' GNU MARST 2.8 → C89；现代翻译器，传名调用有已知生成代码警告，不保证完整语义。','common-lisp':' Common Lisp / SBCL 2.2.9；预装标准环境，不安装 Quicklisp 或第三方库。',sql:' SQL 使用 SQLite 方言，每次独立内存数据库。',xslt:' XSLT 1.0：编辑区为样式表，标准输入为 XML 文档。',php:' PHP 8.3 CLI：禁用系统命令与网络函数。',perl:' Perl 5：只使用预装核心模块，不安装 CPAN 包。',csharp:' C#：Roslyn 编译后运行，任务期间不还原 NuGet 包。',pascal:' Free Pascal：以 ObjFPC 模式编译，不冒充历史 Pascal 方言。',r:' Rscript：预装基础包与文本输出，不安装 CRAN 包或导出绘图。',fortran:' GNU Fortran：以 Fortran 2008 标准选项编译。'}[r.id]||''):'此语言尚未接入浏览器运行环境。')}</p>${r.language?'<button type="button" id="detail-open-lab">'+esc(window.MUSEUM_LAB?.entry(r.id).label||'打开语言实验台')+' ↗</button>':''}</details>`);
+$('#detail-open-lab')?.addEventListener('click',()=>window.MUSEUM_LAB.open(r.id));
+$('#detail-review-gaps')?.addEventListener('click',()=>window.MUSEUM_RELATIONSHIP_COVERAGE?.focusLanguage(r.id));
+bindRelationProofs();
+$('#detail-content').querySelectorAll('[data-related]').forEach(b=>{b.addEventListener('pointerenter',()=>previewRelation(b));b.addEventListener('pointerleave',clearRelationPreview);b.addEventListener('focus',()=>previewRelation(b));b.addEventListener('blur',clearRelationPreview);b.onclick=()=>{const id=b.dataset.related;if(!mapLanguageIds.has(id)&&document.body.classList.contains('lineage-focus'))restoreMapOverview();select(id);if(mapLanguageIds.has(id)){activeId=id;renderLineageFocus(activeId)}else activeId=null}});
+$('#relations').innerHTML=arrowDefinitions()+[...incoming,...outgoing].filter(e=>positions.has(e.from)&&positions.has(e.to)).map(e=>{const a=positions.get(e.from),b=positions.get(e.to),points=curvePoints(a,b),curve=`M${a.x} ${a.y} C${points[1][0]} ${points[1][1]} ${points[2][0]} ${points[2][1]} ${b.x} ${b.y}`;return relationMarkup(e,curve,false,relationHitCurve(a,b))}).join('');}
+
+function bindRelationProofs(){
+  $('#detail-content').querySelectorAll('[data-proof-key]').forEach(b=>b.onclick=()=>openRelationship(b.dataset.proofKey));
+}
+function openRelationship(key){
+  const edge=relationAudit.get(key);if(!edge)return;
+  if($('#river').hidden)activateTab('catalogue-view');
+  const anchor=activeId===edge.from||activeId===edge.to?activeId:edge.to;
+  select(anchor);activeId=mapLanguageIds.has(anchor)?anchor:null;
+  inspectedRelation=key;
+  if(activeId)renderLineageFocus(activeId);
+  const shortClaim=edge.evidence?edge.evidence.split(/[。；]/)[0]+'。':'当前仅记录来源字段，设计关系仍待核。';
+  const stateLabel={'field-only':'来源字段，关系待核','citation-only':'有关系说明，原文摘录待补','excerpt-recorded':'关系说明与原文摘录已存','needs-direct-evidence':'直接设计依据待补'}[edge.state];
+  const sources=edge.sources.map(source=>`<details class="relation-source"><summary>${esc(source.title)}</summary><blockquote>${esc(source.excerpt)}</blockquote><p>读取：${esc(source.checkedAt)}<br>定位：${esc(source.locator||source.title)}<br>哈希口径：${esc(source.hashScope)}</p><code class="source-hash">SHA-256 ${esc(source.sha256)}</code><p><a href="${esc(source.url)}" target="_blank" rel="noreferrer">原文 ↗</a></p></details>`).join('');
+  openPanel(`<div class="eyebrow">关系依据 / ${edge.layer==='design'?'设计脉络':'实现与生态'}</div><h2 class="relationship-title">${esc(byId.get(edge.from).name)} → ${esc(byId.get(edge.to).name)}</h2><p>${esc(relationLabel(edge))} · ${esc(stateLabel)}</p><h3>为什么关联</h3><p class="relationship-summary">${esc(shortClaim)}</p><details class="relation-explanation"><summary>完整说明与边界</summary><p>${esc(edge.evidence||'固定 PLDB 快照记录了此关系字段，尚未保存独立史料论证；不能视为已核实关系。')}</p></details>${window.MUSEUM_RESEARCH_NOTES.render(key)}${edge.reviewNote?`<p class="relationship-warning">${esc(edge.reviewNote)}</p>`:''}${edge.issues.length?`<h3>待核事项</h3><ul>${edge.issues.map(issue=>`<li>${esc(issue)}</li>`).join('')}</ul>`:''}<p>${edge.layer==='ecosystem'?'这条线描述具体实现、接口或互操作，不表示语言继承。':'设计输入不自动表示严格后继、超集或源码兼容。'}</p><p><a href="${esc(edge.source)}" target="_blank" rel="noreferrer">关系引用 ↗</a></p><h3>可回溯证据</h3>${edge.evidenceVersion?.match==='different'?`<details class="evidence-version"><summary>来源版本有字节差异 · 查看记录</summary><p>${esc(edge.evidenceVersion.note)}</p><p>引用 SHA-256：<code>${esc(edge.evidenceVersion.citedSha256)}</code></p><p>已读响应哈希、读取时间与定位见下方来源。</p></details>`:''}${sources||'<p>尚无匹配此引用的已阅读原文摘录，仍需补证。</p>'}<p>摘录和哈希用于回溯这次阅读记录，不证明历史关系已经全部核实。</p><p><a href="data/relationship-status.json">完整关系核对清单 ↗</a></p><h3>继续探索</h3><button type="button" data-relation-endpoint="${esc(edge.from)}">${esc(byId.get(edge.from).name)} 档案</button> <button type="button" data-relation-endpoint="${esc(edge.to)}">${esc(byId.get(edge.to).name)} 档案</button>`);
+  $('#detail-content').querySelectorAll('[data-relation-endpoint]').forEach(button=>button.onclick=()=>{const id=button.dataset.relationEndpoint;select(id);activeId=mapLanguageIds.has(id)?id:null;if(activeId)renderLineageFocus(id)});
+}
+function nearestRelations(event,hitTolerance=8,anchorId=null){
+  const candidates=[];
+  for(const control of $('#relations').querySelectorAll('[data-edge-key]')){
+    const path=control.querySelector('.relation-hit'),rect=path.getBoundingClientRect();
+    if(event.clientX<rect.left-9||event.clientX>rect.right+9||event.clientY<rect.top-9||event.clientY>rect.bottom+9)continue;
+    const matrix=path.getScreenCTM(),length=path.getTotalLength();
+    const distance=at=>{const p=path.getPointAtLength(at).matrixTransform(matrix);return Math.hypot(p.x-event.clientX,p.y-event.clientY)};
+    let best=0,min=Infinity;
+    for(let i=0;i<=32;i++){const at=length*i/32,d=distance(at);if(d<min){min=d;best=at}}
+    let low=Math.max(0,best-length/32),high=Math.min(length,best+length/32);
+    for(let i=0;i<16;i++){const a=low+(high-low)/3,b=high-(high-low)/3;if(distance(a)<distance(b))high=b;else low=a}
+    min=distance((low+high)/2);
+    if(min<=hitTolerance)candidates.push({key:control.dataset.edgeKey,distance:min});
+  }
+  candidates.sort((a,b)=>a.distance-b.distance);
+  if(anchorId){
+    const anchored=candidates.filter(candidate=>{const edge=relationAudit.get(candidate.key);return edge?.from===anchorId||edge?.to===anchorId;});
+    if(anchored.length)return anchored.filter(c=>c.distance<=anchored[0].distance+.6);
+  }
+  return candidates.filter(c=>c.distance<=candidates[0].distance+.6);
+}
+document.addEventListener('click',event=>{
+  if(window.MUSEUM_MAP_INTERACTION?.suppress(event))return;
+  if(!document.body.classList.contains('lineage-focus')||!event.target.closest('#viewport')||event.target.closest('.relation-control,.dock,.map-run'))return;
+  const relation=nearestRelations(event,24)[0];
+  if(!relation)return;
+  event.preventDefault();event.stopImmediatePropagation();openRelationship(relation.key);
+},true);
+$('#relations').addEventListener('click',event=>{
+  const control=event.target.closest('[data-edge-key]');if(!control)return;
+  event.stopPropagation();
+  const choices=nearestRelations(event);
+  if(choices.length<2){openRelationship(choices[0]?.key||control.dataset.edgeKey);return;}
+  const anchor=relationAudit.get(choices[0].key).to;
+  select(anchor);activeId=mapLanguageIds.has(anchor)?anchor:null;if(activeId)renderLineageFocus(activeId);
+  openPanel(`<div class="eyebrow">交叠连线</div><h2 class="relationship-title">选择要查看的关系</h2><p>这里有多条连线靠得很近。</p>${choices.map(choice=>{const edge=relationAudit.get(choice.key);return `<button type="button" class="relation-link" data-proof-key="${esc(edge.key)}">${esc(byId.get(edge.from).name)} → ${esc(byId.get(edge.to).name)} · ${esc(relationLabel(edge))}</button>`}).join('')}`);
+  bindRelationProofs();
+});
+$('#relations').addEventListener('keydown',event=>{const control=event.target.closest('[data-edge-key]');if(control&&['Enter',' '].includes(event.key)){event.preventDefault();openRelationship(control.dataset.edgeKey)}});
+window.MUSEUM_RELATIONS_UI={open:openRelationship,openLanguage:id=>{setView('timeline');select(id);activeId=mapLanguageIds.has(id)?id:null;if(activeId)renderLineageFocus(id)}};
+const nearby=document.createElement('div');nearby.className='nearby-list';nearby.hidden=true;nearby.setAttribute('aria-label','附近的语言');$('#river').append(nearby);
+function hideNearby(){nearby.hidden=true;nearby.innerHTML=''}
+$('#docks').addEventListener('click',e=>{
+  const b=e.target.closest('[data-id]');if(!b)return;
+  if(b.classList.contains('dot')){
+    const center=b.getBoundingClientRect(),x=(center.left+center.right)/2,y=(center.top+center.bottom)/2;
+    const close=[...document.querySelectorAll('#docks [data-id]')].filter(node=>{const rect=node.getBoundingClientRect();return Math.hypot((rect.left+rect.right)/2-x,(rect.top+rect.bottom)/2-y)<28});
+    if(close.length>1){
+      const atlas=$('#river').getBoundingClientRect();
+      nearby.style.left=`${Math.max(8,Math.min(x-atlas.left+12,atlas.width-270))}px`;
+      nearby.style.top=`${Math.max(48,Math.min(y-atlas.top+12,atlas.height-245))}px`;
+      nearby.innerHTML='<strong>选择附近的语言</strong>'+close.sort((a,b)=>(a.dataset.name||'').localeCompare(b.dataset.name||'')).map(node=>`<button type="button" data-nearby="${esc(node.dataset.id)}">${esc(node.dataset.name||byId.get(node.dataset.id)?.name||node.dataset.id)}</button>`).join('');
+      nearby.hidden=false;return;
+    }
+  }
+  hideNearby();select(b.dataset.id);activeId=b.dataset.id;renderLineageFocus(activeId);
+});
+nearby.addEventListener('click',event=>{const choice=event.target.closest('[data-nearby]');if(!choice)return;const id=choice.dataset.nearby;hideNearby();select(id);activeId=id;renderLineageFocus(id)});
+document.addEventListener('pointerdown',event=>{if(!nearby.hidden&&!event.target.closest('.nearby-list,#docks .dot'))hideNearby()});
+$('#detail').inert=true;$('#close').onclick=()=>{clearRelationPreview();$('#detail').classList.remove('open');$('#detail').setAttribute('aria-hidden','true');$('#detail').inert=true;opener?.focus()};document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!document.querySelector('.relation-settings[open]'))$('#close').click()});
+const workspace=$('.workspace'),resizer=$('#detail-resizer');
+const savedSize=key=>{try{return Number(localStorage.getItem(key))||null}catch{return null}};
+const rememberSize=(key,value)=>{try{localStorage.setItem(key,String(value))}catch{}};
+function setDetailSize(size,mobile){
+  const minimum=mobile?150:280;
+  const limit=Math.max(minimum,mobile?Math.min(workspace.clientHeight*.7,600):Math.min(workspace.clientWidth*.55,720));
+  const value=Math.round(Math.max(minimum,Math.min(size,limit)));
+  workspace.style.setProperty(mobile?'--detail-height':'--detail-width',`${value}px`);
+  resizer.setAttribute('aria-label',mobile?'调整详情高度':'调整详情宽度');
+  resizer.setAttribute('aria-orientation',mobile?'horizontal':'vertical');
+  resizer.setAttribute('aria-valuemin',String(minimum));
+  resizer.setAttribute('aria-valuemax',String(Math.round(limit)));
+  resizer.setAttribute('aria-valuenow',String(value));
+  return value;
+}
+setDetailSize(savedSize('museum-detail-width')||440,false);
+setDetailSize(savedSize('museum-detail-height')||workspace.clientHeight*.45,true);
+if(!matchMedia('(max-width:700px)').matches)setDetailSize(savedSize('museum-detail-width')||440,false);
+window.addEventListener('resize',()=>{
+  const mobile=matchMedia('(max-width:700px)').matches;
+  const key=mobile?'museum-detail-height':'museum-detail-width';
+  setDetailSize(savedSize(key)||(mobile?workspace.clientHeight*.45:440),mobile);
+});
+resizer.addEventListener('pointerdown',event=>{
+  event.preventDefault();const mobile=matchMedia('(max-width:700px)').matches;
+  const start=mobile?$('#detail').getBoundingClientRect().height:$('#detail').getBoundingClientRect().width;
+  const origin=mobile?event.clientY:event.clientX;
+  workspace.classList.add('resizing');
+  const move=e=>setDetailSize(start+origin-(mobile?e.clientY:e.clientX),mobile);
+  const end=()=>{
+    window.removeEventListener('pointermove',move);window.removeEventListener('pointerup',end);
+    workspace.classList.remove('resizing');
+    rememberSize(mobile?'museum-detail-height':'museum-detail-width',mobile?$('#detail').getBoundingClientRect().height:$('#detail').getBoundingClientRect().width);
+    if(activeId&&!$('#river').hidden)scheduleFocusGeometry(activeId);
+  };
+  window.addEventListener('pointermove',move);window.addEventListener('pointerup',end,{once:true});
+});
+resizer.addEventListener('keydown',event=>{
+  const mobile=matchMedia('(max-width:700px)').matches;
+  const increase=mobile?event.key==='ArrowUp':event.key==='ArrowLeft';
+  const decrease=mobile?event.key==='ArrowDown':event.key==='ArrowRight';
+  if(!increase&&!decrease)return;
+  event.preventDefault();
+  const current=mobile?$('#detail').getBoundingClientRect().height:$('#detail').getBoundingClientRect().width;
+  const value=setDetailSize(current+(increase?24:-24),mobile);
+  rememberSize(mobile?'museum-detail-height':'museum-detail-width',value);
+  if(activeId&&!$('#river').hidden)scheduleFocusGeometry(activeId);
+});
+let page=0,filtered=records;const size=60;
+function update(reset=true){if(reset)page=0;const q=$('#search').value.trim().toLowerCase(),scope=$('#scope').value;$('#search-clear').hidden=!$('#search').value;filtered=records.filter(r=>(scope==='all'||r.category===(scope==='languages'?'language':scope==='other'?'related':'pending'))&&`${r.name} ${r.id} ${r.aliases} ${r.creators}`.toLowerCase().includes(q));if($('#sort').value==='year')filtered.sort((a,b)=>(a.year||9999)-(b.year||9999)||a.name.localeCompare(b.name));$('#result-count').textContent=`${filtered.length.toLocaleString()} 条匹配 / ${meta.count.toLocaleString()} 条馆藏`;$('#list').innerHTML=filtered.slice(page*size,(page+1)*size).map(r=>`<button class="record" data-id="${esc(r.id)}"><strong>${esc(r.name)}</strong><span>${r.year||'年代待考'} · ${esc(statusLabel(r))}</span></button>`).join('')||'<div class="empty">这次快照没有匹配条目。</div>';$('#page').textContent=`${filtered.length?page+1:0} / ${Math.ceil(filtered.length/size)}`;$('#prev').disabled=page===0;$('#next').disabled=(page+1)*size>=filtered.length;}
+$('#list').onclick=e=>{let b=e.target.closest('[data-id]');if(b){const id=b.dataset.id;if(!mapLanguageIds.has(id)&&document.body.classList.contains('lineage-focus'))restoreMapOverview();select(id);if(mapLanguageIds.has(id)){activeId=id;renderLineageFocus(activeId)}else activeId=null}};$('#search').oninput=()=>update();$('#search-clear').onclick=()=>{$('#search').value='';update();$('#search').focus()};$('#scope').onchange=()=>update();$('#sort').onchange=()=>update();$('#prev').onclick=()=>{page--;update(false)};$('#next').onclick=()=>{page++;update(false)};update();$('#relations').innerHTML=overviewRelationMarkup();requestAnimationFrame(fitMap);
+
+// Search dated map nodes; full collection remains available through catalogue search.
+const mapSearchInput=$('#map-search'),mapSearchPopup=$('#map-search-popup');
+let mapSearchMatches=[],mapSearchIndex=-1;
+function normalizeMapQuery(value){return String(value??'').normalize('NFKC').toLowerCase().replace(/[^\p{L}\p{N}+#]/gu,'')}
+function mapEditDistance(a,b){
+  const matrix=Array.from({length:a.length+1},(_,i)=>[i]);
+  for(let j=0;j<=b.length;j++)matrix[0][j]=j;
+  for(let i=1;i<=a.length;i++)for(let j=1;j<=b.length;j++){
+    matrix[i][j]=Math.min(matrix[i-1][j]+1,matrix[i][j-1]+1,matrix[i-1][j-1]+(a[i-1]===b[j-1]?0:1));
+    if(i>1&&j>1&&a[i-1]===b[j-2]&&a[i-2]===b[j-1])matrix[i][j]=Math.min(matrix[i][j],matrix[i-2][j-2]+1);
+  }
+  return matrix[a.length][b.length];
+}
+const mapSearchEntries=dated.map(record=>({record,terms:[record.name,record.id,...String(record.aliases||'').split(/[,;|\n]|\s+or\s+/i)].map(normalizeMapQuery).filter(Boolean)}));
+function mapMatchRank(term,query){
+  if(term===query)return 0;
+  if(term.startsWith(query))return 10+Math.min(9,(term.length-query.length)/100);
+  if(term.includes(query))return 20+term.indexOf(query)/100;
+  if(query.length>=4&&Math.abs(term.length-query.length)<=2){const distance=mapEditDistance(term,query);if(distance<=(query.length>=7?2:1))return 30+distance;}
+  if(query.length>=3){let i=0;for(const char of term)if(char===query[i])i++;if(i===query.length)return 40+term.length/100;}
+  return Infinity;
+}
+function closeMapSearch(){
+  const input=$('#map-search');if(!input)return;
+  $('#map-search-popup').hidden=true;input.setAttribute('aria-expanded','false');input.removeAttribute('aria-activedescendant');
+}
+function highlightMapSearch(index){
+  mapSearchIndex=index;
+  $('#map-search-results').querySelectorAll('[role=option]').forEach((option,i)=>option.setAttribute('aria-selected',String(i===index)));
+  if(index>=0){const option=$('#map-search-option-'+index);mapSearchInput.setAttribute('aria-activedescendant',option.id);option.scrollIntoView({block:'nearest'});}else mapSearchInput.removeAttribute('aria-activedescendant');
+}
+function updateMapSearch(){
+  const query=normalizeMapQuery(mapSearchInput.value);
+  $('#map-search-clear').hidden=!mapSearchInput.value;
+  if(!query){closeMapSearch();return;}
+  const matches=mapSearchEntries.map(({record,terms})=>({record,rank:Math.min(...terms.map(term=>mapMatchRank(term,query)))})).filter(match=>Number.isFinite(match.rank)).sort((a,b)=>a.rank-b.rank||a.record.name.localeCompare(b.record.name));
+  mapSearchMatches=matches.slice(0,8).map(match=>match.record);
+  $('#map-search-results').innerHTML=mapSearchMatches.map((record,i)=>`<button type="button" role="option" aria-selected="false" id="map-search-option-${i}" data-map-result="${esc(record.id)}"><strong>${esc(record.name)}</strong><small>${record.year} · ${esc(record.id)}${viewMode==='lineage'&&!graphIds.has(record.id)?' · 仅时间长河':''}</small></button>`).join('');
+  $('#map-search-status').textContent=matches.length?`地图中 ${matches.length} 条匹配${matches.length>8?'，显示前 8 条':''}`:`地图中没有匹配；可在全部 ${meta.count.toLocaleString()} 条馆藏中继续检索。`;
+  const riverBounds=$('#river').getBoundingClientRect(),searchBounds=$('#map-search-box').getBoundingClientRect();
+  mapSearchPopup.style.maxWidth=`${Math.max(110,riverBounds.right-searchBounds.left-8)}px`;
+  const room=riverBounds.bottom-searchBounds.bottom-100;
+  $('#map-search-results').style.maxHeight=`${Math.max(36,Math.min(300,innerHeight*.35,room))}px`;
+  mapSearchPopup.hidden=false;mapSearchInput.setAttribute('aria-expanded','true');highlightMapSearch(-1);
+}
+function chooseMapSearch(id){
+  const record=byId.get(id),switchTimeline=viewMode==='lineage'&&!graphIds.has(id);
+  mapSearchInput.value=record.name;$('#map-search-clear').hidden=false;closeMapSearch();hideNearby();
+  select(id);activeId=id;renderLineageFocus(id);
+  if(switchTimeline){setAtlasFeedback('此语言尚无已记录的地图关系，已在时间长河定位；缺失关系不等于没有上游。',`正在查看 ${record.name} · 时间长河定位`);}
+}
+mapSearchInput.addEventListener('input',updateMapSearch);
+mapSearchInput.addEventListener('focus',()=>{if(mapSearchInput.value)updateMapSearch()});
+mapSearchInput.addEventListener('keydown',event=>{
+  if(event.isComposing)return;
+  if(event.key==='Escape'){event.preventDefault();event.stopPropagation();closeMapSearch();return;}
+  if(!['ArrowDown','ArrowUp','Enter'].includes(event.key))return;
+  if(mapSearchPopup.hidden){if(event.key==='Enter')return;updateMapSearch();}
+  if(event.key==='Enter'){if(mapSearchMatches.length){event.preventDefault();chooseMapSearch(mapSearchMatches[Math.max(0,mapSearchIndex)].id);}return;}
+  event.preventDefault();if(mapSearchMatches.length)highlightMapSearch((mapSearchIndex+(event.key==='ArrowDown'?1:mapSearchIndex<0?0:-1)+mapSearchMatches.length)%mapSearchMatches.length);
+});
+// Keep focus on the combobox until click is delivered. On macOS/Safari a
+// mouse click on a button may blur the input with relatedTarget=null.
+// Closing the popup on that blur would remove the target before click.
+$('#map-search-popup').addEventListener('mousedown',event=>{
+  if(event.button===0&&event.target.closest('button'))event.preventDefault();
+});
+$('#map-search-results').addEventListener('click',event=>{const option=event.target.closest('[data-map-result]');if(option)chooseMapSearch(option.dataset.mapResult)});
+$('#map-search-clear').onclick=()=>{mapSearchInput.value='';updateMapSearch();mapSearchInput.focus({preventScroll:true})};
+$('#map-search-catalogue').onclick=()=>{const query=mapSearchInput.value;closeMapSearch();$('#search').value=query;$('#scope').value='all';update();$('#catalogue-view').click();$('#search').focus({preventScroll:true})};
+document.addEventListener('pointerdown',event=>{if(!$('#map-search-box').contains(event.target))closeMapSearch()});
+$('#map-search-box').addEventListener('focusout',event=>{if(!$('#map-search-box').contains(event.relatedTarget))closeMapSearch()});

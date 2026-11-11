@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Code Museum · 一门语言，一段来处</title>
+  <meta name="description" content="Code Museum 独立本地版式预览：探索语言的来处，阅读完整馆藏，在实验台动手。">
+  <link rel="icon" href="/classic/assets/brand/code-museum-tab.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/modern.css">
+</head>
+<body>
+  <a class="skip" href="#main">跳到内容</a>
+  <header class="site-header">
+    <a href="#explore" class="brand" aria-label="Code Museum 首页"><span class="brand-symbol" aria-hidden="true"><i></i><i></i><i></i></span><span>Code Museum<small>编程语言博物馆</small></span></a>
+    <nav class="primary-nav" aria-label="主要导航"><a href="#explore" data-nav="explore">探索</a><a href="#collection" data-nav="collection">馆藏</a><a href="#lab" data-nav="lab">实验台</a></nav>
+    <div class="header-actions"><button class="search-trigger" id="open-search" type="button"><span class="search-icon" aria-hidden="true"></span><span>搜索语言</span><kbd>⌘ K</kbd></button><button class="icon-button" id="theme" type="button" aria-label="切换深色主题">◐</button><a class="classic-link" href="/classic/" target="_blank" rel="noopener">查看原版 ↗</a></div>
+  </header>
+  <main id="main">
+    <section id="explore-view" class="view">
+      <div class="explore-top"><div class="view-label"><span class="live-dot"></span> 一门语言，一段来处</div><span class="preview-label">本地版式预览</span></div>
+      <nav class="explore-tabs" aria-label="探索方式"><button type="button" data-explore="guide" aria-pressed="true">精选导览</button><button type="button" data-explore="time" aria-pressed="false">时间长河</button><button type="button" data-explore="relations" aria-pressed="false">关系谱系</button></nav>
+      <div id="guide-pane">
+        <div class="hero">
+          <div class="hero-copy"><p class="eyebrow">THE MUSEUM OF PROGRAMMING LANGUAGES</p><h1>每一行代码，<br>都有它的<span>来处。</span></h1><p class="hero-description">沿着历史寻找灵感，理解语言之间的联系。<br class="desktop-break">再写一段代码，亲手看看它如何运行。</p><div class="hero-actions"><button class="button primary" id="start-explore" type="button">沿历史探索 <span aria-hidden="true">↗</span></button><a class="button quiet" href="#lab">打开实验台 <span aria-hidden="true">→</span></a></div><div class="hero-footnote"><span class="mini-book" aria-hidden="true">↳</span> 有出处的关系，有真实结果的实验。</div></div>
+          <div class="hero-map"><div class="map-kicker"><span>LANGUAGES, CONNECTED.</span><span class="map-coordinate">DESIGN LINKS</span></div><div id="mini-map" class="mini-map" aria-label="可点击的局部语言设计关系"></div><div class="map-caption"><span><i></i> 仅连接馆藏中已记录的关系</span><button type="button" id="map-more">探索关系 <span aria-hidden="true">↗</span></button></div></div>
+        </div>
+        <div class="collection-facts" id="collection-facts" aria-label="馆藏覆盖范围"></div>
+        <section class="curated-section"><div class="section-heading"><div><p class="eyebrow">FOLLOW YOUR CURIOSITY</p><h2>从一个好问题开始</h2></div><button class="text-button" id="all-routes" type="button">全部导览 <span aria-hidden="true">↗</span></button></div><div class="route-grid" id="route-grid"></div></section>
+        <section class="featured-section"><div class="section-heading"><div><p class="eyebrow">FROM THE COLLECTION</p><h2>停下来，认识一门语言</h2></div><a class="text-button" href="#collection">浏览完整馆藏 <span aria-hidden="true">→</span></a></div><div class="featured-grid" id="featured-grid"></div></section>
+      </div>
+      <div id="time-pane" hidden><div class="page-heading"><p class="eyebrow">A HISTORY OF IDEAS</p><h1>把时间，慢慢展开。</h1><p>按馆藏来源年代浏览地图节点。年代不表示关系，完整馆藏始终可以检索。</p></div><div class="era-filter" id="era-filter"></div><div id="timeline-list" class="timeline-list"></div></div>
+      <div id="relations-pane" hidden><div class="page-heading"><p class="eyebrow">NO LANGUAGE IS AN ISLAND</p><h1>理解语言之间的联系。</h1><p>从一门语言看已记录的设计输入与后续。每条关系都能回到来源。</p></div><div class="relation-selector"><label for="relation-language">观察语言</label><select id="relation-language"></select><a href="/classic/#lineage" target="_blank" rel="noopener">原版完整图谱 ↗</a></div><div id="relation-workspace"></div></div>
+    </section>
+    <section id="collection-view" class="view" hidden>
+      <div class="page-heading"><p class="eyebrow">THE COMPLETE COLLECTION</p><h1>找到你想了解的语言。</h1><p>搜索名字、别名或创造者。热门之外，仍有一整个语言世界。</p></div>
+      <div class="catalogue-search"><span class="search-icon" aria-hidden="true"></span><input type="search" id="catalogue-query" placeholder="试试 Python、ALGOL，或一位语言设计者…" aria-label="检索完整馆藏"><kbd>/</kbd></div>
+      <div class="catalogue-tools"><div class="filter-chips" aria-label="馆藏筛选"><button type="button" data-filter="all" aria-pressed="true">全部馆藏</button><button type="button" data-filter="languages" aria-pressed="false">语言</button><button type="button" data-filter="reviewed" aria-pressed="false">已核实现</button><button type="button" data-filter="runnable" aria-pressed="false">执行环境</button></div><label class="sort-label">排序 <select id="catalogue-sort"><option value="name">名称</option><option value="year">年代</option></select></label></div>
+      <div class="result-meta"><span id="catalogue-count" role="status"></span><span>来源年代 · 核验状态 · 执行方式</span></div><div id="catalogue-list" class="catalogue-list"></div><div class="pagination"><button class="button secondary" id="previous-page" type="button">← 上一页</button><span id="page-number"></span><button class="button secondary" id="next-page" type="button">下一页 →</button></div>
+    </section>
+    <section id="lab" class="view lab" hidden>
+      <div class="lab-title-row"><div><p class="eyebrow">THE LANGUAGE LAB</p><h1>让想法，运行一下。</h1></div><a class="text-button" id="lab-archive" href="#collection">了解这门语言 <span aria-hidden="true">↗</span></a></div>
+      <div class="lab-toolbar"><div class="lab-pickers"><label>语言 <select id="lab-language" aria-label="选择实验语言"></select></label><span class="toolbar-divider"></span><label>示例 <select id="lab-topic" aria-label="选择示例主题"></select></label></div><div class="lab-tools"><details class="file-menu"><summary>代码工具 <span aria-hidden="true">⌄</span></summary><div><button id="reset-code" type="button">恢复示例</button><button id="download-code" type="button">下载代码</button><button id="import-code" type="button">导入代码</button></div></details><input id="import-file" type="file" accept="text/*,.js,.py,.lua,.scm,.c,.cpp,.java,.rs,.go,.ts" hidden><button id="lab-explain-current" type="button">检查并讲解当前代码</button><button class="button primary run-button" id="run-code" type="button"><span aria-hidden="true">▷</span> 运行代码 <kbd>⌘ ↵</kbd></button></div></div>
+      <div class="workbench">
+        <div class="editor-column"><div class="editor-heading"><span><i class="file-dot"></i><span id="lab-file">museum.js</span></span><span class="runtime-pill" id="runtime-label">浏览器 · JavaScript</span></div><div class="code-edit"><pre id="line-numbers" aria-hidden="true">1</pre><pre id="lab-highlight" aria-hidden="true"></pre><textarea id="lab-code" spellcheck="false" autocapitalize="off" autocorrect="off" autocomplete="off" maxlength="131072" aria-label="代码编辑器" aria-describedby="draft-status"></textarea></div><details class="stdin-box"><summary>程序输入 <span>stdin · 可留空</span></summary><textarea id="stdin" rows="3" placeholder="程序需要读取的数据；不需要时留空。" aria-label="程序标准输入"></textarea><p>这是交给程序读取的数据，与上方代码分开。本地浏览器示例通常无需填写。</p></details><div class="editor-footer"><span id="draft-status" role="status">草稿仅保存在本机</span><span id="cursor-status">1 行 · UTF-8</span></div></div>
+        <div class="result-column"><div class="result-heading"><div class="result-tabs" role="tablist" aria-label="实验反馈"><button id="output-tab" role="tab" type="button" aria-selected="true" aria-controls="output-panel">运行结果</button><button id="review-tab" role="tab" type="button" aria-selected="false" aria-controls="lab-explanation">检查与讲解</button></div><button id="stop-code" type="button" class="stop-button" hidden>停止</button></div>
+          <div id="output-panel" class="output-panel" role="tabpanel" aria-labelledby="output-tab"><div class="output-status" id="execution-state"><span class="status-dot"></span><span id="execution-label">等待运行</span><span id="execution-time"></span></div><div class="output-empty" id="output-empty"><div aria-hidden="true">›_</div><h3>从一个小实验开始</h3><p>改一改左侧代码，点击运行。<br>这里会显示本次执行的真实输出。</p></div><pre id="execution-output" role="status" aria-live="polite" hidden></pre><div class="output-boundary" id="execution-boundary">代码在独立 Worker 中执行，超过时间上限会停止。</div></div>
+          <section id="lab-explanation" class="lab-explanation" role="tabpanel" aria-labelledby="review-tab" hidden><div class="lab-explanation-head"><p class="lab-explanation-disclosure">点击时调用大模型检查当前代码，保留原意给出讲解或纠错建议。</p><details class="lab-review-intent"><summary>补充预期行为 <span>可选</span></summary><textarea id="lab-code-intent" rows="2" maxlength="600" aria-label="代码预期行为" placeholder="例如：求 1 到 10 的和。"></textarea></details><p id="lab-explanation-status" role="status"></p></div><div id="lab-explanation-content" class="lab-explanation-content"></div></section>
+          <div class="review-action"><span>检查时按需调用大模型 · 相同代码复用结果 · 原稿不会自动修改</span></div><button id="lab-explanation-toggle" type="button" hidden>隐藏讲解</button>
+        </div>
+      </div><div class="lab-bottom"><span id="runtime-boundary"></span><a href="/classic/#lab" target="_blank" rel="noopener">打开原版实验台 ↗</a></div>
+    </section>
+  </main>
+  <footer class="site-footer"><span class="footer-brand">Code Museum <span>·</span> FreeXLib 自由实验空间</span><div><button id="about" type="button">出处与说明</button><a href="/classic/" target="_blank" rel="noopener">查看原版 ↗</a><a href="https://github.com/glwang-g/code-museum" target="_blank" rel="noopener">项目源码 ↗</a><span class="preview-label">本地预览</span></div></footer>
+  <dialog id="search-dialog" class="search-dialog" aria-labelledby="search-title"><form method="dialog"><button class="dialog-close" aria-label="关闭搜索">×</button></form><h2 id="search-title">想了解哪一门语言？</h2><input id="global-query" type="search" placeholder="名称、别名、创造者…" aria-label="搜索语言"><div id="global-results"></div><a class="search-all" href="#collection">进入完整馆藏 →</a></dialog>
+  <dialog id="detail-dialog" class="detail-dialog" aria-labelledby="detail-title"><form method="dialog"><button class="dialog-close" aria-label="关闭档案">×</button></form><div id="detail-content"></div></dialog>
+  <dialog id="route-dialog" class="route-dialog" aria-labelledby="route-title"><form method="dialog"><button class="dialog-close" aria-label="关闭导览">×</button></form><div id="route-content"></div></dialog>
+  <dialog id="about-dialog" class="about-dialog" aria-labelledby="about-title"><form method="dialog"><button class="dialog-close" aria-label="关闭说明">×</button></form><p class="eyebrow">ABOUT THIS COLLECTION</p><h2 id="about-title">有来处，也有边界。</h2><p>这是 Code Museum 的独立本地版式预览。馆藏、设计关系和示例读取现有固定资料，原版完整保留。</p><div id="about-summary"></div><p>本地可按需运行 JavaScript、Python、Lua、Scheme；远端执行与大模型服务未连接时会明确提示。图中的关系只来自已有记录，缺线不表示没有上游。</p><a class="button primary" href="/classic/#about" target="_blank" rel="noopener">查阅完整出处与许可 ↗</a></dialog>
+  <p id="toast" class="toast" role="status" hidden></p>
+  <script src="/classic/control-activation.js"></script><script src="/classic/lab-examples.js"></script><script src="/classic/learning-examples.js"></script><script src="/classic/data/lab-explanations.js"></script><script type="module" src="/modern.js"></script>
+</body></html>

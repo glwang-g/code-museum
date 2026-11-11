@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-11-10T16:47:15.875Z",
+  "checkedAt": "2026-11-11T08:09:16.660Z",
   "browser": "Chrome/157.0.8103.39",
   "origin": "local preview",
-  "contentSha256": "e744cc73f10769d6c4b236f666d709f49597e9803e4e37ea3cae99be54aa8607",
+  "contentSha256": "b5cbf0b79f5d3c5cc7fa572399849239fd422369ea6be853ca413f6cbdc0e45e",
   "scope": "Actual installed Chrome native press/release and missing-press replay from focused inputs. Model, clipboard, file-picker and download side effects intercepted. Does not certify the user Safari trackpad hardware.",
   "checks": [
     {
@@ -55,7 +55,7 @@
       "passed": true
     },
     {
-      "name": "Hide/show control activates once",
+      "name": "Output/review tabs activate on the first tap without calling the model",
       "passed": true
     },
     {
@@ -79,7 +79,7 @@
       "passed": true
     },
     {
-      "name": "Existing tab compatibility remains one tap",
+      "name": "Catalogue navigation remains one tap",
       "passed": true
     },
     {
@@ -97,9 +97,9 @@
   ],
   "inputs": {
     "src/control-activation.js": "148df5e4acdccc15b33bdc89a50740306724439d425ca1cfc0aeb35e15bfd5e5",
-    "src/museum.js": "82c75abe112c159db70f1d9d201ca42c9df5f0585505a7caca5a4814ddc684cd",
-    "src/index.html": "7d3238548d247b3765d7dad46542e4f873446dfa8857676d10da2c7e9e9d27ec",
-    "scripts/check-control-activation.cjs": "b52c382116a0cd5ecca174a527d9c2f4271430111ee3101e579170b4ffc90e40",
-    "scripts/browser-harness.cjs": "7806f630bc7ae458f982fb0bb186913f051f399af905386c32b234549a35b31d"
+    "src/museum.js": "2f0d3afc33a9032d61006374cb11339b01de46e56df785bfa3df7ab180f62abb",
+    "src/index.html": "77c41ef5e6ac10f9842a9fc97ea0ff6847b7ae87b7d5e10a7d13cef1512c37cc",
+    "scripts/check-control-activation.cjs": "502295d7d972d609486cac2aaf7c8b458b237b3b6edae8d4310f1bbc8ee8b614",
+    "scripts/browser-harness.cjs": "983602a7dc033e9bfbe3d5921511db69cdb592bba857f4cd2a0fec2669f9731f"
   }
 }

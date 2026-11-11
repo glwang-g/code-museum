@@ -1,6 +1,6 @@
 (()=>{
   const route=window.MUSEUM_ROUTE,$=id=>document.getElementById(id);
-  const tabs={'timeline-view':'river','lineage-view':'lineage','catalogue-view':'catalogue','lab-view':'lab','compare-view':'compare','sources-view':'about'};
+  const tabs={'gallery-view':'gallery','reading-view':'read','timeline-view':'river','lineage-view':'lineage','catalogue-view':'catalogue','lab-view':'lab','compare-view':'compare','sources-view':'about'};
   let restoring=false,scheduled=false,archive='',last='';
   function state(){
     const view=tabs[document.querySelector('.museum-tabs .active')?.id]||'river';
@@ -18,10 +18,13 @@
   window.MUSEUM_RELATIONS_UI.open=openRelationship;
   const originalClose=$('close').onclick;$('close').onclick=()=>{originalClose();if($('river').hidden)archive='';inspectedRelation=null;save()};
   function restore(){
-    const s=route.parse(location.hash);restoring=true;
+    const s=route.parse(location.hash||'#gallery');restoring=true;
     try{
       archive='';restoreMapOverview();relationDirection=s.direction;relationLevels=s.levels;setRelationScope(s.depth);setRelationLayer(s.layer);
-      if(s.view==='river'||s.view==='lineage'){
+      if(s.view==='gallery'||s.view==='read'){
+        archive=byId.has(s.language)?s.language:'';
+        activateTab(s.view==='read'?'reading-view':'gallery-view');
+      }else if(s.view==='river'||s.view==='lineage'){
         setView(s.view==='lineage'?'lineage':'timeline');
         if(byId.has(s.language)){select(s.language);activeId=mapLanguageIds.has(s.language)?s.language:null;if(activeId)renderLineageFocus(activeId)}
         if(relationAudit.has(s.relation))openRelationship(s.relation);

@@ -1,0 +1,799 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-11T07:13:37.439Z",
+  "browser": "Chrome/157.0.8103.39",
+  "origin": "http://127.0.0.1:4189",
+  "scope": "Refined B: exhibition / reading / lab, compact typography, simple top navigation and direct language-to-reading entry. Shares validated local interactions with alternative A. Complete fixed catalogue; actual JavaScript/Python/Lua/Scheme Workers. Model states use explicitly intercepted fixtures except one honest local disconnected response. No live provider, remote execution or deployment.",
+  "compactLayout": {
+    "homeTitlePx": 46,
+    "headerHeight": 72,
+    "exhibitionTop": 270.578125,
+    "guideCardTop": 788.265625
+  },
+  "preservation": {
+    "baselineCommit": "942904f36a6cbd1ff04e413db3b26ce6a7829722",
+    "files": 638,
+    "totalBytes": 35718151,
+    "manifestSha256": "cda32214be9f962f6523708f953a7c3b3fb680082dc2a6d835ade89995a24dbf",
+    "unchanged": true
+  },
+  "alternativeA": {
+    "files": {
+      "experiments/modern-preview/index.html": "ce01ebe8d37112173198f6294a86005b642980bc4da9060b46466678a750c37e",
+      "experiments/modern-preview/modern.css": "143fb40d5ac5bf010ac1466eb746b2aee99af08bc38e84912cb2bc04de57513e",
+      "experiments/modern-preview/modern.js": "3037741468179c84ac7451d6b0fdfe105eec62a43b7f15641d7740794d539b38"
+    },
+    "unchanged": true
+  },
+  "checks": [
+    {
+      "name": "Loads actual complete fixed data and makes no model call",
+      "passed": true
+    },
+    {
+      "name": "Compact headings and spacing bring the exhibit and guides into the first screen",
+      "homeTitlePx": 46,
+      "headerHeight": 72,
+      "exhibitionTop": 270.578125,
+      "guideCardTop": 788.265625,
+      "passed": true
+    },
+    {
+      "name": "Global creator search opens reading directly with source links and no intermediate dialog",
+      "passed": true
+    },
+    {
+      "name": "A catalogue language opens its reading page in one click",
+      "passed": true
+    },
+    {
+      "name": "Full catalogue pagination, full-width search, empty state and 59-environment filter work",
+      "passed": true
+    },
+    {
+      "name": "A timeline entry opens reading directly",
+      "passed": true
+    },
+    {
+      "name": "Timeline and design relationships open fixed recorded evidence",
+      "passed": true
+    },
+    {
+      "name": "All five existing guided routes and authored code comparison remain accessible",
+      "passed": true
+    },
+    {
+      "name": "Reuses the existing real browser Worker runtime",
+      "language": "javascript",
+      "output": "42",
+      "passed": true
+    },
+    {
+      "name": "Reuses the existing real browser Worker runtime",
+      "language": "lua",
+      "output": "7",
+      "passed": true
+    },
+    {
+      "name": "Reuses the existing real browser Worker runtime",
+      "language": "scheme",
+      "output": "7",
+      "passed": true
+    },
+    {
+      "name": "Reuses the existing real browser Worker runtime",
+      "language": "python",
+      "output": "10",
+      "passed": true
+    },
+    {
+      "name": "Changing topic and real runtime errors preserve truthful output",
+      "passed": true
+    },
+    {
+      "name": "Missing-press tap from the code editor invokes the new Run button exactly once",
+      "passed": true
+    },
+    {
+      "name": "The primary Run label remains visible while the pointer hovers over it",
+      "passed": true
+    },
+    {
+      "name": "Unbounded JavaScript is limited and explicit Stop terminates the worker",
+      "passed": true
+    },
+    {
+      "name": "Remote runtime is clearly unavailable locally and never fabricates execution",
+      "passed": true
+    },
+    {
+      "name": "Preview drafts restore across reload without calling a model",
+      "passed": true
+    },
+    {
+      "name": "Short Check action stays in the toolbar and tabs only change the viewed content",
+      "passed": true
+    },
+    {
+      "name": "Disconnected model service reports honestly and retains a neutral verdict",
+      "passed": true
+    },
+    {
+      "name": "The actual theme button switches the whole editor and all syntax colors, persists the choice, and leaves code, output and model calls unchanged",
+      "editorThemes": {
+        "dark": {
+          "review": "unchecked",
+          "page": "rgb(22, 27, 24)",
+          "feedback": "rgb(32, 39, 34)",
+          "background": "rgb(36, 46, 42)",
+          "column": "rgb(36, 46, 42)",
+          "heading": "rgb(32, 42, 39)",
+          "footer": "rgb(32, 42, 39)",
+          "footerInk": "rgb(161, 177, 159)",
+          "pill": "rgb(48, 59, 51)",
+          "pillInk": "rgb(161, 177, 159)",
+          "input": "rgb(45, 56, 47)",
+          "ink": "rgb(228, 233, 223)",
+          "gutter": "rgb(161, 177, 159)",
+          "caret": "rgb(238, 184, 150)",
+          "inputInk": "rgb(228, 233, 223)",
+          "tokens": {
+            "tok-comment": "rgb(160, 175, 157)",
+            "tok-keyword": "rgb(225, 176, 138)",
+            "tok-string": "rgb(182, 204, 168)",
+            "tok-number": "rgb(194, 198, 237)"
+          }
+        },
+        "light": {
+          "review": "unchecked",
+          "page": "rgb(243, 241, 233)",
+          "feedback": "rgb(252, 252, 247)",
+          "background": "rgb(236, 238, 232)",
+          "column": "rgb(236, 238, 232)",
+          "heading": "rgb(231, 235, 226)",
+          "footer": "rgb(231, 235, 226)",
+          "footerInk": "rgb(91, 107, 87)",
+          "pill": "rgb(230, 234, 221)",
+          "pillInk": "rgb(91, 107, 87)",
+          "input": "rgb(247, 248, 243)",
+          "ink": "rgb(40, 56, 46)",
+          "gutter": "rgb(91, 107, 87)",
+          "caret": "rgb(165, 73, 48)",
+          "inputInk": "rgb(40, 56, 46)",
+          "tokens": {
+            "tok-comment": "rgb(95, 112, 91)",
+            "tok-keyword": "rgb(138, 78, 43)",
+            "tok-string": "rgb(56, 107, 67)",
+            "tok-number": "rgb(115, 83, 151)"
+          }
+        }
+      },
+      "passed": true
+    },
+    {
+      "name": "Explicit Check reveals the tab and real pending state; edits clear its indicator, late results stay scoped, and cached results do not call again",
+      "passed": true
+    },
+    {
+      "name": "Existing exact-snapshot review feedback keeps readable theme-specific editor colors with fixture-only response",
+      "verdict": "ok",
+      "theme": "dark",
+      "colors": {
+        "review": "ok",
+        "page": "rgb(22, 27, 24)",
+        "feedback": "rgb(32, 39, 34)",
+        "background": "rgb(30, 51, 38)",
+        "column": "rgb(36, 46, 42)",
+        "heading": "rgb(32, 42, 39)",
+        "footer": "rgb(32, 42, 39)",
+        "footerInk": "rgb(161, 177, 159)",
+        "pill": "rgb(48, 59, 51)",
+        "pillInk": "rgb(161, 177, 159)",
+        "input": "rgb(45, 56, 47)",
+        "ink": "rgb(228, 233, 223)",
+        "gutter": "rgb(161, 177, 159)",
+        "caret": "rgb(238, 184, 150)",
+        "inputInk": "rgb(228, 233, 223)",
+        "tokens": {
+          "tok-number": "rgb(194, 198, 237)",
+          "tok-comment": "rgb(160, 175, 157)"
+        }
+      },
+      "passed": true
+    },
+    {
+      "name": "Existing exact-snapshot review feedback keeps readable theme-specific editor colors with fixture-only response",
+      "verdict": "ok",
+      "theme": "light",
+      "colors": {
+        "review": "ok",
+        "page": "rgb(243, 241, 233)",
+        "feedback": "rgb(252, 252, 247)",
+        "background": "rgb(237, 246, 239)",
+        "column": "rgb(236, 238, 232)",
+        "heading": "rgb(231, 235, 226)",
+        "footer": "rgb(231, 235, 226)",
+        "footerInk": "rgb(91, 107, 87)",
+        "pill": "rgb(230, 234, 221)",
+        "pillInk": "rgb(91, 107, 87)",
+        "input": "rgb(247, 248, 243)",
+        "ink": "rgb(40, 56, 46)",
+        "gutter": "rgb(91, 107, 87)",
+        "caret": "rgb(165, 73, 48)",
+        "inputInk": "rgb(40, 56, 46)",
+        "tokens": {
+          "tok-number": "rgb(115, 83, 151)",
+          "tok-comment": "rgb(95, 112, 91)"
+        }
+      },
+      "passed": true
+    },
+    {
+      "name": "Existing exact-snapshot review feedback keeps readable theme-specific editor colors with fixture-only response",
+      "verdict": "issues",
+      "theme": "dark",
+      "colors": {
+        "review": "issues",
+        "page": "rgb(22, 27, 24)",
+        "feedback": "rgb(32, 39, 34)",
+        "background": "rgb(56, 38, 40)",
+        "column": "rgb(36, 46, 42)",
+        "heading": "rgb(32, 42, 39)",
+        "footer": "rgb(32, 42, 39)",
+        "footerInk": "rgb(161, 177, 159)",
+        "pill": "rgb(48, 59, 51)",
+        "pillInk": "rgb(161, 177, 159)",
+        "input": "rgb(45, 56, 47)",
+        "ink": "rgb(228, 233, 223)",
+        "gutter": "rgb(161, 177, 159)",
+        "caret": "rgb(238, 184, 150)",
+        "inputInk": "rgb(228, 233, 223)",
+        "tokens": {
+          "tok-comment": "rgb(160, 175, 157)"
+        }
+      },
+      "passed": true
+    },
+    {
+      "name": "Existing exact-snapshot review feedback keeps readable theme-specific editor colors with fixture-only response",
+      "verdict": "issues",
+      "theme": "light",
+      "colors": {
+        "review": "issues",
+        "page": "rgb(243, 241, 233)",
+        "feedback": "rgb(252, 252, 247)",
+        "background": "rgb(255, 241, 239)",
+        "column": "rgb(236, 238, 232)",
+        "heading": "rgb(231, 235, 226)",
+        "footer": "rgb(231, 235, 226)",
+        "footerInk": "rgb(91, 107, 87)",
+        "pill": "rgb(230, 234, 221)",
+        "pillInk": "rgb(91, 107, 87)",
+        "input": "rgb(247, 248, 243)",
+        "ink": "rgb(40, 56, 46)",
+        "gutter": "rgb(91, 107, 87)",
+        "caret": "rgb(165, 73, 48)",
+        "inputInk": "rgb(40, 56, 46)",
+        "tokens": {
+          "tok-comment": "rgb(95, 112, 91)"
+        }
+      },
+      "passed": true
+    },
+    {
+      "name": "Existing exact-snapshot review feedback keeps readable theme-specific editor colors with fixture-only response",
+      "verdict": "uncertain",
+      "theme": "dark",
+      "colors": {
+        "review": "uncertain",
+        "page": "rgb(22, 27, 24)",
+        "feedback": "rgb(32, 39, 34)",
+        "background": "rgb(36, 46, 42)",
+        "column": "rgb(36, 46, 42)",
+        "heading": "rgb(32, 42, 39)",
+        "footer": "rgb(32, 42, 39)",
+        "footerInk": "rgb(161, 177, 159)",
+        "pill": "rgb(48, 59, 51)",
+        "pillInk": "rgb(161, 177, 159)",
+        "input": "rgb(45, 56, 47)",
+        "ink": "rgb(228, 233, 223)",
+        "gutter": "rgb(161, 177, 159)",
+        "caret": "rgb(238, 184, 150)",
+        "inputInk": "rgb(228, 233, 223)",
+        "tokens": {
+          "tok-comment": "rgb(160, 175, 157)"
+        }
+      },
+      "passed": true
+    },
+    {
+      "name": "Existing exact-snapshot review feedback keeps readable theme-specific editor colors with fixture-only response",
+      "verdict": "uncertain",
+      "theme": "light",
+      "colors": {
+        "review": "uncertain",
+        "page": "rgb(243, 241, 233)",
+        "feedback": "rgb(252, 252, 247)",
+        "background": "rgb(236, 238, 232)",
+        "column": "rgb(236, 238, 232)",
+        "heading": "rgb(231, 235, 226)",
+        "footer": "rgb(231, 235, 226)",
+        "footerInk": "rgb(91, 107, 87)",
+        "pill": "rgb(230, 234, 221)",
+        "pillInk": "rgb(91, 107, 87)",
+        "input": "rgb(247, 248, 243)",
+        "ink": "rgb(40, 56, 46)",
+        "gutter": "rgb(91, 107, 87)",
+        "caret": "rgb(165, 73, 48)",
+        "inputInk": "rgb(40, 56, 46)",
+        "tokens": {
+          "tok-comment": "rgb(95, 112, 91)"
+        }
+      },
+      "passed": true
+    },
+    {
+      "name": "Editing clears prior review color and never replaces the original code",
+      "passed": true
+    },
+    {
+      "name": "Navigation and content fit the viewport",
+      "view": "explore",
+      "width": 1440,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Navigation and content fit the viewport",
+      "view": "collection",
+      "width": 1440,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Navigation and content fit the viewport",
+      "view": "lab",
+      "width": 1440,
+      "theme": "light",
+      "editorColors": {
+        "review": "unchecked",
+        "page": "rgb(243, 241, 233)",
+        "feedback": "rgb(252, 252, 247)",
+        "background": "rgb(236, 238, 232)",
+        "column": "rgb(236, 238, 232)",
+        "heading": "rgb(231, 235, 226)",
+        "footer": "rgb(231, 235, 226)",
+        "footerInk": "rgb(91, 107, 87)",
+        "pill": "rgb(230, 234, 221)",
+        "pillInk": "rgb(91, 107, 87)",
+        "input": "rgb(247, 248, 243)",
+        "ink": "rgb(40, 56, 46)",
+        "gutter": "rgb(91, 107, 87)",
+        "caret": "rgb(165, 73, 48)",
+        "inputInk": "rgb(40, 56, 46)",
+        "tokens": {
+          "tok-number": "rgb(115, 83, 151)",
+          "tok-comment": "rgb(95, 112, 91)"
+        }
+      },
+      "passed": true
+    },
+    {
+      "name": "Navigation and content fit the viewport",
+      "view": "explore",
+      "width": 1440,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Navigation and content fit the viewport",
+      "view": "collection",
+      "width": 1440,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Navigation and content fit the viewport",
+      "view": "lab",
+      "width": 1440,
+      "theme": "dark",
+      "editorColors": {
+        "review": "unchecked",
+        "page": "rgb(22, 27, 24)",
+        "feedback": "rgb(32, 39, 34)",
+        "background": "rgb(36, 46, 42)",
+        "column": "rgb(36, 46, 42)",
+        "heading": "rgb(32, 42, 39)",
+        "footer": "rgb(32, 42, 39)",
+        "footerInk": "rgb(161, 177, 159)",
+        "pill": "rgb(48, 59, 51)",
+        "pillInk": "rgb(161, 177, 159)",
+        "input": "rgb(45, 56, 47)",
+        "ink": "rgb(228, 233, 223)",
+        "gutter": "rgb(161, 177, 159)",
+        "caret": "rgb(238, 184, 150)",
+        "inputInk": "rgb(228, 233, 223)",
+        "tokens": {
+          "tok-number": "rgb(194, 198, 237)",
+          "tok-comment": "rgb(160, 175, 157)"
+        }
+      },
+      "passed": true
+    },
+    {
+      "name": "Navigation and content fit the viewport",
+      "view": "explore",
+      "width": 900,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Navigation and content fit the viewport",
+      "view": "collection",
+      "width": 900,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Navigation and content fit the viewport",
+      "view": "lab",
+      "width": 900,
+      "theme": "light",
+      "editorColors": {
+        "review": "unchecked",
+        "page": "rgb(243, 241, 233)",
+        "feedback": "rgb(252, 252, 247)",
+        "background": "rgb(236, 238, 232)",
+        "column": "rgb(236, 238, 232)",
+        "heading": "rgb(231, 235, 226)",
+        "footer": "rgb(231, 235, 226)",
+        "footerInk": "rgb(91, 107, 87)",
+        "pill": "rgb(230, 234, 221)",
+        "pillInk": "rgb(91, 107, 87)",
+        "input": "rgb(247, 248, 243)",
+        "ink": "rgb(40, 56, 46)",
+        "gutter": "rgb(91, 107, 87)",
+        "caret": "rgb(165, 73, 48)",
+        "inputInk": "rgb(40, 56, 46)",
+        "tokens": {
+          "tok-number": "rgb(115, 83, 151)",
+          "tok-comment": "rgb(95, 112, 91)"
+        }
+      },
+      "passed": true
+    },
+    {
+      "name": "Navigation and content fit the viewport",
+      "view": "explore",
+      "width": 900,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Navigation and content fit the viewport",
+      "view": "collection",
+      "width": 900,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Navigation and content fit the viewport",
+      "view": "lab",
+      "width": 900,
+      "theme": "dark",
+      "editorColors": {
+        "review": "unchecked",
+        "page": "rgb(22, 27, 24)",
+        "feedback": "rgb(32, 39, 34)",
+        "background": "rgb(36, 46, 42)",
+        "column": "rgb(36, 46, 42)",
+        "heading": "rgb(32, 42, 39)",
+        "footer": "rgb(32, 42, 39)",
+        "footerInk": "rgb(161, 177, 159)",
+        "pill": "rgb(48, 59, 51)",
+        "pillInk": "rgb(161, 177, 159)",
+        "input": "rgb(45, 56, 47)",
+        "ink": "rgb(228, 233, 223)",
+        "gutter": "rgb(161, 177, 159)",
+        "caret": "rgb(238, 184, 150)",
+        "inputInk": "rgb(228, 233, 223)",
+        "tokens": {
+          "tok-number": "rgb(194, 198, 237)",
+          "tok-comment": "rgb(160, 175, 157)"
+        }
+      },
+      "passed": true
+    },
+    {
+      "name": "Navigation and content fit the viewport",
+      "view": "explore",
+      "width": 390,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Navigation and content fit the viewport",
+      "view": "collection",
+      "width": 390,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Navigation and content fit the viewport",
+      "view": "lab",
+      "width": 390,
+      "theme": "light",
+      "editorColors": {
+        "review": "unchecked",
+        "page": "rgb(243, 241, 233)",
+        "feedback": "rgb(252, 252, 247)",
+        "background": "rgb(236, 238, 232)",
+        "column": "rgb(236, 238, 232)",
+        "heading": "rgb(231, 235, 226)",
+        "footer": "rgb(231, 235, 226)",
+        "footerInk": "rgb(91, 107, 87)",
+        "pill": "rgb(230, 234, 221)",
+        "pillInk": "rgb(91, 107, 87)",
+        "input": "rgb(247, 248, 243)",
+        "ink": "rgb(40, 56, 46)",
+        "gutter": "rgb(91, 107, 87)",
+        "caret": "rgb(165, 73, 48)",
+        "inputInk": "rgb(40, 56, 46)",
+        "tokens": {
+          "tok-number": "rgb(115, 83, 151)",
+          "tok-comment": "rgb(95, 112, 91)"
+        }
+      },
+      "passed": true
+    },
+    {
+      "name": "Navigation and content fit the viewport",
+      "view": "explore",
+      "width": 390,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Navigation and content fit the viewport",
+      "view": "collection",
+      "width": 390,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Navigation and content fit the viewport",
+      "view": "lab",
+      "width": 390,
+      "theme": "dark",
+      "editorColors": {
+        "review": "unchecked",
+        "page": "rgb(22, 27, 24)",
+        "feedback": "rgb(32, 39, 34)",
+        "background": "rgb(36, 46, 42)",
+        "column": "rgb(36, 46, 42)",
+        "heading": "rgb(32, 42, 39)",
+        "footer": "rgb(32, 42, 39)",
+        "footerInk": "rgb(161, 177, 159)",
+        "pill": "rgb(48, 59, 51)",
+        "pillInk": "rgb(161, 177, 159)",
+        "input": "rgb(45, 56, 47)",
+        "ink": "rgb(228, 233, 223)",
+        "gutter": "rgb(161, 177, 159)",
+        "caret": "rgb(238, 184, 150)",
+        "inputInk": "rgb(228, 233, 223)",
+        "tokens": {
+          "tok-number": "rgb(194, 198, 237)",
+          "tok-comment": "rgb(160, 175, 157)"
+        }
+      },
+      "passed": true
+    },
+    {
+      "name": "Navigation and content fit the viewport",
+      "view": "explore",
+      "width": 320,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Navigation and content fit the viewport",
+      "view": "collection",
+      "width": 320,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Navigation and content fit the viewport",
+      "view": "lab",
+      "width": 320,
+      "theme": "light",
+      "editorColors": {
+        "review": "unchecked",
+        "page": "rgb(243, 241, 233)",
+        "feedback": "rgb(252, 252, 247)",
+        "background": "rgb(236, 238, 232)",
+        "column": "rgb(236, 238, 232)",
+        "heading": "rgb(231, 235, 226)",
+        "footer": "rgb(231, 235, 226)",
+        "footerInk": "rgb(91, 107, 87)",
+        "pill": "rgb(230, 234, 221)",
+        "pillInk": "rgb(91, 107, 87)",
+        "input": "rgb(247, 248, 243)",
+        "ink": "rgb(40, 56, 46)",
+        "gutter": "rgb(91, 107, 87)",
+        "caret": "rgb(165, 73, 48)",
+        "inputInk": "rgb(40, 56, 46)",
+        "tokens": {
+          "tok-number": "rgb(115, 83, 151)",
+          "tok-comment": "rgb(95, 112, 91)"
+        }
+      },
+      "passed": true
+    },
+    {
+      "name": "Navigation and content fit the viewport",
+      "view": "explore",
+      "width": 320,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Navigation and content fit the viewport",
+      "view": "collection",
+      "width": 320,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Navigation and content fit the viewport",
+      "view": "lab",
+      "width": 320,
+      "theme": "dark",
+      "editorColors": {
+        "review": "unchecked",
+        "page": "rgb(22, 27, 24)",
+        "feedback": "rgb(32, 39, 34)",
+        "background": "rgb(36, 46, 42)",
+        "column": "rgb(36, 46, 42)",
+        "heading": "rgb(32, 42, 39)",
+        "footer": "rgb(32, 42, 39)",
+        "footerInk": "rgb(161, 177, 159)",
+        "pill": "rgb(48, 59, 51)",
+        "pillInk": "rgb(161, 177, 159)",
+        "input": "rgb(45, 56, 47)",
+        "ink": "rgb(228, 233, 223)",
+        "gutter": "rgb(161, 177, 159)",
+        "caret": "rgb(238, 184, 150)",
+        "inputInk": "rgb(228, 233, 223)",
+        "tokens": {
+          "tok-number": "rgb(194, 198, 237)",
+          "tok-comment": "rgb(160, 175, 157)"
+        }
+      },
+      "passed": true
+    },
+    {
+      "name": "No uncaught page errors or remote execution submissions",
+      "passed": true
+    },
+    {
+      "name": "The complete current application remains available at the separate original URL",
+      "passed": true
+    },
+    {
+      "name": "All 638 original release files remain byte-for-byte identical to the preserved release",
+      "baselineCommit": "942904f36a6cbd1ff04e413db3b26ce6a7829722",
+      "files": 638,
+      "totalBytes": 35718151,
+      "manifestSha256": "cda32214be9f962f6523708f953a7c3b3fb680082dc2a6d835ade89995a24dbf",
+      "unchanged": true,
+      "passed": true
+    },
+    {
+      "name": "Curated exhibition switches its real specimens and source code",
+      "chapter": 1,
+      "passed": true
+    },
+    {
+      "name": "Curated exhibition switches its real specimens and source code",
+      "chapter": 2,
+      "passed": true
+    },
+    {
+      "name": "Curated exhibition switches its real specimens and source code",
+      "chapter": 3,
+      "passed": true
+    },
+    {
+      "name": "Selecting a dated specimen displays its existing authored example",
+      "passed": true
+    },
+    {
+      "name": "Reading is a separate full-page article with existing rules, code and sources",
+      "passed": true
+    },
+    {
+      "name": "The exact displayed reading example transfers to the lab and really prints 49 without a model call",
+      "passed": true
+    },
+    {
+      "name": "Focus is available in code tools and Escape exits while preserving the editor",
+      "passed": true
+    },
+    {
+      "name": "Editorial reading page fits the viewport",
+      "width": 1440,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Editorial reading page fits the viewport",
+      "width": 1440,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Editorial reading page fits the viewport",
+      "width": 900,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Editorial reading page fits the viewport",
+      "width": 900,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Editorial reading page fits the viewport",
+      "width": 390,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Editorial reading page fits the viewport",
+      "width": 390,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Editorial reading page fits the viewport",
+      "width": 320,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Editorial reading page fits the viewport",
+      "width": 320,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Alternative B completes without uncaught page errors",
+      "passed": true
+    },
+    {
+      "name": "Alternative A frontend source files remain unchanged",
+      "files": {
+        "experiments/modern-preview/index.html": "ce01ebe8d37112173198f6294a86005b642980bc4da9060b46466678a750c37e",
+        "experiments/modern-preview/modern.css": "143fb40d5ac5bf010ac1466eb746b2aee99af08bc38e84912cb2bc04de57513e",
+        "experiments/modern-preview/modern.js": "3037741468179c84ac7451d6b0fdfe105eec62a43b7f15641d7740794d539b38"
+      },
+      "unchanged": true,
+      "passed": true
+    }
+  ],
+  "inputs": {
+    "experiments/gallery-preview/index.html": "c19d9f12993cbf842fc444ad0b001eeff74c7f632a15e9b517c4d47111467a06",
+    "experiments/gallery-preview/gallery.css": "beccb7e73e8fb24733c33077f416defa55bdabcf09e8affbf073a8735d4720df",
+    "experiments/gallery-preview/compact.css": "abd8da33e0fd72992417d421c395ce5f8fabb97726e40e59ae33c1896a52f77e",
+    "experiments/gallery-preview/gallery.js": "350ee05fb538cd56feed49601f82bf98c88c6c9be93f232c4a5a1736da5640b4",
+    "experiments/gallery-preview/check-browser.cjs": "75f60a7e4d3d4e046e5a096cb74ca2ea635480186cdfc709027c2230e48a3192",
+    "experiments/modern-preview/index.html": "ce01ebe8d37112173198f6294a86005b642980bc4da9060b46466678a750c37e",
+    "experiments/modern-preview/modern.js": "3037741468179c84ac7451d6b0fdfe105eec62a43b7f15641d7740794d539b38",
+    "experiments/modern-preview/modern.css": "143fb40d5ac5bf010ac1466eb746b2aee99af08bc38e84912cb2bc04de57513e",
+    "scripts/preview-gallery.cjs": "b03d73c6ccded98579017c0440661b19cec4f3d25b3b80e8b7a1d91eca2d0c9f",
+    "scripts/preview-modern.cjs": "d0a1c10985d911ac15fed21ac46524043f2cf7334d2d43131edb533be88bfa53",
+    "scripts/browser-harness.cjs": "983602a7dc033e9bfbe3d5921511db69cdb592bba857f4cd2a0fec2669f9731f"
+  }
+}
