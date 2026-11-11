@@ -42,6 +42,9 @@
     const invalid=!lab.code.trim()||new TextEncoder().encode(lab.code).length>24576||lab.code.split('\n').length>400||intent.value.length>600;
     action.disabled=!!pending||!!ai||invalid;action.textContent=busy?'正在检查…':pending?'等待上次检查…':ai?'本次检查已就绪':'检查并讲解当前代码';
     panel.setAttribute('aria-busy',String(!!busy));
+    // Feedback belongs to the exact code, language and intended behavior in cache.
+    // Editing or a pending/failed check must never keep an earlier verdict's color.
+    $('lab').dataset.review=busy?'checking':review?.verdict||'unchecked';
     const status=busy?'正在检查当前代码及预期行为。':errors.get(snapshot)|| (ai?'大模型检查 · '+(review.verdict==='ok'?'未发现明显问题':review.verdict==='issues'?'发现问题':'需确认预期')+(ai.cached?' · 已复用':''):matched?'馆内示例讲解 · 尚未进行模型检查':invalid?'最多24KB、400行代码；预期行为最多600字。':'点击按钮，先检查，再讲解或给出纠错建议。');
     $('lab-explanation-status').textContent=status;
     const signature=snapshot+'\0'+lab.topic+'\0'+state+'\0'+String(!!busy);
