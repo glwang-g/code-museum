@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-11T10:45:45.304Z",
+  "browser": "Chrome/157.0.8103.39",
+  "scope": "Same current dist code at 390px in installed isolated headless Chrome. Interleaved three samples per mode; cache disabled; simulated 60ms latency and 1 MiB/s download/upload, no CPU throttling. Only HTML script defer attributes differ. The three existing analytics/visits/messages defer flags and synchronous theme remain in both. No live API/model/execution. DOM ready timestamp, not GPU display.",
+  "scriptSha256": "1c998a06db833fb56ccc69d5070e4a9f8a31bdd9c8682a05db52236bf4c1c0a7",
+  "htmlSha256": "a6a21b866f6b104241efe984e465b3acff5dbc5f444aa5340b4ad0dd7c08ce5b",
+  "rows": [
+    {
+      "sample": 1,
+      "mode": "defer",
+      "readyMs": 766.6999999880791,
+      "fcpMs": 240,
+      "domContentLoadedMs": 766.8000000119209,
+      "contentSha256": "10c1ee83aedd65c3a07a8d122708abed9ac5053fd7596e931c3f49d257a1fa4f"
+    },
+    {
+      "sample": 1,
+      "mode": "sync",
+      "readyMs": 692.4000000059605,
+      "fcpMs": 236,
+      "domContentLoadedMs": 729.6999999880791,
+      "contentSha256": "10c1ee83aedd65c3a07a8d122708abed9ac5053fd7596e931c3f49d257a1fa4f"
+    },
+    {
+      "sample": 2,
+      "mode": "defer",
+      "readyMs": 766.5,
+      "fcpMs": 236,
+      "domContentLoadedMs": 766.5999999940395,
+      "contentSha256": "10c1ee83aedd65c3a07a8d122708abed9ac5053fd7596e931c3f49d257a1fa4f"
+    },
+    {
+      "sample": 2,
+      "mode": "sync",
+      "readyMs": 704.3000000119209,
+      "fcpMs": 256,
+      "domContentLoadedMs": 733.0999999940395,
+      "contentSha256": "10c1ee83aedd65c3a07a8d122708abed9ac5053fd7596e931c3f49d257a1fa4f"
+    },
+    {
+      "sample": 3,
+      "mode": "defer",
+      "readyMs": 769.4000000059605,
+      "fcpMs": 244,
+      "domContentLoadedMs": 769.5,
+      "contentSha256": "10c1ee83aedd65c3a07a8d122708abed9ac5053fd7596e931c3f49d257a1fa4f"
+    },
+    {
+      "sample": 3,
+      "mode": "sync",
+      "readyMs": 690.6999999880791,
+      "fcpMs": 240,
+      "domContentLoadedMs": 730.8000000119209,
+      "contentSha256": "10c1ee83aedd65c3a07a8d122708abed9ac5053fd7596e931c3f49d257a1fa4f"
+    }
+  ],
+  "summary": {
+    "defer": {
+      "samples": 3,
+      "medianMs": 766.6999999880791
+    },
+    "sync": {
+      "samples": 3,
+      "medianMs": 692.4000000059605
+    }
+  }
+}
