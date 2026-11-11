@@ -1,5 +1,15 @@
 # Code Museum 首版部署
 
+## 2026-11-11 默认年代与关系阅读视图已发布
+
+正式release为`0eb0bb22ede183e4bee61b4ec4dd967e69072653`，[Actions 43014084916](https://github.com/glwang-g/code-museum/actions/runs/43014084916) build/deploy成功。“时间长河”默认年代分组、筛选和语言阅读入口；“关系谱系”默认输入/当前/后续三栏及页内依据，手机纵向排列。同页“完整图谱”保留旧地图缩放、方向、范围和关系层。普通入口默认阅读，旧的层级/方向/关系参数链接仍进完整图谱；新增`mode=map`、显式`mode=browse`和年代`era`保持分享/刷新。原文、哈希、待核与研究说明沿用原依据渲染；导览依据步骤已接入新视图。
+
+132项默认测试、公开Git离线重建及本地18项探索、88项整站、13项路径、22项控件、16项出处通过。正式分别18/89/13/22/16，共158项通过，代表截图已核读。四种本地Worker、JS导览与原版仍可用，C/xshow、BCPL/xshow2各真实输出42；未调用真实模型，不声称重跑全部56门。1274文件/71,453,932字节逐一匹配，清单SHA-256为`b67499d0bd3db282d9a8b2c581d8619d9e4833a27fe9fd2763fe93c6d832e2c4`，原版638文件清单仍为`cda32214be9f962f6523708f953a7c3b3fb680082dc2a6d835ade89995a24dbf`。
+
+发布前xshow可用空间约81MB。隔离小夹具证明，新artifact时间戳使原`rsync -a --checksum --link-dest`无法复用相同字节；CI增加`--no-times`，不改旧文件mtime，变更文件独立复制。实际1253个未变文件全部硬链接复用（71,073,219字节），只有21个文件内容变化（380,713字节），旧release全部文件重验仍相同。没有清理历史发布、镜像或日志；发布后余量80,576,512字节，后续容量治理另做。此参数不改变SHA-256发布校验和原子入口切换。
+
+模型、网关、worker、隧道与xshow2 worker保持原PID；analytics按原流程重启健康204，私有凭据、数据库、Nginx及镜像保留。回退可按原激活流程恢复保留的`ab76de12495cddaadf7848721ee10513fe3121ed`，共享的未变资源字节相同且不会原地写入；原版仍在`/classic/`。见 [发布证据](../data/audit/explore-reading-deployment.json)、[文件/复用/服务核验](../data/audit/explore-reading-production-services.json)和[传输对照](../data/audit/explore-deploy-transfer.json)。
+
 ## 2026-11-11 学习路径与测速基线已发布
 
 功能release为`ab76de12495cddaadf7848721ee10513fe3121ed`，[Actions 43007282407](https://github.com/glwang-g/code-museum/actions/runs/43007282407)的build/deploy成功。各页保留对比/导览/出处，补手机底栏滚动空间、页脚上下文绑定和换页同步定位；5条路线可继续/明确重启，阅读/比较/实验携带同一语言和题目，继续任务保留草稿，明确导入可撤销。旧阅读书签及原版仍可用。

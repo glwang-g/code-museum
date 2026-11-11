@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-11-11T10:59:05.793Z",
+  "checkedAt": "2026-11-11T11:52:43.951Z",
   "origin": "https://codemuseum.freexlib.com",
   "browser": "Chrome/157.0.8103.39",
   "scope": "Installed headless Chrome; native mouse/keyboard input at 1440/390/320. Mobile layout emulation, not physical Safari. Real JavaScript Worker. Execution/model submissions prohibited during navigation; no provider calls.",
@@ -59,14 +59,14 @@
     }
   ],
   "inputs": {
-    "src/gallery.js": "147f509121e4554e704f1c8111e36d6c4f3718bdd8cdfdb503b7091030473856",
-    "src/gallery.css": "35cf3ca6f43ea3cf4fb1db3317779fa8550f90b2163a86f037fc23290909c177",
-    "src/index.html": "a0834731d18d78e9de3f83e41f04cd6b66ad4d5322465cbf38d04cec4c6b87da",
-    "src/navigation.js": "b8da269c62a3f27bacf694a391e3f2e41b7896c0c6be7eeb067d0ebdf5d6ed72",
-    "src/navigation-state.js": "ad5fa42030f3f9b174b8817ff005f01eb52cee3d50c0d4308fa8edd10c5371de",
+    "src/gallery.js": "2b284c1ce95d571e76c6f378830ba8f4f2e89de009a7200cb93c7de3d5a7fe89",
+    "src/gallery.css": "3e8bf08b8bb1243659377c28750be1efc9d9e7dbe345f9fad34c6ff4afa6077f",
+    "src/index.html": "1d00aa701529b5138216f8f3ef577b30e60eb3e46f6e5e1ed90bfacff4d74708",
+    "src/navigation.js": "9f88bcb8f4d8ea1cd29d28c125717d638ced8944552eae5f782796e317755b04",
+    "src/navigation-state.js": "1f7a487e95d1907c251b7fd26dd0bdd830252b89337ba987fb54c6b691c42fd6",
     "src/learning-context.js": "cb27acc551f5d3f07d1923133d8e762ba582cfdb5c45a31d97d1d65541f94270",
     "src/compare.js": "46d390f7eb17e8b8aac310190485788a28fae2692369963aadf45df3a38a8a5a",
-    "src/museum.js": "7fab76943f196e341088f845879e039cfdc8bcd643802422d397689522d34cbb",
+    "src/museum.js": "195d3868a4709d396f30be8b1f4ea7b7164804c702eaea8eaae242417812339b",
     "scripts/check-learning-flow.cjs": "7fb72a82ae24b0cc46f1c107a204d1a33a6acf3ee1cf46f2f6bf3f083ae095c4",
     "scripts/browser-harness.cjs": "f39547b4f9870cab90dc339af22d833c9b4c9d486a1f90397b0eb832033f77fb"
   }

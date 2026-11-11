@@ -1,0 +1,51 @@
+{
+  "checkedAt": "2026-11-11T11:52:24.296442+00:00",
+  "release": "/var/www/code-museum/releases/0eb0bb22ede183e4bee61b4ec4dd967e69072653",
+  "filesVerified": 1274,
+  "totalBytes": 71453932,
+  "manifestSha256": "b67499d0bd3db282d9a8b2c581d8619d9e4833a27fe9fd2763fe93c6d832e2c4",
+  "units": {
+    "code-museum-explanation.service": {
+      "MainPID": "2286506",
+      "ActiveState": "active"
+    },
+    "code-museum-execution-gateway.service": {
+      "MainPID": "1969690",
+      "ActiveState": "active"
+    },
+    "code-museum-worker@xshow.service": {
+      "MainPID": "1969684",
+      "ActiveState": "active"
+    },
+    "code-museum-execution-tunnel.service": {
+      "MainPID": "1789185",
+      "ActiveState": "active"
+    },
+    "code-museum-analytics.service": {
+      "MainPID": "2595829",
+      "ActiveState": "active"
+    }
+  },
+  "modelHealth": {
+    "available": true,
+    "model": "deepseek-flash",
+    "schemaVersion": 2,
+    "promptVersion": "museum-review-v2"
+  },
+  "analyticsHealth": 204,
+  "remoteLanguages": 56,
+  "guestMaxSessions": 5,
+  "protectedServicesUnchanged": true,
+  "resourceReuse": {
+    "unchangedFiles": 1253,
+    "hardlinkedFiles": 1253,
+    "hardlinkedBytes": 71073219,
+    "previousReleaseBytesUnchanged": true,
+    "freeBytesAfter": 80576512
+  },
+  "node2": {
+    "MainPID": "198180",
+    "ActiveState": "active"
+  },
+  "passed": true
+}

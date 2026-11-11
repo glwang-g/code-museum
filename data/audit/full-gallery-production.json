@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-11-11T10:59:49.324Z",
+  "checkedAt": "2026-11-11T11:53:31.306Z",
   "browser": "Chrome/157.0.8103.39",
   "origin": "https://codemuseum.freexlib.com",
   "liveGateway": true,
@@ -571,13 +571,13 @@
     }
   ],
   "inputs": {
-    "src/index.html": "a0834731d18d78e9de3f83e41f04cd6b66ad4d5322465cbf38d04cec4c6b87da",
-    "src/gallery.js": "147f509121e4554e704f1c8111e36d6c4f3718bdd8cdfdb503b7091030473856",
-    "src/gallery.css": "35cf3ca6f43ea3cf4fb1db3317779fa8550f90b2163a86f037fc23290909c177",
-    "src/navigation.js": "b8da269c62a3f27bacf694a391e3f2e41b7896c0c6be7eeb067d0ebdf5d6ed72",
-    "src/navigation-state.js": "ad5fa42030f3f9b174b8817ff005f01eb52cee3d50c0d4308fa8edd10c5371de",
-    "src/museum.js": "7fab76943f196e341088f845879e039cfdc8bcd643802422d397689522d34cbb",
-    "src/learning-guide.js": "1656038363a348c7d90797bb1bbe143c81c425492ce77928cdf99e21da5356e0",
+    "src/index.html": "1d00aa701529b5138216f8f3ef577b30e60eb3e46f6e5e1ed90bfacff4d74708",
+    "src/gallery.js": "2b284c1ce95d571e76c6f378830ba8f4f2e89de009a7200cb93c7de3d5a7fe89",
+    "src/gallery.css": "3e8bf08b8bb1243659377c28750be1efc9d9e7dbe345f9fad34c6ff4afa6077f",
+    "src/navigation.js": "9f88bcb8f4d8ea1cd29d28c125717d638ced8944552eae5f782796e317755b04",
+    "src/navigation-state.js": "1f7a487e95d1907c251b7fd26dd0bdd830252b89337ba987fb54c6b691c42fd6",
+    "src/museum.js": "195d3868a4709d396f30be8b1f4ea7b7164804c702eaea8eaae242417812339b",
+    "src/learning-guide.js": "7bed5a4357faedf3bb9e9d70d56de1fbf57cf4363d92daa0c93825bfd82aa661",
     "scripts/build.cjs": "1397b00ecf00db91481c7665ad9d3973783aee6bc7d29e30bf6767993bb621f8",
     "scripts/preserve-classic.cjs": "3f4843cfd022739d5fc53c7cf9808438c61985b1a4e109df556df128ce8321da",
     "scripts/check-full-gallery.cjs": "731df975257d96d9bec4863a0df76bccd525594fa927a1def22ef14c9d39f51f"

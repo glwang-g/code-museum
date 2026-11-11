@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-11T11:55:46.421Z",
+  "commit": "0eb0bb22ede183e4bee61b4ec4dd967e69072653",
+  "actions": {
+    "id": 43014084916,
+    "url": "https://github.com/glwang-g/code-museum/actions/runs/43014084916",
+    "build": "success",
+    "deploy": "success"
+  },
+  "scope": "Default chronology and direct relation reading migrated from the approved demo direction while retaining complete maps as an advanced view. Original evidence rendering and classic UI preserved. Ordinary-site deployment only; no executor/model/config/image/Nginx change, no messages or email sent.",
+  "defaultTests": 132,
+  "localBrowserChecks": {
+    "exploration": 18,
+    "fullGallery": 88,
+    "learningFlow": 13,
+    "controlActivation": 22,
+    "creditsDirectory": 16
+  },
+  "productionBrowserChecks": {
+    "explore-reading": 18,
+    "full-gallery": 89,
+    "learning-flow": 13,
+    "control-activation": 22,
+    "credits-directory": 16
+  },
+  "releaseChecks": {
+    "checkedAt": "2026-11-11T11:52:24.296442+00:00",
+    "release": "/var/www/code-museum/releases/0eb0bb22ede183e4bee61b4ec4dd967e69072653",
+    "filesVerified": 1274,
+    "totalBytes": 71453932,
+    "manifestSha256": "b67499d0bd3db282d9a8b2c581d8619d9e4833a27fe9fd2763fe93c6d832e2c4",
+    "units": {
+      "code-museum-explanation.service": {
+        "MainPID": "2286506",
+        "ActiveState": "active"
+      },
+      "code-museum-execution-gateway.service": {
+        "MainPID": "1969690",
+        "ActiveState": "active"
+      },
+      "code-museum-worker@xshow.service": {
+        "MainPID": "1969684",
+        "ActiveState": "active"
+      },
+      "code-museum-execution-tunnel.service": {
+        "MainPID": "1789185",
+        "ActiveState": "active"
+      },
+      "code-museum-analytics.service": {
+        "MainPID": "2595829",
+        "ActiveState": "active"
+      }
+    },
+    "modelHealth": {
+      "available": true,
+      "model": "deepseek-flash",
+      "schemaVersion": 2,
+      "promptVersion": "museum-review-v2"
+    },
+    "analyticsHealth": 204,
+    "remoteLanguages": 56,
+    "guestMaxSessions": 5,
+    "protectedServicesUnchanged": true,
+    "resourceReuse": {
+      "unchangedFiles": 1253,
+      "hardlinkedFiles": 1253,
+      "hardlinkedBytes": 71073219,
+      "previousReleaseBytesUnchanged": true,
+      "freeBytesAfter": 80576512
+    },
+    "node2": {
+      "MainPID": "198180",
+      "ActiveState": "active"
+    },
+    "passed": true
+  },
+  "classicPreservation": {
+    "files": 638,
+    "totalBytes": 35718151,
+    "manifestSha256": "cda32214be9f962f6523708f953a7c3b3fb680082dc2a6d835ade89995a24dbf",
+    "unchanged": true
+  },
+  "gitReproduction": "data/audit/explore-reading-git-build.json",
+  "publicMetadata": "data/audit/explore-reading-production-consistency.json",
+  "resourceTransfer": "data/audit/explore-deploy-transfer.json",
+  "routing": "Normal river/lineage open reading; mode=map opens complete map. Old rich graph links infer map; mode=browse retains explicit ecology/evidence reading. era is public chronology context. No draft, stdin, intent or credentials enter links.",
+  "coverage": "All 233 dated map records in chronology with full 5155-record catalogue entry. All 461 audited relations available to direct relation reading, including edges not drawn on the map. Sources and pending states retained; no new historical assertions.",
+  "executionScope": "Real browser Workers, guided exercise and one C/xshow plus one BCPL/xshow2 program each printing 42. No live model calls in this UI change. Not a repeat of all 56 remote languages.",
+  "visualInspection": [
+    "Formal 1440 light chronology",
+    "Formal 390 dark relation reading",
+    "Formal 320 dark inline evidence",
+    "Local 1440/900/390/320 light and dark reading/full maps"
+  ],
+  "rollback": "Existing activation may restore retained ab76de12495cddaadf7848721ee10513fe3121ed, keeping current independent services and live databases. All historical releases retained; shared immutable assets have identical bytes. Original UI remains at /classic/."
+}

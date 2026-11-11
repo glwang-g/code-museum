@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-11T11:41:43.956Z",
+  "commit": "0eb0bb22ede183e4bee61b4ec4dd967e69072653",
+  "scope": "Fresh public git archive; offline build without dependency installation/download. Entire ordinary-site package equals tested workspace package byte-for-byte.",
+  "files": 1274,
+  "totalBytes": 71453932,
+  "manifestSha256": "b67499d0bd3db282d9a8b2c581d8619d9e4833a27fe9fd2763fe93c6d832e2c4",
+  "passed": true
+}
