@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-11T08:54:14.232958+00:00",
+  "commit": "94a37208b3651eba6d14ee3690fcf0602c17b16d",
+  "actions": {
+    "id": 42987236337,
+    "url": "https://github.com/glwang-g/code-museum/actions/runs/42987236337",
+    "build": "success",
+    "deploy": "success"
+  },
+  "scope": "Complete gallery/read/lab redesign using the existing catalogue, graph, execution, model, draft, guide, compare, credits, visitor-note and statistics controllers. Original UI rebuilt from tracked source at /classic/. Ordinary-site deployment only; protected execution/model services unchanged. No live messages or email sent.",
+  "defaultTests": 125,
+  "localBrowserChecks": {
+    "full-gallery": 80,
+    "control-activation": 22,
+    "credits-directory": 16
+  },
+  "productionBrowserChecks": {
+    "full-gallery": 81,
+    "control-activation": 22,
+    "credits-directory": 16
+  },
+  "actualModelCheck": {
+    "requests": 1,
+    "verdict": "ok",
+    "knownOriginalOutput": "7"
+  },
+  "releaseChecks": {
+    "checkedAt": "2026-11-11T08:44:28.268164+00:00",
+    "release": "/var/www/code-museum/releases/94a37208b3651eba6d14ee3690fcf0602c17b16d",
+    "filesVerified": 1268,
+    "totalBytes": 71383381,
+    "manifestSha256": "6ae5c318054e843c0a1b9135229c7af47d10b6e0feacd7d919743dc9506b8d0a",
+    "units": {
+      "code-museum-explanation.service": {
+        "MainPID": "2286506",
+        "ActiveState": "active"
+      },
+      "code-museum-execution-gateway.service": {
+        "MainPID": "1969690",
+        "ActiveState": "active"
+      },
+      "code-museum-worker@xshow.service": {
+        "MainPID": "1969684",
+        "ActiveState": "active"
+      },
+      "code-museum-execution-tunnel.service": {
+        "MainPID": "1789185",
+        "ActiveState": "active"
+      },
+      "code-museum-analytics.service": {
+        "MainPID": "2543568",
+        "ActiveState": "active"
+      }
+    },
+    "modelHealth": {
+      "available": true,
+      "model": "deepseek-flash",
+      "schemaVersion": 2,
+      "promptVersion": "museum-review-v2"
+    },
+    "analyticsHealth": 204,
+    "remoteLanguages": 56,
+    "guestMaxSessions": 5,
+    "protectedServicesUnchanged": true,
+    "node2": {
+      "MainPID": "198180",
+      "ActiveState": "active"
+    },
+    "passed": true
+  },
+  "classicPreservation": {
+    "files": 638,
+    "totalBytes": 35718151,
+    "manifestSha256": "cda32214be9f962f6523708f953a7c3b3fb680082dc2a6d835ade89995a24dbf"
+  },
+  "gitReproduction": "data/audit/full-gallery-git-build.json",
+  "executionScope": "New UI actually ran one known C program on xshow and one known BCPL program on xshow2; both printed 42. Four browser Workers and guided exercise also ran. This is not a repeat of the entire 56-language backend suite.",
+  "visualInspection": [
+    "formal C and BCPL output, compiler diagnostics and actual timings at 1440 light",
+    "formal reading at 390 dark",
+    "formal real model review at 1440 light",
+    "local complete views at 1440/900/390/320 in both themes"
+  ],
+  "rollback": "Existing activation can restore retained releases/942904f36a6cbd1ff04e413db3b26ce6a7829722 while preserving the current protected services and live databases."
+}

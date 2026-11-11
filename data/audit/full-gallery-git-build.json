@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "commit": "94a37208b3651eba6d14ee3690fcf0602c17b16d",
+  "scope": "Exact public Git tree, verified against every committed blob, without ignored inputs or private BCPL payloads. Same default test files executed sequentially and build in npm offline mode. Every release byte matches the workspace.",
+  "defaultTests": 125,
+  "initialParallelAttempt": {
+    "passed": false,
+    "reason": "ENOSPC in temporary fixture copies; only this run incomplete copy removed before sequential retry"
+  },
+  "testConcurrency": 1,
+  "release": {
+    "files": 1268,
+    "totalBytes": 71383381,
+    "manifestSha256": "6ae5c318054e843c0a1b9135229c7af47d10b6e0feacd7d919743dc9506b8d0a"
+  },
+  "passed": true
+}

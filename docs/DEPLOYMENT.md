@@ -1,10 +1,12 @@
 # Code Museum 首版部署
 
-## 2026-11-11 完整界面改版发布准备
+## 2026-11-11 完整界面改版已发布
 
-用户要求先按B模式完成整版，再推送部署。正式`src/`沿用既有完整业务控制器，统一展厅、独立阅读、完整馆藏、图谱、实验室、导览/对比、出处、留言与统计。A/B实验源文件保留，不能直接将未接远端的Demo发布为正式功能。固定`archive/classic-ui/`在同次离线构建中重建`/classic/`，原版638文件发布清单SHA仍为`cda32214be9f962f6523708f953a7c3b3fb680082dc2a6d835ade89995a24dbf`。
+正式release为`94a37208b3651eba6d14ee3690fcf0602c17b16d`，[Actions 42987236337](https://github.com/glwang-g/code-museum/actions/runs/42987236337)的build/deploy成功。用户要求先完成B模式的整版应用后再推送；本轮在`src/`沿用完整业务控制器，统一展厅、独立阅读、馆藏、图谱、实验室、导览/对比、出处、留言与统计。A/B实验源文件保留；固定`archive/classic-ui/`同次离线构建出`/classic/`，原版638文件清单仍为`cda32214be9f962f6523708f953a7c3b3fb680082dc2a6d835ade89995a24dbf`。
 
-只走现有master普通站点Actions；不升级双节点执行器或模型服务，不更改私有环境、Nginx或活数据库。因为保留完整原版，站点包约68MiB，仍低于既有128MiB上限；SDK、临时产物与私有BCPL材料仍排除。预检xshow磁盘余约396MiB，原网关/worker/模型/隧道active且PID未变。发布后需核对正式页面、全部release文件、56门元数据、两个节点的代表程序与模型健康，实际commit/Actions/结果在完成后追加。回退界面可沿用现有激活方式切回保留的`942904f36a6cbd1ff04e413db3b26ce6a7829722`，保持后端和活数据库。
+默认125项、精确公开Git树顺序125项及离线构建通过；正式81项整版、22项控件、16项出处通过，代表截图已实际核读。正式通过新实验室在xshow运行C、xshow2运行BCPL，各输出42；另真实按需检查一次自编JS程序并验证缓存、原稿与真实输出7。56门元数据与五会话规则一致，本轮不声称重跑全56门。发布包1268文件、71,383,381字节逐一匹配，SHA-256为`6ae5c318054e843c0a1b9135229c7af47d10b6e0feacd7d919743dc9506b8d0a`；因为保留完整原版，包约68MiB，仍低于128MiB上限且不含SDK、临时产物或私有BCPL材料。
+
+沿用现有master普通站点Actions；没有升级模型服务或双节点执行器，没有更改Nginx、私有环境或直接改写活数据库。模型/网关/worker/隧道及xshow2 worker PID均保持原值，analytics按原激活流程重启且loopback健康204；验证任务正常累计，未发留言或邮件。纯Git验证首次并行副本ENOSPC，清理本轮确切生成副本后同样测试顺序通过，导出树已移除。见 [整版部署记录](../data/audit/full-gallery-deployment.json)、[正式服务/逐文件检查](../data/audit/full-gallery-production-services.json)和 [纯Git复现](../data/audit/full-gallery-git-build.json)。回退界面继续用原激活方式切回保留的`942904f36a6cbd1ff04e413db3b26ce6a7829722`，保留当前后端、凭据与活数据库。
 
 ## 2026-11-11 代码检查颜色反馈发布
 

@@ -1,0 +1,529 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-11T08:45:20.290Z",
+  "browser": "Chrome/157.0.8103.39",
+  "origin": "https://codemuseum.freexlib.com",
+  "liveGateway": true,
+  "scope": "Complete redesigned application, retaining original business controllers and original UI. Real browser Workers. Explicit model display fixtures; no live provider calls. Live gateway tests, when enabled, execute only the two stated known programs on xshow and xshow2.",
+  "checks": [
+    {
+      "name": "Complete fixed collection and all 59 configured execution languages load without model requests",
+      "passed": true
+    },
+    {
+      "name": "Global search enters a complete reading page with original sources",
+      "passed": true
+    },
+    {
+      "name": "Visitor notes, voluntary support, public visit totals and safe sharing remain reachable; clipboard is intercepted and no message is sent",
+      "passed": true
+    },
+    {
+      "name": "The exact reading example reaches the original lab controller and actually prints 49",
+      "passed": true
+    },
+    {
+      "name": "Full catalogue pagination, existing filters and direct reading navigation remain usable",
+      "passed": true
+    },
+    {
+      "name": "Original real browser Worker runs from the complete redesigned laboratory",
+      "language": "javascript",
+      "output": "42",
+      "passed": true
+    },
+    {
+      "name": "Original real browser Worker runs from the complete redesigned laboratory",
+      "language": "lua",
+      "output": "7",
+      "passed": true
+    },
+    {
+      "name": "Original real browser Worker runs from the complete redesigned laboratory",
+      "language": "scheme",
+      "output": "7",
+      "passed": true
+    },
+    {
+      "name": "Original real browser Worker runs from the complete redesigned laboratory",
+      "language": "python",
+      "output": "10",
+      "passed": true
+    },
+    {
+      "name": "Real JavaScript errors remain distinct from successful output",
+      "passed": true
+    },
+    {
+      "name": "The redesigned Stop control terminates a real running Worker",
+      "passed": true
+    },
+    {
+      "name": "Actual anonymous gateway execution completes through the redesigned UI",
+      "language": "c",
+      "node": "xshow",
+      "passed": true
+    },
+    {
+      "name": "Actual anonymous gateway execution completes through the redesigned UI",
+      "language": "bcpl",
+      "node": "xshow2",
+      "passed": true
+    },
+    {
+      "name": "Full graph still supports scope, levels, direction and separate ecosystem evidence",
+      "passed": true
+    },
+    {
+      "name": "Complete same-task comparison and swapping use the original feature",
+      "passed": true
+    },
+    {
+      "name": "All five original guides retain their full step, task, feedback and navigation controllers",
+      "passed": true
+    },
+    {
+      "name": "A real JavaScript guided exercise still checks its output and records completion",
+      "passed": true
+    },
+    {
+      "name": "The complete 62-entry searchable credits directory and scrolling detail pane remain integrated",
+      "passed": true
+    },
+    {
+      "name": "Focus, Escape and reload preserve original persistent drafts without model calls",
+      "passed": true
+    },
+    {
+      "name": "On-demand check, actual pending state, stale-result protection and exact-input cache survive the layout change",
+      "passed": true
+    },
+    {
+      "name": "Original validated model client renders a display fixture without changing or running the draft",
+      "verdict": "ok",
+      "passed": true
+    },
+    {
+      "name": "Original validated model client renders a display fixture without changing or running the draft",
+      "verdict": "issues",
+      "passed": true
+    },
+    {
+      "name": "Original validated model client renders a display fixture without changing or running the draft",
+      "verdict": "uncertain",
+      "passed": true
+    },
+    {
+      "name": "Complete application view fits the viewport",
+      "view": "gallery",
+      "width": 1440,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Complete application view fits the viewport",
+      "view": "catalogue",
+      "width": 1440,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Complete application view fits the viewport",
+      "view": "lab",
+      "width": 1440,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Complete application view fits the viewport",
+      "view": "compare",
+      "width": 1440,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Complete application view fits the viewport",
+      "view": "about",
+      "width": 1440,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Complete application view fits the viewport",
+      "view": "lineage",
+      "width": 1440,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Complete application view fits the viewport",
+      "view": "read?language=javascript",
+      "width": 1440,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Complete application view fits the viewport",
+      "view": "gallery",
+      "width": 1440,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Complete application view fits the viewport",
+      "view": "catalogue",
+      "width": 1440,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Complete application view fits the viewport",
+      "view": "lab",
+      "width": 1440,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Complete application view fits the viewport",
+      "view": "compare",
+      "width": 1440,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Complete application view fits the viewport",
+      "view": "about",
+      "width": 1440,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Complete application view fits the viewport",
+      "view": "lineage",
+      "width": 1440,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Complete application view fits the viewport",
+      "view": "read?language=javascript",
+      "width": 1440,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Complete application view fits the viewport",
+      "view": "gallery",
+      "width": 900,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Complete application view fits the viewport",
+      "view": "catalogue",
+      "width": 900,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Complete application view fits the viewport",
+      "view": "lab",
+      "width": 900,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Complete application view fits the viewport",
+      "view": "compare",
+      "width": 900,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Complete application view fits the viewport",
+      "view": "about",
+      "width": 900,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Complete application view fits the viewport",
+      "view": "lineage",
+      "width": 900,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Complete application view fits the viewport",
+      "view": "read?language=javascript",
+      "width": 900,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Complete application view fits the viewport",
+      "view": "gallery",
+      "width": 900,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Complete application view fits the viewport",
+      "view": "catalogue",
+      "width": 900,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Complete application view fits the viewport",
+      "view": "lab",
+      "width": 900,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Complete application view fits the viewport",
+      "view": "compare",
+      "width": 900,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Complete application view fits the viewport",
+      "view": "about",
+      "width": 900,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Complete application view fits the viewport",
+      "view": "lineage",
+      "width": 900,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Complete application view fits the viewport",
+      "view": "read?language=javascript",
+      "width": 900,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Complete application view fits the viewport",
+      "view": "gallery",
+      "width": 390,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Complete application view fits the viewport",
+      "view": "catalogue",
+      "width": 390,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Complete application view fits the viewport",
+      "view": "lab",
+      "width": 390,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Complete application view fits the viewport",
+      "view": "compare",
+      "width": 390,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Complete application view fits the viewport",
+      "view": "about",
+      "width": 390,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Complete application view fits the viewport",
+      "view": "lineage",
+      "width": 390,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Complete application view fits the viewport",
+      "view": "read?language=javascript",
+      "width": 390,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Complete application view fits the viewport",
+      "view": "gallery",
+      "width": 390,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Complete application view fits the viewport",
+      "view": "catalogue",
+      "width": 390,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Complete application view fits the viewport",
+      "view": "lab",
+      "width": 390,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Complete application view fits the viewport",
+      "view": "compare",
+      "width": 390,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Complete application view fits the viewport",
+      "view": "about",
+      "width": 390,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Complete application view fits the viewport",
+      "view": "lineage",
+      "width": 390,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Complete application view fits the viewport",
+      "view": "read?language=javascript",
+      "width": 390,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Complete application view fits the viewport",
+      "view": "gallery",
+      "width": 320,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Complete application view fits the viewport",
+      "view": "catalogue",
+      "width": 320,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Complete application view fits the viewport",
+      "view": "lab",
+      "width": 320,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Complete application view fits the viewport",
+      "view": "compare",
+      "width": 320,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Complete application view fits the viewport",
+      "view": "about",
+      "width": 320,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Complete application view fits the viewport",
+      "view": "lineage",
+      "width": 320,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Complete application view fits the viewport",
+      "view": "read?language=javascript",
+      "width": 320,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Complete application view fits the viewport",
+      "view": "gallery",
+      "width": 320,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Complete application view fits the viewport",
+      "view": "catalogue",
+      "width": 320,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Complete application view fits the viewport",
+      "view": "lab",
+      "width": 320,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Complete application view fits the viewport",
+      "view": "compare",
+      "width": 320,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Complete application view fits the viewport",
+      "view": "about",
+      "width": 320,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Complete application view fits the viewport",
+      "view": "lineage",
+      "width": 320,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Complete application view fits the viewport",
+      "view": "read?language=javascript",
+      "width": 320,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "No uncaught page errors or visitor execution credentials in JavaScript",
+      "passed": true
+    },
+    {
+      "name": "Retained original UI remains independently usable and really executes its example",
+      "passed": true
+    }
+  ],
+  "inputs": {
+    "src/index.html": "77c41ef5e6ac10f9842a9fc97ea0ff6847b7ae87b7d5e10a7d13cef1512c37cc",
+    "src/gallery.js": "c28ff8a5851b30383d163848304bb68f5b5295c4861778e0b089ba642d56497b",
+    "src/gallery.css": "4f86908b0f2b75ce7851574ccab03a9c4dcb8deb4ca741ca49b492f8dbda2632",
+    "src/navigation.js": "27a722cc0e8504b273698b34c9cd12aa0cf8e232dca6c8d68d22f9c5333e0f75",
+    "src/navigation-state.js": "c79e91837e629ffd664b2c526326ea067e7f4ca8803acb15efa599f90f825e34",
+    "src/museum.js": "2f0d3afc33a9032d61006374cb11339b01de46e56df785bfa3df7ab180f62abb",
+    "src/learning-guide.js": "1656038363a348c7d90797bb1bbe143c81c425492ce77928cdf99e21da5356e0",
+    "scripts/build.cjs": "1397b00ecf00db91481c7665ad9d3973783aee6bc7d29e30bf6767993bb621f8",
+    "scripts/preserve-classic.cjs": "3f4843cfd022739d5fc53c7cf9808438c61985b1a4e109df556df128ce8321da",
+    "scripts/check-full-gallery.cjs": "6383e6512f454d17e34246371877d402136b0f52820919c3b874c1de1def42f2"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-11T08:49:19.683Z",
+  "origin": "https://codemuseum.freexlib.com",
+  "browser": "Chrome/157.0.8103.39",
+  "scope": "One explicit click through the real production model endpoint using the known authored program console.log(7). No provider fixture. Exact code preserved; tabs and restoring identical input reuse browser cache. Only the known original program is executed.",
+  "modelRequests": 1,
+  "verdict": "ok",
+  "status": "大模型检查 · 未发现明显问题",
+  "actualJavaScriptOutput": "7",
+  "passed": true,
+  "inputs": {
+    "src/index.html": "77c41ef5e6ac10f9842a9fc97ea0ff6847b7ae87b7d5e10a7d13cef1512c37cc",
+    "src/gallery.js": "c28ff8a5851b30383d163848304bb68f5b5295c4861778e0b089ba642d56497b",
+    "src/lab-explanations.js": "159ef2f5edbcc321a9fff41416859f86694802d40176e7f7716b458967d9ac8c"
+  }
+}
