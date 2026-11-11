@@ -3,12 +3,17 @@
   function parse(hash){
     const [view,query='']=String(hash).replace(/^#/,'').split('?');
     const p=new URLSearchParams(query);
-    return {view:views.has(view)?view:'river',language:p.get('language')||'',layer:p.get('layer')==='ecosystem'?'ecosystem':'design',depth:['all','levels'].includes(p.get('depth'))?p.get('depth'):'direct',direction:['up','down'].includes(p.get('direction'))?p.get('direction'):'both',levels:[1,2,3].includes(Number(p.get('levels')))?Number(p.get('levels')):1,relation:p.get('relation')||'',topic:p.get('topic')||'default',left:p.get('left')||'',right:p.get('right')||''};
+    const rich=['river','lineage'].includes(view)&&(['design','ecosystem'].includes(p.get('layer'))||['direct','all','levels'].includes(p.get('depth'))||['up','down'].includes(p.get('direction'))||p.has('levels')&&[1,2,3].includes(Number(p.get('levels')))||!!p.get('relation'));
+    const presentation=p.get('mode')==='browse'?'browse':p.get('mode')==='map'||rich?'map':'browse';
+    return {view:views.has(view)?view:'river',presentation,era:/^(all|early|\d{4})$/.test(p.get('era')||'')?p.get('era'):'all',language:p.get('language')||'',layer:p.get('layer')==='ecosystem'?'ecosystem':'design',depth:['all','levels'].includes(p.get('depth'))?p.get('depth'):'direct',direction:['up','down'].includes(p.get('direction'))?p.get('direction'):'both',levels:[1,2,3].includes(Number(p.get('levels')))?Number(p.get('levels')):1,relation:p.get('relation')||'',topic:p.get('topic')||'default',left:p.get('left')||'',right:p.get('right')||''};
   }
   function serialize(s){
     const view=views.has(s.view)?s.view:'river',p=new URLSearchParams();
     if(s.language&&view!=='about'&&view!=='compare')p.set('language',s.language);
     if(['river','lineage'].includes(view)){
+      if(s.presentation==='map')p.set('mode','map');
+      else if(s.presentation==='browse'&&(s.layer==='ecosystem'||s.relation))p.set('mode','browse');
+      if(view==='river'&&s.era&&s.era!=='all'&&/^(early|\d{4})$/.test(s.era))p.set('era',s.era);
       if(s.layer==='ecosystem')p.set('layer','ecosystem');
       if(['all','levels'].includes(s.depth))p.set('depth',s.depth);
       if(s.depth==='levels'){if(['up','down'].includes(s.direction))p.set('direction',s.direction);if([2,3].includes(s.levels))p.set('levels',s.levels)}

@@ -4,7 +4,8 @@
   let restoring=false,scheduled=false,archive='',last='',readingTopic='functions';
   function state(){
     const view=tabs[document.querySelector('.museum-tabs .active')?.id]||'river';
-    return {view,language:view==='lab'?window.MUSEUM_LAB.current:['river','lineage'].includes(view)?activeId||archive:archive,layer:relationLayer,depth:relationScope,direction:relationDirection,levels:relationLevels,relation:inspectedRelation||'',topic:view==='read'?readingTopic:view==='lab'?window.MUSEUM_LAB.topic:$('compare-topic').value,left:$('compare-left').value,right:$('compare-right').value};
+    const explore=window.MUSEUM_EXPLORE?.state(),browsing=['river','lineage'].includes(view)&&explore?.presentation==='browse';
+    return {view,presentation:explore?.presentation||'map',era:explore?.era||'all',language:view==='lab'?window.MUSEUM_LAB.current:browsing?explore.language:['river','lineage'].includes(view)?activeId||archive:archive,layer:relationLayer,depth:browsing?'direct':relationScope,direction:relationDirection,levels:relationLevels,relation:browsing?explore.relation:inspectedRelation||'',topic:view==='read'?readingTopic:view==='lab'?window.MUSEUM_LAB.topic:$('compare-topic').value,left:$('compare-left').value,right:$('compare-right').value};
   }
   function save(){
     if(restoring||scheduled)return;scheduled=true;
@@ -28,9 +29,13 @@
       }else if(s.view==='guides'){
         activateTab('guides-view');
       }else if(s.view==='river'||s.view==='lineage'){
-        setView(s.view==='lineage'?'lineage':'timeline');
-        if(byId.has(s.language)){select(s.language);activeId=mapLanguageIds.has(s.language)?s.language:null;if(activeId)renderLineageFocus(activeId)}
-        if(relationAudit.has(s.relation))openRelationship(s.relation);
+        window.MUSEUM_EXPLORE?.restore(s);
+        if(s.presentation==='browse'&&window.MUSEUM_EXPLORE)activateTab(s.view==='lineage'?'lineage-view':'timeline-view');
+        else{
+          setView(s.view==='lineage'?'lineage':'timeline');
+          if(byId.has(s.language)){select(s.language);activeId=mapLanguageIds.has(s.language)?s.language:null;if(activeId)renderLineageFocus(activeId)}
+          if(relationAudit.has(s.relation))openRelationship(s.relation);
+        }
       }else if(s.view==='lab'){
         // Show while the tab is hidden; restoring a link must not run a draft.
         const language=byId.has(s.language)?s.language:'javascript';

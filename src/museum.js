@@ -154,7 +154,8 @@ function activateTab(id){
   closeMapSearch();
   const copy=tabIntro[id]||tabIntro['timeline-view'];$('.intro h1').textContent=copy.title;$('.intro-copy p').textContent=copy.note;
   const previous=document.querySelector('.museum-tabs .active')?.id;
-  $('#river').hidden=!['timeline-view','lineage-view'].includes(id);
+  $('#river').hidden=!['timeline-view','lineage-view'].includes(id)||window.MUSEUM_EXPLORE?.state().presentation==='browse';
+  if($('#explore-panel'))$('#explore-panel').hidden=!['timeline-view','lineage-view'].includes(id);
   $('#catalogue').hidden=id!=='catalogue-view';
   $('#lab').hidden=id!=='lab-view';
   $('#about').hidden=id!=='sources-view';
@@ -454,16 +455,20 @@ function bindRelationProofs(){
 }
 function openRelationship(key){
   const edge=relationAudit.get(key);if(!edge)return;
+  if(window.MUSEUM_EXPLORE?.openProof(key))return;
   if($('#river').hidden)activateTab('catalogue-view');
   const anchor=activeId===edge.from||activeId===edge.to?activeId:edge.to;
   select(anchor);activeId=mapLanguageIds.has(anchor)?anchor:null;
   inspectedRelation=key;
   if(activeId)renderLineageFocus(activeId);
+  openPanel(relationshipContent(edge));
+  $('#detail-content').querySelectorAll('[data-relation-endpoint]').forEach(button=>button.onclick=()=>{const id=button.dataset.relationEndpoint;select(id);activeId=mapLanguageIds.has(id)?id:null;if(activeId)renderLineageFocus(id)});
+}
+function relationshipContent(edge){
   const shortClaim=edge.evidence?edge.evidence.split(/[。；]/)[0]+'。':'当前仅记录来源字段，设计关系仍待核。';
   const stateLabel={'field-only':'来源字段，关系待核','citation-only':'有关系说明，原文摘录待补','excerpt-recorded':'关系说明与原文摘录已存','needs-direct-evidence':'直接设计依据待补'}[edge.state];
   const sources=edge.sources.map(source=>`<details class="relation-source"><summary>${esc(source.title)}</summary><blockquote>${esc(source.excerpt)}</blockquote><p>读取：${esc(source.checkedAt)}<br>定位：${esc(source.locator||source.title)}<br>哈希口径：${esc(source.hashScope)}</p><code class="source-hash">SHA-256 ${esc(source.sha256)}</code><p><a href="${esc(source.url)}" target="_blank" rel="noreferrer">原文 ↗</a></p></details>`).join('');
-  openPanel(`<div class="eyebrow">关系依据 / ${edge.layer==='design'?'设计脉络':'实现与生态'}</div><h2 class="relationship-title">${esc(byId.get(edge.from).name)} → ${esc(byId.get(edge.to).name)}</h2><p>${esc(relationLabel(edge))} · ${esc(stateLabel)}</p><h3>为什么关联</h3><p class="relationship-summary">${esc(shortClaim)}</p><details class="relation-explanation"><summary>完整说明与边界</summary><p>${esc(edge.evidence||'固定 PLDB 快照记录了此关系字段，尚未保存独立史料论证；不能视为已核实关系。')}</p></details>${window.MUSEUM_RESEARCH_NOTES.render(key)}${edge.reviewNote?`<p class="relationship-warning">${esc(edge.reviewNote)}</p>`:''}${edge.issues.length?`<h3>待核事项</h3><ul>${edge.issues.map(issue=>`<li>${esc(issue)}</li>`).join('')}</ul>`:''}<p>${edge.layer==='ecosystem'?'这条线描述具体实现、接口或互操作，不表示语言继承。':'设计输入不自动表示严格后继、超集或源码兼容。'}</p><p><a href="${esc(edge.source)}" target="_blank" rel="noreferrer">关系引用 ↗</a></p><h3>可回溯证据</h3>${edge.evidenceVersion?.match==='different'?`<details class="evidence-version"><summary>来源版本有字节差异 · 查看记录</summary><p>${esc(edge.evidenceVersion.note)}</p><p>引用 SHA-256：<code>${esc(edge.evidenceVersion.citedSha256)}</code></p><p>已读响应哈希、读取时间与定位见下方来源。</p></details>`:''}${sources||'<p>尚无匹配此引用的已阅读原文摘录，仍需补证。</p>'}<p>摘录和哈希用于回溯这次阅读记录，不证明历史关系已经全部核实。</p><p><a href="data/relationship-status.json">完整关系核对清单 ↗</a></p><h3>继续探索</h3><button type="button" data-relation-endpoint="${esc(edge.from)}">${esc(byId.get(edge.from).name)} 档案</button> <button type="button" data-relation-endpoint="${esc(edge.to)}">${esc(byId.get(edge.to).name)} 档案</button>`);
-  $('#detail-content').querySelectorAll('[data-relation-endpoint]').forEach(button=>button.onclick=()=>{const id=button.dataset.relationEndpoint;select(id);activeId=mapLanguageIds.has(id)?id:null;if(activeId)renderLineageFocus(id)});
+  return `<div class="eyebrow">关系依据 / ${edge.layer==='design'?'设计脉络':'实现与生态'}</div><h2 class="relationship-title">${esc(byId.get(edge.from).name)} → ${esc(byId.get(edge.to).name)}</h2><p>${esc(relationLabel(edge))} · ${esc(stateLabel)}</p><h3>为什么关联</h3><p class="relationship-summary">${esc(shortClaim)}</p><details class="relation-explanation"><summary>完整说明与边界</summary><p>${esc(edge.evidence||'固定 PLDB 快照记录了此关系字段，尚未保存独立史料论证；不能视为已核实关系。')}</p></details>${window.MUSEUM_RESEARCH_NOTES.render(edge.key)}${edge.reviewNote?`<p class="relationship-warning">${esc(edge.reviewNote)}</p>`:''}${edge.issues.length?`<h3>待核事项</h3><ul>${edge.issues.map(issue=>`<li>${esc(issue)}</li>`).join('')}</ul>`:''}<p>${edge.layer==='ecosystem'?'这条线描述具体实现、接口或互操作，不表示语言继承。':'设计输入不自动表示严格后继、超集或源码兼容。'}</p><p><a href="${esc(edge.source)}" target="_blank" rel="noreferrer">关系引用 ↗</a></p><h3>可回溯证据</h3>${edge.evidenceVersion?.match==='different'?`<details class="evidence-version"><summary>来源版本有字节差异 · 查看记录</summary><p>${esc(edge.evidenceVersion.note)}</p><p>引用 SHA-256：<code>${esc(edge.evidenceVersion.citedSha256)}</code></p><p>已读响应哈希、读取时间与定位见下方来源。</p></details>`:''}${sources||'<p>尚无匹配此引用的已阅读原文摘录，仍需补证。</p>'}<p>摘录和哈希用于回溯这次阅读记录，不证明历史关系已经全部核实。</p><p><a href="data/relationship-status.json">完整关系核对清单 ↗</a></p><h3>继续探索</h3><button type="button" data-relation-endpoint="${esc(edge.from)}">${esc(byId.get(edge.from).name)} 档案</button> <button type="button" data-relation-endpoint="${esc(edge.to)}">${esc(byId.get(edge.to).name)} 档案</button>`;
 }
 function nearestRelations(event,hitTolerance=8,anchorId=null){
   const candidates=[];
@@ -504,7 +509,7 @@ $('#relations').addEventListener('click',event=>{
   bindRelationProofs();
 });
 $('#relations').addEventListener('keydown',event=>{const control=event.target.closest('[data-edge-key]');if(control&&['Enter',' '].includes(event.key)){event.preventDefault();openRelationship(control.dataset.edgeKey)}});
-window.MUSEUM_RELATIONS_UI={open:openRelationship,openLanguage:id=>{setView('timeline');select(id);activeId=mapLanguageIds.has(id)?id:null;if(activeId)renderLineageFocus(id)}};
+window.MUSEUM_RELATIONS_UI={open:openRelationship,renderProof:key=>relationAudit.has(key)?relationshipContent(relationAudit.get(key)):'',openLanguage:id=>{if(window.MUSEUM_EXPLORE){window.MUSEUM_EXPLORE.openArchive(id);return}setView('timeline');select(id);activeId=mapLanguageIds.has(id)?id:null;if(activeId)renderLineageFocus(id)}};
 const nearby=document.createElement('div');nearby.className='nearby-list';nearby.hidden=true;nearby.setAttribute('aria-label','附近的语言');$('#river').append(nearby);
 function hideNearby(){nearby.hidden=true;nearby.innerHTML=''}
 $('#docks').addEventListener('click',e=>{

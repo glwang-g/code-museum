@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-11T11:37:54.059Z",
+  "defaultTests": 132,
+  "localBrowserChecks": {
+    "exploration": 18,
+    "fullGallery": 88,
+    "learningFlow": 13,
+    "controlActivation": 22,
+    "creditsDirectory": 16
+  },
+  "release": {
+    "files": 1274,
+    "totalBytes": 71453932,
+    "manifestSha256": "b67499d0bd3db282d9a8b2c581d8619d9e4833a27fe9fd2763fe93c6d832e2c4"
+  },
+  "classic": {
+    "files": 638,
+    "totalBytes": 35718151,
+    "manifestSha256": "cda32214be9f962f6523708f953a7c3b3fb680082dc2a6d835ade89995a24dbf",
+    "unchanged": true
+  }
+}

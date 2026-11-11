@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-11T11:28:45.020Z",
+  "origin": "http://127.0.0.1:4191",
+  "browser": "Chrome/157.0.8103.39",
+  "scope": "Actual isolated Chrome native mouse input; no execution or model calls. Responsive layout emulation, not Safari trackpad hardware. All dated map nodes and full evidence audit retained.",
+  "checks": [
+    {
+      "name": "Home and normal time tab open the complete 233-node chronology with a full catalogue entry",
+      "passed": true
+    },
+    {
+      "name": "Native decade filter, public sharing and reload preserve the chosen decade",
+      "passed": true
+    },
+    {
+      "name": "Chronology → language reading → relation reading opens the same language in the three-column view",
+      "passed": true
+    },
+    {
+      "name": "Original evidence excerpts, hashes and notes render inline and restore without forcing the old map",
+      "passed": true
+    },
+    {
+      "name": "Ecosystem reading stays separate from design and survives public URL restoration",
+      "passed": true
+    },
+    {
+      "name": "A missing recorded relation stays an explicit gap rather than a fabricated ancestry",
+      "passed": true
+    },
+    {
+      "name": "Complete map keeps graph scope, two-level traversal, layers and a same-language return to reading",
+      "passed": true
+    },
+    {
+      "name": "Existing rich graph bookmarks still open the full map",
+      "passed": true
+    },
+    {
+      "name": "Original proof steps in learning guides open the new inline evidence view",
+      "passed": true
+    },
+    {
+      "name": "Chronology, relation reading and full map fit 1440px light",
+      "passed": true
+    },
+    {
+      "name": "Chronology, relation reading and full map fit 1440px dark",
+      "passed": true
+    },
+    {
+      "name": "Chronology, relation reading and full map fit 900px light",
+      "passed": true
+    },
+    {
+      "name": "Chronology, relation reading and full map fit 900px dark",
+      "passed": true
+    },
+    {
+      "name": "Chronology, relation reading and full map fit 390px light",
+      "passed": true
+    },
+    {
+      "name": "Chronology, relation reading and full map fit 390px dark",
+      "passed": true
+    },
+    {
+      "name": "Chronology, relation reading and full map fit 320px light",
+      "passed": true
+    },
+    {
+      "name": "Chronology, relation reading and full map fit 320px dark",
+      "passed": true
+    },
+    {
+      "name": "Narrow dark evidence remains usable; all navigation makes zero model/execution submissions and throws no page errors",
+      "passed": true
+    }
+  ],
+  "inputs": {
+    "src/explore.js": "e81b5ddf1b052b131bd1a8f79ae91a72223c27ce9ebf295dc869b20929f27686",
+    "src/explore-state.js": "fe19bf4e19396ea89fda4dd344dd4b410966e6fe8cd1773d85b7b22190c3ccac",
+    "src/gallery.js": "2b284c1ce95d571e76c6f378830ba8f4f2e89de009a7200cb93c7de3d5a7fe89",
+    "src/gallery.css": "3e8bf08b8bb1243659377c28750be1efc9d9e7dbe345f9fad34c6ff4afa6077f",
+    "src/index.html": "1d00aa701529b5138216f8f3ef577b30e60eb3e46f6e5e1ed90bfacff4d74708",
+    "src/museum.js": "195d3868a4709d396f30be8b1f4ea7b7164804c702eaea8eaae242417812339b",
+    "src/navigation.js": "9f88bcb8f4d8ea1cd29d28c125717d638ced8944552eae5f782796e317755b04",
+    "src/navigation-state.js": "1f7a487e95d1907c251b7fd26dd0bdd830252b89337ba987fb54c6b691c42fd6",
+    "src/learning-guide.js": "7bed5a4357faedf3bb9e9d70d56de1fbf57cf4363d92daa0c93825bfd82aa661",
+    "scripts/check-explore-reading.cjs": "204e56920f5465fa96463d9c4b1be8b3bb65b28ca9a667d41e6e962d0e8f64d4"
+  }
+}

@@ -91,7 +91,7 @@ document.addEventListener('click',event=>{
  const compare=event.target.closest('[data-reading-compare]');if(compare){openTaskComparison(compare.dataset.readingCompare,readingTopic);return}
  const guide=event.target.closest('[data-directory-guide],[data-restart-guide]');if(guide){const id=guide.dataset.directoryGuide||guide.dataset.restartGuide;if(guide.dataset.directoryGuide&&window.MUSEUM_GUIDE.state?.route===id)window.MUSEUM_GUIDE.open();else window.MUSEUM_GUIDE.start(id);return}
  const archive=event.target.closest('[data-reading-archive]');if(archive){window.MUSEUM_RELATIONS_UI.openLanguage(archive.dataset.readingArchive);return}
- const relations=event.target.closest('[data-reading-relations]');if(relations){$('lineage-view').click();window.MUSEUM_RELATIONS_UI.openLanguage(relations.dataset.readingRelations)}
+ const relations=event.target.closest('[data-reading-relations]');if(relations)window.MUSEUM_EXPLORE.openLanguage(relations.dataset.readingRelations)
 });
 // Full catalogue selections open the full reading page; map selections retain their evidence panel.
 document.addEventListener('click',event=>{const record=event.target.closest('#list .record[data-id]');if(!record)return;event.preventDefault();event.stopImmediatePropagation();openReading(record.dataset.id)},true);

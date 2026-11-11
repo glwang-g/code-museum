@@ -21,7 +21,7 @@
  function open(){
   if(!state)return;const step=routes.get(state.route).steps[state.index];
   if(step.action==='archive'){if(window.MUSEUM_GALLERY)window.MUSEUM_GALLERY.openReading(step.language);else window.MUSEUM_RELATIONS_UI.openLanguage(step.language)}
-  else if(step.action==='proof'){$('lineage-view').click();window.MUSEUM_RELATIONS_UI.open(step.key);}
+  else if(step.action==='proof'){if(window.MUSEUM_EXPLORE)window.MUSEUM_EXPLORE.openRelation(step.key);else{$('lineage-view').click();window.MUSEUM_RELATIONS_UI.open(step.key);}}
   else if(step.action==='lesson')window.MUSEUM_LAB.openLesson(step.language,step.topic);
   else window.MUSEUM_COMPARE.open(step.left,step.right,step.topic);
   render();

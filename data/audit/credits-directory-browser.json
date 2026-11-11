@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-11-11T08:09:14.299Z",
+  "checkedAt": "2026-11-11T11:37:55.133Z",
   "browser": "Chrome/157.0.8103.39",
   "origin": "local preview",
-  "contentSha256": "b5cbf0b79f5d3c5cc7fa572399849239fd422369ea6be853ca413f6cbdc0e45e",
+  "contentSha256": "49ba114c02b5e2efaf1a85f58d8aec44151cc926f05502e2f7946a3238bdbbe3",
   "scope": "Actual Chrome directory, fuzzy search, complete source entries, links, keyboard, focus-loss taps, responsive layout and independent scrolling. No external model call or remote execution submitted.",
   "checks": [
     {
@@ -93,9 +93,9 @@
     "src/credits.js": "6e2b3106d474bf6dbaaca279b9dca2798e9ab2ad6a22f4fcb001037f81414ab4",
     "src/credits-search.js": "308cf7c209d7ea97342479b81e870b45d91fcb96510b30a83cf54239594f1eca",
     "src/credits.css": "03001582d9f9969f1e2cc537e3225b89c530713978f70c33537fca616cafdecb",
-    "src/navigation.js": "27a722cc0e8504b273698b34c9cd12aa0cf8e232dca6c8d68d22f9c5333e0f75",
-    "src/index.html": "77c41ef5e6ac10f9842a9fc97ea0ff6847b7ae87b7d5e10a7d13cef1512c37cc",
+    "src/navigation.js": "9f88bcb8f4d8ea1cd29d28c125717d638ced8944552eae5f782796e317755b04",
+    "src/index.html": "1d00aa701529b5138216f8f3ef577b30e60eb3e46f6e5e1ed90bfacff4d74708",
     "scripts/check-credits-browser.cjs": "72853f0aca302ed508d8cd9350cc4ed6d096c18744cf4bd6c7e554f8acff668d",
-    "scripts/browser-harness.cjs": "983602a7dc033e9bfbe3d5921511db69cdb592bba857f4cd2a0fec2669f9731f"
+    "scripts/browser-harness.cjs": "f39547b4f9870cab90dc339af22d833c9b4c9d486a1f90397b0eb832033f77fb"
   }
 }

@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-11-11T08:09:16.660Z",
+  "checkedAt": "2026-11-11T11:37:57.483Z",
   "browser": "Chrome/157.0.8103.39",
   "origin": "local preview",
-  "contentSha256": "b5cbf0b79f5d3c5cc7fa572399849239fd422369ea6be853ca413f6cbdc0e45e",
+  "contentSha256": "49ba114c02b5e2efaf1a85f58d8aec44151cc926f05502e2f7946a3238bdbbe3",
   "scope": "Actual installed Chrome native press/release and missing-press replay from focused inputs. Model, clipboard, file-picker and download side effects intercepted. Does not certify the user Safari trackpad hardware.",
   "checks": [
     {
@@ -97,9 +97,9 @@
   ],
   "inputs": {
     "src/control-activation.js": "148df5e4acdccc15b33bdc89a50740306724439d425ca1cfc0aeb35e15bfd5e5",
-    "src/museum.js": "2f0d3afc33a9032d61006374cb11339b01de46e56df785bfa3df7ab180f62abb",
-    "src/index.html": "77c41ef5e6ac10f9842a9fc97ea0ff6847b7ae87b7d5e10a7d13cef1512c37cc",
+    "src/museum.js": "195d3868a4709d396f30be8b1f4ea7b7164804c702eaea8eaae242417812339b",
+    "src/index.html": "1d00aa701529b5138216f8f3ef577b30e60eb3e46f6e5e1ed90bfacff4d74708",
     "scripts/check-control-activation.cjs": "502295d7d972d609486cac2aaf7c8b458b237b3b6edae8d4310f1bbc8ee8b614",
-    "scripts/browser-harness.cjs": "983602a7dc033e9bfbe3d5921511db69cdb592bba857f4cd2a0fec2669f9731f"
+    "scripts/browser-harness.cjs": "f39547b4f9870cab90dc339af22d833c9b4c9d486a1f90397b0eb832033f77fb"
   }
 }

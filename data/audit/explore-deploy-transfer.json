@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-11T11:38:58.815Z",
+  "scope": "Observed xshow rsync fixture and manifest comparison. Only isolated temporary fixtures were used; no historical release, runtime image or log was removed.",
+  "fixture": {
+    "existingFlags": {
+      "sameAssetInode": false,
+      "changedFileIndependent": true
+    },
+    "withNoTimes": {
+      "sameAssetInode": true,
+      "changedFileIndependent": true
+    },
+    "oldBytesAndMtimeUnchanged": true
+  },
+  "reason": "Fresh artifact extraction timestamps prevented link-dest reuse despite identical SHA-256 bytes. --no-times lets unchanged files retain their existing timestamps and inodes; changed files remain independent.",
+  "changedFiles": 21,
+  "changedFileBytes": 380713,
+  "fullReleaseBytes": 71453932
+}

@@ -28,3 +28,13 @@ test('guide overview and legacy reading bookmarks remain shareable',()=>{
  assert.equal(parse('#read?language=javascript').topic,'default');
  assert.equal(parse('#guides').view,'guides');
 });
+test('reading exploration and complete maps share public context while legacy rich links retain maps',()=>{
+ assert.equal(parse('#river').presentation,'browse');assert.equal(parse('#lineage?language=javascript').presentation,'browse');
+ assert.equal(parse('#lineage?language=c&depth=levels&levels=2').presentation,'map');
+ assert.equal(parse('#lineage?layer=ecosystem').presentation,'map');
+ for(const presentation of ['browse','map']){
+  const state={view:'lineage',language:'cpp',presentation,layer:'ecosystem',relation:'c|cpp|extensionInterface',code:'private-code',stdin:'private-input'};
+  const hash=serialize(state),restored=parse(hash);assert.equal(restored.presentation,presentation);assert.equal(restored.layer,'ecosystem');assert.equal(restored.relation,state.relation);assert.ok(!/private|stdin|code/.test(hash));
+ }
+ assert.equal(parse(serialize({view:'river',presentation:'browse',era:'1990'})).era,'1990');assert.equal(parse('#river?era=bad').era,'all');
+});
