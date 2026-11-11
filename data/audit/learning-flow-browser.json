@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-11T10:24:46.559Z",
+  "origin": "http://127.0.0.1:4191",
+  "browser": "Chrome/157.0.8103.39",
+  "scope": "Installed headless Chrome; native mouse/keyboard input at 1440/390/320. Mobile layout emulation, not physical Safari. Real JavaScript Worker. Execution/model submissions prohibited during navigation; no provider calls.",
+  "checks": [
+    {
+      "name": "Exhibition imports exactly the displayed program without executing it",
+      "passed": true
+    },
+    {
+      "name": "Lab → reading → same-task comparison → other reading → lab preserves topic, comparison partner and draft",
+      "passed": true
+    },
+    {
+      "name": "Explicit reading-example import creates a reversible backup; normal task navigation preserves drafts",
+      "passed": true
+    },
+    {
+      "name": "Reading topic changes, sharing, reload and Back preserve public task context without serializing drafts",
+      "passed": true
+    },
+    {
+      "name": "Persistent utilities and native footer clicks avoid fixed-bottom interception at 1440 px",
+      "passed": true
+    },
+    {
+      "name": "Persistent utilities and native footer clicks avoid fixed-bottom interception at 390 px",
+      "passed": true
+    },
+    {
+      "name": "Persistent utilities and native footer clicks avoid fixed-bottom interception at 320 px",
+      "passed": true
+    },
+    {
+      "name": "Mobile keyboard tab navigation skips hidden exploration tabs and keeps a visible tab stop",
+      "passed": true
+    },
+    {
+      "name": "Guide directory continues saved progress and restarts only through its explicit restart action",
+      "passed": true
+    },
+    {
+      "name": "Unsupported same-task languages show the actual coverage instead of inventing a comparison",
+      "passed": true
+    },
+    {
+      "name": "All navigation and sample import remain manual: zero execution/model POSTs or Worker runs",
+      "passed": true
+    },
+    {
+      "name": "Preserved draft actually executes and returns 42 only after the Run click",
+      "passed": true
+    }
+  ],
+  "inputs": {
+    "src/gallery.js": "6803d09b143fb02aecb04a7ac8b477d725a6fda0a90fab66254a8b8bcd789c83",
+    "src/gallery.css": "35cf3ca6f43ea3cf4fb1db3317779fa8550f90b2163a86f037fc23290909c177",
+    "src/index.html": "2a2f6c51e9392d972de1475cd547db64c98a8f7a0769b6ac611f422e56cb53ce",
+    "src/navigation.js": "b8da269c62a3f27bacf694a391e3f2e41b7896c0c6be7eeb067d0ebdf5d6ed72",
+    "src/navigation-state.js": "ad5fa42030f3f9b174b8817ff005f01eb52cee3d50c0d4308fa8edd10c5371de",
+    "src/learning-context.js": "a7c431a1a167e78de436393dd5a6323e88734f8d7c172be4e8a81697f9630127",
+    "src/compare.js": "46d390f7eb17e8b8aac310190485788a28fae2692369963aadf45df3a38a8a5a",
+    "src/museum.js": "7fab76943f196e341088f845879e039cfdc8bcd643802422d397689522d34cbb",
+    "scripts/check-learning-flow.cjs": "fc19ba8e5b5a71651860c2c0230bc50e43937c8ff49a5da999c10aab9df7c568",
+    "scripts/browser-harness.cjs": "f39547b4f9870cab90dc339af22d833c9b4c9d486a1f90397b0eb832033f77fb"
+  }
+}

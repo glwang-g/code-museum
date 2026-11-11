@@ -1,10 +1,10 @@
 (()=>{
   const route=window.MUSEUM_ROUTE,$=id=>document.getElementById(id);
-  const tabs={'gallery-view':'gallery','reading-view':'read','timeline-view':'river','lineage-view':'lineage','catalogue-view':'catalogue','lab-view':'lab','compare-view':'compare','sources-view':'about'};
-  let restoring=false,scheduled=false,archive='',last='';
+  const tabs={'gallery-view':'gallery','reading-view':'read','guides-view':'guides','timeline-view':'river','lineage-view':'lineage','catalogue-view':'catalogue','lab-view':'lab','compare-view':'compare','sources-view':'about'};
+  let restoring=false,scheduled=false,archive='',last='',readingTopic='functions';
   function state(){
     const view=tabs[document.querySelector('.museum-tabs .active')?.id]||'river';
-    return {view,language:view==='lab'?window.MUSEUM_LAB.current:['river','lineage'].includes(view)?activeId||archive:archive,layer:relationLayer,depth:relationScope,direction:relationDirection,levels:relationLevels,relation:inspectedRelation||'',topic:view==='lab'?window.MUSEUM_LAB.topic:$('compare-topic').value,left:$('compare-left').value,right:$('compare-right').value};
+    return {view,language:view==='lab'?window.MUSEUM_LAB.current:['river','lineage'].includes(view)?activeId||archive:archive,layer:relationLayer,depth:relationScope,direction:relationDirection,levels:relationLevels,relation:inspectedRelation||'',topic:view==='read'?readingTopic:view==='lab'?window.MUSEUM_LAB.topic:$('compare-topic').value,left:$('compare-left').value,right:$('compare-right').value};
   }
   function save(){
     if(restoring||scheduled)return;scheduled=true;
@@ -22,8 +22,11 @@
     try{
       archive='';restoreMapOverview();relationDirection=s.direction;relationLevels=s.levels;setRelationScope(s.depth);setRelationLayer(s.layer);
       if(s.view==='gallery'||s.view==='read'){
-        archive=byId.has(s.language)?s.language:'';
+        archive=byId.has(s.language)?s.language:s.view==='read'?'javascript':'';
+        if(s.view==='read')readingTopic=window.MUSEUM_TASK.topicFor(window.MUSEUM_LESSONS,archive,s.topic);
         activateTab(s.view==='read'?'reading-view':'gallery-view');
+      }else if(s.view==='guides'){
+        activateTab('guides-view');
       }else if(s.view==='river'||s.view==='lineage'){
         setView(s.view==='lineage'?'lineage':'timeline');
         if(byId.has(s.language)){select(s.language);activeId=mapLanguageIds.has(s.language)?s.language:null;if(activeId)renderLineageFocus(activeId)}

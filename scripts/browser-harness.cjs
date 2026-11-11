@@ -21,7 +21,7 @@ async function withBrowser(options,run){
   browser.stdio[4].on('data',chunk=>{buffer+=chunk.toString();let n;while((n=buffer.indexOf('\0'))!==-1){const m=JSON.parse(buffer.slice(0,n));buffer=buffer.slice(n+1);const p=pending.get(m.id);if(p){pending.delete(m.id);clearTimeout(p.timer);m.error?p.reject(new Error('Chrome protocol error: '+JSON.stringify(m.error))):p.resolve(m.result)}}});
   const version=await send('Browser.getVersion'),target=await send('Target.createTarget',{url:'about:blank'});session=(await send('Target.attachToTarget',{targetId:target.targetId,flatten:true})).sessionId;
   await page('Page.enable');await page('Runtime.enable');if(options.fixture)await page('Page.addScriptToEvaluateOnNewDocument',{source:options.fixture});
-  await page('Emulation.setDeviceMetricsOverride',{width:1440,height:1000,mobile:false,deviceScaleFactor:1});
+  await page('Emulation.setDeviceMetricsOverride',options.viewport||{width:1440,height:1000,mobile:false,deviceScaleFactor:1});
   const navigation=await page('Page.navigate',{url:origin+(options.hash||'/')});if(navigation.errorText)throw new Error(navigation.errorText);await page('Page.bringToFront');
   // The lab API is exposed before initial route restoration. Interacting while
   // later classic scripts still load can let that restoration cancel a test run.

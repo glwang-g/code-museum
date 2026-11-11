@@ -1,5 +1,5 @@
 (function(root){
-  const views=new Set(['gallery','read','river','lineage','catalogue','lab','compare','about']);
+  const views=new Set(['gallery','read','guides','river','lineage','catalogue','lab','compare','about']);
   function parse(hash){
     const [view,query='']=String(hash).replace(/^#/,'').split('?');
     const p=new URLSearchParams(query);
@@ -15,7 +15,7 @@
 
     }
     if(['river','lineage','catalogue'].includes(view)&&s.relation)p.set('relation',s.relation);
-    if(['lab','compare'].includes(view)&&s.topic&&s.topic!=='default')p.set('topic',s.topic);
+    if(['read','lab','compare'].includes(view)&&s.topic&&s.topic!=='default')p.set('topic',s.topic);
     if(view==='compare'){if(s.left)p.set('left',s.left);if(s.right)p.set('right',s.right)}
     return '#'+view+(p.size?'?'+p:'');
   }

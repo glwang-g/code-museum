@@ -21,8 +21,8 @@
     const between=audit.filter(e=>(e.from===left&&e.to===right)||(e.from===right&&e.to===left));
     $('compare-relations').innerHTML=left===right?'<p>两侧是同一门语言，可以切换一侧进行对比。</p>':between.map(relation).join('')||'<p>当前数据尚未记录这两门语言之间的直接关系；可展开各自上游、下游或查看档案继续探索。</p>';
     for(const b of document.querySelectorAll('[data-compare-proof]'))b.onclick=()=>window.MUSEUM_RELATIONS_UI.open(b.dataset.compareProof);
-    for(const b of document.querySelectorAll('[data-compare-lab]'))b.onclick=()=>window.MUSEUM_LAB.openLesson(b.dataset.compareLab,$('compare-topic').value);
-    for(const b of document.querySelectorAll('[data-compare-archive]'))b.onclick=()=>window.MUSEUM_RELATIONS_UI.openLanguage(b.dataset.compareArchive);
+    for(const b of document.querySelectorAll('[data-compare-lab]'))b.onclick=()=>{if(window.MUSEUM_GALLERY)window.MUSEUM_GALLERY.openLab(b.dataset.compareLab,$('compare-topic').value);else window.MUSEUM_LAB.openLesson(b.dataset.compareLab,$('compare-topic').value)};
+    for(const b of document.querySelectorAll('[data-compare-archive]'))b.onclick=()=>{if(window.MUSEUM_GALLERY)window.MUSEUM_GALLERY.openReading(b.dataset.compareArchive,$('compare-topic').value);else window.MUSEUM_RELATIONS_UI.openLanguage(b.dataset.compareArchive)};
   }
   const options=Object.keys(data.languages).map(id=>`<option value="${id}">${esc(records.get(id).name)}</option>`).join('');
   $('compare-left').innerHTML=options;$('compare-right').innerHTML=options;
@@ -32,6 +32,6 @@
   $('compare-preset').onchange=()=>{const [left,right]=$('compare-preset').value.split(',');if(!left||!right)return;$('compare-left').value=left;$('compare-right').value=right;render()};
   $('compare-swap').onclick=()=>{const left=$('compare-left').value;$('compare-left').value=$('compare-right').value;$('compare-right').value=left;render()};
   document.addEventListener('museum-execution-change',render);
-  window.MUSEUM_COMPARE={open(left,right,topic){if(!data.languages[left]||!data.languages[right]||!data.topics.some(t=>t.id===topic))return;$('compare-left').value=left;$('compare-right').value=right;$('compare-topic').value=topic;render();$('compare-view').click()}};
+  window.MUSEUM_COMPARE={open(left,right,topic){if(!data.languages[left]||!data.languages[right]||!data.topics.some(t=>t.id===topic))return;$('compare-left').value=left;$('compare-right').value=right;$('compare-topic').value=topic;render();if(window.activateTab)window.activateTab('compare-view');else $('compare-view').click()}};
   render();
 })();

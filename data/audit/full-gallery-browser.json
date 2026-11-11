@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-11-11T08:13:23.127Z",
+  "checkedAt": "2026-11-11T10:25:04.803Z",
   "browser": "Chrome/157.0.8103.39",
   "origin": "http://127.0.0.1:4191",
   "liveGateway": false,
@@ -135,6 +135,13 @@
     },
     {
       "name": "Complete application view fits the viewport",
+      "view": "guides",
+      "width": 1440,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Complete application view fits the viewport",
       "view": "about",
       "width": 1440,
       "theme": "light",
@@ -184,6 +191,13 @@
     },
     {
       "name": "Complete application view fits the viewport",
+      "view": "guides",
+      "width": 1440,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Complete application view fits the viewport",
       "view": "about",
       "width": 1440,
       "theme": "dark",
@@ -233,6 +247,13 @@
     },
     {
       "name": "Complete application view fits the viewport",
+      "view": "guides",
+      "width": 900,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Complete application view fits the viewport",
       "view": "about",
       "width": 900,
       "theme": "light",
@@ -282,6 +303,13 @@
     },
     {
       "name": "Complete application view fits the viewport",
+      "view": "guides",
+      "width": 900,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Complete application view fits the viewport",
       "view": "about",
       "width": 900,
       "theme": "dark",
@@ -331,6 +359,13 @@
     },
     {
       "name": "Complete application view fits the viewport",
+      "view": "guides",
+      "width": 390,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Complete application view fits the viewport",
       "view": "about",
       "width": 390,
       "theme": "light",
@@ -380,6 +415,13 @@
     },
     {
       "name": "Complete application view fits the viewport",
+      "view": "guides",
+      "width": 390,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Complete application view fits the viewport",
       "view": "about",
       "width": 390,
       "theme": "dark",
@@ -429,6 +471,13 @@
     },
     {
       "name": "Complete application view fits the viewport",
+      "view": "guides",
+      "width": 320,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Complete application view fits the viewport",
       "view": "about",
       "width": 320,
       "theme": "light",
@@ -472,6 +521,13 @@
     {
       "name": "Complete application view fits the viewport",
       "view": "compare",
+      "width": 320,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Complete application view fits the viewport",
+      "view": "guides",
       "width": 320,
       "theme": "dark",
       "passed": true
@@ -507,15 +563,15 @@
     }
   ],
   "inputs": {
-    "src/index.html": "77c41ef5e6ac10f9842a9fc97ea0ff6847b7ae87b7d5e10a7d13cef1512c37cc",
-    "src/gallery.js": "c28ff8a5851b30383d163848304bb68f5b5295c4861778e0b089ba642d56497b",
-    "src/gallery.css": "4f86908b0f2b75ce7851574ccab03a9c4dcb8deb4ca741ca49b492f8dbda2632",
-    "src/navigation.js": "27a722cc0e8504b273698b34c9cd12aa0cf8e232dca6c8d68d22f9c5333e0f75",
-    "src/navigation-state.js": "c79e91837e629ffd664b2c526326ea067e7f4ca8803acb15efa599f90f825e34",
-    "src/museum.js": "2f0d3afc33a9032d61006374cb11339b01de46e56df785bfa3df7ab180f62abb",
+    "src/index.html": "2a2f6c51e9392d972de1475cd547db64c98a8f7a0769b6ac611f422e56cb53ce",
+    "src/gallery.js": "6803d09b143fb02aecb04a7ac8b477d725a6fda0a90fab66254a8b8bcd789c83",
+    "src/gallery.css": "35cf3ca6f43ea3cf4fb1db3317779fa8550f90b2163a86f037fc23290909c177",
+    "src/navigation.js": "b8da269c62a3f27bacf694a391e3f2e41b7896c0c6be7eeb067d0ebdf5d6ed72",
+    "src/navigation-state.js": "ad5fa42030f3f9b174b8817ff005f01eb52cee3d50c0d4308fa8edd10c5371de",
+    "src/museum.js": "7fab76943f196e341088f845879e039cfdc8bcd643802422d397689522d34cbb",
     "src/learning-guide.js": "1656038363a348c7d90797bb1bbe143c81c425492ce77928cdf99e21da5356e0",
     "scripts/build.cjs": "1397b00ecf00db91481c7665ad9d3973783aee6bc7d29e30bf6767993bb621f8",
     "scripts/preserve-classic.cjs": "3f4843cfd022739d5fc53c7cf9808438c61985b1a4e109df556df128ce8321da",
-    "scripts/check-full-gallery.cjs": "6383e6512f454d17e34246371877d402136b0f52820919c3b874c1de1def42f2"
+    "scripts/check-full-gallery.cjs": "731df975257d96d9bec4863a0df76bccd525594fa927a1def22ef14c9d39f51f"
   }
 }

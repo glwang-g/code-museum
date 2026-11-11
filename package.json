@@ -47,6 +47,8 @@
     "credits:browser": "node scripts/check-credits-browser.cjs",
     "modern:preview": "npm run build && node scripts/preview-modern.cjs",
     "gallery:preview": "npm run build && node scripts/preview-gallery.cjs",
-    "site:browser": "node scripts/check-full-gallery.cjs"
+    "site:browser": "node scripts/check-full-gallery.cjs",
+    "learning:browser": "node scripts/check-learning-flow.cjs",
+    "platform:measure": "node scripts/measure-platform.cjs"
   }
 }
