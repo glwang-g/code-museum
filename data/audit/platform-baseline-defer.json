@@ -1,0 +1,773 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-11T10:38:50.398Z",
+  "origin": "https://codemuseum.freexlib.com",
+  "browser": "Chrome/157.0.8103.39",
+  "scope": "Installed headless Chrome, no network/CPU throttling; desktop 1440 and mobile-layout emulation 390. Fresh-browser means a new profile, not a cold server/CDN or physical phone. Timings end when result DOM changes; no GPU presentation claim. Three samples are a diagnostic baseline, not a load test or p95. No user code, stdin, output, intent, cookies or job IDs recorded.",
+  "liveExecution": true,
+  "liveModel": true,
+  "modelProgramSha256": "b7cd62661fc99d172a16fd78d08914fa79a062f45d7e9004559faefc63f25216",
+  "programSha256": {
+    "javascript": "5b5131ac0a698c05aa1f838225d3efd5de4d08d9f19b3d17f4bfdcbfd80437f0",
+    "python": "c2d6e9060cbe8dee44279258cc8677d7a20ec16eeeccfedd09b840283efd3685",
+    "c": "ec9853d3649cb80b9b98a86edd5947756d85cd100a50c7b86e23af3a2799c4c5",
+    "bcpl": "f4f9d8da667d5836fe18b3977a3ef0f7e15bd34539932bdf9dffa33d70d4a9d1",
+    "groovy": "7e321852163134e5acac27972970bf095e53fc45767286b9d5914db209fe0a5f"
+  },
+  "frontend": [
+    {
+      "width": 1440,
+      "sample": 1,
+      "cache": "fresh-browser",
+      "contentSha256": "8d72c9c5a57318baf090162d894de70500ddf09ee4d57fd4bfaa1df4cf5ac7f4",
+      "appReadyMs": 1420.800000011921,
+      "fcpMs": 364,
+      "ttfbMs": 125.40000000596046,
+      "domContentLoadedMs": 1420.9000000059605,
+      "scripts": 40,
+      "transferredBytes": 600639,
+      "slowResources": [
+        {
+          "path": "/gallery.6803d09b143f.js",
+          "ms": 1192.4000000059605,
+          "bytes": 10697
+        },
+        {
+          "path": "/exploration-tools.65b84f78f1ce.js",
+          "ms": 1192,
+          "bytes": 1003
+        },
+        {
+          "path": "/map-interaction.66f1c355a187.js",
+          "ms": 1191.8999999761581,
+          "bytes": 1061
+        },
+        {
+          "path": "/navigation.b8da269c62a3.js",
+          "ms": 1191.699999988079,
+          "bytes": 3691
+        },
+        {
+          "path": "/learning-guide.1656038363a3.js",
+          "ms": 1191.5,
+          "bytes": 2404
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "sample": 1,
+      "cache": "reload",
+      "contentSha256": "8d72c9c5a57318baf090162d894de70500ddf09ee4d57fd4bfaa1df4cf5ac7f4",
+      "appReadyMs": 202.5,
+      "fcpMs": 164,
+      "ttfbMs": 60.70000001788139,
+      "domContentLoadedMs": 202.69999998807907,
+      "scripts": 40,
+      "transferredBytes": 13800,
+      "slowResources": [
+        {
+          "path": "/gallery.6803d09b143f.js",
+          "ms": 86.09999999403954,
+          "bytes": 300
+        },
+        {
+          "path": "/exploration-tools.65b84f78f1ce.js",
+          "ms": 85.89999997615814,
+          "bytes": 300
+        },
+        {
+          "path": "/map-interaction.66f1c355a187.js",
+          "ms": 85.69999998807907,
+          "bytes": 300
+        },
+        {
+          "path": "/navigation.b8da269c62a3.js",
+          "ms": 85.59999999403954,
+          "bytes": 300
+        },
+        {
+          "path": "/learning-guide.1656038363a3.js",
+          "ms": 85.19999998807907,
+          "bytes": 300
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "sample": 2,
+      "cache": "fresh-browser",
+      "contentSha256": "8d72c9c5a57318baf090162d894de70500ddf09ee4d57fd4bfaa1df4cf5ac7f4",
+      "appReadyMs": 1536.5,
+      "fcpMs": 224,
+      "ttfbMs": 27.19999998807907,
+      "domContentLoadedMs": 1536.7000000178814,
+      "scripts": 40,
+      "transferredBytes": 600639,
+      "slowResources": [
+        {
+          "path": "/exploration-tools.65b84f78f1ce.js",
+          "ms": 1431,
+          "bytes": 1003
+        },
+        {
+          "path": "/gallery.6803d09b143f.js",
+          "ms": 1430.800000011921,
+          "bytes": 10697
+        },
+        {
+          "path": "/navigation.b8da269c62a3.js",
+          "ms": 1430.4000000059605,
+          "bytes": 3691
+        },
+        {
+          "path": "/map-interaction.66f1c355a187.js",
+          "ms": 1430.2000000178814,
+          "bytes": 1061
+        },
+        {
+          "path": "/data/learning-paths.6762eeaca66d.js",
+          "ms": 1430.0999999940395,
+          "bytes": 4092
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "sample": 2,
+      "cache": "reload",
+      "contentSha256": "8d72c9c5a57318baf090162d894de70500ddf09ee4d57fd4bfaa1df4cf5ac7f4",
+      "appReadyMs": 191.40000000596046,
+      "fcpMs": 136,
+      "ttfbMs": 8.799999982118607,
+      "domContentLoadedMs": 191.5,
+      "scripts": 40,
+      "transferredBytes": 13800,
+      "slowResources": [
+        {
+          "path": "/gallery.6803d09b143f.js",
+          "ms": 127,
+          "bytes": 300
+        },
+        {
+          "path": "/exploration-tools.65b84f78f1ce.js",
+          "ms": 126.80000001192093,
+          "bytes": 300
+        },
+        {
+          "path": "/navigation.b8da269c62a3.js",
+          "ms": 126.59999999403954,
+          "bytes": 300
+        },
+        {
+          "path": "/map-interaction.66f1c355a187.js",
+          "ms": 126.59999999403954,
+          "bytes": 300
+        },
+        {
+          "path": "/learning-guide.1656038363a3.js",
+          "ms": 126.5,
+          "bytes": 300
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "sample": 3,
+      "cache": "fresh-browser",
+      "contentSha256": "8d72c9c5a57318baf090162d894de70500ddf09ee4d57fd4bfaa1df4cf5ac7f4",
+      "appReadyMs": 1380.800000011921,
+      "fcpMs": 232,
+      "ttfbMs": 74.69999998807907,
+      "domContentLoadedMs": 1381,
+      "scripts": 40,
+      "transferredBytes": 600639,
+      "slowResources": [
+        {
+          "path": "/gallery.6803d09b143f.js",
+          "ms": 1216.800000011921,
+          "bytes": 10697
+        },
+        {
+          "path": "/exploration-tools.65b84f78f1ce.js",
+          "ms": 1216.5,
+          "bytes": 1003
+        },
+        {
+          "path": "/map-interaction.66f1c355a187.js",
+          "ms": 1216.199999988079,
+          "bytes": 1061
+        },
+        {
+          "path": "/navigation.b8da269c62a3.js",
+          "ms": 1215.5999999940395,
+          "bytes": 3691
+        },
+        {
+          "path": "/data/learning-paths.6762eeaca66d.js",
+          "ms": 1121.5999999940395,
+          "bytes": 4092
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "sample": 3,
+      "cache": "reload",
+      "contentSha256": "8d72c9c5a57318baf090162d894de70500ddf09ee4d57fd4bfaa1df4cf5ac7f4",
+      "appReadyMs": 538.4000000059605,
+      "fcpMs": 196,
+      "ttfbMs": 16.5,
+      "domContentLoadedMs": 538.5999999940395,
+      "scripts": 40,
+      "transferredBytes": 13800,
+      "slowResources": [
+        {
+          "path": "/gallery.6803d09b143f.js",
+          "ms": 491.5,
+          "bytes": 300
+        },
+        {
+          "path": "/map-interaction.66f1c355a187.js",
+          "ms": 491.40000000596046,
+          "bytes": 300
+        },
+        {
+          "path": "/exploration-tools.65b84f78f1ce.js",
+          "ms": 491.40000000596046,
+          "bytes": 300
+        },
+        {
+          "path": "/learning-guide.1656038363a3.js",
+          "ms": 491.19999998807907,
+          "bytes": 300
+        },
+        {
+          "path": "/navigation.b8da269c62a3.js",
+          "ms": 491.19999998807907,
+          "bytes": 300
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "sample": 1,
+      "cache": "fresh-browser",
+      "contentSha256": "8d72c9c5a57318baf090162d894de70500ddf09ee4d57fd4bfaa1df4cf5ac7f4",
+      "appReadyMs": 1407.800000011921,
+      "fcpMs": 224,
+      "ttfbMs": 34.69999998807907,
+      "domContentLoadedMs": 1407.9000000059605,
+      "scripts": 40,
+      "transferredBytes": 600639,
+      "slowResources": [
+        {
+          "path": "/data/catalogue.217135fc406f.js",
+          "ms": 1214.699999988079,
+          "bytes": 288599
+        },
+        {
+          "path": "/gallery.6803d09b143f.js",
+          "ms": 1108.800000011921,
+          "bytes": 10697
+        },
+        {
+          "path": "/exploration-tools.65b84f78f1ce.js",
+          "ms": 1108,
+          "bytes": 1003
+        },
+        {
+          "path": "/map-interaction.66f1c355a187.js",
+          "ms": 1107.4000000059605,
+          "bytes": 1061
+        },
+        {
+          "path": "/navigation.b8da269c62a3.js",
+          "ms": 1106.7000000178814,
+          "bytes": 3691
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "sample": 1,
+      "cache": "reload",
+      "contentSha256": "8d72c9c5a57318baf090162d894de70500ddf09ee4d57fd4bfaa1df4cf5ac7f4",
+      "appReadyMs": 404.69999998807907,
+      "fcpMs": 104,
+      "ttfbMs": 12.599999994039536,
+      "domContentLoadedMs": 404.89999997615814,
+      "scripts": 40,
+      "transferredBytes": 13800,
+      "slowResources": [
+        {
+          "path": "/gallery.6803d09b143f.js",
+          "ms": 330.09999999403954,
+          "bytes": 300
+        },
+        {
+          "path": "/exploration-tools.65b84f78f1ce.js",
+          "ms": 330,
+          "bytes": 300
+        },
+        {
+          "path": "/map-interaction.66f1c355a187.js",
+          "ms": 329.80000001192093,
+          "bytes": 300
+        },
+        {
+          "path": "/navigation.b8da269c62a3.js",
+          "ms": 329.59999999403954,
+          "bytes": 300
+        },
+        {
+          "path": "/learning-guide.1656038363a3.js",
+          "ms": 329.5,
+          "bytes": 300
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "sample": 2,
+      "cache": "fresh-browser",
+      "contentSha256": "8d72c9c5a57318baf090162d894de70500ddf09ee4d57fd4bfaa1df4cf5ac7f4",
+      "appReadyMs": 3320.5,
+      "fcpMs": 2048,
+      "ttfbMs": 21.900000005960464,
+      "domContentLoadedMs": 3320.699999988079,
+      "scripts": 40,
+      "transferredBytes": 600639,
+      "slowResources": [
+        {
+          "path": "/data/catalogue.217135fc406f.js",
+          "ms": 1392,
+          "bytes": 288599
+        },
+        {
+          "path": "/gallery.6803d09b143f.js",
+          "ms": 1389.9000000059605,
+          "bytes": 10697
+        },
+        {
+          "path": "/exploration-tools.65b84f78f1ce.js",
+          "ms": 1389.4000000059605,
+          "bytes": 1003
+        },
+        {
+          "path": "/map-interaction.66f1c355a187.js",
+          "ms": 1388.800000011921,
+          "bytes": 1061
+        },
+        {
+          "path": "/navigation.b8da269c62a3.js",
+          "ms": 1388.300000011921,
+          "bytes": 3691
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "sample": 2,
+      "cache": "reload",
+      "contentSha256": "8d72c9c5a57318baf090162d894de70500ddf09ee4d57fd4bfaa1df4cf5ac7f4",
+      "appReadyMs": 171.80000001192093,
+      "fcpMs": 116,
+      "ttfbMs": 13.599999994039536,
+      "domContentLoadedMs": 172.09999999403954,
+      "scripts": 40,
+      "transferredBytes": 13800,
+      "slowResources": [
+        {
+          "path": "/exploration-tools.65b84f78f1ce.js",
+          "ms": 100.5,
+          "bytes": 300
+        },
+        {
+          "path": "/gallery.6803d09b143f.js",
+          "ms": 100.5,
+          "bytes": 300
+        },
+        {
+          "path": "/map-interaction.66f1c355a187.js",
+          "ms": 100.30000001192093,
+          "bytes": 300
+        },
+        {
+          "path": "/navigation.b8da269c62a3.js",
+          "ms": 100.10000002384186,
+          "bytes": 300
+        },
+        {
+          "path": "/learning-guide.1656038363a3.js",
+          "ms": 99.90000000596046,
+          "bytes": 300
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "sample": 3,
+      "cache": "fresh-browser",
+      "contentSha256": "8d72c9c5a57318baf090162d894de70500ddf09ee4d57fd4bfaa1df4cf5ac7f4",
+      "appReadyMs": 1639.9000000059605,
+      "fcpMs": 248,
+      "ttfbMs": 32.79999998211861,
+      "domContentLoadedMs": 1640.199999988079,
+      "scripts": 40,
+      "transferredBytes": 600639,
+      "slowResources": [
+        {
+          "path": "/gallery.6803d09b143f.js",
+          "ms": 1474.9000000059605,
+          "bytes": 10697
+        },
+        {
+          "path": "/exploration-tools.65b84f78f1ce.js",
+          "ms": 1474.5,
+          "bytes": 1003
+        },
+        {
+          "path": "/map-interaction.66f1c355a187.js",
+          "ms": 1474,
+          "bytes": 1061
+        },
+        {
+          "path": "/navigation.b8da269c62a3.js",
+          "ms": 1473.4000000059605,
+          "bytes": 3691
+        },
+        {
+          "path": "/learning-guide.1656038363a3.js",
+          "ms": 1371.2000000178814,
+          "bytes": 2404
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "sample": 3,
+      "cache": "reload",
+      "contentSha256": "8d72c9c5a57318baf090162d894de70500ddf09ee4d57fd4bfaa1df4cf5ac7f4",
+      "appReadyMs": 570.5999999940395,
+      "fcpMs": 424,
+      "ttfbMs": 239.7999999821186,
+      "domContentLoadedMs": 570.7999999821186,
+      "scripts": 40,
+      "transferredBytes": 13800,
+      "slowResources": [
+        {
+          "path": "/gallery.6803d09b143f.js",
+          "ms": 266.30000001192093,
+          "bytes": 300
+        },
+        {
+          "path": "/exploration-tools.65b84f78f1ce.js",
+          "ms": 266.09999999403954,
+          "bytes": 300
+        },
+        {
+          "path": "/map-interaction.66f1c355a187.js",
+          "ms": 265.90000000596046,
+          "bytes": 300
+        },
+        {
+          "path": "/navigation.b8da269c62a3.js",
+          "ms": 265.7999999821186,
+          "bytes": 300
+        },
+        {
+          "path": "/learning-guide.1656038363a3.js",
+          "ms": 265.40000000596046,
+          "bytes": 300
+        }
+      ]
+    }
+  ],
+  "operations": [
+    {
+      "kind": "execution",
+      "language": "javascript",
+      "mode": "local",
+      "ms": 20.30000001192093,
+      "state": "ok",
+      "sequence": 1
+    },
+    {
+      "kind": "execution",
+      "language": "javascript",
+      "mode": "local",
+      "ms": 26.599999994039536,
+      "state": "ok",
+      "sequence": 2
+    },
+    {
+      "kind": "execution",
+      "language": "javascript",
+      "mode": "local",
+      "ms": 26.599999994039536,
+      "state": "ok",
+      "sequence": 3
+    },
+    {
+      "kind": "execution",
+      "language": "python",
+      "mode": "local",
+      "ms": 24481.09999999404,
+      "state": "ok",
+      "sequence": 1
+    },
+    {
+      "kind": "execution",
+      "language": "python",
+      "mode": "local",
+      "ms": 12.200000017881393,
+      "state": "ok",
+      "sequence": 2
+    },
+    {
+      "kind": "execution",
+      "language": "python",
+      "mode": "local",
+      "ms": 3,
+      "state": "ok",
+      "sequence": 3
+    },
+    {
+      "kind": "execution",
+      "language": "c",
+      "mode": "remote",
+      "ms": 1489.0999999940395,
+      "state": "ok",
+      "server": {
+        "state": "completed",
+        "queueMs": 0,
+        "compileMs": 172,
+        "runMs": 43,
+        "elapsedMs": 464
+      },
+      "sequence": 1
+    },
+    {
+      "kind": "execution",
+      "language": "c",
+      "mode": "remote",
+      "ms": 1023.3999999761581,
+      "state": "ok",
+      "server": {
+        "state": "completed",
+        "queueMs": 0,
+        "compileMs": 164,
+        "runMs": 45,
+        "elapsedMs": 466
+      },
+      "sequence": 2
+    },
+    {
+      "kind": "execution",
+      "language": "c",
+      "mode": "remote",
+      "ms": 918.3000000119209,
+      "state": "ok",
+      "server": {
+        "state": "completed",
+        "queueMs": 0,
+        "compileMs": 161,
+        "runMs": 46,
+        "elapsedMs": 466
+      },
+      "sequence": 3
+    },
+    {
+      "kind": "execution",
+      "language": "bcpl",
+      "mode": "remote",
+      "ms": 1079.7999999821186,
+      "state": "ok",
+      "server": {
+        "state": "completed",
+        "queueMs": 0,
+        "compileMs": 196,
+        "runMs": 185,
+        "elapsedMs": 661
+      },
+      "sequence": 1
+    },
+    {
+      "kind": "execution",
+      "language": "bcpl",
+      "mode": "remote",
+      "ms": 1153.5999999940395,
+      "state": "ok",
+      "server": {
+        "state": "completed",
+        "queueMs": 0,
+        "compileMs": 200,
+        "runMs": 167,
+        "elapsedMs": 637
+      },
+      "sequence": 2
+    },
+    {
+      "kind": "execution",
+      "language": "bcpl",
+      "mode": "remote",
+      "ms": 1077.5999999940395,
+      "state": "ok",
+      "server": {
+        "state": "completed",
+        "queueMs": 0,
+        "compileMs": 200,
+        "runMs": 187,
+        "elapsedMs": 658
+      },
+      "sequence": 3
+    },
+    {
+      "kind": "execution",
+      "language": "groovy",
+      "mode": "remote",
+      "ms": 4656.5,
+      "state": "ok",
+      "server": {
+        "state": "completed",
+        "queueMs": 0,
+        "runMs": 3848,
+        "elapsedMs": 4095
+      },
+      "sequence": 1
+    },
+    {
+      "kind": "execution",
+      "language": "groovy",
+      "mode": "remote",
+      "ms": 4291.9000000059605,
+      "state": "ok",
+      "server": {
+        "state": "completed",
+        "queueMs": 0,
+        "runMs": 3787,
+        "elapsedMs": 4029
+      },
+      "sequence": 2
+    },
+    {
+      "kind": "execution",
+      "language": "groovy",
+      "mode": "remote",
+      "ms": 4277.300000011921,
+      "state": "ok",
+      "server": {
+        "state": "completed",
+        "queueMs": 0,
+        "runMs": 3796,
+        "elapsedMs": 4022
+      },
+      "sequence": 3
+    },
+    {
+      "kind": "model",
+      "language": "javascript",
+      "ms": 89.2999999821186,
+      "state": "ok",
+      "response": {
+        "kind": "model",
+        "status": 200,
+        "ms": 89.09999999403954,
+        "cached": true
+      }
+    },
+    {
+      "kind": "model-browser-cache",
+      "ms": 7.800000011920929,
+      "extraRequests": 0
+    }
+  ],
+  "summary": {
+    "frontend": [
+      {
+        "width": 1440,
+        "cache": "fresh-browser",
+        "samples": 3,
+        "medianMs": 1420.8,
+        "minMs": 1380.8,
+        "maxMs": 1536.5
+      },
+      {
+        "width": 1440,
+        "cache": "reload",
+        "samples": 3,
+        "medianMs": 202.5,
+        "minMs": 191.4,
+        "maxMs": 538.4
+      },
+      {
+        "width": 390,
+        "cache": "fresh-browser",
+        "samples": 3,
+        "medianMs": 1639.9,
+        "minMs": 1407.8,
+        "maxMs": 3320.5
+      },
+      {
+        "width": 390,
+        "cache": "reload",
+        "samples": 3,
+        "medianMs": 404.7,
+        "minMs": 171.8,
+        "maxMs": 570.6
+      }
+    ],
+    "execution": [
+      {
+        "language": "groovy",
+        "samples": 3,
+        "medianMs": 4291.9,
+        "minMs": 4277.3,
+        "maxMs": 4656.5,
+        "firstMs": 4656.5,
+        "followingMedianMs": 4284.6
+      },
+      {
+        "language": "bcpl",
+        "samples": 3,
+        "medianMs": 1079.8,
+        "minMs": 1077.6,
+        "maxMs": 1153.6,
+        "firstMs": 1079.8,
+        "followingMedianMs": 1115.6
+      },
+      {
+        "language": "c",
+        "samples": 3,
+        "medianMs": 1023.4,
+        "minMs": 918.3,
+        "maxMs": 1489.1,
+        "firstMs": 1489.1,
+        "followingMedianMs": 970.8
+      },
+      {
+        "language": "javascript",
+        "samples": 3,
+        "medianMs": 26.6,
+        "minMs": 20.3,
+        "maxMs": 26.6,
+        "firstMs": 20.3,
+        "followingMedianMs": 26.6
+      },
+      {
+        "language": "python",
+        "samples": 3,
+        "medianMs": 12.2,
+        "minMs": 3,
+        "maxMs": 24481.1,
+        "firstMs": 24481.1,
+        "followingMedianMs": 7.6
+      }
+    ]
+  },
+  "inputs": {
+    "scripts/measure-platform.cjs": "d76c359eeb249a46ae96c49a25e7259f5b14e5b282b1a1a8e208b544a87ca2cc",
+    "scripts/browser-harness.cjs": "f39547b4f9870cab90dc339af22d833c9b4c9d486a1f90397b0eb832033f77fb"
+  }
+}

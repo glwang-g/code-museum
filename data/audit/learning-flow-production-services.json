@@ -1,0 +1,44 @@
+{
+  "checkedAt": "2026-11-11T10:58:45.621132+00:00",
+  "release": "/var/www/code-museum/releases/ab76de12495cddaadf7848721ee10513fe3121ed",
+  "filesVerified": 1270,
+  "totalBytes": 71406844,
+  "manifestSha256": "945b6a2c2338747c393db1fe5f561cd9a624d63388ada262c56ab8421ec4c8cf",
+  "units": {
+    "code-museum-explanation.service": {
+      "MainPID": "2286506",
+      "ActiveState": "active"
+    },
+    "code-museum-execution-gateway.service": {
+      "MainPID": "1969690",
+      "ActiveState": "active"
+    },
+    "code-museum-worker@xshow.service": {
+      "MainPID": "1969684",
+      "ActiveState": "active"
+    },
+    "code-museum-execution-tunnel.service": {
+      "MainPID": "1789185",
+      "ActiveState": "active"
+    },
+    "code-museum-analytics.service": {
+      "MainPID": "2582563",
+      "ActiveState": "active"
+    }
+  },
+  "modelHealth": {
+    "available": true,
+    "model": "deepseek-flash",
+    "schemaVersion": 2,
+    "promptVersion": "museum-review-v2"
+  },
+  "analyticsHealth": 204,
+  "remoteLanguages": 56,
+  "guestMaxSessions": 5,
+  "protectedServicesUnchanged": true,
+  "node2": {
+    "MainPID": "198180",
+    "ActiveState": "active"
+  },
+  "passed": true
+}

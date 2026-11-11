@@ -1,5 +1,15 @@
 # Code Museum 首版部署
 
+## 2026-11-11 学习路径与测速基线已发布
+
+功能release为`ab76de12495cddaadf7848721ee10513fe3121ed`，[Actions 43007282407](https://github.com/glwang-g/code-museum/actions/runs/43007282407)的build/deploy成功。各页保留对比/导览/出处，补手机底栏滚动空间、页脚上下文绑定和换页同步定位；5条路线可继续/明确重启，阅读/比较/实验携带同一语言和题目，继续任务保留草稿，明确导入可撤销。旧阅读书签及原版仍可用。
+
+128项默认测试、公开Git离线重建、本地88项整站和13项路径通过。正式89项整站、13项路径、22项控件、16项出处合计140项通过，代表截图已核读；四种本地Worker、JS导览练习及C/xshow、BCPL/xshow2真实执行通过，后两者各输出42。56门元数据与五会话规则一致，本轮不声称重跑全56门。1270文件/71,406,844字节逐一匹配，清单SHA-256为`945b6a2c2338747c393db1fe5f561cd9a624d63388ada262c56ab8421ec4c8cf`，原版638文件清单保持`cda32214be9f962f6523708f953a7c3b3fb680082dc2a6d835ade89995a24dbf`。
+
+正式前后同源三样本基线已留档；最终首开桌面中位1.54秒、手机布局1.47秒，缓存刷新约0.12秒。新增defer候选在同代码受控对照中约767毫秒、原顺序692毫秒，最终撤回新增defer，保留页脚绑定脚本的位置修复。没有据三个公网样本宣称整体加速。Groovy约4.39秒、无排队；Python显式本地首次约21.6秒，随后毫秒级，生产默认仍远端。未缓存模型1.60秒、最终服务端缓存95毫秒分开记录。见 [测速与结论](LEARNING_FLOW.md)。普通静态发布保持模型/网关/worker/隧道及xshow2 worker PID不变，analytics按原流程重启，健康204；未改Nginx、镜像、私有配置或活数据库，未发留言或邮件。
+
+见 [发布记录](../data/audit/learning-flow-deployment.json)、[逐文件与服务核对](../data/audit/learning-flow-production-services.json)、[公开Git离线重建](../data/audit/learning-flow-git-build.json)。回退可用原激活流程切回保留的`94a37208b3651eba6d14ee3690fcf0602c17b16d`，保留当前独立后端、凭据和数据库；原版也可直接访问`/classic/`。
+
 ## 2026-11-11 完整界面改版已发布
 
 正式release为`94a37208b3651eba6d14ee3690fcf0602c17b16d`，[Actions 42987236337](https://github.com/glwang-g/code-museum/actions/runs/42987236337)的build/deploy成功。用户要求先完成B模式的整版应用后再推送；本轮在`src/`沿用完整业务控制器，统一展厅、独立阅读、馆藏、图谱、实验室、导览/对比、出处、留言与统计。A/B实验源文件保留；固定`archive/classic-ui/`同次离线构建出`/classic/`，原版638文件清单仍为`cda32214be9f962f6523708f953a7c3b3fb680082dc2a6d835ade89995a24dbf`。

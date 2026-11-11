@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-11T10:52:35.342Z",
+  "commit": "ab76de12495cddaadf7848721ee10513fe3121ed",
+  "scope": "Fresh git archive of the public committed tree; offline build with no dependency install/download; complete ordinary-site package equals the tested workspace build byte-for-byte. Default tests already include repeatable source-only build.",
+  "files": 1270,
+  "totalBytes": 71406844,
+  "manifestSha256": "945b6a2c2338747c393db1fe5f561cd9a624d63388ada262c56ab8421ec4c8cf",
+  "passed": true
+}
