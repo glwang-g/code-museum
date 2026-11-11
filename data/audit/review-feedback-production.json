@@ -1,0 +1,183 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-11T00:41:16.964Z",
+  "browser": "Chrome/157.0.8103.39",
+  "origin": "https://codemuseum.freexlib.com",
+  "contentSha256": "d3eb4e3ab596907f836abaa80bedeb2a22189a177beb7714f93ed85080c9b52e",
+  "scope": "Actual Chrome rendering and lifecycle checks with explicit valid/issues/uncertain response fixtures. No real model request or remote execution; only known fixed JavaScript prints 7. No severity inferred.",
+  "checks": [
+    {
+      "name": "Museum examples and page opening have no verdict color or model call",
+      "passed": true
+    },
+    {
+      "name": "Verdict color and text remain visible with no horizontal overflow",
+      "verdict": "ok",
+      "width": 1440,
+      "theme": "light",
+      "colors": {
+        "code": "rgb(234, 246, 237)",
+        "summary": "rgb(234, 246, 237)",
+        "status": "rgb(40, 97, 59)"
+      },
+      "passed": true
+    },
+    {
+      "name": "Verdict color and text remain visible with no horizontal overflow",
+      "verdict": "ok",
+      "width": 1440,
+      "theme": "dark",
+      "colors": {
+        "code": "rgb(18, 48, 38)",
+        "summary": "rgb(18, 48, 38)",
+        "status": "rgb(188, 231, 199)"
+      },
+      "passed": true
+    },
+    {
+      "name": "Verdict color and text remain visible with no horizontal overflow",
+      "verdict": "ok",
+      "width": 390,
+      "theme": "light",
+      "colors": {
+        "code": "rgb(234, 246, 237)",
+        "summary": "rgb(234, 246, 237)",
+        "status": "rgb(40, 97, 59)"
+      },
+      "passed": true
+    },
+    {
+      "name": "Verdict color and text remain visible with no horizontal overflow",
+      "verdict": "ok",
+      "width": 390,
+      "theme": "dark",
+      "colors": {
+        "code": "rgb(18, 48, 38)",
+        "summary": "rgb(18, 48, 38)",
+        "status": "rgb(188, 231, 199)"
+      },
+      "passed": true
+    },
+    {
+      "name": "Known JavaScript runs for real and retains the matching static-check color",
+      "passed": true
+    },
+    {
+      "name": "Verdict color and text remain visible with no horizontal overflow",
+      "verdict": "issues",
+      "width": 1440,
+      "theme": "light",
+      "colors": {
+        "code": "rgb(255, 240, 239)",
+        "summary": "rgb(255, 240, 239)",
+        "status": "rgb(150, 61, 54)"
+      },
+      "passed": true
+    },
+    {
+      "name": "Verdict color and text remain visible with no horizontal overflow",
+      "verdict": "issues",
+      "width": 1440,
+      "theme": "dark",
+      "colors": {
+        "code": "rgb(50, 30, 37)",
+        "summary": "rgb(50, 30, 37)",
+        "status": "rgb(255, 201, 206)"
+      },
+      "passed": true
+    },
+    {
+      "name": "Verdict color and text remain visible with no horizontal overflow",
+      "verdict": "issues",
+      "width": 390,
+      "theme": "light",
+      "colors": {
+        "code": "rgb(255, 240, 239)",
+        "summary": "rgb(255, 240, 239)",
+        "status": "rgb(150, 61, 54)"
+      },
+      "passed": true
+    },
+    {
+      "name": "Verdict color and text remain visible with no horizontal overflow",
+      "verdict": "issues",
+      "width": 390,
+      "theme": "dark",
+      "colors": {
+        "code": "rgb(50, 30, 37)",
+        "summary": "rgb(50, 30, 37)",
+        "status": "rgb(255, 201, 206)"
+      },
+      "passed": true
+    },
+    {
+      "name": "Changing intent clears the old red; restoring the exact input reuses cached feedback without a call",
+      "passed": true
+    },
+    {
+      "name": "Verdict color and text remain visible with no horizontal overflow",
+      "verdict": "uncertain",
+      "width": 1440,
+      "theme": "light",
+      "colors": {
+        "code": "rgba(0, 0, 0, 0)",
+        "summary": "rgba(0, 0, 0, 0)",
+        "status": "rgb(82, 103, 107)"
+      },
+      "passed": true
+    },
+    {
+      "name": "Verdict color and text remain visible with no horizontal overflow",
+      "verdict": "uncertain",
+      "width": 1440,
+      "theme": "dark",
+      "colors": {
+        "code": "rgba(0, 0, 0, 0)",
+        "summary": "rgba(0, 0, 0, 0)",
+        "status": "rgb(158, 181, 182)"
+      },
+      "passed": true
+    },
+    {
+      "name": "Verdict color and text remain visible with no horizontal overflow",
+      "verdict": "uncertain",
+      "width": 390,
+      "theme": "light",
+      "colors": {
+        "code": "rgba(0, 0, 0, 0)",
+        "summary": "rgba(0, 0, 0, 0)",
+        "status": "rgb(82, 103, 107)"
+      },
+      "passed": true
+    },
+    {
+      "name": "Verdict color and text remain visible with no horizontal overflow",
+      "verdict": "uncertain",
+      "width": 390,
+      "theme": "dark",
+      "colors": {
+        "code": "rgba(0, 0, 0, 0)",
+        "summary": "rgba(0, 0, 0, 0)",
+        "status": "rgb(158, 181, 182)"
+      },
+      "passed": true
+    },
+    {
+      "name": "Late checks cannot color a newer draft",
+      "passed": true
+    },
+    {
+      "name": "Network/service failures do not label code as faulty or correct",
+      "passed": true
+    },
+    {
+      "name": "Switching language clears another language verdict without a request",
+      "passed": true
+    }
+  ],
+  "inputs": {
+    "src/lab-explanations.js": "159ef2f5edbcc321a9fff41416859f86694802d40176e7f7716b458967d9ac8c",
+    "src/lab-explanations.css": "a527c42d747dc12c86dad909a92d1528ea4f827fe88f9a45dce07641fdf5ba3c",
+    "scripts/browser-harness.cjs": "7806f630bc7ae458f982fb0bb186913f051f399af905386c32b234549a35b31d"
+  }
+}

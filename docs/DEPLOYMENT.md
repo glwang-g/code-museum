@@ -1,5 +1,11 @@
 # Code Museum 首版部署
 
+## 2026-11-11 代码检查颜色反馈发布
+
+正式release为 `942904f36a6cbd1ff04e413db3b26ce6a7829722`，[Actions 42932555254](https://github.com/glwang-g/code-museum/actions/runs/42932555254)的build/deploy均成功。模型未发现明显问题时编辑区和检查头部为淡绿色，发现问题时浅红色，暗色主题使用低亮度对应色；其他状态保持中性。颜色绑定原语言/代码/预期缓存，编辑、切换和晚到返回不会给新稿沿用旧判断。当前接口没有严重度，不按问题数量加深红。
+
+124项默认回归、离线构建及本机/正式Chrome各18项通过，宽窄明暗代表截图已核读。颜色验收明确拦截模型响应，未新增真实模型调用或远端执行，只运行固定JavaScript输出7。638文件/35,718,151字节逐一核对，清单SHA-256 `cda32214be9f962f6523708f953a7c3b3fb680082dc2a6d835ade89995a24dbf`。原模型源码及模型/执行网关/worker/隧道PID未变，56门和五会话元数据正常。证据见 [发布记录](../data/audit/review-feedback-deployment.json)。回退可切回保留的 `4b69121be6eef0d10b7efc1835d1bbb1eac2db50`，按原激活流程重启analytics并检查首页及loopback4180健康响应；保留独立模型、执行服务和活数据库。
+
 ## 2026-11-11 出处目录与Safari按钮兼容发布
 
 正式release为 `4b69121be6eef0d10b7efc1835d1bbb1eac2db50`，[Actions 42853406444](https://github.com/glwang-g/code-museum/actions/runs/42853406444)的build/deploy均成功。出处页提供62项目录、本地模糊搜索/分类及独立滚动详情；通用控件在输入框失焦后缺少原生click时补发一次，原生点击优先，并保留拖动、禁用、修饰键、触屏和键盘语义。124项默认测试、离线构建通过；本机与正式Chrome均通过22项控件和16项出处检查，正式固定讲解17项通过，代表宽窄明暗截图已核读。Chrome事件重放不等于用户Safari触控板实机验收。
