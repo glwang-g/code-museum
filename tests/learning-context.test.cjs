@@ -8,6 +8,8 @@ test('same-task comparison retains a previous partner and validates language and
  assert.deepEqual(comparisonFor(lessons,'c','collections'),{left:'c',right:'cpp',topic:'collections'});
  assert.equal(comparisonFor(lessons,'bcpl','loops'),null);
  assert.equal(topicFor(lessons,'javascript','invented'),'functions');
+ assert.equal(topicFor(lessons,'javascript','default'),'default');
+ assert.equal(comparisonFor(lessons,'javascript','default').topic,'functions');
  assert.equal(topicFor(lessons,'bcpl','loops'),'default');
  assert.notEqual(comparisonFor(lessons,'python','functions',{left:'python',right:'python'}).right,'python');
 });

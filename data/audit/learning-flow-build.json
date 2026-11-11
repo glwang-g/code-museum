@@ -1,15 +1,15 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-11-11T10:46:18.476Z",
+  "checkedAt": "2026-11-11T10:52:04.323Z",
   "defaultTests": 128,
   "localBrowserChecks": {
     "fullGallery": 88,
-    "learningFlow": 12
+    "learningFlow": 13
   },
   "release": {
     "files": 1270,
-    "totalBytes": 71405978,
-    "manifestSha256": "fdff20bf2a4f22173cd214c511905219138ba482a361c114497c4b8a52e001f9"
+    "totalBytes": 71406844,
+    "manifestSha256": "945b6a2c2338747c393db1fe5f561cd9a624d63388ada262c56ab8421ec4c8cf"
   },
   "classic": {
     "files": 638,

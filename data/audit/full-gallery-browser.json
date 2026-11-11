@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-11-11T10:45:03.402Z",
+  "checkedAt": "2026-11-11T10:51:31.426Z",
   "browser": "Chrome/157.0.8103.39",
   "origin": "http://127.0.0.1:4191",
   "liveGateway": false,
@@ -564,7 +564,7 @@
   ],
   "inputs": {
     "src/index.html": "a0834731d18d78e9de3f83e41f04cd6b66ad4d5322465cbf38d04cec4c6b87da",
-    "src/gallery.js": "6803d09b143fb02aecb04a7ac8b477d725a6fda0a90fab66254a8b8bcd789c83",
+    "src/gallery.js": "147f509121e4554e704f1c8111e36d6c4f3718bdd8cdfdb503b7091030473856",
     "src/gallery.css": "35cf3ca6f43ea3cf4fb1db3317779fa8550f90b2163a86f037fc23290909c177",
     "src/navigation.js": "b8da269c62a3f27bacf694a391e3f2e41b7896c0c6be7eeb067d0ebdf5d6ed72",
     "src/navigation-state.js": "ad5fa42030f3f9b174b8817ff005f01eb52cee3d50c0d4308fa8edd10c5371de",
