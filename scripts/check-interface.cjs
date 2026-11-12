@@ -1,9 +1,10 @@
 // Opt-in interface inspection in isolated installed Chrome; all effects stay local.
 const fs = require('node:fs'), crypto = require('node:crypto'), assert = require('node:assert/strict');
 const {withBrowser} = require('./browser-harness.cjs');
-const origin = process.env.INTERFACE_ORIGIN || 'http://127.0.0.1:4191';
+const live = process.env.INTERFACE_LIVE === '1';
+const origin = process.env.INTERFACE_ORIGIN || (live ? 'https://codemuseum.freexlib.com' : 'http://127.0.0.1:4191');
 const fixture = `window.__modelCalls=0;window.__remoteCalls=0;const f=window.fetch;window.fetch=(url,o={})=>{if(String(url)==='/api/explanations'){__modelCalls++;return Promise.reject(new Error('No model requests in interface inspection'))}if(String(url)==='/api/executions'&&o.method==='POST'){__remoteCalls++;return Promise.reject(new Error('No remote submissions in interface inspection'))}return f(url,o)}`;
-withBrowser({origin,output:'tmp/interface-refresh-browser',ready:"document.readyState==='complete'&&!!window.MUSEUM_GALLERY?.ready",fixture}, async h => {
+withBrowser({origin,output:'tmp/interface-refresh-'+(live?'production':'browser'),ready:"document.readyState==='complete'&&!!window.MUSEUM_GALLERY?.ready",fixture}, async h => {
   const checks=[], samples=[];
   const record=(name,extra)=>checks.push({name,...extra,passed:true});
   const go=async hash=>{await h.evaluate('location.hash='+JSON.stringify(hash));await h.delay(120)};
@@ -18,7 +19,7 @@ withBrowser({origin,output:'tmp/interface-refresh-browser',ready:"document.ready
     const lum=c=>c.slice(0,3).map(v=>v/255).map(v=>v<=.04045?v/12.92:((v+.055)/1.055)**2.4).reduce((s,v,i)=>s+v*[.2126,.7152,.0722][i],0);
     return selectors.flatMap(selector=>[...document.querySelectorAll(selector)].filter(e=>e.getClientRects().length).slice(0,6).map(e=>{
       const c=getComputedStyle(e), b=bg(e), f=blend(parse(c.color),b), l=[lum(f),lum(b)].sort((a,b)=>a-b),r=e.getBoundingClientRect();
-      return {selector,text:e.textContent.trim().slice(0,45),font:parseFloat(c.fontSize),contrast:+((l[1]+.05)/(l[0]+.05)).toFixed(3),x:r.x,y:r.y,width:r.width,height:r.height};
+      return {selector,text:e.textContent.trim().slice(0,45),font:parseFloat(c.fontSize),contrast:+((l[1]+.05)/(l[0]+.05)).toFixed(3),backgroundLuminance:+lum(b).toFixed(4),x:r.x,y:r.y,width:r.width,height:r.height};
     }));
   }
   const inspect=selectors=>h.evaluate('('+measure.toString()+')('+JSON.stringify(selectors)+')');
@@ -30,6 +31,10 @@ withBrowser({origin,output:'tmp/interface-refresh-browser',ready:"document.ready
     for(const m of gallery){assert.ok(m.font>=12,JSON.stringify(m));assert.ok(m.contrast>=4.5,JSON.stringify({width,theme,...m}))}
     assert.equal(await h.evaluate('document.documentElement.scrollWidth<=innerWidth'),true);
     record('Gallery copy, cards and selected navigation have readable type and contrast',{width,theme});samples.push({width,theme,view:'gallery',measurements:gallery});
+    const exhibition=await inspect(['.exhibition','.specimen','.exhibit-kicker','.exhibit-copy h2','#exhibit-description','#read-exhibit','#try-exhibit','.specimen-code > div','.specimen-code pre','.specimen-code p','.exhibit-index button','.exhibit-index button strong','.exhibit-footer']);
+    for(const m of exhibition.filter(m=>!['.exhibition','.specimen'].includes(m.selector)))assert.ok(m.contrast>=4.5,JSON.stringify({width,theme,...m}));
+    for(const m of exhibition.filter(m=>['.exhibition','.specimen'].includes(m.selector)))assert.ok(theme==='light'?m.backgroundLuminance>.65:m.backgroundLuminance<.15,JSON.stringify({width,theme,...m}));
+    record('Exhibition and code sample follow the theme; text, selected years and actions retain readable contrast',{width,theme});samples.push({width,theme,view:'exhibition',measurements:exhibition});
     const order=await h.evaluate("[...document.querySelectorAll('.section-nav a')].filter(e=>e.getClientRects().length).map(e=>e.id)");
     assert.deepEqual(order,['gallery-view','catalogue-view','timeline-view','lineage-view']);
     const main=await h.evaluate("[...document.querySelectorAll('[data-main-nav]')].map(e=>{const r=e.getBoundingClientRect();return {section:e.dataset.mainNav,x:r.x,y:r.y,width:r.width,height:r.height,hit:e.contains(document.elementFromPoint(r.x+r.width/2,r.y+r.height/2))}})");
@@ -70,6 +75,6 @@ withBrowser({origin,output:'tmp/interface-refresh-browser',ready:"document.ready
   }
   assert.equal(await h.evaluate('__modelCalls'),0);assert.equal(await h.evaluate('__remoteCalls'),0);
   const inputs=['src/index.html','src/gallery.js','src/interface.css','src/gallery.css','scripts/check-interface.cjs','scripts/browser-harness.cjs'];
-  const report={schemaVersion:1,checkedAt:new Date().toISOString(),browser:h.browserVersion,origin,scope:'Local isolated Chrome. Four widths and both themes. Computed typography, composited sRGB text contrast, navigation order, control geometry and independent scrolling. No live model or remote execution. Responsive emulation, not physical Safari.',checks,samples,inputs:Object.fromEntries(inputs.map(file=>[file,crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex')]))};
-  fs.writeFileSync('data/audit/interface-refresh-browser.json',JSON.stringify(report,null,2)+'\n');console.log('PASS '+checks.length+' interface readability checks');
+  const report={schemaVersion:1,checkedAt:new Date().toISOString(),browser:h.browserVersion,origin,scope:(live?'Production HTTPS inspected in isolated Chrome.':'Local isolated Chrome.')+' Four widths and both themes. Computed typography, composited sRGB text contrast, navigation order, control geometry and independent scrolling. No live model or remote execution. Responsive emulation, not physical Safari.',checks,samples,inputs:Object.fromEntries(inputs.map(file=>[file,crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex')]))};
+  fs.writeFileSync('data/audit/interface-refresh-'+(live?'production':'browser')+'.json',JSON.stringify(report,null,2)+'\n');console.log('PASS '+checks.length+' interface readability checks');
 }).catch(e=>{console.error(e.stack);process.exitCode=1});

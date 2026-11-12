@@ -2,7 +2,7 @@
   "name": "code-museum",
   "version": "0.1.0",
   "private": true,
-  "description": "FreeXLib programming language museum — reproducible static site",
+  "description": "FreeXLib programming language exploration and experimentation — reproducible static site",
   "engines": {
     "node": ">=22"
   },

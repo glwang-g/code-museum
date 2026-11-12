@@ -110,24 +110,33 @@ body.ui-gallery {
 .ui-gallery .intro-note { min-width: 0; padding-left: 24px; }
 .ui-gallery .intro-note p { font-size: 15px; line-height: 1.85; }
 .ui-gallery .intro-note a { font-size: 14px; margin-top: 14px; }
-.ui-gallery .exhibition { border-radius: var(--radius-lg); }
-.ui-gallery .exhibit-kicker { font-size: 11px; color: #d0c6b5; letter-spacing: .8px; }
+.ui-gallery .exhibition { border-radius: var(--radius-lg); border: 1px solid var(--line); background: var(--panel); color: var(--ink); }
+.ui-gallery .exhibit-kicker { font-size: 11px; color: var(--muted); letter-spacing: .8px; }
 .ui-gallery .exhibit-copy { padding: 32px; }
 .ui-gallery .exhibit-copy h2 { font-size: 32px; line-height: 1.4; margin-top: 20px; }
-.ui-gallery #exhibit-description { font-size: 15px; color: #d0d9ce; line-height: 1.85; }
+.ui-gallery #exhibit-description { font-size: 15px; color: var(--muted); line-height: 1.85; }
 .ui-gallery .exhibit-actions { gap: 16px; margin-top: 22px; }
 .ui-gallery .exhibit-actions button { min-height: 42px; font-size: 14px; padding: 11px 17px; border-radius: var(--radius-sm); }
-.ui-gallery #read-exhibit { background: #eac1a0; color: #28342b; border-color: transparent; font-weight: 600; }
-.ui-gallery #read-exhibit:hover { background: #f5d5b9; }
-.ui-gallery #try-exhibit { color: #f0e8d8; }
-.ui-gallery #try-exhibit:hover { background: #ffffff12; }
+.ui-gallery #read-exhibit { background: var(--green); color: var(--panel); border-color: transparent; font-weight: 600; }
+.ui-gallery #read-exhibit:hover { background: var(--ink); }
+.ui-gallery #try-exhibit { color: var(--green); }
+.ui-gallery #try-exhibit:hover { background: var(--green-soft); color: var(--green); }
+.ui-gallery .specimen { background: var(--editor-bg); }
+.ui-gallery .specimen::before { background-image: linear-gradient(var(--editor-line) 1px, transparent 1px), linear-gradient(90deg, var(--editor-line) 1px, transparent 1px); opacity: .2; }
+.ui-gallery .specimen-glyph { color: var(--editor-ink); opacity: .06; }
 .ui-gallery .specimen-code { padding: 30px; }
-.ui-gallery .specimen-code > div, .ui-gallery .specimen-code p { font-size: 12px; color: #c2d0bd; }
-.ui-gallery .specimen-code pre { font-size: 13px; line-height: 1.85; }
-.ui-gallery .exhibit-index button { padding: 16px 22px; color: #e0e7da; }
+.ui-gallery .specimen-code > div, .ui-gallery .specimen-code p { font-size: 12px; color: var(--editor-muted); }
+.ui-gallery .specimen-code > div { border-bottom-color: var(--editor-line); }
+.ui-gallery .specimen-code pre { font-size: 13px; line-height: 1.85; color: var(--editor-ink); scrollbar-color: var(--editor-muted) transparent; }
+.ui-gallery .exhibit-index { border-top-color: var(--line); background: var(--surface-soft); }
+.ui-gallery .exhibit-index button { padding: 16px 22px; color: var(--ink); border-right-color: var(--line); }
+.ui-gallery .exhibit-index button strong { color: var(--ink); }
+.ui-gallery .exhibit-index button:hover { background: var(--editor-chrome); color: var(--ink); }
+.ui-gallery .exhibit-index button[aria-pressed="true"] { background: var(--green-soft); border-bottom-color: var(--green); }
+.ui-gallery .exhibit-index button[aria-pressed="true"] strong { color: var(--green); }
 .ui-gallery .exhibit-index button span { font-size: 13px; }
 .ui-gallery .exhibit-index button strong { font-size: 27px; }
-.ui-gallery .exhibit-footer { font-size: 12px; line-height: 1.65; color: #bdcbb5; padding: 12px 22px; }
+.ui-gallery .exhibit-footer { font-size: 12px; line-height: 1.65; color: var(--muted); padding: 12px 22px; border-top-color: var(--line); }
 .ui-gallery .chapter-switch { gap: 8px; border: 0; margin: 12px 0 36px; }
 .ui-gallery .chapter-switch button, .ui-gallery .chapter-switch button:first-child, .ui-gallery .chapter-switch button:last-child {
   border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 14px; font-size: 13px; gap: 10px; background: var(--panel);

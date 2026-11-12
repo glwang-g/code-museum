@@ -1,12 +1,12 @@
-# Code Museum
+# Code Museum · 编程语言探索与实验
 
-**The Museum of Programming Languages** — 一座可以漫游、检索、比较和动手运行的编程语言博物馆。
+读懂语言的设计，比较不同的表达，亲手验证代码。
 
 [进入正式网站](https://codemuseum.freexlib.com) · [查看源码仓库](https://github.com/glwang-g/code-museum) · [在线阅读本文档](https://github.com/glwang-g/code-museum/blob/master/README.md)
 
 ## 这是一个什么项目
 
-Code Museum 把编程语言当作一座可以探索的博物馆：你可以沿着时间长河浏览语言，打开关系谱系查看设计来源，搜索完整馆藏，比较不同语言解决同一问题的方式，也可以在实验台中编辑并运行一部分真实代码。
+Code Museum 帮助你探索编程语言的设计与实践：你可以沿着时间长河浏览语言，打开关系谱系查看设计来源，搜索完整馆藏，比较不同语言解决同一问题的方式，也可以在实验台中编辑并运行一部分真实代码。
 
 项目的核心想法很简单：语言之间的关系应该有出处，运行结果应该来自真实环境，缺少证据的地方应该明确标成待核，而不是用看起来合理的故事填满地图。
 
