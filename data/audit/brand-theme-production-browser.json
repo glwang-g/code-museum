@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-12T04:19:33.509Z",
+  "browser": "Chrome/157.0.8103.78",
+  "origin": "https://codemuseum.freexlib.com",
+  "contentSha256": "c44ec9c9fb93ece4984d1f02814c934d663c8534c0191cf11d7075307ce3b1a7",
+  "scope": "One-off production HTTPS inspection in isolated Chrome: five responsive widths and both themes, actual theme control and hover input. No live model call, remote execution or Worker submission. Responsive emulation, not physical Safari.",
+  "checks": [
+    {
+      "name": "Complete current branding, theme control, unchanged selected exhibit/source, navigation hit regions and hovered contrast",
+      "width": 1440,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Complete current branding, theme control, unchanged selected exhibit/source, navigation hit regions and hovered contrast",
+      "width": 1440,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Complete current branding, theme control, unchanged selected exhibit/source, navigation hit regions and hovered contrast",
+      "width": 900,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Complete current branding, theme control, unchanged selected exhibit/source, navigation hit regions and hovered contrast",
+      "width": 900,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Complete current branding, theme control, unchanged selected exhibit/source, navigation hit regions and hovered contrast",
+      "width": 768,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Complete current branding, theme control, unchanged selected exhibit/source, navigation hit regions and hovered contrast",
+      "width": 768,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Complete current branding, theme control, unchanged selected exhibit/source, navigation hit regions and hovered contrast",
+      "width": 390,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Complete current branding, theme control, unchanged selected exhibit/source, navigation hit regions and hovered contrast",
+      "width": 390,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Complete current branding, theme control, unchanged selected exhibit/source, navigation hit regions and hovered contrast",
+      "width": 320,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Complete current branding, theme control, unchanged selected exhibit/source, navigation hit regions and hovered contrast",
+      "width": 320,
+      "theme": "dark",
+      "passed": true
+    }
+  ],
+  "inputs": {
+    "src/index.html": "8d5ad2875ae13456b875fe552506e45bfafb93c46bf391b92ef7e4359019b5f8",
+    "src/interface.css": "47e6c9dfc5e6d9aa2dac0b978214851f52850cc7c52bd79cdf0c2f984baafc06",
+    "src/gallery.js": "3ac891f058a7345bc707566d13e7b3ac90a9a1e5fd49c6454afaa1328846fb82",
+    "src/theme.js": "da9661e20f0c9050a4d456d422099bf52795e8f6795811672e32851e38706445",
+    "scripts/browser-harness.cjs": "f39547b4f9870cab90dc339af22d833c9b4c9d486a1f90397b0eb832033f77fb"
+  }
+}

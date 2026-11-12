@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-12T04:21:58.006018+00:00",
+  "commit": "9b710785be533f183fa6cba73269c079074bda34",
+  "actions": {
+    "id": 43153473121,
+    "url": "https://github.com/glwang-g/code-museum/actions/runs/43153473121",
+    "build": "success",
+    "deploy": "success"
+  },
+  "scope": "Current Chinese brand subtitle and document metadata, plus home exhibition surfaces/text/actions/year index following the selected theme. Existing navigation, source examples, full catalogue, fixed classic UI and runtime services preserved. Ordinary-site release only.",
+  "brand": "Code Museum · 编程语言探索与实验",
+  "defaultTests": 133,
+  "ciDefaultTests": {
+    "tests": 133,
+    "pass": 133,
+    "fail": 0,
+    "skipped": 0
+  },
+  "localInterfaceChecks": 56,
+  "productionBrowserChecks": {
+    "interfaceReadability": 56,
+    "brandingThemeControl": 10
+  },
+  "releaseChecks": {
+    "checkedAt": "2026-11-12T04:19:20.629108+00:00",
+    "release": "/var/www/code-museum/releases/9b710785be533f183fa6cba73269c079074bda34",
+    "filesVerified": 1276,
+    "totalBytes": 71523338,
+    "manifestSha256": "2b98b8ee2be8ee7ab4b1721da63341a409b67c42b3ad3d1e9e12932f468be3d7",
+    "units": {
+      "code-museum-explanation.service": {
+        "MainPID": "2286506",
+        "ActiveState": "active"
+      },
+      "code-museum-execution-gateway.service": {
+        "MainPID": "1969690",
+        "ActiveState": "active"
+      },
+      "code-museum-worker@xshow.service": {
+        "MainPID": "1969684",
+        "ActiveState": "active"
+      },
+      "code-museum-execution-tunnel.service": {
+        "MainPID": "1789185",
+        "ActiveState": "active"
+      },
+      "code-museum-analytics.service": {
+        "MainPID": "2823549",
+        "ActiveState": "active"
+      }
+    },
+    "protectedServicesUnchanged": true,
+    "modelHealth": {
+      "available": true,
+      "model": "deepseek-flash",
+      "schemaVersion": 2,
+      "promptVersion": "museum-review-v2"
+    },
+    "analyticsHealth": 204,
+    "remoteLanguages": 56,
+    "guestMaxSessions": 5,
+    "resourceReuse": {
+      "unchangedFiles": 1269,
+      "hardlinkedFiles": 1269,
+      "hardlinkedBytes": 71427001,
+      "previousReleaseFilesVerified": 1276,
+      "previousReleaseBytesUnchanged": true,
+      "freeBytesAfter": 83841024
+    },
+    "passed": true,
+    "node2": {
+      "MainPID": "198180",
+      "ActiveState": "active"
+    }
+  },
+  "classicPreservation": {
+    "siteFiles": 626,
+    "totalBytes": 35538465,
+    "unchanged": true
+  },
+  "transfer": {
+    "changedFiles": 7,
+    "changedFileBytes": 96337,
+    "unchangedFiles": 1269,
+    "historicalReleasesRetained": true
+  },
+  "ciReproduction": "Clean Actions checkout passed offline reproducibility tests and build; every installed CI artifact file and its manifest matched the tested local package. No separate local Git-archive build is claimed.",
+  "reports": [
+    "data/audit/interface-refresh-production.json",
+    "data/audit/brand-theme-production-browser.json"
+  ],
+  "executionScope": "No code execution or live model calls in this release acceptance. Runtime verification is read-only health/metadata: 56 remote languages, guest limit of five active sessions, unchanged protected service PIDs. Previous runtime acceptance remains separately recorded.",
+  "visualInspection": [
+    "Production 1440 light exhibition and current subtitle",
+    "Production 390 dark exhibition after actual theme control",
+    "Local desktop/mobile light/dark exhibition and code specimens"
+  ],
+  "rollback": "Restore retained c22dad1504c9baeed7d6d21e0aa46e4c8d1ee308 using the existing activation procedure while retaining independent model/executor services and live databases."
+}
