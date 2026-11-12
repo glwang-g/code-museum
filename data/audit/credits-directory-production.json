@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-11-11T11:52:33.567Z",
-  "browser": "Chrome/157.0.8103.39",
+  "checkedAt": "2026-11-12T03:19:54.400Z",
+  "browser": "Chrome/157.0.8103.78",
   "origin": "https://codemuseum.freexlib.com",
-  "contentSha256": "49ba114c02b5e2efaf1a85f58d8aec44151cc926f05502e2f7946a3238bdbbe3",
+  "contentSha256": "746f00a1f6cf628fa340524e35b4231cb0620406c0b0b5e5ef6efe40c60fe143",
   "scope": "Actual Chrome directory, fuzzy search, complete source entries, links, keyboard, focus-loss taps, responsive layout and independent scrolling. No external model call or remote execution submitted.",
   "checks": [
     {
@@ -90,12 +90,13 @@
     }
   ],
   "inputs": {
+    "src/interface.css": "565cb99fd5ad3b58f8d6d5f5171e413ce888a0d3ff9a4ad5cc206521c6189b17",
     "src/credits.js": "6e2b3106d474bf6dbaaca279b9dca2798e9ab2ad6a22f4fcb001037f81414ab4",
     "src/credits-search.js": "308cf7c209d7ea97342479b81e870b45d91fcb96510b30a83cf54239594f1eca",
     "src/credits.css": "03001582d9f9969f1e2cc537e3225b89c530713978f70c33537fca616cafdecb",
-    "src/navigation.js": "9f88bcb8f4d8ea1cd29d28c125717d638ced8944552eae5f782796e317755b04",
-    "src/index.html": "1d00aa701529b5138216f8f3ef577b30e60eb3e46f6e5e1ed90bfacff4d74708",
-    "scripts/check-credits-browser.cjs": "72853f0aca302ed508d8cd9350cc4ed6d096c18744cf4bd6c7e554f8acff668d",
+    "src/navigation.js": "0b7629da17c579ded43400ad65c7d02b9b7cc8891c6b3586a595ef87e6950a36",
+    "src/index.html": "811e695c738cea4367a7c9cbb93444a7724ef925701ad69c5c6584acabd2da43",
+    "scripts/check-credits-browser.cjs": "469c6a35aa3c25f9dc0723e4c8881f26028d00dcfa38f0f0e6406dff7047cdaf",
     "scripts/browser-harness.cjs": "f39547b4f9870cab90dc339af22d833c9b4c9d486a1f90397b0eb832033f77fb"
   }
 }

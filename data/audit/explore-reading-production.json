@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-11-11T11:52:44.838Z",
+  "checkedAt": "2026-11-12T03:20:15.896Z",
   "origin": "https://codemuseum.freexlib.com",
-  "browser": "Chrome/157.0.8103.39",
+  "browser": "Chrome/157.0.8103.78",
   "scope": "Actual isolated Chrome native mouse input; no execution or model calls. Responsive layout emulation, not Safari trackpad hardware. All dated map nodes and full evidence audit retained.",
   "checks": [
     {
@@ -79,15 +79,16 @@
     }
   ],
   "inputs": {
+    "src/interface.css": "565cb99fd5ad3b58f8d6d5f5171e413ce888a0d3ff9a4ad5cc206521c6189b17",
     "src/explore.js": "e81b5ddf1b052b131bd1a8f79ae91a72223c27ce9ebf295dc869b20929f27686",
     "src/explore-state.js": "fe19bf4e19396ea89fda4dd344dd4b410966e6fe8cd1773d85b7b22190c3ccac",
-    "src/gallery.js": "2b284c1ce95d571e76c6f378830ba8f4f2e89de009a7200cb93c7de3d5a7fe89",
+    "src/gallery.js": "3ac891f058a7345bc707566d13e7b3ac90a9a1e5fd49c6454afaa1328846fb82",
     "src/gallery.css": "3e8bf08b8bb1243659377c28750be1efc9d9e7dbe345f9fad34c6ff4afa6077f",
-    "src/index.html": "1d00aa701529b5138216f8f3ef577b30e60eb3e46f6e5e1ed90bfacff4d74708",
-    "src/museum.js": "195d3868a4709d396f30be8b1f4ea7b7164804c702eaea8eaae242417812339b",
-    "src/navigation.js": "9f88bcb8f4d8ea1cd29d28c125717d638ced8944552eae5f782796e317755b04",
+    "src/index.html": "811e695c738cea4367a7c9cbb93444a7724ef925701ad69c5c6584acabd2da43",
+    "src/museum.js": "9d706a97bf851c7add2eb7b11d5184e6d241a9e480f63edef8244433376d65b9",
+    "src/navigation.js": "0b7629da17c579ded43400ad65c7d02b9b7cc8891c6b3586a595ef87e6950a36",
     "src/navigation-state.js": "1f7a487e95d1907c251b7fd26dd0bdd830252b89337ba987fb54c6b691c42fd6",
     "src/learning-guide.js": "7bed5a4357faedf3bb9e9d70d56de1fbf57cf4363d92daa0c93825bfd82aa661",
-    "scripts/check-explore-reading.cjs": "204e56920f5465fa96463d9c4b1be8b3bb65b28ca9a667d41e6e962d0e8f64d4"
+    "scripts/check-explore-reading.cjs": "d89aa174e5ec869546f4c83ea53672452d4a5e325531905d0d07e90958a488cf"
   }
 }

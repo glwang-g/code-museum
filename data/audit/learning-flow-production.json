@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-11-11T11:52:43.951Z",
+  "checkedAt": "2026-11-12T03:20:23.466Z",
   "origin": "https://codemuseum.freexlib.com",
-  "browser": "Chrome/157.0.8103.39",
+  "browser": "Chrome/157.0.8103.78",
   "scope": "Installed headless Chrome; native mouse/keyboard input at 1440/390/320. Mobile layout emulation, not physical Safari. Real JavaScript Worker. Execution/model submissions prohibited during navigation; no provider calls.",
   "checks": [
     {
@@ -26,19 +26,39 @@
       "passed": true
     },
     {
-      "name": "Persistent utilities and native footer clicks avoid fixed-bottom interception at 1440 px",
+      "name": "Three sections expose only their own children; laboratory feedback retains its parent and draft at 1440 px",
       "passed": true
     },
     {
-      "name": "Persistent utilities and native footer clicks avoid fixed-bottom interception at 390 px",
+      "name": "Section entry retains the current task for comparison; footer and sticky navigation stay reachable at 1440 px",
       "passed": true
     },
     {
-      "name": "Persistent utilities and native footer clicks avoid fixed-bottom interception at 320 px",
+      "name": "Three sections expose only their own children; laboratory feedback retains its parent and draft at 390 px",
       "passed": true
     },
     {
-      "name": "Mobile keyboard tab navigation skips hidden exploration tabs and keeps a visible tab stop",
+      "name": "Section entry retains the current task for comparison; footer and sticky navigation stay reachable at 390 px",
+      "passed": true
+    },
+    {
+      "name": "Three sections expose only their own children; laboratory feedback retains its parent and draft at 320 px",
+      "passed": true
+    },
+    {
+      "name": "Section entry retains the current task for comparison; footer and sticky navigation stay reachable at 320 px",
+      "passed": true
+    },
+    {
+      "name": "Primary and secondary page links use native Tab and Enter; changing a learning child keeps Learning selected",
+      "passed": true
+    },
+    {
+      "name": "Reloading a learning child restores both parent and child without relying on the previously visited section",
+      "passed": true
+    },
+    {
+      "name": "Back, Forward and refresh restore primary selection without assigning site information to the exhibition",
       "passed": true
     },
     {
@@ -59,15 +79,16 @@
     }
   ],
   "inputs": {
-    "src/gallery.js": "2b284c1ce95d571e76c6f378830ba8f4f2e89de009a7200cb93c7de3d5a7fe89",
+    "src/interface.css": "565cb99fd5ad3b58f8d6d5f5171e413ce888a0d3ff9a4ad5cc206521c6189b17",
+    "src/gallery.js": "3ac891f058a7345bc707566d13e7b3ac90a9a1e5fd49c6454afaa1328846fb82",
     "src/gallery.css": "3e8bf08b8bb1243659377c28750be1efc9d9e7dbe345f9fad34c6ff4afa6077f",
-    "src/index.html": "1d00aa701529b5138216f8f3ef577b30e60eb3e46f6e5e1ed90bfacff4d74708",
-    "src/navigation.js": "9f88bcb8f4d8ea1cd29d28c125717d638ced8944552eae5f782796e317755b04",
+    "src/index.html": "811e695c738cea4367a7c9cbb93444a7724ef925701ad69c5c6584acabd2da43",
+    "src/navigation.js": "0b7629da17c579ded43400ad65c7d02b9b7cc8891c6b3586a595ef87e6950a36",
     "src/navigation-state.js": "1f7a487e95d1907c251b7fd26dd0bdd830252b89337ba987fb54c6b691c42fd6",
     "src/learning-context.js": "cb27acc551f5d3f07d1923133d8e762ba582cfdb5c45a31d97d1d65541f94270",
     "src/compare.js": "46d390f7eb17e8b8aac310190485788a28fae2692369963aadf45df3a38a8a5a",
-    "src/museum.js": "195d3868a4709d396f30be8b1f4ea7b7164804c702eaea8eaae242417812339b",
-    "scripts/check-learning-flow.cjs": "7fb72a82ae24b0cc46f1c107a204d1a33a6acf3ee1cf46f2f6bf3f083ae095c4",
+    "src/museum.js": "9d706a97bf851c7add2eb7b11d5184e6d241a9e480f63edef8244433376d65b9",
+    "scripts/check-learning-flow.cjs": "4ebd8f0f0d4c9c106b10a31c65a2b9468f979d49d980a86f4caf17a3e65c0651",
     "scripts/browser-harness.cjs": "f39547b4f9870cab90dc339af22d833c9b4c9d486a1f90397b0eb832033f77fb"
   }
 }

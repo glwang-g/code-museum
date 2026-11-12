@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-12T03:23:55.839746+00:00",
+  "commit": "c22dad1504c9baeed7d6d21e0aa46e4c8d1ee308",
+  "actionsId": 43146764480,
+  "scope": "Clean GitHub Actions checkout ran the offline reproducibility tests and build. The installed CI-deployed artifact manifest and every file were compared with the tested local package; no separate local Git archive build is claimed.",
+  "defaultTests": {
+    "tests": 133,
+    "pass": 133,
+    "fail": 0,
+    "skipped": 0
+  },
+  "files": 1276,
+  "totalBytes": 71520984,
+  "manifestSha256": "14b5b776d178bfb39ec40e3b44cce596f4da9f2c963db6ea6d0cd35fce533b2d",
+  "passed": true
+}

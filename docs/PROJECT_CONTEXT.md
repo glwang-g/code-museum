@@ -1,6 +1,6 @@
 # Code Museum · 产品上下文与交接
 
-## 2026-11-12 恢复真正的分级导航（本地）
+## 2026-11-12 分级导航与界面统一已正式发布
 
 用户明确指出五入口平铺偏离了减少常显选项、建立分级的初衷，要求先改一版本地查看；之前提交推送的工作在实际提交前停止。本轮采用“探索／学习／实验室”三个一级分区。探索二级为主题展厅、全量馆藏、时间长河、关系谱系；学习二级为学习导览、语言对比。二级栏目仅在所属分区显示，换学习子栏目保持学习选中，不再归到展厅。实验室没有额外的全站子栏目，内部运行结果／检查与讲解保留为局部反馈页签。“出处”继续在右上角，属于独立的全站资料入口。
 
@@ -8,7 +8,11 @@
 
 公开URL、完整馆藏和固定原版继续保留；从阅读或实验室进入学习，再选择语言对比时保留当前语言与题目，普通跨区操作保留本机草稿。133项默认测试、离线构建通过；真实Chrome整站88、学习路径18、界面48、探索18、控件22、出处16，共210项通过，六份报告记录的输入哈希与当前源码一致。新增核对各视图的父级与子级、不同分区下隐藏无关栏目、两层原生链接键盘操作、学习子栏目刷新恢复及任务传递；导航不调用模型或执行程序，保留的草稿在明确运行后真实输出42。模型展示用夹具，不调用真实提供方。
 
-桌面探索与语言对比、手机导览、探索暗色和320px实验室等代表截图已实际核读；固定原版626个站点文件逐一匹配既有正式发布包。当前仅提供 <http://127.0.0.1:4194/> 本地预览，未提交、推送或部署。最新报告见 [学习路径](../data/audit/learning-flow-browser.json)、[界面](../data/audit/interface-refresh-browser.json)、[整站](../data/audit/full-gallery-browser.json)、[探索](../data/audit/explore-reading-browser.json)、[控件](../data/audit/control-activation-browser.json)和[出处](../data/audit/credits-directory-browser.json)；下面的平铺方案是已撤回的本地历史。
+桌面探索与语言对比、手机导览、探索暗色和320px实验室等本机代表截图已实际核读；固定原版626个站点文件逐一匹配既有正式发布包。用户随后明确授权推送部署，功能提交 `c22dad1504c9baeed7d6d21e0aa46e4c8d1ee308` 已由 [Actions 43146764480](https://github.com/glwang-g/code-museum/actions/runs/43146764480)构建、部署成功。CI干净检出同样通过133项测试；安装的CI发布包1276文件/71,520,984字节逐一匹配本地验收包，清单 `14b5b776d178bfb39ec40e3b44cce596f4da9f2c963db6ea6d0cd35fce533b2d`。本轮没有另做本机Git归档构建，公开提交复现依据是CI检出、离线复现测试、构建与正式安装文件核对。
+
+正式Chrome整站89、学习路径18、探索18、控件22、出处16，共163项通过；C/xshow和BCPL/xshow2各真实输出42，四个浏览器Worker与固定原版继续可用，未请求真实模型或重跑全部56门。正式1440亮色探索、390暗色语言对比及320亮色导览截图已实际核读。1261个未变文件全部硬链接复用，原1274文件release全部字节重验相同；没有删除历史发布、镜像或日志。模型、网关、双worker和隧道PID未变，analytics按既有发布流程重启并健康204；56门远端和5会话元数据正常，Nginx及私有配置未修改，也未发送留言或邮件。
+
+发布、复现与回退见 [本轮记录](../data/audit/hierarchy-navigation-deployment.json)及 [CI构建核对](../data/audit/hierarchy-ci-build.json)；最新正式报告见 [学习路径](../data/audit/learning-flow-production.json)、[整站](../data/audit/full-gallery-production.json)、[探索](../data/audit/explore-reading-production.json)、[控件](../data/audit/control-activation-production.json)和[出处](../data/audit/credits-directory-production.json)，本机另有 [48项界面检查](../data/audit/interface-refresh-browser.json)。4194本地预览继续保留；下面的平铺方案是未发布且已撤回的本地历史。
 
 ## 2026-11-12 五入口平铺尝试（已撤回的本地历史）
 

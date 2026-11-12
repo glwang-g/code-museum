@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-12T03:23:55.943448+00:00",
+  "commit": "c22dad1504c9baeed7d6d21e0aa46e4c8d1ee308",
+  "actions": {
+    "id": 43146764480,
+    "url": "https://github.com/glwang-g/code-museum/actions/runs/43146764480",
+    "build": "success",
+    "deploy": "success"
+  },
+  "scope": "Three primary sections with scoped Explore/Learn links and consistent typography, contrast and controls. Existing full catalogue, reading, task context, drafts and classic UI retained. Ordinary-site release only; no executor/model/config/image/Nginx upgrade, no message or email sent.",
+  "defaultTests": 133,
+  "localBrowserChecks": {
+    "fullGallery": 88,
+    "learningFlow": 18,
+    "interface": 48,
+    "exploration": 18,
+    "controlActivation": 22,
+    "creditsDirectory": 16
+  },
+  "productionBrowserChecks": {
+    "full-gallery": 89,
+    "learning-flow": 18,
+    "explore-reading": 18,
+    "control-activation": 22,
+    "credits-directory": 16
+  },
+  "releaseChecks": {
+    "checkedAt": "2026-11-12T03:19:19.063811+00:00",
+    "release": "/var/www/code-museum/releases/c22dad1504c9baeed7d6d21e0aa46e4c8d1ee308",
+    "filesVerified": 1276,
+    "totalBytes": 71520984,
+    "manifestSha256": "14b5b776d178bfb39ec40e3b44cce596f4da9f2c963db6ea6d0cd35fce533b2d",
+    "units": {
+      "code-museum-explanation.service": {
+        "MainPID": "2286506",
+        "ActiveState": "active"
+      },
+      "code-museum-execution-gateway.service": {
+        "MainPID": "1969690",
+        "ActiveState": "active"
+      },
+      "code-museum-worker@xshow.service": {
+        "MainPID": "1969684",
+        "ActiveState": "active"
+      },
+      "code-museum-execution-tunnel.service": {
+        "MainPID": "1789185",
+        "ActiveState": "active"
+      },
+      "code-museum-analytics.service": {
+        "MainPID": "2809071",
+        "ActiveState": "active"
+      }
+    },
+    "protectedServicesUnchanged": true,
+    "modelHealth": {
+      "available": true,
+      "model": "deepseek-flash",
+      "schemaVersion": 2,
+      "promptVersion": "museum-review-v2"
+    },
+    "analyticsHealth": 204,
+    "remoteLanguages": 56,
+    "guestMaxSessions": 5,
+    "resourceReuse": {
+      "unchangedFiles": 1261,
+      "hardlinkedFiles": 1261,
+      "hardlinkedBytes": 71196073,
+      "previousReleaseFilesVerified": 1274,
+      "previousReleaseBytesUnchanged": true,
+      "freeBytesAfter": 93155328
+    },
+    "passed": true,
+    "node2": {
+      "MainPID": "198180",
+      "ActiveState": "active"
+    }
+  },
+  "classicPreservation": {
+    "siteFiles": 626,
+    "totalBytes": 35538465,
+    "comparison": "Every dist/classic site file equals its corresponding file in the previous 0eb0bb2 ordinary release. The 626-site-file count excludes server extras from a standalone classic release.",
+    "unchanged": true
+  },
+  "ciBuild": "data/audit/hierarchy-ci-build.json",
+  "publicMetadata": "data/audit/hierarchy-production-consistency.json",
+  "transfer": {
+    "changedFiles": 15,
+    "changedFileBytes": 324911,
+    "unchangedFiles": 1261,
+    "removedFromNewRelease": [
+      "dist/data/build-info.4765918bcf55.js",
+      "dist/gallery.2b284c1ce95d.js",
+      "dist/messages.1e22f80394e2.js",
+      "dist/museum.195d3868a470.js",
+      "dist/navigation.9f88bcb8f4d8.js"
+    ],
+    "historicalReleasesRetained": true
+  },
+  "routing": "Explore: gallery/catalogue/river/lineage/read; Learn: guides/compare; Laboratory: lab. About is independent. Existing URLs and explicit run/model actions preserved.",
+  "executionScope": "Four real browser Workers and the retained classic UI; two known programs only, C on xshow and BCPL on xshow2, each printing 42. Model rendering uses explicit fixtures with no live provider call. This does not repeat all 56 remote language checks.",
+  "visualInspection": [
+    "Formal 1440 light exploration",
+    "Formal 390 dark language comparison",
+    "Formal 320 light learning guide",
+    "Local desktop/mobile light/dark component and navigation inspection"
+  ],
+  "rollback": "Retained 0eb0bb22ede183e4bee61b4ec4dd967e69072653 can be restored with the existing release activation procedure while keeping current independent execution/model services and live databases."
+}
