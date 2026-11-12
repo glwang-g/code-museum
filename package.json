@@ -48,6 +48,7 @@
     "modern:preview": "npm run build && node scripts/preview-modern.cjs",
     "gallery:preview": "npm run build && node scripts/preview-gallery.cjs",
     "site:browser": "node scripts/check-full-gallery.cjs",
+    "interface:browser": "node scripts/check-interface.cjs",
     "learning:browser": "node scripts/check-learning-flow.cjs",
     "platform:measure": "node scripts/measure-platform.cjs"
   }

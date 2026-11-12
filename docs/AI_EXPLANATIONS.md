@@ -1,8 +1,8 @@
 # 按需代码检查、讲解与纠错
 
-检查与纠错已随 `b6fe3f6` 正式部署，[Actions 42830035894](https://github.com/glwang-g/code-museum/actions/runs/42830035894)成功。115项默认回归、离线构建、本机及正式模型Chrome各15项和原有讲解Chrome17项通过；部署与回退见 [发布记录](../data/audit/ai-code-review-deployment.json)。原按需讲解首次发布证据保存在 [历史记录](../data/audit/ai-explanations-deployment.json)。
+检查与纠错首次随 `b6fe3f6` 正式部署，[Actions 42830035894](https://github.com/glwang-g/code-museum/actions/runs/42830035894)成功。当次115项默认回归、离线构建、本机及正式模型Chrome各15项和原有讲解Chrome17项通过，见 [首次发布记录](../data/audit/ai-code-review-deployment.json)。这些数量是该次验收快照；后续界面与正式版本见 [部署记录](DEPLOYMENT.md)。原按需讲解首次发布证据保存在 [历史记录](../data/audit/ai-explanations-deployment.json)。
 
-实验台保留馆内固定讲解；点击“检查并讲解当前代码”才向同源 `POST /api/explanations` 提交语言标识、编辑器里的完整代码及可选的“预期行为”。打开页面、编辑代码或预期、导入、恢复草稿、切换语言及显示/隐藏讲解均不调用模型。标准输入、运行结果和其他草稿不随请求发送。模型服务不执行代码，真实运行仍使用原有运行环境。
+实验台保留馆内固定讲解；正式版点击“检查代码”才向同源 `POST /api/explanations` 提交语言标识、编辑器里的完整代码及可选的“预期行为”，结果显示在“检查与讲解”页签。`/classic/`保留旧按钮文案“检查并讲解当前代码”。打开页面、编辑代码或预期、导入、恢复草稿、切换语言及显示/隐藏讲解均不调用模型。标准输入、运行结果和其他草稿不随请求发送。模型服务不执行代码，真实运行仍使用原有运行环境。
 
 模型固定为 `deepseek-flash`，显式设置 `thinking.type=disabled`、`stream=false`、`max_tokens=3200` 和 JSON 输出；不用工具、不自动重试请求。一次调用返回三类判断之一：`ok`仅表示未发现明显问题，展示1至8段原代码讲解；`issues`展示错误位置、原因及改进建议；`uncertain`说明还需确认的预期或上下文，不擅自补全业务规则。馆内固定讲解明确标为尚未进行模型检查。
 
@@ -42,7 +42,7 @@ sudo python3 install-explanation.py --bundle /path/to/reviewed-bundle \
   --manifest-sha256 <reviewed-manifest-hash> --site-sha256 <reviewed-site-hash>
 ```
 
-私有环境经标准输入提供，不能直接粘贴在shell命令中。回退时先恢复上个静态release，再 `systemctl disable --now code-museum-explanation.service`；将审查备份中的 `nginx-site` 恢复至 `/etc/nginx/sites-enabled/code-museum`，移除新增Nginx片段并执行 `nginx -t`、reload。保留私有环境和计数库，不删除双节点网关、worker或隧道配置。后续升级需要另行审查新源码及替换操作；首次安装器不会覆盖现有服务。
+私有环境经标准输入提供，不能直接粘贴在shell命令中。普通前端回退只切回经过核验的静态release，保留独立模型服务和现有Nginx配置。以下是**撤销首次模型服务安装**的操作边界，不是日常前端回退步骤：停用 `code-museum-explanation.service`，核对当前配置与备份差异后恢复安装前主站、移除本次新增片段，经 `nginx -t` 后reload；不能用旧主站备份覆盖后来新增的配置。保留私有环境和计数库，不删除双节点网关、worker或隧道配置。后续后端升级需要另行审查新源码及替换操作；首次安装器不会覆盖现有服务。
 
 检查功能的后端升级使用 `deploy/upgrade-explanation.py --source <审查后源码> --sha256 <新源码摘要> --previous-sha256 <当前源码摘要> --snippet-sha256 <当前模型片段摘要>`。它拒绝覆盖已改变的源码或Nginx片段，先在root0700目录备份两者；短暂关闭新模型请求、等待现有HTTP线程排空（最多45秒），只原子替换独立模型源码并重启该服务，经schemaVersion=2健康检查后恢复原片段。保留原单元、密钥和活计数库，原执行服务不变。升级异常时使用同一备份恢复源码及片段；不要倒灌旧数据库。新后端兼容旧页面请求，以诊断步骤供旧界面显示，避免部署窗口把有问题的代码标成检查通过。
 

@@ -2,7 +2,7 @@
 
 地图节点由语言证据筛选决定，常显文字只决定阅读密度。固定选择输入见 [label-selection.json](../../data/audit/label-selection.json)；更换榜单时须人工核对名称、方言、地图身份和来源，不在构建时联网下载。
 
-当前 230 个地图节点中，50 个常显名称：39 个来自 [TIOBE Index 2026 年 9 月官方前 50 名](https://www.tiobe.com/tiobe-index/)且已纳入本地图，10 个为有来源的历史叙事节点，另有 Groovy 用于阅读已核的 Java → Groovy 关系。其余 180 个是可点击的点。TIOBE 排名不证明编程语言身份，也不决定是否保留在馆藏。
+当前233个地图节点中，50个常显名称：39个来自固定的 [TIOBE Index 2026年9月官方前50名](https://www.tiobe.com/tiobe-index/)且已纳入本地图，10个为有来源的历史叙事节点，另有Groovy用于阅读已核的Java → Groovy关系。其余183个是可点击的点。榜单月份固定，不随官网当前月份自动变化；TIOBE排名不证明编程语言身份，也不决定是否保留在馆藏。
 
 TIOBE 前 50 名中的 11 个目前未映射为地图标签：Delphi/Object Pascal、Scratch、SAS、Caml、GML、ABAP、Transact-SQL、X++、LabVIEW、Ladder Logic、(Visual) FoxPro。`null` 表示本轮未建立已入图的准确对应，不等于它不是语言。尤其 Caml 与 OCaml、VBScript 与 Visual Basic、FoxPro 与 Visual Basic 都不能直接当作同一个地图节点。TIOBE 将当前 “Visual Basic” 解释为 VB.NET，本项目对应 `visual-basic.net`；“Classic Visual Basic” 对应 `visual-basic`。
 

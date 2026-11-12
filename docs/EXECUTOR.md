@@ -1,20 +1,22 @@
-# Docker 私有执行首版
+# 语言执行环境与维护
 
-## 当前访问方式变更（2026-11-09）
+## 当前能力与访问方式（截至2026-11-11）
 
-2026-11-10已正式发布 `f163b27`，全56门远端通过生产匿名执行，正式Chrome及第6会话提示检查通过，维护已解除；[实际部署与回退](DEPLOYMENT.md)。
+正式页面提供59个可执行语言节点：JavaScript、Python、Lua、Scheme四种浏览器模式，56种远端模式，Python重叠；Python默认走远端，本地模式需明确选择。xshow负责42门、xshow2负责14门，通过同源网关路由。2026-11-10免令牌模式上线时，全56门逐一通过生产匿名执行；最新前端为时间长河与关系谱系阅读视图，见 [实际部署与回退](DEPLOYMENT.md)。各次验收只证明报告列明的程序和范围，不等于全语言语义认证。
 
-用户选择免令牌、最多5个活跃执行会话，第6个提示“当前访问比较多，请稍后重试。”。页面移除令牌输入和权限申请，内部worker、管理接口与MCP保留鉴权；详见 [免令牌说明](GUEST_EXECUTION.md)。guest开启须所有可用worker通过runsc健康检查，当前实际部署与验收结果见 [部署记录](DEPLOYMENT.md)。以下按既有历史阶段保留实现记录，其中旧版网页粘贴令牌的步骤已停用。
+最多5个活跃执行会话，第6个提示“当前访问比较多，请稍后重试。”；闲置300秒释放，每会话最多一个在途任务，两台总执行并发2。页面已移除令牌输入和权限申请，内部worker、管理接口与MCP保留鉴权。guest只向通过runsc健康检查的worker派发任务；详见 [免令牌说明](GUEST_EXECUTION.md)。实时可用性读取 `/api/runtimes`，固定版本与预算见 `server/runtime-images.json`；Groovy为8秒，包含JVM启动和脚本编译。
+
+固定工具链公开输入已推送并通过CI离线验证；网站构建不需要Docker、联网下载或连接服务器。BCPL的私有输入边界见下文。本文其余按日期保留实施与验收过程：旧令牌输入、匿名拒绝、“尚未发布”和旧测试数量均指当时，不作为当前操作指引。当前双节点维护见 [双节点说明](DUAL_NODE_DEPLOYMENT.md)，本机验收命令及上传范围见 [本机环境](LOCAL_ENVIRONMENT.md)。
 
 ## 双节点私有发布历史
 
-当前生产后端已于2026-11-09按用户授权升级为双节点56门私有远端执行：xshow 42门、xshow2 14门，统一网关沿用原同域 API 和私有令牌。10项常驻 canary、[63项正式 HTTPS/Chrome 检查](../data/audit/dual-node-production-checks.json)（精确元数据、56门逐一正例及6项既有页面检查）、[8项生命周期与故障恢复检查](../data/audit/dual-node-production-lifecycle.json)通过；[新服务已 active/enabled](../data/audit/dual-node-production-services.json)，旧执行器停用自启但保留回退。Groovy 当前运行预算8秒，含 JVM 启动与脚本编译，其余按各语言 API 预算。拓扑、v3清单和备份见 [双节点部署说明](DUAL_NODE_DEPLOYMENT.md)。
+2026-11-09按用户授权首次升级为双节点56门私有远端执行：xshow 42门、xshow2 14门，当时统一网关沿用原同域 API 和私有令牌。10项常驻 canary、[63项正式 HTTPS/Chrome 检查](../data/audit/dual-node-production-checks.json)（精确元数据、56门逐一正例及6项既有页面检查）、[8项生命周期与故障恢复检查](../data/audit/dual-node-production-lifecycle.json)通过；[新服务已 active/enabled](../data/audit/dual-node-production-services.json)，旧执行器停用自启但保留回退。Groovy 当前运行预算8秒，含 JVM 启动与脚本编译，其余按各语言 API 预算。拓扑、v3清单和备份见 [双节点部署说明](DUAL_NODE_DEPLOYMENT.md)。
 
-当前正式发布提交为`f2ff0bf`，已通过Actions部署，正式页面提供4门浏览器与56门私有远端，Python重叠，共59个可执行节点。[本轮73项正式HTTPS/Chrome检查](../data/audit/b37-site-runtime-checks.json)包含56门逐一真实正例、BCPL/Oberon/Groovy/Swift/Dart/VHDL/PostScript在1440/390页面的执行，以及Python真实错误与恢复；[公开数据一致性](../data/audit/b37-site-consistency.json)通过。Groovy新页面使用8秒预算文案。版本和边界见各节；[逐门记录](../data/audit/runtime-rollout.json)仍保留临时验收阶段，不改写历史。公开固定输入已推送master，[正式Actions](https://github.com/glwang-g/code-museum/actions/runs/42603930037)的build/deploy及[CI后核验](../data/audit/b37-ci-release.json)通过；临时资料分支已清理。Linux执行服务使用Python标准库，不需要pip/npm依赖；网站可从公共输入完全离线构建，不启动Docker、拉镜像或连接服务器。
+该次正式发布提交为`f2ff0bf`，已通过Actions部署，当时页面提供4门浏览器与56门私有远端，Python重叠，共59个可执行节点。[本轮73项正式HTTPS/Chrome检查](../data/audit/b37-site-runtime-checks.json)包含56门逐一真实正例、BCPL/Oberon/Groovy/Swift/Dart/VHDL/PostScript在1440/390页面的执行，以及Python真实错误与恢复；[公开数据一致性](../data/audit/b37-site-consistency.json)通过。Groovy新页面使用8秒预算文案。版本和边界见各节；[逐门记录](../data/audit/runtime-rollout.json)仍保留临时验收阶段，不改写历史。公开固定输入已推送master，[正式Actions](https://github.com/glwang-g/code-museum/actions/runs/42603930037)的build/deploy及[CI后核验](../data/audit/b37-ci-release.json)通过；临时资料分支已清理。Linux执行服务使用Python标准库，不需要pip/npm依赖；网站可从公共输入完全离线构建，不启动Docker、拉镜像或连接服务器。
 
 ## 2026-11-09 公开源码与 BCPL 私有输入
 
-B组37门均已完成真实执行；其中36门的完整固定工具链输入已写入本轮公开发布提交；远端Git分批上传仍在收尾。BCPL的95,200,146字节原始归档及相关上游材料未找到全包公开再分发的明确授权，不能把随包GNU Library GPL文本理解成整个归档采用同一许可。官方条款见 [BCPL页面](https://www.cl.cam.ac.uk/~mr10/BCPL.html) 与 [作者README](https://www.cl.cam.ac.uk/~mr10/BCPL/README)。
+B组37门均已完成真实执行；其中36门的完整固定工具链输入已纳入公共Git并完成CI验证；分批上传与临时分支清理均已完成。BCPL的95,200,146字节原始归档及相关上游材料未找到全包公开再分发的明确授权，不能把随包GNU Library GPL文本理解成整个归档采用同一许可。官方条款见 [BCPL页面](https://www.cl.cam.ac.uk/~mr10/BCPL.html) 与 [作者README](https://www.cl.cam.ac.uk/~mr10/BCPL/README)。
 
 `data/runtime-input-policy.json` 仅为BCPL固定六项私有输入：三个原始归档分片、`cintcode-noninteractive.patch`、上游README全文与`upstream-sysboot.b`。这些材料不进入公共Git或网页发布包；公共部分保留原始`manifest.json`、来源和逐文件哈希、自编Dockerfile/启动器、项目说明及可复制的GNU许可文本。原manifest与已部署镜像身份不改写。
 
@@ -376,9 +378,9 @@ Oberon 把上述 directory/language 及输出名改为 oberon。镜像构建只�
 
 `server/execution-nodes.json` 将 56 个远端运行时完整且唯一地分配到 xshow 42 门、xshow2 14 门。构建会离线拒绝缺失、重复或未知语言，以及非 loopback 节点地址；公开能力数据只给出配置容量（两节点合计 2、每节点 1），不包含上游地址或凭据名称。
 
-worker 使用 `--nodes <file> --node <id>` 启动并仅核对本机镜像。统一入口 `execution_gateway.py` 以独立节点令牌转发同域请求；用户的会话标识保留，查询和取消绑定到原节点。任务路由持久化且短期过期，重启网关不重发任务。提交结果未知时响应 `submissionState=unknown`、`retrySafe=false`；请求只向选定节点发送一次，用户应等待后再操作。失联语言从实时清单移除，仍可使用另一台；指标按样本数加权并标注部分可达覆盖。只读 MCP 保持已发布 `current/dist/data` 的既有配置快照语义，没有随后端切换发布新的59节点数据。
+worker 使用 `--nodes <file> --node <id>` 启动并仅核对本机镜像。统一入口 `execution_gateway.py` 以独立节点令牌转发同域请求；用户的会话标识保留，查询和取消绑定到原节点。任务路由持久化且短期过期，重启网关不重发任务。提交结果未知时响应 `submissionState=unknown`、`retrySafe=false`；请求只向选定节点发送一次，用户应等待后再操作。失联语言从实时清单移除，仍可使用另一台；指标按样本数加权并标注部分可达覆盖。只读MCP读取已发布 `current/dist/data` 的配置快照；首次后端切换时尚未更新静态数据，随后站点发布已提供59节点配置，仍不代表实时运行健康。
 
-临时两机预览与检查不使用生产令牌：
+以下为早期私有模式专项命令，不使用生产令牌；当前免令牌联调应使用 [本机环境](LOCAL_ENVIRONMENT.md) 与 [guest验收](GUEST_EXECUTION.md) 中的命令：
 
 ```sh
 npm run executor:dual-preview
@@ -395,4 +397,4 @@ npm run executor:prepare-dual -- --output output/dual-executor-review
 
 这是宿主执行协议调整，固定 Groovy 工具链与镜像未变。上方旧验收记录与固定 NOTICE 的3秒说明是初期准备状态；生产 API 已按每门 `runSeconds` 正确公开 Groovy 的8秒预算。`/api/runtimes` 的 `limits.seconds` 表示当前可用语言中最大的运行预算，具体语言必须读取自身 `runSeconds`；编译预算另列。本轮已修正语言档案的8秒预算，并把通用执行超时提示改为“运行超过时间预算，已停止。”；修正已随新静态页面发布，Groovy正式宽窄屏执行通过。
 
-最终双节点临时验收：14项API/Chrome与56/56门正例回归通过，分别见 `dual-node-runtime-checks.json`、`dual-node-all-runtimes.json`；宽窄屏及部分可用状态截图已核读。Groovy新预算11项容器/7项网页通过。全量默认测试90/90、网关HTTP测试12/12与离线构建通过。随后正式生产已完成安装、切换和上述HTTPS验收；[启用后健康复核](../data/audit/dual-node-production-final-health.json)再次确认完整56门、并发2及最大预算8秒。静态前端随后已实际发布；当前master已推送，正式Actions以`f2ff0bf`部署了与完整验收版本逐字节一致的独立release，详见本轮部署记录。
+最终双节点临时验收：14项API/Chrome与56/56门正例回归通过，分别见 `dual-node-runtime-checks.json`、`dual-node-all-runtimes.json`；宽窄屏及部分可用状态截图已核读。Groovy新预算11项容器/7项网页通过。全量默认测试90/90、网关HTTP测试12/12与离线构建通过。随后正式生产已完成安装、切换和上述HTTPS验收；[启用后健康复核](../data/audit/dual-node-production-final-health.json)再次确认完整56门、并发2及最大预算8秒。该阶段静态前端随后已推送并由Actions以`f2ff0bf`部署为独立release，与当次完整验收版本逐字节一致；后续正式版本见 [部署记录](DEPLOYMENT.md)。

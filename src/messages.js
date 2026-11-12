@@ -19,7 +19,7 @@
     } catch { return crypto.randomUUID(); } // Without persistent storage, rate limits apply per session only.
   }
   function pageLabel() {
-    const view = VIEWS[document.querySelector('.museum-tabs .active')?.id] || '首页';
+    const view = VIEWS[document.body.dataset.view || document.querySelector('.museum-tabs .active')?.id] || '首页';
     let language = '';
     try { language = window.MUSEUM_NAV.state().language; } catch { language = ''; }
     const label = typeof language === 'string' && language ? view + ' · ' + language : view;

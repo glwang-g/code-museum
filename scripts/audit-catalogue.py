@@ -158,7 +158,7 @@ def main():
     if ksh_path.is_file():
         extra = validate_ksh93_execution(json.loads(ksh_path.read_text()))
         executions[extra['id']] = extra
-    tcsh_path = ROOT/'data/audit/tcsh-runtime-checks.json'
+    tcsh_path = ROOT/'data/audit/tcsh-local-runtime-checks.json'
     if tcsh_path.is_file():
         extra = validate_tcsh_execution(json.loads(tcsh_path.read_text()))
         executions[extra['id']] = extra
@@ -239,15 +239,16 @@ def main():
         'source_language_tool_or_standard_candidates':len(suspicious),
         'runtime_counts':dict(runtime_counts), 'language_evidence_tiers':dict(collections.Counter(r['snapshot_evidence_tier'] for r in source_languages))}
     (OUT/'summary.json').write_text(json.dumps(summary,ensure_ascii=False,indent=2)+'\n')
-    lines = ['# 馆藏语言证据审查', '', '核查日期：'+review_file['checkedAt']+'。', '',
-      f'全量初筛覆盖 **{len(rows):,}** 条馆藏，其中来源标为语言的 **{len(source_languages):,}** 条。逐项外部文档核查覆盖 **{len(reviews)}** 条；其余条目的证据线索已逐条列出，仍未完成人工核实。', '',
-      f'已核到语法资料和实现依据的语言/方言 **{len(confirmed)}** 条；本机独立示例通过 **{runtime_counts["sample-passed"]}** 条。主图按明确的语法/执行线索收录 **{len(eligible)}** 个节点。二者是不同维度。', '',
+    lines = ['# 馆藏语言证据审查', '', '审查输入的 `checkedAt` 字段：'+review_file['checkedAt']+'；各来源实际读取时间见逐条记录，不把该字段当作本文最近更新时间。', '',
+      f'全量初筛覆盖 **{len(rows):,}** 条馆藏，其中来源标为语言的 **{len(source_languages):,}** 条。人工审查文件保存 **{len(reviews)}** 条记录（含未完成条目），不等于全部已完成外部文档核实；全量清单继续逐条保留待核状态。', '',
+      f'已核到语法资料和实现依据的语言/方言 **{len(confirmed)}** 条；历史本机样例集通过 **{runtime_counts["sample-passed"]}** 条。主图按明确的语法/执行线索收录 **{len(eligible)}** 个节点。这些是不同维度。', '',
+      '本文的本机样例、未安装/未测试及表内审查备注是各次取证时的记录，不是当前网页运行能力清单；当前59个可执行语言节点、双节点与访问规则见 [执行说明](../EXECUTOR.md)，实时可用性读取正式站 `/api/runtimes`。', '',
       '## 查看结果', '',
       '- [全量清单 catalogue.csv](catalogue.csv)：每条记录的来源分类、证据线索、审查结果、运行状态及下一步。',
       '- [覆盖与关系完整性审计](INTEGRITY.md)：独立目录对照、别名冲突、关系来源与缺口队列。',
       '- [人工审查记录与原文摘录](../../data/audit/reviews.json)：来源地址、取回时间、内容摘要哈希、短摘录、访问失败记录及判断范围。',
       '- 构建后可从网站 `/data/audit-reviews.json` 下载同一审查输入；`/data/provenance.json` 的 `meta.reviewEvidence` 提供文件路径、SHA-256 和覆盖数量。下载记录不等于完整原网页归档，也不代表全馆已核。',
-      '- [本机执行记录](../../data/audit/runtime-checks.json)：原创样例、命令、版本、实际标准输出与错误。',
+      '- [历史本机执行记录](../../data/audit/runtime-checks.json)：原创样例、命令、版本、实际标准输出与错误，不代表当前网页覆盖。',
       '- [ALGOL 60 独立执行记录](../../data/audit/algol60-runtime-checks.json)：临时构建的 MARST，三条原创样例及无效语法拒绝。',
       '- [主图收录节点](../../data/audit/map-eligible-ids.json)。',
       '- [地图人工分类决定](../../data/audit/map-curation.json)：明显的工具/产品排除及可执行的记法类例外。',
@@ -266,7 +267,7 @@ def main():
       f'来源语言中，缺少官网、规范、代码仓库、简介和代码示例字段的有 **{len(sparse)}** 条；其中可能仍有 HOPL、论文或百科线索。', '',
       '## 已核语法与实现的清单', '',
       '“文档已核”表示存在可追溯的语法和实现资料；“示例通过”仅针对本机记录的版本。BASIC、Scheme 等家族条目以备注中的具体方言为准。', '',
-      '|条目|实现/方言|本机执行|语法与实现来源|范围说明|','|---|---|---|---|---|']
+      '|条目|实现/方言|历史本机样例|语法与实现来源|当次审查备注（非实时运行状态）|','|---|---|---|---|---|']
     runtime_label = {'sample-passed':'示例通过','sample-failed':'示例失败','check-error':'执行受阻','not-installed':'未安装','not-tested':'未测试'}
     for row in confirmed:
         rev=reviews[row['id']]
@@ -281,7 +282,7 @@ def main():
     lines += ['', '## 界限与下一步', '',
       '- 主图仅显示有语法/示例及执行环境线索、或已人工核实的条目；明显属于工具、协议、编码、标记/数据格式的项目不作为语言节点。可执行的领域语言例外与工具/产品排除记录在 map-curation.json。证据不足的项目留在全馆目录供检索，并标为待核。原始快照完整保留。',
       '- METAPI 的论文书目支持其与语言研究相关；全文语法与实现仍待查证。快照年代与论文出版年不能混作同一日期。',
-      '- 本机 Lua 可执行文件因 CPU 架构不兼容而失败，不能据此否定 Lua 的实现；其他环境未安装的语言未伪造执行结果。',
+      '- 早期本机Lua可执行文件曾因CPU架构不兼容而失败；该记录不代表现有Wasmoon浏览器运行时失败，也不能据此否定Lua的实现。其他环境未安装的语言未伪造执行结果。',
       '- 审查语法和实现文档不保证任意版本互相兼容；现代实现不能证明同名历史初版已重现。官方站点访问失败也不等于对应语言不真实。',
       '- 后续按全量 CSV 的下一步逐项补证。只有人工审查记录可升级为已核，补充源码仓库或示例不会自动升级。', '',
       '## 离线重生成', '', '```sh', 'python3 scripts/audit-catalogue.py', '```', '',

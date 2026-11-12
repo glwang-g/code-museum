@@ -1,14 +1,22 @@
 # 地图语言运行环境盘点与分批构建清单
 
-盘点日期：2026-11-02。范围：当前源码对应的 233 个时间长河语言节点，含 50 个常显标签与 183 个微光点；关系谱系是其中的子集。本文同时记录研究排期与实施进度。P1 十二门已接入源码：首批 TypeScript、SQL（SQLite）、Bash、AWK、sed；第二批 PHP、Perl、XSLT、C#、Fortran；2026-11-03 补齐 Pascal、R。十二门均已于 2026-11-03 升级生产执行服务，并完成正式 HTTPS 核验；核验范围见下文。
+## 当前进度（截至2026-11-11）
 
-## 2026-11-06 原 B 组 37 门持续推进
+原B组37/37门已按P2、P3顺序完成固定工具链、真实执行、页面接入与正式上线；4种浏览器模式、56种远端模式合计59个可执行语言节点（Python重叠）。xshow/xshow2按42/14分工，网页已采用最多5个活跃会话的guest/runsc模式，无需用户令牌。公开固定输入已推送master并通过CI离线验证；BCPL六项上游私有材料按固定策略单独保存，公共仓库可以重建网站，完整BCPL镜像另需合法持有且哈希匹配的私有包。当前使用与维护见 [执行说明](../EXECUTOR.md)、[免令牌说明](../GUEST_EXECUTION.md) 和 [部署记录](../DEPLOYMENT.md)。
+
+下文保留最初233节点分组和逐批验收过程。A22/B37表是2026-11-03盘点基线，不是当前待办：原B组已全部完成；各日期段的“未部署”“下一门”“不提交”和旧测试数量均指当时。`runtime-rollout.json`同样是固定临时验收历史，不是实时生产清单。
+
+## 最初盘点与实施记录
+
+盘点日期：2026-11-02。范围：当时源码对应的 233 个时间长河语言节点，含 50 个常显标签与 183 个微光点；关系谱系是其中的子集。本文同时记录研究排期与实施进度。P1 十二门已接入源码：首批 TypeScript、SQL（SQLite）、Bash、AWK、sed；第二批 PHP、Perl、XSLT、C#、Fortran；2026-11-03 补齐 Pascal、R。十二门均已于 2026-11-03 升级生产执行服务，并完成正式 HTTPS 核验；核验范围见下文。
+
+## 2026-11-06 原B组37门启动条件（历史）
 
 用户授权按 P2、P3 顺序逐门推进原 B 组 37 门，不提交、推送或部署。精确队列和逐门阶段见 [runtime-rollout.json](../../data/audit/runtime-rollout.json)。
 
-### 2026-11-09 当前状态：37/37 门后端与页面已上线，Git/CI收尾中
+### 2026-11-09 阶段完成：37/37门上线，Git/CI收尾完成
 
-用户已授权本轮Git提交、推送及静态部署；`8bf6c20`站点现已实际激活，[73项正式HTTPS/Chrome检查](../../data/audit/b37-site-runtime-checks.json)及[公开数据一致性](../../data/audit/b37-site-consistency.json)通过。正式前端为59节点/56远端；公开固定输入现已分批推送master，[Actions 42603930037](https://github.com/glwang-g/code-museum/actions/runs/42603930037)的build/deploy成功；当前正式release为`f2ff0bf`，[CI后核验](../../data/audit/b37-ci-release.json)确认与完整验收版本逐字节一致。公共发布范围为B组36门已写入发布提交的完整固定输入，加BCPL的公开固定元数据及自编适配；BCPL六项上游私有材料不上传。`data/runtime-input-policy.json`使网站可仅由公开输入离线构建，完整BCPL镜像重建另需合法持有并经`--private-input-directory`提供精确固定私有包，不能宣称仅从公共仓库完整复现BCPL工具链。原manifest/镜像身份、历史逐门报告保持不变；本机私有档案以独立Git提交固定，详见 [执行说明](../EXECUTOR.md)。Groovy两处旧3秒文案已修正并随新页面发布，宽窄屏真实执行通过本轮验收。
+用户已授权本轮Git提交、推送及静态部署；`8bf6c20`站点现已实际激活，[73项正式HTTPS/Chrome检查](../../data/audit/b37-site-runtime-checks.json)及[公开数据一致性](../../data/audit/b37-site-consistency.json)通过。正式前端为59节点/56远端；公开固定输入现已分批推送master，[Actions 42603930037](https://github.com/glwang-g/code-museum/actions/runs/42603930037)的build/deploy成功；该阶段正式release为`f2ff0bf`，[CI后核验](../../data/audit/b37-ci-release.json)确认与完整验收版本逐字节一致。公共发布范围为B组36门已写入发布提交的完整固定输入，加BCPL的公开固定元数据及自编适配；BCPL六项上游私有材料不上传。`data/runtime-input-policy.json`使网站可仅由公开输入离线构建，完整BCPL镜像重建另需合法持有并经`--private-input-directory`提供精确固定私有包，不能宣称仅从公共仓库完整复现BCPL工具链。原manifest/镜像身份、历史逐门报告保持不变；本机私有档案以独立Git提交固定，详见 [执行说明](../EXECUTOR.md)。Groovy两处旧3秒文案已修正并随新页面发布，宽窄屏真实执行通过本轮验收。
 
 用户随后明确授权之前的部署计划，双节点生产后端现已切换：xshow 42门、xshow2 14门，经10项常驻 canary、[63项正式 HTTPS/Chrome 检查](../../data/audit/dual-node-production-checks.json)（含全部56门逐一正例）和[8项生命周期/故障恢复检查](../../data/audit/dual-node-production-lifecycle.json)通过；[新服务 active/enabled](../../data/audit/dual-node-production-services.json)，旧执行器停用自启并保留回退。xshow worker使用4184，避开保留的既有留言服务4182；部署清单、备份与回退见 [双节点部署说明](../DUAL_NODE_DEPLOYMENT.md)。
 
@@ -62,7 +70,7 @@ Oberon 使用 OBNC 0.17.2 官方完整源码、4 个 Debian 固定依赖及原�
 
 2026-11-08 节点补记：用户提供 `xshow2` 并明确授权 Docker/Buildx 系统安装及继续隔离测试，专用公钥免密连接已实测通过。新节点 x86_64、约 35 GB 可用磁盘、1.6 GB 内存；Docker 29.1.3 / Buildx 0.30.1 与 cgroup v2 可用。Swift 6.1.3 官方完整 Debian 12 SDK 的 SHA-256、Swift 6.x 发布签名均已核对，固定 27 个归档分片、原始许可与签名证据在 `server/runtimes/swift/`。4 项本机 Swift 编辑器核验通过并已查看 1440/390 截图，记录 `swift-editor-checks.json`；当前仍仅编辑，不能算完成运行或网页执行验收。固定 GCC 镜像复制曾断线，正改为可续传归档；23/37 完成计数保持不变。
 
-## 结论与判定口径
+## 最初分组与判定口径（2026-11-03基线）
 
 “有运行环境”包括解释器、编译器及其产物执行链、转换处理器、求解器和仿真器；这些操作在产品中应分别叫运行、转换、求解、验证或仿真，不统一伪装成控制台程序。
 
@@ -81,7 +89,7 @@ A+B+C 共 185 个已有馆内接入、经人工核实的实现资料或具体安
 
 50 个常显标签中，18 个已接入、22 个有已核实现或构建配方、10 个需先选方言/宿主；没有标签落入本轮“资料不足”组。183 个点中，4 个已接入、141 个有已核实现或构建配方、24 个有实现候选、10 个需先明确条件、4 个资料不足。
 
-## 已接入基线
+## 当时已接入基线（22节点）
 
 2026-11-03 review 修正（本地）：XSLT 的 XML 标准输入现按语言在当前页面内存中保留，切换语言往返及主动清空均不再被默认 XML 覆盖；Perl 默认示例已加入 `use utf8;`，本机中文源码输出回归通过。此修正不增加语言数量、不代表生产升级；原 52 项容器和 27 项远端浏览器报告仍是上轮核验快照；本次补齐 Pascal/R 时，Perl 中文源码用例已纳入最新 72 项固定镜像回归通过。详见 [项目上下文](../PROJECT_CONTEXT.md)。
 
@@ -208,11 +216,11 @@ LSL 的 OpenSimulator 候选见 [官方脚本文档](https://opensimulator.dev/w
 
 每个条目使用“资料待核 → 原型可复现 → 已接入本机页面 → 已核验生产”状态推进；不因下载了镜像就标完成。
 
-## 全量逐项表（233 个，含标签与点）
+## 最初全量逐项表（233个，2026-11-03基线）
 
 表中“标签”指常显标签，“点”指默认微光点，不影响能否执行。B 组依据项目既有人工审查，不代表本轮重跑实现；C 组依据固定 Riju 配方，不代表当前上游下载地址、软件包或旧依赖仍可用；D 组只定位候选。配方命令为识别执行链的摘要，**不是可以直接复制用于生产的安装脚本**。所有未接入项仍需上节验收。
 
-### A · 已接入（22）
+### A · 当时已接入（22）
 
 | 名称 / ID | 地图 | 优先级 | 环境或构建链 | 依据 / 待办 |
 | --- | --- | --- | --- | --- |
@@ -239,7 +247,7 @@ LSL 的 OpenSimulator 候选见 [官方脚本文档](https://opensimulator.dev/w
 | Pascal (`pascal`) | 点 | P1 已核验 | Free Pascal 3.2.2 / ObjFPC / 基础 RTL | [真实容器记录](../../data/audit/p1-runtime-checks.json)；[接入边界](../EXECUTOR.md)；生产已核验 |
 | R (`r`) | 标签 | P1 已核验 | Rscript / R 4.2.2 Patched / 基础包与文本输出 | [真实容器记录](../../data/audit/p1-runtime-checks.json)；[接入边界](../EXECUTOR.md)；生产已核验 |
 
-### B · 实现资料已核，待接入（37）
+### B · 当时待接入，现已完成（37）
 
 | 名称 / ID | 地图 | 优先级 | 环境或构建链 | 依据 / 待办 |
 | --- | --- | --- | --- | --- |

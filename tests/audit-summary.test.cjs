@@ -3,6 +3,36 @@ const assert=require('node:assert/strict');
 const {spawnSync}=require('node:child_process');
 const fs=require('node:fs'),os=require('node:os'),path=require('node:path');
 
+test('tcsh local evidence remains distinct from container checks and rejects altered execution claims',t=>{
+  const available=spawnSync('python3',['--version'],{encoding:'utf8'});
+  if(available.error?.code==='ENOENT'){t.skip('Optional execution evidence validation requires Python 3');return;}
+  assert.equal(available.status,0,available.stderr);
+  const code=`
+import copy, json, runpy, sys
+validate=runpy.run_path(sys.argv[1])['validate_tcsh_execution']
+record=json.load(open(sys.argv[2]))
+validate(record)
+def reject(altered):
+    try: validate(altered)
+    except ValueError: return
+    raise AssertionError('Inconsistent tcsh local evidence accepted')
+reject(json.load(open(sys.argv[3])))
+for change in [lambda r: r['samples'][0].update(sample='changed'),
+               lambda r: r['samples'][0]['command'].update(stdout='54'),
+               lambda r: r['samples'][0]['syntaxCheck'].update(exitCode=1),
+               lambda r: r['invalidSyntax'].update(exitCode=0),
+               lambda r: r.update(versionCommand=['tcsh'])]:
+    altered=copy.deepcopy(record)
+    change(altered)
+    reject(altered)
+`;
+  const result=spawnSync('python3',['-c',code,
+    path.resolve(__dirname,'../scripts/audit-catalogue.py'),
+    path.resolve(__dirname,'../data/audit/tcsh-local-runtime-checks.json'),
+    path.resolve(__dirname,'../data/audit/tcsh-runtime-checks.json')],{encoding:'utf8'});
+  assert.equal(result.status,0,result.stderr);
+});
+
 test('current map gap summary removes resolved labels and is deterministic',t=>{
   const available=spawnSync('python3',['--version'],{encoding:'utf8'});
   if(available.error?.code==='ENOENT'){t.skip('Optional audit generation requires Python 3');return;}
@@ -33,7 +63,7 @@ assert text==file.read_bytes()
     const result=spawnSync('python3',['-c',code,path.resolve(__dirname,'../scripts/audit-integrity.py'),output],{encoding:'utf8'});
     assert.equal(result.status,0,result.stderr);
     const text=fs.readFileSync(path.join(output,'MAP_STATUS.md'),'utf8');
-    assert.match(text,/常显标签 2 个：1 个有设计层地图内关系，1 个暂无该层连线/);
+    assert.match(text,/常显标签 2 个：1 个有规范化输入的地图内关系，1 个暂无该类连线/);
     assert.match(text,/缺失记录不表示没有上游/);
   }finally{fs.rmSync(output,{recursive:true,force:true});}
 });

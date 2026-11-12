@@ -49,11 +49,11 @@ def write_map_status(summary, label_review):
         '# 当前地图关系审计状态', '',
         '由 `npm run audit` 从固定快照、人工关系及地图资格输入生成。研究说明见 [地图关系复核](MAP_LINEAGE.md)。', '',
         '## 覆盖与证据', '',
-        f"- 地图节点 {summary['map_nodes']} 个：{linked} 个参与设计层地图内关系，{summary['map_nodes_without_visible_links']} 个暂无该层连线。",
-        f"- 常显标签 {summary['map_label_nodes']} 个：{linked_labels} 个有设计层地图内关系，{len(missing)} 个暂无该层连线。",
+        f"- 地图节点 {summary['map_nodes']} 个：{linked} 个参与规范化输入的地图内关系，{summary['map_nodes_without_visible_links']} 个暂无该类连线。",
+        f"- 常显标签 {summary['map_label_nodes']} 个：{linked_labels} 个有规范化输入的地图内关系，{len(missing)} 个暂无该类连线。",
         f"- 规范化关系 {summary['relationship_count']} 条，其中 {field_only} 条仍只有来源字段级依据，尚需逐条史料复核。", '',
-        '缺失记录不表示没有上游；地图外关系不自动成为地图内连线。实现与生态边独立展示，不计入这里的设计层数量。', '',
-        '## 暂无设计层地图内连线的常显标签', '',
+        '这里统计原规范化关系输入，包含被校订为实现/兼容的关系，不含独立生态关系文件；不能把规范化关系总数称作纯设计关系数。网页的设计/生态分层及合并总数见 [统一关系状态](RELATIONSHIP_STATUS.md)。缺失记录不表示没有上游；地图外关系不自动成为地图内连线。', '',
+        '## 暂无规范化输入地图内连线的常显标签', '',
         '| 语言 | 馆藏 ID | 地图外关系数 | 待核语句线索数 |',
         '| --- | --- | ---: | ---: |'
     ]

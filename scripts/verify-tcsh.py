@@ -59,7 +59,7 @@ def main():
               'cshExecutable': csh, 'cshIsSameFile': alias,
               'scope': 'Two original tcsh samples and syntax rejection with the installed version; -f skips startup files. Not original 2BSD C shell, exhaustive historical compatibility, full compliance or browser execution.',
               'samples': samples, 'invalidSyntax': {'sample': INVALID, 'sampleSha256': digest(INVALID), **invalid}}
-    (ROOT/'data/audit/tcsh-runtime-checks.json').write_text(json.dumps(report, ensure_ascii=False, indent=2)+'\n')
+    (ROOT/'data/audit/tcsh-local-runtime-checks.json').write_text(json.dumps(report, ensure_ascii=False, indent=2)+'\n')
     print('tcsh: arithmetic loop=55; list/condition=Lisp; invalid syntax rejected.')
 
 

@@ -153,7 +153,7 @@ const tabIntro={
 function activateTab(id){
   closeMapSearch();
   const copy=tabIntro[id]||tabIntro['timeline-view'];$('.intro h1').textContent=copy.title;$('.intro-copy p').textContent=copy.note;
-  const previous=document.querySelector('.museum-tabs .active')?.id;
+  const previous=document.body.dataset.view||document.querySelector('.museum-tabs .active')?.id;
   $('#river').hidden=!['timeline-view','lineage-view'].includes(id)||window.MUSEUM_EXPLORE?.state().presentation==='browse';
   if($('#explore-panel'))$('#explore-panel').hidden=!['timeline-view','lineage-view'].includes(id);
   $('#catalogue').hidden=id!=='catalogue-view';
@@ -165,11 +165,10 @@ function activateTab(id){
   if($('#guides'))$('#guides').hidden=id!=='guides-view';
   document.body.dataset.view=id;
   $('#river').setAttribute('aria-labelledby',id==='lineage-view'?'lineage-view':'timeline-view');
-  for(const tab of document.querySelectorAll('.museum-tabs [role=tab]')){
+  for(const tab of document.querySelectorAll('[data-view-control],.museum-tabs [role=tab]')){
     const active=tab.id===id;
     tab.classList.toggle('active',active);
-    tab.setAttribute('aria-selected',String(active));
-    tab.tabIndex=active?0:-1;
+    if(tab.getAttribute('role')==='tab'){tab.setAttribute('aria-selected',String(active));tab.tabIndex=active?0:-1;}
   }
   if(previous&&previous!==id){
     clearRelationPreview();

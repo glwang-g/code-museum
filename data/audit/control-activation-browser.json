@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-11-11T11:37:57.483Z",
-  "browser": "Chrome/157.0.8103.39",
+  "checkedAt": "2026-11-12T01:52:29.502Z",
+  "browser": "Chrome/157.0.8103.78",
   "origin": "local preview",
-  "contentSha256": "49ba114c02b5e2efaf1a85f58d8aec44151cc926f05502e2f7946a3238bdbbe3",
+  "contentSha256": "746f00a1f6cf628fa340524e35b4231cb0620406c0b0b5e5ef6efe40c60fe143",
   "scope": "Actual installed Chrome native press/release and missing-press replay from focused inputs. Model, clipboard, file-picker and download side effects intercepted. Does not certify the user Safari trackpad hardware.",
   "checks": [
     {
@@ -79,7 +79,7 @@
       "passed": true
     },
     {
-      "name": "Catalogue navigation remains one tap",
+      "name": "Section entry and catalogue child each activate on the first tap",
       "passed": true
     },
     {
@@ -96,10 +96,11 @@
     }
   ],
   "inputs": {
+    "src/interface.css": "565cb99fd5ad3b58f8d6d5f5171e413ce888a0d3ff9a4ad5cc206521c6189b17",
     "src/control-activation.js": "148df5e4acdccc15b33bdc89a50740306724439d425ca1cfc0aeb35e15bfd5e5",
-    "src/museum.js": "195d3868a4709d396f30be8b1f4ea7b7164804c702eaea8eaae242417812339b",
-    "src/index.html": "1d00aa701529b5138216f8f3ef577b30e60eb3e46f6e5e1ed90bfacff4d74708",
-    "scripts/check-control-activation.cjs": "502295d7d972d609486cac2aaf7c8b458b237b3b6edae8d4310f1bbc8ee8b614",
+    "src/museum.js": "9d706a97bf851c7add2eb7b11d5184e6d241a9e480f63edef8244433376d65b9",
+    "src/index.html": "811e695c738cea4367a7c9cbb93444a7724ef925701ad69c5c6584acabd2da43",
+    "scripts/check-control-activation.cjs": "18e83a68ff315c064e349bd0125b7d695c84db44cac75ff114f0e73b58796f45",
     "scripts/browser-harness.cjs": "f39547b4f9870cab90dc339af22d833c9b4c9d486a1f90397b0eb832033f77fb"
   }
 }

@@ -1,10 +1,8 @@
-# 双节点执行部署方案与操作顺序
+# 双节点执行维护与首次部署记录
 
-2026-11-10当前正式release为 `f163b27`，双节点guest/runsc已上线，全56门远端生产匿名执行和第6会话提示通过；[正式部署记录](DEPLOYMENT.md)。内部节点鉴权与受限SSH隧道保留，当前操作规则见 [免令牌说明](GUEST_EXECUTION.md)。
+截至2026-11-11，双节点guest/runsc已上线，提供56门远端执行；免令牌上线时已逐门通过生产匿名正例及第6会话提示。前端此后继续发布，不再把早期 `f163b27` 或 `f2ff0bf` 写作当前release；最新版本与验收范围见 [正式部署记录](DEPLOYMENT.md)。免令牌接入、runsc前提、5个活跃会话及申请退役见 [免令牌说明](GUEST_EXECUTION.md)，内部节点鉴权与受限SSH隧道保留。
 
-当前免令牌接入、runsc前置条件、5个活跃会话及申请退役见 [免令牌说明](GUEST_EXECUTION.md)，实际发布结果见 [部署记录](DEPLOYMENT.md)。以下保留双节点私有服务建立过程；旧版面向用户的令牌输入流程已退役，内部节点及管理鉴权保留。
-
-用户已授权本轮提交、推送和静态部署；当前正式release为`f2ff0bf`，59节点/56远端，[Actions 42603930037](https://github.com/glwang-g/code-museum/actions/runs/42603930037)的build/deploy及[线上核验](../data/audit/b37-ci-release.json)已通过；公开固定输入已推master，临时资料分支已清理。本方案把运行时准备、站点发布和私有执行服务升级分开。`deploy/prepare-dual-executor.py` 只生成本机可审查材料，不连接服务器、不安装账号、不生成凭据、不启动或切换服务。准备成功与临时双节点联调成功都不等于生产已部署。
+运行时准备、站点发布和受保护执行服务升级分别进行。原B组37门的公开固定输入已推送master并通过CI离线验证，临时资料分支已清理；当次 [Actions](https://github.com/glwang-g/code-museum/actions/runs/42603930037) 和 [线上核验](../data/audit/b37-ci-release.json)保留为历史。`deploy/prepare-dual-executor.py`只生成本机可审查材料，不连接服务器、不安装账号、不生成凭据、不启动或切换服务。下文的首次安装与原19门私有执行器回退命令是2026-11-09迁移记录，**不能直接用于当前guest版本的升级或回退**；当前版本须使用对应备份、runsc和guest配置，保留活数据库。
 
 ## 拓扑和分工
 
@@ -20,7 +18,7 @@
 
 分配以 `server/execution-nodes.json` 为准，要求完整覆盖固定清单，每门语言恰好一个节点。每个 worker 仍只有一个执行槽和有界队列。当前 Groovy 单独为 8 秒运行预算（含 JVM 启动与脚本编译），其他语言沿用原预算；API 用每门 `runSeconds` 精确公开，`limits.seconds` 为可用语言中的最大值。网关记录任务归属，查询和取消始终返回原节点；节点失败不自动向另一台重发代码。网站只展示实时可用的语言，失联节点不使另一台全部失效。
 
-网关沿用浏览器使用的现有私有执行令牌，向 worker 转发时使用独立的节点令牌；节点令牌与 SSH 密钥不进入源码、发布包或浏览器。网关账号没有 Docker 权限。worker 只按原有受限容器执行协议运行用户代码。
+网页通过服务端签名的guest Cookie识别会话，无需用户令牌；网关管理接口与只读MCP仍鉴权，向worker转发使用独立节点令牌。内部管理密钥、节点令牌和SSH私钥不进入源码、发布包或浏览器。网关账号没有Docker权限。guest只向实时报告runsc健康的worker派发任务，详见 [免令牌说明](GUEST_EXECUTION.md)。
 
 ## 先生成可审查的部署材料
 
@@ -46,14 +44,14 @@ python3 /path/to/review/xshow2/preflight.py --check-images
 
 任何缺少或身份不同的镜像都要先通过项目固定构建器单独准备；不能改 image ID 让检查表面通过。两台只检查自己的语言子集，不要求每台放入全量镜像。`bundle-manifest.json` 及 `plan.json` 在最终批准前保留原样，后续安装的字节必须与它们相符。
 
-## 经批准后安装常驻服务
+## 首次私有双节点安装（历史操作）
 
 下列是准备材料的安装约定，执行前应审查具体 `plan.json`，确认两台剩余磁盘、内存和已有进程。首次安装须有明确的生产变更授权；普通 GitHub Actions 无权执行这些步骤。
 
 1. 两台都将对应 `code/` 文件安装到新的 root 拥有目录 `/opt/code-museum-executor-dual`，文件不可由 CI 或服务账号写入；不要覆盖旧 `/opt/code-museum-executor`。准备材料中的 `code/museum-data` 同步安装，避免 worker 启动依赖网页发布目录。
 2. 两台建立或复用无登录 `code-museum-executor` 服务身份和 `/var/lib/code-museum-executor`。仅 unit 的 `SupplementaryGroups=docker` 给 worker Docker 权限；不把 CI、网关或 SSH 转发账号加入 docker 组。
 3. xshow 建立无登录的 `code-museum-gateway`、`code-museum-tunnel` 身份。网关路由状态位于独立 `/var/lib/code-museum-executor-gateway`；xshow worker 使用原服务身份并复用原 `/var/lib/code-museum-executor/metrics.sqlite`，使历史聚合指标继续出现在网关汇总中。xshow2 使用独立 `worker-xshow2-metrics.sqlite`；不能把原数据库复制到两台后相加，避免重复计算。worker unit 通过各自 `EXECUTOR_METRICS_DB` 指定路径。旧指标文件、访问统计、留言和授权申请数据库不迁移、不清空。
-4. 通过管理员凭据编辑渠道填充 `/etc/code-museum-executor/worker-xshow.env`、`worker-xshow2.env`、`gateway.env`；仅把各机器需要的文件放到该机器，root:root、0600。`gateway.env` 保留现有公开执行入口的私有令牌，并分别设置与两台 worker 匹配的 `EXECUTOR_NODE_XSHOW_TOKEN`、`EXECUTOR_NODE_XSHOW2_TOKEN`。两个 worker 令牌须不同，禁止使用模板占位文字。
+4. 通过管理员凭据编辑渠道填充 `/etc/code-museum-executor/worker-xshow.env`、`worker-xshow2.env`、`gateway.env`；仅把各机器需要的文件放到该机器，root:root、0600。`gateway.env` 保留内部管理密钥 `EXECUTOR_TOKEN`（首次私有模式曾供网页使用，当前不下发浏览器），并分别设置与两台 worker 匹配的 `EXECUTOR_NODE_XSHOW_TOKEN`、`EXECUTOR_NODE_XSHOW2_TOKEN`。两个 worker 令牌须不同，禁止使用模板占位文字。
 5. 安装相应 `units/` 到 `/etc/systemd/system`，先执行 `systemd-analyze verify` 和 `systemctl daemon-reload`，再启动 worker。xshow worker 使用 4184，可与原生产执行器 4181 并存，作为切换前的验收阶段；它沿用同一聚合指标库，预切换验收任务也会计入真实聚合记录。网关用 `Wants` 启动本机 worker 和隧道，保证重启时会尝试启动它们；不使用强制 `Requires`，单个节点异常仍允许其他节点服务。
 
 BCPL 沿用原作者明确的私人/学术使用边界，原始条款随固定输入保留。使用私有令牌不构成额外的商业再分发授权；任何未来用途变化需要按原条款另行判断。本方案不把暂未明确的授权写成已清除的许可结论。
@@ -91,7 +89,7 @@ restrict,port-forwarding,permitopen="127.0.0.1:4181",command="/bin/false" ssh-ed
 
 unit 固定本机绑定地址为 `127.0.0.1:4183`，远端目标固定为 `127.0.0.1:4181`，并设置连接失败退出、SSH 保活及 systemd 失败重启。两台执行 API 都不直接监听公网。隧道失效时网关应公开对应语言不可用，恢复后重新获取健康状态，不自动重新提交此前请求。
 
-## 切换、验收和回退
+## 首次私有切换、验收和回退（历史操作）
 
 先在临时网关端口、与生产分离的状态文件上核验两节点：真实执行、编译诊断、查询、取消、会话隔离、节点断线与恢复、网关重启后的任务归属，以及 worker 并发上限。必须覆盖原有 19 门远端环境；单门临时测试通过不能代替生产回归。
 
@@ -120,10 +118,12 @@ sudo systemctl start code-museum-executor.service
 
 `scripts/package-release.cjs --output <new-dir>` 从已构建 `dist/`、显式列出的服务源码与 `deploy/activate.sh` 生成普通发布包，拒绝符号链接和已有输出目录，并生成逐文件哈希。包内不含 `server/runtimes/`、测试、`.env` 或部署密钥，整体上限 128 MiB。GitHub Actions 只上传这个 staging 目录，不再把约 2.2 GB 的运行时构建输入传给普通站点 release。
 
-运行时固定输入仍是版本管理和离线复现的必要材料；从普通发布包中排除它们，不等于删除或放弃保存。B组36门完整输入拟纳入公共Git，BCPL则依`data/runtime-input-policy.json`保留公开元数据与自编适配，并将六项上游材料固定在本机私有档案，不上传。网站从公开输入离线构建；重建BCPL镜像须预先提供与原清单逐字节匹配的私有包，不能仅从公共仓库完整重建。固定输入、Docker镜像、执行服务和网页分别准备、核验和回滚，CI继续没有Docker权限，也不自动升级受保护的执行器。
+运行时固定输入仍是版本管理和离线复现的必要材料；从普通发布包中排除它们，不等于删除或放弃保存。B组其余36门完整输入已纳入公共Git并完成CI验证，BCPL则依`data/runtime-input-policy.json`保留公开元数据与自编适配，并将六项上游材料固定在本机私有档案，不上传。网站从公开输入离线构建；重建BCPL镜像须预先提供与原清单逐字节匹配的私有包，不能仅从公共仓库完整重建。固定输入、Docker镜像、执行服务和网页分别准备、核验和回滚，CI继续没有Docker权限，也不自动升级受保护的执行器。
 
 
-## 2026-11-09 实际验收与当前审查材料
+当前静态发布使用rsync `--link-dest`复用未变文件，并以 `--no-times`避免构建时间戳阻止硬链接复用；变更文件写入新release，不改旧文件字节或mtime。该修正已在本机隔离夹具及正式发布核验，见 [传输记录](../data/audit/explore-deploy-transfer.json)。普通CI仍不清理历史release、镜像或日志；磁盘容量整理是独立维护事项。
+
+## 2026-11-09 实际验收与当时的审查材料
 
 - `data/audit/dual-node-inventory.json`：42/14 门分配的全部固定镜像身份与平台匹配；记录当时容量，不承诺未来磁盘余量。
 - `data/audit/dual-node-runtime-checks.json`：14 项真实两机 API/Chrome 联调，含跨节点正例、会话隔离、编译错误、取消、网关重启、节点断线/恢复、部分指标与 1440/390 页面。截图在 `tmp/dual-node-browser/`，已实际查看。
@@ -131,7 +131,7 @@ sudo systemctl start code-museum-executor.service
 - Groovy 单独修正为8秒后，11项容器与7项真实Chrome通过；原3秒超时及三次实际耗时诊断保留，不把超时计作成功。
 - 默认测试90/90、网关回环HTTP测试12/12、离线构建通过。
 
-当前生产对应的本机审查包是 `output/dual-executor-review-20261109-v3/plan.json`，SHA-256 为 `0286663a1997af8f688233ea7216bf5a1e3a1312a7458e69e4c8e22db726c1b1`，两台各约2.95MB。v3 将 xshow worker 端口由4182修订为4184；运行时镜像、执行器实现、凭据和公开入口未因端口修订改变。无后缀及 v2 准备目录保留为历史材料，不能替代当前 v3。普通站点发布包 `output/dual-node-site-release-20261109-v2/` 约35.4MB，尚未发布；审查包和普通发布包都不包含真实凭据。
+当时生产安装使用的本机审查包是 `output/dual-executor-review-20261109-v3/plan.json`，SHA-256 为 `0286663a1997af8f688233ea7216bf5a1e3a1312a7458e69e4c8e22db726c1b1`，两台各约2.95MB。v3 将 xshow worker 端口由4182修订为4184；运行时镜像、执行器实现、凭据和公开入口未因端口修订改变。无后缀及 v2 准备目录保留为历史材料，不能替代当前 v3。普通站点发布包 `output/dual-node-site-release-20261109-v2/` 约35.4MB，在该检查点尚未发布；审查包和普通发布包都不包含真实凭据。
 
 用户随后明确授权“授权之前的部署计划”，生产安装、切换与验收已在该授权下完成。以下最终服务状态截至 `2026-11-09T06:05:38Z`：
 
@@ -144,8 +144,8 @@ sudo systemctl start code-museum-executor.service
 - [最终服务报告](../data/audit/dual-node-production-services.json)：两台 worker 及 xshow 网关/隧道均 active/enabled；旧执行器已停止并 disable，旧代码与配置保留。新API端口均仅绑定loopback，服务身份均无登录且不持久加入Docker组，两台本次执行容器残留均为0。只清理本次安装临时材料与已停止 canary 的路由状态，没有清理历史库或镜像。
 - [启用后健康检查](../data/audit/dual-node-production-final-health.json)：`06:06:28Z` 正式 HTTPS 再次只读确认完整56门、全局并发2、最大运行预算8秒；这是元数据复核，没有重复执行全56门程序。
 
-两台 root 私有安装记录分别在 `/var/backups/code-museum-executor/20261109T054729947461Z-dual-xshow` 和 `/var/backups/code-museum-executor/20261109T054729521128Z-dual-xshow2`，各自的 `port-4184-revision/` 保存端口修订前材料。切换前 SQLite 备份在 xshow 的 `/var/backups/code-museum-executor/20261109T054729947461Z-dual-xshow/metrics-before-cutover.sqlite`；这些主机备份不进入源码或普通发布包。新服务启用和旧服务 disable 已在正式验收通过后完成，避免重启争用4181；回退仍须按上文恢复旧服务的开机状态。
+两台 root 私有安装记录分别在 `/var/backups/code-museum-executor/20261109T054729947461Z-dual-xshow` 和 `/var/backups/code-museum-executor/20261109T054729521128Z-dual-xshow2`，各自的 `port-4184-revision/` 保存端口修订前材料。切换前 SQLite 备份在 xshow 的 `/var/backups/code-museum-executor/20261109T054729947461Z-dual-xshow/metrics-before-cutover.sqlite`；这些主机备份不进入源码或普通发布包，且只对应当时的私有版本，不能据此回退当前guest配置。新服务启用和旧服务 disable 已在正式验收通过后完成，避免重启争用4181；回退仍须按上文恢复旧服务的开机状态。
 
 上述执行器切换检查点之后，`8bf6c20`静态站点已发布，正式前端现为59个可执行节点（4浏览器 / 56远端，Python重叠）。[本轮73项HTTPS/Chrome检查](../data/audit/b37-site-runtime-checks.json)及[公开数据一致性](../data/audit/b37-site-consistency.json)通过；[6项服务检查](../data/audit/b37-site-service-checks.json)确认申请路由及只读MCP新配置快照。随后公开输入已全部推送master，正式Actions部署`f2ff0bf`，626个发布文件与已验收版本的哈希一致；临时资料分支已清理。`data/audit/runtime-rollout.json`保留原逐门临时验收记录，不改写历史。
 
-本轮静态发布补记：Groovy档案8秒与无硬编码3秒超时文案已随新页面发布。新增权限申请路由只追加到现有Nginx messages snippet，主虚拟主机不变；只验证availability和无效请求，没有发送有效申请或真实测试邮件。本次保留活数据库与旧站，执行器PID不变，详见 [站点部署与回退记录](DEPLOYMENT.md)。上述执行器章节内的“尚未发布/提交”是当时检查点；本轮站点已上线，Git/CI状态仍须分别收尾确认。
+本轮静态发布补记：Groovy档案8秒与无硬编码3秒超时文案已随新页面发布。新增权限申请路由只追加到现有Nginx messages snippet，主虚拟主机不变；只验证availability和无效请求，没有发送有效申请或真实测试邮件。本次保留活数据库与旧站，执行器PID不变，详见 [站点部署与回退记录](DEPLOYMENT.md)。上述执行器章节内的“尚未发布/提交”是当时检查点；该阶段站点及Git/CI收尾均已完成；申请路由随后随免令牌上线退役，当前规则见 [免令牌说明](GUEST_EXECUTION.md)。

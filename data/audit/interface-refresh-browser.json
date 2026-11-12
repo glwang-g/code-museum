@@ -1,0 +1,5467 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-12T01:52:31.783Z",
+  "browser": "Chrome/157.0.8103.78",
+  "origin": "http://127.0.0.1:4194",
+  "scope": "Local isolated Chrome. Four widths and both themes. Computed typography, composited sRGB text contrast, navigation order, control geometry and independent scrolling. No live model or remote execution. Responsive emulation, not physical Safari.",
+  "checks": [
+    {
+      "name": "Gallery copy, cards and selected navigation have readable type and contrast",
+      "width": 1440,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Three primary sections remain visible; exploration exposes only its four children",
+      "width": 1440,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Full catalogue separates its title from complete search and filtering controls",
+      "width": 1440,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Reading uses 16px body, distinct actions and accurate dual Python modes",
+      "width": 1440,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Run/check actions fit; editor and four syntax colors meet 4.5:1 contrast",
+      "width": 1440,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Credits keep readable fields and independently scrolling panes",
+      "width": 1440,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Gallery copy, cards and selected navigation have readable type and contrast",
+      "width": 1440,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Three primary sections remain visible; exploration exposes only its four children",
+      "width": 1440,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Full catalogue separates its title from complete search and filtering controls",
+      "width": 1440,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Reading uses 16px body, distinct actions and accurate dual Python modes",
+      "width": 1440,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Run/check actions fit; editor and four syntax colors meet 4.5:1 contrast",
+      "width": 1440,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Credits keep readable fields and independently scrolling panes",
+      "width": 1440,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Gallery copy, cards and selected navigation have readable type and contrast",
+      "width": 900,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Three primary sections remain visible; exploration exposes only its four children",
+      "width": 900,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Full catalogue separates its title from complete search and filtering controls",
+      "width": 900,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Reading uses 16px body, distinct actions and accurate dual Python modes",
+      "width": 900,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Run/check actions fit; editor and four syntax colors meet 4.5:1 contrast",
+      "width": 900,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Credits keep readable fields and independently scrolling panes",
+      "width": 900,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Gallery copy, cards and selected navigation have readable type and contrast",
+      "width": 900,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Three primary sections remain visible; exploration exposes only its four children",
+      "width": 900,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Full catalogue separates its title from complete search and filtering controls",
+      "width": 900,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Reading uses 16px body, distinct actions and accurate dual Python modes",
+      "width": 900,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Run/check actions fit; editor and four syntax colors meet 4.5:1 contrast",
+      "width": 900,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Credits keep readable fields and independently scrolling panes",
+      "width": 900,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Gallery copy, cards and selected navigation have readable type and contrast",
+      "width": 390,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Three primary sections remain visible; exploration exposes only its four children",
+      "width": 390,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Full catalogue separates its title from complete search and filtering controls",
+      "width": 390,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Reading uses 16px body, distinct actions and accurate dual Python modes",
+      "width": 390,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Run/check actions fit; editor and four syntax colors meet 4.5:1 contrast",
+      "width": 390,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Credits keep readable fields and independently scrolling panes",
+      "width": 390,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Gallery copy, cards and selected navigation have readable type and contrast",
+      "width": 390,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Three primary sections remain visible; exploration exposes only its four children",
+      "width": 390,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Full catalogue separates its title from complete search and filtering controls",
+      "width": 390,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Reading uses 16px body, distinct actions and accurate dual Python modes",
+      "width": 390,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Run/check actions fit; editor and four syntax colors meet 4.5:1 contrast",
+      "width": 390,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Credits keep readable fields and independently scrolling panes",
+      "width": 390,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Gallery copy, cards and selected navigation have readable type and contrast",
+      "width": 320,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Three primary sections remain visible; exploration exposes only its four children",
+      "width": 320,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Full catalogue separates its title from complete search and filtering controls",
+      "width": 320,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Reading uses 16px body, distinct actions and accurate dual Python modes",
+      "width": 320,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Run/check actions fit; editor and four syntax colors meet 4.5:1 contrast",
+      "width": 320,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Credits keep readable fields and independently scrolling panes",
+      "width": 320,
+      "theme": "light",
+      "passed": true
+    },
+    {
+      "name": "Gallery copy, cards and selected navigation have readable type and contrast",
+      "width": 320,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Three primary sections remain visible; exploration exposes only its four children",
+      "width": 320,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Full catalogue separates its title from complete search and filtering controls",
+      "width": 320,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Reading uses 16px body, distinct actions and accurate dual Python modes",
+      "width": 320,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Run/check actions fit; editor and four syntax colors meet 4.5:1 contrast",
+      "width": 320,
+      "theme": "dark",
+      "passed": true
+    },
+    {
+      "name": "Credits keep readable fields and independently scrolling panes",
+      "width": 320,
+      "theme": "dark",
+      "passed": true
+    }
+  ],
+  "samples": [
+    {
+      "width": 1440,
+      "theme": "light",
+      "view": "gallery",
+      "measurements": [
+        {
+          "selector": ".intro-note p",
+          "text": "从一段有出处的历史开始，认识一门语言，再亲手写一段代码。",
+          "font": 15,
+          "contrast": 5.485,
+          "x": 1108,
+          "y": 219,
+          "width": 240,
+          "height": 55.5
+        },
+        {
+          "selector": ".route-card p",
+          "text": "沿 BCPL、B、C 的原文依据，再比较 C 与 C++。",
+          "font": 14,
+          "contrast": 13.232,
+          "x": 117,
+          "y": 1062.09375,
+          "width": 359.328125,
+          "height": 41.890625
+        },
+        {
+          "selector": ".route-card p",
+          "text": "从 Lisp 与 Scheme 的设计依据，到 Lua 和 JavaScript 的同题练",
+          "font": 14,
+          "contrast": 13.232,
+          "x": 540.328125,
+          "y": 1049.15625,
+          "width": 359.328125,
+          "height": 67.78125
+        },
+        {
+          "selector": ".route-card p",
+          "text": "区分设计关系、表达方式、解释器与编译环境。",
+          "font": 14,
+          "contrast": 13.232,
+          "x": 963.65625,
+          "y": 1062.09375,
+          "width": 359.34375,
+          "height": 41.890625
+        },
+        {
+          "selector": ".route-card p",
+          "text": "沿 CoffeeScript 与 LiveScript 的明确原文，阅读 Civet 如何",
+          "font": 14,
+          "contrast": 13.232,
+          "x": 117,
+          "y": 1278.15625,
+          "width": 359.328125,
+          "height": 67.78125
+        },
+        {
+          "selector": ".route-card p",
+          "text": "从 JavaScript 展品出发，依次改写变量、分支、循环、函数与列表，得到五次真实输出",
+          "font": 14,
+          "contrast": 13.232,
+          "x": 540.328125,
+          "y": 1278.15625,
+          "width": 359.328125,
+          "height": 67.78125
+        },
+        {
+          "selector": ".route-meta",
+          "text": "策展导览 · 5 个停靠点",
+          "font": 12,
+          "contrast": 5.894,
+          "x": 117,
+          "y": 984.65625,
+          "width": 359.328125,
+          "height": 18
+        },
+        {
+          "selector": ".route-meta",
+          "text": "策展导览 · 6 个停靠点",
+          "font": 12,
+          "contrast": 5.894,
+          "x": 540.328125,
+          "y": 971.71875,
+          "width": 359.328125,
+          "height": 18
+        },
+        {
+          "selector": ".route-meta",
+          "text": "策展导览 · 6 个停靠点",
+          "font": 12,
+          "contrast": 5.894,
+          "x": 963.65625,
+          "y": 984.65625,
+          "width": 359.34375,
+          "height": 18
+        },
+        {
+          "selector": ".route-meta",
+          "text": "策展导览 · 4 个停靠点",
+          "font": 12,
+          "contrast": 5.894,
+          "x": 117,
+          "y": 1200.71875,
+          "width": 359.328125,
+          "height": 18
+        },
+        {
+          "selector": ".route-meta",
+          "text": "策展导览 · 6 个停靠点",
+          "font": 12,
+          "contrast": 5.894,
+          "x": 540.328125,
+          "y": 1200.71875,
+          "width": 359.328125,
+          "height": 18
+        },
+        {
+          "selector": ".language-card small",
+          "text": "1991 · 馆藏来源年代",
+          "font": 12,
+          "contrast": 5.894,
+          "x": 115,
+          "y": 1619.265625,
+          "width": 108.734375,
+          "height": 18
+        },
+        {
+          "selector": ".language-card small",
+          "text": "1995 · 馆藏来源年代",
+          "font": 12,
+          "contrast": 5.894,
+          "x": 432.5,
+          "y": 1619.265625,
+          "width": 110.578125,
+          "height": 18
+        },
+        {
+          "selector": ".language-card small",
+          "text": "1972 · 馆藏来源年代",
+          "font": 12,
+          "contrast": 5.894,
+          "x": 750,
+          "y": 1619.265625,
+          "width": 109.359375,
+          "height": 18
+        },
+        {
+          "selector": ".language-card small",
+          "text": "2010 · 馆藏来源年代",
+          "font": 12,
+          "contrast": 5.894,
+          "x": 1067.5,
+          "y": 1619.265625,
+          "width": 110.25,
+          "height": 18
+        },
+        {
+          "selector": ".section-nav a.active",
+          "text": "主题展厅",
+          "font": 13,
+          "contrast": 5.828,
+          "x": 92,
+          "y": 88,
+          "width": 56,
+          "height": 58
+        },
+        {
+          "selector": ".exhibit-footer",
+          "text": "年代索引，仅作展品排序；设计关系请查阅出处。03 — 04",
+          "font": 12,
+          "contrast": 8.387,
+          "x": 92,
+          "y": 712.53125,
+          "width": 1256,
+          "height": 44.796875
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "view": "catalogue",
+      "measurements": [
+        {
+          "selector": ".catalogue-title",
+          "text": "THE COLLECTION · 不按热度排序每一种名字，都有位置。",
+          "font": 16,
+          "contrast": 12.313,
+          "x": 92,
+          "y": 151,
+          "width": 1058.78125,
+          "height": 68.5
+        },
+        {
+          "selector": "#search",
+          "text": "",
+          "font": 14,
+          "contrast": 13.232,
+          "x": 92,
+          "y": 239.5,
+          "width": 965,
+          "height": 44
+        },
+        {
+          "selector": "#result-count",
+          "text": "5,155 条匹配 / 5,155 条馆藏",
+          "font": 14,
+          "contrast": 5.485,
+          "x": 1174.78125,
+          "y": 191,
+          "width": 173.21875,
+          "height": 24.5
+        },
+        {
+          "selector": ".record strong",
+          "text": "$",
+          "font": 17,
+          "contrast": 13.232,
+          "x": 113,
+          "y": 334.375,
+          "width": 548.125,
+          "height": 25.5
+        },
+        {
+          "selector": ".record strong",
+          "text": ".dwg",
+          "font": 17,
+          "contrast": 13.232,
+          "x": 747,
+          "y": 334.375,
+          "width": 548.125,
+          "height": 25.5
+        },
+        {
+          "selector": ".record strong",
+          "text": ".QL",
+          "font": 17,
+          "contrast": 13.232,
+          "x": 113,
+          "y": 438.375,
+          "width": 548.125,
+          "height": 25.5
+        },
+        {
+          "selector": ".record strong",
+          "text": "05AB1E",
+          "font": 17,
+          "contrast": 13.232,
+          "x": 747,
+          "y": 438.375,
+          "width": 548.125,
+          "height": 25.5
+        },
+        {
+          "selector": ".record strong",
+          "text": "1.pak",
+          "font": 17,
+          "contrast": 13.232,
+          "x": 113,
+          "y": 542.375,
+          "width": 548.125,
+          "height": 25.5
+        },
+        {
+          "selector": ".record strong",
+          "text": "11ty",
+          "font": 17,
+          "contrast": 13.232,
+          "x": 747,
+          "y": 542.375,
+          "width": 548.125,
+          "height": 25.5
+        },
+        {
+          "selector": ".record>span",
+          "text": "1983 · 来源标为语言，性质待核",
+          "font": 13,
+          "contrast": 5.894,
+          "x": 113,
+          "y": 368.625,
+          "width": 548.125,
+          "height": 18
+        },
+        {
+          "selector": ".record>span",
+          "text": "1982 · 来源标为相关技术",
+          "font": 13,
+          "contrast": 5.894,
+          "x": 747,
+          "y": 368.625,
+          "width": 548.125,
+          "height": 18
+        },
+        {
+          "selector": ".record>span",
+          "text": "2007 · 来源标为语言，性质待核",
+          "font": 13,
+          "contrast": 5.894,
+          "x": 113,
+          "y": 472.625,
+          "width": 548.125,
+          "height": 18
+        },
+        {
+          "selector": ".record>span",
+          "text": "2015 · 来源标为语言，性质待核",
+          "font": 13,
+          "contrast": 5.894,
+          "x": 747,
+          "y": 472.625,
+          "width": 548.125,
+          "height": 18
+        },
+        {
+          "selector": ".record>span",
+          "text": "1973 · 来源标为语言，性质待核",
+          "font": 13,
+          "contrast": 5.894,
+          "x": 113,
+          "y": 576.625,
+          "width": 548.125,
+          "height": 18
+        },
+        {
+          "selector": ".record>span",
+          "text": "2017 · 已核相关技术",
+          "font": 13,
+          "contrast": 5.894,
+          "x": 747,
+          "y": 576.625,
+          "width": 548.125,
+          "height": 18
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "view": "reading",
+      "measurements": [
+        {
+          "selector": ".reading-article section>p",
+          "text": "Python 官方 FAQ 将缩进分组与高层数据类型追溯到 ABC 的经验，同时强调两门语",
+          "font": 16,
+          "contrast": 12.313,
+          "x": 170,
+          "y": 498.09375,
+          "width": 760,
+          "height": 62.375
+        },
+        {
+          "selector": ".reading-article section>p",
+          "text": "来源年代不等于当前实现版本；已存依据也不表示历史关系已全部找齐。",
+          "font": 12,
+          "contrast": 5.485,
+          "x": 170,
+          "y": 737.0625,
+          "width": 760,
+          "height": 22.1875
+        },
+        {
+          "selector": ".reading-article section>p",
+          "text": "此处只展示源码，没有预先填入运行结果；进入实验台后点击运行。",
+          "font": 12,
+          "contrast": 5.485,
+          "x": 170,
+          "y": 1437.96875,
+          "width": 760,
+          "height": 22.1875
+        },
+        {
+          "selector": ".reading-article section>p",
+          "text": "示例采用 Python 3；本地使用固定 Pyodide，第三方包和系统接口受环境限制。",
+          "font": 16,
+          "contrast": 12.313,
+          "x": 170,
+          "y": 1543.65625,
+          "width": 760,
+          "height": 31.1875
+        },
+        {
+          "selector": ".reading-source-note",
+          "text": "来源年代不等于当前实现版本；已存依据也不表示历史关系已全部找齐。",
+          "font": 12,
+          "contrast": 5.485,
+          "x": 170,
+          "y": 737.0625,
+          "width": 760,
+          "height": 22.1875
+        },
+        {
+          "selector": ".reading-source-note",
+          "text": "此处只展示源码，没有预先填入运行结果；进入实验台后点击运行。",
+          "font": 12,
+          "contrast": 5.485,
+          "x": 170,
+          "y": 1437.96875,
+          "width": 760,
+          "height": 22.1875
+        },
+        {
+          "selector": ".reading-specimen-card .primary",
+          "text": "继续这个任务 →",
+          "font": 14,
+          "contrast": 6.263,
+          "x": 1023,
+          "y": 722.15625,
+          "width": 224,
+          "height": 45
+        },
+        {
+          "selector": ".reading-evidence p",
+          "text": "Python 官方 FAQ 引 Guido van Rossum 自述：ABC 团队经验是",
+          "font": 14,
+          "contrast": 5.163,
+          "x": 194,
+          "y": 602.46875,
+          "width": 714,
+          "height": 54.59375
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "view": "lab",
+      "measurements": [
+        {
+          "selector": "#lab-run",
+          "text": "运行代码",
+          "font": 14,
+          "contrast": 6.263,
+          "x": 1250,
+          "y": 146.5,
+          "width": 98,
+          "height": 45
+        },
+        {
+          "selector": "#lab-explain-current",
+          "text": "检查代码",
+          "font": 14,
+          "contrast": 13.232,
+          "x": 1150,
+          "y": 147,
+          "width": 90,
+          "height": 44
+        },
+        {
+          "selector": "#lab-highlight",
+          "text": "// interface sample\nconst value = 7;\nconsole.",
+          "font": 14,
+          "contrast": 10.813,
+          "x": 93,
+          "y": 262.5,
+          "width": 770.6875,
+          "height": 434.90625
+        },
+        {
+          "selector": "#lab-highlight .tok-keyword",
+          "text": "const",
+          "font": 14,
+          "contrast": 5.189,
+          "x": 153,
+          "y": 316.390625,
+          "width": 42.15625,
+          "height": 16
+        },
+        {
+          "selector": "#lab-highlight .tok-string",
+          "text": "\"value\"",
+          "font": 14,
+          "contrast": 5.146,
+          "x": 254.15625,
+          "y": 342.28125,
+          "width": 59.015625,
+          "height": 16
+        },
+        {
+          "selector": "#lab-highlight .tok-number",
+          "text": "7",
+          "font": 14,
+          "contrast": 5.68,
+          "x": 271.015625,
+          "y": 316.390625,
+          "width": 8.4375,
+          "height": 16
+        },
+        {
+          "selector": "#lab-highlight .tok-comment",
+          "text": "// interface sample",
+          "font": 14,
+          "contrast": 4.671,
+          "x": 153,
+          "y": 290.5,
+          "width": 160.15625,
+          "height": 16
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "view": "credits",
+      "measurements": [
+        {
+          "selector": "#credit-search",
+          "text": "",
+          "font": 14,
+          "contrast": 13.232,
+          "x": 105,
+          "y": 227.75,
+          "width": 338.234375,
+          "height": 44
+        },
+        {
+          "selector": "#credit-category",
+          "text": "全部分类语言运行环境馆藏数据榜单参考关系核对历史依据与边界项目与支持",
+          "font": 14,
+          "contrast": 13.232,
+          "x": 139,
+          "y": 280.75,
+          "width": 304.234375,
+          "height": 44
+        },
+        {
+          "selector": ".credit-option-name",
+          "text": "浏览器原生 JavaScript",
+          "font": 14,
+          "contrast": 4.285,
+          "x": 118,
+          "y": 380.75,
+          "width": 312.234375,
+          "height": 21
+        },
+        {
+          "selector": ".credit-option-name",
+          "text": "Pyodide",
+          "font": 14,
+          "contrast": 13.232,
+          "x": 118,
+          "y": 445.9375,
+          "width": 312.234375,
+          "height": 21
+        },
+        {
+          "selector": ".credit-option-name",
+          "text": "Wasmoon / Lua",
+          "font": 14,
+          "contrast": 13.232,
+          "x": 118,
+          "y": 511.125,
+          "width": 312.234375,
+          "height": 21
+        },
+        {
+          "selector": ".credit-option-name",
+          "text": "BiwaScheme",
+          "font": 14,
+          "contrast": 13.232,
+          "x": 118,
+          "y": 576.3125,
+          "width": 312.234375,
+          "height": 21
+        },
+        {
+          "selector": ".credit-option-name",
+          "text": "Free Pascal",
+          "font": 14,
+          "contrast": 13.232,
+          "x": 118,
+          "y": 641.5,
+          "width": 312.234375,
+          "height": 21
+        },
+        {
+          "selector": ".credit-option-name",
+          "text": "R / Rscript",
+          "font": 14,
+          "contrast": 13.232,
+          "x": 118,
+          "y": 706.6875,
+          "width": 312.234375,
+          "height": 21
+        },
+        {
+          "selector": ".credit-option-meta",
+          "text": "语言运行环境 · 浏览器能力",
+          "font": 12,
+          "contrast": 4.909,
+          "x": 118,
+          "y": 401.75,
+          "width": 312.234375,
+          "height": 19.1875
+        },
+        {
+          "selector": ".credit-option-meta",
+          "text": "语言运行环境 · Pyodide 314.0.7",
+          "font": 12,
+          "contrast": 5.894,
+          "x": 118,
+          "y": 466.9375,
+          "width": 312.234375,
+          "height": 19.1875
+        },
+        {
+          "selector": ".credit-option-meta",
+          "text": "语言运行环境 · Wasmoon 1.16.0 · Lua 5.4.5",
+          "font": 12,
+          "contrast": 5.894,
+          "x": 118,
+          "y": 532.125,
+          "width": 312.234375,
+          "height": 19.1875
+        },
+        {
+          "selector": ".credit-option-meta",
+          "text": "语言运行环境 · BiwaScheme 0.8.3",
+          "font": 12,
+          "contrast": 5.894,
+          "x": 118,
+          "y": 597.3125,
+          "width": 312.234375,
+          "height": 19.1875
+        },
+        {
+          "selector": ".credit-option-meta",
+          "text": "语言运行环境 · Free Pascal 3.2.2",
+          "font": 12,
+          "contrast": 5.894,
+          "x": 118,
+          "y": 662.5,
+          "width": 312.234375,
+          "height": 19.1875
+        },
+        {
+          "selector": ".credit-option-meta",
+          "text": "语言运行环境 · Rscript (R) version 4.2.2 Patched (2",
+          "font": 12,
+          "contrast": 5.894,
+          "x": 118,
+          "y": 727.6875,
+          "width": 312.234375,
+          "height": 19.1875
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "view": "gallery",
+      "measurements": [
+        {
+          "selector": ".intro-note p",
+          "text": "从一段有出处的历史开始，认识一门语言，再亲手写一段代码。",
+          "font": 15,
+          "contrast": 8.924,
+          "x": 1108,
+          "y": 132,
+          "width": 240,
+          "height": 55.5
+        },
+        {
+          "selector": ".route-card p",
+          "text": "沿 BCPL、B、C 的原文依据，再比较 C 与 C++。",
+          "font": 14,
+          "contrast": 12.916,
+          "x": 117,
+          "y": 975.09375,
+          "width": 359.328125,
+          "height": 41.890625
+        },
+        {
+          "selector": ".route-card p",
+          "text": "从 Lisp 与 Scheme 的设计依据，到 Lua 和 JavaScript 的同题练",
+          "font": 14,
+          "contrast": 12.916,
+          "x": 540.328125,
+          "y": 962.15625,
+          "width": 359.328125,
+          "height": 67.78125
+        },
+        {
+          "selector": ".route-card p",
+          "text": "区分设计关系、表达方式、解释器与编译环境。",
+          "font": 14,
+          "contrast": 12.916,
+          "x": 963.65625,
+          "y": 975.09375,
+          "width": 359.34375,
+          "height": 41.890625
+        },
+        {
+          "selector": ".route-card p",
+          "text": "沿 CoffeeScript 与 LiveScript 的明确原文，阅读 Civet 如何",
+          "font": 14,
+          "contrast": 12.916,
+          "x": 117,
+          "y": 1191.15625,
+          "width": 359.328125,
+          "height": 67.78125
+        },
+        {
+          "selector": ".route-card p",
+          "text": "从 JavaScript 展品出发，依次改写变量、分支、循环、函数与列表，得到五次真实输出",
+          "font": 14,
+          "contrast": 12.916,
+          "x": 540.328125,
+          "y": 1191.15625,
+          "width": 359.328125,
+          "height": 67.78125
+        },
+        {
+          "selector": ".route-meta",
+          "text": "策展导览 · 5 个停靠点",
+          "font": 12,
+          "contrast": 7.611,
+          "x": 117,
+          "y": 897.65625,
+          "width": 359.328125,
+          "height": 18
+        },
+        {
+          "selector": ".route-meta",
+          "text": "策展导览 · 6 个停靠点",
+          "font": 12,
+          "contrast": 7.611,
+          "x": 540.328125,
+          "y": 884.71875,
+          "width": 359.328125,
+          "height": 18
+        },
+        {
+          "selector": ".route-meta",
+          "text": "策展导览 · 6 个停靠点",
+          "font": 12,
+          "contrast": 7.611,
+          "x": 963.65625,
+          "y": 897.65625,
+          "width": 359.34375,
+          "height": 18
+        },
+        {
+          "selector": ".route-meta",
+          "text": "策展导览 · 4 个停靠点",
+          "font": 12,
+          "contrast": 7.611,
+          "x": 117,
+          "y": 1113.71875,
+          "width": 359.328125,
+          "height": 18
+        },
+        {
+          "selector": ".route-meta",
+          "text": "策展导览 · 6 个停靠点",
+          "font": 12,
+          "contrast": 7.611,
+          "x": 540.328125,
+          "y": 1113.71875,
+          "width": 359.328125,
+          "height": 18
+        },
+        {
+          "selector": ".language-card small",
+          "text": "1991 · 馆藏来源年代",
+          "font": 12,
+          "contrast": 7.611,
+          "x": 115,
+          "y": 1532.265625,
+          "width": 108.734375,
+          "height": 18
+        },
+        {
+          "selector": ".language-card small",
+          "text": "1995 · 馆藏来源年代",
+          "font": 12,
+          "contrast": 7.611,
+          "x": 432.5,
+          "y": 1532.265625,
+          "width": 110.578125,
+          "height": 18
+        },
+        {
+          "selector": ".language-card small",
+          "text": "1972 · 馆藏来源年代",
+          "font": 12,
+          "contrast": 7.611,
+          "x": 750,
+          "y": 1532.265625,
+          "width": 109.359375,
+          "height": 18
+        },
+        {
+          "selector": ".language-card small",
+          "text": "2010 · 馆藏来源年代",
+          "font": 12,
+          "contrast": 7.611,
+          "x": 1067.5,
+          "y": 1532.265625,
+          "width": 110.25,
+          "height": 18
+        },
+        {
+          "selector": ".section-nav a.active",
+          "text": "主题展厅",
+          "font": 13,
+          "contrast": 9.425,
+          "x": 92,
+          "y": 72,
+          "width": 56,
+          "height": 58
+        },
+        {
+          "selector": ".exhibit-footer",
+          "text": "年代索引，仅作展品排序；设计关系请查阅出处。03 — 04",
+          "font": 12,
+          "contrast": 8.387,
+          "x": 92,
+          "y": 625.53125,
+          "width": 1256,
+          "height": 44.796875
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "view": "catalogue",
+      "measurements": [
+        {
+          "selector": ".catalogue-title",
+          "text": "THE COLLECTION · 不按热度排序每一种名字，都有位置。",
+          "font": 16,
+          "contrast": 15.144,
+          "x": 92,
+          "y": 151,
+          "width": 1058.78125,
+          "height": 68.5
+        },
+        {
+          "selector": "#search",
+          "text": "",
+          "font": 14,
+          "contrast": 12.916,
+          "x": 92,
+          "y": 239.5,
+          "width": 965,
+          "height": 44
+        },
+        {
+          "selector": "#result-count",
+          "text": "5,155 条匹配 / 5,155 条馆藏",
+          "font": 14,
+          "contrast": 8.924,
+          "x": 1174.78125,
+          "y": 191,
+          "width": 173.21875,
+          "height": 24.5
+        },
+        {
+          "selector": ".record strong",
+          "text": "$",
+          "font": 17,
+          "contrast": 12.916,
+          "x": 113,
+          "y": 334.375,
+          "width": 548.125,
+          "height": 25.5
+        },
+        {
+          "selector": ".record strong",
+          "text": ".dwg",
+          "font": 17,
+          "contrast": 12.916,
+          "x": 747,
+          "y": 334.375,
+          "width": 548.125,
+          "height": 25.5
+        },
+        {
+          "selector": ".record strong",
+          "text": ".QL",
+          "font": 17,
+          "contrast": 12.916,
+          "x": 113,
+          "y": 438.375,
+          "width": 548.125,
+          "height": 25.5
+        },
+        {
+          "selector": ".record strong",
+          "text": "05AB1E",
+          "font": 17,
+          "contrast": 12.916,
+          "x": 747,
+          "y": 438.375,
+          "width": 548.125,
+          "height": 25.5
+        },
+        {
+          "selector": ".record strong",
+          "text": "1.pak",
+          "font": 17,
+          "contrast": 12.916,
+          "x": 113,
+          "y": 542.375,
+          "width": 548.125,
+          "height": 25.5
+        },
+        {
+          "selector": ".record strong",
+          "text": "11ty",
+          "font": 17,
+          "contrast": 12.916,
+          "x": 747,
+          "y": 542.375,
+          "width": 548.125,
+          "height": 25.5
+        },
+        {
+          "selector": ".record>span",
+          "text": "1983 · 来源标为语言，性质待核",
+          "font": 13,
+          "contrast": 7.611,
+          "x": 113,
+          "y": 368.625,
+          "width": 548.125,
+          "height": 18
+        },
+        {
+          "selector": ".record>span",
+          "text": "1982 · 来源标为相关技术",
+          "font": 13,
+          "contrast": 7.611,
+          "x": 747,
+          "y": 368.625,
+          "width": 548.125,
+          "height": 18
+        },
+        {
+          "selector": ".record>span",
+          "text": "2007 · 来源标为语言，性质待核",
+          "font": 13,
+          "contrast": 7.611,
+          "x": 113,
+          "y": 472.625,
+          "width": 548.125,
+          "height": 18
+        },
+        {
+          "selector": ".record>span",
+          "text": "2015 · 来源标为语言，性质待核",
+          "font": 13,
+          "contrast": 7.611,
+          "x": 747,
+          "y": 472.625,
+          "width": 548.125,
+          "height": 18
+        },
+        {
+          "selector": ".record>span",
+          "text": "1973 · 来源标为语言，性质待核",
+          "font": 13,
+          "contrast": 7.611,
+          "x": 113,
+          "y": 576.625,
+          "width": 548.125,
+          "height": 18
+        },
+        {
+          "selector": ".record>span",
+          "text": "2017 · 已核相关技术",
+          "font": 13,
+          "contrast": 7.611,
+          "x": 747,
+          "y": 576.625,
+          "width": 548.125,
+          "height": 18
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "view": "reading",
+      "measurements": [
+        {
+          "selector": ".reading-article section>p",
+          "text": "Python 官方 FAQ 将缩进分组与高层数据类型追溯到 ABC 的经验，同时强调两门语",
+          "font": 16,
+          "contrast": 15.144,
+          "x": 170,
+          "y": 498.09375,
+          "width": 760,
+          "height": 62.375
+        },
+        {
+          "selector": ".reading-article section>p",
+          "text": "来源年代不等于当前实现版本；已存依据也不表示历史关系已全部找齐。",
+          "font": 12,
+          "contrast": 8.924,
+          "x": 170,
+          "y": 737.0625,
+          "width": 760,
+          "height": 22.1875
+        },
+        {
+          "selector": ".reading-article section>p",
+          "text": "此处只展示源码，没有预先填入运行结果；进入实验台后点击运行。",
+          "font": 12,
+          "contrast": 8.924,
+          "x": 170,
+          "y": 1437.96875,
+          "width": 760,
+          "height": 22.1875
+        },
+        {
+          "selector": ".reading-article section>p",
+          "text": "示例采用 Python 3；本地使用固定 Pyodide，第三方包和系统接口受环境限制。",
+          "font": 16,
+          "contrast": 15.144,
+          "x": 170,
+          "y": 1543.65625,
+          "width": 760,
+          "height": 31.1875
+        },
+        {
+          "selector": ".reading-source-note",
+          "text": "来源年代不等于当前实现版本；已存依据也不表示历史关系已全部找齐。",
+          "font": 12,
+          "contrast": 8.924,
+          "x": 170,
+          "y": 737.0625,
+          "width": 760,
+          "height": 22.1875
+        },
+        {
+          "selector": ".reading-source-note",
+          "text": "此处只展示源码，没有预先填入运行结果；进入实验台后点击运行。",
+          "font": 12,
+          "contrast": 8.924,
+          "x": 170,
+          "y": 1437.96875,
+          "width": 760,
+          "height": 22.1875
+        },
+        {
+          "selector": ".reading-specimen-card .primary",
+          "text": "继续这个任务 →",
+          "font": 14,
+          "contrast": 7.255,
+          "x": 1023,
+          "y": 722.15625,
+          "width": 224,
+          "height": 45
+        },
+        {
+          "selector": ".reading-evidence p",
+          "text": "Python 官方 FAQ 引 Guido van Rossum 自述：ABC 团队经验是",
+          "font": 14,
+          "contrast": 6.393,
+          "x": 194,
+          "y": 602.46875,
+          "width": 714,
+          "height": 54.59375
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "view": "lab",
+      "measurements": [
+        {
+          "selector": "#lab-run",
+          "text": "运行代码",
+          "font": 14,
+          "contrast": 7.255,
+          "x": 1250,
+          "y": 146.5,
+          "width": 98,
+          "height": 45
+        },
+        {
+          "selector": "#lab-explain-current",
+          "text": "检查代码",
+          "font": 14,
+          "contrast": 12.916,
+          "x": 1150,
+          "y": 147,
+          "width": 90,
+          "height": 44
+        },
+        {
+          "selector": "#lab-highlight",
+          "text": "// interface sample\nconst value = 7;\nconsole.",
+          "font": 14,
+          "contrast": 11.149,
+          "x": 93,
+          "y": 262.5,
+          "width": 770.6875,
+          "height": 434.90625
+        },
+        {
+          "selector": "#lab-highlight .tok-keyword",
+          "text": "const",
+          "font": 14,
+          "contrast": 6.504,
+          "x": 153,
+          "y": 316.390625,
+          "width": 42.15625,
+          "height": 16
+        },
+        {
+          "selector": "#lab-highlight .tok-string",
+          "text": "\"value\"",
+          "font": 14,
+          "contrast": 7.356,
+          "x": 254.15625,
+          "y": 342.28125,
+          "width": 59.015625,
+          "height": 16
+        },
+        {
+          "selector": "#lab-highlight .tok-number",
+          "text": "7",
+          "font": 14,
+          "contrast": 7.599,
+          "x": 271.015625,
+          "y": 316.390625,
+          "width": 8.4375,
+          "height": 16
+        },
+        {
+          "selector": "#lab-highlight .tok-comment",
+          "text": "// interface sample",
+          "font": 14,
+          "contrast": 5.499,
+          "x": 153,
+          "y": 290.5,
+          "width": 160.15625,
+          "height": 16
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "view": "credits",
+      "measurements": [
+        {
+          "selector": "#credit-search",
+          "text": "",
+          "font": 14,
+          "contrast": 12.916,
+          "x": 105,
+          "y": 227.75,
+          "width": 338.234375,
+          "height": 44
+        },
+        {
+          "selector": "#credit-category",
+          "text": "全部分类语言运行环境馆藏数据榜单参考关系核对历史依据与边界项目与支持",
+          "font": 14,
+          "contrast": 12.916,
+          "x": 139,
+          "y": 280.75,
+          "width": 304.234375,
+          "height": 44
+        },
+        {
+          "selector": ".credit-option-name",
+          "text": "浏览器原生 JavaScript",
+          "font": 14,
+          "contrast": 6.656,
+          "x": 118,
+          "y": 380.75,
+          "width": 312.234375,
+          "height": 21
+        },
+        {
+          "selector": ".credit-option-name",
+          "text": "Pyodide",
+          "font": 14,
+          "contrast": 12.916,
+          "x": 118,
+          "y": 445.9375,
+          "width": 312.234375,
+          "height": 21
+        },
+        {
+          "selector": ".credit-option-name",
+          "text": "Wasmoon / Lua",
+          "font": 14,
+          "contrast": 12.916,
+          "x": 118,
+          "y": 511.125,
+          "width": 312.234375,
+          "height": 21
+        },
+        {
+          "selector": ".credit-option-name",
+          "text": "BiwaScheme",
+          "font": 14,
+          "contrast": 12.916,
+          "x": 118,
+          "y": 576.3125,
+          "width": 312.234375,
+          "height": 21
+        },
+        {
+          "selector": ".credit-option-name",
+          "text": "Free Pascal",
+          "font": 14,
+          "contrast": 12.916,
+          "x": 118,
+          "y": 641.5,
+          "width": 312.234375,
+          "height": 21
+        },
+        {
+          "selector": ".credit-option-name",
+          "text": "R / Rscript",
+          "font": 14,
+          "contrast": 12.916,
+          "x": 118,
+          "y": 706.6875,
+          "width": 312.234375,
+          "height": 21
+        },
+        {
+          "selector": ".credit-option-meta",
+          "text": "语言运行环境 · 浏览器能力",
+          "font": 12,
+          "contrast": 6.225,
+          "x": 118,
+          "y": 401.75,
+          "width": 312.234375,
+          "height": 19.1875
+        },
+        {
+          "selector": ".credit-option-meta",
+          "text": "语言运行环境 · Pyodide 314.0.7",
+          "font": 12,
+          "contrast": 7.611,
+          "x": 118,
+          "y": 466.9375,
+          "width": 312.234375,
+          "height": 19.1875
+        },
+        {
+          "selector": ".credit-option-meta",
+          "text": "语言运行环境 · Wasmoon 1.16.0 · Lua 5.4.5",
+          "font": 12,
+          "contrast": 7.611,
+          "x": 118,
+          "y": 532.125,
+          "width": 312.234375,
+          "height": 19.1875
+        },
+        {
+          "selector": ".credit-option-meta",
+          "text": "语言运行环境 · BiwaScheme 0.8.3",
+          "font": 12,
+          "contrast": 7.611,
+          "x": 118,
+          "y": 597.3125,
+          "width": 312.234375,
+          "height": 19.1875
+        },
+        {
+          "selector": ".credit-option-meta",
+          "text": "语言运行环境 · Free Pascal 3.2.2",
+          "font": 12,
+          "contrast": 7.611,
+          "x": 118,
+          "y": 662.5,
+          "width": 312.234375,
+          "height": 19.1875
+        },
+        {
+          "selector": ".credit-option-meta",
+          "text": "语言运行环境 · Rscript (R) version 4.2.2 Patched (2",
+          "font": 12,
+          "contrast": 7.611,
+          "x": 118,
+          "y": 727.6875,
+          "width": 312.234375,
+          "height": 19.1875
+        }
+      ]
+    },
+    {
+      "width": 900,
+      "theme": "light",
+      "view": "gallery",
+      "measurements": [
+        {
+          "selector": ".intro-note p",
+          "text": "从一段有出处的历史开始，认识一门语言，再亲手写一段代码。",
+          "font": 15,
+          "contrast": 5.485,
+          "x": 649,
+          "y": 132,
+          "width": 225,
+          "height": 83.25
+        },
+        {
+          "selector": ".route-card p",
+          "text": "沿 BCPL、B、C 的原文依据，再比较 C 与 C++。",
+          "font": 14,
+          "contrast": 13.232,
+          "x": 51,
+          "y": 997.734375,
+          "width": 223.328125,
+          "height": 67.78125
+        },
+        {
+          "selector": ".route-card p",
+          "text": "从 Lisp 与 Scheme 的设计依据，到 Lua 和 JavaScript 的同题练",
+          "font": 14,
+          "contrast": 13.232,
+          "x": 338.328125,
+          "y": 984.78125,
+          "width": 223.328125,
+          "height": 93.671875
+        },
+        {
+          "selector": ".route-card p",
+          "text": "区分设计关系、表达方式、解释器与编译环境。",
+          "font": 14,
+          "contrast": 13.232,
+          "x": 625.65625,
+          "y": 1012.453125,
+          "width": 223.34375,
+          "height": 67.78125
+        },
+        {
+          "selector": ".route-card p",
+          "text": "沿 CoffeeScript 与 LiveScript 的明确原文，阅读 Civet 如何",
+          "font": 14,
+          "contrast": 13.232,
+          "x": 51,
+          "y": 1242.390625,
+          "width": 223.328125,
+          "height": 93.671875
+        },
+        {
+          "selector": ".route-card p",
+          "text": "从 JavaScript 展品出发，依次改写变量、分支、循环、函数与列表，得到五次真实输出",
+          "font": 14,
+          "contrast": 13.232,
+          "x": 338.328125,
+          "y": 1257.109375,
+          "width": 223.328125,
+          "height": 93.671875
+        },
+        {
+          "selector": ".route-meta",
+          "text": "策展导览 · 5 个停靠点",
+          "font": 12,
+          "contrast": 5.894,
+          "x": 51,
+          "y": 920.296875,
+          "width": 223.328125,
+          "height": 18
+        },
+        {
+          "selector": ".route-meta",
+          "text": "策展导览 · 6 个停靠点",
+          "font": 12,
+          "contrast": 5.894,
+          "x": 338.328125,
+          "y": 907.34375,
+          "width": 223.328125,
+          "height": 18
+        },
+        {
+          "selector": ".route-meta",
+          "text": "策展导览 · 6 个停靠点",
+          "font": 12,
+          "contrast": 5.894,
+          "x": 625.65625,
+          "y": 905.578125,
+          "width": 223.34375,
+          "height": 18
+        },
+        {
+          "selector": ".route-meta",
+          "text": "策展导览 · 4 个停靠点",
+          "font": 12,
+          "contrast": 5.894,
+          "x": 51,
+          "y": 1164.953125,
+          "width": 223.328125,
+          "height": 18
+        },
+        {
+          "selector": ".route-meta",
+          "text": "策展导览 · 6 个停靠点",
+          "font": 12,
+          "contrast": 5.894,
+          "x": 338.328125,
+          "y": 1150.234375,
+          "width": 223.328125,
+          "height": 18
+        },
+        {
+          "selector": ".language-card small",
+          "text": "1991 · 馆藏来源年代",
+          "font": 12,
+          "contrast": 5.894,
+          "x": 49,
+          "y": 1617.21875,
+          "width": 108.734375,
+          "height": 18
+        },
+        {
+          "selector": ".language-card small",
+          "text": "1995 · 馆藏来源年代",
+          "font": 12,
+          "contrast": 5.894,
+          "x": 480,
+          "y": 1617.21875,
+          "width": 110.578125,
+          "height": 18
+        },
+        {
+          "selector": ".language-card small",
+          "text": "1972 · 馆藏来源年代",
+          "font": 12,
+          "contrast": 5.894,
+          "x": 49,
+          "y": 1891.21875,
+          "width": 109.359375,
+          "height": 18
+        },
+        {
+          "selector": ".language-card small",
+          "text": "2010 · 馆藏来源年代",
+          "font": 12,
+          "contrast": 5.894,
+          "x": 480,
+          "y": 1891.21875,
+          "width": 110.25,
+          "height": 18
+        },
+        {
+          "selector": ".section-nav a.active",
+          "text": "主题展厅",
+          "font": 13,
+          "contrast": 5.828,
+          "x": 26,
+          "y": 72,
+          "width": 56,
+          "height": 58
+        },
+        {
+          "selector": ".exhibit-footer",
+          "text": "年代索引，仅作展品排序；设计关系请查阅出处。03 — 04",
+          "font": 12,
+          "contrast": 8.387,
+          "x": 26,
+          "y": 653.28125,
+          "width": 848,
+          "height": 44.796875
+        }
+      ]
+    },
+    {
+      "width": 900,
+      "theme": "light",
+      "view": "catalogue",
+      "measurements": [
+        {
+          "selector": ".catalogue-title",
+          "text": "THE COLLECTION · 不按热度排序每一种名字，都有位置。",
+          "font": 16,
+          "contrast": 12.313,
+          "x": 26,
+          "y": 151,
+          "width": 650.78125,
+          "height": 68.5
+        },
+        {
+          "selector": "#search",
+          "text": "",
+          "font": 14,
+          "contrast": 13.232,
+          "x": 26,
+          "y": 239.5,
+          "width": 557,
+          "height": 44
+        },
+        {
+          "selector": "#result-count",
+          "text": "5,155 条匹配 / 5,155 条馆藏",
+          "font": 14,
+          "contrast": 5.485,
+          "x": 700.78125,
+          "y": 191,
+          "width": 173.21875,
+          "height": 24.5
+        },
+        {
+          "selector": ".record strong",
+          "text": "$",
+          "font": 17,
+          "contrast": 13.232,
+          "x": 47,
+          "y": 334.375,
+          "width": 344.125,
+          "height": 25.5
+        },
+        {
+          "selector": ".record strong",
+          "text": ".dwg",
+          "font": 17,
+          "contrast": 13.232,
+          "x": 477,
+          "y": 334.375,
+          "width": 344.125,
+          "height": 25.5
+        },
+        {
+          "selector": ".record strong",
+          "text": ".QL",
+          "font": 17,
+          "contrast": 13.232,
+          "x": 47,
+          "y": 438.375,
+          "width": 344.125,
+          "height": 25.5
+        },
+        {
+          "selector": ".record strong",
+          "text": "05AB1E",
+          "font": 17,
+          "contrast": 13.232,
+          "x": 477,
+          "y": 438.375,
+          "width": 344.125,
+          "height": 25.5
+        },
+        {
+          "selector": ".record strong",
+          "text": "1.pak",
+          "font": 17,
+          "contrast": 13.232,
+          "x": 47,
+          "y": 542.375,
+          "width": 344.125,
+          "height": 25.5
+        },
+        {
+          "selector": ".record strong",
+          "text": "11ty",
+          "font": 17,
+          "contrast": 13.232,
+          "x": 477,
+          "y": 542.375,
+          "width": 344.125,
+          "height": 25.5
+        },
+        {
+          "selector": ".record>span",
+          "text": "1983 · 来源标为语言，性质待核",
+          "font": 13,
+          "contrast": 5.894,
+          "x": 47,
+          "y": 368.625,
+          "width": 344.125,
+          "height": 18
+        },
+        {
+          "selector": ".record>span",
+          "text": "1982 · 来源标为相关技术",
+          "font": 13,
+          "contrast": 5.894,
+          "x": 477,
+          "y": 368.625,
+          "width": 344.125,
+          "height": 18
+        },
+        {
+          "selector": ".record>span",
+          "text": "2007 · 来源标为语言，性质待核",
+          "font": 13,
+          "contrast": 5.894,
+          "x": 47,
+          "y": 472.625,
+          "width": 344.125,
+          "height": 18
+        },
+        {
+          "selector": ".record>span",
+          "text": "2015 · 来源标为语言，性质待核",
+          "font": 13,
+          "contrast": 5.894,
+          "x": 477,
+          "y": 472.625,
+          "width": 344.125,
+          "height": 18
+        },
+        {
+          "selector": ".record>span",
+          "text": "1973 · 来源标为语言，性质待核",
+          "font": 13,
+          "contrast": 5.894,
+          "x": 47,
+          "y": 576.625,
+          "width": 344.125,
+          "height": 18
+        },
+        {
+          "selector": ".record>span",
+          "text": "2017 · 已核相关技术",
+          "font": 13,
+          "contrast": 5.894,
+          "x": 477,
+          "y": 576.625,
+          "width": 344.125,
+          "height": 18
+        }
+      ]
+    },
+    {
+      "width": 900,
+      "theme": "light",
+      "view": "reading",
+      "measurements": [
+        {
+          "selector": ".reading-article section>p",
+          "text": "Python 官方 FAQ 将缩进分组与高层数据类型追溯到 ABC 的经验，同时强调两门语",
+          "font": 16,
+          "contrast": 12.313,
+          "x": 26,
+          "y": 498.09375,
+          "width": 579,
+          "height": 62.375
+        },
+        {
+          "selector": ".reading-article section>p",
+          "text": "来源年代不等于当前实现版本；已存依据也不表示历史关系已全部找齐。",
+          "font": 12,
+          "contrast": 5.485,
+          "x": 26,
+          "y": 764.359375,
+          "width": 579,
+          "height": 22.1875
+        },
+        {
+          "selector": ".reading-article section>p",
+          "text": "此处只展示源码，没有预先填入运行结果；进入实验台后点击运行。",
+          "font": 12,
+          "contrast": 5.485,
+          "x": 26,
+          "y": 1465.265625,
+          "width": 579,
+          "height": 22.1875
+        },
+        {
+          "selector": ".reading-article section>p",
+          "text": "示例采用 Python 3；本地使用固定 Pyodide，第三方包和系统接口受环境限制。",
+          "font": 16,
+          "contrast": 12.313,
+          "x": 26,
+          "y": 1570.953125,
+          "width": 579,
+          "height": 31.1875
+        },
+        {
+          "selector": ".reading-source-note",
+          "text": "来源年代不等于当前实现版本；已存依据也不表示历史关系已全部找齐。",
+          "font": 12,
+          "contrast": 5.485,
+          "x": 26,
+          "y": 764.359375,
+          "width": 579,
+          "height": 22.1875
+        },
+        {
+          "selector": ".reading-source-note",
+          "text": "此处只展示源码，没有预先填入运行结果；进入实验台后点击运行。",
+          "font": 12,
+          "contrast": 5.485,
+          "x": 26,
+          "y": 1465.265625,
+          "width": 579,
+          "height": 22.1875
+        },
+        {
+          "selector": ".reading-specimen-card .primary",
+          "text": "继续这个任务 →",
+          "font": 14,
+          "contrast": 6.263,
+          "x": 652,
+          "y": 722.15625,
+          "width": 199,
+          "height": 45
+        },
+        {
+          "selector": ".reading-evidence p",
+          "text": "Python 官方 FAQ 引 Guido van Rossum 自述：ABC 团队经验是",
+          "font": 14,
+          "contrast": 5.163,
+          "x": 50,
+          "y": 602.46875,
+          "width": 533,
+          "height": 81.890625
+        }
+      ]
+    },
+    {
+      "width": 900,
+      "theme": "light",
+      "view": "lab",
+      "measurements": [
+        {
+          "selector": "#lab-run",
+          "text": "运行代码",
+          "font": 14,
+          "contrast": 6.263,
+          "x": 776,
+          "y": 146.5,
+          "width": 98,
+          "height": 45
+        },
+        {
+          "selector": "#lab-explain-current",
+          "text": "检查代码",
+          "font": 14,
+          "contrast": 13.232,
+          "x": 676,
+          "y": 147,
+          "width": 90,
+          "height": 44
+        },
+        {
+          "selector": "#lab-highlight",
+          "text": "// interface sample\nconst value = 7;\nconsole.",
+          "font": 14,
+          "contrast": 10.813,
+          "x": 27,
+          "y": 262.5,
+          "width": 477.171875,
+          "height": 394.90625
+        },
+        {
+          "selector": "#lab-highlight .tok-keyword",
+          "text": "const",
+          "font": 14,
+          "contrast": 5.189,
+          "x": 87,
+          "y": 316.390625,
+          "width": 42.15625,
+          "height": 16
+        },
+        {
+          "selector": "#lab-highlight .tok-string",
+          "text": "\"value\"",
+          "font": 14,
+          "contrast": 5.146,
+          "x": 188.15625,
+          "y": 342.28125,
+          "width": 59.015625,
+          "height": 16
+        },
+        {
+          "selector": "#lab-highlight .tok-number",
+          "text": "7",
+          "font": 14,
+          "contrast": 5.68,
+          "x": 205.015625,
+          "y": 316.390625,
+          "width": 8.4375,
+          "height": 16
+        },
+        {
+          "selector": "#lab-highlight .tok-comment",
+          "text": "// interface sample",
+          "font": 14,
+          "contrast": 4.671,
+          "x": 87,
+          "y": 290.5,
+          "width": 160.15625,
+          "height": 16
+        }
+      ]
+    },
+    {
+      "width": 900,
+      "theme": "light",
+      "view": "credits",
+      "measurements": [
+        {
+          "selector": "#credit-search",
+          "text": "",
+          "font": 14,
+          "contrast": 13.232,
+          "x": 39,
+          "y": 227.75,
+          "width": 219.90625,
+          "height": 44
+        },
+        {
+          "selector": "#credit-category",
+          "text": "全部分类语言运行环境馆藏数据榜单参考关系核对历史依据与边界项目与支持",
+          "font": 14,
+          "contrast": 13.232,
+          "x": 73,
+          "y": 280.75,
+          "width": 185.90625,
+          "height": 44
+        },
+        {
+          "selector": ".credit-option-name",
+          "text": "浏览器原生 JavaScript",
+          "font": 14,
+          "contrast": 4.285,
+          "x": 52,
+          "y": 380.75,
+          "width": 193.90625,
+          "height": 21
+        },
+        {
+          "selector": ".credit-option-name",
+          "text": "Pyodide",
+          "font": 14,
+          "contrast": 13.232,
+          "x": 52,
+          "y": 445.9375,
+          "width": 193.90625,
+          "height": 21
+        },
+        {
+          "selector": ".credit-option-name",
+          "text": "Wasmoon / Lua",
+          "font": 14,
+          "contrast": 13.232,
+          "x": 52,
+          "y": 511.125,
+          "width": 193.90625,
+          "height": 21
+        },
+        {
+          "selector": ".credit-option-name",
+          "text": "BiwaScheme",
+          "font": 14,
+          "contrast": 13.232,
+          "x": 52,
+          "y": 576.3125,
+          "width": 193.90625,
+          "height": 21
+        },
+        {
+          "selector": ".credit-option-name",
+          "text": "Free Pascal",
+          "font": 14,
+          "contrast": 13.232,
+          "x": 52,
+          "y": 641.5,
+          "width": 193.90625,
+          "height": 21
+        },
+        {
+          "selector": ".credit-option-name",
+          "text": "R / Rscript",
+          "font": 14,
+          "contrast": 13.232,
+          "x": 52,
+          "y": 706.6875,
+          "width": 193.90625,
+          "height": 21
+        },
+        {
+          "selector": ".credit-option-meta",
+          "text": "语言运行环境 · 浏览器能力",
+          "font": 12,
+          "contrast": 4.909,
+          "x": 52,
+          "y": 401.75,
+          "width": 193.90625,
+          "height": 19.1875
+        },
+        {
+          "selector": ".credit-option-meta",
+          "text": "语言运行环境 · Pyodide 314.0.7",
+          "font": 12,
+          "contrast": 5.894,
+          "x": 52,
+          "y": 466.9375,
+          "width": 193.90625,
+          "height": 19.1875
+        },
+        {
+          "selector": ".credit-option-meta",
+          "text": "语言运行环境 · Wasmoon 1.16.0 · Lua 5.4.5",
+          "font": 12,
+          "contrast": 5.894,
+          "x": 52,
+          "y": 532.125,
+          "width": 193.90625,
+          "height": 19.1875
+        },
+        {
+          "selector": ".credit-option-meta",
+          "text": "语言运行环境 · BiwaScheme 0.8.3",
+          "font": 12,
+          "contrast": 5.894,
+          "x": 52,
+          "y": 597.3125,
+          "width": 193.90625,
+          "height": 19.1875
+        },
+        {
+          "selector": ".credit-option-meta",
+          "text": "语言运行环境 · Free Pascal 3.2.2",
+          "font": 12,
+          "contrast": 5.894,
+          "x": 52,
+          "y": 662.5,
+          "width": 193.90625,
+          "height": 19.1875
+        },
+        {
+          "selector": ".credit-option-meta",
+          "text": "语言运行环境 · Rscript (R) version 4.2.2 Patched (2",
+          "font": 12,
+          "contrast": 5.894,
+          "x": 52,
+          "y": 727.6875,
+          "width": 193.90625,
+          "height": 19.1875
+        }
+      ]
+    },
+    {
+      "width": 900,
+      "theme": "dark",
+      "view": "gallery",
+      "measurements": [
+        {
+          "selector": ".intro-note p",
+          "text": "从一段有出处的历史开始，认识一门语言，再亲手写一段代码。",
+          "font": 15,
+          "contrast": 8.924,
+          "x": 649,
+          "y": 132,
+          "width": 225,
+          "height": 83.25
+        },
+        {
+          "selector": ".route-card p",
+          "text": "沿 BCPL、B、C 的原文依据，再比较 C 与 C++。",
+          "font": 14,
+          "contrast": 12.916,
+          "x": 51,
+          "y": 997.734375,
+          "width": 223.328125,
+          "height": 67.78125
+        },
+        {
+          "selector": ".route-card p",
+          "text": "从 Lisp 与 Scheme 的设计依据，到 Lua 和 JavaScript 的同题练",
+          "font": 14,
+          "contrast": 12.916,
+          "x": 338.328125,
+          "y": 984.78125,
+          "width": 223.328125,
+          "height": 93.671875
+        },
+        {
+          "selector": ".route-card p",
+          "text": "区分设计关系、表达方式、解释器与编译环境。",
+          "font": 14,
+          "contrast": 12.916,
+          "x": 625.65625,
+          "y": 1012.453125,
+          "width": 223.34375,
+          "height": 67.78125
+        },
+        {
+          "selector": ".route-card p",
+          "text": "沿 CoffeeScript 与 LiveScript 的明确原文，阅读 Civet 如何",
+          "font": 14,
+          "contrast": 12.916,
+          "x": 51,
+          "y": 1242.390625,
+          "width": 223.328125,
+          "height": 93.671875
+        },
+        {
+          "selector": ".route-card p",
+          "text": "从 JavaScript 展品出发，依次改写变量、分支、循环、函数与列表，得到五次真实输出",
+          "font": 14,
+          "contrast": 12.916,
+          "x": 338.328125,
+          "y": 1257.109375,
+          "width": 223.328125,
+          "height": 93.671875
+        },
+        {
+          "selector": ".route-meta",
+          "text": "策展导览 · 5 个停靠点",
+          "font": 12,
+          "contrast": 7.611,
+          "x": 51,
+          "y": 920.296875,
+          "width": 223.328125,
+          "height": 18
+        },
+        {
+          "selector": ".route-meta",
+          "text": "策展导览 · 6 个停靠点",
+          "font": 12,
+          "contrast": 7.611,
+          "x": 338.328125,
+          "y": 907.34375,
+          "width": 223.328125,
+          "height": 18
+        },
+        {
+          "selector": ".route-meta",
+          "text": "策展导览 · 6 个停靠点",
+          "font": 12,
+          "contrast": 7.611,
+          "x": 625.65625,
+          "y": 905.578125,
+          "width": 223.34375,
+          "height": 18
+        },
+        {
+          "selector": ".route-meta",
+          "text": "策展导览 · 4 个停靠点",
+          "font": 12,
+          "contrast": 7.611,
+          "x": 51,
+          "y": 1164.953125,
+          "width": 223.328125,
+          "height": 18
+        },
+        {
+          "selector": ".route-meta",
+          "text": "策展导览 · 6 个停靠点",
+          "font": 12,
+          "contrast": 7.611,
+          "x": 338.328125,
+          "y": 1150.234375,
+          "width": 223.328125,
+          "height": 18
+        },
+        {
+          "selector": ".language-card small",
+          "text": "1991 · 馆藏来源年代",
+          "font": 12,
+          "contrast": 7.611,
+          "x": 49,
+          "y": 1617.21875,
+          "width": 108.734375,
+          "height": 18
+        },
+        {
+          "selector": ".language-card small",
+          "text": "1995 · 馆藏来源年代",
+          "font": 12,
+          "contrast": 7.611,
+          "x": 480,
+          "y": 1617.21875,
+          "width": 110.578125,
+          "height": 18
+        },
+        {
+          "selector": ".language-card small",
+          "text": "1972 · 馆藏来源年代",
+          "font": 12,
+          "contrast": 7.611,
+          "x": 49,
+          "y": 1891.21875,
+          "width": 109.359375,
+          "height": 18
+        },
+        {
+          "selector": ".language-card small",
+          "text": "2010 · 馆藏来源年代",
+          "font": 12,
+          "contrast": 7.611,
+          "x": 480,
+          "y": 1891.21875,
+          "width": 110.25,
+          "height": 18
+        },
+        {
+          "selector": ".section-nav a.active",
+          "text": "主题展厅",
+          "font": 13,
+          "contrast": 9.425,
+          "x": 26,
+          "y": 72,
+          "width": 56,
+          "height": 58
+        },
+        {
+          "selector": ".exhibit-footer",
+          "text": "年代索引，仅作展品排序；设计关系请查阅出处。03 — 04",
+          "font": 12,
+          "contrast": 8.387,
+          "x": 26,
+          "y": 653.28125,
+          "width": 848,
+          "height": 44.796875
+        }
+      ]
+    },
+    {
+      "width": 900,
+      "theme": "dark",
+      "view": "catalogue",
+      "measurements": [
+        {
+          "selector": ".catalogue-title",
+          "text": "THE COLLECTION · 不按热度排序每一种名字，都有位置。",
+          "font": 16,
+          "contrast": 15.144,
+          "x": 26,
+          "y": 151,
+          "width": 650.78125,
+          "height": 68.5
+        },
+        {
+          "selector": "#search",
+          "text": "",
+          "font": 14,
+          "contrast": 12.916,
+          "x": 26,
+          "y": 239.5,
+          "width": 557,
+          "height": 44
+        },
+        {
+          "selector": "#result-count",
+          "text": "5,155 条匹配 / 5,155 条馆藏",
+          "font": 14,
+          "contrast": 8.924,
+          "x": 700.78125,
+          "y": 191,
+          "width": 173.21875,
+          "height": 24.5
+        },
+        {
+          "selector": ".record strong",
+          "text": "$",
+          "font": 17,
+          "contrast": 12.916,
+          "x": 47,
+          "y": 334.375,
+          "width": 344.125,
+          "height": 25.5
+        },
+        {
+          "selector": ".record strong",
+          "text": ".dwg",
+          "font": 17,
+          "contrast": 12.916,
+          "x": 477,
+          "y": 334.375,
+          "width": 344.125,
+          "height": 25.5
+        },
+        {
+          "selector": ".record strong",
+          "text": ".QL",
+          "font": 17,
+          "contrast": 12.916,
+          "x": 47,
+          "y": 438.375,
+          "width": 344.125,
+          "height": 25.5
+        },
+        {
+          "selector": ".record strong",
+          "text": "05AB1E",
+          "font": 17,
+          "contrast": 12.916,
+          "x": 477,
+          "y": 438.375,
+          "width": 344.125,
+          "height": 25.5
+        },
+        {
+          "selector": ".record strong",
+          "text": "1.pak",
+          "font": 17,
+          "contrast": 12.916,
+          "x": 47,
+          "y": 542.375,
+          "width": 344.125,
+          "height": 25.5
+        },
+        {
+          "selector": ".record strong",
+          "text": "11ty",
+          "font": 17,
+          "contrast": 12.916,
+          "x": 477,
+          "y": 542.375,
+          "width": 344.125,
+          "height": 25.5
+        },
+        {
+          "selector": ".record>span",
+          "text": "1983 · 来源标为语言，性质待核",
+          "font": 13,
+          "contrast": 7.611,
+          "x": 47,
+          "y": 368.625,
+          "width": 344.125,
+          "height": 18
+        },
+        {
+          "selector": ".record>span",
+          "text": "1982 · 来源标为相关技术",
+          "font": 13,
+          "contrast": 7.611,
+          "x": 477,
+          "y": 368.625,
+          "width": 344.125,
+          "height": 18
+        },
+        {
+          "selector": ".record>span",
+          "text": "2007 · 来源标为语言，性质待核",
+          "font": 13,
+          "contrast": 7.611,
+          "x": 47,
+          "y": 472.625,
+          "width": 344.125,
+          "height": 18
+        },
+        {
+          "selector": ".record>span",
+          "text": "2015 · 来源标为语言，性质待核",
+          "font": 13,
+          "contrast": 7.611,
+          "x": 477,
+          "y": 472.625,
+          "width": 344.125,
+          "height": 18
+        },
+        {
+          "selector": ".record>span",
+          "text": "1973 · 来源标为语言，性质待核",
+          "font": 13,
+          "contrast": 7.611,
+          "x": 47,
+          "y": 576.625,
+          "width": 344.125,
+          "height": 18
+        },
+        {
+          "selector": ".record>span",
+          "text": "2017 · 已核相关技术",
+          "font": 13,
+          "contrast": 7.611,
+          "x": 477,
+          "y": 576.625,
+          "width": 344.125,
+          "height": 18
+        }
+      ]
+    },
+    {
+      "width": 900,
+      "theme": "dark",
+      "view": "reading",
+      "measurements": [
+        {
+          "selector": ".reading-article section>p",
+          "text": "Python 官方 FAQ 将缩进分组与高层数据类型追溯到 ABC 的经验，同时强调两门语",
+          "font": 16,
+          "contrast": 15.144,
+          "x": 26,
+          "y": 498.09375,
+          "width": 579,
+          "height": 62.375
+        },
+        {
+          "selector": ".reading-article section>p",
+          "text": "来源年代不等于当前实现版本；已存依据也不表示历史关系已全部找齐。",
+          "font": 12,
+          "contrast": 8.924,
+          "x": 26,
+          "y": 764.359375,
+          "width": 579,
+          "height": 22.1875
+        },
+        {
+          "selector": ".reading-article section>p",
+          "text": "此处只展示源码，没有预先填入运行结果；进入实验台后点击运行。",
+          "font": 12,
+          "contrast": 8.924,
+          "x": 26,
+          "y": 1465.265625,
+          "width": 579,
+          "height": 22.1875
+        },
+        {
+          "selector": ".reading-article section>p",
+          "text": "示例采用 Python 3；本地使用固定 Pyodide，第三方包和系统接口受环境限制。",
+          "font": 16,
+          "contrast": 15.144,
+          "x": 26,
+          "y": 1570.953125,
+          "width": 579,
+          "height": 31.1875
+        },
+        {
+          "selector": ".reading-source-note",
+          "text": "来源年代不等于当前实现版本；已存依据也不表示历史关系已全部找齐。",
+          "font": 12,
+          "contrast": 8.924,
+          "x": 26,
+          "y": 764.359375,
+          "width": 579,
+          "height": 22.1875
+        },
+        {
+          "selector": ".reading-source-note",
+          "text": "此处只展示源码，没有预先填入运行结果；进入实验台后点击运行。",
+          "font": 12,
+          "contrast": 8.924,
+          "x": 26,
+          "y": 1465.265625,
+          "width": 579,
+          "height": 22.1875
+        },
+        {
+          "selector": ".reading-specimen-card .primary",
+          "text": "继续这个任务 →",
+          "font": 14,
+          "contrast": 7.255,
+          "x": 652,
+          "y": 722.15625,
+          "width": 199,
+          "height": 45
+        },
+        {
+          "selector": ".reading-evidence p",
+          "text": "Python 官方 FAQ 引 Guido van Rossum 自述：ABC 团队经验是",
+          "font": 14,
+          "contrast": 6.393,
+          "x": 50,
+          "y": 602.46875,
+          "width": 533,
+          "height": 81.890625
+        }
+      ]
+    },
+    {
+      "width": 900,
+      "theme": "dark",
+      "view": "lab",
+      "measurements": [
+        {
+          "selector": "#lab-run",
+          "text": "运行代码",
+          "font": 14,
+          "contrast": 7.255,
+          "x": 776,
+          "y": 146.5,
+          "width": 98,
+          "height": 45
+        },
+        {
+          "selector": "#lab-explain-current",
+          "text": "检查代码",
+          "font": 14,
+          "contrast": 12.916,
+          "x": 676,
+          "y": 147,
+          "width": 90,
+          "height": 44
+        },
+        {
+          "selector": "#lab-highlight",
+          "text": "// interface sample\nconst value = 7;\nconsole.",
+          "font": 14,
+          "contrast": 11.149,
+          "x": 27,
+          "y": 262.5,
+          "width": 477.171875,
+          "height": 394.90625
+        },
+        {
+          "selector": "#lab-highlight .tok-keyword",
+          "text": "const",
+          "font": 14,
+          "contrast": 6.504,
+          "x": 87,
+          "y": 316.390625,
+          "width": 42.15625,
+          "height": 16
+        },
+        {
+          "selector": "#lab-highlight .tok-string",
+          "text": "\"value\"",
+          "font": 14,
+          "contrast": 7.356,
+          "x": 188.15625,
+          "y": 342.28125,
+          "width": 59.015625,
+          "height": 16
+        },
+        {
+          "selector": "#lab-highlight .tok-number",
+          "text": "7",
+          "font": 14,
+          "contrast": 7.599,
+          "x": 205.015625,
+          "y": 316.390625,
+          "width": 8.4375,
+          "height": 16
+        },
+        {
+          "selector": "#lab-highlight .tok-comment",
+          "text": "// interface sample",
+          "font": 14,
+          "contrast": 5.499,
+          "x": 87,
+          "y": 290.5,
+          "width": 160.15625,
+          "height": 16
+        }
+      ]
+    },
+    {
+      "width": 900,
+      "theme": "dark",
+      "view": "credits",
+      "measurements": [
+        {
+          "selector": "#credit-search",
+          "text": "",
+          "font": 14,
+          "contrast": 12.916,
+          "x": 39,
+          "y": 227.75,
+          "width": 219.90625,
+          "height": 44
+        },
+        {
+          "selector": "#credit-category",
+          "text": "全部分类语言运行环境馆藏数据榜单参考关系核对历史依据与边界项目与支持",
+          "font": 14,
+          "contrast": 12.916,
+          "x": 73,
+          "y": 280.75,
+          "width": 185.90625,
+          "height": 44
+        },
+        {
+          "selector": ".credit-option-name",
+          "text": "浏览器原生 JavaScript",
+          "font": 14,
+          "contrast": 6.656,
+          "x": 52,
+          "y": 380.75,
+          "width": 193.90625,
+          "height": 21
+        },
+        {
+          "selector": ".credit-option-name",
+          "text": "Pyodide",
+          "font": 14,
+          "contrast": 12.916,
+          "x": 52,
+          "y": 445.9375,
+          "width": 193.90625,
+          "height": 21
+        },
+        {
+          "selector": ".credit-option-name",
+          "text": "Wasmoon / Lua",
+          "font": 14,
+          "contrast": 12.916,
+          "x": 52,
+          "y": 511.125,
+          "width": 193.90625,
+          "height": 21
+        },
+        {
+          "selector": ".credit-option-name",
+          "text": "BiwaScheme",
+          "font": 14,
+          "contrast": 12.916,
+          "x": 52,
+          "y": 576.3125,
+          "width": 193.90625,
+          "height": 21
+        },
+        {
+          "selector": ".credit-option-name",
+          "text": "Free Pascal",
+          "font": 14,
+          "contrast": 12.916,
+          "x": 52,
+          "y": 641.5,
+          "width": 193.90625,
+          "height": 21
+        },
+        {
+          "selector": ".credit-option-name",
+          "text": "R / Rscript",
+          "font": 14,
+          "contrast": 12.916,
+          "x": 52,
+          "y": 706.6875,
+          "width": 193.90625,
+          "height": 21
+        },
+        {
+          "selector": ".credit-option-meta",
+          "text": "语言运行环境 · 浏览器能力",
+          "font": 12,
+          "contrast": 6.225,
+          "x": 52,
+          "y": 401.75,
+          "width": 193.90625,
+          "height": 19.1875
+        },
+        {
+          "selector": ".credit-option-meta",
+          "text": "语言运行环境 · Pyodide 314.0.7",
+          "font": 12,
+          "contrast": 7.611,
+          "x": 52,
+          "y": 466.9375,
+          "width": 193.90625,
+          "height": 19.1875
+        },
+        {
+          "selector": ".credit-option-meta",
+          "text": "语言运行环境 · Wasmoon 1.16.0 · Lua 5.4.5",
+          "font": 12,
+          "contrast": 7.611,
+          "x": 52,
+          "y": 532.125,
+          "width": 193.90625,
+          "height": 19.1875
+        },
+        {
+          "selector": ".credit-option-meta",
+          "text": "语言运行环境 · BiwaScheme 0.8.3",
+          "font": 12,
+          "contrast": 7.611,
+          "x": 52,
+          "y": 597.3125,
+          "width": 193.90625,
+          "height": 19.1875
+        },
+        {
+          "selector": ".credit-option-meta",
+          "text": "语言运行环境 · Free Pascal 3.2.2",
+          "font": 12,
+          "contrast": 7.611,
+          "x": 52,
+          "y": 662.5,
+          "width": 193.90625,
+          "height": 19.1875
+        },
+        {
+          "selector": ".credit-option-meta",
+          "text": "语言运行环境 · Rscript (R) version 4.2.2 Patched (2",
+          "font": 12,
+          "contrast": 7.611,
+          "x": 52,
+          "y": 727.6875,
+          "width": 193.90625,
+          "height": 19.1875
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "view": "gallery",
+      "measurements": [
+        {
+          "selector": ".intro-note p",
+          "text": "从一段有出处的历史开始，认识一门语言，再亲手写一段代码。",
+          "font": 15,
+          "contrast": 5.485,
+          "x": 18,
+          "y": 242.375,
+          "width": 354,
+          "height": 55.5
+        },
+        {
+          "selector": ".route-card p",
+          "text": "沿 BCPL、B、C 的原文依据，再比较 C 与 C++。",
+          "font": 14,
+          "contrast": 13.232,
+          "x": 41,
+          "y": 1485.328125,
+          "width": 308,
+          "height": 67.78125
+        },
+        {
+          "selector": ".route-card p",
+          "text": "从 Lisp 与 Scheme 的设计依据，到 Lua 和 JavaScript 的同题练",
+          "font": 14,
+          "contrast": 13.232,
+          "x": 41,
+          "y": 1699.328125,
+          "width": 308,
+          "height": 67.78125
+        },
+        {
+          "selector": ".route-card p",
+          "text": "区分设计关系、表达方式、解释器与编译环境。",
+          "font": 14,
+          "contrast": 13.232,
+          "x": 41,
+          "y": 1913.328125,
+          "width": 308,
+          "height": 67.78125
+        },
+        {
+          "selector": ".route-card p",
+          "text": "沿 CoffeeScript 与 LiveScript 的明确原文，阅读 Civet 如何",
+          "font": 14,
+          "contrast": 13.232,
+          "x": 41,
+          "y": 2127.328125,
+          "width": 308,
+          "height": 67.78125
+        },
+        {
+          "selector": ".route-card p",
+          "text": "从 JavaScript 展品出发，依次改写变量、分支、循环、函数与列表，得到五次真实输出",
+          "font": 14,
+          "contrast": 13.232,
+          "x": 41,
+          "y": 2339.9375,
+          "width": 308,
+          "height": 93.671875
+        },
+        {
+          "selector": ".route-meta",
+          "text": "策展导览 · 5 个停靠点",
+          "font": 12,
+          "contrast": 5.894,
+          "x": 41,
+          "y": 1407.890625,
+          "width": 308,
+          "height": 18
+        },
+        {
+          "selector": ".route-meta",
+          "text": "策展导览 · 6 个停靠点",
+          "font": 12,
+          "contrast": 5.894,
+          "x": 41,
+          "y": 1621.890625,
+          "width": 308,
+          "height": 18
+        },
+        {
+          "selector": ".route-meta",
+          "text": "策展导览 · 6 个停靠点",
+          "font": 12,
+          "contrast": 5.894,
+          "x": 41,
+          "y": 1835.890625,
+          "width": 308,
+          "height": 18
+        },
+        {
+          "selector": ".route-meta",
+          "text": "策展导览 · 4 个停靠点",
+          "font": 12,
+          "contrast": 5.894,
+          "x": 41,
+          "y": 2049.890625,
+          "width": 308,
+          "height": 18
+        },
+        {
+          "selector": ".route-meta",
+          "text": "策展导览 · 6 个停靠点",
+          "font": 12,
+          "contrast": 5.894,
+          "x": 41,
+          "y": 2262.5,
+          "width": 308,
+          "height": 18
+        },
+        {
+          "selector": ".language-card small",
+          "text": "1991 · 馆藏来源年代",
+          "font": 12,
+          "contrast": 5.894,
+          "x": 41,
+          "y": 2689.546875,
+          "width": 108.734375,
+          "height": 18
+        },
+        {
+          "selector": ".language-card small",
+          "text": "1995 · 馆藏来源年代",
+          "font": 12,
+          "contrast": 5.894,
+          "x": 41,
+          "y": 2948.375,
+          "width": 110.578125,
+          "height": 18
+        },
+        {
+          "selector": ".language-card small",
+          "text": "1972 · 馆藏来源年代",
+          "font": 12,
+          "contrast": 5.894,
+          "x": 41,
+          "y": 3233.09375,
+          "width": 109.359375,
+          "height": 18
+        },
+        {
+          "selector": ".language-card small",
+          "text": "2010 · 馆藏来源年代",
+          "font": 12,
+          "contrast": 5.894,
+          "x": 41,
+          "y": 3491.921875,
+          "width": 110.25,
+          "height": 18
+        },
+        {
+          "selector": ".section-nav a.active",
+          "text": "主题展厅",
+          "font": 12,
+          "contrast": 5.828,
+          "x": 18,
+          "y": 64,
+          "width": 88.5,
+          "height": 48
+        },
+        {
+          "selector": ".exhibit-footer",
+          "text": "年代索引，仅作展品排序；设计关系请查阅出处。03 — 04",
+          "font": 12,
+          "contrast": 8.387,
+          "x": 18,
+          "y": 1037.90625,
+          "width": 354,
+          "height": 64.59375
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "view": "catalogue",
+      "measurements": [
+        {
+          "selector": ".catalogue-title",
+          "text": "THE COLLECTION · 不按热度排序每一种名字，都有位置。",
+          "font": 16,
+          "contrast": 12.313,
+          "x": 18,
+          "y": 133,
+          "width": 354,
+          "height": 62.6875
+        },
+        {
+          "selector": "#search",
+          "text": "",
+          "font": 14,
+          "contrast": 13.232,
+          "x": 18,
+          "y": 248.1875,
+          "width": 354,
+          "height": 44
+        },
+        {
+          "selector": "#result-count",
+          "text": "5,155 条匹配 / 5,155 条馆藏",
+          "font": 14,
+          "contrast": 5.485,
+          "x": 18,
+          "y": 207.6875,
+          "width": 354,
+          "height": 24.5
+        },
+        {
+          "selector": ".record strong",
+          "text": "$",
+          "font": 17,
+          "contrast": 13.232,
+          "x": 37,
+          "y": 394.5625,
+          "width": 288.125,
+          "height": 25.5
+        },
+        {
+          "selector": ".record strong",
+          "text": ".dwg",
+          "font": 17,
+          "contrast": 13.232,
+          "x": 37,
+          "y": 498.5625,
+          "width": 288.125,
+          "height": 25.5
+        },
+        {
+          "selector": ".record strong",
+          "text": ".QL",
+          "font": 17,
+          "contrast": 13.232,
+          "x": 37,
+          "y": 602.5625,
+          "width": 288.125,
+          "height": 25.5
+        },
+        {
+          "selector": ".record strong",
+          "text": "05AB1E",
+          "font": 17,
+          "contrast": 13.232,
+          "x": 37,
+          "y": 706.5625,
+          "width": 288.125,
+          "height": 25.5
+        },
+        {
+          "selector": ".record strong",
+          "text": "1.pak",
+          "font": 17,
+          "contrast": 13.232,
+          "x": 37,
+          "y": 810.5625,
+          "width": 288.125,
+          "height": 25.5
+        },
+        {
+          "selector": ".record strong",
+          "text": "11ty",
+          "font": 17,
+          "contrast": 13.232,
+          "x": 37,
+          "y": 914.5625,
+          "width": 288.125,
+          "height": 25.5
+        },
+        {
+          "selector": ".record>span",
+          "text": "1983 · 来源标为语言，性质待核",
+          "font": 13,
+          "contrast": 5.894,
+          "x": 37,
+          "y": 429.8125,
+          "width": 288.125,
+          "height": 18
+        },
+        {
+          "selector": ".record>span",
+          "text": "1982 · 来源标为相关技术",
+          "font": 13,
+          "contrast": 5.894,
+          "x": 37,
+          "y": 533.8125,
+          "width": 288.125,
+          "height": 18
+        },
+        {
+          "selector": ".record>span",
+          "text": "2007 · 来源标为语言，性质待核",
+          "font": 13,
+          "contrast": 5.894,
+          "x": 37,
+          "y": 637.8125,
+          "width": 288.125,
+          "height": 18
+        },
+        {
+          "selector": ".record>span",
+          "text": "2015 · 来源标为语言，性质待核",
+          "font": 13,
+          "contrast": 5.894,
+          "x": 37,
+          "y": 741.8125,
+          "width": 288.125,
+          "height": 18
+        },
+        {
+          "selector": ".record>span",
+          "text": "1973 · 来源标为语言，性质待核",
+          "font": 13,
+          "contrast": 5.894,
+          "x": 37,
+          "y": 845.8125,
+          "width": 288.125,
+          "height": 18
+        },
+        {
+          "selector": ".record>span",
+          "text": "2017 · 已核相关技术",
+          "font": 13,
+          "contrast": 5.894,
+          "x": 37,
+          "y": 949.8125,
+          "width": 288.125,
+          "height": 18
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "view": "reading",
+      "measurements": [
+        {
+          "selector": ".reading-article section>p",
+          "text": "Python 官方 FAQ 将缩进分组与高层数据类型追溯到 ABC 的经验，同时强调两门语",
+          "font": 16,
+          "contrast": 12.313,
+          "x": 18,
+          "y": 517.78125,
+          "width": 354,
+          "height": 93.5625
+        },
+        {
+          "selector": ".reading-article section>p",
+          "text": "来源年代不等于当前实现版本；已存依据也不表示历史关系已全部找齐。",
+          "font": 12,
+          "contrast": 5.485,
+          "x": 18,
+          "y": 842.53125,
+          "width": 354,
+          "height": 44.375
+        },
+        {
+          "selector": ".reading-article section>p",
+          "text": "此处只展示源码，没有预先填入运行结果；进入实验台后点击运行。",
+          "font": 12,
+          "contrast": 5.485,
+          "x": 18,
+          "y": 1702.65625,
+          "width": 354,
+          "height": 44.375
+        },
+        {
+          "selector": ".reading-article section>p",
+          "text": "示例采用 Python 3；本地使用固定 Pyodide，第三方包和系统接口受环境限制。",
+          "font": 16,
+          "contrast": 12.313,
+          "x": 18,
+          "y": 1829.03125,
+          "width": 354,
+          "height": 62.375
+        },
+        {
+          "selector": ".reading-source-note",
+          "text": "来源年代不等于当前实现版本；已存依据也不表示历史关系已全部找齐。",
+          "font": 12,
+          "contrast": 5.485,
+          "x": 18,
+          "y": 842.53125,
+          "width": 354,
+          "height": 44.375
+        },
+        {
+          "selector": ".reading-source-note",
+          "text": "此处只展示源码，没有预先填入运行结果；进入实验台后点击运行。",
+          "font": 12,
+          "contrast": 5.485,
+          "x": 18,
+          "y": 1702.65625,
+          "width": 354,
+          "height": 44.375
+        },
+        {
+          "selector": ".reading-specimen-card .primary",
+          "text": "继续这个任务 →",
+          "font": 14,
+          "contrast": 6.263,
+          "x": 37,
+          "y": 2635.125,
+          "width": 316,
+          "height": 45
+        },
+        {
+          "selector": ".reading-evidence p",
+          "text": "Python 官方 FAQ 引 Guido van Rossum 自述：ABC 团队经验是",
+          "font": 14,
+          "contrast": 5.163,
+          "x": 42,
+          "y": 653.34375,
+          "width": 308,
+          "height": 109.1875
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "view": "lab",
+      "measurements": [
+        {
+          "selector": "#lab-run",
+          "text": "运行代码",
+          "font": 13,
+          "contrast": 6.263,
+          "x": 294,
+          "y": 260.921875,
+          "width": 78,
+          "height": 44
+        },
+        {
+          "selector": "#lab-explain-current",
+          "text": "检查代码",
+          "font": 13,
+          "contrast": 13.232,
+          "x": 208,
+          "y": 260.921875,
+          "width": 78,
+          "height": 44
+        },
+        {
+          "selector": "#lab-highlight",
+          "text": "// interface sample\nconst value = 7;\nconsole.",
+          "font": 13,
+          "contrast": 10.813,
+          "x": 19,
+          "y": 374.296875,
+          "width": 352,
+          "height": 219.65625
+        },
+        {
+          "selector": "#lab-highlight .tok-keyword",
+          "text": "const",
+          "font": 13,
+          "contrast": 5.189,
+          "x": 66,
+          "y": 424.34375,
+          "width": 39.140625,
+          "height": 15
+        },
+        {
+          "selector": "#lab-highlight .tok-string",
+          "text": "\"value\"",
+          "font": 13,
+          "contrast": 5.146,
+          "x": 159.921875,
+          "y": 448.390625,
+          "width": 54.796875,
+          "height": 15
+        },
+        {
+          "selector": "#lab-highlight .tok-number",
+          "text": "7",
+          "font": 13,
+          "contrast": 5.68,
+          "x": 175.59375,
+          "y": 424.34375,
+          "width": 7.828125,
+          "height": 15
+        },
+        {
+          "selector": "#lab-highlight .tok-comment",
+          "text": "// interface sample",
+          "font": 13,
+          "contrast": 4.671,
+          "x": 66,
+          "y": 400.296875,
+          "width": 148.71875,
+          "height": 15
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "view": "credits",
+      "measurements": [
+        {
+          "selector": "#credit-search",
+          "text": "",
+          "font": 14,
+          "contrast": 13.232,
+          "x": 27,
+          "y": 233.890625,
+          "width": 198.78125,
+          "height": 44
+        },
+        {
+          "selector": "#credit-category",
+          "text": "全部分类语言运行环境馆藏数据榜单参考关系核对历史依据与边界项目与支持",
+          "font": 14,
+          "contrast": 13.232,
+          "x": 233.78125,
+          "y": 233.890625,
+          "width": 129.21875,
+          "height": 44
+        },
+        {
+          "selector": ".credit-option-name",
+          "text": "浏览器原生 JavaScript",
+          "font": 14,
+          "contrast": 4.285,
+          "x": 40,
+          "y": 324.890625,
+          "width": 310,
+          "height": 21
+        },
+        {
+          "selector": ".credit-option-name",
+          "text": "Pyodide",
+          "font": 14,
+          "contrast": 13.232,
+          "x": 40,
+          "y": 388.078125,
+          "width": 310,
+          "height": 21
+        },
+        {
+          "selector": ".credit-option-name",
+          "text": "Wasmoon / Lua",
+          "font": 14,
+          "contrast": 13.232,
+          "x": 40,
+          "y": 451.265625,
+          "width": 310,
+          "height": 21
+        },
+        {
+          "selector": ".credit-option-name",
+          "text": "BiwaScheme",
+          "font": 14,
+          "contrast": 13.232,
+          "x": 40,
+          "y": 514.453125,
+          "width": 310,
+          "height": 21
+        },
+        {
+          "selector": ".credit-option-name",
+          "text": "Free Pascal",
+          "font": 14,
+          "contrast": 13.232,
+          "x": 40,
+          "y": 577.640625,
+          "width": 310,
+          "height": 21
+        },
+        {
+          "selector": ".credit-option-name",
+          "text": "R / Rscript",
+          "font": 14,
+          "contrast": 13.232,
+          "x": 40,
+          "y": 640.828125,
+          "width": 310,
+          "height": 21
+        },
+        {
+          "selector": ".credit-option-meta",
+          "text": "语言运行环境 · 浏览器能力",
+          "font": 12,
+          "contrast": 4.909,
+          "x": 40,
+          "y": 345.890625,
+          "width": 310,
+          "height": 19.1875
+        },
+        {
+          "selector": ".credit-option-meta",
+          "text": "语言运行环境 · Pyodide 314.0.7",
+          "font": 12,
+          "contrast": 5.894,
+          "x": 40,
+          "y": 409.078125,
+          "width": 310,
+          "height": 19.1875
+        },
+        {
+          "selector": ".credit-option-meta",
+          "text": "语言运行环境 · Wasmoon 1.16.0 · Lua 5.4.5",
+          "font": 12,
+          "contrast": 5.894,
+          "x": 40,
+          "y": 472.265625,
+          "width": 310,
+          "height": 19.1875
+        },
+        {
+          "selector": ".credit-option-meta",
+          "text": "语言运行环境 · BiwaScheme 0.8.3",
+          "font": 12,
+          "contrast": 5.894,
+          "x": 40,
+          "y": 535.453125,
+          "width": 310,
+          "height": 19.1875
+        },
+        {
+          "selector": ".credit-option-meta",
+          "text": "语言运行环境 · Free Pascal 3.2.2",
+          "font": 12,
+          "contrast": 5.894,
+          "x": 40,
+          "y": 598.640625,
+          "width": 310,
+          "height": 19.1875
+        },
+        {
+          "selector": ".credit-option-meta",
+          "text": "语言运行环境 · Rscript (R) version 4.2.2 Patched (2",
+          "font": 12,
+          "contrast": 5.894,
+          "x": 40,
+          "y": 661.828125,
+          "width": 310,
+          "height": 19.1875
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "view": "gallery",
+      "measurements": [
+        {
+          "selector": ".intro-note p",
+          "text": "从一段有出处的历史开始，认识一门语言，再亲手写一段代码。",
+          "font": 15,
+          "contrast": 8.924,
+          "x": 18,
+          "y": 242.375,
+          "width": 354,
+          "height": 55.5
+        },
+        {
+          "selector": ".route-card p",
+          "text": "沿 BCPL、B、C 的原文依据，再比较 C 与 C++。",
+          "font": 14,
+          "contrast": 12.916,
+          "x": 41,
+          "y": 1485.328125,
+          "width": 308,
+          "height": 67.78125
+        },
+        {
+          "selector": ".route-card p",
+          "text": "从 Lisp 与 Scheme 的设计依据，到 Lua 和 JavaScript 的同题练",
+          "font": 14,
+          "contrast": 12.916,
+          "x": 41,
+          "y": 1699.328125,
+          "width": 308,
+          "height": 67.78125
+        },
+        {
+          "selector": ".route-card p",
+          "text": "区分设计关系、表达方式、解释器与编译环境。",
+          "font": 14,
+          "contrast": 12.916,
+          "x": 41,
+          "y": 1913.328125,
+          "width": 308,
+          "height": 67.78125
+        },
+        {
+          "selector": ".route-card p",
+          "text": "沿 CoffeeScript 与 LiveScript 的明确原文，阅读 Civet 如何",
+          "font": 14,
+          "contrast": 12.916,
+          "x": 41,
+          "y": 2127.328125,
+          "width": 308,
+          "height": 67.78125
+        },
+        {
+          "selector": ".route-card p",
+          "text": "从 JavaScript 展品出发，依次改写变量、分支、循环、函数与列表，得到五次真实输出",
+          "font": 14,
+          "contrast": 12.916,
+          "x": 41,
+          "y": 2339.9375,
+          "width": 308,
+          "height": 93.671875
+        },
+        {
+          "selector": ".route-meta",
+          "text": "策展导览 · 5 个停靠点",
+          "font": 12,
+          "contrast": 7.611,
+          "x": 41,
+          "y": 1407.890625,
+          "width": 308,
+          "height": 18
+        },
+        {
+          "selector": ".route-meta",
+          "text": "策展导览 · 6 个停靠点",
+          "font": 12,
+          "contrast": 7.611,
+          "x": 41,
+          "y": 1621.890625,
+          "width": 308,
+          "height": 18
+        },
+        {
+          "selector": ".route-meta",
+          "text": "策展导览 · 6 个停靠点",
+          "font": 12,
+          "contrast": 7.611,
+          "x": 41,
+          "y": 1835.890625,
+          "width": 308,
+          "height": 18
+        },
+        {
+          "selector": ".route-meta",
+          "text": "策展导览 · 4 个停靠点",
+          "font": 12,
+          "contrast": 7.611,
+          "x": 41,
+          "y": 2049.890625,
+          "width": 308,
+          "height": 18
+        },
+        {
+          "selector": ".route-meta",
+          "text": "策展导览 · 6 个停靠点",
+          "font": 12,
+          "contrast": 7.611,
+          "x": 41,
+          "y": 2262.5,
+          "width": 308,
+          "height": 18
+        },
+        {
+          "selector": ".language-card small",
+          "text": "1991 · 馆藏来源年代",
+          "font": 12,
+          "contrast": 7.611,
+          "x": 41,
+          "y": 2689.546875,
+          "width": 108.734375,
+          "height": 18
+        },
+        {
+          "selector": ".language-card small",
+          "text": "1995 · 馆藏来源年代",
+          "font": 12,
+          "contrast": 7.611,
+          "x": 41,
+          "y": 2948.375,
+          "width": 110.578125,
+          "height": 18
+        },
+        {
+          "selector": ".language-card small",
+          "text": "1972 · 馆藏来源年代",
+          "font": 12,
+          "contrast": 7.611,
+          "x": 41,
+          "y": 3233.09375,
+          "width": 109.359375,
+          "height": 18
+        },
+        {
+          "selector": ".language-card small",
+          "text": "2010 · 馆藏来源年代",
+          "font": 12,
+          "contrast": 7.611,
+          "x": 41,
+          "y": 3491.921875,
+          "width": 110.25,
+          "height": 18
+        },
+        {
+          "selector": ".section-nav a.active",
+          "text": "主题展厅",
+          "font": 12,
+          "contrast": 9.425,
+          "x": 18,
+          "y": 64,
+          "width": 88.5,
+          "height": 48
+        },
+        {
+          "selector": ".exhibit-footer",
+          "text": "年代索引，仅作展品排序；设计关系请查阅出处。03 — 04",
+          "font": 12,
+          "contrast": 8.387,
+          "x": 18,
+          "y": 1037.90625,
+          "width": 354,
+          "height": 64.59375
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "view": "catalogue",
+      "measurements": [
+        {
+          "selector": ".catalogue-title",
+          "text": "THE COLLECTION · 不按热度排序每一种名字，都有位置。",
+          "font": 16,
+          "contrast": 15.144,
+          "x": 18,
+          "y": 133,
+          "width": 354,
+          "height": 62.6875
+        },
+        {
+          "selector": "#search",
+          "text": "",
+          "font": 14,
+          "contrast": 12.916,
+          "x": 18,
+          "y": 248.1875,
+          "width": 354,
+          "height": 44
+        },
+        {
+          "selector": "#result-count",
+          "text": "5,155 条匹配 / 5,155 条馆藏",
+          "font": 14,
+          "contrast": 8.924,
+          "x": 18,
+          "y": 207.6875,
+          "width": 354,
+          "height": 24.5
+        },
+        {
+          "selector": ".record strong",
+          "text": "$",
+          "font": 17,
+          "contrast": 12.916,
+          "x": 37,
+          "y": 394.5625,
+          "width": 288.125,
+          "height": 25.5
+        },
+        {
+          "selector": ".record strong",
+          "text": ".dwg",
+          "font": 17,
+          "contrast": 12.916,
+          "x": 37,
+          "y": 498.5625,
+          "width": 288.125,
+          "height": 25.5
+        },
+        {
+          "selector": ".record strong",
+          "text": ".QL",
+          "font": 17,
+          "contrast": 12.916,
+          "x": 37,
+          "y": 602.5625,
+          "width": 288.125,
+          "height": 25.5
+        },
+        {
+          "selector": ".record strong",
+          "text": "05AB1E",
+          "font": 17,
+          "contrast": 12.916,
+          "x": 37,
+          "y": 706.5625,
+          "width": 288.125,
+          "height": 25.5
+        },
+        {
+          "selector": ".record strong",
+          "text": "1.pak",
+          "font": 17,
+          "contrast": 12.916,
+          "x": 37,
+          "y": 810.5625,
+          "width": 288.125,
+          "height": 25.5
+        },
+        {
+          "selector": ".record strong",
+          "text": "11ty",
+          "font": 17,
+          "contrast": 12.916,
+          "x": 37,
+          "y": 914.5625,
+          "width": 288.125,
+          "height": 25.5
+        },
+        {
+          "selector": ".record>span",
+          "text": "1983 · 来源标为语言，性质待核",
+          "font": 13,
+          "contrast": 7.611,
+          "x": 37,
+          "y": 429.8125,
+          "width": 288.125,
+          "height": 18
+        },
+        {
+          "selector": ".record>span",
+          "text": "1982 · 来源标为相关技术",
+          "font": 13,
+          "contrast": 7.611,
+          "x": 37,
+          "y": 533.8125,
+          "width": 288.125,
+          "height": 18
+        },
+        {
+          "selector": ".record>span",
+          "text": "2007 · 来源标为语言，性质待核",
+          "font": 13,
+          "contrast": 7.611,
+          "x": 37,
+          "y": 637.8125,
+          "width": 288.125,
+          "height": 18
+        },
+        {
+          "selector": ".record>span",
+          "text": "2015 · 来源标为语言，性质待核",
+          "font": 13,
+          "contrast": 7.611,
+          "x": 37,
+          "y": 741.8125,
+          "width": 288.125,
+          "height": 18
+        },
+        {
+          "selector": ".record>span",
+          "text": "1973 · 来源标为语言，性质待核",
+          "font": 13,
+          "contrast": 7.611,
+          "x": 37,
+          "y": 845.8125,
+          "width": 288.125,
+          "height": 18
+        },
+        {
+          "selector": ".record>span",
+          "text": "2017 · 已核相关技术",
+          "font": 13,
+          "contrast": 7.611,
+          "x": 37,
+          "y": 949.8125,
+          "width": 288.125,
+          "height": 18
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "view": "reading",
+      "measurements": [
+        {
+          "selector": ".reading-article section>p",
+          "text": "Python 官方 FAQ 将缩进分组与高层数据类型追溯到 ABC 的经验，同时强调两门语",
+          "font": 16,
+          "contrast": 15.144,
+          "x": 18,
+          "y": 517.78125,
+          "width": 354,
+          "height": 93.5625
+        },
+        {
+          "selector": ".reading-article section>p",
+          "text": "来源年代不等于当前实现版本；已存依据也不表示历史关系已全部找齐。",
+          "font": 12,
+          "contrast": 8.924,
+          "x": 18,
+          "y": 842.53125,
+          "width": 354,
+          "height": 44.375
+        },
+        {
+          "selector": ".reading-article section>p",
+          "text": "此处只展示源码，没有预先填入运行结果；进入实验台后点击运行。",
+          "font": 12,
+          "contrast": 8.924,
+          "x": 18,
+          "y": 1702.65625,
+          "width": 354,
+          "height": 44.375
+        },
+        {
+          "selector": ".reading-article section>p",
+          "text": "示例采用 Python 3；本地使用固定 Pyodide，第三方包和系统接口受环境限制。",
+          "font": 16,
+          "contrast": 15.144,
+          "x": 18,
+          "y": 1829.03125,
+          "width": 354,
+          "height": 62.375
+        },
+        {
+          "selector": ".reading-source-note",
+          "text": "来源年代不等于当前实现版本；已存依据也不表示历史关系已全部找齐。",
+          "font": 12,
+          "contrast": 8.924,
+          "x": 18,
+          "y": 842.53125,
+          "width": 354,
+          "height": 44.375
+        },
+        {
+          "selector": ".reading-source-note",
+          "text": "此处只展示源码，没有预先填入运行结果；进入实验台后点击运行。",
+          "font": 12,
+          "contrast": 8.924,
+          "x": 18,
+          "y": 1702.65625,
+          "width": 354,
+          "height": 44.375
+        },
+        {
+          "selector": ".reading-specimen-card .primary",
+          "text": "继续这个任务 →",
+          "font": 14,
+          "contrast": 7.255,
+          "x": 37,
+          "y": 2635.125,
+          "width": 316,
+          "height": 45
+        },
+        {
+          "selector": ".reading-evidence p",
+          "text": "Python 官方 FAQ 引 Guido van Rossum 自述：ABC 团队经验是",
+          "font": 14,
+          "contrast": 6.393,
+          "x": 42,
+          "y": 653.34375,
+          "width": 308,
+          "height": 109.1875
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "view": "lab",
+      "measurements": [
+        {
+          "selector": "#lab-run",
+          "text": "运行代码",
+          "font": 13,
+          "contrast": 7.255,
+          "x": 294,
+          "y": 260.921875,
+          "width": 78,
+          "height": 44
+        },
+        {
+          "selector": "#lab-explain-current",
+          "text": "检查代码",
+          "font": 13,
+          "contrast": 12.916,
+          "x": 208,
+          "y": 260.921875,
+          "width": 78,
+          "height": 44
+        },
+        {
+          "selector": "#lab-highlight",
+          "text": "// interface sample\nconst value = 7;\nconsole.",
+          "font": 13,
+          "contrast": 11.149,
+          "x": 19,
+          "y": 374.296875,
+          "width": 352,
+          "height": 219.65625
+        },
+        {
+          "selector": "#lab-highlight .tok-keyword",
+          "text": "const",
+          "font": 13,
+          "contrast": 6.504,
+          "x": 66,
+          "y": 424.34375,
+          "width": 39.140625,
+          "height": 15
+        },
+        {
+          "selector": "#lab-highlight .tok-string",
+          "text": "\"value\"",
+          "font": 13,
+          "contrast": 7.356,
+          "x": 159.921875,
+          "y": 448.390625,
+          "width": 54.796875,
+          "height": 15
+        },
+        {
+          "selector": "#lab-highlight .tok-number",
+          "text": "7",
+          "font": 13,
+          "contrast": 7.599,
+          "x": 175.59375,
+          "y": 424.34375,
+          "width": 7.828125,
+          "height": 15
+        },
+        {
+          "selector": "#lab-highlight .tok-comment",
+          "text": "// interface sample",
+          "font": 13,
+          "contrast": 5.499,
+          "x": 66,
+          "y": 400.296875,
+          "width": 148.71875,
+          "height": 15
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "view": "credits",
+      "measurements": [
+        {
+          "selector": "#credit-search",
+          "text": "",
+          "font": 14,
+          "contrast": 12.916,
+          "x": 27,
+          "y": 233.890625,
+          "width": 198.78125,
+          "height": 44
+        },
+        {
+          "selector": "#credit-category",
+          "text": "全部分类语言运行环境馆藏数据榜单参考关系核对历史依据与边界项目与支持",
+          "font": 14,
+          "contrast": 12.916,
+          "x": 233.78125,
+          "y": 233.890625,
+          "width": 129.21875,
+          "height": 44
+        },
+        {
+          "selector": ".credit-option-name",
+          "text": "浏览器原生 JavaScript",
+          "font": 14,
+          "contrast": 6.656,
+          "x": 40,
+          "y": 324.890625,
+          "width": 310,
+          "height": 21
+        },
+        {
+          "selector": ".credit-option-name",
+          "text": "Pyodide",
+          "font": 14,
+          "contrast": 12.916,
+          "x": 40,
+          "y": 388.078125,
+          "width": 310,
+          "height": 21
+        },
+        {
+          "selector": ".credit-option-name",
+          "text": "Wasmoon / Lua",
+          "font": 14,
+          "contrast": 12.916,
+          "x": 40,
+          "y": 451.265625,
+          "width": 310,
+          "height": 21
+        },
+        {
+          "selector": ".credit-option-name",
+          "text": "BiwaScheme",
+          "font": 14,
+          "contrast": 12.916,
+          "x": 40,
+          "y": 514.453125,
+          "width": 310,
+          "height": 21
+        },
+        {
+          "selector": ".credit-option-name",
+          "text": "Free Pascal",
+          "font": 14,
+          "contrast": 12.916,
+          "x": 40,
+          "y": 577.640625,
+          "width": 310,
+          "height": 21
+        },
+        {
+          "selector": ".credit-option-name",
+          "text": "R / Rscript",
+          "font": 14,
+          "contrast": 12.916,
+          "x": 40,
+          "y": 640.828125,
+          "width": 310,
+          "height": 21
+        },
+        {
+          "selector": ".credit-option-meta",
+          "text": "语言运行环境 · 浏览器能力",
+          "font": 12,
+          "contrast": 6.225,
+          "x": 40,
+          "y": 345.890625,
+          "width": 310,
+          "height": 19.1875
+        },
+        {
+          "selector": ".credit-option-meta",
+          "text": "语言运行环境 · Pyodide 314.0.7",
+          "font": 12,
+          "contrast": 7.611,
+          "x": 40,
+          "y": 409.078125,
+          "width": 310,
+          "height": 19.1875
+        },
+        {
+          "selector": ".credit-option-meta",
+          "text": "语言运行环境 · Wasmoon 1.16.0 · Lua 5.4.5",
+          "font": 12,
+          "contrast": 7.611,
+          "x": 40,
+          "y": 472.265625,
+          "width": 310,
+          "height": 19.1875
+        },
+        {
+          "selector": ".credit-option-meta",
+          "text": "语言运行环境 · BiwaScheme 0.8.3",
+          "font": 12,
+          "contrast": 7.611,
+          "x": 40,
+          "y": 535.453125,
+          "width": 310,
+          "height": 19.1875
+        },
+        {
+          "selector": ".credit-option-meta",
+          "text": "语言运行环境 · Free Pascal 3.2.2",
+          "font": 12,
+          "contrast": 7.611,
+          "x": 40,
+          "y": 598.640625,
+          "width": 310,
+          "height": 19.1875
+        },
+        {
+          "selector": ".credit-option-meta",
+          "text": "语言运行环境 · Rscript (R) version 4.2.2 Patched (2",
+          "font": 12,
+          "contrast": 7.611,
+          "x": 40,
+          "y": 661.828125,
+          "width": 310,
+          "height": 19.1875
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "theme": "light",
+      "view": "gallery",
+      "measurements": [
+        {
+          "selector": ".intro-note p",
+          "text": "从一段有出处的历史开始，认识一门语言，再亲手写一段代码。",
+          "font": 15,
+          "contrast": 5.485,
+          "x": 14,
+          "y": 232,
+          "width": 292,
+          "height": 55.5
+        },
+        {
+          "selector": ".route-card p",
+          "text": "沿 BCPL、B、C 的原文依据，再比较 C 与 C++。",
+          "font": 14,
+          "contrast": 13.232,
+          "x": 37,
+          "y": 1546.359375,
+          "width": 246,
+          "height": 67.78125
+        },
+        {
+          "selector": ".route-card p",
+          "text": "从 Lisp 与 Scheme 的设计依据，到 Lua 和 JavaScript 的同题练",
+          "font": 14,
+          "contrast": 13.232,
+          "x": 37,
+          "y": 1760.359375,
+          "width": 246,
+          "height": 67.78125
+        },
+        {
+          "selector": ".route-card p",
+          "text": "区分设计关系、表达方式、解释器与编译环境。",
+          "font": 14,
+          "contrast": 13.232,
+          "x": 37,
+          "y": 2002.40625,
+          "width": 246,
+          "height": 67.78125
+        },
+        {
+          "selector": ".route-card p",
+          "text": "沿 CoffeeScript 与 LiveScript 的明确原文，阅读 Civet 如何",
+          "font": 14,
+          "contrast": 13.232,
+          "x": 37,
+          "y": 2213.625,
+          "width": 246,
+          "height": 93.671875
+        },
+        {
+          "selector": ".route-card p",
+          "text": "从 JavaScript 展品出发，依次改写变量、分支、循环、函数与列表，得到五次真实输出",
+          "font": 14,
+          "contrast": 13.232,
+          "x": 37,
+          "y": 2450.734375,
+          "width": 246,
+          "height": 93.671875
+        },
+        {
+          "selector": ".route-meta",
+          "text": "策展导览 · 5 个停靠点",
+          "font": 12,
+          "contrast": 5.894,
+          "x": 37,
+          "y": 1468.921875,
+          "width": 246,
+          "height": 18
+        },
+        {
+          "selector": ".route-meta",
+          "text": "策展导览 · 6 个停靠点",
+          "font": 12,
+          "contrast": 5.894,
+          "x": 37,
+          "y": 1682.921875,
+          "width": 246,
+          "height": 18
+        },
+        {
+          "selector": ".route-meta",
+          "text": "策展导览 · 6 个停靠点",
+          "font": 12,
+          "contrast": 5.894,
+          "x": 37,
+          "y": 1895.53125,
+          "width": 246,
+          "height": 18
+        },
+        {
+          "selector": ".route-meta",
+          "text": "策展导览 · 4 个停靠点",
+          "font": 12,
+          "contrast": 5.894,
+          "x": 37,
+          "y": 2136.1875,
+          "width": 246,
+          "height": 18
+        },
+        {
+          "selector": ".route-meta",
+          "text": "策展导览 · 6 个停靠点",
+          "font": 12,
+          "contrast": 5.894,
+          "x": 37,
+          "y": 2373.296875,
+          "width": 246,
+          "height": 18
+        },
+        {
+          "selector": ".language-card small",
+          "text": "1991 · 馆藏来源年代",
+          "font": 12,
+          "contrast": 5.894,
+          "x": 37,
+          "y": 2834.84375,
+          "width": 108.734375,
+          "height": 18
+        },
+        {
+          "selector": ".language-card small",
+          "text": "1995 · 馆藏来源年代",
+          "font": 12,
+          "contrast": 5.894,
+          "x": 37,
+          "y": 3119.5625,
+          "width": 110.578125,
+          "height": 18
+        },
+        {
+          "selector": ".language-card small",
+          "text": "1972 · 馆藏来源年代",
+          "font": 12,
+          "contrast": 5.894,
+          "x": 37,
+          "y": 3404.28125,
+          "width": 109.359375,
+          "height": 18
+        },
+        {
+          "selector": ".language-card small",
+          "text": "2010 · 馆藏来源年代",
+          "font": 12,
+          "contrast": 5.894,
+          "x": 37,
+          "y": 3689,
+          "width": 110.25,
+          "height": 18
+        },
+        {
+          "selector": ".section-nav a.active",
+          "text": "主题展厅",
+          "font": 12,
+          "contrast": 5.828,
+          "x": 14,
+          "y": 64,
+          "width": 73,
+          "height": 48
+        },
+        {
+          "selector": ".exhibit-footer",
+          "text": "年代索引，仅作展品排序；设计关系请查阅出处。03 — 04",
+          "font": 12,
+          "contrast": 8.387,
+          "x": 14,
+          "y": 1064.4375,
+          "width": 292,
+          "height": 64.59375
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "theme": "light",
+      "view": "catalogue",
+      "measurements": [
+        {
+          "selector": ".catalogue-title",
+          "text": "THE COLLECTION · 不按热度排序每一种名字，都有位置。",
+          "font": 16,
+          "contrast": 12.313,
+          "x": 14,
+          "y": 133,
+          "width": 292,
+          "height": 62.6875
+        },
+        {
+          "selector": "#search",
+          "text": "",
+          "font": 14,
+          "contrast": 13.232,
+          "x": 14,
+          "y": 248.1875,
+          "width": 292,
+          "height": 44
+        },
+        {
+          "selector": "#result-count",
+          "text": "5,155 条匹配 / 5,155 条馆藏",
+          "font": 14,
+          "contrast": 5.485,
+          "x": 14,
+          "y": 207.6875,
+          "width": 292,
+          "height": 24.5
+        },
+        {
+          "selector": ".record strong",
+          "text": "$",
+          "font": 17,
+          "contrast": 13.232,
+          "x": 33,
+          "y": 394.5625,
+          "width": 226.125,
+          "height": 25.5
+        },
+        {
+          "selector": ".record strong",
+          "text": ".dwg",
+          "font": 17,
+          "contrast": 13.232,
+          "x": 33,
+          "y": 498.5625,
+          "width": 226.125,
+          "height": 25.5
+        },
+        {
+          "selector": ".record strong",
+          "text": ".QL",
+          "font": 17,
+          "contrast": 13.232,
+          "x": 33,
+          "y": 602.5625,
+          "width": 226.125,
+          "height": 25.5
+        },
+        {
+          "selector": ".record strong",
+          "text": "05AB1E",
+          "font": 17,
+          "contrast": 13.232,
+          "x": 33,
+          "y": 706.5625,
+          "width": 226.125,
+          "height": 25.5
+        },
+        {
+          "selector": ".record strong",
+          "text": "1.pak",
+          "font": 17,
+          "contrast": 13.232,
+          "x": 33,
+          "y": 810.5625,
+          "width": 226.125,
+          "height": 25.5
+        },
+        {
+          "selector": ".record strong",
+          "text": "11ty",
+          "font": 17,
+          "contrast": 13.232,
+          "x": 33,
+          "y": 914.5625,
+          "width": 226.125,
+          "height": 25.5
+        },
+        {
+          "selector": ".record>span",
+          "text": "1983 · 来源标为语言，性质待核",
+          "font": 13,
+          "contrast": 5.894,
+          "x": 33,
+          "y": 429.8125,
+          "width": 226.125,
+          "height": 18
+        },
+        {
+          "selector": ".record>span",
+          "text": "1982 · 来源标为相关技术",
+          "font": 13,
+          "contrast": 5.894,
+          "x": 33,
+          "y": 533.8125,
+          "width": 226.125,
+          "height": 18
+        },
+        {
+          "selector": ".record>span",
+          "text": "2007 · 来源标为语言，性质待核",
+          "font": 13,
+          "contrast": 5.894,
+          "x": 33,
+          "y": 637.8125,
+          "width": 226.125,
+          "height": 18
+        },
+        {
+          "selector": ".record>span",
+          "text": "2015 · 来源标为语言，性质待核",
+          "font": 13,
+          "contrast": 5.894,
+          "x": 33,
+          "y": 741.8125,
+          "width": 226.125,
+          "height": 18
+        },
+        {
+          "selector": ".record>span",
+          "text": "1973 · 来源标为语言，性质待核",
+          "font": 13,
+          "contrast": 5.894,
+          "x": 33,
+          "y": 845.8125,
+          "width": 226.125,
+          "height": 18
+        },
+        {
+          "selector": ".record>span",
+          "text": "2017 · 已核相关技术",
+          "font": 13,
+          "contrast": 5.894,
+          "x": 33,
+          "y": 949.8125,
+          "width": 226.125,
+          "height": 18
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "theme": "light",
+      "view": "reading",
+      "measurements": [
+        {
+          "selector": ".reading-article section>p",
+          "text": "Python 官方 FAQ 将缩进分组与高层数据类型追溯到 ABC 的经验，同时强调两门语",
+          "font": 16,
+          "contrast": 12.313,
+          "x": 14,
+          "y": 544.765625,
+          "width": 292,
+          "height": 124.75
+        },
+        {
+          "selector": ".reading-article section>p",
+          "text": "来源年代不等于当前实现版本；已存依据也不表示历史关系已全部找齐。",
+          "font": 12,
+          "contrast": 5.485,
+          "x": 14,
+          "y": 928,
+          "width": 292,
+          "height": 44.375
+        },
+        {
+          "selector": ".reading-article section>p",
+          "text": "此处只展示源码，没有预先填入运行结果；进入实验台后点击运行。",
+          "font": 12,
+          "contrast": 5.485,
+          "x": 14,
+          "y": 1848.90625,
+          "width": 292,
+          "height": 44.375
+        },
+        {
+          "selector": ".reading-article section>p",
+          "text": "示例采用 Python 3；本地使用固定 Pyodide，第三方包和系统接口受环境限制。",
+          "font": 16,
+          "contrast": 12.313,
+          "x": 14,
+          "y": 1975.28125,
+          "width": 292,
+          "height": 93.5625
+        },
+        {
+          "selector": ".reading-source-note",
+          "text": "来源年代不等于当前实现版本；已存依据也不表示历史关系已全部找齐。",
+          "font": 12,
+          "contrast": 5.485,
+          "x": 14,
+          "y": 928,
+          "width": 292,
+          "height": 44.375
+        },
+        {
+          "selector": ".reading-source-note",
+          "text": "此处只展示源码，没有预先填入运行结果；进入实验台后点击运行。",
+          "font": 12,
+          "contrast": 5.485,
+          "x": 14,
+          "y": 1848.90625,
+          "width": 292,
+          "height": 44.375
+        },
+        {
+          "selector": ".reading-specimen-card .primary",
+          "text": "继续这个任务 →",
+          "font": 14,
+          "contrast": 6.263,
+          "x": 33,
+          "y": 2812.5625,
+          "width": 254,
+          "height": 45
+        },
+        {
+          "selector": ".reading-evidence p",
+          "text": "Python 官方 FAQ 引 Guido van Rossum 自述：ABC 团队经验是",
+          "font": 14,
+          "contrast": 5.163,
+          "x": 38,
+          "y": 711.515625,
+          "width": 246,
+          "height": 136.484375
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "theme": "light",
+      "view": "lab",
+      "measurements": [
+        {
+          "selector": "#lab-run",
+          "text": "运行代码",
+          "font": 12,
+          "contrast": 6.263,
+          "x": 236,
+          "y": 258.921875,
+          "width": 70,
+          "height": 44
+        },
+        {
+          "selector": "#lab-explain-current",
+          "text": "检查代码",
+          "font": 12,
+          "contrast": 13.232,
+          "x": 158,
+          "y": 258.921875,
+          "width": 70,
+          "height": 44
+        },
+        {
+          "selector": "#lab-highlight",
+          "text": "// interface sample\nconst value = 7;\nconsole.",
+          "font": 13,
+          "contrast": 10.813,
+          "x": 15,
+          "y": 372.296875,
+          "width": 290,
+          "height": 219.65625
+        },
+        {
+          "selector": "#lab-highlight .tok-keyword",
+          "text": "const",
+          "font": 13,
+          "contrast": 5.189,
+          "x": 62,
+          "y": 422.34375,
+          "width": 39.140625,
+          "height": 15
+        },
+        {
+          "selector": "#lab-highlight .tok-string",
+          "text": "\"value\"",
+          "font": 13,
+          "contrast": 5.146,
+          "x": 155.921875,
+          "y": 446.390625,
+          "width": 54.796875,
+          "height": 15
+        },
+        {
+          "selector": "#lab-highlight .tok-number",
+          "text": "7",
+          "font": 13,
+          "contrast": 5.68,
+          "x": 171.59375,
+          "y": 422.34375,
+          "width": 7.828125,
+          "height": 15
+        },
+        {
+          "selector": "#lab-highlight .tok-comment",
+          "text": "// interface sample",
+          "font": 13,
+          "contrast": 4.671,
+          "x": 62,
+          "y": 398.296875,
+          "width": 148.71875,
+          "height": 15
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "theme": "light",
+      "view": "credits",
+      "measurements": [
+        {
+          "selector": "#credit-search",
+          "text": "",
+          "font": 14,
+          "contrast": 13.232,
+          "x": 23,
+          "y": 271.390625,
+          "width": 156,
+          "height": 44
+        },
+        {
+          "selector": "#credit-category",
+          "text": "全部分类语言运行环境馆藏数据榜单参考关系核对历史依据与边界项目与支持",
+          "font": 14,
+          "contrast": 13.232,
+          "x": 187,
+          "y": 271.390625,
+          "width": 110,
+          "height": 44
+        },
+        {
+          "selector": ".credit-option-name",
+          "text": "浏览器原生 JavaScript",
+          "font": 14,
+          "contrast": 4.285,
+          "x": 36,
+          "y": 362.390625,
+          "width": 248,
+          "height": 21
+        },
+        {
+          "selector": ".credit-option-name",
+          "text": "Pyodide",
+          "font": 14,
+          "contrast": 13.232,
+          "x": 36,
+          "y": 425.578125,
+          "width": 248,
+          "height": 21
+        },
+        {
+          "selector": ".credit-option-name",
+          "text": "Wasmoon / Lua",
+          "font": 14,
+          "contrast": 13.232,
+          "x": 36,
+          "y": 488.765625,
+          "width": 248,
+          "height": 21
+        },
+        {
+          "selector": ".credit-option-name",
+          "text": "BiwaScheme",
+          "font": 14,
+          "contrast": 13.232,
+          "x": 36,
+          "y": 551.953125,
+          "width": 248,
+          "height": 21
+        },
+        {
+          "selector": ".credit-option-name",
+          "text": "Free Pascal",
+          "font": 14,
+          "contrast": 13.232,
+          "x": 36,
+          "y": 615.140625,
+          "width": 248,
+          "height": 21
+        },
+        {
+          "selector": ".credit-option-name",
+          "text": "R / Rscript",
+          "font": 14,
+          "contrast": 13.232,
+          "x": 36,
+          "y": 678.328125,
+          "width": 248,
+          "height": 21
+        },
+        {
+          "selector": ".credit-option-meta",
+          "text": "语言运行环境 · 浏览器能力",
+          "font": 12,
+          "contrast": 4.909,
+          "x": 36,
+          "y": 383.390625,
+          "width": 248,
+          "height": 19.1875
+        },
+        {
+          "selector": ".credit-option-meta",
+          "text": "语言运行环境 · Pyodide 314.0.7",
+          "font": 12,
+          "contrast": 5.894,
+          "x": 36,
+          "y": 446.578125,
+          "width": 248,
+          "height": 19.1875
+        },
+        {
+          "selector": ".credit-option-meta",
+          "text": "语言运行环境 · Wasmoon 1.16.0 · Lua 5.4.5",
+          "font": 12,
+          "contrast": 5.894,
+          "x": 36,
+          "y": 509.765625,
+          "width": 248,
+          "height": 19.1875
+        },
+        {
+          "selector": ".credit-option-meta",
+          "text": "语言运行环境 · BiwaScheme 0.8.3",
+          "font": 12,
+          "contrast": 5.894,
+          "x": 36,
+          "y": 572.953125,
+          "width": 248,
+          "height": 19.1875
+        },
+        {
+          "selector": ".credit-option-meta",
+          "text": "语言运行环境 · Free Pascal 3.2.2",
+          "font": 12,
+          "contrast": 5.894,
+          "x": 36,
+          "y": 636.140625,
+          "width": 248,
+          "height": 19.1875
+        },
+        {
+          "selector": ".credit-option-meta",
+          "text": "语言运行环境 · Rscript (R) version 4.2.2 Patched (2",
+          "font": 12,
+          "contrast": 5.894,
+          "x": 36,
+          "y": 699.328125,
+          "width": 248,
+          "height": 19.1875
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "theme": "dark",
+      "view": "gallery",
+      "measurements": [
+        {
+          "selector": ".intro-note p",
+          "text": "从一段有出处的历史开始，认识一门语言，再亲手写一段代码。",
+          "font": 15,
+          "contrast": 8.924,
+          "x": 14,
+          "y": 232,
+          "width": 292,
+          "height": 55.5
+        },
+        {
+          "selector": ".route-card p",
+          "text": "沿 BCPL、B、C 的原文依据，再比较 C 与 C++。",
+          "font": 14,
+          "contrast": 12.916,
+          "x": 37,
+          "y": 1546.359375,
+          "width": 246,
+          "height": 67.78125
+        },
+        {
+          "selector": ".route-card p",
+          "text": "从 Lisp 与 Scheme 的设计依据，到 Lua 和 JavaScript 的同题练",
+          "font": 14,
+          "contrast": 12.916,
+          "x": 37,
+          "y": 1760.359375,
+          "width": 246,
+          "height": 67.78125
+        },
+        {
+          "selector": ".route-card p",
+          "text": "区分设计关系、表达方式、解释器与编译环境。",
+          "font": 14,
+          "contrast": 12.916,
+          "x": 37,
+          "y": 2002.40625,
+          "width": 246,
+          "height": 67.78125
+        },
+        {
+          "selector": ".route-card p",
+          "text": "沿 CoffeeScript 与 LiveScript 的明确原文，阅读 Civet 如何",
+          "font": 14,
+          "contrast": 12.916,
+          "x": 37,
+          "y": 2213.625,
+          "width": 246,
+          "height": 93.671875
+        },
+        {
+          "selector": ".route-card p",
+          "text": "从 JavaScript 展品出发，依次改写变量、分支、循环、函数与列表，得到五次真实输出",
+          "font": 14,
+          "contrast": 12.916,
+          "x": 37,
+          "y": 2450.734375,
+          "width": 246,
+          "height": 93.671875
+        },
+        {
+          "selector": ".route-meta",
+          "text": "策展导览 · 5 个停靠点",
+          "font": 12,
+          "contrast": 7.611,
+          "x": 37,
+          "y": 1468.921875,
+          "width": 246,
+          "height": 18
+        },
+        {
+          "selector": ".route-meta",
+          "text": "策展导览 · 6 个停靠点",
+          "font": 12,
+          "contrast": 7.611,
+          "x": 37,
+          "y": 1682.921875,
+          "width": 246,
+          "height": 18
+        },
+        {
+          "selector": ".route-meta",
+          "text": "策展导览 · 6 个停靠点",
+          "font": 12,
+          "contrast": 7.611,
+          "x": 37,
+          "y": 1895.53125,
+          "width": 246,
+          "height": 18
+        },
+        {
+          "selector": ".route-meta",
+          "text": "策展导览 · 4 个停靠点",
+          "font": 12,
+          "contrast": 7.611,
+          "x": 37,
+          "y": 2136.1875,
+          "width": 246,
+          "height": 18
+        },
+        {
+          "selector": ".route-meta",
+          "text": "策展导览 · 6 个停靠点",
+          "font": 12,
+          "contrast": 7.611,
+          "x": 37,
+          "y": 2373.296875,
+          "width": 246,
+          "height": 18
+        },
+        {
+          "selector": ".language-card small",
+          "text": "1991 · 馆藏来源年代",
+          "font": 12,
+          "contrast": 7.611,
+          "x": 37,
+          "y": 2834.84375,
+          "width": 108.734375,
+          "height": 18
+        },
+        {
+          "selector": ".language-card small",
+          "text": "1995 · 馆藏来源年代",
+          "font": 12,
+          "contrast": 7.611,
+          "x": 37,
+          "y": 3119.5625,
+          "width": 110.578125,
+          "height": 18
+        },
+        {
+          "selector": ".language-card small",
+          "text": "1972 · 馆藏来源年代",
+          "font": 12,
+          "contrast": 7.611,
+          "x": 37,
+          "y": 3404.28125,
+          "width": 109.359375,
+          "height": 18
+        },
+        {
+          "selector": ".language-card small",
+          "text": "2010 · 馆藏来源年代",
+          "font": 12,
+          "contrast": 7.611,
+          "x": 37,
+          "y": 3689,
+          "width": 110.25,
+          "height": 18
+        },
+        {
+          "selector": ".section-nav a.active",
+          "text": "主题展厅",
+          "font": 12,
+          "contrast": 9.425,
+          "x": 14,
+          "y": 64,
+          "width": 73,
+          "height": 48
+        },
+        {
+          "selector": ".exhibit-footer",
+          "text": "年代索引，仅作展品排序；设计关系请查阅出处。03 — 04",
+          "font": 12,
+          "contrast": 8.387,
+          "x": 14,
+          "y": 1064.4375,
+          "width": 292,
+          "height": 64.59375
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "theme": "dark",
+      "view": "catalogue",
+      "measurements": [
+        {
+          "selector": ".catalogue-title",
+          "text": "THE COLLECTION · 不按热度排序每一种名字，都有位置。",
+          "font": 16,
+          "contrast": 15.144,
+          "x": 14,
+          "y": 133,
+          "width": 292,
+          "height": 62.6875
+        },
+        {
+          "selector": "#search",
+          "text": "",
+          "font": 14,
+          "contrast": 12.916,
+          "x": 14,
+          "y": 248.1875,
+          "width": 292,
+          "height": 44
+        },
+        {
+          "selector": "#result-count",
+          "text": "5,155 条匹配 / 5,155 条馆藏",
+          "font": 14,
+          "contrast": 8.924,
+          "x": 14,
+          "y": 207.6875,
+          "width": 292,
+          "height": 24.5
+        },
+        {
+          "selector": ".record strong",
+          "text": "$",
+          "font": 17,
+          "contrast": 12.916,
+          "x": 33,
+          "y": 394.5625,
+          "width": 226.125,
+          "height": 25.5
+        },
+        {
+          "selector": ".record strong",
+          "text": ".dwg",
+          "font": 17,
+          "contrast": 12.916,
+          "x": 33,
+          "y": 498.5625,
+          "width": 226.125,
+          "height": 25.5
+        },
+        {
+          "selector": ".record strong",
+          "text": ".QL",
+          "font": 17,
+          "contrast": 12.916,
+          "x": 33,
+          "y": 602.5625,
+          "width": 226.125,
+          "height": 25.5
+        },
+        {
+          "selector": ".record strong",
+          "text": "05AB1E",
+          "font": 17,
+          "contrast": 12.916,
+          "x": 33,
+          "y": 706.5625,
+          "width": 226.125,
+          "height": 25.5
+        },
+        {
+          "selector": ".record strong",
+          "text": "1.pak",
+          "font": 17,
+          "contrast": 12.916,
+          "x": 33,
+          "y": 810.5625,
+          "width": 226.125,
+          "height": 25.5
+        },
+        {
+          "selector": ".record strong",
+          "text": "11ty",
+          "font": 17,
+          "contrast": 12.916,
+          "x": 33,
+          "y": 914.5625,
+          "width": 226.125,
+          "height": 25.5
+        },
+        {
+          "selector": ".record>span",
+          "text": "1983 · 来源标为语言，性质待核",
+          "font": 13,
+          "contrast": 7.611,
+          "x": 33,
+          "y": 429.8125,
+          "width": 226.125,
+          "height": 18
+        },
+        {
+          "selector": ".record>span",
+          "text": "1982 · 来源标为相关技术",
+          "font": 13,
+          "contrast": 7.611,
+          "x": 33,
+          "y": 533.8125,
+          "width": 226.125,
+          "height": 18
+        },
+        {
+          "selector": ".record>span",
+          "text": "2007 · 来源标为语言，性质待核",
+          "font": 13,
+          "contrast": 7.611,
+          "x": 33,
+          "y": 637.8125,
+          "width": 226.125,
+          "height": 18
+        },
+        {
+          "selector": ".record>span",
+          "text": "2015 · 来源标为语言，性质待核",
+          "font": 13,
+          "contrast": 7.611,
+          "x": 33,
+          "y": 741.8125,
+          "width": 226.125,
+          "height": 18
+        },
+        {
+          "selector": ".record>span",
+          "text": "1973 · 来源标为语言，性质待核",
+          "font": 13,
+          "contrast": 7.611,
+          "x": 33,
+          "y": 845.8125,
+          "width": 226.125,
+          "height": 18
+        },
+        {
+          "selector": ".record>span",
+          "text": "2017 · 已核相关技术",
+          "font": 13,
+          "contrast": 7.611,
+          "x": 33,
+          "y": 949.8125,
+          "width": 226.125,
+          "height": 18
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "theme": "dark",
+      "view": "reading",
+      "measurements": [
+        {
+          "selector": ".reading-article section>p",
+          "text": "Python 官方 FAQ 将缩进分组与高层数据类型追溯到 ABC 的经验，同时强调两门语",
+          "font": 16,
+          "contrast": 15.144,
+          "x": 14,
+          "y": 544.765625,
+          "width": 292,
+          "height": 124.75
+        },
+        {
+          "selector": ".reading-article section>p",
+          "text": "来源年代不等于当前实现版本；已存依据也不表示历史关系已全部找齐。",
+          "font": 12,
+          "contrast": 8.924,
+          "x": 14,
+          "y": 928,
+          "width": 292,
+          "height": 44.375
+        },
+        {
+          "selector": ".reading-article section>p",
+          "text": "此处只展示源码，没有预先填入运行结果；进入实验台后点击运行。",
+          "font": 12,
+          "contrast": 8.924,
+          "x": 14,
+          "y": 1848.90625,
+          "width": 292,
+          "height": 44.375
+        },
+        {
+          "selector": ".reading-article section>p",
+          "text": "示例采用 Python 3；本地使用固定 Pyodide，第三方包和系统接口受环境限制。",
+          "font": 16,
+          "contrast": 15.144,
+          "x": 14,
+          "y": 1975.28125,
+          "width": 292,
+          "height": 93.5625
+        },
+        {
+          "selector": ".reading-source-note",
+          "text": "来源年代不等于当前实现版本；已存依据也不表示历史关系已全部找齐。",
+          "font": 12,
+          "contrast": 8.924,
+          "x": 14,
+          "y": 928,
+          "width": 292,
+          "height": 44.375
+        },
+        {
+          "selector": ".reading-source-note",
+          "text": "此处只展示源码，没有预先填入运行结果；进入实验台后点击运行。",
+          "font": 12,
+          "contrast": 8.924,
+          "x": 14,
+          "y": 1848.90625,
+          "width": 292,
+          "height": 44.375
+        },
+        {
+          "selector": ".reading-specimen-card .primary",
+          "text": "继续这个任务 →",
+          "font": 14,
+          "contrast": 7.255,
+          "x": 33,
+          "y": 2812.5625,
+          "width": 254,
+          "height": 45
+        },
+        {
+          "selector": ".reading-evidence p",
+          "text": "Python 官方 FAQ 引 Guido van Rossum 自述：ABC 团队经验是",
+          "font": 14,
+          "contrast": 6.393,
+          "x": 38,
+          "y": 711.515625,
+          "width": 246,
+          "height": 136.484375
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "theme": "dark",
+      "view": "lab",
+      "measurements": [
+        {
+          "selector": "#lab-run",
+          "text": "运行代码",
+          "font": 12,
+          "contrast": 7.255,
+          "x": 236,
+          "y": 258.921875,
+          "width": 70,
+          "height": 44
+        },
+        {
+          "selector": "#lab-explain-current",
+          "text": "检查代码",
+          "font": 12,
+          "contrast": 12.916,
+          "x": 158,
+          "y": 258.921875,
+          "width": 70,
+          "height": 44
+        },
+        {
+          "selector": "#lab-highlight",
+          "text": "// interface sample\nconst value = 7;\nconsole.",
+          "font": 13,
+          "contrast": 11.149,
+          "x": 15,
+          "y": 372.296875,
+          "width": 290,
+          "height": 219.65625
+        },
+        {
+          "selector": "#lab-highlight .tok-keyword",
+          "text": "const",
+          "font": 13,
+          "contrast": 6.504,
+          "x": 62,
+          "y": 422.34375,
+          "width": 39.140625,
+          "height": 15
+        },
+        {
+          "selector": "#lab-highlight .tok-string",
+          "text": "\"value\"",
+          "font": 13,
+          "contrast": 7.356,
+          "x": 155.921875,
+          "y": 446.390625,
+          "width": 54.796875,
+          "height": 15
+        },
+        {
+          "selector": "#lab-highlight .tok-number",
+          "text": "7",
+          "font": 13,
+          "contrast": 7.599,
+          "x": 171.59375,
+          "y": 422.34375,
+          "width": 7.828125,
+          "height": 15
+        },
+        {
+          "selector": "#lab-highlight .tok-comment",
+          "text": "// interface sample",
+          "font": 13,
+          "contrast": 5.499,
+          "x": 62,
+          "y": 398.296875,
+          "width": 148.71875,
+          "height": 15
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "theme": "dark",
+      "view": "credits",
+      "measurements": [
+        {
+          "selector": "#credit-search",
+          "text": "",
+          "font": 14,
+          "contrast": 12.916,
+          "x": 23,
+          "y": 271.390625,
+          "width": 156,
+          "height": 44
+        },
+        {
+          "selector": "#credit-category",
+          "text": "全部分类语言运行环境馆藏数据榜单参考关系核对历史依据与边界项目与支持",
+          "font": 14,
+          "contrast": 12.916,
+          "x": 187,
+          "y": 271.390625,
+          "width": 110,
+          "height": 44
+        },
+        {
+          "selector": ".credit-option-name",
+          "text": "浏览器原生 JavaScript",
+          "font": 14,
+          "contrast": 6.656,
+          "x": 36,
+          "y": 362.390625,
+          "width": 248,
+          "height": 21
+        },
+        {
+          "selector": ".credit-option-name",
+          "text": "Pyodide",
+          "font": 14,
+          "contrast": 12.916,
+          "x": 36,
+          "y": 425.578125,
+          "width": 248,
+          "height": 21
+        },
+        {
+          "selector": ".credit-option-name",
+          "text": "Wasmoon / Lua",
+          "font": 14,
+          "contrast": 12.916,
+          "x": 36,
+          "y": 488.765625,
+          "width": 248,
+          "height": 21
+        },
+        {
+          "selector": ".credit-option-name",
+          "text": "BiwaScheme",
+          "font": 14,
+          "contrast": 12.916,
+          "x": 36,
+          "y": 551.953125,
+          "width": 248,
+          "height": 21
+        },
+        {
+          "selector": ".credit-option-name",
+          "text": "Free Pascal",
+          "font": 14,
+          "contrast": 12.916,
+          "x": 36,
+          "y": 615.140625,
+          "width": 248,
+          "height": 21
+        },
+        {
+          "selector": ".credit-option-name",
+          "text": "R / Rscript",
+          "font": 14,
+          "contrast": 12.916,
+          "x": 36,
+          "y": 678.328125,
+          "width": 248,
+          "height": 21
+        },
+        {
+          "selector": ".credit-option-meta",
+          "text": "语言运行环境 · 浏览器能力",
+          "font": 12,
+          "contrast": 6.225,
+          "x": 36,
+          "y": 383.390625,
+          "width": 248,
+          "height": 19.1875
+        },
+        {
+          "selector": ".credit-option-meta",
+          "text": "语言运行环境 · Pyodide 314.0.7",
+          "font": 12,
+          "contrast": 7.611,
+          "x": 36,
+          "y": 446.578125,
+          "width": 248,
+          "height": 19.1875
+        },
+        {
+          "selector": ".credit-option-meta",
+          "text": "语言运行环境 · Wasmoon 1.16.0 · Lua 5.4.5",
+          "font": 12,
+          "contrast": 7.611,
+          "x": 36,
+          "y": 509.765625,
+          "width": 248,
+          "height": 19.1875
+        },
+        {
+          "selector": ".credit-option-meta",
+          "text": "语言运行环境 · BiwaScheme 0.8.3",
+          "font": 12,
+          "contrast": 7.611,
+          "x": 36,
+          "y": 572.953125,
+          "width": 248,
+          "height": 19.1875
+        },
+        {
+          "selector": ".credit-option-meta",
+          "text": "语言运行环境 · Free Pascal 3.2.2",
+          "font": 12,
+          "contrast": 7.611,
+          "x": 36,
+          "y": 636.140625,
+          "width": 248,
+          "height": 19.1875
+        },
+        {
+          "selector": ".credit-option-meta",
+          "text": "语言运行环境 · Rscript (R) version 4.2.2 Patched (2",
+          "font": 12,
+          "contrast": 7.611,
+          "x": 36,
+          "y": 699.328125,
+          "width": 248,
+          "height": 19.1875
+        }
+      ]
+    }
+  ],
+  "inputs": {
+    "src/index.html": "811e695c738cea4367a7c9cbb93444a7724ef925701ad69c5c6584acabd2da43",
+    "src/gallery.js": "3ac891f058a7345bc707566d13e7b3ac90a9a1e5fd49c6454afaa1328846fb82",
+    "src/interface.css": "565cb99fd5ad3b58f8d6d5f5171e413ce888a0d3ff9a4ad5cc206521c6189b17",
+    "src/gallery.css": "3e8bf08b8bb1243659377c28750be1efc9d9e7dbe345f9fad34c6ff4afa6077f",
+    "scripts/check-interface.cjs": "8005c24a9e7e1bf0dbc8f7af6733481009c9cde3a673c76953b7c5e51c6f3757",
+    "scripts/browser-harness.cjs": "f39547b4f9870cab90dc339af22d833c9b4c9d486a1f90397b0eb832033f77fb"
+  }
+}
